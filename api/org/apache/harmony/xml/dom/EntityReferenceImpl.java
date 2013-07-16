@@ -12,6 +12,7 @@ public class EntityReferenceImpl extends LeafNodeImpl implements EntityReference
 
     private String name;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.736 -0400", hash_original_method = "0FEA3B6855AA06DD4FD452A95A08D422", hash_generated_method = "2BD3024BAC177934AA0ABB7953C69198")
       EntityReferenceImpl(DocumentImpl document, String name) {
         super(document);

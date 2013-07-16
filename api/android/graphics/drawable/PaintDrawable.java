@@ -12,12 +12,14 @@ import org.xmlpull.v1.XmlPullParser;
 
 public class PaintDrawable extends ShapeDrawable {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.580 -0400", hash_original_method = "35894A2FD0CE190FC6DCE9F697221056", hash_generated_method = "C2DDD9F96B236904D52621DDE9E6E0DC")
     public  PaintDrawable() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.580 -0400", hash_original_method = "51DC0DAE916B0D4375C00567B21115B1", hash_generated_method = "F038BEBA2C824113480A3ED8D46A5AD4")
     public  PaintDrawable(int color) {
         addTaint(color);

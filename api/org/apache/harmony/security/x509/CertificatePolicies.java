@@ -20,6 +20,7 @@ public final class CertificatePolicies extends ExtensionValue {
 
     private byte[] encoding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.758 -0400", hash_original_method = "C31E4B8F2A567252600FDAE2EEE40805", hash_generated_method = "596ED5D28F3D7EA812E6FDACCFE73898")
     public  CertificatePolicies() {
         // ---------- Original Method ----------

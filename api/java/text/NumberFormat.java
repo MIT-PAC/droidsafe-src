@@ -36,6 +36,7 @@ public abstract class NumberFormat extends Format {
 
     private int minimumFractionDigits = 0;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.775 -0400", hash_original_method = "AC8E136DE5A642003A57BDCF52FB755A", hash_generated_method = "4471CB6ABEB340D260FD4A286AE4BB26")
     protected  NumberFormat() {
         // ---------- Original Method ----------
@@ -584,6 +585,7 @@ Object var540C13E9E156B687226421B24F2DF178_584008294 =             null;
     
     public static class Field extends Format.Field {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.793 -0400", hash_original_method = "5600516370D16E6925F34153CC1B60B8", hash_generated_method = "465767ECB3AF93CD4C2D7AEDA23F18B3")
         protected  Field(String fieldName) {
             super(fieldName);

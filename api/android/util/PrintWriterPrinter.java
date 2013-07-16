@@ -19,6 +19,7 @@ public class PrintWriterPrinter implements Printer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.158 -0400", hash_original_method = "5189B7E75DB8D4AF68FE0FEBEB42EF0B", hash_generated_method = "9238571C2E8450C6CAF9490458B52112")
     public void println(String x) {
         addTaint(x.getTaint());

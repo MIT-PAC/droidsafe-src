@@ -21,6 +21,7 @@ abstract class SpannableStringInternal {
 
     private int mSpanCount;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.713 -0400", hash_original_method = "6B8C85BD24C5FB6AAF3EB88754652005", hash_generated_method = "84D61665D5A0833C46D38731DB1B431B")
       SpannableStringInternal(CharSequence source,
                                           int start, int end) {

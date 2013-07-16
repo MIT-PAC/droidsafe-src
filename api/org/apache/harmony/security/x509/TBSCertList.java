@@ -268,6 +268,7 @@ for(RevokedCertificate revokedCertificate : revokedCertificates)
 
         private byte[] encoding;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.447 -0400", hash_original_method = "5F12FE515CE9F47CBF71064D9DB4557F", hash_generated_method = "BC1DB00FC7FFB3D0501D51D30D51D61C")
         public  RevokedCertificate(BigInteger userCertificate,
                 Date revocationDate, Extensions crlEntryExtensions) {

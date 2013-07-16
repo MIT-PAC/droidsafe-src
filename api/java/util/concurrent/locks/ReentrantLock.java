@@ -13,6 +13,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
 
     private Sync sync;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.937 -0400", hash_original_method = "CAF4BD8277F97E8E8A833F3DA738B0B2", hash_generated_method = "D575B8316542FC333CB3BC5C812414AD")
     public  ReentrantLock() {
         sync = new NonfairSync();
@@ -21,6 +22,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.937 -0400", hash_original_method = "D5E979A18BF9FB96236498521D2048B7", hash_generated_method = "A41781E53E248156CFB216376FFDC140")
     public  ReentrantLock(boolean fair) {
         sync = fair ? new FairSync() : new NonfairSync();
@@ -435,6 +437,7 @@ Thread var9A18AC0B80ECEE9576AADF73FC28AEC2_741187584 =             getState() ==
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.945 -0400", hash_original_method = "05D5902ED2395493955B66F039D49364", hash_generated_method = "75645607B1168731113488FBAFB4AB43")
         private void readObject(java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
             addTaint(s.getTaint());

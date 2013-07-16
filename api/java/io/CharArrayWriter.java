@@ -51,6 +51,7 @@ public class CharArrayWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:47.000 -0400", hash_original_method = "74E26FDF253668E5689F73596E4C1217", hash_generated_method = "C52FC5F77B02935642B6F8DEFE2250FA")
     private void expand(int i) {
         addTaint(i);
@@ -146,6 +147,7 @@ String var284A4624AC5D82C1992013009E0FB870_561904108 =             new String(bu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:47.003 -0400", hash_original_method = "17F94D6158075BE971F02096E85AEF33", hash_generated_method = "93847812E3AD8CFF2A91074835AFA875")
     @Override
     public void write(char[] buffer, int offset, int len) {
@@ -168,6 +170,7 @@ String var284A4624AC5D82C1992013009E0FB870_561904108 =             new String(bu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:47.003 -0400", hash_original_method = "F6D5648087F216C6BFDCFB078373F01B", hash_generated_method = "98F21E0D181DB75A943801F4748A9B8D")
     @Override
     public void write(int oneChar) {
@@ -184,6 +187,7 @@ String var284A4624AC5D82C1992013009E0FB870_561904108 =             new String(bu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:47.004 -0400", hash_original_method = "9F8082FBB1391041DAA8F1A348E27C2A", hash_generated_method = "C19F7778337D091F4FD622F851DF67FE")
     @Override
     public void write(String str, int offset, int count) {

@@ -56,6 +56,7 @@ class GLLogWrapper extends GLWrapperBase {
 
     StringBuilder mStringBuilder;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.204 -0400", hash_original_method = "A3493A9CF45B2508C26D55D69FE9C771", hash_generated_method = "B1949F077EADB10141DB0EEAACEAE8AB")
     public  GLLogWrapper(GL gl, Writer log, boolean logArgumentNames) {
         super(gl);
@@ -68,6 +69,7 @@ class GLLogWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.204 -0400", hash_original_method = "7B6C54876CD77673EA856C05F8287BB3", hash_generated_method = "EFC95C47D3C92B691A6C9858FD893B60")
     private void checkError() {
         int glError;
@@ -85,6 +87,7 @@ class GLLogWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.205 -0400", hash_original_method = "B819F9C00E5D903C9B12858E84782EC6", hash_generated_method = "5F5D0216A34371FAE77555290CAD8A42")
     private void logLine(String message) {
         addTaint(message.getTaint());
@@ -112,6 +115,7 @@ class GLLogWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.205 -0400", hash_original_method = "FB0C650254ED9FCE75BB6E7EB1636546", hash_generated_method = "802B50CA37688C411C9409CBBB0D3E0E")
     private void begin(String name) {
         addTaint(name.getTaint());
@@ -123,6 +127,7 @@ class GLLogWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.206 -0400", hash_original_method = "54C70E45C8BA9C703732EB10FD7BBF7B", hash_generated_method = "DF33C133291E9F393FF306B9A4B6373D")
     private void arg(String name, String value) {
         addTaint(value.getTaint());
@@ -147,6 +152,7 @@ class GLLogWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.206 -0400", hash_original_method = "34DADD61F74380F23C382DA05A595428", hash_generated_method = "B9D1C3BCA829E316DC2B840473E126DE")
     private void end() {
         log(");\n");
@@ -157,6 +163,7 @@ class GLLogWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.206 -0400", hash_original_method = "0CDA8C40EE3F1BEB19FC35DF0C9C3B14", hash_generated_method = "927A3CC15B210A38C80E3F1C30213844")
     private void flush() {
         try 
@@ -176,6 +183,7 @@ class GLLogWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.207 -0400", hash_original_method = "955712C9576F8C997D3BDD787DE32104", hash_generated_method = "19E20715DF411A3C41FA9A57D5980F9C")
     private void arg(String name, boolean value) {
         addTaint(value);
@@ -186,6 +194,7 @@ class GLLogWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.207 -0400", hash_original_method = "B92E6D1514E3DF39AF9DE02825B78605", hash_generated_method = "28D5EDBB11EB9542D1E4EDDD6466965E")
     private void arg(String name, int value) {
         addTaint(value);
@@ -196,6 +205,7 @@ class GLLogWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.207 -0400", hash_original_method = "AF09399FA6A192AE093560445EC66367", hash_generated_method = "5733F6CDB0ABD14CBBDCE26540441C2F")
     private void arg(String name, float value) {
         addTaint(value);
@@ -206,6 +216,7 @@ class GLLogWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.208 -0400", hash_original_method = "CEBA98C664D8642C3269C979FB98B560", hash_generated_method = "0CAD5606128D9C9F415A76C0D8E57A1A")
     private void returns(String result) {
         addTaint(result.getTaint());
@@ -217,6 +228,7 @@ class GLLogWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.208 -0400", hash_original_method = "A943ABBAFE7E9588C2D5222F0375E708", hash_generated_method = "8FC8EA26A440313CE4C528916D1B6B45")
     private void returns(int result) {
         addTaint(result);
@@ -226,6 +238,7 @@ class GLLogWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.208 -0400", hash_original_method = "8F13D6071DB2372AF6E5A020B3D63CE4", hash_generated_method = "542393EEB63C2D042450A446FDC1E9BC")
     private void arg(String name, int n, int[] arr, int offset) {
         addTaint(offset);
@@ -238,6 +251,7 @@ class GLLogWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.209 -0400", hash_original_method = "9DAD69FE204FE91A679E79BA32F83523", hash_generated_method = "230ED1E2E2E8220616EC11E0C4CF3DED")
     private void arg(String name, int n, short[] arr, int offset) {
         addTaint(offset);
@@ -250,6 +264,7 @@ class GLLogWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.209 -0400", hash_original_method = "4FD869DC81612135A661446E7D5E36EE", hash_generated_method = "6E29A39297765BCA8BE84D4E52A7100A")
     private void arg(String name, int n, float[] arr, int offset) {
         addTaint(offset);
@@ -262,6 +277,7 @@ class GLLogWrapper extends GLWrapperBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.209 -0400", hash_original_method = "E08D3360122D211DABE718ED5E58458E", hash_generated_method = "9E216C65E5A8F7A6D23AF00F0E950303")
     private void formattedAppend(StringBuilder buf, int value, int format) {
         addTaint(format);
@@ -293,6 +309,7 @@ switch(format){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.210 -0400", hash_original_method = "A1072478259B736CFCA97CBC9F12C979", hash_generated_method = "68E3981D84FCDB70ABB28C27018F9071")
     private String toString(int n, int format, int[] arr, int offset) {
         addTaint(offset);
@@ -339,6 +356,7 @@ String var4FC680801218E6372BC708D6FA44AE60_59257702 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.211 -0400", hash_original_method = "58E007C12B329BF9B88C8DD081E4D73F", hash_generated_method = "E05E406D39BCFB5FC0E297D42761C059")
     private String toString(int n, short[] arr, int offset) {
         addTaint(offset);
@@ -384,6 +402,7 @@ String var4FC680801218E6372BC708D6FA44AE60_973632355 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.211 -0400", hash_original_method = "E0279213DB25FBCD6B1A1BF467A23599", hash_generated_method = "5D2CF1CA272BFB20C1FFCA332BF91D5D")
     private String toString(int n, float[] arr, int offset) {
         addTaint(offset);
@@ -429,6 +448,7 @@ String var4FC680801218E6372BC708D6FA44AE60_2096178406 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.212 -0400", hash_original_method = "BA7BACBB919EFD700D9FF40233C8DEDF", hash_generated_method = "131172A8ECDA302F76EAA8E3988201F6")
     private String toString(int n, FloatBuffer buf) {
         addTaint(buf.getTaint());
@@ -454,6 +474,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1537695601 =         builder.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.212 -0400", hash_original_method = "27E69164B5E7975B2DEDE9414DD97982", hash_generated_method = "7C647F49234853DB2CDBBD25045A7093")
     private String toString(int n, int format, IntBuffer buf) {
         addTaint(buf.getTaint());
@@ -484,6 +505,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_2090853386 =         builder.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.213 -0400", hash_original_method = "AB9E3C5D494B64EE75923B2568F2C9EC", hash_generated_method = "C271CB9381CA276FD3544D6A8FCA6B32")
     private String toString(int n, ShortBuffer buf) {
         addTaint(buf.getTaint());
@@ -509,6 +531,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1719382842 =         builder.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.213 -0400", hash_original_method = "2014532B2F898B51396CE264BC99A9BE", hash_generated_method = "3BA29FC47CA15B5D22009C0EDBE9E6EF")
     private void arg(String name, int n, FloatBuffer buf) {
         addTaint(buf.getTaint());
@@ -520,6 +543,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1719382842 =         builder.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.214 -0400", hash_original_method = "1BF1A33030FB8855D976F59B22DED940", hash_generated_method = "0208B0FCB2F675E00B6BB3A088B61CB9")
     private void arg(String name, int n, IntBuffer buf) {
         addTaint(buf.getTaint());
@@ -531,6 +555,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1719382842 =         builder.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.214 -0400", hash_original_method = "177FB5028A84628CCF2CA388EC75CDD1", hash_generated_method = "7545B9D47459DFDAAC227C3F581459B3")
     private void arg(String name, int n, ShortBuffer buf) {
         addTaint(buf.getTaint());
@@ -542,6 +567,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1719382842 =         builder.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.215 -0400", hash_original_method = "8C908BBB147F5EC443363AEC1AF393E3", hash_generated_method = "976FD0B40A6C94EF72156CD064DB278B")
     private void argPointer(int size, int type, int stride, Buffer pointer) {
         addTaint(pointer.getTaint());
@@ -560,12 +586,14 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1719382842 =         builder.toString
     }
 
     
-        private static String getHex(int value) {
+        @DSModeled(DSC.SAFE)
+    private static String getHex(int value) {
         return "0x" + Integer.toHexString(value);
     }
 
     
-        public static String getErrorString(int error) {
+        @DSModeled(DSC.SAFE)
+    public static String getErrorString(int error) {
         switch (error) {
         case GL_NO_ERROR:
             return "GL_NO_ERROR";
@@ -587,6 +615,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1719382842 =         builder.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.216 -0400", hash_original_method = "D50915305D434E1A5F882494EC15D61A", hash_generated_method = "DC3C43B7E1223E5CF182010E3F708E12")
     private String getClearBufferMask(int mask) {
         addTaint(mask);
@@ -630,6 +659,7 @@ String var53F188277CD163A95D3D9B5184E22806_1376863362 =         b.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.217 -0400", hash_original_method = "7CCE6D819F0C24FC3AF1A95ABD2C3D96", hash_generated_method = "B08ABC5AE53F6CE3F2F089E7DBF6A99D")
     private String getFactor(int factor) {
         addTaint(factor);
@@ -688,6 +718,7 @@ String var840A741A36C6E9A10DFD6A3AB19799AA_723207574 =         getHex(factor);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.217 -0400", hash_original_method = "D293263142DE13A9C5B18E932B7DD8FD", hash_generated_method = "48711402F00D97D89555C5B3FE108B21")
     private String getShadeModel(int model) {
         addTaint(model);
@@ -717,6 +748,7 @@ String var7DB0EEEE1FF94A813E16434692E1FB9C_1204098533 =         getHex(model);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.218 -0400", hash_original_method = "B475B71F7978A29CB571F01EF167C5F4", hash_generated_method = "9AB5E3B1A24327B9FB96A8165DED285C")
     private String getTextureTarget(int target) {
         addTaint(target);
@@ -740,6 +772,7 @@ String varC5BCCB40D483945AD16346DCD4C1BFD9_950850500 =         getHex(target);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.218 -0400", hash_original_method = "A409E4F874EF601C9002CED64297404F", hash_generated_method = "CFF6A11592A730BE13917B5784F8532C")
     private String getTextureEnvTarget(int target) {
         addTaint(target);
@@ -763,6 +796,7 @@ String varC5BCCB40D483945AD16346DCD4C1BFD9_963114930 =         getHex(target);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.219 -0400", hash_original_method = "240EE86688BBA555EFA549F8D5279211", hash_generated_method = "AA2ED5477C8625DD0DA930E28DB5FB48")
     private String getTextureEnvPName(int pname) {
         addTaint(pname);
@@ -822,6 +856,7 @@ switch(pname){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.220 -0400", hash_original_method = "66F5BFBCC2FD04908BD633D296370E3A", hash_generated_method = "DCD6A7CE49CD4185BB7BBF5B6A60601B")
     private String getTextureEnvParamName(float param) {
         addTaint(param);
@@ -886,6 +921,7 @@ String var41CF4871428AE4E5BF75FAC31BD7499F_1339748215 =         Float.toString(p
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.220 -0400", hash_original_method = "A5D3AB9FF6FE40C51BADE42E6771AE1F", hash_generated_method = "342611E264BD71B5B14D75D0AE0C6867")
     private String getMatrixMode(int matrixMode) {
         addTaint(matrixMode);
@@ -921,6 +957,7 @@ String varC63359BEBE10899C8958631BF0D303FF_377559618 =         getHex(matrixMode
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.221 -0400", hash_original_method = "887401050582DE2609B785082BED790B", hash_generated_method = "C8B4F5D62E56167861F1FD8F205137BC")
     private String getClientState(int clientState) {
         addTaint(clientState);
@@ -962,6 +999,7 @@ String varF0023A1C20D46A3CAEFA6083F72A1D1C_902719480 =         getHex(clientStat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.221 -0400", hash_original_method = "26644C965F0F84D320609302178980F8", hash_generated_method = "9632C4521FC80B0B1EDC469245DB235A")
     private String getCap(int cap) {
         addTaint(cap);
@@ -1104,6 +1142,7 @@ String var7988E6ED7ECB3CDD25FE6FDA245358C7_483243742 =         getHex(cap);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.222 -0400", hash_original_method = "97AC8E7B3D4194738E07F221B5D7327E", hash_generated_method = "BEFA47AE70E4F2C40E9A8B5F8A0EB780")
     private String getTexturePName(int pname) {
         addTaint(pname);
@@ -1157,6 +1196,7 @@ String var17EB31AEABC63CBC4D8F00A7873C8076_1701170547 =         getHex(pname);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.222 -0400", hash_original_method = "70E0C8289B892BD0B10D984411AC6166", hash_generated_method = "F02D45903A821491494916DB79D94BB6")
     private String getTextureParamName(float param) {
         addTaint(param);
@@ -1210,6 +1250,7 @@ String var41CF4871428AE4E5BF75FAC31BD7499F_926024304 =         Float.toString(pa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.223 -0400", hash_original_method = "28D99551C137ADB006DA3B79D8C13C8F", hash_generated_method = "E7C6CFA7FA5AD40E1C02A12C97FDB6A3")
     private String getFogPName(int pname) {
         addTaint(pname);
@@ -1305,6 +1346,7 @@ switch(pname){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.223 -0400", hash_original_method = "4BE9513A027CB497279D1900B720EFAA", hash_generated_method = "5B1E52596C594C43EE928A0A36263DD3")
     private String getBeginMode(int mode) {
         addTaint(mode);
@@ -1364,6 +1406,7 @@ String var7FC1C26E2EBB1099D9597F452FB535CF_2109387062 =         getHex(mode);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.224 -0400", hash_original_method = "3E6AD0069200B69D18E8139DEB14B886", hash_generated_method = "F1678503ED173978713BB51C39BD2555")
     private String getIndexType(int type) {
         addTaint(type);
@@ -1393,6 +1436,7 @@ String varD1FC67380EDAAC4DC9A33E588E1EDA29_1490912942 =         getHex(type);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.224 -0400", hash_original_method = "4AD6E894CAD89C639D3AE3693A5D4F5F", hash_generated_method = "0A87FF9389D5CE6CB0CEFE0B2447DC09")
     private String getIntegerStateName(int pname) {
         addTaint(pname);
@@ -1647,6 +1691,7 @@ switch(pname){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.229 -0400", hash_original_method = "4D3E62DAA5E69B9689FE052B7C9786D8", hash_generated_method = "7CB73F806F3A35DB57722FC18DC67682")
     private String getHintTarget(int target) {
         addTaint(target);
@@ -1700,6 +1745,7 @@ String varC5BCCB40D483945AD16346DCD4C1BFD9_1255125845 =         getHex(target);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.229 -0400", hash_original_method = "4CBC7095C8EC2BFC380BB54CFA1150A6", hash_generated_method = "B00D9378248A5B7F1108BA1A9E9EDCA0")
     private String getHintMode(int mode) {
         addTaint(mode);
@@ -1735,6 +1781,7 @@ String var7FC1C26E2EBB1099D9597F452FB535CF_185003334 =         getHex(mode);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.229 -0400", hash_original_method = "BE1CA8C5489B5964B68DFDD8E3046F1A", hash_generated_method = "AA93B0A3A92141D3B4265A90B604B251")
     private String getFaceName(int face) {
         addTaint(face);
@@ -1758,6 +1805,7 @@ String varD1678B9B653067F48DEDC0D2C1EFDF64_374027785 =         getHex(face);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.230 -0400", hash_original_method = "AA6E7FD439F75BBDF66BBAE581FA29DC", hash_generated_method = "B566B134FDEC3AB75825584BA0BFED11")
     private String getMaterialPName(int pname) {
         addTaint(pname);
@@ -1865,6 +1913,7 @@ switch(pname){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.231 -0400", hash_original_method = "1120552551378876CBD5B26DC66EC81D", hash_generated_method = "5AF3544803EC6F958AA63D9650EFCBB4")
     private String getLightName(int light) {
         addTaint(light);
@@ -1885,6 +1934,7 @@ String varA56BF31A21B14BF74666C55011828245_1687023895 =         getHex(light);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.231 -0400", hash_original_method = "3E656EADB323CE9823F4DF06359C055F", hash_generated_method = "E287564B30CE873D17FC170D9CC7D11D")
     private String getLightPName(int pname) {
         addTaint(pname);
@@ -2040,6 +2090,7 @@ switch(pname){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.232 -0400", hash_original_method = "E7E2148BEA6DA3A2392A3015CEC490ED", hash_generated_method = "DB0707C369BBA755E15FDFFDD100415C")
     private String getLightModelPName(int pname) {
         addTaint(pname);
@@ -2099,6 +2150,7 @@ switch(pname){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.234 -0400", hash_original_method = "B46D74FDB30D00E40B69968F15E78E9C", hash_generated_method = "36DF8A9CE812F4FD9BE783E6A2AD5DBA")
     private String getPointerTypeName(int type) {
         addTaint(type);
@@ -2331,6 +2383,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.249 -0400", hash_original_method = "9E2FED0978BD5C803285B27767A7E21D", hash_generated_method = "03CB6FAB1EF19B43493741CA5F919E46")
     private void doArrayElement(StringBuilder builder, boolean enabled,
             String name, PointerInfo pointer, int index) {
@@ -2412,6 +2465,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.250 -0400", hash_original_method = "18ED24BBE3A59BF79B22AC9820775324", hash_generated_method = "A466AEF7D70AFCF204929B83564F867D")
     private void doElement(StringBuilder builder, int ordinal, int vertexIndex) {
         addTaint(vertexIndex);
@@ -2441,6 +2495,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.250 -0400", hash_original_method = "77D79B214B9356E4551CAEF16D65F140", hash_generated_method = "7D35DDA55AEDC27B661B5C22E1D4A896")
     private void bindArrays() {
     if(mColorArrayEnabled)        
@@ -2463,6 +2518,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.251 -0400", hash_original_method = "2D64969A785416C0A5F6948AE4F12F17", hash_generated_method = "769FF29C057685CB2B59B20529BEB7E3")
     private void unbindArrays() {
     if(mColorArrayEnabled)        
@@ -2485,6 +2541,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.251 -0400", hash_original_method = "8BEFE81F11FDFA0803FB840CFDBECE18", hash_generated_method = "62219D2A0CE0F6E5159B158DB282AB47")
     private void startLogIndices() {
         mStringBuilder = new StringBuilder();
@@ -2497,6 +2554,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.251 -0400", hash_original_method = "D9D1714867A0E29CB1E483FA3BEF276D", hash_generated_method = "7DFED89D747BA06C9971FF312944F5EA")
     private void endLogIndices() {
         log(mStringBuilder.toString());
@@ -2507,6 +2565,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.252 -0400", hash_original_method = "8567ECC1E9E342CC5CB7FB31476FB01D", hash_generated_method = "EF3504FE8E55B1C705775736FCBC6B53")
     public void glActiveTexture(int texture) {
         addTaint(texture);
@@ -2524,6 +2583,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.252 -0400", hash_original_method = "0725FDE76DEF9A8A399D8C991E3F0B9C", hash_generated_method = "D6BD478A8D1CC1037A3009AECD004C66")
     public void glAlphaFunc(int func, float ref) {
         addTaint(ref);
@@ -2544,6 +2604,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.252 -0400", hash_original_method = "8B2A6A1FA66E5C47953D46C94A5964A1", hash_generated_method = "5DD1AE8B00C3F4635293E99646634324")
     public void glAlphaFuncx(int func, int ref) {
         addTaint(ref);
@@ -2564,6 +2625,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.253 -0400", hash_original_method = "2496CCD38076BE2E29CA5ED8924E8FF4", hash_generated_method = "E38AA0566AD67B95A29AE9789E985387")
     public void glBindTexture(int target, int texture) {
         addTaint(texture);
@@ -2584,6 +2646,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.253 -0400", hash_original_method = "0DC054B8BC438D7CFE9ABA322CEC8552", hash_generated_method = "B12F1493C8414C99DC1C74F5830F4BD5")
     public void glBlendFunc(int sfactor, int dfactor) {
         addTaint(dfactor);
@@ -2604,6 +2667,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.253 -0400", hash_original_method = "DAAFDFBAA0B614EDE64AD30A9A6E435C", hash_generated_method = "261075F4F1D7C0CD495FB716B6AE4B75")
     public void glClear(int mask) {
         addTaint(mask);
@@ -2621,6 +2685,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.254 -0400", hash_original_method = "5FC26FF6CD80F973822B829D90EC13B7", hash_generated_method = "F7A34C2AE6D2124483AEAFDED1432C28")
     public void glClearColor(float red, float green, float blue, float alpha) {
         addTaint(alpha);
@@ -2647,6 +2712,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.254 -0400", hash_original_method = "E2509AF8FA7B5B572B3BAE8F7D333138", hash_generated_method = "95B005EF246EA379359C8ABCFED6D257")
     public void glClearColorx(int red, int green, int blue, int alpha) {
         addTaint(alpha);
@@ -2673,6 +2739,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.254 -0400", hash_original_method = "3A25B6FEC6D86140F22D47BB1DDC177A", hash_generated_method = "1CCF46E881ADD7495BF654104816C761")
     public void glClearDepthf(float depth) {
         addTaint(depth);
@@ -2690,6 +2757,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.254 -0400", hash_original_method = "4BD589682D48F3C7707333082B6EC6AD", hash_generated_method = "13595CEFF5766E70560B3C55FB0FD5B4")
     public void glClearDepthx(int depth) {
         addTaint(depth);
@@ -2707,6 +2775,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.255 -0400", hash_original_method = "C7BEC8E54C7C957D6E7E3E016A6FE1BA", hash_generated_method = "77F8A926A08A5E255AFFD2F0AF3CDF28")
     public void glClearStencil(int s) {
         addTaint(s);
@@ -2724,6 +2793,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.255 -0400", hash_original_method = "DDCE3AF31C0959191021E8C7743FFE7F", hash_generated_method = "49DBD2E06B46096611F7437C316DC324")
     public void glClientActiveTexture(int texture) {
         addTaint(texture);
@@ -2741,6 +2811,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.255 -0400", hash_original_method = "6D76049DA5F77453E4E9D5A87906CC2F", hash_generated_method = "D96DE4EB86A195D39C7508061FFCE0DD")
     public void glColor4f(float red, float green, float blue, float alpha) {
         addTaint(alpha);
@@ -2767,6 +2838,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.256 -0400", hash_original_method = "BE66C4ED7282BD136506403FACE26B19", hash_generated_method = "F6EF3FFF0C9EEB6A63ABB1CF32A00A0F")
     public void glColor4x(int red, int green, int blue, int alpha) {
         addTaint(alpha);
@@ -2793,6 +2865,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.257 -0400", hash_original_method = "870742C84E0B72750B196AA2FF1325D8", hash_generated_method = "DC254ABB193028D8D158E18A22839AEB")
     public void glColorMask(boolean red, boolean green, boolean blue,
             boolean alpha) {
@@ -2820,6 +2893,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.258 -0400", hash_original_method = "F9F0FDA519223D64121F8A9877DB530E", hash_generated_method = "E7D45278A151993656DE9461428BC683")
     public void glColorPointer(int size, int type, int stride, Buffer pointer) {
         begin("glColorPointer");
@@ -2838,6 +2912,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.259 -0400", hash_original_method = "17D3A67B77DD369DD4ABAC1595F31E23", hash_generated_method = "431A5A9265052A1C7E332E146033CE93")
     public void glCompressedTexImage2D(int target, int level,
             int internalformat, int width, int height, int border,
@@ -2880,6 +2955,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.260 -0400", hash_original_method = "CEDB97427223E63C4F16F0E556BB55B7", hash_generated_method = "0D67B4984D3973E40D6B12E745A4414C")
     public void glCompressedTexSubImage2D(int target, int level, int xoffset,
             int yoffset, int width, int height, int format, int imageSize,
@@ -2925,6 +3001,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.261 -0400", hash_original_method = "F8E44C3AEED19446978405EB93D8610D", hash_generated_method = "85CF19978283AB9E46171CE0A78D92B8")
     public void glCopyTexImage2D(int target, int level, int internalformat,
             int x, int y, int width, int height, int border) {
@@ -2966,6 +3043,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.261 -0400", hash_original_method = "4A0D670FCA04E0D914C9719120DE9E74", hash_generated_method = "993B84C6A6D5470746442E4533633587")
     public void glCopyTexSubImage2D(int target, int level, int xoffset,
             int yoffset, int x, int y, int width, int height) {
@@ -3007,6 +3085,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.262 -0400", hash_original_method = "52A58515AC112AE2469A0F30AE3AF71E", hash_generated_method = "302D2A952E89D062D4B66C263F5D5FC2")
     public void glCullFace(int mode) {
         addTaint(mode);
@@ -3024,6 +3103,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.262 -0400", hash_original_method = "51C4CA113A443136059F7099E505E355", hash_generated_method = "4A04C4C3C70A6242643050583BB197D6")
     public void glDeleteTextures(int n, int[] textures, int offset) {
         addTaint(offset);
@@ -3047,6 +3127,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.263 -0400", hash_original_method = "8A2F6FBD519C49A754C2C116C38B966B", hash_generated_method = "1D139F25C445D3E4E75E8327763BF980")
     public void glDeleteTextures(int n, IntBuffer textures) {
         addTaint(textures.getTaint());
@@ -3067,6 +3148,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.264 -0400", hash_original_method = "427BBAC7E233265CDD5D944F4AC3AB3A", hash_generated_method = "8B7918FFD4C8AAAA9546733B323E073F")
     public void glDepthFunc(int func) {
         addTaint(func);
@@ -3084,6 +3166,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.265 -0400", hash_original_method = "614AE8B97F79C66F0020D862E160FB15", hash_generated_method = "B5EF2D1B7E539643D685EB92759BDFC9")
     public void glDepthMask(boolean flag) {
         addTaint(flag);
@@ -3101,6 +3184,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.266 -0400", hash_original_method = "86889785AAC498DCABCC4829759E53BA", hash_generated_method = "DB3AD7A23913589DD1A7DE7E1086CF2D")
     public void glDepthRangef(float near, float far) {
         addTaint(far);
@@ -3121,6 +3205,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.266 -0400", hash_original_method = "C4CFC5E76FD90D5DE856EA46A6BD2F94", hash_generated_method = "436C65FC355FEC48711A766597548300")
     public void glDepthRangex(int near, int far) {
         addTaint(far);
@@ -3141,6 +3226,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.267 -0400", hash_original_method = "0E29F4F82F989596A0795E7D408BBDA9", hash_generated_method = "4E6CA283AC8F35D9B9351895A70AB763")
     public void glDisable(int cap) {
         addTaint(cap);
@@ -3158,6 +3244,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.279 -0400", hash_original_method = "0B23BC91825AF458EEA5F4AC0A7F02CA", hash_generated_method = "D4EC35CB3F0D328FCFEC8DCCBB99CABB")
     public void glDisableClientState(int array) {
         addTaint(array);
@@ -3202,6 +3289,7 @@ switch(array){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.279 -0400", hash_original_method = "B8B8A917FC846F2FCFF92B923002E5E6", hash_generated_method = "418DB4AFADA1967BAF3553CA310231B1")
     public void glDrawArrays(int mode, int first, int count) {
         addTaint(count);
@@ -3236,6 +3324,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.279 -0400", hash_original_method = "BB870BAE718C31AE354DA627C6185ADE", hash_generated_method = "42C0BBEB4684906E8CB36C8520575E14")
     public void glDrawElements(int mode, int count, int type, Buffer indices) {
         addTaint(indices.getTaint());
@@ -3275,6 +3364,7 @@ for(int i = 0;i < indexArrayLength;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.279 -0400", hash_original_method = "037B187DF286D0F9A044C40D200FDB6A", hash_generated_method = "C685EC809E8B22FC28D0FE778D53A57B")
     public void glEnable(int cap) {
         addTaint(cap);
@@ -3292,6 +3382,7 @@ for(int i = 0;i < indexArrayLength;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.280 -0400", hash_original_method = "9048A27AF44734D74E80C5A5F043B8EE", hash_generated_method = "B38A1912436358AC7196016EE22285B1")
     public void glEnableClientState(int array) {
         addTaint(array);
@@ -3336,6 +3427,7 @@ switch(array){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.280 -0400", hash_original_method = "4919B1BA0D6263390F67068E116D4AA3", hash_generated_method = "F7633D6888AEFF58E1F2ADE8508F1789")
     public void glFinish() {
         begin("glFinish");
@@ -3350,6 +3442,7 @@ switch(array){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.280 -0400", hash_original_method = "423312DFA71D365E2950BA08C10F885F", hash_generated_method = "9CED5A326B9AA4005893E484EEF8BA5F")
     public void glFlush() {
         begin("glFlush");
@@ -3364,6 +3457,7 @@ switch(array){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.280 -0400", hash_original_method = "4E1B2154F1082860A31A1C62D2E4DF3D", hash_generated_method = "AC96BA39B9E9E7770B8BD3F8E30118A1")
     public void glFogf(int pname, float param) {
         addTaint(param);
@@ -3384,6 +3478,7 @@ switch(array){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.280 -0400", hash_original_method = "780C4FF306524B2422381942E74CA09A", hash_generated_method = "EBC6176D18FE54284AC2B542B2789C19")
     public void glFogfv(int pname, float[] params, int offset) {
         addTaint(offset);
@@ -3407,6 +3502,7 @@ switch(array){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.280 -0400", hash_original_method = "B62F50FDE96FA84C6C837ACAD485B847", hash_generated_method = "336C971F86DE021C699056B1706E9034")
     public void glFogfv(int pname, FloatBuffer params) {
         addTaint(params.getTaint());
@@ -3427,6 +3523,7 @@ switch(array){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.280 -0400", hash_original_method = "24AB7D8BC7EC6CB5502C17F690AAFA75", hash_generated_method = "AEA4BC57105C9361FAFA1B3F5F246715")
     public void glFogx(int pname, int param) {
         addTaint(param);
@@ -3447,6 +3544,7 @@ switch(array){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.281 -0400", hash_original_method = "E730360244E81B4BDA1EE45B23499CC9", hash_generated_method = "50A26C288CB5FAF5BBA0C69883C750B3")
     public void glFogxv(int pname, int[] params, int offset) {
         addTaint(offset);
@@ -3470,6 +3568,7 @@ switch(array){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.281 -0400", hash_original_method = "1E7C310CA6843784009209329096AF49", hash_generated_method = "C24B981285A30853EA965E74A9A01639")
     public void glFogxv(int pname, IntBuffer params) {
         addTaint(params.getTaint());
@@ -3490,6 +3589,7 @@ switch(array){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.281 -0400", hash_original_method = "F9B3ED29E2742323457BDEB93D48C2D2", hash_generated_method = "873EA0DA097E2ED99C81756322FB7AEF")
     public void glFrontFace(int mode) {
         addTaint(mode);
@@ -3507,6 +3607,7 @@ switch(array){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.281 -0400", hash_original_method = "606F640A21534CBC3236331EB1800408", hash_generated_method = "7C3DC9F55D519A7695C67C1480E62E92")
     public void glFrustumf(float left, float right, float bottom, float top,
             float near, float far) {
@@ -3540,6 +3641,7 @@ switch(array){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.281 -0400", hash_original_method = "1C689FBDFE8C0AF744CFD0AE99B1B614", hash_generated_method = "EDD4D3303EDA3EE796A681A2EB7BB840")
     public void glFrustumx(int left, int right, int bottom, int top, int near,
             int far) {
@@ -3573,6 +3675,7 @@ switch(array){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.281 -0400", hash_original_method = "B5718C155B7A074626FB445A982478A0", hash_generated_method = "E35A87B4879355A42D8C7881C2BFA34A")
     public void glGenTextures(int n, int[] textures, int offset) {
         addTaint(offset);
@@ -3596,6 +3699,7 @@ switch(array){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.282 -0400", hash_original_method = "E12690B2C5EC417C8BBBC8A0CE38078D", hash_generated_method = "01EFE64B440907F839DA2FB7534A9BD5")
     public void glGenTextures(int n, IntBuffer textures) {
         addTaint(textures.getTaint());
@@ -3616,6 +3720,7 @@ switch(array){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.282 -0400", hash_original_method = "825E7C95315F0ABF8F0608D611FC7623", hash_generated_method = "3E1CEC4234DCBA1C4D1D48709592753F")
     public int glGetError() {
         begin("glGetError");
@@ -3632,6 +3737,7 @@ switch(array){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.282 -0400", hash_original_method = "4A5DBEAE0C4B83B570F7F956E537E4DC", hash_generated_method = "93EDBC11886EB41238FCD8C68BAD43A7")
     public void glGetIntegerv(int pname, int[] params, int offset) {
         addTaint(offset);
@@ -3657,6 +3763,7 @@ switch(array){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.282 -0400", hash_original_method = "D8BB277A5C1B18C544D5870F1AE2547E", hash_generated_method = "B272D3F9039837819586BE59B98BFB59")
     public void glGetIntegerv(int pname, IntBuffer params) {
         addTaint(params.getTaint());
@@ -3679,6 +3786,7 @@ switch(array){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.282 -0400", hash_original_method = "4432C28844C2D8E1383E36AA64E7B8D0", hash_generated_method = "B6E20FFDE0FA080F42F66082153E1BA9")
     public String glGetString(int name) {
         addTaint(name);
@@ -3700,6 +3808,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.282 -0400", hash_original_method = "AF745F825DACE04A0ECC75847B84890F", hash_generated_method = "04A35E633AF432C2784306533E3BCBF5")
     public void glHint(int target, int mode) {
         addTaint(mode);
@@ -3720,6 +3829,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.283 -0400", hash_original_method = "43C83C35A2BF58278F129718A0CCB8E0", hash_generated_method = "CF8DA0AA963B0F696BF54ACAF6A63D19")
     public void glLightModelf(int pname, float param) {
         addTaint(param);
@@ -3740,6 +3850,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.283 -0400", hash_original_method = "D2E9F716BA3428524C591D8E73952F94", hash_generated_method = "79619B1A537C4C5F4D36503FCB5C9F0C")
     public void glLightModelfv(int pname, float[] params, int offset) {
         addTaint(offset);
@@ -3763,6 +3874,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.283 -0400", hash_original_method = "1B40E32FEACEE93AAE84D6059C83E19B", hash_generated_method = "F343FEC7F94AB6283E9B98AF93D08AE4")
     public void glLightModelfv(int pname, FloatBuffer params) {
         addTaint(params.getTaint());
@@ -3783,6 +3895,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.283 -0400", hash_original_method = "0AB22F507F3AEC2B8DBB51B6125611F1", hash_generated_method = "7F6268B45DA48F62272AB7B133A5DC1D")
     public void glLightModelx(int pname, int param) {
         addTaint(param);
@@ -3803,6 +3916,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.283 -0400", hash_original_method = "7A81EF6B335025A246A977F4DDB5523B", hash_generated_method = "11F98499D301BFC8CC68C798FEC59959")
     public void glLightModelxv(int pname, int[] params, int offset) {
         addTaint(offset);
@@ -3826,6 +3940,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.283 -0400", hash_original_method = "EDD6AB43EFA62E0429922574FF165465", hash_generated_method = "5F6E332259E4A5DBD1C9E4ED882C6604")
     public void glLightModelxv(int pname, IntBuffer params) {
         addTaint(params.getTaint());
@@ -3846,6 +3961,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.284 -0400", hash_original_method = "BE7CBC21E4DF919F60B7ABC9E9A39229", hash_generated_method = "24DB0C7922674A7B461DDE6231C0BAE7")
     public void glLightf(int light, int pname, float param) {
         addTaint(param);
@@ -3869,6 +3985,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.284 -0400", hash_original_method = "5819BC859DAA10078044F74898ED27A2", hash_generated_method = "22FFEA4070DE637A48581DB4004BDD2B")
     public void glLightfv(int light, int pname, float[] params, int offset) {
         addTaint(offset);
@@ -3895,6 +4012,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.284 -0400", hash_original_method = "05509FB05D551D5C0F24E5461A019E9D", hash_generated_method = "F2FC947B2C42F31CF7E18DDF326DAF97")
     public void glLightfv(int light, int pname, FloatBuffer params) {
         addTaint(params.getTaint());
@@ -3918,6 +4036,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.284 -0400", hash_original_method = "C59713C3F2C98A691DF6ED0D9CC56790", hash_generated_method = "352F67ABFC4CC32D890406CF6C94BD16")
     public void glLightx(int light, int pname, int param) {
         addTaint(param);
@@ -3941,6 +4060,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.284 -0400", hash_original_method = "CEE405D8204834CFD4958E9296841BF9", hash_generated_method = "0E8A3DF0491EDF313148E0021AA21D3D")
     public void glLightxv(int light, int pname, int[] params, int offset) {
         addTaint(offset);
@@ -3967,6 +4087,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.284 -0400", hash_original_method = "5C3C884B4EA1E90B2851FFFCF57AA8C3", hash_generated_method = "7237CCD48C7633C9617E029410FF7F3C")
     public void glLightxv(int light, int pname, IntBuffer params) {
         addTaint(params.getTaint());
@@ -3990,6 +4111,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.285 -0400", hash_original_method = "F761C45249D7FF175A805273D5BBA766", hash_generated_method = "570CAEC7D437C9EC0E9F1FB972545442")
     public void glLineWidth(float width) {
         addTaint(width);
@@ -4007,6 +4129,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.285 -0400", hash_original_method = "F4E2E52749E3281D62ECD99114FEB263", hash_generated_method = "300CCABD7E6F2AD9364B400AF7E9B513")
     public void glLineWidthx(int width) {
         addTaint(width);
@@ -4024,6 +4147,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.285 -0400", hash_original_method = "F88B218CE09E1C5C548020A1E54977C3", hash_generated_method = "8DB0672DBA6B8F56F2E70B7A67F50117")
     public void glLoadIdentity() {
         begin("glLoadIdentity");
@@ -4038,6 +4162,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.285 -0400", hash_original_method = "687C39CD5DEC5AADF092840F28B619FD", hash_generated_method = "D405C7AE6125B9E6F8AF3F80DC9335DA")
     public void glLoadMatrixf(float[] m, int offset) {
         addTaint(offset);
@@ -4058,6 +4183,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.285 -0400", hash_original_method = "880E32EF2604F1595B752E9CCFE7F69E", hash_generated_method = "2E12E29EA9BFC05DF27EB646112680B5")
     public void glLoadMatrixf(FloatBuffer m) {
         addTaint(m.getTaint());
@@ -4075,6 +4201,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.285 -0400", hash_original_method = "476A0BC5D3776D45E97995A37B0A37E6", hash_generated_method = "41A89969CF4DC5D67B81C47E46220572")
     public void glLoadMatrixx(int[] m, int offset) {
         addTaint(offset);
@@ -4095,6 +4222,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.285 -0400", hash_original_method = "8F70779E25DE9596BE3929AE54958722", hash_generated_method = "FA9FAD5705AF1381765FEB958056219E")
     public void glLoadMatrixx(IntBuffer m) {
         addTaint(m.getTaint());
@@ -4112,6 +4240,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.285 -0400", hash_original_method = "3FD0E924214C79DB2C00A21CEE462ABB", hash_generated_method = "0907A76F2C9459623CA9A39A6196C45C")
     public void glLogicOp(int opcode) {
         addTaint(opcode);
@@ -4129,6 +4258,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.286 -0400", hash_original_method = "936946C97699308AE2CF16FF909FE5B3", hash_generated_method = "4E49D92D4FB3EFF8DF8568CBB735B004")
     public void glMaterialf(int face, int pname, float param) {
         addTaint(param);
@@ -4152,6 +4282,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.286 -0400", hash_original_method = "D41282511741456A16F4BE2E43CE842E", hash_generated_method = "A5F705781BAF6125F7B2B0B14BB53F49")
     public void glMaterialfv(int face, int pname, float[] params, int offset) {
         addTaint(offset);
@@ -4178,6 +4309,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.286 -0400", hash_original_method = "9C665EB85D69DD7B8F9D999AFD512769", hash_generated_method = "A70CADFDD7143A0A7285E2864FAD4012")
     public void glMaterialfv(int face, int pname, FloatBuffer params) {
         addTaint(params.getTaint());
@@ -4201,6 +4333,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.286 -0400", hash_original_method = "387A298350B07625BDFDB1B9DE2A4675", hash_generated_method = "97B701CA2D7FF2D711F89E2D42F94430")
     public void glMaterialx(int face, int pname, int param) {
         addTaint(param);
@@ -4224,6 +4357,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.286 -0400", hash_original_method = "CBFD548600D9445E6341587A5303FFB2", hash_generated_method = "70C8DFFEEA97383ACE5795C15053EA52")
     public void glMaterialxv(int face, int pname, int[] params, int offset) {
         addTaint(offset);
@@ -4250,6 +4384,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.287 -0400", hash_original_method = "4C8733D8C4D7688FBA1548248BF2DDEA", hash_generated_method = "C1FD8C0CE8064CA5C762D347E08AE80A")
     public void glMaterialxv(int face, int pname, IntBuffer params) {
         addTaint(params.getTaint());
@@ -4273,6 +4408,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.287 -0400", hash_original_method = "BEE3E754BA2B56E36F6E1425F4D645D1", hash_generated_method = "BB5B81CC90FEB8975C3D0D4C581C9548")
     public void glMatrixMode(int mode) {
         addTaint(mode);
@@ -4290,6 +4426,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.287 -0400", hash_original_method = "8612501CF000DA9CE87F4C45AF0190A3", hash_generated_method = "43BAE16DB3404E609E3D9D6245FFB99D")
     public void glMultMatrixf(float[] m, int offset) {
         addTaint(offset);
@@ -4310,6 +4447,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.287 -0400", hash_original_method = "AB97FC4290D8B0A3F5FCBE4FBF022286", hash_generated_method = "A5D10435EA89CF5C11B8BF595B7FDCF2")
     public void glMultMatrixf(FloatBuffer m) {
         addTaint(m.getTaint());
@@ -4327,6 +4465,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.287 -0400", hash_original_method = "92FDBB22C33889299245E7F12194D7C7", hash_generated_method = "E5944A0026212A53A8C536683E159CEE")
     public void glMultMatrixx(int[] m, int offset) {
         addTaint(offset);
@@ -4347,6 +4486,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.288 -0400", hash_original_method = "687C4E76B5EEC57D6750FED61FC116C8", hash_generated_method = "2370D8A04AD55F1C44E18C679E619498")
     public void glMultMatrixx(IntBuffer m) {
         addTaint(m.getTaint());
@@ -4364,6 +4504,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.288 -0400", hash_original_method = "A988E1C9140DEB4EBB9B24D3314588F7", hash_generated_method = "A62F9DE16FCC3B6D57B338ECF9BD0C85")
     public void glMultiTexCoord4f(int target, float s, float t, float r, float q) {
         addTaint(q);
@@ -4393,6 +4534,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.288 -0400", hash_original_method = "85A9C417EFE7C5EEA1B7083D0FD21661", hash_generated_method = "460CEC1D1A56C8B61F615F5B4B2F3548")
     public void glMultiTexCoord4x(int target, int s, int t, int r, int q) {
         addTaint(q);
@@ -4422,6 +4564,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.288 -0400", hash_original_method = "7DE7615C0A0E812379EF8154DBA60ABA", hash_generated_method = "D191D53922FA1DCFAB741A6300100F9B")
     public void glNormal3f(float nx, float ny, float nz) {
         addTaint(nz);
@@ -4445,6 +4588,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.289 -0400", hash_original_method = "96F295208F045988498392EB2AFDCBE8", hash_generated_method = "63FEEF1A47A2B41BA91703F5A24803E3")
     public void glNormal3x(int nx, int ny, int nz) {
         addTaint(nz);
@@ -4468,6 +4612,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.289 -0400", hash_original_method = "4CDD75BE9076420CDF6781B5A1C0C14A", hash_generated_method = "BC8CA0340FECAA01604B66F7108F74B2")
     public void glNormalPointer(int type, int stride, Buffer pointer) {
         begin("glNormalPointer");
@@ -4490,6 +4635,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.289 -0400", hash_original_method = "CC5F9AB73FB02ADBE5D8C7CC273C82BE", hash_generated_method = "6DEC9689FDDFFBED5C2217039E209C2E")
     public void glOrthof(float left, float right, float bottom, float top,
             float near, float far) {
@@ -4523,6 +4669,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.290 -0400", hash_original_method = "D9852318860C3F9C023ED9A734CD971A", hash_generated_method = "3D59F0DE4C35CF9705714F6EAAAD4380")
     public void glOrthox(int left, int right, int bottom, int top, int near,
             int far) {
@@ -4556,6 +4703,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.290 -0400", hash_original_method = "E1BB93D74FF29863494383E778333B81", hash_generated_method = "CB55A265CE8F3AE290B13EE9FDF75FFC")
     public void glPixelStorei(int pname, int param) {
         addTaint(param);
@@ -4576,6 +4724,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.290 -0400", hash_original_method = "76CD1D614E9C29778EAF9BE33C6AC95E", hash_generated_method = "15EC5B73620D1B28E7FB54B775BA671A")
     public void glPointSize(float size) {
         addTaint(size);
@@ -4593,6 +4742,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.290 -0400", hash_original_method = "49C03CEE24AC3E5D2F2B86D001DFA2CB", hash_generated_method = "3B08FD8ACECD9421437726FA360D4F99")
     public void glPointSizex(int size) {
         addTaint(size);
@@ -4610,6 +4760,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.291 -0400", hash_original_method = "216A378FAD292A41D04F329E10BF6584", hash_generated_method = "9F1F196E3BA737650C96FB275200A24E")
     public void glPolygonOffset(float factor, float units) {
         addTaint(units);
@@ -4630,6 +4781,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.291 -0400", hash_original_method = "DA9EEDED2F49B9E40FF2DF4FFC3ED016", hash_generated_method = "2FE844A29EDA74A2DC818C9C5189ACDD")
     public void glPolygonOffsetx(int factor, int units) {
         addTaint(units);
@@ -4650,6 +4802,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.291 -0400", hash_original_method = "E0C7AB77CC18EDB6C1A8822FA08F2B0A", hash_generated_method = "FFDF1F841A88D62C825F12A8517C1A02")
     public void glPopMatrix() {
         begin("glPopMatrix");
@@ -4664,6 +4817,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.291 -0400", hash_original_method = "6DACA4E8433EC8FB8ACBC7A4B896895D", hash_generated_method = "16010D98D4ED73B6279ACB9EE3C40B56")
     public void glPushMatrix() {
         begin("glPushMatrix");
@@ -4678,6 +4832,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.292 -0400", hash_original_method = "1FC2D294CFB625D57F0C66A824B8D0C9", hash_generated_method = "20550D63AE0E49F7E4614548CF2C0E04")
     public void glReadPixels(int x, int y, int width, int height, int format,
             int type, Buffer pixels) {
@@ -4714,6 +4869,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.292 -0400", hash_original_method = "86C197E31CF22A62AC9FE6EAB3D542F2", hash_generated_method = "EBD2D8D82CC56DE53A8056AB423B5F9F")
     public void glRotatef(float angle, float x, float y, float z) {
         addTaint(z);
@@ -4740,6 +4896,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.293 -0400", hash_original_method = "D032860203F65851FE32D2D2E6C02375", hash_generated_method = "A595F05BDDCD125872A0B32AD157265A")
     public void glRotatex(int angle, int x, int y, int z) {
         addTaint(z);
@@ -4766,6 +4923,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.293 -0400", hash_original_method = "D8FFE313F54D472FE54AE109823120A2", hash_generated_method = "547E383C1D6BFF876070941BA3E804B6")
     public void glSampleCoverage(float value, boolean invert) {
         addTaint(invert);
@@ -4786,6 +4944,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.293 -0400", hash_original_method = "0B3B4600402FD7A8792E136EC4739B11", hash_generated_method = "2DF1A941650A5CC4C982267BEABFE236")
     public void glSampleCoveragex(int value, boolean invert) {
         addTaint(invert);
@@ -4806,6 +4965,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.293 -0400", hash_original_method = "93595DB9272CE8DE11430AFE816D5F43", hash_generated_method = "2385D7FA40E3AEC67DEAD627A21137D0")
     public void glScalef(float x, float y, float z) {
         addTaint(z);
@@ -4829,6 +4989,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.293 -0400", hash_original_method = "7B35710BC2AB65E8950A6808B54E6418", hash_generated_method = "250A2FCBE83AF22BB97A08BF4CC6F194")
     public void glScalex(int x, int y, int z) {
         addTaint(z);
@@ -4852,6 +5013,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.294 -0400", hash_original_method = "DF9B1B600FB2D7DA84EE7E4C47142374", hash_generated_method = "6561E63527F0AE16242B89B30EE9A0F8")
     public void glScissor(int x, int y, int width, int height) {
         addTaint(height);
@@ -4878,6 +5040,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.294 -0400", hash_original_method = "AD0E84D18B813E8777234A51390B757D", hash_generated_method = "7F47683AE4457DCF680517492F15214E")
     public void glShadeModel(int mode) {
         addTaint(mode);
@@ -4895,6 +5058,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.294 -0400", hash_original_method = "B16614109EDB4D98A3001CD4605F1195", hash_generated_method = "587520120607199C5EE7F13621A9C031")
     public void glStencilFunc(int func, int ref, int mask) {
         addTaint(mask);
@@ -4918,6 +5082,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.294 -0400", hash_original_method = "9D511E02BADCED3EEC804B1620E4AD35", hash_generated_method = "EBF386800230907B1C06F2A00B341477")
     public void glStencilMask(int mask) {
         addTaint(mask);
@@ -4935,6 +5100,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.294 -0400", hash_original_method = "445ACDB6B83AE298891E797CC73F7C8B", hash_generated_method = "A1F5EC749B66C1F7906180F6A4456457")
     public void glStencilOp(int fail, int zfail, int zpass) {
         addTaint(zpass);
@@ -4958,6 +5124,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.294 -0400", hash_original_method = "8CE56D81302A70F79172F83575A87867", hash_generated_method = "B4926AF7306B2C6A952AB2CF35CF7725")
     public void glTexCoordPointer(int size, int type, int stride, Buffer pointer) {
         begin("glTexCoordPointer");
@@ -4976,6 +5143,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.294 -0400", hash_original_method = "A22ACE33D3E4A09C05233B2FF790E64C", hash_generated_method = "3A91103540DE11AEB9FD5E70037262E4")
     public void glTexEnvf(int target, int pname, float param) {
         addTaint(param);
@@ -4999,6 +5167,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.295 -0400", hash_original_method = "ADEF831FBD02DBD86AF48DF9DC789AC8", hash_generated_method = "F2A7031B2075E257D9BB720895D4F1CE")
     public void glTexEnvfv(int target, int pname, float[] params, int offset) {
         addTaint(offset);
@@ -5025,6 +5194,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.295 -0400", hash_original_method = "864B2C28E798D802302BFA91D4161B21", hash_generated_method = "FB3545801BE3197D50FC3C32F5A1BAD5")
     public void glTexEnvfv(int target, int pname, FloatBuffer params) {
         addTaint(params.getTaint());
@@ -5048,6 +5218,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.295 -0400", hash_original_method = "C17E57F5559AEF12C94D6CF5F868E617", hash_generated_method = "F829F3E00B3A5441AF3E2B1116608A6D")
     public void glTexEnvx(int target, int pname, int param) {
         addTaint(param);
@@ -5071,6 +5242,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.295 -0400", hash_original_method = "A17A2FD28E78C904BEC8410F37290575", hash_generated_method = "A1593587A2D7FF0FD1FFD57041F0B7C8")
     public void glTexEnvxv(int target, int pname, int[] params, int offset) {
         addTaint(offset);
@@ -5097,6 +5269,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.295 -0400", hash_original_method = "F00237E41CAC47D001F8ACEA0F58DAF7", hash_generated_method = "7F1B9D4218BF00B14B394039131C4893")
     public void glTexEnvxv(int target, int pname, IntBuffer params) {
         addTaint(params.getTaint());
@@ -5120,6 +5293,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.296 -0400", hash_original_method = "011E94FC51CD7DFAF3DF4BFD8D5857BA", hash_generated_method = "E0F971B2BDD478A7F7F33F4A575BFCD8")
     public void glTexImage2D(int target, int level, int internalformat,
             int width, int height, int border, int format, int type,
@@ -5165,6 +5339,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.296 -0400", hash_original_method = "DDDDC6FF259314F2A5D05C75F951145D", hash_generated_method = "C41DFEDB1B9C252927CAE7A3EB6AE616")
     public void glTexParameterf(int target, int pname, float param) {
         addTaint(param);
@@ -5188,6 +5363,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.296 -0400", hash_original_method = "0602BC1A27E3B85EFD8A003CECB00874", hash_generated_method = "10553A5EA5BC088F5AE653E5CFE87525")
     public void glTexParameterx(int target, int pname, int param) {
         addTaint(param);
@@ -5211,6 +5387,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.303 -0400", hash_original_method = "DAEE78FBCC7407DC537852B2B260381B", hash_generated_method = "7975C6CD3BDC56077A4D5C8231832A0E")
     public void glTexParameteriv(int target, int pname, int[] params, int offset) {
         addTaint(offset);
@@ -5235,6 +5412,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.304 -0400", hash_original_method = "DD3FE44849ED1CB6B9C3AC6BFE440888", hash_generated_method = "A44C198ACBDE1EBB6B975B631CFD2B8F")
     public void glTexParameteriv(int target, int pname, IntBuffer params) {
         addTaint(params.getTaint());
@@ -5258,6 +5436,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.304 -0400", hash_original_method = "D0E4565FEEA624282D81073F513C1845", hash_generated_method = "11AFB05ECA2CE4E3FA8A9BDD25B258B0")
     public void glTexSubImage2D(int target, int level, int xoffset,
             int yoffset, int width, int height, int format, int type,
@@ -5303,6 +5482,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.304 -0400", hash_original_method = "6237DE4F39B9C0DD8B4D4591974E579B", hash_generated_method = "A1B3A26FD6382573F010A6100C0A3B83")
     public void glTranslatef(float x, float y, float z) {
         addTaint(z);
@@ -5326,6 +5506,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.304 -0400", hash_original_method = "20667205749A7EF5D7FD523F7BEF786A", hash_generated_method = "1F11666A821DCEEA3CB50FC577319480")
     public void glTranslatex(int x, int y, int z) {
         addTaint(z);
@@ -5349,6 +5530,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.304 -0400", hash_original_method = "965A17780E8361A91EAC387D26D1622D", hash_generated_method = "EED33DC9AE0AAC73A6F1328D84F61C7B")
     public void glVertexPointer(int size, int type, int stride, Buffer pointer) {
         begin("glVertexPointer");
@@ -5367,6 +5549,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.311 -0400", hash_original_method = "D3E732269F4A090032B6FB75CDC1094D", hash_generated_method = "6E7D75601D80395045EFBFE403C7BABE")
     public void glViewport(int x, int y, int width, int height) {
         addTaint(height);
@@ -5393,6 +5576,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.311 -0400", hash_original_method = "9CADFA145D5EB2143B81CBA64BA23463", hash_generated_method = "9C541624BF20ED58CF75A42B13B084F3")
     public void glClipPlanef(int plane, float[] equation, int offset) {
         addTaint(offset);
@@ -5416,6 +5600,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.311 -0400", hash_original_method = "85538846DBE9D66EF7B7888CF781577E", hash_generated_method = "3A4821307994C184C46A67FABF1756C9")
     public void glClipPlanef(int plane, FloatBuffer equation) {
         addTaint(equation.getTaint());
@@ -5436,6 +5621,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.311 -0400", hash_original_method = "4C969A7F06E92847E1AFBAAD459DDBA5", hash_generated_method = "E4C4EA76191C4A333A9D7C6ECD85B9FF")
     public void glClipPlanex(int plane, int[] equation, int offset) {
         addTaint(offset);
@@ -5459,6 +5645,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.312 -0400", hash_original_method = "0B5D59DDF9DA3F300DDA46337FD3385D", hash_generated_method = "0F981D50B83B02E100A87190F901F047")
     public void glClipPlanex(int plane, IntBuffer equation) {
         addTaint(equation.getTaint());
@@ -5479,6 +5666,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.312 -0400", hash_original_method = "9AEED6FBBEDDBBFB8CA6D980B6BF5E58", hash_generated_method = "6E6A1A6F60FA355C6EBFF855568AC30C")
     public void glDrawTexfOES(float x, float y, float z,
         float width, float height) {
@@ -5509,6 +5697,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.312 -0400", hash_original_method = "C18A7403550BE93CDB0A64E0DDF3C5AF", hash_generated_method = "CD1E101ABD4939B09A0358492CEB390A")
     public void glDrawTexfvOES(float[] coords, int offset) {
         addTaint(offset);
@@ -5529,6 +5718,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.312 -0400", hash_original_method = "2653CD989ED785E48C62BAD0521A80EF", hash_generated_method = "36ED9AE8AA230099F8BAB5503C08539F")
     public void glDrawTexfvOES(FloatBuffer coords) {
         addTaint(coords.getTaint());
@@ -5546,6 +5736,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.312 -0400", hash_original_method = "CB1FCBCDBF1A3F61200BEDE6649BE4DA", hash_generated_method = "18A32475EC53BC9298C4B3C8BD233A99")
     public void glDrawTexiOES(int x, int y, int z, int width, int height) {
         addTaint(height);
@@ -5575,6 +5766,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.313 -0400", hash_original_method = "66AD6F482CD9F2FDC30C988FD5ECCF4C", hash_generated_method = "4381BCED45702F42575208E190FD3D7D")
     public void glDrawTexivOES(int[] coords, int offset) {
         addTaint(offset);
@@ -5595,6 +5787,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.313 -0400", hash_original_method = "FB09BC541D2C24A3C37D913F5C51A002", hash_generated_method = "8E9C611E426CC637A488A3767204ACE6")
     public void glDrawTexivOES(IntBuffer coords) {
         addTaint(coords.getTaint());
@@ -5612,6 +5805,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.313 -0400", hash_original_method = "C2D1EB0C8029347A6625C35DD3AAEC2A", hash_generated_method = "64C5D9B38933396E6FEB0123FB4D0E9A")
     public void glDrawTexsOES(short x, short y, short z,
         short width, short height) {
@@ -5642,6 +5836,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.313 -0400", hash_original_method = "D2EB8EC38B4CC4F91A6AA276AEE85541", hash_generated_method = "DF510F2F3A0BB3EA9CB001536D2C36FB")
     public void glDrawTexsvOES(short[] coords, int offset) {
         addTaint(offset);
@@ -5662,6 +5857,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.314 -0400", hash_original_method = "F51BEDCA1D6F6785C6C721E8CC2FBE94", hash_generated_method = "5593BA5E43826605FE1AA058517F70E7")
     public void glDrawTexsvOES(ShortBuffer coords) {
         addTaint(coords.getTaint());
@@ -5679,6 +5875,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.316 -0400", hash_original_method = "5061E46D01D14FE03282BCFBD1BABA7C", hash_generated_method = "1DCB6344FB78891CC1F73E4F4A82ED11")
     public void glDrawTexxOES(int x, int y, int z, int width, int height) {
         addTaint(height);
@@ -5708,6 +5905,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.317 -0400", hash_original_method = "9743785194981AB410283518D731F731", hash_generated_method = "39C56B94D83DBFD635E398CAB3CC7A03")
     public void glDrawTexxvOES(int[] coords, int offset) {
         addTaint(offset);
@@ -5728,6 +5926,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.317 -0400", hash_original_method = "865108D0187ACA1114F35594F70D238B", hash_generated_method = "7EDFFFF052D5C0C2206914E6FC1A4F59")
     public void glDrawTexxvOES(IntBuffer coords) {
         addTaint(coords.getTaint());
@@ -5745,6 +5944,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.318 -0400", hash_original_method = "1BA8E855F04581FD7EA4EBD5DC11117A", hash_generated_method = "49F384BB38B3574B820E645FD777B157")
     public int glQueryMatrixxOES(int[] mantissa, int mantissaOffset,
         int[] exponent, int exponentOffset) {
@@ -5778,6 +5978,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.318 -0400", hash_original_method = "02D82882D216B0B47C2D0767A306D636", hash_generated_method = "FB9F6B7FEE727205DEDEC0AAEF4ED04C")
     public int glQueryMatrixxOES(IntBuffer mantissa, IntBuffer exponent) {
         addTaint(exponent.getTaint());
@@ -5806,6 +6007,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.318 -0400", hash_original_method = "79C98D67E2C2957CCE19D903D86F48F4", hash_generated_method = "B3D1672DAE90E58681D000861BF887E0")
     public void glBindBuffer(int target, int buffer) {
         addTaint(buffer);
@@ -5826,6 +6028,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.318 -0400", hash_original_method = "CFA9CC965A97B436966D65BB7CC13B13", hash_generated_method = "54E97C6229BB8D1BA65A351CF3F55F4D")
     public void glBufferData(int target, int size, Buffer data, int usage) {
         addTaint(usage);
@@ -5852,6 +6055,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.319 -0400", hash_original_method = "2D9FCC9DA0375DB81D5D80FFB10846B0", hash_generated_method = "83478910CBBD141D9063D26E891E9F07")
     public void glBufferSubData(int target, int offset, int size, Buffer data) {
         addTaint(data.getTaint());
@@ -5878,6 +6082,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.319 -0400", hash_original_method = "38D503FD9C8B4ADD2B7F612F10730C49", hash_generated_method = "C146F82F835EBFBB22E429237856CD99")
     public void glColor4ub(byte red, byte green, byte blue, byte alpha) {
         addTaint(alpha);
@@ -5904,6 +6109,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.319 -0400", hash_original_method = "DF5E0282021F86CB2227CAD1AEAA3AE2", hash_generated_method = "9731CEDAF9744EC902DEED22C0491077")
     public void glDeleteBuffers(int n, int[] buffers, int offset) {
         addTaint(offset);
@@ -5927,6 +6133,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.320 -0400", hash_original_method = "624AEEC2C2CEDEA054A3519AA4A82323", hash_generated_method = "4A772FE064AA53894DA05B824857EED9")
     public void glDeleteBuffers(int n, IntBuffer buffers) {
         addTaint(buffers.getTaint());
@@ -5947,6 +6154,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.320 -0400", hash_original_method = "36A39DBC0F5F5BEE8C744DD8630485FB", hash_generated_method = "7E931DDC35E3C6D3FB2ADA8AFC9C1A0C")
     public void glGenBuffers(int n, int[] buffers, int offset) {
         addTaint(offset);
@@ -5970,6 +6178,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.320 -0400", hash_original_method = "BE63AFDAFAFB9BEC4B5910C0424448D8", hash_generated_method = "EAEDF1FD1EF2D0235EE83EED32DF1C0E")
     public void glGenBuffers(int n, IntBuffer buffers) {
         addTaint(buffers.getTaint());
@@ -5990,6 +6199,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.320 -0400", hash_original_method = "D49FD57B9EDDEB8A333068EB1EC59B27", hash_generated_method = "E6E658D141CFD51F303A8DBAF2A793A3")
     public void glGetBooleanv(int pname, boolean[] params, int offset) {
         addTaint(offset);
@@ -6013,6 +6223,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.320 -0400", hash_original_method = "51B341CF444D33A052C3AED89B0ADFDD", hash_generated_method = "027929251440E218B0546F1CD12384EF")
     public void glGetBooleanv(int pname, IntBuffer params) {
         addTaint(params.getTaint());
@@ -6033,6 +6244,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.320 -0400", hash_original_method = "1BDFA42CE3765237F848F8B2B63C5535", hash_generated_method = "EC7E1B762A01012E236B3BC954BEBD6A")
     public void glGetBufferParameteriv(int target, int pname, int[] params,
             int offset) {
@@ -6060,6 +6272,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.321 -0400", hash_original_method = "0330F0FB2F5D3C5756F5CCFBB6F98087", hash_generated_method = "59D3DDB7D266630942469D18DC4B15B9")
     public void glGetBufferParameteriv(int target, int pname, IntBuffer params) {
         addTaint(params.getTaint());
@@ -6083,6 +6296,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.321 -0400", hash_original_method = "25E0B8CDFE08613F8C93B892E2B783FC", hash_generated_method = "100A9C85AB7272B6397EE2822D10304B")
     public void glGetClipPlanef(int pname, float[] eqn, int offset) {
         addTaint(offset);
@@ -6106,6 +6320,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.321 -0400", hash_original_method = "6B1337E1EE7C67573B1B64D6774FD937", hash_generated_method = "9D4C2D4BA3154078C66CC4107B5B1EF6")
     public void glGetClipPlanef(int pname, FloatBuffer eqn) {
         addTaint(eqn.getTaint());
@@ -6126,6 +6341,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.321 -0400", hash_original_method = "037B64CF94A7EF11AD0816F42C72D3F6", hash_generated_method = "0D54884DF106B6EC21F8BE5B9D8F5377")
     public void glGetClipPlanex(int pname, int[] eqn, int offset) {
         addTaint(offset);
@@ -6147,6 +6363,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.322 -0400", hash_original_method = "52082623BD03AD7465BF11E5122D8706", hash_generated_method = "88CDB380E723F2364C5AA1273581C456")
     public void glGetClipPlanex(int pname, IntBuffer eqn) {
         addTaint(eqn.getTaint());
@@ -6167,6 +6384,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.322 -0400", hash_original_method = "1176578E59CDA354160C624EF757BD48", hash_generated_method = "C63EA1F6836ADD900F9C5BFFA7691B37")
     public void glGetFixedv(int pname, int[] params, int offset) {
         addTaint(offset);
@@ -6188,6 +6406,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.322 -0400", hash_original_method = "3A4E477101BC30252F2768BC91347C36", hash_generated_method = "44C71F6AD500722186B9BEBDE078933D")
     public void glGetFixedv(int pname, IntBuffer params) {
         addTaint(params.getTaint());
@@ -6208,6 +6427,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.322 -0400", hash_original_method = "2E83138077BCAC0010C969653414AD04", hash_generated_method = "CF12069B25990EA9FB201FAE4F7CADAF")
     public void glGetFloatv(int pname, float[] params, int offset) {
         addTaint(offset);
@@ -6229,6 +6449,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.323 -0400", hash_original_method = "6AB73CCB4472CB8AD2F054C3A5970178", hash_generated_method = "65BBFBBA28FE386B2427FFD33FA24209")
     public void glGetFloatv(int pname, FloatBuffer params) {
         addTaint(params.getTaint());
@@ -6249,6 +6470,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.323 -0400", hash_original_method = "51A9727F905475D76A5957677B81226F", hash_generated_method = "F085610E805E924D1A8690749099EEAC")
     public void glGetLightfv(int light, int pname, float[] params, int offset) {
         addTaint(offset);
@@ -6275,6 +6497,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.323 -0400", hash_original_method = "E66F7CF2C608F21E1E90842355B23A5A", hash_generated_method = "C93FB97E70C2DD2A704D158963620723")
     public void glGetLightfv(int light, int pname, FloatBuffer params) {
         addTaint(params.getTaint());
@@ -6298,6 +6521,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.324 -0400", hash_original_method = "E83D766969B35040C9A169CE4C510624", hash_generated_method = "BEE86683EAE95CD24C0AC32956851A38")
     public void glGetLightxv(int light, int pname, int[] params, int offset) {
         addTaint(offset);
@@ -6324,6 +6548,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.324 -0400", hash_original_method = "6288DF336931CB05169EC9276B0D68D3", hash_generated_method = "0A8A5CC974437AFEB38291E1471212B1")
     public void glGetLightxv(int light, int pname, IntBuffer params) {
         addTaint(params.getTaint());
@@ -6347,6 +6572,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.325 -0400", hash_original_method = "482C6685F4C42A94390CCEDA3874A04D", hash_generated_method = "1D7DFC8A1970FE8CF30DB11193CA93B8")
     public void glGetMaterialfv(int face, int pname, float[] params,
             int offset) {
@@ -6374,6 +6600,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.325 -0400", hash_original_method = "201112BB8BA75F2DB9D5DF300E3AB123", hash_generated_method = "123ADD1856F5032640995C7F53178FE0")
     public void glGetMaterialfv(int face, int pname, FloatBuffer params) {
         addTaint(params.getTaint());
@@ -6397,6 +6624,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.325 -0400", hash_original_method = "D3E20C73CC4FE1487043FD2B0DDDD236", hash_generated_method = "3CDC351825C69F2395C0B39290682105")
     public void glGetMaterialxv(int face, int pname, int[] params, int offset) {
         addTaint(offset);
@@ -6423,6 +6651,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.325 -0400", hash_original_method = "F15DB76CDF761063EA7EE91130FCCA1C", hash_generated_method = "1AA8921A6BC2B1D617C93C7CF7CDF046")
     public void glGetMaterialxv(int face, int pname, IntBuffer params) {
         addTaint(params.getTaint());
@@ -6446,6 +6675,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.326 -0400", hash_original_method = "66B2642F95864E07E8FB25E2B5082F1A", hash_generated_method = "3F12426C603335BC2E1C903636CA3462")
     public void glGetTexEnviv(int env, int pname, int[] params, int offset) {
         addTaint(offset);
@@ -6472,6 +6702,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.327 -0400", hash_original_method = "ED4578155288559B620D3D7080E4312B", hash_generated_method = "AA66F647727D760EC95410967775BBCB")
     public void glGetTexEnviv(int env, int pname, IntBuffer params) {
         addTaint(params.getTaint());
@@ -6495,6 +6726,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.327 -0400", hash_original_method = "26C49480E5A470482939BDD32DD36E50", hash_generated_method = "4FE26FCAB3EE5BBC50490B3A022F4955")
     public void glGetTexEnvxv(int env, int pname, int[] params, int offset) {
         addTaint(offset);
@@ -6521,6 +6753,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.327 -0400", hash_original_method = "E0E1CE0B7F1886B6EFED117FB4065CA6", hash_generated_method = "80FFBD8B08CE03DD5D111DD84E2A42CB")
     public void glGetTexEnvxv(int env, int pname, IntBuffer params) {
         addTaint(params.getTaint());
@@ -6544,6 +6777,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.327 -0400", hash_original_method = "0F3A08DF0C87DD814661A01CC509B43C", hash_generated_method = "139D511BC1D6B9566DE01ABBD24DE77B")
     public void glGetTexParameterfv(int target, int pname, float[] params, int offset) {
         addTaint(offset);
@@ -6570,6 +6804,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.327 -0400", hash_original_method = "FABD2A0E542E183FD9C4FE79A0BA6C61", hash_generated_method = "87A4D57B6D2B6C60374A4A23D393BD9E")
     public void glGetTexParameterfv(int target, int pname, FloatBuffer params) {
         addTaint(params.getTaint());
@@ -6593,6 +6828,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.328 -0400", hash_original_method = "BBAD5ACA898863B0EBC35B8803FB9F3D", hash_generated_method = "CDE4D974DA4B67490114A5BD9070F89A")
     public void glGetTexParameteriv(int target, int pname, int[] params, int offset) {
         addTaint(offset);
@@ -6619,6 +6855,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.329 -0400", hash_original_method = "540D7C8CB9CD23B9B01DAE94A38E14AF", hash_generated_method = "82B533A0B9B2F4538992A67995CD3DD0")
     public void glGetTexParameteriv(int target, int pname, IntBuffer params) {
         addTaint(params.getTaint());
@@ -6642,6 +6879,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.329 -0400", hash_original_method = "3163D2F410D94B9024F75B7547E0C3E3", hash_generated_method = "3E8890A33D92A1EE4523123759199F9E")
     public void glGetTexParameterxv(int target, int pname, int[] params,
             int offset) {
@@ -6669,6 +6907,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.329 -0400", hash_original_method = "1D20993377AEB3F7A0B0E7DC7E217DD0", hash_generated_method = "903DBD8FEF1432C55BE9435BCF070E5C")
     public void glGetTexParameterxv(int target, int pname, IntBuffer params) {
         addTaint(params.getTaint());
@@ -6692,6 +6931,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.329 -0400", hash_original_method = "6B9785D331C2E858FA29AE7DA0D1B803", hash_generated_method = "DAF998C3C6E741A5D50C9382EEE230E9")
     public boolean glIsBuffer(int buffer) {
         addTaint(buffer);
@@ -6713,6 +6953,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.329 -0400", hash_original_method = "1AD1E600FF9A83F906FAEDDFF57AA5B6", hash_generated_method = "399D21E44E5F0FCE4E3DB032E20F9CC9")
     public boolean glIsEnabled(int cap) {
         addTaint(cap);
@@ -6734,6 +6975,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.330 -0400", hash_original_method = "0FD2BACB2FEAAD5003D96D2F6F829064", hash_generated_method = "AB4A55A3FDA1F8581C58CCF7694B5B6E")
     public boolean glIsTexture(int texture) {
         addTaint(texture);
@@ -6755,6 +6997,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.330 -0400", hash_original_method = "4434284BAE8152D50F6CAEB48E264BCA", hash_generated_method = "231B2EB996F9725F6ED396059BA17AC9")
     public void glPointParameterf(int pname, float param) {
         addTaint(param);
@@ -6775,6 +7018,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.331 -0400", hash_original_method = "305C3B842F3FF114E036AEA8482C3307", hash_generated_method = "79064B82AE6CB064703B2611AA87E964")
     public void glPointParameterfv(int pname, float[] params, int offset) {
         addTaint(offset);
@@ -6798,6 +7042,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.331 -0400", hash_original_method = "949DF2F7152FA59021AB77D76958EFD9", hash_generated_method = "D53624D4EF3FA66A08B2DABD6F0A7574")
     public void glPointParameterfv(int pname, FloatBuffer params) {
         addTaint(params.getTaint());
@@ -6818,6 +7063,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.331 -0400", hash_original_method = "D150C38C9D48CC1A83918BF1E26BF21F", hash_generated_method = "D7B002BFE0F50EC353F74969A88B1BA4")
     public void glPointParameterx(int pname, int param) {
         addTaint(param);
@@ -6838,6 +7084,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.331 -0400", hash_original_method = "4DC2E958B1028A79B487F04DB436CDC6", hash_generated_method = "FA6193D8195153CCEEC67CD03A9EDB33")
     public void glPointParameterxv(int pname, int[] params, int offset) {
         addTaint(offset);
@@ -6861,6 +7108,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.331 -0400", hash_original_method = "C55305BED941314F1A9C9B8472FF501F", hash_generated_method = "AF2289C898E60875AF7C114465E339AF")
     public void glPointParameterxv(int pname, IntBuffer params) {
         addTaint(params.getTaint());
@@ -6881,6 +7129,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.331 -0400", hash_original_method = "FD66F4C41E1D11118BA5779006D7A981", hash_generated_method = "2ED49F64D740FD3DAFEFC752BB959B34")
     public void glPointSizePointerOES(int type, int stride, Buffer pointer) {
         addTaint(pointer.getTaint());
@@ -6904,6 +7153,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.332 -0400", hash_original_method = "7A777D65C6D69E6095F6ADFA0B80508D", hash_generated_method = "876C1818D19A42D4AD68AF3100206A7E")
     public void glTexEnvi(int target, int pname, int param) {
         addTaint(param);
@@ -6927,6 +7177,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.334 -0400", hash_original_method = "B84E3D84C7D28B80E45025FB1EE344CC", hash_generated_method = "3289877FF83BB397859804045553783A")
     public void glTexEnviv(int target, int pname, int[] params, int offset) {
         addTaint(offset);
@@ -6953,6 +7204,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.334 -0400", hash_original_method = "596BAF2194FFAB1EB8D7822E12BEF314", hash_generated_method = "DE5D24807A1D3EDB0AD75C8F3258B35A")
     public void glTexEnviv(int target, int pname, IntBuffer params) {
         addTaint(params.getTaint());
@@ -6976,6 +7228,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.334 -0400", hash_original_method = "F91D584D006EFDAAACF005F4F66F0398", hash_generated_method = "83EE0F2A3E6A188EE8486D6EF6A600C9")
     public void glTexParameterfv(int target, int pname, float[] params,
             int offset) {
@@ -7003,6 +7256,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.334 -0400", hash_original_method = "3435AA73DA9923F97CBB67D135D5584E", hash_generated_method = "ADE90CB18760F9BC8D12C0D5B7E8A602")
     public void glTexParameterfv(int target, int pname, FloatBuffer params) {
         addTaint(params.getTaint());
@@ -7026,6 +7280,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.335 -0400", hash_original_method = "07CC406D5F2784E78C454F48595A2D00", hash_generated_method = "A458E30D15E93E4D22B9B389BE953C84")
     public void glTexParameteri(int target, int pname, int param) {
         addTaint(param);
@@ -7049,6 +7304,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.335 -0400", hash_original_method = "273DD4FAA8A70680294276539FB369C0", hash_generated_method = "AB8C64F97DDC30BC0CFBDA594409A99E")
     public void glTexParameterxv(int target, int pname, int[] params,
             int offset) {
@@ -7076,6 +7332,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.335 -0400", hash_original_method = "2075B6D1DB4F033BEB2D89D653B6CB6D", hash_generated_method = "E045171D73F7A5743804BA3D0A29FBD4")
     public void glTexParameterxv(int target, int pname, IntBuffer params) {
         addTaint(params.getTaint());
@@ -7099,6 +7356,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.335 -0400", hash_original_method = "0B1AE3EA13B753BEF7CDDB7D4FDA419D", hash_generated_method = "B8E322FF943BE1687FBFADDF1954701E")
     public void glColorPointer(int size, int type, int stride, int offset) {
         addTaint(offset);
@@ -7125,6 +7383,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.335 -0400", hash_original_method = "AAEC91A3DF139FE81A9767750F6793D5", hash_generated_method = "D482482652D9B29A8B76BFA2DFC06FA9")
     public void glDrawElements(int mode, int count, int type, int offset) {
         addTaint(offset);
@@ -7151,6 +7410,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.335 -0400", hash_original_method = "60A1256295E839C4D45E05AF6D558D8B", hash_generated_method = "C385C25B96D387D1F29BB31BFA057663")
     public void glGetPointerv(int pname, Buffer[] params) {
         addTaint(params[0].getTaint());
@@ -7171,6 +7431,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.336 -0400", hash_original_method = "FEDAC0A9DEC1266CF068E55758CD2493", hash_generated_method = "8786232426CBAC7BF5C178016FAC6A16")
     public void glNormalPointer(int type, int stride, int offset) {
         addTaint(offset);
@@ -7192,6 +7453,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.336 -0400", hash_original_method = "DA1881A2EEF20840CCC98BF020E67BD0", hash_generated_method = "B847896213F37606E9A0AD359D56B036")
     public void glTexCoordPointer(int size, int type, int stride, int offset) {
         addTaint(offset);
@@ -7216,6 +7478,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.336 -0400", hash_original_method = "36FE060B86348B3B1148EFC3F53E7802", hash_generated_method = "655BE52CE162D362831301C3A1E8D9E0")
     public void glVertexPointer(int size, int type, int stride, int offset) {
         addTaint(offset);
@@ -7240,6 +7503,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.336 -0400", hash_original_method = "56EA13855F9D8C15AC2F4F16ACF2BAD0", hash_generated_method = "37D0A6E2EF7C5B9BF9FCA1B0AEFC1A79")
     public void glCurrentPaletteMatrixOES(int matrixpaletteindex) {
         addTaint(matrixpaletteindex);
@@ -7257,6 +7521,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.337 -0400", hash_original_method = "35478D1CDD4C06716A4E2591613C3204", hash_generated_method = "6370A88EB36AD041610D1E744D7BC520")
     public void glLoadPaletteFromModelViewMatrixOES() {
         begin("glLoadPaletteFromModelViewMatrixOES");
@@ -7271,6 +7536,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.337 -0400", hash_original_method = "03AC97935CDCC62E8A8EC9D4D8594CBE", hash_generated_method = "7CC48A30749AAE4C40939670EEA3E105")
     public void glMatrixIndexPointerOES(int size, int type, int stride,
             Buffer pointer) {
@@ -7292,6 +7558,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.337 -0400", hash_original_method = "15A38F791432104E54B02A81BD91298B", hash_generated_method = "BF47E963D7B9716B59CFDB7FA5618E25")
     public void glMatrixIndexPointerOES(int size, int type, int stride,
             int offset) {
@@ -7319,6 +7586,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.337 -0400", hash_original_method = "D7F62CABFCAB2B782790DA8BF3A5F81B", hash_generated_method = "9AB2ED8C554F6C0870176FC59579182E")
     public void glWeightPointerOES(int size, int type, int stride,
             Buffer pointer) {
@@ -7340,6 +7608,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.338 -0400", hash_original_method = "929C2DA030422B90FCA87AFFBB277E59", hash_generated_method = "197564754B5643E467A08D0ACD74BF93")
     public void glWeightPointerOES(int size, int type, int stride, int offset) {
         addTaint(offset);
@@ -7366,6 +7635,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.338 -0400", hash_original_method = "E77F873E668F8C0CE2F5C8974547F621", hash_generated_method = "738AE7E88B8525BFDC2F5C085757D83E")
     @Override
     public void glBindFramebufferOES(int target, int framebuffer) {
@@ -7387,6 +7657,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.338 -0400", hash_original_method = "A8A4B7A7443FA6EBE6E4D943AD45B00E", hash_generated_method = "9344BB5F997B97388BD247FD1CC4B72D")
     @Override
     public void glBindRenderbufferOES(int target, int renderbuffer) {
@@ -7408,6 +7679,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.342 -0400", hash_original_method = "158661D288C415C1238721FD58EBABB8", hash_generated_method = "E98C0077BFD0A881B83472D6766C21D2")
     @Override
     public void glBlendEquation(int mode) {
@@ -7426,6 +7698,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.342 -0400", hash_original_method = "1F240B30CD77B7B90E937BB1FD93D32C", hash_generated_method = "BB92032BBF8EF6B09483763AF6B39006")
     @Override
     public void glBlendEquationSeparate(int modeRGB, int modeAlpha) {
@@ -7447,6 +7720,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.342 -0400", hash_original_method = "DBB248C6792EA3906C0326D7F236F09A", hash_generated_method = "931C470006DABA3376014D954AFEB34D")
     @Override
     public void glBlendFuncSeparate(int srcRGB, int dstRGB, int srcAlpha,
@@ -7475,6 +7749,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.342 -0400", hash_original_method = "7D6042BBF52B8B65B385F14F7FA0E569", hash_generated_method = "78AC29F6DB9818EC129952E3FDB7380F")
     @Override
     public int glCheckFramebufferStatusOES(int target) {
@@ -7497,6 +7772,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.343 -0400", hash_original_method = "372A8FA79AEC7DB477299D2C5D1E2A6F", hash_generated_method = "A4BE68131776175C1F0AAC4EAB9041AB")
     @Override
     public void glDeleteFramebuffersOES(int n, int[] framebuffers, int offset) {
@@ -7521,6 +7797,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.343 -0400", hash_original_method = "2D9352B5D029EE3E8C03E4A1B1DC9B9B", hash_generated_method = "988AE67EC8FD773042D88F879A6FF534")
     @Override
     public void glDeleteFramebuffersOES(int n, IntBuffer framebuffers) {
@@ -7542,6 +7819,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.343 -0400", hash_original_method = "827EC3DAA32EB74EF8461B36ACB50C25", hash_generated_method = "528A1F8D5566CC0256E423807B96014F")
     @Override
     public void glDeleteRenderbuffersOES(int n, int[] renderbuffers, int offset) {
@@ -7566,6 +7844,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.344 -0400", hash_original_method = "20D8ABDA98BA2D5246C059B7C8739ECA", hash_generated_method = "96BE14BED36A594115DAF80B7DE0C7F3")
     @Override
     public void glDeleteRenderbuffersOES(int n, IntBuffer renderbuffers) {
@@ -7587,6 +7866,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.345 -0400", hash_original_method = "6F475A0F0CB56F25CDE245EA62E021F9", hash_generated_method = "3611FEFF0AEDFE9D78A84E3079FE6AB0")
     @Override
     public void glFramebufferRenderbufferOES(int target, int attachment,
@@ -7615,6 +7895,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.345 -0400", hash_original_method = "8751850D98C9ED7FB29D9CD40877157F", hash_generated_method = "FE13641030A56C529E299CC7A744BBF3")
     @Override
     public void glFramebufferTexture2DOES(int target, int attachment,
@@ -7646,6 +7927,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.345 -0400", hash_original_method = "48891B79641038350E4AE7FF8D617104", hash_generated_method = "F77F6F8A7960C454F9A33E80B24E64DD")
     @Override
     public void glGenerateMipmapOES(int target) {
@@ -7664,6 +7946,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.345 -0400", hash_original_method = "40CE6725F9C7FA7EA51D8A6D7FA3FEEE", hash_generated_method = "6215F8CA05267A88B9E89202E22D7743")
     @Override
     public void glGenFramebuffersOES(int n, int[] framebuffers, int offset) {
@@ -7688,6 +7971,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.345 -0400", hash_original_method = "6A580B7E14BA9495073FFECBB16303C8", hash_generated_method = "79ACC24D8DFF38F4C53343521A0BB8CB")
     @Override
     public void glGenFramebuffersOES(int n, IntBuffer framebuffers) {
@@ -7709,6 +7993,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.345 -0400", hash_original_method = "E85D13A31D2128B6318C5054325A533E", hash_generated_method = "DCCF3525E998A17FDC9B83B9A1576B08")
     @Override
     public void glGenRenderbuffersOES(int n, int[] renderbuffers, int offset) {
@@ -7733,6 +8018,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.346 -0400", hash_original_method = "F34B5CD6DFE0BE30C3C28142D34AFC07", hash_generated_method = "F8B5C65BBCFE9481E25CD0E6310B65AE")
     @Override
     public void glGenRenderbuffersOES(int n, IntBuffer renderbuffers) {
@@ -7754,6 +8040,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.347 -0400", hash_original_method = "70D50BC50BA4FB405BF6ABDC7E890470", hash_generated_method = "97E6A7D580CF4902C94810520E0B5469")
     @Override
     public void glGetFramebufferAttachmentParameterivOES(int target,
@@ -7785,6 +8072,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.347 -0400", hash_original_method = "F5945C1AA7A5C201BBFC39B975E9D889", hash_generated_method = "752E23B3C9BB5EAEEB15DFFB842B93FB")
     @Override
     public void glGetFramebufferAttachmentParameterivOES(int target,
@@ -7813,6 +8101,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.347 -0400", hash_original_method = "7E506FAE04F28D19CC194506D81706A7", hash_generated_method = "D7BA2C15528EE45DF632C0D7D504D9F0")
     @Override
     public void glGetRenderbufferParameterivOES(int target, int pname,
@@ -7841,6 +8130,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.347 -0400", hash_original_method = "BA383F1D8BCC9E9005D6C5B4FDDF8AF4", hash_generated_method = "1F4B95DC74C4E6A6D8CCB0A2FB805683")
     @Override
     public void glGetRenderbufferParameterivOES(int target, int pname,
@@ -7866,6 +8156,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.347 -0400", hash_original_method = "C3F01D78373307DD84FCCE6B3B5B2899", hash_generated_method = "A19EE2A12085C02BD1C1D6D84897B62C")
     @Override
     public void glGetTexGenfv(int coord, int pname, float[] params, int offset) {
@@ -7893,6 +8184,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.349 -0400", hash_original_method = "F06E55A7F5E3D8E8FC357F0BE936E11B", hash_generated_method = "0A774D69444FDB3E0EE8EF977DB8111E")
     @Override
     public void glGetTexGenfv(int coord, int pname, FloatBuffer params) {
@@ -7917,6 +8209,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.349 -0400", hash_original_method = "EA7169848BC2EAE9985144D566B53338", hash_generated_method = "115F4B61E578B5EE889F74BEE776D152")
     @Override
     public void glGetTexGeniv(int coord, int pname, int[] params, int offset) {
@@ -7944,6 +8237,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.349 -0400", hash_original_method = "BACD60145789C346FD5547F693851D4B", hash_generated_method = "F5074D64EA6A3B841CD68A734053E302")
     @Override
     public void glGetTexGeniv(int coord, int pname, IntBuffer params) {
@@ -7968,6 +8262,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.349 -0400", hash_original_method = "971C5F9665759126170C545C89B7DA86", hash_generated_method = "F43037B1990D8799E9EDDCCB765DC131")
     @Override
     public void glGetTexGenxv(int coord, int pname, int[] params, int offset) {
@@ -7995,6 +8290,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.350 -0400", hash_original_method = "FE5A58FBAEA96832C2D2DA0E698824E7", hash_generated_method = "55B511F1F87467BF7EA3EDDAAE3A4A5C")
     @Override
     public void glGetTexGenxv(int coord, int pname, IntBuffer params) {
@@ -8019,6 +8315,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.350 -0400", hash_original_method = "F40ECC8CF4D14FE34FA5FA9B11214CC4", hash_generated_method = "0E55D96BC8B3AAB8CB845BD281CD5F48")
     @Override
     public boolean glIsFramebufferOES(int framebuffer) {
@@ -8041,6 +8338,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.350 -0400", hash_original_method = "8F4C4857FFC99CE99F3F0A009BA01FB0", hash_generated_method = "40E9F5690F42AB898EBE3096CBEE345A")
     @Override
     public boolean glIsRenderbufferOES(int renderbuffer) {
@@ -8063,6 +8361,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.351 -0400", hash_original_method = "BBC044233862C82E6F9485381BF2EFAC", hash_generated_method = "4363F76D3976F54B28DF19658A72B18C")
     @Override
     public void glRenderbufferStorageOES(int target, int internalformat,
@@ -8091,6 +8390,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.351 -0400", hash_original_method = "5B61ED130837A79F1176AF47B6DE593C", hash_generated_method = "C2EB51390BE70FBBE42C4FEA6FBD1D54")
     @Override
     public void glTexGenf(int coord, int pname, float param) {
@@ -8115,6 +8415,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.351 -0400", hash_original_method = "49199B8EC9F410EF81E538A2A5BA4CF1", hash_generated_method = "9045B46D6C3BFFA8A4B74604A40D2D14")
     @Override
     public void glTexGenfv(int coord, int pname, float[] params, int offset) {
@@ -8142,6 +8443,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.351 -0400", hash_original_method = "E25A823820D6AC5F127FFC2606DF6362", hash_generated_method = "562BDD4F50AFFA3D589FB71E68DF39F3")
     @Override
     public void glTexGenfv(int coord, int pname, FloatBuffer params) {
@@ -8166,6 +8468,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.351 -0400", hash_original_method = "1D228209471FF3E94635E5910E3BB6B6", hash_generated_method = "2EC810D02A2E3BCA5C4421BB33DD2495")
     @Override
     public void glTexGeni(int coord, int pname, int param) {
@@ -8190,6 +8493,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.352 -0400", hash_original_method = "6E7250885E975DA213108772499C9737", hash_generated_method = "445514F560DB0885A53FADEACB4FD229")
     @Override
     public void glTexGeniv(int coord, int pname, int[] params, int offset) {
@@ -8217,6 +8521,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.353 -0400", hash_original_method = "25685DDF3F658D52B7E613A0BE3A1EC5", hash_generated_method = "F1B25E7F7CE0C18F9CDCE1A12F20A88D")
     @Override
     public void glTexGeniv(int coord, int pname, IntBuffer params) {
@@ -8241,6 +8546,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.353 -0400", hash_original_method = "B00241C250B7D64FCF33453DD29CABC3", hash_generated_method = "0A691591BF9CF189B25FC0B9E760122B")
     @Override
     public void glTexGenx(int coord, int pname, int param) {
@@ -8265,6 +8571,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.353 -0400", hash_original_method = "2830984F509DAD563B76F6673B473FE1", hash_generated_method = "16D7089D7033F687FE35F927943AE7A4")
     @Override
     public void glTexGenxv(int coord, int pname, int[] params, int offset) {
@@ -8292,6 +8599,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.353 -0400", hash_original_method = "0816B8D048093B188D49101678893C82", hash_generated_method = "ED84E9D3BDE54BE80B52C69FF0480CDB")
     @Override
     public void glTexGenxv(int coord, int pname, IntBuffer params) {
@@ -8333,12 +8641,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
 
         public ByteBuffer mTempByteBuffer;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.354 -0400", hash_original_method = "2509173D0AE6A11561E2EDCFDAA6FFC8", hash_generated_method = "51CC6407DCF00513E197FB9A315A08C4")
         public  PointerInfo() {
             // ---------- Original Method ----------
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.355 -0400", hash_original_method = "744E1DCF58D39C70267D81DF3BD13F28", hash_generated_method = "DB36014DE0E1682A2BA069EA82B188A5")
         public  PointerInfo(int size, int type, int stride, Buffer pointer) {
             mSize = size;
@@ -8401,6 +8711,7 @@ switch(type){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.356 -0400", hash_original_method = "026A802AC136EE8CA246416A4A83001B", hash_generated_method = "472CA572DC6EC5DB8953FD065EF29A07")
         public int getStride() {
             int var9E95A309D40EA19CFE29EC0E636D0CFA_967052724 = (mStride > 0 ? mStride : sizeof(mType) * mSize);
@@ -8411,6 +8722,7 @@ switch(type){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.356 -0400", hash_original_method = "CE219A6CF66D5CC900891E4666E4C00F", hash_generated_method = "4F46BB203F1321E126F71625F24110B5")
         public void bindByteBuffer() {
             mTempByteBuffer = mPointer == null ? null : toByteBuffer(-1, mPointer);

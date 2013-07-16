@@ -33,6 +33,7 @@ public final class SubjectPublicKeyInfo {
 
     private byte[] encoding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.280 -0400", hash_original_method = "253956FBAD4830165078A1D4A5A10C63", hash_generated_method = "C639D3F7C8633FBC29F6E0517839AEEF")
     public  SubjectPublicKeyInfo(AlgorithmIdentifier algID, byte[] subjectPublicKey) {
         this(algID, subjectPublicKey, 0);
@@ -42,6 +43,7 @@ public final class SubjectPublicKeyInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.280 -0400", hash_original_method = "D57000139A93CCBF30D6DA3399D9D5D5", hash_generated_method = "67C903E1D0E2A77FC73DDED86F145E23")
     public  SubjectPublicKeyInfo(AlgorithmIdentifier algID, byte[] subjectPublicKey, int unused) {
         this(algID, subjectPublicKey, 0, null);
@@ -52,6 +54,7 @@ public final class SubjectPublicKeyInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.281 -0400", hash_original_method = "78E5942A2DBBC7DA4B73868B62747270", hash_generated_method = "55B3A45EAE77C42BF8DBEEB82A2A5BF7")
     private  SubjectPublicKeyInfo(AlgorithmIdentifier algID,
                                  byte[] subjectPublicKey, int unused,

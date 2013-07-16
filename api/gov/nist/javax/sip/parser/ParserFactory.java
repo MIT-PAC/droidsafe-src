@@ -24,7 +24,8 @@ public class ParserFactory {
     }
 
 
-        public static HeaderParser createParser(String line) throws ParseException {
+        @DSModeled(DSC.SAFE)
+    public static HeaderParser createParser(String line) throws ParseException {
         String headerName = Lexer.getHeaderName(line);
         String headerValue = Lexer.getHeaderValue(line);
         if (headerName == null || headerValue == null)

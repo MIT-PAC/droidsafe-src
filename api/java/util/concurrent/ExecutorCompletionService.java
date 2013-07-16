@@ -16,6 +16,7 @@ public class ExecutorCompletionService<V> implements CompletionService<V> {
 
     private BlockingQueue<Future<V>> completionQueue;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.495 -0400", hash_original_method = "EDD261742BCF15D9FB8B326368F1ACDA", hash_generated_method = "44B1294BCA0C7A20310D9A9002E52E6F")
     public  ExecutorCompletionService(Executor executor) {
     if(executor == null)        

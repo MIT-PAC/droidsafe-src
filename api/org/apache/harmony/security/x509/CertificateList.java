@@ -25,6 +25,7 @@ public final class CertificateList {
 
     private byte[] encoding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.749 -0400", hash_original_method = "08126E4FD8546D7C66517E47FC438E4A", hash_generated_method = "83B6B6743FC51D8D2C6FB4B4C0C94E98")
     public  CertificateList(TBSCertList tbsCertList,
                        AlgorithmIdentifier signatureAlgorithm,
@@ -43,6 +44,7 @@ public final class CertificateList {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.749 -0400", hash_original_method = "296A8B306ED3B280093A8F830EEE1E41", hash_generated_method = "17F3BE8A0536D3DD761284DABCBA7EF4")
     private  CertificateList(TBSCertList tbsCertList,
                        AlgorithmIdentifier signatureAlgorithm,

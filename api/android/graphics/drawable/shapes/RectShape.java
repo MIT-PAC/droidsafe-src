@@ -13,6 +13,7 @@ public class RectShape extends Shape {
 
     private RectF mRect = new RectF();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.872 -0400", hash_original_method = "86D7394A029CE4FDE438585868C447F4", hash_generated_method = "296628B3E8AE7C2CA6ACF988628F6E64")
     public  RectShape() {
         // ---------- Original Method ----------

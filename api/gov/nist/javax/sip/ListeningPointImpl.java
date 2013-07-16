@@ -38,6 +38,7 @@ public class ListeningPointImpl implements javax.sip.ListeningPoint, gov.nist.ja
 
     protected SipStackImpl sipStack;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.506 -0400", hash_original_method = "7DF0488B21396F065D358B863377FD48", hash_generated_method = "4D9DF6DC89E29396EAAAC394873BE570")
     protected  ListeningPointImpl(
         SipStack sipStack,
@@ -53,7 +54,8 @@ public class ListeningPointImpl implements javax.sip.ListeningPoint, gov.nist.ja
     }
 
     
-        public static String makeKey(String host, int port, String transport) {
+        @DSModeled(DSC.SAFE)
+    public static String makeKey(String host, int port, String transport) {
         return new StringBuffer(host)
             .append(":")
             .append(port)
@@ -118,6 +120,7 @@ Object var258B3606D2892CBE12D92EDF68F0CCA7_1491745422 =         lip;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.507 -0400", hash_original_method = "2F70021F53E5650B4EE9A2F614549153", hash_generated_method = "B5068C20DE4B9B2B8A52D916B1F13125")
     public String getTransport() {
 String varBC4C3AAE5A28DB5958C39988EF1A9898_2114052833 =         messageProcessor.getTransport();
@@ -139,6 +142,7 @@ SipProviderImpl varDA6985F98D2B970198C4C0F63DBC3E3D_1944325015 =         this.si
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.507 -0400", hash_original_method = "C8FDA759281B0540F1A01A50A8584E49", hash_generated_method = "A7DDA88851B9A023AB91FB0BF2458254")
     public String getIPAddress() {
 String var1D236C2B85BDC9A40A91146AB55AA21E_1753644671 =         this.messageProcessor.getIpAddress().getHostAddress();
@@ -149,6 +153,7 @@ String var1D236C2B85BDC9A40A91146AB55AA21E_1753644671 =         this.messageProc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.507 -0400", hash_original_method = "C988C19E7315430B0087298232CBBC55", hash_generated_method = "C1A5E207036B122F5BF52F198EB53F42")
     public void setSentBy(String sentBy) throws ParseException {
         addTaint(sentBy.getTaint());
@@ -158,6 +163,7 @@ String var1D236C2B85BDC9A40A91146AB55AA21E_1753644671 =         this.messageProc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.507 -0400", hash_original_method = "0F3CBDA4EFE78BE80FA7EB48D9C543C3", hash_generated_method = "71AE5CEB975DA9443E1868433C3B8E21")
     public String getSentBy() {
 String varC94510D23C21D2DACB64ADCA57DEE82D_574851774 =         this.messageProcessor.getSentBy();
@@ -168,6 +174,7 @@ String varC94510D23C21D2DACB64ADCA57DEE82D_574851774 =         this.messageProce
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.508 -0400", hash_original_method = "FB81111FA8EEF846B60E416B5C715284", hash_generated_method = "650EC0AC063B41ADD4B3C40AD57DF92A")
     public boolean isSentBySet() {
         boolean var8CDC11C5D3CD6C901BC0259044842CED_1954074386 = (this.messageProcessor.isSentBySet());
@@ -178,6 +185,7 @@ String varC94510D23C21D2DACB64ADCA57DEE82D_574851774 =         this.messageProce
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.508 -0400", hash_original_method = "98E0FDFAA28F1C7110EA27D9E468A7B1", hash_generated_method = "5D4B50FEFF574F762C6013959F84728A")
     public Via getViaHeader() {
 Via var6D1FAA9A9C9AD7C385C321F6DCC97D70_1194308123 =         this.messageProcessor.getViaHeader();
@@ -199,6 +207,7 @@ MessageProcessor varEE93DAA9E4FDACE3D0129BF58212AA5C_199697410 =         this.me
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.508 -0400", hash_original_method = "5245FC9449D74C308C0D9DFB6981DAC3", hash_generated_method = "F572B7316A0BBF13B8EE8F2FDB37BB68")
     public ContactHeader createContactHeader() {
         try 
@@ -267,6 +276,7 @@ ContactHeader var540C13E9E156B687226421B24F2DF178_2046273960 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.508 -0400", hash_original_method = "463489B426580FC1D58885BA81FC3706", hash_generated_method = "FE27625A04846F0F6A404082BB9E8A5F")
     public ViaHeader createViaHeader() {
 ViaHeader varE3EA92396C3E49AC27B9C4A2722AD142_674331102 =         this.getViaHeader();

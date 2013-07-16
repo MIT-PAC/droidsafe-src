@@ -10,6 +10,7 @@ public class ParseException extends RuntimeException {
 
     public String response;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.292 -0400", hash_original_method = "E43EF8DD9693C1DC19D1ACB3B5C49985", hash_generated_method = "705A6C04EF6F9F6860332A406292052E")
       ParseException(String response) {
         this.response = response;

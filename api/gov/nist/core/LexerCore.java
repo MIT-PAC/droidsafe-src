@@ -18,6 +18,7 @@ public class LexerCore extends StringTokenizer {
 
     protected Token currentMatch;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.482 -0400", hash_original_method = "F81A1A23CDDF7D21ADD1D8559F70EDF8", hash_generated_method = "19E7A347F27B6A740B2625DD5BBF0D5D")
     protected  LexerCore() {
         this.currentLexer = new Hashtable();
@@ -28,6 +29,7 @@ public class LexerCore extends StringTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.482 -0400", hash_original_method = "E63C8DBFE6FAFFBE522AAC8B0CA2CC77", hash_generated_method = "0CD5C881208739B291EFCEA06D660F21")
     public  LexerCore(String lexerName, String buffer) {
         super(buffer);
@@ -54,6 +56,7 @@ public class LexerCore extends StringTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.483 -0400", hash_original_method = "3D857462C470E4A1F5CD1262364F803E", hash_generated_method = "4CF8A4D454C43DCF420FEF9853B07ABE")
     public String lookupToken(int value) {
         addTaint(value);
@@ -80,6 +83,7 @@ String varE40BD3D60B6E3E9CBE4DAE78046C1312_424368291 =             ch.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.484 -0400", hash_original_method = "A9968CF51D1D67FF8D3FB6DE23BFC8AA", hash_generated_method = "90B7AA09D13BB7BD09B7F1E0679E0E93")
     protected Hashtable addLexer(String lexerName) {
         currentLexer = (Hashtable) lexerTables.get(lexerName);
@@ -110,6 +114,7 @@ Hashtable varB406B65E78DE5EEA723ABCBB6A241AA3_940303750 =         currentLexer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.484 -0400", hash_original_method = "490BF814B9BDCA5834E18A73438F6256", hash_generated_method = "77F185AFA44F331A205FC46458218D72")
     public String peekNextId() {
         int oldPtr = ptr;
@@ -128,6 +133,7 @@ String varF9E19AD6135C970F387F77C6F3DE4477_758915095 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.485 -0400", hash_original_method = "7F6D0FFBB3DD0E896E18057F7DC876B2", hash_generated_method = "021C5C6E2600CAD08DFC1B0A18D03D39")
     public String getNextId() {
 String var8A2ECCBCB7CC49E68555F1F70EC6B023_2110843682 =         ttoken();
@@ -149,6 +155,7 @@ Token var4F2F48FA7E0E08F3309FEA0E4F1D3813_1897680577 =         this.currentMatch
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.485 -0400", hash_original_method = "7245F245408FA6FEC683585F2431BE34", hash_generated_method = "14BA5505BA84326713B69ABA347F7F10")
     public Token peekNextToken() throws ParseException {
 Token var56EDAF3C69C0E5C2B44B57EEDFB6EDC8_456514044 =         (Token) peekNextToken(1)[0];
@@ -159,6 +166,7 @@ Token var56EDAF3C69C0E5C2B44B57EEDFB6EDC8_456514044 =         (Token) peekNextTo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.487 -0400", hash_original_method = "E053A5C6A0917BEE124D59DA4B3EBFD6", hash_generated_method = "B8CF9DB00C595E109F61379352F32843")
     public Token[] peekNextToken(int ntokens) throws ParseException {
         addTaint(ntokens);
@@ -319,6 +327,7 @@ Token var4F2F48FA7E0E08F3309FEA0E4F1D3813_696335772 =         this.currentMatch;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.491 -0400", hash_original_method = "2A2C3BB94776A03619BA392D0DD9FA22", hash_generated_method = "4050FC46B793FE5A4471DF1021454707")
     public void SPorHT() {
         try 
@@ -367,6 +376,7 @@ Token var4F2F48FA7E0E08F3309FEA0E4F1D3813_696335772 =         this.currentMatch;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.492 -0400", hash_original_method = "F58976B32EA8A9502EE0AC2AF2B6A7AB", hash_generated_method = "17424EE6895DB2BCC74A41191800CBC1")
     public boolean startsId() {
         try 
@@ -452,6 +462,7 @@ switch(nextChar){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.492 -0400", hash_original_method = "263A0804A198D7BD9F45ED20C20E2FC4", hash_generated_method = "EC0F87C1B08F953FCEC9E6BF77E692B4")
     public String ttoken() {
         int startIdx = ptr;
@@ -565,6 +576,7 @@ String var540C13E9E156B687226421B24F2DF178_644896627 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.494 -0400", hash_original_method = "8CC0A9D05C89C60DBFAAF7C7ED88483F", hash_generated_method = "52BA2DA413C23889FAD9CFE9C7EB3FCD")
     public void consumeValidChars(char[] validChars) {
         addTaint(validChars[0]);
@@ -822,6 +834,7 @@ String var1B324365A764C077A55854483509F4AB_1386357382 =         retval.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.512 -0400", hash_original_method = "03994A77D1324F910A7EC2E8D4C779CB", hash_generated_method = "1C0DF1D69FFC0D56BC114F76F3CFE31D")
     public String byteStringNoComma() {
         StringBuffer retval = new StringBuffer();
@@ -866,11 +879,13 @@ String var1B324365A764C077A55854483509F4AB_844361597 =         retval.toString()
     }
 
     
-        public static String charAsString(char ch) {
+        @DSModeled(DSC.SAFE)
+    public static String charAsString(char ch) {
         return String.valueOf(ch);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.513 -0400", hash_original_method = "5A32401256C252E56BBB94CC59C2BA04", hash_generated_method = "03EA7783602AD3FA911AE255E3E41E9F")
     public String charAsString(int nchars) {
         addTaint(nchars);
@@ -882,6 +897,7 @@ String var0F966DE49562217014D14DFD47D907D7_520807682 =         buffer.substring(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.514 -0400", hash_original_method = "322A7AA8BD0B180616D94A352B3FE7FA", hash_generated_method = "92FB6B8C0ED0004B362CE23ED793F34B")
     public String number() throws ParseException {
         int startIdx = ptr;
@@ -961,6 +977,7 @@ String var6AFF5978BAB12C2506D33445AED98631_38610515 =             buffer.substri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.517 -0400", hash_original_method = "2FDB8C189AB11331619907255B1EC94B", hash_generated_method = "E3711B835D8730325DCEE258BD7CCFF6")
     public String getRest() {
     if(ptr >= buffer.length())        
@@ -1060,6 +1077,7 @@ String var45A7A4931E21905A5463F27B77E1344A_723649513 =         this.buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.519 -0400", hash_original_method = "3D7442B3A5CE831DBB9C36AFA9551D12", hash_generated_method = "79B480791B9272FA0C2853CFC1C295E7")
     public ParseException createParseException() {
 ParseException var9A65CD9ED84788A978C315F5B36906E5_1869642297 =         new ParseException(this.buffer, this.ptr);

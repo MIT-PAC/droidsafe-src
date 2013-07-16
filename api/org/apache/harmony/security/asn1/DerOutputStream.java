@@ -17,6 +17,7 @@ public final class DerOutputStream extends BerOutputStream {
 
     private Object[][] val = new Object[initSize][];
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.017 -0400", hash_original_method = "C2B2568E8FC3DE05B0E3A6791919A3B3", hash_generated_method = "DD97B51F13357288F097F2DBE10163B9")
     public  DerOutputStream(ASN1Type asn1, Object object) {
         addTaint(object.getTaint());

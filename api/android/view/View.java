@@ -345,6 +345,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     protected final InputEventConsistencyVerifier mInputEventConsistencyVerifier = InputEventConsistencyVerifier.isInstrumentationEnabled() ?
                     new InputEventConsistencyVerifier(this, 0) : null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:51.910 -0400", hash_original_method = "6E480C32A7FC910695FE07C33ABF7A7A", hash_generated_method = "AD454F01B4A79F64B85B96CBA3B68A9E")
     public  View(Context context) {
         mContext = context;
@@ -367,6 +368,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:51.911 -0400", hash_original_method = "7A0AD99F840E8369EC476A6B56BA8ADA", hash_generated_method = "D878A93C1345BE8652B8CC2AFF1D23F2")
     public  View(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -376,6 +378,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:51.917 -0400", hash_original_method = "F8E7269105FB2D522A5F7FAB2F89EE95", hash_generated_method = "31C9E4D0F75FB66010F7ED39C6C4FDBB")
     public  View(Context context, AttributeSet attrs, int defStyle) {
         this(context);
@@ -781,6 +784,7 @@ switch(attr){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:51.918 -0400", hash_original_method = "5C3A364FECC6F7D07E7A546170C25E98", hash_generated_method = "32A2A5FFE588BE14FBF7F5D017C5A252")
       View() {
         mResources = null;
@@ -1386,6 +1390,7 @@ OnFocusChangeListener var29F540C0B1ABCCAD45EDB3ADF0206923_1609921342 =         l
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:51.949 -0400", hash_original_method = "554809A43858BFBD98E9D476D5975BC9", hash_generated_method = "08A5675AB5D65C1CDA6A0CD2A0F6B5D4")
     public ActionMode startActionMode(ActionMode.Callback callback) {
         addTaint(callback.getTaint());

@@ -76,6 +76,7 @@ public final class Scanner implements Iterator<String> {
 
     private int cachehasNextIndex = -1;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.851 -0400", hash_original_method = "B810C33BB807151E40D15163250E5E02", hash_generated_method = "321539E3B9BA845EF9F76541A8DBF8C3")
     public  Scanner(File src) throws FileNotFoundException {
         this(src, Charset.defaultCharset().name());
@@ -84,6 +85,7 @@ public final class Scanner implements Iterator<String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.852 -0400", hash_original_method = "CF25217F399E81A22DEECAEA7B649FFD", hash_generated_method = "0D4664DE1AE731D3F42D9F7A9F678CEC")
     public  Scanner(File src, String charsetName) throws FileNotFoundException {
         addTaint(src.getTaint());
@@ -130,6 +132,7 @@ public final class Scanner implements Iterator<String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.853 -0400", hash_original_method = "4332C70F225A92CAAA372FEA2EE20E90", hash_generated_method = "B648128C94F00F07C9AB0502C3851792")
     public  Scanner(String src) {
         input = new StringReader(src);
@@ -140,6 +143,7 @@ public final class Scanner implements Iterator<String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.853 -0400", hash_original_method = "C892D51D9056C33835D132934536F6A9", hash_generated_method = "29915AE179E011A2C0282BFECF6B6B0F")
     public  Scanner(InputStream src) {
         this(src, Charset.defaultCharset().name());
@@ -148,6 +152,7 @@ public final class Scanner implements Iterator<String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.853 -0400", hash_original_method = "BF515108409EAD1D2D6060053F2B8EDA", hash_generated_method = "4E314E8984E6863A91D87717E8AD3ED2")
     public  Scanner(InputStream src, String charsetName) {
     if(src == null)        
@@ -180,6 +185,7 @@ public final class Scanner implements Iterator<String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.854 -0400", hash_original_method = "E0E6972A58007CF9E26777BD359FD5D7", hash_generated_method = "857EC357668DDF9717864E3F590BD06B")
     public  Scanner(Readable src) {
     if(src == null)        
@@ -199,6 +205,7 @@ public final class Scanner implements Iterator<String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.854 -0400", hash_original_method = "246C896BCE9403BE34073893721DED9F", hash_generated_method = "24C2F70730EE9356054D047DBB43A0CE")
     public  Scanner(ReadableByteChannel src) {
         this(src, Charset.defaultCharset().name());
@@ -207,6 +214,7 @@ public final class Scanner implements Iterator<String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.855 -0400", hash_original_method = "88C5EB3CF5CA9A4257014ADC8E6F132C", hash_generated_method = "8EDA7AE49E259FAF2F1B701923AE3C21")
     public  Scanner(ReadableByteChannel src, String charsetName) {
     if(src == null)        

@@ -12,6 +12,7 @@ public class SIPIfMatch extends SIPHeader implements SIPIfMatchHeader, Extension
 
     protected String entityTag;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.325 -0400", hash_original_method = "BAD2DC814CD45D5939615C62F83835FA", hash_generated_method = "BC1325341205D047D33E2F234910D97F")
     public  SIPIfMatch() {
         super(NAME);
@@ -19,6 +20,7 @@ public class SIPIfMatch extends SIPHeader implements SIPIfMatchHeader, Extension
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.325 -0400", hash_original_method = "3D0893288CE2D1B79B07387D603E62DB", hash_generated_method = "01CDA246878419CA1D7404FB25E3602E")
     public  SIPIfMatch(String etag) throws ParseException {
         this();

@@ -26,7 +26,8 @@ public class DateFormat {
     }
 
 
-        public static boolean is24HourFormat(Context context) {
+        @DSModeled(DSC.SAFE)
+    public static boolean is24HourFormat(Context context) {
         String value = Settings.System.getString(context.getContentResolver(),
                 Settings.System.TIME_12_24);
         if (value == null) {
@@ -79,7 +80,8 @@ public class DateFormat {
     }
 
     
-        public static java.text.DateFormat getDateFormatForSetting(Context context,
+        @DSModeled(DSC.SAFE)
+    public static java.text.DateFormat getDateFormatForSetting(Context context,
                                                                String value) {
         String format = getDateFormatStringForSetting(context, value);
         return new java.text.SimpleDateFormat(format);

@@ -29,6 +29,7 @@ public final class SpellCheckerSubtype implements Parcelable {
 
     private String mSubtypeExtraValue;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.693 -0400", hash_original_method = "3A30DA6D8D85E7F9D6AFF40F9B2BC528", hash_generated_method = "980FDD3E96F63120DD6D6A74E5B9D797")
     public  SpellCheckerSubtype(int nameId, String locale, String extraValue) {
         mSubtypeNameResId = nameId;
@@ -43,6 +44,7 @@ public final class SpellCheckerSubtype implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.694 -0400", hash_original_method = "3B75B8CFEB6B6700A7C113FAE634CC5F", hash_generated_method = "39C8675410726AB5491DA3D839BFB49B")
       SpellCheckerSubtype(Parcel source) {
         String s;
@@ -108,6 +110,7 @@ String varD5103786A790F3D4881070784C5A1DFD_1744972808 =         mSubtypeExtraVal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.695 -0400", hash_original_method = "214F55EDB23FD4CF8A5A66E21291C440", hash_generated_method = "4C00EA60753F03A30028A6DAEF7DC831")
     @Override
     public boolean equals(Object o) {
@@ -208,6 +211,7 @@ CharSequence varF1554E4544B9FE124AB662A8FBD78003_1365447033 =             locale
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.697 -0400", hash_original_method = "AC1CB8559B86122857E11C69298B0C2C", hash_generated_method = "63DAF4D2DF6DCF4D5AAA97C477D14334")
     @Override
     public void writeToParcel(Parcel dest, int parcelableFlags) {
@@ -223,7 +227,8 @@ CharSequence varF1554E4544B9FE124AB662A8FBD78003_1365447033 =             locale
     }
 
     
-        private static int hashCodeInternal(String locale, String extraValue) {
+        @DSModeled(DSC.SAFE)
+    private static int hashCodeInternal(String locale, String extraValue) {
         return Arrays.hashCode(new Object[] {locale, extraValue});
     }
 

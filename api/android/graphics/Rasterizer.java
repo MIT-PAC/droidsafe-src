@@ -10,6 +10,7 @@ public class Rasterizer {
 
     int native_instance;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.866 -0400", hash_original_method = "11C4CA6DFE8F610B47AB2C394C18DE1F", hash_generated_method = "11C4CA6DFE8F610B47AB2C394C18DE1F")
     public Rasterizer ()
     {

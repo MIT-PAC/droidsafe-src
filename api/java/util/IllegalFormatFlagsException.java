@@ -11,6 +11,7 @@ public class IllegalFormatFlagsException extends IllegalFormatException implemen
 
     private String flags;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.632 -0400", hash_original_method = "C96D31C6D500DFB377940B671202C076", hash_generated_method = "DBB5F7D66789ED8ABB0A0888AE5E8541")
     public  IllegalFormatFlagsException(String flags) {
     if(flags == null)        

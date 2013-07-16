@@ -344,7 +344,8 @@ KeyStore.Entry varF6CA60BE43493BB9E1AF2A8B4D10A17E_1807190992 =                 
     }
 
     
-        static char[] getPasswordFromCallBack(KeyStore.ProtectionParameter protParam) throws UnrecoverableEntryException {
+        @DSModeled(DSC.SAFE)
+    static char[] getPasswordFromCallBack(KeyStore.ProtectionParameter protParam) throws UnrecoverableEntryException {
         if (protParam == null) {
             return null;
         }

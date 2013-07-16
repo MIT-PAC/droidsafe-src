@@ -12,6 +12,7 @@ public class Supported extends SIPHeader implements SupportedHeader {
 
     protected String optionTag;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.494 -0400", hash_original_method = "5230DF363A4CA66C4A13E103BCE72C7C", hash_generated_method = "3C8D784CD22FBCF471BE0C5853D91DD1")
     public  Supported() {
         super(SIPHeaderNames.SUPPORTED);
@@ -21,6 +22,7 @@ public class Supported extends SIPHeader implements SupportedHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.495 -0400", hash_original_method = "22E9310B7938D206E4E2944ECFF36AB1", hash_generated_method = "ECAB293A06845B6630EB2733D29358A7")
     public  Supported(String option_tag) {
         super(SIPHeaderNames.SUPPORTED);

@@ -13,6 +13,7 @@ public class ParsePosition {
 
     private int errorIndex = -1;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.809 -0400", hash_original_method = "DC50BCA5F95CF2B530ABA250C6125033", hash_generated_method = "14D727696863DAC0F24A030F748724FE")
     public  ParsePosition(int index) {
         currentPosition = index;

@@ -10,6 +10,7 @@ import javax.sip.address.*;
 
 public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.972 -0400", hash_original_method = "5EAE66D49E862BAEE0E410CA69871D83", hash_generated_method = "BC48FF6852307C189B528CA214114244")
     public  AddressFactoryImpl() {
         // ---------- Original Method ----------
@@ -186,6 +187,7 @@ javax.sip.address.TelURL varF8A4163C88152127E4816DEA07C7EB20_1361010559 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.978 -0400", hash_original_method = "5762E0D071920DC6C61FB0E25B45CBE7", hash_generated_method = "C19A05128ABD9C0EBC90AC0B21160AB5")
     public javax.sip.address.Address createAddress(javax.sip.address.URI uri) {
         addTaint(uri.getTaint());

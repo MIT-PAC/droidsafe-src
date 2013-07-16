@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public final class NativeCollation {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.703 -0400", hash_original_method = "16B47962CFF99F85D0E598C53BC7328E", hash_generated_method = "FF71B9CC7F83E39BD5165BFFBBD0AADB")
     private  NativeCollation() {
         // ---------- Original Method ----------

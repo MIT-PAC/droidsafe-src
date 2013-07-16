@@ -52,7 +52,8 @@ public final class HttpDateTime {
     }
 
     
-        private static int getDate(String dateString) {
+        @DSModeled(DSC.SAFE)
+    private static int getDate(String dateString) {
         if (dateString.length() == 2) {
             return (dateString.charAt(0) - '0') * 10
                     + (dateString.charAt(1) - '0');
@@ -62,7 +63,8 @@ public final class HttpDateTime {
     }
 
     
-        private static int getMonth(String monthString) {
+        @DSModeled(DSC.SAFE)
+    private static int getMonth(String monthString) {
         int hash = Character.toLowerCase(monthString.charAt(0)) +
                 Character.toLowerCase(monthString.charAt(1)) +
                 Character.toLowerCase(monthString.charAt(2)) - 3 * 'a';
@@ -148,6 +150,7 @@ public final class HttpDateTime {
 
         int second;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.640 -0400", hash_original_method = "C386336929F1995213D1FEE1C093D027", hash_generated_method = "CFAAF78546A399AC683BE2F251F89455")
           TimeOfDay(int h, int m, int s) {
             this.hour = h;

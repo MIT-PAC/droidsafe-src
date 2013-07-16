@@ -32,6 +32,7 @@ final class IoVec {
 
     private Direction direction;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.725 -0400", hash_original_method = "79FA89440D1C6736393E7E6CE16B2553", hash_generated_method = "202BD0CFA645C0A9325FB09F7D29AF1B")
       IoVec(ByteBuffer[] byteBuffers, int offset, int bufferCount, Direction direction) {
         this.byteBuffers = byteBuffers;
@@ -52,6 +53,7 @@ final class IoVec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.726 -0400", hash_original_method = "0C69B202E78D62C368E6E03D03D6C92B", hash_generated_method = "5CF65243B7AC1E787887847465050FFF")
      int init() {
         int totalRemaining = 0;
@@ -101,6 +103,7 @@ for(int i = 0;i < bufferCount;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.732 -0400", hash_original_method = "A7EE0836183CE06C4386DE620F235FAB", hash_generated_method = "A9FAFB3CA948E70239124AC55BDE2912")
      int doTransfer(FileDescriptor fd) throws IOException {
         addTaint(fd.getTaint());
@@ -147,6 +150,7 @@ for(int i = 0;i < bufferCount;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.733 -0400", hash_original_method = "EBAF870E907233DA47B6BC3AD10EE875", hash_generated_method = "DE63A292B99FEB33B2C92DFFC3D4ECDB")
      void didTransfer(int byteCount) {
         addTaint(byteCount);

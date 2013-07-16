@@ -49,6 +49,7 @@ public class NetscapeCertRequest extends ASN1Encodable {
 
     PublicKey pubkey;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.548 -0400", hash_original_method = "E784D2D6D9424F9738F1550A3283A21D", hash_generated_method = "578731D7077838229C848DAEA84ED2C9")
     public  NetscapeCertRequest(
         byte[]  req) throws IOException {
@@ -101,6 +102,7 @@ public class NetscapeCertRequest extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.554 -0400", hash_original_method = "1A82B1619517E26DD541E9FF2CF124F1", hash_generated_method = "DEE91FCADDA2612A8DF8A00CEF4A8771")
     public  NetscapeCertRequest(
         String challenge,
@@ -255,6 +257,7 @@ PublicKey varF4E785CAC4E37DDA6682AE974579280B_657540199 =         pubkey;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.560 -0400", hash_original_method = "D4E72A005612CE8E458CA009F1575A62", hash_generated_method = "869EC6A3A6F2CA434F6451498E61ADC1")
     public void sign(PrivateKey priv_key, SecureRandom rand) throws NoSuchAlgorithmException, InvalidKeyException,
             SignatureException, NoSuchProviderException,

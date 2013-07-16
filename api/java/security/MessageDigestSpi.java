@@ -140,6 +140,7 @@ public abstract class MessageDigestSpi {
     protected abstract void engineReset();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.127 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "5B375CA84478ED722DB4E18BDDF03D6F")
     @Override
     public Object clone() throws CloneNotSupportedException {

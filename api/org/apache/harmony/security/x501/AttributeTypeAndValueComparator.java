@@ -17,6 +17,7 @@ public class AttributeTypeAndValueComparator implements Comparator, Serializable
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.514 -0400", hash_original_method = "3F7D901C5D2A92F81B8BE7A716DA67AE", hash_generated_method = "9F4632445497AF2714100970E71346E9")
     public int compare(Object obj1, Object obj2) {
         addTaint(obj2.getTaint());
@@ -73,7 +74,8 @@ public class AttributeTypeAndValueComparator implements Comparator, Serializable
     }
 
     
-        private static int compateOids(ObjectIdentifier oid1, ObjectIdentifier oid2) {
+        @DSModeled(DSC.SAFE)
+    private static int compateOids(ObjectIdentifier oid1, ObjectIdentifier oid2) {
         if (oid1 == oid2) {
             return 0;
         }

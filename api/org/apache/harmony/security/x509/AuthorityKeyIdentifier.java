@@ -25,6 +25,7 @@ public final class AuthorityKeyIdentifier extends ExtensionValue {
 
     private BigInteger authorityCertSerialNumber;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.695 -0400", hash_original_method = "5D5E1041410A971B297479A3E9285379", hash_generated_method = "9AA133B7694427BFE4C2E449B4FADBE5")
     public  AuthorityKeyIdentifier(byte[] keyIdentifier,
             GeneralNames authorityCertIssuer,

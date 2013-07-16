@@ -10,6 +10,7 @@ public abstract class SIPHeader extends SIPObject implements SIPHeaderNames, jav
 
     protected String headerName;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.148 -0400", hash_original_method = "FE673D693BAC70694CA41EF39D92900D", hash_generated_method = "65F96AA6876FD65CD5AC5D1ED00B8886")
     protected  SIPHeader(String hname) {
         headerName = hname;
@@ -18,6 +19,7 @@ public abstract class SIPHeader extends SIPObject implements SIPHeaderNames, jav
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.148 -0400", hash_original_method = "1EA533F6110BBCB8F937FFE2E4A5C224", hash_generated_method = "944F6867AF0E885EC31D94410F55FE87")
     public  SIPHeader() {
         // ---------- Original Method ----------

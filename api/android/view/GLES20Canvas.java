@@ -53,6 +53,7 @@ class GLES20Canvas extends HardwareCanvas {
 
     private DrawFilter mFilter;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.911 -0400", hash_original_method = "E61B8AD2F95A2B414E32399D6E0EB15F", hash_generated_method = "2AFB8DAA72D20488621230DD00C5A8A5")
       GLES20Canvas(boolean translucent) {
         this(false, translucent);
@@ -61,6 +62,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.911 -0400", hash_original_method = "7F059AE8F3F932B35FF16ED888919AA8", hash_generated_method = "74FC0FA718B9D10E4233916A4857DF72")
       GLES20Canvas(int layer, boolean translucent) {
         mOpaque = !translucent;
@@ -73,6 +75,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.912 -0400", hash_original_method = "E76C4C3F056A713824BBE7237B891059", hash_generated_method = "71C01C0F92BAF29181A5B3B9E2729313")
     protected  GLES20Canvas(boolean record, boolean translucent) {
         addTaint(record);
@@ -314,7 +317,8 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-        public static boolean isBackBufferPreserved() {
+        @DSModeled(DSC.SAFE)
+    public static boolean isBackBufferPreserved() {
         return nIsBackBufferPreserved();
     }
 
@@ -415,7 +419,8 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
-        public static void terminateCaches() {
+        @DSModeled(DSC.SAFE)
+    public static void terminateCaches() {
         nTerminateCaches();
     }
 
@@ -586,6 +591,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.920 -0400", hash_original_method = "A0322959331EF06FDECE706338820D13", hash_generated_method = "4825D00B1BD1F28498A552B6049E7E00")
     @Override
     public boolean clipPath(Path path, Region.Op op) {
@@ -622,6 +628,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.921 -0400", hash_original_method = "CF0F08AE677C71FBDBDD5FF973518EEC", hash_generated_method = "924907C64CC5C0163F11807DC976CA6E")
     @Override
     public boolean clipRect(float left, float top, float right, float bottom, Region.Op op) {
@@ -676,6 +683,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.921 -0400", hash_original_method = "CE1C58CF7145731A4EAE6ABB1C090975", hash_generated_method = "47DDAD4E7A9763CE4F98A355196B72CA")
     @Override
     public boolean clipRect(Rect rect, Region.Op op) {
@@ -704,6 +712,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.921 -0400", hash_original_method = "84F2B877854C623DFB4ED57554605946", hash_generated_method = "C683738CBBC9AA81DE8CF1C9E23C3065")
     @Override
     public boolean clipRect(RectF rect, Region.Op op) {
@@ -730,6 +739,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.922 -0400", hash_original_method = "9554359F0ECC8D3364C9D02F1B6C0A6E", hash_generated_method = "6573BFE731C43EBBF7CAEC87E9F28D13")
     @Override
     public boolean clipRegion(Region region, Region.Op op) {
@@ -1226,6 +1236,7 @@ DrawFilter var6104E4BD549FCD2640641D136DD683A6_716747252 =         mFilter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.928 -0400", hash_original_method = "3E288E14B7CE68A819334B0A90162954", hash_generated_method = "7AC6D5A04025FF0F15BCC4B7A9825784")
     @Override
     public void drawPatch(Bitmap bitmap, byte[] chunks, RectF dst, Paint paint) {
@@ -1254,6 +1265,7 @@ DrawFilter var6104E4BD549FCD2640641D136DD683A6_716747252 =         mFilter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.928 -0400", hash_original_method = "BF78CEE5A5D5A0B7000D42B8D7CD12A6", hash_generated_method = "63652DBC220F442FA35F1DF187A840BA")
     @Override
     public void drawBitmap(Bitmap bitmap, float left, float top, Paint paint) {
@@ -1280,6 +1292,7 @@ DrawFilter var6104E4BD549FCD2640641D136DD683A6_716747252 =         mFilter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.928 -0400", hash_original_method = "7A23E114FF3FC414FFADAB9162210E17", hash_generated_method = "77800C56F7A3BF21B32AC59C4E20982A")
     @Override
     public void drawBitmap(Bitmap bitmap, Matrix matrix, Paint paint) {
@@ -1307,6 +1320,7 @@ DrawFilter var6104E4BD549FCD2640641D136DD683A6_716747252 =         mFilter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.930 -0400", hash_original_method = "025B89D3F15CD9670FC3D74B91AB5D58", hash_generated_method = "5EF40C1FA30701B82DDAC90FA0F06068")
     @Override
     public void drawBitmap(Bitmap bitmap, Rect src, Rect dst, Paint paint) {
@@ -1357,6 +1371,7 @@ DrawFilter var6104E4BD549FCD2640641D136DD683A6_716747252 =         mFilter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.933 -0400", hash_original_method = "18A7A5D5D5C8B881DFD85E47F7DA3439", hash_generated_method = "DF85C1A6DC7E947ACE5692AB3884D7DD")
     @Override
     public void drawBitmap(Bitmap bitmap, Rect src, RectF dst, Paint paint) {
@@ -1414,6 +1429,7 @@ DrawFilter var6104E4BD549FCD2640641D136DD683A6_716747252 =         mFilter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.933 -0400", hash_original_method = "9B6F84B3164E22399F0F518F30D6F56B", hash_generated_method = "5446C43054469AD262F4DED8FBBDF7E2")
     @Override
     public void drawBitmap(int[] colors, int offset, int stride, float x, float y,
@@ -1446,6 +1462,7 @@ DrawFilter var6104E4BD549FCD2640641D136DD683A6_716747252 =         mFilter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.933 -0400", hash_original_method = "1DECC82647C03783DFB70A54A4715DCA", hash_generated_method = "1B6822115F8797CEFF093DB7882E6C34")
     @Override
     public void drawBitmap(int[] colors, int offset, int stride, int x, int y,
@@ -1465,6 +1482,7 @@ DrawFilter var6104E4BD549FCD2640641D136DD683A6_716747252 =         mFilter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.935 -0400", hash_original_method = "B49032D10E62987D37B2D43027E8B7B3", hash_generated_method = "8B0200765003E312C53292084B058D2E")
     @Override
     public void drawBitmapMesh(Bitmap bitmap, int meshWidth, int meshHeight, float[] verts,
@@ -1559,6 +1577,7 @@ DrawFilter var6104E4BD549FCD2640641D136DD683A6_716747252 =         mFilter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.937 -0400", hash_original_method = "CF35C7302232BF0C4B60CFA92B96D407", hash_generated_method = "7AA2693CA714743AC774AEC1B0C16439")
     @Override
     public void drawColor(int color, PorterDuff.Mode mode) {
@@ -2399,6 +2418,7 @@ DrawFilter var6104E4BD549FCD2640641D136DD683A6_716747252 =         mFilter;
 
         private int mRenderer;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.960 -0400", hash_original_method = "FD0EABF3A28C8F1A6C7AE1792F2A951E", hash_generated_method = "F4CE774395766560B3604C2271BA47E5")
         public  CanvasFinalizer(int renderer) {
             mRenderer = renderer;

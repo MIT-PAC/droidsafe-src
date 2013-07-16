@@ -101,6 +101,7 @@ Object var67C46C91EC95982FAA7F5AAD7A93F0B2_251446545 =         service.newInstan
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.068 -0400", hash_original_method = "30EA070B5875ADB1FAA05CA3F6CF14E2", hash_generated_method = "83763609B47EBA0E60FF1797657C3F44")
     private NoSuchAlgorithmException notFound(String serviceName, String algorithm) throws NoSuchAlgorithmException {
         addTaint(algorithm.getTaint());
@@ -126,6 +127,7 @@ Object var67C46C91EC95982FAA7F5AAD7A93F0B2_251446545 =         service.newInstan
 
         private Provider.Service service;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.069 -0400", hash_original_method = "CED34B656EC03ABCC50FF9454F3ADD00", hash_generated_method = "8800597E2F5F372C2DD11E854A6A0F47")
         private  ServiceCacheEntry(String algorithm,
                                   int refreshNumber,
@@ -152,6 +154,7 @@ Object var67C46C91EC95982FAA7F5AAD7A93F0B2_251446545 =         service.newInstan
 
         public Provider provider;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.070 -0400", hash_original_method = "CD98A36834DFC76460E887FD6F06A4ED", hash_generated_method = "20BDD65E0BE5E0F91615EFB5B93DE53F")
         private  SpiAndProvider(Object spi, Provider provider) {
             this.spi = spi;

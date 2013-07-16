@@ -19,6 +19,7 @@ public abstract class GenericObject implements Serializable, Cloneable {
 
     protected Match matchExpression;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.175 -0400", hash_original_method = "26BB6C9083355DA218DE35B50B1395A1", hash_generated_method = "A848942BE08E69D42E88C40CE7E5C52A")
     protected  GenericObject() {
         indentation = 0;
@@ -264,6 +265,7 @@ for(int i = 0;i < fields.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.181 -0400", hash_original_method = "F608522BE2D902628C253AAC05B9941D", hash_generated_method = "806ED529FA695F239C4158EA2B3D4195")
     protected String getIndentation() {
         char [] chars = new char [indentation];

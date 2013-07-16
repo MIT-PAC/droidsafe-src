@@ -117,6 +117,7 @@ public abstract class SignatureSpi {
     protected abstract byte[] engineSign() throws SignatureException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.557 -0400", hash_original_method = "1C34A6699CF243CE14ADEEFCA006987F", hash_generated_method = "7E4CBA6A33FC414DAD16BE40F0793495")
     protected int engineSign(byte[] outbuf, int offset, int len) throws SignatureException {
         addTaint(len);
@@ -222,6 +223,7 @@ protected abstract Object engineGetParameter(String param)
             throws InvalidParameterException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.560 -0400", hash_original_method = "31D01322C9910F836DA03F7FCF4D6261", hash_generated_method = "FC48D153D9C0B729D681F7098C224B94")
     @Override
     public Object clone() throws CloneNotSupportedException {

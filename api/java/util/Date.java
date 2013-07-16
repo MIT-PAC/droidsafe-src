@@ -18,6 +18,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
 
     private transient long milliseconds;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.045 -0400", hash_original_method = "117F9B64DCE96B425DE39D6FF0E7C956", hash_generated_method = "B532C1831EBB14D72EFD726653EE6196")
     public  Date() {
         this(System.currentTimeMillis());
@@ -25,6 +26,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.046 -0400", hash_original_method = "1DCF8B1AF6198BC90A64E56405CA39AF", hash_generated_method = "C816810EFAF12567DFEF379FD00BD3EC")
     @Deprecated
     public  Date(int year, int month, int day) {
@@ -41,6 +43,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.046 -0400", hash_original_method = "426C20A19A7753D3CB1FAC13BA7CC9BA", hash_generated_method = "C46DE9D59F584A20197F00253F08E68A")
     @Deprecated
     public  Date(int year, int month, int day, int hour, int minute) {
@@ -78,6 +81,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.059 -0400", hash_original_method = "F91B8E0C111622A18C17EB4FC5AA472B", hash_generated_method = "E4592A518430609A4961F6175BC1CB09")
     public  Date(long milliseconds) {
         this.milliseconds = milliseconds;
@@ -86,6 +90,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.059 -0400", hash_original_method = "2B1036AFFF9E6DD3B4220E3E27A88A34", hash_generated_method = "3AF303FF71AE81B5072ED58BCD6C559F")
     @Deprecated
     public  Date(String string) {
@@ -119,6 +124,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.061 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "B11764617C1019D6DB854428E457004F")
     @Override
     public Object clone() {
@@ -188,6 +194,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.064 -0400", hash_original_method = "9CDBB71B4B3C803B1AA8EE69EFD3E0ED", hash_generated_method = "D17FAAAD37D88EDF530E98B10D3A8549")
     @Deprecated
     public int getDate() {
@@ -199,6 +206,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.065 -0400", hash_original_method = "A7B9A9C37FFBE4D61CB1113163F9DEB3", hash_generated_method = "AD3DEB1DB606E55EE05197F5D29192B4")
     @Deprecated
     public int getDay() {
@@ -210,6 +218,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.065 -0400", hash_original_method = "E9FAB79941832FB5BB28A56A75132611", hash_generated_method = "BF95BB2ED87E12AE6B08F613EA5CAC4A")
     @Deprecated
     public int getHours() {
@@ -221,6 +230,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.066 -0400", hash_original_method = "905F61D3BDD6A004D6695A8C4C0A588F", hash_generated_method = "3672562448770DE846A2CEC5CC05BBBB")
     @Deprecated
     public int getMinutes() {
@@ -232,6 +242,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.066 -0400", hash_original_method = "62BF86AE189F2A0680B405E29E252A59", hash_generated_method = "B9F235F6794757AA98ECC5783BC91BE1")
     @Deprecated
     public int getMonth() {
@@ -243,6 +254,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.066 -0400", hash_original_method = "21461173A59BCEF943A6FBABC454A724", hash_generated_method = "F2E312FB44CAE79888621F82D92BC4D9")
     @Deprecated
     public int getSeconds() {
@@ -265,6 +277,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.067 -0400", hash_original_method = "1B1108BADA7A1EB96631D5AF2C5C5E87", hash_generated_method = "8F227B83402986785D95ACE35AEFA869")
     @Deprecated
     public int getTimezoneOffset() {
@@ -278,6 +291,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.068 -0400", hash_original_method = "C799A54F09693A95BB69288113BB6509", hash_generated_method = "46F939A599FFF6B26B8AD10522025569")
     @Deprecated
     public int getYear() {
@@ -301,7 +315,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
     }
 
     
-        private static int parse(String string, String[] array) {
+        @DSModeled(DSC.SAFE)
+    private static int parse(String string, String[] array) {
         for (int i = 0, alength = array.length, slength = string.length(); i < alength; i++) {
             if (string.regionMatches(true, 0, array[i], 0, slength)) {
                 return i;
@@ -489,6 +504,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.069 -0400", hash_original_method = "CA2D09B2D9B2F9BDCD2321E1B3353343", hash_generated_method = "DA077A0D31A4BA0D3A346A9E0AEF6438")
     @Deprecated
     public void setDate(int day) {
@@ -503,6 +519,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.070 -0400", hash_original_method = "DAB8B4072C80F91D1F54942852D0B029", hash_generated_method = "B11ACABE13F801BC574E053B51DA69D4")
     @Deprecated
     public void setHours(int hour) {
@@ -517,6 +534,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.070 -0400", hash_original_method = "9DC7826FE54BE20D0703E6C2CC9AB71D", hash_generated_method = "E11785CDF9D9F05B15453AB54645991F")
     @Deprecated
     public void setMinutes(int minute) {
@@ -531,6 +549,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.071 -0400", hash_original_method = "CBC4CDF52C0128D6B57913B17A16C753", hash_generated_method = "5581F73EB4432E64C6D2D5915F8F1A10")
     @Deprecated
     public void setMonth(int month) {
@@ -545,6 +564,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.071 -0400", hash_original_method = "2FB8CB70BDB70CDBCF22A1F179F9FAD0", hash_generated_method = "2E48A606A8BD86D8FE7CE0775B93E2AD")
     @Deprecated
     public void setSeconds(int second) {
@@ -568,6 +588,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.072 -0400", hash_original_method = "6618142CAD2C334ADC07B7799C053111", hash_generated_method = "3CD42C19705E3A34126FF41C6BFD9EA8")
     @Deprecated
     public void setYear(int year) {
@@ -603,6 +624,7 @@ String var3D3DAAC9586EC28FD8E8B7CAD3910303_1432280450 =         sdf.format(this)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.073 -0400", hash_original_method = "D0CA357369B8BFBAFFC49AE023576C24", hash_generated_method = "DAEFF631C123D4D91A6E8F4D21FB2BA3")
     @Deprecated
     public String toLocaleString() {
@@ -644,7 +666,8 @@ String varE65B3A02759122992CB82C0E651AD408_2006945014 =         result.toString(
     }
 
     
-        private static void appendTwoDigits(StringBuilder sb, int n) {
+        @DSModeled(DSC.SAFE)
+    private static void appendTwoDigits(StringBuilder sb, int n) {
         if (n < 10) {
             sb.append('0');
         }
@@ -662,7 +685,8 @@ String varE65B3A02759122992CB82C0E651AD408_2006945014 =         result.toString(
     }
 
     
-        private static int zone(String text) {
+        @DSModeled(DSC.SAFE)
+    private static int zone(String text) {
         if (text.equals("EST")) {
             return -5;
         }
@@ -691,6 +715,7 @@ String varE65B3A02759122992CB82C0E651AD408_2006945014 =         result.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.075 -0400", hash_original_method = "A8D1E2059FF037BF4B3478BBC82EA0DD", hash_generated_method = "0AC5220109B8F6AD62B51D88635F7C8C")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -702,6 +727,7 @@ String varE65B3A02759122992CB82C0E651AD408_2006945014 =         result.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.075 -0400", hash_original_method = "59F27179ED4F1C5D53DD2971937048C1", hash_generated_method = "BE1A0AEAD9A5F8FAF1B8C4997D3688D3")
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {

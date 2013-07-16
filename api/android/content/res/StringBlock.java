@@ -208,6 +208,7 @@ CharSequence varB5053E025797B3BF768F5C37934C244D_1899010486 =             res;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.594 -0400", hash_original_method = "0AE42B829C6407A7351435B91C0A8F63", hash_generated_method = "9B316FC98E3AB60D004F5D4D4B36377A")
     protected void finalize() throws Throwable {
     if(mOwnsNative)        
@@ -419,7 +420,8 @@ CharSequence varAB46AC10AF20400ACC82DD97491C87AF_223871313 =         new Spanned
     }
 
     
-        private static String subtag(String full, String attribute) {
+        @DSModeled(DSC.SAFE)
+    private static String subtag(String full, String attribute) {
         int start = full.indexOf(attribute);
         if (start < 0) {
             return null;
@@ -539,6 +541,7 @@ CharSequence varAB46AC10AF20400ACC82DD97491C87AF_223871313 =         new Spanned
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.606 -0400", hash_original_method = "8C5957365F8EC7EB873EDA19F7109033", hash_generated_method = "6F3151B972A5840AB031A3BFA4B9204D")
         public void chooseHeight(CharSequence text, int start, int end,
                                  int spanstartv, int v,

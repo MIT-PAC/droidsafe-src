@@ -28,6 +28,7 @@ public class LoggingSessionInputBuffer implements SessionInputBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.858 -0400", hash_original_method = "73B755DCF940E19A92F1412B6DE37AD9", hash_generated_method = "C8B6293A8F6E92BF6EFC95D4A9224065")
     public boolean isDataAvailable(int timeout) throws IOException {
         addTaint(timeout);
@@ -39,6 +40,7 @@ public class LoggingSessionInputBuffer implements SessionInputBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.858 -0400", hash_original_method = "DA2B8DCC431BE484C4A0BB40C73A5E8B", hash_generated_method = "19DE80477E72F685511664FA59113183")
     public int read(byte[] b, int off, int len) throws IOException {
         addTaint(len);
@@ -61,6 +63,7 @@ public class LoggingSessionInputBuffer implements SessionInputBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.859 -0400", hash_original_method = "33F84B16C0AA1EFA7634C96C8981DA03", hash_generated_method = "572C278C0846CBC0BB07580E304B10B1")
     public int read() throws IOException {
         int l = this.in.read();
@@ -80,6 +83,7 @@ public class LoggingSessionInputBuffer implements SessionInputBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.859 -0400", hash_original_method = "488208D8F1DE3F15889876EA1125BA0B", hash_generated_method = "AA5B5E77AF7C7FD3F7BA4B806BD869AB")
     public int read(byte[] b) throws IOException {
         addTaint(b[0]);
@@ -100,6 +104,7 @@ public class LoggingSessionInputBuffer implements SessionInputBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.860 -0400", hash_original_method = "805C419B2A6B4FC548E6FF12081C14DD", hash_generated_method = "66AD84BA946969AB3B394720661126F1")
     public String readLine() throws IOException {
         String s = this.in.readLine();
@@ -143,6 +148,7 @@ String var0478718F0636FB61899C13801CE9FE09_879318989 =         s;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.861 -0400", hash_original_method = "CFF2A55480460235D568A691407E3D1A", hash_generated_method = "DD982D93B273E72208BEF4F1C34C0654")
     public HttpTransportMetrics getMetrics() {
 HttpTransportMetrics var9067750D6C9B0996803EF7528D8C8DC3_1814798855 =         this.in.getMetrics();

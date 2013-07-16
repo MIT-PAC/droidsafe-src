@@ -2508,6 +2508,7 @@ ViewGroup.LayoutParams var023B3FAAA9940C6DE114BF4C9FED2D73_64531958 =         ne
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.327 -0400", hash_original_method = "C91DCD2D2A900CBC6E45E0C16FB00296", hash_generated_method = "657B832FC5D507D9AEEF8C1572736437")
           SavedState(Parcel in, ClassLoader loader) {
             super(in);

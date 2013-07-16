@@ -7,12 +7,14 @@ import droidsafe.runtime.*;
 
 public class IllegalAccessError extends IncompatibleClassChangeError {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.874 -0400", hash_original_method = "AF78E0BEB545D91D9B237CD89EEDE6D8", hash_generated_method = "FF9C4607F2B6BD8F47118D2DD02021E5")
     public  IllegalAccessError() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.874 -0400", hash_original_method = "82FD6CF28C2427CE5A3234413711027B", hash_generated_method = "EF71EDF71CFD6E601E5B330591C39D44")
     public  IllegalAccessError(String detailMessage) {
         super(detailMessage);

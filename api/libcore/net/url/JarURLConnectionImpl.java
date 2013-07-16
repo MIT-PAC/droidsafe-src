@@ -42,6 +42,7 @@ public class JarURLConnectionImpl extends JarURLConnection {
 
     private boolean closed;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.044 -0400", hash_original_method = "5F30611EBB0C16B95EA706518FA3E093", hash_generated_method = "9DDDBFF77E65873874F1A576049EEF40")
     public  JarURLConnectionImpl(URL url) throws MalformedURLException,
             IOException {

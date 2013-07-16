@@ -10,6 +10,7 @@ public class ErrorManager {
 
     private boolean called;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.047 -0400", hash_original_method = "F8543B5AF6CB4B42529104ECFDE08620", hash_generated_method = "4CBB7C3EF85E54BBF4EC847A9E1DDCAF")
     public  ErrorManager() {
         // ---------- Original Method ----------

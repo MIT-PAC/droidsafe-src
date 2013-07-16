@@ -10,6 +10,7 @@ public abstract class CollationKey implements Comparable<CollationKey> {
 
     private String source;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.512 -0400", hash_original_method = "FA2BB1F012B53BF817CC40F1D26354AF", hash_generated_method = "8A83B74FC7ACECB2BEE0C5F65526CEEC")
     protected  CollationKey(String source) {
         this.source = source;

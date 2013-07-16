@@ -18,6 +18,7 @@ public abstract class ParserCore {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.734 -0400", hash_original_method = "2B8F776DAFC357EFC899FF251A427EF6", hash_generated_method = "1252DB65E0525B015A8BF035F45D5B15")
     protected NameValue nameValue(char separator) throws ParseException {
         addTaint(separator);

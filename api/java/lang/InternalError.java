@@ -7,12 +7,14 @@ import droidsafe.runtime.*;
 
 public class InternalError extends VirtualMachineError {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.019 -0400", hash_original_method = "18A11DFE954AAC7F3401D9A18E98EAA5", hash_generated_method = "6CB2AD680A92FD012F933015174E0A46")
     public  InternalError() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.020 -0400", hash_original_method = "11A7F61F65B1BF556316C3B357308A87", hash_generated_method = "E9DD4839E3562DA66C7916783D23E007")
     public  InternalError(String detailMessage) {
         super(detailMessage);

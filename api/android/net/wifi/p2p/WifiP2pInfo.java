@@ -20,12 +20,14 @@ public class WifiP2pInfo implements Parcelable {
 
     public InetAddress groupOwnerAddress;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.244 -0400", hash_original_method = "F3F0ABA121ED75F0A34990BB87685D5A", hash_generated_method = "8D8A828B3FE364068776E0C23F2C39D1")
     public  WifiP2pInfo() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.244 -0400", hash_original_method = "B6AB4762A9FFB2E56B17CB04649CE702", hash_generated_method = "E32609BDA8BE2120C63377FC7E0FF44F")
     public  WifiP2pInfo(WifiP2pInfo source) {
     if(source != null)        
@@ -43,6 +45,7 @@ public class WifiP2pInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.245 -0400", hash_original_method = "D5529C8AE8D596D7C37EDA99E72A8446", hash_generated_method = "F96ED8CDE394042C522D623CE4380F39")
     public String toString() {
         StringBuffer sbuf = new StringBuffer();
@@ -72,6 +75,7 @@ String var69222FFA45D1268AEE1923C5558B0BD5_945638731 =         sbuf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.246 -0400", hash_original_method = "FB185B7C2F06925C4BFCD27CA8D3CCFA", hash_generated_method = "E9D8979270555CBE4D1DBA2BD57956B2")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

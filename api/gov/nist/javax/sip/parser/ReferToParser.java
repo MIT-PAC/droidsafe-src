@@ -9,6 +9,7 @@ import gov.nist.javax.sip.header.*;
 
 public class ReferToParser extends AddressParametersParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.626 -0400", hash_original_method = "DF57B31FD2F05C7FE41E5F087EC0A031", hash_generated_method = "306BD483FA2BCDBD92831A5479E623FC")
     public  ReferToParser(String referTo) {
         super(referTo);
@@ -17,6 +18,7 @@ public class ReferToParser extends AddressParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.627 -0400", hash_original_method = "78341A496A4C46C460D57FED9263DC9D", hash_generated_method = "33783D1B9AF63A24398C18B41F2BD83E")
     protected  ReferToParser(Lexer lexer) {
         super(lexer);

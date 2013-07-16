@@ -13,6 +13,7 @@ public class PixelFormat {
 
     public int bitsPerPixel;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.745 -0400", hash_original_method = "0A480F0344E4C89067BA9E346BA03813", hash_generated_method = "0A480F0344E4C89067BA9E346BA03813")
     public PixelFormat ()
     {

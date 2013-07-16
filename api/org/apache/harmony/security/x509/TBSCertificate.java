@@ -51,6 +51,7 @@ public final class TBSCertificate {
 
     private byte[] encoding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.473 -0400", hash_original_method = "65C275BF923474477DF3B94B95744E3C", hash_generated_method = "D32BC3034AF72749EAC9CAB5AB060502")
     public  TBSCertificate(int version, BigInteger serialNumber,
                           AlgorithmIdentifier signature, Name issuer,
@@ -82,6 +83,7 @@ public final class TBSCertificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.473 -0400", hash_original_method = "A222BEBABFC582354A181FFF7432BD39", hash_generated_method = "AE8AEE807BA9CF0F313BD01A0B425623")
     private  TBSCertificate(int version, BigInteger serialNumber,
                           AlgorithmIdentifier signature, Name issuer,

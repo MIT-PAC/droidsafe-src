@@ -43,6 +43,7 @@ public class ContentProviderOperation implements Parcelable {
 
     private boolean mYieldAllowed;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.683 -0400", hash_original_method = "E83648833C15023B0A37354984B5CA31", hash_generated_method = "82CDA661D135A6B2C13B951998951636")
     private  ContentProviderOperation(Builder builder) {
         mType = builder.mType;
@@ -545,6 +546,7 @@ String var5437924A98110F3BAD119BEF211F2BFE_587531811 =         "mType: " + mType
 
         private boolean mYieldAllowed;
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.700 -0400", hash_original_method = "E4683F1EC70220B8EE12920060472DE0", hash_generated_method = "7C8CBC2DF3FFEB974A9F820366CBF279")
         private  Builder(int type, Uri uri) {
     if(uri == null)            

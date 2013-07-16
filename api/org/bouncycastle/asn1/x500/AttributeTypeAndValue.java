@@ -76,6 +76,7 @@ ASN1Encodable varAF280DA2BC37D8BE783D8499160168DE_1667650551 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.684 -0400", hash_original_method = "5081032FA8CA5E98B22B4FF57246FC38", hash_generated_method = "5DD0A024F71A0DA14CC0B1F0BE2F57AA")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

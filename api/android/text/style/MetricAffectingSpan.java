@@ -9,6 +9,7 @@ import android.text.TextPaint;
 
 public abstract class MetricAffectingSpan extends CharacterStyle implements UpdateLayout {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.233 -0400", hash_original_method = "9C185298DCF08F9282BECADE276ABE7A", hash_generated_method = "9C185298DCF08F9282BECADE276ABE7A")
     public MetricAffectingSpan ()
     {

@@ -11,6 +11,7 @@ public class Unsupported extends SIPHeader implements javax.sip.header.Unsupport
 
     protected String optionTag;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.548 -0400", hash_original_method = "7F4BD1C3AF5762ECCF124F3A56ADDC67", hash_generated_method = "20CE9BE220E1B76B99762452ADA57ECB")
     public  Unsupported() {
         super(NAME);
@@ -18,6 +19,7 @@ public class Unsupported extends SIPHeader implements javax.sip.header.Unsupport
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.548 -0400", hash_original_method = "91BBA837F044D0A0A4874364E40F6125", hash_generated_method = "2C85D3B90F3F77053ABDF107887B68AA")
     public  Unsupported(String ot) {
         super(NAME);

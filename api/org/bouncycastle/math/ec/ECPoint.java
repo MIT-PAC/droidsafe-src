@@ -27,6 +27,7 @@ public abstract class ECPoint {
 
     protected PreCompInfo preCompInfo = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.032 -0400", hash_original_method = "5BA77B5B0277E538D25ED5D9A027BA25", hash_generated_method = "847A130CB97DB4D071D636D195FCCE97")
     protected  ECPoint(ECCurve curve, ECFieldElement x, ECFieldElement y) {
         this.curve = curve;
@@ -94,7 +95,7 @@ ECFieldElement var01417B0442ECD521584E2B7EFB9FC218_278008415 =         y;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.034 -0400", hash_original_method = "8BF915B7848C2883598F0B5C0E5B1EC3", hash_generated_method = "53F966FC49DEBDB3031B1A1491F2D87C")
     public boolean equals(
         Object  other) {
@@ -139,7 +140,7 @@ ECFieldElement var01417B0442ECD521584E2B7EFB9FC218_278008415 =         y;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.035 -0400", hash_original_method = "50EB0D4EE4BADC10EDE9CC4D5C9244FF", hash_generated_method = "47F85655367BEEF7513A866C975B472D")
     public int hashCode() {
     if(this.isInfinity())        
@@ -278,6 +279,7 @@ ECPoint varE79EE08445955BDA41CB74C2C47AC61F_1810750821 =         this.multiplier
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.038 -0400", hash_original_method = "122C86DAB9B6EC00B00943741F6C7C43", hash_generated_method = "4911DDC02583A9F16ECEBCD8F2BE17E7")
         public byte[] getEncoded() {
     if(this.isInfinity())            
@@ -441,6 +443,7 @@ ECPoint var32038E816FAB690831584DAC6FED51A3_154466517 =             add(b.negate
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.039 -0400", hash_original_method = "18C2403460E252970B56CE0DE1D343AC", hash_generated_method = "67EC5EFAFA42390ACF8C7CEB40269A50")
         public ECPoint negate() {
 ECPoint var35D308A124E50E56D68F906961B3437A_1065451652 =             new ECPoint.Fp(curve, this.x, this.y.negate(), this.withCompression);
@@ -471,6 +474,7 @@ ECPoint var35D308A124E50E56D68F906961B3437A_1065451652 =             new ECPoint
     
     public static class F2m extends ECPoint {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.039 -0400", hash_original_method = "73BD63756191E5AAFB19346FBE556EB3", hash_generated_method = "85DC6EED2BC08775B318F74ACB17C246")
         public  F2m(ECCurve curve, ECFieldElement x, ECFieldElement y) {
             this(curve, x, y, false);
@@ -570,6 +574,7 @@ ECPoint var35D308A124E50E56D68F906961B3437A_1065451652 =             new ECPoint
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.040 -0400", hash_original_method = "CE1FEB0E79091A4CCB0243E0EA7A28CB", hash_generated_method = "5D0D61E54F58F6B4967949205807A6B6")
         public ECPoint add(ECPoint b) {
             addTaint(b.getTaint());
@@ -624,6 +629,7 @@ ECPoint.F2m varE29EE30F858B45227C50CD4435ABFBEA_1138579208 =             new ECP
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.041 -0400", hash_original_method = "E180EBB5B66B4130D071F14F4EE083E4", hash_generated_method = "04CAB91488D5AEEFA9E0A6FE44073ECD")
         public ECPoint subtract(ECPoint b) {
             addTaint(b.getTaint());
@@ -703,6 +709,7 @@ ECPoint varD40A7246E4D1D01EF654FCE8BF0FE2B3_1721620865 =             new ECPoint
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.042 -0400", hash_original_method = "55BA3FB66363791B05BA3007051689C2", hash_generated_method = "E26BC956C66DEB0711576DC7D3104C76")
         public ECPoint negate() {
 ECPoint var8A5D491956EA8C03A91531C071EF48DE_810204297 =             new ECPoint.F2m(curve, this.getX(), this.getY().add(this.getX()), withCompression);

@@ -11,6 +11,7 @@ import org.w3c.dom.DocumentType;
 
 public final class DOMImplementationImpl implements DOMImplementation {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.601 -0400", hash_original_method = "E3A87B6F32DA0C6F1234238EE265E85D", hash_generated_method = "9E169770513CF74C2B62B5136465DB92")
       DOMImplementationImpl() {
         // ---------- Original Method ----------
@@ -47,6 +48,7 @@ DocumentType var641A63204CB54C67EE90D89886D51C3B_1242962996 =         new Docume
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.603 -0400", hash_original_method = "E091A0410E0BC85A7F21C3C96448A760", hash_generated_method = "75D40FD4B7A1F93F1EB7EC254038CD9D")
     public boolean hasFeature(String feature, String version) {
         addTaint(version.getTaint());
@@ -99,7 +101,8 @@ DocumentType var641A63204CB54C67EE90D89886D51C3B_1242962996 =         new Docume
     }
 
     
-        public static DOMImplementationImpl getInstance() {
+        @DSModeled(DSC.SAFE)
+    public static DOMImplementationImpl getInstance() {
         if (instance == null) {
             instance = new DOMImplementationImpl();
         }

@@ -18,6 +18,7 @@ public class RequestLine extends SIPObject implements SipRequestLine {
 
     protected String sipVersion;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.888 -0400", hash_original_method = "E4B7F4B41910EC919E5F140217342F7C", hash_generated_method = "EAF4B8E6F66C463F263AD3BE32A3D88C")
     public  RequestLine() {
         sipVersion = "SIP/2.0";
@@ -26,6 +27,7 @@ public class RequestLine extends SIPObject implements SipRequestLine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.888 -0400", hash_original_method = "FF0843F55ACEC2A8E2B69A1885A4A70E", hash_generated_method = "94E775391CAAE4815033C54C5EEE9CB9")
     public  RequestLine(GenericURI requestURI, String method) {
         this.uri = requestURI;

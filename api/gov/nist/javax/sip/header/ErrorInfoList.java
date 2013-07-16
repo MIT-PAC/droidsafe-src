@@ -8,6 +8,7 @@ import javax.sip.header.*;
 
 public class ErrorInfoList extends SIPHeaderList<ErrorInfo> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.342 -0400", hash_original_method = "BE8380000E3CB2DA0A370B790F9454ED", hash_generated_method = "314469C48167DD93726734246BAB2F4B")
     public  ErrorInfoList() {
         super(ErrorInfo.class, ErrorInfoHeader.NAME);

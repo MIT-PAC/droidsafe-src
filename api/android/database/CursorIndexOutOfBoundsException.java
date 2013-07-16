@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public class CursorIndexOutOfBoundsException extends IndexOutOfBoundsException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.065 -0400", hash_original_method = "7D18BDB25CF5B28922C44487D666A0F3", hash_generated_method = "FB61BDBC65B82502B57056CDC6A52687")
     public  CursorIndexOutOfBoundsException(int index, int size) {
         super("Index " + index + " requested, with a size of " + size);

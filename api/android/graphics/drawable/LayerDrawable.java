@@ -42,6 +42,7 @@ public class LayerDrawable extends Drawable implements Drawable.Callback {
 
     private boolean mMutated;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.392 -0400", hash_original_method = "45431E38A045C0C983A2E1F24B9ACFC3", hash_generated_method = "4CE2708C4D9F71FB85D58CF9B25390F6")
     public  LayerDrawable(Drawable[] layers) {
         this(layers, null);
@@ -50,6 +51,7 @@ public class LayerDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.393 -0400", hash_original_method = "FF485081EB7D7D498FB9DCE337B88F15", hash_generated_method = "8CCEA8836EDA995C4FECEBC7ECD1B1C3")
       LayerDrawable(Drawable[] layers, LayerState state) {
         this(state, null);
@@ -81,6 +83,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.393 -0400", hash_original_method = "E2A4F408D4F72AC6B7199B314E863E72", hash_generated_method = "E5E998CAAF8ED85BF887873B15A40A8F")
       LayerDrawable() {
         this((LayerState) null, null);
@@ -88,6 +91,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.394 -0400", hash_original_method = "026CAD40EA728EE5D396C83F5E4D2B2B", hash_generated_method = "3AC485F18684D21301A60FDB017CEB1E")
       LayerDrawable(LayerState state, Resources res) {
         addTaint(res.getTaint());
@@ -1056,6 +1060,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_445557219 =         this;
 
         private boolean mCanConstantState;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.423 -0400", hash_original_method = "BD826615A7A8424D072A11138F67C8D8", hash_generated_method = "5866F982317DF3E106921EEC25832ED4")
           LayerState(LayerState orig, LayerDrawable owner, Resources res) {
             addTaint(res.getTaint());
@@ -1103,6 +1108,7 @@ for(int i = 0;i < N;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.423 -0400", hash_original_method = "4F2E1E1D85BE3BBCABDE93BB1C6F5E02", hash_generated_method = "538CDA84750879A82CBFD555A3A5809F")
         @Override
         public Drawable newDrawable() {
@@ -1114,6 +1120,7 @@ Drawable varA80F74B52EAC520FF21BF628D3F68BF6_933268297 =             new LayerDr
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.424 -0400", hash_original_method = "40E045186798A3567910482DC0B43DC7", hash_generated_method = "A290B76951FD05EEB28DAEECE2D28EC8")
         @Override
         public Drawable newDrawable(Resources res) {
@@ -1213,6 +1220,7 @@ for(int i = 0;i < N;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.426 -0400", hash_original_method = "08014AA1073210728E3D3AA9FAF026EA", hash_generated_method = "2824B6ABA52F255E843B43D934ED16EC")
         public synchronized boolean canConstantState() {
     if(!mCheckedConstantState && mChildren != null)            

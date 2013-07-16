@@ -23,6 +23,7 @@ public class Path {
 
     private Direction mLastDirection = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.656 -0400", hash_original_method = "E55892E9E32EE58ABA689C884DCC620A", hash_generated_method = "2516288491884B0595FC4CFC8A04A2E0")
     public  Path() {
         mNativePath = init1();
@@ -33,6 +34,7 @@ public class Path {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.657 -0400", hash_original_method = "75D205ED700EB535C654F75061722DB2", hash_generated_method = "6C76EF4E23B4B68E5688BD1FBBB31DA6")
     public  Path(Path src) {
         addTaint(src.getTaint());
@@ -904,6 +906,7 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
         EVEN_ODD        (1),
         INVERSE_WINDING (2),
         INVERSE_EVEN_ODD(3);
+        @DSModeled(DSC.SAFE)
         FillType(int ni) {
             nativeInt = ni;
         }
@@ -914,6 +917,7 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     public enum Direction {
         CW  (0),    
         CCW (1);    
+        @DSModeled(DSC.SAFE)
         Direction(int ni) {
             nativeInt = ni;
         }

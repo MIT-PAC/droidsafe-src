@@ -20,6 +20,7 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
 
     private boolean stripAddressScopeZones = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.484 -0400", hash_original_method = "EA4ABB94B4CFEF029E31D8F450F44C66", hash_generated_method = "4DBE2EDCEE71001244079D3C05C060E8")
     public  HeaderFactoryImpl() {
         stripAddressScopeZones
@@ -570,6 +571,7 @@ ExpiresHeader var6BFFBFA2F1D556BA80433C2335198CE9_1251899169 =         e;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.494 -0400", hash_original_method = "C38CB4735B94E96E0C6FB81DC8E60CBF", hash_generated_method = "63750E2D03A433A272B650AA6E864503")
     public javax.sip.header.ExtensionHeader createExtensionHeader(
         String name,
@@ -1464,6 +1466,7 @@ ErrorInfoHeader varAC4EE33C2B0252F0E59C54FCD6BACAA8_1389740758 =         new Err
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.511 -0400", hash_original_method = "7E6122EDAE408D205AF0C9E45A024F04", hash_generated_method = "931DCF2BB138EEB0A6B4CE80BA126F34")
     public javax.sip.header.Header createHeader(String headerText) throws ParseException {
         addTaint(headerText.getTaint());
@@ -1523,6 +1526,7 @@ javax.sip.header.Header varDF77B5B4168F45421B89B792E9510A4B_1466634192 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.512 -0400", hash_original_method = "BE8A77015DA0080195A899A1BFDA2B08", hash_generated_method = "33BCC67C8B654E6EFE3891C229FAE971")
     public javax.sip.header.Header createHeader(
         String headerName,
@@ -1556,6 +1560,7 @@ javax.sip.header.Header varBD16535AB9329533F3A0DEDB01A35333_1715179378 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.512 -0400", hash_original_method = "FDCDF9463F1CDDAF0BCBB63B8B4D05F5", hash_generated_method = "A818F082763FAF1087500C5FA56E57C7")
     public java.util.List createHeaders(String headers) throws java.text.ParseException {
         addTaint(headers.getTaint());

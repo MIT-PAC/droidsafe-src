@@ -32,6 +32,7 @@ public class TCPMessageProcessor extends MessageProcessor {
 
     protected int useCount;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.218 -0400", hash_original_method = "DF01D933234B7570953E27AF1B039A12", hash_generated_method = "C33F2C4BEE20E7C4A39AD914B8A706CD")
     protected  TCPMessageProcessor(InetAddress ipAddress, SIPTransactionStack sipStack, int port) {
         super(ipAddress, port, "tcp",sipStack);
@@ -48,6 +49,7 @@ public class TCPMessageProcessor extends MessageProcessor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.219 -0400", hash_original_method = "1E47DBAC30060B20437BE89450E78A73", hash_generated_method = "823BEB743EA85CA587911E0E95E89BCD")
     public void start() throws IOException {
         Thread thread = new Thread(this);

@@ -443,6 +443,7 @@ String var5D73975C9EFF81CD9FF6232386AC7C22_1446896898 =         cab.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.522 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "2EF9DA81981704AA59E6A0AE17EA0F42")
     @Override
     public Object clone() throws CloneNotSupportedException {

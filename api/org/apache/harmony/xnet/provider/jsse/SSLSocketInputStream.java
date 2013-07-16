@@ -28,6 +28,7 @@ public final class SSLSocketInputStream extends InputStream {
 
     protected Adapter dataPoint = new Adapter();
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.412 -0400", hash_original_method = "2B2DE235A31ECF6D427ED4CC1BA78F0B", hash_generated_method = "E318056FDC005244FC8100AFE22AA9B7")
     protected  SSLSocketInputStream(SSLSocketImpl owner) {
         this.owner = owner;

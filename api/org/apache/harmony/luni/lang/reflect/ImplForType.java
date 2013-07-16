@@ -27,6 +27,7 @@ public final class ImplForType implements ParameterizedType {
 
     private ClassLoader loader;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.298 -0400", hash_original_method = "23B26279F59FD2756996C3E4E28C143C", hash_generated_method = "2AC9C0D81F36FAF383FEAA341A36E39B")
     public  ImplForType(ImplForType ownerType, String rawTypeName,
             ListOfTypes args, ClassLoader loader) {

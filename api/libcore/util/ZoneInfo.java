@@ -288,6 +288,7 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.185 -0400", hash_original_method = "ECC5255AD9E8EF75737AB68867396FFB", hash_generated_method = "5FCC2293AE0E583EFA748B7604DB4837")
     @Override
     public boolean equals(Object obj) {
@@ -311,6 +312,7 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.186 -0400", hash_original_method = "8C2336163065486F5E05E5E7E360E4D3", hash_generated_method = "5D2A54E06390F9E11373C1C7E110FD61")
     @Override
     public int hashCode() {
@@ -381,7 +383,8 @@ String var2460B846747F8B22185AD8BE722266A5_1748440814 =         sb.toString();
     }
 
     
-        private static String formatTime(int s, TimeZone tz) {
+        @DSModeled(DSC.SAFE)
+    private static String formatTime(int s, TimeZone tz) {
         SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd HH:mm:ss yyyy zzz");
         sdf.setTimeZone(tz);
         long ms = ((long) s) * 1000L;

@@ -12,6 +12,7 @@ public class ContentType extends ParametersHeader implements javax.sip.header.Co
 
     protected MediaRange mediaRange;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.312 -0400", hash_original_method = "DFB0ACA07F1EF34999053FFFBC3153AF", hash_generated_method = "D69CDBB6EDF548FF307DB3C54F1E561D")
     public  ContentType() {
         super(CONTENT_TYPE);
@@ -19,6 +20,7 @@ public class ContentType extends ParametersHeader implements javax.sip.header.Co
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.313 -0400", hash_original_method = "97EC00F8B2220E42E6B0126E7CC0F3E7", hash_generated_method = "A4E9557449833D9EC257340C027A3E09")
     public  ContentType(String contentType, String contentSubtype) {
         this();

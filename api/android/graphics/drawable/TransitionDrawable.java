@@ -37,6 +37,7 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
 
     private boolean mCrossFade;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.853 -0400", hash_original_method = "C5B06968060DB82F171AE45EB2B5A112", hash_generated_method = "96BB954A38E0D98DFDF4DA5977B5DDA9")
     public  TransitionDrawable(Drawable[] layers) {
         this(new TransitionState(null, null, null), layers);
@@ -45,6 +46,7 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.853 -0400", hash_original_method = "F9A92C9D3CD4AD3DBA18C1A12C406B85", hash_generated_method = "DD0146F709A79835F04688F1C0174458")
       TransitionDrawable() {
         this(new TransitionState(null, null, null), (Resources)null);
@@ -52,6 +54,7 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.854 -0400", hash_original_method = "EA80240A8BFE15F4A059DA8EDA5E6B2D", hash_generated_method = "783646D46B8A867D755590D4F91771E7")
     private  TransitionDrawable(TransitionState state, Resources res) {
         super(state, res);
@@ -61,6 +64,7 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.854 -0400", hash_original_method = "63330FC0726BC441343F8A6C1CE8445A", hash_generated_method = "420E6B132C9C9B47A613EB096B3CB9C3")
     private  TransitionDrawable(TransitionState state, Drawable[] layers) {
         super(layers, state);
@@ -240,6 +244,7 @@ switch(mTransitionState){
     
     static class TransitionState extends LayerState {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.861 -0400", hash_original_method = "F1D0B45B3E25602A3478E0025FE64518", hash_generated_method = "4C0EC10F321A055E513D635268A6AFC3")
           TransitionState(TransitionState orig, TransitionDrawable owner,
                 Resources res) {
@@ -251,6 +256,7 @@ switch(mTransitionState){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.862 -0400", hash_original_method = "74F5798AEA04A77B6E31B76C53519B4C", hash_generated_method = "DEB35AAA9765A476D90A63B71BD47560")
         @Override
         public Drawable newDrawable() {
@@ -262,6 +268,7 @@ Drawable varF0BC0AD4EF24A0E6AA445EF832DC562E_365660618 =             new Transit
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.862 -0400", hash_original_method = "2864DA5070788F66F2135B6D59FADE5D", hash_generated_method = "42F8AFD12ABDCA5AA62BD4FA213D1415")
         @Override
         public Drawable newDrawable(Resources res) {

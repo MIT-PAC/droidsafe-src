@@ -188,6 +188,7 @@ public class Scroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.219 -0400", hash_original_method = "B027DED22A5B5763CA61B11517344C6D", hash_generated_method = "0B6645462F769C051E1D3F026428BB2A")
     public float getCurrVelocity() {
         float var71AD6C62DE88F3704D3F0CB1692E44A0_524459098 = (mVelocity - mDeceleration * timePassed() / 2000.0f);
@@ -383,7 +384,8 @@ switch(mMode){
     }
 
     
-        static float viscousFluid(float x) {
+        @DSModeled(DSC.SAFE)
+    static float viscousFluid(float x) {
         x *= sViscousFluidScale;
         if (x < 1.0f) {
             x -= (1.0f - (float)Math.exp(-x));
@@ -461,6 +463,7 @@ switch(mMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.230 -0400", hash_original_method = "8B3C79E02507006E36F2788C827D3070", hash_generated_method = "9C6B2111BEF4ED5380C6E22EABC04830")
     public boolean isScrollingInDirection(float xvel, float yvel) {
         addTaint(yvel);

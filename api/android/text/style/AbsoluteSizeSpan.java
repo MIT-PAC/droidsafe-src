@@ -17,6 +17,7 @@ public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableS
 
     private boolean mDip;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.104 -0400", hash_original_method = "9F182F09B08FED6314DBE96ECAD38ABB", hash_generated_method = "808C7C6BBA9410B93532F64C75FFF2BB")
     public  AbsoluteSizeSpan(int size) {
         mSize = size;
@@ -25,6 +26,7 @@ public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.105 -0400", hash_original_method = "452A1F4FB6807BADBE67E3FEF1703DF6", hash_generated_method = "D6608B6B61B74F52F734D2B318918E9F")
     public  AbsoluteSizeSpan(int size, boolean dip) {
         mSize = size;
@@ -35,6 +37,7 @@ public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.105 -0400", hash_original_method = "11A22A410F4688830BCA693D188465D5", hash_generated_method = "1DCCD9D6C7E3D190DB37D22C39654879")
     public  AbsoluteSizeSpan(Parcel src) {
         mSize = src.readInt();

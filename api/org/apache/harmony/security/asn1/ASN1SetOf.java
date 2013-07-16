@@ -8,6 +8,7 @@ import java.io.IOException;
 
 public class ASN1SetOf extends ASN1ValueCollection {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.686 -0400", hash_original_method = "49B473C463A20ED93456B0E252B9BBF0", hash_generated_method = "010E6CB1BA97B161E8C9420B580E2B49")
     public  ASN1SetOf(ASN1Type type) {
         super(TAG_SETOF, type);

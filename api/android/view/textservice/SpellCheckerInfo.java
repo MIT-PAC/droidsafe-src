@@ -260,6 +260,7 @@ String varF52598D579FB7EF6DE23C12DD22DC004_1790089261 =         mSettingsActivit
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.618 -0400", hash_original_method = "A5CD061EE9765DD17A95FDAD389682DB", hash_generated_method = "5DED6B5E36F348A0352C90E19819A241")
     public SpellCheckerSubtype getSubtypeAt(int index) {
         addTaint(index);

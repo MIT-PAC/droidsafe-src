@@ -12,6 +12,7 @@ public class Movie {
 
     private int mNativeMovie;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.403 -0400", hash_original_method = "E5F06651A3B56F187AA9A006C8924984", hash_generated_method = "B84D80373E2AF429C2411B5993D179A0")
     private  Movie(int nativeMovie) {
     if(nativeMovie == 0)        

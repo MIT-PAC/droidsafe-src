@@ -29,6 +29,7 @@ public class GeneralName extends ASN1Encodable implements ASN1Choice {
 
     int tag;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.053 -0400", hash_original_method = "ADE0DAE6BE5F1175688F81D676806619", hash_generated_method = "E0B97A054FF02C188587E94A8DFD80D7")
     public  GeneralName(
         X509Name  dirName) {
@@ -40,6 +41,7 @@ public class GeneralName extends ASN1Encodable implements ASN1Choice {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.053 -0400", hash_original_method = "C9285F8047F7E752E9E16F56DB946619", hash_generated_method = "5849A1FB12E98D0EE9ECAC7307462461")
     public  GeneralName(
         X500Name dirName) {
@@ -119,7 +121,8 @@ public class GeneralName extends ASN1Encodable implements ASN1Choice {
     }
 
     
-        public static GeneralName getInstance(
+        @DSModeled(DSC.SAFE)
+    public static GeneralName getInstance(
         Object obj) {
         if (obj == null || obj instanceof GeneralName)
         {
@@ -166,7 +169,8 @@ public class GeneralName extends ASN1Encodable implements ASN1Choice {
     }
 
     
-        public static GeneralName getInstance(
+        @DSModeled(DSC.SAFE)
+    public static GeneralName getInstance(
         ASN1TaggedObject tagObj,
         boolean          explicit) {
         return GeneralName.getInstance(ASN1TaggedObject.getInstance(tagObj, true));
@@ -195,6 +199,7 @@ DEREncodable var2FDE1120F80AA4E8798ECDBDB1C0E85C_160745817 =         obj;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.058 -0400", hash_original_method = "6AFE1DDEFB420AC1C3733113CDF77755", hash_generated_method = "848FA605281B50991121C4A971A96119")
     public String toString() {
         StringBuffer buf = new StringBuffer();
@@ -235,6 +240,7 @@ switch(tag){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.058 -0400", hash_original_method = "F02018A790F280370B2CB39B10862FEC", hash_generated_method = "E45C999B08C8A845D82DBCA567A3CD25")
     private byte[] toGeneralNameEncoding(String ip) {
         addTaint(ip.getTaint());
@@ -308,6 +314,7 @@ switch(tag){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.060 -0400", hash_original_method = "B54AB1000C04EF98C8414C613F178EE6", hash_generated_method = "258BA28276EF9E214656AFB3B86C624E")
     private void parseIPv4Mask(String mask, byte[] addr, int offset) {
         addTaint(offset);
@@ -327,6 +334,7 @@ for(int i = 0;i != maskVal;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.060 -0400", hash_original_method = "D3256FE340A5AB891180F872DE9312FE", hash_generated_method = "68A2479A5E81FFF17B9F79253FBFBA95")
     private void parseIPv4(String ip, byte[] addr, int offset) {
         addTaint(offset);
@@ -349,6 +357,7 @@ for(int i = 0;i != maskVal;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.061 -0400", hash_original_method = "AAEA46BCEA791BA55D0418C441E919BF", hash_generated_method = "2C065F093B43E8B0FA6CD06FFB760DA0")
     private int[] parseMask(String mask) {
         addTaint(mask.getTaint());
@@ -392,6 +401,7 @@ for(int i = 0;i != parsedIp.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.065 -0400", hash_original_method = "9628A2DF5EA66A9EC56C6B58E58FBD48", hash_generated_method = "BEC919FF2C2213D78FDF6FC3AD165AC2")
     private int[] parseIPv6(String ip) {
         addTaint(ip.getTaint());

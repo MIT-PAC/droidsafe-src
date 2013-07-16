@@ -41,6 +41,7 @@ public class CharacterPickerDialog extends Dialog implements OnItemClickListener
 
     private Button mCancelButton;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.445 -0400", hash_original_method = "B85B2CE2D9925643AD72FE26FAC534DC", hash_generated_method = "5B1A2735870F24FE62447B6CF58004A1")
     public  CharacterPickerDialog(Context context, View view,
                                  Editable text, String options,
@@ -160,6 +161,7 @@ public class CharacterPickerDialog extends Dialog implements OnItemClickListener
     
     private class OptionsAdapter extends BaseAdapter {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.448 -0400", hash_original_method = "AC698511382015922DCBD4CE64D2CC39", hash_generated_method = "4CB448F3AC319182556080A4A7EEB149")
         public  OptionsAdapter(Context context) {
             super();
@@ -168,6 +170,7 @@ public class CharacterPickerDialog extends Dialog implements OnItemClickListener
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.449 -0400", hash_original_method = "2F3D5346969689C1B0E524EA0F83CDB3", hash_generated_method = "0D9D7E49F5F77401C5CAA6DBF5CA2D2C")
         public View getView(int position, View convertView, ViewGroup parent) {
             addTaint(parent.getTaint());

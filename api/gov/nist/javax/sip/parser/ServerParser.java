@@ -9,6 +9,7 @@ import java.text.ParseException;
 
 public class ServerParser extends HeaderParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.802 -0400", hash_original_method = "34ED7286D2A920D6CAAB19B69F1E2272", hash_generated_method = "888E93136AD8569BFDC8D4F05F7D97A3")
     public  ServerParser(String server) {
         super(server);
@@ -17,6 +18,7 @@ public class ServerParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.802 -0400", hash_original_method = "D6FF2C5B569C35FFD38E06BDFF6C27A4", hash_generated_method = "8A465FAAC11B416930BD68F6E655D9F3")
     protected  ServerParser(Lexer lexer) {
         super(lexer);

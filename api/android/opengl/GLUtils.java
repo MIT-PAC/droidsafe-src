@@ -10,6 +10,7 @@ import javax.microedition.khronos.egl.EGL11;
 
 public final class GLUtils {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.612 -0400", hash_original_method = "A98AAD2DCE964D3E8867B0B125C8757B", hash_generated_method = "602B8AFAFBDBCCEF4BCB5E24B6A14FC8")
     private  GLUtils() {
         // ---------- Original Method ----------
@@ -74,7 +75,8 @@ public final class GLUtils {
     }
 
     
-        public static void texImage2D(int target, int level, Bitmap bitmap,
+        @DSModeled(DSC.SAFE)
+    public static void texImage2D(int target, int level, Bitmap bitmap,
             int border) {
         if (bitmap == null) {
             throw new NullPointerException("texImage2D can't be used with a null Bitmap");

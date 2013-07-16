@@ -161,6 +161,7 @@ class FastScroller {
         
 };
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.571 -0400", hash_original_method = "A2A2A1F0C9639ECE9FE84AFC4D4D3A80", hash_generated_method = "0B141ECB374D843CB3DB1DD2E461B7DA")
     public  FastScroller(Context context, AbsListView listView) {
         addTaint(context.getTaint());
@@ -172,6 +173,7 @@ class FastScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.572 -0400", hash_original_method = "39D93CA5552A2245B487796C83EA3A2C", hash_generated_method = "03F67F31381A931F81A887F8AC0441DF")
     public void setAlwaysShow(boolean alwaysShow) {
         mAlwaysShow = alwaysShow;
@@ -207,6 +209,7 @@ class FastScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.572 -0400", hash_original_method = "8A07D5E4DE8CD170DC3BFC9FE8A30504", hash_generated_method = "0EE924EB15FAA986B21693A42CA35E6A")
     private void refreshDrawableState() {
         int[] state = mState == STATE_DRAGGING ? PRESSED_STATES : DEFAULT_STATES;
@@ -269,6 +272,7 @@ switch(position){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.574 -0400", hash_original_method = "FD0548A7869DD54F34FB4A98FCCC10E9", hash_generated_method = "D7E8F07092066C1CEC6AE3B185A88ACE")
     public void setState(int state) {
 switch(state){
@@ -421,6 +425,7 @@ switch(mPosition){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.577 -0400", hash_original_method = "056243A841F0EC691D28BA5422CDF65B", hash_generated_method = "CFE1ED30A07D3814D31EDD1FE0EF553E")
      void stop() {
         setState(STATE_NONE);
@@ -547,6 +552,7 @@ switch(mPosition){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.582 -0400", hash_original_method = "E295B7FC2E9560F481D5875AE2ECD038", hash_generated_method = "3C069F5AB31197439F88C1B76E1C5CD7")
      void onSizeChanged(int w, int h, int oldw, int oldh) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -664,6 +670,7 @@ SectionIndexer var2661E5C5004D8E16E116544E6D9A6497_2036728793 =         mSection
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.585 -0400", hash_original_method = "0CD968054794DA4AF55762FEAC06E707", hash_generated_method = "270420EAD1F8DE78A93A58A5FA14A032")
      Object[] getSections() {
     if(mListAdapter == null && mList != null)        
@@ -907,6 +914,7 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.592 -0400", hash_original_method = "CEA01B9B754ED8848F89028F972B696F", hash_generated_method = "EE3570EACFEF93FEA7F996E4F2C62C63")
     private void cancelFling() {
         MotionEvent cancelFling = MotionEvent.obtain(0, 0, MotionEvent.ACTION_CANCEL, 0, 0, 0);
@@ -919,6 +927,7 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.592 -0400", hash_original_method = "1BBF9FC05240D406AB082B75B38F8E40", hash_generated_method = "A17CF01D8897AFD0C2378D2D899955A1")
      void cancelPendingDrag() {
         mList.removeCallbacks(mDeferStartDrag);
@@ -929,6 +938,7 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.593 -0400", hash_original_method = "DD628BE0DD3562FCAA0807D28A9AC0F6", hash_generated_method = "43BA3AD6A490FA6251BAC1E2C528E5CF")
      void startPendingDrag() {
         mPendingDrag = true;
@@ -1191,6 +1201,7 @@ switch(mPosition){
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.599 -0400", hash_original_method = "C2CB87B9E1EBFB96BF37E1CA2A1422A5", hash_generated_method = "19230DB05151B9744467D8C099CFC776")
          void startFade() {
             mFadeDuration = FADE_DURATION;
@@ -1203,6 +1214,7 @@ switch(mPosition){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.599 -0400", hash_original_method = "AFB48DA784BE880095A4465F927D06A4", hash_generated_method = "B7A2522CD88ABA08BF9D272621EF0FE5")
          int getAlpha() {
     if(getState() != STATE_EXIT)            

@@ -67,6 +67,7 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.654 -0400", hash_original_method = "A5616D4D55CEB63F772F9CBA3C1DFD14", hash_generated_method = "F0E18FE70983065F38D66BBCC1D37881")
     public  JCEECPublicKey(
         String              algorithm,
@@ -81,6 +82,7 @@ public class JCEECPublicKey implements ECPublicKey, org.bouncycastle.jce.interfa
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.655 -0400", hash_original_method = "111BFFE89DFF28BACA95639C99C739E4", hash_generated_method = "DA5A9316F343B2974C9F9C723F746697")
     public  JCEECPublicKey(
         String              algorithm,

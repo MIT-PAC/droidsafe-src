@@ -8,6 +8,7 @@ import gov.nist.javax.sip.address.*;
 
 public final class ReferTo extends AddressParametersHeader implements javax.sip.header.ReferToHeader {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.838 -0400", hash_original_method = "3600BA21C1DE3615470645CB07A3B945", hash_generated_method = "895B7864473D22CB612ECFF8E800F936")
     public  ReferTo() {
         super(NAME);

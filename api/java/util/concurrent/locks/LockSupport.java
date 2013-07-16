@@ -9,6 +9,7 @@ import sun.misc.Unsafe;
 
 public class LockSupport {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.915 -0400", hash_original_method = "1CF344A2CC5D467FE100F1B8497D1A42", hash_generated_method = "97F54F0429C724F0C1E459A848015358")
     private  LockSupport() {
         // ---------- Original Method ----------

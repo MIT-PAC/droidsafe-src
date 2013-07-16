@@ -19,6 +19,7 @@ public final class Contact extends AddressParametersHeader implements javax.sip.
 
     protected boolean wildCardFlag;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.202 -0400", hash_original_method = "91EC1BE71FCEDDA82A3A1E5DD0E8F369", hash_generated_method = "2C3BCCEE45586F853C3FCDA950D37478")
     public  Contact() {
         super(NAME);
@@ -218,6 +219,7 @@ NameValueList var3CB0A38B794BDEDADB1F50256E0AE35B_1568912814 =         parameter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.210 -0400", hash_original_method = "8D515165C9CEE70CC9BAE834218A7BF9", hash_generated_method = "C8484BBF2A47CAF2F24CD2FAC98EBB38")
     public void setAddress(javax.sip.address.Address address) {
         addTaint(address.getTaint());

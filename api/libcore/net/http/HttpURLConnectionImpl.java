@@ -44,6 +44,7 @@ class HttpURLConnectionImpl extends HttpURLConnection {
 
     protected HttpEngine httpEngine;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.459 -0400", hash_original_method = "728F41C3EA57BB4820711A693EC4FE30", hash_generated_method = "7CBA8FCA196AEE6B9E9044A4807B746E")
     protected  HttpURLConnectionImpl(URL url, int port) {
         super(url);
@@ -54,6 +55,7 @@ class HttpURLConnectionImpl extends HttpURLConnection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.460 -0400", hash_original_method = "77B9035B2943659FD08A151F360F3F70", hash_generated_method = "EB0F23C10BF92F54B6E07023E872F21C")
     protected  HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
         this(url, port);

@@ -38,6 +38,7 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements Blocking
 
     private final Condition notFull = putLock.newCondition();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.087 -0400", hash_original_method = "632CB0CBBBC44DF00B6EA380FB3D1564", hash_generated_method = "7E050AD6D76868049EBE527D41ED6759")
     public  LinkedBlockingQueue() {
         this(Integer.MAX_VALUE);
@@ -45,6 +46,7 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements Blocking
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.088 -0400", hash_original_method = "B75314FE98F585143D624DCD24C1F5B2", hash_generated_method = "5B347333FA903F80A1D4D44039985A40")
     public  LinkedBlockingQueue(int capacity) {
     if(capacity <= 0)        
@@ -170,6 +172,7 @@ for(E e : c)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.091 -0400", hash_original_method = "0F3CD055205E18F01917D382EBA2EDD8", hash_generated_method = "6509C2912E877C42BE06E6EEF54FFFF5")
     private E dequeue() {
         Node<E> h = head;
@@ -236,6 +239,7 @@ E varEA5659DA512DECF23E6D37EE8060D074_899084514 =         x;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.092 -0400", hash_original_method = "37DF2D00E21001E825743AC7943B033F", hash_generated_method = "7528C9F52C8EFDFFB943B503B336C896")
     public void put(E e) throws InterruptedException {
         addTaint(e.getTaint());
@@ -291,6 +295,7 @@ E varEA5659DA512DECF23E6D37EE8060D074_899084514 =         x;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.093 -0400", hash_original_method = "D5F3AC00421DA10DEFBB832E0EC3BAC8", hash_generated_method = "EFE61CBC8D5F21263844E01E805AC1FF")
     public boolean offer(E e, long timeout, TimeUnit unit) throws InterruptedException {
         addTaint(unit.getTaint());
@@ -360,6 +365,7 @@ E varEA5659DA512DECF23E6D37EE8060D074_899084514 =         x;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.094 -0400", hash_original_method = "751C55DFDD2504B6D9AAA83EF3048DDA", hash_generated_method = "CFFA4EF437B18BE61091197BCAB29E22")
     public boolean offer(E e) {
         addTaint(e.getTaint());
@@ -790,6 +796,7 @@ Object[] var3F5343BF1D849954A73F0BB303805FFD_332685010 =             a;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.102 -0400", hash_original_method = "3C0973EC18B4AB6267920EDC87F075C5", hash_generated_method = "FCF8BFA271B0C2797D65911737BC8C49")
     @SuppressWarnings("unchecked")
     public <T> T[] toArray(T[] a) {
@@ -1069,6 +1076,7 @@ for(;;)
 
         Node<E> next;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.107 -0400", hash_original_method = "E24CFB813CF8D6D3545154C1747D57F8", hash_generated_method = "F143FACCEFEC2EC78FAE43B87B01534B")
           Node(E x) {
             item = x;
@@ -1092,6 +1100,7 @@ for(;;)
 
         private E currentElement;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.108 -0400", hash_original_method = "5363017965403D930144EB6431B1229A", hash_generated_method = "173E625799237D8F29CD5FD5A03F020E")
           Itr() {
             fullyLock();
@@ -1200,6 +1209,7 @@ E varEA5659DA512DECF23E6D37EE8060D074_922981628 =                 x;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.110 -0400", hash_original_method = "9DBE3C9C0D54D1E1956F6E76D38BE63A", hash_generated_method = "BDF383EFDEE35CF1927D950EB878B14D")
         public void remove() {
     if(lastRet == null)            

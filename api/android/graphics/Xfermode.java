@@ -10,6 +10,7 @@ public class Xfermode {
 
     int native_instance;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.439 -0400", hash_original_method = "C597DAEA4231BF58F4F9DBF898816899", hash_generated_method = "C597DAEA4231BF58F4F9DBF898816899")
     public Xfermode ()
     {

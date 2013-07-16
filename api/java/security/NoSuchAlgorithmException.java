@@ -15,6 +15,7 @@ public class NoSuchAlgorithmException extends GeneralSecurityException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.131 -0400", hash_original_method = "BDAEA1DD03CDDD29A73CAE9E450C10A2", hash_generated_method = "6779E68168EEB1D0C958B92A65CCA975")
     public  NoSuchAlgorithmException() {
         // ---------- Original Method ----------

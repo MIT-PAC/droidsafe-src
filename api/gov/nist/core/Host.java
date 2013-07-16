@@ -20,6 +20,7 @@ public class Host extends GenericObject {
 
     private InetAddress inetAddress;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.308 -0400", hash_original_method = "11FB0BA24AED11EB92365CE28BAFE602", hash_generated_method = "574F594357DF9FBF615091F7035CC8B1")
     public  Host() {
         addressType = HOSTNAME;
@@ -53,6 +54,7 @@ public class Host extends GenericObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.309 -0400", hash_original_method = "9150DE1483C0BC278AB5442475C15F45", hash_generated_method = "54C21396F552F1DE0AA0C4CFFD8F2FE8")
     public  Host(String name, int addrType) {
         addTaint(addrType);

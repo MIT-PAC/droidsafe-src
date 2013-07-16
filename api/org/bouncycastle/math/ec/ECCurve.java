@@ -67,6 +67,7 @@ ECFieldElement var73F89FAC8F369DF0913D10C37C1E0EA1_677114218 =         b;
 
         ECPoint.Fp infinity;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.801 -0400", hash_original_method = "22B1E0FEEF98DB62B3F95091656AE119", hash_generated_method = "7846805D72ADC3FA3F6A4C0B21318F69")
         public  Fp(BigInteger q, BigInteger a, BigInteger b) {
             addTaint(b.getTaint());
@@ -94,6 +95,7 @@ BigInteger varBEF1B7662E10AF6D5747729987514CB6_1187626092 =             q;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.802 -0400", hash_original_method = "B586F82D19D11BCE8142121499961CE9", hash_generated_method = "B35FBAC6E86F2DDD921F1AA80BFFF9B5")
         public int getFieldSize() {
             int var0769037565AC374C9291621AA66E8145_2098927123 = (q.bitLength());
@@ -104,6 +106,7 @@ BigInteger varBEF1B7662E10AF6D5747729987514CB6_1187626092 =             q;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.802 -0400", hash_original_method = "717FAD51B8C0866C7878DF981123AAA4", hash_generated_method = "FACF65AA930D1EDEFD315F2A8894D043")
         public ECFieldElement fromBigInteger(BigInteger x) {
             addTaint(x.getTaint());
@@ -115,6 +118,7 @@ ECFieldElement var9002094E05CF56420543DC9EAEAEF109_1629544581 =             new 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.802 -0400", hash_original_method = "E2F0508F86D70ECB95714B920D7ED166", hash_generated_method = "A342B08554F76ABB7E96548CC8085FE3")
         public ECPoint createPoint(BigInteger x, BigInteger y, boolean withCompression) {
             addTaint(withCompression);
@@ -201,6 +205,7 @@ ECPoint varD826F01678C0988122ADB8C93417E177_1001255834 =             infinity;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.805 -0400", hash_original_method = "937E7F8C7D7C20805F9F2153639BF5E3", hash_generated_method = "568C64EE61EC3268B620D180D74B531A")
         public boolean equals(
             Object anObject) {
@@ -237,6 +242,7 @@ ECPoint varD826F01678C0988122ADB8C93417E177_1001255834 =             infinity;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.805 -0400", hash_original_method = "0595BFE04038932B73D34C7D5BF16F78", hash_generated_method = "E790EE4FE99AA8DEDA3FB004A5B628B8")
         public int hashCode() {
             int var0FD32793CB23B5AFDB05A870AAB833C7_752731403 = (a.hashCode() ^ b.hashCode() ^ q.hashCode());
@@ -280,6 +286,7 @@ ECPoint varD826F01678C0988122ADB8C93417E177_1001255834 =             infinity;
 
         private BigInteger[] si = null;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.806 -0400", hash_original_method = "DEC52BA66274A72254EB3F42E643013D", hash_generated_method = "D0986C1D732EC363393DF80C8862B1D1")
         public  F2m(
             int m,
@@ -400,6 +407,7 @@ ECPoint varD826F01678C0988122ADB8C93417E177_1001255834 =             infinity;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.810 -0400", hash_original_method = "7AF48CB12A1921AAC7C154231A16AA21", hash_generated_method = "E3B4841FC6E695073C23BDCC075C5E60")
         public ECFieldElement fromBigInteger(BigInteger x) {
             addTaint(x.getTaint());
@@ -411,6 +419,7 @@ ECFieldElement var2192A5A60ACD6C969D10D16EBF531997_1754814450 =             new 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.810 -0400", hash_original_method = "166EA7512C9A204978606C53F7DDDB4A", hash_generated_method = "9A3BEB1B5D8F9114BEE201D4BAE48753")
         public ECPoint createPoint(BigInteger x, BigInteger y, boolean withCompression) {
             addTaint(withCompression);
@@ -424,6 +433,7 @@ ECPoint var03FF0EF84700327CC816AF0C0D978C53_152143008 =             new ECPoint.
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.811 -0400", hash_original_method = "3A440A2E6AC052FD5047F5B01472DA22", hash_generated_method = "810DC1FB463ECE5DE9ED81B7B2F14C61")
         public ECPoint decodePoint(byte[] encoded) {
             addTaint(encoded[0]);
@@ -487,6 +497,7 @@ ECPoint varD826F01678C0988122ADB8C93417E177_1609910212 =             infinity;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.812 -0400", hash_original_method = "0873B9ADE54853DB8C371F01782A1B9E", hash_generated_method = "41343067AE535ECA9089801FE846FFF6")
         public boolean isKoblitz() {
             boolean var3A159A0BE54692E8571216DB24FAD4EB_172552649 = (((n != null) && (h != null) &&
@@ -503,6 +514,7 @@ ECPoint varD826F01678C0988122ADB8C93417E177_1609910212 =             infinity;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.812 -0400", hash_original_method = "6A47B833A38B2C51AF1636CDFCEB3B55", hash_generated_method = "D62D8CCEF0734278F691AD82E185E17F")
         synchronized byte getMu() {
     if(mu == 0)            
@@ -539,6 +551,7 @@ BigInteger[] var316474D4DA67FD8479E170FE8E19F283_1079959863 =             si;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.814 -0400", hash_original_method = "ABCDD5682443273B6E9EF7110AFEAA10", hash_generated_method = "CDE79A605A4669F8B7C6B04ED3898ED6")
         private ECPoint decompressPoint(
             byte[] xEnc, 
@@ -587,6 +600,7 @@ ECPoint varD903BA7B856E5972E8BD7D9E7940A611_1217492304 =             new ECPoint
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.815 -0400", hash_original_method = "25ED10C579C6ED4884A834D5A2CEB482", hash_generated_method = "8D1F12AC8F6166D7BC994A4B7856C163")
         private ECFieldElement solveQuadradicEquation(ECFieldElement beta) {
             addTaint(beta.getTaint());
@@ -630,6 +644,7 @@ ECFieldElement var07014B16947C3ECA078D6A03A18D6101_1253364650 =             z;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.816 -0400", hash_original_method = "5F33BE6BAAB2ADDEB5EF1D1748825E7B", hash_generated_method = "DF4C72B1318D0AD3C1E641E65748256E")
         public boolean equals(
             Object anObject) {
@@ -668,6 +683,7 @@ ECFieldElement var07014B16947C3ECA078D6A03A18D6101_1253364650 =             z;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.816 -0400", hash_original_method = "E92144A56D15AF334E01FB92437AD76B", hash_generated_method = "006996DC4094A8BDDA8EB396201C7683")
         public int hashCode() {
             int var094CC37330A541EC50C4AE279DAFABD8_826758011 = (this.a.hashCode() ^ this.b.hashCode() ^ m ^ k1 ^ k2 ^ k3);

@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public class IOError extends Error {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.756 -0400", hash_original_method = "96BEEC8FF3377FBD2EA8C52D4E2435B2", hash_generated_method = "E1C685C302D9B1163FA3A403DF396CF3")
     public  IOError(Throwable cause) {
         super(cause);

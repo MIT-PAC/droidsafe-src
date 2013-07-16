@@ -12,6 +12,7 @@ import java.text.ParseException;
 
 public final class To extends AddressParametersHeader implements javax.sip.header.ToHeader {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.536 -0400", hash_original_method = "7CFB3ABB21EF244A9FD6E54AD9CC5173", hash_generated_method = "668C3C4C9F8E59AA7D7644F10E61864F")
     public  To() {
         super(TO,true);
@@ -19,6 +20,7 @@ public final class To extends AddressParametersHeader implements javax.sip.heade
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.537 -0400", hash_original_method = "10EA715D50A25194DE35700E69984D3D", hash_generated_method = "097D153EC4F5E824438C8E5A2BDE56D1")
     public  To(From from) {
         super(TO);

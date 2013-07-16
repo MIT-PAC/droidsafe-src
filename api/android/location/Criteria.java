@@ -42,6 +42,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.703 -0400", hash_original_method = "4027197A668FB712D0A5A09027B96247", hash_generated_method = "AF9F22AB717402C29CAE5B27F1850449")
     public  Criteria(Criteria criteria) {
         mHorizontalAccuracy = criteria.mHorizontalAccuracy;
@@ -122,6 +123,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.705 -0400", hash_original_method = "7DA41913012CB9940E77425DCF2D2731", hash_generated_method = "59EBFC9D3D0BC3479BC6F1B784FF295C")
     public void setSpeedAccuracy(int accuracy) {
     if(accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH)        
@@ -150,6 +152,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.706 -0400", hash_original_method = "7D38552738106C949C369F73EBC07BAD", hash_generated_method = "F09537FD39EAAC0FEBD4A1F2EE5883AB")
     public void setBearingAccuracy(int accuracy) {
     if(accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH)        
@@ -231,6 +234,7 @@ public class Criteria implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.708 -0400", hash_original_method = "91C2D38607A4F9F70C65E1811565AAD2", hash_generated_method = "79AB1DFDEA2D72971180F16A0B06CCEC")
     public void setPowerRequirement(int level) {
     if(level < NO_REQUIREMENT || level > POWER_HIGH)        

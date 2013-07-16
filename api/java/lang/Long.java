@@ -10,6 +10,7 @@ public final class Long extends Number implements Comparable<Long> {
 
     private long value;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.929 -0400", hash_original_method = "F7421F28ECB11D742A45928A1DF88A80", hash_generated_method = "5A444BA7F41E5A7F34C5C8078DB04F37")
     public  Long(long value) {
         this.value = value;
@@ -18,6 +19,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.929 -0400", hash_original_method = "FBD907393492057451D7BFE621A4E030", hash_generated_method = "EB1664B2E0B2D14FE1ECCC22062306DD")
     public  Long(String string) throws NumberFormatException {
         this(parseLong(string));

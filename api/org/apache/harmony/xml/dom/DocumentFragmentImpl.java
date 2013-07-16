@@ -9,6 +9,7 @@ import org.w3c.dom.Node;
 
 public class DocumentFragmentImpl extends InnerNodeImpl implements DocumentFragment {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.607 -0400", hash_original_method = "B1D1A671578496EB48835D218203CA93", hash_generated_method = "421CBD2E20B1FA2FAC0712CBFADDBED8")
       DocumentFragmentImpl(DocumentImpl document) {
         super(document);

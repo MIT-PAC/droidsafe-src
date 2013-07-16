@@ -27,6 +27,7 @@ public final class AttributeTypeAndValue {
 
     private AttributeValue value;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.496 -0400", hash_original_method = "6EC11ED1743D72D03D153EE3955FA226", hash_generated_method = "E5E12649FAADB9729D11ACE6459D9D75")
     private  AttributeTypeAndValue(int[] oid, AttributeValue value) throws IOException {
         ObjectIdentifier thisOid = getOID(oid);

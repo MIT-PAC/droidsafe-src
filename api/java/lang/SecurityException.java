@@ -7,12 +7,14 @@ import droidsafe.runtime.*;
 
 public class SecurityException extends RuntimeException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.330 -0400", hash_original_method = "0D8A79337436926212C4E8DACFE6A955", hash_generated_method = "49F62E2C6329A19237B5CEBA0FFCFB90")
     public  SecurityException() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.331 -0400", hash_original_method = "35201AC9E2F0540A3FCA08DB4F71F2A3", hash_generated_method = "2B5388A512F651617E228BD4D9459369")
     public  SecurityException(String detailMessage) {
         super(detailMessage);
@@ -21,6 +23,7 @@ public class SecurityException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.332 -0400", hash_original_method = "6D3B8DD6DA516F6B2B4EBB83E8379AAA", hash_generated_method = "2DDAE86B7A212BCB4BC442A919237681")
     public  SecurityException(String message, Throwable cause) {
         super(message, cause);
@@ -30,6 +33,7 @@ public class SecurityException extends RuntimeException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.332 -0400", hash_original_method = "B0CE861A38AC7D57FFFB507001C97872", hash_generated_method = "8D1AEA529C4E516EB04747A04E4A10C9")
     public  SecurityException(Throwable cause) {
         super((cause == null ? null : cause.toString()), cause);

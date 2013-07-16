@@ -47,6 +47,7 @@ import org.bouncycastle.util.Strings;
 
 public class PKCS10CertificationRequest extends CertificationRequest {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.472 -0400", hash_original_method = "3A41672F51C7647865E5A6F21420932E", hash_generated_method = "FF24829872F3AA31786B4DCB8CC254E0")
     public  PKCS10CertificationRequest(
         byte[]  bytes) {
@@ -56,6 +57,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.473 -0400", hash_original_method = "E80E9113023CB84AD6D915B7A5F597A7", hash_generated_method = "4ABCE1760383597C1301750287ADF3F7")
     public  PKCS10CertificationRequest(
         ASN1Sequence  sequence) {
@@ -65,6 +67,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.473 -0400", hash_original_method = "DCC234DC4AA32AD53B9F45C5CD92E5AA", hash_generated_method = "D6258080ABBCD93337111577476C7AD9")
     public  PKCS10CertificationRequest(
         String              signatureAlgorithm,
@@ -83,6 +86,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.474 -0400", hash_original_method = "8331D41600BE6136ABFAAFB9EC7881F5", hash_generated_method = "D6D6AE127A2EA6FF1A02E4C3D7F97044")
     public  PKCS10CertificationRequest(
         String              signatureAlgorithm,
@@ -101,6 +105,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.474 -0400", hash_original_method = "47F27C3C5B072C1921CEA8CD2618865D", hash_generated_method = "6FDB8329B6328664E5F47F239FB24DF0")
     public  PKCS10CertificationRequest(
         String              signatureAlgorithm,
@@ -213,7 +218,8 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-        private static RSASSAPSSparams creatPSSParams(AlgorithmIdentifier hashAlgId, int saltSize) {
+        @DSModeled(DSC.SAFE)
+    private static RSASSAPSSparams creatPSSParams(AlgorithmIdentifier hashAlgId, int saltSize) {
         return new RSASSAPSSparams(
             hashAlgId,
             new AlgorithmIdentifier(PKCSObjectIdentifiers.id_mgf1, hashAlgId),
@@ -222,7 +228,8 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-        private static ASN1Sequence toDERSequence(
+        @DSModeled(DSC.SAFE)
+    private static ASN1Sequence toDERSequence(
         byte[]  bytes) {
         try
         {
@@ -236,7 +243,8 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-        private static X509Name convertName(
+        @DSModeled(DSC.SAFE)
+    private static X509Name convertName(
         X500Principal    name) {
         try
         {
@@ -259,6 +267,7 @@ PublicKey varC3D0D1C56178EDDD777C8C53EF7F0CE9_1985376175 =         getPublicKey(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.478 -0400", hash_original_method = "B8875DFEFA5CEF760F6C887EECDEC741", hash_generated_method = "6C0A80D18407D5917819C773FAAC2D2D")
     public PublicKey getPublicKey(
         String  provider) throws NoSuchAlgorithmException, NoSuchProviderException,
@@ -317,6 +326,7 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.479 -0400", hash_original_method = "76B4A35CDD087589FE1D86D8EB63F14C", hash_generated_method = "5D90B6BCD7F7FF1B0C579FEBFDFEB9AE")
     public boolean verify() throws NoSuchAlgorithmException, NoSuchProviderException,
                 InvalidKeyException, SignatureException {
@@ -400,6 +410,7 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.498 -0400", hash_original_method = "FFCAA10D74329AA15B8FE83335744F82", hash_generated_method = "3654BC0547305E30EAEFC3A85A49BF4D")
     public byte[] getEncoded() {
         try 
@@ -426,6 +437,7 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.498 -0400", hash_original_method = "572BCE240DBAD7E2FCA6B5178E7F9E48", hash_generated_method = "8438FDB6F4BF08B60222EDD8A4138D05")
     private void setSignatureParameters(
         Signature signature,
@@ -464,7 +476,8 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
     }
 
     
-        static String getSignatureName(
+        @DSModeled(DSC.SAFE)
+    static String getSignatureName(
         AlgorithmIdentifier sigAlgId) {
         DEREncodable params = sigAlgId.getParameters();
         if (params != null && !DERNull.INSTANCE.equals(params))

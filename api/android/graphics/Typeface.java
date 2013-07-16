@@ -12,6 +12,7 @@ public class Typeface {
 
     int native_instance;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.424 -0400", hash_original_method = "A1E0C89A80599EF6E13C90B8B8945AA4", hash_generated_method = "94156491CEF351E7D8C37CF8A12042F0")
     private  Typeface(int ni) {
     if(0 == ni)        

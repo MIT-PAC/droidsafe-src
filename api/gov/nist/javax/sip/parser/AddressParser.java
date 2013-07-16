@@ -9,6 +9,7 @@ import java.text.ParseException;
 
 public class AddressParser extends Parser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.760 -0400", hash_original_method = "DDF0B6D19753B0F457279892E29569BE", hash_generated_method = "9CF4E18F46F9477751A9430799FE22E0")
     public  AddressParser(Lexer lexer) {
         addTaint(lexer.getTaint());
@@ -20,6 +21,7 @@ public class AddressParser extends Parser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.767 -0400", hash_original_method = "8E6C25B6D8313F3B657F98EEF90351BF", hash_generated_method = "538555F0FD76922F7C0E34D896811AA5")
     public  AddressParser(String address) {
         addTaint(address.getTaint());
@@ -29,6 +31,7 @@ public class AddressParser extends Parser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.768 -0400", hash_original_method = "FFACB1FB21E7531199E63E4BDFD4B5B1", hash_generated_method = "5C04F91476E78CC29AE6073A1373F233")
     protected AddressImpl nameAddr() throws ParseException {
     if(debug)        

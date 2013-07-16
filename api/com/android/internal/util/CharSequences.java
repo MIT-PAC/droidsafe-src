@@ -64,7 +64,8 @@ public class CharSequences {
     }
 
     
-        public static boolean equals(CharSequence a, CharSequence b) {
+        @DSModeled(DSC.SAFE)
+    public static boolean equals(CharSequence a, CharSequence b) {
         if (a.length() != b.length()) {
             return false;
         }

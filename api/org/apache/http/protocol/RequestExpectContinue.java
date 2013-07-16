@@ -16,6 +16,7 @@ import org.apache.http.params.HttpProtocolParams;
 
 public class RequestExpectContinue implements HttpRequestInterceptor {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.995 -0400", hash_original_method = "6FB86855078200C1DA7E1696137BDEB8", hash_generated_method = "D8D48DC6FB0C5155B811101DF979F44F")
     public  RequestExpectContinue() {
         super();

@@ -25,6 +25,7 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
 
     private int mColor;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.139 -0400", hash_original_method = "F333B1FCD15ED8238A329F687C815603", hash_generated_method = "20A8517CDEC0FF183CEEC5E7CE07B6B1")
     public  BulletSpan() {
         mGapWidth = STANDARD_GAP_WIDTH;
@@ -37,6 +38,7 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.139 -0400", hash_original_method = "5B0962B90C33EFC1A7FAF035AC11CB4A", hash_generated_method = "4ACC823AF3A5799EE596B467B6C6CBB2")
     public  BulletSpan(int gapWidth) {
         mGapWidth = gapWidth;
@@ -49,6 +51,7 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.140 -0400", hash_original_method = "49E46CCFEED0864DEF606DCF0C6D9BFC", hash_generated_method = "8B91A604CD1AE956B220887A498E6E72")
     public  BulletSpan(int gapWidth, int color) {
         mGapWidth = gapWidth;
@@ -61,6 +64,7 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.140 -0400", hash_original_method = "2310754227525D5B1AC7AB495FD8FC46", hash_generated_method = "514629213F2127D7DAD5A8A732F42B78")
     public  BulletSpan(Parcel src) {
         mGapWidth = src.readInt();

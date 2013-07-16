@@ -63,6 +63,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
 
     private Handler mMainQueue;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.811 -0400", hash_original_method = "812B134D167B9B4075E3C9A16E9536C3", hash_generated_method = "738DDB18022FED702F1EF565CB9D43E6")
     public  RemoteViewsAdapter(Context context, Intent intent, RemoteAdapterConnectionCallback callback) {
         mContext = context;

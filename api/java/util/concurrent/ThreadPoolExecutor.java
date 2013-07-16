@@ -1601,6 +1601,7 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
     
     public static class CallerRunsPolicy implements RejectedExecutionHandler {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.622 -0400", hash_original_method = "0024AA22CD353D26AF52EE7A7BFF5B6A", hash_generated_method = "EE6F5E0062E38533EDD0CC7DB47C5E41")
         public  CallerRunsPolicy() {
             // ---------- Original Method ----------
@@ -1657,6 +1658,7 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
     
     public static class DiscardPolicy implements RejectedExecutionHandler {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.623 -0400", hash_original_method = "F09B76305D692D1CB8CB62E17F499CB5", hash_generated_method = "C4B475A3525556F9D1B8C945DF152CD4")
         public  DiscardPolicy() {
             // ---------- Original Method ----------

@@ -33,6 +33,7 @@ public class Canvas {
 
     @SuppressWarnings({"UnusedDeclaration"}) private CanvasFinalizer mFinalizer;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.003 -0400", hash_original_method = "1267A44EC7BCBF8838C9761711C37259", hash_generated_method = "63552CAA2E9C15316003F51321B1A087")
     public  Canvas() {
         mNativeCanvas = initRaster(0);
@@ -43,6 +44,7 @@ public class Canvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.003 -0400", hash_original_method = "57E1F1C357DC29B7A94C226F5C3B5C9B", hash_generated_method = "C1E3736697761AAC806FE58B9651C9BF")
     public  Canvas(Bitmap bitmap) {
     if(!bitmap.isMutable())        
@@ -70,6 +72,7 @@ public class Canvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.004 -0400", hash_original_method = "347D84319548CC8FC9B392FE55B81BD9", hash_generated_method = "9B641B7AFE9E2E3F67409182659044D0")
       Canvas(int nativeCanvas) {
     if(nativeCanvas == 0)        
@@ -1990,6 +1993,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_535850003 =         r;
 
         private int mNativeCanvas;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.039 -0400", hash_original_method = "C87133F6F9E7B261DCFE48B3CCDE3AF4", hash_generated_method = "B264373C320A36AAFBD12A28825D248D")
         public  CanvasFinalizer(int nativeCanvas) {
             mNativeCanvas = nativeCanvas;
@@ -2031,6 +2035,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_535850003 =         r;
     public enum EdgeType {
         BW(0),  
         AA(1);  
+        @DSModeled(DSC.SAFE)
         EdgeType(int nativeInt) {
             this.nativeInt = nativeInt;
         }
@@ -2042,6 +2047,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_535850003 =         r;
         TRIANGLES(0),
         TRIANGLE_STRIP(1),
         TRIANGLE_FAN(2);
+        @DSModeled(DSC.SAFE)
         VertexMode(int nativeInt) {
             this.nativeInt = nativeInt;
         }

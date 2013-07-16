@@ -12,6 +12,7 @@ public abstract class CharacterDataImpl extends LeafNodeImpl implements Characte
 
     protected StringBuffer buffer;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.516 -0400", hash_original_method = "2CB76BA87C10BADB4B5943F1B8732E1D", hash_generated_method = "8F15F2CC9C5F87747EE4E20D290E4362")
       CharacterDataImpl(DocumentImpl document, String data) {
         super(document);
@@ -55,6 +56,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_306354697 =         buffer.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.517 -0400", hash_original_method = "DF8889919B491656E0252194C5FFA90E", hash_generated_method = "A918F92CF730A33AC3F60E20C95E0B62")
     public void appendDataTo(StringBuilder stringBuilder) {
         addTaint(stringBuilder.getTaint());

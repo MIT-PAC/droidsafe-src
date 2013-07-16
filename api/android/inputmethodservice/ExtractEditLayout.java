@@ -45,6 +45,7 @@ public class ExtractEditLayout extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.059 -0400", hash_original_method = "3AB740C640E719B54F03586FCEB648DB", hash_generated_method = "7685187E8AFA095526BBA06574DEA996")
     @Override
     public ActionMode startActionModeForChild(View sourceView, ActionMode.Callback cb) {
@@ -103,6 +104,7 @@ ActionMode var540C13E9E156B687226421B24F2DF178_1805606483 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.061 -0400", hash_original_method = "F4E3F3E884E506D9FE93C33AFB725466", hash_generated_method = "44EBAD2437B0DF22373A7E76EA21D40D")
     @Override
     public void onFinishInflate() {
@@ -147,6 +149,7 @@ ActionMode var540C13E9E156B687226421B24F2DF178_1805606483 =         null;
 
         MenuBuilder mMenu;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.062 -0400", hash_original_method = "1DFFBDF48C83C4F81EE07812707228A4", hash_generated_method = "7016906F6AE6283CE484B5EEE99D31EE")
         public  ExtractActionMode(Callback cb) {
             mMenu = new MenuBuilder(getContext());

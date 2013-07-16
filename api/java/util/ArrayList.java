@@ -20,6 +20,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
 
     transient Object[] array;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.338 -0400", hash_original_method = "3E3801877D646C78E965A019C35437FB", hash_generated_method = "7C558483610DC494A480AD27C2416965")
     public  ArrayList(int capacity) {
     if(capacity < 0)        
@@ -37,6 +38,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.338 -0400", hash_original_method = "A7503C07B95C656689F43518416554F0", hash_generated_method = "A3AEAA024802F16BF2F719D937C47F2E")
     public  ArrayList() {
         array = EmptyArray.OBJECT;
@@ -69,6 +71,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.340 -0400", hash_original_method = "2E95EC775538EB90DD9A0EBE35FC856F", hash_generated_method = "A89CC274F5A664A167BDC23344C3573D")
     @Override
     public boolean add(E object) {
@@ -106,6 +109,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.341 -0400", hash_original_method = "C5A93B072C15A6072F87F254E0F87786", hash_generated_method = "289598F66BD58A4CDF183A31DF8FD020")
     @Override
     public void add(int index, E object) {
@@ -534,6 +538,7 @@ for(int i = size - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.350 -0400", hash_original_method = "A1787B19405DA1FA0654C3278265A2A8", hash_generated_method = "58DEAF93F61AB31D815548D04F009E11")
     @Override
     public E remove(int index) {
@@ -701,6 +706,7 @@ for(int i = 0;i < s;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.353 -0400", hash_original_method = "F03306481ED210492B573188BD80D78C", hash_generated_method = "F30AC65A1C6F2C9E6397C8E143447B78")
     @Override
     public E set(int index, E object) {
@@ -745,6 +751,7 @@ Object[] varDC838461EE2FA0CA4C9BBB70A15456B0_1481877930 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.354 -0400", hash_original_method = "C3B471E5DAFB04B40866B17E5BAEF530", hash_generated_method = "F7011F02B0DD392D3210323ECD1E716F")
     @Override
     public <T> T[] toArray(T[] contents) {
@@ -1028,6 +1035,7 @@ E var3DD0F0FCD302CDCF1356101DE87082ED_1224683241 =             (E) ourList.array
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.360 -0400", hash_original_method = "2CA6472AB4D5ED4AA6A79E4E390FB476", hash_generated_method = "75BF930C8E2F3FF6125EE885D8E86471")
         public void remove() {
             Object[] a = array;

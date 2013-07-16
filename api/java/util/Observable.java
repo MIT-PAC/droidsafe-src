@@ -13,6 +13,7 @@ public class Observable {
 
     boolean changed = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.310 -0400", hash_original_method = "88DD44E29F0E251AC2213FB1D624DCBA", hash_generated_method = "AF0C25D466E31090823089706BD42B3B")
     public  Observable() {
         // ---------- Original Method ----------

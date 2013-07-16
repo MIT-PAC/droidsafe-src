@@ -52,6 +52,7 @@ public abstract class URLConnection {
 
     private int connectTimeout = 0;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.775 -0400", hash_original_method = "C1B78B989F00EEFB1B34CFF3211D8415", hash_generated_method = "26FB837EE505F718F5C8BD67B14C0626")
     protected  URLConnection(URL url) {
         this.url = url;

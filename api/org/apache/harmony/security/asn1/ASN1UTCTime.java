@@ -24,6 +24,7 @@ public final class ASN1UTCTime extends ASN1Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.738 -0400", hash_original_method = "A91CD5C6AC359830199B04A7EA591A03", hash_generated_method = "EDDC3C0CE8636DCEFC24E52A05F213F6")
     @Override
     public Object decode(BerInputStream in) throws IOException {
@@ -47,6 +48,7 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1695614670 =         getDecodedObject
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.738 -0400", hash_original_method = "7E6261B78AC933A3E78C661A729AB3E3", hash_generated_method = "4C214FEABCFF713A2B54435D0092B026")
     @Override
     public void encodeContent(BerOutputStream out) {
@@ -57,6 +59,7 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1695614670 =         getDecodedObject
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.739 -0400", hash_original_method = "DF1F65526ADDCB7D66CE158126525DF9", hash_generated_method = "CBDD5E7C00CCC5231BF41A0D847EC972")
     @Override
     public void setEncodingContent(BerOutputStream out) {

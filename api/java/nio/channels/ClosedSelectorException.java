@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public class ClosedSelectorException extends IllegalStateException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.442 -0400", hash_original_method = "DF89DC603B24D4C0D4A25FAB2E303102", hash_generated_method = "EBC2602035EFA186F6E82D28AAA9EB87")
     public  ClosedSelectorException() {
         // ---------- Original Method ----------

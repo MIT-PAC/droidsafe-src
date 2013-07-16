@@ -25,6 +25,7 @@ class DatabaseConnectionPool {
 
     private Random rand;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.494 -0400", hash_original_method = "642674B3CBAE34C61C10ECDA81AF12DF", hash_generated_method = "405D2245E138C6BA6810E66559719176")
       DatabaseConnectionPool(SQLiteDatabase db) {
         this.mParentDbObj = db;
@@ -242,6 +243,7 @@ ArrayList<PoolObj> varB4506CA02789EEFE1322E696990510A4_356372886 =         mPool
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.502 -0400", hash_original_method = "9BBFDBA2A96C9EEA2C362B37886D3C5D", hash_generated_method = "19BDB992AEF80CC157F6E9E29201DC04")
     @Override
     public String toString() {
@@ -280,6 +282,7 @@ String varA8F8BFF7B1F2F52B225C2C2411606CA3_1879728431 =         buff.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.502 -0400", hash_original_method = "8B6A0047A202C3A27DBFDE3CD809337B", hash_generated_method = "77C1B699DA78CB73993DB6036DAEE561")
     private void doAsserts() {
 for(int i = 0;i < mPool.size();i++)
@@ -325,6 +328,7 @@ for(int i = 0;i < mPool.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.505 -0400", hash_original_method = "CEDD9D91870F2CDCC14A9842125741BE", hash_generated_method = "4CFF256967BCAFEED95CB1E6C929E9AD")
      int getSize() {
         int var945EC9F080E24881B59692063D2865DE_1795394994 = (mPool.size());

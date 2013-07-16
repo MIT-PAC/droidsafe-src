@@ -37,6 +37,7 @@ public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
 
     private TextKeyListener.SettingsObserver mObserver;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.957 -0400", hash_original_method = "9DAB45081F29D4D9259EECD11A475A04", hash_generated_method = "B59FD9AE6465D27FF27D624847BFBF79")
     public  TextKeyListener(Capitalize cap, boolean autotext) {
         mAutoCap = cap;

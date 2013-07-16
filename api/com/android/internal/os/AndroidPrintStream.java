@@ -33,6 +33,7 @@ class AndroidPrintStream extends LoggingPrintStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.870 -0400", hash_original_method = "0F469F25708F7CED7810AA1C6F552E30", hash_generated_method = "542144C3C4C9B13C75081C517A6B2D20")
     protected void log(String line) {
         addTaint(line.getTaint());

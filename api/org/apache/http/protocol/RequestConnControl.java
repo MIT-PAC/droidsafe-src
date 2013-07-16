@@ -11,6 +11,7 @@ import org.apache.http.HttpRequestInterceptor;
 
 public class RequestConnControl implements HttpRequestInterceptor {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.974 -0400", hash_original_method = "76ED84E03F54549E28D46816E0160A3A", hash_generated_method = "72AD438ABB5E9882C9BDC97BAC97B081")
     public  RequestConnControl() {
         super();

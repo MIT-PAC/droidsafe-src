@@ -25,6 +25,7 @@ public abstract class JarURLConnection extends URLConnection {
 
     private String file;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.841 -0400", hash_original_method = "E4DD2BF7117B0709966B99D66AA37CA9", hash_generated_method = "E3727A35225122E090CF4B144886C6B7")
     protected  JarURLConnection(URL url) throws MalformedURLException {
         super(url);

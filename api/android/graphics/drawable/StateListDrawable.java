@@ -21,6 +21,7 @@ public class StateListDrawable extends DrawableContainer {
 
     private boolean mMutated;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.808 -0400", hash_original_method = "2C05F8B66F3CA072BC0F3CED1F3E988B", hash_generated_method = "3034A7A547BD403E1E0F238C476B9227")
     public  StateListDrawable() {
         this(null, null);
@@ -28,6 +29,7 @@ public class StateListDrawable extends DrawableContainer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.809 -0400", hash_original_method = "90179FAF2CD102672779F3C6B59674D6", hash_generated_method = "A626E1BEE80BB60E02C9F2063D8F77B3")
     private  StateListDrawable(StateListState state, Resources res) {
         addTaint(res.getTaint());

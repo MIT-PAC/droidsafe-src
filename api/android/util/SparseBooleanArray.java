@@ -17,6 +17,7 @@ public class SparseBooleanArray implements Cloneable {
 
     private int mSize;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.288 -0400", hash_original_method = "8D15548F78BDFDD752295E5C53E86F2F", hash_generated_method = "615FAF32D19F7E913E71139FAA2C7BA8")
     public  SparseBooleanArray() {
         this(10);
@@ -24,6 +25,7 @@ public class SparseBooleanArray implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.289 -0400", hash_original_method = "A6A3EB653943D50370F97C74C514666D", hash_generated_method = "C46C350968A04AE428E20A28C4AC075E")
     public  SparseBooleanArray(int initialCapacity) {
         initialCapacity = ArrayUtils.idealIntArraySize(initialCapacity);

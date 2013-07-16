@@ -22,6 +22,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
 
     private final Rect mTmpRect = new Rect();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.677 -0400", hash_original_method = "E02759DF2D4F91913B09748266B3DC55", hash_generated_method = "2B186D8FB2296E2181BF9479B3E0E4E2")
       ClipDrawable() {
         this(null, null);
@@ -29,6 +30,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.678 -0400", hash_original_method = "5201E74D3B1AF986B1DE2C301B497FD9", hash_generated_method = "66CE8596D6C8FF092D446B0A1E09F43E")
     public  ClipDrawable(Drawable drawable, int gravity, int orientation) {
         this(null, null);
@@ -49,6 +51,7 @@ public class ClipDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.679 -0400", hash_original_method = "F385B151B35BFC6DCEF1AAF1F3B81836", hash_generated_method = "9297ED1FDF6C3519ACB39D77D3FE54B0")
     private  ClipDrawable(ClipState state, Resources res) {
         mClipState = new ClipState(state, this, res);

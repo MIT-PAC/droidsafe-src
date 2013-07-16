@@ -600,6 +600,7 @@ for(int i = 0;i < responseHeaderLineCount;i++)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.405 -0400", hash_original_method = "2730B752BE7E47C2A79E3158A4A5E3C1", hash_generated_method = "4FC61995C091E9EAA1AE368408756DB4")
         public  Entry(URI uri, RawHeaders varyHeaders, HttpURLConnection httpConnection) {
             this.uri = uri.toString();

@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public class ParserConfigurationException extends Exception {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.494 -0400", hash_original_method = "8E684FA0ECF2833FC98AE584F5004E57", hash_generated_method = "53A7B7CE142D7AEF09E0FF4A81F112E7")
     public  ParserConfigurationException() {
         // ---------- Original Method ----------

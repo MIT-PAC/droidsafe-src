@@ -26,6 +26,7 @@ public class RoundRectShape extends RectShape {
 
     private Path mPath;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.889 -0400", hash_original_method = "BFB37C497FF277AFDA0C7FF1B797A20B", hash_generated_method = "BDCC58A5738C946C01F8FF4317D1875E")
     public  RoundRectShape(float[] outerRadii, RectF inset,
                           float[] innerRadii) {

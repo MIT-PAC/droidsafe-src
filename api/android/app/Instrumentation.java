@@ -1634,6 +1634,7 @@ Activity varB5053E025797B3BF768F5C37934C244D_2087176395 =                     re
 
         private Intent mResultData;
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.632 -0400", hash_original_method = "C450F5B8EDB38A231DF953C34FD7C745", hash_generated_method = "24DA7F362B57EA7AFBB13D11AD29E232")
         public  ActivityResult(int resultCode, Intent resultData) {
             mResultCode = resultCode;
@@ -1807,6 +1808,7 @@ Intent var7AF81C367EA4623980C8741236739982_230886168 =             mResultData;
 
         public Activity activity;
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.639 -0400", hash_original_method = "749CA2F0047E4C5ABC5CE22C281FA095", hash_generated_method = "3059D2ED47C5D0B987E8709844E0C081")
         public  ActivityWaiter(Intent _intent) {
             intent = _intent;

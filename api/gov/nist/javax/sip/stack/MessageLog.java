@@ -35,6 +35,7 @@ class MessageLog implements LogRecord {
 
     private long timeStampHeaderValue;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.742 -0400", hash_original_method = "4DF5C3B1D01E7222DCCDFE20C1B5824A", hash_generated_method = "C7C392B605B2FF034E06E1D7E6233505")
     public  MessageLog(
         String message,
@@ -101,6 +102,7 @@ class MessageLog implements LogRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.746 -0400", hash_original_method = "C29CF89B26E4E43BB7B19BB7E4FDCA0D", hash_generated_method = "133E35FFA28E4B229CCA5CAB4DCC97FD")
     public  MessageLog(
         String message,

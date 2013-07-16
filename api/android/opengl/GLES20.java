@@ -985,7 +985,8 @@ public class GLES20 {
 	}
 
     
-        public static void glVertexAttribPointer(
+        @DSModeled(DSC.SAFE)
+    public static void glVertexAttribPointer(
         int indx,
         int size,
         int type,

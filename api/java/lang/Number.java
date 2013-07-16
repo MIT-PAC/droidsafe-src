@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public abstract class Number implements java.io.Serializable {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.038 -0400", hash_original_method = "AF006D3372C503951E85770849BA1AA0", hash_generated_method = "D2CCD29F4D81AEE9EDFA9AD93C3B8CFB")
     public  Number() {
         // ---------- Original Method ----------

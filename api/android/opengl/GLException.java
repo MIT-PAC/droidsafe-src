@@ -29,7 +29,8 @@ public class GLException extends RuntimeException {
     }
 
     
-        private static String getErrorString(int error) {
+        @DSModeled(DSC.SAFE)
+    private static String getErrorString(int error) {
         String errorString = GLU.gluErrorString(error);
         if ( errorString == null ) {
             errorString = "Unknown error 0x" + Integer.toHexString(error);

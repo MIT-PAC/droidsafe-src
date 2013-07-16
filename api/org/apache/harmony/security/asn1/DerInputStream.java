@@ -9,6 +9,7 @@ import java.io.InputStream;
 
 public final class DerInputStream extends BerInputStream {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.991 -0400", hash_original_method = "0C4A7C9E977F3C6859980EACEBE18672", hash_generated_method = "2DAC332C35F56196C474BC40BD9CC6B5")
     public  DerInputStream(byte[] encoded) throws IOException {
         super(encoded, 0, encoded.length);
@@ -17,6 +18,7 @@ public final class DerInputStream extends BerInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.992 -0400", hash_original_method = "28091E4E014A0D7A42E8F791C3C64E87", hash_generated_method = "20A04CC92DF588609E21BDEAC19731B1")
     public  DerInputStream(byte[] encoded, int offset, int encodingLen) throws IOException {
         super(encoded, offset, encodingLen);
@@ -27,6 +29,7 @@ public final class DerInputStream extends BerInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.992 -0400", hash_original_method = "BE2CCC0A8AA1ECB77ECF4313FFFD9645", hash_generated_method = "4248547F37FF25E76C7631771B383ED9")
     public  DerInputStream(InputStream in) throws IOException {
         super(in);
@@ -35,6 +38,7 @@ public final class DerInputStream extends BerInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.992 -0400", hash_original_method = "ACFD8393341C557A4C5CB85B57910849", hash_generated_method = "1DFB852ED62A72B9DBDB8D2BC7D6DA5D")
     public int next() throws IOException {
         int tag = super.next();
@@ -56,6 +60,7 @@ public final class DerInputStream extends BerInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.993 -0400", hash_original_method = "7A0EADAA1891B960439C6C2BFD607720", hash_generated_method = "0FD1317CA7F7465D5494B793B2C2DB3A")
     public void readBitString() throws IOException {
     if(tag == ASN1Constants.TAG_C_BITSTRING)        
@@ -90,6 +95,7 @@ public final class DerInputStream extends BerInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.993 -0400", hash_original_method = "10108ACDBF74B8DE65083A6BBAC4052F", hash_generated_method = "AF48270BE6AA86925A9E519375C77091")
     public void readBoolean() throws IOException {
         super.readBoolean();

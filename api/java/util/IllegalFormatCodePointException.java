@@ -11,6 +11,7 @@ public class IllegalFormatCodePointException extends IllegalFormatException impl
 
     private int c;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.622 -0400", hash_original_method = "EC5D1DD50821B22662FE61EFD96C533A", hash_generated_method = "B0BCC925AF8D66DD3A3ED68FAEE6F46E")
     public  IllegalFormatCodePointException(int c) {
         this.c = c;

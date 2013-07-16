@@ -58,6 +58,7 @@ public class DateFormatSymbols implements Serializable, Cloneable {
 
     transient Locale locale;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.234 -0400", hash_original_method = "5D59D1DAC1D60D67A4A902493CF704FB", hash_generated_method = "C859C77BBE7800A29A0C963324C5BAF5")
     public  DateFormatSymbols() {
         this(Locale.getDefault());
@@ -65,6 +66,7 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.236 -0400", hash_original_method = "10456A2571D0B6BA1CAC9BF624A7CB6F", hash_generated_method = "813E0D82CEB1AAC3D46F84D0B9C1DFBC")
     public  DateFormatSymbols(Locale locale) {
         this.locale = locale;

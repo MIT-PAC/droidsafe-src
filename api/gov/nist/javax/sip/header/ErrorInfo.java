@@ -14,6 +14,7 @@ public final class ErrorInfo extends ParametersHeader implements ErrorInfoHeader
 
     protected GenericURI errorInfo;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.334 -0400", hash_original_method = "E4884C80CFD3760FF481610C05E97D11", hash_generated_method = "79B25B6B953F6F9A24DA8C23D01FB1BE")
     public  ErrorInfo() {
         super(NAME);
@@ -21,6 +22,7 @@ public final class ErrorInfo extends ParametersHeader implements ErrorInfoHeader
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.334 -0400", hash_original_method = "5D4EAB69496BA6FC52162AB30D1BA363", hash_generated_method = "CE88C25A02D8DA66304F83D86F593A68")
     public  ErrorInfo(GenericURI errorInfo) {
         this();

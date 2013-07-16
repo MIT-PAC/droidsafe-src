@@ -19,6 +19,7 @@ import static android.telephony.SmsMessage.MAX_USER_DATA_SEPTETS_WITH_HEADER;
 
 public class GsmAlphabet {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.806 -0400", hash_original_method = "ACEB66A7A5EB57C667A16876F7FFD7A1", hash_generated_method = "9D914C4804B753FB0D925E0024275993")
     private  GsmAlphabet() {
         // ---------- Original Method ----------
@@ -53,7 +54,8 @@ public class GsmAlphabet {
     }
 
     
-        public static int charToGsmExtended(char c) {
+        @DSModeled(DSC.SAFE)
+    public static int charToGsmExtended(char c) {
         int ret;
         ret = sCharsToShiftTables[0].get(c, -1);
         if (ret == -1) {
@@ -63,7 +65,8 @@ public class GsmAlphabet {
     }
 
     
-        public static char gsmToChar(int gsmChar) {
+        @DSModeled(DSC.SAFE)
+    public static char gsmToChar(int gsmChar) {
         if (gsmChar >= 0 && gsmChar < 128) {
             return sLanguageTables[0].charAt(gsmChar);
         } else {
@@ -173,7 +176,8 @@ public class GsmAlphabet {
     }
 
     
-        public static String gsm7BitPackedToString(byte[] pdu, int offset,
+        @DSModeled(DSC.SAFE)
+    public static String gsm7BitPackedToString(byte[] pdu, int offset,
             int lengthSeptets) {
         return gsm7BitPackedToString(pdu, offset, lengthSeptets, 0, 0, 0);
     }

@@ -16,6 +16,7 @@ public class ContentProviderResult implements Parcelable {
 
     public Integer count;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.734 -0400", hash_original_method = "D6E18454D2E4039ABD60A78819D956A0", hash_generated_method = "9541B994DC1FCFA2469E2D0DC70DA884")
     public  ContentProviderResult(Uri uri) {
     if(uri == null)        

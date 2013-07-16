@@ -48,6 +48,7 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
 
     private TimeZone zone;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.622 -0400", hash_original_method = "E09C10A5808D539238E77D59E7FF85D8", hash_generated_method = "374B305B1106BD03A7A9AA8CD5945D9E")
     protected  Calendar() {
         this(TimeZone.getDefault(), Locale.getDefault());
@@ -55,6 +56,7 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.623 -0400", hash_original_method = "88FEBE5E333C1748D0E9CCFA28BF3B86", hash_generated_method = "173EE3582E48B11E5AC2279E888D102B")
       Calendar(TimeZone timezone) {
         addTaint(timezone.getTaint());
@@ -72,6 +74,7 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.624 -0400", hash_original_method = "DC052852760F164E5EB6C2F703BBC41B", hash_generated_method = "ED1D6E28F6ACA9D7EA6540B2E29A74E0")
     protected  Calendar(TimeZone timezone, Locale locale) {
         this(timezone);

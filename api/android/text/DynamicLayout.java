@@ -44,6 +44,7 @@ public class DynamicLayout extends Layout {
 
     private int mBottomPadding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.853 -0400", hash_original_method = "DB07DE8DB9A02739307D238F9A46C5FB", hash_generated_method = "EEA2B5F84A7766858D699FBE69B1ED40")
     public  DynamicLayout(CharSequence base,
                          TextPaint paint,
@@ -63,6 +64,7 @@ public class DynamicLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.854 -0400", hash_original_method = "BEECDC91516286CCE30494A55398B48A", hash_generated_method = "51699F20F89BE5E4989B54AB6C2169FF")
     public  DynamicLayout(CharSequence base, CharSequence display,
                          TextPaint paint,
@@ -83,6 +85,7 @@ public class DynamicLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.855 -0400", hash_original_method = "F5040E07E9B927EF44F79345AA20F61D", hash_generated_method = "218F21935476BD981B333FAA63B2980D")
     public  DynamicLayout(CharSequence base, CharSequence display,
                          TextPaint paint,
@@ -106,6 +109,7 @@ public class DynamicLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.858 -0400", hash_original_method = "E989442183EB5456191B90B4A9B0462E", hash_generated_method = "9207675087389DD33A1BFBC9D2AD4778")
     public  DynamicLayout(CharSequence base, CharSequence display,
                          TextPaint paint,

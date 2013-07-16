@@ -322,6 +322,7 @@ DERInteger var6F7D586A588E89E70D60AA8FC6714E98_1733112849 =         indirectRefe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.986 -0400", hash_original_method = "D6EB4173694568A37E5CF8BEC224CE9C", hash_generated_method = "EFA55292B5DA342015C58F7294484ED6")
     private void setEncoding(int encoding) {
     if(encoding < 0 || encoding > 2)        

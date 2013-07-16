@@ -42,6 +42,7 @@ public class SweepGradient extends Shader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.397 -0400", hash_original_method = "1126924377A1AF5E908D05CFB28B37FF", hash_generated_method = "29EFDAE02E5390F062AE386B310F4B8A")
     public  SweepGradient(float cx, float cy, int color0, int color1) {
         addTaint(color1);

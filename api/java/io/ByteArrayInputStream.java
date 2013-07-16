@@ -20,6 +20,7 @@ public class ByteArrayInputStream extends InputStream {
 
     protected int count;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.414 -0400", hash_original_method = "CF1B6A0EB8AC88640F4210354AA3396D", hash_generated_method = "A0B0F5C55FABD496502CD1493CE61372")
     public  ByteArrayInputStream(byte[] buf) {
         this.mark = 0;
@@ -32,6 +33,7 @@ public class ByteArrayInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.422 -0400", hash_original_method = "CF3AD622E6B16C040D235FE2C3A31C84", hash_generated_method = "D1E790062826309E9586368E1A175542")
     public  ByteArrayInputStream(byte[] buf, int offset, int length) {
         this.buf = buf;
@@ -101,6 +103,7 @@ public class ByteArrayInputStream extends InputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.433 -0400", hash_original_method = "2397610A056026EF1112E9790F6EF360", hash_generated_method = "7A5794AA431BDDBF7F1D9C86C52C97E6")
     @Override
     public synchronized int read(byte[] buffer, int offset, int length) {

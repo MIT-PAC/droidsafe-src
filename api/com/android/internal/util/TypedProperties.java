@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
 
 public class TypedProperties extends HashMap<String, Object> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.957 -0400", hash_original_method = "ECB16241B0AB765E13051ACDAE33A02C", hash_generated_method = "B248ACEE9001880DCCB88F00DD01C611")
     public  TypedProperties() {
         super();
@@ -220,6 +221,7 @@ public class TypedProperties extends HashMap<String, Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.960 -0400", hash_original_method = "47BA0B831F55080B235C21EE87FA94B0", hash_generated_method = "AE82895C51F80670D30106DEDB3CB83B")
     @Override
     public Object get(Object key) {

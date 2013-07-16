@@ -10,6 +10,7 @@ public class DuplicateFormatFlagsException extends IllegalFormatException {
 
     private String flags;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.253 -0400", hash_original_method = "BC09E00DC83FE8523846524A935EDBC5", hash_generated_method = "8D9823769FC7418D10A199E08FB4639E")
     public  DuplicateFormatFlagsException(String f) {
     if(f == null)        

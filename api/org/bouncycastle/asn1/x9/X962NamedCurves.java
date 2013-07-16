@@ -21,7 +21,7 @@ public class X962NamedCurves {
     }
 
 
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
     static void defineCurve(String name, DERObjectIdentifier oid, X9ECParametersHolder holder) {
         objIds.put(name, oid);
         names.put(oid, name);
@@ -29,7 +29,7 @@ public class X962NamedCurves {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
     public static X9ECParameters getByName(
         String name) {
         DERObjectIdentifier oid = (DERObjectIdentifier)objIds.get(Strings.toLowerCase(name));

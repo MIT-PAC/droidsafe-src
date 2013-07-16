@@ -25,6 +25,7 @@ public class ServerHello extends Message {
 
     byte compression_method;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.643 -0400", hash_original_method = "9AA41B9BF38033172F833E5120B7F6E3", hash_generated_method = "8D216AC98F65920A7889676EEB853E59")
     public  ServerHello(SecureRandom sr, byte[] server_version,
             byte[] session_id, CipherSuite cipher_suite, byte compression_method) {
@@ -55,6 +56,7 @@ public class ServerHello extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.645 -0400", hash_original_method = "23655B86BFA253F8DFEBCBADE0DA1F73", hash_generated_method = "A73982B1C835A7A4867500468C46D28B")
     public  ServerHello(HandshakeIODataStream in, int length) throws IOException {
         addTaint(length);
@@ -91,6 +93,7 @@ public class ServerHello extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.645 -0400", hash_original_method = "58B711F614C57C81491E703600BC8F27", hash_generated_method = "9513DD1B93794DF1265A768875C6AAE4")
     @Override
     public void send(HandshakeIODataStream out) {

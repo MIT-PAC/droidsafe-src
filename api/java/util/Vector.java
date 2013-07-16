@@ -20,6 +20,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
 
     protected int capacityIncrement;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.929 -0400", hash_original_method = "DACE16FEA3F29475D20FB4F2AE2C4BF3", hash_generated_method = "F92FDEEA28BC7E4B901A0A343D42232D")
     public  Vector() {
         this(DEFAULT_SIZE, 0);
@@ -27,6 +28,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.929 -0400", hash_original_method = "516F631FEB27C4B8AC76BAFF727DB150", hash_generated_method = "F3CDA2715564D8E8516468F487D83DFA")
     public  Vector(int capacity) {
         this(capacity, 0);
@@ -35,6 +37,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.929 -0400", hash_original_method = "B35B3D540AE265DD802702BED4157C47", hash_generated_method = "1BD13D60C0795FC81A939E9F1E8E8974")
     public  Vector(int capacity, int capacityIncrement) {
     if(capacity < 0)        
@@ -87,6 +90,7 @@ E[] var1B2FE2B69B45A4B74BDC1E1658079136_1984782008 =         (E[]) new Object[si
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.930 -0400", hash_original_method = "48191DBEFAEF26CE3AD2676469C6C588", hash_generated_method = "21D6949D568C503AE4CDB992DFC1EAB1")
     @Override
     public void add(int location, E object) {
@@ -98,6 +102,7 @@ E[] var1B2FE2B69B45A4B74BDC1E1658079136_1984782008 =         (E[]) new Object[si
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.930 -0400", hash_original_method = "4A1B135502A4FBF53B5971ADD0895265", hash_generated_method = "85D55B98C15BBA7A6A0C26543873A2C9")
     @Override
     public synchronized boolean add(E object) {
@@ -176,6 +181,7 @@ E[] var1B2FE2B69B45A4B74BDC1E1658079136_1984782008 =         (E[]) new Object[si
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.938 -0400", hash_original_method = "A5163E0F34F09A3D8DEA4C412903D1D1", hash_generated_method = "A227B57D2FB30D770C2C72C2E445FBFD")
     public synchronized void addElement(E object) {
     if(elementCount == elementData.length)        
@@ -279,6 +285,7 @@ Object varAFE05DA6BCC31D768176AC4CA91A2154_553051461 =             vector;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.947 -0400", hash_original_method = "3CA02A8FB0EDF4F6C1F1F261516DC679", hash_generated_method = "332C428346B2A785B67C0F0C561271B3")
     @SuppressWarnings("unchecked")
     public synchronized E elementAt(int location) {
@@ -442,6 +449,7 @@ E varC0FA0F1B092A92789BDD5894D3168FF7_1828805928 =                     (E) eleme
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.951 -0400", hash_original_method = "D89343B924D76ED75CDC4E663D066F77", hash_generated_method = "187FE8E988BC74559CACBEF3A1D6DAD4")
     @SuppressWarnings("unchecked")
     public synchronized E firstElement() {
@@ -462,6 +470,7 @@ E var13CFD9961928450F08557A948826D5C4_88263985 =             (E) elementData[0];
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.951 -0400", hash_original_method = "E09D80C19A651BF8C26D5375E71CA6A0", hash_generated_method = "1754FBFD68EE3D90785929CAF451E6DC")
     @Override
     public E get(int location) {
@@ -657,6 +666,7 @@ for(int i = location;i < elementCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.962 -0400", hash_original_method = "288EF4E8EFAE610E93F8F6663B1B7C8C", hash_generated_method = "C0A66FD1831034185EC522D491C92763")
     public synchronized void insertElementAt(E object, int location) {
     if(location >= 0 && location <= elementCount)        
@@ -712,6 +722,7 @@ for(int i = location;i < elementCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.963 -0400", hash_original_method = "BB5B48C89086DB15EEAE482333CC1417", hash_generated_method = "2EBB8D2E662377E2A3470E8B795F9259")
     @SuppressWarnings("unchecked")
     public synchronized E lastElement() {
@@ -808,6 +819,7 @@ for(int i = location;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.979 -0400", hash_original_method = "E42458246EBBDA79B230DDF671CA6424", hash_generated_method = "0487B705857BB955EA413BDDCA0B48CF")
     @SuppressWarnings("unchecked")
     @Override
@@ -1021,6 +1033,7 @@ for(int i = 0;i < elementCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.996 -0400", hash_original_method = "5EA1E920588C93D742AF1B9C3DFE2811", hash_generated_method = "CD1A38AC120A7FFD04756FFC50CF32B4")
     @SuppressWarnings("unchecked")
     @Override
@@ -1046,6 +1059,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_999939029 =             result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.004 -0400", hash_original_method = "BE9BD0132B3B62E633B4EDB307CB7290", hash_generated_method = "EB4FEAFEFF2F9B8F2670ED49875A91C2")
     public synchronized void setElementAt(E object, int location) {
     if(location < elementCount)        
@@ -1143,6 +1157,7 @@ Object[] varDC838461EE2FA0CA4C9BBB70A15456B0_227105199 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.006 -0400", hash_original_method = "70C5BC6785EB6C524C2B60C494DFFFBE", hash_generated_method = "B895578376D7FA5559681628B7E7BE12")
     @Override
     @SuppressWarnings("unchecked")

@@ -12,6 +12,7 @@ public class Subject extends SIPHeader implements SubjectHeader {
 
     protected String subject;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.467 -0400", hash_original_method = "D63809B6DE8F5F47E85D84EB99E1AE5D", hash_generated_method = "FC1BF9AC217CC58F50D5E1F25B779F09")
     public  Subject() {
         super(SUBJECT);

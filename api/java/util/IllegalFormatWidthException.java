@@ -10,6 +10,7 @@ public class IllegalFormatWidthException extends IllegalFormatException {
 
     private int w;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.638 -0400", hash_original_method = "3E51700FF2AA6FFF2196939892FEBA05", hash_generated_method = "4DD4772DE4285108BD460BD54AF74ECB")
     public  IllegalFormatWidthException(int w) {
         this.w = w;

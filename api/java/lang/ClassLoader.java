@@ -32,6 +32,7 @@ public abstract class ClassLoader {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.596 -0400", hash_original_method = "DB0BF52E0FA8D43D630F9D86095EF243", hash_generated_method = "68E30502081669C8BA075C762E52DBD8")
     protected  ClassLoader(ClassLoader parentLoader) {
         this(parentLoader, false);
@@ -40,6 +41,7 @@ public abstract class ClassLoader {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.597 -0400", hash_original_method = "B3E4E8C3A704386E61A8D58325A9E2B7", hash_generated_method = "780D7F88429DECBF9F1408D531CBF627")
       ClassLoader(ClassLoader parentLoader, boolean nullAllowed) {
         addTaint(nullAllowed);

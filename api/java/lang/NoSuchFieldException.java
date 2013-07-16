@@ -7,12 +7,14 @@ import droidsafe.runtime.*;
 
 public class NoSuchFieldException extends Exception {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.027 -0400", hash_original_method = "C9B6E52CB5F5184DC84559DF357B6964", hash_generated_method = "0AA9C44117E303F6AB30495E8744B93B")
     public  NoSuchFieldException() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.027 -0400", hash_original_method = "3003F78B5EA782042D23C70E768D6CA2", hash_generated_method = "16F4AEC15F62FE0969E0A32A1F6B837B")
     public  NoSuchFieldException(String detailMessage) {
         super(detailMessage);

@@ -14,6 +14,7 @@ public class MinSE extends ParametersHeader implements ExtensionHeader, MinSEHea
 
     public int expires;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.713 -0400", hash_original_method = "FF95F949FD2A1D95680CD0A1163B2941", hash_generated_method = "4E41930010A8369BD320B3492D85970B")
     public  MinSE() {
         super(NAME);

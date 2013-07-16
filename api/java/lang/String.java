@@ -31,6 +31,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
 
     private int hashCode;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.639 -0400", hash_original_method = "F65E96A775698E2C256BB1E903F5D8A6", hash_generated_method = "B4FE7A30CB86B25991ECB034EA74BE0F")
     public  String() {
         value = EmptyArray.CHAR;
@@ -43,6 +44,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.640 -0400", hash_original_method = "8A258D0AF74DE6E118252D0EA5531366", hash_generated_method = "A11432EA568E66AD1DE5D8C05C5AB870")
     @SuppressWarnings("unused")
     private  String(String s, char c) {
@@ -60,6 +62,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.641 -0400", hash_original_method = "3CF6472F1EAFF36B200903831BC9D282", hash_generated_method = "4D4C07B858AC27A3595A4F1ED164415E")
     public  String(byte[] data) {
         this(data, 0, data.length);
@@ -68,6 +71,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.641 -0400", hash_original_method = "94FE9BFA8A903BE49DF8F4E82A84C713", hash_generated_method = "96F2149D8F428069C3C87AA58538065E")
     @Deprecated
     public  String(byte[] data, int high) {
@@ -78,6 +82,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.652 -0400", hash_original_method = "9C5B9D3903B08C7F386C9C307D28A8D8", hash_generated_method = "D6439CB90D6545AC7AC3C86073E9F0E9")
     public  String(byte[] data, int offset, int byteCount) {
         addTaint(byteCount);
@@ -114,6 +119,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.695 -0400", hash_original_method = "22A6AFB2E643FB23D243CAF5D019E325", hash_generated_method = "79A975FB90AD0ECD193D044E40A8EEB8")
     @Deprecated
     public  String(byte[] data, int high, int offset, int byteCount) {
@@ -145,6 +151,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.696 -0400", hash_original_method = "D35F458D65648B05442A41C1A12F30CA", hash_generated_method = "3CEEE872B2C15AD5D826CC9768AE132D")
     public  String(byte[] data, int offset, int byteCount, String charsetName) throws UnsupportedEncodingException {
         this(data, offset, byteCount, Charset.forNameUEE(charsetName));
@@ -156,6 +163,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.697 -0400", hash_original_method = "11FE032D0B0EBCDEFC4E4C2065489303", hash_generated_method = "E5BE82FCBB454F307F1387B9FE1B9C0E")
     public  String(byte[] data, String charsetName) throws UnsupportedEncodingException {
         this(data, 0, data.length, Charset.forNameUEE(charsetName));
@@ -165,6 +173,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.813 -0400", hash_original_method = "230168F72CB2A0A48AA9F4A7AFCECA03", hash_generated_method = "5CF85473A930BD9609F6F58C62C97D46")
     public  String(byte[] data, int offset, int byteCount, Charset charset) {
         addTaint(charset.getTaint());
@@ -307,6 +316,7 @@ for(int i = 0;i < utfCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.815 -0400", hash_original_method = "9D77FFE69AA84BF1048ED5CBD8EE386C", hash_generated_method = "6C134F8B1B500206BC50C4890F003080")
     public  String(byte[] data, Charset charset) {
         this(data, 0, data.length, charset);
@@ -316,6 +326,7 @@ for(int i = 0;i < utfCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.815 -0400", hash_original_method = "84FF2A14EA759DC7C1F299809C55E832", hash_generated_method = "941AD48499B8A325EBF754DD62D23EFF")
     public  String(char[] data) {
         this(data, 0, data.length);
@@ -324,6 +335,7 @@ for(int i = 0;i < utfCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.828 -0400", hash_original_method = "14BFB40845511D49F067DB0E6AC711FE", hash_generated_method = "971E3234E4344BD64B6C546645470DD3")
     public  String(char[] data, int offset, int charCount) {
         addTaint(data[0]);
@@ -348,6 +360,7 @@ for(int i = 0;i < utfCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.830 -0400", hash_original_method = "6AA52B72AD5521C733ED3E9463435DD5", hash_generated_method = "99D51D061C47D5C074A83E94BF3BA236")
       String(int offset, int charCount, char[] chars) {
         this.value = chars;
@@ -360,6 +373,7 @@ for(int i = 0;i < utfCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.832 -0400", hash_original_method = "7D7AE898849737A5DE2F771028ADD293", hash_generated_method = "7FE6513FD8F04FE77BE3B65E244B762D")
     public  String(String toCopy) {
         value = (toCopy.value.length == toCopy.count)
@@ -376,6 +390,7 @@ for(int i = 0;i < utfCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.834 -0400", hash_original_method = "8B59C74FD130D5556CE63A5F3CE74139", hash_generated_method = "08126433ED54CCD02F64DEF6C42B8545")
     @SuppressWarnings( { "unused", "nls" })
     private  String(String s1, String s2) {
@@ -407,6 +422,7 @@ for(int i = 0;i < utfCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.836 -0400", hash_original_method = "E07460C3146BC4727C3E888CAC21772A", hash_generated_method = "73ACD6CE76E5E989647928EAA1950CB1")
     @SuppressWarnings( { "unused", "nls" })
     private  String(String s1, String s2, String s3) {
@@ -447,6 +463,7 @@ for(int i = 0;i < utfCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.844 -0400", hash_original_method = "C3DEF5F256BD0FFA01404830FE1A0B0E", hash_generated_method = "9D73BD38C4E1C34F746D9E60AA5559EA")
     public  String(StringBuffer stringBuffer) {
         offset = 0;
@@ -464,6 +481,7 @@ for(int i = 0;i < utfCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.865 -0400", hash_original_method = "DE744DAB842D7A0BE4BC8C7648E27967", hash_generated_method = "A4716F806D0CB47D314F039D1EE5E331")
     public  String(int[] codePoints, int offset, int count) {
         addTaint(codePoints[0]);
@@ -506,6 +524,7 @@ for(int i = offset;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.866 -0400", hash_original_method = "1A43E0983F964C9F4090DA81181B802F", hash_generated_method = "7E5B9FDFA1C4CDCDDA082F7287071AD9")
     public  String(StringBuilder stringBuilder) {
     if(stringBuilder == null)        
@@ -529,6 +548,7 @@ for(int i = offset;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.868 -0400", hash_original_method = "8767608BAC25DDC267BEC70B13CF72A3", hash_generated_method = "23EDDAB7C39C6B71B48112C650C2BBBB")
     @SuppressWarnings("unused")
     private  String(String s1, int v1) {
@@ -2243,6 +2263,7 @@ CharSequence var14116236EC4BC8D62F0E86641118EABD_458525488 =         substring(s
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.148 -0400", hash_original_method = "10AFFFE45F62C15CA0052EB0BB14A8D3", hash_generated_method = "33D046C4796C99E36627257D5B926B55")
         public int compare(String o1, String o2) {
             addTaint(o2.getTaint());

@@ -69,6 +69,7 @@ public class Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.219 -0400", hash_original_method = "B143F86B302A5932C8EBD6FB2BD46478", hash_generated_method = "D523B0EECDBAE13FC752EA1B886457F7")
     public  Time() {
         this(TimeZone.getDefault().getID());
@@ -165,6 +166,7 @@ switch(field){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.224 -0400", hash_original_method = "CE0E4353FCA63B39E00F0F1C4B7BFC83", hash_generated_method = "693CA2EEFA31A14CD4393E8083CD6D72")
     public void clear(String timezone) {
     if(timezone == null)        
@@ -204,7 +206,8 @@ switch(field){
     }
 
     
-        public static int compare(Time a, Time b) {
+        @DSModeled(DSC.SAFE)
+    public static int compare(Time a, Time b) {
         if (a == null) {
             throw new NullPointerException("a == null");
         } else if (b == null) {
@@ -386,7 +389,8 @@ String varFBBEE5BC025677B8DDBAC7529127CCD6_601568264 =             format1(forma
     }
 
     
-        public static String getCurrentTimezone() {
+        @DSModeled(DSC.SAFE)
+    public static String getCurrentTimezone() {
         return TimeZone.getDefault().getID();
     }
 
@@ -558,6 +562,7 @@ String varFBBEE5BC025677B8DDBAC7529127CCD6_601568264 =             format1(forma
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.237 -0400", hash_original_method = "84747EB963EFC6E551D95C210645E8C0", hash_generated_method = "D7B075DDF17583DB644BC9E6FBECBE32")
     public String format3339(boolean allDay) {
         addTaint(allDay);
@@ -601,7 +606,8 @@ String varF1ABAA80440B3A2EE683E32AB62D2A3A_2051772461 =             String.forma
     }
 
     
-        public static boolean isEpoch(Time time) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isEpoch(Time time) {
         long millis = time.toMillis(true);
         return getJulianDay(millis, 0) == EPOCH_JULIAN_DAY;
     }

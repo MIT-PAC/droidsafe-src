@@ -83,6 +83,7 @@ public final class ResponseHeaders {
 
     private String wwwAuthenticate;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.827 -0400", hash_original_method = "DB24454BC912323B5FCB6CCA35CD9240", hash_generated_method = "B1262A28C863954B742AD0D089384546")
     public  ResponseHeaders(URI uri, RawHeaders headers) {
         this.uri = uri;

@@ -18,6 +18,7 @@ public class ChoiceFormat extends NumberFormat {
 
     private String[] choiceFormats;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.484 -0400", hash_original_method = "6AA98ECEF055DFD6530181EFB704802A", hash_generated_method = "ACD028F8EA6BC8E69CA309C91F48773D")
     public  ChoiceFormat(double[] limits, String[] formats) {
         addTaint(formats[0].getTaint());
@@ -28,6 +29,7 @@ public class ChoiceFormat extends NumberFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.485 -0400", hash_original_method = "7A22DFD5F0C8BF76D2134AD604327DD6", hash_generated_method = "93C351C34DF6315C36BF2170EFF4591B")
     public  ChoiceFormat(String template) {
         addTaint(template.getTaint());

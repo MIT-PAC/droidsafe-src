@@ -21,6 +21,7 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
 
     private WeakReference<Drawable> mDrawableRef;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.168 -0400", hash_original_method = "587E05693DC916F3D9913DB57CE5CC25", hash_generated_method = "789768EBC2745941ED923A1AE4190854")
     public  DynamicDrawableSpan() {
         mVerticalAlignment = ALIGN_BOTTOM;
@@ -29,6 +30,7 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.169 -0400", hash_original_method = "5C20CFC81A776E313C1A5A57E335B286", hash_generated_method = "DB69116249BA33E0EF3EEBB6FDC4C251")
     protected  DynamicDrawableSpan(int verticalAlignment) {
         mVerticalAlignment = verticalAlignment;

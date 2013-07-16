@@ -12,6 +12,7 @@ public final class CallInfo extends ParametersHeader implements javax.sip.header
 
     protected GenericURI info;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.135 -0400", hash_original_method = "E32B7E5F9D4A1980425339805E4FFC9A", hash_generated_method = "37A5CF038F326ECEA85878995B55B295")
     public  CallInfo() {
         super(CALL_INFO);

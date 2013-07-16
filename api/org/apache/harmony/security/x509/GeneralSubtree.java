@@ -24,6 +24,7 @@ public final class GeneralSubtree {
 
     private byte[] encoding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.094 -0400", hash_original_method = "438D69377D52986D40A8B5F5E96E3A6B", hash_generated_method = "33C4C368992CAD0DD88C217B1E59C1D3")
     public  GeneralSubtree(GeneralName base, int minimum, int maximum) {
         this.base = base;

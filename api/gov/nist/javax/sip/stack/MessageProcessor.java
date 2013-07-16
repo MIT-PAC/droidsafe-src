@@ -43,6 +43,7 @@ public abstract class MessageProcessor implements Runnable {
 
     protected SIPTransactionStack sipStack;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.790 -0400", hash_original_method = "BC8F7D4E4A2ED3DFF02CD99DF0273205", hash_generated_method = "BE2224366E62DB88B879A0C9A552860C")
     protected  MessageProcessor( String transport ) {
         this.transport = transport;
@@ -168,6 +169,7 @@ Via var540C13E9E156B687226421B24F2DF178_1701257404 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.796 -0400", hash_original_method = "07B7078D968B938E9AAFF4E32CB3E487", hash_generated_method = "093B809364592CDAC8EB002DCD4DA50C")
     public ListeningPointImpl getListeningPoint() {
     if(listeningPoint == null)        
@@ -192,6 +194,7 @@ ListeningPointImpl var28610F0C322E41C5E84A3628D8BE13E8_1711802144 =         list
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.798 -0400", hash_original_method = "0844D1EB645D6FF4A4D65C631732D7AB", hash_generated_method = "BE7D682CAF040C429C211A38D46F6EF5")
     public void setListeningPoint(ListeningPointImpl lp) {
     if(this.getSIPStack().isLoggingEnabled())        
@@ -237,6 +240,7 @@ InetAddress var021FE4BB5A9347AB07122A06261B0E87_924582487 =         this.ipAddre
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.799 -0400", hash_original_method = "B4AF9626210C81D85EEE89A64933E4EF", hash_generated_method = "C9A7808E9D2B0ECBB7A42CAB1AE9EBBB")
     protected void setIpAddress(InetAddress ipAddress) {
         this.sentByHostPort.setHost( new Host(ipAddress.getHostAddress()));
@@ -295,6 +299,7 @@ InetAddress var021FE4BB5A9347AB07122A06261B0E87_924582487 =         this.ipAddre
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.801 -0400", hash_original_method = "F9F985C0AF39EB878B850CABB152BA50", hash_generated_method = "7903FDAD2561FF4CB6E0420080F258C4")
     public String getSentBy() {
     if(this.sentBy == null && this.sentByHostPort != null)        
@@ -355,7 +360,8 @@ String varD51D88094686E0D480B6E2DDA4DFBAA7_1578934438 =         this.sentBy;
     }
 
     
-        public static int getDefaultPort(String transport) {
+        @DSModeled(DSC.SAFE)
+    public static int getDefaultPort(String transport) {
         return transport.equalsIgnoreCase("TLS")?5061:5060;
     }
 

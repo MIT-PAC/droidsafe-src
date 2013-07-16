@@ -16,12 +16,14 @@ public class OpenSSLPBEParametersGenerator extends PBEParametersGenerator {
 
     private Digest digest = new MD5Digest();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.282 -0400", hash_original_method = "469CB0205646D06181D1559BA7D61CF9", hash_generated_method = "1CCF825CE7F4725EE21D0B68C89CAE4D")
     public  OpenSSLPBEParametersGenerator() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.282 -0400", hash_original_method = "2CA180C614EC01706903EAD38F06E97B", hash_generated_method = "F7EBA9D758CB6C26713FE78F382C4CD6")
     public void init(
        byte[] password,
@@ -84,6 +86,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.283 -0400", hash_original_method = "47F03A4B7607EC42FAB580BDD530C12C", hash_generated_method = "B59FE7363A1D715A01FFF922FB445A00")
     public CipherParameters generateDerivedParameters(
         int keySize) {
@@ -120,6 +123,7 @@ CipherParameters var03ABCD9D26B2AC8C264C443A6B20AF1A_2100677700 =         new Pa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.283 -0400", hash_original_method = "9CBF59A81FEE9822185147DE8DCD075A", hash_generated_method = "AB0679EA83982D2DD2620873005E1BDF")
     public CipherParameters generateDerivedMacParameters(
         int keySize) {

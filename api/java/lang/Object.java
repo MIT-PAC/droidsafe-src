@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public class Object {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.051 -0400", hash_original_method = "1035BC9FD37C3D2AC57825226BBB0539", hash_generated_method = "5CDBD442E1AC1C77BDFC3434B00402E2")
     public  Object() {
         // ---------- Original Method ----------

@@ -11,6 +11,7 @@ public class DERNumericString extends ASN1Object implements DERString {
 
     String string;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.101 -0400", hash_original_method = "68F5D78267A661375BFA3ED79E149992", hash_generated_method = "9B887FA3143697834C11702A7625F1AB")
     public  DERNumericString(
         byte[]   string) {
@@ -30,6 +31,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.102 -0400", hash_original_method = "4A4CC31A466FEB81F134844B7BA257FB", hash_generated_method = "F68CB3283C8D4442C3B0A799F975D5BD")
     public  DERNumericString(
         String   string) {
@@ -39,6 +41,7 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.102 -0400", hash_original_method = "E352C3D2266CB71465C2437206485D10", hash_generated_method = "10A8E8D7B1721F43AE8EB90533EB6F44")
     public  DERNumericString(
         String   string,
@@ -60,7 +63,8 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
-        public static DERNumericString getInstance(
+        @DSModeled(DSC.SAFE)
+    public static DERNumericString getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DERNumericString)
         {
@@ -70,7 +74,8 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
-        public static DERNumericString getInstance(
+        @DSModeled(DSC.SAFE)
+    public static DERNumericString getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
         DERObject o = obj.getObject();
@@ -177,7 +182,8 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
-        public static boolean isNumericString(
+        @DSModeled(DSC.SAFE)
+    public static boolean isNumericString(
         String  str) {
         for (int i = str.length() - 1; i >= 0; i--)
         {

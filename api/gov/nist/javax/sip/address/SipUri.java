@@ -27,6 +27,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
 
     protected TelephoneNumber telephoneSubscriber;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.267 -0400", hash_original_method = "4581AC1C0AE43A94306BF80DA76A0B36", hash_generated_method = "C518F6BE6D677C49B5D373A0ADD9B73A")
     public  SipUri() {
         this.scheme = SIP;
@@ -393,6 +394,7 @@ String var5C0D40F1B156D8DCF39E701F873150CC_1799544899 =         s.append(host).t
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.279 -0400", hash_original_method = "6F248E410BDCE844EE042BFFA98482C9", hash_generated_method = "232A5E0AE2E4C8BED3785B05F822CB35")
     public String getUserAtHostPort() {
         String user = "";
@@ -861,6 +863,7 @@ String varE1F15250491F87E8943C750256671D6A_813552208 =         authority.getHost
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.292 -0400", hash_original_method = "FBDBB9DDA2030458399AB3B5F3F4F0C6", hash_generated_method = "1AA95D1226AC15143412C988EA21B340")
     public void setUserParam(String usertype) {
         addTaint(usertype.getTaint());

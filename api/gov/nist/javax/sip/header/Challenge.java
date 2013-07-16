@@ -14,6 +14,7 @@ public class Challenge extends SIPObject {
 
     protected NameValueList authParams;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.167 -0400", hash_original_method = "8BBE6E62DECF2D10899FEF6115E55B0A", hash_generated_method = "8B8D628BE29F284A7616E96B4E975F92")
     public  Challenge() {
         authParams = new NameValueList();

@@ -19,6 +19,7 @@ public final class Pattern implements Serializable {
 
     transient int address;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.333 -0400", hash_original_method = "F3225888DE48ADF8B6D1D654970A412C", hash_generated_method = "A8DABE650B74D081B38E6086E18BED65")
     private  Pattern(String pattern, int flags) throws PatternSyntaxException {
     if((flags & CANON_EQ) != 0)        

@@ -14,6 +14,7 @@ public class Wire {
 
     private Log log;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.956 -0400", hash_original_method = "B4B1AB4B499B8A15063D0CC014BEC991", hash_generated_method = "FBE8B17783F099F7154A4AC40DE90B09")
     public  Wire(Log log) {
         this.log = log;
@@ -22,6 +23,7 @@ public class Wire {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.957 -0400", hash_original_method = "8AB487D8D5FB9334AB649D48E9DFB74A", hash_generated_method = "96754D9F7E98A4F3A15C3BC8F64D7256")
     private void wire(String header, InputStream instream) throws IOException {
         addTaint(instream.getTaint());
@@ -68,6 +70,7 @@ public class Wire {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.957 -0400", hash_original_method = "3293A063039621258FD717F75AAE20F6", hash_generated_method = "E39921ECFA6DB14FD11027FF246BBAF4")
     public boolean enabled() {
         boolean varF9714C35AB36CA5601F98E2200BBE3AC_118993757 = (log.isDebugEnabled());
@@ -78,6 +81,7 @@ public class Wire {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.958 -0400", hash_original_method = "41909751022A9CA66D19EAE8E0D21F96", hash_generated_method = "903B9466C12F472E25550F1FD53AA1D5")
     public void output(InputStream outstream) throws IOException {
         addTaint(outstream.getTaint());
@@ -96,6 +100,7 @@ public class Wire {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.958 -0400", hash_original_method = "9B3D263B2ABEC36BE45DD8B457A2FB5F", hash_generated_method = "449AF39614183BD4E1DED6A2B708202A")
     public void input(InputStream instream) throws IOException {
         addTaint(instream.getTaint());
@@ -114,6 +119,7 @@ public class Wire {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.959 -0400", hash_original_method = "FC3E92A1F886275998FB021C6804D6A9", hash_generated_method = "989672677B6860D8E7507821C13E670B")
     public void output(byte[] b, int off, int len) throws IOException {
         addTaint(len);
@@ -134,6 +140,7 @@ public class Wire {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.959 -0400", hash_original_method = "7AB6B9BAC192F7B379ECF2E9CAEC39DE", hash_generated_method = "6A55CA41A17DF78D90C8C78542CE1859")
     public void input(byte[] b, int off, int len) throws IOException {
         addTaint(len);
@@ -154,6 +161,7 @@ public class Wire {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.959 -0400", hash_original_method = "C456100C17A97A0094094ACD8A59EB30", hash_generated_method = "14FBD79C14C609CFEE03B269734DE694")
     public void output(byte[] b) throws IOException {
         addTaint(b[0]);
@@ -172,6 +180,7 @@ public class Wire {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.960 -0400", hash_original_method = "CACCE18D78F1F755698157152E4CF23A", hash_generated_method = "39727B4F684EBBA0DF3429200AAB68CF")
     public void input(byte[] b) throws IOException {
         addTaint(b[0]);
@@ -190,6 +199,7 @@ public class Wire {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.960 -0400", hash_original_method = "98C5B0073473ADAA98ACDF73DE6F6267", hash_generated_method = "B4A46F207D2BBAC5A7EDB382988D2536")
     public void output(int b) throws IOException {
         addTaint(b);
@@ -199,6 +209,7 @@ public class Wire {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.960 -0400", hash_original_method = "95BA17E717E6FE2824B7813CA2829BC6", hash_generated_method = "7D889AA18AF09DE3BF7D147223C2250C")
     public void input(int b) throws IOException {
         addTaint(b);

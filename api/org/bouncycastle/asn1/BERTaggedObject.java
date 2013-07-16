@@ -33,6 +33,7 @@ public class BERTaggedObject extends DERTaggedObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.834 -0400", hash_original_method = "6F574A26D6DB1C59B77D339A09CC5651", hash_generated_method = "EADAE545A6D448B2C6F1DC545BE8A8F7")
     public  BERTaggedObject(
         int             tagNo) {
@@ -42,6 +43,7 @@ public class BERTaggedObject extends DERTaggedObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.835 -0400", hash_original_method = "7D1415DBFEACA82B062C25744BEBEEC4", hash_generated_method = "5EEBB432CC94C55B6B4B5B34267871D2")
      void encode(
         DEROutputStream  out) throws IOException {

@@ -31,6 +31,7 @@ public class WifiP2pGroup implements Parcelable {
 
     private String mInterface;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.211 -0400", hash_original_method = "BC18BEC489FA7E8F37CA54A3CD540A78", hash_generated_method = "D3978A9837D03D7B11DDE06D4B93706F")
     public  WifiP2pGroup() {
         // ---------- Original Method ----------
@@ -182,6 +183,7 @@ WifiP2pDevice var5F2C684ADE383867ABA7E337213B9967_1903258619 =         mOwner;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.216 -0400", hash_original_method = "DBE7A809671EFF433B1C312D5019CC64", hash_generated_method = "05C15EB6CB5B7D76D8FB922DCA764393")
     public void addClient(String address) {
         addTaint(address.getTaint());
@@ -191,6 +193,7 @@ WifiP2pDevice var5F2C684ADE383867ABA7E337213B9967_1903258619 =         mOwner;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.216 -0400", hash_original_method = "79E27749F3AC38AE959779DE4B42A054", hash_generated_method = "A6E14D2E4AA901ABB15FC121BD431A5C")
     public void addClient(WifiP2pDevice device) {
         addTaint(device.getTaint());
@@ -208,6 +211,7 @@ for(WifiP2pDevice client : mClients)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.217 -0400", hash_original_method = "1526E375B4DF8BACD06805B33A5DCA8C", hash_generated_method = "D024E090839F14EF680D67C02D85622A")
     public boolean removeClient(String address) {
         addTaint(address.getTaint());
@@ -219,6 +223,7 @@ for(WifiP2pDevice client : mClients)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.217 -0400", hash_original_method = "EDE2AC4ED1045F1449D193D9276A4C02", hash_generated_method = "F03385EAA01FE8380BFFF0F7E9F21D3D")
     public boolean removeClient(WifiP2pDevice device) {
         addTaint(device.getTaint());
@@ -230,6 +235,7 @@ for(WifiP2pDevice client : mClients)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.217 -0400", hash_original_method = "FBB5E028AB398AA4DEEB45B59F22DD8A", hash_generated_method = "8B7FC9ECA45A3BB7726EF1C82BCF57C8")
     public boolean isClientListEmpty() {
         boolean var37652FDED570C923755D3B11FF970CB3_597619763 = (mClients.size() == 0);
@@ -290,6 +296,7 @@ String var690AAF4620A1A50EE3302D08CABA94B2_194907995 =         mInterface;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.219 -0400", hash_original_method = "D6A6710E4962EEBC5AEB834D1EC25D10", hash_generated_method = "96E9ED0CF02639CA0A860068B6870A40")
     public String toString() {
         StringBuffer sbuf = new StringBuffer();
@@ -328,6 +335,7 @@ String var69222FFA45D1268AEE1923C5558B0BD5_136615428 =         sbuf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.220 -0400", hash_original_method = "1E901056DDD7FF66FB9A75FE788910FD", hash_generated_method = "31B5C3A28B81F70F77D19173D5A432CA")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

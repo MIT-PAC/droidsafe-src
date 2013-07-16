@@ -68,6 +68,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.806 -0400", hash_original_method = "3FAB664599EE7924CC36F277EFA522C8", hash_generated_method = "AB0CC1E246524C1E63F16EBEA02DAD1F")
     public  Intent(Intent o) {
         this.mAction = o.mAction;
@@ -114,6 +115,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.807 -0400", hash_original_method = "C1E3B3E9040DD8E1371895A668D56796", hash_generated_method = "F6A9D53A94931318D36FCC5BE378C0C7")
     private  Intent(Intent o, boolean all) {
         addTaint(all);
@@ -147,6 +149,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.807 -0400", hash_original_method = "FF213ACFD5B7DFA2C83F432472B13960", hash_generated_method = "AFB7FB15D02CAD0F331E4E2FFC4CCB6D")
     public  Intent(String action, Uri uri) {
         addTaint(action.getTaint());
@@ -3127,6 +3130,7 @@ String varDE4363A900B18904B4024DC514CB5E14_1826406929 =             resourceName
 
         private int mHashCode;
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.858 -0400", hash_original_method = "2099CA9774C8964FCB84A0C5BA5EC3C6", hash_generated_method = "01A84E541FBE057533665879491A9DB5")
         public  FilterComparison(Intent intent) {
             mIntent = intent;

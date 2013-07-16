@@ -26,6 +26,7 @@ public final class ObjectIdentifier {
 
     private Object group;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.433 -0400", hash_original_method = "7ABF15BC63C3D8D706564084308C24AA", hash_generated_method = "CCC4EB505410486A6B9D3FE727DD263E")
     public  ObjectIdentifier(int[] oid) {
         validateOid(oid);
@@ -92,6 +93,7 @@ Object varD15A27BD67EB0D670CD5C298FF20B74F_1360345573 =         group;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.436 -0400", hash_original_method = "7A1590EC642F64148081547F7DE77EEF", hash_generated_method = "6920D7354AC33295F438E4E16C128630")
     public boolean equals(Object o) {
         addTaint(o.getTaint());
@@ -139,6 +141,7 @@ String var1644F0E5DA14318D1460A2F3EC7526E4_1309316059 =         sOID;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.438 -0400", hash_original_method = "B22823BCA8FD058C901A741025BA8FB1", hash_generated_method = "B449E8E141599E0F58295658D3CD58DA")
     public String toString() {
     if(soid == null)        
@@ -169,6 +172,7 @@ String var2D98CC55C81F1E6E04CCE50DEB76A9B7_1680422614 =         soid;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.438 -0400", hash_original_method = "F5FB24607FBDCD1263609B3FEECCC6D5", hash_generated_method = "00143AD5836ADEAA65F9EC791BD5323C")
     public int hashCode() {
     if(hash == -1)        
@@ -186,7 +190,8 @@ String var2D98CC55C81F1E6E04CCE50DEB76A9B7_1680422614 =         soid;
     }
 
     
-        public static void validateOid(int[] oid) {
+        @DSModeled(DSC.SAFE)
+    public static void validateOid(int[] oid) {
         if (oid == null) {
             throw new NullPointerException("oid == null");
         }

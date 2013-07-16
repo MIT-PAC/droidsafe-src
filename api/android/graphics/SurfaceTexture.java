@@ -20,6 +20,7 @@ public class SurfaceTexture {
 
     private int mSurfaceTexture;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.370 -0400", hash_original_method = "C7158DCB4D3EE755177A25DCF0F3004D", hash_generated_method = "13E12D1E7782CE5DAEA4C56B1E7081B7")
     public  SurfaceTexture(int texName) {
         this(texName, false);
@@ -28,6 +29,7 @@ public class SurfaceTexture {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.372 -0400", hash_original_method = "67BB7F3D4FE9BE0028412949F77419AD", hash_generated_method = "B2A0E9C07FEC7C8D13D73B6B367CF09B")
     public  SurfaceTexture(int texName, boolean allowSynchronousMode) {
         addTaint(allowSynchronousMode);
@@ -233,12 +235,14 @@ public class SurfaceTexture {
     
     public static class OutOfResourcesException extends Exception {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.379 -0400", hash_original_method = "61F4EF1E830289140B20E24C64AAB8C1", hash_generated_method = "A594474F57F2910DF90E8F2B34F97C87")
         public  OutOfResourcesException() {
             // ---------- Original Method ----------
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.380 -0400", hash_original_method = "939C993D5367F7A0F0B43DA6997565C5", hash_generated_method = "5C61F340B8BA1A59560151D83B1A6E5F")
         public  OutOfResourcesException(String name) {
             super(name);

@@ -18,6 +18,7 @@ public class Transformation {
 
     protected int mTransformationType;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.990 -0400", hash_original_method = "B51BFBC203820EC809B8E082E20903C2", hash_generated_method = "3F4DA68BCEF9BF3D04E9F77E20D14323")
     public  Transformation() {
         clear();
@@ -69,6 +70,7 @@ public class Transformation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.992 -0400", hash_original_method = "6A74ACE3E87C2A5E84C908FCAD2903E1", hash_generated_method = "AA3A3FDF21E49D36483D40C6AB86DBDC")
     public void set(Transformation t) {
         mAlpha = t.getAlpha();
@@ -122,6 +124,7 @@ Matrix var49A816397330451E1FD30BEA000F3851_1270977908 =         mMatrix;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.994 -0400", hash_original_method = "6F2D8252A709B880F4404B074507697E", hash_generated_method = "A38E5271B41326A74D795930D4AA4967")
     @Override
     public String toString() {
@@ -139,6 +142,7 @@ String var2460B846747F8B22185AD8BE722266A5_825600311 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.994 -0400", hash_original_method = "9DDD7B6FB851EDEB6218261EF1A63117", hash_generated_method = "D9095526A9CEAD7031223F9941517BA1")
     public String toShortString() {
         StringBuilder sb = new StringBuilder(64);
@@ -153,6 +157,7 @@ String var2460B846747F8B22185AD8BE722266A5_1012984187 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.994 -0400", hash_original_method = "1DD4705BF9B7609556F25B5998828696", hash_generated_method = "829B61668E32909A783B8000FB54F779")
     public void toShortString(StringBuilder sb) {
         addTaint(sb.getTaint());
@@ -170,6 +175,7 @@ String var2460B846747F8B22185AD8BE722266A5_1012984187 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.995 -0400", hash_original_method = "434986F5E9E4AD2D5C5ADC5B37E7986B", hash_generated_method = "D7B21699736F25ACFD6128B78A3CEF97")
     public void printShortString(PrintWriter pw) {
         addTaint(pw.getTaint());

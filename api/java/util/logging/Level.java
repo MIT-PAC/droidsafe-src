@@ -29,6 +29,7 @@ public class Level implements Serializable {
 
     private transient ResourceBundle rb;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.130 -0400", hash_original_method = "BA2D7DFC8FDB62519DA8B21DD64373B1", hash_generated_method = "5D13951DD8E87306CD7F4B33BD4FE6EE")
     protected  Level(String name, int level) {
         this(name, level, null);
@@ -38,6 +39,7 @@ public class Level implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.131 -0400", hash_original_method = "53B5A8F24D3D39AE441B077329C71771", hash_generated_method = "F06404053DF4A029E748BBBA6D0CAFD2")
     protected  Level(String name, int level, String resourceBundleName) {
     if(name == null)        

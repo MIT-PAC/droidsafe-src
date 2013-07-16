@@ -28,6 +28,7 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
 
     private GLES20DisplayList mDisplayList;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.014 -0400", hash_original_method = "812619B49F53F101F754768C67C6D06B", hash_generated_method = "DB948983801BF86D0D9F511447C56561")
     private  GLES20RecordingCanvas() {
         super(true , true );
@@ -99,6 +100,7 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.017 -0400", hash_original_method = "CA25EBA5455666A6E9CEF7F1EE6D9382", hash_generated_method = "391F3A60380EF7E41A5ECD0D07319057")
     @Override
     public void drawPatch(Bitmap bitmap, byte[] chunks, RectF dst, Paint paint) {
@@ -114,6 +116,7 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.017 -0400", hash_original_method = "DC4589341334316769F25D31A4526E34", hash_generated_method = "449B33B463CBCAA5FF28BE380430AA5A")
     @Override
     public void drawBitmap(Bitmap bitmap, float left, float top, Paint paint) {
@@ -129,6 +132,7 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.017 -0400", hash_original_method = "CFD3BD2C1BBA98F5626893D13AB7C95A", hash_generated_method = "59D9F85B65AA4625DAA42C812DCDDD44")
     @Override
     public void drawBitmap(Bitmap bitmap, Matrix matrix, Paint paint) {
@@ -143,6 +147,7 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.018 -0400", hash_original_method = "9D2E295A26539D23EF0FD856A55589EB", hash_generated_method = "1FC92FCEAEBB7508A2435B6B45119A81")
     @Override
     public void drawBitmap(Bitmap bitmap, Rect src, Rect dst, Paint paint) {
@@ -158,6 +163,7 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.018 -0400", hash_original_method = "4963172342BE3F3A14C54D98056B0F90", hash_generated_method = "D8DB9F357E1F07E7301DAA32562295BD")
     @Override
     public void drawBitmap(Bitmap bitmap, Rect src, RectF dst, Paint paint) {
@@ -173,6 +179,7 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.019 -0400", hash_original_method = "DB3E0CCCF2FCFB4CB333E762F8389779", hash_generated_method = "2D19080CE4E20144F8223B553F785458")
     @Override
     public void drawBitmap(int[] colors, int offset, int stride, float x, float y, int width,
@@ -192,6 +199,7 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.020 -0400", hash_original_method = "CC1BFF66CF59C17AECED1F918B377AD4", hash_generated_method = "44BD992D13673ECB8DF78B7564882360")
     @Override
     public void drawBitmap(int[] colors, int offset, int stride, int x, int y, int width,
@@ -211,6 +219,7 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.020 -0400", hash_original_method = "B7C59AEFBBFF71A556BD33964BA07740", hash_generated_method = "6255FBCE62202C7B7721B368F1104A14")
     @Override
     public void drawBitmapMesh(Bitmap bitmap, int meshWidth, int meshHeight, float[] verts,

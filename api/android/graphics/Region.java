@@ -12,6 +12,7 @@ public class Region implements Parcelable {
 
     public int mNativeRegion;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.290 -0400", hash_original_method = "0D8BB79D644235D834A5B870E7DE5E55", hash_generated_method = "E39C818312FCB6AA783B7BFB03E94023")
     public  Region() {
         this(nativeConstructor());
@@ -19,6 +20,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.290 -0400", hash_original_method = "ADA47703EEBAAF081A921E3B439FC136", hash_generated_method = "582253F2DAC4B25A9646718BCF02E18A")
     public  Region(Region region) {
         this(nativeConstructor());
@@ -29,6 +31,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.290 -0400", hash_original_method = "A1BEE89A791B5892C0419D31229063CC", hash_generated_method = "14114442245D1B4BD280000ECC27ED02")
     public  Region(Rect r) {
         addTaint(r.getTaint());
@@ -40,6 +43,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.291 -0400", hash_original_method = "3B1EBFADD13882DEC7CB8A7DB9BB782B", hash_generated_method = "E86BD36C25460E44FE220E2247882CFB")
     public  Region(int left, int top, int right, int bottom) {
         addTaint(bottom);
@@ -54,6 +58,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.291 -0400", hash_original_method = "AE1199122B801919FCCD86EFAEB8981E", hash_generated_method = "7472ACE5C029CE9D1729441DFE480C65")
       Region(int ni) {
     if(ni == 0)        
@@ -71,6 +76,7 @@ public class Region implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.292 -0400", hash_original_method = "5B5253F8036AE411F7DD245C7F6E35C3", hash_generated_method = "01C6E0BEBF91446973826C5A49A77230")
     private  Region(int ni, int dummy) {
         this(ni);

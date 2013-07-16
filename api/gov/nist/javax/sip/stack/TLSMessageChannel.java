@@ -63,6 +63,7 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
 
     private HandshakeCompletedListener handshakeCompletedListener;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.345 -0400", hash_original_method = "358EB7732CC002B4969C64CA3912C6FF", hash_generated_method = "41AAD92E4FE6A62BC4352A5940D4CEFE")
     protected  TLSMessageChannel(Socket sock, SIPTransactionStack sipStack,
             TLSMessageProcessor msgProcessor) throws IOException {

@@ -19,6 +19,7 @@ public class SSLSocketWrapper extends SSLSocketImpl {
 
     private boolean autoClose;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.428 -0400", hash_original_method = "FF4D5BDA5C4AFB5D1A6A640264C26B17", hash_generated_method = "5EED383929661E3CE140252CD84D9132")
     protected  SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl sslParameters) throws IOException {
         super(sslParameters);

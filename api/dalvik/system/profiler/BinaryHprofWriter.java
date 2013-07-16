@@ -37,6 +37,7 @@ public final class BinaryHprofWriter {
 
     private DataOutputStream out;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.883 -0400", hash_original_method = "732DAB84FABC53991CAEE3EC9AA68C95", hash_generated_method = "C306B4BCFF5195975397838E8E1DDCB6")
     private  BinaryHprofWriter(HprofData data, OutputStream outputStream) {
         this.data = data;

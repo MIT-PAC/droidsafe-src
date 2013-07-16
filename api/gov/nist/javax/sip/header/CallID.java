@@ -12,6 +12,7 @@ public class CallID extends SIPHeader implements javax.sip.header.CallIdHeader {
 
     protected CallIdentifier callIdentifier;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.090 -0400", hash_original_method = "253D83F9785581049F0DE9229A1A9A12", hash_generated_method = "D0160839F48607E2E4B82542420DBAB5")
     public  CallID() {
         super(NAME);
@@ -19,6 +20,7 @@ public class CallID extends SIPHeader implements javax.sip.header.CallIdHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.090 -0400", hash_original_method = "931206B362DAA8816F4CAAC363313ED6", hash_generated_method = "C016BAC8412FB03C8BCF9C3AA8A9D65B")
     public  CallID(String callId) throws IllegalArgumentException {
         super(NAME);

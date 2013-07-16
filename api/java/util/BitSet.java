@@ -20,6 +20,7 @@ public class BitSet implements Serializable, Cloneable {
 
     private transient int longCount;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.658 -0400", hash_original_method = "36F48153593A7027DE7089606CF225FB", hash_generated_method = "613602062985992FB8430672E70C7481")
     public  BitSet() {
         this(new long[1]);
@@ -27,6 +28,7 @@ public class BitSet implements Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.659 -0400", hash_original_method = "12ED281EDA73627C34F706B1E8393C0F", hash_generated_method = "4E63E465488E9B463A5E6C4043B098BE")
     public  BitSet(int bitCount) {
     if(bitCount < 0)        
@@ -46,6 +48,7 @@ public class BitSet implements Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.660 -0400", hash_original_method = "F5397E49D432953D65E6CB2ED1150384", hash_generated_method = "1C0E37C5115CD13FD56B4BE776F6A166")
     private  BitSet(long[] bits) {
         this.bits = bits;

@@ -10,6 +10,7 @@ public class IllegalFormatPrecisionException extends IllegalFormatException {
 
     private int p;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.635 -0400", hash_original_method = "1F9B0D4B155F0DC19F08720A34E7C4BD", hash_generated_method = "13646296FDF6AF63AF33B67CE5FD65FA")
     public  IllegalFormatPrecisionException(int p) {
         this.p = p;

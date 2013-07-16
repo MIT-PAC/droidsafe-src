@@ -15,6 +15,7 @@ import java.security.AccessControlException;
 
 public class Executors {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.941 -0400", hash_original_method = "F4CB3C27487DF72857FE3507DC40AD75", hash_generated_method = "27F2BAE4FD286E326334A8739E3D4262")
     private  Executors() {
         // ---------- Original Method ----------

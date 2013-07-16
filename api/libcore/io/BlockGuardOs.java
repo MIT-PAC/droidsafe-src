@@ -15,6 +15,7 @@ import static libcore.io.OsConstants.*;
 
 public class BlockGuardOs extends ForwardingOs {
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.364 -0400", hash_original_method = "2D0FCA28E55AE009AE62E6973DC0875A", hash_generated_method = "BFBA9034BDD5BE98046722AE218C09AC")
     public  BlockGuardOs(Os os) {
         super(os);

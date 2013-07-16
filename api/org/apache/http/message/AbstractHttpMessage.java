@@ -30,6 +30,7 @@ public abstract class AbstractHttpMessage implements HttpMessage {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.281 -0400", hash_original_method = "2222B1AD198C1052436204E49A67A13C", hash_generated_method = "20CE23CB860DE8F239A1882E6A61E5B3")
     protected  AbstractHttpMessage() {
         this(null);
@@ -37,6 +38,7 @@ public abstract class AbstractHttpMessage implements HttpMessage {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.281 -0400", hash_original_method = "9EF327933AC8CF093A78CA62674DD20F", hash_generated_method = "268D40C59F0D2BD903C5EE428D948DEE")
     public boolean containsHeader(String name) {
         addTaint(name.getTaint());
@@ -81,6 +83,7 @@ Header varDCA51A694DA7D6393945A3D3B01EF2B5_1605776514 =         this.headergroup
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.282 -0400", hash_original_method = "89AD2C028927AB3E8715A79204D69C99", hash_generated_method = "60A8AC79AD2F633B0FE0068B792A5540")
     public Header[] getAllHeaders() {
 Header[] var99C90132A83F658FD46240FBE89AABEC_608863904 =         this.headergroup.getAllHeaders();
@@ -193,6 +196,7 @@ for(Iterator i = this.headergroup.iterator();i.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.285 -0400", hash_original_method = "7F921B9752F1205280862FD328D06FCE", hash_generated_method = "83BBF5634A6BF1CC797647B75C640B93")
     public HeaderIterator headerIterator() {
 HeaderIterator varBC8FD1A25E6CA34046651A289C8D3833_485808447 =         this.headergroup.iterator();
@@ -203,6 +207,7 @@ HeaderIterator varBC8FD1A25E6CA34046651A289C8D3833_485808447 =         this.head
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.285 -0400", hash_original_method = "68644A261C0F1E0602A67E0AF6E4CB07", hash_generated_method = "63722F77C2C74054E351DF4FB04B3637")
     public HeaderIterator headerIterator(String name) {
         addTaint(name.getTaint());
@@ -214,6 +219,7 @@ HeaderIterator var50B3BE6049EC99BC0B6303B951AFDF6C_390273764 =         this.head
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.286 -0400", hash_original_method = "D8EA4E4823DF4752A606F523C6CA7ECB", hash_generated_method = "AA66697F63A964CA147A0A0E60C61ED8")
     public HttpParams getParams() {
     if(this.params == null)        

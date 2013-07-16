@@ -25,6 +25,7 @@ final class DexPathList {
 
     private File[] nativeLibraryDirectories;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.775 -0400", hash_original_method = "391CC1D8031EEADD5869B9B2E6DEDA56", hash_generated_method = "B3FA33FEFFBD5D8B4D2BE5CE102F8DD5")
     public  DexPathList(ClassLoader definingContext, String dexPath,
             String libraryPath, File optimizedDirectory) {
@@ -313,6 +314,7 @@ String var540C13E9E156B687226421B24F2DF178_1773595931 =         null;
 
         public DexFile dexFile;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.822 -0400", hash_original_method = "6D7B88020BD7097C5D3BFE418F13B214", hash_generated_method = "D256E2B985F1BE23E6B46E6D305762AC")
         public  Element(File file, ZipFile zipFile, DexFile dexFile) {
             this.file = file;

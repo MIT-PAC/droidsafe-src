@@ -36,6 +36,7 @@ public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serial
 
     private transient int state;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.345 -0400", hash_original_method = "D644E56206842370DC4588BE79799AE3", hash_generated_method = "7CC69FE4B2EBF55A1C1DCB7DE02B3CF2")
     public  SHA1PRNG_SecureRandomImpl() {
         seed = new int[HASH_OFFSET + EXTRAFRAME_OFFSET];

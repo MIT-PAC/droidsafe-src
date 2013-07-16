@@ -72,6 +72,7 @@ public class FtpURLConnection extends URLConnection {
 
     private URI uri;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.985 -0400", hash_original_method = "9C0763DE42B4885FC37474533A9FD11D", hash_generated_method = "5B7478F2D6D39BFC00FE35AA4A872A60")
     protected  FtpURLConnection(URL url) {
         super(url);
@@ -118,6 +119,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.986 -0400", hash_original_method = "705675501234B79BED4D0186BAC535B7", hash_generated_method = "B14C2A1E53F4EB1A3F812FD3C5F1795E")
     protected  FtpURLConnection(URL url, Proxy proxy) {
         this(url);

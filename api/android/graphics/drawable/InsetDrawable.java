@@ -24,6 +24,7 @@ public class InsetDrawable extends Drawable implements Drawable.Callback {
 
     private boolean mMutated;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.269 -0400", hash_original_method = "F48DBEE10522FF6B015323744245900F", hash_generated_method = "DDE232BCCCC6C70EAA4019D4AF233073")
       InsetDrawable() {
         this(null, null);
@@ -31,6 +32,7 @@ public class InsetDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.270 -0400", hash_original_method = "2918696D36F33B173FD0AA17323912B6", hash_generated_method = "C707C6402ABF12F91F85B26152257A57")
     public  InsetDrawable(Drawable drawable, int inset) {
         this(drawable, inset, inset, inset, inset);
@@ -40,6 +42,7 @@ public class InsetDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.272 -0400", hash_original_method = "410D0B69961CD6B4D438C72969BE5ACA", hash_generated_method = "BDE2FD81BC8DEC3BDC4CFFBE6796D731")
     public  InsetDrawable(Drawable drawable, int insetLeft, int insetTop,
                          int insetRight, int insetBottom) {
@@ -65,6 +68,7 @@ public class InsetDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.272 -0400", hash_original_method = "125D08C0C0AD10DE80234690E438546C", hash_generated_method = "D3D8132F753D7CBE37A3E6171E0E9075")
     private  InsetDrawable(InsetState state, Resources res) {
         mInsetState = new InsetState(state, this, res);

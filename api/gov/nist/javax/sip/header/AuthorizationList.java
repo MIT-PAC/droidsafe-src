@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public class AuthorizationList extends SIPHeaderList<Authorization> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.058 -0400", hash_original_method = "84C7F0569F21A5F411F5E14C38C62885", hash_generated_method = "F63A8C57CD2EBABA71B55FD2B076BBC7")
     public  AuthorizationList() {
         super(Authorization.class, Authorization.NAME);

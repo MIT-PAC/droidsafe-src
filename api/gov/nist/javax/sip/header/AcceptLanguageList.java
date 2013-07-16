@@ -8,6 +8,7 @@ import javax.sip.header.*;
 
 public class AcceptLanguageList extends SIPHeaderList<AcceptLanguage> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.690 -0400", hash_original_method = "240BB3B9B24C078BD16B4E527289E882", hash_generated_method = "11DB9C05848E7350775B5746176F17CF")
     public  AcceptLanguageList() {
         super(AcceptLanguage.class, AcceptLanguageHeader.NAME);

@@ -7,12 +7,14 @@ import droidsafe.runtime.*;
 
 public class NoSuchElementException extends RuntimeException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.264 -0400", hash_original_method = "7511719788F886A7A8274E764953E7B7", hash_generated_method = "DB2EC439058F2459B76E1B52F342488A")
     public  NoSuchElementException() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.265 -0400", hash_original_method = "7D966D3BE675039003302E31B0D249C5", hash_generated_method = "4F0A68924BDC2EC633358C9FFEFBE43D")
     public  NoSuchElementException(String detailMessage) {
         super(detailMessage);

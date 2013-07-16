@@ -11,6 +11,7 @@ public abstract class IccServiceTable {
 
     protected byte[] mServiceTable;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.637 -0400", hash_original_method = "267DA89C5A4C09BB5FED527397C007E9", hash_generated_method = "6C2507E3F5C81255379CE53C88536A64")
     protected  IccServiceTable(byte[] table) {
         mServiceTable = table;
@@ -51,6 +52,7 @@ public abstract class IccServiceTable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.638 -0400", hash_original_method = "427975D3C71DD8A8E9A905B09CF356ED", hash_generated_method = "F8DB1620277E237A36F9BF5AC327FCBB")
     public String toString() {
         Object[] values = getValues();

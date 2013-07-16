@@ -12,6 +12,7 @@ public class SSLEngineAppData implements org.apache.harmony.xnet.provider.jsse.A
 
     byte[] buffer;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.917 -0400", hash_original_method = "06EACE6E653645104AEC16265D727782", hash_generated_method = "A265DEAC1EBA95E175EB1A0A29A2449C")
     protected  SSLEngineAppData() {
         // ---------- Original Method ----------

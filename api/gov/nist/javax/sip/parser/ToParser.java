@@ -11,6 +11,7 @@ import gov.nist.core.*;
 
 public class ToParser extends AddressParametersParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.111 -0400", hash_original_method = "C8F2641055D76DBC203D7F98D786CB89", hash_generated_method = "88793D27788E97D3A4BDFC1C76A5832E")
     public  ToParser(String to) {
         super(to);
@@ -19,6 +20,7 @@ public class ToParser extends AddressParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.112 -0400", hash_original_method = "F0F7A8E65FEB47CEDC2639617287C00D", hash_generated_method = "417100FA4B28FEC2CE41545F8246BD45")
     protected  ToParser(Lexer lexer) {
         super(lexer);

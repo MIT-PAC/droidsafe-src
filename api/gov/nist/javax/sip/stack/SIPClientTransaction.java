@@ -293,6 +293,7 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.073 -0400", hash_original_method = "27FC8E987828EB63A48AA2B14048F41C", hash_generated_method = "DA679BFF18BA26AD4A1EF8DA988AEEA4")
     public synchronized void processResponse(SIPResponse transactionResponse,
             MessageChannel sourceChannel, SIPDialog dialog) {
@@ -1089,6 +1090,7 @@ Via var9A2F2EDE559A039B7F1EAC2CD02F6527_1068274590 =         this.getMessageProc
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.103 -0400", hash_original_method = "513C7C1329620A072B43100259C2C5F6", hash_generated_method = "7E5B38E45DDC0A88EF7BA5931A947D15")
     public void setState(TransactionState newState) {
         addTaint(newState.getTaint());
@@ -1458,6 +1460,7 @@ Hop var7E6D0C89CF2547AEC7B1741A7E613AB4_312760731 =         nextHop;
     
     public class TransactionTimer extends SIPStackTimerTask {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.115 -0400", hash_original_method = "7764BAFD5C7951E95371726125E892CE", hash_generated_method = "33DB74724AFAD3CA3F59EFA77CA701E3")
         public  TransactionTimer() {
             // ---------- Original Method ----------

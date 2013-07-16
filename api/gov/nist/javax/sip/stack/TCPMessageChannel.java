@@ -61,6 +61,7 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
 
     private TCPMessageProcessor tcpMessageProcessor;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.167 -0400", hash_original_method = "A2B275A41CF549D2A1285292B7E5107C", hash_generated_method = "1B936302B48EAC3381B05CB0C4A70DD8")
     protected  TCPMessageChannel(SIPTransactionStack sipStack) {
         this.sipStack = sipStack;
@@ -69,6 +70,7 @@ public class TCPMessageChannel extends MessageChannel implements SIPMessageListe
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.170 -0400", hash_original_method = "5A50CDCBFA2341437DDE39E7C9C5EE35", hash_generated_method = "9D1C166DE284CF235872A564337541EF")
     protected  TCPMessageChannel(Socket sock, SIPTransactionStack sipStack,
             TCPMessageProcessor msgProcessor) throws IOException {

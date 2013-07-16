@@ -16,6 +16,7 @@ import java.util.Iterator;
 
 public class ContactParser extends AddressParametersParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.967 -0400", hash_original_method = "259D82B4FB0F930288D81B3FF39234D9", hash_generated_method = "62E82C69DA52DF4188E2B413B56E0050")
     public  ContactParser(String contact) {
         super(contact);
@@ -24,6 +25,7 @@ public class ContactParser extends AddressParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.967 -0400", hash_original_method = "9392FB11C199E27843D6B36D0194676C", hash_generated_method = "8DED6447CE407CBF72C510D04FB98BF7")
     protected  ContactParser(Lexer lexer) {
         super(lexer);
@@ -34,6 +36,7 @@ public class ContactParser extends AddressParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.993 -0400", hash_original_method = "BF729EDB4B0BCD2BE7D180520FE998E8", hash_generated_method = "744BFA2FB489C8A25B861F4527EB88D5")
     public SIPHeader parse() throws ParseException {
         headerName(TokenTypes.CONTACT);

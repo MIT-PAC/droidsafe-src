@@ -8,6 +8,7 @@ import android.text.TextPaint;
 
 public abstract class CharacterStyle {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.148 -0400", hash_original_method = "41D29785B7D143A249368B9153DB6D45", hash_generated_method = "41D29785B7D143A249368B9153DB6D45")
     public CharacterStyle ()
     {

@@ -9,6 +9,7 @@ import libcore.util.EmptyArray;
 
 public final class Void {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.815 -0400", hash_original_method = "CD8BC0E717D271B8A5F5646E1CE2D7A5", hash_generated_method = "824764433804841F8B24CCE495EAD381")
     private  Void() {
         // ---------- Original Method ----------

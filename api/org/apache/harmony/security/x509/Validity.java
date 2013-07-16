@@ -20,6 +20,7 @@ public final class Validity {
 
     private byte[] encoding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.486 -0400", hash_original_method = "F8867A5D4F27966CF2038460A4C147B6", hash_generated_method = "3695B438AEFDA2C428F57F58CBFD712B")
     public  Validity(Date notBefore, Date notAfter) {
         this.notBefore = notBefore;

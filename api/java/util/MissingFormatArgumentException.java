@@ -10,6 +10,7 @@ public class MissingFormatArgumentException extends IllegalFormatException {
 
     private String s;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.251 -0400", hash_original_method = "3488C8E98AE00375533889C559694B58", hash_generated_method = "C6C470C11F722C5FBD4B81B7273C6CDA")
     public  MissingFormatArgumentException(String s) {
     if(s == null)        

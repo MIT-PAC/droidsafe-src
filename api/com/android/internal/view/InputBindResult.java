@@ -18,6 +18,7 @@ public final class InputBindResult implements Parcelable {
 
     public int sequence;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.678 -0400", hash_original_method = "42A6111FE2D2686864FA2FE8E1A98CEE", hash_generated_method = "0E19872E754A1ACA2FE96A430449E1DF")
     public  InputBindResult(IInputMethodSession _method, String _id, int _sequence) {
         method = _method;
@@ -30,6 +31,7 @@ public final class InputBindResult implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.678 -0400", hash_original_method = "26E767C4231C3DD46E94F9C79DE09374", hash_generated_method = "5B5FD2FBFE93BA5F669C51F8EABAEAB0")
       InputBindResult(Parcel source) {
         method = IInputMethodSession.Stub.asInterface(source.readStrongBinder());

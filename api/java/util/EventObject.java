@@ -11,6 +11,7 @@ public class EventObject implements Serializable {
 
     @FindBugsSuppressWarnings("SE_TRANSIENT_FIELD_NOT_RESTORED") protected transient Object source;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.262 -0400", hash_original_method = "19E83C4C00CF513D7C219A8F2CE4B9FA", hash_generated_method = "0D4E9D99F8FF87F195F3CF7007BE476E")
     public  EventObject(Object source) {
     if(source == null)        

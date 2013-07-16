@@ -20,6 +20,7 @@ public final class BasicConstraints extends ExtensionValue {
 
     private int pathLenConstraint = Integer.MAX_VALUE;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.705 -0400", hash_original_method = "98F3193EB5FEEA682D1EF037C6D0CBF1", hash_generated_method = "21204B31B29AB410B6637338560FD5BF")
     public  BasicConstraints(byte[] encoding) throws IOException {
         super(encoding);

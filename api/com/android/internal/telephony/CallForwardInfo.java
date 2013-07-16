@@ -33,6 +33,7 @@ public class CallForwardInfo {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.999 -0400", hash_original_method = "EA7E7BF9BED1BC105930545F926483CA", hash_generated_method = "CE418936B68A46FD5FEAE8BE350E2DE4")
     public String toString() {
 String varBD27EB6ED1FF8008C8406F96DC54FF13_1856122297 =         super.toString() + (status == 0 ? " not active " : " active ")

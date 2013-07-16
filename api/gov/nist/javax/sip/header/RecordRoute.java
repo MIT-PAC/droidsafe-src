@@ -8,6 +8,7 @@ import gov.nist.javax.sip.address.*;
 
 public class RecordRoute extends AddressParametersHeader implements javax.sip.header.RecordRouteHeader {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.820 -0400", hash_original_method = "1784D193E15A9C55742286FE08847141", hash_generated_method = "D1F947A90DC2AC7C0CD39710A57089DF")
     public  RecordRoute(AddressImpl address) {
         super(NAME);
@@ -18,6 +19,7 @@ public class RecordRoute extends AddressParametersHeader implements javax.sip.he
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.820 -0400", hash_original_method = "F63822F670C4D20D985D1B2C470568FD", hash_generated_method = "6E15848E792F6F3E30F683E515F8A47E")
     public  RecordRoute() {
         super(RECORD_ROUTE);

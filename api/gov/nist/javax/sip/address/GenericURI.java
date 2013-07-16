@@ -15,6 +15,7 @@ public class GenericURI extends NetObject implements javax.sip.address.URI {
 
     protected String scheme;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.058 -0400", hash_original_method = "523B0443B4AA531D1FAD6DE404409AD6", hash_generated_method = "6DA1D92CCB90E95FA80352986AB46076")
     protected  GenericURI() {
         // ---------- Original Method ----------
@@ -102,6 +103,7 @@ String varFD3305CF8340E40F0AC0AB554909AEBC_143294473 =         scheme;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.062 -0400", hash_original_method = "7E429DD6D2D2C657A6046B8560CB3B06", hash_generated_method = "14AE0D260E941035A9F2DBC1FD488F5F")
     public boolean equals(Object that) {
         addTaint(that.getTaint());

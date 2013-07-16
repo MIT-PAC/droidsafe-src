@@ -15,6 +15,7 @@ public abstract class BaseTestRunner implements TestListener {
 
     boolean fLoading = true;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.377 -0400", hash_original_method = "7AE9B4E2779E68829E6E78655AC68035", hash_generated_method = "7AE9B4E2779E68829E6E78655AC68035")
     public BaseTestRunner ()
     {

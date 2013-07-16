@@ -44,6 +44,7 @@ class PackedIntVector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.294 -0400", hash_original_method = "127603F69B46B56B0057C44974C5D0F5", hash_generated_method = "58656AACBD301EEBE46E095E01C7E732")
     public int getValue(int row, int column) {
         addTaint(column);
@@ -85,6 +86,7 @@ class PackedIntVector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.295 -0400", hash_original_method = "DF9491EC74B5A8AD3F1F814A7288BD27", hash_generated_method = "56A2DB8C61644CA37F36B04C9ECE525C")
     public void setValue(int row, int column, int value) {
     if(((row | column) < 0) || (row >= size()) || (column >= mColumns))        
@@ -172,6 +174,7 @@ class PackedIntVector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.297 -0400", hash_original_method = "6AE5D8E6865DDCD084B3272F01FD2E51", hash_generated_method = "B582FCC020781596586F3E8247F859A2")
     public void insertAt(int row, int[] values) {
         addTaint(values[0]);

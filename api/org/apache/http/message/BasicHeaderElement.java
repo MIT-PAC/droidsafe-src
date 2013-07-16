@@ -202,6 +202,7 @@ NameValuePair varF632CA15DF7F0948C110F1E316CEC23E_896126278 =         found;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.351 -0400", hash_original_method = "4C03DB3D3629EDBB8E252CDFFA259653", hash_generated_method = "830BAAC65685FEC599640482C10123E9")
     public int hashCode() {
         int hash = LangUtils.HASH_SEED;

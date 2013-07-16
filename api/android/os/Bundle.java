@@ -63,6 +63,7 @@ public final class Bundle implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.006 -0400", hash_original_method = "ED19BD28A9BE16566DAB3F7BC8440A20", hash_generated_method = "54C66743395BE4AB6BAD14CE7AE27455")
     public  Bundle(ClassLoader loader) {
         mMap = new HashMap<String, Object>();
@@ -271,6 +272,7 @@ Object var4CCA019CFB07D192DF8D7237E7F0B00E_351829002 =         new Bundle(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.011 -0400", hash_original_method = "8B93AFDE665AAAFE98B5EE9FD5355D4B", hash_generated_method = "AFC1690A950666BE114524D2B5ADF3A4")
     public boolean isEmpty() {
         unparcel();

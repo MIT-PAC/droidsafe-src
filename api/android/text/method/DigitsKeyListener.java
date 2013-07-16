@@ -20,6 +20,7 @@ public class DigitsKeyListener extends NumberKeyListener {
 
     private boolean mDecimal;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.493 -0400", hash_original_method = "6BE6AAF45437494799568EB9C567DA33", hash_generated_method = "96F31F59DAF98D6C6BCAE9A71EA0B101")
     public  DigitsKeyListener() {
         this(false, false);
@@ -27,6 +28,7 @@ public class DigitsKeyListener extends NumberKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.495 -0400", hash_original_method = "FA23D3FC8F275B4F859DA176A5851F12", hash_generated_method = "CC71E0DDF004012087625C769F1BD779")
     public  DigitsKeyListener(boolean sign, boolean decimal) {
         mSign = sign;

@@ -31,6 +31,7 @@ public final class NameConstraints extends ExtensionValue {
 
     private ArrayList<GeneralName>[] excluded_names;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.202 -0400", hash_original_method = "22A7E7A2EB4ADA3B586F576057F0955D", hash_generated_method = "5E67AD0C86710B6BDFF7ECF61336EC01")
     public  NameConstraints(GeneralSubtrees permittedSubtrees,
                            GeneralSubtrees excludedSubtrees) {
@@ -74,6 +75,7 @@ public final class NameConstraints extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.203 -0400", hash_original_method = "0B4FF50B5EED3F81B51F891413D3BBDC", hash_generated_method = "582E2E363AE87AB58D993B6DB1CE1EF6")
     private  NameConstraints(GeneralSubtrees permittedSubtrees,
                             GeneralSubtrees excludedSubtrees, byte[] encoding) {

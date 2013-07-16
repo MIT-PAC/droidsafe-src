@@ -8,6 +8,7 @@ import java.text.BreakIterator;
 
 public class Selection {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.372 -0400", hash_original_method = "B8D298D1C681D859448C141B901530AF", hash_generated_method = "43EBC81447082EA8B9876FF117E2ADA5")
     private  Selection() {
         // ---------- Original Method ----------

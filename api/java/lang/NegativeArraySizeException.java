@@ -7,12 +7,14 @@ import droidsafe.runtime.*;
 
 public class NegativeArraySizeException extends RuntimeException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.021 -0400", hash_original_method = "D33CED1C2CC51E1A27A91F713183A870", hash_generated_method = "AAB9A11ADDB53662AAA6D6FF71C8894C")
     public  NegativeArraySizeException() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.021 -0400", hash_original_method = "8AAF2E9F34B5796377EDFC62134DFEB6", hash_generated_method = "4C405883FAC3ED31CDDEA2D11953EAE0")
     public  NegativeArraySizeException(String detailMessage) {
         super(detailMessage);

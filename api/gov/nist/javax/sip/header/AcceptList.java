@@ -8,6 +8,7 @@ import javax.sip.header.*;
 
 public class AcceptList extends SIPHeaderList<Accept> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.697 -0400", hash_original_method = "51B5F4325CF7E310BAF41022AF7E4824", hash_generated_method = "70A657851AA3A54A657243AA76937424")
     public  AcceptList() {
         super(Accept.class, AcceptHeader.NAME);

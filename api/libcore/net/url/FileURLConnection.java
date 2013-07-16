@@ -34,6 +34,7 @@ public class FileURLConnection extends URLConnection {
 
     private FilePermission permission;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.891 -0400", hash_original_method = "ECDCE15AD3E40A66FECAA373F1AD69DD", hash_generated_method = "4F166745F09965E9EE46DA91F5F6B516")
     public  FileURLConnection(URL url) {
         super(url);

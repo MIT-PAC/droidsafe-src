@@ -28,6 +28,7 @@ import libcore.util.MutableInt;
 
 public final class IoBridge {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.676 -0400", hash_original_method = "4BE9929C9EF4F07FA420F9178CCE2A9A", hash_generated_method = "1249D99A029C3582A74310C04E7ECC4A")
     private  IoBridge() {
         // ---------- Original Method ----------
@@ -125,7 +126,8 @@ public final class IoBridge {
     }
 
     
-        private static String connectDetail(InetAddress inetAddress, int port, int timeoutMs, ErrnoException cause) {
+        @DSModeled(DSC.SAFE)
+    private static String connectDetail(InetAddress inetAddress, int port, int timeoutMs, ErrnoException cause) {
         String detail = "failed to connect to " + inetAddress + " (port " + port + ")";
         if (timeoutMs > 0) {
             detail += " after " + timeoutMs + "ms";
@@ -391,7 +393,8 @@ public final class IoBridge {
     }
 
     
-        public static int sendto(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, InetAddress inetAddress, int port) throws IOException {
+        @DSModeled(DSC.SAFE)
+    public static int sendto(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, InetAddress inetAddress, int port) throws IOException {
         boolean isDatagram = (inetAddress != null);
         if (!isDatagram && byteCount <= 0) {
             return 0;
@@ -406,7 +409,8 @@ public final class IoBridge {
     }
 
     
-        public static int sendto(FileDescriptor fd, ByteBuffer buffer, int flags, InetAddress inetAddress, int port) throws IOException {
+        @DSModeled(DSC.SAFE)
+    public static int sendto(FileDescriptor fd, ByteBuffer buffer, int flags, InetAddress inetAddress, int port) throws IOException {
         boolean isDatagram = (inetAddress != null);
         if (!isDatagram && buffer.remaining() == 0) {
             return 0;
@@ -435,7 +439,8 @@ public final class IoBridge {
     }
 
     
-        public static int recvfrom(boolean isRead, FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, DatagramPacket packet, boolean isConnected) throws IOException {
+        @DSModeled(DSC.SAFE)
+    public static int recvfrom(boolean isRead, FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, DatagramPacket packet, boolean isConnected) throws IOException {
         int result;
         try {
             InetSocketAddress srcAddress = (packet != null && !isConnected) ? new InetSocketAddress() : null;
@@ -448,7 +453,8 @@ public final class IoBridge {
     }
 
     
-        public static int recvfrom(boolean isRead, FileDescriptor fd, ByteBuffer buffer, int flags, DatagramPacket packet, boolean isConnected) throws IOException {
+        @DSModeled(DSC.SAFE)
+    public static int recvfrom(boolean isRead, FileDescriptor fd, ByteBuffer buffer, int flags, DatagramPacket packet, boolean isConnected) throws IOException {
         int result;
         try {
             InetSocketAddress srcAddress = (packet != null && !isConnected) ? new InetSocketAddress() : null;
@@ -461,7 +467,8 @@ public final class IoBridge {
     }
 
     
-        private static int postRecvfrom(boolean isRead, DatagramPacket packet, boolean isConnected, InetSocketAddress srcAddress, int byteCount) {
+        @DSModeled(DSC.SAFE)
+    private static int postRecvfrom(boolean isRead, DatagramPacket packet, boolean isConnected, InetSocketAddress srcAddress, int byteCount) {
         if (isRead && byteCount == 0) {
             return -1;
         }
@@ -476,7 +483,8 @@ public final class IoBridge {
     }
 
     
-        private static int maybeThrowAfterRecvfrom(boolean isRead, boolean isConnected, ErrnoException errnoException) throws SocketException, SocketTimeoutException {
+        @DSModeled(DSC.SAFE)
+    private static int maybeThrowAfterRecvfrom(boolean isRead, boolean isConnected, ErrnoException errnoException) throws SocketException, SocketTimeoutException {
         if (isRead) {
             if (errnoException.errno == EAGAIN || errnoException.errno == EWOULDBLOCK) {
                 return 0;
@@ -509,7 +517,8 @@ public final class IoBridge {
     }
 
     
-        public static InetAddress getSocketLocalAddress(FileDescriptor fd) {
+        @DSModeled(DSC.SAFE)
+    public static InetAddress getSocketLocalAddress(FileDescriptor fd) {
         try {
             SocketAddress sa = Libcore.os.getsockname(fd);
             InetSocketAddress isa = (InetSocketAddress) sa;
@@ -520,7 +529,8 @@ public final class IoBridge {
     }
 
     
-        public static int getSocketLocalPort(FileDescriptor fd) {
+        @DSModeled(DSC.SAFE)
+    public static int getSocketLocalPort(FileDescriptor fd) {
         try {
             SocketAddress sa = Libcore.os.getsockname(fd);
             InetSocketAddress isa = (InetSocketAddress) sa;

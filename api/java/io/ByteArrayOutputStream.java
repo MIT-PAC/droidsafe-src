@@ -149,6 +149,7 @@ String var5E21685371F07E75C95D47BDF9CF6168_697785732 =         new String(buf, 0
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.489 -0400", hash_original_method = "6803EEF19C65AA8F03D81EBEC2EC6C85", hash_generated_method = "E5E384291269A029D32437DA8898098C")
     @Override
     public synchronized void write(byte[] buffer, int offset, int len) {

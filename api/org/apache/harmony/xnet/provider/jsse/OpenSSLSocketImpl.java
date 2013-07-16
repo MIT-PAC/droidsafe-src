@@ -196,6 +196,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.369 -0400", hash_original_method = "E8402FE2BCEFBC2883099C44FF33F005", hash_generated_method = "27CD6DD943584E4FE9704337D522BA65")
     protected  OpenSSLSocketImpl(Socket socket, String host, int port,
             boolean autoClose, SSLParametersImpl sslParameters) throws IOException {

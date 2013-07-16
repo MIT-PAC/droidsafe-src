@@ -34,6 +34,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
 
     private transient Collection<V> values;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.569 -0400", hash_original_method = "9A93999031A29C4DD8DE295A6372F847", hash_generated_method = "6A7170C4C6FFAE127214BE36F7841D7F")
     @SuppressWarnings("unchecked")
     public  Hashtable() {
@@ -45,6 +46,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.570 -0400", hash_original_method = "6003D4D798348C1583CB15DE42C187C6", hash_generated_method = "1A4CFD1EE43EB0AD683218A6C1B6BA0A")
     public  Hashtable(int capacity) {
         addTaint(capacity);
@@ -97,6 +99,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.570 -0400", hash_original_method = "5B6B569F078844A0FAD42909C56D1E6D", hash_generated_method = "16CB7D14B0B8C4DE945AB3B58AB366AE")
     public  Hashtable(int capacity, float loadFactor) {
         this(capacity);
@@ -210,6 +213,7 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_315047863 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.574 -0400", hash_original_method = "0D498A226869DEB0F3920DC31F67162F", hash_generated_method = "F4F38018A1CF46D7D9AC8301DB1ADAB7")
     public synchronized V get(Object key) {
         addTaint(key.getTaint());
@@ -577,6 +581,7 @@ HashtableEntry<K, V>[] varBBDF9FA229AA843E98D9C8441545D1D6_1988099233 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.583 -0400", hash_original_method = "B19FA41811C96CC39A17F943778772D8", hash_generated_method = "03E190B901C384E87B24035008D3C8BC")
     public synchronized V remove(Object key) {
         addTaint(key.getTaint());
@@ -1116,6 +1121,7 @@ String varFE698C13EFD83B87FAF2DC2AB0874271_452754191 =             key + "=" + v
 
         int expectedModCount = modCount;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.596 -0400", hash_original_method = "1BB35CB0E7E6DF7A5633A61B0F63C5AA", hash_generated_method = "1DEA380805BCD885E22B88C930E74A1E")
           HashIterator() {
             HashtableEntry<K, V>[] tab = table;
@@ -1223,6 +1229,7 @@ HashtableEntry<K, V> var4D0F707C8B7B92ABA91FE6E8CAA540A2_1136871736 =           
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.599 -0400", hash_original_method = "342FDC52CA82B385D96AADB83EE8F936", hash_generated_method = "46842471DF5E38BEE5E3EA450F4DB34A")
         public void remove() {
     if(lastEntryReturned == null)            
@@ -1335,6 +1342,7 @@ Entry<K, V> varDC8D7EA83135934E991F02D91E02BF6E_640364973 =             nextEntr
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.601 -0400", hash_original_method = "00AF58B06A8865C0E6725656CE1DF6CF", hash_generated_method = "DF0D9536916DED8C9F81A1B8B8812274")
         public boolean hasMoreElements() {
             boolean varABBE3B24714136305D7430F5669CF141_1422682961 = (hasNext());
@@ -1369,6 +1377,7 @@ K var543B7F1D4AED8B3FA8DE77E5172AD0E2_8753133 =             nextEntryNotFailFast
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.602 -0400", hash_original_method = "00AF58B06A8865C0E6725656CE1DF6CF", hash_generated_method = "041B34064E90F4E3DF25EB0840D380D7")
         public boolean hasMoreElements() {
             boolean varABBE3B24714136305D7430F5669CF141_1484757808 = (hasNext());
@@ -1414,6 +1423,7 @@ Iterator<K> var3934136BB713579A43A8E8C1C3034CA0_1079390382 =             new Key
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.603 -0400", hash_original_method = "4D94E1187CEF061AFF285C9B88148BEA", hash_generated_method = "AAB917D4DB13CE595317E34CB4EBA11B")
         public int size() {
             int varB057BBA362E5B50E22D7AFEEF31086FA_380606755 = (Hashtable.this.size());
@@ -1424,6 +1434,7 @@ Iterator<K> var3934136BB713579A43A8E8C1C3034CA0_1079390382 =             new Key
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.603 -0400", hash_original_method = "55474555B71DFC8666AC2B6E4F0261A5", hash_generated_method = "B3910CC58E7B24CE4E38255C4A981CEC")
         public boolean contains(Object o) {
             addTaint(o.getTaint());
@@ -1435,6 +1446,7 @@ Iterator<K> var3934136BB713579A43A8E8C1C3034CA0_1079390382 =             new Key
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.603 -0400", hash_original_method = "FF159DEBFD9D37DD2EC80383AA98B734", hash_generated_method = "AB498961830AB1AA2E173AE11B21EE5D")
         public boolean remove(Object o) {
             addTaint(o.getTaint());
@@ -1455,6 +1467,7 @@ Iterator<K> var3934136BB713579A43A8E8C1C3034CA0_1079390382 =             new Key
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.604 -0400", hash_original_method = "AE02AA469A4E8570D154A10ABA31B821", hash_generated_method = "F532431CEF2368433A5DB4F8A6DBCD80")
         public void clear() {
             Hashtable.this.clear();
@@ -1514,6 +1527,7 @@ Iterator<K> var3934136BB713579A43A8E8C1C3034CA0_1079390382 =             new Key
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.605 -0400", hash_original_method = "806262E7A3C64BA287E3756348FCDE7E", hash_generated_method = "91277BD5630A924F1A43C1C0F6DC9B01")
         public boolean equals(Object object) {
             addTaint(object.getTaint());
@@ -1530,6 +1544,7 @@ Iterator<K> var3934136BB713579A43A8E8C1C3034CA0_1079390382 =             new Key
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.606 -0400", hash_original_method = "2EB37718E343BC9663B783B0FC3BE747", hash_generated_method = "3D7C44C445FDC17B4825BAB939B80484")
         public int hashCode() {
             synchronized
@@ -1545,6 +1560,7 @@ Iterator<K> var3934136BB713579A43A8E8C1C3034CA0_1079390382 =             new Key
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.606 -0400", hash_original_method = "41533210C6AD9564260587928C07D199", hash_generated_method = "C1B64AA00A4440817880DB24024A3108")
         public String toString() {
             synchronized
@@ -1560,6 +1576,7 @@ String varD8287C6801A4C167675BF9EBA9EC2C1B_1565238821 =                 super.to
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.606 -0400", hash_original_method = "2DE6CB7DA73A7C633D03F26162BE3C9B", hash_generated_method = "C24A5484062BBC89551598A04A4C128F")
         public Object[] toArray() {
             synchronized
@@ -1616,6 +1633,7 @@ Iterator<V> varA5D0B7DD47403A81B3461DEE499DEE74_2112701170 =             new Val
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.608 -0400", hash_original_method = "4D94E1187CEF061AFF285C9B88148BEA", hash_generated_method = "CC095431FFB760361D04933874B38D6C")
         public int size() {
             int varB057BBA362E5B50E22D7AFEEF31086FA_723817576 = (Hashtable.this.size());
@@ -1626,6 +1644,7 @@ Iterator<V> varA5D0B7DD47403A81B3461DEE499DEE74_2112701170 =             new Val
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.608 -0400", hash_original_method = "C13053467D6FDF772DF450C87D40A3D5", hash_generated_method = "E2B6AF6947D6A742BBC9EFBD8BE5A07A")
         public boolean contains(Object o) {
             addTaint(o.getTaint());
@@ -1637,6 +1656,7 @@ Iterator<V> varA5D0B7DD47403A81B3461DEE499DEE74_2112701170 =             new Val
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.608 -0400", hash_original_method = "AE02AA469A4E8570D154A10ABA31B821", hash_generated_method = "F532431CEF2368433A5DB4F8A6DBCD80")
         public void clear() {
             Hashtable.this.clear();
@@ -1662,6 +1682,7 @@ Iterator<V> varA5D0B7DD47403A81B3461DEE499DEE74_2112701170 =             new Val
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.609 -0400", hash_original_method = "41533210C6AD9564260587928C07D199", hash_generated_method = "0A3898F2B41BF4866F51FBDAD43DF2D6")
         public String toString() {
             synchronized
@@ -1677,6 +1698,7 @@ String varD8287C6801A4C167675BF9EBA9EC2C1B_301848934 =                 super.toS
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.609 -0400", hash_original_method = "2DE6CB7DA73A7C633D03F26162BE3C9B", hash_generated_method = "C8D57BF8DCAA23F66C4A45DEB1D8177C")
         public Object[] toArray() {
             synchronized
@@ -1732,6 +1754,7 @@ Iterator<Entry<K, V>> varA27729B8E339A6F174B2D9A9BA7B896F_1042866050 =          
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.611 -0400", hash_original_method = "6E695F138E29D844DC896198513B6135", hash_generated_method = "0A98804B884627858BF0D8351414D41F")
         public boolean contains(Object o) {
             addTaint(o.getTaint());
@@ -1753,6 +1776,7 @@ Iterator<Entry<K, V>> varA27729B8E339A6F174B2D9A9BA7B896F_1042866050 =          
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.611 -0400", hash_original_method = "F484CBC8566C601718EDE0034034C7B3", hash_generated_method = "BF4E87C6F94271D8D2078BAA65CB657F")
         public boolean remove(Object o) {
             addTaint(o.getTaint());
@@ -1774,6 +1798,7 @@ Iterator<Entry<K, V>> varA27729B8E339A6F174B2D9A9BA7B896F_1042866050 =          
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.612 -0400", hash_original_method = "4D94E1187CEF061AFF285C9B88148BEA", hash_generated_method = "AD73550C57CE17B7DB0A4D4A340ACBA7")
         public int size() {
             int varB057BBA362E5B50E22D7AFEEF31086FA_1274506703 = (Hashtable.this.size());
@@ -1784,6 +1809,7 @@ Iterator<Entry<K, V>> varA27729B8E339A6F174B2D9A9BA7B896F_1042866050 =          
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.612 -0400", hash_original_method = "AE02AA469A4E8570D154A10ABA31B821", hash_generated_method = "F532431CEF2368433A5DB4F8A6DBCD80")
         public void clear() {
             Hashtable.this.clear();
@@ -1843,6 +1869,7 @@ Iterator<Entry<K, V>> varA27729B8E339A6F174B2D9A9BA7B896F_1042866050 =          
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.615 -0400", hash_original_method = "806262E7A3C64BA287E3756348FCDE7E", hash_generated_method = "04EAACC6EEDFAB87B6445E9CFB1C864B")
         public boolean equals(Object object) {
             addTaint(object.getTaint());
@@ -1859,6 +1886,7 @@ Iterator<Entry<K, V>> varA27729B8E339A6F174B2D9A9BA7B896F_1042866050 =          
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.615 -0400", hash_original_method = "3000FE237E7845AEAFDA2B41B0704346", hash_generated_method = "273B8046870E34EC4B393D2307070B8F")
         public int hashCode() {
             int var40E5B040409EAFD396E30657035E9D74_1795905692 = (Hashtable.this.hashCode());
@@ -1869,6 +1897,7 @@ Iterator<Entry<K, V>> varA27729B8E339A6F174B2D9A9BA7B896F_1042866050 =          
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.616 -0400", hash_original_method = "41533210C6AD9564260587928C07D199", hash_generated_method = "8A22485593BD1D5E9D424BDCA8564C69")
         public String toString() {
             synchronized
@@ -1884,6 +1913,7 @@ String varD8287C6801A4C167675BF9EBA9EC2C1B_1286760946 =                 super.to
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.616 -0400", hash_original_method = "2DE6CB7DA73A7C633D03F26162BE3C9B", hash_generated_method = "2A7327EEF8FDC7EFCB8F201CB361D80B")
         public Object[] toArray() {
             synchronized

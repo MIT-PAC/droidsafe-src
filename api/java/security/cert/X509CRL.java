@@ -26,6 +26,7 @@ public abstract class X509CRL extends CRL implements X509Extension {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.883 -0400", hash_original_method = "B46E0DB2406C7673FA6227AB64C6E804", hash_generated_method = "52D30EB31ACD119110ECC59C0D45BCA4")
     public boolean equals(Object other) {
         addTaint(other.getTaint());

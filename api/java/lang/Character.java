@@ -12,6 +12,7 @@ public final class Character implements Serializable, Comparable<Character> {
 
     private char value;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.252 -0400", hash_original_method = "8DEFF913326DC7F74512EFD131579B65", hash_generated_method = "1645DDBBE78063D348F5E0EDDC7FC72B")
     public  Character(char value) {
         this.value = value;
@@ -1106,6 +1107,7 @@ String varE1C269B12AA3B951D8A9B8058A1CED16_1657025431 =         String.valueOf(v
 
         String name;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.269 -0400", hash_original_method = "F864A542FCD1C844E1D83841069C7DB4", hash_generated_method = "78BAC075C10FAE2CADF664B464BCED71")
         protected  Subset(String string) {
     if(string == null)            
@@ -1163,6 +1165,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1392171040 =             name;
     
     public static final class UnicodeBlock extends Subset {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.273 -0400", hash_original_method = "234E88093AAFC12110C9FE35072443BD", hash_generated_method = "4B1FCCF606CEF9910A2C98FAAC82908F")
         private  UnicodeBlock(String blockName, int start, int end) {
             super(blockName);

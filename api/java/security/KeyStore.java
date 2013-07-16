@@ -50,7 +50,8 @@ public class KeyStore {
     }
 
     
-        private static void throwNotInitialized() throws KeyStoreException {
+        @DSModeled(DSC.SAFE)
+    private static void throwNotInitialized() throws KeyStoreException {
         throw new KeyStoreException("KeyStore was not initialized");
     }
 

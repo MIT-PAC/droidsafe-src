@@ -24,6 +24,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
 
     private boolean mRecycled;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.539 -0400", hash_original_method = "B1B69F583261D8BEEC921FF43580AA66", hash_generated_method = "40B8D4E791D456515D6D7EBB1643CE79")
     private  MotionEvent() {
         // ---------- Original Method ----------
@@ -1738,12 +1739,14 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1578607967 =         msg.toString();
 
         public float orientation;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.570 -0400", hash_original_method = "30C014872AED120D5788F672204C6D56", hash_generated_method = "02D472FB06CC6A49D31A045DF0321860")
         public  PointerCoords() {
             // ---------- Original Method ----------
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.570 -0400", hash_original_method = "4C1A041805DDE756B7430BBCF7A4A54D", hash_generated_method = "1C66435E307BF04A88E45A81EECD37FF")
         public  PointerCoords(PointerCoords other) {
             addTaint(other.getTaint());
@@ -1986,6 +1989,7 @@ switch(axis){
 
         public int toolType;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.576 -0400", hash_original_method = "D6AAE40F539D7383E827DA395512E95B", hash_generated_method = "207B464AAB7566FD25D2646B7EE6C19D")
         public  PointerProperties() {
             clear();
@@ -1994,6 +1998,7 @@ switch(axis){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.576 -0400", hash_original_method = "0B0B44B5B3A0DCF648446956F27785E9", hash_generated_method = "ADD0C86B658EF40FE7B592A4493E84A0")
         public  PointerProperties(PointerProperties other) {
             addTaint(other.getTaint());

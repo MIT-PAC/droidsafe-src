@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public class PixelXorXfermode extends Xfermode {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.757 -0400", hash_original_method = "D83BD6D1A9BB9762D9B3F34AF8222FEA", hash_generated_method = "116186C686DB4DF13AE7D12EB56DDCCC")
     public  PixelXorXfermode(int opColor) {
         addTaint(opColor);

@@ -34,6 +34,7 @@ public final class SIPRequest extends SIPMessage implements javax.sip.message.Re
 
     private transient Object inviteTransaction;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.209 -0400", hash_original_method = "CD96843F1E97D10004B6B61F026BE84E", hash_generated_method = "17A7559EA941598D9F8A4A095B6BE33D")
     public  SIPRequest() {
         super();
@@ -230,6 +231,7 @@ String var8D11C2D110975896438D6F91C60E6D6F_1048524705 =         stringRepresenta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.214 -0400", hash_original_method = "B439ED3271619C5D642106B24B6F8DC7", hash_generated_method = "DB85EEDA5853F156143C1DBB84462C9B")
     protected void setDefaults() {
     if(requestLine == null)        
@@ -302,6 +304,7 @@ String var8D11C2D110975896438D6F91C60E6D6F_1048524705 =         stringRepresenta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.215 -0400", hash_original_method = "A3406866B9B5846BB9675C9F68E4252E", hash_generated_method = "3892B4AD82EFC8F1EB57A55CCA6620CF")
     public javax.sip.address.URI getRequestURI() {
     if(this.requestLine == null)        

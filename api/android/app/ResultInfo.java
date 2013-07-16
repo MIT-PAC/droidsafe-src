@@ -25,6 +25,7 @@ public class ResultInfo implements Parcelable {
 
     public Intent mData;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.524 -0400", hash_original_method = "5613E3DAA5C00F0B9643F3F13EB312FC", hash_generated_method = "7996DAB0AC864885B2CBAC135A1A1795")
     public  ResultInfo(String resultWho, int requestCode, int resultCode,
             Intent data) {

@@ -17,6 +17,7 @@ public class CSeq extends SIPHeader implements javax.sip.header.CSeqHeader {
 
     protected String method;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.075 -0400", hash_original_method = "CAC1D7DD6777B55F66B86A8C606BDF3F", hash_generated_method = "BFE754B09B264D46E6FE8D5188A03DEF")
     public  CSeq() {
         super(CSEQ);
@@ -24,6 +25,7 @@ public class CSeq extends SIPHeader implements javax.sip.header.CSeqHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.076 -0400", hash_original_method = "0763337F5CD1490E001F70DA32337AFB", hash_generated_method = "F9B3D16C7E67EEEABA12EC35D440EC3F")
     public  CSeq(long seqno, String method) {
         this();

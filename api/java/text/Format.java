@@ -8,6 +8,7 @@ import java.io.Serializable;
 
 public abstract class Format implements Serializable, Cloneable {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.678 -0400", hash_original_method = "6FBA04B2B44BD6140150C63C748AD62A", hash_generated_method = "8A4387ADC0046A91B4EE8D219103BC9A")
     protected  Format() {
         // ---------- Original Method ----------
@@ -152,6 +153,7 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_627065926 =         result;
     
     public static class Field extends AttributedCharacterIterator.Attribute {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.681 -0400", hash_original_method = "5600516370D16E6925F34153CC1B60B8", hash_generated_method = "465767ECB3AF93CD4C2D7AEDA23F18B3")
         protected  Field(String fieldName) {
             super(fieldName);

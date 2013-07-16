@@ -30,6 +30,7 @@ public class MiniThumbFile {
 
     private ByteBuffer mBuffer;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.491 -0400", hash_original_method = "4830D2FF2BD59004BFED5BEAD8B6AF84", hash_generated_method = "434CCADDBD0B76ADF3CB67EA4913C9CF")
     public  MiniThumbFile(Uri uri) {
         mUri = uri;

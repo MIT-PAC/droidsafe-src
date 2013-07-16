@@ -15,6 +15,7 @@ public class X509EncodedKeySpec extends EncodedKeySpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.674 -0400", hash_original_method = "79A7CC1F7A80EF2ADD7D2AFF5368D500", hash_generated_method = "E9F2A0D08CB781B8C805D5B9BAFB0EC4")
     public byte[] getEncoded() {
         byte[] varE852F609BBA3F241A4F96363DE8BC6BE_285430535 = (super.getEncoded());

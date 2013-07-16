@@ -143,6 +143,7 @@ public final class AttributeValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.602 -0400", hash_original_method = "01F8BD1A541A09C15BC5DA5B1F02995A", hash_generated_method = "110AC0788A36CB4B00A72B87A7285DF0")
     public int getTag() {
     if(tag == -1)        

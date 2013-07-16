@@ -9,6 +9,7 @@ import java.math.BigInteger;
 
 public final class ASN1Integer extends ASN1Primitive {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.626 -0400", hash_original_method = "46ADEA8E713BD711C252666C512B58BA", hash_generated_method = "61455BA42D466162249D5D385FEFD5D0")
     public  ASN1Integer() {
         super(TAG_INTEGER);
@@ -83,17 +84,20 @@ Object varE123E70E73254F8B84526419D168A7C8_263992367 =         bytesEncoded;
     }
 
     
-        public static int toIntValue(Object decoded) {
+        @DSModeled(DSC.SAFE)
+    public static int toIntValue(Object decoded) {
         return new BigInteger((byte[]) decoded).intValue();
     }
 
     
-        public static BigInteger toBigIntegerValue(Object decoded) {
+        @DSModeled(DSC.SAFE)
+    public static BigInteger toBigIntegerValue(Object decoded) {
         return new BigInteger((byte[]) decoded);
     }
 
     
-        public static Object fromIntValue(int value) {
+        @DSModeled(DSC.SAFE)
+    public static Object fromIntValue(int value) {
         return BigInteger.valueOf(value).toByteArray();
     }
 

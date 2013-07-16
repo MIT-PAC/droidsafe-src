@@ -665,6 +665,7 @@ for(int i=0;i<N;i++)
 
         int curState = RESTORED;
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.236 -0400", hash_original_method = "E1D83503B31583A6BAE5696926B0F492", hash_generated_method = "102BDDA6481BC598610972B4C2EC5CBD")
           LocalActivityRecord(String _id, Intent _intent) {
             id = _id;

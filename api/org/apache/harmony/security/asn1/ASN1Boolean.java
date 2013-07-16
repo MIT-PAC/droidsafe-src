@@ -66,6 +66,7 @@ Object varA0859487E5CB2E75775DF67E6DA72EE1_1389835050 =         Boolean.TRUE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.537 -0400", hash_original_method = "6CB7A1753C32BDECF173E6F0AF328B6D", hash_generated_method = "22584134D30D47A04B1F047243E2E798")
     public void encodeContent(BerOutputStream out) {
         addTaint(out.getTaint());

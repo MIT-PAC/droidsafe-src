@@ -10,6 +10,7 @@ import java.text.ParseException;
 
 public class DateParser extends HeaderParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.383 -0400", hash_original_method = "12ABECDC99786B59BCBD31A7419E2B41", hash_generated_method = "31E9035441D49005C3879B8FD8D40DE2")
     public  DateParser(String date) {
         super(date);
@@ -18,6 +19,7 @@ public class DateParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.384 -0400", hash_original_method = "00ADBDEF8E181F85BEA9DD7E552A7849", hash_generated_method = "3AA19BA386E9B78EC047238A34FE54CF")
     protected  DateParser(Lexer lexer) {
         super(lexer);

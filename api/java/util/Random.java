@@ -17,6 +17,7 @@ public class Random implements Serializable {
 
     private double nextNextGaussian;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.396 -0400", hash_original_method = "3173C51AF7594D647EC1C2CFA488A448", hash_generated_method = "973708C9D1F059DB74B65B6DA7E473CF")
     public  Random() {
         setSeed(System.currentTimeMillis() + System.identityHashCode(this));
@@ -25,6 +26,7 @@ public class Random implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.396 -0400", hash_original_method = "D88C1F5B76368386940C522DAEBBB898", hash_generated_method = "56786C405BAD68607F8B6A822C989807")
     public  Random(long seed) {
         addTaint(seed);

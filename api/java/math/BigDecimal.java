@@ -34,6 +34,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
 
     private transient int precision = 0;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.563 -0400", hash_original_method = "6BC27F867C09C0249873A4D338F8666D", hash_generated_method = "675ADE6C6F01FF4ED08427C7FC23A83B")
     private  BigDecimal(long smallValue, int scale) {
         this.smallValue = smallValue;
@@ -46,6 +47,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.564 -0400", hash_original_method = "9F6CD654516DCD03F33530EDCF81D84D", hash_generated_method = "3DC98F1132A232115D5983B57B665BF0")
     private  BigDecimal(int smallValue, int scale) {
         this.smallValue = smallValue;
@@ -58,6 +60,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.566 -0400", hash_original_method = "374C425CF4086C798A21EEA670343536", hash_generated_method = "A7AE5B589CBF39DA6B5A4657DA2B485C")
     public  BigDecimal(char[] in, int offset, int len) {
         addTaint(len);
@@ -173,6 +176,7 @@ for(;(offset <= last) && (in[offset] != 'e')
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.568 -0400", hash_original_method = "021DB19003FFCB38960FC53E0DB20D11", hash_generated_method = "6EA90666D1CAF03400C0CFC3D6B3005E")
     public  BigDecimal(char[] in, int offset, int len, MathContext mc) {
         this(in, offset, len);
@@ -186,6 +190,7 @@ for(;(offset <= last) && (in[offset] != 'e')
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.568 -0400", hash_original_method = "2CA49E7A005F756FE298C75D3E276FBD", hash_generated_method = "B4FD1176C71EA8991071A29C074F944A")
     public  BigDecimal(char[] in) {
         this(in, 0, in.length);
@@ -194,6 +199,7 @@ for(;(offset <= last) && (in[offset] != 'e')
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.569 -0400", hash_original_method = "24A3A809E90D8D728111B1E9DFB6AE2B", hash_generated_method = "003A1CBC3DF4748A413346F98A116CAD")
     public  BigDecimal(char[] in, MathContext mc) {
         this(in, 0, in.length);
@@ -205,6 +211,7 @@ for(;(offset <= last) && (in[offset] != 'e')
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.569 -0400", hash_original_method = "97883F5F25D8C2D5B9EC2501AC7ECDA2", hash_generated_method = "F8C02FFBA49B73A7A22E83CA112803F6")
     public  BigDecimal(String val) {
         this(val.toCharArray(), 0, val.length());
@@ -213,6 +220,7 @@ for(;(offset <= last) && (in[offset] != 'e')
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.569 -0400", hash_original_method = "65FA78E7CB5F82CDA77BAA4B434CD165", hash_generated_method = "C6CF09061D87965AB685D6E3C6C70502")
     public  BigDecimal(String val, MathContext mc) {
         this(val.toCharArray(), 0, val.length());
@@ -224,6 +232,7 @@ for(;(offset <= last) && (in[offset] != 'e')
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.572 -0400", hash_original_method = "A550123107439183BDAF78BFBC33380D", hash_generated_method = "B47384F62B2FD6F3986613710EC9745E")
     public  BigDecimal(double val) {
         addTaint(val);
@@ -295,6 +304,7 @@ for(;(offset <= last) && (in[offset] != 'e')
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.573 -0400", hash_original_method = "A301A521891A68A20E545213C1CF7F7F", hash_generated_method = "795441CAE659A8DAD7CFEBC298E96E6A")
     public  BigDecimal(double val, MathContext mc) {
         this(val);
@@ -306,6 +316,7 @@ for(;(offset <= last) && (in[offset] != 'e')
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.573 -0400", hash_original_method = "35103202AC4D8227390F065BF679C471", hash_generated_method = "D504D0B814354DD64C3D66DE08011646")
     public  BigDecimal(BigInteger val) {
         this(val, 0);
@@ -314,6 +325,7 @@ for(;(offset <= last) && (in[offset] != 'e')
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.573 -0400", hash_original_method = "4DD15F45D533F2889A2A72BE2BF675A6", hash_generated_method = "41EA77FB9F894AFE7ED5FEE5B9D530AB")
     public  BigDecimal(BigInteger val, MathContext mc) {
         this(val);
@@ -325,6 +337,7 @@ for(;(offset <= last) && (in[offset] != 'e')
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.574 -0400", hash_original_method = "E5BF86952E31D522F2FAABCF30464562", hash_generated_method = "9081881F98A86D531988A6F7ACEC9F2C")
     public  BigDecimal(BigInteger unscaledVal, int scale) {
         addTaint(unscaledVal.getTaint());
@@ -345,6 +358,7 @@ for(;(offset <= last) && (in[offset] != 'e')
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.574 -0400", hash_original_method = "59F34EC0A04F061EC6FA9A9EFC322A4C", hash_generated_method = "7A740693F0C00529EF1F7D48CB20A65F")
     public  BigDecimal(BigInteger unscaledVal, int scale, MathContext mc) {
         this(unscaledVal, scale);
@@ -357,6 +371,7 @@ for(;(offset <= last) && (in[offset] != 'e')
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.575 -0400", hash_original_method = "5359C9BE484C4A97ECD231D115B1BCDB", hash_generated_method = "D648D7F23799D878CE7DE9DEA41AED6E")
     public  BigDecimal(int val) {
         this(val,0);
@@ -365,6 +380,7 @@ for(;(offset <= last) && (in[offset] != 'e')
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.575 -0400", hash_original_method = "919820155B3DF9AD0A8E776AC27BF824", hash_generated_method = "AFC7448519945F4B1F353BEBE5A3926C")
     public  BigDecimal(int val, MathContext mc) {
         this(val,0);
@@ -376,6 +392,7 @@ for(;(offset <= last) && (in[offset] != 'e')
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.576 -0400", hash_original_method = "3B8082CDF108D6321820C9FA6A6A1D42", hash_generated_method = "5CD5A0914C8C99DBF87C1115B74C5DD3")
     public  BigDecimal(long val) {
         this(val,0);
@@ -384,6 +401,7 @@ for(;(offset <= last) && (in[offset] != 'e')
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.576 -0400", hash_original_method = "E0851629E0BD0FDB6233816479A7E4A8", hash_generated_method = "E5D91C59CD5A78C99046DC7DF747470E")
     public  BigDecimal(long val, MathContext mc) {
         this(val);

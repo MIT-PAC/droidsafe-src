@@ -315,6 +315,7 @@ public class InflaterInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.462 -0400", hash_original_method = "249965AABC06DCB5B5F50760C9E2C49A", hash_generated_method = "F0489217BA4667E6AB4E65C3F17F9121")
     private void checkClosed() throws IOException {
     if(closed)        

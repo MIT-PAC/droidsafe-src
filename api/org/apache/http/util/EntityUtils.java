@@ -16,6 +16,7 @@ import org.apache.http.protocol.HTTP;
 
 public final class EntityUtils {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:38.107 -0400", hash_original_method = "A25F629EA0AE9AB637DBB7282029CCE6", hash_generated_method = "DF638A820C62149FB3BD6CF8B6EF2106")
     private  EntityUtils() {
         // ---------- Original Method ----------

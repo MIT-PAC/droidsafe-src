@@ -115,6 +115,7 @@ SslCertificate varAD9FB3E799180A1D9497E2C35C2EA89C_367732284 =         mCertific
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.012 -0400", hash_original_method = "F5EEA514D7040591FC6D3FB9B4E157ED", hash_generated_method = "90E7FCD9DF8AADBE39E6E7B49FD40632")
      void processRequests(Request firstRequest) {
         addTaint(firstRequest.getTaint());

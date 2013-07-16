@@ -10,6 +10,7 @@ public class MissingFormatWidthException extends IllegalFormatException {
 
     private String s;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.254 -0400", hash_original_method = "3B5695383AF45988D55F3947C3C6E408", hash_generated_method = "80BB9836BFF3BB7F8C03187DBB29022B")
     public  MissingFormatWidthException(String s) {
     if(s == null)        

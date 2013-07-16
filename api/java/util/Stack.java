@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public class Stack<E> extends Vector<E> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:13.662 -0400", hash_original_method = "625E2B3812BBF73AC690F7D19F4288A9", hash_generated_method = "C931746C59237A3AA8E23B4112671D1E")
     public  Stack() {
         // ---------- Original Method ----------

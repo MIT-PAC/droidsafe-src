@@ -66,6 +66,7 @@ String[] var7F6A794107009E794CDF4DF232EEFD7F_1132607272 =         cipherSuites.c
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.861 -0400", hash_original_method = "9E670D049040F6D0CEE95ADCC5A2BB8E", hash_generated_method = "4B64EAD1DECBC9F9BF26C083131225FE")
     public void setCipherSuites(String[] cipherSuites) {
         this.cipherSuites = ((cipherSuites == null)

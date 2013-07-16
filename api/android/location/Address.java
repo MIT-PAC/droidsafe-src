@@ -77,6 +77,7 @@ public class Address implements Parcelable {
 
     private Bundle mExtras = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.571 -0400", hash_original_method = "8C8D8A006008D0E9588030A46EE6B5B9", hash_generated_method = "8FD930FF34428F79FC4B7AEC5627420E")
     public  Address(Locale locale) {
         mLocale = locale;
@@ -107,6 +108,7 @@ Locale varD4470AF088C85BDC4D13A941A003DD34_1586046080 =         mLocale;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.572 -0400", hash_original_method = "D824FE2CFE40DB25058DC1465F2D4439", hash_generated_method = "9DD70E957D2A1107CE4222BC4649C8DD")
     public String getAddressLine(int index) {
         addTaint(index);
@@ -127,6 +129,7 @@ String var8F52A3584A08AAA3EC3C8E4490F64BF1_951804538 =         mAddressLines == 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.573 -0400", hash_original_method = "5C23144E8A22EAB5D8930884A1255DAC", hash_generated_method = "7830F275D258C3E2D907AE80F39D6424")
     public void setAddressLine(int index, String line) {
         addTaint(line.getTaint());
@@ -403,6 +406,7 @@ String var2458595564A156466F479EBF50DC6884_842555643 =         mCountryName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.581 -0400", hash_original_method = "74A963FE4AC8482F316E1B3E19ABA2D8", hash_generated_method = "1EE8D30436E328DA36EA6C61D6182365")
     public double getLatitude() {
     if(mHasLatitude)        
@@ -457,6 +461,7 @@ String var2458595564A156466F479EBF50DC6884_842555643 =         mCountryName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.582 -0400", hash_original_method = "90E38F72A8C0EDFD5CFCC6EABD3BD432", hash_generated_method = "4501EBB1D8F3D39BFFD4A3C600E11353")
     public double getLongitude() {
     if(mHasLongitude)        

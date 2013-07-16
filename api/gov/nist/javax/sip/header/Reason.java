@@ -18,6 +18,7 @@ public class Reason extends ParametersHeader implements javax.sip.header.ReasonH
 
     protected String protocol;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.800 -0400", hash_original_method = "49B37C8425CF255FB1500AD2816C1ABC", hash_generated_method = "07F22BA75232C6AA162B9790FFFB6280")
     public  Reason() {
         super(NAME);
@@ -105,6 +106,7 @@ String var4AF16528A7526259CFEF5DF72DA3FFB0_421513727 =         NAME;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.803 -0400", hash_original_method = "F6A3921BF2DA3805D24A4DD375373A7E", hash_generated_method = "7BE0A37B89E21FEEA5D8B6F33175AB72")
     protected String encodeBody() {
         StringBuffer s = new StringBuffer();

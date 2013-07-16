@@ -24,6 +24,7 @@ public final class HeapBufferIterator extends BufferIterator {
 
     private int position;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.595 -0400", hash_original_method = "A6C30EED25CCFD2AB62FEA4E16ACBAB8", hash_generated_method = "823E99C85FB6B418E4A8B14A07E9B962")
       HeapBufferIterator(byte[] buffer, int offset, int byteCount, ByteOrder order) {
         this.buffer = buffer;
@@ -56,6 +57,7 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.596 -0400", hash_original_method = "3E61A2FCBE8F1A085EF50016EDA93C91", hash_generated_method = "F2A972725E0F950EABF7D46C2A9BF48F")
     public void readByteArray(byte[] dst, int dstOffset, int byteCount) {
         addTaint(dstOffset);
@@ -83,6 +85,7 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.597 -0400", hash_original_method = "DB59E455EA40BB4A6ED9DEE68F53B94D", hash_generated_method = "0196E147C8B66E92A0F33A7F52D321C1")
     public int readInt() {
         int result = Memory.peekInt(buffer, offset + position, order);
@@ -97,6 +100,7 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.598 -0400", hash_original_method = "329E16A9527E1EB7B49C2B3423D775A3", hash_generated_method = "F9498F674AF7E8E07D616E60E23ACF01")
     public void readIntArray(int[] dst, int dstOffset, int intCount) {
         addTaint(intCount);
@@ -112,6 +116,7 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.598 -0400", hash_original_method = "DE8A7EDE581D91941B0B91B035994D93", hash_generated_method = "1710BFD0DDECCCD743900FA584417568")
     public short readShort() {
         short result = Memory.peekShort(buffer, offset + position, order);
@@ -126,7 +131,8 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
-        public static BufferIterator iterator(byte[] buffer, int offset, int byteCount, ByteOrder order) {
+        @DSModeled(DSC.SAFE)
+    public static BufferIterator iterator(byte[] buffer, int offset, int byteCount, ByteOrder order) {
         return new HeapBufferIterator(buffer, offset, byteCount, order);
     }
 

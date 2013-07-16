@@ -16,6 +16,7 @@ public class BitwiseOutputStream {
 
     private int mEnd;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.642 -0400", hash_original_method = "8BA43F60B4A234D737B83D6AB4280BA3", hash_generated_method = "06427A18CDB37C1BE01DC8D43457AF3E")
     public  BitwiseOutputStream(int startingLength) {
         mBuf = new byte[startingLength];

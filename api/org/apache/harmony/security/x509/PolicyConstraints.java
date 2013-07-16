@@ -23,6 +23,7 @@ public final class PolicyConstraints extends ExtensionValue {
 
     private byte[] encoding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.233 -0400", hash_original_method = "4066280A3CCDE594602954A8F84CD571", hash_generated_method = "E4485033E88078E407A778DFBB35B69E")
     public  PolicyConstraints(BigInteger requireExplicitPolicy,
             BigInteger inhibitPolicyMapping) {
@@ -34,6 +35,7 @@ public final class PolicyConstraints extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.234 -0400", hash_original_method = "D14D123A6A25A0AC6CCBFD6F67D6AABA", hash_generated_method = "EE766B707538E38BBD67762025AF5684")
     public  PolicyConstraints(byte[] encoding) throws IOException {
         super(encoding);
@@ -48,6 +50,7 @@ public final class PolicyConstraints extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.234 -0400", hash_original_method = "8B4F6C3FF9A61E2FC4F0FDE77894DD6A", hash_generated_method = "27E4C2E709CB80A7E682C74912EB4D27")
     private  PolicyConstraints(BigInteger requireExplicitPolicy,
                             BigInteger inhibitPolicyMapping, byte[] encoding) {

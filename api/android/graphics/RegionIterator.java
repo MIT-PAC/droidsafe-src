@@ -10,6 +10,7 @@ public class RegionIterator {
 
     private int mNativeIter;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.325 -0400", hash_original_method = "8221B1C759F7AE45DFBE3F2918777459", hash_generated_method = "79006011C2E682714FDDFBE507D6EEAE")
     public  RegionIterator(Region region) {
         mNativeIter = nativeConstructor(region.ni());

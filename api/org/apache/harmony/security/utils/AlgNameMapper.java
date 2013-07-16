@@ -15,13 +15,15 @@ import org.apache.harmony.security.asn1.ObjectIdentifier;
 
 public class AlgNameMapper {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.371 -0400", hash_original_method = "22469560D029349EBF273B6D8BC83B7A", hash_generated_method = "31CEA5AC8FC09495AFA62E889F9BA508")
     private  AlgNameMapper() {
         // ---------- Original Method ----------
     }
 
     
-        public static String map2OID(String algName) {
+        @DSModeled(DSC.SAFE)
+    public static String map2OID(String algName) {
         return alg2OidMap.get(algName.toUpperCase(Locale.US));
     }
 
@@ -32,7 +34,8 @@ public class AlgNameMapper {
     }
 
     
-        public static String getStandardName(String algName) {
+        @DSModeled(DSC.SAFE)
+    public static String getStandardName(String algName) {
         return algAliasesMap.get(algName.toUpperCase(Locale.US));
     }
 
@@ -72,7 +75,8 @@ public class AlgNameMapper {
     }
 
     
-        public static boolean isOID(String alias) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isOID(String alias) {
         return ObjectIdentifier.isOID(normalize(alias));
     }
 

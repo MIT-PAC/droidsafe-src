@@ -63,6 +63,7 @@ Date var4DFAA868C3B58DBB3005236311862DD3_94572789 =         new Date(startDate);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.508 -0400", hash_original_method = "53A3C4742E83A3AEE0A9A0D2D307AB00", hash_generated_method = "CCB8A03BC47936304918CD866135EB12")
     public Date getEndDate() {
     if(endDate == -1)        

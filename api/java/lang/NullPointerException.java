@@ -7,12 +7,14 @@ import droidsafe.runtime.*;
 
 public class NullPointerException extends RuntimeException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.035 -0400", hash_original_method = "4CD1558B74CC9F94FAFFAA64104ABAFD", hash_generated_method = "019AF9545A44CED52FDE464DC17E038C")
     public  NullPointerException() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.035 -0400", hash_original_method = "35797291F30B5B7A43FB2D60560B242A", hash_generated_method = "6D5845D5637806BD482E311D922504C1")
     public  NullPointerException(String detailMessage) {
         super(detailMessage);

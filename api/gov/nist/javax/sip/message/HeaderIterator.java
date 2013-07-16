@@ -22,6 +22,7 @@ public class HeaderIterator implements ListIterator {
 
     private SIPHeader sipHeader;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.271 -0400", hash_original_method = "F7312950516DDC7BFFF0814D6316FA82", hash_generated_method = "513E3B1158BAD913FFE0123019121598")
     protected  HeaderIterator(SIPMessage sipMessage, SIPHeader sipHeader) {
         this.sipMessage = sipMessage;

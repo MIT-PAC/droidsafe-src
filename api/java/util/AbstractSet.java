@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public abstract class AbstractSet<E> extends AbstractCollection<E> implements Set<E> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.289 -0400", hash_original_method = "422EAA7182FF45B88C4EE6C211DE4EBB", hash_generated_method = "370CF36F1557D7355E48B1CB7D8F5E8D")
     protected  AbstractSet() {
         // ---------- Original Method ----------

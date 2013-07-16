@@ -10,6 +10,7 @@ import java.text.ParseException;
 
 public class AuthenticationInfoParser extends ParametersParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.862 -0400", hash_original_method = "F28ABF8CFF04CC1C57BCD4E014C95C2B", hash_generated_method = "4D29FE7F36335FA05C3B36A828DB26AC")
     public  AuthenticationInfoParser(String authenticationInfo) {
         super(authenticationInfo);
@@ -18,6 +19,7 @@ public class AuthenticationInfoParser extends ParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.863 -0400", hash_original_method = "49A5BC0E10B199942A909086CCB53299", hash_generated_method = "F575724D8379F4722AEB97946F517A74")
     protected  AuthenticationInfoParser(Lexer lexer) {
         super(lexer);
@@ -26,6 +28,7 @@ public class AuthenticationInfoParser extends ParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.865 -0400", hash_original_method = "2DCD0228D3AB6B3B6D80756266EB3403", hash_generated_method = "DFCBB33974BDFE00F1E73185C994B8E9")
     public SIPHeader parse() throws ParseException {
     if(debug)        

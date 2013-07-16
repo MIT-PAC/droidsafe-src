@@ -172,6 +172,7 @@ public class ActionBarImpl extends ActionBar {
         
 };
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.276 -0400", hash_original_method = "59F98BFDF3B79CD734A4E0F1D5C36E49", hash_generated_method = "9528A6BA30B9DF359C9B94DCBB572096")
     public  ActionBarImpl(Activity activity) {
         mActivity = activity;
@@ -193,6 +194,7 @@ public class ActionBarImpl extends ActionBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.276 -0400", hash_original_method = "8749FCFE1A7B0A0EC82F09729A7EA1FF", hash_generated_method = "ABD82B745CE6FBD975A8B09752DAC6AC")
     public  ActionBarImpl(Dialog dialog) {
         mDialog = dialog;
@@ -694,6 +696,7 @@ CharSequence var49061D54F2B8280289A21FE9090C3B9B_89788125 =         mActionView.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.280 -0400", hash_original_method = "6F680EB91F7327296F43077A9CFCB9CD", hash_generated_method = "1DC8FBA14361BC6B2DD836C580C83E98")
     public ActionMode startActionMode(ActionMode.Callback callback) {
         addTaint(callback.getTaint());
@@ -922,6 +925,7 @@ for(int i = position;i < newTabCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.282 -0400", hash_original_method = "08E647315276EA6EFD361EFCDF66D68C", hash_generated_method = "C9E3CCB156A465A92272FE8FB6C9EAB7")
     @Override
     public void selectTab(Tab tab) {
@@ -996,6 +1000,7 @@ Tab var9219C2C21C7D119E2F710096353412F3_140836845 =         mSelectedTab;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.285 -0400", hash_original_method = "B9AB02E6F73BE3423F7A7521B424A639", hash_generated_method = "16F89618A7F83118B97AC25034FF8F4F")
      void show(boolean markHiddenBeforeMode) {
         addTaint(markHiddenBeforeMode);
@@ -1043,6 +1048,7 @@ Tab var9219C2C21C7D119E2F710096353412F3_140836845 =         mSelectedTab;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.285 -0400", hash_original_method = "F98E692B5353704914249A64080F4E16", hash_generated_method = "5AC3F8092073922F480BA99D58A22211")
     @Override
     public void hide() {
@@ -1378,6 +1384,7 @@ Tab var1B354487B7E90F4FE7AAB17F5B158656_283712403 =         mTabs.get(index);
 
         private WeakReference<View> mCustomView;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:16.294 -0400", hash_original_method = "329ADB94B68F012647BA8B5F412D446E", hash_generated_method = "EB690C59C99DA9C6D91EA9F49BC255A4")
         public  ActionModeImpl(ActionMode.Callback callback) {
             mCallback = callback;

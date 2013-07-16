@@ -427,6 +427,7 @@ SSLSocket var483A6DFBDF2AF13A3CF8A0177BC684A5_643544812 =         sslSocket;
 
         private int socketPort;
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.173 -0400", hash_original_method = "56C3F1DA7938694CED60FE34095C0213", hash_generated_method = "2090EDCF2F749D57DB0C828E6D058B86")
         public  Address(URI uri) {
             this.proxy = null;
@@ -445,6 +446,7 @@ SSLSocket var483A6DFBDF2AF13A3CF8A0177BC684A5_643544812 =         sslSocket;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.174 -0400", hash_original_method = "A6C9CB15451FF69F0D42BB48C7372F2F", hash_generated_method = "C9F78A91F8BA40A4A360389BE7C526FD")
         public  Address(URI uri, Proxy proxy, boolean requiresTunnel) {
             this.proxy = proxy;

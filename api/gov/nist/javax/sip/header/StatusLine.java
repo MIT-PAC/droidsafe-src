@@ -20,6 +20,7 @@ public final class StatusLine extends SIPObject implements SipStatusLine {
 
     protected String reasonPhrase;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.446 -0400", hash_original_method = "952A7A04B56CA19CB087E879E7A74676", hash_generated_method = "264BF0CCCF59EFC8D77A76A8838AD81F")
     public  StatusLine() {
         reasonPhrase = null;

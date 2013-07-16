@@ -16,6 +16,7 @@ public abstract class ASN1TypeCollection extends ASN1Constructed {
 
     public Object[] DEFAULT;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.729 -0400", hash_original_method = "2D9B8BA6B8763CB3A447E57286A5B8E0", hash_generated_method = "F4FE42E5FDBCC705F1F18E33AB127556")
     protected  ASN1TypeCollection(int tagNumber, ASN1Type[] type) {
         super(tagNumber);

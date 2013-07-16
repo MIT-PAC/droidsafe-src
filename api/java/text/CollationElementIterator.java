@@ -11,6 +11,7 @@ public final class CollationElementIterator {
 
     private CollationElementIteratorICU icuIterator;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.504 -0400", hash_original_method = "C4D82AD91997942FF2D2C5DD5D5F8256", hash_generated_method = "2A5E66AEE713561DB977D9A2014C7603")
       CollationElementIterator(CollationElementIteratorICU iterator) {
         this.icuIterator = iterator;

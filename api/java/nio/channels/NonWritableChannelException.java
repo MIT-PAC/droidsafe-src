@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public class NonWritableChannelException extends IllegalStateException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.630 -0400", hash_original_method = "DD4364D6F2E76958E04196C03440F0A2", hash_generated_method = "2BF951121B4822F356A7705B9844EE8C")
     public  NonWritableChannelException() {
         // ---------- Original Method ----------

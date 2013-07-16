@@ -10,6 +10,7 @@ public class TypeNotPresentException extends RuntimeException {
 
     private String typeName;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.749 -0400", hash_original_method = "8F99105588FC99ADE0A826CA1D876689", hash_generated_method = "CAB211ED29B063F4857097B8EB26FB6A")
     public  TypeNotPresentException(String typeName, Throwable cause) {
         super("Type " + typeName + " not present", cause);

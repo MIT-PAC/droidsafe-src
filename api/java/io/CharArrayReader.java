@@ -30,6 +30,7 @@ public class CharArrayReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.978 -0400", hash_original_method = "1EBD72186921B7C86A5F89F0B57C5DD7", hash_generated_method = "533918F57A8C94C2EE2321DB4CBD7AC0")
     public  CharArrayReader(char[] buf, int offset, int length) {
     if(offset < 0 || offset > buf.length || length < 0 || offset + length < 0)        
@@ -113,6 +114,7 @@ public class CharArrayReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.981 -0400", hash_original_method = "DD3D03D90C3AA2556C16493577BC59FF", hash_generated_method = "DEB28D2ECE33C5089458D34065B94E80")
     private void checkNotClosed() throws IOException {
     if(isClosed())        

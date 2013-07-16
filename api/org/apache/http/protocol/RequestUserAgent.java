@@ -12,6 +12,7 @@ import org.apache.http.params.HttpProtocolParams;
 
 public class RequestUserAgent implements HttpRequestInterceptor {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:38.015 -0400", hash_original_method = "C4ABF37EB88E79840E3C3C778B3D3723", hash_generated_method = "6AC3C7B8C84D6604FDB3259D42FE25C2")
     public  RequestUserAgent() {
         super();

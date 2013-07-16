@@ -79,7 +79,7 @@ for(Iterator it = obj.getHeaders().iterator();it.hasNext();)
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.662 -0400", hash_original_method = "7DC9EFDB066BC03515C2F692EE0CAAF1", hash_generated_method = "3E45C2F3E6847EA5C286FC9BB64ECF40")
     public void writeObject(PemObjectGenerator objGen) throws IOException {
         addTaint(objGen.getTaint());
@@ -119,6 +119,7 @@ for(Iterator it = obj.getHeaders().iterator();it.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.664 -0400", hash_original_method = "68336F0D98EECA9F6E841F3ED0087F4A", hash_generated_method = "4EF62BA2E0454445BE13247FEA2E2D26")
     private void writeEncoded(byte[] bytes) throws IOException {
         bytes = Base64.encode(bytes);
@@ -158,6 +159,7 @@ for(int i = 0;i < bytes.length;i += buf.length)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.664 -0400", hash_original_method = "B0C6E0FE046A2BB4F1EE412D60500B94", hash_generated_method = "88B3238FDCFDC671F62E9F603BBC9C35")
     private void writePreEncapsulationBoundary(
         String type) throws IOException {
@@ -170,6 +172,7 @@ for(int i = 0;i < bytes.length;i += buf.length)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.664 -0400", hash_original_method = "F04AE80D2D9D0D11E28641848118BF80", hash_generated_method = "248981DAD4C65BB0CC7BC4EBBD42F949")
     private void writePostEncapsulationBoundary(
         String type) throws IOException {

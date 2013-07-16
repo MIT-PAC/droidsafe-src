@@ -10,6 +10,7 @@ import java.text.ParseException;
 
 public class HeaderParser extends Parser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.534 -0400", hash_original_method = "D7BF0781EB1B150DCC61F7ABE4F04AEB", hash_generated_method = "46DA31DA5B47D55BC12A84C005EF4143")
     protected  HeaderParser(String header) {
         addTaint(header.getTaint());
@@ -19,6 +20,7 @@ public class HeaderParser extends Parser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.535 -0400", hash_original_method = "844D98E200F4C4A3FE69D132F5D518A2", hash_generated_method = "8DC163926180CDBC36982AACF4429F5C")
     protected  HeaderParser(Lexer lexer) {
         addTaint(lexer.getTaint());

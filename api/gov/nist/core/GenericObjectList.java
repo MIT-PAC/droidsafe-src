@@ -27,6 +27,7 @@ public abstract class GenericObjectList extends LinkedList<GenericObject> implem
 
     protected String separator;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.249 -0400", hash_original_method = "B4C0906D853ADC385414EECD7EA637D1", hash_generated_method = "4A8976BAB43057C94B303DF0AF3F3720")
     protected  GenericObjectList() {
         super();
@@ -40,6 +41,7 @@ public abstract class GenericObjectList extends LinkedList<GenericObject> implem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.250 -0400", hash_original_method = "8E04C29D2DF262A7362105153E637B6F", hash_generated_method = "8CCE918BF37E1EBCCE0CDCFB3626393F")
     protected  GenericObjectList(String lname) {
         this();
@@ -107,6 +109,7 @@ String var300818D7D4F603E5F4346D4E090224B6_479965771 =         new String(chars)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.252 -0400", hash_original_method = "6368B146C50DA8D7E84E7623E4D72233", hash_generated_method = "80389B1283EDA0FF09AB76925EF3E5A0")
     public Object clone() {
         GenericObjectList retval = (GenericObjectList) super.clone();
@@ -139,6 +142,7 @@ Object varF9E19AD6135C970F387F77C6F3DE4477_782499885 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.252 -0400", hash_original_method = "04D90EEE60FDC73EE04A6B692FFCF48F", hash_generated_method = "0EC2295E3D316A6129CF91B3D1058E20")
     protected GenericObject next(ListIterator iterator) {
         addTaint(iterator.getTaint());
@@ -163,6 +167,7 @@ GenericObject var540C13E9E156B687226421B24F2DF178_1911378215 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.253 -0400", hash_original_method = "0C810F8EA313238CAFFD85BD22D89FC5", hash_generated_method = "839302873DDFF53B7740E4621B4BA58C")
     protected GenericObject first() {
         myListIterator = this.listIterator(0);
@@ -288,6 +293,7 @@ GenericObject var540C13E9E156B687226421B24F2DF178_1575801893 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.256 -0400", hash_original_method = "373CBEDF2A2DC4BB05F4307048ABF6D6", hash_generated_method = "ADBEB176173463819CCA116DA77CC051")
     public String debugDump() {
         stringRep = "";
@@ -403,6 +409,7 @@ String varF9E19AD6135C970F387F77C6F3DE4477_1591904100 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.258 -0400", hash_original_method = "CDD824836834585D009706CA2D2AF418", hash_generated_method = "78D00AC6CB7E6F5F0730FE7016E460C7")
     public String encode() {
     if(this.isEmpty())        
@@ -461,6 +468,7 @@ String varD48A745DC29A29C7851286E6A426D0D0_1582057543 =         encoding.toStrin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.259 -0400", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0AAB838ECCE4348A0F84C523C34828F5")
     public String toString() {
 String varB17575D7C845B2C662583710539AAEBB_1513441414 =         this.encode();
@@ -491,6 +499,7 @@ String varB17575D7C845B2C662583710539AAEBB_1513441414 =         this.encode();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.260 -0400", hash_original_method = "DCC9B19E3EEEE0A135F8C5BB2CAD40B2", hash_generated_method = "3083866FE0B14B967FC2822097BC828B")
     public boolean equals(Object other) {
         addTaint(other.getTaint());

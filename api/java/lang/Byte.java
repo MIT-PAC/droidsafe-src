@@ -10,6 +10,7 @@ public final class Byte extends Number implements Comparable<Byte> {
 
     private byte value;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.658 -0400", hash_original_method = "7E64D11F2C96BA434CA992EF3846EE45", hash_generated_method = "EF48A56C44D8A8A39C1273A89D41BB2B")
     public  Byte(byte value) {
         this.value = value;
@@ -18,6 +19,7 @@ public final class Byte extends Number implements Comparable<Byte> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.659 -0400", hash_original_method = "6A41489347990CAADB010180F3DA4F08", hash_generated_method = "F7CBDE0FC3DB6982482E3182E5E24FEB")
     public  Byte(String string) throws NumberFormatException {
         this(parseByte(string));

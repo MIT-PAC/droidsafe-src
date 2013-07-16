@@ -11,6 +11,7 @@ import javax.sip.*;
 
 public class AcceptEncodingParser extends HeaderParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.377 -0400", hash_original_method = "865E86FA800E1D68F0770AD3080D258F", hash_generated_method = "F0F93EB7D3971DD3BFB62EE12CA6FFF8")
     public  AcceptEncodingParser(String acceptEncoding) {
         super(acceptEncoding);
@@ -19,6 +20,7 @@ public class AcceptEncodingParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.377 -0400", hash_original_method = "2A31652D0F06752F063CE4D7769684DB", hash_generated_method = "275A392B40423395F120EDEEAEEEC6CC")
     protected  AcceptEncodingParser(Lexer lexer) {
         super(lexer);

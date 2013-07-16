@@ -21,6 +21,7 @@ public abstract class DateFormat extends Format {
 
     protected NumberFormat numberFormat;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.060 -0400", hash_original_method = "B3EF4E3485D0789C83BAEC35E9E3BAD6", hash_generated_method = "4CEB3B1E67F52104B0EDECB49E396168")
     protected  DateFormat() {
         // ---------- Original Method ----------
@@ -379,6 +380,7 @@ Object var0D84F404ADD0A115F77E7D80294D92BC_1559282355 =         parse(string, po
 
         private int calendarField = -1;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.074 -0400", hash_original_method = "888BC0FB09FD210C46F878EFCBB9BD6C", hash_generated_method = "34C878B4D528D2045E74CFAB77D96DFE")
         protected  Field(String fieldName, int calendarField) {
             super(fieldName);
@@ -407,7 +409,8 @@ Object var0D84F404ADD0A115F77E7D80294D92BC_1559282355 =         parse(string, po
         }
 
         
-                public static Field ofCalendarField(int calendarField) {
+                @DSModeled(DSC.SAFE)
+        public static Field ofCalendarField(int calendarField) {
             if (calendarField < 0 || calendarField >= Calendar.FIELD_COUNT) {
                 throw new IllegalArgumentException();
             }

@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public class GenericSignatureFormatError extends ClassFormatError {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.028 -0400", hash_original_method = "E96D22F4E41570100FD099326A170098", hash_generated_method = "B6AFB6F3A939DA2DD0DBBAC7E7D8D900")
     public  GenericSignatureFormatError() {
         // ---------- Original Method ----------

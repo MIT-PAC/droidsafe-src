@@ -22,6 +22,7 @@ public class SubscriptionState extends ParametersHeader implements SubscriptionS
 
     protected String state;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.477 -0400", hash_original_method = "2AE8767260EE49A022E5D260FFA8A02D", hash_generated_method = "F9D33CC11D1A46D0CF22E4B318D53B6E")
     public  SubscriptionState() {
         super(SIPHeaderNames.SUBSCRIPTION_STATE);

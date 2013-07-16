@@ -68,6 +68,7 @@ public class BinderInternal {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.906 -0400", hash_original_method = "D42E2C52A602997A5DDE899C13954EBC", hash_generated_method = "B4840BBAE77128E6C2E9444A36D72BDC")
         @Override
         protected void finalize() throws Throwable {

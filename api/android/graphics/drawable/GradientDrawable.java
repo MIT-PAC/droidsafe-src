@@ -69,6 +69,7 @@ public class GradientDrawable extends Drawable {
 
     private boolean mPathIsDirty = true;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.141 -0400", hash_original_method = "64287040FBFB7F81692AADB4245B0378", hash_generated_method = "78296307B8E83E1FC392EC6080C25EE7")
     public  GradientDrawable() {
         this(new GradientState(Orientation.TOP_BOTTOM, null));
@@ -76,6 +77,7 @@ public class GradientDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.142 -0400", hash_original_method = "48FF7A4A9E39F0BE519CF2AE778248C7", hash_generated_method = "E4546EC665FA75F324F70D8F0B07D90F")
     public  GradientDrawable(Orientation orientation, int[] colors) {
         this(new GradientState(orientation, colors));
@@ -85,6 +87,7 @@ public class GradientDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.143 -0400", hash_original_method = "11AB49F3A166C4EC986EE8723C09CE3C", hash_generated_method = "EB17AAEC21D5CB5883C8C3AB3D6841B1")
     private  GradientDrawable(GradientState state) {
         mGradientState = state;
@@ -1216,6 +1219,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_1171855264 =         this;
 
         private boolean mUseLevelForShape;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.209 -0400", hash_original_method = "9C4B8156D5998AA4F070091BFAC51297", hash_generated_method = "36EA0AD2FEF9D7DF957604ED73351F6F")
           GradientState() {
             mOrientation = Orientation.TOP_BOTTOM;
@@ -1224,6 +1228,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_1171855264 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.209 -0400", hash_original_method = "D56C041244D40E3233BE0185764F984A", hash_generated_method = "DCD98CC869C46D3675D13FDE4D8B9C1F")
           GradientState(Orientation orientation, int[] colors) {
             mOrientation = orientation;
@@ -1234,6 +1239,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_1171855264 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.215 -0400", hash_original_method = "E9F630A8A3449D4E0942DD92A53A8789", hash_generated_method = "54B11CD7D8A8D825E0378AFCF9BDBF78")
         public  GradientState(GradientState state) {
             mChangingConfigurations = state.mChangingConfigurations;
@@ -1279,6 +1285,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_1171855264 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.215 -0400", hash_original_method = "995801C56CB4C9E6715A12BAA40CCB03", hash_generated_method = "970FDD5B2F64C60EA927D24694EBBB63")
         @Override
         public Drawable newDrawable() {
@@ -1290,6 +1297,7 @@ Drawable var3A2E8558FFCC994DB93A13AF4E9CDC52_1833467522 =             new Gradie
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.215 -0400", hash_original_method = "C54DA0CD853A4A5864DFD734D15AF82F", hash_generated_method = "805558D04579AD2838AE020B776FC98C")
         @Override
         public Drawable newDrawable(Resources res) {

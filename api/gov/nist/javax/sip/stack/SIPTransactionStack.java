@@ -2673,6 +2673,7 @@ SIPClientTransaction var631DB370CC7F7F1595271E10802FCFDA_1319825839 =         th
 
         ThreadAuditor.ThreadHandle threadHandle;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.014 -0400", hash_original_method = "BD8473F7A826DDA501F390A58BAECB33", hash_generated_method = "AFD1D6DF671C7BCECC8041EEE49A6EBB")
         public  PingTimer(ThreadAuditor.ThreadHandle a_oThreadHandle) {
             threadHandle = a_oThreadHandle;
@@ -2714,6 +2715,7 @@ SIPClientTransaction var631DB370CC7F7F1595271E10802FCFDA_1319825839 =         th
 
         private SIPClientTransaction clientTransaction;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.015 -0400", hash_original_method = "D0A941D96C1666EFE3BE3721976F6AA6", hash_generated_method = "ABA505C7494D21E7D5CE259EA437DF15")
         public  RemoveForkedTransactionTimerTask(SIPClientTransaction sipClientTransaction ) {
             this.clientTransaction = sipClientTransaction;

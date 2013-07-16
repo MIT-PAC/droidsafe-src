@@ -292,6 +292,7 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
 
     CharSequence mBreadCrumbShortTitleText;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.944 -0400", hash_original_method = "8E110563CDFB79724FBA0799BF0D3C19", hash_generated_method = "222018A87C5C0AD32DB56B9265BCFEC3")
     public  BackStackRecord(FragmentManagerImpl manager) {
         mManager = manager;
@@ -300,6 +301,7 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.945 -0400", hash_original_method = "0F20E0B479CF0E65111306B7DA0E9ECF", hash_generated_method = "F84A4F94D5329BDC38A9F06D2F4D41A8")
     @Override
     public String toString() {
@@ -350,6 +352,7 @@ String var2460B846747F8B22185AD8BE722266A5_53185224 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.947 -0400", hash_original_method = "856C187C4078543C316E968949741777", hash_generated_method = "D667E6425E8E4E1E7139F0A6FF278AC1")
     public void dump(String prefix, PrintWriter writer, boolean full) {
         addTaint(full);

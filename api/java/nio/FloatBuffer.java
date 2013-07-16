@@ -8,6 +8,7 @@ import java.util.Arrays;
 
 public abstract class FloatBuffer extends Buffer implements Comparable<FloatBuffer> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.532 -0400", hash_original_method = "40CC822379F71BDE2069817768983643", hash_generated_method = "9E533343D88E64736D05E2F347F6068D")
       FloatBuffer(int capacity) {
         super(2, capacity, null);
@@ -16,7 +17,8 @@ public abstract class FloatBuffer extends Buffer implements Comparable<FloatBuff
     }
 
     
-        public static FloatBuffer allocate(int capacity) {
+        @DSModeled(DSC.SAFE)
+    public static FloatBuffer allocate(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException();
         }
@@ -24,12 +26,14 @@ public abstract class FloatBuffer extends Buffer implements Comparable<FloatBuff
     }
 
     
-        public static FloatBuffer wrap(float[] array) {
+        @DSModeled(DSC.SAFE)
+    public static FloatBuffer wrap(float[] array) {
         return wrap(array, 0, array.length);
     }
 
     
-        public static FloatBuffer wrap(float[] array, int start, int floatCount) {
+        @DSModeled(DSC.SAFE)
+    public static FloatBuffer wrap(float[] array, int start, int floatCount) {
         Arrays.checkOffsetAndCount(array.length, start, floatCount);
         FloatBuffer buf = new ReadWriteFloatArrayBuffer(array);
         buf.position = start;
@@ -64,6 +68,7 @@ public abstract class FloatBuffer extends Buffer implements Comparable<FloatBuff
     public abstract FloatBuffer compact();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.534 -0400", hash_original_method = "255AC25FE0773812484072E75724705E", hash_generated_method = "9B964915AD470523204350FCDF05BE5E")
     public int compareTo(FloatBuffer otherBuffer) {
         addTaint(otherBuffer.getTaint());
@@ -116,6 +121,7 @@ public abstract class FloatBuffer extends Buffer implements Comparable<FloatBuff
     public abstract FloatBuffer duplicate();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.536 -0400", hash_original_method = "962C433BA6F78C4BE1DF9C98AF3A7A4D", hash_generated_method = "B94DB7E4C4A6161F8E1029239067262E")
     @Override
     public boolean equals(Object other) {
@@ -169,6 +175,7 @@ public abstract class FloatBuffer extends Buffer implements Comparable<FloatBuff
     public abstract float get();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.536 -0400", hash_original_method = "5C1BC742B784E1F54201A6BFE04FB3C1", hash_generated_method = "994CB6D76594A55D9C15807FA9FF6694")
     public FloatBuffer get(float[] dst) {
         addTaint(dst[0]);
@@ -180,6 +187,7 @@ FloatBuffer varAF8F268F60258FE30F192DE78F11CD4A_358582306 =         get(dst, 0, 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.537 -0400", hash_original_method = "62E3FD5BE0E5A19BF5F39022D7154217", hash_generated_method = "4E384F4C1BBFF8277D6ADBA1D9B53BA8")
     public FloatBuffer get(float[] dst, int dstOffset, int floatCount) {
         addTaint(floatCount);
@@ -224,6 +232,7 @@ FloatBuffer var72A74007B2BE62B849F475C7BDA4658B_409674209 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.539 -0400", hash_original_method = "B144F8C59516E29D7B0EE6B79958F98A", hash_generated_method = "C1F463155AFB06B74AD067FA15B2E85B")
     @Override
     public int hashCode() {
@@ -276,6 +285,7 @@ FloatBuffer var7D505613BED257805463C43ADCB4DBAD_1097579588 =         put(src, 0,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.541 -0400", hash_original_method = "DFC1F5A8B9B8E6C8478049F847BE00DC", hash_generated_method = "1B2B6CD709E18E77B7F5B5F5C0183FB9")
     public FloatBuffer put(float[] src, int srcOffset, int floatCount) {
         addTaint(floatCount);
@@ -307,6 +317,7 @@ FloatBuffer var72A74007B2BE62B849F475C7BDA4658B_1249632567 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.542 -0400", hash_original_method = "338DD208CFE8C4AD7CB14619D9789866", hash_generated_method = "001FCAEBE0488AE7543403CE94DC6DFF")
     public FloatBuffer put(FloatBuffer src) {
         addTaint(src.getTaint());

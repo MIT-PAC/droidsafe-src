@@ -33,6 +33,7 @@ public class SimpleDateFormat extends DateFormat {
 
     private Date defaultCenturyStart;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.974 -0400", hash_original_method = "55288B23256ED63825B1D49B41027576", hash_generated_method = "F82B18A1A66AF548F5C62D87F2131939")
     public  SimpleDateFormat() {
         this(Locale.getDefault());
@@ -44,6 +45,7 @@ public class SimpleDateFormat extends DateFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.974 -0400", hash_original_method = "DF79561AB8D44B187C9CA04B354315AC", hash_generated_method = "D4A2069D1C68F4AB2BBA6AA73240C2D8")
     public  SimpleDateFormat(String pattern) {
         this(pattern, Locale.getDefault());
@@ -52,6 +54,7 @@ public class SimpleDateFormat extends DateFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.975 -0400", hash_original_method = "2C117D04FF17ED0139CEC7451AA4BD73", hash_generated_method = "BA4FDDD7A78A1236519D0152F2C887F3")
     public  SimpleDateFormat(String template, DateFormatSymbols value) {
         this(Locale.getDefault());
@@ -65,6 +68,7 @@ public class SimpleDateFormat extends DateFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.976 -0400", hash_original_method = "1BCD123DF2A5414BB2A2ECF5D3357D25", hash_generated_method = "476D04B09E3E58E3666ECF86228F2313")
     public  SimpleDateFormat(String template, Locale locale) {
         this(locale);
@@ -78,6 +82,7 @@ public class SimpleDateFormat extends DateFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.977 -0400", hash_original_method = "F464E2338695834D875FCA6185F1E83B", hash_generated_method = "E5454081FE896EFEC960EA2EC9ACCD73")
     private  SimpleDateFormat(Locale locale) {
         addTaint(locale.getTaint());

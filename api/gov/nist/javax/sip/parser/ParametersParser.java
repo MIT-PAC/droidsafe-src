@@ -10,6 +10,7 @@ import java.text.ParseException;
 
 public abstract class ParametersParser extends HeaderParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.948 -0400", hash_original_method = "8DB209633D35B91A05910E58BFF524C0", hash_generated_method = "60EECF453E8AEF1F96199531012AB464")
     protected  ParametersParser(Lexer lexer) {
         super((Lexer) lexer);
@@ -18,6 +19,7 @@ public abstract class ParametersParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.948 -0400", hash_original_method = "1337D3E6D061A128A8E8534FBF59A488", hash_generated_method = "C4F88D2E99DE3DC3430895330CA3BC8E")
     protected  ParametersParser(String buffer) {
         super(buffer);

@@ -81,6 +81,7 @@ String varDC708CD29829AA84C3F2D9B68CF84B0D_1945637881 =         this.name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.713 -0400", hash_original_method = "832891E6742DCF403246DBD5D871CA11", hash_generated_method = "38AC7D76904F0DE1B753D96B59C6DB42")
     public String getValue() {
 String varCDE153C7C83987B368C3E568152249DB_1233022702 =         this.buffer.substringTrimmed(this.valuePos, this.buffer.length());
@@ -91,6 +92,7 @@ String varCDE153C7C83987B368C3E568152249DB_1233022702 =         this.buffer.subs
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.714 -0400", hash_original_method = "5721C7259C8939164D56A25B24055244", hash_generated_method = "B952E3D79A60F86A2F5B7C64B1242287")
     public HeaderElement[] getElements() throws ParseException {
         ParserCursor cursor = new ParserCursor(0, this.buffer.length());
@@ -129,6 +131,7 @@ CharArrayBuffer var45A7A4931E21905A5463F27B77E1344A_542388146 =         this.buf
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.714 -0400", hash_original_method = "45FB39B4E67563C5A568E25DDBF414D1", hash_generated_method = "4757387818C4EF3729F909F9B7520DB0")
     public String toString() {
 String var7B8BB72F06E6A8EB72498BA3268BFE1C_146655686 =         this.buffer.toString();

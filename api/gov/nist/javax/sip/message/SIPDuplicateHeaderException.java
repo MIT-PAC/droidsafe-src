@@ -15,6 +15,7 @@ public class SIPDuplicateHeaderException extends ParseException {
 
     protected SIPMessage sipMessage;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.752 -0400", hash_original_method = "C7110F542E7C86523593AC1F47E9C6EF", hash_generated_method = "CBF45538ABCFE5E246A21B260CF0E645")
     public  SIPDuplicateHeaderException(String msg) {
         super(msg, 0);

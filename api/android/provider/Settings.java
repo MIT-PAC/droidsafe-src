@@ -51,6 +51,7 @@ public final class Settings {
     
     public static class SettingNotFoundException extends AndroidException {
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.608 -0400", hash_original_method = "9D3DA3FD01BD65E9C8D44BD33E232128", hash_generated_method = "200240BBB63B98FF89E2DBCEE5936BE5")
         public  SettingNotFoundException(String msg) {
             super(msg);
@@ -124,6 +125,7 @@ public final class Settings {
 
         private String mCallCommand;
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.610 -0400", hash_original_method = "AA2EC60B6F4EA71E8A16119EB161E070", hash_generated_method = "E3A8B4C7105DE18E39D460473A77A79A")
         public  NameValueCache(String versionSystemProperty, Uri uri, String callCommand) {
             mVersionSystemProperty = versionSystemProperty;

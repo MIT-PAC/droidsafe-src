@@ -16,6 +16,7 @@ public final class ProcessingInstructionImpl extends LeafNodeImpl implements Pro
 
     private String data;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.943 -0400", hash_original_method = "87437044DD20821D3A88B8D33A6B0848", hash_generated_method = "C18A2496D5113AAA3D7AFB706BE663C1")
       ProcessingInstructionImpl(DocumentImpl document, String target, String data) {
         super(document);

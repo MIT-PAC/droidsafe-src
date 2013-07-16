@@ -37,6 +37,7 @@ public class MessageFormat extends Format {
 
     transient private int maxArgumentIndex;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.455 -0400", hash_original_method = "DF99A7D88BE30484426F461C5ED2222D", hash_generated_method = "E719E3A26C5068F11E196361CE198F4F")
     public  MessageFormat(String template, Locale locale) {
         addTaint(template.getTaint());
@@ -48,6 +49,7 @@ public class MessageFormat extends Format {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.455 -0400", hash_original_method = "BAA918AD1B6BB7758E580E5A4864BDBA", hash_generated_method = "81896B9388D8AB87ADBF31550E3A1963")
     public  MessageFormat(String template) {
         this(template, Locale.getDefault());
@@ -1259,6 +1261,7 @@ for(int i = 0;i <= maxOffset;i++)
 
         Object value;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.483 -0400", hash_original_method = "79F81C9DE3A6ED731ECF4F86681A281A", hash_generated_method = "2168FA24EBD30878F8A9FAB65C5466CD")
         public  FieldContainer(int start, int end,
                 AttributedCharacterIterator.Attribute attribute, Object value) {
@@ -1280,6 +1283,7 @@ for(int i = 0;i <= maxOffset;i++)
     
     public static class Field extends Format.Field {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.484 -0400", hash_original_method = "5600516370D16E6925F34153CC1B60B8", hash_generated_method = "465767ECB3AF93CD4C2D7AEDA23F18B3")
         protected  Field(String fieldName) {
             super(fieldName);

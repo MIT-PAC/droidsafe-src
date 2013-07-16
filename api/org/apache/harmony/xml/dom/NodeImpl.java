@@ -26,6 +26,7 @@ public abstract class NodeImpl implements Node {
 
     DocumentImpl document;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.907 -0400", hash_original_method = "A803585FEFBC6246911A956CA607D5CA", hash_generated_method = "9F50EA75A2AED9D57A4F24B1458FBC54")
       NodeImpl(DocumentImpl document) {
         this.document = document;
@@ -34,6 +35,7 @@ public abstract class NodeImpl implements Node {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.908 -0400", hash_original_method = "2014C4DBC7F925271C7D07A1BBA7C167", hash_generated_method = "1AAC607A213868555930488553E7FB6A")
     public Node appendChild(Node newChild) throws DOMException {
         addTaint(newChild.getTaint());
@@ -223,6 +225,7 @@ Node var540C13E9E156B687226421B24F2DF178_850895892 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.915 -0400", hash_original_method = "02900D7407B8981D4618C0943B784132", hash_generated_method = "49C57727650C34094B5B8ACD9A4CA872")
     public Node insertBefore(Node newChild, Node refChild) throws DOMException {
         addTaint(refChild.getTaint());
@@ -235,6 +238,7 @@ Node var540C13E9E156B687226421B24F2DF178_850895892 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.915 -0400", hash_original_method = "83D2E21D1EF19CE5C027A4D56C9BBECC", hash_generated_method = "739F07BE2464A98FF5444116F1AB2C53")
     public boolean isSupported(String feature, String version) {
         addTaint(version.getTaint());
@@ -254,6 +258,7 @@ Node var540C13E9E156B687226421B24F2DF178_850895892 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.916 -0400", hash_original_method = "C0BCC4253F844D2665FCB84131264ACF", hash_generated_method = "E1CAF61A74575DAF2EFB9E2705172711")
     public Node removeChild(Node oldChild) throws DOMException {
         addTaint(oldChild.getTaint());
@@ -265,6 +270,7 @@ Node var540C13E9E156B687226421B24F2DF178_850895892 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.916 -0400", hash_original_method = "3CB9ABDC605D3811167E9E73D3AF8E67", hash_generated_method = "C303B01634A99BA1D9D4219C7A3F8404")
     public Node replaceChild(Node newChild, Node oldChild) throws DOMException {
         addTaint(oldChild.getTaint());
@@ -374,7 +380,8 @@ switch(getNodeType()){
     }
 
     
-        static void setName(NodeImpl node, String name) {
+        @DSModeled(DSC.SAFE)
+    static void setName(NodeImpl node, String name) {
         int prefixSeparator = name.lastIndexOf(":");
         if (prefixSeparator != -1) {
             String prefix = name.substring(0, prefixSeparator);
@@ -478,6 +485,7 @@ String var540C13E9E156B687226421B24F2DF178_1809667097 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.919 -0400", hash_original_method = "DFD855C107B39D74015E43DCF13ECA5E", hash_generated_method = "3173A7C6E00CA2A551040035E8BB4A61")
     private String getParentBaseUri() {
         Node parentNode = getParentNode();
@@ -523,6 +531,7 @@ String var540C13E9E156B687226421B24F2DF178_1612418045 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.920 -0400", hash_original_method = "1DDF123F9002EFB3DC60D7666C901199", hash_generated_method = "FFDBA392D59FA8EAE3916F68B613A60B")
     public short compareDocumentPosition(Node other) throws DOMException {
         addTaint(other.getTaint());
@@ -534,6 +543,7 @@ String var540C13E9E156B687226421B24F2DF178_1612418045 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.920 -0400", hash_original_method = "67AC02ADFBE93754C1AB8AE0D37378EE", hash_generated_method = "0C4B52BB8D2383D2AFD5C3FA73131E1B")
     public String getTextContent() throws DOMException {
 String var7364FBEBC22E1599B041B125CD0C1F76_648778828 =         getNodeValue();
@@ -544,6 +554,7 @@ String var7364FBEBC22E1599B041B125CD0C1F76_648778828 =         getNodeValue();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.921 -0400", hash_original_method = "6ADB0BF10CD256A5C763161A1385CD79", hash_generated_method = "83697DB6930881E839504C8200EC175F")
      void getTextContent(StringBuilder buf) throws DOMException {
         addTaint(buf.getTaint());
@@ -654,6 +665,7 @@ NodeImpl var8BC235EA48173B3F91C3D3D2A4E83A35_1526888838 =         getContainingE
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.922 -0400", hash_original_method = "E4B9E13482B5AB13521831694CDD3F31", hash_generated_method = "465628102735C95ED3037FEE559E8999")
     private NodeImpl getContainingElement() {
 for(Node p = getParentNode();p != null;p = p.getParentNode())
@@ -924,6 +936,7 @@ for(int i = 0;i < listA.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.927 -0400", hash_original_method = "C9854B9EF2C5621F4F378B8106F34125", hash_generated_method = "A5EA130A3D4E02C8947FF280E0905098")
     private boolean namedNodeMapsEqual(NamedNodeMap a, NamedNodeMap b) {
         addTaint(b.getTaint());
@@ -1041,6 +1054,7 @@ Object var0B7881AA1F8DD69A4EC48032632042A1_734203603 =         userData != null 
 
         UserDataHandler handler;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.930 -0400", hash_original_method = "0B6C19B4FFBA791689124EA47788F25F", hash_generated_method = "B74553803370CA04690975E42C003D03")
           UserData(Object value, UserDataHandler handler) {
             this.value = value;

@@ -438,7 +438,8 @@ public class Matrix {
     }
 
     
-        public static void setLookAtM(float[] rm, int rmOffset,
+        @DSModeled(DSC.SAFE)
+    public static void setLookAtM(float[] rm, int rmOffset,
             float eyeX, float eyeY, float eyeZ,
             float centerX, float centerY, float centerZ, float upX, float upY,
             float upZ) {

@@ -9,6 +9,7 @@ import java.text.ParseException;
 
 public class ProxyAuthenticateParser extends ChallengeParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.468 -0400", hash_original_method = "581BDEBBD299AB0E5135A7CDD0C8C9B1", hash_generated_method = "CF83D4E1378EBF47C4D5202332A2C120")
     public  ProxyAuthenticateParser(String proxyAuthenticate) {
         super(proxyAuthenticate);
@@ -17,6 +18,7 @@ public class ProxyAuthenticateParser extends ChallengeParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.468 -0400", hash_original_method = "31FFFD362F12BC1F7E1E79481AA610B2", hash_generated_method = "4EB66B1C980DD68F479690AB3A750989")
     protected  ProxyAuthenticateParser(Lexer lexer) {
         super(lexer);
@@ -25,6 +27,7 @@ public class ProxyAuthenticateParser extends ChallengeParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.468 -0400", hash_original_method = "EBFDF03354240070ED50C53BEBC6AA29", hash_generated_method = "8694D63A39CA05254E393AD440DED2B7")
     public SIPHeader parse() throws ParseException {
         headerName(TokenTypes.PROXY_AUTHENTICATE);

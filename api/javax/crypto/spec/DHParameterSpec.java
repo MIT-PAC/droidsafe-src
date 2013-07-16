@@ -18,6 +18,7 @@ public class DHParameterSpec implements AlgorithmParameterSpec {
 
     private int l;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.382 -0400", hash_original_method = "F8E48B54378C41D41344A45EFE5DEAF0", hash_generated_method = "F3E49A122D6436FD446BB87E32C19389")
     public  DHParameterSpec(BigInteger p, BigInteger g) {
         this.p = p;
@@ -30,6 +31,7 @@ public class DHParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.383 -0400", hash_original_method = "ACD960FD5413B931010CFE492BF9890E", hash_generated_method = "C966810A766680754342EBC5CE901E83")
     public  DHParameterSpec(BigInteger p, BigInteger g, int l) {
         this.p = p;

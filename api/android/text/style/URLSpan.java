@@ -18,6 +18,7 @@ public class URLSpan extends ClickableSpan implements ParcelableSpan {
 
     private String mURL;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.500 -0400", hash_original_method = "5AD1FAF34DE3FA8A09E91DA82ECEC3B3", hash_generated_method = "B54D202A14D180513BBE84D40D7107CE")
     public  URLSpan(String url) {
         mURL = url;
@@ -26,6 +27,7 @@ public class URLSpan extends ClickableSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.501 -0400", hash_original_method = "DE27BD82F1FA5C839057FA46D57E26CE", hash_generated_method = "2AD0059B727D0874C6EE4948E755257A")
     public  URLSpan(Parcel src) {
         mURL = src.readString();

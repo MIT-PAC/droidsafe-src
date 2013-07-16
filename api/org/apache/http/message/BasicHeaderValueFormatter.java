@@ -243,6 +243,7 @@ for(int i=0;i<parcnt;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.402 -0400", hash_original_method = "7ECB2224BD638F620F916826D26E8E08", hash_generated_method = "4F007819C4DDCF3950DD198D605988BF")
     public CharArrayBuffer formatParameters(CharArrayBuffer buffer,
                                             NameValuePair[] nvps,
@@ -472,6 +473,7 @@ for(int i = 0;i < value.length();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.407 -0400", hash_original_method = "541354ACFD70CC9FA3913AE1E29B9D2A", hash_generated_method = "73E75CBCA3F3B3825604B7E2F5B786C9")
     protected boolean isSeparator(char ch) {
         addTaint(ch);
@@ -483,6 +485,7 @@ for(int i = 0;i < value.length();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.407 -0400", hash_original_method = "8B650CEFA0EAACAAB9B471FC321305C5", hash_generated_method = "E63D00D28FE89CDAF58E5B87B0533FC1")
     protected boolean isUnsafe(char ch) {
         addTaint(ch);

@@ -26,6 +26,7 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
 
     public long lastSnooze;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.780 -0400", hash_original_method = "719C24F8BE1248DF6A461023036B66AA", hash_generated_method = "3550B4B21E9EC1B088693EA5F5E52A49")
     public  NetworkPolicy(NetworkTemplate template, int cycleDay, long warningBytes, long limitBytes,
             long lastSnooze) {
@@ -43,6 +44,7 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.781 -0400", hash_original_method = "60FCEF3D01A6B189740F65177391DDF0", hash_generated_method = "11DE13DCBA6497EEC7DA8F3A613FF638")
     public  NetworkPolicy(Parcel in) {
         template = in.readParcelable(null);
@@ -59,6 +61,7 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.782 -0400", hash_original_method = "A386F04ADA8A00FB5A1B1E46AA17FE85", hash_generated_method = "F9674402A8455DFA9AC45C655E37A9AA")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -132,6 +135,7 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.784 -0400", hash_original_method = "65DB678FEF7477006B15C098764A0236", hash_generated_method = "09A54652135D74FA1612C5596BAD0EED")
     @Override
     public int hashCode() {
@@ -143,6 +147,7 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.784 -0400", hash_original_method = "29E54ABFFB72D1CE12A9FC870E79CFC8", hash_generated_method = "07788977F04C93213B23F12AD5E2AF9F")
     @Override
     public boolean equals(Object obj) {
@@ -170,6 +175,7 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.785 -0400", hash_original_method = "CB6123FDA6EA84240F335B44F0260DCB", hash_generated_method = "6D74CFFE641359DAA0B28097248D2EAE")
     @Override
     public String toString() {

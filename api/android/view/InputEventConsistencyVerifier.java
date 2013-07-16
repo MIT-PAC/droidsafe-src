@@ -750,7 +750,8 @@ for(int i = 0;i < RECENT_EVENTS_TO_LOG;i++)
     }
 
     
-        private static void appendEvent(StringBuilder message, int index,
+        @DSModeled(DSC.SAFE)
+    private static void appendEvent(StringBuilder message, int index,
             InputEvent event, boolean unhandled) {
         message.append(index).append(": sent at ").append(event.getEventTimeNano());
         message.append(", ");

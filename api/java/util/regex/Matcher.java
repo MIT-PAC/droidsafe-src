@@ -40,6 +40,7 @@ public final class Matcher implements MatchResult {
 
     private boolean transparentBounds;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.300 -0400", hash_original_method = "3CAF328B13970C51C4DF071BCDFD21EA", hash_generated_method = "8249972DDA8DD488E0F8A49E2E97FBB8")
       Matcher(Pattern pattern, CharSequence input) {
         addTaint(input.getTaint());

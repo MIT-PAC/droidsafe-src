@@ -23,6 +23,7 @@ public final class OtherName {
 
     private byte[] encoding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.220 -0400", hash_original_method = "8C037AC601E342BA78689B6228900DCB", hash_generated_method = "09F0907ABE90DBAFBEFA8C413EFD8E2C")
     public  OtherName(String typeID, byte[] value) {
         this(typeID, value, null);
@@ -32,6 +33,7 @@ public final class OtherName {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.220 -0400", hash_original_method = "595A6767FA47B61357D3EB21D3BC18A1", hash_generated_method = "BFC1570F9ED10661ABF3396DF662D49E")
     private  OtherName(String typeID, byte[] value, byte[] encoding) {
         this.typeID = typeID;

@@ -14,6 +14,7 @@ public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
 
     private float mProportion;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.270 -0400", hash_original_method = "5A8420DEA89D3BA24C51E3449203D410", hash_generated_method = "07EA7FB4A78397A0402CFA97CFD413F0")
     public  ScaleXSpan(float proportion) {
         mProportion = proportion;
@@ -22,6 +23,7 @@ public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.270 -0400", hash_original_method = "84B8294F7669FCC40D337D5712D24934", hash_generated_method = "6A0BF93ECB06D20C8DD707C448ED318A")
     public  ScaleXSpan(Parcel src) {
         mProportion = src.readFloat();

@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public class Date extends java.util.Date {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.042 -0400", hash_original_method = "54033E67BCAF2131C1DBBD633092C516", hash_generated_method = "0F8920CDA87ACA0287FF1F11A1689C5D")
     @Deprecated
     public  Date(int theYear, int theMonth, int theDay) {
@@ -18,6 +19,7 @@ public class Date extends java.util.Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.042 -0400", hash_original_method = "0597C0984A3A8E2CF9C870E073A794F7", hash_generated_method = "8669F986664A2B6B10801AEBAAF3C66B")
     public  Date(long theDate) {
         super(normalizeTime(theDate));
@@ -26,6 +28,7 @@ public class Date extends java.util.Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.042 -0400", hash_original_method = "9D3BFA18991740345E9C4B50C3BC1C7B", hash_generated_method = "FCF24EA2CEF6D508AC6E1DA7D1C60706")
     @Deprecated
     @Override
@@ -38,6 +41,7 @@ public class Date extends java.util.Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.043 -0400", hash_original_method = "20D35DA199D26861EF3B1850BF9B2C7B", hash_generated_method = "FFE581D000B9A08EE5044E4D2047931B")
     @Deprecated
     @Override
@@ -50,6 +54,7 @@ public class Date extends java.util.Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.043 -0400", hash_original_method = "5B3A8174ABF60BC4DD674AADB526CA5F", hash_generated_method = "143445FFD7BB365EF54AB07D0CBA773E")
     @Deprecated
     @Override
@@ -62,6 +67,7 @@ public class Date extends java.util.Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.044 -0400", hash_original_method = "8AEDCDA359475E67EC180A6BBC9EA00B", hash_generated_method = "80AEDADEC19DB3530FDDF2747D031BF1")
     @Deprecated
     @Override
@@ -75,6 +81,7 @@ public class Date extends java.util.Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.044 -0400", hash_original_method = "C3170E6698742DBDFB0C085047CF3D73", hash_generated_method = "D5EA8EE7A38FD8D456FA318DE7969A0A")
     @Deprecated
     @Override
@@ -88,6 +95,7 @@ public class Date extends java.util.Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.045 -0400", hash_original_method = "90D475806A3C76BA7C308DE5A81BA772", hash_generated_method = "BE0711C9B17098BCEBB6A01B3BA7C60C")
     @Deprecated
     @Override
@@ -101,6 +109,7 @@ public class Date extends java.util.Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.045 -0400", hash_original_method = "58DD96CFC8DDA00016DEC24CC6519017", hash_generated_method = "F7EA085E57B4B6E067D6A4897E08BD3E")
     @Override
     public void setTime(long theTime) {
@@ -111,6 +120,7 @@ public class Date extends java.util.Date {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.046 -0400", hash_original_method = "F7971D7A9962AA78000A8292B336C43C", hash_generated_method = "2015C31DFF64F697D858A9D68CC91B68")
     @Override
     public String toString() {
@@ -134,6 +144,7 @@ String var2460B846747F8B22185AD8BE722266A5_2072412108 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.046 -0400", hash_original_method = "D5825B232A74B71A26A12413148003F7", hash_generated_method = "3B6BC052A730CD4CC839ACA88FCF6674")
     private void format(int date, int digits, StringBuilder sb) {
         addTaint(sb.getTaint());

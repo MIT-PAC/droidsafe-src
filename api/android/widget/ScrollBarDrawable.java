@@ -51,6 +51,7 @@ public class ScrollBarDrawable extends Drawable {
 
     private boolean mAlwaysDrawVerticalTrack;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.884 -0400", hash_original_method = "F6C29E547BD302257DEE1C67DCEB3680", hash_generated_method = "5558BCE67B8081D2BE7E25243209DB1F")
     public  ScrollBarDrawable() {
         // ---------- Original Method ----------
@@ -171,6 +172,7 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.888 -0400", hash_original_method = "44DF7C7CE3C6FB97927067DC59DBEDA2", hash_generated_method = "234F873EEFF541E8F76F6444E7967C0E")
     @Override
     protected void onBoundsChange(Rect bounds) {
@@ -184,6 +186,7 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.888 -0400", hash_original_method = "FBC32EDDC9C94F2A507C4B078AFDC706", hash_generated_method = "8F23B2C5D7EAA33844EA210CE890B3DD")
     protected void drawTrack(Canvas canvas, Rect bounds, boolean vertical) {
         addTaint(vertical);
@@ -222,6 +225,7 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.889 -0400", hash_original_method = "272AE2AAF08C3293C4192CBFA02ABB41", hash_generated_method = "2F496C3C0C2136F7CAD89B8B6715F7C6")
     protected void drawThumb(Canvas canvas, Rect bounds, int offset, int length, boolean vertical) {
         addTaint(vertical);
@@ -328,6 +332,7 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.891 -0400", hash_original_method = "7E286D23B763C72717353421EFF3C480", hash_generated_method = "1FC2A6C5C2EFAA487EAF9EC025E49989")
     public int getSize(boolean vertical) {
         addTaint(vertical);
@@ -356,6 +361,7 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.891 -0400", hash_original_method = "B18AEA250E30640B8B376B842AF0FDF6", hash_generated_method = "8073E0D2CAE830A2A68A79A3A02B026A")
     @Override
     public void setAlpha(int alpha) {
@@ -382,6 +388,7 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.892 -0400", hash_original_method = "CBF97912C9C8F01704D565D3AA800300", hash_generated_method = "C099314E8C22F5EC481D2F3BC41570FD")
     @Override
     public void setColorFilter(ColorFilter cf) {

@@ -22,6 +22,7 @@ public class QwertyKeyListener extends BaseKeyListener {
 
     private boolean mFullKeyboard;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.865 -0400", hash_original_method = "49C27B077A312737DD85C2ED4E150C41", hash_generated_method = "25D87651643C9B230153ECA71855D847")
     private  QwertyKeyListener(Capitalize cap, boolean autoText, boolean fullKeyboard) {
         mAutoCap = cap;
@@ -34,6 +35,7 @@ public class QwertyKeyListener extends BaseKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.866 -0400", hash_original_method = "603DCE8018B8306CEBEFEE75734ABE47", hash_generated_method = "FA006C201779DC6F947B6B1B5A38693F")
     public  QwertyKeyListener(Capitalize cap, boolean autoText) {
         this(cap, autoText, false);

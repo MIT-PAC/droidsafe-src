@@ -11,6 +11,7 @@ public class Finished extends Message {
 
     private byte[] data;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.390 -0400", hash_original_method = "5B583BB83679498D2C51EBF7375CF750", hash_generated_method = "DEE02002D3BDD8388F58700661F5D064")
     public  Finished(byte[] bytes) {
         data = bytes;
@@ -21,6 +22,7 @@ public class Finished extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.390 -0400", hash_original_method = "7020D64852F49C66B1A4A40108BB938F", hash_generated_method = "EE1678930FDE2B65E42F76EF853A8CD8")
     public  Finished(HandshakeIODataStream in, int length) throws IOException {
     if(length == 12 || length == 36)        
@@ -42,6 +44,7 @@ public class Finished extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.391 -0400", hash_original_method = "E175A61E2BD704850DF6197D24D9CB45", hash_generated_method = "3AF954A43EB4DEE1FD736921D9EBCACC")
     @Override
     public void send(HandshakeIODataStream out) {

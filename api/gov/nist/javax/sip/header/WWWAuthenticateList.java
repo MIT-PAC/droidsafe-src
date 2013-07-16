@@ -8,6 +8,7 @@ import  javax.sip.header.*;
 
 public class WWWAuthenticateList extends SIPHeaderList<WWWAuthenticate> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.656 -0400", hash_original_method = "5D0C93082A28C4F76AC90901A48C6BD1", hash_generated_method = "6035EA6C915C1EC737CCB1ED8A829814")
     public  WWWAuthenticateList() {
         super(WWWAuthenticate.class, WWWAuthenticateHeader.NAME);

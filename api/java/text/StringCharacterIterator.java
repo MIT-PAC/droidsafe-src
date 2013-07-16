@@ -19,6 +19,7 @@ public final class StringCharacterIterator implements CharacterIterator {
 
     int offset;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.930 -0400", hash_original_method = "DAE1DA2C567D7E8FDA6EBD1FE5405924", hash_generated_method = "61D955F47042EEBAE171065441D93BDE")
     public  StringCharacterIterator(String value) {
         string = value;
@@ -31,6 +32,7 @@ public final class StringCharacterIterator implements CharacterIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.930 -0400", hash_original_method = "5C2CF51DC0D0A9D0DCD2C7E4ADB28E8E", hash_generated_method = "03D5E3E5F0EEB1FA00287999DFF61EAE")
     public  StringCharacterIterator(String value, int location) {
         string = value;
@@ -54,6 +56,7 @@ public final class StringCharacterIterator implements CharacterIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.931 -0400", hash_original_method = "704865465DB7061F34F598DD3605E202", hash_generated_method = "E4A4F356C3FCAF37FD728B76AB003BBD")
     public  StringCharacterIterator(String value, int start, int end, int location) {
         string = value;

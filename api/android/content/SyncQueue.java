@@ -121,6 +121,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.196 -0400", hash_original_method = "6EA1C69DAD85A65D52720F29F3DAA89B", hash_generated_method = "43227B16A981F05D22D6413B5FEC2A9A")
     public void remove(SyncOperation operation) {
         addTaint(operation.getTaint());

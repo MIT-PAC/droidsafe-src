@@ -41,6 +41,7 @@ public final class Extension {
 
     private boolean valueDecoded = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.912 -0400", hash_original_method = "772675EFC6AAA2D937AD864985824958", hash_generated_method = "50760EB0ED9565090BA8684D8B00AE4E")
     public  Extension(String extnID, boolean critical,
             ExtensionValue extnValueObject) {
@@ -60,6 +61,7 @@ public final class Extension {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.913 -0400", hash_original_method = "CDEFB016C5499D8DADD8F004F1D30D96", hash_generated_method = "735B7734C17EB3020FD2E48FFAF24114")
     public  Extension(String extnID, boolean critical, byte[] extnValue) {
         this.extnID_str = extnID;
@@ -74,6 +76,7 @@ public final class Extension {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.913 -0400", hash_original_method = "345C69C0F4252C8238B8F3F8FD2D0F67", hash_generated_method = "D97F8633F554235658DAFAFD0C28C8C5")
     public  Extension(int[] extnID, boolean critical, byte[] extnValue) {
         this.extnID = extnID;
@@ -86,6 +89,7 @@ public final class Extension {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.914 -0400", hash_original_method = "AB0587524B2C2DEDC0BB33A1419E0149", hash_generated_method = "351C9DFA2A01E311DFC56D35F7B3BDFA")
     public  Extension(String extnID, byte[] extnValue) {
         this(extnID, NON_CRITICAL, extnValue);
@@ -95,6 +99,7 @@ public final class Extension {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.914 -0400", hash_original_method = "2B9F71DD37B484A7E5BC50F8CEC81A97", hash_generated_method = "30C90C267E196C5A82BF00559145C2F7")
     public  Extension(int[] extnID, byte[] extnValue) {
         this(extnID, NON_CRITICAL, extnValue);
@@ -104,6 +109,7 @@ public final class Extension {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.915 -0400", hash_original_method = "22B9D2F4819411931A16D6B56F128648", hash_generated_method = "10865578CB40C6A017938930366CE1E5")
     private  Extension(int[] extnID, boolean critical, byte[] extnValue,
             byte[] rawExtnValue, byte[] encoding,

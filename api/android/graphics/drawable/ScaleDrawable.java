@@ -25,6 +25,7 @@ public class ScaleDrawable extends Drawable implements Drawable.Callback {
 
     private final Rect mTmpRect = new Rect();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.693 -0400", hash_original_method = "514942F1E0299625DD7C1CF4A65C7704", hash_generated_method = "EC158C9898C13743C5AABD0B773303D8")
       ScaleDrawable() {
         this(null, null);
@@ -32,6 +33,7 @@ public class ScaleDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.695 -0400", hash_original_method = "70D37B4EA14F56A15F832FEAF48A06AB", hash_generated_method = "B8E122F34396D83FB465FB26AF671D41")
     public  ScaleDrawable(Drawable drawable, int gravity, float scaleWidth, float scaleHeight) {
         this(null, null);
@@ -54,6 +56,7 @@ public class ScaleDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.695 -0400", hash_original_method = "044BA74036106E0DA1F4FE69AE9E5ADC", hash_generated_method = "6721B4F6DF11F5114CA467CA4B12E797")
     private  ScaleDrawable(ScaleState state, Resources res) {
         mScaleState = new ScaleState(state, this, res);

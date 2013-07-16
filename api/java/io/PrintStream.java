@@ -533,6 +533,7 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.597 -0400", hash_original_method = "F607EA18611E8A10720BC492B203762D", hash_generated_method = "A4550291CE5D3C3EB60289B80344327B")
     @Override
     public void write(byte[] buffer, int offset, int length) {
@@ -657,6 +658,7 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1593595578 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.600 -0400", hash_original_method = "E6E1D45C488E30FA7AAEB51CD532F3E9", hash_generated_method = "0F0D82B63452B362AD6CF70A19EFDF7B")
     public PrintStream append(CharSequence charSequence, int start, int end) {
         addTaint(end);

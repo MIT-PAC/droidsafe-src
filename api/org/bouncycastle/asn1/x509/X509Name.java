@@ -354,7 +354,8 @@ for(int i = 0;i < this.ordering.size();i++)
     }
 
     
-        public static X509Name getInstance(
+        @DSModeled(DSC.SAFE)
+    public static X509Name getInstance(
         Object  obj) {
         if (obj == null || obj instanceof X509Name)
         {
@@ -372,6 +373,7 @@ for(int i = 0;i < this.ordering.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.549 -0400", hash_original_method = "964F6D63AF200DB73DB551657282148F", hash_generated_method = "29C7DAA51AB4C9640A5DC464276002AB")
     private DERObjectIdentifier decodeOID(
         String      name,
@@ -503,6 +505,7 @@ Vector var6DC76BC51820DD65E8396280E884AA78_1016318996 =         v;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.551 -0400", hash_original_method = "3947A3064A86A512C4391326C6ABB01D", hash_generated_method = "43A153AF2C88C45CE354ED1E64D55B9B")
     public DERObject toASN1Object() {
     if(seq == null)        
@@ -750,6 +753,7 @@ for(int j = 0;j < orderingSize;j++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.557 -0400", hash_original_method = "4C05CDE4A9C2B68738F6FCFBDDBEA55B", hash_generated_method = "9F08E6670F71888F7B8443A4827140AB")
     private boolean equivalentStrings(String s1, String s2) {
         addTaint(s2.getTaint());
@@ -786,6 +790,7 @@ for(int j = 0;j < orderingSize;j++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.558 -0400", hash_original_method = "94F49650EDA8FF5038678A71C47387EA", hash_generated_method = "7C2D9870A33CE33959BCA782AE37A117")
     private String canonicalize(String s) {
         addTaint(s.getTaint());
@@ -815,6 +820,7 @@ String varAF280DA2BC37D8BE783D8499160168DE_1041148621 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.558 -0400", hash_original_method = "DA9861DC0244404A041AD42C955600B0", hash_generated_method = "F25703653FA2E8E6B9EA76F8094584A3")
     private ASN1Object decodeObject(String oValue) {
         addTaint(oValue.getTaint());
@@ -842,6 +848,7 @@ ASN1Object varDC836AD1738524F460698D3D090F44A0_860754255 =             ASN1Objec
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.559 -0400", hash_original_method = "1E1DA2E49EB072DAE70813000ABE2315", hash_generated_method = "6C0FBCBB76741300137C57BBEF8410AB")
     private String stripInternalSpaces(
         String str) {
@@ -884,6 +891,7 @@ String varEC7EB75EF3C7FA633C54FC66A0358174_720957858 =         res.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.560 -0400", hash_original_method = "276C610AF86C7F7EC8233E2E5B295559", hash_generated_method = "72C683AF7BF2C0498E9BE64DE54A298D")
     private void appendValue(
         StringBuffer        buf,
@@ -1000,6 +1008,7 @@ String var4FC680801218E6372BC708D6FA44AE60_1456740391 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.562 -0400", hash_original_method = "B6C7D564A6D3D0BE9A656CE0C6CFB554", hash_generated_method = "6BB3F11F9C8DF35E1F330EE6F8FA8D2D")
     private String bytesToString(
         byte[] data) {
@@ -1022,6 +1031,7 @@ String varEE3C15FF17401E8EE402ABCA933B75C8_2005073165 =         new String(cs);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.562 -0400", hash_original_method = "E860E9E8B8CF997531DC86A289D376AE", hash_generated_method = "35AA799D63EFB7B455090F2B9F31264B")
     public String toString() {
 String varD00BB2E4A865BC001F6C25F341B09FCC_925325489 =         toString(DefaultReverse, DefaultSymbols);

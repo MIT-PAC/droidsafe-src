@@ -9,6 +9,7 @@ import javax.sip.header.*;
 
 public final class ReasonList extends SIPHeaderList<Reason> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.811 -0400", hash_original_method = "5579E067F388468CFB2A3241EC57C70E", hash_generated_method = "60E83E51B1F3EDD817C21DE6C510D11F")
     public  ReasonList() {
         super(Reason.class, ReasonHeader.NAME);

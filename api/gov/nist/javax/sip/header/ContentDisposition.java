@@ -11,6 +11,7 @@ public final class ContentDisposition extends ParametersHeader implements javax.
 
     protected String dispositionType;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.225 -0400", hash_original_method = "43E6E51171C31AE017D057FA4552D811", hash_generated_method = "30697E61C2A62E132F1F2ECEC533B294")
     public  ContentDisposition() {
         super(NAME);

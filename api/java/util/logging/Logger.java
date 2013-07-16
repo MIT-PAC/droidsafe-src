@@ -55,6 +55,7 @@ public class Logger {
 
     private volatile DalvikLogHandler dalvikLogHandler = GENERAL_LOG_HANDLER;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.290 -0400", hash_original_method = "1D8BB758275405206E6B2E9C876A4290", hash_generated_method = "13027EFBDA67B26CF1931AEC057D585C")
     protected  Logger(String name, String resourceBundleName) {
         addTaint(resourceBundleName.getTaint());

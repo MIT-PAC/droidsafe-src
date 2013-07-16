@@ -29,6 +29,7 @@ public class SHA1Digest extends GeneralDigest {
 
     private int xOff;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.278 -0400", hash_original_method = "1DF8B488961A33FC47935CC7CCD682F9", hash_generated_method = "5BEBE9232FDB549FC09A55F3A228E9E2")
     public  SHA1Digest() {
         reset();
@@ -37,6 +38,7 @@ public class SHA1Digest extends GeneralDigest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.279 -0400", hash_original_method = "2658789ECEB2A700883676C5815F56AD", hash_generated_method = "7057FD241BF30991DA8810797C3FC58B")
     public  SHA1Digest(SHA1Digest t) {
         super(t);
@@ -108,6 +110,7 @@ String var1E1AC6D31B058D162EAB78A22C4FBDE6_387404807 =         "SHA-1";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.281 -0400", hash_original_method = "E48925D533DC79A9930A6F42B92C0F9E", hash_generated_method = "93CAFE7A83556ACFEC7AA716CD36A091")
     protected void processLength(
         long    bitLength) {
@@ -127,6 +130,7 @@ String var1E1AC6D31B058D162EAB78A22C4FBDE6_387404807 =         "SHA-1";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.282 -0400", hash_original_method = "7A3A19F87647349D75F24CB81F80AF7C", hash_generated_method = "B5E728E6ACF9A03276C8C349F71D3737")
     public int doFinal(
         byte[]  out,
@@ -155,6 +159,7 @@ String var1E1AC6D31B058D162EAB78A22C4FBDE6_387404807 =         "SHA-1";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.283 -0400", hash_original_method = "0BD8B4210E063DA673A9D4D2CF1851E6", hash_generated_method = "661B19412C482D97794CD86078C6E2FB")
     public void reset() {
         super.reset();

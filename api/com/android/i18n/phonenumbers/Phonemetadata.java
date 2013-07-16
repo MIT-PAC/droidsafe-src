@@ -11,6 +11,7 @@ import java.io.ObjectOutput;
 
 public final class Phonemetadata {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.086 -0400", hash_original_method = "AA2168146A79C42118444B1AF1D13430", hash_generated_method = "01D7B0EC1EB8E0CA70481AF327448A6E")
     private  Phonemetadata() {
         // ---------- Original Method ----------
@@ -46,6 +47,7 @@ public final class Phonemetadata {
 
         private String domesticCarrierCodeFormattingRule_ = "";
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.087 -0400", hash_original_method = "AC8E136DE5A642003A57BDCF52FB755A", hash_generated_method = "8FEBA1E1E8A6552B6917C667BFAE4E78")
         public  NumberFormat() {
             // ---------- Original Method ----------
@@ -277,6 +279,7 @@ NumberFormat var72A74007B2BE62B849F475C7BDA4658B_400887926 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.093 -0400", hash_original_method = "DEB91FB350FEBE5DEE35AF7BFA950AEF", hash_generated_method = "3750FFD74ECE3186069EADED819CF7FB")
         public NumberFormat mergeFrom(NumberFormat other) {
             addTaint(other.getTaint());
@@ -452,6 +455,7 @@ NumberFormat var72A74007B2BE62B849F475C7BDA4658B_134036244 =                 thi
 
         private String exampleNumber_ = "";
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.096 -0400", hash_original_method = "7B50B3AE2E947514292047EE4CC3D0B3", hash_generated_method = "FF0F10C59E5A022C63A72AE504F6D672")
         public  PhoneNumberDesc() {
             // ---------- Original Method ----------
@@ -865,6 +869,7 @@ PhoneNumberDesc var72A74007B2BE62B849F475C7BDA4658B_763059920 =                 
 
         private boolean leadingZeroPossible_ = false;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.108 -0400", hash_original_method = "8411C48F959C93D1C6435DDA5C4FFBF8", hash_generated_method = "246EB5CC112F2B1B6402C47CB846FD5D")
         public  PhoneMetadata() {
             // ---------- Original Method ----------
@@ -2075,6 +2080,7 @@ for(int i = 0;i < intlNumberFormatSize;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.129 -0400", hash_original_method = "4D891D3CC56C8A4A25C2FA3B62E66106", hash_generated_method = "68C4B4E6932F5678320FEB53BD6FBFC6")
         public void readExternal(ObjectInput objectInput) throws IOException {
             addTaint(objectInput.getTaint());
@@ -2246,6 +2252,7 @@ PhoneMetadata var72A74007B2BE62B849F475C7BDA4658B_442054912 =                 th
 
         private java.util.List<PhoneMetadata> metadata_ = new java.util.ArrayList<PhoneMetadata>();
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.130 -0400", hash_original_method = "833FEC11FB1A703522FFE165412E2F7D", hash_generated_method = "911AB4D46731349730F9522D952A81AB")
         public  PhoneMetadataCollection() {
             // ---------- Original Method ----------

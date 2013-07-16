@@ -57,6 +57,7 @@ public class TestSuiteBuilder {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.614 -0400", hash_original_method = "9CA7BA6922F108D38C6201808A4CEB3C", hash_generated_method = "2B68C8CF1815DEC346D9B178539BCD51")
     public  TestSuiteBuilder(String name, ClassLoader classLoader) {
         addTaint(classLoader.getTaint());

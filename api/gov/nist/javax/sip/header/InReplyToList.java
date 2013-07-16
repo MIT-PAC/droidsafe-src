@@ -8,6 +8,7 @@ import javax.sip.header.*;
 
 public final class InReplyToList extends SIPHeaderList<InReplyTo> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.544 -0400", hash_original_method = "352B2862B115206F092911A984BAE33E", hash_generated_method = "52313BE3C7A7A4FFFFF799BC507758A6")
     public  InReplyToList() {
         super(InReplyTo.class, InReplyToHeader.NAME);

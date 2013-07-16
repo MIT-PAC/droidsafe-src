@@ -16,6 +16,7 @@ public class RetryAfter extends ParametersHeader implements RetryAfterHeader {
 
     protected String comment;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.922 -0400", hash_original_method = "5EF666CD25CA3C0D16B00CF8EC3126E1", hash_generated_method = "11165192A4B29AE963502E735055EFFA")
     public  RetryAfter() {
         super(NAME);

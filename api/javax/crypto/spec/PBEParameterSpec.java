@@ -35,6 +35,7 @@ public class PBEParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.425 -0400", hash_original_method = "DE7716C6003A9CBA24C4421C19D5F40E", hash_generated_method = "74DC688218AD1B93BA9BBDE4A873B1D0")
     public byte[] getSalt() {
         byte[] result = new byte[salt.length];

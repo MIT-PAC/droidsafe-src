@@ -21,6 +21,7 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
 
     private boolean strict = true;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.675 -0400", hash_original_method = "1A6840ADE4B5EE3A7D8D47E6638687F6", hash_generated_method = "F0B1C59F76B6CADA6430628AA379007A")
     public  MessageFactoryImpl() {
         // ---------- Original Method ----------
@@ -421,6 +422,7 @@ Response varF66B3BABBC9AAC75BB598AB35EF16644_1957044126 =         sipResponse;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.682 -0400", hash_original_method = "8BDEFE6980DC0197E43DC25D26C94143", hash_generated_method = "8C5A0903747D67758827FFA420C6205C")
     public Response createResponse(int statusCode, Request request,
             ContentTypeHeader contentType, byte[] content) throws ParseException {

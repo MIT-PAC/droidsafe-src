@@ -24,6 +24,7 @@ public class SubjectPublicKeyInfo extends ASN1Encodable {
 
     private DERBitString keyData;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.418 -0400", hash_original_method = "DAF161BC79C94F8473696EE08E829AE4", hash_generated_method = "4363098941C5E033671050691A8E48D2")
     public  SubjectPublicKeyInfo(
         AlgorithmIdentifier algId,
@@ -36,6 +37,7 @@ public class SubjectPublicKeyInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.419 -0400", hash_original_method = "01C45324BCF6F8FB0A087E5E236F4467", hash_generated_method = "DCA3B9BB1ABF80FCD998139CDB109A4E")
     public  SubjectPublicKeyInfo(
         AlgorithmIdentifier algId,
@@ -48,6 +50,7 @@ public class SubjectPublicKeyInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.420 -0400", hash_original_method = "6922DB35904CEC4F9CE097AEE1FB704C", hash_generated_method = "367B8CD3B1B588EC55AC601CA73E2728")
     public  SubjectPublicKeyInfo(
         ASN1Sequence  seq) {
@@ -74,14 +77,16 @@ public class SubjectPublicKeyInfo extends ASN1Encodable {
     }
 
     
-        public static SubjectPublicKeyInfo getInstance(
+        @DSModeled(DSC.SAFE)
+    public static SubjectPublicKeyInfo getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
         return getInstance(ASN1Sequence.getInstance(obj, explicit));
     }
 
     
-        public static SubjectPublicKeyInfo getInstance(
+        @DSModeled(DSC.SAFE)
+    public static SubjectPublicKeyInfo getInstance(
         Object  obj) {
         if (obj instanceof SubjectPublicKeyInfo)
         {

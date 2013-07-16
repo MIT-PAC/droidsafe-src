@@ -13,6 +13,7 @@ public class ComparisonFailure extends AssertionFailedError {
 
     private String fActual;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.181 -0400", hash_original_method = "7454800965A05A4B5CEDE9BB116D75F0", hash_generated_method = "DAC7EBAB7B1F20E35BBDB9396400A80F")
     public  ComparisonFailure(String message, String expected, String actual) {
         super (message);

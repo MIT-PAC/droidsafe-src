@@ -36,6 +36,7 @@ public class ServerKeyExchange extends Message {
 
     private RSAPublicKey key;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.680 -0400", hash_original_method = "BAF04F24660E6C5095996548EBED85A1", hash_generated_method = "014A3310402719A730AA9214365124BC")
     public  ServerKeyExchange(BigInteger par1, BigInteger par2, BigInteger par3,
             byte[] hash) {
@@ -77,6 +78,7 @@ public class ServerKeyExchange extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.685 -0400", hash_original_method = "0FED75D6D7B207E32712BBEB8093B91D", hash_generated_method = "3E8DA7F8435B4C72CF941A1C5F30E6EA")
     public  ServerKeyExchange(HandshakeIODataStream in, int length,
             int keyExchange) throws IOException {
@@ -138,6 +140,7 @@ public class ServerKeyExchange extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.687 -0400", hash_original_method = "2B7BAEA20D94561E69BFE5897EA1BEB9", hash_generated_method = "26707A5C2D788078CB431B2940CA17F6")
     @Override
     public void send(HandshakeIODataStream out) {
@@ -172,6 +175,7 @@ public class ServerKeyExchange extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.688 -0400", hash_original_method = "72FB1E0FC95B638A772EDD07E458B713", hash_generated_method = "EA2ED49E12359E3BBDBABBB6B316A6BD")
     public RSAPublicKey getRSAPublicKey() {
     if(key != null)        

@@ -61,6 +61,7 @@ public class Thread implements Runnable {
 
     private Object parkBlocker;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.487 -0400", hash_original_method = "A2846A412942D9A4A6734B659C3C08EA", hash_generated_method = "FC648266C8623CAE59D46FDD8401EFDA")
     public  Thread() {
         create(null, null, null, 0);
@@ -69,6 +70,7 @@ public class Thread implements Runnable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.488 -0400", hash_original_method = "FFE43BBD5535897A2D4ADC63E06A2D0F", hash_generated_method = "3784830CC12A01134E29A04BE69E0386")
     public  Thread(Runnable runnable) {
         addTaint(runnable.getTaint());
@@ -78,6 +80,7 @@ public class Thread implements Runnable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.488 -0400", hash_original_method = "BDCA95CAB999722EC25DF6B8E927C95F", hash_generated_method = "9AE6D43B7355DBE568A6ED32DB1A5579")
     public  Thread(Runnable runnable, String threadName) {
         addTaint(threadName.getTaint());
@@ -97,6 +100,7 @@ public class Thread implements Runnable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.489 -0400", hash_original_method = "ACB5E26D2EF52FBACC4A4E78EC843CDD", hash_generated_method = "B00F27225392636AFE706D12567EF45F")
     public  Thread(String threadName) {
         addTaint(threadName.getTaint());
@@ -115,6 +119,7 @@ public class Thread implements Runnable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.489 -0400", hash_original_method = "CFE0254168731091471FC08E1B68E532", hash_generated_method = "853E07A889463840212E70255D3EEDAF")
     public  Thread(ThreadGroup group, Runnable runnable) {
         addTaint(runnable.getTaint());
@@ -125,6 +130,7 @@ public class Thread implements Runnable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.489 -0400", hash_original_method = "492306C5FED9EC58991A5E8736E27F15", hash_generated_method = "497802ED7AE3C273D7CB077D6F09AD97")
     public  Thread(ThreadGroup group, Runnable runnable, String threadName) {
         addTaint(threadName.getTaint());
@@ -145,6 +151,7 @@ public class Thread implements Runnable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.490 -0400", hash_original_method = "D83475E079BCC4E2E3558A574C3A704E", hash_generated_method = "37417F4F63139B4E9E86CEB1068AE3B1")
     public  Thread(ThreadGroup group, String threadName) {
         addTaint(threadName.getTaint());
@@ -164,6 +171,7 @@ public class Thread implements Runnable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.490 -0400", hash_original_method = "38DDF80F64A6875AC3B97FC941143FB8", hash_generated_method = "6B3ACF2B260C9CC4D9942E6449CADC2B")
     public  Thread(ThreadGroup group, Runnable runnable, String threadName, long stackSize) {
         addTaint(stackSize);
@@ -185,6 +193,7 @@ public class Thread implements Runnable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.493 -0400", hash_original_method = "DA36D17A4C27DE9C11E6923E1A7A26CA", hash_generated_method = "63D15D421DB3245126E760C8549E4BD0")
       Thread(ThreadGroup group, String name, int priority, boolean daemon) {
         synchronized

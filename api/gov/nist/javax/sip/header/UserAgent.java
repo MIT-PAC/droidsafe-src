@@ -13,6 +13,7 @@ public class UserAgent extends SIPHeader implements UserAgentHeader {
 
     protected List productTokens;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.566 -0400", hash_original_method = "92D698CE7378CD097EA41B036334F01C", hash_generated_method = "96AC165CBEEAA1B39BCA167D71822187")
     public  UserAgent() {
         super(NAME);

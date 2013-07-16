@@ -554,6 +554,7 @@ BasicHttpProcessor varB9569B978E5F00EB20FE2D57A31757F4_1387179419 =         http
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.295 -0400", hash_original_method = "42A1BB66B3595540F9652B515180E4CB", hash_generated_method = "0F67C6005946CB050103CDEE5FDD8709")
     public synchronized HttpResponseInterceptor getResponseInterceptor(int index) {
         addTaint(index);
@@ -565,6 +566,7 @@ HttpResponseInterceptor var14C69ADE76D50A2EFFEE1CF66D37806B_921028034 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.295 -0400", hash_original_method = "5AA44E0EBC7669E8C12BB7D18976B6A3", hash_generated_method = "CC924DCA4DBEA60FFD6F3CB70095A943")
     public synchronized int getResponseInterceptorCount() {
         int var8EA0D8340E2D60259BD9861995DDFC00_832085366 = (getHttpProcessor().getResponseInterceptorCount());
@@ -575,6 +577,7 @@ HttpResponseInterceptor var14C69ADE76D50A2EFFEE1CF66D37806B_921028034 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.295 -0400", hash_original_method = "37835CD99974C274F51BA3B209149DC5", hash_generated_method = "5C0A7ECAE42D29CBA9A2D07A634B67C4")
     public synchronized void clearResponseInterceptors() {
         getHttpProcessor().clearResponseInterceptors();
@@ -612,6 +615,7 @@ HttpResponseInterceptor var14C69ADE76D50A2EFFEE1CF66D37806B_921028034 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.296 -0400", hash_original_method = "3B8965152373170CD1AE42DF74FC23C9", hash_generated_method = "27A5B79D38FE037D36ABE51490178956")
     public synchronized HttpRequestInterceptor getRequestInterceptor(int index) {
         addTaint(index);
@@ -623,6 +627,7 @@ HttpRequestInterceptor varBB4763CB0F25016809DFE65E2B809ED2_1034420265 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.296 -0400", hash_original_method = "F968E9F4352A234FB330890874D0E8D3", hash_generated_method = "EDA7CBE3C53C014693328E78CCBCE602")
     public synchronized int getRequestInterceptorCount() {
         int var60A5A35335FD81C73D38FB7498882438_1863675823 = (getHttpProcessor().getRequestInterceptorCount());
@@ -633,6 +638,7 @@ HttpRequestInterceptor varBB4763CB0F25016809DFE65E2B809ED2_1034420265 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.296 -0400", hash_original_method = "71ED0A9BF43B0DB4DD62422FA6127326", hash_generated_method = "284478C231A7ED3EAB636F66A5467B37")
     public synchronized void clearRequestInterceptors() {
         getHttpProcessor().clearRequestInterceptors();

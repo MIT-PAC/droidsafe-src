@@ -14,6 +14,7 @@ public final class AcceptLanguage extends ParametersHeader implements AcceptLang
 
     protected String languageRange;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.678 -0400", hash_original_method = "8CFB40CB8981635645AE5871E0424817", hash_generated_method = "416AAE1C28B1E7BEC05C29FC17C2D9BD")
     public  AcceptLanguage() {
         super(NAME);

@@ -86,6 +86,7 @@ switch(tag){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.072 -0400", hash_original_method = "E499E58677EFB5DC6AB5C0B464CEB8CF", hash_generated_method = "A7E878DFEBBD99087D212C020B471EED")
     public  GeneralName(OtherName name) {
         this.tag = OTHER_NAME;
@@ -96,6 +97,7 @@ switch(tag){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.072 -0400", hash_original_method = "6111C4D1FF1E577BF7541C1C985772FA", hash_generated_method = "2274B23BB02D19178F6F1924487CB55F")
     public  GeneralName(ORAddress name) {
         this.tag = X400_ADDR;
@@ -106,6 +108,7 @@ switch(tag){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.073 -0400", hash_original_method = "4A8D46C1231B71B1B6714BAB7338B8B6", hash_generated_method = "A414828AEF9526E2BF08611BC7117D8C")
     public  GeneralName(Name name) {
         this.tag = DIR_NAME;
@@ -116,6 +119,7 @@ switch(tag){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.073 -0400", hash_original_method = "E96CC43FEA6BBB964F564DC514331182", hash_generated_method = "4265CE90B2DB501796206157F9B8D102")
     public  GeneralName(EDIPartyName name) {
         this.tag = EDIP_NAME;
@@ -149,6 +153,7 @@ switch(tag){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.073 -0400", hash_original_method = "0D9E6D76CFD125A61E2F4A9B060ECF6F", hash_generated_method = "76816EC10B9A99D68FDF95F54E9161BF")
     public  GeneralName(int tag, byte[] name) throws IOException {
     if(name == null)        
@@ -203,6 +208,7 @@ Object varB017984728AC60AD1F0BF8734F33F15C_907179227 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.074 -0400", hash_original_method = "47F6A98481038A57781CC8365511AC09", hash_generated_method = "28017C870A652086E4AE980E2944D53D")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -567,7 +573,8 @@ switch(tag){
     }
 
     
-        public static int[] oidStrToInts(String oid) throws IOException {
+        @DSModeled(DSC.SAFE)
+    public static int[] oidStrToInts(String oid) throws IOException {
         int length = oid.length();
         if (oid.charAt(length-1) == '.') {
             throw new IOException("Bad OID: " + oid);

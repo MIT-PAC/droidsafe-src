@@ -10,6 +10,7 @@ public class ClassNotFoundException extends Exception {
 
     private Throwable ex;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.628 -0400", hash_original_method = "0639B59AB447390D4DDFBD24616B4C1C", hash_generated_method = "1E5153620BBC3A8E1E248DD972E06BD5")
     public  ClassNotFoundException() {
         super((Throwable) null);
@@ -17,6 +18,7 @@ public class ClassNotFoundException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.629 -0400", hash_original_method = "298BE36926392F30C6A667D05BCFC9E5", hash_generated_method = "6ADA4533E6B0190347B8DB281C46029B")
     public  ClassNotFoundException(String detailMessage) {
         super(detailMessage, null);
@@ -25,6 +27,7 @@ public class ClassNotFoundException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.629 -0400", hash_original_method = "3941F53B9B07ECD0ECA0F56417778218", hash_generated_method = "900E83B98E626A6E2C47CFB3A061CCDD")
     public  ClassNotFoundException(String detailMessage, Throwable exception) {
         super(detailMessage);

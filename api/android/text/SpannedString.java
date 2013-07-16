@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public final class SpannedString extends SpannableStringInternal implements CharSequence, GetChars, Spanned {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.742 -0400", hash_original_method = "9F76D9B76481417FB492CEBE18B667F5", hash_generated_method = "33D79447D7CEC7769A48AF3D60B5F026")
     public  SpannedString(CharSequence source) {
         super(source, 0, source.length());
@@ -15,6 +16,7 @@ public final class SpannedString extends SpannableStringInternal implements Char
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.742 -0400", hash_original_method = "E05868F8FE8E68E6279EDAD3C69CD063", hash_generated_method = "CA2C1B740D91BC45FA9416DCEDCDA186")
     private  SpannedString(CharSequence source, int start, int end) {
         super(source, start, end);

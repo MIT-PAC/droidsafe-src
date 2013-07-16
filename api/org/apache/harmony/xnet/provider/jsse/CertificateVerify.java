@@ -11,6 +11,7 @@ public class CertificateVerify extends Message {
 
     byte[] signedHash;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.881 -0400", hash_original_method = "F3A93A83C93F754D4846FCC8297217FD", hash_generated_method = "80B4C7BBCB19AD7DA3EBCCC9093A1710")
     public  CertificateVerify(byte[] hash) {
     if(hash == null || hash.length == 0)        
@@ -30,6 +31,7 @@ public class CertificateVerify extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.882 -0400", hash_original_method = "C08A411708B1C45834DF498B4B831402", hash_generated_method = "1563C9EABE390A3F98EE0A0D08831534")
     public  CertificateVerify(HandshakeIODataStream in, int length) throws IOException {
     if(length == 0)        
@@ -62,6 +64,7 @@ public class CertificateVerify extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.882 -0400", hash_original_method = "8645B529D351D3837595463E8D8CA061", hash_generated_method = "9D702605B3262E68B958372B36F6E95E")
     @Override
     public void send(HandshakeIODataStream out) {

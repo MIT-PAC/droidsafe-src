@@ -26,6 +26,7 @@ public abstract class ResourceBundle {
 
     private long lastLoadTime = 0;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.633 -0400", hash_original_method = "D851446F8E957DA41A03795AD93701D3", hash_generated_method = "5DB393969C6D50D5978689CA2C066976")
     public  ResourceBundle() {
         // ---------- Original Method ----------
@@ -525,6 +526,7 @@ Object var540C13E9E156B687226421B24F2DF178_906675946 =             null;
     
     private static class NoFallbackControl extends Control {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.645 -0400", hash_original_method = "FB8596E95C5FFB192AB3B86CF874FD9D", hash_generated_method = "D6F73F948E0D8F37ECD519A8C4AF865C")
         public  NoFallbackControl(String format) {
             addTaint(format.getTaint());
@@ -547,6 +549,7 @@ Object var540C13E9E156B687226421B24F2DF178_906675946 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.645 -0400", hash_original_method = "BF31820043735E3E2FECA9848CEFC17E", hash_generated_method = "BC04DC0043D00C385B303B8B1FF59B1E")
         @Override
         public Locale getFallbackLocale(String baseName, Locale locale) {
@@ -587,6 +590,7 @@ Locale var540C13E9E156B687226421B24F2DF178_1822220640 =             null;
     
     private static class SimpleControl extends Control {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.646 -0400", hash_original_method = "3FE57273BBED2EFD79C4104DD304532B", hash_generated_method = "48312E8DD566917F1786283E480D6528")
         public  SimpleControl(String format) {
             addTaint(format.getTaint());
@@ -609,6 +613,7 @@ Locale var540C13E9E156B687226421B24F2DF178_1822220640 =             null;
 
         List<String> format;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.647 -0400", hash_original_method = "95C40A3E350A764DF5A1D8A784434E7C", hash_generated_method = "949CF8FAA99C36B6D02001CFF1C3EFE2")
         protected  Control() {
             listClass = new ArrayList<String>();

@@ -14,6 +14,7 @@ public class BackgroundColorSpan extends CharacterStyle implements UpdateAppeara
 
     private int mColor;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.124 -0400", hash_original_method = "1BABE23E25570DA2EF62C4506697834B", hash_generated_method = "35000CFE38870CD7CB814F81DF321DBD")
     public  BackgroundColorSpan(int color) {
         mColor = color;
@@ -22,6 +23,7 @@ public class BackgroundColorSpan extends CharacterStyle implements UpdateAppeara
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.125 -0400", hash_original_method = "71157ECE822D307A1BD642C08548B0D3", hash_generated_method = "70CE0565CAAE91A6A441B8AAAAA665D4")
     public  BackgroundColorSpan(Parcel src) {
         mColor = src.readInt();

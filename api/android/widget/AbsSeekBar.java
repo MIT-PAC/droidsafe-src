@@ -145,6 +145,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.618 -0400", hash_original_method = "19F18537D3EF5D294C0A19C19876A9D3", hash_generated_method = "C1AE1170153E1358AA343297EAC9437B")
     public void setThumbOffset(int thumbOffset) {
         mThumbOffset = thumbOffset;

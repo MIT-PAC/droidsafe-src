@@ -20,6 +20,7 @@ public class LongSparseArray<E> {
 
     private int mSize;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.998 -0400", hash_original_method = "F893922E2C2E4CF6AF95C190516DB394", hash_generated_method = "6A1F4B6B8C0C50DC092B16F38EE20B61")
     public  LongSparseArray() {
         this(10);
@@ -27,6 +28,7 @@ public class LongSparseArray<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.999 -0400", hash_original_method = "69FE78AD0B4200050B3EDA46329CEBED", hash_generated_method = "2F8B33E1FC222BCBE8DE8718FECEA2E8")
     public  LongSparseArray(int initialCapacity) {
         initialCapacity = ArrayUtils.idealIntArraySize(initialCapacity);
@@ -58,6 +60,7 @@ public class LongSparseArray<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.000 -0400", hash_original_method = "F8E34621620A1E3C4828967422EF7D07", hash_generated_method = "F65B88B7C2216D28197498FC6B402B99")
     public void setValues(long[] keys, E uniqueValue) {
         addTaint(uniqueValue.getTaint());
@@ -75,6 +78,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.000 -0400", hash_original_method = "4371A69A3700205284573EEAA3E6B17F", hash_generated_method = "435A9DCFF3705335D3D8C7D0BB760E09")
     public E get(long key) {
         addTaint(key);
@@ -86,6 +90,7 @@ E varB73A11C4827B454321D868D4D1819714_1537622244 =         get(key, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.001 -0400", hash_original_method = "E2D85B672251F3A6432F3D64B14D09C9", hash_generated_method = "D68DB38DA4479112D462AD9B64F3CA9E")
     public E get(long key, E valueIfKeyNotFound) {
         addTaint(valueIfKeyNotFound.getTaint());
@@ -271,6 +276,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.006 -0400", hash_original_method = "23592451CB50AFA841274AC3732C91A0", hash_generated_method = "6688D05030132B8FF48B8E421512F5C7")
     public E valueAt(int index) {
         addTaint(index);
@@ -289,6 +295,7 @@ E varFD8FAAC0C3572ACBC73A56817ABFB8BB_1242344100 =         (E) mValues[index];
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.006 -0400", hash_original_method = "7F2F6916ED61673EAF8E91642A81797D", hash_generated_method = "C9DDB9E9EA02C5782F8816164CB68524")
     public void setValueAt(int index, E value) {
     if(mGarbage)        

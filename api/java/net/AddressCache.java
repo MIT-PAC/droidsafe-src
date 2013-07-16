@@ -163,6 +163,7 @@ Object var540C13E9E156B687226421B24F2DF178_1435379857 =         null;
 
         long expiryNanos;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.443 -0400", hash_original_method = "B930CA112737DBCA1D7B360D8F80699C", hash_generated_method = "BFC56695F6C33AF0097E4C4530359872")
           AddressCacheEntry(Object value, long expiryNanos) {
             this.value = value;

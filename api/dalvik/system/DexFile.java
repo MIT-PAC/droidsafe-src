@@ -20,6 +20,7 @@ public final class DexFile {
 
     private final CloseGuard guard = CloseGuard.get();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.244 -0400", hash_original_method = "DB9E956B9DDA3EEC264D03CBFDEFBF6F", hash_generated_method = "9E460D61C27B487B20C9A4F9A7002E15")
     public  DexFile(File file) throws IOException {
         this(file.getPath());
@@ -28,6 +29,7 @@ public final class DexFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.250 -0400", hash_original_method = "2B4E18996A051A13BE51394FD13F0A3C", hash_generated_method = "F42425DD98401A7DAF698362F1153DB2")
     public  DexFile(String fileName) throws IOException {
         mCookie = openDexFile(fileName, null, 0);
@@ -40,6 +42,7 @@ public final class DexFile {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.255 -0400", hash_original_method = "A9D59C5CAA6AEFC931B2439A85EC8214", hash_generated_method = "8D2E1506C95983BAF3F0866420E60844")
     private  DexFile(String sourceName, String outputName, int flags) throws IOException {
         mCookie = openDexFile(sourceName, outputName, flags);

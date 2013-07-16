@@ -72,6 +72,7 @@ public class SIPServerTransaction extends SIPTransaction implements ServerReques
 
     private Semaphore provisionalResponseSem = new Semaphore(1);
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:45.392 -0400", hash_original_method = "D29C36EF10CFF1709E916D648669409B", hash_generated_method = "15F353E13F85C6C70FC7B37C3AC3A689")
     protected  SIPServerTransaction(SIPTransactionStack sipStack, MessageChannel newChannelToUse) {
         super(sipStack, newChannelToUse);
@@ -990,6 +991,7 @@ TransactionState varB2F6DC77C80BF408EE3A0FF5E79E41E6_1348159246 =         super.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:45.427 -0400", hash_original_method = "1CF9EDD0CC0B815CCCB8459FE319457E", hash_generated_method = "27C11793166415CB07ED96C4503745AF")
     public TransactionState getState() {
     if(this.isInviteTransaction() && TransactionState.TRYING == super.getState())        
@@ -1012,6 +1014,7 @@ TransactionState varB2F6DC77C80BF408EE3A0FF5E79E41E6_995708970 =         super.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:45.429 -0400", hash_original_method = "64016F2524A7B9A8D94F9FFA297FAA00", hash_generated_method = "AA01CDD68E738D9738710C2833E0BC06")
     public void setState(TransactionState newState) {
         addTaint(newState.getTaint());
@@ -1030,6 +1033,7 @@ TransactionState varB2F6DC77C80BF408EE3A0FF5E79E41E6_995708970 =         super.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:45.429 -0400", hash_original_method = "058740AD5F567A2FC597464136294293", hash_generated_method = "60897C79AA11C6ACE891B9974D425457")
     protected void startTransactionTimer() {
     if(this.transactionTimerStarted.compareAndSet(false, true))        
@@ -1149,6 +1153,7 @@ Dialog var8318F0A3FDFE0CD78A89325807A453A1_1741933962 =         this.dialog;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:45.435 -0400", hash_original_method = "113CF757EF1C74D90A992F25B2E0E550", hash_generated_method = "DBEB1227A4C2C3B134CC9ECD0BBC1E82")
     protected void sendReliableProvisionalResponse(Response relResponse) throws SipException {
     if(this.pendingReliableResponse != null)        
@@ -1409,6 +1414,7 @@ SIPServerTransaction var4366A1E0CE05E8DD96D50952869C4149_1296817432 =         th
 
         int ticksLeft;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:45.447 -0400", hash_original_method = "D09929C71A38D835F5CB9E6FA68F0FB4", hash_generated_method = "AA5DD423EFE7E935018FF3A31BFE2303")
         public  RetransmissionAlertTimerTask(String dialogId) {
             addTaint(dialogId.getTaint());
@@ -1452,6 +1458,7 @@ SIPServerTransaction var4366A1E0CE05E8DD96D50952869C4149_1296817432 =         th
 
         int ticksLeft;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:45.450 -0400", hash_original_method = "7F2BA0B0C3F62E74BA1198F711026EF0", hash_generated_method = "936AB35C1A1D2D3B3199B32B118A8C98")
         public  ProvisionalResponseTask() {
             this.ticks = SIPTransaction.T1;
@@ -1462,6 +1469,7 @@ SIPServerTransaction var4366A1E0CE05E8DD96D50952869C4149_1296817432 =         th
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:45.452 -0400", hash_original_method = "3BA43FFA8E7EB2E8FD814B03BC519869", hash_generated_method = "5ACE34290795D96F0D2AC3AA8D4C544D")
         protected void runTask() {
             SIPServerTransaction serverTransaction = SIPServerTransaction.this;
@@ -1514,12 +1522,14 @@ SIPServerTransaction var4366A1E0CE05E8DD96D50952869C4149_1296817432 =         th
 
         SIPServerTransaction serverTransaction = SIPServerTransaction.this;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:45.453 -0400", hash_original_method = "250D0DA46E4093885E0FDCBFA4428EAC", hash_generated_method = "C6F9312E02D3396BE69D6D2069B3841F")
           ListenerExecutionMaxTimer() {
             // ---------- Original Method ----------
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:45.454 -0400", hash_original_method = "FEDCDB906765008977DAE6268EB71EAC", hash_generated_method = "1D57A1537CA58EA274CC9009C5578C90")
         protected void runTask() {
             try 
@@ -1556,6 +1566,7 @@ SIPServerTransaction var4366A1E0CE05E8DD96D50952869C4149_1296817432 =         th
     
     class SendTrying extends SIPStackTimerTask {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:45.455 -0400", hash_original_method = "C30DBC53FC262811E7ACF1B35A336493", hash_generated_method = "EB8EEF4900FBE44B1A8651A4FFDC251C")
         protected  SendTrying() {
     if(sipStack.isLoggingEnabled())            
@@ -1566,6 +1577,7 @@ SIPServerTransaction var4366A1E0CE05E8DD96D50952869C4149_1296817432 =         th
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:45.455 -0400", hash_original_method = "F91C856C78DFF19E74F73B1B16259454", hash_generated_method = "082340EE3F1CFB24C29EBF25F2C3ABC7")
         protected void runTask() {
             SIPServerTransaction serverTransaction = SIPServerTransaction.this;
@@ -1600,6 +1612,7 @@ SIPServerTransaction var4366A1E0CE05E8DD96D50952869C4149_1296817432 =         th
     
     class TransactionTimer extends SIPStackTimerTask {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:45.456 -0400", hash_original_method = "3D8EFF77F5EF9F9762C1A26A2D305727", hash_generated_method = "92844DFA086947510B0646EF295579DC")
         public  TransactionTimer() {
     if(sipStack.isLoggingEnabled())            

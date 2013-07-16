@@ -38,6 +38,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
 
     private int mSpanCount;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.578 -0400", hash_original_method = "FC61BFC3FC94A92F6E91F05B84386B00", hash_generated_method = "803E26A984ACC0C077D94CC677976F62")
     public  SpannableStringBuilder() {
         this("");
@@ -45,6 +46,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.578 -0400", hash_original_method = "9676D8694A6D1EC55F8FB5E1D9DC6D95", hash_generated_method = "AD8306198DF2DA98740386F2F808A31C")
     public  SpannableStringBuilder(CharSequence text) {
         this(text, 0, text.length());
@@ -53,6 +55,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.580 -0400", hash_original_method = "D35C3B0425645BAC16D8668E04F8F0BF", hash_generated_method = "07CF4C849CCF3ABB621F32E5FF76EFC7")
     public  SpannableStringBuilder(CharSequence text, int start, int end) {
         addTaint(end);

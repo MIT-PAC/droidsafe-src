@@ -51,6 +51,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.601 -0400", hash_original_method = "4AB400BD05A544E56EC5FA788A743E49", hash_generated_method = "FB66FD477913D2AD65F93BAB6FD83F97")
     public  DeflaterOutputStream(OutputStream os, boolean syncFlush) {
         this(os, new Deflater(), BUF_SIZE, syncFlush);
@@ -60,6 +61,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.601 -0400", hash_original_method = "030FC273048345BE6683513E5C823172", hash_generated_method = "E26A235F655019C7C5A57E31F5C59720")
     public  DeflaterOutputStream(OutputStream os, Deflater def, boolean syncFlush) {
         this(os, def, BUF_SIZE, syncFlush);
@@ -70,6 +72,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.601 -0400", hash_original_method = "36641FCF7AB1B4FCCCA71F3379196A62", hash_generated_method = "3C40DAA4CD8B0396ED401DC5BFBF8C50")
     public  DeflaterOutputStream(OutputStream os, Deflater def, int bsize, boolean syncFlush) {
         super(os);

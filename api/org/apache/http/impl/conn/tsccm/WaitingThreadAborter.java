@@ -20,6 +20,7 @@ public class WaitingThreadAborter {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.191 -0400", hash_original_method = "27CF8733634F3CF20401DD1AFEAA91BD", hash_generated_method = "CEC22C4B3505739F30026513C6F8E7A8")
     public void abort() {
         aborted = true;

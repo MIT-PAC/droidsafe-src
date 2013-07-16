@@ -179,6 +179,7 @@ Class<?> var8C6A66A89969D061B1ECE468EDE00B0A_96135295 =         cl;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.473 -0400", hash_original_method = "6C03FA17A8A9EDC07915A4F462B31BC8", hash_generated_method = "1BA177B37B8576BE87F07B69341E0EEC")
     public char getTypeCode() {
         char var43EFEAF95577F8DDC10B9CD1AB86DD46_363601031 = (typeCodeOf(getTypeInternal()));
@@ -317,6 +318,7 @@ String var7A85238CD32275F0BFF675D89BABBB30_1821854435 =         typeString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.478 -0400", hash_original_method = "109BC8E5B51BF330504215C17ADD6478", hash_generated_method = "DCF3C21E792B348A59544CFB58553D57")
     public boolean isPrimitive() {
         Class<?> t = getTypeInternal();
@@ -329,6 +331,7 @@ String var7A85238CD32275F0BFF675D89BABBB30_1821854435 =         typeString;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.479 -0400", hash_original_method = "6EE925571D11CA9854483CD43D60AA5F", hash_generated_method = "C63725AE05CCBE83A81535148356DD0A")
      boolean writeField(DataOutputStream out) throws IOException {
         addTaint(out.getTaint());

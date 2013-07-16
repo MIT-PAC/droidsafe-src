@@ -46,6 +46,7 @@ public final class Formatter implements Closeable, Flushable {
 
     private LocaleData localeData;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.538 -0400", hash_original_method = "776A8092D7EB6A8CE9FA3707C90FDC71", hash_generated_method = "84D520F5378D0961C20054F1B6C8CEC3")
     public  Formatter() {
         this(new StringBuilder(), Locale.getDefault());
@@ -53,6 +54,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.538 -0400", hash_original_method = "C10A7E7C6014F1D5457B2868B8DDD5FA", hash_generated_method = "31E6013FD29F4E00375F2E0819EFEC43")
     public  Formatter(Appendable a) {
         this(a, Locale.getDefault());
@@ -61,6 +63,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.538 -0400", hash_original_method = "949ED46E62E9C1FD97345CAB1F572157", hash_generated_method = "1F77DEC42C276C4F532BB809AEBFC555")
     public  Formatter(Locale l) {
         this(new StringBuilder(), l);
@@ -69,6 +72,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.539 -0400", hash_original_method = "731A0E308D6775F1250BD9086CA3748C", hash_generated_method = "470B7F8F60748480EE3440031861637F")
     public  Formatter(Appendable a, Locale l) {
     if(a == null)        
@@ -90,6 +94,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.540 -0400", hash_original_method = "55110CB3A063CDDA9DDF2A6FEEDBC4D6", hash_generated_method = "70BDD2B3DD755EDDD96C2C4A66B6ADFD")
     public  Formatter(String fileName) throws FileNotFoundException {
         this(new File(fileName));
@@ -98,6 +103,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.540 -0400", hash_original_method = "D05AE6CA9B3694824C73C0B398D66198", hash_generated_method = "F00C95169A2C801D9F2667AF05A8DEA3")
     public  Formatter(String fileName, String csn) throws FileNotFoundException,
             UnsupportedEncodingException {
@@ -108,6 +114,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.540 -0400", hash_original_method = "106406A68116E4DC11358A25DB96C9D8", hash_generated_method = "3C730AAB253E20740C1D3314BBCAE1DB")
     public  Formatter(String fileName, String csn, Locale l) throws FileNotFoundException, UnsupportedEncodingException {
         this(new File(fileName), csn, l);
@@ -118,6 +125,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.541 -0400", hash_original_method = "56C5088BBC7ACEBB0E3B42C5FC534A61", hash_generated_method = "589E7B2AC2ADE54B3D54DCD41B50441F")
     public  Formatter(File file) throws FileNotFoundException {
         this(new FileOutputStream(file));
@@ -126,6 +134,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.541 -0400", hash_original_method = "15C3BB1BBEBB7DA2B256558B7A83F1D2", hash_generated_method = "C1739D626FDEC289527DD1A976635F93")
     public  Formatter(File file, String csn) throws FileNotFoundException,
             UnsupportedEncodingException {
@@ -136,6 +145,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.542 -0400", hash_original_method = "11FC304A866A57AD6707E0AE5ACD74C6", hash_generated_method = "322FB5E5CA52A8C798F67AB147F0CEA3")
     public  Formatter(File file, String csn, Locale l) throws FileNotFoundException, UnsupportedEncodingException {
         addTaint(file.getTaint());
@@ -174,6 +184,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.543 -0400", hash_original_method = "18094D8509766CE6FC608D9540C5972B", hash_generated_method = "86DB88A0468A92B37477CC3A3583D801")
     public  Formatter(OutputStream os) {
         out = new BufferedWriter(new OutputStreamWriter(os, Charset.defaultCharset()));
@@ -184,6 +195,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.543 -0400", hash_original_method = "F6295FD9F7AB3AB7F721531D402E7F81", hash_generated_method = "1D099F685783C7C0CE31B5FF23D472D0")
     public  Formatter(OutputStream os, String csn) throws UnsupportedEncodingException {
         this(os, csn, Locale.getDefault());
@@ -193,6 +205,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.544 -0400", hash_original_method = "339D31BAB557832A3B8A75EB377C0635", hash_generated_method = "8BEF5CEA51D6B567DEC1210198AC5CE9")
     public  Formatter(OutputStream os, String csn, Locale l) throws UnsupportedEncodingException {
         out = new BufferedWriter(new OutputStreamWriter(os, csn));
@@ -203,6 +216,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.544 -0400", hash_original_method = "6A92C9283CC7B01627E24F0E27824A3B", hash_generated_method = "1FB44483F510116A2A4A5B346B964275")
     public  Formatter(PrintStream ps) {
     if(ps == null)        
@@ -1997,6 +2011,7 @@ for(int i = 0;i < precision;++i)
 
         public String currentPattern;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.670 -0400", hash_original_method = "3AB4302EBBD3C6ECF16B79A91E887CC6", hash_generated_method = "C4149067CD2AF28823E946F111841C62")
         public  CachedDecimalFormat() {
             // ---------- Original Method ----------
@@ -2190,6 +2205,7 @@ String varE356DE50F486C3F72B629C8B7984509F_2053697223 =             (strFlags !=
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.678 -0400", hash_original_method = "E6ACD7E32E6ABC5AE16C357DB8116DB3", hash_generated_method = "3B967B323E5138305958D1C8E1BDC81C")
          boolean setFlag(int ch) {
             addTaint(ch);
@@ -2297,6 +2313,7 @@ switch(ch){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.705 -0400", hash_original_method = "34D9D8688BA6BF211700F1E1A866C731", hash_generated_method = "952F29F8E70F669EFD5D0538F7AF2A3E")
          void checkFlags(Object arg) {
             addTaint(arg.getTaint());
@@ -2517,6 +2534,7 @@ switch(conversionType){
 
         private int i;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.709 -0400", hash_original_method = "2EAAE714EE0AE41BF39DBCA3F91B9104", hash_generated_method = "99616AB8C1E30FEFAAC91AD743EEE46F")
           FormatSpecifierParser(String format) {
             this.format = format;
@@ -2595,6 +2613,7 @@ String varAEB69BD2749C34A7344D72401C529AA5_1259294541 =             format.subst
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.714 -0400", hash_original_method = "AD27190704DEC79DF3778A7C88589CDF", hash_generated_method = "C9B3EDB33271251A149A9EE5797C777F")
         private FormatToken parseArgumentIndexAndFlags(FormatToken token) {
             addTaint(token.getTaint());

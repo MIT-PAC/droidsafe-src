@@ -14,6 +14,7 @@ public abstract class LeafNodeImpl extends NodeImpl {
 
     int index;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.777 -0400", hash_original_method = "C37CADF0F64FF24C3BED74AC237BFE15", hash_generated_method = "BD8792B33C5ED85E1BF733B7FAB8E9B4")
       LeafNodeImpl(DocumentImpl document) {
         super(document);

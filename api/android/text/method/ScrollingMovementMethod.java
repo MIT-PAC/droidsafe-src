@@ -11,6 +11,7 @@ import android.view.View;
 
 public class ScrollingMovementMethod extends BaseMovementMethod implements MovementMethod {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.921 -0400", hash_original_method = "997C1BE7C30077BC0332DB617608ABA5", hash_generated_method = "997C1BE7C30077BC0332DB617608ABA5")
     public ScrollingMovementMethod ()
     {

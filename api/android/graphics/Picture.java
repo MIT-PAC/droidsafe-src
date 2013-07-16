@@ -94,6 +94,7 @@ Canvas var1D97605435A680D4B9EC641401BFF9EE_1430995049 =         mRecordingCanvas
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.720 -0400", hash_original_method = "DC7CFB067EE80684132B2B92372F3B79", hash_generated_method = "B467DEB9F2198F0D4B06EBCE6806E8AC")
     public void draw(Canvas canvas) {
         addTaint(canvas.getTaint());

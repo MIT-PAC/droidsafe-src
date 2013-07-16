@@ -20,6 +20,7 @@ public class ClientKeyExchange extends Message {
 
     boolean isRSA;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.162 -0400", hash_original_method = "C9B8341788FD531DBE072AC5097543AB", hash_generated_method = "324D7AE6FC9C76BE82CA5FA9EE760B5E")
     public  ClientKeyExchange(byte[] encrypted_pre_master_secret, boolean isTLS) {
         this.exchange_keys = encrypted_pre_master_secret;
@@ -41,6 +42,7 @@ public class ClientKeyExchange extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.162 -0400", hash_original_method = "82DB124C7EE193607645A424E30C3D24", hash_generated_method = "3A30B8A16145844F107E4DA92033B6B4")
     public  ClientKeyExchange(BigInteger dh_Yc) {
         addTaint(dh_Yc.getTaint());
@@ -69,6 +71,7 @@ public class ClientKeyExchange extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.163 -0400", hash_original_method = "F9E21C88B251C3A8D5F2F68FD08CDC9E", hash_generated_method = "4533FE8F4312A563E5A5CB5E21E04D95")
     public  ClientKeyExchange() {
         exchange_keys = EmptyArray.BYTE;
@@ -81,6 +84,7 @@ public class ClientKeyExchange extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.164 -0400", hash_original_method = "C1B0A0A6F00EB418D00ABC26C97C8AF6", hash_generated_method = "A5BE4479C1DE23E05ED2358C61C791A5")
     public  ClientKeyExchange(HandshakeIODataStream in, int length, boolean isTLS, boolean isRSA) throws IOException {
         addTaint(length);
@@ -136,6 +140,7 @@ public class ClientKeyExchange extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.164 -0400", hash_original_method = "355F47F7AE472993E3A2C68F4F83F8CB", hash_generated_method = "A9598CA71454CF8D4A05FB12AD659097")
     @Override
     public void send(HandshakeIODataStream out) {

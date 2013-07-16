@@ -17,6 +17,7 @@ class DefaultMapStorage extends AreaCodeMapStorageStrategy {
 
     private String[] descriptions;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.349 -0400", hash_original_method = "303B051C40F1A8F79D475AA40AA2373B", hash_generated_method = "4548E228F5AD6C18BCD7D9B123AD0017")
     public  DefaultMapStorage() {
         // ---------- Original Method ----------
@@ -89,6 +90,7 @@ for(int prefix : sortedAreaCodeMap.keySet())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.353 -0400", hash_original_method = "0264417E3D0614273CCDCAAD5EB78429", hash_generated_method = "4839434E131D829160F1C03195346F39")
     @Override
     public void readExternal(ObjectInput objectInput) throws IOException {
@@ -132,6 +134,7 @@ for(int i = 0;i < sizeOfLengths;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.355 -0400", hash_original_method = "7B03681C04FCB0BC9386533E4F9ED1FB", hash_generated_method = "E28CE5DAB41B3AD8F9294F43775B88CD")
     @Override
     public void writeExternal(ObjectOutput objectOutput) throws IOException {

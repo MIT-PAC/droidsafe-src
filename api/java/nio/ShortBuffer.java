@@ -8,6 +8,7 @@ import java.util.Arrays;
 
 public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuffer> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.335 -0400", hash_original_method = "EAB92A092C9FEE1EEAB86C6A6FABA79C", hash_generated_method = "6318691CE755B9046B333B497AB15184")
       ShortBuffer(int capacity) {
         super(1, capacity, null);
@@ -16,7 +17,8 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
     }
 
     
-        public static ShortBuffer allocate(int capacity) {
+        @DSModeled(DSC.SAFE)
+    public static ShortBuffer allocate(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException();
         }
@@ -24,12 +26,14 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
     }
 
     
-        public static ShortBuffer wrap(short[] array) {
+        @DSModeled(DSC.SAFE)
+    public static ShortBuffer wrap(short[] array) {
         return wrap(array, 0, array.length);
     }
 
     
-        public static ShortBuffer wrap(short[] array, int start, int shortCount) {
+        @DSModeled(DSC.SAFE)
+    public static ShortBuffer wrap(short[] array, int start, int shortCount) {
         Arrays.checkOffsetAndCount(array.length, start, shortCount);
         ShortBuffer buf = new ReadWriteShortArrayBuffer(array);
         buf.position = start;
@@ -64,6 +68,7 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
     public abstract ShortBuffer compact();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.337 -0400", hash_original_method = "F5228E310614FF7F70EC616A5A8F6CEB", hash_generated_method = "79E746AF0ADB25BBB9A1EF3D0049ED50")
     public int compareTo(ShortBuffer otherBuffer) {
         addTaint(otherBuffer.getTaint());
@@ -114,6 +119,7 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
     public abstract ShortBuffer duplicate();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.338 -0400", hash_original_method = "5B31F4285E964D7BDABED3BB847D41AA", hash_generated_method = "282E663D6EF46305F6FD14A13299502E")
     @Override
     public boolean equals(Object other) {
@@ -163,6 +169,7 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
     public abstract short get();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.339 -0400", hash_original_method = "68406DA953A1F3530F74FC6FE1C452A7", hash_generated_method = "5BB60B024AE7FF6A35DEA0DA49F1598C")
     public ShortBuffer get(short[] dst) {
         addTaint(dst[0]);
@@ -174,6 +181,7 @@ ShortBuffer varAF8F268F60258FE30F192DE78F11CD4A_462922269 =         get(dst, 0, 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.340 -0400", hash_original_method = "DE4C5284FF189AE8B07194EE8C193F03", hash_generated_method = "3D03F08A33D839729E093C0FA9BF1BBB")
     public ShortBuffer get(short[] dst, int dstOffset, int shortCount) {
         addTaint(shortCount);
@@ -218,6 +226,7 @@ ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_1880025305 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.341 -0400", hash_original_method = "371FAD0CF0C9AC8E78075F4EA52336BD", hash_generated_method = "9A68C4EB78A11A128DEAB4B6AF5F5723")
     @Override
     public int hashCode() {
@@ -270,6 +279,7 @@ ShortBuffer var7D505613BED257805463C43ADCB4DBAD_1232597552 =         put(src, 0,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.343 -0400", hash_original_method = "F4EA1FDC39DA95E004DECB204CC15A47", hash_generated_method = "05253F3FB9D4DCE90C9795C5467B38D7")
     public ShortBuffer put(short[] src, int srcOffset, int shortCount) {
         addTaint(shortCount);
@@ -301,6 +311,7 @@ ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_1754260443 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.344 -0400", hash_original_method = "1D8FC7647B57D46D94B3AA0BA31269DF", hash_generated_method = "782DD836E31AA1C04C7A41014B4911EC")
     public ShortBuffer put(ShortBuffer src) {
         addTaint(src.getTaint());

@@ -20,6 +20,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
 
     private volatile int state;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.803 -0400", hash_original_method = "C7F1FA27B1E7517E25F1C7951B5E8CA8", hash_generated_method = "D0F5CBC29675A9CABCA264BF6F7A7644")
     protected  AbstractQueuedSynchronizer() {
         // ---------- Original Method ----------
@@ -1400,12 +1401,14 @@ Collection<Thread> var8981A24903B26F18C4110654EEEEEF5C_2116542914 =         cond
 
         Node nextWaiter;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.842 -0400", hash_original_method = "2DD8BF5485F2495811D83404AF44A29C", hash_generated_method = "AAE5751DE21B256CB4EDD0DDB605F24E")
           Node() {
             // ---------- Original Method ----------
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.843 -0400", hash_original_method = "764EF23A3C66C99D5E5160039F46E6BD", hash_generated_method = "2CAC145FA8BF94E846C302C88AD33F87")
           Node(Thread thread, Node mode) {
             this.nextWaiter = mode;
@@ -1416,6 +1419,7 @@ Collection<Thread> var8981A24903B26F18C4110654EEEEEF5C_2116542914 =         cond
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.843 -0400", hash_original_method = "5118904E6021AE155CDFF15DB609BD48", hash_generated_method = "4FCE7CEF63C545859A3D7EF41D2DEAC9")
           Node(Thread thread, int waitStatus) {
             this.waitStatus = waitStatus;
@@ -1490,6 +1494,7 @@ Node var74E4690D9F2A026504928C017944E149_1619547431 =             p;
 
         private transient Node lastWaiter;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.845 -0400", hash_original_method = "0A3E2C1E27BAEA738FDF96AD17500BEE", hash_generated_method = "6AF9B0E3D406E6C56AA07F09E795B0E2")
         public  ConditionObject() {
             // ---------- Original Method ----------

@@ -7,12 +7,14 @@ import droidsafe.runtime.*;
 
 public abstract class AbstractQueue<E> extends AbstractCollection<E> implements Queue<E> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.262 -0400", hash_original_method = "898E1AC4CE228AED7FA804DCD29D86E1", hash_generated_method = "BA28E44BB32CE28A4E02FA17DE6E4457")
     protected  AbstractQueue() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.263 -0400", hash_original_method = "1A50CFE77F83A9D61A2F23666507E72F", hash_generated_method = "AB7A870D43E654CE3ABE67FEFC8D0B94")
     public boolean add(E e) {
         addTaint(e.getTaint());
@@ -36,6 +38,7 @@ public abstract class AbstractQueue<E> extends AbstractCollection<E> implements 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.263 -0400", hash_original_method = "9DCDFDCD4BD0DA1BA6AE29C07F6D5161", hash_generated_method = "8A6167182D7C08B2CA5D3DDA9791AAE5")
     public E remove() {
         E x = poll();
@@ -60,6 +63,7 @@ E varEA5659DA512DECF23E6D37EE8060D074_1680548635 =         x;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.264 -0400", hash_original_method = "25B2B6020E0E758714C2C5A3E37A85D5", hash_generated_method = "64A9B877D6A67F269E78D4EE5A8B02ED")
     public E element() {
         E x = peek();

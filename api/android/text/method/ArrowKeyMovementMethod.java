@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 public class ArrowKeyMovementMethod extends BaseMovementMethod implements MovementMethod {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.289 -0400", hash_original_method = "4B84DCFAF96B2ABE0CEB1C58A836BE09", hash_generated_method = "4B84DCFAF96B2ABE0CEB1C58A836BE09")
     public ArrowKeyMovementMethod ()
     {

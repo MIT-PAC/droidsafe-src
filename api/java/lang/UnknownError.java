@@ -7,12 +7,14 @@ import droidsafe.runtime.*;
 
 public class UnknownError extends VirtualMachineError {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:52.013 -0400", hash_original_method = "DEBB86C8E485BA79C07551D87066B1FF", hash_generated_method = "8B2FBCDE5A416A32BD94734123C8D214")
     public  UnknownError() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:52.013 -0400", hash_original_method = "9EE2469E06677E3029FF643B11D994DB", hash_generated_method = "7D5350E4022121FF812DF6D1B2B31AC0")
     public  UnknownError(String detailMessage) {
         super(detailMessage);

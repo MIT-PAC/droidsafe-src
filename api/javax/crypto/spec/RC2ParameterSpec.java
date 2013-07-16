@@ -15,6 +15,7 @@ public class RC2ParameterSpec implements AlgorithmParameterSpec {
 
     private byte[] iv;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.433 -0400", hash_original_method = "981D6EF1132B7EAC7AA89C92203BA1A2", hash_generated_method = "2C7506A4650CED37076AB6ECD0B6B611")
     public  RC2ParameterSpec(int effectiveKeyBits) {
         this.effectiveKeyBits = effectiveKeyBits;
@@ -97,6 +98,7 @@ public class RC2ParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.436 -0400", hash_original_method = "462AE8FB0DAC66A27C950BA3964C530D", hash_generated_method = "698212C27C4D01B3C6DD81B4D16F05D5")
     public byte[] getIV() {
     if(iv == null)        
@@ -120,6 +122,7 @@ public class RC2ParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.436 -0400", hash_original_method = "054E5AEB74111DBC68AB791919DED60A", hash_generated_method = "9E7F86E3733D22192F391EAF2F3202B7")
     @Override
     public boolean equals(Object obj) {

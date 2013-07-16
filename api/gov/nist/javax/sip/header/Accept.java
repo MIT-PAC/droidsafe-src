@@ -11,6 +11,7 @@ public final class Accept extends ParametersHeader implements javax.sip.header.A
 
     protected MediaRange mediaRange;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.634 -0400", hash_original_method = "4311F842678DE87ACCC1A689A829FC2C", hash_generated_method = "078F21FB6AC134D27AFE15A2BEB94126")
     public  Accept() {
         super(NAME);

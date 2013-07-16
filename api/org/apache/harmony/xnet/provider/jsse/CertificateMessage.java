@@ -20,6 +20,7 @@ public class CertificateMessage extends Message {
 
     byte[][] encoded_certs;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.837 -0400", hash_original_method = "3441A786FC97408CA6232DAAE3F595DF", hash_generated_method = "A04A02F7028ABFA3F0B49BB43AD40487")
     public  CertificateMessage(HandshakeIODataStream in, int length) throws IOException {
         addTaint(length);
@@ -77,6 +78,7 @@ public class CertificateMessage extends Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.839 -0400", hash_original_method = "A869E13906426823448DC988F0CB5F8A", hash_generated_method = "296962B6C9A284843495F5AD92EA77AA")
     public  CertificateMessage(X509Certificate[] certs) {
     if(certs == null)        
@@ -134,6 +136,7 @@ for(int i = 0;i < encoded_certs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.841 -0400", hash_original_method = "345309F322E0CB3C0BD3B9A37C988F09", hash_generated_method = "BC46345C1188639EBD19AC7917340C77")
     @Override
     public void send(HandshakeIODataStream out) {
@@ -171,6 +174,7 @@ for(int i = 0;i < encoded_certs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.842 -0400", hash_original_method = "B57A0154C34F76610C0A1E207F806B75", hash_generated_method = "EC1C4F5EDFBFE39AB91A58750BC93A56")
     public String getAuthType() {
 String varF523B99BFF261AB8239F9E49DE817850_1805125093 =         certs[0].getPublicKey().getAlgorithm();

@@ -28,6 +28,7 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
 
     private boolean rPortFlag = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.615 -0400", hash_original_method = "7D07E05C0BEE96603D98F8B1E7A2E317", hash_generated_method = "05BCC6515CD84F16CEE1E054ED6F0504")
     public  Via() {
         super(NAME);

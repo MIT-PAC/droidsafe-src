@@ -10,6 +10,7 @@ import javax.sip.header.*;
 
 public class AllowList extends SIPHeaderList<Allow> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.775 -0400", hash_original_method = "F4CA7E921A2CAA269087CDE3B4673EDF", hash_generated_method = "D9C4828F0D645AEECBD56D2F64C1FA84")
     public  AllowList() {
         super(Allow.class, AllowHeader.NAME);

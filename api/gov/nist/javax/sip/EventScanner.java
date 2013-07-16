@@ -60,6 +60,7 @@ class EventScanner implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.468 -0400", hash_original_method = "A71B34BF35FB557BC1E9288C6E8DE3F6", hash_generated_method = "EE0F9CE3BD8341FB293279BC2F97C0A2")
     public void addEvent(EventWrapper eventWrapper) {
         addTaint(eventWrapper.getTaint());
@@ -80,6 +81,7 @@ class EventScanner implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.472 -0400", hash_original_method = "66FF7F77E84125B131D0D04138A3FE42", hash_generated_method = "C1768E218AB02D6895B611755F1204FA")
     public void stop() {
         synchronized
@@ -104,6 +106,7 @@ class EventScanner implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.473 -0400", hash_original_method = "F0E51D59DB287FD1630B012799B48A4C", hash_generated_method = "5F44D689C5F207AE2B81454D4BA3AE06")
     public void forceStop() {
         synchronized

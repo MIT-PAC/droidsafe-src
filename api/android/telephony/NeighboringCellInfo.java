@@ -109,6 +109,7 @@ switch(radioType){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.653 -0400", hash_original_method = "17FDCF259E4D17E2ACC4CF1446DF5669", hash_generated_method = "6630B7089771F571BDC033EC7FF2D880")
     public  NeighboringCellInfo(Parcel in) {
         mRssi = in.readInt();
@@ -200,6 +201,7 @@ switch(radioType){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.655 -0400", hash_original_method = "8F5318BC3FCF7BF30F83B998176BAD1B", hash_generated_method = "ED4F3A1A04505D36619A0295DF85933B")
     @Override
     public String toString() {
@@ -248,6 +250,7 @@ String var2460B846747F8B22185AD8BE722266A5_1168421261 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.656 -0400", hash_original_method = "1E78D18C8DE0132253C9C6F62415E5D0", hash_generated_method = "FA1CAB9206E178F89040B282ADC106B2")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

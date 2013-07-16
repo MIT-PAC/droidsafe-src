@@ -40,6 +40,7 @@ public class Country implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.633 -0400", hash_original_method = "E5422BF754D1EEFE24F783DEE0DEB6C8", hash_generated_method = "93FC7471C9A9942792321C1DF9B6A336")
     public  Country(Country country) {
         mCountryIso = country.mCountryIso;
@@ -81,6 +82,7 @@ String varABD26FAEF97E5A889B52BBA304F6F7F1_97258137 =         mCountryIso;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.635 -0400", hash_original_method = "FCA327E6B3FDBBC7798ED2309FF9DDE2", hash_generated_method = "C9942526C4E1080AA8DDF55A21E17068")
     public void writeToParcel(Parcel parcel, int flags) {
         addTaint(flags);
@@ -93,6 +95,7 @@ String varABD26FAEF97E5A889B52BBA304F6F7F1_97258137 =         mCountryIso;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.636 -0400", hash_original_method = "A4E8BAE44F340138225E9939A030C872", hash_generated_method = "C7629E21A426F06506109A5B779FCBB9")
     @Override
     public boolean equals(Object object) {
@@ -125,6 +128,7 @@ String varABD26FAEF97E5A889B52BBA304F6F7F1_97258137 =         mCountryIso;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.637 -0400", hash_original_method = "B421DD13AECD8D681C930C2BD9632735", hash_generated_method = "9F5FAE7A74ADE9B9720B316AA0F23D79")
     @Override
     public int hashCode() {
@@ -151,6 +155,7 @@ String varABD26FAEF97E5A889B52BBA304F6F7F1_97258137 =         mCountryIso;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.638 -0400", hash_original_method = "1D459D842605CA34811091FC29FDA2D4", hash_generated_method = "760CC8901E7035A1D0C72DCF1F6DB47C")
     public boolean equalsIgnoreSource(Country country) {
         addTaint(country.getTaint());

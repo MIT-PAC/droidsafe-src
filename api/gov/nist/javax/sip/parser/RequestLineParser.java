@@ -10,6 +10,7 @@ import gov.nist.javax.sip.header.*;
 
 public class RequestLineParser extends Parser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.652 -0400", hash_original_method = "9E54F2AF74A618ACEB8F17B65C16A48F", hash_generated_method = "FB8FE551FA5D181ADCB5FE9C481BD6ED")
     public  RequestLineParser(String requestLine) {
         addTaint(requestLine.getTaint());
@@ -19,6 +20,7 @@ public class RequestLineParser extends Parser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.653 -0400", hash_original_method = "A6666834E60C7B51DE2E6BABDAF9B193", hash_generated_method = "219D76BC983E87B19D174293804330B6")
     public  RequestLineParser(Lexer lexer) {
         addTaint(lexer.getTaint());
@@ -30,6 +32,7 @@ public class RequestLineParser extends Parser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.655 -0400", hash_original_method = "3F5CD164E270AAF338C0D4B97DF78E19", hash_generated_method = "818E255CAF929F559386CB4FABB3CB21")
     public RequestLine parse() throws ParseException {
     if(debug)        

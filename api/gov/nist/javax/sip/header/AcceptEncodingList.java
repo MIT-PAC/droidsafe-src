@@ -8,6 +8,7 @@ import javax.sip.header.*;
 
 public class AcceptEncodingList extends SIPHeaderList<AcceptEncoding> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.660 -0400", hash_original_method = "6872E94CB9CC14DAB89517B2FDF048F7", hash_generated_method = "8D77967938F665982D2EA5AC5A044ED3")
     public  AcceptEncodingList() {
         super(AcceptEncoding.class, AcceptEncodingHeader.NAME);

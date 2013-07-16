@@ -17,6 +17,7 @@ public class Protocol extends SIPObject {
 
     protected String transport;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.699 -0400", hash_original_method = "B029C737A70A786967A2F293EBAB35D1", hash_generated_method = "DEE5EC031EDC612478B0E1C953847222")
     public  Protocol() {
         protocolName = "SIP";

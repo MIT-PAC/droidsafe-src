@@ -51,6 +51,7 @@ public class DecimalFormat extends NumberFormat {
 
     private transient RoundingMode roundingMode = RoundingMode.HALF_EVEN;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.300 -0400", hash_original_method = "DE88C1883A924350E112FA17163006E9", hash_generated_method = "8F3D56F06F018038500D450373B97D16")
     public  DecimalFormat() {
         Locale locale = Locale.getDefault();
@@ -63,6 +64,7 @@ public class DecimalFormat extends NumberFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.300 -0400", hash_original_method = "35AB5293961F9B593ADD183E8B6B3242", hash_generated_method = "32BBE801F866CA8E0CC29DE98F1BC803")
     public  DecimalFormat(String pattern) {
         this(pattern, Locale.getDefault());
@@ -71,6 +73,7 @@ public class DecimalFormat extends NumberFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.301 -0400", hash_original_method = "17CE9F29195C1874CE3535C0883BB7B4", hash_generated_method = "AFF6933CB6C09563DAB789392870D572")
     public  DecimalFormat(String pattern, DecimalFormatSymbols value) {
         addTaint(pattern.getTaint());
@@ -82,6 +85,7 @@ public class DecimalFormat extends NumberFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.301 -0400", hash_original_method = "1EB8095DC5F926848B20CBA55F6BDD83", hash_generated_method = "AF780A5AAAFB38AE6A93DEC938F1E518")
       DecimalFormat(String pattern, Locale locale) {
         addTaint(pattern.getTaint());

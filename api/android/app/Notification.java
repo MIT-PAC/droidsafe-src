@@ -84,6 +84,7 @@ public class Notification implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.315 -0400", hash_original_method = "F912A2DECFC167F58680F860007D2BB5", hash_generated_method = "3B18C5842AE1AC8C6EE94277514E87EA")
     public  Notification(Context context, int icon, CharSequence tickerText, long when,
             CharSequence contentTitle, CharSequence contentText, Intent contentIntent) {

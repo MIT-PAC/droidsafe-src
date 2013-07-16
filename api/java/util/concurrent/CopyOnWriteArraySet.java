@@ -11,6 +11,7 @@ public class CopyOnWriteArraySet<E> extends AbstractSet<E> implements java.io.Se
 
     private CopyOnWriteArrayList<E> al;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.791 -0400", hash_original_method = "719CF91FD15681D04C85978CBE8B39AE", hash_generated_method = "0FB9C3E2A709B12CF65A46E85BF7EE93")
     public  CopyOnWriteArraySet() {
         al = new CopyOnWriteArrayList<E>();
@@ -107,6 +108,7 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1997563438 =         al.toArray(a);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.794 -0400", hash_original_method = "C36F2E0651BF3F93251D9AAA1075E241", hash_generated_method = "1D5A13303C02083E1979E878394E9297")
     public boolean add(E e) {
         addTaint(e.getTaint());

@@ -22,6 +22,7 @@ public class RequestProxyAuthentication implements HttpRequestInterceptor {
 
     private final Log log = LogFactory.getLog(getClass());
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.256 -0400", hash_original_method = "A74AF022CE8AD2F75949F498B58D4DA7", hash_generated_method = "019FDF755D508F75C35A23CC550E2502")
     public  RequestProxyAuthentication() {
         super();

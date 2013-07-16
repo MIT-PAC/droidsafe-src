@@ -127,7 +127,8 @@ public class JarUtils {
     }
 
     
-        private static X509Certificate[] createChain(X509Certificate  signer, X509Certificate[] candidates) {
+        @DSModeled(DSC.SAFE)
+    private static X509Certificate[] createChain(X509Certificate  signer, X509Certificate[] candidates) {
         LinkedList chain = new LinkedList();
         chain.add(0, signer);
         if (signer.getSubjectDN().equals(signer.getIssuerDN())){
@@ -152,7 +153,8 @@ public class JarUtils {
     }
 
     
-        private static X509Certificate findCert(Principal issuer, X509Certificate[] candidates) {
+        @DSModeled(DSC.SAFE)
+    private static X509Certificate findCert(Principal issuer, X509Certificate[] candidates) {
         for (int i = 0; i < candidates.length; i++) {
             if (issuer.equals(candidates[i].getSubjectDN())) {
                 return candidates[i];

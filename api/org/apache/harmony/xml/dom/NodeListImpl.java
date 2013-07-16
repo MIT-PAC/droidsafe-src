@@ -14,6 +14,7 @@ public class NodeListImpl implements NodeList {
 
     private List<NodeImpl> children;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.936 -0400", hash_original_method = "90C695C7BB2C17E5AEDC35249C42B72B", hash_generated_method = "0E4047B11F334542A784CB40C2591858")
       NodeListImpl() {
         children = new ArrayList<NodeImpl>();

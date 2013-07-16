@@ -163,7 +163,8 @@ public class DateUtils {
     }
 
     
-        private synchronized static long getNumberOfDaysPassed(long date1, long date2) {
+        @DSModeled(DSC.SAFE)
+    private synchronized static long getNumberOfDaysPassed(long date1, long date2) {
         if (sThenTime == null) {
             sThenTime = new Time();
         }
@@ -313,7 +314,8 @@ public class DateUtils {
     }
 
     
-        private static String formatElapsedTime(StringBuilder recycle, String format, long minutes,
+        @DSModeled(DSC.SAFE)
+    private static String formatElapsedTime(StringBuilder recycle, String format, long minutes,
             long seconds) {
         if (FAST_FORMAT_MMSS.equals(format)) {
             StringBuilder sb = recycle;

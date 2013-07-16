@@ -52,6 +52,7 @@ public class LogRecord implements Serializable {
 
     private transient boolean sourceInitialized;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.231 -0400", hash_original_method = "022A0341917C5DE72EB88D3FD14C370E", hash_generated_method = "BDA97495A8DA9E3048676180EA8B9675")
     public  LogRecord(Level level, String msg) {
     if(level == null)        

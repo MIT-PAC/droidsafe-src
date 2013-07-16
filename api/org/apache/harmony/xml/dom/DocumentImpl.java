@@ -52,6 +52,7 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
 
     private WeakHashMap<NodeImpl, Map<String, UserData>> nodeToUserData;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.658 -0400", hash_original_method = "163C3C7D3935E830694E09EA8384B9EA", hash_generated_method = "3F556D19054A03740E830ABA0E8C4D3B")
     public  DocumentImpl(DOMImplementationImpl impl, String namespaceURI,
             String qualifiedName, DocumentType doctype, String inputEncoding) {
@@ -210,6 +211,7 @@ NodeImpl var8A7EEC6EF96FD1552AA04838C81FCFF3_2129859364 =         createTextNode
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.661 -0400", hash_original_method = "33992AC73E126DB7F05D741A2596DA1D", hash_generated_method = "1A42F6C3BA11B6EBEFBD524D2757B4B0")
      Node cloneOrImportNode(short operation, Node node, boolean deep) {
         addTaint(deep);
@@ -630,6 +632,7 @@ String var184E07E47A1EBD9CDE63E55F8C3223BD_544016789 =         "#document";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.670 -0400", hash_original_method = "C51ADCEBFAB6A11E8C0AA42A3197A4ED", hash_generated_method = "7A64A052C46BEE8F1954A26041DB1C32")
     @Override
     public Node insertChildAt(Node toInsert, int index) {

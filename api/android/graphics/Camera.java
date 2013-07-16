@@ -66,6 +66,7 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.898 -0400", hash_original_method = "EEC65A3D99E4715BBC5254EBE009F300", hash_generated_method = "193F51559B6F0F84541452FB57314A1E")
     public void getMatrix(Matrix matrix) {
         addTaint(matrix.getTaint());
@@ -75,6 +76,7 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.899 -0400", hash_original_method = "E58BA8CAEF8D98DCBC5CC423229EB1CE", hash_generated_method = "1A7F09AF3563F6E1FDF684A9CD251FE7")
     public void applyToCanvas(Canvas canvas) {
         addTaint(canvas.getTaint());

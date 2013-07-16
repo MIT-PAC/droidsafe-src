@@ -2197,6 +2197,7 @@ View var0099E201860CA496C23576A81894B76F_1540155085 =         onCreateView(infla
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.321 -0400", hash_original_method = "E611F4C5C5E159704631D93ABD994DEF", hash_generated_method = "D25353096B5344EC0F39CEF0AD4F19B4")
           SavedState(Parcel in, ClassLoader loader) {
             addTaint(loader.getTaint());

@@ -11,6 +11,7 @@ import javax.sip.*;
 
 public class SubscriptionStateParser extends HeaderParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.974 -0400", hash_original_method = "604DE186E2AE6B899B90A7B635A83D11", hash_generated_method = "EE4717884D1C4FD3720AE6096B59C6FE")
     public  SubscriptionStateParser(String subscriptionState) {
         super(subscriptionState);
@@ -19,6 +20,7 @@ public class SubscriptionStateParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.975 -0400", hash_original_method = "DBAE404317B64960398576BE2AFF6197", hash_generated_method = "3DF077F7D908C07527C65DF0BE095586")
     protected  SubscriptionStateParser(Lexer lexer) {
         super(lexer);

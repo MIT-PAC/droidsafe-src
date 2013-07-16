@@ -12,6 +12,7 @@ public class Organization extends SIPHeader implements OrganizationHeader {
 
     protected String organization;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.628 -0400", hash_original_method = "A22A45BA0A2B2678454705CA5BB968BD", hash_generated_method = "77544CC18B49DD4CBC9F054FA924E69C")
     public  Organization() {
         super(ORGANIZATION);

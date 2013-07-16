@@ -8,6 +8,7 @@ import javax.sip.header.*;
 
 public class ProxyRequireList extends SIPHeaderList<ProxyRequire> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.755 -0400", hash_original_method = "029C98C6EA119F5ED189F5C1632A9558", hash_generated_method = "2056F217F92BE2216FB0A4CD03CA3055")
     public  ProxyRequireList() {
         super(ProxyRequire.class, ProxyRequireHeader.NAME);

@@ -503,6 +503,7 @@ PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_213783041 =             
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.224 -0400", hash_original_method = "F2C8E0AE199C63E108D40A2C42D8E5F5", hash_generated_method = "D5C63AA6DA446F7B8CF8463A0C61BC6B")
     private InvalidKeyException invalidKey() throws InvalidKeyException {
         InvalidKeyException varB88FC85BF2AB94E1CB7ED53A5595DB16_777326906 = new InvalidKeyException("Decrypted data does not represent valid PKCS#8 PrivateKeyInfo");
@@ -513,6 +514,7 @@ PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_213783041 =             
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.225 -0400", hash_original_method = "64506A3A148BFB8614C90465965B2E22", hash_generated_method = "F5AA5E3CA409264FE03E820D20177D36")
     public byte[] getEncoded() throws IOException {
     if(encoded == null)        

@@ -11,6 +11,7 @@ public class AtomicLong extends Number implements java.io.Serializable {
 
     private volatile long value;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.684 -0400", hash_original_method = "6ECA774993D880ABD38A420DC693E35F", hash_generated_method = "E46494BE6F9671647D71141C197C734C")
     public  AtomicLong(long initialValue) {
         value = initialValue;
@@ -19,6 +20,7 @@ public class AtomicLong extends Number implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.684 -0400", hash_original_method = "E5BCC7DD3ADE986582FDD04FB62FAAFA", hash_generated_method = "F7B97E703BF9873CEAC0A4C7BFF9C409")
     public  AtomicLong() {
         // ---------- Original Method ----------

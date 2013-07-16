@@ -18,6 +18,7 @@ class GLES20RenderLayer extends GLES20Layer {
 
     private GLES20Canvas mCanvas;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.045 -0400", hash_original_method = "D4B7D579B17E08A54081CE8ABAF79334", hash_generated_method = "A9899E63C4C871A25CED270B82E1DB47")
       GLES20RenderLayer(int width, int height, boolean isOpaque) {
         super(width, height, isOpaque);

@@ -32,6 +32,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
 
     private List<AttrImpl> attributes = new ArrayList<AttrImpl>();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.715 -0400", hash_original_method = "E83037DBBA9A213D892AFBAECFD42006", hash_generated_method = "FB62429B0AFFA4514DE2F18DD89625B5")
       ElementImpl(DocumentImpl document, String namespaceURI, String qualifiedName) {
         super(document);
@@ -44,6 +45,7 @@ public class ElementImpl extends InnerNodeImpl implements Element {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.716 -0400", hash_original_method = "D2CD0310D5C8F85822C82439B7C2ED0A", hash_generated_method = "E79762F2053F1B3B8BC49C769FD1DFBF")
       ElementImpl(DocumentImpl document, String name) {
         super(document);
@@ -220,6 +222,7 @@ NamedNodeMap var2F1F25D64FCCE96DAC96F4F317CFC68F_1809088924 =         new Elemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.719 -0400", hash_original_method = "75972D234B77F7219B8A807D51F2F4BE", hash_generated_method = "882087776F06E845DC9FC4ED6A8EDED2")
      Element getElementById(String name) {
         addTaint(name.getTaint());

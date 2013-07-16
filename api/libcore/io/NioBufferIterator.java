@@ -20,6 +20,7 @@ public final class NioBufferIterator extends BufferIterator {
 
     private int position;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.734 -0400", hash_original_method = "1851358DA9BE5B3D125F1A8CE59A39B7", hash_generated_method = "0424634FEE076B20A42B61ECA5D4A252")
       NioBufferIterator(int address, int size, boolean swap) {
         this.address = address;
@@ -50,6 +51,7 @@ public final class NioBufferIterator extends BufferIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.735 -0400", hash_original_method = "AF50505279F6805CCFBDD6FA7CF3687B", hash_generated_method = "1B3C42FB9872A5DA84CB54FF89C7B26F")
     public void readByteArray(byte[] dst, int dstOffset, int byteCount) {
         addTaint(dstOffset);
@@ -62,6 +64,7 @@ public final class NioBufferIterator extends BufferIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.736 -0400", hash_original_method = "47AEAAA269BE342FCE4A8C8B269BAED8", hash_generated_method = "70C02BFDA185887502737D90DB7DF0B9")
     public byte readByte() {
         byte result = Memory.peekByte(address + position);
@@ -76,6 +79,7 @@ public final class NioBufferIterator extends BufferIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.736 -0400", hash_original_method = "F3BC6F7E073908C181908589CEF0FEA1", hash_generated_method = "B6D82AD2C30A4A8ED96776BFBF0EF372")
     public int readInt() {
         int result = Memory.peekInt(address + position, swap);
@@ -90,6 +94,7 @@ public final class NioBufferIterator extends BufferIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.737 -0400", hash_original_method = "61F99480AF42C401222A5DDE05D611E9", hash_generated_method = "9D264C8747233403E14A7FFCF1C7C4A5")
     public void readIntArray(int[] dst, int dstOffset, int intCount) {
         addTaint(dstOffset);
@@ -102,6 +107,7 @@ public final class NioBufferIterator extends BufferIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.737 -0400", hash_original_method = "34473D83268F7BAA3E1410708A3FD84F", hash_generated_method = "312D537282725E5FF8A735DD4B5F896B")
     public short readShort() {
         short result = Memory.peekShort(address + position, swap);

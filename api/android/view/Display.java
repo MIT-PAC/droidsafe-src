@@ -275,6 +275,7 @@ public class Display {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.595 -0400", hash_original_method = "1DDDF7191F0FF0F7297CF97C1DA4B799", hash_generated_method = "F9A766C277FF6E923C7C8D6929824154")
     public int getRawWidth() {
         int w = getRawWidthNative();
@@ -297,6 +298,7 @@ public class Display {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.596 -0400", hash_original_method = "3ACB8E9BEACC517B317C29EAF3634629", hash_generated_method = "EC496BCF0A94E55FDC99BA461A54352B")
     public int getRawHeight() {
         int h = getRawHeightNative();
@@ -389,6 +391,7 @@ public class Display {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.598 -0400", hash_original_method = "EF32DD6952DB89EBAA6A7EFF5769279F", hash_generated_method = "CEB9F6CDC024DCF0EC6F879D5778E32C")
     public void getRealMetrics(DisplayMetrics outMetrics) {
         addTaint(outMetrics.getTaint());
@@ -474,7 +477,8 @@ public class Display {
     }
 
     
-        public static Display createCompatibleDisplay(int displayId, CompatibilityInfoHolder compat) {
+        @DSModeled(DSC.SAFE)
+    public static Display createCompatibleDisplay(int displayId, CompatibilityInfoHolder compat) {
         return new Display(displayId, compat);
     }
 

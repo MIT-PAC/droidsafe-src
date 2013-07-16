@@ -14,6 +14,7 @@ public class RSAPublicKeySpec implements KeySpec {
 
     private BigInteger publicExponent;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.016 -0400", hash_original_method = "02D2E2047B69666CD33836F402773F8F", hash_generated_method = "55386654FDBA392AC0F435BAE28B6236")
     public  RSAPublicKeySpec(BigInteger modulus, BigInteger publicExponent) {
         this.modulus = modulus;

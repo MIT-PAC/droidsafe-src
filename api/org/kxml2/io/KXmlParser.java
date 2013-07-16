@@ -3024,6 +3024,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_757820824 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.061 -0400", hash_original_method = "8F280A3CDA5A3533C9FB5C99B2A6A6C2", hash_generated_method = "1875E14C2FF645B516B31839CE1AE2FD")
     private void pushContentSource(char[] newBuffer) {
         nextContentSource = new ContentSource(nextContentSource, buffer, position, limit);
@@ -3038,6 +3039,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_757820824 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.061 -0400", hash_original_method = "E5A180E871F653CC9F75C9B7A9F73687", hash_generated_method = "AB3CB35729064AF57103D5354FFFA23D")
     private void popContentSource() {
         buffer = nextContentSource.buffer;

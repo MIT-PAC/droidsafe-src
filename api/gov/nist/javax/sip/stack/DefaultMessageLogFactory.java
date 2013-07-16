@@ -16,6 +16,7 @@ public class DefaultMessageLogFactory implements LogRecordFactory {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.377 -0400", hash_original_method = "1FCBD43A9010493D751AC2489A6EFE82", hash_generated_method = "F7ED9852DF235BFFFF83153057F034F2")
     public LogRecord createLogRecord(String message, String source,
             String destination, String timeStamp, boolean isSender,
@@ -39,6 +40,7 @@ LogRecord var78D95E71B445F3D0B3A5C204500A3C42_677581852 =         new MessageLog
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.377 -0400", hash_original_method = "6DD4174F440258B3C35BB449B3066E66", hash_generated_method = "43B8F40FF1679D2D429CE51A1B9BA535")
     public LogRecord createLogRecord(String message, String source,
             String destination, long timeStamp, boolean isSender,

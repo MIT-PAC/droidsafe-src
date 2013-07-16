@@ -124,6 +124,7 @@ public final class LoadedApk {
 
     int mClientCount = 0;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.869 -0400", hash_original_method = "B0521F2A8F8912484DABAF70EB52FE24", hash_generated_method = "47ED539A6A4A48DDDFAF9A0FD9D1728C")
     public  LoadedApk(ActivityThread activityThread, ApplicationInfo aInfo,
             CompatibilityInfo compatInfo,

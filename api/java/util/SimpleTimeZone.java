@@ -64,6 +64,7 @@ public class SimpleTimeZone extends TimeZone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.028 -0400", hash_original_method = "8CE6DF24772062229638C2D4C95CF5BA", hash_generated_method = "38D3D253CC2E2CB5FD407DDF3977B709")
     public  SimpleTimeZone(int offset, String name, int startMonth,
             int startDay, int startDayOfWeek, int startTime, int endMonth,
@@ -84,6 +85,7 @@ public class SimpleTimeZone extends TimeZone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.029 -0400", hash_original_method = "8623FC95180B9E56345F7D06857248B1", hash_generated_method = "BBC20B945F47CB5AEE1E8D963A3D89F3")
     public  SimpleTimeZone(int offset, String name, int startMonth,
             int startDay, int startDayOfWeek, int startTime, int endMonth,
@@ -118,6 +120,7 @@ public class SimpleTimeZone extends TimeZone {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.030 -0400", hash_original_method = "79A83CB077FC893587B86C22BBA871F3", hash_generated_method = "A2B5A6045C003AB476F80E12B43CD1EE")
     public  SimpleTimeZone(int offset, String name, int startMonth,
             int startDay, int startDayOfWeek, int startTime, int startTimeMode,

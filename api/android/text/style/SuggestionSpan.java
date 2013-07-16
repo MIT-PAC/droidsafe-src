@@ -52,6 +52,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
 
     private int mAutoCorrectionUnderlineColor;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.398 -0400", hash_original_method = "1AA1B5C63F654C549AF10ADB766A64DF", hash_generated_method = "DBD60BCEEE69E8AE6149D744FD438FD6")
     public  SuggestionSpan(Context context, String[] suggestions, int flags) {
         this(context, null, suggestions, flags, null);
@@ -62,6 +63,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.398 -0400", hash_original_method = "88CDF93F546795CBA0066C8B71DB0B2A", hash_generated_method = "A2CA26509DC18D698A004F0E040FEA4A")
     public  SuggestionSpan(Locale locale, String[] suggestions, int flags) {
         this(null, locale, suggestions, flags, null);
@@ -115,6 +117,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.402 -0400", hash_original_method = "AC28AFCA6CE2EAE56AAAC33C5F3867AA", hash_generated_method = "712A353AF7234E2FDCC2A17962307AE6")
     public  SuggestionSpan(Parcel src) {
         mSuggestions = src.readStringArray();

@@ -30,6 +30,7 @@ public class AutoText {
 
     private int mSize;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.737 -0400", hash_original_method = "09AEE40B99596F23FD7F50F9A174308F", hash_generated_method = "8A758FB35DD76CF0024FB127BB02DD22")
     private  AutoText(Resources resources) {
         mLocale = resources.getConfiguration().locale;

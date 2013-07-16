@@ -12,6 +12,7 @@ import java.lang.reflect.Modifier;
 
 public abstract class SIPObject extends GenericObject {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.397 -0400", hash_original_method = "F2415C91D035ABB45320678077A163BD", hash_generated_method = "90A009E0ECCD723DE48100CDD9B85812")
     protected  SIPObject() {
         super();

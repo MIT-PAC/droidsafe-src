@@ -118,6 +118,7 @@ String varF99B99AB0238EB21CB7B88C63CBC8EB5_1999545267 =         mPhone.getLine1N
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.350 -0400", hash_original_method = "3100EE5C09A183E0C52EA30DD2C38FCE", hash_generated_method = "9545F5ACF5B09034722EF8832AFB5E0A")
     public String getLine1AlphaTag() {
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");

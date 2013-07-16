@@ -18,6 +18,7 @@ public abstract class HttpsURLConnection extends HttpURLConnection {
 
     private SSLSocketFactory sslSocketFactory;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.781 -0400", hash_original_method = "3F2F2A4446750A53080925148675EF12", hash_generated_method = "21E52D30BDA62739F7F2DD6E81A4893B")
     protected  HttpsURLConnection(URL url) {
         super(url);

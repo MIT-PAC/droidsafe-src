@@ -12,6 +12,7 @@ public class SIPDateHeader extends SIPHeader implements DateHeader {
 
     protected SIPDate date;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.115 -0400", hash_original_method = "1EECE0587E859340DA3FB0354A4B8225", hash_generated_method = "82F22B1EC104F5553333AC52A87327F2")
     public  SIPDateHeader() {
         super(DATE);

@@ -58,12 +58,14 @@ public class ViewDebug {
     }
 
 
-        public static long getViewInstanceCount() {
+        @DSModeled(DSC.SAFE)
+    public static long getViewInstanceCount() {
         return Debug.countInstancesOfClass(View.class);
     }
 
     
-        public static long getViewRootImplCount() {
+        @DSModeled(DSC.SAFE)
+    public static long getViewRootImplCount() {
         return Debug.countInstancesOfClass(ViewRootImpl.class);
     }
 
@@ -292,7 +294,8 @@ public class ViewDebug {
     }
 
     
-        private static void invalidate(View root, String parameter) {
+        @DSModeled(DSC.SAFE)
+    private static void invalidate(View root, String parameter) {
         final View view = findView(root, parameter);
         if (view != null) {
             view.postInvalidate();
@@ -300,7 +303,8 @@ public class ViewDebug {
     }
 
     
-        private static void requestLayout(View root, String parameter) {
+        @DSModeled(DSC.SAFE)
+    private static void requestLayout(View root, String parameter) {
         final View view = findView(root, parameter);
         if (view != null) {
             root.post(new Runnable() {
@@ -312,7 +316,8 @@ public class ViewDebug {
     }
 
     
-        private static void profile(View root, OutputStream clientStream, String parameter) throws IOException {
+        @DSModeled(DSC.SAFE)
+    private static void profile(View root, OutputStream clientStream, String parameter) throws IOException {
         final View view = findView(root, parameter);
         BufferedWriter out = null;
         try {
@@ -1174,6 +1179,7 @@ public class ViewDebug {
 
         private ParcelFileDescriptor mFileDescriptor;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.987 -0400", hash_original_method = "837FBF9717038E47AC8A60A9DD4D19D4", hash_generated_method = "FE3B0B79E36A70DB3D7F6B03F60231A5")
           LooperProfiler(String path, FileDescriptor fileDescriptor) {
             mPath = path;
@@ -1211,6 +1217,7 @@ public class ViewDebug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.988 -0400", hash_original_method = "CBC3F19E284786CED14CDBC43ACD7A30", hash_generated_method = "BABFE7725B9CF546A9ABBF29A5E1087C")
         @Override
         public void profile(Message message, long wallStart, long wallTime,
@@ -1238,6 +1245,7 @@ public class ViewDebug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.988 -0400", hash_original_method = "A4E97683E16A36EF6068E097213C1038", hash_generated_method = "85C2FABCDE862B0F5907A7E1561356BF")
         private int getTraceId(Message message) {
             addTaint(message.getTaint());
@@ -1283,6 +1291,7 @@ public class ViewDebug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.990 -0400", hash_original_method = "B1053AAB109E078FB60D54B6D9E37ED4", hash_generated_method = "AE38BB95A86B2CDE9EBD1002E7DAC717")
         private void saveTraces() {
             FileOutputStream fos = new FileOutputStream(mFileDescriptor.getFileDescriptor());
@@ -1385,12 +1394,14 @@ public class ViewDebug {
         }
 
         
-                private static void addThreadId(int id, String name, DataOutputStream out) throws IOException {
+                @DSModeled(DSC.SAFE)
+        private static void addThreadId(int id, String name, DataOutputStream out) throws IOException {
             out.writeBytes(Integer.toString(id) + '\t' + name + '\n');
         }
 
         
-                private static void addValue(String name, String value, DataOutputStream out) throws IOException {
+                @DSModeled(DSC.SAFE)
+        private static void addValue(String name, String value, DataOutputStream out) throws IOException {
             if (name != null) {
                 out.writeBytes(name + "=");
             }
@@ -1398,7 +1409,8 @@ public class ViewDebug {
         }
 
         
-                private static void startSection(String name, DataOutputStream out) throws IOException {
+                @DSModeled(DSC.SAFE)
+        private static void startSection(String name, DataOutputStream out) throws IOException {
             out.writeBytes("*" + name + '\n');
         }
 

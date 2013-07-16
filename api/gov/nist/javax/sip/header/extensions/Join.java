@@ -16,6 +16,7 @@ public class Join extends ParametersHeader implements ExtensionHeader, JoinHeade
 
     public String callId;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.697 -0400", hash_original_method = "87F4B3791A773FA2D819A20B11BB86DF", hash_generated_method = "23B37B63F5C24397936779F145AE090F")
     public  Join() {
         super(NAME);
@@ -23,6 +24,7 @@ public class Join extends ParametersHeader implements ExtensionHeader, JoinHeade
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.698 -0400", hash_original_method = "873C342CB455582A93D9F186CC2FD1CC", hash_generated_method = "EC235DE55FAB4BA862DA3EC36BAA7583")
     public  Join(String callId) throws IllegalArgumentException {
         super(NAME);

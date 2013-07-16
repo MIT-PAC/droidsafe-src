@@ -21,6 +21,7 @@ public final class EDIPartyName {
 
     private byte[] encoding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.863 -0400", hash_original_method = "2E4835ED3F1B68ED273C9B2B326EFCFA", hash_generated_method = "F696079F2CA56838285735C3A64B1A92")
     private  EDIPartyName(String nameAssigner, String partyName, byte[] encoding) {
         this.nameAssigner = nameAssigner;

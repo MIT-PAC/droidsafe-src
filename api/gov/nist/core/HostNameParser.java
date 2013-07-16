@@ -11,6 +11,7 @@ public class HostNameParser extends ParserCore {
 
     private boolean stripAddressScopeZones = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.381 -0400", hash_original_method = "BDF66B8A6A6E733FD4317463FD36B54D", hash_generated_method = "51CABFAB96FAD259535C251BF896922A")
     public  HostNameParser(String hname) {
         addTaint(hname.getTaint());
@@ -24,6 +25,7 @@ public class HostNameParser extends ParserCore {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.381 -0400", hash_original_method = "DE9D0F52F3286ED66509E4F5CE87141D", hash_generated_method = "20CF374D4AA9C817A729173439D1F500")
     public  HostNameParser(LexerCore lexer) {
         addTaint(lexer.getTaint());
@@ -39,6 +41,7 @@ public class HostNameParser extends ParserCore {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.382 -0400", hash_original_method = "4DE693D4586CFA412C55EF35C3691C08", hash_generated_method = "DEF01A9C369D53079E6221F8E32BA4EB")
     protected void consumeDomainLabel() throws ParseException {
     if(debug)        

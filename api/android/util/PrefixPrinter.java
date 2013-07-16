@@ -13,6 +13,7 @@ public class PrefixPrinter implements Printer {
 
     private String mPrefix;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.153 -0400", hash_original_method = "F8CFF4B37C5F46A6632B10286A6992AD", hash_generated_method = "22BDD1FC37978C0870ED7EF0016E7749")
     private  PrefixPrinter(Printer printer, String prefix) {
         mPrinter = printer;
@@ -31,6 +32,7 @@ public class PrefixPrinter implements Printer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.153 -0400", hash_original_method = "278C97F139303CC78C423B9DD8BE836F", hash_generated_method = "73C60C2FC6507DE1588B2DF3C2ED613C")
     public void println(String str) {
         addTaint(str.getTaint());

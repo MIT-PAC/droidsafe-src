@@ -84,6 +84,7 @@ String varC345C9016D68CE4F646C76C73C4A46BE_1917115336 =         android.telephon
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.999 -0400", hash_original_method = "789365F05DDE44536DDE00C9B93C643B", hash_generated_method = "D85C24BB39BCB33B5566BF304B4D5843")
     @Override
     public void handleMessage(Message msg) {

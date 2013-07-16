@@ -10,6 +10,7 @@ import javax.sip.header.*;
 
 public class AllowEventsList extends SIPHeaderList<AllowEvents> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.763 -0400", hash_original_method = "BE25141B87EEBB7CC79E715B98DBCC1B", hash_generated_method = "A1202FE197D1B9DCE04FF93738262B91")
     public  AllowEventsList() {
         super(AllowEvents.class, AllowEventsHeader.NAME);

@@ -131,7 +131,8 @@ public final class Streams {
     }
 
     
-        public static int copy(InputStream in, OutputStream out) throws IOException {
+        @DSModeled(DSC.SAFE)
+    public static int copy(InputStream in, OutputStream out) throws IOException {
         int total = 0;
         byte[] buffer = new byte[8192];
         int c;

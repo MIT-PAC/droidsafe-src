@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 
 public abstract class Formatter {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.061 -0400", hash_original_method = "3D350E85A089AFD791F4A318777DFCA3", hash_generated_method = "6FBB4F35E1975CE926BE7C768BE8709E")
     protected  Formatter() {
         // ---------- Original Method ----------

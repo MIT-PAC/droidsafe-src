@@ -47,6 +47,7 @@ CardState var2D1E0840F22322CEA6782A0E26A4A513_1566293230 =         mCardState;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.433 -0400", hash_original_method = "DF1BA1B7D815247B6DDD09A8150ACB8E", hash_generated_method = "890589AE829FC25E884BEC58BB099453")
     public void setCardState(int state) {
         addTaint(state);
@@ -93,6 +94,7 @@ PinState var01A551BCF4C2957CEA82343EFB7BBFCF_1989370772 =         mUniversalPinS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.435 -0400", hash_original_method = "B5D48B53E99405CE8B767A81E3B60FC3", hash_generated_method = "28C47A5B66F3C14B36EE39BF7FEDD247")
     public void setUniversalPinState(int state) {
         addTaint(state);
@@ -226,6 +228,7 @@ switch(state){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.438 -0400", hash_original_method = "A2EAD3988F60EC73A08878F3FE639EE8", hash_generated_method = "16675080692E3ED5EA9853877242ED18")
     public void addApplication(IccCardApplication application) {
         addTaint(application.getTaint());
@@ -235,6 +238,7 @@ switch(state){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.438 -0400", hash_original_method = "57D1023FA4D5ED682F8C58AD605F19ED", hash_generated_method = "481E28371A2E65BC786C85E5F0CD274C")
     public IccCardApplication getApplication(int index) {
         addTaint(index);
@@ -246,6 +250,7 @@ IccCardApplication var4EF5E4003948690D864DE616AE0C5D71_1695984726 =         mApp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.439 -0400", hash_original_method = "29E2CBB78335356F6993D73415A74DA6", hash_generated_method = "3DD20A405D3864109B178C6A2200A748")
     @Override
     public String toString() {

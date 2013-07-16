@@ -17,6 +17,7 @@ class FtpURLInputStream extends InputStream {
 
     private Socket controlSocket;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.008 -0400", hash_original_method = "826919C06E887B63574F8C2AA9021EA4", hash_generated_method = "AE5139D29BF3056C3C33DA54DF2C377C")
     public  FtpURLInputStream(InputStream is, Socket controlSocket) {
         this.is = is;

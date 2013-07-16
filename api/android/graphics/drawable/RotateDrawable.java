@@ -24,6 +24,7 @@ public class RotateDrawable extends Drawable implements Drawable.Callback {
 
     private boolean mMutated;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.634 -0400", hash_original_method = "D68BBF88E63BC402EDEA5DC6DCE17035", hash_generated_method = "11900DAE62AC2CC48BD0D9D71B368CB1")
     public  RotateDrawable() {
         this(null, null);
@@ -31,6 +32,7 @@ public class RotateDrawable extends Drawable implements Drawable.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.635 -0400", hash_original_method = "995C0E9A95F93D2E12F98717831D2FCB", hash_generated_method = "DDDE6149D3CE02B80BFFE97CEC56A3B9")
     private  RotateDrawable(RotateState rotateState, Resources res) {
         mState = new RotateState(rotateState, this, res);

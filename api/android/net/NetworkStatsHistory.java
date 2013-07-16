@@ -55,6 +55,7 @@ public class NetworkStatsHistory implements Parcelable {
 
     private long[] operations;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.192 -0400", hash_original_method = "87FB06C16EBBFAA433DCDABD0A1A2DD9", hash_generated_method = "9BC80FF72FB768FAAFDEE19442FA2D5A")
     public  NetworkStatsHistory(long bucketDuration) {
         this(bucketDuration, 10, FIELD_ALL);
@@ -63,6 +64,7 @@ public class NetworkStatsHistory implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.193 -0400", hash_original_method = "EAC8ED507C3789501B6488454258F44A", hash_generated_method = "04CA3603F7E84D9EC51BF15D997481D4")
     public  NetworkStatsHistory(long bucketDuration, int initialSize) {
         this(bucketDuration, initialSize, FIELD_ALL);
@@ -72,6 +74,7 @@ public class NetworkStatsHistory implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.194 -0400", hash_original_method = "91F33DD6289F13A1041AE60DDEFCB3A5", hash_generated_method = "6D1F6B934D4FF55C0E9178B6DAFE7524")
     public  NetworkStatsHistory(long bucketDuration, int initialSize, int fields) {
         addTaint(fields);
@@ -103,6 +106,7 @@ public class NetworkStatsHistory implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.195 -0400", hash_original_method = "C5C154CF2AF179AC7D0E69C633C9B809", hash_generated_method = "16B280BFDD21585CB02BBFEF20047B68")
     public  NetworkStatsHistory(Parcel in) {
         bucketDuration = in.readLong();
@@ -127,6 +131,7 @@ public class NetworkStatsHistory implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.198 -0400", hash_original_method = "EDC1A57CB9EE8B46632E6D4E4377F32F", hash_generated_method = "A4500129B855603CBD25B576EEEACAB5")
     public  NetworkStatsHistory(DataInputStream in) throws IOException {
         final int version = in.readInt();
@@ -170,6 +175,7 @@ switch(version){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.198 -0400", hash_original_method = "7FCED8E87AE3E02DFD52BA28011A12D7", hash_generated_method = "5BCDAF5927C74D242506BDEB6E6A63C6")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);
@@ -194,6 +200,7 @@ switch(version){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.198 -0400", hash_original_method = "F25B937341175CC0273E2E92554C8F17", hash_generated_method = "15B0EAA0BFBDDE1927BD2E4EDA65B8BA")
     public void writeToStream(DataOutputStream out) throws IOException {
         addTaint(out.getTaint());
@@ -300,6 +307,7 @@ switch(version){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.200 -0400", hash_original_method = "44CA8F6D269FC47862A9173C06F73618", hash_generated_method = "7AEBE52FAB2D99F64AE369F2955A420F")
     public int getIndexBefore(long time) {
         addTaint(time);
@@ -326,6 +334,7 @@ switch(version){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.201 -0400", hash_original_method = "44680AD61A9756C7015B14278BDED4D1", hash_generated_method = "C6CD043CBAB9DD3619FF596887426158")
     public int getIndexAfter(long time) {
         addTaint(time);
@@ -686,6 +695,7 @@ Entry varF26DBE38545460D6F6AE1D948FF53869_1861057595 =         entry;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.212 -0400", hash_original_method = "2B4929E4FB42F9E11DEF8BA8131121D5", hash_generated_method = "BF2AA8D0235DAA532C10D8D84DEDBF18")
     @Deprecated
     public void generateRandom(long start, long end, long rxBytes, long rxPackets, long txBytes,
@@ -718,11 +728,13 @@ Entry varF26DBE38545460D6F6AE1D948FF53869_1861057595 =         entry;
     }
 
     
-        public static long randomLong(Random r, long start, long end) {
+        @DSModeled(DSC.SAFE)
+    public static long randomLong(Random r, long start, long end) {
         return (long) (start + (r.nextFloat() * (end - start)));
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.212 -0400", hash_original_method = "9A3509822F71494F86F9AA38F61F7118", hash_generated_method = "11B50048BE383ACACC538454FA7654A3")
     public void dump(String prefix, PrintWriter pw, boolean fullHistory) {
         addTaint(fullHistory);
@@ -781,6 +793,7 @@ for(int i = start;i < bucketCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.213 -0400", hash_original_method = "BC70BAB3B88F6C51172FD25602AB6B1A", hash_generated_method = "C3ADC5B56CAD220CBF9382871C785643")
     @Override
     public String toString() {

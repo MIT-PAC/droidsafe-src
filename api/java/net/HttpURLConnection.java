@@ -29,6 +29,7 @@ public abstract class HttpURLConnection extends URLConnection {
 
     protected int fixedContentLength = -1;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.633 -0400", hash_original_method = "58372EDCAE538607FC34A4F4F0582407", hash_generated_method = "EF30486123EAFC89CBD27123BFE65934")
     protected  HttpURLConnection(URL url) {
         super(url);

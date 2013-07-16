@@ -63,7 +63,8 @@ public abstract class ASN1TaggedObject extends ASN1Object implements ASN1TaggedO
     }
 
     
-        static public ASN1TaggedObject getInstance(
+        @DSModeled(DSC.SAFE)
+    static public ASN1TaggedObject getInstance(
         ASN1TaggedObject    obj,
         boolean             explicit) {
         if (explicit)
@@ -74,7 +75,8 @@ public abstract class ASN1TaggedObject extends ASN1Object implements ASN1TaggedO
     }
 
     
-        static public ASN1TaggedObject getInstance(
+        @DSModeled(DSC.SAFE)
+    static public ASN1TaggedObject getInstance(
         Object obj) {
         if (obj == null || obj instanceof ASN1TaggedObject) 
         {
@@ -84,6 +86,7 @@ public abstract class ASN1TaggedObject extends ASN1Object implements ASN1TaggedO
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.765 -0400", hash_original_method = "68AE9CCB33F87A12C7FA4AA63E83BFDC", hash_generated_method = "5F40F94E4DFE69529BB62A5F3DC12AC3")
      boolean asn1Equals(
         DERObject o) {
@@ -269,6 +272,7 @@ DEREncodable var63D6E0ED18B2DCD697AD4DA88AE04A3A_1352356018 =             getObj
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.770 -0400", hash_original_method = "D3363286272FDA8D05900543905FFBE8", hash_generated_method = "9C712BFDA0A21A97B1441721C0E17A12")
     public DERObject getLoadedObject() {
 DERObject var637323B1C4EE7CAF17B2CD40E14254B5_94608418 =         this.getDERObject();
@@ -283,6 +287,7 @@ DERObject var637323B1C4EE7CAF17B2CD40E14254B5_94608418 =         this.getDERObje
         throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.771 -0400", hash_original_method = "5750585E0FAF2C7F60E10F96F297B6DF", hash_generated_method = "6484C29F6466B6CF068A4DD24F26E7D3")
     public String toString() {
 String varD4481D92D04117EB9AC946380B8C587E_470716193 =         "[" + tagNo + "]" + obj;

@@ -7,12 +7,14 @@ import droidsafe.runtime.*;
 
 public class NoSuchMethodError extends IncompatibleClassChangeError {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.030 -0400", hash_original_method = "80EBD198F916FEE348D274437586B5BC", hash_generated_method = "47FDE86C35A2EDC474B42FD4951F4771")
     public  NoSuchMethodError() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.030 -0400", hash_original_method = "4CC31AAD9CD08413E75D886E5A5CF2D3", hash_generated_method = "F70A06E2B6A2049C050C4CF6BC542578")
     public  NoSuchMethodError(String detailMessage) {
         super(detailMessage);

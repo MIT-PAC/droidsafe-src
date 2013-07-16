@@ -19,12 +19,14 @@ public class TestSuite implements Test {
 
     private String fName;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.337 -0400", hash_original_method = "32487D028E6F96FB94F028FA0EDAB2CF", hash_generated_method = "A3BB17C6F6CBA255CBA107DF4331D4C9")
     public  TestSuite() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.338 -0400", hash_original_method = "C68844F78BFBC377AC149EE8998489D7", hash_generated_method = "694BA6E6591B51908D02CCDF5FCE398A")
     public  TestSuite(Class theClass, String name) {
         this(theClass);
@@ -72,6 +74,7 @@ for(int i= 0;i < methods.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.339 -0400", hash_original_method = "AFEF019FF6F5ADCED59C3EF3F970BCF3", hash_generated_method = "5F3C16489AAF3913541789E8247BC8C9")
     public  TestSuite(String name) {
         addTaint(name.getTaint());

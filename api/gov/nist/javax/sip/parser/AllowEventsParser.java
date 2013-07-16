@@ -10,6 +10,7 @@ import java.text.ParseException;
 
 public class AllowEventsParser extends HeaderParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.834 -0400", hash_original_method = "B8B57389921DBA1CC2428437DFD404AC", hash_generated_method = "5AC91EE0056EEBBD86FC067D51E73555")
     public  AllowEventsParser(String allowEvents) {
         super(allowEvents);
@@ -18,6 +19,7 @@ public class AllowEventsParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.834 -0400", hash_original_method = "53ECD40448666EF39463E8A30244C2E7", hash_generated_method = "8FDDFDAA1BA9889E2ED576BBB1A6320C")
     protected  AllowEventsParser(Lexer lexer) {
         super(lexer);
@@ -26,6 +28,7 @@ public class AllowEventsParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.835 -0400", hash_original_method = "457BF63FCB5F5743303EA5CCFBD04779", hash_generated_method = "BE4A73278E655A778F2B996D35C62025")
     public SIPHeader parse() throws ParseException {
     if(debug)        

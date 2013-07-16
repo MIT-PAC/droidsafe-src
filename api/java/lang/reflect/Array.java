@@ -38,7 +38,8 @@ public final class Array {
     }
 
     
-        public static boolean getBoolean(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+        @DSModeled(DSC.SAFE)
+    public static boolean getBoolean(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof boolean[]) {
             return ((boolean[]) array)[index];
         } else if (array == null) {
@@ -51,7 +52,8 @@ public final class Array {
     }
 
     
-        public static byte getByte(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+        @DSModeled(DSC.SAFE)
+    public static byte getByte(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof byte[]) {
             return ((byte[]) array)[index];
         } else {
@@ -60,7 +62,8 @@ public final class Array {
     }
 
     
-        public static char getChar(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+        @DSModeled(DSC.SAFE)
+    public static char getChar(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof char[]) {
             return ((char[]) array)[index];
         } else if (array == null) {
@@ -73,7 +76,8 @@ public final class Array {
     }
 
     
-        public static double getDouble(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+        @DSModeled(DSC.SAFE)
+    public static double getDouble(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof double[]) {
             return ((double[]) array)[index];
         } else {
@@ -82,7 +86,8 @@ public final class Array {
     }
 
     
-        public static float getFloat(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+        @DSModeled(DSC.SAFE)
+    public static float getFloat(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof float[]) {
             return ((float[]) array)[index];
         } else {
@@ -91,7 +96,8 @@ public final class Array {
     }
 
     
-        public static int getInt(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+        @DSModeled(DSC.SAFE)
+    public static int getInt(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof int[]) {
             return ((int[]) array)[index];
         } else {
@@ -125,7 +131,8 @@ public final class Array {
     }
 
     
-        public static long getLong(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+        @DSModeled(DSC.SAFE)
+    public static long getLong(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof long[]) {
             return ((long[]) array)[index];
         } else {
@@ -134,7 +141,8 @@ public final class Array {
     }
 
     
-        public static short getShort(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+        @DSModeled(DSC.SAFE)
+    public static short getShort(Object array, int index) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof short[])
             return ((short[]) array)[index];
         return getByte(array, index);
@@ -241,7 +249,8 @@ public final class Array {
     }
 
     
-        public static void setBoolean(Object array, int index, boolean value) {
+        @DSModeled(DSC.SAFE)
+    public static void setBoolean(Object array, int index, boolean value) {
         if (array instanceof boolean[]) {
             ((boolean[]) array)[index] = value;
         } else {
@@ -250,7 +259,8 @@ public final class Array {
     }
 
     
-        public static void setByte(Object array, int index, byte value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+        @DSModeled(DSC.SAFE)
+    public static void setByte(Object array, int index, byte value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof byte[]) {
             ((byte[]) array)[index] = value;
         } else {
@@ -259,7 +269,8 @@ public final class Array {
     }
 
     
-        public static void setChar(Object array, int index, char value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+        @DSModeled(DSC.SAFE)
+    public static void setChar(Object array, int index, char value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof char[]) {
             ((char[]) array)[index] = value;
         } else if (array == null) {
@@ -272,7 +283,8 @@ public final class Array {
     }
 
     
-        public static void setDouble(Object array, int index, double value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+        @DSModeled(DSC.SAFE)
+    public static void setDouble(Object array, int index, double value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof double[]) {
             ((double[]) array)[index] = value;
         } else if (array == null) {
@@ -285,7 +297,8 @@ public final class Array {
     }
 
     
-        public static void setFloat(Object array, int index, float value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+        @DSModeled(DSC.SAFE)
+    public static void setFloat(Object array, int index, float value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof float[]) {
             ((float[]) array)[index] = value;
         } else {
@@ -303,7 +316,8 @@ public final class Array {
     }
 
     
-        public static void setLong(Object array, int index, long value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+        @DSModeled(DSC.SAFE)
+    public static void setLong(Object array, int index, long value) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (array instanceof long[]) {
             ((long[]) array)[index] = value;
         } else {

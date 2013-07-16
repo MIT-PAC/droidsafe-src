@@ -53,6 +53,7 @@ public final class SamplingProfiler {
 
     private ThreadSampler threadSampler;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.029 -0400", hash_original_method = "E2013E33C1696BCCD8E7E5A3F3F67C32", hash_generated_method = "B76DB7C625B045DFE876895F1C48B5DF")
     public  SamplingProfiler(int depth, ThreadSet threadSet) {
         this.depth = depth;
@@ -247,6 +248,7 @@ Thread[] var67CF445A22B0B72AFF038F817DEEC61B_1386471828 =             threads;
 
         private int lastThread;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.034 -0400", hash_original_method = "A3C3F7BBDEF2CA8B1B158C093A73C39B", hash_generated_method = "632C96C2D961A7E346F7C616D3A7D098")
         public  ThreadGroupThreadSet(ThreadGroup threadGroup) {
     if(threadGroup == null)            

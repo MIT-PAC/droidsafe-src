@@ -190,7 +190,8 @@ public final class NativeConverter {
     }
 
     
-        private static int translateCodingErrorAction(CodingErrorAction action) {
+        @DSModeled(DSC.SAFE)
+    private static int translateCodingErrorAction(CodingErrorAction action) {
         if (action == CodingErrorAction.REPORT) {
             return 0;
         } else if (action == CodingErrorAction.IGNORE) {
@@ -203,7 +204,8 @@ public final class NativeConverter {
     }
 
     
-        public static int setCallbackDecode(long converterHandle, CharsetDecoder decoder) {
+        @DSModeled(DSC.SAFE)
+    public static int setCallbackDecode(long converterHandle, CharsetDecoder decoder) {
         return setCallbackDecode(converterHandle,
                 translateCodingErrorAction(decoder.malformedInputAction()),
                 translateCodingErrorAction(decoder.unmappableCharacterAction()),
@@ -218,7 +220,8 @@ public final class NativeConverter {
     }
 
     
-        public static int setCallbackEncode(long converterHandle, CharsetEncoder encoder) {
+        @DSModeled(DSC.SAFE)
+    public static int setCallbackEncode(long converterHandle, CharsetEncoder encoder) {
         return setCallbackEncode(converterHandle,
                 translateCodingErrorAction(encoder.malformedInputAction()),
                 translateCodingErrorAction(encoder.unmappableCharacterAction()),

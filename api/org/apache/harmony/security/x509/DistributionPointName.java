@@ -20,6 +20,7 @@ public final class DistributionPointName {
 
     private Name nameRelativeToCRLIssuer;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.856 -0400", hash_original_method = "C8749F3ED2C366A9AA00695E66A37B12", hash_generated_method = "1B48298FDCF9464F19CF22C34C0AFDA7")
     public  DistributionPointName(GeneralNames fullName) {
         this.fullName = fullName;
@@ -30,6 +31,7 @@ public final class DistributionPointName {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.857 -0400", hash_original_method = "1334C14C36DE89EB1519C775A1FE97BC", hash_generated_method = "97CE1DD7E87A43A8C11B166000B40E4F")
     public  DistributionPointName(Name nameRelativeToCRLIssuer) {
         this.fullName = null;

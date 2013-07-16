@@ -11,6 +11,7 @@ import java.io.ObjectOutputStream;
 
 public class InvalidPropertiesFormatException extends IOException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.642 -0400", hash_original_method = "00EAAF64B023AA3E2882C7003D2FFD8D", hash_generated_method = "EBA1C1CF9DDCDAB8AD09C608F35943B1")
     public  InvalidPropertiesFormatException(String m) {
         super(m);
@@ -19,6 +20,7 @@ public class InvalidPropertiesFormatException extends IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.642 -0400", hash_original_method = "9AA9838C1FE2F17D83D4EAE179EF6104", hash_generated_method = "ED8E0D12448B7E488E7C5F63D27144A7")
     public  InvalidPropertiesFormatException(Throwable c) {
         addTaint(c.getTaint());

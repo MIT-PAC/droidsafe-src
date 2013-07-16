@@ -11,6 +11,7 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
 
     private boolean value;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.544 -0400", hash_original_method = "16D96B4E7F901C7B1D5828A237ACCAC7", hash_generated_method = "92DDB70BC101508B3FB882C8FBF7B3A5")
     public  Boolean(String string) {
         this(parseBoolean(string));
@@ -19,6 +20,7 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.545 -0400", hash_original_method = "AAA63288DF04453D39E07EAA91131D42", hash_generated_method = "61C13C2ADE094B1CD107EB04FB0A6541")
     public  Boolean(boolean value) {
         this.value = value;

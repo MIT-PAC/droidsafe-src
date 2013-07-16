@@ -229,12 +229,14 @@ public class CipherSuite {
     }
 
     
-        public static CipherSuite getByName(String name) {
+        @DSModeled(DSC.SAFE)
+    public static CipherSuite getByName(String name) {
         return SUITES_BY_NAME.get(name);
     }
 
     
-        public static CipherSuite getByCode(byte b1, byte b2) {
+        @DSModeled(DSC.SAFE)
+    public static CipherSuite getByCode(byte b1, byte b2) {
         int i1 = b1 & 0xff;
         int i2 = b2 & 0xff;
         CipherSuite cs = getCipherSuiteByCode(0, i1, i2);
@@ -306,7 +308,8 @@ public class CipherSuite {
     }
 
     
-        public static String[] getSupportedCipherSuiteNames() {
+        @DSModeled(DSC.SAFE)
+    public static String[] getSupportedCipherSuiteNames() {
         return SUPPORTED_CIPHER_SUITE_NAMES.clone();
     }
 

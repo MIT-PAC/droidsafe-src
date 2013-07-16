@@ -8,6 +8,7 @@ import java.io.IOException;
 
 public class CharacterCodingException extends IOException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.720 -0400", hash_original_method = "78766B0B5A918B78169C937EF9CF6383", hash_generated_method = "FF524B2C63545A7758BDD3593136370D")
     public  CharacterCodingException() {
         // ---------- Original Method ----------

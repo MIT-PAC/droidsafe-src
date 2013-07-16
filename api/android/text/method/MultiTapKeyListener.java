@@ -20,6 +20,7 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
 
     private boolean mAutoText;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.685 -0400", hash_original_method = "6BE005A7E4D72D3CA2FBB167C1B244A8", hash_generated_method = "ACE10D57511C93DA67E8E32A11F686A8")
     public  MultiTapKeyListener(Capitalize cap,
                                boolean autotext) {

@@ -14,6 +14,7 @@ public abstract class Collator implements Comparator<Object>, Cloneable {
 
     RuleBasedCollatorICU icuColl;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.533 -0400", hash_original_method = "18D47750B740CE28B17D63629E2E6276", hash_generated_method = "C76C95AB4C34DF3BF3A2153AA412ACD4")
       Collator(RuleBasedCollatorICU icuColl) {
         this.icuColl = icuColl;
@@ -22,6 +23,7 @@ public abstract class Collator implements Comparator<Object>, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.533 -0400", hash_original_method = "D1E80A5B5BD1C7C64C7B560256B076FF", hash_generated_method = "7031D0D95FB73398508462AD1E04E9F7")
     protected  Collator() {
         icuColl = new RuleBasedCollatorICU(Locale.getDefault());

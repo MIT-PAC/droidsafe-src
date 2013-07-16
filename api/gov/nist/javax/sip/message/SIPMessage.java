@@ -129,6 +129,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
 
     protected Object applicationData;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.993 -0400", hash_original_method = "7EF8FE4247F4A54A74550FF503F5DF85", hash_generated_method = "68D380DBA20A2D78EF34207CFD9F99DB")
     public  SIPMessage() {
         this.unrecognizedHeaders = new LinkedList<String>();
@@ -1172,6 +1173,7 @@ ViaList varE4963E1622596596C3AFE385A55A1E9A_327526914 =         (ViaList) getSIP
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.029 -0400", hash_original_method = "4714C62FF03EE4A312864AB7EDBC16A3", hash_generated_method = "09B60E41928A0343A5CE1F94CD911BF5")
     public void setVia(java.util.List viaList) {
         addTaint(viaList.getTaint());
@@ -1577,6 +1579,7 @@ Object var540C13E9E156B687226421B24F2DF178_2068231515 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.033 -0400", hash_original_method = "39F2BE1EDB04320A3B64ACD0EA831DED", hash_generated_method = "8D7B8AC18D948BD084D9DE2BD3F88C2E")
     public void setMessageContent(String content, boolean strict, boolean computeContentLength, int givenLength) throws ParseException {
         addTaint(givenLength);
@@ -2152,6 +2155,7 @@ ListIterator<String> varE5CB21342F743C2789E32811BD0E4C88_738402580 =         ret
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.042 -0400", hash_original_method = "3C4825ADE695C84AAF8B57CDEA1CF4CB", hash_generated_method = "229017C0639D05E5C18428BF2DDC54E0")
     public javax.sip.header.ContentDispositionHeader getContentDisposition() {
 javax.sip.header.ContentDispositionHeader var0C3CF09A84B7387B5D513DFBB63065C9_1485943404 =         (ContentDispositionHeader) getHeaderLowerCase(CONTENT_DISPOSITION_LOWERCASE);
@@ -2162,6 +2166,7 @@ javax.sip.header.ContentDispositionHeader var0C3CF09A84B7387B5D513DFBB63065C9_14
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.043 -0400", hash_original_method = "46C03ED253FA9F93BF664C06918E9287", hash_generated_method = "0CA4D8EF60941920F83AC52BFC6850B9")
     public javax.sip.header.ContentEncodingHeader getContentEncoding() {
 javax.sip.header.ContentEncodingHeader varC6E3235EA647D2810EA39E3A1F9012F6_1533075157 =         (ContentEncodingHeader) getHeaderLowerCase(CONTENT_ENCODING_LOWERCASE);
@@ -2172,6 +2177,7 @@ javax.sip.header.ContentEncodingHeader varC6E3235EA647D2810EA39E3A1F9012F6_15330
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.043 -0400", hash_original_method = "7F8FF7046ECB01AA1B56D3558C9342AE", hash_generated_method = "2739AFC1FDC0BA7795498034E4CA922E")
     public javax.sip.header.ContentLanguageHeader getContentLanguage() {
 javax.sip.header.ContentLanguageHeader var61C269B8BA190EE217406EE4EDBBA0AE_886910581 =         (ContentLanguageHeader) getHeaderLowerCase(CONTENT_LANGUAGE_LOWERCASE);
@@ -2182,6 +2188,7 @@ javax.sip.header.ContentLanguageHeader var61C269B8BA190EE217406EE4EDBBA0AE_88691
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.043 -0400", hash_original_method = "9AC8AD6CCC74995A67CEDA1778D18415", hash_generated_method = "11F2C11B37F42B31C6030D5CD0AF602B")
     public javax.sip.header.ExpiresHeader getExpires() {
 javax.sip.header.ExpiresHeader var59689CAA2553FE76D9CF3160828DFD83_1221929641 =         (ExpiresHeader) getHeaderLowerCase(EXPIRES_LOWERCASE);

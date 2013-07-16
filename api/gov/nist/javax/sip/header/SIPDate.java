@@ -44,6 +44,7 @@ public class SIPDate implements Cloneable, Serializable {
 
     private java.util.Calendar javaCal;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.086 -0400", hash_original_method = "C73CBA236E994654D9EB18CB745C41F4", hash_generated_method = "B8FAD3ED34CC8D51B2A635E7C63EE33A")
     public  SIPDate() {
         wkday = -1;
@@ -66,6 +67,7 @@ public class SIPDate implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.089 -0400", hash_original_method = "7A2DC6C5A2282C24FE6927FC780CB71C", hash_generated_method = "FE04B2941AB15E971CA4F39146792012")
     public  SIPDate(long timeMillis) {
         addTaint(timeMillis);
@@ -239,6 +241,7 @@ String varE424DD5E6E58EB63E1272B71B5A81966_1070871338 =         encoding;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.092 -0400", hash_original_method = "AA358655086B2D4E31F8BC09FB299576", hash_generated_method = "CFBA28D3C72929107F9FEEE728855D9F")
     public java.util.Calendar getJavaCal() {
     if(javaCal == null)        

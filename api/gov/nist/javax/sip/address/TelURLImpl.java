@@ -13,6 +13,7 @@ public class TelURLImpl extends GenericURI implements javax.sip.address.TelURL {
 
     protected TelephoneNumber telephoneNumber;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.368 -0400", hash_original_method = "C17135FC5CC76AEB5F88156629F51796", hash_generated_method = "377BA745CD46D0E73B14510DE7FBBCEB")
     public  TelURLImpl() {
         this.scheme = "tel";
@@ -30,6 +31,7 @@ public class TelURLImpl extends GenericURI implements javax.sip.address.TelURL {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.376 -0400", hash_original_method = "7749933BE9F1A8F770924BE8E0DD80B2", hash_generated_method = "18EEBD56D9EDB2F914A8BEF9E0BFA1DE")
     public String getIsdnSubAddress() {
 String var172B27340AEC7A96C98F43E2188CFB2E_1249627745 =         telephoneNumber.getIsdnSubaddress();
@@ -40,6 +42,7 @@ String var172B27340AEC7A96C98F43E2188CFB2E_1249627745 =         telephoneNumber.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.377 -0400", hash_original_method = "A07C64D3F1CC8848A39F332213EC7E5C", hash_generated_method = "342F8D9796D44F753618EAB704DA605B")
     public String getPostDial() {
 String varA33BA7A023A959AD044A6D5D34B61AD7_1884051136 =         telephoneNumber.getPostDial();
@@ -61,6 +64,7 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_1295594357 =         this.scheme;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.378 -0400", hash_original_method = "95ED443083D9E3C79BD9C6E46A138264", hash_generated_method = "230534A9ABA7CE72ECEA44EFEE624382")
     public boolean isGlobal() {
         boolean var26E631107706F594FC27E5156B8AE5CE_337246065 = (telephoneNumber.isGlobal());
@@ -82,6 +86,7 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_1295594357 =         this.scheme;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.379 -0400", hash_original_method = "EE86C87982E4E6CE462C2F1CF12245F2", hash_generated_method = "951824DCB735E93CF68C84EFAE990424")
     public void setGlobal(boolean global) {
         addTaint(global);
@@ -91,6 +96,7 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_1295594357 =         this.scheme;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.379 -0400", hash_original_method = "122F825A7097C68E3CD71E8CD7DD2208", hash_generated_method = "CE312079A10A601EB683505464A4D9FB")
     public void setIsdnSubAddress(String isdnSubAddress) {
         addTaint(isdnSubAddress.getTaint());
@@ -100,6 +106,7 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_1295594357 =         this.scheme;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.380 -0400", hash_original_method = "19BDC1422936CE8CD2446692653D846C", hash_generated_method = "DC35F0337B77BF3F6C113C97E7A2B7DD")
     public void setPostDial(String postDial) {
         addTaint(postDial.getTaint());
@@ -109,6 +116,7 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_1295594357 =         this.scheme;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.380 -0400", hash_original_method = "57F725D8D07902BEB47C996DF34801CB", hash_generated_method = "D4836FB7C96184B58591AE9C3CA5A28F")
     public void setPhoneNumber(String telephoneNumber) {
         addTaint(telephoneNumber.getTaint());
@@ -167,6 +175,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1737399231 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.383 -0400", hash_original_method = "6B8A416F4757BDF00BB53E081B0C9027", hash_generated_method = "9E1D1B845F8613B9C70DD8A20D8D8CF4")
     public Object clone() {
         TelURLImpl retval = (TelURLImpl) super.clone();
@@ -238,6 +247,7 @@ NameValueList var056B7BA6BDE391B0E6EDACF40AED3FE6_278253709 =         telephoneN
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.385 -0400", hash_original_method = "601A60F168280AF8DB609489286F142F", hash_generated_method = "098359866EC490DDBD811279E3119059")
     public void setPhoneContext(String phoneContext) throws ParseException {
         addTaint(phoneContext.getTaint());

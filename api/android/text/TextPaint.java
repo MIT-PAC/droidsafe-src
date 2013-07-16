@@ -29,6 +29,7 @@ public class TextPaint extends Paint {
 
     public float underlineThickness;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.156 -0400", hash_original_method = "618AB1B9CBAFB419831828FB2E1722C9", hash_generated_method = "184089B139E22F497C16BD8D371A9B08")
     public  TextPaint() {
         super();
@@ -36,6 +37,7 @@ public class TextPaint extends Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.157 -0400", hash_original_method = "512D920DE77B40AA9B525CC82C9BBF96", hash_generated_method = "DE922740154B87E22B3BB98FB3439983")
     public  TextPaint(int flags) {
         super(flags);
@@ -44,6 +46,7 @@ public class TextPaint extends Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.157 -0400", hash_original_method = "EB2846FC8EC35D49B4CB30B890D5BAE5", hash_generated_method = "CF91856792D1C86756E14BC914E80401")
     public  TextPaint(Paint p) {
         super(p);

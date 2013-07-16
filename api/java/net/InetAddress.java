@@ -39,6 +39,7 @@ public class InetAddress implements Serializable {
 
     String hostName;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.758 -0400", hash_original_method = "D743789B4770A2F65AD981CCEDC5E9F2", hash_generated_method = "2E1DC10CC44AF4781FBC49399E601EDD")
       InetAddress(int family, byte[] ipaddress, String hostName) {
         this.family = family;
@@ -84,7 +85,8 @@ public class InetAddress implements Serializable {
     }
 
     
-        private static InetAddress[] bytesToInetAddresses(byte[][] rawAddresses, String hostName) throws UnknownHostException {
+        @DSModeled(DSC.SAFE)
+    private static InetAddress[] bytesToInetAddresses(byte[][] rawAddresses, String hostName) throws UnknownHostException {
         InetAddress[] returnedAddresses = new InetAddress[rawAddresses.length];
         for (int i = 0; i < rawAddresses.length; i++) {
             returnedAddresses[i] = makeInetAddress(rawAddresses[i], hostName);

@@ -52,6 +52,7 @@ public class BerInputStream {
 
     private Object[][] pool;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.829 -0400", hash_original_method = "879F2FC8DE697B067D571C3BF31ADD98", hash_generated_method = "D463D36C1F029E44BAE5AEAD9B64564C")
     public  BerInputStream(byte[] encoded) throws IOException {
         this(encoded, 0, encoded.length);
@@ -60,6 +61,7 @@ public class BerInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.830 -0400", hash_original_method = "FB2C80FA06C3B0FD8EA5024440AD49C3", hash_generated_method = "A0DC1E3B84D9387A24BFD9FECFEB7490")
     public  BerInputStream(byte[] encoded, int offset, int expectedLength) throws IOException {
         addTaint(expectedLength);
@@ -86,6 +88,7 @@ public class BerInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.830 -0400", hash_original_method = "43063225C34584E29FE6185CE8AAB05D", hash_generated_method = "3A90B6A336723BC11B1F963E14757334")
     public  BerInputStream(InputStream in) throws IOException {
         this(in, BUF_INCREASE_SIZE);
@@ -94,6 +97,7 @@ public class BerInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.831 -0400", hash_original_method = "ED7F15B5071BF063BB4017E313468A57", hash_generated_method = "2BC13F22EB120F0C2C0BE206B1D95E06")
     public  BerInputStream(InputStream in, int initialSize) throws IOException {
         this.in = in;
@@ -200,6 +204,7 @@ for(int i = 1;i < numOctets;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.839 -0400", hash_original_method = "A15B72AB03BE363B2B31FA8E7C1F64A3", hash_generated_method = "EE8E36DA1F86B943084B5346AAAEE051")
     public void readBitString() throws IOException {
     if(tag == ASN1Constants.TAG_BITSTRING)        
@@ -244,6 +249,7 @@ for(int i = 1;i < numOctets;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.846 -0400", hash_original_method = "70271B544C5D122FB5ABE2DE9A460926", hash_generated_method = "F7EE3DC502F8F75AFC225709FFCEA134")
     public void readEnumerated() throws IOException {
     if(tag != ASN1Constants.TAG_ENUM)        
@@ -297,6 +303,7 @@ for(int i = 1;i < numOctets;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.850 -0400", hash_original_method = "13F2651D91961A81EAE79BEA9D5230AF", hash_generated_method = "22DD234259086F819B1478BAD390D8FE")
     public void readBoolean() throws IOException {
     if(tag != ASN1Constants.TAG_BOOLEAN)        
@@ -459,6 +466,7 @@ switch(length){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.880 -0400", hash_original_method = "7B8FBAB80C5ADD7C25B56AA6C7A7A7A0", hash_generated_method = "28CE92BBB0D69CE0EE35830E235C1AAA")
     private int strToInt(int off, int count) throws ASN1Exception {
         addTaint(count);
@@ -491,6 +499,7 @@ for(int i = off, end = off + count;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.887 -0400", hash_original_method = "8E0BB334F5FA3F917B6C3297724E29A6", hash_generated_method = "7F013936907CCE39752A3133DACF1721")
     public void readInteger() throws IOException {
     if(tag != ASN1Constants.TAG_INTEGER)        
@@ -537,6 +546,7 @@ for(int i = off, end = off + count;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.890 -0400", hash_original_method = "FF10597CCF521EBE62B89D95947AA842", hash_generated_method = "2B14660A19AC379C2A797EFF6BD91371")
     public void readOctetString() throws IOException {
     if(tag == ASN1Constants.TAG_OCTETSTRING)        
@@ -579,6 +589,7 @@ for(int i = off, end = off + count;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.898 -0400", hash_original_method = "1DFB0A727BF9534907B350DDA9E1A15B", hash_generated_method = "6C14754EFE7CE6B8147CE4D4B4C59B2B")
     public void readOID() throws IOException {
     if(tag != ASN1Constants.TAG_OID)        
@@ -721,6 +732,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.920 -0400", hash_original_method = "48BA5600C2E0D1ED619B576E3555D97D", hash_generated_method = "A1E5763EE86D23678C78BCD725925CDC")
     public void readSequenceOf(ASN1SequenceOf sequenceOf) throws IOException {
         addTaint(sequenceOf.getTaint());
@@ -739,6 +751,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.924 -0400", hash_original_method = "51B09D41A46E89A1CD0754E5C1F0D1B8", hash_generated_method = "0BB94E81636AA63158B4D8CC4BF2ADF6")
     public void readSet(ASN1Set set) throws IOException {
         addTaint(set.getTaint());
@@ -759,6 +772,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.927 -0400", hash_original_method = "8593963787440F0A1F5CC05E2CC3EB6D", hash_generated_method = "917A2B570FEA7D871DF92B722C105CC5")
     public void readSetOf(ASN1SetOf setOf) throws IOException {
         addTaint(setOf.getTaint());
@@ -777,6 +791,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.928 -0400", hash_original_method = "A1B2FAB02C0A9A6283AF8F291FFC1121", hash_generated_method = "EFE3732592E5529A2231D7500C6313BF")
     private void decodeValueCollection(ASN1ValueCollection collection) throws IOException {
         addTaint(collection.getTaint());
@@ -838,6 +853,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.933 -0400", hash_original_method = "2E006816EDCCACEA53589D73DD63B701", hash_generated_method = "DEC4F319A9F35E058C4C2053FE5B12CE")
     public void readString(ASN1StringType type) throws IOException {
         addTaint(type.getTaint());
@@ -869,6 +885,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.933 -0400", hash_original_method = "34E54E473055277C13E19CBB4B194845", hash_generated_method = "63F6455E04D11C3E03D4289EC3FBC05D")
     public byte[] getEncoded() {
         byte[] encoded = new byte[offset - tagOffset];
@@ -1043,6 +1060,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.938 -0400", hash_original_method = "DCB4E4732715D068A4BB6AF51135E41B", hash_generated_method = "709E101088D93A2846ABEE2FDCFC7BFD")
     public void compactBuffer() {
     if(offset != buffer.length)        
@@ -1060,6 +1078,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.939 -0400", hash_original_method = "AFFB1C62116A7F4F1AC3586F8D79C157", hash_generated_method = "2769815BC7DD3B7E2CFA10CEBAE35832")
     public void put(Object key, Object entry) {
     if(pool == null)        

@@ -12,6 +12,7 @@ public class InReplyTo extends SIPHeader implements InReplyToHeader {
 
     protected CallIdentifier callId;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.538 -0400", hash_original_method = "561B527F5C5623362D2C0AB5E9627468", hash_generated_method = "707E7DE6657A4D9EDF233D4BDC82F475")
     public  InReplyTo() {
         super(IN_REPLY_TO);
@@ -19,6 +20,7 @@ public class InReplyTo extends SIPHeader implements InReplyToHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.539 -0400", hash_original_method = "92FFE21441DA37C601278DB74C30EBCA", hash_generated_method = "352E400B155B2FEC10BA1BDE1E4626BF")
     public  InReplyTo(CallIdentifier cid) {
         super(IN_REPLY_TO);

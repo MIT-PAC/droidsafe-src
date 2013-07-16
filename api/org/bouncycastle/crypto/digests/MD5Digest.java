@@ -25,6 +25,7 @@ public class MD5Digest extends GeneralDigest {
 
     private int xOff;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.092 -0400", hash_original_method = "CA98629A68DF074D716C2EED7E360A30", hash_generated_method = "31A92487FDF635D7C47FB6419F68D10C")
     public  MD5Digest() {
         reset();
@@ -33,6 +34,7 @@ public class MD5Digest extends GeneralDigest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.092 -0400", hash_original_method = "D456AB50DF678E39352B68F4F0BE277E", hash_generated_method = "488DA5589A8892ECA9FA29886A372F0F")
     public  MD5Digest(MD5Digest t) {
         super(t);
@@ -74,6 +76,7 @@ String var01833783E5A5FEFADF736A2D18E3349A_2087115787 =         "MD5";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.093 -0400", hash_original_method = "F91F442FD561833E473644F7E1FD670A", hash_generated_method = "CF72A0EC6A34D83F505029B81559FD0D")
     protected void processWord(
         byte[]  in,
@@ -94,6 +97,7 @@ String var01833783E5A5FEFADF736A2D18E3349A_2087115787 =         "MD5";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.093 -0400", hash_original_method = "F76655D079767580E949272246E442C2", hash_generated_method = "8141D120BF4430AEB3A8AFCB801BE99C")
     protected void processLength(
         long    bitLength) {
@@ -134,6 +138,7 @@ String var01833783E5A5FEFADF736A2D18E3349A_2087115787 =         "MD5";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.093 -0400", hash_original_method = "2C0425F44A983E26D17057A66E7774F6", hash_generated_method = "EF1C0DE9CE579C41ACBA131192C19571")
     public int doFinal(
         byte[]  out,
@@ -160,6 +165,7 @@ String var01833783E5A5FEFADF736A2D18E3349A_2087115787 =         "MD5";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.094 -0400", hash_original_method = "1D88AF12F47BE66D32BA577915055CD5", hash_generated_method = "2D0E2B2262C05E988F5E2B37638220D1")
     public void reset() {
         super.reset();

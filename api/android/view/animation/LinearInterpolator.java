@@ -9,12 +9,14 @@ import android.util.AttributeSet;
 
 public class LinearInterpolator implements Interpolator {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.894 -0400", hash_original_method = "13E92F18FAEF7A23B3FECE76D3743C4D", hash_generated_method = "DC13658407D17E107075AA3D5F40CD6F")
     public  LinearInterpolator() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.894 -0400", hash_original_method = "29CB619ACC2051B5132F64AAC7117909", hash_generated_method = "E17E5DE09DBE968101A281DD2E33328D")
     public  LinearInterpolator(Context context, AttributeSet attrs) {
         addTaint(attrs.getTaint());

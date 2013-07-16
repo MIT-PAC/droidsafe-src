@@ -31,6 +31,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
 
     AttributesAdapter qAtts;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.574 -0400", hash_original_method = "76BB97F012769A161CBA88EA8A2E4EBA", hash_generated_method = "ACE6CAC3BCC79737302ED6D2560D7BCC")
     public  XMLReaderAdapter() throws SAXException {
         setup(XMLReaderFactory.createXMLReader());
@@ -39,6 +40,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.574 -0400", hash_original_method = "8B041FBF651D4DFB0C8BE59922C68E87", hash_generated_method = "68236319045C333DDA2C63ABA6A00A6E")
     public  XMLReaderAdapter(XMLReader xmlReader) {
         addTaint(xmlReader.getTaint());
@@ -48,6 +50,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.574 -0400", hash_original_method = "E177ACAABE14FBF113725220BFCC127D", hash_generated_method = "F814BBD75BFFED9613BE2787CF10D549")
     private void setup(XMLReader xmlReader) {
     if(xmlReader == null)        
@@ -67,6 +70,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.575 -0400", hash_original_method = "6F3F2251FC8DF5A2BC76DADBD382AD55", hash_generated_method = "FE3D5976C1036574A017999CA0AE2B80")
     public void setLocale(Locale locale) throws SAXException {
         addTaint(locale.getTaint());
@@ -78,6 +82,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.575 -0400", hash_original_method = "4AE4FF8425B7CD5477DB299D2E768007", hash_generated_method = "6A7DC052A1CDF85E6C55241582AB4591")
     public void setEntityResolver(EntityResolver resolver) {
         addTaint(resolver.getTaint());
@@ -87,6 +92,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.575 -0400", hash_original_method = "88C10864FC45C96400C579FA2D97330E", hash_generated_method = "15D425542C5D7FB6C1A94A40E6518DF7")
     public void setDTDHandler(DTDHandler handler) {
         addTaint(handler.getTaint());
@@ -105,6 +111,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.576 -0400", hash_original_method = "72DE679535A20097297B12B846F37162", hash_generated_method = "6B56BD84A7CD1A51E5DEB00740286C1C")
     public void setErrorHandler(ErrorHandler handler) {
         addTaint(handler.getTaint());
@@ -134,6 +141,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.577 -0400", hash_original_method = "996AF21F9D794D58D80CF95A8864356D", hash_generated_method = "119DA054CAB6D2BE1AE12489C76320FE")
     private void setupXMLReader() throws SAXException {
         xmlReader.setFeature("http://xml.org/sax/features/namespace-prefixes", true);
@@ -157,6 +165,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.577 -0400", hash_original_method = "3CAE4C302EA4B3C24003E67187B52764", hash_generated_method = "53808CE1292164DF4F2C0DEFF480E5D8")
     public void setDocumentLocator(Locator locator) {
         addTaint(locator.getTaint());
@@ -168,6 +177,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.577 -0400", hash_original_method = "32BB697A91610539031004A9D01C7415", hash_generated_method = "A885E37BCC4F9F9864D6924DF41A4991")
     public void startDocument() throws SAXException {
     if(documentHandler != null)        
@@ -178,6 +188,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.577 -0400", hash_original_method = "1ABAE35BE3091AD40FC1FECAC80B863E", hash_generated_method = "A07C315E9EAAE9095823EDE97401D0E2")
     public void endDocument() throws SAXException {
     if(documentHandler != null)        
@@ -205,6 +216,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.578 -0400", hash_original_method = "19EEF6F7A6D3ECB16FB052F6607F9998", hash_generated_method = "8E48A42E7883B421EC89944C7059B215")
     public void startElement(String uri, String localName,
                   String qName, Attributes atts) throws SAXException {
@@ -225,6 +237,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.578 -0400", hash_original_method = "931F7A2FD2648B2A1C28EDF8D67E709D", hash_generated_method = "92BF34C58EDE960AF6CE2595BD0C34B5")
     public void endElement(String uri, String localName,
                 String qName) throws SAXException {
@@ -265,6 +278,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.579 -0400", hash_original_method = "01B4469A7119F79BBDA4CF4D6616EEC2", hash_generated_method = "0CB8AE81DF9A3474166F68D34BEED378")
     public void processingInstruction(String target, String data) throws SAXException {
         addTaint(data.getTaint());
@@ -290,6 +304,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
 
         private Attributes attributes;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.580 -0400", hash_original_method = "E50C9A4E371E1BB1DB8AD3C2D41905DA", hash_generated_method = "6DD45A539CB2C54185009851E7F4E171")
           AttributesAdapter() {
             // ---------- Original Method ----------
@@ -305,6 +320,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.581 -0400", hash_original_method = "91D9ED6BC44066DC74ACDFE2397CD717", hash_generated_method = "9DE7434789E3286BB882A57EF226E996")
         public int getLength() {
             int var88709B1969FAA074A8AF53DE81D847BB_1151960463 = (attributes.getLength());
@@ -315,6 +331,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.581 -0400", hash_original_method = "ED147CDF790A0CCB36C14BED3C6421FF", hash_generated_method = "943F273EEE8CA9E830DA9933E3DE65C0")
         public String getName(int i) {
             addTaint(i);
@@ -326,6 +343,7 @@ String varD3C415BCDC7E1755014BC06AE2F77294_1116798341 =             attributes.g
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.581 -0400", hash_original_method = "CD7B0B2A6AEED3EE82C9A05E49CD2219", hash_generated_method = "2E004F55C54F8B134B3B86739A42A099")
         public String getType(int i) {
             addTaint(i);
@@ -337,6 +355,7 @@ String var3818F318EC5F073B13DD78EF162E343C_1348390820 =             attributes.g
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.582 -0400", hash_original_method = "985A31734C2AABCE7CE9E7B351282D4B", hash_generated_method = "250ADD00AEAFCC35F47D4252BC312351")
         public String getValue(int i) {
             addTaint(i);
@@ -348,6 +367,7 @@ String varAAEFE96E9C44A0217652CF0D167CC709_186473975 =             attributes.ge
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.582 -0400", hash_original_method = "8A6442FB647EA21090E4FC03D1B47FA4", hash_generated_method = "F95DF89093563E18CBCF886BC7EC3D15")
         public String getType(String qName) {
             addTaint(qName.getTaint());
@@ -359,6 +379,7 @@ String varD43747F64DB59BD3B1BAF20BB8E1CFE0_1672162981 =             attributes.g
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.582 -0400", hash_original_method = "4A5F2D731504040B76231CFBA75E49A7", hash_generated_method = "2C312FE13A34C1938BA47C3CA4809852")
         public String getValue(String qName) {
             addTaint(qName.getTaint());

@@ -10,6 +10,7 @@ import java.text.ParseException;
 
 public class InReplyToParser extends HeaderParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.686 -0400", hash_original_method = "7EE0A4AE96DC703284542932FE729FBB", hash_generated_method = "C9411351C1E5B676DB6F3A4FEAFDBC61")
     public  InReplyToParser(String inReplyTo) {
         super(inReplyTo);
@@ -18,6 +19,7 @@ public class InReplyToParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.687 -0400", hash_original_method = "513EEBB38452DE199EDFA3069C858F5F", hash_generated_method = "CAE03DC805C508DE845B029D8069273B")
     protected  InReplyToParser(Lexer lexer) {
         super(lexer);
@@ -26,6 +28,7 @@ public class InReplyToParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.688 -0400", hash_original_method = "A68E0921F08E40A4FFD6BCC285B4B760", hash_generated_method = "29C93F2C91D2ABFFB7442FF9C7C26B68")
     public SIPHeader parse() throws ParseException {
     if(debug)        

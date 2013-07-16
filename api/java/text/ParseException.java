@@ -10,6 +10,7 @@ public class ParseException extends Exception {
 
     private int errorOffset;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.802 -0400", hash_original_method = "23D3B11AE402493DA8F476B948072A30", hash_generated_method = "D1555EF0FFA9A6471C758462A176BF9F")
     public  ParseException(String detailMessage, int location) {
         super(detailMessage + (" (at offset " + location + ")"));

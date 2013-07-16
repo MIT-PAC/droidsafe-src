@@ -35,6 +35,7 @@ public class WapPushOverSms {
 
     private WapPushConnection mWapConn = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.582 -0400", hash_original_method = "7408CC3A8D1F62FE40C38A48E5413064", hash_generated_method = "ACDB8A63C6AB0F97DDE14EB0A53DC58A")
     public  WapPushOverSms(Phone phone, SMSDispatcher smsDispatcher) {
         mSmsDispatcher = smsDispatcher;
@@ -182,6 +183,7 @@ public class WapPushOverSms {
 
         private Context mOwner;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.587 -0400", hash_original_method = "0BE0ADFB7F6B93B695220B7DE6F98A35", hash_generated_method = "6773F021BC021CF2B844CE5946D38111")
         public  WapPushConnection(Context ownerContext) {
             mOwner = ownerContext;

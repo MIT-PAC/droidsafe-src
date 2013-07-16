@@ -7,12 +7,14 @@ import droidsafe.runtime.*;
 
 public class UnsupportedEncodingException extends IOException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.073 -0400", hash_original_method = "120B741722292072F71D190D9178D3DA", hash_generated_method = "7FBF0CFE4EECE294CF78ED69B3643DFF")
     public  UnsupportedEncodingException() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.074 -0400", hash_original_method = "94DA8264158047F6F5B3A7DFC24D11B0", hash_generated_method = "0C997B919FD30A9E9D895FCD884B43F6")
     public  UnsupportedEncodingException(String detailMessage) {
         super(detailMessage);

@@ -30,6 +30,7 @@ public class X500Name extends ASN1Encodable implements ASN1Choice {
 
     private RDN[] rdns;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.714 -0400", hash_original_method = "A073765FBB48105361A5471731765C3D", hash_generated_method = "093B2FEDED0BC18154E34520F6C498C4")
     public  X500Name(X500NameStyle style, X500Name name) {
         this.rdns = name.rdns;
@@ -71,6 +72,7 @@ for(Enumeration e = seq.getObjects();e.hasMoreElements();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.716 -0400", hash_original_method = "A1AF24A6A66F9AA8032E8762CECAE163", hash_generated_method = "69E2F80B6124FA423B7E6C6A1781254E")
     public  X500Name(
         RDN[] rDNs) {
@@ -80,6 +82,7 @@ for(Enumeration e = seq.getObjects();e.hasMoreElements();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.716 -0400", hash_original_method = "DBB344B9E2C452B4F0EF3A22549C0276", hash_generated_method = "6BE0AEF6BEA980DE15D8648A58D50D5B")
     public  X500Name(
         X500NameStyle style,
@@ -92,6 +95,7 @@ for(Enumeration e = seq.getObjects();e.hasMoreElements();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.716 -0400", hash_original_method = "3F7EF5F2D5D32EA7D1792E59FB00B21E", hash_generated_method = "4D2AD5C19F9F366370E3DA365F2B86D0")
     public  X500Name(
         String dirName) {
@@ -101,6 +105,7 @@ for(Enumeration e = seq.getObjects();e.hasMoreElements();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.717 -0400", hash_original_method = "1876E348797BFE6D82540F4D5D4BC70E", hash_generated_method = "055B504C6120FB44555E494659EAA9A2")
     public  X500Name(
         X500NameStyle style,
@@ -120,7 +125,8 @@ for(Enumeration e = seq.getObjects();e.hasMoreElements();)
     }
 
     
-        public static X500Name getInstance(
+        @DSModeled(DSC.SAFE)
+    public static X500Name getInstance(
         Object  obj) {
         if (obj instanceof X500Name)
         {
@@ -190,6 +196,7 @@ RDN[] var3F12A0424932F6B5155AA6C49B63FE6E_1123839864 =         tmp;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.731 -0400", hash_original_method = "F0EEE66F5B12B6A45E4A635050172EB9", hash_generated_method = "FD8A11F5A990123A56C5C1D98D387866")
     public DERObject toASN1Object() {
 DERObject varC9775E03431426A026E62F2D736073FB_1531193550 =         new DERSequence(rdns);
@@ -200,6 +207,7 @@ DERObject varC9775E03431426A026E62F2D736073FB_1531193550 =         new DERSequen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.731 -0400", hash_original_method = "ECFD9A32E241F4FBD41987B44388CEAF", hash_generated_method = "E1448229CFB96868EF59EF11390899FB")
     public int hashCode() {
     if(isHashCodeCalculated)        
@@ -283,6 +291,7 @@ DERObject varC9775E03431426A026E62F2D736073FB_1531193550 =         new DERSequen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.731 -0400", hash_original_method = "567E5D4F3D1A0F74E3A26BABA7FE2561", hash_generated_method = "C4E815B9C8431B6BEFADAE17100C64C9")
     public String toString() {
 String var5C06B59BC1D23B5BBA16F9412A6A7844_1588339791 =         style.toString(this);

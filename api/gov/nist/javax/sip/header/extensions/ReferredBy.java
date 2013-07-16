@@ -11,6 +11,7 @@ import gov.nist.javax.sip.address.*;
 
 public final class ReferredBy extends AddressParametersHeader implements ExtensionHeader, ReferredByHeader {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.754 -0400", hash_original_method = "C3DEC8F418CE8BBD8D4ED1D7A2F51A12", hash_generated_method = "44B60B9435122CE6D895DDF9A9B319C3")
     public  ReferredBy() {
         super(NAME);

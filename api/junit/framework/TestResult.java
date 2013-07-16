@@ -24,6 +24,7 @@ public class TestResult extends Object {
 
     private boolean fStop;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.262 -0400", hash_original_method = "8F7D8E869233098F7B3F654359449283", hash_generated_method = "077061235279A3097A476FE8301982CA")
     public  TestResult() {
         fFailures= new Vector();

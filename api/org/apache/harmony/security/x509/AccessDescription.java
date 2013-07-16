@@ -21,6 +21,7 @@ public final class AccessDescription {
 
     private byte[] encoding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.651 -0400", hash_original_method = "FB49FC0C1C39F6A3E5A7CF2545478BA4", hash_generated_method = "2DC2B4F5F853BD382B1E8F46D351C1FF")
     private  AccessDescription(String accessMethod, GeneralName accessLocation, byte[] encoding) {
         this.accessMethod = accessMethod;

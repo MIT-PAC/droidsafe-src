@@ -8,6 +8,7 @@ import libcore.icu.RuleBasedCollatorICU;
 
 public class RuleBasedCollator extends Collator {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.659 -0400", hash_original_method = "31FBA21C05DBD02C02879BE90D845185", hash_generated_method = "4BAD392396C7D2F8879451F9FF7C21AB")
       RuleBasedCollator(RuleBasedCollatorICU wrapper) {
         super(wrapper);
@@ -16,6 +17,7 @@ public class RuleBasedCollator extends Collator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:00.659 -0400", hash_original_method = "A2DABBE445FB3F5820A862D094AFC471", hash_generated_method = "5310EF898DCE07C16DE7E03217C2DCF4")
     public  RuleBasedCollator(String rules) throws ParseException {
         addTaint(rules.getTaint());

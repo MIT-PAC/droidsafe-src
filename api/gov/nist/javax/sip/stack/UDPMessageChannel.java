@@ -951,6 +951,7 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_1046894759 =         this.peerProtoco
 
         int port;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.601 -0400", hash_original_method = "041AEFB77EA8D7413831FA09D8E7E5F2", hash_generated_method = "AF34990A25633808182801353E3CAE7C")
         public  PingBackTimerTask(String ipAddress, int port) {
             this.ipAddress = ipAddress;

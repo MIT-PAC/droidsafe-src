@@ -7,12 +7,14 @@ import droidsafe.runtime.*;
 
 public class ArithmeticException extends RuntimeException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.454 -0400", hash_original_method = "24115F2AC5B4BFA51305F479377E801A", hash_generated_method = "C79B2E7C2BBB39468FF7E68D70189892")
     public  ArithmeticException() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.455 -0400", hash_original_method = "FAC340A34D2F62BBB9E823C2AE5CBB24", hash_generated_method = "ECEB91A71265109801A18B2FD1482B61")
     public  ArithmeticException(String detailMessage) {
         super(detailMessage);

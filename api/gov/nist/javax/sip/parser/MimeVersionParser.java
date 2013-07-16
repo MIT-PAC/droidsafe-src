@@ -10,6 +10,7 @@ import javax.sip.*;
 
 public class MimeVersionParser extends HeaderParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.846 -0400", hash_original_method = "25EDC565C62A5EB92B68AF9D2AE96AEA", hash_generated_method = "61EF8513FB01478CF0DBB78AFE1EC056")
     public  MimeVersionParser(String mimeVersion) {
         super(mimeVersion);
@@ -18,6 +19,7 @@ public class MimeVersionParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.847 -0400", hash_original_method = "931DCFE817B53A973ED5D85AA9B55841", hash_generated_method = "6511C9A06A99E68915FA6E59B17CA6E4")
     protected  MimeVersionParser(Lexer lexer) {
         super(lexer);
@@ -26,6 +28,7 @@ public class MimeVersionParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.877 -0400", hash_original_method = "5451311C0FC76A3AF05558D3E031ACC9", hash_generated_method = "B06441E4359C2C89137187D3587F5A63")
     public SIPHeader parse() throws ParseException {
     if(debug)        

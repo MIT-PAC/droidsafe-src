@@ -155,6 +155,7 @@ String var2460B846747F8B22185AD8BE722266A5_928927993 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.069 -0400", hash_original_method = "D5825B232A74B71A26A12413148003F7", hash_generated_method = "3B6BC052A730CD4CC839ACA88FCF6674")
     private void format(int date, int digits, StringBuilder sb) {
         addTaint(sb.getTaint());

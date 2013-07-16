@@ -19,6 +19,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
 
     Sync sync;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:17.613 -0400", hash_original_method = "1C7ADE1C43258ED1B8231199DCC94C2F", hash_generated_method = "A2362B6FC27126ECCCC3F80E71268B1E")
     public  ReentrantReadWriteLock() {
         this(false);
@@ -26,6 +27,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:17.614 -0400", hash_original_method = "A6CD875E912D33CADF6A81571C0A078B", hash_generated_method = "40472467CFFF2D78F76EB33BF5AABCCB")
     public  ReentrantReadWriteLock(boolean fair) {
         sync = fair ? new FairSync() : new NonfairSync();
@@ -313,6 +315,7 @@ String varF396C8E82331D702AD553E1BB16E0C78_1310107075 =         super.toString()
 
         private transient int firstReaderHoldCount;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:17.618 -0400", hash_original_method = "89DA4D8EA92261B26BAB9F4AB5CDD482", hash_generated_method = "F96B116FAEB3CF7E52F47724A0D1064E")
           Sync() {
             readHolds = new ThreadLocalHoldCounter();
@@ -471,6 +474,7 @@ for(;;)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:17.631 -0400", hash_original_method = "4AE7D8D2A940AB168E8F2908DE9ACCF1", hash_generated_method = "005D1AE2034E3144E64A4AF3C30587F9")
         private IllegalMonitorStateException unmatchedUnlockException() {
 IllegalMonitorStateException varAC3EE6A2AAB0A3AB5F9F21BDB3141812_621759118 =             new IllegalMonitorStateException(
@@ -819,6 +823,7 @@ Thread var968C91F9D0BAAE3E440CA3AE2A5B5090_1393350936 =             ((exclusiveC
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:17.642 -0400", hash_original_method = "4E48396D4489DBF7E8DA7E593070FC82", hash_generated_method = "10F4B8958932986F227806E7628AC7E0")
         private void readObject(java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
             addTaint(s.getTaint());
@@ -870,6 +875,7 @@ Thread var968C91F9D0BAAE3E440CA3AE2A5B5090_1393350936 =             ((exclusiveC
             }
 
 
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:17.642 -0400", hash_original_method = "65FB587992A751B61B2E99AB391905DE", hash_generated_method = "FE31CB2E0C9A9AA6BBFB5BD4E094BB7C")
             public HoldCounter initialValue() {
 HoldCounter varDEF0919C35A2158C32922614479824E5_1623450393 =                 new HoldCounter();
@@ -980,6 +986,7 @@ HoldCounter varDEF0919C35A2158C32922614479824E5_1623450393 =                 new
 
         private Sync sync;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:17.645 -0400", hash_original_method = "86296C44CAAC51998FCC18AC6C334852", hash_generated_method = "90987B1257AE5908AD98C331E68E3B50")
         protected  ReadLock(ReentrantReadWriteLock lock) {
             sync = lock.sync;
@@ -1077,6 +1084,7 @@ String var5655CEE833115D216B799F25DFB7F2BA_1570649879 =             super.toStri
 
         private Sync sync;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:17.647 -0400", hash_original_method = "2F59DA9CAF578BD2524C05A37F86DF01", hash_generated_method = "A7C2CC6406BCF200D20C7B5AD2A21C1A")
         protected  WriteLock(ReentrantReadWriteLock lock) {
             sync = lock.sync;

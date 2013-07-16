@@ -94,6 +94,7 @@ public class LinearLayout extends ViewGroup {
 
     private int mDividerPadding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.341 -0400", hash_original_method = "FE94B0C3331DC48DD922B45C9927A2E5", hash_generated_method = "5599C5BD2C841CC6FACAC31E386AB809")
     public  LinearLayout(Context context) {
         super(context);
@@ -102,6 +103,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.341 -0400", hash_original_method = "90765D7AD39C5FFE28F827609E4D9AAF", hash_generated_method = "925B6A265C6D1E46B0725F25315F719B")
     public  LinearLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -252,6 +254,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.345 -0400", hash_original_method = "4D234859DAD3D7D2BD3ABC15BDBCF93C", hash_generated_method = "7D984BD009131C8D48CBEC98ADBFAC87")
     @Override
     protected void onDraw(Canvas canvas) {
@@ -558,6 +561,7 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_337656075 =         getChildAt(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.352 -0400", hash_original_method = "3F3B158F407FDE6BDDE91ED473E376D3", hash_generated_method = "38D57F229EDBAF022EF059A47EA4C0DB")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -1338,6 +1342,7 @@ for(int i = 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.386 -0400", hash_original_method = "38617BD257A07AF46AAF702E88FA7138", hash_generated_method = "B3E7499C806C69C5A24D37B8FEFE1CCB")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
@@ -1532,6 +1537,7 @@ switch(gravity & Gravity.VERTICAL_GRAVITY_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.395 -0400", hash_original_method = "74793CDC2820B7770CC6C7B645CE6A0C", hash_generated_method = "BD26B7AE50FED9DA7F9954C0EB3295D4")
     private void setChildFrame(View child, int left, int top, int width, int height) {
         addTaint(height);
@@ -1601,6 +1607,7 @@ switch(gravity & Gravity.VERTICAL_GRAVITY_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.397 -0400", hash_original_method = "076C59065FCBD07F7CAA4FFA6D12CC3A", hash_generated_method = "A03836F2AB6748AC9B219828C5EEA77B")
     @android.view.RemotableViewMethod
     public void setHorizontalGravity(int horizontalGravity) {
@@ -1620,6 +1627,7 @@ switch(gravity & Gravity.VERTICAL_GRAVITY_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.397 -0400", hash_original_method = "EE245B70888F9F1582A126D948173E64", hash_generated_method = "E89CA8A9E7442430CE8604395B3DB0DE")
     @android.view.RemotableViewMethod
     public void setVerticalGravity(int verticalGravity) {
@@ -1680,6 +1688,7 @@ LayoutParams var540C13E9E156B687226421B24F2DF178_1781687435 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.399 -0400", hash_original_method = "E5FE95308BC48D9899CFDE5A4F7DEDB6", hash_generated_method = "9CC3D2600C97A34AD1AC50C0D2AAEC2C")
     @Override
     protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {

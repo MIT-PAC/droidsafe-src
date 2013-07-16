@@ -17,6 +17,7 @@ public class Interpolator {
 
     private int native_instance;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.268 -0400", hash_original_method = "19122541958F7FA844B795B7542E8DCA", hash_generated_method = "8508DD55D9C551232014E9D4DB09C860")
     public  Interpolator(int valueCount) {
         mValueCount = valueCount;
@@ -29,6 +30,7 @@ public class Interpolator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.268 -0400", hash_original_method = "39AB5A4645DDA75ACBCA394AE8D72CCA", hash_generated_method = "8340695937F416EFEBA414C444356F88")
     public  Interpolator(int valueCount, int frameCount) {
         mValueCount = valueCount;

@@ -61,6 +61,7 @@ for(int i = 0;i < accepted.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.866 -0400", hash_original_method = "D10E4DAB13CE1708B5021E84302588D4", hash_generated_method = "7EB0F58B7E9A9640D6ADA6B783F73FF2")
     public  CertificateRequest(HandshakeIODataStream in, int length) throws IOException {
         addTaint(length);
@@ -91,6 +92,7 @@ for(int i = 0;i < accepted.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.867 -0400", hash_original_method = "B75D6FC2C98C385FE0F3914F9044B1F0", hash_generated_method = "D9B0E49081A3BE31065801DEB7A1559F")
     @Override
     public void send(HandshakeIODataStream out) {

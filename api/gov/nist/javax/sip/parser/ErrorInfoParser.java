@@ -10,6 +10,7 @@ import java.text.ParseException;
 
 public class ErrorInfoParser extends ParametersParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.432 -0400", hash_original_method = "5AFF5330EA4A2771143BBB17EF4E79AC", hash_generated_method = "83D3B9F618EFC876DDE2B0F01045EEC6")
     public  ErrorInfoParser(String errorInfo) {
         super(errorInfo);
@@ -18,6 +19,7 @@ public class ErrorInfoParser extends ParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.432 -0400", hash_original_method = "8F205A65B870DAE08BD525603424E427", hash_generated_method = "5E6090731FD6E4E3002E0DA957BD8102")
     protected  ErrorInfoParser(Lexer lexer) {
         super(lexer);

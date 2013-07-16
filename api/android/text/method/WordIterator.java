@@ -20,6 +20,7 @@ public class WordIterator implements Selection.PositionIterator {
 
     private BreakIterator mIterator;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.084 -0400", hash_original_method = "AB8CC8AEC36CC88806001A57825CD492", hash_generated_method = "F6A3B701594167B73AD57D2CAA166CCE")
     public  WordIterator() {
         this(Locale.getDefault());
@@ -35,6 +36,7 @@ public class WordIterator implements Selection.PositionIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.085 -0400", hash_original_method = "2DDA1ACFC823FC1E605D540F8F620C39", hash_generated_method = "7AD3B9AAC2855D8186DCC9D466D4D797")
     public void setCharSequence(CharSequence charSequence, int start, int end) {
         addTaint(end);
@@ -61,6 +63,7 @@ public class WordIterator implements Selection.PositionIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.086 -0400", hash_original_method = "17B38EF0704190E954BC6997CBD1C0A2", hash_generated_method = "23C47998C97189F31C70C487F7F7259C")
     public int preceding(int offset) {
         addTaint(offset);
@@ -96,6 +99,7 @@ public class WordIterator implements Selection.PositionIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.087 -0400", hash_original_method = "DA3F9C05695BD8FAB846E8868344998B", hash_generated_method = "168AB8EB8F069CE5722F58821BAAD40F")
     public int following(int offset) {
         addTaint(offset);
@@ -131,6 +135,7 @@ public class WordIterator implements Selection.PositionIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.088 -0400", hash_original_method = "0D432F790B6324713F4FDAF5BC7F832D", hash_generated_method = "939FEBF3C0543B9493DAE287D916E8B4")
     public int getBeginning(int offset) {
         addTaint(offset);
@@ -181,6 +186,7 @@ public class WordIterator implements Selection.PositionIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.089 -0400", hash_original_method = "BDAE18DC1A45A79C9134EA83087086A0", hash_generated_method = "CB7A7E296E9D261AF1B8BED5EF4FC42E")
     public int getEnd(int offset) {
         addTaint(offset);
@@ -231,6 +237,7 @@ public class WordIterator implements Selection.PositionIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.090 -0400", hash_original_method = "60A45BC82DD7A1F2C5F7476F31AEBCCE", hash_generated_method = "BE8EE8729C102E6B34FD4A17426E6B48")
     private boolean isAfterLetterOrDigit(int shiftedOffset) {
         addTaint(shiftedOffset);
@@ -256,6 +263,7 @@ public class WordIterator implements Selection.PositionIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.092 -0400", hash_original_method = "C811EDD4D225F2A549F13F257AE33EBA", hash_generated_method = "E3E1191D0D6037D48A19F4C38A2F67A6")
     private boolean isOnLetterOrDigit(int shiftedOffset) {
         addTaint(shiftedOffset);
@@ -281,6 +289,7 @@ public class WordIterator implements Selection.PositionIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.093 -0400", hash_original_method = "715BE561E387B8F91746DB56405B0D1C", hash_generated_method = "8C88189C0A1C14B686527F7B5E01342E")
     private void checkOffsetIsValid(int shiftedOffset) {
         addTaint(shiftedOffset);

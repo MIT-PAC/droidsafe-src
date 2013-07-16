@@ -165,6 +165,7 @@ for(int j = i - start + 1, e = inext - start;j < e;++j)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.118 -0400", hash_original_method = "20A60861C26C58A53A0282FABD9ED153", hash_generated_method = "5A4A461B5A73E637F80ED8E2B627765F")
      void draw(Canvas c, float x, int top, int y, int bottom) {
         addTaint(bottom);
@@ -381,6 +382,7 @@ for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.122 -0400", hash_original_method = "1E01EF0F20C48DC869D8591ACBCB40DD", hash_generated_method = "43AE0AEEB57D0409DEDB420597E13B59")
     private float drawRun(Canvas c, int start,
             int limit, boolean runIsRtl, float x, int top, int y, int bottom,

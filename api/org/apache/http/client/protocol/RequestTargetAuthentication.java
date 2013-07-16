@@ -22,6 +22,7 @@ public class RequestTargetAuthentication implements HttpRequestInterceptor {
 
     private final Log log = LogFactory.getLog(getClass());
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.268 -0400", hash_original_method = "18D614B059705CD511AA931F33F39470", hash_generated_method = "54C850D3041D3B5C1C4E415558AD142B")
     public  RequestTargetAuthentication() {
         super();

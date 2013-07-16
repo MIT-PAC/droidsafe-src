@@ -16,12 +16,14 @@ public class PointF implements Parcelable {
 
     public float y;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.801 -0400", hash_original_method = "AC71EBB0EDB844032A48DF20A80FB47B", hash_generated_method = "80B58F578A9E18CAE61877DE29226528")
     public  PointF() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.803 -0400", hash_original_method = "9BF59EFAA8370540E900DAD5DAB0D2CC", hash_generated_method = "025777B23DE5DE112C6936ED28AD52FF")
     public  PointF(float x, float y) {
         this.x = x;
@@ -32,6 +34,7 @@ public class PointF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.804 -0400", hash_original_method = "41FF564220F19615AF5858F564634DDE", hash_generated_method = "43B60ECB24E323638CDF17F248D0955A")
     public  PointF(Point p) {
         this.x = p.x;

@@ -17,6 +17,7 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.970 -0400", hash_original_method = "ACE2451F013C7800286FF5717C2987CD", hash_generated_method = "CADF042E68E5AE21C5DEC4539E5C1EAA")
     @Override
     public Object getAttribute(String name) throws IllegalArgumentException {
@@ -29,6 +30,7 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.971 -0400", hash_original_method = "64128D577B53B34B78055B7B7FC0B66E", hash_generated_method = "A6EE69CF7A37E4005424CCE8ECB56C43")
     @Override
     public boolean getFeature(String name) throws ParserConfigurationException {
@@ -104,6 +106,7 @@ DocumentBuilder varFD34A536430ED6812E338CBCF7B883AA_312149181 =         builder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.972 -0400", hash_original_method = "0A4757F3D6B7A1DEAD03596DF47811E0", hash_generated_method = "6DFA4850F68396B9E2C586233D4BC137")
     @Override
     public void setAttribute(String name, Object value) throws IllegalArgumentException {
@@ -117,6 +120,7 @@ DocumentBuilder varFD34A536430ED6812E338CBCF7B883AA_312149181 =         builder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.972 -0400", hash_original_method = "C59D3A431C1BE604F6A4E910499EE08A", hash_generated_method = "65874C4DEE948F81CDD71D046564E92B")
     @Override
     public void setFeature(String name, boolean value) throws ParserConfigurationException {

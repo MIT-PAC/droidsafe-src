@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public class DateParseException extends Exception {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.476 -0400", hash_original_method = "0DFD241FD26282310774337DBB864354", hash_generated_method = "46CBFA588965752E74CF7AC631DE7478")
     public  DateParseException() {
         super();

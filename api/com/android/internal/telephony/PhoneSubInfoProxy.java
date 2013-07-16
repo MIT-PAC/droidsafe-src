@@ -89,6 +89,7 @@ String var78619270DC9056B01A41B8C7ADA444E2_638446639 =         mPhoneSubInfo.get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.357 -0400", hash_original_method = "64EA0D6EA297012E928C67F727560D62", hash_generated_method = "A8859177414B3593BE5A08ADD4B1C694")
     public String getLine1AlphaTag() {
 String varA8750D8FD1CA94253E89C0BCFFC60CB9_27905860 =         mPhoneSubInfo.getLine1AlphaTag();

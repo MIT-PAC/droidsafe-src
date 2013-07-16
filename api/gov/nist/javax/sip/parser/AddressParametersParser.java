@@ -10,6 +10,7 @@ import java.text.ParseException;
 
 public class AddressParametersParser extends ParametersParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.727 -0400", hash_original_method = "C3BA12083B7F74793C4F2E2FB3C1DB43", hash_generated_method = "0A98B82046309B91B28D34D99AE83B32")
     protected  AddressParametersParser(Lexer lexer) {
         super(lexer);
@@ -18,6 +19,7 @@ public class AddressParametersParser extends ParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.727 -0400", hash_original_method = "D3B3C15A6507A072481DABC46CDC9E97", hash_generated_method = "FE6FDA4F8652475F409E7BF0F7526903")
     protected  AddressParametersParser(String buffer) {
         super(buffer);
@@ -26,6 +28,7 @@ public class AddressParametersParser extends ParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.728 -0400", hash_original_method = "CAB6813880E3A34B3347219ABB88ECB8", hash_generated_method = "7397D47E35DCEACFF126F85021A286CD")
     protected void parse(AddressParametersHeader addressParametersHeader) throws ParseException {
         addTaint(addressParametersHeader.getTaint());

@@ -14,6 +14,7 @@ public final class ReasonFlags {
 
     private boolean[] flags;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.261 -0400", hash_original_method = "0723455182874DC076BEC16F53F1DAFE", hash_generated_method = "ACE7EB18781E115780B1426F26EFDD8E")
     public  ReasonFlags(boolean[] flags) {
         this.flags = flags;

@@ -9,6 +9,7 @@ import java.text.ParseException;
 
 public class StatusLineParser extends Parser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.848 -0400", hash_original_method = "F0811D6B30C3A9A6294707377FD9E5BC", hash_generated_method = "F397B50EA6E3FCE8DEE7C71AE8627540")
     public  StatusLineParser(String statusLine) {
         addTaint(statusLine.getTaint());
@@ -18,6 +19,7 @@ public class StatusLineParser extends Parser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.849 -0400", hash_original_method = "D89BEA50DEDE4DC8C4AB185A28D8567A", hash_generated_method = "7866C00787255358665DC9ECBE14F660")
     public  StatusLineParser(Lexer lexer) {
         addTaint(lexer.getTaint());

@@ -7,12 +7,14 @@ import droidsafe.runtime.*;
 
 public class InstantiationException extends Exception {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.910 -0400", hash_original_method = "4FE52ED96718E49A2C12E29EB6D41BB1", hash_generated_method = "41A9F8C5A9604CBE4AC2140585ED8858")
     public  InstantiationException() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.911 -0400", hash_original_method = "5F54417A31BE783961475C78B79DF3BE", hash_generated_method = "BC53AD53B6A263E4868C2D5DB52E8A85")
     public  InstantiationException(String detailMessage) {
         super(detailMessage);

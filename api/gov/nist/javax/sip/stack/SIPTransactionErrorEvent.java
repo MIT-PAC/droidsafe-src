@@ -11,6 +11,7 @@ public class SIPTransactionErrorEvent extends EventObject {
 
     private int errorID;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:45.734 -0400", hash_original_method = "09AF95BC0271C57553075E85B6A27865", hash_generated_method = "1D8558C0CAAE0977D236E119DD6C68C8")
       SIPTransactionErrorEvent(
         SIPTransaction sourceTransaction,

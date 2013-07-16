@@ -32,6 +32,7 @@ public final class IssuingDistributionPoint extends ExtensionValue {
 
     private boolean onlyContainsAttributeCerts = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.141 -0400", hash_original_method = "5DAD3F148ACCC07E280B84A8DEBF40F1", hash_generated_method = "5F1FB5B4AFDE276C1F722AA473CBA495")
     public  IssuingDistributionPoint(DistributionPointName distributionPoint,
             ReasonFlags onlySomeReasons) {

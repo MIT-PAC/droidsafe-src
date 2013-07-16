@@ -42,6 +42,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
 
     private transient int hashCode = 0;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.889 -0400", hash_original_method = "E2046ACAAE3FADB78A197B33030B87EF", hash_generated_method = "3E3C50692E79BCF975961B46539BD421")
       BigInteger(BigInt bigInt) {
         addTaint(bigInt.getTaint());
@@ -60,6 +61,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.889 -0400", hash_original_method = "6A0326FFA4F8DFD22C6BE505D4303A06", hash_generated_method = "92216124076F98A374EFEB47B7382295")
       BigInteger(int sign, long value) {
         addTaint(value);
@@ -74,6 +76,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.890 -0400", hash_original_method = "8FE766A630C587CF3D36C6776BEC57AB", hash_generated_method = "48E2A9CFEFC5EDAD56DC73CAEB4CFCF6")
       BigInteger(int sign, int numberLength, int[] digits) {
         addTaint(digits[0]);
@@ -85,6 +88,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.891 -0400", hash_original_method = "0CDCBE4F35D9E336AD3EE0D0E2D0776D", hash_generated_method = "686B233538FAF7C902DF47CC69300AEE")
     public  BigInteger(int numBits, Random random) {
     if(numBits < 0)        
@@ -130,6 +134,7 @@ for(int i = 0;i < numberLength;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.892 -0400", hash_original_method = "E06C60E93C7C91BB266029ED9C3D532A", hash_generated_method = "96B307F3B2CBEF711EE5A8A3ED4497FA")
     public  BigInteger(int bitLength, int certainty, Random unused) {
         addTaint(unused.getTaint());
@@ -150,6 +155,7 @@ for(int i = 0;i < numberLength;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.892 -0400", hash_original_method = "858DE6DF463E0F4BFB47F99F590AB0EF", hash_generated_method = "32A998134AF57C10FF47D8D7A17DA61C")
     public  BigInteger(String value) {
         addTaint(value.getTaint());
@@ -163,6 +169,7 @@ for(int i = 0;i < numberLength;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.893 -0400", hash_original_method = "A13EC41ACC3DF589C11C4779074EEB6B", hash_generated_method = "A65B44CF201C284B56A1746ABA31FE24")
     public  BigInteger(String value, int radix) {
         addTaint(radix);
@@ -226,6 +233,7 @@ for(int i = 0;i < numberLength;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.893 -0400", hash_original_method = "4725614D4A9FDEE6DBC2F6DB247469CF", hash_generated_method = "E2F436D0E1E6CD8FF195D45968F250EF")
     public  BigInteger(int signum, byte[] magnitude) {
         addTaint(magnitude[0]);
@@ -277,6 +285,7 @@ for(byte element : magnitude)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.894 -0400", hash_original_method = "ABB1E16F13BE7B2CA5EC1AADB52B2350", hash_generated_method = "6D6390D88492187DD4255A396D9ACD96")
     public  BigInteger(byte[] value) {
         addTaint(value[0]);

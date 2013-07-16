@@ -99,6 +99,7 @@ List<SignerInfo> var7B0F5615FE64201092B96D782E134CD6_2001901246 =         signer
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.129 -0400", hash_original_method = "39B5111592E9C9F7E25B09890D35A8D3", hash_generated_method = "55A0B2268ED591B9A2DF075638008F9C")
     @Override
     public String toString() {

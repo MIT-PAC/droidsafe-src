@@ -29,6 +29,7 @@ final class HttpsURLConnectionImpl extends HttpsURLConnection {
 
     private HttpUrlConnectionDelegate delegate;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.517 -0400", hash_original_method = "F295B580C14FF5A1734764BBCB494556", hash_generated_method = "D7761E6D33F0C47B987ABA4B6009A9B6")
     protected  HttpsURLConnectionImpl(URL url, int port) {
         super(url);
@@ -38,6 +39,7 @@ final class HttpsURLConnectionImpl extends HttpsURLConnection {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.518 -0400", hash_original_method = "4AA9A1CCAF3707AB1A6045360D36785E", hash_generated_method = "144D9F5811306E263A0B42085141274A")
     protected  HttpsURLConnectionImpl(URL url, int port, Proxy proxy) {
         super(url);

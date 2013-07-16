@@ -95,6 +95,7 @@ BigInteger varC5241B523DA06FB03F5998149659C655_1511091224 =         serialNumber
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.147 -0400", hash_original_method = "E49EED34625AA0C2EE5919DE429AB631", hash_generated_method = "95B74E580DA3B5434F5A2809E3B8615F")
     public String getDigestAlgorithm() {
 String var1EA0FCDFB070C78EDCDBFC3FC9833618_881821269 =         digestAlgorithm.getAlgorithm();
@@ -105,6 +106,7 @@ String var1EA0FCDFB070C78EDCDBFC3FC9833618_881821269 =         digestAlgorithm.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.147 -0400", hash_original_method = "C6CE7835E1C3757C7439121AECC2E59C", hash_generated_method = "615FB78DD78B5D2A543F534F890D4663")
     public String getDigestEncryptionAlgorithm() {
 String varD7ABE868ACE670569FA3F032243EA182_35547336 =         digestEncryptionAlgorithm.getAlgorithm();
@@ -135,6 +137,7 @@ List<AttributeTypeAndValue> var111D566C00971C79F18A3FFB116CA856_2034026704 =    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.148 -0400", hash_original_method = "807A0AFC068DD73DE0C4C3C2177CA7D2", hash_generated_method = "8EF19C1FE07DE97F3DEBCA0FF23A94C0")
     public byte[] getEncodedAuthenticatedAttributes() {
     if(authenticatedAttributes == null)        
@@ -165,6 +168,7 @@ List<AttributeTypeAndValue> var111D566C00971C79F18A3FFB116CA856_2034026704 =    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.149 -0400", hash_original_method = "1FB56313E7A9E641FD4CA0515EC1DCD9", hash_generated_method = "2B0503EE8DC7019203851D5A80E29B12")
     public String toString() {
         StringBuilder res = new StringBuilder();

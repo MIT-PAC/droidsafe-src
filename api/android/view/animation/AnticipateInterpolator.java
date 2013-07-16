@@ -13,6 +13,7 @@ public class AnticipateInterpolator implements Interpolator {
 
     private float mTension;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.728 -0400", hash_original_method = "7C2506D70A86643AB33B7796EA331F9D", hash_generated_method = "761E0AC6C5BE23250969F07445914E84")
     public  AnticipateInterpolator() {
         mTension = 2.0f;
@@ -29,6 +30,7 @@ public class AnticipateInterpolator implements Interpolator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.728 -0400", hash_original_method = "82BFA8AC47DF9DDA6D8E3F7FE8B02F6B", hash_generated_method = "904814DD998FA5C8676C061F993C9AA7")
     public  AnticipateInterpolator(Context context, AttributeSet attrs) {
         addTaint(attrs.getTaint());

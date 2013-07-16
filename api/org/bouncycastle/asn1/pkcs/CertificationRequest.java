@@ -23,12 +23,14 @@ public class CertificationRequest extends ASN1Encodable {
 
     protected DERBitString sigBits = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.275 -0400", hash_original_method = "1CFEB89AC9CC2F01B2815840CE7D5DC0", hash_generated_method = "0A9AC513A138E0AC5A936CA016F6281D")
     protected  CertificationRequest() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.276 -0400", hash_original_method = "3309D08710207237EB4B8131BFE31567", hash_generated_method = "B889F4024E78CCDC5E0231360ADCD23C")
     public  CertificationRequest(
         CertificationRequestInfo requestInfo,
@@ -44,6 +46,7 @@ public class CertificationRequest extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.277 -0400", hash_original_method = "9E46DFFF284F62A1B4585D1F4143C812", hash_generated_method = "6C0103451ABC5EFB3EFDF0C037047379")
     public  CertificationRequest(
         ASN1Sequence seq) {
@@ -57,7 +60,8 @@ public class CertificationRequest extends ASN1Encodable {
     }
 
     
-        public static CertificationRequest getInstance(Object o) {
+        @DSModeled(DSC.SAFE)
+    public static CertificationRequest getInstance(Object o) {
         if (o instanceof CertificationRequest)
         {
             return (CertificationRequest)o;
@@ -103,6 +107,7 @@ DERBitString varC5633072113013D70DBB727048BAA9AC_1715680413 =         sigBits;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.278 -0400", hash_original_method = "52E36C7D6F310829AB6E6BD23A9D3BF1", hash_generated_method = "04DD74737A224AF02358083B566BE5B8")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

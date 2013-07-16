@@ -20,6 +20,7 @@ public class UsimDataDownloadHandler extends Handler {
 
     private CommandsInterface mCI;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.910 -0400", hash_original_method = "2BD8C1E6CB98C9A3BA971F52113C7C15", hash_generated_method = "6253F0A4A1A3E88DC85C7C8CF860EEA2")
     public  UsimDataDownloadHandler(CommandsInterface commandsInterface) {
         mCI = commandsInterface;
@@ -192,6 +193,7 @@ public class UsimDataDownloadHandler extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.919 -0400", hash_original_method = "906B533055E100DFA749FD0587281F55", hash_generated_method = "15DB38CEE7D6B7D886C8F91F0944A93D")
     private void acknowledgeSmsWithError(int cause) {
         addTaint(cause);

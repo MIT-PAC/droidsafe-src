@@ -11,6 +11,7 @@ public final class ASN1Explicit extends ASN1Constructed {
 
     public ASN1Type type;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.588 -0400", hash_original_method = "B0F7BA820AB1A580DEB9F8D4C1B1D195", hash_generated_method = "8400C7DFCCC28DC069879BA416A6411D")
     public  ASN1Explicit(int tagNumber, ASN1Type type) {
         this(CLASS_CONTEXTSPECIFIC, tagNumber, type);
@@ -20,6 +21,7 @@ public final class ASN1Explicit extends ASN1Constructed {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.588 -0400", hash_original_method = "3F0FA66BFD46DABED8E86D16322A75CE", hash_generated_method = "A772C1132E1161798F83F3B6D3D1D46C")
     public  ASN1Explicit(int tagClass, int tagNumber, ASN1Type type) {
         super(tagClass, tagNumber);
@@ -69,6 +71,7 @@ Object var6AD043AF0280111F31D0D60A6CD70863_2074098184 =         getDecodedObject
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.589 -0400", hash_original_method = "185B9650CC00F76A6008982D1539FA31", hash_generated_method = "A7D08E67C26C573634E3EEFCBAA61B2A")
     public void encodeContent(BerOutputStream out) {
         addTaint(out.getTaint());
@@ -78,6 +81,7 @@ Object var6AD043AF0280111F31D0D60A6CD70863_2074098184 =         getDecodedObject
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.590 -0400", hash_original_method = "8EE64F8332C91721514C0E16F4A7E840", hash_generated_method = "AB3F9776D0F77F0EC23D8597949630CF")
     public void setEncodingContent(BerOutputStream out) {
         addTaint(out.getTaint());
@@ -87,6 +91,7 @@ Object var6AD043AF0280111F31D0D60A6CD70863_2074098184 =         getDecodedObject
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.590 -0400", hash_original_method = "8627A6334FE9B6784BD6CB87A9255671", hash_generated_method = "2E6540786BC439F4B7A4AAD87328F817")
     @Override
     public String toString() {

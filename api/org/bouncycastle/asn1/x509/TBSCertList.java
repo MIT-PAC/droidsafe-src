@@ -40,6 +40,7 @@ public class TBSCertList extends ASN1Encodable {
 
     X509Extensions crlExtensions;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.249 -0400", hash_original_method = "979311BA6EB06D915E93C36961984E0B", hash_generated_method = "86422CE3ECBE3C939591A11C3949CB81")
     public  TBSCertList(
         ASN1Sequence  seq) {
@@ -261,6 +262,7 @@ DERObject var42A78C062640017A329FA085150BC1B8_417030053 =         seq;
 
         X509Extensions crlEntryExtensions;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.254 -0400", hash_original_method = "5E4E4AC1AFC14B33E134B0DE6A66EF69", hash_generated_method = "336316E2F076729EEE4A65479CF6A30D")
         public  CRLEntry(
             ASN1Sequence  seq) {
@@ -345,6 +347,7 @@ DERObject var42A78C062640017A329FA085150BC1B8_206139203 =             seq;
 
         private Enumeration en;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.255 -0400", hash_original_method = "6A29318C110C11222950EB9111D0EBEA", hash_generated_method = "CA8192B4B33D4156BE2130DE3439FDDC")
           RevokedCertificatesEnumeration(Enumeration en) {
             this.en = en;

@@ -19,6 +19,7 @@ public class StringTokenizer implements Enumeration<Object> {
 
     private int position;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.110 -0400", hash_original_method = "B454FB9D24CB40B920B0F26A1DEB0F99", hash_generated_method = "EB61119094E6FDDB7986B6AC19E9A0E5")
     public  StringTokenizer(String string) {
         this(string, " \t\n\r\f", false);
@@ -27,6 +28,7 @@ public class StringTokenizer implements Enumeration<Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.111 -0400", hash_original_method = "19F75AB88247B84D1EA58EB13E75D4B3", hash_generated_method = "AD660F0D83D59036DF028A02B99004EE")
     public  StringTokenizer(String string, String delimiters) {
         this(string, delimiters, false);
@@ -36,6 +38,7 @@ public class StringTokenizer implements Enumeration<Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.112 -0400", hash_original_method = "8522BA3F0D65BC6302678F3FDA0BEB48", hash_generated_method = "217A499D0B05A457D6B337B91FEED69F")
     public  StringTokenizer(String string, String delimiters,
             boolean returnDelimiters) {

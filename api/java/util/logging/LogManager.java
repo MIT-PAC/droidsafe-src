@@ -29,6 +29,7 @@ public class LogManager {
 
     private PropertyChangeSupport listeners;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.178 -0400", hash_original_method = "F83269E1889FF9DC50A0440D3CD9234B", hash_generated_method = "2FCA8E9D58726F53DD9A1342774D88C0")
     protected  LogManager() {
         loggers = new Hashtable<String, Logger>();

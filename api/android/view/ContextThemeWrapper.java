@@ -23,6 +23,7 @@ public class ContextThemeWrapper extends ContextWrapper {
 
     private LayoutInflater mInflater;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.557 -0400", hash_original_method = "2CB22459058FC77C2233290E776C217F", hash_generated_method = "A52E6A8077E95A96382ABDDF2BE523D0")
     public  ContextThemeWrapper() {
         super(null);
@@ -30,6 +31,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.557 -0400", hash_original_method = "41565ED1870D25D8F04F2364AB693A1C", hash_generated_method = "BB006EB06E8E607466055A931E2EFE9A")
     public  ContextThemeWrapper(Context base, int themeres) {
         super(base);
@@ -77,6 +79,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.559 -0400", hash_original_method = "21593966DDD7C797D13E86548D9AA1B9", hash_generated_method = "7FFCB92CDA37F350A048A6CC3AAEA2E6")
     @Override
     public Resources.Theme getTheme() {

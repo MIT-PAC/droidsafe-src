@@ -51,6 +51,7 @@ E varB73A11C4827B454321D868D4D1819714_1426584779 =         get(key, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.600 -0400", hash_original_method = "C9E62D05249D95E7C50A204FF58AB455", hash_generated_method = "C5083D9EA9E4DB05D88C386690930A43")
     public E get(int key, E valueIfKeyNotFound) {
         addTaint(valueIfKeyNotFound.getTaint());
@@ -110,6 +111,7 @@ E var9A906597833C8E11199C8E4BAC361563_1134367384 =             (E) mValues[i];
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.602 -0400", hash_original_method = "1992218C2CA2A9A793E8A4995C16BACA", hash_generated_method = "CA640CDFEEE9EE6687BB0AE18A3535CE")
     public void removeAt(int index) {
     if(mValues[index] != DELETED)        
@@ -125,6 +127,7 @@ E var9A906597833C8E11199C8E4BAC361563_1134367384 =             (E) mValues[i];
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.602 -0400", hash_original_method = "2C5263E549B4F001B6A4C4F0C63C3EBE", hash_generated_method = "EBA03DAF57CC7BB8DE07C1BF8CB32496")
     public void removeAtRange(int index, int size) {
         addTaint(size);
@@ -245,6 +248,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.608 -0400", hash_original_method = "AD3650995583655A8D059B5C8CE85FAD", hash_generated_method = "34E03FBB8BFACBB6DB559B5B0BA1E42C")
     public int keyAt(int index) {
         addTaint(index);
@@ -263,6 +267,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.608 -0400", hash_original_method = "23592451CB50AFA841274AC3732C91A0", hash_generated_method = "0EDA29448E435E58F980B76093494B10")
     public E valueAt(int index) {
         addTaint(index);
@@ -281,6 +286,7 @@ E varFD8FAAC0C3572ACBC73A56817ABFB8BB_1278431279 =         (E) mValues[index];
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.609 -0400", hash_original_method = "7F2F6916ED61673EAF8E91642A81797D", hash_generated_method = "C9DDB9E9EA02C5782F8816164CB68524")
     public void setValueAt(int index, E value) {
     if(mGarbage)        
@@ -296,6 +302,7 @@ E varFD8FAAC0C3572ACBC73A56817ABFB8BB_1278431279 =         (E) mValues[index];
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.609 -0400", hash_original_method = "2AE05DC6F4A524A5C2D1FCD4B3573FB7", hash_generated_method = "0307DA699FE9E91313EECEBD385EFAAC")
     public int indexOfKey(int key) {
         addTaint(key);

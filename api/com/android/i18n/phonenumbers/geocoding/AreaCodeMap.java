@@ -54,6 +54,7 @@ AreaCodeMapStorageStrategy var31ED7B04A16DD339604BD6A4FB648540_1920404784 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.301 -0400", hash_original_method = "541ED4E710A19E1EDF02867FA9DD727B", hash_generated_method = "CA13BCF3368D8BFF28D6CC5B9001FE18")
     private AreaCodeMapStorageStrategy createDefaultMapStorage() {
 AreaCodeMapStorageStrategy var5612085B6FCF2B9D00F0475758608512_1509582090 =         new DefaultMapStorage();
@@ -64,6 +65,7 @@ AreaCodeMapStorageStrategy var5612085B6FCF2B9D00F0475758608512_1509582090 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.302 -0400", hash_original_method = "A0A2E6205BB60A092B8D66A75357AACD", hash_generated_method = "1E943F9E1860837A0D5CFA25BF70A9DF")
     private AreaCodeMapStorageStrategy createFlyweightMapStorage() {
 AreaCodeMapStorageStrategy var3D730F5F1921CF750D41B64D8DC60212_1750060108 =         new FlyweightMapStorage();

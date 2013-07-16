@@ -65,6 +65,7 @@ public final class RequestHeaders {
 
     private String proxyAuthorization;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.662 -0400", hash_original_method = "43C01170F0D6680BF52373FD0CBCB9B1", hash_generated_method = "4674D86252DCD3882B7924CBE3BCC387")
     public  RequestHeaders(URI uri, RawHeaders headers) {
         this.uri = uri;

@@ -45,6 +45,7 @@ public class CursorLoader extends AsyncTaskLoader<Cursor> {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.290 -0400", hash_original_method = "E85CFBB14C85DBDBF43218DB60311B9E", hash_generated_method = "A5D059C6DDFA88FF863DBA7E23D0D50C")
     public  CursorLoader(Context context, Uri uri, String[] projection, String selection,
             String[] selectionArgs, String sortOrder) {

@@ -11,6 +11,7 @@ import javax.sip.*;
 
 public class RetryAfterParser extends HeaderParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.686 -0400", hash_original_method = "72BD428D826DE1DC77C96CF7C6F2A06C", hash_generated_method = "E2C7543DA0C1A825C0CFA9D6F4377574")
     public  RetryAfterParser(String retryAfter) {
         super(retryAfter);
@@ -19,6 +20,7 @@ public class RetryAfterParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.687 -0400", hash_original_method = "E2C340AAC5E92DCEDAC2E3B0DF98081F", hash_generated_method = "10262A43B95845EE6DCB49933AA67729")
     protected  RetryAfterParser(Lexer lexer) {
         super(lexer);
@@ -27,6 +29,7 @@ public class RetryAfterParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.732 -0400", hash_original_method = "4F8238CAC8DB557039065AEC5DC20094", hash_generated_method = "A4FBFD4AA17812BE88289156DB153B36")
     public SIPHeader parse() throws ParseException {
     if(debug)        

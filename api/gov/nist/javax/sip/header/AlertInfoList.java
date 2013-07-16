@@ -8,6 +8,7 @@ import javax.sip.header.*;
 
 public class AlertInfoList extends SIPHeaderList<AlertInfo> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.731 -0400", hash_original_method = "A08E8746373CA778814FF59876F6CC5B", hash_generated_method = "1454CC4C294B31424367C5E69A11C07E")
     public  AlertInfoList() {
         super( AlertInfo.class,AlertInfoHeader.NAME);

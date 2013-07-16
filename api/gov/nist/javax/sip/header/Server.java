@@ -13,6 +13,7 @@ public class Server extends SIPHeader implements ServerHeader {
 
     protected List productTokens;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.418 -0400", hash_original_method = "28A485C01704A957BCAF31556583EFBE", hash_generated_method = "305518061AF0A2CB840B318B99F5BA97")
     public  Server() {
         super(NAME);

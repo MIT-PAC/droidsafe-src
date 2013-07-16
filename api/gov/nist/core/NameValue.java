@@ -26,6 +26,7 @@ public class NameValue extends GenericObject implements Entry<String,String> {
 
     private Object value;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.654 -0400", hash_original_method = "673B7BD3BE99F15EF906052B0E031E5B", hash_generated_method = "22606C6D179EA13EE251F2CB102498B8")
     public  NameValue() {
         name = null;
@@ -58,6 +59,7 @@ public class NameValue extends GenericObject implements Entry<String,String> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.655 -0400", hash_original_method = "2B84565E65A85C087167BA7C90B69F9F", hash_generated_method = "FD4F72848B1B5443110848234E64A90B")
     public  NameValue(String n, Object v) {
         this(n, v, false);
@@ -262,6 +264,7 @@ Object varF9E19AD6135C970F387F77C6F3DE4477_927588770 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.664 -0400", hash_original_method = "C7D1B39DFE3B0192F0BEF83FC7C40106", hash_generated_method = "8BD4BB7916C83DD8CC325AE2B2412EB1")
     public boolean equals(Object other) {
         addTaint(other.getTaint());

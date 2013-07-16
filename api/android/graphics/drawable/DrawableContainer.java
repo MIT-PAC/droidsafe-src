@@ -43,6 +43,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
 
     private Drawable mLastDrawable;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.897 -0400", hash_original_method = "094684F7E86BAEC8B113ECD0EF1A35E3", hash_generated_method = "094684F7E86BAEC8B113ECD0EF1A35E3")
     public DrawableContainer ()
     {
@@ -859,6 +860,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_1160049040 =         this;
 
         int mExitFadeDuration;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.941 -0400", hash_original_method = "BB71D442E5298FC9607AB33C7CE8B85B", hash_generated_method = "46E064BC52ED8FF773216D8A59CA3090")
           DrawableContainerState(DrawableContainerState orig, DrawableContainer owner,
                 Resources res) {

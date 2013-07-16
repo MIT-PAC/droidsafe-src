@@ -15,6 +15,7 @@ public class TestFailure extends Object {
 
     protected Throwable fThrownException;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.240 -0400", hash_original_method = "5E53006C9FF9FBE366053539294E0761", hash_generated_method = "019011B38156D6EB94834D3FFD52306F")
     public  TestFailure(Test failedTest, Throwable thrownException) {
         fFailedTest= failedTest;

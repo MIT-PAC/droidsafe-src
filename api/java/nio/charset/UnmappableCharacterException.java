@@ -10,6 +10,7 @@ public class UnmappableCharacterException extends CharacterCodingException {
 
     private int inputLength;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.894 -0400", hash_original_method = "A3967154D82E53B3FB96C6C01ABA540C", hash_generated_method = "CD28904CBDAD593411E47A61730B54DC")
     public  UnmappableCharacterException(int length) {
         this.inputLength = length;
@@ -29,6 +30,7 @@ public class UnmappableCharacterException extends CharacterCodingException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.895 -0400", hash_original_method = "7D10807CFABB560A12F38675F46A3FF5", hash_generated_method = "B50428EE10BB8673B33AE15CDEE475E8")
     @Override
     public String getMessage() {

@@ -25,6 +25,7 @@ public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Clone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.802 -0400", hash_original_method = "A94A461A61DAB692596F2C820B79ED22", hash_generated_method = "A6C5D84D9A701B6CDF74CA290070974E")
     public  TreeSet() {
         backingMap = new TreeMap<E, Object>();
@@ -227,6 +228,7 @@ Iterator<E> varD3454307C396409E194901FB5FF7ED83_1302659798 =         descendingS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.808 -0400", hash_original_method = "4513FA2253D64848D60CCD34F380731F", hash_generated_method = "0BA6B0A0F8C1096C0F6F8520ABE3DC1A")
     public E first() {
 E var8DB841A69B1D735980AF64DA2B78D0EC_1824334429 =         backingMap.firstKey();
@@ -237,6 +239,7 @@ E var8DB841A69B1D735980AF64DA2B78D0EC_1824334429 =         backingMap.firstKey()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.808 -0400", hash_original_method = "4FE03970533DF6513B3C509D55D59969", hash_generated_method = "ABAD470F7110BC794453EEBDD11D2072")
     public E last() {
 E var2C2B2EBC96908803319022A0DEF6CB15_1083319558 =         backingMap.lastKey();
@@ -247,6 +250,7 @@ E var2C2B2EBC96908803319022A0DEF6CB15_1083319558 =         backingMap.lastKey();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.808 -0400", hash_original_method = "C4703F0CB955C02A45F56DAC0B50011B", hash_generated_method = "2540FED7E3C8FCF6B7D8D94F0724A5DE")
     public E pollFirst() {
         Map.Entry<E, Object> entry = backingMap.pollFirstEntry();
@@ -259,6 +263,7 @@ E varAAB8B0B77C6EA53269B891049D031A51_1194621196 =         (entry == null) ? nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.809 -0400", hash_original_method = "F4F5E61D6851DE05B80C97EFA1D29318", hash_generated_method = "BBEBAAD61D9D05FB2EE0C2DB5816F3F7")
     public E pollLast() {
         Map.Entry<E, Object> entry = backingMap.pollLastEntry();
@@ -271,6 +276,7 @@ E varAAB8B0B77C6EA53269B891049D031A51_339854002 =         (entry == null) ? null
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.809 -0400", hash_original_method = "255C56AF04920CEFFC0E8FF16D0886BA", hash_generated_method = "03DE1B6D0EC0E362622E2301A81404BD")
     public E higher(E e) {
         addTaint(e.getTaint());
@@ -282,6 +288,7 @@ E varC6C81EAEF2C464D73BE5EA1C987CA06B_342089204 =         backingMap.higherKey(e
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.809 -0400", hash_original_method = "2923D8AB0DD9211CCF8AD13865FD4B03", hash_generated_method = "E34205D624EADE6ED942978F6401FF61")
     public E lower(E e) {
         addTaint(e.getTaint());
@@ -293,6 +300,7 @@ E var2DDBCD2256760211E3C0FF2C55B1D44F_1863948877 =         backingMap.lowerKey(e
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.810 -0400", hash_original_method = "F02A103FC86BCAE7229665056FB74739", hash_generated_method = "E8A316D3D23FA0ABD4095F9FC546BFA9")
     public E ceiling(E e) {
         addTaint(e.getTaint());
@@ -304,6 +312,7 @@ E var9543504692B376FEAF1B79BFE5FAB480_1290282709 =         backingMap.ceilingKey
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.810 -0400", hash_original_method = "09066F58D542F9425C5670329C148EFE", hash_generated_method = "37EE6DE7E4886ACD8D1401A5DC818BD9")
     public E floor(E e) {
         addTaint(e.getTaint());

@@ -12,6 +12,7 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
 
     ByteOrder order = ByteOrder.BIG_ENDIAN;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.955 -0400", hash_original_method = "8BF63B2B8E79FA88256074D41FD2061C", hash_generated_method = "B1FB9B21998280D6987895DE380D1F33")
       ByteBuffer(int capacity, MemoryBlock block) {
         super(0, capacity, block);
@@ -21,7 +22,8 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     }
 
     
-        public static ByteBuffer allocate(int capacity) {
+        @DSModeled(DSC.SAFE)
+    public static ByteBuffer allocate(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException();
         }
@@ -29,7 +31,8 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     }
 
     
-        public static ByteBuffer allocateDirect(int capacity) {
+        @DSModeled(DSC.SAFE)
+    public static ByteBuffer allocateDirect(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException();
         }
@@ -42,7 +45,8 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     }
 
     
-        public static ByteBuffer wrap(byte[] array, int start, int byteCount) {
+        @DSModeled(DSC.SAFE)
+    public static ByteBuffer wrap(byte[] array, int start, int byteCount) {
         Arrays.checkOffsetAndCount(array.length, start, byteCount);
         ByteBuffer buf = new ReadWriteHeapByteBuffer(array);
         buf.position = start;
@@ -146,6 +150,7 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     public abstract ByteBuffer duplicate();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.960 -0400", hash_original_method = "D3C1AD6F8182660C2A5A272A59569D9E", hash_generated_method = "7665817FBD2A3EA064641235AE76235B")
     @Override
     public boolean equals(Object other) {
@@ -195,6 +200,7 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     public abstract byte get();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.961 -0400", hash_original_method = "9A475FF9B92E938C1B69F2A1BC2AE724", hash_generated_method = "6EAA770EB0172E36630BCB0C79C498F7")
     public ByteBuffer get(byte[] dst) {
         addTaint(dst[0]);
@@ -206,6 +212,7 @@ ByteBuffer varAF8F268F60258FE30F192DE78F11CD4A_358581275 =         get(dst, 0, d
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.962 -0400", hash_original_method = "1D8E1FFC265A4E71218B8D81ECBD99D1", hash_generated_method = "1C6C344EE57F2AEEF96873B6B4041FF6")
     public ByteBuffer get(byte[] dst, int dstOffset, int byteCount) {
         addTaint(byteCount);
@@ -286,6 +293,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_187515551 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.965 -0400", hash_original_method = "371FAD0CF0C9AC8E78075F4EA52336BD", hash_generated_method = "8FA7DE7ABE4181E763264C66421CBD27")
     @Override
     public int hashCode() {
@@ -374,6 +382,7 @@ ByteBuffer var7D505613BED257805463C43ADCB4DBAD_1760799234 =         put(src, 0, 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.969 -0400", hash_original_method = "D0316A3A41AD4E9576A2DF2983507374", hash_generated_method = "3F65F636383EA5C5A36F8A79CC681DB0")
     public ByteBuffer put(byte[] src, int srcOffset, int byteCount) {
         addTaint(byteCount);
@@ -405,6 +414,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_357134210 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.970 -0400", hash_original_method = "9C697C4B592697CC08FD298666C0BB54", hash_generated_method = "30A346412C71FB195A8FB6C4A208457F")
     public ByteBuffer put(ByteBuffer src) {
         addTaint(src.getTaint());

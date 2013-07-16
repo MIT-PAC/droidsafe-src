@@ -10,6 +10,7 @@ import javax.sip.header.*;
 
 public final class ReplyTo extends AddressParametersHeader implements ReplyToHeader {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.848 -0400", hash_original_method = "39A6C3CE738448740A75D288CF2B6517", hash_generated_method = "9351E959CBBABCA53952EE7B443BEEAE")
     public  ReplyTo() {
         super(NAME);
@@ -17,6 +18,7 @@ public final class ReplyTo extends AddressParametersHeader implements ReplyToHea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.849 -0400", hash_original_method = "FAB557ADCBC2DA51C11496316EFDCBFF", hash_generated_method = "EA33CECA8A42005784BBAB1C45EBA527")
     public  ReplyTo(AddressImpl address) {
         super(NAME);

@@ -9,6 +9,7 @@ import java.util.*;
 
 public class RouteList extends SIPHeaderList<Route> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.952 -0400", hash_original_method = "D139D7EC1148299A31F54E2FC8ABBD38", hash_generated_method = "740A4A8603D56CB0E3B664BFE94DAD13")
     public  RouteList() {
         super(Route.class, RouteHeader.NAME);

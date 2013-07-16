@@ -13,6 +13,7 @@ public final class BitString {
 
     public int unusedBits;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.975 -0400", hash_original_method = "4AD7912E7289EAB288F9F3EC6E0E1363", hash_generated_method = "CD65A732ECBC86D3F443EC2DBF9D1664")
     public  BitString(byte[] bytes, int unusedBits) {
     if(unusedBits < 0 || unusedBits > 7)        
@@ -41,6 +42,7 @@ public final class BitString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.976 -0400", hash_original_method = "8BDC421B437B146AA72D15C02ACDA1CF", hash_generated_method = "D5B08642D98F005EEC07E4AB2AB29E63")
     public  BitString(boolean[] values) {
         unusedBits = values.length % 8;
@@ -109,6 +111,7 @@ for(int i = 0;i < values.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.977 -0400", hash_original_method = "6591A9422CBA64DB7D3ADDA84BA94652", hash_generated_method = "056CC2A12CB928EECBE9A60C4C63FA3A")
     public boolean[] toBooleanArray() {
         boolean[] result = new boolean[bytes.length * 8 - unusedBits];

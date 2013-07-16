@@ -11,6 +11,7 @@ import java.security.Permission;
 
 public final class LoggingPermission extends BasicPermission implements Guard, Serializable {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.343 -0400", hash_original_method = "49660D4D996C1CD70562D31B56A71F27", hash_generated_method = "744F24E6611D0653BF74F97C773F7339")
     public  LoggingPermission(String name, String actions) {
         super("", "");

@@ -15,6 +15,7 @@ public abstract class ASN1Type implements ASN1Constants {
 
     public int constrId;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.717 -0400", hash_original_method = "E753351671CF761070C01803DBBE0A73", hash_generated_method = "763C5C08EEE9DC836BBB64D168C02191")
     public  ASN1Type(int tagNumber) {
         this(CLASS_UNIVERSAL, tagNumber);
@@ -23,6 +24,7 @@ public abstract class ASN1Type implements ASN1Constants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.718 -0400", hash_original_method = "C924F9DEBC46E3FF1C759C2A69F62440", hash_generated_method = "D78CD4F3C68DE2DDD77F22C73FB126A6")
     public  ASN1Type(int tagClass, int tagNumber) {
     if(tagNumber < 0)        
@@ -201,6 +203,7 @@ for(int cur = out.length >> 8;cur > 0;len++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.723 -0400", hash_original_method = "54C9519AE58EE8A367BF831B5FC731FF", hash_generated_method = "6BE06FD2938AFEC2A56F5853542CE7E3")
     @Override
     public String toString() {

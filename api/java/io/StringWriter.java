@@ -11,6 +11,7 @@ public class StringWriter extends Writer {
 
     private StringBuffer buf;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.050 -0400", hash_original_method = "70E0091DAD5CA0CE69DCEADFA1D1533C", hash_generated_method = "63358526500471A61BCE1FB30E5618B4")
     public  StringWriter() {
         buf = new StringBuffer(16);
@@ -21,6 +22,7 @@ public class StringWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.051 -0400", hash_original_method = "9AACBAF662EC7E043DE68391EFC0EC82", hash_generated_method = "8514F4D4C8EADED5B44F3B0F1045C14C")
     public  StringWriter(int initialSize) {
     if(initialSize < 0)        
@@ -67,6 +69,7 @@ StringBuffer var0D8E466677B8F245666E1A4B1E0924E6_262121077 =         buf;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.054 -0400", hash_original_method = "B210C316A5935A34586C62D959011891", hash_generated_method = "BBFE608E63CB715DE1E446BCC012A49E")
     @Override
     public String toString() {
@@ -78,6 +81,7 @@ String var4FC680801218E6372BC708D6FA44AE60_1584033799 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.054 -0400", hash_original_method = "B574F1A893A28468E9B79E59C4419CC6", hash_generated_method = "8B30BF7F12B571949DA372C9347EACE5")
     @Override
     public void write(char[] chars, int offset, int count) {
@@ -99,6 +103,7 @@ String var4FC680801218E6372BC708D6FA44AE60_1584033799 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.055 -0400", hash_original_method = "9E74599A1E38039394CB519CF0982BB0", hash_generated_method = "01E91D957E82637CFC3C47E10D1867C5")
     @Override
     public void write(int oneChar) {
@@ -109,6 +114,7 @@ String var4FC680801218E6372BC708D6FA44AE60_1584033799 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.056 -0400", hash_original_method = "C709310F14478B827E3F0AC974DDA1E9", hash_generated_method = "B35CF84D879E60368FE32761B2308CB2")
     @Override
     public void write(String str) {
@@ -119,6 +125,7 @@ String var4FC680801218E6372BC708D6FA44AE60_1584033799 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.057 -0400", hash_original_method = "944E85902A11A60E741C7A4261619164", hash_generated_method = "13A75375C9F789E104808755450CF2D4")
     @Override
     public void write(String str, int offset, int count) {
@@ -133,6 +140,7 @@ String var4FC680801218E6372BC708D6FA44AE60_1584033799 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.057 -0400", hash_original_method = "15F384D8A1FFEEB0786C49990EC18DEC", hash_generated_method = "15EB26134AB9BD7C081513450515C384")
     @Override
     public StringWriter append(char c) {
@@ -168,6 +176,7 @@ StringWriter var72A74007B2BE62B849F475C7BDA4658B_1128835944 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.062 -0400", hash_original_method = "D18F40A53A7260972FC6506FD741C13E", hash_generated_method = "7E6ADB3CDABE92FF3650078C4338A9A4")
     @Override
     public StringWriter append(CharSequence csq, int start, int end) {

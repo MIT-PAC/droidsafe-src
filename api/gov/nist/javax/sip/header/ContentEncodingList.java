@@ -8,6 +8,7 @@ import javax.sip.header.*;
 
 public final class ContentEncodingList extends SIPHeaderList<ContentEncoding> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.251 -0400", hash_original_method = "D2B39D5ACAE79985BE6285F6D548E94B", hash_generated_method = "9E0268B063A40FA0BEE5F57BE7734754")
     public  ContentEncodingList() {
         super( ContentEncoding.class,

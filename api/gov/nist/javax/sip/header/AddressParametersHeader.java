@@ -15,6 +15,7 @@ public abstract class AddressParametersHeader extends ParametersHeader implement
 
     protected AddressImpl address;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.711 -0400", hash_original_method = "86C06714D64ED7D78AC32A4EA648ACC6", hash_generated_method = "F54EE8FA70CA0B8B70E354AD7FA7161D")
     protected  AddressParametersHeader(String name) {
         super(name);
@@ -23,6 +24,7 @@ public abstract class AddressParametersHeader extends ParametersHeader implement
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.712 -0400", hash_original_method = "18F0A32F1016A1077EE2441198C172CD", hash_generated_method = "331BA800AAEF831082C717652B31761C")
     protected  AddressParametersHeader(String name, boolean sync) {
         super(name,sync);

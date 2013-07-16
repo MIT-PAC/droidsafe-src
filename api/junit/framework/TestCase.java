@@ -11,6 +11,7 @@ public abstract class TestCase extends Assert implements Test {
 
     private String fName;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.215 -0400", hash_original_method = "1F809C892F1386C5BCE506B7B9E71577", hash_generated_method = "EFA0774B980C6EAA278AECDBED24A0D4")
     public  TestCase() {
         fName= null;
@@ -19,6 +20,7 @@ public abstract class TestCase extends Assert implements Test {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.215 -0400", hash_original_method = "E2C49012EEA8722F341B549129350038", hash_generated_method = "949661DA74AFDD06CDA8B0AC1CFEFB80")
     public  TestCase(String name) {
         fName= name;

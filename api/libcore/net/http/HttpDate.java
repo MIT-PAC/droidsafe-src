@@ -35,7 +35,8 @@ public final class HttpDate {
     }
 
     
-        public static String format(Date value) {
+        @DSModeled(DSC.SAFE)
+    public static String format(Date value) {
         return STANDARD_DATE_FORMAT.get().format(value);
     }
 

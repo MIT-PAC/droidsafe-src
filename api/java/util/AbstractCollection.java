@@ -8,6 +8,7 @@ import java.lang.reflect.Array;
 
 public abstract class AbstractCollection<E> implements Collection<E> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.047 -0400", hash_original_method = "2CD999E5665A4C31F4601D44982C7C04", hash_generated_method = "80ABF1E4206482266414E558C3C72331")
     protected  AbstractCollection() {
         // ---------- Original Method ----------

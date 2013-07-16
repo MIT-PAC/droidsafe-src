@@ -27,6 +27,7 @@ public final class PipelinedMsgParser implements Runnable {
 
     private int sizeCounter;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.434 -0400", hash_original_method = "E22CE959BAB24F19C875E84872180E07", hash_generated_method = "362C6A06EBFCC475DC7BD25EA8D59893")
     protected  PipelinedMsgParser() {
         super();

@@ -12,6 +12,7 @@ public class MinExpires extends SIPHeader implements MinExpiresHeader {
 
     protected int expires;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.605 -0400", hash_original_method = "E220E899B716906991999B2A4C081552", hash_generated_method = "CD25F29B29CDBECA1004AA69954293B5")
     public  MinExpires() {
         super(NAME);

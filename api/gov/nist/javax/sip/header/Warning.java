@@ -19,6 +19,7 @@ public class Warning extends SIPHeader implements WarningHeader {
 
     protected String text;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.671 -0400", hash_original_method = "EC205AAA0E57D7457805C01D650D3D4C", hash_generated_method = "4BBA6FE432398CF7B15E3E65F123726B")
     public  Warning() {
         super(WARNING);

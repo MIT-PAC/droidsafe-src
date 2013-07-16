@@ -13,6 +13,7 @@ class NistSipMessageFactoryImpl implements StackMessageFactory {
 
     private SipStackImpl sipStack;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.531 -0400", hash_original_method = "B4A348E139EC58BD28DD0F3A69B45AAD", hash_generated_method = "9205204DA58BEC015C262841C10BC546")
     public  NistSipMessageFactoryImpl(SipStackImpl sipStackImpl) {
         this.sipStack = sipStackImpl;

@@ -22,6 +22,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
 
     private WaitQueue waitingConsumers;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.449 -0400", hash_original_method = "CA3CB3D951221FCCF0DFF3BB5DF12346", hash_generated_method = "5255A939CCFA97D45156B8A4109C3AE2")
     public  SynchronousQueue() {
         this(false);
@@ -29,6 +30,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.450 -0400", hash_original_method = "2A4F416DA0F8363F009FD8DA8EB74A84", hash_generated_method = "E36170E9580D212BFA99521F1CF0C67D")
     public  SynchronousQueue(boolean fair) {
         transferer = fair ? new TransferQueue() : new TransferStack();
@@ -63,6 +65,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.451 -0400", hash_original_method = "3A6AFFAA000C17EA73FBC10B0EC018FD", hash_generated_method = "8E589C71111F9DEAD9D8A62194D3AE14")
     public boolean offer(E o, long timeout, TimeUnit unit) throws InterruptedException {
         addTaint(unit.getTaint());
@@ -99,6 +102,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.452 -0400", hash_original_method = "A4F84C12941B1214559E662FB5D2360B", hash_generated_method = "DC7021B7B8E97D00FBA0C7F90B155099")
     public boolean offer(E e) {
         addTaint(e.getTaint());
@@ -140,6 +144,7 @@ E var3BC4883C21B65D53A2DE2E8A607F7309_83524711 =         (E)e;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.453 -0400", hash_original_method = "F80BFD27E2D553DA44FF7C91997050D6", hash_generated_method = "C31B626C7F33417802870A284FFC4EDE")
     public E poll(long timeout, TimeUnit unit) throws InterruptedException {
         addTaint(unit.getTaint());
@@ -520,7 +525,8 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_451630112 =         a;
         }
 
         
-                static SNode snode(SNode s, Object e, SNode next, int mode) {
+                @DSModeled(DSC.SAFE)
+        static SNode snode(SNode s, Object e, SNode next, int mode) {
             if (s == null) s = new SNode(e);
             s.mode = mode;
             s.next = next;
@@ -619,6 +625,7 @@ Object varEEDD4C596768D38C2DDEFF8C87BE1ABC_1562068925 =                         
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.466 -0400", hash_original_method = "8450123659E4F3E3FBDDF976A06B7608", hash_generated_method = "1952A3260C1170EB0BC83B40B63842EE")
          SNode awaitFulfill(SNode s, boolean timed, long nanos) {
             addTaint(nanos);
@@ -668,6 +675,7 @@ SNode varBD22C5ECD1F8BC3EE2416AF7A8014FD2_1264808286 =                 m;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.467 -0400", hash_original_method = "C3C9887957CF791F525718002F2944FE", hash_generated_method = "308E499D42A196FCCA0A1FBC587AF7C5")
          boolean shouldSpin(SNode s) {
             addTaint(s.getTaint());
@@ -681,6 +689,7 @@ SNode varBD22C5ECD1F8BC3EE2416AF7A8014FD2_1264808286 =                 m;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.468 -0400", hash_original_method = "162514ED54A955A73353466B6689AF5B", hash_generated_method = "893EA4A31C5AC295AEEEAE42659C0BE5")
          void clean(SNode s) {
             addTaint(s.getTaint());
@@ -738,6 +747,7 @@ SNode varBD22C5ECD1F8BC3EE2416AF7A8014FD2_1264808286 =                 m;
 
             int mode;
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.469 -0400", hash_original_method = "1B0B8D11CB10F0B4CCAA4D8835EC421B", hash_generated_method = "CF1397AC3B88B93FEFBB222BFAAE5E40")
               SNode(Object item) {
                 this.item = item;
@@ -761,6 +771,7 @@ SNode varBD22C5ECD1F8BC3EE2416AF7A8014FD2_1264808286 =                 m;
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.470 -0400", hash_original_method = "CEB4EA3334013C3454101E56EFA00D65", hash_generated_method = "86E03D43BCD31DE2F725DBFF55AB5D46")
              boolean tryMatch(SNode s) {
                 addTaint(s.getTaint());
@@ -794,6 +805,7 @@ SNode varBD22C5ECD1F8BC3EE2416AF7A8014FD2_1264808286 =                 m;
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.470 -0400", hash_original_method = "4364F2F312C8CE7EEFC1A24A7BE396DF", hash_generated_method = "F113C1DDE10ED16910489434287E4197")
              void tryCancel() {
                 UNSAFE.compareAndSwapObject(this, matchOffset, null, this);
@@ -856,6 +868,7 @@ SNode varBD22C5ECD1F8BC3EE2416AF7A8014FD2_1264808286 =                 m;
 
         transient volatile QNode cleanMe;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.472 -0400", hash_original_method = "EBB3C2235277D03D49EE8D8BB02DD64A", hash_generated_method = "064390A0D5BEAB18E259D10581E7DE52")
           TransferQueue() {
             QNode h = new QNode(null, false);
@@ -868,6 +881,7 @@ SNode varBD22C5ECD1F8BC3EE2416AF7A8014FD2_1264808286 =                 m;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.473 -0400", hash_original_method = "80B021B7B5DA5B6F1F69021D0C7D6F89", hash_generated_method = "3848825921A0C6EF2D287543CD489E8F")
          void advanceHead(QNode h, QNode nh) {
             addTaint(nh.getTaint());
@@ -882,6 +896,7 @@ SNode varBD22C5ECD1F8BC3EE2416AF7A8014FD2_1264808286 =                 m;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.473 -0400", hash_original_method = "8E334B9D021C7CA1D4C0B314F9C4B69F", hash_generated_method = "42770E690901EA6FCDFCD111E808492A")
          void advanceTail(QNode t, QNode nt) {
             addTaint(nt.getTaint());
@@ -894,6 +909,7 @@ SNode varBD22C5ECD1F8BC3EE2416AF7A8014FD2_1264808286 =                 m;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.474 -0400", hash_original_method = "7A9E3B63F4597B524322C45DD727A635", hash_generated_method = "051D05CD982B5E536D5D8CCA4F2E6E68")
          boolean casCleanMe(QNode cmp, QNode val) {
             addTaint(val.getTaint());
@@ -908,6 +924,7 @@ SNode varBD22C5ECD1F8BC3EE2416AF7A8014FD2_1264808286 =                 m;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.475 -0400", hash_original_method = "D9295193CC3F280F47A7E51B4594CC44", hash_generated_method = "906F123AC25181B901CDFF6114257421")
          Object transfer(Object e, boolean timed, long nanos) {
             addTaint(nanos);
@@ -986,6 +1003,7 @@ Object var334CF9D5F70A003E4B00529C4159C965_1584119018 =                     (x !
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.476 -0400", hash_original_method = "90C8A09C09ECF2EF83975D209FFEEF37", hash_generated_method = "1602A76FAE7E5BEDE43512FC1D10938D")
          Object awaitFulfill(QNode s, Object e, boolean timed, long nanos) {
             addTaint(nanos);
@@ -1035,6 +1053,7 @@ Object varEA5659DA512DECF23E6D37EE8060D074_1195284597 =                 x;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.478 -0400", hash_original_method = "6683A876B1B30ADB5D756618BABF762A", hash_generated_method = "9CB6726E913BE84BE197504A381D5A79")
          void clean(QNode pred, QNode s) {
             addTaint(s.getTaint());
@@ -1106,6 +1125,7 @@ Object varEA5659DA512DECF23E6D37EE8060D074_1195284597 =                 x;
 
             boolean isData;
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.479 -0400", hash_original_method = "36E0BDE690B9319BBAE39AE7BB5AED99", hash_generated_method = "AC79B184894CD3D93DB04113A86F071F")
               QNode(Object item, boolean isData) {
                 this.item = item;
@@ -1146,6 +1166,7 @@ Object varEA5659DA512DECF23E6D37EE8060D074_1195284597 =                 x;
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.480 -0400", hash_original_method = "99C72522BA0C395099FBEE5F0489DB78", hash_generated_method = "78DB00E49750243FBA8528681AB076FE")
              void tryCancel(Object cmp) {
                 addTaint(cmp.getTaint());

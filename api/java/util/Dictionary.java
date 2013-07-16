@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public abstract class Dictionary<K, V> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.084 -0400", hash_original_method = "9548777BBF89E111326DB823D31BF669", hash_generated_method = "14E151CF1CAF4908929119D552F99B0F")
     public  Dictionary() {
         // ---------- Original Method ----------

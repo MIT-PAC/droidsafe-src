@@ -13,6 +13,7 @@ public final class Currency implements Serializable {
 
     private String currencyCode;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:02.898 -0400", hash_original_method = "B8C067C2D581EC195B8ADF9C49328ECD", hash_generated_method = "A6F30179708FF3E4869204CF9307A4EC")
     private  Currency(String currencyCode) {
         this.currencyCode = currencyCode;

@@ -11,6 +11,7 @@ class PortableThreadSampler implements ThreadSampler {
 
     private int depth;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.997 -0400", hash_original_method = "4D56809BA46B0880BDFB6525AB14F55F", hash_generated_method = "4D56809BA46B0880BDFB6525AB14F55F")
     public PortableThreadSampler ()
     {

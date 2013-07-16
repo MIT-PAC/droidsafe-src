@@ -30,6 +30,7 @@ public class ArrayBlockingQueue<E> extends AbstractQueue<E> implements BlockingQ
 
     private Condition notFull;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.230 -0400", hash_original_method = "989EAF8314C95E2BC3034097E1831933", hash_generated_method = "83B64C9C6E2AFE89CF5D0C45CAB4ECE4")
     public  ArrayBlockingQueue(int capacity) {
         this(capacity, false);
@@ -38,6 +39,7 @@ public class ArrayBlockingQueue<E> extends AbstractQueue<E> implements BlockingQ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.231 -0400", hash_original_method = "D00F5C645B4A4E3D47EB794330FD0093", hash_generated_method = "A00054CD90BF3CC8702DD118BED07DA0")
     public  ArrayBlockingQueue(int capacity, boolean fair) {
     if(capacity <= 0)        
@@ -250,6 +252,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.235 -0400", hash_original_method = "656D7386EF8E1EB18507F4383E955E73", hash_generated_method = "46841001ECD77B1E53D7A96143B0E694")
     public boolean add(E e) {
         addTaint(e.getTaint());
@@ -261,6 +264,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.236 -0400", hash_original_method = "9E7F5A1AF35EF2F840CAB652EE8C4445", hash_generated_method = "645901535ACA1995D69E0BFCBF79EE48")
     public boolean offer(E e) {
         addTaint(e.getTaint());
@@ -702,6 +706,7 @@ Object[] var3F5343BF1D849954A73F0BB303805FFD_1998450638 =             a;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.242 -0400", hash_original_method = "95E1CD553E699913E584434D85EF3537", hash_generated_method = "BD21CF058F27560D4A7D59C7E2BAF6AD")
     @SuppressWarnings("unchecked")
     public <T> T[] toArray(T[] a) {
@@ -1017,6 +1022,7 @@ Iterator<E> varB10D928EC6DDAEBFD727C2EDCEC6EDF5_843037571 =         new Itr();
 
         private int lastRet;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.247 -0400", hash_original_method = "34A8A1361DC6E07DEA1D770580A406E1", hash_generated_method = "9B192081A4F4F6EC1238902C5B1DC882")
           Itr() {
             final ReentrantLock lock = ArrayBlockingQueue.this.lock;
@@ -1112,6 +1118,7 @@ E varEA5659DA512DECF23E6D37EE8060D074_1329569756 =                 x;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.248 -0400", hash_original_method = "E7345F06EBC3C2DA4E698FB7A5897ADC", hash_generated_method = "9BD623E14D3D3F952CCEAA4016BCDA0E")
         public void remove() {
             final ReentrantLock lock = ArrayBlockingQueue.this.lock;

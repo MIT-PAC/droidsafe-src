@@ -15,6 +15,7 @@ public class Attributes implements Cloneable, Map<Object, Object> {
 
     protected Map<Object, Object> map;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.976 -0400", hash_original_method = "CDEB7A2340880305C142690108AEFF5F", hash_generated_method = "9872D14EC462B5E29026E6B7277BD8A7")
     public  Attributes() {
         map = new HashMap<Object, Object>();
@@ -23,6 +24,7 @@ public class Attributes implements Cloneable, Map<Object, Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.977 -0400", hash_original_method = "F8717927CC90D5B5AE946AC3A31B19F4", hash_generated_method = "FBDA935B9A3831C52372D161FF350F6C")
     @SuppressWarnings("unchecked")
     public  Attributes(Attributes attrib) {
@@ -32,6 +34,7 @@ public class Attributes implements Cloneable, Map<Object, Object> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.977 -0400", hash_original_method = "C0A84EEFF5C41531DA971DB0633F74FC", hash_generated_method = "792E69047F9763844FF159A7272D0CD4")
     public  Attributes(int size) {
         map = new HashMap<Object, Object>(size);
@@ -298,6 +301,7 @@ String var47CC551B40DEE7AD31FE1F527336EAD6_1246735726 =         (String) map.put
 
         private String name;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.985 -0400", hash_original_method = "2C39DBA2C28891B792407C3858FAD7FB", hash_generated_method = "5F9DCEF9E26C61F6FFB0E8B08C0B73EE")
         public  Name(String name) {
     if(name.isEmpty() || name.length() > Manifest.LINE_LENGTH_LIMIT - 2)            

@@ -33,6 +33,7 @@ public class Runtime {
 
     private boolean tracingMethods;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.290 -0400", hash_original_method = "F82AC05B2B9BDA560435929D86D5DD16", hash_generated_method = "AAB21F2EDBE02CAE189D3D873254E410")
     private  Runtime() {
         String pathList = System.getProperty("java.library.path", ".");

@@ -54,6 +54,7 @@ public class HTMLScanner implements Scanner, Locator {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.993 -0400", hash_original_method = "7BF7C7D5830ADAF76FEF60D8F3F10567", hash_generated_method = "890AFDC0362A983D917AD9F3C0B327CD")
     private void unread(PushbackReader r, int c) throws IOException {
         addTaint(c);
@@ -493,7 +494,8 @@ Integer.toString(theState));
     }
 
     
-        private static String nicechar(int in) {
+        @DSModeled(DSC.SAFE)
+    private static String nicechar(int in) {
         if (in == '\n') return "\\n";
         if (in < 32) return "0x"+Integer.toHexString(in);
         return "'"+((char)in)+"'";

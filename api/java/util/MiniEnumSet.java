@@ -137,6 +137,7 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.255 -0400", hash_original_method = "574C67B26880FBDD7ECF2408ADA0BF3B", hash_generated_method = "DD25502B6C26536D645D3F1903D0CBA3")
     @Override
     public boolean contains(Object object) {
@@ -326,6 +327,7 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.260 -0400", hash_original_method = "07B13756E56A1DF188CDC5BDB0B18ECF", hash_generated_method = "CB4649358C9639CBE5601B5C54757CF6")
     @Override
     public boolean remove(Object object) {
@@ -369,6 +371,7 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.261 -0400", hash_original_method = "0AE7A2B8046F11F65D5A1DDC2DB371C6", hash_generated_method = "20A81B020383EA998A51AEF8D5D68DC0")
     @Override
     public boolean equals(Object object) {
@@ -467,6 +470,7 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.264 -0400", hash_original_method = "B8BEA11D538861DDC29BFADEA29DB32E", hash_generated_method = "CF6BA9B7890A7F7D2EEAF0F68FD067B8")
         public E next() {
     if(mask == 0)            
@@ -494,6 +498,7 @@ E var3D331EA760A7BCD3BF7E380A6C79C638_1058988489 =             last;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.265 -0400", hash_original_method = "38D2DDD498ED91B92C87DCAC1BCF5E89", hash_generated_method = "692EDF902899B76EE5A5677F87AF36AB")
         public void remove() {
     if(last == null)            

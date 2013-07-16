@@ -28,6 +28,7 @@ class GLES20DisplayList extends DisplayList {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.972 -0400", hash_original_method = "95D7EAA4B043B28D3D04F5E259ED8AAD", hash_generated_method = "837276E931CE6637F3EF4F80E7005DFA")
      int getNativeDisplayList() {
     if(!mValid || mFinalizer == null)        
@@ -47,6 +48,7 @@ class GLES20DisplayList extends DisplayList {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.973 -0400", hash_original_method = "E5C596CBDCD8BE3EF1855673907A59B8", hash_generated_method = "B88138000F754DA7A1D16F5FD3D9B171")
     @Override
      HardwareCanvas start() {
@@ -73,6 +75,7 @@ HardwareCanvas var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_2002352752 =         mCanvas;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.973 -0400", hash_original_method = "247D3D8A3D31E91BE5C013DB24963870", hash_generated_method = "5324511ABE521DB3D2590643621BE97D")
     @Override
      void invalidate() {
@@ -103,6 +106,7 @@ HardwareCanvas var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_2002352752 =         mCanvas;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.975 -0400", hash_original_method = "96CA5C3852449FF9B74309A832926627", hash_generated_method = "233B6BDCB06001155F9BF184EA762713")
     @Override
      void end() {
@@ -134,6 +138,7 @@ HardwareCanvas var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_2002352752 =         mCanvas;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.975 -0400", hash_original_method = "3E7FC40C3EA5DE4EA51EEDE8E80652F9", hash_generated_method = "2C21EF78868DD02A6CBAAC250E8BE573")
     @Override
      int getSize() {
@@ -157,6 +162,7 @@ HardwareCanvas var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_2002352752 =         mCanvas;
 
         int mNativeDisplayList;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.976 -0400", hash_original_method = "0B1B093880262044EED2D5421EB7C8E9", hash_generated_method = "DAAE4ADD86F9B0F97F318309228FD8AA")
         public  DisplayListFinalizer(int nativeDisplayList) {
             mNativeDisplayList = nativeDisplayList;
@@ -165,6 +171,7 @@ HardwareCanvas var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_2002352752 =         mCanvas;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.976 -0400", hash_original_method = "FB7FF5339A61C1A66F37CCF40E62B9AC", hash_generated_method = "E7681B50DE99CA561B64705CC62CB068")
         @Override
         protected void finalize() throws Throwable {

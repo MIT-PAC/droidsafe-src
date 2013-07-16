@@ -10,6 +10,7 @@ import java.text.ParseException;
 
 public class ContentTypeParser extends ParametersParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.353 -0400", hash_original_method = "AC2B50BA9F98FE0D35E93AB411532CED", hash_generated_method = "947A255A2E43F450BF732116A9038526")
     public  ContentTypeParser(String contentType) {
         super(contentType);
@@ -18,6 +19,7 @@ public class ContentTypeParser extends ParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.354 -0400", hash_original_method = "9BAC92854D082DF9DDE50098E692CCEB", hash_generated_method = "33C6ACBCFC1C53EB6403F2BED8015A51")
     protected  ContentTypeParser(Lexer lexer) {
         super(lexer);

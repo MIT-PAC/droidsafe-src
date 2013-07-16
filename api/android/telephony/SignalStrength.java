@@ -50,6 +50,7 @@ public class SignalStrength implements Parcelable {
 
     private boolean isGsm;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.307 -0400", hash_original_method = "39BD55AB1A011261FC242AC9054B9C2E", hash_generated_method = "D875ED6565624795B17AC9E777BF75B0")
     public  SignalStrength() {
         mGsmSignalStrength = 99;
@@ -82,6 +83,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.310 -0400", hash_original_method = "A4D70EF20E0500A170A5E059B2CA4163", hash_generated_method = "8B3499FE5FE1F52A2BA85D36FF45861A")
     public  SignalStrength(int gsmSignalStrength, int gsmBitErrorRate,
             int cdmaDbm, int cdmaEcio,
@@ -118,6 +120,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.312 -0400", hash_original_method = "50D26D8F6F19A1F72234E376840BB613", hash_generated_method = "B75B55533EC54529861535BB55D7AF99")
     public  SignalStrength(int gsmSignalStrength, int gsmBitErrorRate,
             int cdmaDbm, int cdmaEcio,
@@ -219,6 +222,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.319 -0400", hash_original_method = "85E260BC5044CD4D9894DB51C4B27CA0", hash_generated_method = "B90DF558AEC913DC18D8555F274B17F0")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);
@@ -341,6 +345,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.324 -0400", hash_original_method = "7504E540028056CDE39219F81B4E1E59", hash_generated_method = "0652CE67B69742427E8C7C399FB05C2A")
     public int getLevel() {
         int level;
@@ -433,6 +438,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.327 -0400", hash_original_method = "91A92262F8869E8CA480E3922C8E164F", hash_generated_method = "A840A221F32E038E427F1426D951A3D1")
     public int getDbm() {
         int dBm;
@@ -480,6 +486,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.328 -0400", hash_original_method = "EDC72A768CC18025065D104AFB382B7A", hash_generated_method = "5DE0B7F2360D20A1DB5AE139071AC768")
     public int getGsmDbm() {
         int dBm;
@@ -562,6 +569,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.331 -0400", hash_original_method = "CB4649EF15F9DF295DD79289916B6CB5", hash_generated_method = "E91C0C1AA1BA9B7BC0C4E80D6B67294F")
     public int getCdmaLevel() {
         final int cdmaDbm = getCdmaDbm();
@@ -654,6 +662,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.336 -0400", hash_original_method = "0AB26F5835CA97F0ED2A069B69FE7D82", hash_generated_method = "A7390ECC4BD358DEEE0588C3429E68F0")
     public int getEvdoLevel() {
         int evdoDbm = getEvdoDbm();
@@ -922,6 +931,7 @@ public class SignalStrength implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.346 -0400", hash_original_method = "4C867D664E694B283CE0DE88ADFC0BF6", hash_generated_method = "80F5805FD6F705D76B764EF12C08AFD2")
     @Override
     public String toString() {
@@ -1024,7 +1034,8 @@ String var3AB1774E337C2A164F26B8C12AE948E0_280544248 =         ("SignalStrength:
     }
 
     
-        private static void log(String s) {
+        @DSModeled(DSC.SAFE)
+    private static void log(String s) {
         Log.w(LOG_TAG, s);
     }
 

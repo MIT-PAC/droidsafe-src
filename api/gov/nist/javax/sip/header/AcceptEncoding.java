@@ -13,6 +13,7 @@ public final class AcceptEncoding extends ParametersHeader implements AcceptEnco
 
     protected String contentCoding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.649 -0400", hash_original_method = "45FBA71B6A8F004018F3CEEA4ED1F1C4", hash_generated_method = "6F107BDA532202B5E7B29048E45E2E47")
     public  AcceptEncoding() {
         super(NAME);

@@ -251,6 +251,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
 
     protected Contact contactHeader;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.709 -0400", hash_original_method = "B89E344ABA0B0C4EAAF339C3C960DE0F", hash_generated_method = "685613B365B139F14EC760382B8F90A2")
     private  SIPDialog(SipProviderImpl provider) {
         this.terminateOnBye = true;
@@ -271,6 +272,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.710 -0400", hash_original_method = "BE0EB8A93E786CF5997E41E028500B95", hash_generated_method = "FF2904EDE7691432C9ED1EC4D3CED466")
     public  SIPDialog(SIPTransaction transaction) {
         this(transaction.getSipProvider());
@@ -306,6 +308,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.710 -0400", hash_original_method = "0305A0224D6BCDD571D54C883A13EEA2", hash_generated_method = "0D129DB9E3754F8C133E3D66DFF6A2A5")
     public  SIPDialog(SIPClientTransaction transaction, SIPResponse sipResponse) {
         this(transaction);
@@ -327,6 +330,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.713 -0400", hash_original_method = "95FF401EAA7EE3F3C9E78290081B0530", hash_generated_method = "40C2F0EE6B1C8077D29C4FA481DE0F43")
     public  SIPDialog(SipProviderImpl sipProvider, SIPResponse sipResponse) {
         this(sipProvider);
@@ -643,6 +647,7 @@ public class SIPDialog implements javax.sip.Dialog, DialogExt {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.725 -0400", hash_original_method = "EDCC5E2E639B8E515D6889EB4E225297", hash_generated_method = "3F83A0B99C012511EFAB01F0F9881E41")
     private synchronized RouteList getRouteList() {
     if(sipStack.isLoggingEnabled())        
@@ -1030,6 +1035,7 @@ Object varAC81821DD38AD6A8C7609D7C76D213BC_933045929 =         this.applicationD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.734 -0400", hash_original_method = "DBF870542E6B78326B5509C5A5BAD885", hash_generated_method = "3C29306C85D11C3411653C121C60FBDB")
     public void setState(int state) {
     if(sipStack.isLoggingEnabled())        
@@ -1692,6 +1698,7 @@ javax.sip.address.Address varA324A22659E41955B199219D5C3C3E02_236856460 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.745 -0400", hash_original_method = "CA9799D7C5644CC201AAA28B1842190A", hash_generated_method = "CE79D98BC1FF70552DF48BB67E834E0C")
     public javax.sip.address.Address getRemoteParty() {
     if(sipStack.isLoggingEnabled())        
@@ -3524,6 +3531,7 @@ EventHeader var831190736CCDD70E51757EC097B34D0B_1153655363 =         eventHeader
     
     class LingerTimer extends SIPStackTimerTask implements Serializable {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.781 -0400", hash_original_method = "FEDA9229694989A502508E95A3FCFE54", hash_generated_method = "CF6D3A28041C64960D5CFB7948EF46EA")
         public  LingerTimer() {
             // ---------- Original Method ----------
@@ -3562,6 +3570,7 @@ EventHeader var831190736CCDD70E51757EC097B34D0B_1153655363 =         eventHeader
 
         SIPServerTransaction transaction;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.781 -0400", hash_original_method = "99967D6CED868AEC0B4229119C79B2A3", hash_generated_method = "06BD75BECC309B66DC13C9730079A32C")
         public  DialogTimerTask(SIPServerTransaction transaction) {
             this.transaction = transaction;
@@ -3663,6 +3672,7 @@ EventHeader var831190736CCDD70E51757EC097B34D0B_1153655363 =         eventHeader
 
         private long seqno;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.783 -0400", hash_original_method = "D6D7FB77E2882EBB362E9FAF3BE7D45E", hash_generated_method = "A0EA5F4F4663FCA6881081121335338B")
         public  DialogDeleteIfNoAckSentTask(long seqno) {
             this.seqno = seqno;

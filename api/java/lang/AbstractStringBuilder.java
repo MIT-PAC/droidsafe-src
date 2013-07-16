@@ -19,6 +19,7 @@ abstract class AbstractStringBuilder {
 
     private boolean shared;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.254 -0400", hash_original_method = "C4ACD0AC259F7EA41C20592CA02F17C8", hash_generated_method = "7E18A23DEBF832E11F71B13CFDB1A343")
       AbstractStringBuilder() {
         value = new char[INITIAL_CAPACITY];
@@ -27,6 +28,7 @@ abstract class AbstractStringBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.255 -0400", hash_original_method = "18E3A9BF20D4EDF142A00D9C9EE6DE65", hash_generated_method = "784C45F0BABC0FFD7B331503F00B2623")
       AbstractStringBuilder(int capacity) {
     if(capacity < 0)        
@@ -44,6 +46,7 @@ abstract class AbstractStringBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.256 -0400", hash_original_method = "0C09A579E41A9FFDC9603418777FC2FA", hash_generated_method = "83BF7EE3FC5376E0A4CCA6CA8877D61D")
       AbstractStringBuilder(String string) {
         count = string.length();

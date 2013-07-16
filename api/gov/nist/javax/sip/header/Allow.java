@@ -11,6 +11,7 @@ public final class Allow extends SIPHeader implements javax.sip.header.AllowHead
 
     protected String method;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.736 -0400", hash_original_method = "473413697039914FAE978B5460F14DD9", hash_generated_method = "4D31534EA8011D7FF178B53A73A728AA")
     public  Allow() {
         super(ALLOW);
@@ -18,6 +19,7 @@ public final class Allow extends SIPHeader implements javax.sip.header.AllowHead
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.736 -0400", hash_original_method = "07DC0232E600446B62A81ACF6B5528CD", hash_generated_method = "8A73E6FD8CDE43ABC63EE34599FECCC8")
     public  Allow(String m) {
         super(ALLOW);

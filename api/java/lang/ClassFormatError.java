@@ -7,12 +7,14 @@ import droidsafe.runtime.*;
 
 public class ClassFormatError extends LinkageError {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.549 -0400", hash_original_method = "425CA80A6692859A51AA327ECCF27B34", hash_generated_method = "BF82F7972D435F9EE4D71CA7D0625D1F")
     public  ClassFormatError() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.549 -0400", hash_original_method = "BAE3B13B354B16D7CAA986D0ECE3EF81", hash_generated_method = "B2AB2C4D43C370115B45008C4ACD2EEC")
     public  ClassFormatError(String detailMessage) {
         super(detailMessage);

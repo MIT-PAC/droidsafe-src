@@ -14,7 +14,8 @@ public class DebugUtils {
     }
 
 
-        public static void buildShortClassTag(Object cls, StringBuilder out) {
+        @DSModeled(DSC.SAFE)
+    public static void buildShortClassTag(Object cls, StringBuilder out) {
         if (cls == null) {
             out.append("null");
         } else {

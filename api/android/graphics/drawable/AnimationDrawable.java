@@ -23,6 +23,7 @@ public class AnimationDrawable extends DrawableContainer implements Runnable, An
 
     private boolean mMutated;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.549 -0400", hash_original_method = "35EE0C4966C7CA57865D8E1E9DE06504", hash_generated_method = "86EDDFEE2C351DEF5FE882A4933337FE")
     public  AnimationDrawable() {
         this(null, null);
@@ -30,6 +31,7 @@ public class AnimationDrawable extends DrawableContainer implements Runnable, An
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.550 -0400", hash_original_method = "586B7D97991AD2B5DDF2BA28DAD874F2", hash_generated_method = "73715A255D8BA3FA2401D48109BD3696")
     private  AnimationDrawable(AnimationState state, Resources res) {
         addTaint(res.getTaint());

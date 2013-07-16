@@ -11,6 +11,7 @@ public class AtomicInteger extends Number implements java.io.Serializable {
 
     private volatile int value;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.667 -0400", hash_original_method = "A3EEEE607FBEBD432F4111F47BB23345", hash_generated_method = "C1B1444E172E49708F3A7562ABBF445D")
     public  AtomicInteger(int initialValue) {
         value = initialValue;
@@ -19,6 +20,7 @@ public class AtomicInteger extends Number implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.667 -0400", hash_original_method = "3B74ED36698F9901BA50127D104C26DE", hash_generated_method = "3FC2676712951E4C0961989AC4A65B09")
     public  AtomicInteger() {
         // ---------- Original Method ----------

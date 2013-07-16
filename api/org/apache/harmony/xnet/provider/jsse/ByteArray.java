@@ -14,6 +14,7 @@ final class ByteArray {
 
     private int hashCode;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.053 -0400", hash_original_method = "4AF9F563805F4ED44AAE8EE4F8A801D9", hash_generated_method = "86424FE701B8BE7F328DF822143425C6")
       ByteArray(byte[] bytes) {
         this.bytes = bytes;
@@ -36,6 +37,7 @@ final class ByteArray {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.054 -0400", hash_original_method = "035A671466178159FCEA5052C8344F27", hash_generated_method = "46E7C92158D3685A641271DA98D5716D")
     @Override
     public boolean equals(Object o) {

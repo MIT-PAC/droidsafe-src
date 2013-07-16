@@ -9,6 +9,7 @@ import javax.sip.header.*;
 
 public class UnsupportedList extends SIPHeaderList<Unsupported> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.556 -0400", hash_original_method = "CBBAF1558631750DDBDF9DAEDB7A572C", hash_generated_method = "8F7A7A782386B52882B87C6BD42B708B")
     public  UnsupportedList() {
         super(Unsupported.class, UnsupportedHeader.NAME);

@@ -39,6 +39,7 @@ public class IccCardApplication {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.410 -0400", hash_original_method = "1116744B87B74A8B1F94F0BFA362A158", hash_generated_method = "A7CC678E039FDE49B91D361FB87368BE")
      AppType AppTypeFromRILInt(int type) {
         addTaint(type);
@@ -87,6 +88,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.411 -0400", hash_original_method = "9534088223FA9637F4929B2D2CEDDB5A", hash_generated_method = "42216E22F9A777D9F97CFFA4567699BC")
      AppState AppStateFromRILInt(int state) {
         addTaint(state);
@@ -135,6 +137,7 @@ switch(state){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.414 -0400", hash_original_method = "17A43E5E3170BC2C3023BB14299D6F08", hash_generated_method = "F08293A8EA656C73BF0C2E153FDB7F97")
      PersoSubState PersoSubstateFromRILInt(int substate) {
         addTaint(substate);
@@ -228,6 +231,7 @@ switch(substate){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.415 -0400", hash_original_method = "691AF073265032051E58110F3AF07370", hash_generated_method = "94EF584EE0528D9E8859277D0086044F")
      PinState PinStateFromRILInt(int state) {
         addTaint(state);
@@ -263,6 +267,7 @@ switch(state){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.415 -0400", hash_original_method = "B7A3E528A56EA330AD359B5362903D13", hash_generated_method = "AABCE080AA10F4BB10366961CA3D4B29")
     @Override
     public String toString() {

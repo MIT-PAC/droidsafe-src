@@ -13,6 +13,7 @@ public final class ReasonCode extends ExtensionValue {
 
     private byte code;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.254 -0400", hash_original_method = "82F7372CC184C4A16042B3B65BCB1447", hash_generated_method = "DEE2F064406DCFE3BA4877D17EF1ADBE")
     public  ReasonCode(byte[] encoding) throws IOException {
         super(encoding);

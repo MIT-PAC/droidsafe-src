@@ -18,6 +18,7 @@ public final class ExtendedKeyUsage extends ExtensionValue {
 
     private List<String> keys;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.871 -0400", hash_original_method = "52F4822F456F1C9559212854B99C1B20", hash_generated_method = "0DAABCEEB9168D9F7C9191F2C42E9954")
     public  ExtendedKeyUsage(byte[] encoding) {
         super(encoding);

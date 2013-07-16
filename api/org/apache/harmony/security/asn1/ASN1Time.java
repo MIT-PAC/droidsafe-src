@@ -11,6 +11,7 @@ import java.util.TimeZone;
 
 public abstract class ASN1Time extends ASN1StringType {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.704 -0400", hash_original_method = "82E49EA5DBBF8DF43E60D041D8EADCBA", hash_generated_method = "5910C74D0DA9D50869787EA00524B4A2")
     public  ASN1Time(int tagNumber) {
         super(tagNumber);
@@ -19,6 +20,7 @@ public abstract class ASN1Time extends ASN1StringType {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.705 -0400", hash_original_method = "A8543817917479A67ACF72269E42F301", hash_generated_method = "BA47F9D729C2D86CC73F6B73F6A457F9")
     @Override
     public Object getDecodedObject(BerInputStream in) throws IOException {

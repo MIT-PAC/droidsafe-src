@@ -15,6 +15,7 @@ public class OpenSSLSocketImplWrapper extends OpenSSLSocketImpl {
 
     private Socket socket;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.830 -0400", hash_original_method = "AE2ACFC3381FF02B6F42819ACFB99347", hash_generated_method = "A5B558FEF1208ED6FA02558FADAD9F6F")
     protected  OpenSSLSocketImplWrapper(Socket socket, String host, int port,
             boolean autoClose, SSLParametersImpl sslParameters) throws IOException {

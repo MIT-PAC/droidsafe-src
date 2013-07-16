@@ -13,6 +13,7 @@ import java.text.ParseException;
 
 public class AlertInfoParser extends ParametersParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.823 -0400", hash_original_method = "D981F7025F52BA8E1CEDC583E21B710C", hash_generated_method = "41BACA132BB4D5A2EA759A0E45FC23E8")
     public  AlertInfoParser(String alertInfo) {
         super(alertInfo);
@@ -21,6 +22,7 @@ public class AlertInfoParser extends ParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.824 -0400", hash_original_method = "FBB9329DBFDB9634284D1CD105BFF940", hash_generated_method = "FD6C3DC5F66F572DD8205BD78C09C230")
     protected  AlertInfoParser(Lexer lexer) {
         super(lexer);
@@ -29,6 +31,7 @@ public class AlertInfoParser extends ParametersParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.825 -0400", hash_original_method = "01178CDB4B591AEEFEAB9C463FFB7ADD", hash_generated_method = "B41EEC215F548ED826A737D47B357C15")
     public SIPHeader parse() throws ParseException {
     if(debug)        

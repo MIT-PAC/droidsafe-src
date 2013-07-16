@@ -8,6 +8,7 @@ import javax.sip.header.*;
 
 public class CallInfoList extends SIPHeaderList<CallInfo> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.144 -0400", hash_original_method = "ED4F99F21CB3236766303F800D1CCEF7", hash_generated_method = "D2020F1988EEA6AAE4D1E2BFFF584D3E")
     public  CallInfoList() {
         super(CallInfo.class, CallInfoHeader.NAME);

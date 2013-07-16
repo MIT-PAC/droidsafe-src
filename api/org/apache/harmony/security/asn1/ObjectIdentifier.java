@@ -14,6 +14,7 @@ public final class ObjectIdentifier {
 
     private String soid;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.043 -0400", hash_original_method = "20230C77538103726EF6427B9F75CADF", hash_generated_method = "695B95975CC186A99EED9C9A4C949FFD")
     public  ObjectIdentifier(int[] oid) {
         validate(oid);
@@ -24,6 +25,7 @@ public final class ObjectIdentifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.044 -0400", hash_original_method = "33C298706B9DEBE0D1CFE9C3A9D89C98", hash_generated_method = "29DFD93289F4CBDE2E7B748208083263")
     public  ObjectIdentifier(String strOid) {
         this.oid = toIntArray(strOid);
@@ -105,7 +107,8 @@ for(int i = 0;i < oid.length && i < 4;i++)
     }
 
     
-        public static void validate(int[] oid) {
+        @DSModeled(DSC.SAFE)
+    public static void validate(int[] oid) {
         if (oid == null) {
             throw new IllegalArgumentException("oid == null");
         }
@@ -138,12 +141,14 @@ for(int i = 0;i < oid.length && i < 4;i++)
     }
 
     
-        public static int[] toIntArray(String str) {
+        @DSModeled(DSC.SAFE)
+    public static int[] toIntArray(String str) {
         return toIntArray(str, true);
     }
 
     
-        public static boolean isOID(String str) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isOID(String str) {
         return toIntArray(str, false) != null;
     }
 

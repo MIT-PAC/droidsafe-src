@@ -10,6 +10,7 @@ import java.text.ParseException;
 
 public class ContentEncodingParser extends HeaderParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.064 -0400", hash_original_method = "025E1AD213DC2532673CB1D1FC75B1CC", hash_generated_method = "FFAAEC346361910DA318E1B0118C932F")
     public  ContentEncodingParser(String contentEncoding) {
         super(contentEncoding);
@@ -18,6 +19,7 @@ public class ContentEncodingParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.064 -0400", hash_original_method = "15007428AB3C93C7C47122E74B782E26", hash_generated_method = "AF577344E81FCFEAE8DA389C0D71631C")
     protected  ContentEncodingParser(Lexer lexer) {
         super(lexer);
@@ -26,6 +28,7 @@ public class ContentEncodingParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.127 -0400", hash_original_method = "8ACC6861A4ACA970AEBA8CCFE6984687", hash_generated_method = "A769B38FE7031267BC0DA0E8809E8B82")
     public SIPHeader parse() throws ParseException {
     if(debug)        

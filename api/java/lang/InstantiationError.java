@@ -7,12 +7,14 @@ import droidsafe.runtime.*;
 
 public class InstantiationError extends IncompatibleClassChangeError {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:50.318 -0400", hash_original_method = "0CADFA7EDCF977E1C3E40BA09A641E39", hash_generated_method = "FBD8BFBFF8541964AECF4F628B71A9C5")
     public  InstantiationError() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:50.318 -0400", hash_original_method = "023CF4960A8F6AD78560985CF4A496AC", hash_generated_method = "96ED0A295193144E3FB5C2522C000545")
     public  InstantiationError(String detailMessage) {
         super(detailMessage);

@@ -16,6 +16,7 @@ public class BaseDexClassLoader extends ClassLoader {
 
     private DexPathList pathList;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:18.523 -0400", hash_original_method = "ADD286CC7B907BF4568C827AC1E89193", hash_generated_method = "CDB2BDC6E5E67AA9B137C4248320D43E")
     public  BaseDexClassLoader(String dexPath, File optimizedDirectory,
             String libraryPath, ClassLoader parent) {

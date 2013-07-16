@@ -16,6 +16,7 @@ public final class AlertInfo extends ParametersHeader implements javax.sip.heade
 
     protected String string;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.723 -0400", hash_original_method = "573DE3A32F61321788993C5785A09259", hash_generated_method = "427D589A7E774F7BCAE83A7C7B6EDB4C")
     public  AlertInfo() {
         super(NAME);

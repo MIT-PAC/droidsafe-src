@@ -8,6 +8,7 @@ import java.io.File;
 
 public class Zygote {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.850 -0400", hash_original_method = "571209F1E0BFAC649B933D0F6DC3BC96", hash_generated_method = "73F0DE5FDE691A3192BDD297AB8647BC")
     private  Zygote() {
         // ---------- Original Method ----------

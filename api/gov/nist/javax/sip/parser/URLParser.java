@@ -17,6 +17,7 @@ import java.text.ParseException;
 
 public class URLParser extends Parser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.245 -0400", hash_original_method = "02D762C7659C29C6C28E615D4F3B4986", hash_generated_method = "A180A25B080D63F54CAEAC34D9A2E288")
     public  URLParser(String url) {
         addTaint(url.getTaint());
@@ -26,6 +27,7 @@ public class URLParser extends Parser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.246 -0400", hash_original_method = "FF384429583BB1654143EB8FA592B141", hash_generated_method = "7313880486DB469022F6906AFC13E663")
     public  URLParser(Lexer lexer) {
         addTaint(lexer.getTaint());
@@ -56,7 +58,8 @@ public class URLParser extends Parser {
     }
 
     
-        protected static boolean isUnreserved(char next) {
+        @DSModeled(DSC.SAFE)
+    protected static boolean isUnreserved(char next) {
         return Lexer.isAlphaDigit(next) || isMark(next);
     }
 
@@ -98,6 +101,7 @@ public class URLParser extends Parser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.262 -0400", hash_original_method = "8FE92D5DF4A5AF3ADE92B1ED26FEEDBE", hash_generated_method = "02952C9F6C0D44FF8154BCABE90C445F")
     protected String unreserved() throws ParseException {
         char next = lexer.lookAhead(0);
@@ -289,6 +293,7 @@ String var15B8CCCC42482049DA2C2F49F34A1C30_341627523 =             new StringBuf
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.273 -0400", hash_original_method = "B69B97990375B5870393017EB399692B", hash_generated_method = "15E061FA2EA645CB2D528767870EB25C")
     protected boolean isEscaped() {
         try 
@@ -1159,6 +1164,7 @@ SipUri varF9E19AD6135C970F387F77C6F3DE4477_1163710353 =             retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.444 -0400", hash_original_method = "A1AFDB81F6A99AEF965D53D1558A830F", hash_generated_method = "515B513651E7D12057567205D7345075")
     public String peekScheme() throws ParseException {
         Token[] tokens = lexer.peekNextToken(1);
@@ -1282,6 +1288,7 @@ String var1B324365A764C077A55854483509F4AB_750384469 =         retval.toString()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.447 -0400", hash_original_method = "9AA60F60D9528CA4DF3AB8B29A4A0237", hash_generated_method = "244F559F21A496E3DE0CA31DF6233C0D")
     protected String user() throws ParseException {
     if(debug)        

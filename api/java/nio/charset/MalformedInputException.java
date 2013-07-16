@@ -10,6 +10,7 @@ public class MalformedInputException extends CharacterCodingException {
 
     private int inputLength;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.880 -0400", hash_original_method = "18BAC8E5082B44B03924789E1D8CD6BE", hash_generated_method = "8016B46A7DF01A09F456F05131FC6411")
     public  MalformedInputException(int length) {
         this.inputLength = length;
@@ -29,6 +30,7 @@ public class MalformedInputException extends CharacterCodingException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.881 -0400", hash_original_method = "7D10807CFABB560A12F38675F46A3FF5", hash_generated_method = "46D6438D344063AA38D51AB01B133D83")
     @Override
     public String getMessage() {

@@ -18,6 +18,7 @@ public class RAck extends SIPHeader implements javax.sip.header.RAckHeader {
 
     protected String method;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.771 -0400", hash_original_method = "7C5933C28B73D77B67311599A1BD6348", hash_generated_method = "B9F10F92D666D06433633A2E45A818B7")
     public  RAck() {
         super(NAME);

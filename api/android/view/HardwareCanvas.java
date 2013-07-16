@@ -30,6 +30,7 @@ public abstract class HardwareCanvas extends Canvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.216 -0400", hash_original_method = "09BF352B013BE09D7407EC81EDFAD3C9", hash_generated_method = "C28BC27DFF41A23D3F8C6210902632D2")
     @Override
     public void setBitmap(Bitmap bitmap) {

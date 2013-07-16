@@ -16,6 +16,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
 
     private String attrName;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.198 -0400", hash_original_method = "B358C277B5E2AD8935F1F06BA02E5093", hash_generated_method = "7E06F9A3DD0D146797AF22B3E80D4F4B")
     public  PYXWriter(Writer w) {
     if(w instanceof PrintWriter)        
@@ -36,6 +37,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.199 -0400", hash_original_method = "387AEB9DCE887E98A76AE2F20CD71AE2", hash_generated_method = "5466ADD270A11872DC76669A9AE00475")
     public void adup(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -49,6 +51,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.199 -0400", hash_original_method = "7D20D176BBEC71DA76C0647D5C25D5A3", hash_generated_method = "EC053AB6B03C84BABD4ED2C8768D9B86")
     public void aname(char[] buff, int offset, int length) throws SAXException {
         theWriter.print('A');
@@ -63,6 +66,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.200 -0400", hash_original_method = "0B592E26491ABBF6D6340D0C31CDF40A", hash_generated_method = "B2A5D6759AFE8D0F9508A2DF497760B1")
     public void aval(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -108,6 +112,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.201 -0400", hash_original_method = "D330469217CBCDF6CFC5B6F4299F7DED", hash_generated_method = "88A48D9CE88B81DA05A6C4CB83BA6CBA")
     public void eof(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -119,6 +124,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.202 -0400", hash_original_method = "26BADE83A21B645404502BDE9A94D5D0", hash_generated_method = "3C55794E7DA952F0E1A7F2DF347459C8")
     public void etag(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -144,6 +150,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.204 -0400", hash_original_method = "F17CC0C0B50085C85B2E9F440AE2C746", hash_generated_method = "61566874696B9573264CAD0D075D6C9A")
     public void gi(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -159,6 +166,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.205 -0400", hash_original_method = "A1521B964CA14C9F176B788365114A3A", hash_generated_method = "1EB8129B6CA88172B1C64D2E93BDD09B")
     public void cdsect(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -170,6 +178,7 @@ public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.206 -0400", hash_original_method = "EA665DB78182CC462806E2E30B0F15A4", hash_generated_method = "674C4C19ADB558AB0EB530C436B1E83A")
     public void pcdata(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -247,6 +256,7 @@ switch(buff[i]){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.207 -0400", hash_original_method = "434533230F3CD22E7AA0C553CAF97C2F", hash_generated_method = "8B165F3927FC63F8BD904E3F86A63FD5")
     public void pitarget(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -262,6 +272,7 @@ switch(buff[i]){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.207 -0400", hash_original_method = "ED46B5C6DF2EC4C94179D535403EEAEA", hash_generated_method = "768E0BCDE205A1F1632EB544EACF56AC")
     public void pi(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -285,6 +296,7 @@ switch(buff[i]){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.208 -0400", hash_original_method = "7F7C0809B3837070EBC39FFF348639C7", hash_generated_method = "BF7D539665C7572AF39A50267E3494A0")
     public void stage(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -296,6 +308,7 @@ switch(buff[i]){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.208 -0400", hash_original_method = "908998A64774886455085A6988C60433", hash_generated_method = "C1CD1C9ED8794B73072868413C0E0DC8")
     public void characters(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -307,6 +320,7 @@ switch(buff[i]){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.208 -0400", hash_original_method = "07AC39EBDED7098E926E255FC164A2D5", hash_generated_method = "129EEEA29FDFB63334E96FC98253B8C7")
     public void endDocument() throws SAXException {
         theWriter.close();
@@ -315,6 +329,7 @@ switch(buff[i]){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.209 -0400", hash_original_method = "52900B9FEFC9FE65D64402526E52F683", hash_generated_method = "F8D30026C6CFB5BAD43C4CD7AF795CDB")
     public void endElement(String uri, String localname, String qname) throws SAXException {
         addTaint(qname.getTaint());
@@ -339,6 +354,7 @@ switch(buff[i]){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.209 -0400", hash_original_method = "2E1F534279DED267EA0D6CCAD700E3B2", hash_generated_method = "8C9A43D7B1BD843C646E072F2D34453A")
     public void ignorableWhitespace(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -350,6 +366,7 @@ switch(buff[i]){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.210 -0400", hash_original_method = "53BDE4B1E3F8AE32ABB1D442EEBC1FC0", hash_generated_method = "4DB922F4F7FF81D9B768A460BD04AC3A")
     public void processingInstruction(String target, String data) throws SAXException {
         addTaint(data.getTaint());
@@ -436,6 +453,7 @@ for(int i = 0;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.212 -0400", hash_original_method = "E94210BE8A910F2AF0BA66BAC743271D", hash_generated_method = "3EF40672DD68D8A8055CE5BE33343B58")
     public void comment(char[] ch, int start, int length) throws SAXException {
         addTaint(length);

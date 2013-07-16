@@ -22,6 +22,7 @@ public class NinePatch {
 
     private final RectF mRect = new RectF();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.421 -0400", hash_original_method = "D88879F567A4CA145787F3AF3B8F5F18", hash_generated_method = "FDBCEF26C845555A069651CFEE5744A4")
     public  NinePatch(Bitmap bitmap, byte[] chunk, String srcName) {
         mBitmap = bitmap;
@@ -36,6 +37,7 @@ public class NinePatch {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.421 -0400", hash_original_method = "578697A0E71C0E213522F36880BE7410", hash_generated_method = "6981D35AE9F988AB316977678E776170")
     public  NinePatch(NinePatch patch) {
         mBitmap = patch.mBitmap;

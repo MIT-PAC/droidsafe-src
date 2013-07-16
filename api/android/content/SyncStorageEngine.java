@@ -1877,6 +1877,7 @@ SyncStatusInfo var62D3D5D442782C1992154E821A40FA75_18394594 =         status;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.866 -0400", hash_original_method = "E278B7FDC712595C2D25226C12B41BCD", hash_generated_method = "1E6BFD699FAE548F7E57430D3002414F")
     public void clearAndReadState() {
         synchronized

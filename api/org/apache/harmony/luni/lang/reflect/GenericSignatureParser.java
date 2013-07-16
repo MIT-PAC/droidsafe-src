@@ -55,6 +55,7 @@ public class GenericSignatureParser {
 
     int pos;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.265 -0400", hash_original_method = "B4AF29B80F8E14619B64C65F02963718", hash_generated_method = "C049BAD034A575B3E9230CA1104DE603")
     public  GenericSignatureParser(ClassLoader loader) {
         this.loader = loader;

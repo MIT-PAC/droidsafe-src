@@ -36,7 +36,8 @@ class CommandParamsFactory extends Handler {
     }
 
     
-        static synchronized CommandParamsFactory getInstance(RilMessageDecoder caller,
+        @DSModeled(DSC.SAFE)
+    static synchronized CommandParamsFactory getInstance(RilMessageDecoder caller,
             IccFileHandler fh) {
         if (sInstance != null) {
             return sInstance;
@@ -246,6 +247,7 @@ for(Bitmap icon : icons)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.084 -0400", hash_original_method = "075D6D54A772D277DACB0A1749F22220", hash_generated_method = "890BBE601D7498292AA6CD8EF9E6D69E")
     private void sendCmdParams(ResultCode resCode) {
         addTaint(resCode.getTaint());

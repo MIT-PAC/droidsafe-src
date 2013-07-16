@@ -16,6 +16,7 @@ public class Account implements Parcelable {
 
     public String type;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.134 -0400", hash_original_method = "92321A38B636724882B81077847DFFEE", hash_generated_method = "02364E2820942279EF72CC1B583CD935")
     public  Account(String name, String type) {
     if(TextUtils.isEmpty(name))        
@@ -44,6 +45,7 @@ public class Account implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.139 -0400", hash_original_method = "634539653E1462125AEF6C008057544F", hash_generated_method = "AB670C373627CC667B25B3C5CC45E291")
     public  Account(Parcel in) {
         this.name = in.readString();
@@ -54,6 +56,7 @@ public class Account implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.143 -0400", hash_original_method = "8952178E80D6EF68D44FC6803A31AC53", hash_generated_method = "57354EA46B3BB69C0611FC58A6E6CA26")
     public boolean equals(Object o) {
         addTaint(o.getTaint());
@@ -81,6 +84,7 @@ public class Account implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.148 -0400", hash_original_method = "2D8E3835F41EEE5A0134485B603913A1", hash_generated_method = "57022B31714A7043649734EC6BB6C2B1")
     public int hashCode() {
         int result = 17;
@@ -108,6 +112,7 @@ public class Account implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.154 -0400", hash_original_method = "5E35BE18734E956B072A3A591EB1639E", hash_generated_method = "9553A42F573EBC29D5C802031B61C868")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -120,6 +125,7 @@ public class Account implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.156 -0400", hash_original_method = "E40D22A387A231E7FC5FB70BCBB60906", hash_generated_method = "1397F1AC812005463D89EDC05CA072B4")
     public String toString() {
 String var88C3A4BDB947BCD23BACD4E0029C901F_1000356310 =         "Account {name=" + name + ", type=" + type + "}";

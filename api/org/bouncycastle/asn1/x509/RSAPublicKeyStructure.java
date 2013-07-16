@@ -103,6 +103,7 @@ BigInteger varB360105573401CCC465D10C242BA5623_2035082422 =         publicExpone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.182 -0400", hash_original_method = "2A6A9DB413CE77685147AC30675BFEF2", hash_generated_method = "B9331FEF6ABC8785D6F240DCF9B00C49")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

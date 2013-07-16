@@ -122,6 +122,7 @@ CharArrayBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_109670696 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.542 -0400", hash_original_method = "19984FDC599EEB66F432BF4C8D33EB13", hash_generated_method = "35E2AB86AC0E815ED9AB1138CAEDE94C")
     public CharArrayBuffer formatRequestLine(CharArrayBuffer buffer,
                                              RequestLine reqline) {

@@ -72,6 +72,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.536 -0400", hash_original_method = "A3E85FE8F46B76369541B6339B556DCC", hash_generated_method = "D381A8AE144E212E1E6A0EEC9EE319D0")
     private void flushBuilder() {
     if(mBuilder.length() > 0)        

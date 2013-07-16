@@ -9,6 +9,7 @@ import javax.sip.header.*;
 
 public class ProxyAuthenticate extends AuthenticationHeader implements ProxyAuthenticateHeader {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.720 -0400", hash_original_method = "B80D256AA9E947492E2C0A1F4B8ED695", hash_generated_method = "97DB8173897D34702A0D76F3A00F4117")
     public  ProxyAuthenticate() {
         super(NAME);

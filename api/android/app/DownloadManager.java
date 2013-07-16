@@ -460,6 +460,7 @@ Uri varCB06EC07B2D6682F3C59CCA414EC1632_1038656105 =         ContentUris.withApp
 
         private int mNotificationVisibility = VISIBILITY_VISIBLE;
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.133 -0400", hash_original_method = "38AB51743560DA4EF393F63C39D43853", hash_generated_method = "0239CCDAF308BBBDC57A66371279B683")
         public  Request(Uri uri) {
     if(uri == null)            
@@ -1082,6 +1083,7 @@ String var301A4207D137C8EA4EF56F87F78044E6_1308900692 =             Downloads.Im
 
         private Uri mBaseUri;
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.170 -0400", hash_original_method = "DA2C30EB999FAADAF9AB1439D3B9F223", hash_generated_method = "1DA672EC02AC581A572B00BC4EEFBBB5")
         public  CursorTranslator(Cursor cursor, Uri baseUri) {
             super(cursor);

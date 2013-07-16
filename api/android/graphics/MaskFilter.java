@@ -10,6 +10,7 @@ public class MaskFilter {
 
     int native_instance;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.300 -0400", hash_original_method = "C1D6709FDC433FB6BE788CD4DDEC7BFF", hash_generated_method = "C1D6709FDC433FB6BE788CD4DDEC7BFF")
     public MaskFilter ()
     {

@@ -27,6 +27,7 @@ public class ClientHello extends Message {
 
     byte[] compression_methods;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.145 -0400", hash_original_method = "B360A744DA2558AEF3A4AD32A9DD66E9", hash_generated_method = "FFD2B2CAD76C273C2B27B53586298235")
     public  ClientHello(SecureRandom sr, byte[] version, byte[] ses_id,
             CipherSuite[] cipher_suite) {

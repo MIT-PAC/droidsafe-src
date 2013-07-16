@@ -158,6 +158,7 @@ DERObject var9F6A5CC5D0E8FDBA0198C27DF56526D2_232400701 =             outer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.656 -0400", hash_original_method = "09A8CA93ED2ECABA19E96E21E19C2A5D", hash_generated_method = "FF87C34F2B850A4E5E42447838EBF887")
     public DEREncodable getObjectAt(
         int index) {

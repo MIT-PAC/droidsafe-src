@@ -21,6 +21,7 @@ public class NameValueList implements Serializable, Cloneable, Map<String,NameVa
 
     private String separator;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.704 -0400", hash_original_method = "E8FF7D679153D33DE114891B4F9D5A45", hash_generated_method = "336BD0E12DEBE109B27311EE1406982B")
     public  NameValueList() {
         this.separator = ";";
@@ -31,6 +32,7 @@ public class NameValueList implements Serializable, Cloneable, Map<String,NameVa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.705 -0400", hash_original_method = "31A624E97D000A93AA89FEF53FE9BAB4", hash_generated_method = "5B93D3F26384022AFCBB9E398E15D02D")
     public  NameValueList(boolean sync) {
         addTaint(sync);

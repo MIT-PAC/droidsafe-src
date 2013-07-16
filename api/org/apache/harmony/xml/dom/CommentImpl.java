@@ -9,6 +9,7 @@ import org.w3c.dom.Node;
 
 public final class CommentImpl extends CharacterDataImpl implements Comment {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.523 -0400", hash_original_method = "73927E77C0FC42AE226BC21B47EED77C", hash_generated_method = "86D6DE47A9846A97B5EBDE80FDEF8B9D")
       CommentImpl(DocumentImpl document, String data) {
         super(document, data);
@@ -42,6 +43,7 @@ String var0FCA15F9618B56275D1C4A63BF78C539_309308725 =         "#comment";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.524 -0400", hash_original_method = "F249C6EFBACF4B954D25B46FE7AAC81B", hash_generated_method = "672C4205D808FEA857686BDEDB190167")
     public boolean containsDashDash() {
         boolean varFCF615543A0352A82B69E2339E044D2C_1342863256 = (buffer.indexOf("--") != -1);

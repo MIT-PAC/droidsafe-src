@@ -24,6 +24,7 @@ abstract class ExpatAttributes implements Attributes {
     public abstract int getPointer();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.885 -0400", hash_original_method = "57C7829583448928D2E62C8F0C20470B", hash_generated_method = "37DAF6F6C3F29E3A876682FAA21F2B11")
     public String getURI(int index) {
         addTaint(index);
@@ -44,6 +45,7 @@ String varA2510C6EE73B8C0F038F54B09AE84839_1760359056 =         getURI(getParser
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.885 -0400", hash_original_method = "0BE26DE1FC37C5F8E294AD66DA35C798", hash_generated_method = "1DE23036B67D15CC5D010033D1CA56AF")
     public String getLocalName(int index) {
         addTaint(index);
@@ -59,6 +61,7 @@ String varE9C78DB39C4181168A54285DD59C1B40_325244092 =         (index < 0 || ind
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.885 -0400", hash_original_method = "0E62167FF9D29B28633236898C212817", hash_generated_method = "8F26EEDC9EFD3A8FB8FF92A76DE36304")
     public String getQName(int index) {
         addTaint(index);
@@ -74,6 +77,7 @@ String var83B75B73A459239093C3A115ADCAEC22_136350485 =         (index < 0 || ind
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.885 -0400", hash_original_method = "906F8D6EEECA09A0EB9B2E9E5289B227", hash_generated_method = "69A4494FD4B3E8A202E4FB4BBC98C52D")
     public String getType(int index) {
         addTaint(index);
@@ -85,6 +89,7 @@ String var1C4F05A547C0F7E57CC38D5C9BDF43F4_661517899 =         (index < 0 || ind
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.885 -0400", hash_original_method = "3269AF76DE45F61A692FCC87354CAB72", hash_generated_method = "26AF43F3660E2F72335CE06C9DD77270")
     public String getValue(int index) {
         addTaint(index);
@@ -100,6 +105,7 @@ String varB49A60064FD492A96C55111B103E1FA7_883475951 =         (index < 0 || ind
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.886 -0400", hash_original_method = "C871C7E3F593C081235C517FE9A1E558", hash_generated_method = "EEF7F96E155E2E098335A3D8EEBC853C")
     public int getIndex(String uri, String localName) {
         addTaint(localName.getTaint());
@@ -141,6 +147,7 @@ String varB49A60064FD492A96C55111B103E1FA7_883475951 =         (index < 0 || ind
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.886 -0400", hash_original_method = "980758BEF60D7C26C232D3CAD78E7835", hash_generated_method = "2F4EC87DFC5F4AE679D404F32F3E4F3A")
     public int getIndex(String qName) {
         addTaint(qName.getTaint());
@@ -172,6 +179,7 @@ String varB49A60064FD492A96C55111B103E1FA7_883475951 =         (index < 0 || ind
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.886 -0400", hash_original_method = "374AA6D4EA76C101E4A1F3245973703C", hash_generated_method = "654FCB9CE0AE37034F9AAFD4FA926927")
     public String getType(String uri, String localName) {
         addTaint(localName.getTaint());
@@ -202,6 +210,7 @@ String varC04434C4E85414930EE6EADF3FF469A4_1488704840 =         getIndex(uri, lo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.886 -0400", hash_original_method = "845C2A9D603CFD94A25AD0FA47DD5097", hash_generated_method = "FD95818ABB5734915E7BAC2909A380A7")
     public String getType(String qName) {
         addTaint(qName.getTaint());
@@ -213,6 +222,7 @@ String varA41D0BC36B3E3C4AE23E8E34671D0A46_1727284847 =         getIndex(qName) 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.887 -0400", hash_original_method = "C565081F95CF8700320081FA5DB3FD15", hash_generated_method = "710262155FB54245C98B48CEDFD2F94D")
     public String getValue(String uri, String localName) {
         addTaint(localName.getTaint());
@@ -254,6 +264,7 @@ String varD4D21E93203A8FF776FFEF18BDCAB032_915026484 =         getValue(pointer,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.887 -0400", hash_original_method = "11A6BF5F6E86FB8B88CA0053A4EF72DA", hash_generated_method = "B799BE554C0F9C96135773DC46FC80D6")
     public String getValue(String qName) {
         addTaint(qName.getTaint());

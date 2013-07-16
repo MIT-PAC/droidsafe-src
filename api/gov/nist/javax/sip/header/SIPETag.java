@@ -12,6 +12,7 @@ public class SIPETag extends SIPHeader implements SIPETagHeader, ExtensionHeader
 
     protected String entityTag;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.124 -0400", hash_original_method = "BAC01810EAA501495132ECB89EEE2B88", hash_generated_method = "5AAB108C68C33BB6DA943351B9383C7C")
     public  SIPETag() {
         super(NAME);
@@ -19,6 +20,7 @@ public class SIPETag extends SIPHeader implements SIPETagHeader, ExtensionHeader
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.124 -0400", hash_original_method = "85BBFA4AA70935C1ADD9E51D03FF73BB", hash_generated_method = "C6A7745E5CB45C52A4FD10CF9FC79528")
     public  SIPETag( String tag ) throws ParseException {
         this();

@@ -14,6 +14,7 @@ public final class CRLNumber extends ExtensionValue {
 
     private BigInteger number;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.717 -0400", hash_original_method = "F2D26D3BB1859BB9D7AC567B8EA30F7D", hash_generated_method = "E13ABED8946C422780CE8CDBBC8C2031")
     public  CRLNumber(byte[] encoding) throws IOException {
         super(encoding);

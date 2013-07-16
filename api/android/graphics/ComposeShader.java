@@ -13,6 +13,7 @@ public class ComposeShader extends Shader {
 
     @SuppressWarnings({"UnusedDeclaration"}) private Shader mShaderB;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.232 -0400", hash_original_method = "54479FEAF5918A2D0015420E3AF1868D", hash_generated_method = "C7F1D56EF0682306F7831840B5A4D0B0")
     public  ComposeShader(Shader shaderA, Shader shaderB, Xfermode mode) {
         addTaint(mode.getTaint());
@@ -47,6 +48,7 @@ public class ComposeShader extends Shader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.233 -0400", hash_original_method = "6DA3793B1F4C3B72942152784A23C545", hash_generated_method = "B112B2A6881BB62DFF4E7106CDBF9A05")
     public  ComposeShader(Shader shaderA, Shader shaderB, PorterDuff.Mode mode) {
         addTaint(mode.getTaint());

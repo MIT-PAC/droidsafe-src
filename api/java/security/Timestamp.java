@@ -92,6 +92,7 @@ CertPath varC4579A22BE0444B538B995294C4BD4B5_1473273335 =         signerCertPath
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.571 -0400", hash_original_method = "9F5E9DF58C2165A57C2B03C2ABFACB32", hash_generated_method = "D2D4C5BCE1B5E69E19B1CE1250CD124C")
     public Date getTimestamp() {
 Date var9C830804DEBADE9F0F9D7100079F1F4C_1601913173 =         (Date) timestamp.clone();

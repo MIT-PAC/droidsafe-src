@@ -8,6 +8,7 @@ import javax.sip.header.*;
 
 public final class ContentLanguageList extends SIPHeaderList<ContentLanguage> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.274 -0400", hash_original_method = "E0E10BF5A133A10286DF9F5F2B3DD32A", hash_generated_method = "B287B041EB942C3779176FC9062E1E91")
     public  ContentLanguageList() {
         super(ContentLanguage.class,

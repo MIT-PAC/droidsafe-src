@@ -30,6 +30,7 @@ public final class DNParser {
 
     private byte[] encoded;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.830 -0400", hash_original_method = "66B2F9736FABC0973929FB105735B82E", hash_generated_method = "5286CFA825BD8D2CE0A88F3464588C97")
     public  DNParser(String dn) throws IOException {
         chars = dn.toCharArray();
@@ -391,6 +392,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.840 -0400", hash_original_method = "C98D163E17FC33654783E302104D54C8", hash_generated_method = "B6F9702C91B304A1A4B87EA30A144BD3")
     private int getByte(int position) throws IOException {
         addTaint(position);

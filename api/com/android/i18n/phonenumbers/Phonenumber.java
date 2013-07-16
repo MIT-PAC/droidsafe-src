@@ -8,6 +8,7 @@ import java.io.Serializable;
 
 public final class Phonenumber {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.231 -0400", hash_original_method = "9F0C69719EBF6B458992D61E4BCC90E8", hash_generated_method = "5CB1D98A4150FC5519010EC189B4C107")
     private  Phonenumber() {
         // ---------- Original Method ----------
@@ -58,6 +59,7 @@ public final class Phonenumber {
 
         private java.lang.String preferredDomesticCarrierCode_ = "";
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.233 -0400", hash_original_method = "BC3E0739FB67F4B1E9E07E3377CC422E", hash_generated_method = "82E1ACB1E508CA9B7F2766C0989401DD")
         public  PhoneNumber() {
             countryCodeSource_ = CountryCodeSource.FROM_NUMBER_WITH_PLUS_SIGN;
@@ -490,6 +492,7 @@ PhoneNumber var72A74007B2BE62B849F475C7BDA4658B_1652574318 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.244 -0400", hash_original_method = "0AFF34EE20E5281E0E8704C233C4A6C7", hash_generated_method = "5F37F37B6A8DC42401FE752628E6876A")
         public PhoneNumber mergeFrom(PhoneNumber other) {
             addTaint(other.getTaint());

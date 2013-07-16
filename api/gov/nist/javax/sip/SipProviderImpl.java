@@ -83,12 +83,14 @@ public class SipProviderImpl implements javax.sip.SipProvider, gov.nist.javax.si
 
     private boolean dialogErrorsAutomaticallyHandled = true;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.696 -0400", hash_original_method = "D7A082BA7BBEB80ADC15AA42F366B72C", hash_generated_method = "58CC0CE0C4D98D56E1D4B23FD5EE5252")
     private  SipProviderImpl() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.697 -0400", hash_original_method = "E70748599E06F3AAB45B7E3DFBC2B3DC", hash_generated_method = "C7D1CA44448B68E5234FA92ECF9809FE")
     protected  SipProviderImpl(SipStackImpl sipStack) {
         this.eventScanner = sipStack.getEventScanner();

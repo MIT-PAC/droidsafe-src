@@ -16,6 +16,7 @@ public class Replaces extends ParametersHeader implements ExtensionHeader, Repla
 
     public String callId;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.788 -0400", hash_original_method = "573D7C3C26F3FDBFC64B6AAA9C0FB261", hash_generated_method = "E109DF2046FCB28298FD5EAEEDF43CFC")
     public  Replaces() {
         super(NAME);
@@ -23,6 +24,7 @@ public class Replaces extends ParametersHeader implements ExtensionHeader, Repla
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.788 -0400", hash_original_method = "FC3FC3684A022FA26474BF29AC78B1CA", hash_generated_method = "9D6712590EF6EE91F7F5D49A3617C968")
     public  Replaces(String callId) throws IllegalArgumentException {
         super(NAME);

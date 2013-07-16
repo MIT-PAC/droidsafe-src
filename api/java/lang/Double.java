@@ -10,6 +10,7 @@ public final class Double extends Number implements Comparable<Double> {
 
     private double value;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.660 -0400", hash_original_method = "7EA95E8804ADA9698A61C51212EFD766", hash_generated_method = "3990EEE74B02A4503F84EFFAB849E6FA")
     public  Double(double value) {
         this.value = value;
@@ -18,6 +19,7 @@ public final class Double extends Number implements Comparable<Double> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.660 -0400", hash_original_method = "C14717042677DE8EFE6605DB4D5CF298", hash_generated_method = "7C73988AE58AF7A7F8B0B979C47A8434")
     public  Double(String string) throws NumberFormatException {
         this(parseDouble(string));

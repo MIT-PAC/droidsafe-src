@@ -105,6 +105,7 @@ public abstract class HandshakeProtocol {
 
     public SSLSocketImpl socketOwner;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.463 -0400", hash_original_method = "6E2FD3B88BA1414C6B3F142DFE23A2F6", hash_generated_method = "F71C033E0C4580167C8F05355A419151")
     protected  HandshakeProtocol(Object owner) {
     if(owner instanceof SSLEngineImpl)        
@@ -156,6 +157,7 @@ public abstract class HandshakeProtocol {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.465 -0400", hash_original_method = "0CB6BF73CCE484420EACC5A99703893D", hash_generated_method = "4AEEC4656DDF5C866505D45E97967DF0")
     public SSLEngineResult.HandshakeStatus getStatus() {
     if(io_stream.hasData() || needSendCCSpec ||
@@ -461,6 +463,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.472 -0400", hash_original_method = "0009DED469C26D41942AD89710EE0C01", hash_generated_method = "E542A31BC24FF5919214DEDD845699A2")
     public void send(Message message) {
         addTaint(message.getTaint());
@@ -567,7 +570,8 @@ Runnable var26C8C3773B386D0D496AF0D33B0E53BA_1091736267 =         delegatedTasks
     }
 
     
-        protected static int getRSAKeyLength(PublicKey pk) throws NoSuchAlgorithmException, InvalidKeySpecException {
+        @DSModeled(DSC.SAFE)
+    protected static int getRSAKeyLength(PublicKey pk) throws NoSuchAlgorithmException, InvalidKeySpecException {
         BigInteger mod;
         if (pk instanceof RSAKey) {
             mod = ((RSAKey) pk).getModulus();

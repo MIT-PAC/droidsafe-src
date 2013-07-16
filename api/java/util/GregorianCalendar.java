@@ -38,6 +38,7 @@ public class GregorianCalendar extends Calendar {
 
     private int lastYearSkew = 0;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.056 -0400", hash_original_method = "7EB3091E87333B7AA987345512812570", hash_generated_method = "2E973698D04F2D2AAC57C914B74CED19")
     public  GregorianCalendar() {
         this(TimeZone.getDefault(), Locale.getDefault());
@@ -45,6 +46,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.058 -0400", hash_original_method = "B0762BDDD2B39759F6CE94DB8F25D3E0", hash_generated_method = "38F0A9BF75F9A56470D2031A9E0A5D2D")
     public  GregorianCalendar(int year, int month, int day) {
         super(TimeZone.getDefault(), Locale.getDefault());
@@ -57,6 +59,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.069 -0400", hash_original_method = "D6C72587979F1136CC7CF710B2F32D12", hash_generated_method = "F7EFABA788F844F525D02243BF9520F0")
     public  GregorianCalendar(int year, int month, int day, int hour, int minute) {
         super(TimeZone.getDefault(), Locale.getDefault());
@@ -71,6 +74,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.074 -0400", hash_original_method = "BC793B84C6DC2AD69827C6FC0D0FCEDD", hash_generated_method = "FC0236E2BF577D7CE57E3BA1598443DF")
     public  GregorianCalendar(int year, int month, int day, int hour,
             int minute, int second) {
@@ -87,6 +91,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.078 -0400", hash_original_method = "63C34121AB8507D7813FBAF0F269A9D2", hash_generated_method = "DBDDB5E1B686CEF0A39C004ACB03E3DF")
       GregorianCalendar(long milliseconds) {
         this(false);
@@ -97,6 +102,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.080 -0400", hash_original_method = "56E3B8EB09DD30B0731434891C29D1A4", hash_generated_method = "4EF55C9A9234380F5CABEBE8788FA517")
     public  GregorianCalendar(Locale locale) {
         this(TimeZone.getDefault(), locale);
@@ -105,6 +111,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.080 -0400", hash_original_method = "7987E4D71BE0DBF5086B038B74101A38", hash_generated_method = "1274F0C4BA04C348AAE90FD4E15265AE")
     public  GregorianCalendar(TimeZone timezone) {
         this(timezone, Locale.getDefault());
@@ -113,6 +120,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.081 -0400", hash_original_method = "98E484CB97D77C9503930A8DB608CAE2", hash_generated_method = "16236B43E103E0BE92398E5AAC116A6B")
     public  GregorianCalendar(TimeZone timezone, Locale locale) {
         super(timezone, locale);
@@ -124,6 +132,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.082 -0400", hash_original_method = "0CE38BA4675BDF22B153CA671467EBE6", hash_generated_method = "19136D995F6410ABA81A5328621EBDCA")
       GregorianCalendar(boolean ignored) {
         super(TimeZone.getDefault());
@@ -436,6 +445,7 @@ Object varAEB7DF9800272FF7E732FE6AE6B21A82_1631509430 =         thisClone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.100 -0400", hash_original_method = "B0DF08CEBB1EE730F98FF9762C9FEBD4", hash_generated_method = "87253D919D628CA2225925A01EF2B0D0")
     @Override
     protected void computeFields() {
@@ -541,6 +551,7 @@ for(int i = 0;i < FIELD_COUNT;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.110 -0400", hash_original_method = "2C41A89AB92A41E731883E58EB4B865A", hash_generated_method = "14DF9FF10FF5FF103D5668BF747C39BA")
     @Override
     protected void computeTime() {

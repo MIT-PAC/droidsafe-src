@@ -120,6 +120,7 @@ public final class X509CertImpl extends X509Certificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.211 -0400", hash_original_method = "9C90F0AD6131A4566D6AF431EC38BE50", hash_generated_method = "2BACBF722EBA4E0F7AD1F70B03BC8985")
     public  X509CertImpl(byte[] encoding) throws IOException {
         this((Certificate) Certificate.ASN1.decode(encoding));

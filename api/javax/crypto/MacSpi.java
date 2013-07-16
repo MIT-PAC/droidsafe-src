@@ -31,6 +31,7 @@ public abstract class MacSpi {
     protected abstract void engineUpdate(byte[] input, int offset, int len);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.341 -0400", hash_original_method = "7BFE449B7BFB03ADBCFF5433860FD67B", hash_generated_method = "63823689C67BEE238B041BFC33C14571")
     protected void engineUpdate(ByteBuffer input) {
         addTaint(input.getTaint());

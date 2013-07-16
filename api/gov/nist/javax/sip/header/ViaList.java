@@ -9,6 +9,7 @@ import java.util.Iterator;
 
 public final class ViaList extends SIPHeaderList<Via> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.645 -0400", hash_original_method = "810E0ED8E1E79C548735B6B2AD5FE1B8", hash_generated_method = "075F5CC46E50FEE2ED5E752A18746683")
     public  ViaList() {
         super(Via.class, ViaHeader.NAME);

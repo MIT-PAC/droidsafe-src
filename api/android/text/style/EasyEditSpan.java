@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 public class EasyEditSpan implements ParcelableSpan {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.176 -0400", hash_original_method = "A230929293AFFCA631493D5E514D429F", hash_generated_method = "30C43FC9D033188B5BCE7C639844F2F1")
     public  EasyEditSpan() {
         // ---------- Original Method ----------

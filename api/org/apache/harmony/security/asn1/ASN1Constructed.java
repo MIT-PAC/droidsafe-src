@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public abstract class ASN1Constructed extends ASN1Type {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.559 -0400", hash_original_method = "9FFE4A234D2E2DB42C06DD57E257B3F5", hash_generated_method = "FB8D52ECAFCCCA9AC4D6B778E247FD10")
     protected  ASN1Constructed(int tagNumber) {
         super(CLASS_UNIVERSAL, tagNumber);
@@ -15,6 +16,7 @@ public abstract class ASN1Constructed extends ASN1Type {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.559 -0400", hash_original_method = "0ED0D05BF14BE7B30955286BAE5204E3", hash_generated_method = "54D1A80DE22E55591D27EA9989B25016")
     protected  ASN1Constructed(int tagClass, int tagNumber) {
         super(tagClass, tagNumber);

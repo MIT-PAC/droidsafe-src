@@ -88,6 +88,7 @@ String varAC3FC6DF81C7E6B09314CC9E9CD3CD11_1048211768 =             "SIP/2.0";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.339 -0400", hash_original_method = "DFEA7962E8FE3DE66D00681F9A6D11E3", hash_generated_method = "CAE2D18A4E4250D79E957D3F1AC1C740")
     protected String method() throws ParseException {
         try 

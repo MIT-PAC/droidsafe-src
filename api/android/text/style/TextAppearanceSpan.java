@@ -30,6 +30,7 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
 
     private ColorStateList mTextColorLink;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.459 -0400", hash_original_method = "9B1172C0C8B31BFAE0D2C93687346AFE", hash_generated_method = "BCD1C1AD08E368165FE4EC652DB19889")
     public  TextAppearanceSpan(Context context, int appearance) {
         this(context, appearance, -1);
@@ -39,6 +40,7 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.462 -0400", hash_original_method = "9317B5C63D080DC3774D9B3DFE979A1B", hash_generated_method = "9F02B1C64430E2A7FE434EC80EDD3242")
     public  TextAppearanceSpan(Context context, int appearance, int colorList) {
         addTaint(colorList);
@@ -82,6 +84,7 @@ switch(tf){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.463 -0400", hash_original_method = "BC7BB9D16048D8ABD4B4822412C22F80", hash_generated_method = "1562EAF0D06CC3B413C7B78388E7EB34")
     public  TextAppearanceSpan(String family, int style, int size,
                               ColorStateList color, ColorStateList linkColor) {
@@ -99,6 +102,7 @@ switch(tf){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.465 -0400", hash_original_method = "0C8ADD28198996D9662262CC57DEB737", hash_generated_method = "274C9A5D1FDF6FD94E4AFC7D7B010B27")
     public  TextAppearanceSpan(Parcel src) {
         mTypeface = src.readString();

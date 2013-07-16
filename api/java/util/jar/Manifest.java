@@ -33,12 +33,14 @@ public class Manifest implements Cloneable {
 
     private int mainEnd;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.243 -0400", hash_original_method = "2CD70F0E3E6560EF53C780EFAB38343C", hash_generated_method = "BD1DF1E0A8292856D9BBD81FC9365027")
     public  Manifest() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.243 -0400", hash_original_method = "2FA11E9347D2AC2716E0BA224CCFCCB5", hash_generated_method = "86671B3BDCFC8E436185AB91F1B806C9")
     public  Manifest(InputStream is) throws IOException {
         addTaint(is.getTaint());
@@ -48,6 +50,7 @@ public class Manifest implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.244 -0400", hash_original_method = "0E23B3A5115DCECDE6F46702BE2E2DEF", hash_generated_method = "CCE22E52017A98DFD89C5BA563E76749")
     @SuppressWarnings("unchecked")
     public  Manifest(Manifest man) {
@@ -61,6 +64,7 @@ public class Manifest implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.244 -0400", hash_original_method = "19FA98C36DB13DC48F6FA00606FD5E9E", hash_generated_method = "19E49DDE84D514043ECC50D3E1AA986A")
       Manifest(InputStream is, boolean readChunks) throws IOException {
         addTaint(readChunks);

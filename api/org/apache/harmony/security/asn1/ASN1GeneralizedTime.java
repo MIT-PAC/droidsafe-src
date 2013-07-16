@@ -24,6 +24,7 @@ public final class ASN1GeneralizedTime extends ASN1Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.601 -0400", hash_original_method = "9601D88CE03A72C3505152153428ACD0", hash_generated_method = "614855DCD582D8D5AE471FD5A709D178")
     public Object decode(BerInputStream in) throws IOException {
         addTaint(in.getTaint());
@@ -46,6 +47,7 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1244638534 =         getDecodedObject
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.601 -0400", hash_original_method = "815E5B13588CE775C73F05D1D7B36D43", hash_generated_method = "E719230D9A4ACB5C6353F15249002784")
     public void encodeContent(BerOutputStream out) {
         addTaint(out.getTaint());

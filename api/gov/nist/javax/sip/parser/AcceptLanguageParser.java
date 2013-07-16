@@ -11,6 +11,7 @@ import java.text.ParseException;
 
 public class AcceptLanguageParser extends HeaderParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.567 -0400", hash_original_method = "4ECD6586A5A6ED08B6159E7C6D7079C1", hash_generated_method = "68B941454870B09E18FF5563FC674CF8")
     public  AcceptLanguageParser(String acceptLanguage) {
         super(acceptLanguage);
@@ -19,6 +20,7 @@ public class AcceptLanguageParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.568 -0400", hash_original_method = "8738AF37C5C1AC35B7D6DAA26504D715", hash_generated_method = "44799DF67856C143D12EE029A648B896")
     protected  AcceptLanguageParser(Lexer lexer) {
         super(lexer);

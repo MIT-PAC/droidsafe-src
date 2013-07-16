@@ -13,6 +13,7 @@ public class RegexCache {
 
     private LRUCache<String, Pattern> cache;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.266 -0400", hash_original_method = "21C87B9404006AB8BDC70A7D87D605C9", hash_generated_method = "BA72428A9A53B792FB4D16D0540B1699")
     public  RegexCache(int size) {
         cache = new LRUCache<String, Pattern>(size);
@@ -21,6 +22,7 @@ public class RegexCache {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.267 -0400", hash_original_method = "625FF0438C87362FF750355AAC8DD91B", hash_generated_method = "7802E79BA710B5FBB590985F42BB31A1")
     public Pattern getPatternForRegex(String regex) {
         addTaint(regex.getTaint());
@@ -43,6 +45,7 @@ Pattern var407D32260E541B695CF3FD3F7EFB76AB_986472401 =         pattern;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.267 -0400", hash_original_method = "9456A95A80F85B5D1573A006C0CCB596", hash_generated_method = "2D0BE40CD6821F85B7550726AE028D8E")
      boolean containsRegex(String regex) {
         addTaint(regex.getTaint());
@@ -62,6 +65,7 @@ Pattern var407D32260E541B695CF3FD3F7EFB76AB_986472401 =         pattern;
 
         private int size;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.268 -0400", hash_original_method = "2359AFA0A580D93087724107F1345FB2", hash_generated_method = "B4E5F1DEDAC08075FB9CDC0705AAA980")
         @SuppressWarnings("serial")
         public  LRUCache(int size) {

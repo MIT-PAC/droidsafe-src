@@ -13,6 +13,7 @@ public abstract class AuthenticationHeader extends ParametersHeader {
 
     protected String scheme;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.941 -0400", hash_original_method = "54F496DB6FA267582688938E2479AFBA", hash_generated_method = "B4F236130307FEDC604CE6EF6AC3EF84")
     public  AuthenticationHeader(String name) {
         super(name);
@@ -25,6 +26,7 @@ public abstract class AuthenticationHeader extends ParametersHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.941 -0400", hash_original_method = "DB765A091C9F86F3B91F21F5A402D773", hash_generated_method = "AF7ABC2AFF9A4F2DB220A0160AEAC81F")
     public  AuthenticationHeader() {
         super();
@@ -197,6 +199,7 @@ String var633F5466DA94E80AD88E448E7E95AA79_118972883 =         getParameter(Para
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.946 -0400", hash_original_method = "1D3E80F645890E8406B036C8FE6ADD92", hash_generated_method = "C8D94144782E88436AB1D2F8BF5A9668")
     public void setURI(javax.sip.address.URI uri) {
         addTaint(uri.getTaint());
@@ -223,6 +226,7 @@ String var633F5466DA94E80AD88E448E7E95AA79_118972883 =         getParameter(Para
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.947 -0400", hash_original_method = "C651D4576806B169F61A46B4807216FD", hash_generated_method = "BFECCFBCF9BB64A57F72FFD079C49A3B")
     public javax.sip.address.URI getURI() {
 javax.sip.address.URI var6F068FBDDD0AF28B4DBD05B3B635730E_572504871 =         getParameterAsURI(ParameterNames.URI);

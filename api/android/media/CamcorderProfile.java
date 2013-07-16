@@ -45,6 +45,7 @@ public class CamcorderProfile {
 
     public int audioChannels;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.741 -0400", hash_original_method = "90038C05C514B802B5EF0BEF919C1051", hash_generated_method = "C3818218D2A2A98B65BF2018248FE056")
     private  CamcorderProfile(int duration,
                              int quality,

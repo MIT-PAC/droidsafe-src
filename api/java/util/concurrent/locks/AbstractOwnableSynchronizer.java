@@ -10,6 +10,7 @@ public abstract class AbstractOwnableSynchronizer implements java.io.Serializabl
 
     private transient Thread exclusiveOwnerThread;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.704 -0400", hash_original_method = "09FACEDDA2CFE0BD4863CBAC9CCC5DB1", hash_generated_method = "D297C3151434464F48AC3AE139C059A0")
     protected  AbstractOwnableSynchronizer() {
         // ---------- Original Method ----------

@@ -19,6 +19,7 @@ public class LevelListDrawable extends DrawableContainer {
 
     private boolean mMutated;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.470 -0400", hash_original_method = "44C08D01AD86FB5FD2CB8E648FBEEBE6", hash_generated_method = "8DEE93644819C11B01FE6D8DDDC1A0A5")
     public  LevelListDrawable() {
         this(null, null);
@@ -26,6 +27,7 @@ public class LevelListDrawable extends DrawableContainer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.471 -0400", hash_original_method = "FF29C84E557E14BBFF6CC67242AEE642", hash_generated_method = "2DF4817439F49DD91F462701D8ABAACD")
     private  LevelListDrawable(LevelListState state, Resources res) {
         addTaint(res.getTaint());

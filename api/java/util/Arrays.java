@@ -9,6 +9,7 @@ import java.lang.reflect.Array;
 
 public class Arrays {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.500 -0400", hash_original_method = "F55A33B7721183458366770FE1A5E43D", hash_generated_method = "49F223D555836B7BADC6EB97733A13D3")
     private  Arrays() {
         // ---------- Original Method ----------
@@ -1303,7 +1304,8 @@ public class Arrays {
     }
 
     
-        public static <T> T[] copyOf(T[] original, int newLength) {
+        @DSModeled(DSC.SAFE)
+    public static <T> T[] copyOf(T[] original, int newLength) {
         if (original == null) {
             throw new NullPointerException();
         }
@@ -1458,7 +1460,8 @@ public class Arrays {
     }
 
     
-        @SuppressWarnings("unchecked")
+        @DSModeled(DSC.SAFE)
+    @SuppressWarnings("unchecked")
     public static <T> T[] copyOfRange(T[] original, int start, int end) {
         int originalLength = original.length;
         if (start > end) {
@@ -1497,6 +1500,7 @@ public class Arrays {
 
         private E[] a;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.516 -0400", hash_original_method = "28401D48F15218543E5E002CE4B26D15", hash_generated_method = "6C8E7B3C9CFFF01A4CA812F9F9575AC1")
           ArrayList(E[] storage) {
     if(storage == null)            
@@ -1514,6 +1518,7 @@ public class Arrays {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.516 -0400", hash_original_method = "60C2CE78869B52DAF166079897D78161", hash_generated_method = "3B077A1D74DB429D81FCE793275B1892")
         @Override
         public boolean contains(Object object) {
@@ -1589,6 +1594,7 @@ E varE9389EE2200B2620B656A8101CB528EA_471271096 =                 a[location];
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.518 -0400", hash_original_method = "2A691ADB93209815384C011B6281A9FB", hash_generated_method = "62F98370F1423D0000C081103E1F71CE")
         @Override
         public int indexOf(Object object) {
@@ -1638,6 +1644,7 @@ for(int i = 0;i < a.length;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.519 -0400", hash_original_method = "0667C423DABE9154AC3C7F87378CA39A", hash_generated_method = "9D81FBB5B7A5848A193DFB31720EF54E")
         @Override
         public int lastIndexOf(Object object) {
@@ -1715,6 +1722,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1465601843 =             result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.520 -0400", hash_original_method = "4819818080CBECF7C6E758DFD111EA84", hash_generated_method = "3B80557504683C5CC2CDEF21DFC76438")
         @Override
         public Object[] toArray() {

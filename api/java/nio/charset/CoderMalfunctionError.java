@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public class CoderMalfunctionError extends Error {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.851 -0400", hash_original_method = "883FFC59265DE3B21E7C8AE56E57641B", hash_generated_method = "2133BCAD975CC26F38D1A082BEC9E5A3")
     public  CoderMalfunctionError(Exception ex) {
         super(ex);

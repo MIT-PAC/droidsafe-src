@@ -134,7 +134,8 @@ public class DERBitString extends ASN1Object implements DERString {
     }
 
     
-        public static DERBitString getInstance(
+        @DSModeled(DSC.SAFE)
+    public static DERBitString getInstance(
         Object  obj) {
         if (obj == null || obj instanceof DERBitString)
         {

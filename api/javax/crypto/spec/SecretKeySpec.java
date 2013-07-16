@@ -17,6 +17,7 @@ public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
 
     private String algorithm;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.450 -0400", hash_original_method = "46BCBD91E8C2018C32B65BFBDD14DAE3", hash_generated_method = "D60779714C0B84A27BEE110B8A8B9E35")
     public  SecretKeySpec(byte[] key, String algorithm) {
     if(key == null)        
@@ -56,6 +57,7 @@ public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.451 -0400", hash_original_method = "97539A44FE944982691962B490B5A049", hash_generated_method = "B9C94CDC0C91CF046877CE912F66B0B4")
     public  SecretKeySpec(byte[] key, int offset, int len, String algorithm) {
         addTaint(offset);
@@ -136,6 +138,7 @@ String var75AE4CAF1CB13EF15783F46A006C5A7F_1816652193 =         "RAW";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.452 -0400", hash_original_method = "3F6C1397C7B2518265F6653D66E9AC87", hash_generated_method = "387913A0D8A0EFADB8448C87620DD380")
     public byte[] getEncoded() {
         byte[] result = new byte[key.length];
@@ -150,6 +153,7 @@ String var75AE4CAF1CB13EF15783F46A006C5A7F_1816652193 =         "RAW";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.453 -0400", hash_original_method = "561BEB6A8D834A34E4D5A2503144263D", hash_generated_method = "4A2517803DD7519356DD0402DF852879")
     @Override
     public int hashCode() {
@@ -170,6 +174,7 @@ for(byte element : key)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.453 -0400", hash_original_method = "7E1551F3E39A01E70E4CFF4FAB6C7AC5", hash_generated_method = "41E8AB70C454E49BA3EF7E326C719444")
     @Override
     public boolean equals(Object obj) {

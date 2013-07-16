@@ -29,6 +29,7 @@ import dalvik.system.VMDebug;
 
 public final class Debug {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.131 -0400", hash_original_method = "2057C70024BF253BE1820FDFE7216E44", hash_generated_method = "CEC0EF1C9C14E821D3D42B954D6BD596")
     private  Debug() {
         // ---------- Original Method ----------
@@ -189,32 +190,38 @@ public final class Debug {
     }
 
     
-        public static int getGlobalAllocCount() {
+        @DSModeled(DSC.SAFE)
+    public static int getGlobalAllocCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_ALLOCATED_OBJECTS);
     }
 
     
-        public static int getGlobalAllocSize() {
+        @DSModeled(DSC.SAFE)
+    public static int getGlobalAllocSize() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_ALLOCATED_BYTES);
     }
 
     
-        public static int getGlobalFreedCount() {
+        @DSModeled(DSC.SAFE)
+    public static int getGlobalFreedCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_FREED_OBJECTS);
     }
 
     
-        public static int getGlobalFreedSize() {
+        @DSModeled(DSC.SAFE)
+    public static int getGlobalFreedSize() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_FREED_BYTES);
     }
 
     
-        public static int getGlobalClassInitCount() {
+        @DSModeled(DSC.SAFE)
+    public static int getGlobalClassInitCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_CLASS_INIT_COUNT);
     }
 
     
-        public static int getGlobalClassInitTime() {
+        @DSModeled(DSC.SAFE)
+    public static int getGlobalClassInitTime() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_CLASS_INIT_TIME);
     }
 
@@ -247,17 +254,20 @@ public final class Debug {
     }
 
     
-        public static int getGlobalGcInvocationCount() {
+        @DSModeled(DSC.SAFE)
+    public static int getGlobalGcInvocationCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_GC_INVOCATIONS);
     }
 
     
-        public static int getThreadAllocCount() {
+        @DSModeled(DSC.SAFE)
+    public static int getThreadAllocCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_THREAD_ALLOCATED_OBJECTS);
     }
 
     
-        public static int getThreadAllocSize() {
+        @DSModeled(DSC.SAFE)
+    public static int getThreadAllocSize() {
         return VMDebug.getAllocCount(VMDebug.KIND_THREAD_ALLOCATED_BYTES);
     }
 
@@ -276,37 +286,44 @@ public final class Debug {
     }
 
     
-        public static int getThreadGcInvocationCount() {
+        @DSModeled(DSC.SAFE)
+    public static int getThreadGcInvocationCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_THREAD_GC_INVOCATIONS);
     }
 
     
-        public static void resetGlobalAllocCount() {
+        @DSModeled(DSC.SAFE)
+    public static void resetGlobalAllocCount() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_ALLOCATED_OBJECTS);
     }
 
     
-        public static void resetGlobalAllocSize() {
+        @DSModeled(DSC.SAFE)
+    public static void resetGlobalAllocSize() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_ALLOCATED_BYTES);
     }
 
     
-        public static void resetGlobalFreedCount() {
+        @DSModeled(DSC.SAFE)
+    public static void resetGlobalFreedCount() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_FREED_OBJECTS);
     }
 
     
-        public static void resetGlobalFreedSize() {
+        @DSModeled(DSC.SAFE)
+    public static void resetGlobalFreedSize() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_FREED_BYTES);
     }
 
     
-        public static void resetGlobalClassInitCount() {
+        @DSModeled(DSC.SAFE)
+    public static void resetGlobalClassInitCount() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_CLASS_INIT_COUNT);
     }
 
     
-        public static void resetGlobalClassInitTime() {
+        @DSModeled(DSC.SAFE)
+    public static void resetGlobalClassInitTime() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_CLASS_INIT_TIME);
     }
 
@@ -335,17 +352,20 @@ public final class Debug {
     }
 
     
-        public static void resetGlobalGcInvocationCount() {
+        @DSModeled(DSC.SAFE)
+    public static void resetGlobalGcInvocationCount() {
         VMDebug.resetAllocCount(VMDebug.KIND_GLOBAL_GC_INVOCATIONS);
     }
 
     
-        public static void resetThreadAllocCount() {
+        @DSModeled(DSC.SAFE)
+    public static void resetThreadAllocCount() {
         VMDebug.resetAllocCount(VMDebug.KIND_THREAD_ALLOCATED_OBJECTS);
     }
 
     
-        public static void resetThreadAllocSize() {
+        @DSModeled(DSC.SAFE)
+    public static void resetThreadAllocSize() {
         VMDebug.resetAllocCount(VMDebug.KIND_THREAD_ALLOCATED_BYTES);
     }
 
@@ -362,12 +382,14 @@ public final class Debug {
     }
 
     
-        public static void resetThreadGcInvocationCount() {
+        @DSModeled(DSC.SAFE)
+    public static void resetThreadGcInvocationCount() {
         VMDebug.resetAllocCount(VMDebug.KIND_THREAD_GC_INVOCATIONS);
     }
 
     
-        public static void resetAllCounts() {
+        @DSModeled(DSC.SAFE)
+    public static void resetAllCounts() {
         VMDebug.resetAllocCount(VMDebug.KIND_ALL_COUNTS);
     }
 

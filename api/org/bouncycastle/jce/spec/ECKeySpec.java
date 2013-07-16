@@ -11,6 +11,7 @@ public class ECKeySpec implements KeySpec {
 
     private ECParameterSpec spec;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.690 -0400", hash_original_method = "26671DF5D8347FB8E2181E6D1CD58161", hash_generated_method = "33F8C75912C13380AEF70792CA92BEAA")
     protected  ECKeySpec(
         ECParameterSpec spec) {

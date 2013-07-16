@@ -10,6 +10,7 @@ public class BitmapShader extends Shader {
 
     @SuppressWarnings({"FieldCanBeLocal", "UnusedDeclaration"}) public Bitmap mBitmap;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.882 -0400", hash_original_method = "4EB08FDCAC2586A4FA6B09EB3F8E173D", hash_generated_method = "76C78F9777E6673654CDB9F9C21F6196")
     public  BitmapShader(Bitmap bitmap, TileMode tileX, TileMode tileY) {
         addTaint(tileY.getTaint());

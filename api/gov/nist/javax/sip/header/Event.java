@@ -12,6 +12,7 @@ public class Event extends ParametersHeader implements EventHeader {
 
     protected String eventType;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.361 -0400", hash_original_method = "4CF8CB38A5AC53FB99D6035A88D058D2", hash_generated_method = "BB45294AF8494FB6A0990700F3F53A05")
     public  Event() {
         super(EVENT);

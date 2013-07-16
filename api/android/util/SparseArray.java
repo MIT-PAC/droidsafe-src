@@ -20,6 +20,7 @@ public class SparseArray<E> implements Cloneable {
 
     private int mSize;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.250 -0400", hash_original_method = "E97D5EED29ED8377C999990C20A12343", hash_generated_method = "E245EEBE3057EE5A6B20AA3D7F52AD37")
     public  SparseArray() {
         this(10);
@@ -27,6 +28,7 @@ public class SparseArray<E> implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.251 -0400", hash_original_method = "F193A0D2E79CC42C4145064D20AB5B71", hash_generated_method = "0CE585F4CFEAD80D83275E2B999CFA02")
     public  SparseArray(int initialCapacity) {
         initialCapacity = ArrayUtils.idealIntArraySize(initialCapacity);
@@ -71,6 +73,7 @@ SparseArray<E> var3DE52045BFD3C1BF3742F994ED6139AD_1654600270 =         clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.253 -0400", hash_original_method = "63029C5D60DB5A1F0C43DA1A71993094", hash_generated_method = "8D811DD1DEE46E1FB34A61754AEA16EE")
     public E get(int key) {
         addTaint(key);
@@ -82,6 +85,7 @@ E varB73A11C4827B454321D868D4D1819714_976702287 =         get(key, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.253 -0400", hash_original_method = "C9E62D05249D95E7C50A204FF58AB455", hash_generated_method = "DA89B8EC72EF00AD21AEEB856B431A62")
     @SuppressWarnings("unchecked")
     public E get(int key, E valueIfKeyNotFound) {
@@ -286,6 +290,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.262 -0400", hash_original_method = "23592451CB50AFA841274AC3732C91A0", hash_generated_method = "03A10331FAAD4FC5C77DC9B13C09D20D")
     @SuppressWarnings("unchecked")
     public E valueAt(int index) {
@@ -305,6 +310,7 @@ E varFD8FAAC0C3572ACBC73A56817ABFB8BB_1520052726 =         (E) mValues[index];
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.263 -0400", hash_original_method = "7F2F6916ED61673EAF8E91642A81797D", hash_generated_method = "C9DDB9E9EA02C5782F8816164CB68524")
     public void setValueAt(int index, E value) {
     if(mGarbage)        
@@ -389,6 +395,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.268 -0400", hash_original_method = "5B63A048C0AD4A7F3A46491DB8DBCD38", hash_generated_method = "E5BE7126557319647405778022C25AEE")
     public void append(int key, E value) {
     if(mSize != 0 && key <= mKeys[mSize - 1])        

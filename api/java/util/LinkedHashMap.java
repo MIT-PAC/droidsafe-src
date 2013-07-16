@@ -13,6 +13,7 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
 
     private boolean accessOrder;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.810 -0400", hash_original_method = "BC14FA557BD7B0B9C577C3EA20F65BB1", hash_generated_method = "841BDE13C0D724F59D7372319DB3BC68")
     public  LinkedHashMap() {
         init();
@@ -23,6 +24,7 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.810 -0400", hash_original_method = "D0F194CEDBAC4E60D053508661AB90EF", hash_generated_method = "AF81C3A6342901CDC78A39BBC8257F31")
     public  LinkedHashMap(int initialCapacity) {
         this(initialCapacity, DEFAULT_LOAD_FACTOR);
@@ -31,6 +33,7 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.811 -0400", hash_original_method = "51A3F20C6E131F4E066F002E9C38CBA5", hash_generated_method = "E801E70E5B9A8065A7FA1C2E98EF899F")
     public  LinkedHashMap(int initialCapacity, float loadFactor) {
         this(initialCapacity, loadFactor, false);
@@ -40,6 +43,7 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.811 -0400", hash_original_method = "40A72D68B61D12122A849997E9E4FA74", hash_generated_method = "D77757EB06EAB7C9CBF5A87B44178E77")
     public  LinkedHashMap(
             int initialCapacity, float loadFactor, boolean accessOrder) {
@@ -116,6 +120,7 @@ Entry<K, V> varE0B314C45F4873EC0C98E000D41141FA_1098001952 =         eldest != h
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.813 -0400", hash_original_method = "53E46D1C7C140F5769FD83EFA867F0EB", hash_generated_method = "E31DCE9A89CD69F6A6F7ED11696CBD2A")
     @Override
      void addNewEntryForNullKey(V value) {
@@ -166,6 +171,7 @@ HashMapEntry<K, V> var80578C1A2A213CB039565B6F7F57A514_107686525 =         oldTa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.815 -0400", hash_original_method = "5C4F6BF9C2C1A7BF64D67EB60F9C3D15", hash_generated_method = "947E93969E99BC5EB3A0A547F3387828")
     @Override
     public V get(Object key) {
@@ -412,6 +418,7 @@ Iterator<Map.Entry<K, V>> varA27729B8E339A6F174B2D9A9BA7B896F_1396995811 =      
 
         LinkedEntry<K, V> prv;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.820 -0400", hash_original_method = "2D3DD312F29888BE4F3ED431CA771887", hash_generated_method = "43ABFEF2EAF691DAC71324A38269F779")
           LinkedEntry() {
             super(null, null, 0, null);

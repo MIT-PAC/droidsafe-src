@@ -10,6 +10,7 @@ import javax.sip.header.Header;
 
 public class ExtensionHeaderList extends SIPHeaderList<ExtensionHeaderImpl> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.397 -0400", hash_original_method = "9F1BA104827E0F2F29324BDDE3EB0EE9", hash_generated_method = "3D5B61862F27E9137B1BDBC12BD22287")
     public  ExtensionHeaderList(String hName) {
         super( ExtensionHeaderImpl.class, hName);
@@ -18,6 +19,7 @@ public class ExtensionHeaderList extends SIPHeaderList<ExtensionHeaderImpl> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.398 -0400", hash_original_method = "52FAE424BADAAEF22385083D45DE9281", hash_generated_method = "B4759EE8D9DB6DE8172FBD3EF60E4182")
     public  ExtensionHeaderList() {
         super(ExtensionHeaderImpl.class,null);

@@ -27,6 +27,7 @@ public final class AlgorithmIdentifier {
 
     private byte[] encoding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.678 -0400", hash_original_method = "2A12FAF842ACAA2DBD4904F8F0273D03", hash_generated_method = "2EBF08AB7CEC761BB58F4F2AC8E07597")
     public  AlgorithmIdentifier(String algorithm) {
         this(algorithm, null, null);
@@ -35,6 +36,7 @@ public final class AlgorithmIdentifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.678 -0400", hash_original_method = "3A9ADFAB73D31AB7E50DF2B242FDEB53", hash_generated_method = "12A74528D275DAB41B9C77B0333CD230")
     public  AlgorithmIdentifier(String algorithm, byte[] parameters) {
         this(algorithm, parameters, null);
@@ -44,6 +46,7 @@ public final class AlgorithmIdentifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.678 -0400", hash_original_method = "D2431539DF2ECCEF9FBA946BEDC34F61", hash_generated_method = "B03A559CDDF8734F7178FAD091F38793")
     private  AlgorithmIdentifier(String algorithm, byte[] parameters, byte[] encoding) {
         this.algorithm = algorithm;

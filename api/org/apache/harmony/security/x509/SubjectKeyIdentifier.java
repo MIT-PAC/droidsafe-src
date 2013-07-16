@@ -13,6 +13,7 @@ public final class SubjectKeyIdentifier extends ExtensionValue {
 
     private byte[] keyIdentifier;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.268 -0400", hash_original_method = "98097DD6E6764877F7A5356FC5E050F1", hash_generated_method = "A27868715BD106CD9EA123F3B6E524D5")
     public  SubjectKeyIdentifier(byte[] keyIdentifier) {
         this.keyIdentifier = keyIdentifier;

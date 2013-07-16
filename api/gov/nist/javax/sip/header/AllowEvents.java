@@ -11,6 +11,7 @@ public final class AllowEvents extends SIPHeader implements javax.sip.header.All
 
     protected String eventType;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.742 -0400", hash_original_method = "B300CC10915D88E488A895EA20EE2A09", hash_generated_method = "60A08C0FBE41C8160995AE7F013B9128")
     public  AllowEvents() {
         super(ALLOW_EVENTS);
@@ -18,6 +19,7 @@ public final class AllowEvents extends SIPHeader implements javax.sip.header.All
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.743 -0400", hash_original_method = "5D2656FB66C7C3040E5BEE12ACA7E341", hash_generated_method = "614CF3514F02380A9D78B1E9692E01B2")
     public  AllowEvents(String m) {
         super(ALLOW_EVENTS);

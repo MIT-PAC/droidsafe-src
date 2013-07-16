@@ -23,6 +23,7 @@ public class AttributedString {
 
     Map<AttributedCharacterIterator.Attribute, List<Range>> attributeMap;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.911 -0400", hash_original_method = "5638BBE38DFF9B04A672F4EC9A02409B", hash_generated_method = "A51193DACC009B9A0F49FC0DA5615B57")
     public  AttributedString(AttributedCharacterIterator iterator) {
         addTaint(iterator.getTaint());
@@ -126,6 +127,7 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.913 -0400", hash_original_method = "D0E1FC5545253EA6E008AE3675A9452F", hash_generated_method = "4626B692A0BDADD9D4B59FC620D439B6")
     public  AttributedString(AttributedCharacterIterator iterator, int start,
             int end) {
@@ -151,6 +153,7 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.914 -0400", hash_original_method = "A0ACF5D97B9D79B3295575A771939692", hash_generated_method = "319732FF47A4CEFFA4C9FF2E51344E0F")
     public  AttributedString(String value) {
     if(value == null)        

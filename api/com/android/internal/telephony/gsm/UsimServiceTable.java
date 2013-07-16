@@ -8,6 +8,7 @@ import com.android.internal.telephony.IccServiceTable;
 
 public final class UsimServiceTable extends IccServiceTable {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.014 -0400", hash_original_method = "817BD5CF49BC23E6643D1124A4E1BE41", hash_generated_method = "6D7E057B1FC8F501ED71E554CCC54EE8")
     public  UsimServiceTable(byte[] table) {
         super(table);
@@ -16,6 +17,7 @@ public final class UsimServiceTable extends IccServiceTable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.015 -0400", hash_original_method = "DBA3BE1184DAC743D00CD4A8E44903BD", hash_generated_method = "96234BBACDC3FC5384D333ADC736B356")
     public boolean isAvailable(UsimService service) {
         addTaint(service.getTaint());
@@ -39,6 +41,7 @@ String var577DBB8C3CC289BB3D816ABEFC0282D3_1934231122 =         "UsimServiceTabl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.016 -0400", hash_original_method = "5896C19C7C6B06EFB443A2DEA834E8BC", hash_generated_method = "35A8C76412C7AA8FF0D4E3D0DDCFE516")
     @Override
     protected Object[] getValues() {

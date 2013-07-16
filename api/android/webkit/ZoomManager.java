@@ -138,6 +138,7 @@ class ZoomManager {
 
     private boolean mInHWAcceleratedZoom = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.650 -0400", hash_original_method = "C53EE2007D9BEC2FE01EA607CD54C4FF", hash_generated_method = "0190DB67F1A6601D594EAB9FDB61EC8B")
     public  ZoomManager(WebView webView, CallbackProxy callbackProxy) {
         mWebView = webView;
@@ -152,6 +153,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.651 -0400", hash_original_method = "93CFAAB8556EE96135ADFFE4D2689C29", hash_generated_method = "BAE942C36681C49C4BCAA7C766AB89E9")
     public void init(float density) {
         mDisplayDensity = density;
@@ -190,6 +192,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.652 -0400", hash_original_method = "E8BCC867B6D8CCFABF539A9D95032C95", hash_generated_method = "044CA3F35DF3912DC2557C65DFC8C381")
     private void setDefaultZoomScale(float defaultScale) {
         final float originalDefault = mDefaultScale;
@@ -473,6 +476,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.660 -0400", hash_original_method = "0D06D835317E38A4890F08EB962517B9", hash_generated_method = "195C03D8EC04B7E2D3874448234837EB")
     private boolean zoom(float zoomMultiplier) {
         addTaint(zoomMultiplier);
@@ -498,6 +502,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.662 -0400", hash_original_method = "ABA8C6E97A9C369182835D6347EB12CF", hash_generated_method = "2DE67FDF1DA66B8F30FAD51B46E13033")
     public boolean startZoomAnimation(float scale, boolean reflowText) {
         addTaint(reflowText);
@@ -992,6 +997,7 @@ ScaleGestureDetector varD1305AEC83178DF8791BB9CAB71C5E16_2111590888 =         mS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.679 -0400", hash_original_method = "853C20600470FB7106E8D67215AF9147", hash_generated_method = "D5D728797049DE4FB67602697B7D15CD")
     public void updateZoomRange(WebViewCore.ViewState viewState,
             int viewWidth, int minPrefWidth) {
@@ -1413,6 +1419,7 @@ View var540C13E9E156B687226421B24F2DF178_956018557 =             null;
 
         private int mIndex;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.683 -0400", hash_original_method = "C2CA3F4962FE0D524626245DAD0C9DD6", hash_generated_method = "D4AF6BA17545ED20E2FFAFBAF09FD153")
           FocusMovementQueue() {
             mQueue = new float[QUEUE_CAPACITY];
@@ -1672,6 +1679,7 @@ for(int i = 0;i < QUEUE_CAPACITY;++i)
 
         boolean mInPortraitMode;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.686 -0400", hash_original_method = "987305C98B26834A8CB0058E5C6D93E2", hash_generated_method = "3399CCB2C3E7BA10E96510C264203349")
         public  PostScale(boolean updateTextWrap,
                          boolean inZoomOverview,

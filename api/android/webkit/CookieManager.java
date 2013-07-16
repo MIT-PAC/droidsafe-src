@@ -31,12 +31,14 @@ public final class CookieManager {
 
     private int pendingCookieOperations = 0;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.703 -0400", hash_original_method = "D1B429C0ADFDAAD2AA9A34491D464202", hash_generated_method = "7E9E6C54D01E5F13F7A4CCB58B878A0F")
     private  CookieManager() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.703 -0400", hash_original_method = "192983167FE22E48CC26A3CAFDDD8D6B", hash_generated_method = "CA52ADFBDEFC500949C0271D05AC5501")
     protected Object clone() throws CloneNotSupportedException {
         CloneNotSupportedException var526F0275412AAA8782D17897499AAE9F_794930757 = new CloneNotSupportedException("doesn't implement Cloneable");
@@ -55,6 +57,7 @@ public final class CookieManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.704 -0400", hash_original_method = "0044CC48946D988BAC3F9C31DC5ECF6E", hash_generated_method = "4FBB921F151D5F041D99E7A219E5115B")
     public synchronized void setAcceptCookie(boolean accept) {
     if(JniUtil.useChromiumHttpStack())        
@@ -72,6 +75,7 @@ public final class CookieManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.704 -0400", hash_original_method = "EAEA6182C3DE8E7E3FA46C84A2197DA5", hash_generated_method = "A7F291B244370B34FB6C1433BE5FD268")
     public synchronized boolean acceptCookie() {
     if(JniUtil.useChromiumHttpStack())        
@@ -470,6 +474,7 @@ String var540C13E9E156B687226421B24F2DF178_1856118514 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.712 -0400", hash_original_method = "65B0411E3AAD9BA729084C50D7485B13", hash_generated_method = "A9E6A312E809291F60B900D7678FD37D")
     private synchronized void signalCookieOperationsComplete() {
         pendingCookieOperations--;
@@ -538,6 +543,7 @@ Void var540C13E9E156B687226421B24F2DF178_1268020359 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.713 -0400", hash_original_method = "E6726E6A7287E971302CDEBC56D91ADA", hash_generated_method = "436F546B5A6EA9D0AA57CF8692050EBE")
     public void removeAllCookie() {
     if(JniUtil.useChromiumHttpStack())        
@@ -573,6 +579,7 @@ Void var540C13E9E156B687226421B24F2DF178_1268020359 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.714 -0400", hash_original_method = "2201D105B8AC0DA82BEBC1DB9FB29AE8", hash_generated_method = "FF8FF02B26660AB733CDE8B6F1985E27")
     public synchronized boolean hasCookies() {
     if(JniUtil.useChromiumHttpStack())        

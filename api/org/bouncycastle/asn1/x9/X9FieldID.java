@@ -21,6 +21,7 @@ public class X9FieldID extends ASN1Encodable implements X9ObjectIdentifiers {
 
     private DERObject parameters;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.530 -0400", hash_original_method = "947D632CD3BB9C70FFB74606AF4AA65C", hash_generated_method = "336E537F452F8D6FB7E3AC232B57761F")
     public  X9FieldID(BigInteger primeP) {
         this.id = prime_field;
@@ -31,6 +32,7 @@ public class X9FieldID extends ASN1Encodable implements X9ObjectIdentifiers {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.531 -0400", hash_original_method = "E68F2B5FEB9AA2D283212DC970B04168", hash_generated_method = "E74A148C6CB0FA6E4FC5EDC4BB523A7D")
     public  X9FieldID(int m, int k1, int k2, int k3) {
         addTaint(k3);
@@ -110,6 +112,7 @@ DERObject var3CB0A38B794BDEDADB1F50256E0AE35B_1219856664 =         parameters;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.532 -0400", hash_original_method = "F64CE532B89E0DF8480CF348DC73F510", hash_generated_method = "75F3B3DB6ADDD9F450B896CD7C515889")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

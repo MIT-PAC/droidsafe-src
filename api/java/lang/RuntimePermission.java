@@ -9,6 +9,7 @@ import java.security.Permission;
 
 public final class RuntimePermission extends BasicPermission {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.321 -0400", hash_original_method = "4B2115E5C37ED723471172D5C8F80B46", hash_generated_method = "152F2835EE644AC6F0BD82FFF888E07E")
     public  RuntimePermission(String permissionName) {
         super("");
@@ -17,6 +18,7 @@ public final class RuntimePermission extends BasicPermission {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.321 -0400", hash_original_method = "E2D7FAA6FF83E30EF411D458EDB8F08D", hash_generated_method = "FAFA1A47962316FEAD3E99C5FBE31749")
     public  RuntimePermission(String name, String actions) {
         super("", "");

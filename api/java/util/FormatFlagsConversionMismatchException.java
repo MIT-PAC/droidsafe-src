@@ -14,6 +14,7 @@ public class FormatFlagsConversionMismatchException extends IllegalFormatExcepti
 
     private char c;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.269 -0400", hash_original_method = "23601B02BC801B28ADE07C396E4C34FF", hash_generated_method = "85CD4B7F28E08D8B666BFBE164887DF4")
     public  FormatFlagsConversionMismatchException(String f, char c) {
     if(f == null)        

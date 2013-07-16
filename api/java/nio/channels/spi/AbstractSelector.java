@@ -123,6 +123,7 @@ Set<SelectionKey> var091462B1A8133F0DFC29D67499143648_587406252 =         cancel
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.713 -0400", hash_original_method = "7076984DBD0A39CC1D8943756DBBDDA2", hash_generated_method = "00857F0EB67BC9BB4B02DCF6D6590303")
      void cancel(SelectionKey key) {
         addTaint(key.getTaint());

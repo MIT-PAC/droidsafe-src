@@ -13,6 +13,7 @@ public class MissingResourceException extends RuntimeException {
 
     String key;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.286 -0400", hash_original_method = "0B71E2B2311543F4039A5E1A5B0E2A4E", hash_generated_method = "D2D270E5678C7D6AEC3024600B6F3596")
     public  MissingResourceException(String detailMessage, String className,
             String resourceName) {

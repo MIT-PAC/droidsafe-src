@@ -27,6 +27,7 @@ public class PrintWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.691 -0400", hash_original_method = "A0422DBDFA7D458C1211AD61A93CCD24", hash_generated_method = "0DBD8D5D52D6E0F06AC9665BF6EBD740")
     public  PrintWriter(OutputStream out, boolean autoFlush) {
         this(new OutputStreamWriter(out), autoFlush);
@@ -44,6 +45,7 @@ public class PrintWriter extends Writer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.692 -0400", hash_original_method = "C1927249B88242DCE6CFA0FA4F3C29B3", hash_generated_method = "F14F2A3F33B8FBF372DAB923D7D74C2F")
     public  PrintWriter(Writer wr, boolean autoFlush) {
         super(wr);
@@ -266,6 +268,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.702 -0400", hash_original_method = "9BEBBB6A7E36A898084CFD13E6678C15", hash_generated_method = "3486C37664FA541B5040893E2C1275CE")
     public void print(char[] charArray) {
         addTaint(charArray[0]);
@@ -275,6 +278,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.703 -0400", hash_original_method = "F35E4DD8AE097731F5674B94681A91A4", hash_generated_method = "045C30FA2D98CA82AC0ADDCDA34B6B51")
     public void print(char ch) {
         addTaint(ch);
@@ -367,6 +371,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.708 -0400", hash_original_method = "C86060CC83A142ED26FEFD1C4AFF06F6", hash_generated_method = "5D13023447190678839A52E6EC0FD6E6")
     public void println(char[] chars) {
         addTaint(chars[0]);
@@ -376,6 +381,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.708 -0400", hash_original_method = "0AD803DE0349B67DF3766F5E61BB22D0", hash_generated_method = "5B54C4A804342FB66DA39CD1A802F010")
     public void println(char c) {
         addTaint(c);
@@ -385,6 +391,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.709 -0400", hash_original_method = "1C71B315F5691439EEEA0D1A39435B84", hash_generated_method = "3DD05D2B8A6F7FA399C6E8CD1479DBC2")
     public void println(double d) {
         addTaint(d);
@@ -394,6 +401,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.709 -0400", hash_original_method = "303071589A63282B34174CD2B6A3FE64", hash_generated_method = "520DE5B296981CB84314D5F031E424FD")
     public void println(float f) {
         addTaint(f);
@@ -412,6 +420,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.710 -0400", hash_original_method = "13C762985E9CE0F97BF4916754E07523", hash_generated_method = "D0CEAADD771279275CD5802BDD412D24")
     public void println(long l) {
         addTaint(l);
@@ -469,6 +478,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.713 -0400", hash_original_method = "A3159CA9C79B3AD467B0FCF29995C9CC", hash_generated_method = "3724A19C23B3F2EE07A60FEC7F3E7C0F")
     @Override
     public void write(char[] buf) {
@@ -479,6 +489,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.713 -0400", hash_original_method = "F47BE159FF15FE26B09EE65FDEAB6B8C", hash_generated_method = "28BFB103FC18830EB2F0EBB80758FC72")
     @Override
     public void write(char[] buf, int offset, int count) {
@@ -491,6 +502,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.714 -0400", hash_original_method = "28E681395D573BD9F19024ECEBC35F4A", hash_generated_method = "39D68CAD32D8FB616634ECC972B68645")
     @Override
     public void write(int oneChar) {
@@ -549,6 +561,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.716 -0400", hash_original_method = "63C99944EF00B97313C46973AD4FFC8C", hash_generated_method = "18A84DE5C687FFDD671BD947D6A5E9B2")
     @Override
     public void write(String str, int offset, int count) {
@@ -561,6 +574,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.716 -0400", hash_original_method = "4FD83DFE8717316B104D560444A12EF3", hash_generated_method = "4C43CB8D76EC3A8A7B06CD3D6B910C52")
     @Override
     public PrintWriter append(char c) {
@@ -575,6 +589,7 @@ PrintWriter var72A74007B2BE62B849F475C7BDA4658B_30956472 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.717 -0400", hash_original_method = "EC867D10B212AD9763F84A42EB42848B", hash_generated_method = "5DE11AE5687D0F972410DB8FE9539E6F")
     @Override
     public PrintWriter append(CharSequence csq) {
@@ -596,6 +611,7 @@ PrintWriter var72A74007B2BE62B849F475C7BDA4658B_258145174 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.718 -0400", hash_original_method = "3313C31A52AD9501A690D6955A7EC57D", hash_generated_method = "2A8345AC691C7A4100CA6779297E1D0F")
     @Override
     public PrintWriter append(CharSequence csq, int start, int end) {

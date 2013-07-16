@@ -21,12 +21,14 @@ public class StringTokenizer {
 
     protected int savedPtr;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.773 -0400", hash_original_method = "54BA219EC49F828609CB54EE2A82793E", hash_generated_method = "829CC47E9AA7BAE84979A930F35B1839")
     protected  StringTokenizer() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.774 -0400", hash_original_method = "DA5ACD58DF915D63245F1B44E5CF5026", hash_generated_method = "932701E03D6383C1215DA8D23CF0D394")
     public  StringTokenizer(String buffer) {
         this.buffer = buffer;
@@ -39,6 +41,7 @@ public class StringTokenizer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.774 -0400", hash_original_method = "51D68C0C294E8AE98A6D3675712278FD", hash_generated_method = "173E0AF2F33ED85F57953A508661C371")
     public String nextToken() {
         int startIdx = ptr;
@@ -79,14 +82,16 @@ String var6AFF5978BAB12C2506D33445AED98631_1389258036 =         buffer.substring
     }
 
     
-        public static boolean isHexDigit(char ch) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isHexDigit(char ch) {
         return (ch >= 'A' && ch <= 'F') ||
                (ch >= 'a' && ch <= 'f') ||
                isDigit(ch);
     }
 
     
-        public static boolean isAlpha(char ch) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isAlpha(char ch) {
         if (ch <= 127) {
             return ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'));
         }
@@ -96,7 +101,8 @@ String var6AFF5978BAB12C2506D33445AED98631_1389258036 =         buffer.substring
     }
 
     
-        public static boolean isDigit(char ch) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isDigit(char ch) {
         if (ch <= 127) {
             return (ch <= '9' && ch >= '0');
         }
@@ -106,7 +112,8 @@ String var6AFF5978BAB12C2506D33445AED98631_1389258036 =         buffer.substring
     }
 
     
-        public static boolean isAlphaDigit(char ch) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isAlphaDigit(char ch) {
         if (ch <= 127) {
             return (ch >= 'a' && ch <= 'z') ||
                 (ch >= 'A' && ch <= 'Z') ||
@@ -120,6 +127,7 @@ String var6AFF5978BAB12C2506D33445AED98631_1389258036 =         buffer.substring
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.776 -0400", hash_original_method = "4D480BDC007302EAB6B0602B0495288F", hash_generated_method = "3489B54E7D436B5A067FF67DA178D576")
     public String getLine() {
         int startIdx = ptr;
@@ -147,6 +155,7 @@ String var6AFF5978BAB12C2506D33445AED98631_999730499 =         buffer.substring(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.776 -0400", hash_original_method = "CE231B51EB0438B81CB38E6BFC514388", hash_generated_method = "34D3273713220F0D28C3870A9FEB3E0F")
     public String peekLine() {
         int curPos = ptr;
@@ -163,6 +172,7 @@ String varF9E19AD6135C970F387F77C6F3DE4477_1394373865 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.776 -0400", hash_original_method = "593E91DFCA6EC80AB3947C1558B0F334", hash_generated_method = "92298377A54E643023AD42A40E0624D7")
     public char lookAhead() throws ParseException {
         char varA40DDAE514814BC55844536D2DD1C8F6_1617705763 = (lookAhead(0));
@@ -198,6 +208,7 @@ String varF9E19AD6135C970F387F77C6F3DE4477_1394373865 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.777 -0400", hash_original_method = "D29CC80BBA7473591484322BC854C4EB", hash_generated_method = "8705C722149F7C2B2677E1D28340BA82")
     public char getNextChar() throws ParseException {
     if(ptr >= bufferLen)        
@@ -265,6 +276,7 @@ Vector<String> varDC838461EE2FA0CA4C9BBB70A15456B0_697400642 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.778 -0400", hash_original_method = "758FF66D123B700B938FDF74929D0C7F", hash_generated_method = "E9FDF7EC95CFBFFDADDA32B3A3542984")
     public String getNextToken(char delim) throws ParseException {
         addTaint(delim);
@@ -301,7 +313,8 @@ String var6AFF5978BAB12C2506D33445AED98631_52399566 =         buffer.substring(s
     }
 
     
-        public static String getSDPFieldName(String line) {
+        @DSModeled(DSC.SAFE)
+    public static String getSDPFieldName(String line) {
         if (line == null)
             return null;
         String fieldName = null;

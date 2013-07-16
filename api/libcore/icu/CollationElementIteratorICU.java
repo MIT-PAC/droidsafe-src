@@ -11,6 +11,7 @@ public final class CollationElementIteratorICU {
 
     private int address;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.520 -0400", hash_original_method = "650A589CB2D4F7C3E63293AEFAAA9A77", hash_generated_method = "9F96A6BEB757984005D7DA3929E5AC60")
     private  CollationElementIteratorICU(int address) {
         this.address = address;
@@ -50,6 +51,7 @@ public final class CollationElementIteratorICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.522 -0400", hash_original_method = "8640B8389DB00731AE9D5E817F73B27B", hash_generated_method = "C3D2E6984FB436DE1EB5F628456F2F01")
     public int getMaxExpansion(int order) {
         addTaint(order);
@@ -128,6 +130,7 @@ public final class CollationElementIteratorICU {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.526 -0400", hash_original_method = "286B49C8E8E4DF34140969B2D7F609E6", hash_generated_method = "0D60DF47C60AB4D85F6C195166DE8F59")
     @Override
     protected void finalize() throws Throwable {

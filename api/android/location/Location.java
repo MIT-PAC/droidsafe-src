@@ -90,6 +90,7 @@ public class Location implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.325 -0400", hash_original_method = "E894B78E8DAE7217EB8A906829737D1E", hash_generated_method = "9F87EAEF0B688A50D01B5BDBBF0C42A3")
     public void dump(Printer pw, String prefix) {
         addTaint(prefix.getTaint());
@@ -177,7 +178,8 @@ public class Location implements Parcelable {
     }
 
     
-        public static String convert(double coordinate, int outputType) {
+        @DSModeled(DSC.SAFE)
+    public static String convert(double coordinate, int outputType) {
         if (coordinate < -180.0 || coordinate > 180.0 ||
             Double.isNaN(coordinate)) {
             throw new IllegalArgumentException("coordinate=" + coordinate);
@@ -732,6 +734,7 @@ Bundle var5E49E1FEC958658F846C38CDDBF16A8B_32897766 =         mExtras;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.347 -0400", hash_original_method = "5688E2364E565225F14DAE87FCAB3981", hash_generated_method = "8EB0047A3EB6BB3E410F9CB21929E433")
     @Override
     public String toString() {
@@ -778,6 +781,7 @@ String var6F3A800E12E4FDE656C7E8769F254149_1943856363 =         "Location[mProvi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.348 -0400", hash_original_method = "32F156010F6C4E7296DBF5DD142C1BEC", hash_generated_method = "2CA0C36603A3E001544DEF45823F352A")
     public void writeToParcel(Parcel parcel, int flags) {
         addTaint(flags);

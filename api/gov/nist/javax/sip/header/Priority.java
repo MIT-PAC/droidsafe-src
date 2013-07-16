@@ -12,6 +12,7 @@ public class Priority extends SIPHeader implements PriorityHeader {
 
     protected String priority;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.690 -0400", hash_original_method = "33A980E78264A96D694E0BA8D4330749", hash_generated_method = "2DAB64ED9F1F75184A9783CA81667401")
     public  Priority() {
         super(NAME);

@@ -27,6 +27,7 @@ public class SmsHeader {
 
     public int languageShiftTable;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.440 -0400", hash_original_method = "F06BD280EA34997B1794CB44E7D9D16A", hash_generated_method = "EBF9FF6335726A7119DA9BD07425785D")
     public  SmsHeader() {
         // ---------- Original Method ----------

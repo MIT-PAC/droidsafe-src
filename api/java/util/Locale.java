@@ -25,6 +25,7 @@ public final class Locale implements Cloneable, Serializable {
 
     private transient String cachedToStringResult;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.219 -0400", hash_original_method = "3151080AB39B36B6870FE53962DD218F", hash_generated_method = "EE01A9EAA1684C1454F7936A22A4747D")
     private  Locale(boolean unused, String lowerCaseLanguageCode, String upperCaseCountryCode) {
         addTaint(unused);
@@ -38,6 +39,7 @@ public final class Locale implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.219 -0400", hash_original_method = "95F62AD785CE7F14018E0D0D1E27B00E", hash_generated_method = "AA357B84DEB8D807A33A795D8F57D011")
     public  Locale(String language) {
         this(language, "", "");
@@ -46,6 +48,7 @@ public final class Locale implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.219 -0400", hash_original_method = "37BC67CA8C45857B55D0F669E159529A", hash_generated_method = "69B893E13BBBAE538AF94B2DE7037E0D")
     public  Locale(String language, String country) {
         this(language, country, "");
@@ -55,6 +58,7 @@ public final class Locale implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.221 -0400", hash_original_method = "C07F4523516B5D8C3B044DC468C2EE3F", hash_generated_method = "34F94F2E1495960E87071B6D3FACFE6B")
     public  Locale(String language, String country, String variant) {
     if(language == null || country == null || variant == null)        

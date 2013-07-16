@@ -40,6 +40,7 @@ import java.util.regex.Pattern;
 
 public class TextUtils {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.780 -0400", hash_original_method = "B02737FE3AF0C7262E7E1815816AFA38", hash_generated_method = "853174FD0AC9B98EEFD3B7193A02A48C")
     private  TextUtils() {
         // ---------- Original Method ----------
@@ -1047,6 +1048,7 @@ public class TextUtils {
 
         private int mLength;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.787 -0400", hash_original_method = "6A654BA34A10AA2B42750EC65A3F679B", hash_generated_method = "BEDF5C296E1AC394E7130E39CA8E7B49")
         public  SimpleStringSplitter(char delimiter) {
             mDelimiter = delimiter;

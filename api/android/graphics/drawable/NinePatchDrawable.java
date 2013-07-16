@@ -41,12 +41,14 @@ public class NinePatchDrawable extends Drawable {
 
     private int mBitmapHeight;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.550 -0400", hash_original_method = "273B833CD4C77CDA56AC8174D9DCFE29", hash_generated_method = "FBBCF1482AE910368A61C9233970F106")
       NinePatchDrawable() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.551 -0400", hash_original_method = "EA37E144790F39B12A14B8A0E7D897B0", hash_generated_method = "920C3EB779A3AFB982DD93E08AD3D6C0")
     @Deprecated
     public  NinePatchDrawable(Bitmap bitmap, byte[] chunk, Rect padding, String srcName) {
@@ -59,6 +61,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.551 -0400", hash_original_method = "929FEA5C59B893442F4AD64A16378707", hash_generated_method = "D83509E58DB04D6614D87C911ADD5C72")
     public  NinePatchDrawable(Resources res, Bitmap bitmap, byte[] chunk,
             Rect padding, String srcName) {
@@ -74,6 +77,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.552 -0400", hash_original_method = "50B637C031C7A89AA164A5082D6A3A93", hash_generated_method = "ADF5474A5E2E0C922D423BE285EC1969")
     @Deprecated
     public  NinePatchDrawable(NinePatch patch) {
@@ -83,6 +87,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.552 -0400", hash_original_method = "78318325CB229FE4515B0254D2B416A2", hash_generated_method = "3DB822036D83D5C77CEBD7A15865D10D")
     public  NinePatchDrawable(Resources res, NinePatch patch) {
         this(new NinePatchState(patch, new Rect()), res);
@@ -94,6 +99,7 @@ public class NinePatchDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.553 -0400", hash_original_method = "EB08CD45C7A208D135CB0BEAA7998119", hash_generated_method = "BF0F1A13FDB2188FD0ADF9C2CB131DB4")
     private  NinePatchDrawable(NinePatchState state, Resources res) {
         addTaint(res.getTaint());
@@ -535,6 +541,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_245321162 =         this;
 
         int mTargetDensity = DisplayMetrics.DENSITY_DEFAULT;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.568 -0400", hash_original_method = "CA3208FB1D6439C7B894EDBF6EC3D9DE", hash_generated_method = "36BE5747EFD26B53A2FEAEF755695FDB")
           NinePatchState(NinePatch ninePatch, Rect padding) {
             this(ninePatch, padding, DEFAULT_DITHER);
@@ -544,6 +551,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_245321162 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.568 -0400", hash_original_method = "88C0915540B2FF11645913E277979DA7", hash_generated_method = "9BFFEFD000BA64BCBBB112BD3FA1ECE8")
           NinePatchState(NinePatch ninePatch, Rect rect, boolean dither) {
             mNinePatch = ninePatch;
@@ -572,6 +580,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_245321162 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.570 -0400", hash_original_method = "D02B1AE1E59D491553AECB8C917A9A24", hash_generated_method = "9D718CAB2A80426548103407A9C1B58C")
         @Override
         public Drawable newDrawable() {
@@ -583,6 +592,7 @@ Drawable var708FDFD1DBFE28145CA77F3831E02689_36037275 =             new NinePatc
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.570 -0400", hash_original_method = "A66FA8882A8A4D3CAB4071390F4B61B2", hash_generated_method = "5777978BAC0C344180566ACD8BBD9EFF")
         @Override
         public Drawable newDrawable(Resources res) {

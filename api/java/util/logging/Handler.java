@@ -27,6 +27,7 @@ public abstract class Handler {
 
     private String prefix;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.093 -0400", hash_original_method = "E5C195C4F6A42ED3922A908BC2F6920A", hash_generated_method = "4AD38258785274DDA54C2318D34742C6")
     protected  Handler() {
         this.errorMan = new ErrorManager();

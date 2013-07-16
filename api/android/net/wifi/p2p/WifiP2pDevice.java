@@ -38,6 +38,7 @@ public class WifiP2pDevice implements Parcelable {
 
     public int status = UNAVAILABLE;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.134 -0400", hash_original_method = "6DEE1BC764FD2CB933A4912269652401", hash_generated_method = "F64008BCEC449AEC52DED02A9FF6F441")
     public  WifiP2pDevice() {
         // ---------- Original Method ----------
@@ -103,6 +104,7 @@ for(String token : tokens)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.137 -0400", hash_original_method = "8BE5EC4742BDBC547BA4DA345C8E71E1", hash_generated_method = "DA5AC86B594A9ED5697AEB6D0BB3C08F")
     public  WifiP2pDevice(WifiP2pDevice source) {
     if(source != null)        
@@ -187,6 +189,7 @@ for(String token : tokens)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.139 -0400", hash_original_method = "09392A3C152DA1725DCCBD5DEBB248C2", hash_generated_method = "BE0377C63836D514DEC4C2DD88C8DB41")
     @Override
     public boolean equals(Object obj) {
@@ -224,6 +227,7 @@ for(String token : tokens)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.140 -0400", hash_original_method = "016D59A2B811BA8203F4683B5513F2D5", hash_generated_method = "A66B5AA6A52CCD6EE951D78DA805154F")
     public String toString() {
         StringBuffer sbuf = new StringBuffer();
@@ -265,6 +269,7 @@ String var69222FFA45D1268AEE1923C5558B0BD5_846022831 =         sbuf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.141 -0400", hash_original_method = "F1F1C1D05E28ABD7E03ACA6C9259AC2F", hash_generated_method = "CAC736DCC6093181C1E19002887B656A")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -291,6 +296,7 @@ String var69222FFA45D1268AEE1923C5558B0BD5_846022831 =         sbuf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.142 -0400", hash_original_method = "81EACEB4EB0E2420630EBFC84E59B2A4", hash_generated_method = "8C7163017954E3E7103D439C53AFB9D5")
     private String trimQuotes(String str) {
         addTaint(str.getTaint());
@@ -313,6 +319,7 @@ String var061B89662D09DE43FE2A2D88636258A2_1435452816 =         str;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.142 -0400", hash_original_method = "C0F4185566F115FC2220CE409C454DF3", hash_generated_method = "73F2708678C6C6A024A26F18AEF5D8A0")
     private int parseHex(String hexString) {
         addTaint(hexString.getTaint());

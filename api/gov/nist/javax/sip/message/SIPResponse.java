@@ -36,6 +36,7 @@ public final class SIPResponse extends SIPMessage implements javax.sip.message.R
 
     protected StatusLine statusLine;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.352 -0400", hash_original_method = "65DF8DACE365B596A00FB19E5D885842", hash_generated_method = "AE416E6D4DED1C87AFAE2A281AEC29CD")
     public  SIPResponse() {
         super();

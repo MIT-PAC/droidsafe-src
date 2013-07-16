@@ -39,6 +39,7 @@ public class DummyLocationProvider extends LocationProvider {
 
     int mAccuracy;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.651 -0400", hash_original_method = "2D2A21251E5C69E5D6553C80AB5C5FAF", hash_generated_method = "0F2EE2A59421CE5E665E6F54FE7883D8")
     public  DummyLocationProvider(String name, ILocationManager service) {
         super(name, service);

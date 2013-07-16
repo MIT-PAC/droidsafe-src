@@ -14,6 +14,7 @@ public final class SessionExpires extends ParametersHeader implements ExtensionH
 
     public int expires;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.798 -0400", hash_original_method = "A8246024A4BBDCEF318DB7F6B74C4E64", hash_generated_method = "0E464BB06220F15972D6EA6681E34A06")
     public  SessionExpires() {
         super(NAME);

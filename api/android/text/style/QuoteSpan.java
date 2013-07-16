@@ -16,6 +16,7 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
 
     private int mColor;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.244 -0400", hash_original_method = "7152FED56017453956A1C017DE8477BE", hash_generated_method = "B1FC0E64911AD70D2C36AA9A795566DE")
     public  QuoteSpan() {
         super();
@@ -25,6 +26,7 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.245 -0400", hash_original_method = "4E894B64A8966BC763843058D0706996", hash_generated_method = "CE96CFCA16C64DAFE0B2647269D1901B")
     public  QuoteSpan(int color) {
         super();
@@ -34,6 +36,7 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.245 -0400", hash_original_method = "4AD2E1D19CE8BCCBC25D1F8A03F5DD71", hash_generated_method = "363E859350F26FF2EA6C7AA4654BCC93")
     public  QuoteSpan(Parcel src) {
         mColor = src.readInt();

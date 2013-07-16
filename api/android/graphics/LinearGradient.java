@@ -45,6 +45,7 @@ public class LinearGradient extends Shader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.291 -0400", hash_original_method = "138E7D6C6B15213658AC13EABF129E3A", hash_generated_method = "11EED24E4F210F48B8DCBAEC4926ADC9")
     public  LinearGradient(float x0, float y0, float x1, float y1,
                           int color0, int color1, TileMode tile) {

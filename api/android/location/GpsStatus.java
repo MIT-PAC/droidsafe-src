@@ -163,6 +163,7 @@ Iterable<GpsSatellite> varE7F4188585FE55A58108466B6F8F81B3_48896212 =         mS
 
         int mIndex = 0;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.812 -0400", hash_original_method = "AEF39F6B14389CFD613D955A0F70C3EF", hash_generated_method = "28BB9F681E40E1A19CFE5F015D2B2BB4")
           SatelliteIterator(GpsSatellite[] satellites) {
             mSatellites = satellites;

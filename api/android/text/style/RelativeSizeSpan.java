@@ -14,6 +14,7 @@ public class RelativeSizeSpan extends MetricAffectingSpan implements ParcelableS
 
     private float mProportion;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.254 -0400", hash_original_method = "A7FADA85249F1B8943B2C3745C9AD73C", hash_generated_method = "525A76130EC8817067C8B8013EE73EC7")
     public  RelativeSizeSpan(float proportion) {
         mProportion = proportion;
@@ -22,6 +23,7 @@ public class RelativeSizeSpan extends MetricAffectingSpan implements ParcelableS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.255 -0400", hash_original_method = "3E1E83FB4F6546C2007DF6E3D1177212", hash_generated_method = "E62FC47C3538C5889E4F568A97414710")
     public  RelativeSizeSpan(Parcel src) {
         mProportion = src.readFloat();

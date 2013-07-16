@@ -8,6 +8,7 @@ import java.util.Random;
 
 public final class Math {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.996 -0400", hash_original_method = "0273784C246265D2ED8DEE21631953AB", hash_generated_method = "78B9D931D5E71470A5832EAA02F41698")
     private  Math() {
         // ---------- Original Method ----------

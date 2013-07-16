@@ -16,6 +16,7 @@ class GLES20TextureLayer extends GLES20Layer {
 
     private SurfaceTexture mSurface;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.061 -0400", hash_original_method = "CC530FDF67357759801B1D3133D8497C", hash_generated_method = "C12D6DCDF45E95507C5ABD93A9CB7A40")
       GLES20TextureLayer(boolean isOpaque) {
         addTaint(isOpaque);
@@ -98,6 +99,7 @@ HardwareCanvas var540C13E9E156B687226421B24F2DF178_2098844255 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.064 -0400", hash_original_method = "CDD23CBBC42E4C818DBF49A0C1C7FFA6", hash_generated_method = "31B67A3A6EF2E12100A1727CCA389C35")
      SurfaceTexture getSurfaceTexture() {
     if(mSurface == null)        
@@ -115,6 +117,7 @@ SurfaceTexture varB7C98568942B156EFD367CE054011CDA_312063055 =         mSurface;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.064 -0400", hash_original_method = "1A4F8689DF0CBFF789DC290DBC90C4B6", hash_generated_method = "FA32477217667E6A245305472C350461")
     @Override
      void update(int width, int height, boolean isOpaque) {
@@ -129,6 +132,7 @@ SurfaceTexture varB7C98568942B156EFD367CE054011CDA_312063055 =         mSurface;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.064 -0400", hash_original_method = "A2F486FA7726377A1A987D8CE4D8F80A", hash_generated_method = "1C942EECCC683208F04F691C39E8B4B2")
     @Override
      void setTransform(Matrix matrix) {

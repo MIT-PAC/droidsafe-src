@@ -13,6 +13,7 @@ public class PropertyResourceBundle extends ResourceBundle {
 
     Properties resources;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.466 -0400", hash_original_method = "3D88428E114136417B3FF5D84DADF880", hash_generated_method = "8DE0A2B3C1D1947C182BE8679A283779")
     public  PropertyResourceBundle(InputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -33,6 +34,7 @@ public class PropertyResourceBundle extends ResourceBundle {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.466 -0400", hash_original_method = "51B0205103DDC756BC77F911CC2E7B89", hash_generated_method = "585E5D540BC25846CCF84EF424ECB2B2")
     public  PropertyResourceBundle(Reader reader) throws IOException {
         addTaint(reader.getTaint());

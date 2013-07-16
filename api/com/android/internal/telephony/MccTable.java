@@ -82,7 +82,8 @@ public final class MccTable {
     }
 
     
-        public static int smallestDigitsMccForMnc(int mcc) {
+        @DSModeled(DSC.SAFE)
+    public static int smallestDigitsMccForMnc(int mcc) {
         MccEntry entry;
         entry = entryForMcc(mcc);
         if (entry == null) {

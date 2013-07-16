@@ -91,6 +91,7 @@ String var2460B846747F8B22185AD8BE722266A5_784155251 =         sb.toString();
 
         public ContentValues values;
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.179 -0400", hash_original_method = "533825480D51754A83735318617774D9", hash_generated_method = "6BF5E55727791FDE823E7FD6A13C3F01")
         public  NamedContentValues(Uri uri, ContentValues values) {
             this.uri = uri;

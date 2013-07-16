@@ -19,6 +19,7 @@ public abstract class Reference<T> {
 
     public volatile Reference<?> pendingNext;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.838 -0400", hash_original_method = "6CD3D0843AA30F3B07C5B27C93AA8456", hash_generated_method = "D75FE998C2119926819E778AB344D99C")
       Reference() {
         // ---------- Original Method ----------

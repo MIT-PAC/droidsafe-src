@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public final class VMRuntime {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:20.092 -0400", hash_original_method = "33A03FA36AA2C869C23BC2B48A2B01BF", hash_generated_method = "7F5477CE47831425632DC95401495DBA")
     private  VMRuntime() {
         // ---------- Original Method ----------

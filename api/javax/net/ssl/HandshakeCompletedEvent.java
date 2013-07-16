@@ -14,6 +14,7 @@ public class HandshakeCompletedEvent extends EventObject {
 
     private transient SSLSession session;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.757 -0400", hash_original_method = "49E2221C7C9E09C593B53C8D7CC4ED30", hash_generated_method = "7A8448F3800B0E2713B80E8EAA9DE7DE")
     public  HandshakeCompletedEvent(SSLSocket sock, SSLSession s) {
         super(sock);

@@ -9,6 +9,7 @@ import java.lang.reflect.InvocationTargetException;
 
 public class DebugUtils {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.821 -0400", hash_original_method = "4AD5C036447EEE6EF322222D7F2F6DED", hash_generated_method = "40067A418DEF2AF784763164D3515C4D")
     public  DebugUtils() {
         // ---------- Original Method ----------
@@ -54,7 +55,8 @@ public class DebugUtils {
     }
 
     
-        public static void buildShortClassTag(Object cls, StringBuilder out) {
+        @DSModeled(DSC.SAFE)
+    public static void buildShortClassTag(Object cls, StringBuilder out) {
         if (cls == null) {
             out.append("null");
         } else {

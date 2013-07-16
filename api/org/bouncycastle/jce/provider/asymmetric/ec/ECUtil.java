@@ -123,7 +123,8 @@ public class ECUtil {
     }
 
     
-        public static AsymmetricKeyParameter generatePrivateKeyParameter(
+        @DSModeled(DSC.SAFE)
+    public static AsymmetricKeyParameter generatePrivateKeyParameter(
         PrivateKey    key) throws InvalidKeyException {
         if (key instanceof ECPrivateKey)
         {

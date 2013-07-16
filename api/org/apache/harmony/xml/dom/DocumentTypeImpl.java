@@ -20,6 +20,7 @@ public final class DocumentTypeImpl extends LeafNodeImpl implements DocumentType
 
     private String systemId;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.686 -0400", hash_original_method = "B3AEE891CFF5F13501F03FB795F88BCC", hash_generated_method = "94DC658A962803E4C2A3BDE48DF002C4")
     public  DocumentTypeImpl(DocumentImpl document, String qualifiedName,
             String publicId, String systemId) {

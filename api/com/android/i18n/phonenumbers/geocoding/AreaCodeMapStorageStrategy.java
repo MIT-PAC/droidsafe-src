@@ -18,6 +18,7 @@ abstract class AreaCodeMapStorageStrategy {
 
     protected final TreeSet<Integer> possibleLengths = new TreeSet<Integer>();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.315 -0400", hash_original_method = "552FE922C6186E104B342E1C364AC348", hash_generated_method = "78F311E4855CBA2D4A156E20751234C3")
     public  AreaCodeMapStorageStrategy() {
         // ---------- Original Method ----------
@@ -63,6 +64,7 @@ TreeSet<Integer> var439F4A98FBDEDBC4D02BC8BC3F605BAF_2046447022 =         possib
     public abstract void writeExternal(ObjectOutput objectOutput) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.317 -0400", hash_original_method = "4D596518D97EDAAEB28E920BC89837B3", hash_generated_method = "C2B04EC839960647F17C83C5A07953E9")
     @Override
     public String toString() {

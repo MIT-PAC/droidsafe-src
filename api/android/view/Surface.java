@@ -147,6 +147,7 @@ public class Surface implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.767 -0400", hash_original_method = "F02785EB89A3C576418753FA8D7724E3", hash_generated_method = "BA65B65CE441ED52E9E2F2A12D868895")
     public Canvas lockCanvas(Rect dirty) throws OutOfResourcesException, IllegalArgumentException {
         addTaint(dirty.getTaint());
@@ -232,6 +233,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_1010474690 =         "Surface(name=" 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.770 -0400", hash_original_method = "CB1C97A8279A76B0FD2F8557CCA1DF81", hash_generated_method = "630AFFACC4A23B139D7CE5E8B049F1EC")
      void setCompatibilityTranslator(Translator translator) {
         addTaint(translator.getTaint());

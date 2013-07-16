@@ -201,6 +201,7 @@ Object var60FC9F22F7E863EBFD33B2ADB8462743_1482022873 =         proxy;
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:09.656 -0400", hash_original_method = "60C5F56392547A20884548FBBB7D801A", hash_generated_method = "62D6A342974EE75B5ADD58F8F57E6C55")
         private Object readResolve() {
             EnumSet<E> set = EnumSet.noneOf(elementType);

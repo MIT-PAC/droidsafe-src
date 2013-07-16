@@ -11,6 +11,7 @@ public class Matrix {
 
     public int native_instance;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.379 -0400", hash_original_method = "48ECB7BFD8634672F9ACB2AF6643F504", hash_generated_method = "B74B17C57C92799FAD74B4A80984C415")
     public  Matrix() {
         native_instance = native_create(0);
@@ -19,6 +20,7 @@ public class Matrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.380 -0400", hash_original_method = "D46661DF78A0C4D4A11243C86DA400FE", hash_generated_method = "138AD9A2B29FF4BCFFBD9A8B05F17035")
     public  Matrix(Matrix src) {
         native_instance = native_create(src != null ? src.native_instance : 0);
@@ -1113,6 +1115,7 @@ String var2460B846747F8B22185AD8BE722266A5_1656700004 =         sb.toString();
         START   (1),
         CENTER  (2),
         END     (3);
+        @DSModeled(DSC.SAFE)
         ScaleToFit(int nativeInt) {
             this.nativeInt = nativeInt;
         }

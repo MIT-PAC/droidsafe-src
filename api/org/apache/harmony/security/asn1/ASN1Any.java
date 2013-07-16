@@ -32,6 +32,7 @@ public final class ASN1Any extends ASN1Type {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.500 -0400", hash_original_method = "F8B6556748DA568C4BCDCD3BC4853721", hash_generated_method = "58435E83163BB0B59998918634126424")
     public Object decode(BerInputStream in) throws IOException {
         addTaint(in.getTaint());
@@ -54,6 +55,7 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1252240023 =         getDecodedObject
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.500 -0400", hash_original_method = "7A8EAE0B0D15C25D8FE798817C72F0C1", hash_generated_method = "E110B11051E024F62E49E15E6F3258D0")
     public Object getDecodedObject(BerInputStream in) throws IOException {
         addTaint(in.getTaint());

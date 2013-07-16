@@ -12,6 +12,7 @@ final class BluetoothOutputStream extends OutputStream {
 
     private BluetoothSocket mSocket;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.277 -0400", hash_original_method = "6B802CCB266833E5725B115B8F18B649", hash_generated_method = "0A5737DCA899319336946825E00B057E")
       BluetoothOutputStream(BluetoothSocket s) {
         mSocket = s;
@@ -41,6 +42,7 @@ final class BluetoothOutputStream extends OutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.280 -0400", hash_original_method = "DFA6C29609C7324702E3356FC466F21E", hash_generated_method = "B05A49B30351F28044D150ECB9C61300")
     public void write(byte[] b, int offset, int count) throws IOException {
         addTaint(count);

@@ -16,6 +16,7 @@ import org.apache.http.ProtocolException;
 
 public class RequestContent implements HttpRequestInterceptor {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.987 -0400", hash_original_method = "9AE5E648CA522092E457677BB79033D0", hash_generated_method = "E4F12D313596D681A69A32225957CE9E")
     public  RequestContent() {
         super();

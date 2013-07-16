@@ -23,6 +23,7 @@ public class FocusFinder {
 
     SequentialFocusComparator mSequentialFocusComparator = new SequentialFocusComparator();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.771 -0400", hash_original_method = "DC255E332B77A13B263C537BB61FEC63", hash_generated_method = "F16241C74771068F25916AC2FC4602F5")
     private  FocusFinder() {
         // ---------- Original Method ----------
@@ -350,6 +351,7 @@ switch(direction){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.780 -0400", hash_original_method = "CDB9DCB11C27A9CD8A1036801B813613", hash_generated_method = "6F73D9E0D04603CC085FC8C1C10C3A05")
      boolean beamsOverlap(int direction, Rect rect1, Rect rect2) {
         addTaint(rect2.getTaint());
@@ -384,6 +386,7 @@ switch(direction){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.793 -0400", hash_original_method = "0F816E844CC5CD74396FEF014D25737B", hash_generated_method = "842371A13C806FE20D5EF57926342822")
      boolean isToDirectionOf(int direction, Rect src, Rect dest) {
         addTaint(dest.getTaint());
@@ -426,12 +429,14 @@ switch(direction){
     }
 
     
-        static int majorAxisDistance(int direction, Rect source, Rect dest) {
+        @DSModeled(DSC.SAFE)
+    static int majorAxisDistance(int direction, Rect source, Rect dest) {
         return Math.max(0, majorAxisDistanceRaw(direction, source, dest));
     }
 
     
-        static int majorAxisDistanceRaw(int direction, Rect source, Rect dest) {
+        @DSModeled(DSC.SAFE)
+    static int majorAxisDistanceRaw(int direction, Rect source, Rect dest) {
         switch (direction) {
             case View.FOCUS_LEFT:
                 return source.left - dest.right;
@@ -452,7 +457,8 @@ switch(direction){
     }
 
     
-        static int majorAxisDistanceToFarEdgeRaw(int direction, Rect source, Rect dest) {
+        @DSModeled(DSC.SAFE)
+    static int majorAxisDistanceToFarEdgeRaw(int direction, Rect source, Rect dest) {
         switch (direction) {
             case View.FOCUS_LEFT:
                 return source.left - dest.left;
@@ -557,6 +563,7 @@ View var65F842BF8DD12196C017063DB033EAE1_657936151 =         closest;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.797 -0400", hash_original_method = "4EDA0197C585E6B2A33216D89691E993", hash_generated_method = "460DFE716D77C97FFD63A5A4480A27A6")
     private boolean isTouchCandidate(int x, int y, Rect destRect, int direction) {
         addTaint(direction);

@@ -24,7 +24,8 @@ final class DoubleToByteBufferAdapter extends DoubleBuffer {
     }
 
     
-        static DoubleBuffer asDoubleBuffer(ByteBuffer byteBuffer) {
+        @DSModeled(DSC.SAFE)
+    static DoubleBuffer asDoubleBuffer(ByteBuffer byteBuffer) {
         ByteBuffer slice = byteBuffer.slice();
         slice.order(byteBuffer.order());
         return new DoubleToByteBufferAdapter(slice);
@@ -86,6 +87,7 @@ DoubleBuffer var72A74007B2BE62B849F475C7BDA4658B_1090322398 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.278 -0400", hash_original_method = "FD4932C207B542FC04D0525E47AC3161", hash_generated_method = "8DB025CCB677941ADECDB2014A59DB45")
     @Override
     public DoubleBuffer duplicate() {
@@ -141,6 +143,7 @@ DoubleBuffer var0D8E466677B8F245666E1A4B1E0924E6_1709607675 =         buf;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.279 -0400", hash_original_method = "D37CED54394BDE1310F07C3D0EF5D332", hash_generated_method = "AC3B3F0F0615C70D76B88B4FAA97EE03")
     @Override
     public DoubleBuffer get(double[] dst, int dstOffset, int doubleCount) {
@@ -281,6 +284,7 @@ DoubleBuffer var72A74007B2BE62B849F475C7BDA4658B_1766370729 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.281 -0400", hash_original_method = "9EEEA82F785CE6D4D72E12428428FA8D", hash_generated_method = "7E740EEBEF98DBFE4AF8BAD27C8CBE3B")
     @Override
     public DoubleBuffer put(double[] src, int srcOffset, int doubleCount) {
@@ -314,6 +318,7 @@ DoubleBuffer var72A74007B2BE62B849F475C7BDA4658B_1980847632 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.281 -0400", hash_original_method = "22A6C9D0B842A6C5A7761EE0E7412B6B", hash_generated_method = "27B74AEEB82C0A702A5FEF14045677B7")
     @Override
     public DoubleBuffer slice() {

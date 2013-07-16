@@ -13,6 +13,7 @@ public final class InhibitAnyPolicy extends ExtensionValue {
 
     private int skipCerts;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.117 -0400", hash_original_method = "1933FA0EC9823F8DA6E27E5F5995EEC8", hash_generated_method = "467922954530EACCB586AEDF82EDDCC3")
     public  InhibitAnyPolicy(byte[] encoding) throws IOException {
         super(encoding);

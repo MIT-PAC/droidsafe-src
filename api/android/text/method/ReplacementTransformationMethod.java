@@ -15,6 +15,7 @@ import android.view.View;
 
 public abstract class ReplacementTransformationMethod implements TransformationMethod {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.899 -0400", hash_original_method = "1B7B28F98DAC94187572CC248AC52BB7", hash_generated_method = "1B7B28F98DAC94187572CC248AC52BB7")
     public ReplacementTransformationMethod ()
     {
@@ -117,6 +118,7 @@ CharSequence varCD506DB4E74DA4B564FA03112F99BB17_1907547577 =             new Re
 
         private CharSequence mSource;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.902 -0400", hash_original_method = "F89FC48B18F547DBB1705366EEF3AC7C", hash_generated_method = "7440FAA0F491D27D7D153C80FF2CC4EE")
         public  ReplacementCharSequence(CharSequence source, char[] original,
                                        char[] replacement) {
@@ -130,6 +132,7 @@ CharSequence varCD506DB4E74DA4B564FA03112F99BB17_1907547577 =             new Re
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.902 -0400", hash_original_method = "FE3E30D6F998A38B269E405486258D53", hash_generated_method = "6FA971910968BB408E8DD8E9CAA3FE8F")
         public int length() {
             int var9E844678846AA17EBC2ADB2098AEA729_230838726 = (mSource.length());
@@ -140,6 +143,7 @@ CharSequence varCD506DB4E74DA4B564FA03112F99BB17_1907547577 =             new Re
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.902 -0400", hash_original_method = "F5CDEE5D506853CF95A4D9E8A551C716", hash_generated_method = "2783DFA7C82FF947182ED75EBFD745D6")
         public char charAt(int i) {
             addTaint(i);
@@ -167,6 +171,7 @@ for(int j = 0;j < n;j++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.903 -0400", hash_original_method = "16B48B66F40BC5C2F3D95D2C2FC575C8", hash_generated_method = "EFCA1027956DBE2F75F8A3F9086D60A6")
         public CharSequence subSequence(int start, int end) {
             addTaint(end);
@@ -183,6 +188,7 @@ CharSequence varB221E45F434F915AFB96577CA5936EA6_1900545842 =             new St
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.903 -0400", hash_original_method = "C6C9F4F28222CB23CDD8D19463D6DD00", hash_generated_method = "B36A50811D881931BADC29A2A96EFE60")
         public String toString() {
             char[] c = new char[length()];
@@ -197,6 +203,7 @@ String varB221E45F434F915AFB96577CA5936EA6_352666195 =             new String(c)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.904 -0400", hash_original_method = "296CE0E87E188E4485863573C8375539", hash_generated_method = "B804FF7FEB807AF660AA728EA5370F61")
         public void getChars(int start, int end, char[] dest, int off) {
             addTaint(off);
@@ -241,6 +248,7 @@ for(int j = 0;j < n;j++)
 
         private Spanned mSpanned;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.905 -0400", hash_original_method = "CAA9811C5358881331EB71A9EC7C0C0E", hash_generated_method = "5950D708106BF6DE3B32B87F9AA6BC2A")
         public  SpannedReplacementCharSequence(Spanned source, char[] original,
                                               char[] replacement) {
@@ -253,6 +261,7 @@ for(int j = 0;j < n;j++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.905 -0400", hash_original_method = "C46F3FF4F9C2D4E0959AE37E95AA6C52", hash_generated_method = "C752E2DD80E4B8B5CC92F21BF67BD4B5")
         public CharSequence subSequence(int start, int end) {
             addTaint(end);
@@ -278,6 +287,7 @@ T[] varF03F51B4D510CEB709FCAEAB771CF011_1458673821 =             mSpanned.getSpa
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.906 -0400", hash_original_method = "2071284CDE64572D4D3F80F80EB4C823", hash_generated_method = "B63B5C5B53F873FEC6B76898662668A9")
         public int getSpanStart(Object tag) {
             addTaint(tag.getTaint());
@@ -289,6 +299,7 @@ T[] varF03F51B4D510CEB709FCAEAB771CF011_1458673821 =             mSpanned.getSpa
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.906 -0400", hash_original_method = "B1DC38D90632AE4EB220020E4C5B16DF", hash_generated_method = "4A3F4F530959AC31D0BD5ED3A3BF99BC")
         public int getSpanEnd(Object tag) {
             addTaint(tag.getTaint());
@@ -300,6 +311,7 @@ T[] varF03F51B4D510CEB709FCAEAB771CF011_1458673821 =             mSpanned.getSpa
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.907 -0400", hash_original_method = "A386D5CC8A9C15386840381A75E4D6FD", hash_generated_method = "3536B8543DAA97C00134D78FB54431A1")
         public int getSpanFlags(Object tag) {
             addTaint(tag.getTaint());
@@ -311,6 +323,7 @@ T[] varF03F51B4D510CEB709FCAEAB771CF011_1458673821 =             mSpanned.getSpa
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.907 -0400", hash_original_method = "0259540B9EDC3EBDD85F9EA3B2A19C33", hash_generated_method = "C1B481FF44B0E47E35956C45C4055E5D")
         public int nextSpanTransition(int start, int end, Class type) {
             addTaint(type.getTaint());

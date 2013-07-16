@@ -42,6 +42,7 @@ public final class Bitmap implements Parcelable {
 
     int mDensity = sDefaultDensity = getDefaultDensity();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.776 -0400", hash_original_method = "99AF26591A06E5269F88FBD6B3710F13", hash_generated_method = "3932AC41E4A5FE2ED24282D3E2D321CA")
       Bitmap(int nativeBitmap, byte[] buffer, boolean isMutable, byte[] ninePatchChunk,
             int density) {
@@ -1193,6 +1194,7 @@ Bitmap varB8E43D5ABE5A56CEFCFBA2D810F6046C_771735090 =         bm;
         JPEG    (0),
         PNG     (1),
         WEBP    (2);
+        @DSModeled(DSC.SAFE)
         CompressFormat(int nativeInt) {
             this.nativeInt = nativeInt;
         }

@@ -18,6 +18,7 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
 
     int ordinal;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.700 -0400", hash_original_method = "2DD8D404884977C1C225DE3C5244FDA0", hash_generated_method = "3A3CD01EC43B734FD3F8DAA5CF280987")
     protected  Enum(String name, int ordinal) {
         this.name = name;

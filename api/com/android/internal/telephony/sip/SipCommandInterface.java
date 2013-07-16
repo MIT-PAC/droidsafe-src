@@ -14,6 +14,7 @@ import com.android.internal.telephony.gsm.SmsBroadcastConfigInfo;
 
 class SipCommandInterface extends BaseCommands implements CommandsInterface {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.099 -0400", hash_original_method = "A6511375FC27D28438216697969D84B8", hash_generated_method = "A859198BE8A3007C12546D581D9014DC")
       SipCommandInterface(Context context) {
         super(context);

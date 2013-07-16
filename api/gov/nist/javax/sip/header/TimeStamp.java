@@ -21,6 +21,7 @@ public class TimeStamp extends SIPHeader implements TimeStampHeader {
 
     private float timeStampFloat = -1;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.515 -0400", hash_original_method = "02FBDC0E6C2AA0154E61A684C5364628", hash_generated_method = "178E8182DE940535EF9B1562E25AC807")
     public  TimeStamp() {
         super(TIMESTAMP);

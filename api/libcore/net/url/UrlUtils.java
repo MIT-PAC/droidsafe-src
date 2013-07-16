@@ -88,7 +88,8 @@ public final class UrlUtils {
     }
 
     
-        public static int findFirstOf(String string, String chars, int start, int end) {
+        @DSModeled(DSC.SAFE)
+    public static int findFirstOf(String string, String chars, int start, int end) {
         for (int i = start; i < end; i++) {
             char c = string.charAt(i);
             if (chars.indexOf(c) != -1) {

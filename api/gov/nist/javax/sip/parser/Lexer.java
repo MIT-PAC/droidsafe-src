@@ -12,6 +12,7 @@ import java.util.Hashtable;
 
 public class Lexer extends LexerCore {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.720 -0400", hash_original_method = "1890ACF170ADFCBA047D359B33ABA230", hash_generated_method = "7AD0628F236553F5847A73488C6F1B5F")
     public  Lexer(String lexerName, String buffer) {
         super(lexerName, buffer);

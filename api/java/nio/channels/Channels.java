@@ -20,6 +20,7 @@ import libcore.io.Streams;
 
 public final class Channels {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:57.418 -0400", hash_original_method = "E5756BC98BED6794F2A2668CF27D9D40", hash_generated_method = "A3FFC3FD46BE47AAF4DAB2140E96D8E8")
     private  Channels() {
         // ---------- Original Method ----------
@@ -46,7 +47,8 @@ public final class Channels {
     }
 
     
-        public static Reader newReader(ReadableByteChannel channel,
+        @DSModeled(DSC.SAFE)
+    public static Reader newReader(ReadableByteChannel channel,
             CharsetDecoder decoder, int minBufferCapacity) {
         return new InputStreamReader(new ChannelInputStream(channel), decoder);
     }
@@ -61,7 +63,8 @@ public final class Channels {
     }
 
     
-        public static Writer newWriter(WritableByteChannel channel,
+        @DSModeled(DSC.SAFE)
+    public static Writer newWriter(WritableByteChannel channel,
             CharsetEncoder encoder, int minBufferCapacity) {
         return new OutputStreamWriter(new ChannelOutputStream(channel), encoder);
     }
@@ -76,7 +79,8 @@ public final class Channels {
     }
 
     
-        static void checkBlocking(Channel channel) {
+        @DSModeled(DSC.SAFE)
+    static void checkBlocking(Channel channel) {
         if (channel instanceof SelectableChannel && !((SelectableChannel) channel).isBlocking()) {
             throw new IllegalBlockingModeException();
         }

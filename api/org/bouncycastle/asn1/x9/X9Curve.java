@@ -27,6 +27,7 @@ public class X9Curve extends ASN1Encodable implements X9ObjectIdentifiers {
 
     private DERObjectIdentifier fieldIdentifier = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.474 -0400", hash_original_method = "D6C787E2A4803225F35FA6BCE1822130", hash_generated_method = "9C77687FAE312DDD695CEE5DA2B770F5")
     public  X9Curve(
         ECCurve     curve) {
@@ -40,6 +41,7 @@ public class X9Curve extends ASN1Encodable implements X9ObjectIdentifiers {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.474 -0400", hash_original_method = "3B7C14B5F62450195FF0D6E781874500", hash_generated_method = "520BE3AA222231447B5DC8D30ABB9A87")
     public  X9Curve(
         ECCurve     curve,
@@ -106,7 +108,7 @@ public class X9Curve extends ASN1Encodable implements X9ObjectIdentifiers {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.475 -0400", hash_original_method = "D736F484B6800931FE72576618335766", hash_generated_method = "8F8562D02FAC5353A01979F5EEB6A0EB")
     private void setFieldIdentifier() {
     if(curve instanceof ECCurve.Fp)        
@@ -164,6 +166,7 @@ ECCurve varCB08C04A7A1DB77E60E6F93B4C766067_852918609 =         curve;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.476 -0400", hash_original_method = "FE4C71C21A5F26496E8390DAB2BE9299", hash_generated_method = "CE1DE703572355A20F013CC58B7202C6")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();

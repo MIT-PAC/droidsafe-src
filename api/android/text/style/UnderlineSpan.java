@@ -11,12 +11,14 @@ import android.text.TextUtils;
 
 public class UnderlineSpan extends CharacterStyle implements UpdateAppearance, ParcelableSpan {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.508 -0400", hash_original_method = "0961EBA9EB7C20D52B677528162BDFE2", hash_generated_method = "7390F9D5E0BC1E526CED5304868F9B88")
     public  UnderlineSpan() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.508 -0400", hash_original_method = "2F10E98AFC8F657229593A567035B72B", hash_generated_method = "7760FAFCB018CA151139F1A8E40D2AAC")
     public  UnderlineSpan(Parcel src) {
         addTaint(src.getTaint());

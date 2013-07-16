@@ -9,6 +9,7 @@ import javax.sip.header.RouteHeader;
 
 public class Route extends AddressParametersHeader implements javax.sip.header.RouteHeader {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.937 -0400", hash_original_method = "B9CE287F547A57CF29833C977E422F42", hash_generated_method = "78BD04979B7BBC9CE0E7EF4486861FDE")
     public  Route() {
         super(NAME);
@@ -16,6 +17,7 @@ public class Route extends AddressParametersHeader implements javax.sip.header.R
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.938 -0400", hash_original_method = "D97B9DA75E98466FFB5CFE28F884D630", hash_generated_method = "D5CA80DDFE0F9A7510EA0A6177493FB2")
     public  Route(AddressImpl address) {
         super(NAME);

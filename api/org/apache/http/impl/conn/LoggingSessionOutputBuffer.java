@@ -28,6 +28,7 @@ public class LoggingSessionOutputBuffer implements SessionOutputBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.874 -0400", hash_original_method = "E8AA091506E0C7EDCD0C7636A9C3BA76", hash_generated_method = "5FDC2D03186779504998E4E2B99FD937")
     public void write(byte[] b, int off, int len) throws IOException {
         addTaint(len);
@@ -46,6 +47,7 @@ public class LoggingSessionOutputBuffer implements SessionOutputBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.875 -0400", hash_original_method = "5AAEA6F1D5C12B4807525C7221D2D4F0", hash_generated_method = "4B152F58BFBD1D01468D9DDC23A1FD74")
     public void write(int b) throws IOException {
         addTaint(b);
@@ -62,6 +64,7 @@ public class LoggingSessionOutputBuffer implements SessionOutputBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.875 -0400", hash_original_method = "398DA088D4360963F630B5E740A28F5B", hash_generated_method = "9AE926A31D415F5F24FBB6B8FA4A6F4B")
     public void write(byte[] b) throws IOException {
         addTaint(b[0]);
@@ -78,6 +81,7 @@ public class LoggingSessionOutputBuffer implements SessionOutputBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.876 -0400", hash_original_method = "A5A452E28D931563D6707491621FFBE7", hash_generated_method = "659F5DF70DF5E6C77EDF97533C3E99AE")
     public void flush() throws IOException {
         this.out.flush();
@@ -120,6 +124,7 @@ public class LoggingSessionOutputBuffer implements SessionOutputBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.877 -0400", hash_original_method = "1A01B276520F9BEAE357611B160DD712", hash_generated_method = "80EF366C418E32A9C411C68FC4268D5C")
     public HttpTransportMetrics getMetrics() {
 HttpTransportMetrics var720CA9FBB3D3518FCE8644278DFC2DC3_554438409 =         this.out.getMetrics();

@@ -9,6 +9,7 @@ import java.text.ParseException;
 
 public final class AuthenticationInfo extends ParametersHeader implements javax.sip.header.AuthenticationInfoHeader {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.035 -0400", hash_original_method = "501AA426592E66DB320F694568AF73E3", hash_generated_method = "EF9C7B2271BA28B15E1D45A4FFBE5636")
     public  AuthenticationInfo() {
         super(NAME);
@@ -39,6 +40,7 @@ String varEF6E14FE7C327BE363085D7A5020E89C_1618892631 =         parameters.encod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.036 -0400", hash_original_method = "4557281A63D104D6DD73401BFDDD37E4", hash_generated_method = "044B85E19D476478C662F93F6B80EE54")
     public NameValue getAuthInfo(String name) {
         addTaint(name.getTaint());
@@ -166,6 +168,7 @@ String var652AB4C7E1504C0D435CEB3C517BD439_1604967325 =         this.getParamete
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.046 -0400", hash_original_method = "79F5ECF04A9DFE6DE6CC38CF9BC2A733", hash_generated_method = "C661184E5EE75DFCA9B4BC2803991365")
     public void setResponse(String response) throws ParseException {
         addTaint(response.getTaint());

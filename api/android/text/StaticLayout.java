@@ -46,6 +46,7 @@ public class StaticLayout extends Layout {
 
     private Paint.FontMetricsInt mFontMetricsInt = new Paint.FontMetricsInt();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.900 -0400", hash_original_method = "C77149727B404FEFD5CB3129B7BB45BF", hash_generated_method = "A2C7FD3BDCFF5AE3C68F7EA7EEA215C3")
     public  StaticLayout(CharSequence source, TextPaint paint,
                         int width,
@@ -64,6 +65,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.901 -0400", hash_original_method = "81565FB766EC1D266415894033F3BC38", hash_generated_method = "1BDEA4DDCB95B2D4AE1B3855FDF537E6")
     public  StaticLayout(CharSequence source, TextPaint paint,
             int width, Alignment align, TextDirectionHeuristic textDir,
@@ -83,6 +85,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.901 -0400", hash_original_method = "BF066121E6D6D3B30CB2E4FB82D6E631", hash_generated_method = "09C0F14EBB940ED04BE0CFE26AF7FE94")
     public  StaticLayout(CharSequence source, int bufstart, int bufend,
                         TextPaint paint, int outerwidth,
@@ -104,6 +107,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.902 -0400", hash_original_method = "683465774808809C7366667F354731A1", hash_generated_method = "186A22AC5077869045034CC835F739C5")
     public  StaticLayout(CharSequence source, int bufstart, int bufend,
             TextPaint paint, int outerwidth,
@@ -126,6 +130,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.902 -0400", hash_original_method = "D92F1C5E6D18A86EA341983F1D2D5889", hash_generated_method = "376E1BA0E40B0B0D45744B8AA2B98A9C")
     public  StaticLayout(CharSequence source, int bufstart, int bufend,
             TextPaint paint, int outerwidth,
@@ -151,6 +156,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.904 -0400", hash_original_method = "67715870CA89D1E43E3638ABED5B90D0", hash_generated_method = "1C4DC0C3B0F775E883C7672994F557B4")
     public  StaticLayout(CharSequence source, int bufstart, int bufend,
                         TextPaint paint, int outerwidth,
@@ -203,6 +209,7 @@ public class StaticLayout extends Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.905 -0400", hash_original_method = "F6D0B9C991ED85508405BA894E3CF311", hash_generated_method = "929A49CB2EA338727AF65A2DC3C24AB9")
       StaticLayout(CharSequence text) {
         super(text, null, 0, null, 0, 0);

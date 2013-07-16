@@ -42,6 +42,7 @@ public class DERUTCTime extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.232 -0400", hash_original_method = "889E462D85EE47A04EE3B8EBB5F8A587", hash_generated_method = "B19451CF21E769F4102167FB36DDE638")
     public  DERUTCTime(
         Date time) {
@@ -173,6 +174,7 @@ String var519C08293EE0B442111F7C58479E6A8C_350871226 =                 d.substri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.244 -0400", hash_original_method = "F061A0CEFEFA91AF7DA40604EA772B20", hash_generated_method = "801DCAB1425571D3D072E15336D3E0E4")
     public String getAdjustedTime() {
         String d = this.getTime();

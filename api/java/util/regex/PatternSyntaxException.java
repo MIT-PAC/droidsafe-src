@@ -17,6 +17,7 @@ public class PatternSyntaxException extends IllegalArgumentException {
 
     private int index = -1;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.345 -0400", hash_original_method = "89B9A833AE2CE5B13E9F312F3F36ED4B", hash_generated_method = "B95671C7B358D385696E60C8C86E6A70")
     public  PatternSyntaxException(String description, String pattern, int index) {
         this.desc = description;

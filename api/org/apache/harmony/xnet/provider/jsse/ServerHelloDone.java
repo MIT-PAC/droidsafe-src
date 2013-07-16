@@ -8,12 +8,14 @@ import java.io.IOException;
 
 public class ServerHelloDone extends Message {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.649 -0400", hash_original_method = "452B2923DC2D49E8C5C850D6FAC160F0", hash_generated_method = "444AAD10FB3A2E0EE274ED19A66E35AB")
     public  ServerHelloDone() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.650 -0400", hash_original_method = "80970884A2E49299D172B83B85177CAF", hash_generated_method = "5EA7237B4BD759A89661CA21FF8F1DE9")
     public  ServerHelloDone(HandshakeIODataStream in, int length) throws IOException {
         addTaint(length);

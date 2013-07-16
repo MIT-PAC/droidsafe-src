@@ -11,6 +11,7 @@ public class AtomicBoolean implements java.io.Serializable {
 
     private volatile int value;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.653 -0400", hash_original_method = "2D4043190EFF6FBF71F6E61F91ACE979", hash_generated_method = "FFDDA23FDAF935FA94934FA7D0DF7A90")
     public  AtomicBoolean(boolean initialValue) {
         value = initialValue ? 1 : 0;
@@ -19,6 +20,7 @@ public class AtomicBoolean implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.653 -0400", hash_original_method = "4EFA45A0BE6632C845A9BA70932A5A0A", hash_generated_method = "6F354300E0EEDCD66A892901A02868C4")
     public  AtomicBoolean() {
         // ---------- Original Method ----------

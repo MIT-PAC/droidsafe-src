@@ -13,6 +13,7 @@ import org.apache.http.cookie.SetCookie2;
 
 public class RFC2965DiscardAttributeHandler implements CookieAttributeHandler {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.815 -0400", hash_original_method = "40A04040358E10BE463BC9E2FF4354F7", hash_generated_method = "A8A4D4F0913E8CA95AF486E5DDC0A437")
     public  RFC2965DiscardAttributeHandler() {
         super();

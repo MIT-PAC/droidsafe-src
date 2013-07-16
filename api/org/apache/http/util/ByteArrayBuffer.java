@@ -13,6 +13,7 @@ public final class ByteArrayBuffer {
 
     private int len;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:38.034 -0400", hash_original_method = "8E5F8B5095E051129F22BA678563CC37", hash_generated_method = "68BB3FE11AE7B7BB5130B840E9150530")
     public  ByteArrayBuffer(int capacity) {
         super();
@@ -31,6 +32,7 @@ public final class ByteArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:38.035 -0400", hash_original_method = "00DB8B6A06284480D1470563C3051457", hash_generated_method = "6480572B68B9B86AD9C02C3C0C6383C9")
     private void expand(int newlen) {
         addTaint(newlen);
@@ -90,6 +92,7 @@ public final class ByteArrayBuffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:38.036 -0400", hash_original_method = "2CBB81D0688F751ED507CC2CFBAC1CFC", hash_generated_method = "0FE56DBCD92E1ADD5F67C120391BD066")
     public void append(int b) {
         int newlen = this.len + 1;
@@ -188,6 +191,7 @@ for(int i1 = off, i2 = oldlen;i2 < newlen;i1++,i2++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:38.039 -0400", hash_original_method = "1D2E8B5D0002EFCBEC9528FA90BDCD1E", hash_generated_method = "BF6B0FF83C538FFF4BD69C9553A84B61")
     public byte[] toByteArray() {
         byte[] b = new byte[this.len];
@@ -252,6 +256,7 @@ for(int i1 = off, i2 = oldlen;i2 < newlen;i1++,i2++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:38.040 -0400", hash_original_method = "91BC3CAF824730CA70DA03BDE47FFB38", hash_generated_method = "E37113F2521A3D278DCF5E4A922C046D")
     public void setLength(int len) {
     if(len < 0 || len > this.buffer.length)        

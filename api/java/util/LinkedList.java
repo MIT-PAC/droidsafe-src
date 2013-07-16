@@ -18,6 +18,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
 
     transient Link<E> voidLink;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.138 -0400", hash_original_method = "4832DB7F32D79BC3832C9989ACB7B916", hash_generated_method = "8DFD03108CDD2A33CB7D765F5A450A4F")
     public  LinkedList() {
         voidLink = new Link<E>(null, null, null);

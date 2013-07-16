@@ -1038,6 +1038,7 @@ SipProviderImpl var3225FCDEC68828DBDB22B9A45DB9B695_1089364232 =         this.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:45.721 -0400", hash_original_method = "BA06BB4C0270C8B47C1CBBF5F94DA61A", hash_generated_method = "9D61886FD6672CD3972ACA9DAD63DF87")
     public void raiseIOExceptionEvent() {
         setState(TransactionState.TERMINATED);
@@ -1058,6 +1059,7 @@ SipProviderImpl var3225FCDEC68828DBDB22B9A45DB9B695_1089364232 =         this.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:45.722 -0400", hash_original_method = "9C758C929345C5BD5429DB309FDFD6EA", hash_generated_method = "9F21003A704736DBDED8AB6C1E9A4AC1")
     public boolean acquireSem() {
         boolean retval = false;
@@ -1235,6 +1237,7 @@ String var0F8063DAA649B506FBB1129D8593BD3D_1690445619 =             ((TLSMessage
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:45.724 -0400", hash_original_method = "1BD353D03C47A7F0291FB8AF92EA1899", hash_generated_method = "60010E0194BDF5E4B3815D92BFC5101F")
     public java.security.cert.Certificate[] getLocalCertificates() throws UnsupportedOperationException {
     if(this.getMessageChannel() instanceof TLSMessageChannel)        
@@ -1276,6 +1279,7 @@ java.security.cert.Certificate[] var6376468DB45EDFCA476E9DCC32DF9FD6_505721492 =
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:45.724 -0400", hash_original_method = "425975E25339AF497E9130895A1F6EC3", hash_generated_method = "06662C4F0BB5EA6352099F160D15343D")
     public java.security.cert.Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {
     if(this.getMessageChannel() instanceof TLSMessageChannel)        

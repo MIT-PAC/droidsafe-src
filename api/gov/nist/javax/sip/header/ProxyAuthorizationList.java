@@ -8,6 +8,7 @@ import javax.sip.header.*;
 
 public class ProxyAuthorizationList extends SIPHeaderList<ProxyAuthorization> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.739 -0400", hash_original_method = "7E2339716E9E591A456966370DA5C67A", hash_generated_method = "13BE6CAE5E4586734CD6519D7633A9B2")
     public  ProxyAuthorizationList() {
         super(ProxyAuthorization.class, ProxyAuthorizationHeader.NAME);

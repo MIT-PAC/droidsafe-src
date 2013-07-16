@@ -77,6 +77,7 @@ public class StringReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.031 -0400", hash_original_method = "52097AD3D6FE0975840C468FF1E0F766", hash_generated_method = "D1E5065EF095D2AFB2C2F463C5D3AF39")
     private void checkNotClosed() throws IOException {
     if(isClosed())        
@@ -104,6 +105,7 @@ public class StringReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.033 -0400", hash_original_method = "7FFE2BA54C7A195E9FE8B5D995EC9572", hash_generated_method = "6EECBD4A7B383D6006C4517F42679884")
     @Override
     public int read() throws IOException {
@@ -131,6 +133,7 @@ public class StringReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.036 -0400", hash_original_method = "85EEB2DAA826BA4238F8F98E34D3FBD9", hash_generated_method = "C964C704A5BBC89388926EA4FA623026")
     @Override
     public int read(char[] buf, int offset, int len) throws IOException {
@@ -180,6 +183,7 @@ public class StringReader extends Reader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.039 -0400", hash_original_method = "3162F271739E7EAF4DA155264EC5FC94", hash_generated_method = "87764FCF8E80E98FC8ADF3E606814D73")
     @Override
     public boolean ready() throws IOException {

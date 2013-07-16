@@ -49,6 +49,7 @@ public class ExpatReader implements XMLReader {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.012 -0400", hash_original_method = "783B372D10B457C55DE61BCE252421E8", hash_generated_method = "E6F1A3EEB70C8CA543E1C99AC326B17F")
     public boolean getFeature(String name) throws SAXNotRecognizedException, SAXNotSupportedException {
         addTaint(name.getTaint());
@@ -164,6 +165,7 @@ public class ExpatReader implements XMLReader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.014 -0400", hash_original_method = "22B8A6F31FF28964E09EDBCB1671EC65", hash_generated_method = "55407472F47B530FE11A5AF9687B9738")
     public Object getProperty(String name) throws SAXNotRecognizedException, SAXNotSupportedException {
         addTaint(name.getTaint());
@@ -412,6 +414,7 @@ LexicalHandler varF24ED8F881B00D87C96DB18E799E5B4E_767331437 =         lexicalHa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.019 -0400", hash_original_method = "B98792032D9978680A85667A6250DD52", hash_generated_method = "6B72C28BFDE47C3257FAC5C2568B986B")
     private void parse(Reader in, String publicId, String systemId) throws IOException, SAXException {
         addTaint(systemId.getTaint());
@@ -437,6 +440,7 @@ LexicalHandler varF24ED8F881B00D87C96DB18E799E5B4E_767331437 =         lexicalHa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.020 -0400", hash_original_method = "9D71B5A1B65775D1A1A09DC689E8FD0F", hash_generated_method = "B972BF86E748D3E1A70B9A1830F3F3CF")
     private void parse(InputStream in, String encoding, String publicId,
             String systemId) throws IOException, SAXException {
@@ -464,6 +468,7 @@ LexicalHandler varF24ED8F881B00D87C96DB18E799E5B4E_767331437 =         lexicalHa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.020 -0400", hash_original_method = "8AE6DA2951569D3F1B1B45FDE2C61B3C", hash_generated_method = "17B1436177E4DE56B91CAF4A0F73B451")
     public void parse(String systemId) throws IOException, SAXException {
         addTaint(systemId.getTaint());

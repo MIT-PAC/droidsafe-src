@@ -48,6 +48,7 @@ public class BitmapDrawable extends Drawable {
 
     private int mBitmapHeight;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.615 -0400", hash_original_method = "B0AF2A53C18BC0AEA00F89D5110E52E7", hash_generated_method = "29FF9CA7DE78EFC57224158AE5341D65")
     @Deprecated
     public  BitmapDrawable() {
@@ -57,6 +58,7 @@ public class BitmapDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.616 -0400", hash_original_method = "ECC74DE3478988E64B883DFDAEC329B4", hash_generated_method = "B8F53F068664D88F4A14ADE77C0B6BB1")
     @SuppressWarnings({"UnusedParameters"})
     public  BitmapDrawable(Resources res) {
@@ -69,6 +71,7 @@ public class BitmapDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.616 -0400", hash_original_method = "EDF3772DB206CC7034C0B4AE87D72F1A", hash_generated_method = "C08812B7C36B875EA3AC6289F8C1030A")
     @Deprecated
     public  BitmapDrawable(Bitmap bitmap) {
@@ -78,6 +81,7 @@ public class BitmapDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.617 -0400", hash_original_method = "0FA3F000A20BF5722D4983CAD4B48A6A", hash_generated_method = "2910F98D7FC104D8099BFC6FCA77279D")
     public  BitmapDrawable(Resources res, Bitmap bitmap) {
         this(new BitmapState(bitmap), res);
@@ -89,6 +93,7 @@ public class BitmapDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.617 -0400", hash_original_method = "88A1392443C2003D9FA4C6DECF6A14A3", hash_generated_method = "11E1EB6556FB31A283EA23E9AB149719")
     @Deprecated
     public  BitmapDrawable(String filepath) {
@@ -105,6 +110,7 @@ public class BitmapDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.618 -0400", hash_original_method = "2E50FC990DF5F99ED2B436DB68D65D30", hash_generated_method = "52559ACAAB9903121470AE818205C61E")
     @SuppressWarnings({"UnusedParameters"})
     public  BitmapDrawable(Resources res, String filepath) {
@@ -124,6 +130,7 @@ public class BitmapDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.618 -0400", hash_original_method = "5474E95C495E2BDEA7848B2F1051B5AB", hash_generated_method = "3CC7842E019BDB532FFCC8F01C34C375")
     @Deprecated
     public  BitmapDrawable(java.io.InputStream is) {
@@ -140,6 +147,7 @@ public class BitmapDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.619 -0400", hash_original_method = "A95CEE47ED6D08FEFE672AAA66725922", hash_generated_method = "BAA8606004AB589254F25A1225F006AD")
     @SuppressWarnings({"UnusedParameters"})
     public  BitmapDrawable(Resources res, java.io.InputStream is) {
@@ -159,6 +167,7 @@ public class BitmapDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.620 -0400", hash_original_method = "FB19047A342C9589C667FFAF2B0ECEA1", hash_generated_method = "64DA8E1E2360AAEBBD8776CA3ECF0205")
     private  BitmapDrawable(BitmapState state, Resources res) {
         mBitmapState = state;
@@ -695,6 +704,7 @@ ConstantState var3E67C407BBCC4D42D5C5CECC6362B9A7_1380033668 =         mBitmapSt
 
         boolean mRebuildShader;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.641 -0400", hash_original_method = "80003A9E2431B1DF8C6F7DBC005B3BC9", hash_generated_method = "A9BB708F42AA8B8426AFD5B8BA3AC518")
           BitmapState(Bitmap bitmap) {
             mBitmap = bitmap;
@@ -703,6 +713,7 @@ ConstantState var3E67C407BBCC4D42D5C5CECC6362B9A7_1380033668 =         mBitmapSt
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.642 -0400", hash_original_method = "C0031760E3673EAB51AB6808BBA62477", hash_generated_method = "2C0F2E0534D8B72198A0A519439014E3")
           BitmapState(BitmapState bitmapState) {
             this(bitmapState.mBitmap);
@@ -724,6 +735,7 @@ ConstantState var3E67C407BBCC4D42D5C5CECC6362B9A7_1380033668 =         mBitmapSt
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.642 -0400", hash_original_method = "7A0D3C52124D4E31E0F3E052BCC0F262", hash_generated_method = "97165EA7B597097714802EA0386B1A57")
         @Override
         public Drawable newDrawable() {
@@ -735,6 +747,7 @@ Drawable var5E1084F28333265ABFA76FF86F056B51_479098243 =             new BitmapD
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.643 -0400", hash_original_method = "E262501023FDB9346524FFA189B84EDB", hash_generated_method = "30BC067CDD8D9867F0074A3B8CC3393C")
         @Override
         public Drawable newDrawable(Resources res) {

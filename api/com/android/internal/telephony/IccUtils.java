@@ -40,7 +40,8 @@ public class IccUtils {
     }
 
     
-        public static String cdmaBcdToString(byte[] data, int offset, int length) {
+        @DSModeled(DSC.SAFE)
+    public static String cdmaBcdToString(byte[] data, int offset, int length) {
         StringBuilder ret = new StringBuilder(length);
         int count = 0;
         for (int i = offset; count < length; i++) {
@@ -162,7 +163,8 @@ public class IccUtils {
     }
 
     
-        public static byte[] hexStringToBytes(String s) {
+        @DSModeled(DSC.SAFE)
+    public static byte[] hexStringToBytes(String s) {
         byte[] ret;
         if (s == null) return null;
         int sz = s.length();
@@ -175,7 +177,8 @@ public class IccUtils {
     }
 
     
-        public static String bytesToHexString(byte[] bytes) {
+        @DSModeled(DSC.SAFE)
+    public static String bytesToHexString(byte[] bytes) {
         if (bytes == null) return null;
         StringBuilder ret = new StringBuilder(2*bytes.length);
         for (int i = 0 ; i < bytes.length ; i++) {

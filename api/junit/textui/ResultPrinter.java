@@ -214,7 +214,7 @@ PrintStream var15EB857739387F1E1116D7F9B05806F0_1394098965 =         fWriter;
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.489 -0400", hash_original_method = "CBE875AE1CC49C40C27CB7367A3CF890", hash_generated_method = "1E4A1B85ECBE1BCC1195742497B0AD92")
     public void addFailure(Test test, AssertionFailedError t) {
         addTaint(t.getTaint());

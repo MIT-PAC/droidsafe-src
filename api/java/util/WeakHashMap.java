@@ -27,6 +27,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
 
     volatile int modCount;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.239 -0400", hash_original_method = "B976885DE3CF2C49EC1331AC2786A4B5", hash_generated_method = "947788F1D50A3898B6C48AAEC3B777CB")
     public  WeakHashMap() {
         this(DEFAULT_SIZE);
@@ -34,6 +35,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.240 -0400", hash_original_method = "76AE00E803F5BFDB4BDF43DC151D88D7", hash_generated_method = "34C7D3AF4E4B9C761F16AF3ED654C8BF")
     public  WeakHashMap(int capacity) {
     if(capacity >= 0)        
@@ -63,6 +65,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.241 -0400", hash_original_method = "342F9B7CF63C1134C14E3979782FA4FA", hash_generated_method = "B1738045C859D1278767C8748DE4AC8B")
     public  WeakHashMap(int capacity, float loadFactor) {
     if(capacity >= 0 && loadFactor > 0)        

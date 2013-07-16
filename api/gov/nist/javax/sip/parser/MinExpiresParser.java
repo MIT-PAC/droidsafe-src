@@ -10,6 +10,7 @@ import javax.sip.*;
 
 public class MinExpiresParser extends HeaderParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.885 -0400", hash_original_method = "958EB85119CB55ADB0187595D23A4161", hash_generated_method = "18AE5AC1AECFE735B4B780AF40AFA3F3")
     public  MinExpiresParser(String minExpires) {
         super(minExpires);
@@ -18,6 +19,7 @@ public class MinExpiresParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.886 -0400", hash_original_method = "C5E703E21CCA5CEB1F1840058DFBE664", hash_generated_method = "882AED7A38440106939A78D2EDA46308")
     protected  MinExpiresParser(Lexer lexer) {
         super(lexer);
@@ -26,6 +28,7 @@ public class MinExpiresParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.906 -0400", hash_original_method = "67C1C5FB3D4E718484F296CD0580B923", hash_generated_method = "BF1367DF14AB75512F693E9F307AC7FB")
     public SIPHeader parse() throws ParseException {
     if(debug)        

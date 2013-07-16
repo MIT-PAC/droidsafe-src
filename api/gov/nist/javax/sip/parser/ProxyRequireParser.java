@@ -10,6 +10,7 @@ import java.text.ParseException;
 
 public class ProxyRequireParser extends HeaderParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.504 -0400", hash_original_method = "5FB5567CF156CEA2F5335691822C90DD", hash_generated_method = "C6DDB63A7E80EC8542F2F90711E95456")
     public  ProxyRequireParser(String require) {
         super(require);
@@ -18,6 +19,7 @@ public class ProxyRequireParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.505 -0400", hash_original_method = "234BDD3530202548153433053521557F", hash_generated_method = "AF1665D0ED8B9465A6299ECE846D143E")
     protected  ProxyRequireParser(Lexer lexer) {
         super(lexer);

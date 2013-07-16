@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public class ColorMatrixColorFilter extends ColorFilter {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.215 -0400", hash_original_method = "92B387BCC5497E96DCF4BCCE85C5A491", hash_generated_method = "51F33EB5912D51F7349BD07120C17B07")
     public  ColorMatrixColorFilter(ColorMatrix matrix) {
         addTaint(matrix.getTaint());
@@ -20,6 +21,7 @@ public class ColorMatrixColorFilter extends ColorFilter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.215 -0400", hash_original_method = "2D0E3EA51658F535A9A5BDBE5AE078D8", hash_generated_method = "06945BA4000A9368E278CDFD95CF83E4")
     public  ColorMatrixColorFilter(float[] array) {
         addTaint(array[0]);

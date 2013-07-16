@@ -265,6 +265,7 @@ switch(pushbackTC){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.215 -0400", hash_original_method = "7E3B2630C90BBA61B0E7CD83B04481D2", hash_generated_method = "6E602F9E034C6F1A2900723EA3033402")
     @Override
     public int read(byte[] buffer, int offset, int length) throws IOException {

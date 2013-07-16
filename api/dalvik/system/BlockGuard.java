@@ -14,6 +14,7 @@ import java.nio.charset.Charsets;
 
 public final class BlockGuard {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:18.780 -0400", hash_original_method = "0E6BC3DAACB3346655A889CA6E7D1AFA", hash_generated_method = "69110DD784D65387D879431CB3C0A133")
     private  BlockGuard() {
         // ---------- Original Method ----------
@@ -46,6 +47,7 @@ public final class BlockGuard {
 
         private String mMessage;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:18.796 -0400", hash_original_method = "FE59F9C45AD8795BBBCB0FEAFA85E7D3", hash_generated_method = "F2ACDF1DF00A6391214A9BBEFD00FDB4")
         public  BlockGuardPolicyException(int policyState, int policyViolated) {
             this(policyState, policyViolated, null);
@@ -55,6 +57,7 @@ public final class BlockGuard {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:18.806 -0400", hash_original_method = "CA74B61F12E68CE7397040DE549DC38F", hash_generated_method = "0AE0F1A66733E14D239803D5E1E8520F")
         public  BlockGuardPolicyException(int policyState, int policyViolated, String message) {
             mPolicyState = policyState;

@@ -64,6 +64,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
 
     private transient String exponentSeparator;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.623 -0400", hash_original_method = "91524EB1B511A6593A9E4C16AA4F2798", hash_generated_method = "56C5B7DBED39CFE7A5BF60DA4A9A951E")
     public  DecimalFormatSymbols() {
         this(Locale.getDefault());
@@ -71,6 +72,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.626 -0400", hash_original_method = "0AEA27B26006219100D92BC0021E5648", hash_generated_method = "0C40F0BF5A36D944A9C064502F428D15")
     public  DecimalFormatSymbols(Locale locale) {
         LocaleData localeData = LocaleData.get(locale);

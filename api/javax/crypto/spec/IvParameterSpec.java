@@ -12,6 +12,7 @@ public class IvParameterSpec implements AlgorithmParameterSpec {
 
     private byte[] iv;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.398 -0400", hash_original_method = "D9A5990E9ED63A0A9D454C79A44593C3", hash_generated_method = "A139254C8054C2476F56A9776864AF91")
     public  IvParameterSpec(byte[] iv) {
     if(iv == null)        
@@ -31,6 +32,7 @@ public class IvParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.399 -0400", hash_original_method = "60CA42675AB74B8A2A3519AD856C2D26", hash_generated_method = "FA9A6C1E5C35729CC5F616693B0C9338")
     public  IvParameterSpec(byte[] iv, int offset, int byteCount) {
         addTaint(offset);
@@ -53,6 +55,7 @@ public class IvParameterSpec implements AlgorithmParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.400 -0400", hash_original_method = "A92FDD2E910AFCA63CE828A3161FD7A9", hash_generated_method = "1812D8ED37F0FED1C1C08BF5F179A186")
     public byte[] getIV() {
         byte[] res = new byte[iv.length];

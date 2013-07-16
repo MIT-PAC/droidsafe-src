@@ -24,7 +24,8 @@ final class FloatToByteBufferAdapter extends FloatBuffer {
     }
 
     
-        static FloatBuffer asFloatBuffer(ByteBuffer byteBuffer) {
+        @DSModeled(DSC.SAFE)
+    static FloatBuffer asFloatBuffer(ByteBuffer byteBuffer) {
         ByteBuffer slice = byteBuffer.slice();
         slice.order(byteBuffer.order());
         return new FloatToByteBufferAdapter(slice);
@@ -86,6 +87,7 @@ FloatBuffer var72A74007B2BE62B849F475C7BDA4658B_1469071595 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.565 -0400", hash_original_method = "2336A0F3EA16333D5C7B2B5772DB119B", hash_generated_method = "DF449F19599C7B457EC7270D02090719")
     @Override
     public FloatBuffer duplicate() {
@@ -141,6 +143,7 @@ FloatBuffer var0D8E466677B8F245666E1A4B1E0924E6_461533909 =         buf;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.566 -0400", hash_original_method = "D58B2A76A0F3A395BA7B6FFCBE67E2EB", hash_generated_method = "C5816FD56145DAEF04D0E43ED9503030")
     @Override
     public FloatBuffer get(float[] dst, int dstOffset, int floatCount) {
@@ -281,6 +284,7 @@ FloatBuffer var72A74007B2BE62B849F475C7BDA4658B_1593774513 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.571 -0400", hash_original_method = "3BDFA2137C718F8287015587FF612D27", hash_generated_method = "0E4BE72C9A0F96FFECAECFE01433AC99")
     @Override
     public FloatBuffer put(float[] src, int srcOffset, int floatCount) {
@@ -314,6 +318,7 @@ FloatBuffer var72A74007B2BE62B849F475C7BDA4658B_1402881965 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.572 -0400", hash_original_method = "72D0D38C2A2E773EAB91888933B787B4", hash_generated_method = "052B1539BF5FA4711665C00D6DEAC8A3")
     @Override
     public FloatBuffer slice() {

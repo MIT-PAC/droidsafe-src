@@ -19,6 +19,7 @@ public class KeyCharacterMap {
 
     private int mPtr;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.990 -0400", hash_original_method = "F25FFC35847D9654A71D98E78C4759D8", hash_generated_method = "BA7BA688730B5A8F24D16B2D5566D72A")
     private  KeyCharacterMap(int deviceId, int ptr) {
         mDeviceId = deviceId;
@@ -91,6 +92,7 @@ public class KeyCharacterMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.992 -0400", hash_original_method = "C46984664DD9459250D6B9D7539380FB", hash_generated_method = "CEED56C0A46D3A8BE8E96FE3E66EC586")
     @Override
     protected void finalize() throws Throwable {

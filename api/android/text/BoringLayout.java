@@ -42,6 +42,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
 
     private int mEllipsizedCount;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.787 -0400", hash_original_method = "4AC8C9A33DE614873CD5C4119639BAC7", hash_generated_method = "8D2FEEB8D8E4FE0D7BC60530C30990FC")
     public  BoringLayout(CharSequence source,
                         TextPaint paint, int outerwidth,
@@ -70,6 +71,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.788 -0400", hash_original_method = "614BD9653B1F69671BF8486744526AD2", hash_generated_method = "39E62614F86006D0D161F6482294CE54")
     public  BoringLayout(CharSequence source,
                         TextPaint paint, int outerwidth,
@@ -612,6 +614,7 @@ Directions var23DB167A4CD06697C566FA0F2EDA02AD_325199986 =         Layout.DIRS_A
 
         public int width;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.801 -0400", hash_original_method = "5093089FD85953828BC1A867B844524A", hash_generated_method = "5093089FD85953828BC1A867B844524A")
         public Metrics ()
         {

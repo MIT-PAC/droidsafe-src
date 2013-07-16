@@ -38,6 +38,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
 
     private transient Collection<V> values;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.320 -0400", hash_original_method = "67F8ADB6599C3AA95FA8DFFD843377DD", hash_generated_method = "7409D258B8D042741B25C0440FA51BF9")
     @SuppressWarnings("unchecked")
     public  HashMap() {
@@ -49,6 +50,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.322 -0400", hash_original_method = "DBEA46BF5DB352E6536C06B54FDF6C1E", hash_generated_method = "BA97128E8E9D5305ED3203708DEBC318")
     public  HashMap(int capacity) {
         addTaint(capacity);
@@ -101,6 +103,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.323 -0400", hash_original_method = "ED265422F07438826BD7CEB727CA13DA", hash_generated_method = "67CCEF6CDF538271A60E0D75269DD5BC")
     public  HashMap(int capacity, float loadFactor) {
         this(capacity);
@@ -227,6 +230,7 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_1397747498 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.333 -0400", hash_original_method = "D55BBCD9F0C6BD0BD798F81C2A3EFECD", hash_generated_method = "F669F9C9FF658C6CC451CEBCBA0790F0")
     public V get(Object key) {
         addTaint(key.getTaint());
@@ -385,6 +389,7 @@ for(HashMapEntry e = tab[i];e != null;e = e.next)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.336 -0400", hash_original_method = "5BBA395276A0B9AAD236878C1432D189", hash_generated_method = "A39CE2483822BF86BD97C7401CB24E60")
     @Override
     public V put(K key, V value) {
@@ -549,6 +554,7 @@ for(HashMapEntry<K, V> e = first;e != null;e = e.next)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.340 -0400", hash_original_method = "6DFE8ABD0EB0EC55F81B8127E2FB540C", hash_generated_method = "453D2264FFA6453AAFEB1CBBCCBC261D")
      void addNewEntry(K key, V value, int hash, int index) {
         table[index] = new HashMapEntry<K, V>(key, value, hash, table[index]);
@@ -557,6 +563,7 @@ for(HashMapEntry<K, V> e = first;e != null;e = e.next)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.341 -0400", hash_original_method = "1A0C0EFFA3B59B8426ED7AB00D5D7C14", hash_generated_method = "0ED80084966D32973E9213641BE7C311")
      void addNewEntryForNullKey(V value) {
         entryForNullKey = new HashMapEntry<K, V>(null, value, 0, null);
@@ -699,6 +706,7 @@ HashMapEntry<K, V>[] varBBDF9FA229AA843E98D9C8441545D1D6_704836610 =         new
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.350 -0400", hash_original_method = "D4E7D7B0427A5C260627922F822E871C", hash_generated_method = "9084DE264665C071FBFA05FD85B32A81")
     @Override
     public V remove(Object key) {
@@ -1213,6 +1221,7 @@ String varFE698C13EFD83B87FAF2DC2AB0874271_837323381 =             key + "=" + v
 
         int expectedModCount = modCount;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.369 -0400", hash_original_method = "1EAE57F880E5B81388FFC9611EFAA8EA", hash_generated_method = "0E815CC1DAEDDD549C8BCEC8F3AF959F")
           HashIterator() {
     if(nextEntry == null)            

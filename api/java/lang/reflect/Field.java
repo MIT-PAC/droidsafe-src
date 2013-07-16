@@ -59,6 +59,7 @@ public final class Field extends AccessibleObject implements Member {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.008 -0400", hash_original_method = "5029B4C059F978BE158986B034FE3005", hash_generated_method = "7599278F3A909698F9008CA14287B9C3")
     private synchronized void initGenericType() {
     if(!genericTypesAreInitialized)        
@@ -89,6 +90,7 @@ public final class Field extends AccessibleObject implements Member {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.008 -0400", hash_original_method = "1CDF5107AC443AA5F8C2E1DA9DF559A0", hash_generated_method = "26B88D48A365618B7EFBE1B108F56745")
     @Override
      String getSignatureAttribute() {
@@ -120,6 +122,7 @@ String var2F8E51633C4B934C6A6871930033C26B_1631289780 =         StringUtils.comb
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.009 -0400", hash_original_method = "FC3424D2079ACBF27BEC7269ECB48C94", hash_generated_method = "AABDD5E3ED2B2B56EA2598985ECDC454")
     public boolean isSynthetic() {
         int flags = getFieldModifiers(declaringClass, slot);
@@ -159,6 +162,7 @@ String var2460B846747F8B22185AD8BE722266A5_2091115217 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.010 -0400", hash_original_method = "2827C86400F787FBBD0EA58BB5706D02", hash_generated_method = "F02B7B5DFE2BC458F08B8AFD55B8CB68")
     public boolean isEnumConstant() {
         int flags = getFieldModifiers(declaringClass, slot);
@@ -183,6 +187,7 @@ Type var3CE4A4E61FC97920A085126FE74A2E59_1683467774 =         Types.getType(gene
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.010 -0400", hash_original_method = "4122EC91CDDE6FFD9DA08F5ADAF8DB5D", hash_generated_method = "8F323C1E88974B4F856A628E785D0CA3")
     @Override
     public Annotation[] getDeclaredAnnotations() {

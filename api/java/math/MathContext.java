@@ -17,6 +17,7 @@ public final class MathContext implements Serializable {
 
     private RoundingMode roundingMode;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.279 -0400", hash_original_method = "F106BE9E01EEA929163197AB20FC2E93", hash_generated_method = "FF4603BC7D4813473BCC71C7FD0CAB96")
     public  MathContext(int precision) {
         this(precision, RoundingMode.HALF_UP);
@@ -25,6 +26,7 @@ public final class MathContext implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.280 -0400", hash_original_method = "8370E5A41DB25B2BD130B4958C97346D", hash_generated_method = "97182812B40ACBE4BFE88F2BD06975A8")
     public  MathContext(int precision, RoundingMode roundingMode) {
         this.precision = precision;
@@ -37,6 +39,7 @@ public final class MathContext implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.301 -0400", hash_original_method = "1D8B76B7C700FBF158167DD4C05A3C30", hash_generated_method = "4E9E49586846B17DCF2165B08B3E34D6")
     public  MathContext(String s) {
         int precisionLength = "precision=".length();

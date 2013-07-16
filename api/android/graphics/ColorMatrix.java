@@ -11,6 +11,7 @@ public class ColorMatrix {
 
     private final float[] mArray = new float[20];
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.196 -0400", hash_original_method = "7C280C0D6BD3CA85A908B9065390FD08", hash_generated_method = "6DEF39A3008ED08D4A1B025A428FE1FD")
     public  ColorMatrix() {
         reset();
@@ -19,6 +20,7 @@ public class ColorMatrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.196 -0400", hash_original_method = "E88FC6AE9EAD423F2D43BC5A2B86150F", hash_generated_method = "7E4012C738026800C49D63F2B3F72F99")
     public  ColorMatrix(float[] src) {
         addTaint(src[0]);
@@ -28,6 +30,7 @@ public class ColorMatrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.196 -0400", hash_original_method = "668D89CF48F3ADC6BE7AF94D782DA652", hash_generated_method = "616C3AD70D489E51A138B69F12C5E978")
     public  ColorMatrix(ColorMatrix src) {
         addTaint(src.getTaint());

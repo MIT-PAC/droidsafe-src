@@ -44,6 +44,7 @@ public class AlphaAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.493 -0400", hash_original_method = "C966828EC5DEEE2C5EF9ADFBDC1A50C3", hash_generated_method = "6DF76B1F64A45DEDEA1BB459C7CD473C")
     @Override
     protected void applyTransformation(float interpolatedTime, Transformation t) {

@@ -61,6 +61,7 @@ public final class URL implements Serializable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.684 -0400", hash_original_method = "472053565B13D456EDCEBEA98F287F95", hash_generated_method = "1FC82ED97C60498A8BEFE74ED7D4AD49")
     public  URL(URL context, String spec) throws MalformedURLException {
         this(context, spec, null);
@@ -70,6 +71,7 @@ public final class URL implements Serializable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.686 -0400", hash_original_method = "D8E146F1F2E4ED207D7672129A3654D5", hash_generated_method = "08FA0B6D4641F97A4A109972255F336C")
     public  URL(URL context, String spec, URLStreamHandler handler) throws MalformedURLException {
     if(spec == null)        

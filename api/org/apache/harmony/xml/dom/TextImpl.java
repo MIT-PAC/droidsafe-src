@@ -10,6 +10,7 @@ import org.w3c.dom.Text;
 
 public class TextImpl extends CharacterDataImpl implements Text {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.961 -0400", hash_original_method = "8FBFCF7E900515A865ACF1E6532A7BB4", hash_generated_method = "DDA698DE5625F3952C79CAC3D7CFF209")
     public  TextImpl(DocumentImpl document, String data) {
         super(document, data);
@@ -178,6 +179,7 @@ TextImpl var0029222DF1606034C9ECFB713BE58214_1658712362 =         firstTextInCur
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.965 -0400", hash_original_method = "E11C938286265122BF52D51A5CD9EED3", hash_generated_method = "033F89523305485014B3D97BA3CB8EEA")
     private TextImpl nextTextNode() {
         Node nextSibling = getNextSibling();

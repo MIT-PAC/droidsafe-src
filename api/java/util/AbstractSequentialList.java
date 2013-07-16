@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public abstract class AbstractSequentialList<E> extends AbstractList<E> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.276 -0400", hash_original_method = "E95CC14AC93438CE9E4618C927D37CA8", hash_generated_method = "8ABE5E8156F04BB347DDB529BD7F304D")
     protected  AbstractSequentialList() {
         // ---------- Original Method ----------

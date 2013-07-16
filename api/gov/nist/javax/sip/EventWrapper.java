@@ -15,6 +15,7 @@ class EventWrapper {
 
     protected SIPTransaction transaction;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.485 -0400", hash_original_method = "90A52EB1D7464A6D23F549B5DAB9B818", hash_generated_method = "5F0F269D069D41C60DD94AC4EC33879F")
       EventWrapper(EventObject sipEvent, SIPTransaction transaction) {
         this.sipEvent = sipEvent;

@@ -10,6 +10,7 @@ public final class Short extends Number implements Comparable<Short> {
 
     private short value;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.415 -0400", hash_original_method = "929EA7C7B9F688B1FB918E42E094A176", hash_generated_method = "34D1BC1A6D7D79A3CCC438567DA6D000")
     public  Short(String string) throws NumberFormatException {
         this(parseShort(string));
@@ -18,6 +19,7 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.415 -0400", hash_original_method = "943F3BD92535719838B11732349A25CE", hash_generated_method = "6461AAF473DA1D4263F37F10CDE089FA")
     public  Short(short value) {
         this.value = value;

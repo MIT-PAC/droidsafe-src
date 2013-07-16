@@ -71,6 +71,7 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.996 -0400", hash_original_method = "E0D906663A0994551C89240DFDC0BDC8", hash_generated_method = "ABA5A37BF0D9B72AE08F6D010D45EC01")
     public void reset() {
         mPhoneBookRecords.clear();
@@ -154,6 +155,7 @@ ArrayList<AdnRecord> var8C99AB5783B2B47FF38441E92273C2C9_1488998289 =         mP
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.997 -0400", hash_original_method = "B532D4E2E21067521A95047E8C8D19E8", hash_generated_method = "D25B4351DA4581F02965F916DEC5A2E4")
     private void refreshCache() {
     if(mPbrFile == null)        
@@ -183,6 +185,7 @@ for(int i = 0;i < numRecs;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.998 -0400", hash_original_method = "78E381AC3959E12E81678D4DFFBA5C8B", hash_generated_method = "78D7A3DA17E948EF054C319C109A5332")
     private void readPbrFileAndWait() {
         mPhone.getIccFileHandler().loadEFLinearFixedAll(EF_PBR, obtainMessage(EVENT_PBR_LOAD_DONE));
@@ -241,6 +244,7 @@ for(int i = 0;i < numRecs;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.999 -0400", hash_original_method = "9E809A1ED86DEC7D2454BACD182423F6", hash_generated_method = "A820AC140FAB73CAD101B3FAA05AEE33")
     private void readIapFileAndWait(int efid) {
         addTaint(efid);
@@ -453,6 +457,7 @@ String var2D726FE6F9242582D95F0FF51CCDA35C_1600598886 =         email;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.005 -0400", hash_original_method = "DBCDBDCB51A5EB5E1A763E38D42C7855", hash_generated_method = "108787DAAABEE7D2F37A89956E1E2A4B")
     @Override
     public void handleMessage(Message msg) {
@@ -512,6 +517,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.005 -0400", hash_original_method = "B26CBB1291A6152D9C092C7AC934B437", hash_generated_method = "AAF410B832FB4150C632556005AFA12A")
     private void log(String msg) {
         addTaint(msg.getTaint());
@@ -551,6 +557,7 @@ for(byte[] record : records)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.007 -0400", hash_original_method = "D93ED3119C94191277253FF2EE0C71AD", hash_generated_method = "CDFA39D15832799BA034DAB20D3CC40D")
          void parseTag(SimTlv tlv, int recNum) {
             addTaint(recNum);

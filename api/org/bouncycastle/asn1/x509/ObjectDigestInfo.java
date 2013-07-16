@@ -52,6 +52,7 @@ public class ObjectDigestInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.162 -0400", hash_original_method = "44BAD3DCA2A27D701ACA3AA084450844", hash_generated_method = "4CE57B4744575B8693ACEA996B89BA22")
     private  ObjectDigestInfo(
         ASN1Sequence seq) {

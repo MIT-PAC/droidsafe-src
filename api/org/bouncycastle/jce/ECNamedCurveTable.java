@@ -76,7 +76,8 @@ public class ECNamedCurveTable {
     }
 
     
-        private static void addEnumeration(
+        @DSModeled(DSC.SAFE)
+    private static void addEnumeration(
         Vector v, 
         Enumeration e) {
         while (e.hasMoreElements())

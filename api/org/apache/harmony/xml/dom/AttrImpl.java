@@ -33,6 +33,7 @@ public final class AttrImpl extends NodeImpl implements Attr {
 
     private String value = "";
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.499 -0400", hash_original_method = "EF27CA8C1828BF4AC2BE0D84F97E8864", hash_generated_method = "52BC6CFCF3E571E2CA85B2E9409292BE")
       AttrImpl(DocumentImpl document, String namespaceURI, String qualifiedName) {
         super(document);
@@ -45,6 +46,7 @@ public final class AttrImpl extends NodeImpl implements Attr {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.499 -0400", hash_original_method = "2F6F1C08CF036A2A7F978D7F391927BA", hash_generated_method = "1AECBFB595BB1BDB0438AA504D17877B")
       AttrImpl(DocumentImpl document, String name) {
         super(document);

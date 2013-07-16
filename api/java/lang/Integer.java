@@ -10,6 +10,7 @@ public final class Integer extends Number implements Comparable<Integer> {
 
     private int value;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.945 -0400", hash_original_method = "22146E0D9B2FD3EEBD460016C940A35F", hash_generated_method = "F4A1CCEE47CB188DE4B924DA0BBDC75E")
     public  Integer(int value) {
         this.value = value;
@@ -18,6 +19,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.946 -0400", hash_original_method = "E0CD1D1A7D46CCFF15C90A26B138404A", hash_generated_method = "C7D8A3D0A970F4CCFAE7CF1E10D54B3A")
     public  Integer(String string) throws NumberFormatException {
         this(parseInt(string));

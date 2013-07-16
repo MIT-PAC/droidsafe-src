@@ -22,6 +22,7 @@ public final class DistributionPoint {
 
     private GeneralNames cRLIssuer;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.850 -0400", hash_original_method = "4418C7FD449AAB99CCC4CA119AA3884F", hash_generated_method = "44A11BFBBA585543CE4C330F95FB94AA")
     public  DistributionPoint(DistributionPointName distributionPoint,
             ReasonFlags reasons, GeneralNames cRLIssuer) {

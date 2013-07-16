@@ -30,6 +30,7 @@ public class CertificationRequestInfo extends ASN1Encodable {
 
     ASN1Set attributes = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.297 -0400", hash_original_method = "3FEF08A37E0D9141B7E2C5E10AC22D85", hash_generated_method = "4516536591C0306AAA3325323C71D751")
     public  CertificationRequestInfo(
         X500Name subject,
@@ -55,6 +56,7 @@ public class CertificationRequestInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.298 -0400", hash_original_method = "8A394FF3547B9E5B97402324215DFF8C", hash_generated_method = "DF7D696E1EA9B48845CFEB903A3C2EA4")
     public  CertificationRequestInfo(
         X509Name                subject,

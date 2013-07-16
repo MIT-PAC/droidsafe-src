@@ -10,6 +10,7 @@ import android.text.TextPaint;
 
 public abstract class ReplacementSpan extends MetricAffectingSpan {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.259 -0400", hash_original_method = "2ECC8F1A2253E21B3B9AB67FC300FA22", hash_generated_method = "2ECC8F1A2253E21B3B9AB67FC300FA22")
     public ReplacementSpan ()
     {

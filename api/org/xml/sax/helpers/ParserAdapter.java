@@ -121,6 +121,7 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.523 -0400", hash_original_method = "4DBB6701F2EF3CA3BC7975B2574ABC06", hash_generated_method = "14B26D3E15032A126487D810C6ED10C5")
     public  ParserAdapter(Parser parser) {
         addTaint(parser.getTaint());
@@ -130,6 +131,7 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.524 -0400", hash_original_method = "9AA60727AB1204C604E2657D93003A43", hash_generated_method = "324865595ECA46BA457E838B2A787B66")
     private void setup(Parser parser) {
     if(parser == null)        
@@ -400,6 +402,7 @@ ErrorHandler var814E1CB3DFFE2674E65471BBF7C52ECD_626979424 =         errorHandle
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.531 -0400", hash_original_method = "88280AABBB79C1920DB5BD8874CDE919", hash_generated_method = "22207F6F6BD10F58E52B020983AF3365")
     public void setDocumentLocator(Locator locator) {
         this.locator = locator;
@@ -428,6 +431,7 @@ ErrorHandler var814E1CB3DFFE2674E65471BBF7C52ECD_626979424 =         errorHandle
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.531 -0400", hash_original_method = "B39D6D1260080244B44CBF7BC9D51D96", hash_generated_method = "83FCC356CC66A9AE6C6FC709463CAD60")
     public void endDocument() throws SAXException {
     if(contentHandler != null)        
@@ -646,6 +650,7 @@ for(SAXParseException ex : exceptions)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.536 -0400", hash_original_method = "43648C78921975CBE3898500F19AF8D8", hash_generated_method = "55CD42B2EBE15E5D11FD1310D86F35BE")
     private void setupParser() {
     if(!prefixes && !namespaces)        
@@ -730,6 +735,7 @@ String [] var6651EAC2994005EE903B8D00ACB7442E_128503195 =         parts;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.544 -0400", hash_original_method = "FBBB3C346433F99D88D798BC2E1AE3CE", hash_generated_method = "26207B5932662170530D27CE0BD6E390")
      void reportError(String message) throws SAXException {
         addTaint(message.getTaint());
@@ -741,6 +747,7 @@ String [] var6651EAC2994005EE903B8D00ACB7442E_128503195 =         parts;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.545 -0400", hash_original_method = "E1E473BD4A5E19C1B1699A01EEA95F9A", hash_generated_method = "BAA1797E7210BF7350047F4687113DF6")
     private SAXParseException makeException(String message) {
         addTaint(message.getTaint());

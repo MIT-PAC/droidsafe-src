@@ -8,6 +8,7 @@ import java.util.Arrays;
 
 public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.764 -0400", hash_original_method = "3A9B5F2A82543AF360E63C0F2EA35C03", hash_generated_method = "41849BA7BDC3CE94FF819BE93189CEF6")
       LongBuffer(int capacity) {
         super(3, capacity, null);
@@ -16,7 +17,8 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
     }
 
     
-        public static LongBuffer allocate(int capacity) {
+        @DSModeled(DSC.SAFE)
+    public static LongBuffer allocate(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException();
         }
@@ -24,12 +26,14 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
     }
 
     
-        public static LongBuffer wrap(long[] array) {
+        @DSModeled(DSC.SAFE)
+    public static LongBuffer wrap(long[] array) {
         return wrap(array, 0, array.length);
     }
 
     
-        public static LongBuffer wrap(long[] array, int start, int longCount) {
+        @DSModeled(DSC.SAFE)
+    public static LongBuffer wrap(long[] array, int start, int longCount) {
         Arrays.checkOffsetAndCount(array.length, start, longCount);
         LongBuffer buf = new ReadWriteLongArrayBuffer(array);
         buf.position = start;
@@ -64,6 +68,7 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
     public abstract LongBuffer compact();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.767 -0400", hash_original_method = "FEA629F677F50B81610B0F350A8DD419", hash_generated_method = "BC26D1AECE8A70DC5DF6F6F9D4869EC7")
     public int compareTo(LongBuffer otherBuffer) {
         addTaint(otherBuffer.getTaint());
@@ -114,6 +119,7 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
     public abstract LongBuffer duplicate();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.768 -0400", hash_original_method = "D82E6566C9B77850C7E0596D73483706", hash_generated_method = "26442C89930BFDDAA834342D74A2800E")
     @Override
     public boolean equals(Object other) {
@@ -163,6 +169,7 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
     public abstract long get();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.769 -0400", hash_original_method = "D4B2A0425DC120EC01BAEA51D6880E08", hash_generated_method = "E02D406F6C65F10253280BF464365018")
     public LongBuffer get(long[] dst) {
         addTaint(dst[0]);
@@ -174,6 +181,7 @@ LongBuffer varAF8F268F60258FE30F192DE78F11CD4A_1915582442 =         get(dst, 0, 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.769 -0400", hash_original_method = "22F3DDD60BBBE627A1DDE8F148E9CD33", hash_generated_method = "971B1222044D55B01A11D73CD3DDA2CC")
     public LongBuffer get(long[] dst, int dstOffset, int longCount) {
         addTaint(longCount);
@@ -218,6 +226,7 @@ LongBuffer var72A74007B2BE62B849F475C7BDA4658B_1925856977 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.771 -0400", hash_original_method = "5C7ADDF6CA5903C3487F2A9B009FDDB4", hash_generated_method = "C0C354D4EA769AADA0BE214778113E4F")
     @Override
     public int hashCode() {
@@ -274,6 +283,7 @@ LongBuffer var7D505613BED257805463C43ADCB4DBAD_1278592092 =         put(src, 0, 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.773 -0400", hash_original_method = "B57657AA1D79DC46C889A6E8179D7A18", hash_generated_method = "EDD1A1816006CC8DC9AD34256F0CAA8E")
     public LongBuffer put(long[] src, int srcOffset, int longCount) {
         addTaint(longCount);
@@ -305,6 +315,7 @@ LongBuffer var72A74007B2BE62B849F475C7BDA4658B_1868028732 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.773 -0400", hash_original_method = "268B2EFE55B01F54F51A1709DBD7F8C3", hash_generated_method = "B1A8594155447A0DE98ED9ECEC0415F5")
     public LongBuffer put(LongBuffer src) {
         addTaint(src.getTaint());

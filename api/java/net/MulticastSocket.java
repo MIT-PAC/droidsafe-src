@@ -175,6 +175,7 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         Network
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:54.169 -0400", hash_original_method = "5D3737731721260F57AF95D7810519A1", hash_generated_method = "964EBB7C53F17E2142B94B323865D003")
     private void checkJoinOrLeave(SocketAddress groupAddress, NetworkInterface netInterface) throws IOException {
         addTaint(netInterface.getTaint());
@@ -217,6 +218,7 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         Network
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:54.170 -0400", hash_original_method = "6596B4EA78B0ED28321084C8CA9DCC77", hash_generated_method = "071ADCC831629BBBEDE64B11AF2383F9")
     private void checkJoinOrLeave(InetAddress groupAddr) throws IOException {
         addTaint(groupAddr.getTaint());
@@ -362,6 +364,7 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         Network
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:54.173 -0400", hash_original_method = "EBCEB6AAB2ED917FE096C1D1630BA905", hash_generated_method = "FC3BB31DCA0918B6BE7F82F5D18150FD")
     @Override
     synchronized void createSocket(int aPort, InetAddress addr) throws SocketException {

@@ -24,12 +24,14 @@ public class RectF implements Parcelable {
 
     public float bottom;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.236 -0400", hash_original_method = "D61F570F41294C50B794115B72F287CF", hash_generated_method = "FB1DA24AD52B1F8131024D12E52691C3")
     public  RectF() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.238 -0400", hash_original_method = "5B128CE85C88A209036C5C9DCC51E26B", hash_generated_method = "3EDBF02BD4BEB5E789B57FE1928F6929")
     public  RectF(float left, float top, float right, float bottom) {
         this.left = left;
@@ -44,6 +46,7 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.238 -0400", hash_original_method = "B04E1848489B49A13109B1343E9C5563", hash_generated_method = "468C2DB7F428A4C6C73464452505394B")
     public  RectF(RectF r) {
         left = r.left;
@@ -58,6 +61,7 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.239 -0400", hash_original_method = "7FD4415AACB98A397DC21B4FD086AC26", hash_generated_method = "50BF0A54EC76D10DA74704D8CEEF9B49")
     public  RectF(Rect r) {
         left = r.left;

@@ -13,12 +13,14 @@ public final class CallIdentifier extends SIPObject {
 
     protected String host;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.113 -0400", hash_original_method = "725C6736E3C17143B15C26E546AA8C2D", hash_generated_method = "9B9DCA6066999CD4A4D71B400C05A796")
     public  CallIdentifier() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.114 -0400", hash_original_method = "FA95D86B0844593C9B40E5A0309137C0", hash_generated_method = "C0DB7A582E1DE893DDD4C612D25EF1A4")
     public  CallIdentifier(String localId, String host) {
         this.localId = localId;
@@ -29,6 +31,7 @@ public final class CallIdentifier extends SIPObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.114 -0400", hash_original_method = "DC194AEEEBC974AB700C1882192F385A", hash_generated_method = "2DE98CAEF4040EA53C45B07F85056575")
     public  CallIdentifier(String cid) throws IllegalArgumentException {
         addTaint(cid.getTaint());

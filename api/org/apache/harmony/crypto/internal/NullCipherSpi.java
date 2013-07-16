@@ -133,6 +133,7 @@ AlgorithmParameters var540C13E9E156B687226421B24F2DF178_1410345272 =         nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.221 -0400", hash_original_method = "09310CB0118160B29BD7A01C1B70DD45", hash_generated_method = "A79709018C71CEF451A0DE019C9C5917")
     @Override
     public byte[] engineUpdate(byte[] input, int inputOffset, int inputLen) {
@@ -160,6 +161,7 @@ AlgorithmParameters var540C13E9E156B687226421B24F2DF178_1410345272 =         nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.222 -0400", hash_original_method = "60A1BA3728F191B40038A2CE01896EE6", hash_generated_method = "7275BDE161A145648647986CE3CCDBDA")
     @Override
     public int engineUpdate(byte[] input, int inputOffset, int inputLen,
@@ -188,6 +190,7 @@ AlgorithmParameters var540C13E9E156B687226421B24F2DF178_1410345272 =         nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.222 -0400", hash_original_method = "52F18BDADF6C5DE31B16AD29ECF185DD", hash_generated_method = "267F09D8C55CA90597C3899C1D4AFD72")
     @Override
     public int engineUpdate(ByteBuffer input, ByteBuffer output) throws ShortBufferException {
@@ -227,6 +230,7 @@ AlgorithmParameters var540C13E9E156B687226421B24F2DF178_1410345272 =         nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.223 -0400", hash_original_method = "BACBD39F75A04196004D2E06D99366CD", hash_generated_method = "AF997A034A365E5E43F06AFD633F25B7")
     @Override
     public byte[] engineDoFinal(byte[] input, int inputOffset, int inputLen) throws IllegalBlockSizeException, BadPaddingException {
@@ -250,6 +254,7 @@ AlgorithmParameters var540C13E9E156B687226421B24F2DF178_1410345272 =         nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.224 -0400", hash_original_method = "C78AB3EC778278E6CB8FDDB4DDEF61A0", hash_generated_method = "58403285F7C6072D5AE30FE5B9DF21DF")
     @Override
     public int engineDoFinal(byte[] input, int inputOffset, int inputLen,
@@ -272,6 +277,7 @@ AlgorithmParameters var540C13E9E156B687226421B24F2DF178_1410345272 =         nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.224 -0400", hash_original_method = "245FFB9EDA02A1B2DEFFE10111DCBE72", hash_generated_method = "C328DCD5F1E8C6BC377A13C90DA1DCF5")
     @Override
     public int engineDoFinal(ByteBuffer input, ByteBuffer output) throws ShortBufferException, IllegalBlockSizeException,
@@ -286,6 +292,7 @@ AlgorithmParameters var540C13E9E156B687226421B24F2DF178_1410345272 =         nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.224 -0400", hash_original_method = "39FE6C15BFF89C7EBC497DBB2542410E", hash_generated_method = "94F6DF1C3450B14CEDD2DD46F2EB5E08")
     @Override
     public byte[] engineWrap(Key key) throws IllegalBlockSizeException, InvalidKeyException {
@@ -298,6 +305,7 @@ AlgorithmParameters var540C13E9E156B687226421B24F2DF178_1410345272 =         nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.225 -0400", hash_original_method = "6B4157CFE5E357119D9C5A035C31A1F5", hash_generated_method = "F9410D47B4A614C0A759DC4498EFE792")
     @Override
     public Key engineUnwrap(byte[] wrappedKey, String wrappedKeyAlgorithm,
@@ -314,6 +322,7 @@ AlgorithmParameters var540C13E9E156B687226421B24F2DF178_1410345272 =         nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.225 -0400", hash_original_method = "3103A3DFE966B970FCF19F267AD5457A", hash_generated_method = "570AA5CF18A77E52FE4B980E91BCED74")
     @Override
     public int engineGetKeySize(Key key) throws InvalidKeyException {

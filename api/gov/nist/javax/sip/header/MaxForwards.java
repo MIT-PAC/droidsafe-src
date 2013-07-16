@@ -12,6 +12,7 @@ public class MaxForwards extends SIPHeader implements MaxForwardsHeader {
 
     protected int maxForwards;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.572 -0400", hash_original_method = "112FF42CCB27FA28BF813D0D5005682D", hash_generated_method = "04D96CD1DE0F0679DECA6B600CDA4279")
     public  MaxForwards() {
         super(NAME);
@@ -19,6 +20,7 @@ public class MaxForwards extends SIPHeader implements MaxForwardsHeader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.573 -0400", hash_original_method = "23B968D979F2A1F7830372508F81A601", hash_generated_method = "F05FAF277873E93451BFC3CDDBD3D483")
     public  MaxForwards( int m ) throws InvalidArgumentException {
         super(NAME);

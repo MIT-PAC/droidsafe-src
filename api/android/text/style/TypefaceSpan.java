@@ -16,6 +16,7 @@ public class TypefaceSpan extends MetricAffectingSpan implements ParcelableSpan 
 
     private String mFamily;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.485 -0400", hash_original_method = "30225DE18E1EF58337803047C2C7576B", hash_generated_method = "4B1F3B13B466F40663FF030C15840841")
     public  TypefaceSpan(String family) {
         mFamily = family;
@@ -24,6 +25,7 @@ public class TypefaceSpan extends MetricAffectingSpan implements ParcelableSpan 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.486 -0400", hash_original_method = "EBFC14963D531976FE4CEA16F8670D1D", hash_generated_method = "3E595017B09B3F0687BA6DDD205A5770")
     public  TypefaceSpan(Parcel src) {
         mFamily = src.readString();

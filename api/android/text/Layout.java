@@ -49,6 +49,7 @@ public abstract class Layout {
 
     private TextDirectionHeuristic mTextDir;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.160 -0400", hash_original_method = "DA432A00E31F4EFC04FE32B9AEC1CEE4", hash_generated_method = "5C9EE1B990D1CB576C2D75FA059ACD66")
     protected  Layout(CharSequence text, TextPaint paint,
                      int width, Alignment align,
@@ -65,6 +66,7 @@ public abstract class Layout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.162 -0400", hash_original_method = "E08E539EEFF1AD274546B85662DC9DCC", hash_generated_method = "E0B77E806AE56A5A83F441DC526E4367")
     protected  Layout(CharSequence text, TextPaint paint,
                      int width, Alignment align, TextDirectionHeuristic textDir,
@@ -2010,6 +2012,7 @@ for(int i = ellipsisStart;i < ellipsisStart + ellipsisCount;i++)
 
         private int mIncrement;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.204 -0400", hash_original_method = "56D1FFBFF7D6B6649609A0E9FF6888AB", hash_generated_method = "AFA44880A555125C3DC767FF87A30CDD")
           TabStops(int increment, Object[] spans) {
             addTaint(spans[0].getTaint());
@@ -2020,6 +2023,7 @@ for(int i = ellipsisStart;i < ellipsisStart + ellipsisCount;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.205 -0400", hash_original_method = "12BC3A9AA4E5F32DB7C736F6D72E4602", hash_generated_method = "0C7C8FBF62661C7CC37ACE1B7BA57AF6")
          void reset(int increment, Object[] spans) {
             addTaint(spans[0].getTaint());
@@ -2064,6 +2068,7 @@ for(int i = 0;i < ns;++i)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.205 -0400", hash_original_method = "A46080BC8F3B4D3099E262DAA9B4728B", hash_generated_method = "92FEF60F037C8D749FEC20715B0B988B")
          float nextTab(float h) {
             addTaint(h);
@@ -2115,6 +2120,7 @@ for(int i = 0;i < ns;++i)
 
         int[] mDirections;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.205 -0400", hash_original_method = "DA94802578AA1A107A88665DAAC4811A", hash_generated_method = "C362AB05F4F382AB8B2A847D6ACC1E92")
           Directions(int[] dirs) {
             mDirections = dirs;
@@ -2141,6 +2147,7 @@ for(int i = 0;i < ns;++i)
 
         TextUtils.TruncateAt mMethod;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.207 -0400", hash_original_method = "991CD3860414493D5159CDEA8946E94D", hash_generated_method = "D2DA4A1117D0439320B581750375AE47")
         public  Ellipsizer(CharSequence s) {
             mText = s;
@@ -2149,6 +2156,7 @@ for(int i = 0;i < ns;++i)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.207 -0400", hash_original_method = "D253D2AD2D0DACD122596323ACBBAF25", hash_generated_method = "0037F6BDD6915D74410674EE49A70B1E")
         public char charAt(int off) {
             addTaint(off);
@@ -2168,6 +2176,7 @@ for(int i = 0;i < ns;++i)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.207 -0400", hash_original_method = "F2DBD2F3D78F3955B1714BB078A793F8", hash_generated_method = "1C6299C8B1A9CCCBDBCA294EAC792B93")
         public void getChars(int start, int end, char[] dest, int destoff) {
             addTaint(destoff);
@@ -2191,6 +2200,7 @@ for(int i = line1;i <= line2;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.207 -0400", hash_original_method = "9A68249D01A4FE1CBD4D535668FCEB6F", hash_generated_method = "8EE4A913B43342BBA9D018ABABD90198")
         public int length() {
             int varDC3F5DE2558DF3D25118F6362DE3EB1B_1721270451 = (mText.length());
@@ -2201,6 +2211,7 @@ for(int i = line1;i <= line2;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.207 -0400", hash_original_method = "019151395F1B77A008AA178A5A5CA402", hash_generated_method = "CE1E9144EE8501A2C4EAAA78F6C4AA02")
         public CharSequence subSequence(int start, int end) {
             addTaint(end);
@@ -2217,6 +2228,7 @@ CharSequence var36EEEB02F8950D6778907441639F547C_371171348 =             new Str
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.207 -0400", hash_original_method = "8ED281151745D3FC40324C23FDF16D10", hash_generated_method = "B0C9444CA6507428590FB68FAEF61574")
         @Override
         public String toString() {
@@ -2241,6 +2253,7 @@ String var36EEEB02F8950D6778907441639F547C_955826852 =             new String(s)
 
         private Spanned mSpanned;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.210 -0400", hash_original_method = "F42AC9AEDB79FF2719E5DE12CF0CD85E", hash_generated_method = "521E0E4859CABE811C363188B0E6F44F")
         public  SpannedEllipsizer(CharSequence display) {
             super(display);
@@ -2264,6 +2277,7 @@ T[] varF03F51B4D510CEB709FCAEAB771CF011_1516634164 =             mSpanned.getSpa
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.211 -0400", hash_original_method = "2071284CDE64572D4D3F80F80EB4C823", hash_generated_method = "F061D192BC71C827F4CBED1D3E3BB7EA")
         public int getSpanStart(Object tag) {
             addTaint(tag.getTaint());
@@ -2275,6 +2289,7 @@ T[] varF03F51B4D510CEB709FCAEAB771CF011_1516634164 =             mSpanned.getSpa
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.211 -0400", hash_original_method = "B1DC38D90632AE4EB220020E4C5B16DF", hash_generated_method = "36DE4D7F1F2F071FD0E2483143799694")
         public int getSpanEnd(Object tag) {
             addTaint(tag.getTaint());
@@ -2286,6 +2301,7 @@ T[] varF03F51B4D510CEB709FCAEAB771CF011_1516634164 =             mSpanned.getSpa
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.211 -0400", hash_original_method = "A386D5CC8A9C15386840381A75E4D6FD", hash_generated_method = "4CEB85E782EFA346A96D04BC9AE130BF")
         public int getSpanFlags(Object tag) {
             addTaint(tag.getTaint());
@@ -2297,6 +2313,7 @@ T[] varF03F51B4D510CEB709FCAEAB771CF011_1516634164 =             mSpanned.getSpa
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.211 -0400", hash_original_method = "AF35DA8DF947D9C1330368703ECE15BE", hash_generated_method = "6BEE027DC8EA6F83E7A3DBADAE55E175")
         public int nextSpanTransition(int start, int limit, Class type) {
             addTaint(type.getTaint());
@@ -2310,6 +2327,7 @@ T[] varF03F51B4D510CEB709FCAEAB771CF011_1516634164 =             mSpanned.getSpa
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.211 -0400", hash_original_method = "16B37527DFF576A9EB476E4EC2A69F5D", hash_generated_method = "E77EAC612C304B77B94B4B139AC29622")
         @Override
         public CharSequence subSequence(int start, int end) {

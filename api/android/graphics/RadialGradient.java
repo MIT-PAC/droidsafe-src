@@ -53,6 +53,7 @@ public class RadialGradient extends Shader {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.857 -0400", hash_original_method = "967A1FFF1D78A377DCB1552FAD26240E", hash_generated_method = "9E0C09B86AD2DB056EADD7FAF04C5DD1")
     public  RadialGradient(float x, float y, float radius,
                           int color0, int color1, TileMode tile) {

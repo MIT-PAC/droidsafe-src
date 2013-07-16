@@ -13,6 +13,7 @@ import libcore.util.BasicLruCache;
 
 public final class TimeZones {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.309 -0400", hash_original_method = "A05C4975F009B050E4723CBEC63CF03D", hash_generated_method = "A3706FB06655BF7A8E96F021B21E6A98")
     private  TimeZones() {
         // ---------- Original Method ----------
@@ -106,6 +107,7 @@ String[][] varDC838461EE2FA0CA4C9BBB70A15456B0_717399683 =             result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.312 -0400", hash_original_method = "B8ADCF3091CCD0EA103D9032F8613DD2", hash_generated_method = "5A7ADE4AA1DECADF6175D595B59ABCD6")
         private synchronized void internStrings(String[][] result) {
             addTaint(result[0][0].getTaint());

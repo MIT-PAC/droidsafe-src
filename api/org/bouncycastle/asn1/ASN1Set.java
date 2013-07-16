@@ -81,6 +81,7 @@ Enumeration varA1727DEC63199D9B4CED8021F1EF3128_2084691083 =         set.element
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.689 -0400", hash_original_method = "2EC03929E91899921E681A1E59657958", hash_generated_method = "302FC4DE49E73058FE0748E2CD98F7EF")
     public DEREncodable getObjectAt(
         int index) {

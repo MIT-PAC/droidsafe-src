@@ -10,6 +10,7 @@ public class ReferenceQueue<T> {
 
     private Reference<? extends T> head;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.848 -0400", hash_original_method = "74975F7A6AFB5E81CCF3457B53FB8A14", hash_generated_method = "77FCC81AFA085C6B3B372539AC2D673F")
     public  ReferenceQueue() {
         // ---------- Original Method ----------

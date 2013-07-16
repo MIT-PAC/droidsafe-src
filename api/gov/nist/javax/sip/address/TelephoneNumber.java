@@ -18,6 +18,7 @@ public class TelephoneNumber extends NetObject {
 
     protected NameValueList parameters;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.403 -0400", hash_original_method = "C2E661A0F0E8603FDB28C1E5F6957C6B", hash_generated_method = "ED4544B8D5B014FCD0F73770D6821934")
     public  TelephoneNumber() {
         parameters = new NameValueList();
@@ -232,6 +233,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_237647649 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.410 -0400", hash_original_method = "6A189D1F37381970473560C000F9F148", hash_generated_method = "97F42750C3C708635B4C3588023F3740")
     public String getParameter(String name) {
         addTaint(name.getTaint());

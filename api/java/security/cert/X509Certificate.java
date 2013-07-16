@@ -14,6 +14,7 @@ import javax.security.auth.x500.X500Principal;
 
 public abstract class X509Certificate extends Certificate implements X509Extension {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.655 -0400", hash_original_method = "91BE0E39C67CC71AFC40C5A05860BC17", hash_generated_method = "FA912E7D2076329B07D35CCC0B73CE9D")
     protected  X509Certificate() {
         super("X.509");
@@ -38,6 +39,7 @@ public abstract class X509Certificate extends Certificate implements X509Extensi
     public abstract Principal getIssuerDN() ;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.656 -0400", hash_original_method = "622364792700CAE6EDC2CD40345CDB0C", hash_generated_method = "7A9679457D68348C47D79666927DA427")
     public X500Principal getIssuerX500Principal() {
         try 
@@ -72,6 +74,7 @@ X500Principal var52A5A8995E7C651750494F51BE6F78BC_924405093 =             cert.g
     public abstract Principal getSubjectDN();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.656 -0400", hash_original_method = "4B536E889AC2F831879320061DB28B36", hash_generated_method = "9E3D071D5C97DCCFE8ACF66F3135B32D")
     public X500Principal getSubjectX500Principal() {
         try 

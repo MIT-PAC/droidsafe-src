@@ -73,6 +73,7 @@ for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.958 -0400", hash_original_method = "EA25C8AA6C461721569737ADD747FC16", hash_generated_method = "B45722CBC940BBC32F80D5D5939709AF")
     public void encodeANY() {
         System.arraycopy(content, 0, encoded, offset, length);
@@ -83,6 +84,7 @@ for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.958 -0400", hash_original_method = "5C094D2C250154036897578CBC75AFD1", hash_generated_method = "BCF34B2A3012F8AA716C0D3745F68C88")
     public void encodeBitString() {
         BitString bStr = (BitString) content;
@@ -97,6 +99,7 @@ for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.959 -0400", hash_original_method = "E8ACAA21C20B23BBCED2827068B00143", hash_generated_method = "D0CBA9281912D189047FF598500C2639")
     public void encodeBoolean() {
     if((Boolean) content)        
@@ -118,6 +121,7 @@ for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.959 -0400", hash_original_method = "E802EB76E66355F21E1DFC6D16124774", hash_generated_method = "4ED7A66A27C49A5FEFFD8A7CCE9194BD")
     public void encodeChoice(ASN1Choice choice) {
         addTaint(choice.getTaint());
@@ -129,6 +133,7 @@ for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.960 -0400", hash_original_method = "292D7E5BD8ED56974441257C805288C7", hash_generated_method = "E50BCE21C7CFFA53F16C7933B3C83D64")
     public void encodeExplicit(ASN1Explicit explicit) {
         addTaint(explicit.getTaint());
@@ -140,6 +145,7 @@ for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.960 -0400", hash_original_method = "2F89F53709F36ECD4B32D0929F0F5EAE", hash_generated_method = "06A3E901D961EA1F69B92AF570DEBAC0")
     public void encodeGeneralizedTime() {
         System.arraycopy(content, 0, encoded, offset, length);
@@ -150,6 +156,7 @@ for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.960 -0400", hash_original_method = "1CD5409EC89A1F8D9E3008915332B968", hash_generated_method = "0537E7B8D97744D2F152BBFEAD030363")
     public void encodeUTCTime() {
         System.arraycopy(content, 0, encoded, offset, length);
@@ -160,6 +167,7 @@ for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.961 -0400", hash_original_method = "6878EDB9468F416E1691597293C87648", hash_generated_method = "83C24224CDBFA033C347AEC44B9D17F7")
     public void encodeInteger() {
         System.arraycopy(content, 0, encoded, offset, length);
@@ -170,6 +178,7 @@ for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.961 -0400", hash_original_method = "9339BB7E7D4F4A4E178E3D3139642B19", hash_generated_method = "0C760DC5A5AD4D16EF6F169C5F56F6F0")
     public void encodeOctetString() {
         System.arraycopy(content, 0, encoded, offset, length);
@@ -227,6 +236,7 @@ for(;elem > 0;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.963 -0400", hash_original_method = "D323E1EB3DEEC7478D240465668C5921", hash_generated_method = "9E79ED5C4690C7DEC82AAF82F04D6430")
     public void encodeSequence(ASN1Sequence sequence) {
         addTaint(sequence.getTaint());
@@ -238,6 +248,7 @@ for(;elem > 0;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.964 -0400", hash_original_method = "8F8FA1CFCDC711CAAAA81FD323F60610", hash_generated_method = "6F338E76F2F25953626B1A6E641BB55D")
     public void encodeSequenceOf(ASN1SequenceOf sequenceOf) {
         addTaint(sequenceOf.getTaint());
@@ -249,6 +260,7 @@ for(;elem > 0;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.964 -0400", hash_original_method = "C800AB149478B24214827D5CC5B7FA3B", hash_generated_method = "C85D5742F14706D5E4D177836C47B6E6")
     public void encodeSet(ASN1Set set) {
         addTaint(set.getTaint());
@@ -260,6 +272,7 @@ for(;elem > 0;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.964 -0400", hash_original_method = "5BA1B115D777FEA0793A44B700946129", hash_generated_method = "E78B1CD76EBC155E236491657E6A67CE")
     public void encodeSetOf(ASN1SetOf setOf) {
         addTaint(setOf.getTaint());
@@ -271,6 +284,7 @@ for(;elem > 0;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.965 -0400", hash_original_method = "C20EE97623962055A396212EF514666C", hash_generated_method = "0B6A5DEA08764373F166A7957BABCB05")
     public void encodeString() {
         System.arraycopy(content, 0, encoded, offset, length);
@@ -281,6 +295,7 @@ for(;elem > 0;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.965 -0400", hash_original_method = "3B2CD397D1827B3F55A2B2B2B09D5CEC", hash_generated_method = "DD4AE2B07A103DA5171F1D3D03AD7EA4")
     public void getChoiceLength(ASN1Choice choice) {
         addTaint(choice.getTaint());
@@ -292,6 +307,7 @@ for(;elem > 0;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.965 -0400", hash_original_method = "D74AD9AD6B17DC6BC5FAEB15F22A4F28", hash_generated_method = "E2309D0C5AB1D86C41DD04DB7EC17E9B")
     public void getExplicitLength(ASN1Explicit sequence) {
         addTaint(sequence.getTaint());
@@ -303,6 +319,7 @@ for(;elem > 0;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.965 -0400", hash_original_method = "C51A0127E3C370A72526C726CD92E293", hash_generated_method = "89AAD1A99530027485D3AB57A1470749")
     public void getSequenceLength(ASN1Sequence sequence) {
         addTaint(sequence.getTaint());
@@ -314,6 +331,7 @@ for(;elem > 0;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.966 -0400", hash_original_method = "02ACE8DD7FB1180FD62EB5624B511B64", hash_generated_method = "0BAA95D6C1503C711CA1550D1E008941")
     public void getSequenceOfLength(ASN1SequenceOf sequence) {
         addTaint(sequence.getTaint());
@@ -325,6 +343,7 @@ for(;elem > 0;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.966 -0400", hash_original_method = "2106F07F5CB10EE3DAB9C7BD5AA5C772", hash_generated_method = "7ADE17BC113801ECFA9E458613287728")
     public void getSetLength(ASN1Set set) {
         addTaint(set.getTaint());
@@ -336,6 +355,7 @@ for(;elem > 0;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.967 -0400", hash_original_method = "AAF1C08C7F71173806810BED7152C887", hash_generated_method = "5F4104B790878A19326A057C1E2B95B1")
     public void getSetOfLength(ASN1SetOf setOf) {
         addTaint(setOf.getTaint());

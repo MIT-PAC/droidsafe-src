@@ -42,6 +42,7 @@ public class ActivityManager {
 
     private Handler mHandler;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.203 -0400", hash_original_method = "5B4171109A2201F1FE14E6225146AB80", hash_generated_method = "8ADD7487E2C46628C6CC7A69BA117746")
       ActivityManager(Context context, Handler handler) {
         mContext = context;
@@ -1160,12 +1161,14 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
 
         public IThumbnailRetriever retriever;
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.324 -0400", hash_original_method = "EB2263C71F650A09D4909FB1B34C782F", hash_generated_method = "1036CA739667021DAECAC8857E8C6B4B")
         public  TaskThumbnails() {
             // ---------- Original Method ----------
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.324 -0400", hash_original_method = "0FEFA86B10CDE25FCF4328B39BD2F7D5", hash_generated_method = "B84CE83BF37AAE2D5444DEDF5AEBF090")
         private  TaskThumbnails(Parcel source) {
             addTaint(source.getTaint());
@@ -1755,6 +1758,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
 
         public int importanceReasonImportance;
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.379 -0400", hash_original_method = "037D75A14244F6412C20718AD220CDB7", hash_generated_method = "EBA9A2537661CB41AD3E24299B24227D")
         public  RunningAppProcessInfo() {
             importance = IMPORTANCE_FOREGROUND;
@@ -1777,6 +1781,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.382 -0400", hash_original_method = "224713C5B1CB6C52B9BDAF058DA172D4", hash_generated_method = "340013C0C3A8DD7A66C737B96311B201")
         private  RunningAppProcessInfo(Parcel source) {
             addTaint(source.getTaint());

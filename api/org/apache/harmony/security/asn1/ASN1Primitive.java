@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public abstract class ASN1Primitive extends ASN1Type {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.665 -0400", hash_original_method = "6E01D122B93A51FA632034F321085BC1", hash_generated_method = "9D56F69B9803BBDA89E5C889018CDCB2")
     public  ASN1Primitive(int tagNumber) {
         super(tagNumber);
@@ -26,6 +27,7 @@ public abstract class ASN1Primitive extends ASN1Type {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.666 -0400", hash_original_method = "56680739FC748952853149E66560E94E", hash_generated_method = "48F131D00A1E1D9FE33198C4F5017853")
     public void encodeASN(BerOutputStream out) {
         addTaint(out.getTaint());

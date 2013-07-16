@@ -77,6 +77,7 @@ public class DefaultHttpClient extends AbstractHttpClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.421 -0400", hash_original_method = "750193D90CA0949C0C735B3486D9889C", hash_generated_method = "85C57FF144AEFA1152101B8C3A7B1643")
     public  DefaultHttpClient() {
         super(null, null);
@@ -121,6 +122,7 @@ HttpParams varD15CEB6F45B18F7EB233792D020C6115_847388363 =         params;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.422 -0400", hash_original_method = "F3505412AB0839480CB671E1A4D22DAB", hash_generated_method = "511AC9430D330C39D6EB1B108DBC1010")
     @Override
     protected HttpRequestExecutor createRequestExecutor() {
@@ -192,6 +194,7 @@ ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1022508968 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.424 -0400", hash_original_method = "25CB6129B8FDB94E4986C80A494E2B06", hash_generated_method = "0C7163396FD34E75A816AC5DEAA72E09")
     @Override
     protected HttpContext createHttpContext() {
@@ -229,6 +232,7 @@ HttpContext var4C2DD4015CB4BB3F876A587F79816595_2000388682 =         context;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.424 -0400", hash_original_method = "D717E5D917BACE4DBA9E14F0AD65F48C", hash_generated_method = "AF278E19047C4391E1F5D5B7856EA9BB")
     @Override
     protected ConnectionReuseStrategy createConnectionReuseStrategy() {
@@ -240,6 +244,7 @@ ConnectionReuseStrategy varE9614091F2187FE4D3A838719839C82D_1379758353 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.425 -0400", hash_original_method = "EFD49BF95531A6CFB8AB7833D5492B46", hash_generated_method = "2BB07F10DB3D82AE52EAD68A6013D7B0")
     @Override
     protected ConnectionKeepAliveStrategy createConnectionKeepAliveStrategy() {
@@ -251,6 +256,7 @@ ConnectionKeepAliveStrategy varB1B09AA60E36505913439B04233EB63B_810266198 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.425 -0400", hash_original_method = "75C52B493B32BA0931FDF11A10703B36", hash_generated_method = "72AC120A5B1347C36DEA3F7027FDC280")
     @Override
     protected AuthSchemeRegistry createAuthSchemeRegistry() {
@@ -276,6 +282,7 @@ AuthSchemeRegistry var80BE65E57DEC31A391449487F60A8EC2_2115342290 =         regi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.425 -0400", hash_original_method = "2986BF87A2DD05E6E31FCC1654EB03B5", hash_generated_method = "B8D9664114EAE699079905E44AB09BD4")
     @Override
     protected CookieSpecRegistry createCookieSpecRegistry() {
@@ -352,6 +359,7 @@ BasicHttpProcessor var469B662EBDAC4AFE0D9BAB3D14417878_643112585 =         httpp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.426 -0400", hash_original_method = "060CC3B74841E3F6FC79CC89E59C47D3", hash_generated_method = "8865E4263F29A9034DCD5EA590A92FCC")
     @Override
     protected HttpRequestRetryHandler createHttpRequestRetryHandler() {
@@ -363,6 +371,7 @@ HttpRequestRetryHandler varF009522154DB5FDBD3705EA6977C3184_485082996 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.427 -0400", hash_original_method = "4B5E8754A7C96AB1D27440EE21EB62A0", hash_generated_method = "09065C497C183873B4D15455FDCDC7DA")
     @Override
     protected RedirectHandler createRedirectHandler() {
@@ -374,6 +383,7 @@ RedirectHandler var47CC789AA5B62D2A2EBD610A236C23FF_1016355126 =         new Def
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.427 -0400", hash_original_method = "CE20EA4DC0B433CD2AE1F8D13D6593E2", hash_generated_method = "24FC206BC12B8005B8196830FC4AD0A7")
     @Override
     protected AuthenticationHandler createTargetAuthenticationHandler() {
@@ -385,6 +395,7 @@ AuthenticationHandler var2194A4635854AFE57F91D31B277D1AAB_2110170040 =         n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.427 -0400", hash_original_method = "B6E682DFDA0487EF6FFF82AF7B123D48", hash_generated_method = "3807143C0CD4EE226C9FFBE04516A722")
     @Override
     protected AuthenticationHandler createProxyAuthenticationHandler() {
@@ -396,6 +407,7 @@ AuthenticationHandler varAFB13A519EB778DEB4F297B86FCEA1A7_483741348 =         ne
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.427 -0400", hash_original_method = "EF2D14C866EAD04A4C29973169C02328", hash_generated_method = "05CA1FECD39A803BC61E45AFB65ED968")
     @Override
     protected CookieStore createCookieStore() {
@@ -407,6 +419,7 @@ CookieStore varBD17152B433B2B4B8E0F5024503423FA_156900461 =         new BasicCoo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.428 -0400", hash_original_method = "7086A691E773C3CE0961AEAF5E488C24", hash_generated_method = "BC9FD880DA58ADA60007F542887DE684")
     @Override
     protected CredentialsProvider createCredentialsProvider() {
@@ -429,6 +442,7 @@ HttpRoutePlanner varEB83F82775DEAF4B7F183B848435FE34_1929799828 =         new Pr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.428 -0400", hash_original_method = "B64DD33A238620F5CE58C192C71660B3", hash_generated_method = "BC1CEC48EE6228B93E8C9B12D87F37CE")
     @Override
     protected UserTokenHandler createUserTokenHandler() {

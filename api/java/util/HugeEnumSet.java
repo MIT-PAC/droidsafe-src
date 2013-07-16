@@ -135,6 +135,7 @@ for(int i = 0;i < bits.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:11.394 -0400", hash_original_method = "DCEAB8467BE76F2C68D656B465986296", hash_generated_method = "44B0C7C748288EE706DEDE8A6C28EFB5")
     @Override
     public void clear() {
@@ -173,6 +174,7 @@ for(int i = 0, length = bits.length;i < length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:11.395 -0400", hash_original_method = "B006F695BBA9ACB2815E6A6799929FF8", hash_generated_method = "E2B8B3CE476ADEFA523F958C4336D7F6")
     @Override
     public boolean contains(Object object) {
@@ -271,6 +273,7 @@ for(int i = 0;i < bits.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:11.395 -0400", hash_original_method = "29B1F731631A653DA7254FAD146C3D30", hash_generated_method = "94A4A772E332FC1B3CDE3DC274D7CC1C")
     @Override
     public boolean equals(Object object) {
@@ -313,6 +316,7 @@ Iterator<E> var23ABE8665BBA8FC4E64A26ACD82C00C6_1532959484 =         new HugeEnu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:11.396 -0400", hash_original_method = "0CEE396056E1D776D537706DDC043702", hash_generated_method = "9F47EBD75A809632AEC76F1AD793E290")
     @Override
     public boolean remove(Object object) {
@@ -506,6 +510,7 @@ for(int i = (startIndex + 1);i <= (endIndex - 1);i++)
 
         private E last;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:11.400 -0400", hash_original_method = "FF84D40F2248B9BB6D017CB27211B237", hash_generated_method = "93D38B12F784CDCB9694A9331A12A737")
         private  HugeEnumSetIterator() {
             computeNextElement();
@@ -514,6 +519,7 @@ for(int i = (startIndex + 1);i <= (endIndex - 1);i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:11.401 -0400", hash_original_method = "2CE5F24A4C571BEECB25C40400E44908", hash_generated_method = "BC6D53F8A1B341BC320605F46B1E3098")
          void computeNextElement() {
             while
@@ -589,6 +595,7 @@ E var3D331EA760A7BCD3BF7E380A6C79C638_2104179466 =             last;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:11.401 -0400", hash_original_method = "56FBFE20B1E9D061DA542B4F3A5EEEAB", hash_generated_method = "826847A79E97AD605DE25260F8F41DF9")
         public void remove() {
     if(last == null)            

@@ -62,6 +62,7 @@ public class Paint {
 
     public int mBidiFlags = BIDI_DEFAULT_LTR;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.530 -0400", hash_original_method = "07976DE00CD3F977E8ACA514AAEDE967", hash_generated_method = "2E92EC59FFA72681E3F4ECFD5F5383AA")
     public  Paint() {
         this(0);
@@ -69,6 +70,7 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.531 -0400", hash_original_method = "DD18D0561860908DF0D4B7BC76B2B3D2", hash_generated_method = "ABDF03E9F8EA7583E030156FE4ED96D1")
     public  Paint(int flags) {
         addTaint(flags);
@@ -82,6 +84,7 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.531 -0400", hash_original_method = "5333FFC8A800A9BDD5C93C0D81F44606", hash_generated_method = "1E0CEE6CD795EABAB79C1575708D48D5")
     public  Paint(Paint paint) {
         mNativePaint = native_initWithPaint(paint.mNativePaint);
@@ -2386,6 +2389,7 @@ for(int i = advancesIndex, e = i + (end - start);i < e;i++)
         FILL            (0),
         STROKE          (1),
         FILL_AND_STROKE (2);
+        @DSModeled(DSC.SAFE)
         Style(int nativeInt) {
             this.nativeInt = nativeInt;
         }
@@ -2397,6 +2401,7 @@ for(int i = advancesIndex, e = i + (end - start);i < e;i++)
         BUTT    (0),
         ROUND   (1),
         SQUARE  (2);
+        @DSModeled(DSC.SAFE)
         private Cap(int nativeInt) {
             this.nativeInt = nativeInt;
         }
@@ -2408,6 +2413,7 @@ for(int i = advancesIndex, e = i + (end - start);i < e;i++)
         MITER   (0),
         ROUND   (1),
         BEVEL   (2);
+        @DSModeled(DSC.SAFE)
         private Join(int nativeInt) {
             this.nativeInt = nativeInt;
         }
@@ -2419,6 +2425,7 @@ for(int i = advancesIndex, e = i + (end - start);i < e;i++)
         LEFT    (0),
         CENTER  (1),
         RIGHT   (2);
+        @DSModeled(DSC.SAFE)
         private Align(int nativeInt) {
             this.nativeInt = nativeInt;
         }
@@ -2443,6 +2450,7 @@ for(int i = advancesIndex, e = i + (end - start);i < e;i++)
 
         public float leading;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.613 -0400", hash_original_method = "9D0F6E676FD14A88D6B94EA1234A3DC2", hash_generated_method = "9D0F6E676FD14A88D6B94EA1234A3DC2")
         public FontMetrics ()
         {
@@ -2471,6 +2479,7 @@ for(int i = advancesIndex, e = i + (end - start);i < e;i++)
 
         public int leading;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.614 -0400", hash_original_method = "8179D96EF0A0532FF84A77E27487BF14", hash_generated_method = "8179D96EF0A0532FF84A77E27487BF14")
         public FontMetricsInt ()
         {

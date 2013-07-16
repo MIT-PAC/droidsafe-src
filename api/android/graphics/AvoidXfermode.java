@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public class AvoidXfermode extends Xfermode {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.671 -0400", hash_original_method = "293A98A7728721725813AFA29BD3A029", hash_generated_method = "A240F39A65C0D1F14017A81FDF3C80D3")
     public  AvoidXfermode(int opColor, int tolerance, Mode mode) {
         addTaint(mode.getTaint());
@@ -38,6 +39,7 @@ public class AvoidXfermode extends Xfermode {
     public enum Mode {
         AVOID   (0),    
         TARGET  (1);    
+        @DSModeled(DSC.SAFE)
         Mode(int nativeInt) {
             this.nativeInt = nativeInt;
         }

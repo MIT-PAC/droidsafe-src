@@ -19,6 +19,7 @@ public class X509Extension {
 
     ASN1OctetString value;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.394 -0400", hash_original_method = "6C4CE5090B82D2BBA22095A3F4EA5D32", hash_generated_method = "DEBE1CFA4604C6B61DD9B6C136F8E2C6")
     public  X509Extension(
         DERBoolean              critical,
@@ -31,6 +32,7 @@ public class X509Extension {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.395 -0400", hash_original_method = "F07A2761AE08F0A017E88726FB4327E2", hash_generated_method = "1932F9A473D856E5303B496CB5EBCCCC")
     public  X509Extension(
         boolean                 critical,
@@ -65,6 +67,7 @@ ASN1OctetString varAF280DA2BC37D8BE783D8499160168DE_621815942 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.395 -0400", hash_original_method = "1593618AA769EDEFE49746B8725FB3A3", hash_generated_method = "EE95CDEDF16AD9F5FC9633379F77F694")
     public ASN1Encodable getParsedValue() {
 ASN1Encodable var47B17C3D944300E6B2DC899E4956696B_573837958 =         convertValueToObject(this);
@@ -123,7 +126,8 @@ ASN1Encodable var47B17C3D944300E6B2DC899E4956696B_573837958 =         convertVal
     }
 
     
-        public static ASN1Object convertValueToObject(
+        @DSModeled(DSC.SAFE)
+    public static ASN1Object convertValueToObject(
         X509Extension ext) throws IllegalArgumentException {
         try
         {

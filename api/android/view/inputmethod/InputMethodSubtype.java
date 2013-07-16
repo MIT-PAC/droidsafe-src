@@ -85,6 +85,7 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.548 -0400", hash_original_method = "D71F12C4764A764AF688AE6184DB2ED2", hash_generated_method = "ACF11529AB7DB787C152AB2F8CF531D9")
       InputMethodSubtype(Parcel source) {
         String s;
@@ -320,6 +321,7 @@ String var668958CC928CE427869ECE8B61534E65_1270859244 =         getExtraValueHas
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.552 -0400", hash_original_method = "0FAD58BA0D22A8990D6C7F18B4CA40E4", hash_generated_method = "053ADC64CB809C1B1CDC185F6E27B57A")
     @Override
     public boolean equals(Object o) {
@@ -367,6 +369,7 @@ String var668958CC928CE427869ECE8B61534E65_1270859244 =         getExtraValueHas
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.552 -0400", hash_original_method = "C419DC818714EC441C397D1AF0BAA00C", hash_generated_method = "21B80350FB24780FB690788355954CED")
     @Override
     public void writeToParcel(Parcel dest, int parcelableFlags) {
@@ -405,7 +408,8 @@ String var668958CC928CE427869ECE8B61534E65_1270859244 =         getExtraValueHas
     }
 
     
-        private static int hashCodeInternal(String locale, String mode, String extraValue,
+        @DSModeled(DSC.SAFE)
+    private static int hashCodeInternal(String locale, String mode, String extraValue,
             boolean isAuxiliary, boolean overridesImplicitlyEnabledSubtype) {
         return Arrays.hashCode(new Object[] {locale, mode, extraValue, isAuxiliary,
                 overridesImplicitlyEnabledSubtype});

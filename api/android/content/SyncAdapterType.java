@@ -34,6 +34,7 @@ public class SyncAdapterType implements Parcelable {
 
     private String settingsActivity;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.385 -0400", hash_original_method = "7289662DB03EFD3B7823DCECDC339B9C", hash_generated_method = "3B2BA7AD8F0CB2F368AD77D4ADAC641C")
     public  SyncAdapterType(String authority, String accountType, boolean userVisible,
             boolean supportsUploading) {
@@ -75,6 +76,7 @@ public class SyncAdapterType implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.391 -0400", hash_original_method = "8EF09623074C1EE06130DE195B26B1A3", hash_generated_method = "4DDD6FF371EAA23B078B7565F8676CBA")
     public  SyncAdapterType(String authority, String accountType, boolean userVisible,
             boolean supportsUploading,
@@ -119,6 +121,7 @@ public class SyncAdapterType implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.394 -0400", hash_original_method = "E5F69ADC566D68AE55898AF008FDA708", hash_generated_method = "279BE3B92B0117B33BF6F5BE419C59C8")
     private  SyncAdapterType(String authority, String accountType) {
     if(TextUtils.isEmpty(authority))        
@@ -159,6 +162,7 @@ public class SyncAdapterType implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.395 -0400", hash_original_method = "7591B3B4C417B70692687F09C44AB48B", hash_generated_method = "BA5B95BC49F29754E6A41C165811392F")
     public  SyncAdapterType(Parcel source) {
         this(
@@ -174,6 +178,7 @@ public class SyncAdapterType implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.396 -0400", hash_original_method = "1E794225B2A769540CA80516F7B50837", hash_generated_method = "79251D951C8D11360E647B0153C8898E")
     public boolean supportsUploading() {
     if(isKey)        
@@ -195,6 +200,7 @@ public class SyncAdapterType implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.397 -0400", hash_original_method = "E748D000233018148FC3D8951248BEFC", hash_generated_method = "B40BCAC3E2CE5C9D042D3ECB5AEC60D9")
     public boolean isUserVisible() {
     if(isKey)        
@@ -279,7 +285,8 @@ String var99638EA45B20928CF2245440E0728CEF_35102691 =         settingsActivity;
     }
 
     
-        public static SyncAdapterType newKey(String authority, String accountType) {
+        @DSModeled(DSC.SAFE)
+    public static SyncAdapterType newKey(String authority, String accountType) {
         return new SyncAdapterType(authority, accountType);
     }
 
@@ -311,6 +318,7 @@ String var99638EA45B20928CF2245440E0728CEF_35102691 =         settingsActivity;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.403 -0400", hash_original_method = "16D7E959FAC6345A599199AFC4EA50EB", hash_generated_method = "8010329E24E70DCC7436BF60809DB19F")
     public int hashCode() {
         int result = 17;
@@ -327,6 +335,7 @@ String var99638EA45B20928CF2245440E0728CEF_35102691 =         settingsActivity;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.404 -0400", hash_original_method = "35ACA65A211F277218A9C2784AA8F4DE", hash_generated_method = "C28AFB4FCDC61C0F2E6D10C82A31ADFE")
     public String toString() {
     if(isKey)        
@@ -379,6 +388,7 @@ String var2060563EFD93E4F59770E183A15C5E49_309341817 =             "SyncAdapterT
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.406 -0400", hash_original_method = "B6F0FAFEE232DA1C5B972583BC48E189", hash_generated_method = "148EC0FE04320D761B91A9C8B906EA83")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

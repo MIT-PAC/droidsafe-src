@@ -19,6 +19,7 @@ abstract class HardwareLayer {
 
     boolean mOpaque;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.222 -0400", hash_original_method = "4AE458D6667BFFD1B9464B983848F2AB", hash_generated_method = "92D52C23F6DFF44BDBE3EFECA1FD8C4D")
       HardwareLayer() {
         this(DIMENSION_UNDEFINED, DIMENSION_UNDEFINED, false);
@@ -26,6 +27,7 @@ abstract class HardwareLayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.222 -0400", hash_original_method = "1344419F3E25BE7760177B4956551826", hash_generated_method = "FBBAA57B0C2969B94BC83489D95BFD96")
       HardwareLayer(int width, int height, boolean isOpaque) {
         mWidth = width;

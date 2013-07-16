@@ -14,6 +14,7 @@ public final class CollationKeyICU extends CollationKey {
 
     private int hashCode;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.540 -0400", hash_original_method = "FDD367E7E47ED4793DE3731632868D96", hash_generated_method = "A46AF2BB61EEDFD614E5969E9D97A01A")
       CollationKeyICU(String source, byte[] bytes) {
         super(source);
@@ -24,6 +25,7 @@ public final class CollationKeyICU extends CollationKey {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.541 -0400", hash_original_method = "2BC5B1EAC391DF0E7068AFC895CE7148", hash_generated_method = "A87610D2B561D3EB8EECB7A1C07FD67E")
     @Override
     public int compareTo(CollationKey other) {
@@ -96,6 +98,7 @@ for(int i = 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.542 -0400", hash_original_method = "02D4FA820C7658A0385D9CDD7EC5D935", hash_generated_method = "AB8D2C8A3EFAFE3E7B5F6AA582387044")
     @Override
     public boolean equals(Object object) {
@@ -168,6 +171,7 @@ for(int i = 0;i < len;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.543 -0400", hash_original_method = "6C3C6FF515A6D95256010638A5024205", hash_generated_method = "4E603E5626B7FB3447A4CA3DC91C9AE0")
     @Override
     public byte[] toByteArray() {

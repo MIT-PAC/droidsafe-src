@@ -59,6 +59,7 @@ public class LinkCapabilities implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.372 -0400", hash_original_method = "50DA395E2AF302C1CC5EAE713D0D4EBB", hash_generated_method = "094567F562C6622597CD0B9BE55BADCC")
     public boolean isEmpty() {
         boolean var651A9CCC76FF7B6A32F11DFBA25B6C83_1335089207 = (mCapabilities.isEmpty());
@@ -69,6 +70,7 @@ public class LinkCapabilities implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.372 -0400", hash_original_method = "32A53E9BB0DE153D2975EBB6ECC5F512", hash_generated_method = "83D30FD9DF090BC0C87035933A772BA8")
     public int size() {
         int var4F37A19B41DACFAB8B445BF9526CFCB2_1758832898 = (mCapabilities.size());
@@ -100,6 +102,7 @@ String var0CDFD3D1516B36DBEF2AEE1E4B24910F_1803758264 =         mCapabilities.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.373 -0400", hash_original_method = "C1A26B01C735E97490E02BBFBAC6A09E", hash_generated_method = "B6D19C177E2804D1DD3FA2CA05233A16")
     public boolean containsKey(int key) {
         addTaint(key);
@@ -111,6 +114,7 @@ String var0CDFD3D1516B36DBEF2AEE1E4B24910F_1803758264 =         mCapabilities.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.373 -0400", hash_original_method = "05E28527AC6BDB7F8BDD1968A304DADF", hash_generated_method = "8A6CF7A08CE29839C09FEBA5E630D2DD")
     public boolean containsValue(String value) {
         addTaint(value.getTaint());

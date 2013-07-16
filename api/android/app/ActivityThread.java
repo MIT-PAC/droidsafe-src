@@ -4642,6 +4642,7 @@ String var029687FA3448A44CDE2ADF906A695CC0_1636833312 =             "NewIntentDa
 
         CompatibilityInfo compatInfo;
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.623 -0400", hash_original_method = "95DC539EA4572F0714768317249686D3", hash_generated_method = "5F5EA5B5DB9BAC270C564AE64F897F98")
         public  ReceiverData(Intent intent, int resultCode, String resultData, Bundle resultExtras,
                 boolean ordered, boolean sticky, IBinder token) {

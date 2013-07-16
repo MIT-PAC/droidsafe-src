@@ -238,6 +238,7 @@ switch(event.type){
 
         public String parentGroupName;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.976 -0400", hash_original_method = "418862520135AFAF9D5B41BB00EA7C53", hash_generated_method = "59A0E2BA0E2ED6081C457D4BBF807355")
         private  ThreadEvent(ThreadEventType type, int objectId, int threadId,
                             String threadName, String groupName, String parentGroupName) {
@@ -266,6 +267,7 @@ switch(event.type){
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.977 -0400", hash_original_method = "87F2300773E111C1834911C7597238E6", hash_generated_method = "9601CB79B6EA603856556CF9BC4D5103")
         private  ThreadEvent(ThreadEventType type, int threadId) {
             this.type = ThreadEventType.END;
@@ -414,6 +416,7 @@ String var00B1B2FF6D903F68E7D679B21A349625_1126133881 =             String.forma
 
         StackTraceElement[] stackFrames;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.980 -0400", hash_original_method = "937A3F2A08E08A14F8EC24A94B9A8468", hash_generated_method = "B8B05431485364C1F4F77D04A35AC9F2")
           StackTrace() {
             this.stackTraceId = -1;
@@ -422,6 +425,7 @@ String var00B1B2FF6D903F68E7D679B21A349625_1126133881 =             String.forma
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.982 -0400", hash_original_method = "D4A1391652F07F93D8818AA4C8761514", hash_generated_method = "1FC22075DBBF6B11BC1F0733B401DF87")
         public  StackTrace(int stackTraceId, int threadId, StackTraceElement[] stackFrames) {
     if(stackFrames == null)            
@@ -561,6 +565,7 @@ String var30DC02AFA0A56F317C6F6FEE3F2FBD1E_641705422 =             "StackTrace[s
 
         public int count;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.986 -0400", hash_original_method = "8A8A799FE1363281492F811288A07E90", hash_generated_method = "66DA3F45D9F21ABC2ADD07B199A75ADB")
         private  Sample(StackTrace stackTrace, int count) {
     if(stackTrace == null)            

@@ -10,6 +10,7 @@ import java.text.ParseException;
 
 public class SIPIfMatchParser extends HeaderParser {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.782 -0400", hash_original_method = "58C73D632C90677B10301C6C3F2EA3A6", hash_generated_method = "D36D57F754DDFBB2D2D1B6545FE05766")
     public  SIPIfMatchParser(String etag) {
         super(etag);
@@ -18,6 +19,7 @@ public class SIPIfMatchParser extends HeaderParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.782 -0400", hash_original_method = "EF4950625B84E18FA318F1BE4AE7C3DD", hash_generated_method = "171AF033935E7415D801A5713DA8219F")
     protected  SIPIfMatchParser(Lexer lexer) {
         super(lexer);

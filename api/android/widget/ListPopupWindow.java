@@ -257,6 +257,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.576 -0400", hash_original_method = "EF5235E70AE7C9521CFD0F4410B9073C", hash_generated_method = "CE94840FC2120F4556B4D052EBA89732")
     public int getSoftInputMode() {
         int var964404E9EAF1CA05AB3CAF30EE68B324_1352586600 = (mPopup.getSoftInputMode());
@@ -297,6 +298,7 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1391030963 =         mPopup.getBack
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.577 -0400", hash_original_method = "CF4F09D135A7A5849055A447382D076E", hash_generated_method = "0DCFB58E124A9F127ACBB80FEF5C665B")
     public void setAnimationStyle(int animationStyle) {
         addTaint(animationStyle);
@@ -408,6 +410,7 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.581 -0400", hash_original_method = "1CC81B1489D8EBDAA358E87EA72284F9", hash_generated_method = "B062CF3F22DF7B6E3FBD05CE3C919E7F")
     public void setContentWidth(int width) {
         Drawable popupBackground = mPopup.getBackground();
@@ -493,6 +496,7 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.583 -0400", hash_original_method = "6F8BB8AB5CFBCAF655CCF7F8C4D42CCD", hash_generated_method = "12A7B7B2D0ABC916C160864A366BF13A")
     public void postShow() {
         mHandler.post(mShowDropDownRunnable);
@@ -623,6 +627,7 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.588 -0400", hash_original_method = "C7BE29500BF4339E2FDC892E2A139524", hash_generated_method = "3AF4A97BA15B7F497640EC707509DB4A")
     public void setOnDismissListener(PopupWindow.OnDismissListener listener) {
         addTaint(listener.getTaint());
@@ -664,6 +669,7 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.589 -0400", hash_original_method = "341CBB053B214C5E0FB1B54637325DA3", hash_generated_method = "D75B89D01B40CCE85225A5BBC6B8DBB4")
     public int getInputMethodMode() {
         int var5A145EEE78AACF161EAD0CCBA6449D66_1299292769 = (mPopup.getInputMethodMode());
@@ -700,6 +706,7 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.591 -0400", hash_original_method = "5E25633D1BEAE372BF50698DAAA66CA7", hash_generated_method = "6F3A6B5295DECA5E206B687D3202D2F6")
     public void clearListSelection() {
         final DropDownListView list = mDropDownList;
@@ -730,6 +737,7 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.594 -0400", hash_original_method = "C5EEC00F4CE1C916DAF561B7CF397229", hash_generated_method = "C95C72D3AED6DD464371AEA1FA7DD9CC")
     public boolean isInputMethodNotNeeded() {
         boolean var72A051B02AB9B817782B9C116F4B4AB3_26114793 = (mPopup.getInputMethodMode() == INPUT_METHOD_NOT_NEEDED);
@@ -773,6 +781,7 @@ View var0AB2834B220EB17FD3E645A276A93F12_587737865 =         mDropDownAnchorView
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.597 -0400", hash_original_method = "E481FD4B78A135BB1B6DC4E83167B196", hash_generated_method = "9406A6AF8AA4AF9445C334A1F1EDFBCB")
     public Object getSelectedItem() {
     if(!isShowing())        
@@ -812,6 +821,7 @@ Object varBFC298C836B1964BD2B82A432050A888_2023393764 =         mDropDownList.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.599 -0400", hash_original_method = "4492784EC84C61BD8D41E43112FEBCD0", hash_generated_method = "55C18317697095E3CF1EFB878B0D9F06")
     public long getSelectedItemId() {
     if(!isShowing())        
@@ -831,6 +841,7 @@ Object varBFC298C836B1964BD2B82A432050A888_2023393764 =         mDropDownList.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.599 -0400", hash_original_method = "A94FEEC1ECDAC3555C21CB10FFC68C47", hash_generated_method = "02D567FDAE9B10D41064BAC0322EDAAE")
     public View getSelectedView() {
     if(!isShowing())        
@@ -1285,6 +1296,7 @@ View var057D265746AE9672AFE5F9FF6338071D_624483759 =             view;
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.612 -0400", hash_original_method = "6E4DA5A5D077D6C0AA24FD2BF6BDF53A", hash_generated_method = "7456C947FFBE552E1D6E82B11D3D8B56")
         @Override
         public void onChanged() {
