@@ -128,8 +128,8 @@ public class ValueAnalysis {
                   "<android.app.Activity: void onActivityResult(int,int,android.content.Intent)>",
                   "<droidsafe.helpers.DSUtils: void translateIntent(android.content.Intent,android.content.Intent)>",
                   "<android.net.URI: android.net.Uri parse(java.lang.String)", 
-                  "<java.net.URI: java.lang.URI create(java.lang.String)>"));
-
+                  "<java.net.URI: java.lang.URI create(java.lang.String)>",
+                  "<java.lang.Object: void addTaint(boolean)>"));
 
     //==================================================================================================================
     // Attributes
@@ -405,7 +405,7 @@ public class ValueAnalysis {
                                         // have to invalidate the receiver
                                         modeledReceiverObject.__ds__invalidate();
                                         am.logError("Couldn't model every parameter for " + iie + am.sourceLocation + 
-                                                "\n" + "> invalidating " + modeledReceiverObject + " as a result");
+                                                "\n" + "> invalidating " + modeledReceiverObject.__ds__toString() + " as a result");
                                     }
                                 }
                             }
@@ -517,7 +517,7 @@ public class ValueAnalysis {
                 // If this is an InstanceInvoke, also invalidate the receiver object
                 if (modeledReceiverObject != null){
                     modeledReceiverObject.__ds__invalidate();
-                    error += "\n" + "> invalidating receiver " + modeledReceiverObject + " as a result";
+                    error += "\n" + "> invalidating receiver " + modeledReceiverObject.__ds__toString() + " as a result";
                 }
                 this.logError(error);
                 // The method isn't modeled, so we must invalidate every argument that we modeled
@@ -639,7 +639,7 @@ public class ValueAnalysis {
                     validModeledUriNum++;
                 }
             }
-            logger.info("Finished Model: {}", modeledObject.__ds__display());
+            logger.info("Finished Model: {}", modeledObject.__ds__toString());
             logger.info("Corresponding AllocNode: {}", entry.getKey());
         }
         /*
@@ -848,21 +848,29 @@ public class ValueAnalysis {
                                                 }
                                             } catch(ClassNotFoundException cnfe) {
                                                 ValueAnalysis.this.logError("Couldn't getDroidsafeClass for arg " + arg 
-                                                        + "\n"); return;
+                                                        + "\n"); 
+                                                // We couldn't model the argument node, so invalidate any param models we've 
+                                                // already created
+                                                for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
+                                                    ValueAnalysis.this.logError("> invalidating argument model " + modeledObject.__ds__toString());
+                                                    modeledObject.__ds__invalidate();
+                                                }
+                                                return;
                                             }
                                             // Store the param object model so that we can later invalidate it if we 
                                             // haven't modeled the method
                                             paramObjectModels.add(modeledParamObject);
                                         } else {
-                                            // We couldn't model the argument node, so invalidate any param models we've 
-                                            // already created
-                                            for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
-                                                modeledObject.__ds__invalidate();
-                                            }
                                             ValueAnalysis.this.logError("Couldn't model argument " + i + " " + node 
                                                     + " for method" + invokeExpr 
                                                     + ValueAnalysis.this.sourceLocation);
-                                            return;
+                                            // We couldn't model the argument node, so invalidate any param models we've 
+                                            // already created
+                                            for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
+                                               ValueAnalysis.this.logError("> invalidating argument model " + modeledObject.__ds__toString());
+                                               modeledObject.__ds__invalidate();
+                                            }
+                                     return;
                                         }
                                     } 
                                 } else {
@@ -871,7 +879,7 @@ public class ValueAnalysis {
                                             + " of instanceInvokeExpr " + invokeExpr);
                                     // invalidate any param models we've already created
                                     for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
-                                        ValueAnalysis.this.logError("> invalidating argument model " + modeledObject);
+                                        ValueAnalysis.this.logError("> invalidating argument model " + modeledObject.__ds__toString());
                                         modeledObject.__ds__invalidate();
                                     }
                                     return;
@@ -917,13 +925,11 @@ public class ValueAnalysis {
                         paramObjectSets.get(i).add(Sets.newHashSet(obj));
                         paramClasses.add(i, Set.class);
                     } else {
-                        ValueAnalysis.this.logError("Arg #" + i + " of method " + invokeExpr 
-                                + " isn't a constant or a RefType." 
-                                + " Not sure what to do - invalidating other arguments " 
-                                + "and not simulating.");
+                        ValueAnalysis.this.logError("Arg #" + i + " of method " + invokeExpr + " isn't a constant or a "
+                                   + "RefType. Not sure what to do - invalidating other arguments and not simulating.");
                         // invalidate any param models we've already created
                         for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
-                            ValueAnalysis.this.logError("> invalidating argument model " + modeledObject);
+                            ValueAnalysis.this.logError("> invalidating argument model " + modeledObject.__ds__toString());
                             modeledObject.__ds__invalidate();
                         }
                         return;
