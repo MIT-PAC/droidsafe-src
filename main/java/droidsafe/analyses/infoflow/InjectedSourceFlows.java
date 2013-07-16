@@ -1,5 +1,6 @@
 package droidsafe.analyses.infoflow;
 
+import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.analyses.value.ValueAnalysisModeledObject;
@@ -21,6 +22,7 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.jimple.NewExpr;
 import soot.jimple.internal.AbstractNewExpr;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
@@ -77,6 +79,20 @@ public class InjectedSourceFlows {
     }};
 
     /**
+     * This map defines the flows we will inject based on classes.
+     *
+     * fully qualified class name -> set of kinds
+     */
+    private static Map<String, Set<MyKind>> classNameToFlows = new HashMap<String, Set<MyKind>>();
+    static {
+        {
+            Set<MyKind> kinds = new HashSet<MyKind>();
+            kinds.add(MyKind.LOCATION);
+            classNameToFlows.put("android.location.Location", kinds);
+        }
+    }
+
+    /**
      * runs the analysis
      */
     public static void run() {
@@ -101,6 +117,14 @@ public class InjectedSourceFlows {
      * Return the set of injected flows for this allocation site.
      */
     public Set<MyKind> getInjectedFlows(AllocNode node) {
+        Object newExpr = GeoPTA.v().getNewExpr(node);
+        if (newExpr instanceof NewExpr) {
+            String className = ((NewExpr)newExpr).getBaseType().getClassName();
+            if (classNameToFlows.containsKey(className)) {
+                return classNameToFlows.get(className);
+            }
+        }
+
         if (injectedFlows.containsKey(node)) {
             return injectedFlows.get(node);
         } else {
