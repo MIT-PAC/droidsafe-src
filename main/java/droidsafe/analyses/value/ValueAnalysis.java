@@ -488,6 +488,8 @@ public class ValueAnalysis {
         try {
             // get the method we are going to simulate
             Class[] paramObjectClassArray = paramObjectClasses.toArray(new Class[paramObjectClasses.size()]);
+            // we use getMethod because it takes into account inheritance appropriately. However, it doesn't find
+            // private methods and thus all value analysis model methods should be public
             java.lang.reflect.Method method = invokeExprClass.getMethod(methodName, paramObjectClassArray);    
 
             // simulate the method using reflection for every permutation of parameter values, aggregating the returned
