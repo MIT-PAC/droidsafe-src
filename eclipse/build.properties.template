@@ -48,7 +48,7 @@ skipFetch=true
 #CDC-1.1/Foundation-1.1=${java.home}/lib/rt.jar
 #JavaSE-1.6=${java.home}/lib/rt.jar
 logExtension=.log
-javacDebugInfo=false 
+javacDebugInfo=true
 javacFailOnError=true
 javacVerbose=true
 # Default value for the version of the source code. This value is used when compiling plug-ins that do not set the Bundle-RequiredExecutionEnvironment or set javacSource in build.properties
