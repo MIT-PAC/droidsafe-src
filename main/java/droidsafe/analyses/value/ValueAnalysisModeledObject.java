@@ -150,18 +150,4 @@ public abstract class ValueAnalysisModeledObject {
         }
         return str;
     }
-    
-    /**
-     * Display method for the model that says whether the model is invalidated.
-     * 
-     * @returns model description as a String
-     */
-    /*
-    public String __ds__display(){
-        Class cls = this.getClass();
-        String str = "<modeled " + cls.getSimpleName() +  this.__ds__getId() + "> {";
-        str += this.__ds__fieldsString();
-        return str + "}";
-    }
-    */
 }
