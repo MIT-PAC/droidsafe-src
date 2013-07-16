@@ -207,13 +207,13 @@ public class DroidsafeAnalysisRunner extends Main {
       return Status.CANCEL_STATUS;
     }
 
-    logger.info("Inserting DSTaintObject allocations at each new expression...");
-    monitor.subTask("Inserting DSTaintObject allocations at each new expression");
-    InsertDSTaintAllocs.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return Status.CANCEL_STATUS;
-    }
+    // logger.info("Inserting DSTaintObject allocations at each new expression...");
+    // monitor.subTask("Inserting DSTaintObject allocations at each new expression");
+    // InsertDSTaintAllocs.run();
+    // monitor.worked(1);
+    // if (monitor.isCanceled()) {
+    // return Status.CANCEL_STATUS;
+    // }
 
     AddAllocsForAPICalls.run();
     monitor.worked(1);
