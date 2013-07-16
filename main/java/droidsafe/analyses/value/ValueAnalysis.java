@@ -460,7 +460,7 @@ public class ValueAnalysis {
                     if(object instanceof ValueAnalysisModeledObject){
                         ValueAnalysisModeledObject modeledObject = (ValueAnalysisModeledObject)object;
                         modeledObject.__ds__invalidate();
-                        this.logError("> invalidating argument " + modeledObject + " as a result");
+                        this.logError("> invalidating argument " + modeledObject.__ds__toString() + " as a result");
                     }
                 }
             }
