@@ -555,13 +555,13 @@ public class AndroidManifest {
   /** 
    * Class for IntentFilter information.  
    */
-  class IntentFilter extends BaseElement {
+  public class IntentFilter extends BaseElement {
 
     // list of actions accepted by filter
-    List<String> actions = new ArrayList<String>();
+    public List<String> actions = new ArrayList<String>();
 
     // List of categories accepted by filter
-    List<String>  categories = new ArrayList<String>();
+    public List<String>  categories = new ArrayList<String>();
 
     public IntentFilter (BaseElement parent, Node n) 
       throws InvalidPropertiesFormatException {

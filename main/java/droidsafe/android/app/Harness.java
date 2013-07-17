@@ -36,6 +36,7 @@ import soot.jimple.NewExpr;
 import soot.jimple.NopStmt;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
+import soot.jimple.StringConstant;
 import soot.util.Chain;
 
 import com.google.common.collect.ImmutableMap;
@@ -45,7 +46,13 @@ import droidsafe.android.system.Components;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.Utils;
 import droidsafe.android.app.resources.AndroidManifest;
+import droidsafe.android.app.resources.AndroidManifest.IntentFilter;
+import droidsafe.android.app.resources.Layout;
 import droidsafe.android.app.resources.Resources;
+import droidsafe.android.app.resources.AndroidManifest.Activity;
+import droidsafe.android.app.resources.AndroidManifest.Provider;
+import droidsafe.android.app.resources.AndroidManifest.Receiver;
+import droidsafe.android.app.resources.AndroidManifest.Service;
 
 /**
  * Create a harness class that will call the entry points of the android application
@@ -185,13 +192,22 @@ public class Harness {
 		
 		StmtBody body = (StmtBody) harnessMain.getActiveBody();
 		
-		
-		 // inject Application __dsApp__
-		RefType appType = appClass.getType();
         
         // locate app constructor and call them
         String appInitSig = String.format("<%s: void <init>()>", "android.app.Application");
 		SootMethod appInit = Scene.v().getMethod(appInitSig);
+		
+		String methodSig = String.format("<%s: void <init>()>", "android.content.IntentFilter");
+		SootMethod intentFilterInit = Scene.v().getMethod(methodSig);
+		
+		methodSig = String.format("<%s: void addCategory(java.lang.String)>", 
+								"android.content.IntentFilter");
+		SootMethod addCategory = Scene.v().getMethod(methodSig);
+	
+		methodSig = String.format("<%s: void addAction(java.lang.String)>", 
+								"android.content.IntentFilter");
+		SootMethod addAction = Scene.v().getMethod(methodSig);
+	
 		SootMethod initMethod = null;
 		
 		try {
@@ -202,17 +218,113 @@ public class Harness {
 			return;
 		}
 		
+		 // inject Application __dsApp__
+		RefType appType = appClass.getType();
+		RefType intentFilterType = RefType.v("android.content.IntentFilter");
+		
 		Local appLocal = Jimple.v().newLocal("__dsApp__",  RefType.v("android.app.Application"));
         body.getLocals().add(appLocal);
+        
+        Local localString = Jimple.v().newLocal("__dsString__",  RefType.v("java.lang.String"));
         
         // __dsApp__ = new Application
         Expr newAppExpr = Jimple.v().newNewExpr(appType);
         body.getUnits().add(Jimple.v().newAssignStmt(appLocal,  newAppExpr));
         
-		
+        // __dsApp__.<init>()
 		InvokeStmt initStmt = Jimple.v().newInvokeStmt(
 									Jimple.v().newVirtualInvokeExpr(appLocal, initMethod.makeRef()));
 		body.getUnits().add(initStmt);
+		
+		 String     activityInitSig = String.format("<%s: void <init>()>", "android.app.Activity");
+		 SootMethod activityInit = Scene.v().getMethod(activityInitSig);
+	
+		// Deal with activities addressed in XML file
+		int counter = 0;
+		int intentFilterCount = 0;
+		for (Activity a : manifest.activities) {
+			logger.warn("Activity {} ", a);
+			String name = String.format("__dsActivity%03d__", counter++);
+			
+			try {
+				initMethod = Scene.v().getActiveHierarchy().resolveConcreteDispatch(a.getSootClass(), appInit); 
+			} 
+			catch (Exception ex) {
+				logger.warn("Cannot resolve App constructor {}", appClass);
+				continue;
+			}
+			Local activityLocal = Jimple.v().newLocal(name,  RefType.v("android.app.Activity"));
+			body.getLocals().add(activityLocal);
+
+			newAppExpr = Jimple.v().newNewExpr(a.getSootClass().getType());
+			body.getUnits().add(Jimple.v().newAssignStmt(activityLocal,  newAppExpr));
+
+			initStmt = Jimple.v().newInvokeStmt(
+					Jimple.v().newVirtualInvokeExpr(activityLocal, initMethod.makeRef()));
+			body.getUnits().add(initStmt);
+
+			for (IntentFilter intentFilter: a.intent_filters) {
+				String intentLocalName = String.format("__dsIntentFilter%s__", intentFilterCount++);
+				
+				// add local
+				Local intentFilterLocal = Jimple.v().newLocal(intentLocalName, intentFilterType);
+				body.getLocals().add(intentFilterLocal);
+				
+				// add new
+				newAppExpr = Jimple.v().newNewExpr(intentFilterType);
+				body.getUnits().add(Jimple.v().newAssignStmt(intentFilterLocal,  newAppExpr));
+
+				// call default constructor
+				initStmt = Jimple.v().newInvokeStmt(
+						Jimple.v().newVirtualInvokeExpr(intentFilterLocal, intentFilterInit.makeRef()));
+				
+				body.getUnits().add(initStmt);
+				
+				for (String action: intentFilter.actions) {
+					//localString = "constant"
+					body.getUnits().add(Jimple.v().
+									newAssignStmt(localString, StringConstant.v(action)));
+					
+					//call addAction
+					body.getUnits().add(
+							Jimple.v().newInvokeStmt(
+									Jimple.v().newVirtualInvokeExpr(intentFilterLocal, 
+												addAction.makeRef(), localString)));
+				}
+				
+				for (String category: intentFilter.categories) {
+					//localString = "constant"
+					body.getUnits().add(Jimple.v().
+									newAssignStmt(localString, StringConstant.v(category)));
+					
+					//call addAction
+					body.getUnits().add(
+							Jimple.v().newInvokeStmt(
+									Jimple.v().newVirtualInvokeExpr(intentFilterLocal, 
+												addCategory.makeRef(), localString)));
+				}
+				
+			}
+		}
+
+		//other than activity
+		for (Service s : manifest.services) {
+			if (s.intent_filters.size() > 0) {
+				logger.info("has intent filter for {}:{}", s.name, s);
+			}
+		}
+
+		for (Provider p : manifest.providers) {
+			if (p.intent_filters.size() > 0) {
+				logger.info("has intent filter for {}:{} ", p.name, p);
+			}
+		}
+
+		for (Receiver r : manifest.receivers) {
+			if (r.intent_filters.size() > 0) {
+				logger.info("has intent filter for {}:{}", r.name, r);
+			}
+		}
 	}
 	
 	/**
