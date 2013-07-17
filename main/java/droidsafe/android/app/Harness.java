@@ -27,8 +27,10 @@ import soot.Unit;
 import soot.Value;
 import soot.VoidType;
 import soot.jimple.AssignStmt;
+import soot.jimple.Expr;
 import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
+import soot.jimple.InvokeStmt;
 import soot.jimple.Jimple;
 import soot.jimple.NewExpr;
 import soot.jimple.NopStmt;
@@ -42,6 +44,8 @@ import droidsafe.android.system.API;
 import droidsafe.android.system.Components;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.Utils;
+import droidsafe.android.app.resources.AndroidManifest;
+import droidsafe.android.app.resources.Resources;
 
 /**
  * Create a harness class that will call the entry points of the android application
@@ -135,7 +139,12 @@ public class Harness {
 		harnessMain.setActiveBody(body);
 		
 		Stmt beginCalls = mainMethodHeader(body);
+		
 		addCallToModelingRuntime(body);
+		
+		/** inject intentfilter and application  */
+		injectApplicationIntentFilters();
+		
 		Set<SootClass> visitedClasses = addCallsToComponentEntryPoints(body);
 		visitedClasses.addAll(addEntryPointsForAllocatedObjects(body));
 		addEntryPointsForNonAllocated(body, visitedClasses);
@@ -144,7 +153,6 @@ public class Harness {
 		body.getUnits().add(Jimple.v().newGotoStmt(beginCalls));
 		
 		body.getUnits().add(Jimple.v().newReturnVoidStmt());
-		
 		
 		Scene.v().addClass(harnessClass);
 		Scene.v().loadClass(harnessClass.getName(), SootClass.BODIES);
@@ -159,6 +167,52 @@ public class Harness {
 		SootMethod entry = dsRuntime.getMethod("void main()");
 		Stmt call = Jimple.v().newInvokeStmt(makeInvokeExpression(entry, null, new LinkedList<Value>()));
 		body.getUnits().add(call);
+	}
+	
+	/**
+	 * Inject intent-filter, create application instance 
+	 */
+	private void injectApplicationIntentFilters(){
+		
+		logger.warn("**injectApplicationIntentFilters .... ");
+		
+		AndroidManifest manifest = Resources.v().getManifest();
+		logger.warn("Application {}, package {} ", manifest.application, Resources.v().package_name);
+		
+		manifest.application.setSootClass(manifest.application.name);
+		
+		SootClass appClass = manifest.application.getSootClass();
+		
+		StmtBody body = (StmtBody) harnessMain.getActiveBody();
+		
+		
+		 // inject Application __dsApp__
+		RefType appType = appClass.getType();
+        
+        // locate app constructor and call them
+        String appInitSig = String.format("<%s: void <init>()>", "android.app.Application");
+		SootMethod appInit = Scene.v().getMethod(appInitSig);
+		SootMethod initMethod = null;
+		
+		try {
+			initMethod = Scene.v().getActiveHierarchy().resolveConcreteDispatch(appClass, appInit); 
+		} 
+		catch (Exception ex) {
+			logger.warn("Cannot resolve App constructor {}", appClass);
+			return;
+		}
+		
+		Local appLocal = Jimple.v().newLocal("__dsApp__",  RefType.v("android.app.Application"));
+        body.getLocals().add(appLocal);
+        
+        // __dsApp__ = new Application
+        Expr newAppExpr = Jimple.v().newNewExpr(appType);
+        body.getUnits().add(Jimple.v().newAssignStmt(appLocal,  newAppExpr));
+        
+		
+		InvokeStmt initStmt = Jimple.v().newInvokeStmt(
+									Jimple.v().newVirtualInvokeExpr(appLocal, initMethod.makeRef()));
+		body.getUnits().add(initStmt);
 	}
 	
 	/**
