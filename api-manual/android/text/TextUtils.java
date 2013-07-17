@@ -27,15 +27,15 @@ public class TextUtils {
 
     static class MyCreator implements Parcelable.Creator<CharSequence> {
         
-        @DSModeled
+        @DSModeled(DSC.SPEC)
         public MyCreator() {}
         
-        @DSModeled
+        @DSModeled(DSC.SPEC)
         public CharSequence createFromParcel(Parcel p) {
             return new String();
         }
         
-        @DSModeled
+        @DSModeled(DSC.SPEC)
         public CharSequence[] newArray(int size)
         {
             return new CharSequence[size];
@@ -107,7 +107,7 @@ public class TextUtils {
         }
 
         // GITI DSModeled
-        @DSModeled
+        @DSModeled(DSC.SPEC)
         public boolean hasNext() {
         	// GITI DSModeled - the result of this method should have no impact
         	// on the PTA whether or not the result is TRUE or FALSE.

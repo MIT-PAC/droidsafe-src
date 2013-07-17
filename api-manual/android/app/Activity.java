@@ -685,7 +685,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
-	@DSModeled
+	@DSModeled(DSC.SPEC)
 	public void onTrimMemory(int level){
 		mFragments.dispatchTrimMemory(level);
 		// Original method
@@ -698,7 +698,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
-	@DSModeled
+	@DSModeled(DSC.SPEC)
 	public FragmentManager getFragmentManager(){
 		if (mFragments == null)
 			mFragments = new FragmentManagerImpl();
@@ -2640,7 +2640,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 	
-	@DSModeled
+	@DSModeled(DSC.SPEC)
 	public final String getString(int id) {
 		return new String();
 	}

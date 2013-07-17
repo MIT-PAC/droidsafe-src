@@ -86,12 +86,12 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     public int textLayoutDirection;
     public int seq;
     
-    @DSModeled
+    @DSModeled(DSC.SPEC)
     public Configuration() {
         setToDefaults();
     }
     
-    @DSModeled
+    @DSModeled(DSC.SPEC)
     public Configuration(Configuration o) {
         setTo(o);
     }
@@ -116,7 +116,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
         setToDefaults();
     }
     
-	@DSModeled
+	@DSModeled(DSC.SPEC)
     public int updateFrom(Configuration delta) {
         addTaint(delta.getTaint());
         return getTaintInt();
@@ -274,7 +274,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     
     /** replacing anonymous inner class */
     private static class MyCreator implements Parcelable.Creator<Configuration> {
-        @DSModeled
+        @DSModeled(DSC.SPEC)
         public MyCreator() {
             
         }

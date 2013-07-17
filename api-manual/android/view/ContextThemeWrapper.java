@@ -30,7 +30,7 @@ import droidsafe.annotations.DSModeled;
 public class ContextThemeWrapper extends ContextWrapper {
 	private Context mBase;
    
-    @DSModeled
+    @DSModeled(DSC.SPEC)
     public ContextThemeWrapper() {
         super(new ContextImpl());
     }

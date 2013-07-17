@@ -48,7 +48,7 @@ public class Path {
         addTaint(sweepAngle);
     }
 
-    @DSModeled()
+    @DSModeled(DSC.SPEC)
     final int ni() {
         return getTaintInt(); 
     }

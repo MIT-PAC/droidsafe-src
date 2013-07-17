@@ -2800,7 +2800,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		return getTaintInt();
 	}
 	
-	@DSModeled
+	@DSModeled(DSC.SPEC)
 	public View getChildAt(int index){
 		return mChildren[0];
 	}
@@ -2944,7 +2944,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	
 	private class MyTransitionListener implements LayoutTransition.TransitionListener {
 	    
-	    @DSModeled
+	    @DSModeled(DSC.SPEC)
 	    public MyTransitionListener(ViewGroup viewGroup) {
 	        
 	    }

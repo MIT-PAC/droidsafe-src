@@ -20,7 +20,7 @@ public class DroidSafeAndroidRuntime {
 	public static boolean control = new Random().nextBoolean();
 	public static int switchControl = new Random().nextInt();
 
-	@DSModeled
+	@DSModeled(DSC.SPEC)
 	/**
 	 * This method will be called automatically by the droidsafe harness class before all
 	 * application code.
@@ -31,7 +31,7 @@ public class DroidSafeAndroidRuntime {
 		
 	}
 	
-	@DSModeled
+	@DSModeled(DSC.SPEC)
 	/**
 	 * create any associated state and call init methods on an activity
 	 * 
@@ -66,7 +66,7 @@ public class DroidSafeAndroidRuntime {
 		
 	}
 	
-	@DSModeled
+	@DSModeled(DSC.SPEC)
 	public static void modelBroadCastReceiver(BroadcastReceiver receiver) {
 		receiver.onReceive(new ContextImpl(), new Intent());
 	}
