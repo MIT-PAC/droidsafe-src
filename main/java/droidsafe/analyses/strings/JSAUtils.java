@@ -1,5 +1,13 @@
 package droidsafe.analyses.strings;
 
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisBoolean;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisByte;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisChar;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisDouble;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisFloat;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisInt;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisLong;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisShort;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.analyses.value.ValueAnalysisModeledObject;
 
@@ -31,6 +39,7 @@ public class JSAUtils {
             Method modeledMethods[] = modeledClass.getDeclaredMethods();
 
             for (Method modeledMethod : modeledMethods) {
+                System.out.println(modeledMethod);
                 ArrayList<Integer> paramOfInterestIndexes = new ArrayList<Integer>();
 
                 String signature = "<";
@@ -59,6 +68,22 @@ public class JSAUtils {
                                    || paramTypeString.equals("java.lang.StringBuffer")
                                    || paramTypeString.equals("java.lang.StringBuilder")) {
                                     paramOfInterestIndexes.add(i);
+                                } else if(typeParamForBaseInterfaceClass.equals(ValueAnalysisBoolean.class)){
+                                    paramTypeString = "boolean";
+                                } else if(typeParamForBaseInterfaceClass.equals(ValueAnalysisByte.class)){
+                                    paramTypeString = "byte";
+                                } else if(typeParamForBaseInterfaceClass.equals(ValueAnalysisChar.class)){
+                                    paramTypeString = "char";
+                                } else if(typeParamForBaseInterfaceClass.equals(ValueAnalysisDouble.class)){
+                                    paramTypeString = "double";
+                                } else if(typeParamForBaseInterfaceClass.equals(ValueAnalysisFloat.class)){
+                                    paramTypeString = "float";
+                                } else if(typeParamForBaseInterfaceClass.equals(ValueAnalysisInt.class)){
+                                    paramTypeString = "int";
+                                } else if(typeParamForBaseInterfaceClass.equals(ValueAnalysisLong.class)){
+                                    paramTypeString = "long";
+                                } else if(typeParamForBaseInterfaceClass.equals(ValueAnalysisShort.class)){
+                                    paramTypeString = "short";
                                 }
                             }
                         }
