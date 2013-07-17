@@ -237,7 +237,7 @@ public class Toast {
     @DSModeled()
     public static Toast makeText(Context context, CharSequence text, int duration) {
         Toast result = new Toast(context);
-        result.addTaint(text.toString().getTaint());
+        result.addTaint(text.getTaint());
         result.addTaint(duration);
 
         /*  DSModel: Not needed for ds modeling
