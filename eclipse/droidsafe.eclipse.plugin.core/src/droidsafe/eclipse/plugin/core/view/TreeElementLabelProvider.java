@@ -11,6 +11,8 @@ import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.jface.viewers.ViewerCell;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.TextStyle;
 import org.eclipse.swt.widgets.Display;
@@ -66,6 +68,19 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
 
   private boolean useShortSignatureForMethods = true;
 
+  private static Font boldFont;
+
+  static {
+    FontData[] fontData = Display.getCurrent().getSystemFont().getFontData();
+    FontData[] styleData = new FontData[fontData.length];
+    for (int i = 0; i < styleData.length; i++) {
+      FontData base = fontData[i];
+      styleData[i] = new FontData(base.getName(), base.getHeight(), base.getStyle() | SWT.BOLD);
+    }
+    boldFont = new Font(Display.getCurrent(), styleData);
+  }
+
+
   /**
    * Method to set the boolean to control what type of labels should be used for method nodes in the
    * outline. Returns the previous value of the flag so the view will know if it needs to refresh or
@@ -94,25 +109,16 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
       Object data = ((TreeElement<?, ?>) element).getData();
       if (data instanceof MethodModel) {
         MethodModel method = (MethodModel) data;
-        String receiver =
-            (method.getReceiver() == null || method.getReceiver().equals("")) ? "" : "\n"
-                + method.getReceiver();
+        String receiver = method.getReceiver();
+        if (receiver == null) {
+          receiver = "";
+        } else if (!receiver.equals("")) {
+          receiver = "\n" + receiver;
+        }
         if (!useShortSignatureForMethods) {
           return method.getSignature() + receiver;
         } else {
           return method.getShortSignature() + receiver;
-        }
-      }
-    }
-    return element.toString();
-  }
-
-  public String getText_Saved(Object element) {
-    if (!useShortSignatureForMethods) {
-      if (element instanceof TreeElement<?, ?>) {
-        Object data = ((TreeElement<?, ?>) element).getData();
-        if (data instanceof MethodModel) {
-          return ((MethodModel) data).getSignature();
         }
       }
     }
@@ -189,13 +195,25 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
   private static final Color RED = Display.getDefault().getSystemColor(SWT.COLOR_RED);
 
   /**
+   * A styler to allow the label of the node to be red.
+   */
+  private static StyledString.Styler RED_FOREGROUND = new StyledString.Styler() {
+
+    @Override
+    public void applyStyles(TextStyle textStyle) {
+      textStyle.foreground = RED;
+      textStyle.font = boldFont;
+    }
+  };
+
+  /**
    * A styler to allow the label of the node to be bold.
    */
   private static StyledString.Styler BOLD = new StyledString.Styler() {
 
     @Override
     public void applyStyles(TextStyle textStyle) {
-      textStyle.foreground = RED;
+      textStyle.font = boldFont;
     }
   };
 
@@ -217,8 +235,9 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
         if (method.isSafe()) {
           styledString.setStyle(0, styledString.length(), STRIKEOUT);
         } else if (method.getPermissions() != null && !method.getPermissions().isEmpty()) {
+          styledString.setStyle(0, styledString.length(), RED_FOREGROUND);
+        } else if (method.getReceiver() != null && !method.getReceiver().equals("")) {
           styledString.setStyle(0, styledString.length(), BOLD);
-          // cell.setForeground(RED);
         }
       } else if (data instanceof CodeLocationModel && ((CodeLocationModel) data).isSafe()) {
         styledString.setStyle(0, styledString.length(), STRIKEOUT);
@@ -230,6 +249,7 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
     cell.setImage(getImage(obj));
     super.update(cell);
   }
+
 
   /**
    * Helper Method to load the images

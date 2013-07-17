@@ -3,16 +3,11 @@ package droidsafe.eclipse.plugin.core.runner;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -55,11 +50,8 @@ import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.main.Config;
 import droidsafe.main.Main;
 import droidsafe.main.SootConfig;
-import droidsafe.speclang.Method;
 import droidsafe.speclang.SecuritySpecification;
-import droidsafe.speclang.model.CodeLocationModel;
 import droidsafe.speclang.model.HotspotModel;
-import droidsafe.speclang.model.MethodModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.transforms.InsertDSTaintAllocs;
@@ -68,7 +60,6 @@ import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
 import droidsafe.utils.SootUtils;
-import droidsafe.utils.SourceLocationTag;
 
 /*
  * This is the main run class for Droidsafe Eclipse Plugin. It is based on droidsafe.Main.java
@@ -158,14 +149,6 @@ public class DroidsafeAnalysisRunner extends Main {
       return Status.CANCEL_STATUS;
     }
 
-    // IJobManager mgr = Job.getJobManager();
-    // Job currentJob = mgr.currentJob();
-    // currentJob.cancel();
-    // monitor.setCanceled(true);
-    // if (monitor.isCanceled()){
-    // return Status.CANCEL_STATUS;
-    // }
-
     monitor.subTask("Scalar Optimization");
     logger.info("Calling scalar optimizations.");
     ScalarAppOptimizations.run();
@@ -224,13 +207,13 @@ public class DroidsafeAnalysisRunner extends Main {
       return Status.CANCEL_STATUS;
     }
 
-    logger.info("Inserting DSTaintObject allocations at each new expression...");
-    monitor.subTask("Inserting DSTaintObject allocations at each new expression");
-    InsertDSTaintAllocs.run();
-    monitor.worked(1);
-    if (monitor.isCanceled()) {
-      return Status.CANCEL_STATUS;
-    }
+    // logger.info("Inserting DSTaintObject allocations at each new expression...");
+    // monitor.subTask("Inserting DSTaintObject allocations at each new expression");
+    // InsertDSTaintAllocs.run();
+    // monitor.worked(1);
+    // if (monitor.isCanceled()) {
+    // return Status.CANCEL_STATUS;
+    // }
 
     AddAllocsForAPICalls.run();
     monitor.worked(1);

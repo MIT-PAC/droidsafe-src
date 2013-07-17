@@ -44,31 +44,17 @@ public class Activator extends AbstractUIPlugin {
   public void start(BundleContext context) throws Exception {
     super.start(context);
     plugin = this;
-    //LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
-    //StatusPrinter.print(lc);
-    configureDebugLog();
+    
+    LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
+    StatusPrinter.print(lc);
+    //configureDebugLog();
     //lc = (LoggerContext) LoggerFactory.getILoggerFactory();
     //StatusPrinter.print(lc);
-
-    // UIJob job = new UIJob("InitCommandsWorkaround") {    
-    // public IStatus runInUIThread(@SuppressWarnings("unused") IProgressMonitor monitor) {    
-    // ICommandService commandService =
-    // (ICommandService) PlatformUI.getWorkbench().getActiveWorkbenchWindow()
-    // .getService(ICommandService.class);
-    // Command command =
-    // commandService.getCommand("droidsafe.eclipse.plugin.core.commands.SortView");
-    // command.isEnabled();
-    // return new Status(IStatus.OK, PLUGIN_ID, "Init commands workaround performed succesfully");
-    // }
-    //
-    // };
-    // job.schedule();
-
-
 
   }
 
 
+  @SuppressWarnings("unused")
   private void configureDebugLog() {
     String pluginId = Activator.PLUGIN_ID;
     Bundle bundle = Platform.getBundle(pluginId);

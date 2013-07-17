@@ -106,7 +106,8 @@ public abstract class ValueAnalysisModeledObject {
      */
     public String __ds__toString() {
         Class cls = this.getClass();
-        String str = "<" + cls.getName().substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length()) + ": "; 
+        String str = "<va-modeled " + cls.getName().substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length()) + " " 
+                     + this.__ds__getId() + ": "; 
         if (!this.__ds__invalidated())
             str += "{" + this.__ds__fieldsString() + "}";
         else
@@ -135,7 +136,7 @@ public abstract class ValueAnalysisModeledObject {
                         }
                         String newAttr = field.getName() + ": ";
                         if(value instanceof ValueAnalysisModeledObject) {
-                          newAttr += ((ValueAnalysisModeledObject)value).__ds__display();
+                          newAttr += ((ValueAnalysisModeledObject)value).__ds__toString();
                         } else {
                           newAttr += value;
                         }
@@ -148,17 +149,5 @@ public abstract class ValueAnalysisModeledObject {
             str = str + StringUtils.join(attrs.toArray(), ", ");
         }
         return str;
-    }
-    
-    /**
-     * Display method for the model that says whether the model is invalidated.
-     * 
-     * @returns model description as a String
-     */
-    public String __ds__display(){
-        Class cls = this.getClass();
-        String str = "<modeled " + cls.getSimpleName() +  this.__ds__getId() + "> {";
-        str += this.__ds__fieldsString();
-        return str + "}";
     }
 }

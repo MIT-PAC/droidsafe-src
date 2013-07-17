@@ -126,7 +126,7 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
    * add this content provider as listener to the new TreeElement passed in the newTreeElement
    * parameter.
    * 
-   * @param modelObject The actual domain object we want to dispplay.
+   * @param modelObject The actual domain object we want to display.
    * @param newTreeElement The tree node container for the model object.
    */
   private void updatePropertyChangeListener(IModelChangeSupport modelObject,
@@ -134,6 +134,7 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
     modelObject.addPropertyChangeListener(newTreeElement);
     newTreeElement.addPropertyChangeListener(this);
     treeElementList.add(newTreeElement);
+    treeElementMap.put(modelObject, newTreeElement);
   }
 
   /**
@@ -202,7 +203,7 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
                       HotspotModel.class);
               inputElement.addChild(locationElement);
               updatePropertyChangeListener(location, locationElement);
-              
+
               List<HotspotModel> hotspots = location.getHotspots();
               for (HotspotModel hotspot : hotspots) {
                 TreeElement<HotspotModel, Object> hotspotElement =
@@ -395,4 +396,21 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
     }
   }
 
+  /**
+   * Returns the tree element corresponding to the element model (method or code location).
+   * 
+   * @param modelObject The method or code location object represented in the outline view.
+   * 
+   * @return The tree node element wrapping the model object.
+   * 
+   */
+  public TreeElement<?, ?> findTreeElementForModelObject(IModelChangeSupport modelObject) {
+    TreeElement<?, ?> result = this.treeElementMap.get(modelObject);
+    if (result != null && modelObject.equals(result.getData())) {
+      return result;
+    } else {
+      logger.debug("Could not find tree element for data item {}", modelObject);
+      return null;
+    }
+  }
 }

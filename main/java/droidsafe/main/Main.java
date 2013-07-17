@@ -31,7 +31,6 @@ import droidsafe.android.system.Permissions;
 import droidsafe.speclang.SecuritySpecification;
 import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.transforms.AddAllocsForAPICalls;
-import droidsafe.transforms.InsertDSTaintAllocs;
 import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
@@ -96,9 +95,6 @@ public class Main {
         if (Config.v().runStringAnalysis) {
             jsaAnalysis();
         }
-
-        logger.info("Inserting DSTaintObject allocations at each new expression...");
-        InsertDSTaintAllocs.run();
         
         AddAllocsForAPICalls.run();
 

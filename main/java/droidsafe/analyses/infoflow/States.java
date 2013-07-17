@@ -653,7 +653,7 @@ class Heap {
         Heap heap = new Heap();
         for (Map.Entry<AddressField, ImmutableList<MyValue>> addressFieldValues : instances.entrySet()) {
             AddressField addressField = addressFieldValues.getKey();
-            if (reachable.contains(addressField.address) && addressFields.contains(addressField)) {
+            if (reachable.contains(addressField.address) && (addressFields.contains(addressField) || addressField.field.equals(ObjectUtil.v().taint))) {
                 heap.instances.putS(addressField.address, addressField.field, addressFieldValues.getValue());
             }
         }
@@ -691,7 +691,7 @@ class Heap {
         DefaultHashMap<Address, List<Address>> reachableDirectly = new DefaultHashMap<Address, List<Address>>(Collections.<Address>emptyList());
         for (Map.Entry<AddressField, ImmutableList<MyValue>> addressFieldValues : instances.entrySet()) {
             AddressField addressField = addressFieldValues.getKey();
-            ArrayList<Address> addresses = new ArrayList<Address>();
+            ArrayList<Address> addresses = new ArrayList<Address>(reachableDirectly.get(addressField.address));
             for (MyValue value : addressFieldValues.getValue()) {
                 if (value instanceof Address) {
                     addresses.add((Address)value);

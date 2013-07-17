@@ -16,8 +16,8 @@
 		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
 			<level>DEBUG</level>
 		</filter>
-		<encoder>
-			<pattern>%level: %msg%n</pattern>
+		<encoder>		    
+			<pattern>%d{HH:mm:ss} [%thread] %-5level %-36logger{36} [%-4line] - %msg%n</pattern>
 		</encoder>
 	</appender>
 
