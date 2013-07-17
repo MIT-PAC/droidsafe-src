@@ -296,6 +296,7 @@ for(boolean b : subjectUniqueID)
             setOptional(9);
         }
 
+		@DSModeled(DSC.SAFE)
         @Override protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
 
@@ -318,6 +319,7 @@ for(boolean b : subjectUniqueID)
                     );
         }
 
+		@DSModeled(DSC.SAFE)
         @Override protected void getValues(Object object, Object[] values) {
             TBSCertificate tbs = (TBSCertificate) object;
             values[0] = ASN1Integer.fromIntValue(tbs.version);

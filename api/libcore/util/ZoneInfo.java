@@ -33,8 +33,9 @@ public final class ZoneInfo extends TimeZone {
 
     private boolean mUseDst;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.546 -0400", hash_original_method = "7B585FDC58F35CED01D1FBB089EE95E4", hash_generated_method = "727133FC28FC441C8D650224D389BFC8")
-      ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] isDsts) {
+    ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] isDsts) {
         addTaint(name.getTaint());
         mTransitions = transitions;
         mTypes = type;
@@ -93,6 +94,7 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
+	@DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.548 -0400", hash_original_method = "F24BAF6EEBE3E0E7B99D03D590A46295", hash_generated_method = "E3DDE6DB58910D8DDA65E0EDE880D5EF")
     @Override
     public int getOffset(int era, int year, int month, int day, int dayOfWeek, int millis) {
@@ -139,6 +141,7 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
+	@DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.548 -0400", hash_original_method = "1DD2E67C6E4C7148C355A1BA56BEEEAB", hash_generated_method = "D33EEE12A4BA22B78DB368B31CE32FB8")
     @Override
     public int getOffset(long when) {

@@ -76,11 +76,13 @@ Date varE84253AB2AD08AA2E1E3A8582D622350_1851212332 =         notAfter;
     public static final ASN1Sequence ASN1
         = new ASN1Sequence(new ASN1Type[] {Time.ASN1, Time.ASN1 }) {
 
+		@DSModeled(DSC.SAFE)
         @Override protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
             return new Validity((Date) values[0], (Date) values[1]);
         }
 
+		@DSModeled(DSC.SAFE)
         @Override protected void getValues(Object object, Object[] values) {
             Validity validity = (Validity) object;
             values[0] = validity.notBefore;

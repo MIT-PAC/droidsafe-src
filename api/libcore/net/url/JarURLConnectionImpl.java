@@ -257,6 +257,7 @@ JarEntry varAD3A77394289B6D52417AADF8827369A_1717278875 =         jarEntry;
     }
 
     
+	@DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.363 -0400", hash_original_method = "96C498B69E21157D37D76B9902545F24", hash_generated_method = "94E1E630EB7534EB9A0C26F34E4FD15D")
     @Override
     public InputStream getInputStream() throws IOException {
@@ -299,6 +300,7 @@ InputStream var633EF97C7E21EA794417A3B390707D41_1881543837 =         jarInput = 
     }
 
     
+	@DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.363 -0400", hash_original_method = "626D247225A5C5A729C002EF0C988C29", hash_generated_method = "2E3C57964D38F1FB6D353C04C9AAD776")
     @Override
     public String getContentType() {

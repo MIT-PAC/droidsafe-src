@@ -19,7 +19,8 @@ public final class PolicyInformation {
 
     private byte[] encoding;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.662 -0400", hash_original_method = "97521BA30F23785F6A554ACA63DC6021", hash_generated_method = "9C337939CB6B38E442B16C9693BA1B39")
+	@DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.241 -0400", hash_original_method = "97521BA30F23785F6A554ACA63DC6021", hash_generated_method = "9C337939CB6B38E442B16C9693BA1B39")
     public  PolicyInformation(String policyIdentifier) {
         this.policyIdentifier = policyIdentifier;
         // ---------- Original Method ----------
@@ -74,11 +75,13 @@ String var042D1F5662848EDA928AD6E741377A61_782747704 =         policyIdentifier;
             setOptional(1);
         }
 
+		@DSModeled(DSC.SAFE)
         @Override protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
             return new PolicyInformation(ObjectIdentifier.toString((int[]) values[0]));
         }
 
+		@DSModeled(DSC.SAFE)
         @Override protected void getValues(Object object, Object[] values) {
             PolicyInformation pi = (PolicyInformation) object;
             values[0] = ObjectIdentifier.toIntArray(pi.policyIdentifier);

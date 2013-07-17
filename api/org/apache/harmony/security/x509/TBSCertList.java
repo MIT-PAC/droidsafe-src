@@ -43,8 +43,10 @@ public final class TBSCertList {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.890 -0400", hash_original_field = "84BEA1F0FD2CE16F7E562A9F06EF03D3", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
 
     private byte[] encoding;
-    
+
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.891 -0400", hash_original_method = "31062813EF8734E09BA3D189CC3AAF0B", hash_generated_method = "A4ED463E22612FB239D52B5DA01F0A61")
+
     private  TBSCertList(int version, AlgorithmIdentifier signature,
             Name issuer, Date thisUpdate, Date nextUpdate,
             List<RevokedCertificate> revokedCertificates, Extensions crlExtensions,
@@ -492,6 +494,7 @@ X500Principal var8EF52627413B91AB97DB59853805E979_1392520941 =             issue
             setOptional(6);
         }
 
+		@DSModeled(DSC.SAFE)
         @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
             Object[] values = (Object[]) in.content;
             return new TBSCertList(
@@ -508,6 +511,7 @@ X500Principal var8EF52627413B91AB97DB59853805E979_1392520941 =             issue
                     );
         }
 
+		@DSModeled(DSC.SAFE)
         @Override protected void getValues(Object object, Object[] values) {
             TBSCertList tbs = (TBSCertList) object;
             values[0] = (tbs.version > 1)

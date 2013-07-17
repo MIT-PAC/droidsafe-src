@@ -28,8 +28,10 @@ public final class ZoneInfoDB {
     }
 
     
+    @DSModeled(DSC.SAFE)
+
     private static String readVersion() {
-        try {
+    	try {
             byte[] bytes = IoUtils.readFileAsByteArray(ZONE_DIRECTORY_NAME + "zoneinfo.version");
             return new String(bytes, 0, bytes.length, Charsets.ISO_8859_1).trim();
         } catch (IOException ex) {
@@ -38,6 +40,7 @@ public final class ZoneInfoDB {
     }
 
     
+	@DSModeled(DSC.SAFE)
     private static MemoryMappedFile mapData() {
         try {
             return MemoryMappedFile.mmapRO(ZONE_FILE_NAME);
@@ -47,6 +50,7 @@ public final class ZoneInfoDB {
     }
 
     
+	@DSModeled(DSC.SAFE)
     private static void readIndex() {
         MemoryMappedFile mappedFile = null;
         try {
@@ -60,6 +64,7 @@ public final class ZoneInfoDB {
     }
 
     
+	@DSModeled(DSC.SAFE)
     private static void readIndex(MemoryMappedFile mappedFile) throws ErrnoException, IOException {
         BufferIterator it = mappedFile.bigEndianIterator();
         final int SIZEOF_TZNAME = 40;
@@ -96,7 +101,8 @@ public final class ZoneInfoDB {
     }
 
     
-    private static TimeZone makeTimeZone(String id) throws IOException {
+	@DSModeled(DSC.SAFE)
+	private static TimeZone makeTimeZone(String id) throws IOException {
         int index = Arrays.binarySearch(ids, id);
         if (index < 0) {
             return null;
@@ -124,13 +130,14 @@ public final class ZoneInfoDB {
         return new ZoneInfo(id, transitions, type, gmtOffsets, isDsts);
     }
 
-    
+	@DSModeled(DSC.SAFE)
     public static String[] getAvailableIDs() {
         return ids.clone();
     }
 
     
-    public static String[] getAvailableIDs(int rawOffset) {
+	@DSModeled(DSC.SAFE)
+	public static String[] getAvailableIDs(int rawOffset) {
         List<String> matches = new ArrayList<String>();
         for (int i = 0, end = rawUtcOffsets.length; i < end; i++) {
             if (rawUtcOffsets[i] == rawOffset) {
@@ -141,6 +148,7 @@ public final class ZoneInfoDB {
     }
 
     
+	@DSModeled(DSC.SAFE)
     public static TimeZone getSystemDefault() {
         synchronized (LOCK) {
             TimezoneGetter tzGetter = TimezoneGetter.getInstance();
@@ -156,6 +164,7 @@ public final class ZoneInfoDB {
     }
 
     
+	@DSModeled(DSC.SAFE)
     public static TimeZone getTimeZone(String id) {
         if (id == null) {
             return null;

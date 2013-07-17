@@ -15,8 +15,8 @@ public final class Unsafe {
         // ---------- Original Method ----------
     }
 
-    
-    public static Unsafe getUnsafe() {
+    	@DSModeled(DSC.BAN)
+        public static Unsafe getUnsafe() {
         ClassLoader calling = VMStack.getCallingClassLoader();
         if ((calling != null) && (calling != Unsafe.class.getClassLoader())) {
             throw new SecurityException("Unsafe access denied");
@@ -24,8 +24,9 @@ public final class Unsafe {
         return THE_ONE;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.588 -0400", hash_original_method = "826DF3AF2C82C95E7B53BC94C24540AA", hash_generated_method = "F77995C4116F11205C2EA4C81BBABBC3")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.181 -0400", hash_original_method = "826DF3AF2C82C95E7B53BC94C24540AA", hash_generated_method = "37509F27C578466D3CFFA3A1C5C8873A")
+	@DSModeled(DSC.BAN)
     public long objectFieldOffset(Field field) {
         addTaint(field.getTaint());
         if(Modifier.isStatic(field.getModifiers()))        

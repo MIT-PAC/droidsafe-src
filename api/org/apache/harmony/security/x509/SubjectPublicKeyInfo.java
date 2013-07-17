@@ -169,6 +169,7 @@ PublicKey var36BC502DA0D0F28A150F4A1969DBE960_1727366497 =         publicKey;
 
     public static final ASN1Sequence ASN1 = new ASN1Sequence(new ASN1Type[] {
             AlgorithmIdentifier.ASN1, ASN1BitString.getInstance() }) {
+		@DSModeled(DSC.SAFE)
         @Override protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
             return new SubjectPublicKeyInfo(
@@ -178,6 +179,7 @@ PublicKey var36BC502DA0D0F28A150F4A1969DBE960_1727366497 =         publicKey;
                     in.getEncoded());
         }
 
+		@DSModeled(DSC.SAFE)
         @Override protected void getValues(Object object, Object[] values) {
             SubjectPublicKeyInfo spki = (SubjectPublicKeyInfo) object;
             values[0] = spki.algorithmID;

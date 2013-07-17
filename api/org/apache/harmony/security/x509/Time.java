@@ -25,7 +25,7 @@ public final class Time {
 
     public static final ASN1Choice ASN1 = new ASN1Choice(new ASN1Type[] {
             ASN1GeneralizedTime.getInstance(), ASN1UTCTime.getInstance() }) {
-
+		@DSModeled(DSC.SAFE)
         public int getIndex(java.lang.Object object) {
             
             if (((java.util.Date) object).getTime() < JAN_01_2050) {
@@ -35,24 +35,10 @@ public final class Time {
             }
         }
 
+		@DSModeled(DSC.SAFE)
         public Object getObjectToEncode(Object object) {
             return object;
         }
     };
-    // orphaned legacy method
-    public int getIndex(java.lang.Object object) {
-            
-            if (((java.util.Date) object).getTime() < JAN_01_2050) {
-                return 1; 
-            } else {
-                return 0; 
-            }
-        }
-    
-    // orphaned legacy method
-    public Object getObjectToEncode(Object object) {
-            return object;
-        }
-    
 }
 

@@ -29,6 +29,7 @@ public final class AlgorithmIdentifier {
     
         @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.786 -0400", hash_original_method = "2A12FAF842ACAA2DBD4904F8F0273D03", hash_generated_method = "2EBF08AB7CEC761BB58F4F2AC8E07597")
+
     public  AlgorithmIdentifier(String algorithm) {
         this(algorithm, null, null);
         addTaint(algorithm.getTaint());
@@ -201,12 +202,14 @@ String var2F10FAEB775F4B5DF3001375F37870C3_762411297 =         algorithmName;
             setOptional(1); 
         }
 
+	@DSModeled(DSC.SAFE)
         @Override protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
             return new AlgorithmIdentifier(ObjectIdentifier
                     .toString((int[]) values[0]), (byte[]) values[1]);
         }
 
+	@DSModeled(DSC.SAFE)
         @Override protected void getValues(Object object, Object[] values) {
 
             AlgorithmIdentifier aID = (AlgorithmIdentifier) object;
