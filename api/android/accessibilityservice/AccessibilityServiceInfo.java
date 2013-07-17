@@ -23,44 +23,44 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 
 public class AccessibilityServiceInfo implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.666 -0400", hash_original_field = "B6798C32DB18990EFA91D37F3C984B4D", hash_generated_field = "EEF9A290ACD5C7B733F6B6DEDE8E3A43")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.824 -0400", hash_original_field = "B6798C32DB18990EFA91D37F3C984B4D", hash_generated_field = "EEF9A290ACD5C7B733F6B6DEDE8E3A43")
 
     public int eventTypes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.667 -0400", hash_original_field = "CDFCE21563C1C11CAC0A8B86CB3D248A", hash_generated_field = "4498F27AF93559A7532BFFF1A93CBFB9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.826 -0400", hash_original_field = "CDFCE21563C1C11CAC0A8B86CB3D248A", hash_generated_field = "4498F27AF93559A7532BFFF1A93CBFB9")
 
     public String[] packageNames;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.667 -0400", hash_original_field = "EF3D4DB24D1A38BA00C793A35B38641C", hash_generated_field = "68FE335A39435FE4A5727D74F41FDDD2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.827 -0400", hash_original_field = "EF3D4DB24D1A38BA00C793A35B38641C", hash_generated_field = "68FE335A39435FE4A5727D74F41FDDD2")
 
     public int feedbackType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.668 -0400", hash_original_field = "634929FAC91F7F5B885BEAA1660825D9", hash_generated_field = "F1CBE56C199C9B56F74193D61740D91B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.828 -0400", hash_original_field = "634929FAC91F7F5B885BEAA1660825D9", hash_generated_field = "F1CBE56C199C9B56F74193D61740D91B")
 
     public long notificationTimeout;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.669 -0400", hash_original_field = "4E5868D676CB634AA75B125A0F741ABF", hash_generated_field = "06C062A47B4E980AE7B4928732A7AB14")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.829 -0400", hash_original_field = "4E5868D676CB634AA75B125A0F741ABF", hash_generated_field = "06C062A47B4E980AE7B4928732A7AB14")
 
     public int flags;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.669 -0400", hash_original_field = "6AC7F06B6413A1BE9C136DC7DF0D2B60", hash_generated_field = "34D624C7CD290D72B15AB814BF1BA854")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.830 -0400", hash_original_field = "6AC7F06B6413A1BE9C136DC7DF0D2B60", hash_generated_field = "34D624C7CD290D72B15AB814BF1BA854")
 
     private String mId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.670 -0400", hash_original_field = "B56830C8982A0389C507F778EDDBDB2E", hash_generated_field = "6B33B1DC79BC09883016E8729764237B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.831 -0400", hash_original_field = "B56830C8982A0389C507F778EDDBDB2E", hash_generated_field = "6B33B1DC79BC09883016E8729764237B")
 
     private ResolveInfo mResolveInfo;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.670 -0400", hash_original_field = "A7226C9DD6CAE5D50DDA70DBC0A93E5E", hash_generated_field = "3227A556BB8D91CC368DE162089FC968")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.832 -0400", hash_original_field = "A7226C9DD6CAE5D50DDA70DBC0A93E5E", hash_generated_field = "3227A556BB8D91CC368DE162089FC968")
 
     private String mSettingsActivityName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.671 -0400", hash_original_field = "6D4745E833964FE3F3A2EBA5882199BF", hash_generated_field = "D82CCF51637435103547C999EFEF8AB3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.839 -0400", hash_original_field = "6D4745E833964FE3F3A2EBA5882199BF", hash_generated_field = "D82CCF51637435103547C999EFEF8AB3")
 
     private boolean mCanRetrieveWindowContent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.672 -0400", hash_original_field = "FF2B9B684DDD70D7BE468C8D9A54343D", hash_generated_field = "D58E2E2E369193E8B6C54168B334B477")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.842 -0400", hash_original_field = "FF2B9B684DDD70D7BE468C8D9A54343D", hash_generated_field = "D58E2E2E369193E8B6C54168B334B477")
 
     private String mDescription;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.674 -0400", hash_original_method = "32AC306673DA52F864FB7CE370FDF901", hash_generated_method = "96C87DCFF62BE612814976BB93D4DE38")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.846 -0400", hash_original_method = "32AC306673DA52F864FB7CE370FDF901", hash_generated_method = "96C87DCFF62BE612814976BB93D4DE38")
     public  AccessibilityServiceInfo() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.699 -0400", hash_original_method = "D068D99220BF43F7F5E36309EDDC7C96", hash_generated_method = "6FF11D97FE84D93D4A9C36FED348192E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.871 -0400", hash_original_method = "D068D99220BF43F7F5E36309EDDC7C96", hash_generated_method = "010C328372962F56A8C21FC5663F7D3B")
     public  AccessibilityServiceInfo(ResolveInfo resolveInfo, Context context) throws XmlPullParserException, IOException {
         addTaint(context.getTaint());
         ServiceInfo serviceInfo = resolveInfo.serviceInfo;
@@ -72,7 +72,7 @@ public class AccessibilityServiceInfo implements Parcelable {
             PackageManager packageManager = context.getPackageManager();
             parser = serviceInfo.loadXmlMetaData(packageManager,
                     AccessibilityService.SERVICE_META_DATA);
-    if(parser == null)            
+            if(parser == null)            
             {
                 return;
             } //End block
@@ -83,12 +83,12 @@ public class AccessibilityServiceInfo implements Parcelable {
                 type = parser.next();
             } //End block
             String nodeName = parser.getName();
-    if(!TAG_ACCESSIBILITY_SERVICE.equals(nodeName))            
+            if(!TAG_ACCESSIBILITY_SERVICE.equals(nodeName))            
             {
-                XmlPullParserException varB4F274FAD086D2D67F066419440AE3B6_2092182434 = new XmlPullParserException( "Meta-data does not start with"
+                XmlPullParserException varB4F274FAD086D2D67F066419440AE3B6_1823405460 = new XmlPullParserException( "Meta-data does not start with"
                         + TAG_ACCESSIBILITY_SERVICE + " tag");
-                varB4F274FAD086D2D67F066419440AE3B6_2092182434.addTaint(taint);
-                throw varB4F274FAD086D2D67F066419440AE3B6_2092182434;
+                varB4F274FAD086D2D67F066419440AE3B6_1823405460.addTaint(taint);
+                throw varB4F274FAD086D2D67F066419440AE3B6_1823405460;
             } //End block
             AttributeSet allAttributes = Xml.asAttributeSet(parser);
             Resources resources = packageManager.getResourcesForApplication(
@@ -100,7 +100,7 @@ public class AccessibilityServiceInfo implements Parcelable {
                     0);
             String packageNamez = asAttributes.getString(
                     com.android.internal.R.styleable.AccessibilityService_packageNames);
-    if(packageNamez != null)            
+            if(packageNamez != null)            
             {
                 packageNames = packageNamez.split("(\\s)*,(\\s)*");
             } //End block
@@ -123,14 +123,14 @@ public class AccessibilityServiceInfo implements Parcelable {
         } //End block
         catch (NameNotFoundException e)
         {
-            XmlPullParserException varD15B348A6E7DD45D4807A8ABA4A7A271_2050386851 = new XmlPullParserException( "Unable to create context for: "
+            XmlPullParserException varD15B348A6E7DD45D4807A8ABA4A7A271_209489419 = new XmlPullParserException( "Unable to create context for: "
                     + serviceInfo.packageName);
-            varD15B348A6E7DD45D4807A8ABA4A7A271_2050386851.addTaint(taint);
-            throw varD15B348A6E7DD45D4807A8ABA4A7A271_2050386851;
+            varD15B348A6E7DD45D4807A8ABA4A7A271_209489419.addTaint(taint);
+            throw varD15B348A6E7DD45D4807A8ABA4A7A271_209489419;
         } //End block
         finally 
         {
-    if(parser != null)            
+            if(parser != null)            
             {
                 parser.close();
             } //End block
@@ -140,8 +140,8 @@ public class AccessibilityServiceInfo implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.711 -0400", hash_original_method = "2C9B75B7F79417EB76D61370935CF9C8", hash_generated_method = "A0C7324A63FA3E4756821C675147A473")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.880 -0400", hash_original_method = "2C9B75B7F79417EB76D61370935CF9C8", hash_generated_method = "A0C7324A63FA3E4756821C675147A473")
     public void updateDynamicallyConfigurableProperties(AccessibilityServiceInfo other) {
         eventTypes = other.eventTypes;
         packageNames = other.packageNames;
@@ -157,73 +157,73 @@ public class AccessibilityServiceInfo implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.714 -0400", hash_original_method = "89A68E81BC93C5F428177630DB2A624A", hash_generated_method = "43087C2FFECCDA6576EC9668DE60271D")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.883 -0400", hash_original_method = "89A68E81BC93C5F428177630DB2A624A", hash_generated_method = "21D6EE04BC076856993784DD6A3DFFFA")
     public String getId() {
-String var565D51511D15781AE576ED3D7A8F70E9_261279112 =         mId;
-        var565D51511D15781AE576ED3D7A8F70E9_261279112.addTaint(taint);
-        return var565D51511D15781AE576ED3D7A8F70E9_261279112;
+String var565D51511D15781AE576ED3D7A8F70E9_632326568 =         mId;
+        var565D51511D15781AE576ED3D7A8F70E9_632326568.addTaint(taint);
+        return var565D51511D15781AE576ED3D7A8F70E9_632326568;
         // ---------- Original Method ----------
         //return mId;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.717 -0400", hash_original_method = "CD70F9B024F94168959F7F67ECCC2D46", hash_generated_method = "F3816ECAC77EBC7CA57EE1381D5BBC08")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.888 -0400", hash_original_method = "CD70F9B024F94168959F7F67ECCC2D46", hash_generated_method = "23E13F488B891EA9D0CA54D980FEDD9C")
     public ResolveInfo getResolveInfo() {
-ResolveInfo varA409562FAFA81D29E47E0388D6699416_1482098709 =         mResolveInfo;
-        varA409562FAFA81D29E47E0388D6699416_1482098709.addTaint(taint);
-        return varA409562FAFA81D29E47E0388D6699416_1482098709;
+ResolveInfo varA409562FAFA81D29E47E0388D6699416_1129325132 =         mResolveInfo;
+        varA409562FAFA81D29E47E0388D6699416_1129325132.addTaint(taint);
+        return varA409562FAFA81D29E47E0388D6699416_1129325132;
         // ---------- Original Method ----------
         //return mResolveInfo;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.720 -0400", hash_original_method = "193585B262D581003491A72A585CC7AB", hash_generated_method = "E7AD57E6ABABA9693A5487AF7BAAA2F7")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.892 -0400", hash_original_method = "193585B262D581003491A72A585CC7AB", hash_generated_method = "4BCB3068F58FF4F2E0A5ABE49F5A2098")
     public String getSettingsActivityName() {
-String varF52598D579FB7EF6DE23C12DD22DC004_594248533 =         mSettingsActivityName;
-        varF52598D579FB7EF6DE23C12DD22DC004_594248533.addTaint(taint);
-        return varF52598D579FB7EF6DE23C12DD22DC004_594248533;
+String varF52598D579FB7EF6DE23C12DD22DC004_1321724629 =         mSettingsActivityName;
+        varF52598D579FB7EF6DE23C12DD22DC004_1321724629.addTaint(taint);
+        return varF52598D579FB7EF6DE23C12DD22DC004_1321724629;
         // ---------- Original Method ----------
         //return mSettingsActivityName;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.725 -0400", hash_original_method = "E6B94BCDAE7DB4F02CCDA58E176F7C09", hash_generated_method = "7C6DD5D610A9C8085FD5DDFCCA284934")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.896 -0400", hash_original_method = "E6B94BCDAE7DB4F02CCDA58E176F7C09", hash_generated_method = "BB6F6CAD27AD85C89F09D4764A2BBBC3")
     public boolean getCanRetrieveWindowContent() {
-        boolean var6D4745E833964FE3F3A2EBA5882199BF_1895414849 = (mCanRetrieveWindowContent);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1667195973 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1667195973;
+        boolean var6D4745E833964FE3F3A2EBA5882199BF_205615067 = (mCanRetrieveWindowContent);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2008347904 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2008347904;
         // ---------- Original Method ----------
         //return mCanRetrieveWindowContent;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.728 -0400", hash_original_method = "177DD147D2F75620FD2B154278EC57FA", hash_generated_method = "0A0FFB649381DFA3D38CE400EC953936")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.899 -0400", hash_original_method = "177DD147D2F75620FD2B154278EC57FA", hash_generated_method = "F28AAA050275C9AF4B51DBB8D392A177")
     public String getDescription() {
-String var2094894B2BDB1315AACD05A5CC5702EE_2038082824 =         mDescription;
-        var2094894B2BDB1315AACD05A5CC5702EE_2038082824.addTaint(taint);
-        return var2094894B2BDB1315AACD05A5CC5702EE_2038082824;
+String var2094894B2BDB1315AACD05A5CC5702EE_1598126750 =         mDescription;
+        var2094894B2BDB1315AACD05A5CC5702EE_1598126750.addTaint(taint);
+        return var2094894B2BDB1315AACD05A5CC5702EE_1598126750;
         // ---------- Original Method ----------
         //return mDescription;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.733 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "58B9873F4BFE5B213A737F59B2274FF1")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.903 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "54AD8EC335ACB81060732607BA9044A9")
     public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_143647840 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_667630431 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_667630431;
+        int varCFCD208495D565EF66E7DFF9F98764DA_709804735 = (0);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_254439110 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_254439110;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.737 -0400", hash_original_method = "D1D2BA1A1EB65F368E7D0CDDBF151C6C", hash_generated_method = "B8E66243677FC74C65A28839BF82C037")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.914 -0400", hash_original_method = "D1D2BA1A1EB65F368E7D0CDDBF151C6C", hash_generated_method = "B8E66243677FC74C65A28839BF82C037")
     public void writeToParcel(Parcel parcel, int flagz) {
         addTaint(flagz);
         addTaint(parcel.getTaint());
@@ -251,7 +251,7 @@ String var2094894B2BDB1315AACD05A5CC5702EE_2038082824 =         mDescription;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.750 -0400", hash_original_method = "7D575AC4AF313C6A4D2D5091D77147E2", hash_generated_method = "A72BDE444FE7201E107DC7271F0D928A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.936 -0400", hash_original_method = "7D575AC4AF313C6A4D2D5091D77147E2", hash_generated_method = "A72BDE444FE7201E107DC7271F0D928A")
     private void initFromParcel(Parcel parcel) {
         eventTypes = parcel.readInt();
         packageNames = parcel.readStringArray();
@@ -277,7 +277,7 @@ String var2094894B2BDB1315AACD05A5CC5702EE_2038082824 =         mDescription;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.759 -0400", hash_original_method = "854D12839280F599645F8CCCA5C3093D", hash_generated_method = "0BB53733F71875762BF5FB8CABF4BEFA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.950 -0400", hash_original_method = "854D12839280F599645F8CCCA5C3093D", hash_generated_method = "A02AD7FCC6DF31BF092757132CB35BBE")
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
@@ -298,15 +298,15 @@ String var2094894B2BDB1315AACD05A5CC5702EE_2038082824 =         mDescription;
         stringBuilder.append("settingsActivityName: ").append(mSettingsActivityName);
         stringBuilder.append(", ");
         stringBuilder.append("retrieveScreenContent: ").append(mCanRetrieveWindowContent);
-String varA049BEEDFC361569B93FDB699C8C26A6_1055723969 =         stringBuilder.toString();
-        varA049BEEDFC361569B93FDB699C8C26A6_1055723969.addTaint(taint);
-        return varA049BEEDFC361569B93FDB699C8C26A6_1055723969;
+String varA049BEEDFC361569B93FDB699C8C26A6_897438334 =         stringBuilder.toString();
+        varA049BEEDFC361569B93FDB699C8C26A6_897438334.addTaint(taint);
+        return varA049BEEDFC361569B93FDB699C8C26A6_897438334;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        private static void appendFeedbackTypes(StringBuilder stringBuilder, int feedbackTypes) {
+    private static void appendFeedbackTypes(StringBuilder stringBuilder, int feedbackTypes) {
         stringBuilder.append("feedbackTypes:");
         stringBuilder.append("[");
         while (feedbackTypes != 0) {
@@ -321,7 +321,7 @@ String varA049BEEDFC361569B93FDB699C8C26A6_1055723969 =         stringBuilder.to
     }
 
     
-        private static void appendPackageNames(StringBuilder stringBuilder, String[] packageNames) {
+    private static void appendPackageNames(StringBuilder stringBuilder, String[] packageNames) {
         stringBuilder.append("packageNames:");
         stringBuilder.append("[");
         if (packageNames != null) {
@@ -337,7 +337,7 @@ String varA049BEEDFC361569B93FDB699C8C26A6_1055723969 =         stringBuilder.to
     }
 
     
-        private static void appendEventTypes(StringBuilder stringBuilder, int eventTypes) {
+    private static void appendEventTypes(StringBuilder stringBuilder, int eventTypes) {
         stringBuilder.append("eventTypes:");
         stringBuilder.append("[");
         while (eventTypes != 0) {
@@ -352,7 +352,7 @@ String varA049BEEDFC361569B93FDB699C8C26A6_1055723969 =         stringBuilder.to
     }
 
     
-        private static void appendFlags(StringBuilder stringBuilder, int flags) {
+    private static void appendFlags(StringBuilder stringBuilder, int flags) {
         stringBuilder.append("flags:");
         stringBuilder.append("[");
         while (flags != 0) {
@@ -367,7 +367,7 @@ String varA049BEEDFC361569B93FDB699C8C26A6_1055723969 =         stringBuilder.to
     }
 
     
-        public static String feedbackTypeToString(int feedbackType) {
+    public static String feedbackTypeToString(int feedbackType) {
         StringBuilder builder = new StringBuilder();
         builder.append("[");
         while (feedbackType > 0) {
@@ -399,7 +399,7 @@ String varA049BEEDFC361569B93FDB699C8C26A6_1055723969 =         stringBuilder.to
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static String flagToString(int flag) {
         switch (flag) {
             case DEFAULT:
@@ -410,31 +410,31 @@ String varA049BEEDFC361569B93FDB699C8C26A6_1055723969 =         stringBuilder.to
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.778 -0400", hash_original_field = "5AD75209E87571A06A60F516C6D84721", hash_generated_field = "2C523776EC0C9005124059FD690CA3B4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.978 -0400", hash_original_field = "5AD75209E87571A06A60F516C6D84721", hash_generated_field = "2C523776EC0C9005124059FD690CA3B4")
 
     private static final String TAG_ACCESSIBILITY_SERVICE = "accessibility-service";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.780 -0400", hash_original_field = "95BEA6CF6F955CE20115C3FE6D13B2A4", hash_generated_field = "71D96296190DC21E199DC14E475F746B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.980 -0400", hash_original_field = "95BEA6CF6F955CE20115C3FE6D13B2A4", hash_generated_field = "71D96296190DC21E199DC14E475F746B")
 
     public static final int FEEDBACK_SPOKEN = 0x0000001;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.781 -0400", hash_original_field = "10271180B4879DACBBA3846E757B2DDA", hash_generated_field = "6D2D98BDDD1C2B6F757615BD3595D906")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.982 -0400", hash_original_field = "10271180B4879DACBBA3846E757B2DDA", hash_generated_field = "6D2D98BDDD1C2B6F757615BD3595D906")
 
     public static final int FEEDBACK_HAPTIC =  0x0000002;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.783 -0400", hash_original_field = "C76A63F61B3624BB5D22BE30D7F4C2E7", hash_generated_field = "6ADCA380195B52253A35EB0B375D1268")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.984 -0400", hash_original_field = "C76A63F61B3624BB5D22BE30D7F4C2E7", hash_generated_field = "6ADCA380195B52253A35EB0B375D1268")
 
     public static final int FEEDBACK_AUDIBLE = 0x0000004;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.784 -0400", hash_original_field = "A8E17247CD6512F5A34581124FAB926D", hash_generated_field = "E92CD3AA57C6E0F9809E0BE28DA1C8D0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.985 -0400", hash_original_field = "A8E17247CD6512F5A34581124FAB926D", hash_generated_field = "E92CD3AA57C6E0F9809E0BE28DA1C8D0")
 
     public static final int FEEDBACK_VISUAL = 0x0000008;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.785 -0400", hash_original_field = "2F04AF42C7F881663D0068363021B2D4", hash_generated_field = "8258584ABD8E9E22B1F9F183B20BE2BC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.987 -0400", hash_original_field = "2F04AF42C7F881663D0068363021B2D4", hash_generated_field = "8258584ABD8E9E22B1F9F183B20BE2BC")
 
     public static final int FEEDBACK_GENERIC = 0x0000010;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.786 -0400", hash_original_field = "DB5DB0B17BB92986AF9DB12CA7B96FA8", hash_generated_field = "F30739AC04BDBB3384FC429FE4C84EAD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.989 -0400", hash_original_field = "DB5DB0B17BB92986AF9DB12CA7B96FA8", hash_generated_field = "F30739AC04BDBB3384FC429FE4C84EAD")
 
     public static final int FEEDBACK_ALL_MASK = 0xFFFFFFFF;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.786 -0400", hash_original_field = "0DE7A7646BF363996FBCDA8601C4B6C0", hash_generated_field = "D861C34854518E1545D3D8722C8CAD47")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.991 -0400", hash_original_field = "0DE7A7646BF363996FBCDA8601C4B6C0", hash_generated_field = "D861C34854518E1545D3D8722C8CAD47")
 
     public static final int DEFAULT = 0x0000001;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:30.787 -0400", hash_original_field = "5E2AFB32F3A5C2A0FFD7DBA1DD373F44", hash_generated_field = "064E407C79FF2820562F6591958C9DF1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:11.993 -0400", hash_original_field = "5E2AFB32F3A5C2A0FFD7DBA1DD373F44", hash_generated_field = "064E407C79FF2820562F6591958C9DF1")
 
     public static final Parcelable.Creator<AccessibilityServiceInfo> CREATOR =
             new Parcelable.Creator<AccessibilityServiceInfo>() {

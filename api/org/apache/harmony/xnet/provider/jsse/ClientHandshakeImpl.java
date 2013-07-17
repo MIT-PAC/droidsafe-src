@@ -29,7 +29,7 @@ import javax.security.auth.x500.X500Principal;
 
 public class ClientHandshakeImpl extends HandshakeProtocol {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.064 -0400", hash_original_method = "E7725F54B70B03AB684209C7F7E63A02", hash_generated_method = "FEEBAC8AF1F679A50E59BF09FC15BB2E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.186 -0400", hash_original_method = "E7725F54B70B03AB684209C7F7E63A02", hash_generated_method = "FEEBAC8AF1F679A50E59BF09FC15BB2E")
       ClientHandshakeImpl(Object owner) {
         super(owner);
         addTaint(owner.getTaint());
@@ -37,34 +37,34 @@ public class ClientHandshakeImpl extends HandshakeProtocol {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.066 -0400", hash_original_method = "6C060C09ED0246441EBDE47DFEF048B2", hash_generated_method = "3403D44FF3172B973A0689BE5E46B8D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.188 -0400", hash_original_method = "6C060C09ED0246441EBDE47DFEF048B2", hash_generated_method = "3403D44FF3172B973A0689BE5E46B8D3")
     @Override
     public void start() {
-    if(session == null)        
+        if(session == null)        
         {
             session = findSessionToResume();
         } //End block
         else
         {
-    if(clientHello != null && this.status != FINISHED)            
+            if(clientHello != null && this.status != FINISHED)            
             {
                 return;
             } //End block
-    if(!session.isValid())            
+            if(!session.isValid())            
             {
                 session = null;
             } //End block
         } //End block
-    if(session != null)        
+        if(session != null)        
         {
             isResuming = true;
         } //End block
         else
-    if(parameters.getEnableSessionCreation())        
+        if(parameters.getEnableSessionCreation())        
         {
             isResuming = false;
             session = new SSLSessionImpl(parameters.getSecureRandom());
-    if(engineOwner != null)            
+            if(engineOwner != null)            
             {
                 session.setPeer(engineOwner.getPeerHost(), engineOwner.getPeerPort());
             } //End block
@@ -85,13 +85,13 @@ public class ClientHandshakeImpl extends HandshakeProtocol {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.068 -0400", hash_original_method = "A1AF1BC51EE82C9340D705103AD7A155", hash_generated_method = "34AB750B95F9FEAA9E5DB9B016ECCE56")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.189 -0400", hash_original_method = "A1AF1BC51EE82C9340D705103AD7A155", hash_generated_method = "34AB750B95F9FEAA9E5DB9B016ECCE56")
     private void renegotiateNewSession() {
-    if(parameters.getEnableSessionCreation())        
+        if(parameters.getEnableSessionCreation())        
         {
             isResuming = false;
             session = new SSLSessionImpl(parameters.getSecureRandom());
-    if(engineOwner != null)            
+            if(engineOwner != null)            
             {
                 session.setPeer(engineOwner.getPeerHost(), engineOwner.getPeerPort());
             } //End block
@@ -127,10 +127,10 @@ public class ClientHandshakeImpl extends HandshakeProtocol {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.070 -0400", hash_original_method = "FFCAFC294E61749148CA1FC19A14A2BB", hash_generated_method = "923F226CD9CCDFFFCDAC17AA0ED53D1F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.190 -0400", hash_original_method = "FFCAFC294E61749148CA1FC19A14A2BB", hash_generated_method = "923F226CD9CCDFFFCDAC17AA0ED53D1F")
     private void startSession() {
         CipherSuite[] cipher_suites;
-    if(isResuming)        
+        if(isResuming)        
         {
             cipher_suites = new CipherSuite[] { session.cipherSuite };
         } //End block
@@ -158,11 +158,11 @@ public class ClientHandshakeImpl extends HandshakeProtocol {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.077 -0400", hash_original_method = "A389390FF4680222C458E1D6E9083717", hash_generated_method = "BAFE85A38A4B4CEEA52A9E3E6791D53F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.195 -0400", hash_original_method = "A389390FF4680222C458E1D6E9083717", hash_generated_method = "9F72BECF52EB87EE30A5336AD2E7B255")
     @Override
     public void unwrap(byte[] bytes) {
         addTaint(bytes[0]);
-    if(this.delegatedTaskErr != null)        
+        if(this.delegatedTaskErr != null)        
         {
             Exception e = this.delegatedTaskErr;
             this.delegatedTaskErr = null;
@@ -179,7 +179,7 @@ public class ClientHandshakeImpl extends HandshakeProtocol {
             {
                 handshakeType = io_stream.read();
                 length = io_stream.readUint24();
-    if(io_stream.available() < length)                
+                if(io_stream.available() < length)                
                 {
                     io_stream.reset();
                     return;
@@ -187,12 +187,12 @@ public class ClientHandshakeImpl extends HandshakeProtocol {
 switch(handshakeType){
                 case 0:
                 io_stream.removeFromMarkedPosition();
-    if(clientHello != null
+                if(clientHello != null
                             && (clientFinished == null || serverFinished == null))                
                 {
                     break;
                 } //End block
-    if(session.isValid())                
+                if(session.isValid())                
                 {
                     session = (SSLSessionImpl) session.clone();
                     isResuming = true;
@@ -204,7 +204,7 @@ switch(handshakeType){
                 } //End block
                 break;
                 case 2:
-    if(clientHello == null || serverHello != null)                
+                if(clientHello == null || serverHello != null)                
                 {
                     unexpectedMessage();
                     return;
@@ -212,11 +212,11 @@ switch(handshakeType){
                 serverHello = new ServerHello(io_stream, length);
                 ProtocolVersion servProt = ProtocolVersion.getByVersion(serverHello.server_version);
                 String[] enabled = parameters.getEnabledProtocols();
-    find                :
+                find                :
                 {
 for(int i = 0;i < enabled.length;i++)
                     {
-    if(servProt.equals(ProtocolVersion.getByName(enabled[i])))                        
+                        if(servProt.equals(ProtocolVersion.getByName(enabled[i])))                        
                         {
                             break find;
                         } //End block
@@ -224,17 +224,17 @@ for(int i = 0;i < enabled.length;i++)
                     fatalAlert(AlertProtocol.HANDSHAKE_FAILURE,
                                    "Bad server hello protocol version");
                 } //End block
-    if(serverHello.compression_method != 0)                
+                if(serverHello.compression_method != 0)                
                 {
                     fatalAlert(AlertProtocol.HANDSHAKE_FAILURE,
                                    "Bad server hello compression method");
                 } //End block
                 CipherSuite[] enabledSuites = parameters.getEnabledCipherSuitesMember();
-    find                :
+                find                :
                 {
 for(int i = 0;i < enabledSuites.length;i++)
                     {
-    if(serverHello.cipher_suite.equals(enabledSuites[i]))                        
+                        if(serverHello.cipher_suite.equals(enabledSuites[i]))                        
                         {
                             break find;
                         } //End block
@@ -242,30 +242,30 @@ for(int i = 0;i < enabledSuites.length;i++)
                     fatalAlert(AlertProtocol.HANDSHAKE_FAILURE,
                                    "Bad server hello cipher suite");
                 } //End block
-    if(isResuming)                
+                if(isResuming)                
                 {
-    if(serverHello.session_id.length == 0)                    
+                    if(serverHello.session_id.length == 0)                    
                     {
                         isResuming = false;
                     } //End block
                     else
-    if(!Arrays.equals(serverHello.session_id, clientHello.session_id))                    
+                    if(!Arrays.equals(serverHello.session_id, clientHello.session_id))                    
                     {
                         isResuming = false;
                     } //End block
                     else
-    if(!session.protocol.equals(servProt))                    
+                    if(!session.protocol.equals(servProt))                    
                     {
                         fatalAlert(AlertProtocol.HANDSHAKE_FAILURE,
                                        "Bad server hello protocol version");
                     } //End block
                     else
-    if(!session.cipherSuite.equals(serverHello.cipher_suite))                    
+                    if(!session.cipherSuite.equals(serverHello.cipher_suite))                    
                     {
                         fatalAlert(AlertProtocol.HANDSHAKE_FAILURE,
                                        "Bad server hello cipher suite");
                     } //End block
-    if(serverHello.server_version[1] == 1)                    
+                    if(serverHello.server_version[1] == 1)                    
                     {
                         computerReferenceVerifyDataTLS("server finished");
                     } //End block
@@ -281,7 +281,7 @@ for(int i = 0;i < enabledSuites.length;i++)
                 session.serverRandom = serverHello.random;
                 break;
                 case 11:
-    if(serverHello == null || serverKeyExchange != null
+                if(serverHello == null || serverKeyExchange != null
                             || serverCert != null || isResuming)                
                 {
                     unexpectedMessage();
@@ -290,7 +290,7 @@ for(int i = 0;i < enabledSuites.length;i++)
                 serverCert = new CertificateMessage(io_stream, length);
                 break;
                 case 12:
-    if(serverHello == null || serverKeyExchange != null
+                if(serverHello == null || serverKeyExchange != null
                             || isResuming)                
                 {
                     unexpectedMessage();
@@ -300,7 +300,7 @@ for(int i = 0;i < enabledSuites.length;i++)
                             length, session.cipherSuite.keyExchange);
                 break;
                 case 13:
-    if(serverCert == null || certificateRequest != null
+                if(serverCert == null || certificateRequest != null
                             || session.cipherSuite.isAnonymous() || isResuming)                
                 {
                     unexpectedMessage();
@@ -309,16 +309,16 @@ for(int i = 0;i < enabledSuites.length;i++)
                 certificateRequest = new CertificateRequest(io_stream, length);
                 break;
                 case 14:
-    if(serverHello == null || serverHelloDone != null || isResuming)                
+                if(serverHello == null || serverHelloDone != null || isResuming)                
                 {
                     unexpectedMessage();
                     return;
                 } //End block
                 serverHelloDone = new ServerHelloDone(io_stream, length);
-    if(this.nonBlocking)                
+                if(this.nonBlocking)                
                 {
                     delegatedTasks.add(new DelegatedTask(new Runnable() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.076 -0400", hash_original_method = "0DFF79E1B822BFCDEB6260105932743B", hash_generated_method = "5828D0275E43E6D76D054149775437AB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.194 -0400", hash_original_method = "0DFF79E1B822BFCDEB6260105932743B", hash_generated_method = "5828D0275E43E6D76D054149775437AB")
         public void run() {
             processServerHelloDone();
             // ---------- Original Method ----------
@@ -330,7 +330,7 @@ for(int i = 0;i < enabledSuites.length;i++)
                 processServerHelloDone();
                 break;
                 case 20:
-    if(!changeCipherSpecReceived)                
+                if(!changeCipherSpecReceived)                
                 {
                     unexpectedMessage();
                     return;
@@ -340,7 +340,7 @@ for(int i = 0;i < enabledSuites.length;i++)
                 session.lastAccessedTime = System.currentTimeMillis();
                 session.context = parameters.getClientSessionContext();
                 parameters.getClientSessionContext().putSession(session);
-    if(isResuming)                
+                if(isResuming)                
                 {
                     sendChangeCipherSpec();
                 } //End block
@@ -366,7 +366,7 @@ for(int i = 0;i < enabledSuites.length;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.080 -0400", hash_original_method = "A121217103E96E47F6E62859875393D7", hash_generated_method = "2FF585C3D5729D57C12D07A25AF1150C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.197 -0400", hash_original_method = "A121217103E96E47F6E62859875393D7", hash_generated_method = "2FF585C3D5729D57C12D07A25AF1150C")
     @Override
     public void unwrapSSLv2(byte[] bytes) {
         addTaint(bytes[0]);
@@ -376,11 +376,11 @@ for(int i = 0;i < enabledSuites.length;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.081 -0400", hash_original_method = "8B073BF3F8F00875CF9B653567C3900A", hash_generated_method = "F31860A050F869286408932C4C5C5720")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.198 -0400", hash_original_method = "8B073BF3F8F00875CF9B653567C3900A", hash_generated_method = "F31860A050F869286408932C4C5C5720")
     @Override
     protected void makeFinished() {
         byte[] verify_data;
-    if(serverHello.server_version[1] == 1)        
+        if(serverHello.server_version[1] == 1)        
         {
             verify_data = new byte[12];
             computerVerifyDataTLS("client finished", verify_data);
@@ -392,14 +392,14 @@ for(int i = 0;i < enabledSuites.length;i++)
         } //End block
         clientFinished = new Finished(verify_data);
         send(clientFinished);
-    if(isResuming)        
+        if(isResuming)        
         {
             session.lastAccessedTime = System.currentTimeMillis();
             status = FINISHED;
         } //End block
         else
         {
-    if(serverHello.server_version[1] == 1)            
+            if(serverHello.server_version[1] == 1)            
             {
                 computerReferenceVerifyDataTLS("server finished");
             } //End block
@@ -414,12 +414,12 @@ for(int i = 0;i < enabledSuites.length;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.085 -0400", hash_original_method = "2DDF37E22088D1FE8BC73EB3CA83F3A0", hash_generated_method = "2337C43A9C88174D0885EE34102CF3D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.202 -0400", hash_original_method = "2DDF37E22088D1FE8BC73EB3CA83F3A0", hash_generated_method = "2337C43A9C88174D0885EE34102CF3D6")
      void processServerHelloDone() {
         PrivateKey clientKey = null;
-    if(serverCert != null)        
+        if(serverCert != null)        
         {
-    if(session.cipherSuite.isAnonymous())            
+            if(session.cipherSuite.isAnonymous())            
             {
                 unexpectedMessage();
                 return;
@@ -428,23 +428,23 @@ for(int i = 0;i < enabledSuites.length;i++)
         } //End block
         else
         {
-    if(!session.cipherSuite.isAnonymous())            
+            if(!session.cipherSuite.isAnonymous())            
             {
                 unexpectedMessage();
                 return;
             } //End block
         } //End block
-    if(certificateRequest != null)        
+        if(certificateRequest != null)        
         {
             X509Certificate[] certs = null;
             String alias = null;
             String[] certTypes = certificateRequest.getTypesAsString();
             X500Principal[] issuers = certificateRequest.certificate_authorities;
             X509KeyManager km = parameters.getKeyManager();
-    if(km instanceof X509ExtendedKeyManager)            
+            if(km instanceof X509ExtendedKeyManager)            
             {
                 X509ExtendedKeyManager ekm = (X509ExtendedKeyManager)km;
-    if(this.socketOwner != null)                
+                if(this.socketOwner != null)                
                 {
                     alias = ekm.chooseClientAlias(certTypes, issuers, this.socketOwner);
                 } //End block
@@ -452,7 +452,7 @@ for(int i = 0;i < enabledSuites.length;i++)
                 {
                     alias = ekm.chooseEngineClientAlias(certTypes, issuers, this.engineOwner);
                 } //End block
-    if(alias != null)                
+                if(alias != null)                
                 {
                     certs = ekm.getCertificateChain(alias);
                 } //End block
@@ -460,7 +460,7 @@ for(int i = 0;i < enabledSuites.length;i++)
             else
             {
                 alias = km.chooseClientAlias(certTypes, issuers, this.socketOwner);
-    if(alias != null)                
+                if(alias != null)                
                 {
                     certs = km.getCertificateChain(alias);
                 } //End block
@@ -470,14 +470,14 @@ for(int i = 0;i < enabledSuites.length;i++)
             clientKey = km.getPrivateKey(alias);
             send(clientCert);
         } //End block
-    if(session.cipherSuite.keyExchange == CipherSuite.KEY_EXCHANGE_RSA
+        if(session.cipherSuite.keyExchange == CipherSuite.KEY_EXCHANGE_RSA
                 || session.cipherSuite.keyExchange == CipherSuite.KEY_EXCHANGE_RSA_EXPORT)        
         {
             Cipher c;
             try 
             {
                 c = Cipher.getInstance("RSA/ECB/PKCS1Padding");
-    if(serverKeyExchange != null)                
+                if(serverKeyExchange != null)                
                 {
                     c.init(Cipher.ENCRYPT_MODE, serverKeyExchange
                             .getRSAPublicKey());
@@ -518,7 +518,7 @@ for(int i = 0;i < enabledSuites.length;i++)
                 KeyPairGenerator kpg = KeyPairGenerator.getInstance("DH");
                 PublicKey serverPublic;
                 DHParameterSpec spec;
-    if(serverKeyExchange != null)                
+                if(serverKeyExchange != null)                
                 {
                     serverPublic = kf.generatePublic(new DHPublicKeySpec(
                             serverKeyExchange.par3, serverKeyExchange.par1,
@@ -534,17 +534,17 @@ for(int i = 0;i < enabledSuites.length;i++)
                 kpg.initialize(spec);
                 KeyPair kp = kpg.generateKeyPair();
                 Key key = kp.getPublic();
-    if(clientCert != null
+                if(clientCert != null
                         && serverCert != null
                         && (session.cipherSuite.keyExchange == CipherSuite.KEY_EXCHANGE_DHE_RSA
                                 || session.cipherSuite.keyExchange == CipherSuite.KEY_EXCHANGE_DHE_DSS))                
                 {
                     PublicKey client_pk = clientCert.certs[0].getPublicKey();
                     PublicKey server_pk = serverCert.certs[0].getPublicKey();
-    if(client_pk instanceof DHKey
+                    if(client_pk instanceof DHKey
                             && server_pk instanceof DHKey)                    
                     {
-    if(((DHKey) client_pk).getParams().getG().equals(
+                        if(((DHKey) client_pk).getParams().getG().equals(
                                 ((DHKey) server_pk).getParams().getG())
                                 && ((DHKey) client_pk).getParams().getP()
                                     .equals(((DHKey) server_pk).getParams().getG()))                        
@@ -570,23 +570,23 @@ for(int i = 0;i < enabledSuites.length;i++)
                 return;
             } //End block
         } //End block
-    if(clientKeyExchange != null)        
+        if(clientKeyExchange != null)        
         {
             send(clientKeyExchange);
         } //End block
         computerMasterSecret();
-    if(clientCert != null && !clientKeyExchange.isEmpty())        
+        if(clientCert != null && !clientKeyExchange.isEmpty())        
         {
             String authType = clientKey.getAlgorithm();
             DigitalSignature ds = new DigitalSignature(authType);
             ds.init(clientKey);
-    if("RSA".equals(authType))            
+            if("RSA".equals(authType))            
             {
                 ds.setMD5(io_stream.getDigestMD5());
                 ds.setSHA(io_stream.getDigestSHA());
             } //End block
             else
-    if("DSA".equals(authType))            
+            if("DSA".equals(authType))            
             {
                 ds.setSHA(io_stream.getDigestSHA());
             } //End block
@@ -599,10 +599,10 @@ for(int i = 0;i < enabledSuites.length;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.086 -0400", hash_original_method = "D4DFA4A65ECB84B5CCE7F9A88CE9F713", hash_generated_method = "B104F25657ACC58E1B5DF9097A7E0310")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.203 -0400", hash_original_method = "D4DFA4A65ECB84B5CCE7F9A88CE9F713", hash_generated_method = "B104F25657ACC58E1B5DF9097A7E0310")
     private void verifyServerCert() {
         String authType = session.cipherSuite.getAuthType(serverKeyExchange != null);
-    if(authType == null)        
+        if(authType == null)        
         {
             return;
         } //End block
@@ -631,18 +631,18 @@ for(int i = 0;i < enabledSuites.length;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.087 -0400", hash_original_method = "EC675B353AC97965B98DB90ABCC2C0E4", hash_generated_method = "CBC1E69E18C206F9C2C0CDAD2D5ECA7A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.204 -0400", hash_original_method = "EC675B353AC97965B98DB90ABCC2C0E4", hash_generated_method = "CBC1E69E18C206F9C2C0CDAD2D5ECA7A")
     @Override
     public void receiveChangeCipherSpec() {
-    if(isResuming)        
+        if(isResuming)        
         {
-    if(serverHello == null)            
+            if(serverHello == null)            
             {
                 unexpectedMessage();
             } //End block
         } //End block
         else
-    if(clientFinished == null)        
+        if(clientFinished == null)        
         {
             unexpectedMessage();
         } //End block
@@ -659,11 +659,11 @@ for(int i = 0;i < enabledSuites.length;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.108 -0400", hash_original_method = "BCA1C752C9C2161C7353D057736B9B80", hash_generated_method = "0C8214996616DEDDA9AC254D396BA2D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.204 -0400", hash_original_method = "BCA1C752C9C2161C7353D057736B9B80", hash_generated_method = "EE5253BFD6174C24E631263FD42716F5")
     private SSLSessionImpl findSessionToResume() {
         String host = null;
         int port = -1;
-    if(engineOwner != null)        
+        if(engineOwner != null)        
         {
             host = engineOwner.getPeerHost();
             port = engineOwner.getPeerPort();
@@ -673,21 +673,21 @@ for(int i = 0;i < enabledSuites.length;i++)
             host = socketOwner.getInetAddress().getHostName();
             port = socketOwner.getPort();
         } //End block
-    if(host == null || port == -1)        
+        if(host == null || port == -1)        
         {
-SSLSessionImpl var540C13E9E156B687226421B24F2DF178_624631115 =             null;
-            var540C13E9E156B687226421B24F2DF178_624631115.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_624631115;
+SSLSessionImpl var540C13E9E156B687226421B24F2DF178_1432250072 =             null;
+            var540C13E9E156B687226421B24F2DF178_1432250072.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_1432250072;
         } //End block
         ClientSessionContext context = parameters.getClientSessionContext();
         SSLSessionImpl session = (SSLSessionImpl) context.getSession(host, port);
-    if(session != null)        
+        if(session != null)        
         {
             session = (SSLSessionImpl) session.clone();
         } //End block
-SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_311660083 =         session;
-        varD555E544A66E0F97DA6BCDE940E3E79C_311660083.addTaint(taint);
-        return varD555E544A66E0F97DA6BCDE940E3E79C_311660083;
+SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2101822270 =         session;
+        varD555E544A66E0F97DA6BCDE940E3E79C_2101822270.addTaint(taint);
+        return varD555E544A66E0F97DA6BCDE940E3E79C_2101822270;
         // ---------- Original Method ----------
         //String host = null;
         //int port = -1;

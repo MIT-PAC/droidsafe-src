@@ -8,11 +8,11 @@ import java.nio.CharBuffer;
 import java.nio.ReadOnlyBufferException;
 
 public abstract class Reader implements Readable, Closeable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.949 -0400", hash_original_field = "DCE7C4174CE9323904A934A486C41288", hash_generated_field = "AB852390F41C8C6739EA01C427D6BB51")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.559 -0400", hash_original_field = "DCE7C4174CE9323904A934A486C41288", hash_generated_field = "AB852390F41C8C6739EA01C427D6BB51")
 
     protected Object lock;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.949 -0400", hash_original_method = "23BD0F45FCD5744DE183656F7640DB10", hash_generated_method = "34ED878B44B0872C50C8F22A6EAAAA08")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.559 -0400", hash_original_method = "23BD0F45FCD5744DE183656F7640DB10", hash_generated_method = "34ED878B44B0872C50C8F22A6EAAAA08")
     protected  Reader() {
         lock = this;
         // ---------- Original Method ----------
@@ -20,13 +20,13 @@ public abstract class Reader implements Readable, Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.950 -0400", hash_original_method = "841CA56D08654DE62644A6941CD75AE9", hash_generated_method = "FF2A58ADC1ACF9E2C2B97737EDCD977B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.560 -0400", hash_original_method = "841CA56D08654DE62644A6941CD75AE9", hash_generated_method = "6ACC0117984130FEF270F8A8B65EEA39")
     protected  Reader(Object lock) {
-    if(lock == null)        
+        if(lock == null)        
         {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1150829133 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_1150829133.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1150829133;
+            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1130269748 = new NullPointerException();
+            var7338BC9F48D81FE0BBD6183F4014DCC4_1130269748.addTaint(taint);
+            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1130269748;
         } //End block
         this.lock = lock;
         // ---------- Original Method ----------
@@ -40,42 +40,42 @@ public abstract class Reader implements Readable, Closeable {
     public abstract void close() throws IOException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.951 -0400", hash_original_method = "2066C142E0E9A9BCC65518E0FCDDA1D6", hash_generated_method = "9D2061A81986A1BD2D4C90BF5C8AB930")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.560 -0400", hash_original_method = "2066C142E0E9A9BCC65518E0FCDDA1D6", hash_generated_method = "2FA2C63572C6BB3E092699AC1428BB82")
     public void mark(int readLimit) throws IOException {
         addTaint(readLimit);
-        IOException var1508E3FDF27FD56D4E1051DB16DE1816_1484499688 = new IOException();
-        var1508E3FDF27FD56D4E1051DB16DE1816_1484499688.addTaint(taint);
-        throw var1508E3FDF27FD56D4E1051DB16DE1816_1484499688;
+        IOException var1508E3FDF27FD56D4E1051DB16DE1816_198267087 = new IOException();
+        var1508E3FDF27FD56D4E1051DB16DE1816_198267087.addTaint(taint);
+        throw var1508E3FDF27FD56D4E1051DB16DE1816_198267087;
         // ---------- Original Method ----------
         //throw new IOException();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.952 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "21350C4434B8A868B793E9D1839A10B7")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.561 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "119DC9F213F1DAF82196F6D9D3F1392E")
     public boolean markSupported() {
-        boolean var68934A3E9455FA72420237EB05902327_1854795426 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1704195219 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1704195219;
+        boolean var68934A3E9455FA72420237EB05902327_212776920 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1121786310 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1121786310;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.952 -0400", hash_original_method = "4B904F9F4843983C12271BC14A375F35", hash_generated_method = "D95F270773B7BC02A7C416A5437F1A0B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.561 -0400", hash_original_method = "4B904F9F4843983C12271BC14A375F35", hash_generated_method = "53FD29739C2536D59A3E4D34635FC8EF")
     public int read() throws IOException {
         synchronized
 (lock)        {
             char[] charArray = new char[1];
-    if(read(charArray, 0, 1) != -1)            
+            if(read(charArray, 0, 1) != -1)            
             {
-                int var5B6AEFF299C84706C52041B8081F3370_996353476 = (charArray[0]);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_743812444 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_743812444;
+                int var5B6AEFF299C84706C52041B8081F3370_467175230 = (charArray[0]);
+                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_603867010 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_603867010;
             } //End block
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_1519234335 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_587878656 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_587878656;
+            int var6BB61E3B7BCE0931DA574D19D1D82C88_1596382483 = (-1);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_151368181 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_151368181;
         } //End block
         // ---------- Original Method ----------
         //synchronized (lock) {
@@ -88,12 +88,12 @@ public abstract class Reader implements Readable, Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.953 -0400", hash_original_method = "E743E3D19B5FD453D0CBC2E5CA424673", hash_generated_method = "F6A01B46CF5B694298DCAFE15FD8F7AE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.562 -0400", hash_original_method = "E743E3D19B5FD453D0CBC2E5CA424673", hash_generated_method = "C34F63961F0884DC63CA06ADEC1498AE")
     public int read(char[] buf) throws IOException {
         addTaint(buf[0]);
-        int var4828354AC0CD4A28CE476D719F00E912_434255972 = (read(buf, 0, buf.length));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1817486076 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1817486076;
+        int var4828354AC0CD4A28CE476D719F00E912_624196172 = (read(buf, 0, buf.length));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1672564327 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1672564327;
         // ---------- Original Method ----------
         //return read(buf, 0, buf.length);
     }
@@ -102,35 +102,35 @@ public abstract class Reader implements Readable, Closeable {
     public abstract int read(char[] buf, int offset, int count) throws IOException;
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.954 -0400", hash_original_method = "D41EE0434E50B3C6E1AA0E42EDD44E0B", hash_generated_method = "55B049812EF39A97B075B6B848028795")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.562 -0400", hash_original_method = "D41EE0434E50B3C6E1AA0E42EDD44E0B", hash_generated_method = "87D0550D57E2E56A71E37C9419F96770")
     public boolean ready() throws IOException {
-        boolean var68934A3E9455FA72420237EB05902327_1271823751 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_567673433 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_567673433;
+        boolean var68934A3E9455FA72420237EB05902327_1851989275 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1961464190 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1961464190;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.955 -0400", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "359A7D1B007E8C9E03EE29004F6C9F75")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.563 -0400", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "A59EB893AD90CAFAE7C8C9BB0ECEF97C")
     public void reset() throws IOException {
-        IOException var1508E3FDF27FD56D4E1051DB16DE1816_934754458 = new IOException();
-        var1508E3FDF27FD56D4E1051DB16DE1816_934754458.addTaint(taint);
-        throw var1508E3FDF27FD56D4E1051DB16DE1816_934754458;
+        IOException var1508E3FDF27FD56D4E1051DB16DE1816_2032160395 = new IOException();
+        var1508E3FDF27FD56D4E1051DB16DE1816_2032160395.addTaint(taint);
+        throw var1508E3FDF27FD56D4E1051DB16DE1816_2032160395;
         // ---------- Original Method ----------
         //throw new IOException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.956 -0400", hash_original_method = "7E8A2F73FB8EAE936D216E90BE91676B", hash_generated_method = "2C3FB6D6097308594437B2AB6A90A96E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.563 -0400", hash_original_method = "7E8A2F73FB8EAE936D216E90BE91676B", hash_generated_method = "DF34705AF9DA8AD14EA1CCC68B333D82")
     public long skip(long charCount) throws IOException {
         addTaint(charCount);
-    if(charCount < 0)        
+        if(charCount < 0)        
         {
-            IllegalArgumentException var1938519F99623D8B8D1D15216863BFAB_1496935932 = new IllegalArgumentException("charCount < 0: " + charCount);
-            var1938519F99623D8B8D1D15216863BFAB_1496935932.addTaint(taint);
-            throw var1938519F99623D8B8D1D15216863BFAB_1496935932;
+            IllegalArgumentException var1938519F99623D8B8D1D15216863BFAB_844314565 = new IllegalArgumentException("charCount < 0: " + charCount);
+            var1938519F99623D8B8D1D15216863BFAB_844314565.addTaint(taint);
+            throw var1938519F99623D8B8D1D15216863BFAB_844314565;
         } //End block
         synchronized
 (lock)        {
@@ -141,27 +141,27 @@ public abstract class Reader implements Readable, Closeable {
 (skipped < charCount)            
             {
                 int read = read(charsSkipped, 0, toRead);
-    if(read == -1)                
+                if(read == -1)                
                 {
-                    long varE52E279299E912838F689D4380C81F4A_636336101 = (skipped);
-                                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1122761774 = getTaintLong();
-                    return var0F5264038205EDFB1AC05FBB0E8C5E94_1122761774;
+                    long varE52E279299E912838F689D4380C81F4A_2052213478 = (skipped);
+                                        long var0F5264038205EDFB1AC05FBB0E8C5E94_370181174 = getTaintLong();
+                    return var0F5264038205EDFB1AC05FBB0E8C5E94_370181174;
                 } //End block
                 skipped += read;
-    if(read < toRead)                
+                if(read < toRead)                
                 {
-                    long varE52E279299E912838F689D4380C81F4A_171669530 = (skipped);
-                                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1734272223 = getTaintLong();
-                    return var0F5264038205EDFB1AC05FBB0E8C5E94_1734272223;
+                    long varE52E279299E912838F689D4380C81F4A_1375794625 = (skipped);
+                                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1664152784 = getTaintLong();
+                    return var0F5264038205EDFB1AC05FBB0E8C5E94_1664152784;
                 } //End block
-    if(charCount - skipped < toRead)                
+                if(charCount - skipped < toRead)                
                 {
                     toRead = (int) (charCount - skipped);
                 } //End block
             } //End block
-            long varE52E279299E912838F689D4380C81F4A_1045370425 = (skipped);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1259375588 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_1259375588;
+            long varE52E279299E912838F689D4380C81F4A_1365417727 = (skipped);
+                        long var0F5264038205EDFB1AC05FBB0E8C5E94_265083516 = getTaintLong();
+            return var0F5264038205EDFB1AC05FBB0E8C5E94_265083516;
         } //End block
         // ---------- Original Method ----------
         //if (charCount < 0) {
@@ -189,19 +189,19 @@ public abstract class Reader implements Readable, Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.958 -0400", hash_original_method = "3EEA08DE1417537F34B729CF4FE40629", hash_generated_method = "9A294E3DBFFF9E2CE7D58FF1818C22A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.564 -0400", hash_original_method = "3EEA08DE1417537F34B729CF4FE40629", hash_generated_method = "AF72018FA5B2DB253969FA2595202A0F")
     public int read(CharBuffer target) throws IOException {
         addTaint(target.getTaint());
         int length = target.length();
         char[] buf = new char[length];
         length = Math.min(length, read(buf));
-    if(length > 0)        
+        if(length > 0)        
         {
             target.put(buf, 0, length);
         } //End block
-        int var2FA47F7C65FEC19CC163B195725E3844_467464825 = (length);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_248864896 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_248864896;
+        int var2FA47F7C65FEC19CC163B195725E3844_1972091792 = (length);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_635520017 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_635520017;
         // ---------- Original Method ----------
         //int length = target.length();
         //char[] buf = new char[length];

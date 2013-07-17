@@ -11,22 +11,22 @@ import org.apache.http.conn.routing.HttpRoute;
 import org.apache.http.impl.conn.AbstractPoolEntry;
 
 public class BasicPoolEntry extends AbstractPoolEntry {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.997 -0400", hash_original_field = "B8AF13EA9C8FE890C9979A1FA8DBDE22", hash_generated_field = "E34C8060B8024F897E4DE2DDC540C297")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.317 -0400", hash_original_field = "B8AF13EA9C8FE890C9979A1FA8DBDE22", hash_generated_field = "E34C8060B8024F897E4DE2DDC540C297")
 
     private BasicPoolEntryRef reference;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.998 -0400", hash_original_method = "9CCB47DAF369299C60002AA9C328CEC6", hash_generated_method = "6A43729BE10D205118296AF7C733BC1B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.318 -0400", hash_original_method = "9CCB47DAF369299C60002AA9C328CEC6", hash_generated_method = "9BBF9EA52E762ED81E1C10784C4E98BD")
     public  BasicPoolEntry(ClientConnectionOperator op,
                           HttpRoute route,
                           ReferenceQueue<Object> queue) {
         super(op, route);
         addTaint(route.getTaint());
         addTaint(op.getTaint());
-    if(route == null)        
+        if(route == null)        
         {
-            IllegalArgumentException varFD744275F02EFC64909CB4CC194944E5_148899958 = new IllegalArgumentException("HTTP route may not be null");
-            varFD744275F02EFC64909CB4CC194944E5_148899958.addTaint(taint);
-            throw varFD744275F02EFC64909CB4CC194944E5_148899958;
+            IllegalArgumentException varFD744275F02EFC64909CB4CC194944E5_1253588891 = new IllegalArgumentException("HTTP route may not be null");
+            varFD744275F02EFC64909CB4CC194944E5_1253588891.addTaint(taint);
+            throw varFD744275F02EFC64909CB4CC194944E5_1253588891;
         } //End block
         this.reference = new BasicPoolEntryRef(this, queue);
         // ---------- Original Method ----------
@@ -37,31 +37,31 @@ public class BasicPoolEntry extends AbstractPoolEntry {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.998 -0400", hash_original_method = "833089AC155D5F0DD92B0C74A18F2763", hash_generated_method = "4A534C4153A561A98B2765EC0978FB8C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.319 -0400", hash_original_method = "833089AC155D5F0DD92B0C74A18F2763", hash_generated_method = "AB66B5291C6C7BD851189997D069BA50")
     protected final OperatedClientConnection getConnection() {
-OperatedClientConnection var5BFA9F3364143AB41D8297B301DBEBFA_826042886 =         super.connection;
-        var5BFA9F3364143AB41D8297B301DBEBFA_826042886.addTaint(taint);
-        return var5BFA9F3364143AB41D8297B301DBEBFA_826042886;
+OperatedClientConnection var5BFA9F3364143AB41D8297B301DBEBFA_956021652 =         super.connection;
+        var5BFA9F3364143AB41D8297B301DBEBFA_956021652.addTaint(taint);
+        return var5BFA9F3364143AB41D8297B301DBEBFA_956021652;
         // ---------- Original Method ----------
         //return super.connection;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.998 -0400", hash_original_method = "F928965F3078B3981FAC8F2BBDABCB11", hash_generated_method = "30EDDF54242C9CEF6A4E3A78E9695FEB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.319 -0400", hash_original_method = "F928965F3078B3981FAC8F2BBDABCB11", hash_generated_method = "D14FED9B8A5AE184FD4873D0263CD73E")
     protected final HttpRoute getPlannedRoute() {
-HttpRoute varC5F10401C07B57E7F878A1A1BA05EB57_2102075438 =         super.route;
-        varC5F10401C07B57E7F878A1A1BA05EB57_2102075438.addTaint(taint);
-        return varC5F10401C07B57E7F878A1A1BA05EB57_2102075438;
+HttpRoute varC5F10401C07B57E7F878A1A1BA05EB57_1654771705 =         super.route;
+        varC5F10401C07B57E7F878A1A1BA05EB57_1654771705.addTaint(taint);
+        return varC5F10401C07B57E7F878A1A1BA05EB57_1654771705;
         // ---------- Original Method ----------
         //return super.route;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.998 -0400", hash_original_method = "A5F0662ECC443ACB4B44B4D02A3B5BBC", hash_generated_method = "942D8A66C69D1DBC97CC799CD5193C26")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.320 -0400", hash_original_method = "A5F0662ECC443ACB4B44B4D02A3B5BBC", hash_generated_method = "5C91004207B98C1314A2FF08C35B4621")
     protected final BasicPoolEntryRef getWeakRef() {
-BasicPoolEntryRef var29BAF2A5D8FE5ED926C67F1F68BB834A_247399253 =         this.reference;
-        var29BAF2A5D8FE5ED926C67F1F68BB834A_247399253.addTaint(taint);
-        return var29BAF2A5D8FE5ED926C67F1F68BB834A_247399253;
+BasicPoolEntryRef var29BAF2A5D8FE5ED926C67F1F68BB834A_1142818898 =         this.reference;
+        var29BAF2A5D8FE5ED926C67F1F68BB834A_1142818898.addTaint(taint);
+        return var29BAF2A5D8FE5ED926C67F1F68BB834A_1142818898;
         // ---------- Original Method ----------
         //return this.reference;
     }

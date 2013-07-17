@@ -7,49 +7,49 @@ import droidsafe.runtime.*;
 
 public abstract class AbstractSet<E> extends AbstractCollection<E> implements Set<E> {
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.289 -0400", hash_original_method = "422EAA7182FF45B88C4EE6C211DE4EBB", hash_generated_method = "370CF36F1557D7355E48B1CB7D8F5E8D")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.656 -0400", hash_original_method = "422EAA7182FF45B88C4EE6C211DE4EBB", hash_generated_method = "370CF36F1557D7355E48B1CB7D8F5E8D")
     protected  AbstractSet() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.290 -0400", hash_original_method = "8965F512606A1DFD0C1662786439C503", hash_generated_method = "24BB3F415C56C73FEEF98BA9C84212B6")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.657 -0400", hash_original_method = "8965F512606A1DFD0C1662786439C503", hash_generated_method = "F562AD9D6FCD2DAE6CC8714D342120D2")
     @Override
     public boolean equals(Object object) {
         addTaint(object.getTaint());
-    if(this == object)        
+        if(this == object)        
         {
-            boolean varB326B5062B2F0E69046810717534CB09_533869892 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_102534499 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_102534499;
+            boolean varB326B5062B2F0E69046810717534CB09_912764069 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1712191046 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1712191046;
         } //End block
-    if(object instanceof Set)        
+        if(object instanceof Set)        
         {
             Set<?> s = (Set<?>) object;
             try 
             {
-                boolean varF7695CAF5A9CB346DC0805A64AAE8DF9_668780601 = (size() == s.size() && containsAll(s));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_808062794 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_808062794;
+                boolean varF7695CAF5A9CB346DC0805A64AAE8DF9_159810235 = (size() == s.size() && containsAll(s));
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1798261613 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1798261613;
             } //End block
             catch (NullPointerException ignored)
             {
-                boolean var68934A3E9455FA72420237EB05902327_2100470006 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1859625984 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1859625984;
+                boolean var68934A3E9455FA72420237EB05902327_395958906 = (false);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1333996458 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1333996458;
             } //End block
             catch (ClassCastException ignored)
             {
-                boolean var68934A3E9455FA72420237EB05902327_1282571864 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_65609883 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_65609883;
+                boolean var68934A3E9455FA72420237EB05902327_646753934 = (false);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_506475887 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_506475887;
             } //End block
         } //End block
-        boolean var68934A3E9455FA72420237EB05902327_231600849 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2112277057 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2112277057;
+        boolean var68934A3E9455FA72420237EB05902327_1218782334 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1691824157 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1691824157;
         // ---------- Original Method ----------
         //if (this == object) {
             //return true;
@@ -68,8 +68,8 @@ public abstract class AbstractSet<E> extends AbstractCollection<E> implements Se
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.291 -0400", hash_original_method = "CFEA0B963C36C0E6CA161741555B0EDA", hash_generated_method = "A932B71A4D0C0B01614858C5FB3CC3CB")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.658 -0400", hash_original_method = "CFEA0B963C36C0E6CA161741555B0EDA", hash_generated_method = "4329886434D842FF3EFF045E72E15555")
     @Override
     public int hashCode() {
         int result = 0;
@@ -80,9 +80,9 @@ public abstract class AbstractSet<E> extends AbstractCollection<E> implements Se
             Object next = it.next();
             result += next == null ? 0 : next.hashCode();
         } //End block
-        int varB4A88417B3D0170D754C647C30B7216A_1999902209 = (result);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1416542900 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1416542900;
+        int varB4A88417B3D0170D754C647C30B7216A_554553828 = (result);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1019373771 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1019373771;
         // ---------- Original Method ----------
         //int result = 0;
         //Iterator<?> it = iterator();
@@ -94,18 +94,18 @@ public abstract class AbstractSet<E> extends AbstractCollection<E> implements Se
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.292 -0400", hash_original_method = "6793D4CBA252A26447B19640912FAD83", hash_generated_method = "E45562D93476DB3DBE95CDC9E49D1AE1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.659 -0400", hash_original_method = "6793D4CBA252A26447B19640912FAD83", hash_generated_method = "3340A7706F9D036C2E7AF8AB63DB5D19")
     @Override
     public boolean removeAll(Collection<?> collection) {
         addTaint(collection.getTaint());
         boolean result = false;
-    if(size() <= collection.size())        
+        if(size() <= collection.size())        
         {
             Iterator<?> it = iterator();
             while
 (it.hasNext())            
             {
-    if(collection.contains(it.next()))                
+                if(collection.contains(it.next()))                
                 {
                     it.remove();
                     result = true;
@@ -121,9 +121,9 @@ public abstract class AbstractSet<E> extends AbstractCollection<E> implements Se
                 result = remove(it.next()) || result;
             } //End block
         } //End block
-        boolean varB4A88417B3D0170D754C647C30B7216A_2046825607 = (result);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1227396963 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1227396963;
+        boolean varB4A88417B3D0170D754C647C30B7216A_1642279308 = (result);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_986545679 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_986545679;
         // ---------- Original Method ----------
         //boolean result = false;
         //if (size() <= collection.size()) {

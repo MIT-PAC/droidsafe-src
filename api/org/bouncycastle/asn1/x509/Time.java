@@ -16,19 +16,19 @@ import java.util.Date;
 import java.util.SimpleTimeZone;
 
 public class Time extends ASN1Encodable implements ASN1Choice {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.324 -0400", hash_original_field = "07CC694B9B3FC636710FA08B6922C42B", hash_generated_field = "9454FEFE155A6399796F93141389DE58")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.964 -0400", hash_original_field = "07CC694B9B3FC636710FA08B6922C42B", hash_generated_field = "9454FEFE155A6399796F93141389DE58")
 
     DERObject time;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.324 -0400", hash_original_method = "01C20E280B683C170EEEF3EFC0766C68", hash_generated_method = "50FE084CB78EFB62C1AEE55F99ED7D1C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.964 -0400", hash_original_method = "01C20E280B683C170EEEF3EFC0766C68", hash_generated_method = "86AEDB52A98DAF180650ABDAA28E6A99")
     public  Time(
         DERObject   time) {
-    if(!(time instanceof DERUTCTime)
+        if(!(time instanceof DERUTCTime)
             && !(time instanceof DERGeneralizedTime))        
         {
-            IllegalArgumentException varEB3AD89893BE62E8E2C248F9BE2332CE_29654718 = new IllegalArgumentException("unknown object passed to Time");
-            varEB3AD89893BE62E8E2C248F9BE2332CE_29654718.addTaint(taint);
-            throw varEB3AD89893BE62E8E2C248F9BE2332CE_29654718;
+            IllegalArgumentException varEB3AD89893BE62E8E2C248F9BE2332CE_480538400 = new IllegalArgumentException("unknown object passed to Time");
+            varEB3AD89893BE62E8E2C248F9BE2332CE_480538400.addTaint(taint);
+            throw varEB3AD89893BE62E8E2C248F9BE2332CE_480538400;
         } //End block
         this.time = time;
         // ---------- Original Method ----------
@@ -41,7 +41,7 @@ public class Time extends ASN1Encodable implements ASN1Choice {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.325 -0400", hash_original_method = "8BBEA010362F5295A61D1C019D01CC8B", hash_generated_method = "9D1EB4E2FF0778DE3B851DE145D48D43")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.965 -0400", hash_original_method = "8BBEA010362F5295A61D1C019D01CC8B", hash_generated_method = "9D1EB4E2FF0778DE3B851DE145D48D43")
     public  Time(
         Date    date) {
         addTaint(date.getTaint());
@@ -50,7 +50,7 @@ public class Time extends ASN1Encodable implements ASN1Choice {
         dateF.setTimeZone(tz);
         String d = dateF.format(date) + "Z";
         int year = Integer.parseInt(d.substring(0, 4));
-    if(year < 1950 || year > 2049)        
+        if(year < 1950 || year > 2049)        
         {
             time = new DERGeneralizedTime(d);
         } //End block
@@ -75,7 +75,7 @@ public class Time extends ASN1Encodable implements ASN1Choice {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static Time getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
@@ -83,7 +83,7 @@ public class Time extends ASN1Encodable implements ASN1Choice {
     }
 
     
-        public static Time getInstance(
+    public static Time getInstance(
         Object  obj) {
         if (obj == null || obj instanceof Time)
         {
@@ -101,19 +101,19 @@ public class Time extends ASN1Encodable implements ASN1Choice {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.326 -0400", hash_original_method = "BF57E645E9DF37568C2EEE61DCF61153", hash_generated_method = "D9E99674D1497710ACF29F10CEE0E7E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.967 -0400", hash_original_method = "BF57E645E9DF37568C2EEE61DCF61153", hash_generated_method = "BE0E9DE7FE4501F1C472D45939BCC3C8")
     public String getTime() {
-    if(time instanceof DERUTCTime)        
+        if(time instanceof DERUTCTime)        
         {
-String var6737BDEA5D416D8B776FC3237CFB7AEE_345866125 =             ((DERUTCTime)time).getAdjustedTime();
-            var6737BDEA5D416D8B776FC3237CFB7AEE_345866125.addTaint(taint);
-            return var6737BDEA5D416D8B776FC3237CFB7AEE_345866125;
+String var6737BDEA5D416D8B776FC3237CFB7AEE_680680575 =             ((DERUTCTime)time).getAdjustedTime();
+            var6737BDEA5D416D8B776FC3237CFB7AEE_680680575.addTaint(taint);
+            return var6737BDEA5D416D8B776FC3237CFB7AEE_680680575;
         } //End block
         else
         {
-String varF54206F6C86C22C29E8157882DDD686C_493728726 =             ((DERGeneralizedTime)time).getTime();
-            varF54206F6C86C22C29E8157882DDD686C_493728726.addTaint(taint);
-            return varF54206F6C86C22C29E8157882DDD686C_493728726;
+String varF54206F6C86C22C29E8157882DDD686C_1707747037 =             ((DERGeneralizedTime)time).getTime();
+            varF54206F6C86C22C29E8157882DDD686C_1707747037.addTaint(taint);
+            return varF54206F6C86C22C29E8157882DDD686C_1707747037;
         } //End block
         // ---------- Original Method ----------
         //if (time instanceof DERUTCTime)
@@ -127,29 +127,29 @@ String varF54206F6C86C22C29E8157882DDD686C_493728726 =             ((DERGenerali
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.326 -0400", hash_original_method = "FDC0BE61EAA40B266A36758B51B3F270", hash_generated_method = "022E1243C417282B9A2555B5B0E460A7")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.967 -0400", hash_original_method = "FDC0BE61EAA40B266A36758B51B3F270", hash_generated_method = "6CBE6C16C4F40BFEF29BDA3A6432F906")
     public Date getDate() {
         try 
         {
-    if(time instanceof DERUTCTime)            
+            if(time instanceof DERUTCTime)            
             {
-Date var5C4DF896594C919BFBC3B94B005A0623_457786699 =                 ((DERUTCTime)time).getAdjustedDate();
-                var5C4DF896594C919BFBC3B94B005A0623_457786699.addTaint(taint);
-                return var5C4DF896594C919BFBC3B94B005A0623_457786699;
+Date var5C4DF896594C919BFBC3B94B005A0623_1987292244 =                 ((DERUTCTime)time).getAdjustedDate();
+                var5C4DF896594C919BFBC3B94B005A0623_1987292244.addTaint(taint);
+                return var5C4DF896594C919BFBC3B94B005A0623_1987292244;
             } //End block
             else
             {
-Date var8D783C4AB38B34C5480A243364749A59_75162190 =                 ((DERGeneralizedTime)time).getDate();
-                var8D783C4AB38B34C5480A243364749A59_75162190.addTaint(taint);
-                return var8D783C4AB38B34C5480A243364749A59_75162190;
+Date var8D783C4AB38B34C5480A243364749A59_1285248308 =                 ((DERGeneralizedTime)time).getDate();
+                var8D783C4AB38B34C5480A243364749A59_1285248308.addTaint(taint);
+                return var8D783C4AB38B34C5480A243364749A59_1285248308;
             } //End block
         } //End block
         catch (ParseException e)
         {
-            IllegalStateException var28109244B68609BB4DDBD618A711B019_248142880 = new IllegalStateException("invalid date string: " + e.getMessage());
-            var28109244B68609BB4DDBD618A711B019_248142880.addTaint(taint);
-            throw var28109244B68609BB4DDBD618A711B019_248142880;
+            IllegalStateException var28109244B68609BB4DDBD618A711B019_1472596386 = new IllegalStateException("invalid date string: " + e.getMessage());
+            var28109244B68609BB4DDBD618A711B019_1472596386.addTaint(taint);
+            throw var28109244B68609BB4DDBD618A711B019_1472596386;
         } //End block
         // ---------- Original Method ----------
         //try
@@ -170,22 +170,22 @@ Date var8D783C4AB38B34C5480A243364749A59_75162190 =                 ((DERGeneral
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.326 -0400", hash_original_method = "4A8C4B62F84A5603FDAAD94F25A110A4", hash_generated_method = "BF17D9376BC07B0AE09AF0FEFAB1CF8E")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.968 -0400", hash_original_method = "4A8C4B62F84A5603FDAAD94F25A110A4", hash_generated_method = "BC3FCCCD35FF47B0F49CA7EE8A918BF1")
     public DERObject toASN1Object() {
-DERObject varA66D020F4BCAB26A12562312D8A04DED_978425339 =         time;
-        varA66D020F4BCAB26A12562312D8A04DED_978425339.addTaint(taint);
-        return varA66D020F4BCAB26A12562312D8A04DED_978425339;
+DERObject varA66D020F4BCAB26A12562312D8A04DED_712409709 =         time;
+        varA66D020F4BCAB26A12562312D8A04DED_712409709.addTaint(taint);
+        return varA66D020F4BCAB26A12562312D8A04DED_712409709;
         // ---------- Original Method ----------
         //return time;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.327 -0400", hash_original_method = "B1D8E302C2A2168C967B1C035989FAE4", hash_generated_method = "805BFA01B9A68AE9208BFFFBDCAE2EB5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.968 -0400", hash_original_method = "B1D8E302C2A2168C967B1C035989FAE4", hash_generated_method = "BA1855A097A7E7C43EC34AD04DA41F8C")
     public String toString() {
-String varA2437939C7847B22878509056EAFE1EF_547260502 =         getTime();
-        varA2437939C7847B22878509056EAFE1EF_547260502.addTaint(taint);
-        return varA2437939C7847B22878509056EAFE1EF_547260502;
+String varA2437939C7847B22878509056EAFE1EF_1661126395 =         getTime();
+        varA2437939C7847B22878509056EAFE1EF_1661126395.addTaint(taint);
+        return varA2437939C7847B22878509056EAFE1EF_1661126395;
         // ---------- Original Method ----------
         //return getTime();
     }

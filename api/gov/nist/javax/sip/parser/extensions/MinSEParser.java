@@ -12,7 +12,7 @@ import javax.sip.*;
 
 public class MinSEParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.727 -0400", hash_original_method = "4E326F54C0BC2C416F3292ADC3B64C39", hash_generated_method = "2A074247CD48DBE45FB5E6C0EEF6E56E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.734 -0400", hash_original_method = "4E326F54C0BC2C416F3292ADC3B64C39", hash_generated_method = "2A074247CD48DBE45FB5E6C0EEF6E56E")
     public  MinSEParser(String text) {
         super(text);
         addTaint(text.getTaint());
@@ -20,7 +20,7 @@ public class MinSEParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.730 -0400", hash_original_method = "B8B8CA8DFA565E816EE248A435214726", hash_generated_method = "C6A16FD6432DA865B85A7B65721542F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.735 -0400", hash_original_method = "B8B8CA8DFA565E816EE248A435214726", hash_generated_method = "C6A16FD6432DA865B85A7B65721542F7")
     protected  MinSEParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -28,10 +28,10 @@ public class MinSEParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.766 -0400", hash_original_method = "528678E8CA90A52E25DB45830845A36C", hash_generated_method = "9187F4832D1994FFD82AD0EAE7BA3384")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.754 -0400", hash_original_method = "528678E8CA90A52E25DB45830845A36C", hash_generated_method = "CEA5F129CA828EF26F6AC3876C928EB6")
     public SIPHeader parse() throws ParseException {
         MinSE minse = new MinSE();
-    if(debug)        
+        if(debug)        
         dbg_enter("parse");
         try 
         {
@@ -44,25 +44,25 @@ public class MinSEParser extends ParametersParser {
             } //End block
             catch (NumberFormatException ex)
             {
-                java.text.ParseException var5FB99FE9B64E519E79EC6426B25925EC_196574685 = createParseException("bad integer format");
-                var5FB99FE9B64E519E79EC6426B25925EC_196574685.addTaint(taint);
-                throw var5FB99FE9B64E519E79EC6426B25925EC_196574685;
+                java.text.ParseException var5FB99FE9B64E519E79EC6426B25925EC_1316769831 = createParseException("bad integer format");
+                var5FB99FE9B64E519E79EC6426B25925EC_1316769831.addTaint(taint);
+                throw var5FB99FE9B64E519E79EC6426B25925EC_1316769831;
             } //End block
             catch (InvalidArgumentException ex)
             {
-                java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1541787794 = createParseException(ex.getMessage());
-                varB8C80F72F95BF6A850D07F4EC5726C09_1541787794.addTaint(taint);
-                throw varB8C80F72F95BF6A850D07F4EC5726C09_1541787794;
+                java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_916870105 = createParseException(ex.getMessage());
+                varB8C80F72F95BF6A850D07F4EC5726C09_916870105.addTaint(taint);
+                throw varB8C80F72F95BF6A850D07F4EC5726C09_916870105;
             } //End block
             this.lexer.SPorHT();
             super.parse(minse);
-SIPHeader varF3CC1D7F771FF7BA71AED1439CF6D47D_1671047371 =             minse;
-            varF3CC1D7F771FF7BA71AED1439CF6D47D_1671047371.addTaint(taint);
-            return varF3CC1D7F771FF7BA71AED1439CF6D47D_1671047371;
+SIPHeader varF3CC1D7F771FF7BA71AED1439CF6D47D_158728804 =             minse;
+            varF3CC1D7F771FF7BA71AED1439CF6D47D_158728804.addTaint(taint);
+            return varF3CC1D7F771FF7BA71AED1439CF6D47D_158728804;
         } //End block
         finally 
         {
-    if(debug)            
+            if(debug)            
             dbg_leave("parse");
         } //End block
         // ---------- Original Method ----------
@@ -90,7 +90,7 @@ SIPHeader varF3CC1D7F771FF7BA71AED1439CF6D47D_1671047371 =             minse;
     }
 
     
-        public static void main(String args[]) throws ParseException {
+    public static void main(String args[]) throws ParseException {
         String to[] =
             {   "Min-SE: 30\n",
                 "Min-SE: 45;some-param=somevalue\n",

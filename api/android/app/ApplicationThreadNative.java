@@ -29,7 +29,7 @@ import java.util.Map;
 
 public abstract class ApplicationThreadNative extends Binder implements IApplicationThread {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.919 -0400", hash_original_method = "94F554AA12869316A649B35CDD2C48B7", hash_generated_method = "7133F8D8ECAF77EA1D7A82265BA8BB74")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.741 -0400", hash_original_method = "94F554AA12869316A649B35CDD2C48B7", hash_generated_method = "7133F8D8ECAF77EA1D7A82265BA8BB74")
     public  ApplicationThreadNative() {
         attachInterface(this, descriptor);
         // ---------- Original Method ----------
@@ -37,7 +37,7 @@ public abstract class ApplicationThreadNative extends Binder implements IApplica
     }
 
     
-        static public IApplicationThread asInterface(IBinder obj) {
+    static public IApplicationThread asInterface(IBinder obj) {
         if (obj == null) {
             return null;
         }
@@ -50,8 +50,8 @@ public abstract class ApplicationThreadNative extends Binder implements IApplica
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.932 -0400", hash_original_method = "B17DF3ED953946DC6FB6C3E82DF1C3B7", hash_generated_method = "3A1547BF2B499BFBA0133EB6B6A316C5")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.754 -0400", hash_original_method = "B17DF3ED953946DC6FB6C3E82DF1C3B7", hash_generated_method = "9D01222C3F4FF1949B4F57900166ED54")
     @Override
     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -68,9 +68,9 @@ switch(code){
             boolean userLeaving = data.readInt() != 0;
             int configChanges = data.readInt();
             schedulePauseActivity(b, finished, userLeaving, configChanges);
-            boolean varB326B5062B2F0E69046810717534CB09_1813513142 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1374006121 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1374006121;
+            boolean varB326B5062B2F0E69046810717534CB09_2123717364 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1017628204 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1017628204;
         } //End block
         case SCHEDULE_STOP_ACTIVITY_TRANSACTION:
         {
@@ -79,9 +79,9 @@ switch(code){
             boolean show = data.readInt() != 0;
             int configChanges = data.readInt();
             scheduleStopActivity(b, show, configChanges);
-            boolean varB326B5062B2F0E69046810717534CB09_540055023 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1918079661 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1918079661;
+            boolean varB326B5062B2F0E69046810717534CB09_201268706 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_826726827 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_826726827;
         } //End block
         case SCHEDULE_WINDOW_VISIBILITY_TRANSACTION:
         {
@@ -89,9 +89,9 @@ switch(code){
             IBinder b = data.readStrongBinder();
             boolean show = data.readInt() != 0;
             scheduleWindowVisibility(b, show);
-            boolean varB326B5062B2F0E69046810717534CB09_2006903076 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1656752071 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1656752071;
+            boolean varB326B5062B2F0E69046810717534CB09_171223911 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_934222773 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_934222773;
         } //End block
         case SCHEDULE_SLEEPING_TRANSACTION:
         {
@@ -99,9 +99,9 @@ switch(code){
             IBinder b = data.readStrongBinder();
             boolean sleeping = data.readInt() != 0;
             scheduleSleeping(b, sleeping);
-            boolean varB326B5062B2F0E69046810717534CB09_1373308984 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1383479921 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1383479921;
+            boolean varB326B5062B2F0E69046810717534CB09_344895790 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1864916665 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1864916665;
         } //End block
         case SCHEDULE_RESUME_ACTIVITY_TRANSACTION:
         {
@@ -109,9 +109,9 @@ switch(code){
             IBinder b = data.readStrongBinder();
             boolean isForward = data.readInt() != 0;
             scheduleResumeActivity(b, isForward);
-            boolean varB326B5062B2F0E69046810717534CB09_1888579037 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1816318488 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1816318488;
+            boolean varB326B5062B2F0E69046810717534CB09_398367552 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_473582066 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_473582066;
         } //End block
         case SCHEDULE_SEND_RESULT_TRANSACTION:
         {
@@ -119,9 +119,9 @@ switch(code){
             IBinder b = data.readStrongBinder();
             List<ResultInfo> ri = data.createTypedArrayList(ResultInfo.CREATOR);
             scheduleSendResult(b, ri);
-            boolean varB326B5062B2F0E69046810717534CB09_805335173 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1747428367 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1747428367;
+            boolean varB326B5062B2F0E69046810717534CB09_40652567 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1034070860 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1034070860;
         } //End block
         case SCHEDULE_LAUNCH_ACTIVITY_TRANSACTION:
         {
@@ -143,9 +143,9 @@ switch(code){
             boolean autoStopProfiler = data.readInt() != 0;
             scheduleLaunchActivity(intent, b, ident, info, curConfig, compatInfo, state, ri, pi,
                     notResumed, isForward, profileName, profileFd, autoStopProfiler);
-            boolean varB326B5062B2F0E69046810717534CB09_1346517954 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_39283231 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_39283231;
+            boolean varB326B5062B2F0E69046810717534CB09_1053346122 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_522341432 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_522341432;
         } //End block
         case SCHEDULE_RELAUNCH_ACTIVITY_TRANSACTION:
         {
@@ -156,14 +156,14 @@ switch(code){
             int configChanges = data.readInt();
             boolean notResumed = data.readInt() != 0;
             Configuration config = null;
-    if(data.readInt() != 0)            
+            if(data.readInt() != 0)            
             {
                 config = Configuration.CREATOR.createFromParcel(data);
             } //End block
             scheduleRelaunchActivity(b, ri, pi, configChanges, notResumed, config);
-            boolean varB326B5062B2F0E69046810717534CB09_174788538 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2024492556 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2024492556;
+            boolean varB326B5062B2F0E69046810717534CB09_605394117 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2127690925 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2127690925;
         } //End block
         case SCHEDULE_NEW_INTENT_TRANSACTION:
         {
@@ -171,9 +171,9 @@ switch(code){
             List<Intent> pi = data.createTypedArrayList(Intent.CREATOR);
             IBinder b = data.readStrongBinder();
             scheduleNewIntent(pi, b);
-            boolean varB326B5062B2F0E69046810717534CB09_1525792745 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_927736367 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_927736367;
+            boolean varB326B5062B2F0E69046810717534CB09_62897445 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1681129360 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1681129360;
         } //End block
         case SCHEDULE_FINISH_ACTIVITY_TRANSACTION:
         {
@@ -182,9 +182,9 @@ switch(code){
             boolean finishing = data.readInt() != 0;
             int configChanges = data.readInt();
             scheduleDestroyActivity(b, finishing, configChanges);
-            boolean varB326B5062B2F0E69046810717534CB09_1705238571 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_302482104 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_302482104;
+            boolean varB326B5062B2F0E69046810717534CB09_249583045 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_205599014 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_205599014;
         } //End block
         case SCHEDULE_RECEIVER_TRANSACTION:
         {
@@ -198,9 +198,9 @@ switch(code){
             boolean sync = data.readInt() != 0;
             scheduleReceiver(intent, info, compatInfo, resultCode, resultData,
                     resultExtras, sync);
-            boolean varB326B5062B2F0E69046810717534CB09_550470639 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1874949001 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1874949001;
+            boolean varB326B5062B2F0E69046810717534CB09_1273033734 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1912104746 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1912104746;
         } //End block
         case SCHEDULE_CREATE_SERVICE_TRANSACTION:
         {
@@ -209,9 +209,9 @@ switch(code){
             ServiceInfo info = ServiceInfo.CREATOR.createFromParcel(data);
             CompatibilityInfo compatInfo = CompatibilityInfo.CREATOR.createFromParcel(data);
             scheduleCreateService(token, info, compatInfo);
-            boolean varB326B5062B2F0E69046810717534CB09_488601541 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_621730309 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_621730309;
+            boolean varB326B5062B2F0E69046810717534CB09_2122106783 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_947749377 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_947749377;
         } //End block
         case SCHEDULE_BIND_SERVICE_TRANSACTION:
         {
@@ -220,9 +220,9 @@ switch(code){
             Intent intent = Intent.CREATOR.createFromParcel(data);
             boolean rebind = data.readInt() != 0;
             scheduleBindService(token, intent, rebind);
-            boolean varB326B5062B2F0E69046810717534CB09_1698408700 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1526722601 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1526722601;
+            boolean varB326B5062B2F0E69046810717534CB09_985054897 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1203524379 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1203524379;
         } //End block
         case SCHEDULE_UNBIND_SERVICE_TRANSACTION:
         {
@@ -230,9 +230,9 @@ switch(code){
             IBinder token = data.readStrongBinder();
             Intent intent = Intent.CREATOR.createFromParcel(data);
             scheduleUnbindService(token, intent);
-            boolean varB326B5062B2F0E69046810717534CB09_1679323015 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1840525186 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1840525186;
+            boolean varB326B5062B2F0E69046810717534CB09_1740605962 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_632065375 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_632065375;
         } //End block
         case SCHEDULE_SERVICE_ARGS_TRANSACTION:
         {
@@ -242,7 +242,7 @@ switch(code){
             int startId = data.readInt();
             int fl = data.readInt();
             Intent args;
-    if(data.readInt() != 0)            
+            if(data.readInt() != 0)            
             {
                 args = Intent.CREATOR.createFromParcel(data);
             } //End block
@@ -251,18 +251,18 @@ switch(code){
                 args = null;
             } //End block
             scheduleServiceArgs(token, taskRemoved, startId, fl, args);
-            boolean varB326B5062B2F0E69046810717534CB09_2009249082 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1064741902 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1064741902;
+            boolean varB326B5062B2F0E69046810717534CB09_1949125577 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1090034127 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1090034127;
         } //End block
         case SCHEDULE_STOP_SERVICE_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
             IBinder token = data.readStrongBinder();
             scheduleStopService(token);
-            boolean varB326B5062B2F0E69046810717534CB09_859891058 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1927252935 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1927252935;
+            boolean varB326B5062B2F0E69046810717534CB09_260480321 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_994557656 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_994557656;
         } //End block
         case BIND_APPLICATION_TRANSACTION:
         {
@@ -290,59 +290,59 @@ switch(code){
                             providers, testName, profileName, profileFd, autoStopProfiler,
                             testArgs, testWatcher, testMode, restrictedBackupMode, persistent,
                             config, compatInfo, services, coreSettings);
-            boolean varB326B5062B2F0E69046810717534CB09_2027827550 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1664690572 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1664690572;
+            boolean varB326B5062B2F0E69046810717534CB09_1369256688 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1061135883 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1061135883;
         } //End block
         case SCHEDULE_EXIT_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
             scheduleExit();
-            boolean varB326B5062B2F0E69046810717534CB09_552809501 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_835397266 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_835397266;
+            boolean varB326B5062B2F0E69046810717534CB09_2052940910 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1221406022 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1221406022;
         } //End block
         case SCHEDULE_SUICIDE_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
             scheduleSuicide();
-            boolean varB326B5062B2F0E69046810717534CB09_641829103 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_734301639 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_734301639;
+            boolean varB326B5062B2F0E69046810717534CB09_246778568 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1445708383 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1445708383;
         } //End block
         case REQUEST_THUMBNAIL_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
             IBinder b = data.readStrongBinder();
             requestThumbnail(b);
-            boolean varB326B5062B2F0E69046810717534CB09_297151244 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_381256508 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_381256508;
+            boolean varB326B5062B2F0E69046810717534CB09_1958056977 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_574620126 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_574620126;
         } //End block
         case SCHEDULE_CONFIGURATION_CHANGED_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
             Configuration config = Configuration.CREATOR.createFromParcel(data);
             scheduleConfigurationChanged(config);
-            boolean varB326B5062B2F0E69046810717534CB09_777049886 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_477590300 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_477590300;
+            boolean varB326B5062B2F0E69046810717534CB09_987580951 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_657838006 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_657838006;
         } //End block
         case UPDATE_TIME_ZONE_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
             updateTimeZone();
-            boolean varB326B5062B2F0E69046810717534CB09_1824721491 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1170594664 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1170594664;
+            boolean varB326B5062B2F0E69046810717534CB09_1628624763 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1369457537 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1369457537;
         } //End block
         case CLEAR_DNS_CACHE_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
             clearDnsCache();
-            boolean varB326B5062B2F0E69046810717534CB09_1405663444 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2122499497 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2122499497;
+            boolean varB326B5062B2F0E69046810717534CB09_1842962277 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1166140164 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1166140164;
         } //End block
         case SET_HTTP_PROXY_TRANSACTION:
         {
@@ -351,17 +351,17 @@ switch(code){
             final String port = data.readString();
             final String exclList = data.readString();
             setHttpProxy(proxy, port, exclList);
-            boolean varB326B5062B2F0E69046810717534CB09_1573380378 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1919559351 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1919559351;
+            boolean varB326B5062B2F0E69046810717534CB09_68883671 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_622782798 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_622782798;
         } //End block
         case PROCESS_IN_BACKGROUND_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
             processInBackground();
-            boolean varB326B5062B2F0E69046810717534CB09_1702385086 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1092663038 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1092663038;
+            boolean varB326B5062B2F0E69046810717534CB09_1947137634 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_749304171 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_749304171;
         } //End block
         case DUMP_SERVICE_TRANSACTION:
         {
@@ -369,7 +369,7 @@ switch(code){
             ParcelFileDescriptor fd = data.readFileDescriptor();
             final IBinder service = data.readStrongBinder();
             final String[] args = data.readStringArray();
-    if(fd != null)            
+            if(fd != null)            
             {
                 dumpService(fd.getFileDescriptor(), service, args);
                 try 
@@ -380,9 +380,9 @@ switch(code){
                 {
                 } //End block
             } //End block
-            boolean varB326B5062B2F0E69046810717534CB09_250872056 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_235806472 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_235806472;
+            boolean varB326B5062B2F0E69046810717534CB09_1765246523 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1146559362 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1146559362;
         } //End block
         case SCHEDULE_REGISTERED_RECEIVER_TRANSACTION:
         {
@@ -397,25 +397,25 @@ switch(code){
             boolean sticky = data.readInt() != 0;
             scheduleRegisteredReceiver(receiver, intent,
                     resultCode, dataStr, extras, ordered, sticky);
-            boolean varB326B5062B2F0E69046810717534CB09_1582118107 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2596754 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2596754;
+            boolean varB326B5062B2F0E69046810717534CB09_491432372 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_776669904 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_776669904;
         } //End block
         case SCHEDULE_LOW_MEMORY_TRANSACTION:
         {
             scheduleLowMemory();
-            boolean varB326B5062B2F0E69046810717534CB09_229737774 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2050492748 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2050492748;
+            boolean varB326B5062B2F0E69046810717534CB09_1067900146 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1111572860 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1111572860;
         } //End block
         case SCHEDULE_ACTIVITY_CONFIGURATION_CHANGED_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
             IBinder b = data.readStrongBinder();
             scheduleActivityConfigurationChanged(b);
-            boolean varB326B5062B2F0E69046810717534CB09_1666440374 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1387977090 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1387977090;
+            boolean varB326B5062B2F0E69046810717534CB09_1259054705 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1187094757 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1187094757;
         } //End block
         case PROFILER_CONTROL_TRANSACTION:
         {
@@ -426,18 +426,18 @@ switch(code){
             ParcelFileDescriptor fd = data.readInt() != 0
                     ? data.readFileDescriptor() : null;
             profilerControl(start, path, fd, profileType);
-            boolean varB326B5062B2F0E69046810717534CB09_1943365114 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1081645652 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1081645652;
+            boolean varB326B5062B2F0E69046810717534CB09_1226749606 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1310107162 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1310107162;
         } //End block
         case SET_SCHEDULING_GROUP_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
             int group = data.readInt();
             setSchedulingGroup(group);
-            boolean varB326B5062B2F0E69046810717534CB09_1636445012 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_242962758 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_242962758;
+            boolean varB326B5062B2F0E69046810717534CB09_1215826189 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_229335299 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_229335299;
         } //End block
         case SCHEDULE_CREATE_BACKUP_AGENT_TRANSACTION:
         {
@@ -446,9 +446,9 @@ switch(code){
             CompatibilityInfo compatInfo = CompatibilityInfo.CREATOR.createFromParcel(data);
             int backupMode = data.readInt();
             scheduleCreateBackupAgent(appInfo, compatInfo, backupMode);
-            boolean varB326B5062B2F0E69046810717534CB09_1808199517 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_779011999 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_779011999;
+            boolean varB326B5062B2F0E69046810717534CB09_1654694925 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_548418379 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_548418379;
         } //End block
         case SCHEDULE_DESTROY_BACKUP_AGENT_TRANSACTION:
         {
@@ -456,9 +456,9 @@ switch(code){
             ApplicationInfo appInfo = ApplicationInfo.CREATOR.createFromParcel(data);
             CompatibilityInfo compatInfo = CompatibilityInfo.CREATOR.createFromParcel(data);
             scheduleDestroyBackupAgent(appInfo, compatInfo);
-            boolean varB326B5062B2F0E69046810717534CB09_1484299709 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1023536593 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1023536593;
+            boolean varB326B5062B2F0E69046810717534CB09_233279947 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_510985364 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_510985364;
         } //End block
         case GET_MEMORY_INFO_TRANSACTION:
         {
@@ -467,9 +467,9 @@ switch(code){
             getMemoryInfo(mi);
             reply.writeNoException();
             mi.writeToParcel(reply, 0);
-            boolean varB326B5062B2F0E69046810717534CB09_1655709300 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1689396698 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1689396698;
+            boolean varB326B5062B2F0E69046810717534CB09_1258846473 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_297874970 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_297874970;
         } //End block
         case DISPATCH_PACKAGE_BROADCAST_TRANSACTION:
         {
@@ -477,18 +477,18 @@ switch(code){
             int cmd = data.readInt();
             String[] packages = data.readStringArray();
             dispatchPackageBroadcast(cmd, packages);
-            boolean varB326B5062B2F0E69046810717534CB09_392614938 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1432241704 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1432241704;
+            boolean varB326B5062B2F0E69046810717534CB09_1761925135 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1053987628 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1053987628;
         } //End block
         case SCHEDULE_CRASH_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
             String msg = data.readString();
             scheduleCrash(msg);
-            boolean varB326B5062B2F0E69046810717534CB09_1589290544 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_799102538 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_799102538;
+            boolean varB326B5062B2F0E69046810717534CB09_1537839150 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2137996617 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2137996617;
         } //End block
         case DUMP_HEAP_TRANSACTION:
         {
@@ -498,9 +498,9 @@ switch(code){
             ParcelFileDescriptor fd = data.readInt() != 0
                     ? data.readFileDescriptor() : null;
             dumpHeap(managed, path, fd);
-            boolean varB326B5062B2F0E69046810717534CB09_283653282 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2051718500 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2051718500;
+            boolean varB326B5062B2F0E69046810717534CB09_282537847 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_147454439 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_147454439;
         } //End block
         case DUMP_ACTIVITY_TRANSACTION:
         {
@@ -509,7 +509,7 @@ switch(code){
             final IBinder activity = data.readStrongBinder();
             final String prefix = data.readString();
             final String[] args = data.readStringArray();
-    if(fd != null)            
+            if(fd != null)            
             {
                 dumpActivity(fd.getFileDescriptor(), activity, prefix, args);
                 try 
@@ -520,18 +520,18 @@ switch(code){
                 {
                 } //End block
             } //End block
-            boolean varB326B5062B2F0E69046810717534CB09_1633412525 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_144299623 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_144299623;
+            boolean varB326B5062B2F0E69046810717534CB09_2120882359 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1007021275 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1007021275;
         } //End block
         case SET_CORE_SETTINGS_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
             Bundle settings = data.readBundle();
             setCoreSettings(settings);
-            boolean varB326B5062B2F0E69046810717534CB09_1469090832 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1124390374 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1124390374;
+            boolean varB326B5062B2F0E69046810717534CB09_440779805 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1840127783 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1840127783;
         } //End block
         case UPDATE_PACKAGE_COMPATIBILITY_INFO_TRANSACTION:
         {
@@ -539,18 +539,18 @@ switch(code){
             String pkg = data.readString();
             CompatibilityInfo compat = CompatibilityInfo.CREATOR.createFromParcel(data);
             updatePackageCompatibilityInfo(pkg, compat);
-            boolean varB326B5062B2F0E69046810717534CB09_780608582 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_111726084 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_111726084;
+            boolean varB326B5062B2F0E69046810717534CB09_1818442957 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1047225011 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1047225011;
         } //End block
         case SCHEDULE_TRIM_MEMORY_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
             int level = data.readInt();
             scheduleTrimMemory(level);
-            boolean varB326B5062B2F0E69046810717534CB09_246042872 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_229978163 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_229978163;
+            boolean varB326B5062B2F0E69046810717534CB09_1547820413 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1421321012 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1421321012;
         } //End block
         case DUMP_MEM_INFO_TRANSACTION:
         {
@@ -560,7 +560,7 @@ switch(code){
             boolean all = data.readInt() != 0;
             String[] args = data.readStringArray();
             Debug.MemoryInfo mi = null;
-    if(fd != null)            
+            if(fd != null)            
             {
                 try 
                 {
@@ -579,16 +579,16 @@ switch(code){
             } //End block
             reply.writeNoException();
             mi.writeToParcel(reply, 0);
-            boolean varB326B5062B2F0E69046810717534CB09_211314177 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1507630279 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1507630279;
+            boolean varB326B5062B2F0E69046810717534CB09_1382101112 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_190292928 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_190292928;
         } //End block
         case DUMP_GFX_INFO_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
             ParcelFileDescriptor fd = data.readFileDescriptor();
             String[] args = data.readStringArray();
-    if(fd != null)            
+            if(fd != null)            
             {
                 try 
                 {
@@ -606,24 +606,24 @@ switch(code){
                 } //End block
             } //End block
             reply.writeNoException();
-            boolean varB326B5062B2F0E69046810717534CB09_1437245847 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_432039328 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_432039328;
+            boolean varB326B5062B2F0E69046810717534CB09_319548890 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1324686378 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1324686378;
         } //End block
-}        boolean var3B3A841664B2F7D5B8C0C4B7B8E31E3B_347104668 = (super.onTransact(code, data, reply, flags));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_836564250 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_836564250;
+}        boolean var3B3A841664B2F7D5B8C0C4B7B8E31E3B_1860142272 = (super.onTransact(code, data, reply, flags));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1606010706 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1606010706;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.936 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "CD240EABD7443743B265B3EEDADDC579")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.760 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "7B20D4AB0ACCBF3697537E4F27639500")
     public IBinder asBinder() {
-IBinder var72A74007B2BE62B849F475C7BDA4658B_572818306 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_572818306.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_572818306;
+IBinder var72A74007B2BE62B849F475C7BDA4658B_754923137 =         this;
+        var72A74007B2BE62B849F475C7BDA4658B_754923137.addTaint(taint);
+        return var72A74007B2BE62B849F475C7BDA4658B_754923137;
         // ---------- Original Method ----------
         //return this;
     }
@@ -632,11 +632,11 @@ IBinder var72A74007B2BE62B849F475C7BDA4658B_572818306 =         this;
 }
 
 class ApplicationThreadProxy implements IApplicationThread {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.937 -0400", hash_original_field = "571FFBF4D13799B98890AF05D7751D0E", hash_generated_field = "5E1E2B7D69F0EB092684BFF6D1335CA5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.761 -0400", hash_original_field = "571FFBF4D13799B98890AF05D7751D0E", hash_generated_field = "5E1E2B7D69F0EB092684BFF6D1335CA5")
 
     private IBinder mRemote;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.937 -0400", hash_original_method = "08B50EC8A0FF95C7A679215C14C2E347", hash_generated_method = "07C34BD386C4B1EE3B5CAAFB7C484EE0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.762 -0400", hash_original_method = "08B50EC8A0FF95C7A679215C14C2E347", hash_generated_method = "07C34BD386C4B1EE3B5CAAFB7C484EE0")
     public  ApplicationThreadProxy(IBinder remote) {
         mRemote = remote;
         // ---------- Original Method ----------
@@ -644,17 +644,17 @@ class ApplicationThreadProxy implements IApplicationThread {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.938 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "D5A52805D1E49A84E290E5B8156938AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.763 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "192977129AC0581890F6722883BFE5C6")
     public final IBinder asBinder() {
-IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
-        varF4936CA84F7841A48B466C9D273BE2EB_134814242.addTaint(taint);
-        return varF4936CA84F7841A48B466C9D273BE2EB_134814242;
+IBinder varF4936CA84F7841A48B466C9D273BE2EB_1188390858 =         mRemote;
+        varF4936CA84F7841A48B466C9D273BE2EB_1188390858.addTaint(taint);
+        return varF4936CA84F7841A48B466C9D273BE2EB_1188390858;
         // ---------- Original Method ----------
         //return mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.939 -0400", hash_original_method = "F385294CE3D6AC21F25405F7E688DF1E", hash_generated_method = "0FF507F26107E8EC50E1B67A67A0898C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.764 -0400", hash_original_method = "F385294CE3D6AC21F25405F7E688DF1E", hash_generated_method = "0FF507F26107E8EC50E1B67A67A0898C")
     public final void schedulePauseActivity(IBinder token, boolean finished,
             boolean userLeaving, int configChanges) throws RemoteException {
         addTaint(configChanges);
@@ -683,7 +683,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.939 -0400", hash_original_method = "8D9A120B7A56CEA8B7726147C17D07B9", hash_generated_method = "070D7BC20FB4162220C5438CA9B59977")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.767 -0400", hash_original_method = "8D9A120B7A56CEA8B7726147C17D07B9", hash_generated_method = "070D7BC20FB4162220C5438CA9B59977")
     public final void scheduleStopActivity(IBinder token, boolean showWindow,
             int configChanges) throws RemoteException {
         addTaint(configChanges);
@@ -709,7 +709,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.941 -0400", hash_original_method = "5CD7B361184ED9060554C6A3DFD958DC", hash_generated_method = "26449A75313169FADD8AF47DD248EC8F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.768 -0400", hash_original_method = "5CD7B361184ED9060554C6A3DFD958DC", hash_generated_method = "26449A75313169FADD8AF47DD248EC8F")
     public final void scheduleWindowVisibility(IBinder token,
             boolean showWindow) throws RemoteException {
         addTaint(showWindow);
@@ -732,7 +732,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.942 -0400", hash_original_method = "037CA20E3B4BFBAB7FFA0954AEB6461B", hash_generated_method = "BD5067B18A3E5B302232517B11109BF7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.770 -0400", hash_original_method = "037CA20E3B4BFBAB7FFA0954AEB6461B", hash_generated_method = "BD5067B18A3E5B302232517B11109BF7")
     public final void scheduleSleeping(IBinder token,
             boolean sleeping) throws RemoteException {
         addTaint(sleeping);
@@ -755,7 +755,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.943 -0400", hash_original_method = "3B8EDF2F01C1C03EA4B1D6DE44BA40A1", hash_generated_method = "65ACAA7EC15DA543F735F26382A56956")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.771 -0400", hash_original_method = "3B8EDF2F01C1C03EA4B1D6DE44BA40A1", hash_generated_method = "65ACAA7EC15DA543F735F26382A56956")
     public final void scheduleResumeActivity(IBinder token, boolean isForward) throws RemoteException {
         addTaint(isForward);
         addTaint(token.getTaint());
@@ -777,7 +777,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.945 -0400", hash_original_method = "DF66BA9A5FFE4BEC7C06F9E22C0B5667", hash_generated_method = "6156B27802A084E9FF70A5784B982D84")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.773 -0400", hash_original_method = "DF66BA9A5FFE4BEC7C06F9E22C0B5667", hash_generated_method = "6156B27802A084E9FF70A5784B982D84")
     public final void scheduleSendResult(IBinder token, List<ResultInfo> results) throws RemoteException {
         addTaint(results.getTaint());
         addTaint(token.getTaint());
@@ -799,7 +799,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.951 -0400", hash_original_method = "F26C51AD11E848270AE4A9EC525A0958", hash_generated_method = "DCA71A66112BB2FB5C3801788B809AA4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.776 -0400", hash_original_method = "F26C51AD11E848270AE4A9EC525A0958", hash_generated_method = "DCA71A66112BB2FB5C3801788B809AA4")
     public final void scheduleLaunchActivity(Intent intent, IBinder token, int ident,
             ActivityInfo info, Configuration curConfig, CompatibilityInfo compatInfo,
             Bundle state, List<ResultInfo> pendingResults,
@@ -833,7 +833,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         data.writeInt(notResumed ? 1 : 0);
         data.writeInt(isForward ? 1 : 0);
         data.writeString(profileName);
-    if(profileFd != null)        
+        if(profileFd != null)        
         {
             data.writeInt(1);
             profileFd.writeToParcel(data, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
@@ -851,7 +851,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.953 -0400", hash_original_method = "D28E37482E7B0F4E96EA5389499C167D", hash_generated_method = "5F2F9BF2A01F5E5BDB611513FA7B7DDB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.780 -0400", hash_original_method = "D28E37482E7B0F4E96EA5389499C167D", hash_generated_method = "5F2F9BF2A01F5E5BDB611513FA7B7DDB")
     public final void scheduleRelaunchActivity(IBinder token,
             List<ResultInfo> pendingResults, List<Intent> pendingNewIntents,
             int configChanges, boolean notResumed, Configuration config) throws RemoteException {
@@ -868,7 +868,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         data.writeTypedList(pendingNewIntents);
         data.writeInt(configChanges);
         data.writeInt(notResumed ? 1 : 0);
-    if(config != null)        
+        if(config != null)        
         {
             data.writeInt(1);
             config.writeToParcel(data, 0);
@@ -900,7 +900,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.956 -0400", hash_original_method = "C9991D806FA54B06B2907086AD0FF677", hash_generated_method = "CDDC3C991DAB569BC27FF332D26952FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.782 -0400", hash_original_method = "C9991D806FA54B06B2907086AD0FF677", hash_generated_method = "CDDC3C991DAB569BC27FF332D26952FD")
     public void scheduleNewIntent(List<Intent> intents, IBinder token) throws RemoteException {
         addTaint(token.getTaint());
         addTaint(intents.getTaint());
@@ -922,7 +922,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.957 -0400", hash_original_method = "30A44B425A4D374BA87F220BE9EBE9B7", hash_generated_method = "057B1F1CCECF5B92908D098EE4164695")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.784 -0400", hash_original_method = "30A44B425A4D374BA87F220BE9EBE9B7", hash_generated_method = "057B1F1CCECF5B92908D098EE4164695")
     public final void scheduleDestroyActivity(IBinder token, boolean finishing,
             int configChanges) throws RemoteException {
         addTaint(configChanges);
@@ -948,7 +948,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.958 -0400", hash_original_method = "C42B70805B0C7922B26FF1FB8A47345A", hash_generated_method = "F30DC71D7756D99B9D48C6471893769E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.786 -0400", hash_original_method = "C42B70805B0C7922B26FF1FB8A47345A", hash_generated_method = "F30DC71D7756D99B9D48C6471893769E")
     public final void scheduleReceiver(Intent intent, ActivityInfo info,
             CompatibilityInfo compatInfo, int resultCode, String resultData,
             Bundle map, boolean sync) throws RemoteException {
@@ -987,7 +987,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.959 -0400", hash_original_method = "FBCEE90A351EFB6AE922D66BDA990D49", hash_generated_method = "F48844FD049370BC65891E96A0594593")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.788 -0400", hash_original_method = "FBCEE90A351EFB6AE922D66BDA990D49", hash_generated_method = "F48844FD049370BC65891E96A0594593")
     public final void scheduleCreateBackupAgent(ApplicationInfo app,
             CompatibilityInfo compatInfo, int backupMode) throws RemoteException {
         addTaint(backupMode);
@@ -1013,7 +1013,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.960 -0400", hash_original_method = "213DB620D8FBF1A9C8341DE04CE19BA9", hash_generated_method = "EDF3DE78C966470A8304CE47C87001F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.790 -0400", hash_original_method = "213DB620D8FBF1A9C8341DE04CE19BA9", hash_generated_method = "EDF3DE78C966470A8304CE47C87001F8")
     public final void scheduleDestroyBackupAgent(ApplicationInfo app,
             CompatibilityInfo compatInfo) throws RemoteException {
         addTaint(compatInfo.getTaint());
@@ -1036,7 +1036,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.961 -0400", hash_original_method = "6404222A540CAF1DD9DE4C2FFFFCFFEA", hash_generated_method = "6C8BBEA21BC678545A7D12BE26ABEF18")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.792 -0400", hash_original_method = "6404222A540CAF1DD9DE4C2FFFFCFFEA", hash_generated_method = "6C8BBEA21BC678545A7D12BE26ABEF18")
     public final void scheduleCreateService(IBinder token, ServiceInfo info,
             CompatibilityInfo compatInfo) throws RemoteException {
         addTaint(compatInfo.getTaint());
@@ -1062,7 +1062,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.962 -0400", hash_original_method = "B7457DD503BA4FDF2022DE2BEF8A4AE7", hash_generated_method = "576EE22BFA91FEDD5BF306917FB1FF59")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.794 -0400", hash_original_method = "B7457DD503BA4FDF2022DE2BEF8A4AE7", hash_generated_method = "576EE22BFA91FEDD5BF306917FB1FF59")
     public final void scheduleBindService(IBinder token, Intent intent, boolean rebind) throws RemoteException {
         addTaint(rebind);
         addTaint(intent.getTaint());
@@ -1087,7 +1087,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.964 -0400", hash_original_method = "015A697DF0B7313A5A91440BE749BA70", hash_generated_method = "0E63B78B52A632B97472F345D8485633")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.795 -0400", hash_original_method = "015A697DF0B7313A5A91440BE749BA70", hash_generated_method = "0E63B78B52A632B97472F345D8485633")
     public final void scheduleUnbindService(IBinder token, Intent intent) throws RemoteException {
         addTaint(intent.getTaint());
         addTaint(token.getTaint());
@@ -1109,7 +1109,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.966 -0400", hash_original_method = "9440CDA1B00A67ECA4131E9DDBFF94BE", hash_generated_method = "06DCB7E4117107E85AC6F73AD01E9BFD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.796 -0400", hash_original_method = "9440CDA1B00A67ECA4131E9DDBFF94BE", hash_generated_method = "06DCB7E4117107E85AC6F73AD01E9BFD")
     public final void scheduleServiceArgs(IBinder token, boolean taskRemoved, int startId,
 	    int flags, Intent args) throws RemoteException {
         addTaint(args.getTaint());
@@ -1123,7 +1123,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         data.writeInt(taskRemoved ? 1 : 0);
         data.writeInt(startId);
         data.writeInt(flags);
-    if(args != null)        
+        if(args != null)        
         {
             data.writeInt(1);
             args.writeToParcel(data, 0);
@@ -1154,7 +1154,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.967 -0400", hash_original_method = "C0CB5C15E3301223B23F08D2A5944F63", hash_generated_method = "83B606C53EE10864B540DA454DA40E5D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.797 -0400", hash_original_method = "C0CB5C15E3301223B23F08D2A5944F63", hash_generated_method = "83B606C53EE10864B540DA454DA40E5D")
     public final void scheduleStopService(IBinder token) throws RemoteException {
         addTaint(token.getTaint());
         Parcel data = Parcel.obtain();
@@ -1173,7 +1173,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.973 -0400", hash_original_method = "4BEF103D5873B276CD3FCACF31B60747", hash_generated_method = "7DA660BFBAF026D0143B3E7F85052EF9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.801 -0400", hash_original_method = "4BEF103D5873B276CD3FCACF31B60747", hash_generated_method = "7DA660BFBAF026D0143B3E7F85052EF9")
     public final void bindApplication(String packageName, ApplicationInfo info,
             List<ProviderInfo> providers, ComponentName testName, String profileName,
             ParcelFileDescriptor profileFd, boolean autoStopProfiler, Bundle testArgs,
@@ -1201,7 +1201,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         data.writeString(packageName);
         info.writeToParcel(data, 0);
         data.writeTypedList(providers);
-    if(testName == null)        
+        if(testName == null)        
         {
             data.writeInt(0);
         } //End block
@@ -1211,7 +1211,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
             testName.writeToParcel(data, 0);
         } //End block
         data.writeString(profileName);
-    if(profileFd != null)        
+        if(profileFd != null)        
         {
             data.writeInt(1);
             profileFd.writeToParcel(data, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
@@ -1238,7 +1238,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.974 -0400", hash_original_method = "D9B97B2B196869DD6997DE8F0F3DB6A8", hash_generated_method = "D3CA0846FF06D3C9E5630604634D4BA2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.803 -0400", hash_original_method = "D9B97B2B196869DD6997DE8F0F3DB6A8", hash_generated_method = "D3CA0846FF06D3C9E5630604634D4BA2")
     public final void scheduleExit() throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -1254,7 +1254,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.976 -0400", hash_original_method = "54C10BB1160F71CB1C13A86830E02D00", hash_generated_method = "ED81A5C888EDD342E66C9265348D4DAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.805 -0400", hash_original_method = "54C10BB1160F71CB1C13A86830E02D00", hash_generated_method = "ED81A5C888EDD342E66C9265348D4DAE")
     public final void scheduleSuicide() throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -1270,7 +1270,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.978 -0400", hash_original_method = "D665A0E549B16E7CA815762264938E1F", hash_generated_method = "4D1B84982C08864D005750B934A0D095")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.807 -0400", hash_original_method = "D665A0E549B16E7CA815762264938E1F", hash_generated_method = "4D1B84982C08864D005750B934A0D095")
     public final void requestThumbnail(IBinder token) throws RemoteException {
         addTaint(token.getTaint());
         Parcel data = Parcel.obtain();
@@ -1289,7 +1289,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.979 -0400", hash_original_method = "2C1AC44E23EDB2D99649E68F5C228686", hash_generated_method = "66E3689AC30D669B7B5CF6DF89375758")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.808 -0400", hash_original_method = "2C1AC44E23EDB2D99649E68F5C228686", hash_generated_method = "66E3689AC30D669B7B5CF6DF89375758")
     public final void scheduleConfigurationChanged(Configuration config) throws RemoteException {
         addTaint(config.getTaint());
         Parcel data = Parcel.obtain();
@@ -1308,8 +1308,8 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.980 -0400", hash_original_method = "0B9C0FCD5E0F49B1C57B4B2960062787", hash_generated_method = "6B4EB282B8034AF6B04F5C786CE621E6")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.809 -0400", hash_original_method = "0B9C0FCD5E0F49B1C57B4B2960062787", hash_generated_method = "6B4EB282B8034AF6B04F5C786CE621E6")
     public void updateTimeZone() throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -1325,8 +1325,8 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.980 -0400", hash_original_method = "2659A1DE78848CD92C8786506E83B52E", hash_generated_method = "AD8A78BD18783AC3E3C75CF71B2022A5")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.809 -0400", hash_original_method = "2659A1DE78848CD92C8786506E83B52E", hash_generated_method = "AD8A78BD18783AC3E3C75CF71B2022A5")
     public void clearDnsCache() throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -1342,7 +1342,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.981 -0400", hash_original_method = "B79CFB3A109E11AF1583EBEB0497855B", hash_generated_method = "F9148AEE1E033D2B1E944CB252D1ABC7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.810 -0400", hash_original_method = "B79CFB3A109E11AF1583EBEB0497855B", hash_generated_method = "F9148AEE1E033D2B1E944CB252D1ABC7")
     public void setHttpProxy(String proxy, String port, String exclList) throws RemoteException {
         addTaint(exclList.getTaint());
         addTaint(port.getTaint());
@@ -1365,8 +1365,8 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.982 -0400", hash_original_method = "3372F7AC9E7DAF2A573613018E648B58", hash_generated_method = "AD3B0C88626F3F67EB69C259E2505999")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.811 -0400", hash_original_method = "3372F7AC9E7DAF2A573613018E648B58", hash_generated_method = "AD3B0C88626F3F67EB69C259E2505999")
     public void processInBackground() throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -1382,7 +1382,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.982 -0400", hash_original_method = "E161C2DD10689877C1DFEA4F44C5B49B", hash_generated_method = "59BEC63F319B26C7384046F6C7245D72")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.813 -0400", hash_original_method = "E161C2DD10689877C1DFEA4F44C5B49B", hash_generated_method = "59BEC63F319B26C7384046F6C7245D72")
     public void dumpService(FileDescriptor fd, IBinder token, String[] args) throws RemoteException {
         addTaint(args[0].getTaint());
         addTaint(token.getTaint());
@@ -1405,8 +1405,8 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.984 -0400", hash_original_method = "D0D9D13B7AFC8143680190DFDB1E27B8", hash_generated_method = "2D22A40D153506A0338036F565216D19")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.815 -0400", hash_original_method = "D0D9D13B7AFC8143680190DFDB1E27B8", hash_generated_method = "2D22A40D153506A0338036F565216D19")
     public void scheduleRegisteredReceiver(IIntentReceiver receiver, Intent intent,
             int resultCode, String dataStr, Bundle extras, boolean ordered, boolean sticky) throws RemoteException {
         addTaint(sticky);
@@ -1444,7 +1444,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.984 -0400", hash_original_method = "9B139EEAA8537BD0FDDE5F0ABD5B2BE9", hash_generated_method = "29EF77959C49CF075B7080F4F56A9E01")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.816 -0400", hash_original_method = "9B139EEAA8537BD0FDDE5F0ABD5B2BE9", hash_generated_method = "29EF77959C49CF075B7080F4F56A9E01")
     public final void scheduleLowMemory() throws RemoteException {
         Parcel data = Parcel.obtain();
         data.writeInterfaceToken(IApplicationThread.descriptor);
@@ -1460,7 +1460,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.986 -0400", hash_original_method = "17DBD33C1569C467FA5E9849A4B7DAA5", hash_generated_method = "F7F4AF9C39C7ADDB4F5E397335B2BAAA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.817 -0400", hash_original_method = "17DBD33C1569C467FA5E9849A4B7DAA5", hash_generated_method = "F7F4AF9C39C7ADDB4F5E397335B2BAAA")
     public final void scheduleActivityConfigurationChanged(
             IBinder token) throws RemoteException {
         addTaint(token.getTaint());
@@ -1480,7 +1480,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.987 -0400", hash_original_method = "727EEF540008C4D098D698BFCF8CD3C2", hash_generated_method = "A354385E0655044DC8F6A9B279BA163B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.818 -0400", hash_original_method = "727EEF540008C4D098D698BFCF8CD3C2", hash_generated_method = "A354385E0655044DC8F6A9B279BA163B")
     public void profilerControl(boolean start, String path,
             ParcelFileDescriptor fd, int profileType) throws RemoteException {
         addTaint(profileType);
@@ -1492,7 +1492,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         data.writeInt(start ? 1 : 0);
         data.writeInt(profileType);
         data.writeString(path);
-    if(fd != null)        
+        if(fd != null)        
         {
             data.writeInt(1);
             fd.writeToParcel(data, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
@@ -1522,7 +1522,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.988 -0400", hash_original_method = "732323D2FE13A948B7BB2E76176A6F90", hash_generated_method = "F4CEC45A9988EAC4A66FF3A8C483DE9E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.825 -0400", hash_original_method = "732323D2FE13A948B7BB2E76176A6F90", hash_generated_method = "F4CEC45A9988EAC4A66FF3A8C483DE9E")
     public void setSchedulingGroup(int group) throws RemoteException {
         addTaint(group);
         Parcel data = Parcel.obtain();
@@ -1541,7 +1541,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.989 -0400", hash_original_method = "307083C9D45C8404399A6967BFC677B1", hash_generated_method = "9F34CC8A67B079A7D955D484A8EC95CD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.828 -0400", hash_original_method = "307083C9D45C8404399A6967BFC677B1", hash_generated_method = "9F34CC8A67B079A7D955D484A8EC95CD")
     public void getMemoryInfo(Debug.MemoryInfo outInfo) throws RemoteException {
         addTaint(outInfo.getTaint());
         Parcel data = Parcel.obtain();
@@ -1564,7 +1564,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.990 -0400", hash_original_method = "ACFC9FA9BBB19958DCB9CD2CDA3432BC", hash_generated_method = "0DB75DD89C31264EF86496D0D7C9CF84")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.831 -0400", hash_original_method = "ACFC9FA9BBB19958DCB9CD2CDA3432BC", hash_generated_method = "0DB75DD89C31264EF86496D0D7C9CF84")
     public void dispatchPackageBroadcast(int cmd, String[] packages) throws RemoteException {
         addTaint(packages[0].getTaint());
         addTaint(cmd);
@@ -1586,7 +1586,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.990 -0400", hash_original_method = "0DA34150FDE2C37709AA14FDDE4D7856", hash_generated_method = "0B52A5AD0E8B100DB3EEFE2D3FE17C4F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.833 -0400", hash_original_method = "0DA34150FDE2C37709AA14FDDE4D7856", hash_generated_method = "0B52A5AD0E8B100DB3EEFE2D3FE17C4F")
     public void scheduleCrash(String msg) throws RemoteException {
         addTaint(msg.getTaint());
         Parcel data = Parcel.obtain();
@@ -1605,7 +1605,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.991 -0400", hash_original_method = "14C0866A00E3EF07677471FCFBE5006D", hash_generated_method = "75D795C09AF1EA7CD19A854E8015605C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.836 -0400", hash_original_method = "14C0866A00E3EF07677471FCFBE5006D", hash_generated_method = "75D795C09AF1EA7CD19A854E8015605C")
     public void dumpHeap(boolean managed, String path,
             ParcelFileDescriptor fd) throws RemoteException {
         addTaint(fd.getTaint());
@@ -1615,7 +1615,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         data.writeInterfaceToken(IApplicationThread.descriptor);
         data.writeInt(managed ? 1 : 0);
         data.writeString(path);
-    if(fd != null)        
+        if(fd != null)        
         {
             data.writeInt(1);
             fd.writeToParcel(data, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
@@ -1644,8 +1644,8 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.992 -0400", hash_original_method = "7214E8ED977AF65264275D69BD7546BC", hash_generated_method = "CFA19AF2C50705D0CA471E3D57136C34")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.838 -0400", hash_original_method = "7214E8ED977AF65264275D69BD7546BC", hash_generated_method = "CFA19AF2C50705D0CA471E3D57136C34")
     public void dumpActivity(FileDescriptor fd, IBinder token, String prefix, String[] args) throws RemoteException {
         addTaint(args[0].getTaint());
         addTaint(prefix.getTaint());
@@ -1671,8 +1671,8 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.993 -0400", hash_original_method = "A6BD18E7AC0ECE0599305450F757BFCE", hash_generated_method = "9B7E48B8D0238A39B95E280429ECACBD")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.840 -0400", hash_original_method = "A6BD18E7AC0ECE0599305450F757BFCE", hash_generated_method = "9B7E48B8D0238A39B95E280429ECACBD")
     public void setCoreSettings(Bundle coreSettings) throws RemoteException {
         addTaint(coreSettings.getTaint());
         Parcel data = Parcel.obtain();
@@ -1687,7 +1687,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.994 -0400", hash_original_method = "D2FA44681587FB29A159697C062E818E", hash_generated_method = "197FCB7786AD953CD52FA99C818A3B9A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.842 -0400", hash_original_method = "D2FA44681587FB29A159697C062E818E", hash_generated_method = "197FCB7786AD953CD52FA99C818A3B9A")
     public void updatePackageCompatibilityInfo(String pkg, CompatibilityInfo info) throws RemoteException {
         addTaint(info.getTaint());
         addTaint(pkg.getTaint());
@@ -1707,8 +1707,8 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.996 -0400", hash_original_method = "2D27841853A53E2CEBF025C44DD03509", hash_generated_method = "CC98A9EF80ACE6E25A95F97BCF6C110F")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.844 -0400", hash_original_method = "2D27841853A53E2CEBF025C44DD03509", hash_generated_method = "CC98A9EF80ACE6E25A95F97BCF6C110F")
     public void scheduleTrimMemory(int level) throws RemoteException {
         addTaint(level);
         Parcel data = Parcel.obtain();
@@ -1725,7 +1725,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.001 -0400", hash_original_method = "2FCBBED71EEEC4941D4B92155F73ADA0", hash_generated_method = "0F8EA3DF7F51CB2F14B905D0C8E07B66")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.846 -0400", hash_original_method = "2FCBBED71EEEC4941D4B92155F73ADA0", hash_generated_method = "9C92F94985D63DEB68958EC16D3A217E")
     public Debug.MemoryInfo dumpMemInfo(FileDescriptor fd, boolean checkin, boolean all,
             String[] args) throws RemoteException {
         addTaint(args[0].getTaint());
@@ -1745,9 +1745,9 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         info.readFromParcel(reply);
         data.recycle();
         reply.recycle();
-Debug.MemoryInfo var43CF3338FDBA93597A9562D3166E9DC4_879596471 =         info;
-        var43CF3338FDBA93597A9562D3166E9DC4_879596471.addTaint(taint);
-        return var43CF3338FDBA93597A9562D3166E9DC4_879596471;
+Debug.MemoryInfo var43CF3338FDBA93597A9562D3166E9DC4_2113590576 =         info;
+        var43CF3338FDBA93597A9562D3166E9DC4_2113590576.addTaint(taint);
+        return var43CF3338FDBA93597A9562D3166E9DC4_2113590576;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -1766,7 +1766,7 @@ Debug.MemoryInfo var43CF3338FDBA93597A9562D3166E9DC4_879596471 =         info;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.002 -0400", hash_original_method = "A649B6B1FE51F3F8AC43A3FCCC575DB3", hash_generated_method = "35A9A2A47361FE54E34562726152D166")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.847 -0400", hash_original_method = "A649B6B1FE51F3F8AC43A3FCCC575DB3", hash_generated_method = "35A9A2A47361FE54E34562726152D166")
     public void dumpGfxInfo(FileDescriptor fd, String[] args) throws RemoteException {
         addTaint(args[0].getTaint());
         addTaint(fd.getTaint());

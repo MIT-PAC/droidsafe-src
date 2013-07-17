@@ -7,15 +7,15 @@ import droidsafe.runtime.*;
 
 public class ArgbEvaluator implements TypeEvaluator {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.214 -0400", hash_original_method = "2B314B5188522F79C40FC502122E5F12", hash_generated_method = "2B314B5188522F79C40FC502122E5F12")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.508 -0400", hash_original_method = "2B314B5188522F79C40FC502122E5F12", hash_generated_method = "2B314B5188522F79C40FC502122E5F12")
     public ArgbEvaluator ()
     {
         //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.217 -0400", hash_original_method = "415FA7137AA653EF40F66C5BED279EE7", hash_generated_method = "7C4CEC4D2AAB10CBB2A909B5996B0FE9")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.512 -0400", hash_original_method = "415FA7137AA653EF40F66C5BED279EE7", hash_generated_method = "CCFCAD8E134722C31C5148BA1F01B6D8")
     public Object evaluate(float fraction, Object startValue, Object endValue) {
         addTaint(endValue.getTaint());
         addTaint(startValue.getTaint());
@@ -30,12 +30,12 @@ public class ArgbEvaluator implements TypeEvaluator {
         int endR = (endInt >> 16) & 0xff;
         int endG = (endInt >> 8) & 0xff;
         int endB = endInt & 0xff;
-Object var8682AC4B94D3EEF03B558C75A615F0F2_519896368 =         (int)((startA + (int)(fraction * (endA - startA))) << 24) |
+Object var8682AC4B94D3EEF03B558C75A615F0F2_1342359153 =         (int)((startA + (int)(fraction * (endA - startA))) << 24) |
                 (int)((startR + (int)(fraction * (endR - startR))) << 16) |
                 (int)((startG + (int)(fraction * (endG - startG))) << 8) |
                 (int)((startB + (int)(fraction * (endB - startB))));
-        var8682AC4B94D3EEF03B558C75A615F0F2_519896368.addTaint(taint);
-        return var8682AC4B94D3EEF03B558C75A615F0F2_519896368;
+        var8682AC4B94D3EEF03B558C75A615F0F2_1342359153.addTaint(taint);
+        return var8682AC4B94D3EEF03B558C75A615F0F2_1342359153;
         // ---------- Original Method ----------
         //int startInt = (Integer) startValue;
         //int startA = (startInt >> 24);

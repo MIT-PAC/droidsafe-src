@@ -22,11 +22,11 @@ import org.bouncycastle.jce.X509Principal;
 import org.bouncycastle.util.Selector;
 
 public class AttributeCertificateIssuer implements CertSelector, Selector {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.723 -0400", hash_original_field = "3FCDB73D36D54F2CC22D0F68E6B6E182", hash_generated_field = "F472E80F733CDF00E48AF589322F06BE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.541 -0400", hash_original_field = "3FCDB73D36D54F2CC22D0F68E6B6E182", hash_generated_field = "F472E80F733CDF00E48AF589322F06BE")
 
     ASN1Encodable form;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.724 -0400", hash_original_method = "BBF050FF37EED8F05F0CD887F679CFE4", hash_generated_method = "8F764C03AD36B828C9A7285A3E1B5206")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.541 -0400", hash_original_method = "BBF050FF37EED8F05F0CD887F679CFE4", hash_generated_method = "8F764C03AD36B828C9A7285A3E1B5206")
     public  AttributeCertificateIssuer(AttCertIssuer issuer) {
         form = issuer.getIssuer();
         // ---------- Original Method ----------
@@ -34,7 +34,7 @@ public class AttributeCertificateIssuer implements CertSelector, Selector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.724 -0400", hash_original_method = "D6A3C71D8C78168F005DD976BB9D460A", hash_generated_method = "C24B960C0D07622B82E720E4F5D99D83")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.542 -0400", hash_original_method = "D6A3C71D8C78168F005DD976BB9D460A", hash_generated_method = "C24B960C0D07622B82E720E4F5D99D83")
     public  AttributeCertificateIssuer(X500Principal principal) throws IOException {
         this(new X509Principal(principal.getEncoded()));
         addTaint(principal.getTaint());
@@ -42,7 +42,7 @@ public class AttributeCertificateIssuer implements CertSelector, Selector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.725 -0400", hash_original_method = "6459F0ACD6C2225742DF42C099A35AAF", hash_generated_method = "3C855DCA6BE989638579F74FEA16CA18")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.542 -0400", hash_original_method = "6459F0ACD6C2225742DF42C099A35AAF", hash_generated_method = "3C855DCA6BE989638579F74FEA16CA18")
     public  AttributeCertificateIssuer(X509Principal principal) {
         form = new V2Form(new GeneralNames(new DERSequence(new GeneralName(principal))));
         // ---------- Original Method ----------
@@ -50,11 +50,11 @@ public class AttributeCertificateIssuer implements CertSelector, Selector {
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.726 -0400", hash_original_method = "E1F244CC3C2F69A383C3B6A34635861B", hash_generated_method = "4C949B64BEA8E325E67189DAA1E0C5F2")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.543 -0400", hash_original_method = "E1F244CC3C2F69A383C3B6A34635861B", hash_generated_method = "98914B8ECB7765EBF74DEB261F97F788")
     private Object[] getNames() {
         GeneralNames name;
-    if(form instanceof V2Form)        
+        if(form instanceof V2Form)        
         {
             name = ((V2Form)form).getIssuerName();
         } //End block
@@ -66,7 +66,7 @@ public class AttributeCertificateIssuer implements CertSelector, Selector {
         List l = new ArrayList(names.length);
 for(int i = 0;i != names.length;i++)
         {
-    if(names[i].getTagNo() == GeneralName.directoryName)            
+            if(names[i].getTagNo() == GeneralName.directoryName)            
             {
                 try 
                 {
@@ -75,34 +75,34 @@ for(int i = 0;i != names.length;i++)
                 } //End block
                 catch (IOException e)
                 {
-                    RuntimeException var4980AE888B424D26E0A3FAF1A1097229_1069474429 = new RuntimeException("badly formed Name object");
-                    var4980AE888B424D26E0A3FAF1A1097229_1069474429.addTaint(taint);
-                    throw var4980AE888B424D26E0A3FAF1A1097229_1069474429;
+                    RuntimeException var4980AE888B424D26E0A3FAF1A1097229_1516083605 = new RuntimeException("badly formed Name object");
+                    var4980AE888B424D26E0A3FAF1A1097229_1516083605.addTaint(taint);
+                    throw var4980AE888B424D26E0A3FAF1A1097229_1516083605;
                 } //End block
             } //End block
         } //End block
-Object[] var6C26F6EC1F7A67F950053C95FE24CCE6_2035222950 =         l.toArray(new Object[l.size()]);
-        var6C26F6EC1F7A67F950053C95FE24CCE6_2035222950.addTaint(taint);
-        return var6C26F6EC1F7A67F950053C95FE24CCE6_2035222950;
+Object[] var6C26F6EC1F7A67F950053C95FE24CCE6_993389672 =         l.toArray(new Object[l.size()]);
+        var6C26F6EC1F7A67F950053C95FE24CCE6_993389672.addTaint(taint);
+        return var6C26F6EC1F7A67F950053C95FE24CCE6_993389672;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.727 -0400", hash_original_method = "3DFD2537FFB449B5321668C577E5D216", hash_generated_method = "D40DC32DBEB0777E35CBE184D6E28618")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.544 -0400", hash_original_method = "3DFD2537FFB449B5321668C577E5D216", hash_generated_method = "F3E76D004975A4880378881519A8C4B1")
     public Principal[] getPrincipals() {
         Object[] p = this.getNames();
         List l = new ArrayList();
 for(int i = 0;i != p.length;i++)
         {
-    if(p[i] instanceof Principal)            
+            if(p[i] instanceof Principal)            
             {
                 l.add(p[i]);
             } //End block
         } //End block
-Principal[] var2BC6CB15026C258E2509F6CFCF0FEAB1_811810954 =         (Principal[])l.toArray(new Principal[l.size()]);
-        var2BC6CB15026C258E2509F6CFCF0FEAB1_811810954.addTaint(taint);
-        return var2BC6CB15026C258E2509F6CFCF0FEAB1_811810954;
+Principal[] var2BC6CB15026C258E2509F6CFCF0FEAB1_427413284 =         (Principal[])l.toArray(new Principal[l.size()]);
+        var2BC6CB15026C258E2509F6CFCF0FEAB1_427413284.addTaint(taint);
+        return var2BC6CB15026C258E2509F6CFCF0FEAB1_427413284;
         // ---------- Original Method ----------
         //Object[] p = this.getNames();
         //List l = new ArrayList();
@@ -117,8 +117,8 @@ Principal[] var2BC6CB15026C258E2509F6CFCF0FEAB1_811810954 =         (Principal[]
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.728 -0400", hash_original_method = "DB608757031C3F022268BBCAE1434BBE", hash_generated_method = "D6B373F555998B86660374262BF9935A")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.545 -0400", hash_original_method = "DB608757031C3F022268BBCAE1434BBE", hash_generated_method = "4E1007EC008361D1D7159FC32DBFFFAE")
     private boolean matchesDN(X500Principal subject, GeneralNames targets) {
         addTaint(targets.getTaint());
         addTaint(subject.getTaint());
@@ -126,15 +126,15 @@ Principal[] var2BC6CB15026C258E2509F6CFCF0FEAB1_811810954 =         (Principal[]
 for(int i = 0;i != names.length;i++)
         {
             GeneralName gn = names[i];
-    if(gn.getTagNo() == GeneralName.directoryName)            
+            if(gn.getTagNo() == GeneralName.directoryName)            
             {
                 try 
                 {
-    if(new X500Principal(((ASN1Encodable)gn.getName()).getEncoded()).equals(subject))                    
+                    if(new X500Principal(((ASN1Encodable)gn.getName()).getEncoded()).equals(subject))                    
                     {
-                        boolean varB326B5062B2F0E69046810717534CB09_1697963758 = (true);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1874089458 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1874089458;
+                        boolean varB326B5062B2F0E69046810717534CB09_1837713839 = (true);
+                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1657087242 = getTaintBoolean();
+                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1657087242;
                     } //End block
                 } //End block
                 catch (IOException e)
@@ -142,9 +142,9 @@ for(int i = 0;i != names.length;i++)
                 } //End block
             } //End block
         } //End block
-        boolean var68934A3E9455FA72420237EB05902327_521296753 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_956911489 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_956911489;
+        boolean var68934A3E9455FA72420237EB05902327_990334584 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1546229065 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1546229065;
         // ---------- Original Method ----------
         //GeneralName[] names = targets.getNames();
         //for (int i = 0; i != names.length; i++)
@@ -168,83 +168,83 @@ for(int i = 0;i != names.length;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.729 -0400", hash_original_method = "3AF2A857F3C742FB55D3884093F02C4D", hash_generated_method = "FF324CFD729A99AD6FD8BC215CF903F3")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.546 -0400", hash_original_method = "3AF2A857F3C742FB55D3884093F02C4D", hash_generated_method = "F8A4FFB8B9ACA8B145EBAFEAC2E25074")
     public Object clone() {
-Object varDACB60B4A9E3539334B4EC7C8A572E76_1681813759 =         new AttributeCertificateIssuer(AttCertIssuer.getInstance(form));
-        varDACB60B4A9E3539334B4EC7C8A572E76_1681813759.addTaint(taint);
-        return varDACB60B4A9E3539334B4EC7C8A572E76_1681813759;
+Object varDACB60B4A9E3539334B4EC7C8A572E76_1893228147 =         new AttributeCertificateIssuer(AttCertIssuer.getInstance(form));
+        varDACB60B4A9E3539334B4EC7C8A572E76_1893228147.addTaint(taint);
+        return varDACB60B4A9E3539334B4EC7C8A572E76_1893228147;
         // ---------- Original Method ----------
         //return new AttributeCertificateIssuer(AttCertIssuer.getInstance(form));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.729 -0400", hash_original_method = "743F0CF49EF8F89EFC9B72FE9124B1C1", hash_generated_method = "C59CD124C574720A88C98AAD630E5AAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.547 -0400", hash_original_method = "743F0CF49EF8F89EFC9B72FE9124B1C1", hash_generated_method = "C72762E3DF1EB7DAA9055A6BB5483444")
     public boolean match(Certificate cert) {
         addTaint(cert.getTaint());
-    if(!(cert instanceof X509Certificate))        
+        if(!(cert instanceof X509Certificate))        
         {
-            boolean var68934A3E9455FA72420237EB05902327_866146734 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1683009693 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1683009693;
+            boolean var68934A3E9455FA72420237EB05902327_829232224 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_923059034 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_923059034;
         } //End block
         X509Certificate x509Cert = (X509Certificate)cert;
-    if(form instanceof V2Form)        
+        if(form instanceof V2Form)        
         {
             V2Form issuer = (V2Form)form;
-    if(issuer.getBaseCertificateID() != null)            
+            if(issuer.getBaseCertificateID() != null)            
             {
-                boolean varC23C002EA2F687F9C5AFBF47EE576B4B_1047197408 = (issuer.getBaseCertificateID().getSerial().getValue().equals(x509Cert.getSerialNumber())
+                boolean varC23C002EA2F687F9C5AFBF47EE576B4B_1890101310 = (issuer.getBaseCertificateID().getSerial().getValue().equals(x509Cert.getSerialNumber())
                     && matchesDN(x509Cert.getIssuerX500Principal(), issuer.getBaseCertificateID().getIssuer()));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1278801146 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1278801146;
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_291618391 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_291618391;
             } //End block
             GeneralNames name = issuer.getIssuerName();
-    if(matchesDN(x509Cert.getSubjectX500Principal(), name))            
+            if(matchesDN(x509Cert.getSubjectX500Principal(), name))            
             {
-                boolean varB326B5062B2F0E69046810717534CB09_855113238 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2029960114 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_2029960114;
+                boolean varB326B5062B2F0E69046810717534CB09_465202654 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1461451859 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1461451859;
             } //End block
         } //End block
         else
         {
             GeneralNames name = (GeneralNames)form;
-    if(matchesDN(x509Cert.getSubjectX500Principal(), name))            
+            if(matchesDN(x509Cert.getSubjectX500Principal(), name))            
             {
-                boolean varB326B5062B2F0E69046810717534CB09_912708132 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_536491050 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_536491050;
+                boolean varB326B5062B2F0E69046810717534CB09_619323976 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_790139479 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_790139479;
             } //End block
         } //End block
-        boolean var68934A3E9455FA72420237EB05902327_875125921 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1521792393 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1521792393;
+        boolean var68934A3E9455FA72420237EB05902327_483419658 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_462733735 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_462733735;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.730 -0400", hash_original_method = "F6888345D31D77DF02A0F426A3C9D5A0", hash_generated_method = "D593755F6D25767EA857FAC110BF00AB")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.548 -0400", hash_original_method = "F6888345D31D77DF02A0F426A3C9D5A0", hash_generated_method = "787ED14296DD4D56455C84BF19687BFE")
     public boolean equals(Object obj) {
         addTaint(obj.getTaint());
-    if(obj == this)        
+        if(obj == this)        
         {
-            boolean varB326B5062B2F0E69046810717534CB09_1366495515 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_926312688 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_926312688;
+            boolean varB326B5062B2F0E69046810717534CB09_18385240 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1745856148 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1745856148;
         } //End block
-    if(!(obj instanceof AttributeCertificateIssuer))        
+        if(!(obj instanceof AttributeCertificateIssuer))        
         {
-            boolean var68934A3E9455FA72420237EB05902327_1439644574 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_588933984 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_588933984;
+            boolean var68934A3E9455FA72420237EB05902327_581274836 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1804069847 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1804069847;
         } //End block
         AttributeCertificateIssuer other = (AttributeCertificateIssuer)obj;
-        boolean varCF24DFE3C963EC5254560A1E23DAEC9B_544475465 = (this.form.equals(other.form));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1453800280 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1453800280;
+        boolean varCF24DFE3C963EC5254560A1E23DAEC9B_1893621320 = (this.form.equals(other.form));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_914601240 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_914601240;
         // ---------- Original Method ----------
         //if (obj == this)
         //{
@@ -259,30 +259,30 @@ Object varDACB60B4A9E3539334B4EC7C8A572E76_1681813759 =         new AttributeCer
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.730 -0400", hash_original_method = "0B7A1B2982787E7750666F5D71BB8845", hash_generated_method = "9695A5C444606A833FB5F9C1A3DA3174")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.549 -0400", hash_original_method = "0B7A1B2982787E7750666F5D71BB8845", hash_generated_method = "95CE252A6AA1BEF066951B9A6A44C1AB")
     public int hashCode() {
-        int var2B374B3BF0704C747879C70CC6564E97_15731814 = (this.form.hashCode());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1780465293 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1780465293;
+        int var2B374B3BF0704C747879C70CC6564E97_1069490562 = (this.form.hashCode());
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_995508650 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_995508650;
         // ---------- Original Method ----------
         //return this.form.hashCode();
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.731 -0400", hash_original_method = "A87301CDB1806806ACAD029929062C9D", hash_generated_method = "34E4672FF82A2409A64AF3E5AB856EA9")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.549 -0400", hash_original_method = "A87301CDB1806806ACAD029929062C9D", hash_generated_method = "03C001172413F9A7BABF49E1BC6F263E")
     public boolean match(Object obj) {
         addTaint(obj.getTaint());
-    if(!(obj instanceof X509Certificate))        
+        if(!(obj instanceof X509Certificate))        
         {
-            boolean var68934A3E9455FA72420237EB05902327_1137633311 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_993777846 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_993777846;
+            boolean var68934A3E9455FA72420237EB05902327_379768295 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_114728058 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_114728058;
         } //End block
-        boolean varADA7754756F13D45E6E9A386DF7AABD4_919853541 = (match((Certificate)obj));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_807802742 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_807802742;
+        boolean varADA7754756F13D45E6E9A386DF7AABD4_1655293602 = (match((Certificate)obj));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_713100744 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_713100744;
         // ---------- Original Method ----------
         //if (!(obj instanceof X509Certificate))
         //{

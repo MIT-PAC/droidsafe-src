@@ -15,13 +15,13 @@ import java.util.ServiceLoader;
 
 public abstract class SelectorProvider {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.717 -0400", hash_original_method = "DDE564F0B2C96394E14746CA546F5611", hash_generated_method = "6B40AAE650197172BEF43AA1CD6DE226")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.374 -0400", hash_original_method = "DDE564F0B2C96394E14746CA546F5611", hash_generated_method = "6B40AAE650197172BEF43AA1CD6DE226")
     protected  SelectorProvider() {
         // ---------- Original Method ----------
     }
 
     
-        synchronized public static SelectorProvider provider() {
+    synchronized public static SelectorProvider provider() {
         if (provider == null) {
             provider = ServiceLoader.loadFromSystemProperty(SelectorProvider.class);
             if (provider == null) {
@@ -35,7 +35,7 @@ public abstract class SelectorProvider {
     }
 
     
-        private static SelectorProvider loadProviderByJar() {
+    private static SelectorProvider loadProviderByJar() {
         for (SelectorProvider provider : ServiceLoader.load(SelectorProvider.class)) {
             return provider;
         }
@@ -59,18 +59,18 @@ public abstract class SelectorProvider {
     public abstract SocketChannel openSocketChannel() throws IOException;
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.719 -0400", hash_original_method = "1567929400994F6BBA42155A37789D93", hash_generated_method = "DA4A24394BAC57FF04668E824D97D3FB")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.375 -0400", hash_original_method = "1567929400994F6BBA42155A37789D93", hash_generated_method = "3A830C4E766EBB079B5DE563CF317113")
     public Channel inheritedChannel() throws IOException {
-Channel var540C13E9E156B687226421B24F2DF178_2085358213 =         null;
-        var540C13E9E156B687226421B24F2DF178_2085358213.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_2085358213;
+Channel var540C13E9E156B687226421B24F2DF178_781734417 =         null;
+        var540C13E9E156B687226421B24F2DF178_781734417.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_781734417;
         // ---------- Original Method ----------
         //return null;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.719 -0400", hash_original_field = "A84D4D80E229BA36EE3D0C6D573ECAAF", hash_generated_field = "D035C1A1A75D6145DD94D05B3D58FE60")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.376 -0400", hash_original_field = "A84D4D80E229BA36EE3D0C6D573ECAAF", hash_generated_field = "D035C1A1A75D6145DD94D05B3D58FE60")
 
     private static SelectorProvider provider = null;
 }

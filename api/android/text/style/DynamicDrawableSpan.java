@@ -14,15 +14,15 @@ import android.util.Log;
 import java.lang.ref.WeakReference;
 
 public abstract class DynamicDrawableSpan extends ReplacementSpan {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.167 -0400", hash_original_field = "DD0F6B30A1C3613F4ED1E78B9E676A97", hash_generated_field = "D68ADB86A975A9AE5050DE7500A9318A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.973 -0400", hash_original_field = "DD0F6B30A1C3613F4ED1E78B9E676A97", hash_generated_field = "D68ADB86A975A9AE5050DE7500A9318A")
 
     protected int mVerticalAlignment;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.167 -0400", hash_original_field = "0AFE42520E442245FC7671F0C64652E7", hash_generated_field = "6E7F288327E5F719EDD09C1387A42733")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.973 -0400", hash_original_field = "0AFE42520E442245FC7671F0C64652E7", hash_generated_field = "6E7F288327E5F719EDD09C1387A42733")
 
     private WeakReference<Drawable> mDrawableRef;
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.168 -0400", hash_original_method = "587E05693DC916F3D9913DB57CE5CC25", hash_generated_method = "789768EBC2745941ED923A1AE4190854")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.973 -0400", hash_original_method = "587E05693DC916F3D9913DB57CE5CC25", hash_generated_method = "789768EBC2745941ED923A1AE4190854")
     public  DynamicDrawableSpan() {
         mVerticalAlignment = ALIGN_BOTTOM;
         // ---------- Original Method ----------
@@ -30,8 +30,8 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.169 -0400", hash_original_method = "5C20CFC81A776E313C1A5A57E335B286", hash_generated_method = "DB69116249BA33E0EF3EEBB6FDC4C251")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.974 -0400", hash_original_method = "5C20CFC81A776E313C1A5A57E335B286", hash_generated_method = "DB69116249BA33E0EF3EEBB6FDC4C251")
     protected  DynamicDrawableSpan(int verticalAlignment) {
         mVerticalAlignment = verticalAlignment;
         // ---------- Original Method ----------
@@ -39,12 +39,12 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.169 -0400", hash_original_method = "613CAAD12B2914F4036D9034966EEECA", hash_generated_method = "06AA56A01629129DC4524AAB8FFE3774")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.974 -0400", hash_original_method = "613CAAD12B2914F4036D9034966EEECA", hash_generated_method = "97DAA51389F18767270A6C48F470B1C9")
     public int getVerticalAlignment() {
-        int varDD0F6B30A1C3613F4ED1E78B9E676A97_472378010 = (mVerticalAlignment);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_469502306 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_469502306;
+        int varDD0F6B30A1C3613F4ED1E78B9E676A97_442507762 = (mVerticalAlignment);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_43121076 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_43121076;
         // ---------- Original Method ----------
         //return mVerticalAlignment;
     }
@@ -53,8 +53,8 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
     public abstract Drawable getDrawable();
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.170 -0400", hash_original_method = "0E2414BE2E113C87DD8ACCDB4F014ABB", hash_generated_method = "4A71819D1A1DD79C0343CEC40E87F61C")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.976 -0400", hash_original_method = "0E2414BE2E113C87DD8ACCDB4F014ABB", hash_generated_method = "D1259AE92AFAA0E3C7BDDB442E6E28F0")
     @Override
     public int getSize(Paint paint, CharSequence text,
                          int start, int end,
@@ -66,16 +66,16 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
         addTaint(paint.getTaint());
         Drawable d = getCachedDrawable();
         Rect rect = d.getBounds();
-    if(fm != null)        
+        if(fm != null)        
         {
             fm.ascent = -rect.bottom;
             fm.descent = 0;
             fm.top = fm.ascent;
             fm.bottom = 0;
         } //End block
-        int varEDBDBA894CAF24DA1077CEF4A95929F4_198952479 = (rect.right);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1360886535 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1360886535;
+        int varEDBDBA894CAF24DA1077CEF4A95929F4_1247633549 = (rect.right);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_426555855 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_426555855;
         // ---------- Original Method ----------
         //Drawable d = getCachedDrawable();
         //Rect rect = d.getBounds();
@@ -89,8 +89,8 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.171 -0400", hash_original_method = "6EDA777F5CB3128927ADAA236FCAEE94", hash_generated_method = "294CD1309671CFA7EE5FC6BF83780CF3")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.977 -0400", hash_original_method = "6EDA777F5CB3128927ADAA236FCAEE94", hash_generated_method = "294CD1309671CFA7EE5FC6BF83780CF3")
     @Override
     public void draw(Canvas canvas, CharSequence text,
                      int start, int end, float x, 
@@ -107,7 +107,7 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
         Drawable b = getCachedDrawable();
         canvas.save();
         int transY = bottom - b.getBounds().bottom;
-    if(mVerticalAlignment == ALIGN_BASELINE)        
+        if(mVerticalAlignment == ALIGN_BASELINE)        
         {
             transY -= paint.getFontMetricsInt().descent;
         } //End block
@@ -127,21 +127,21 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.172 -0400", hash_original_method = "0EFD0E735C0FDE972D23D8A040440B54", hash_generated_method = "5A539C74290ACE01A61AFC7CFEB8FC59")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.978 -0400", hash_original_method = "0EFD0E735C0FDE972D23D8A040440B54", hash_generated_method = "1AD13B3BF30B7BDD876B196CAF4835F1")
     private Drawable getCachedDrawable() {
         WeakReference<Drawable> wr = mDrawableRef;
         Drawable d = null;
-    if(wr != null)        
+        if(wr != null)        
         d = wr.get();
-    if(d == null)        
+        if(d == null)        
         {
             d = getDrawable();
             mDrawableRef = new WeakReference<Drawable>(d);
         } //End block
-Drawable varBE245B24E7ED509FDFAAA6CD39E35D89_1126444331 =         d;
-        varBE245B24E7ED509FDFAAA6CD39E35D89_1126444331.addTaint(taint);
-        return varBE245B24E7ED509FDFAAA6CD39E35D89_1126444331;
+Drawable varBE245B24E7ED509FDFAAA6CD39E35D89_1568719537 =         d;
+        varBE245B24E7ED509FDFAAA6CD39E35D89_1568719537.addTaint(taint);
+        return varBE245B24E7ED509FDFAAA6CD39E35D89_1568719537;
         // ---------- Original Method ----------
         //WeakReference<Drawable> wr = mDrawableRef;
         //Drawable d = null;
@@ -155,13 +155,13 @@ Drawable varBE245B24E7ED509FDFAAA6CD39E35D89_1126444331 =         d;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.172 -0400", hash_original_field = "EC81B49D6F038D1D244D6A566855D109", hash_generated_field = "A47BFC49D3DFA51412A4721B935ED380")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.978 -0400", hash_original_field = "EC81B49D6F038D1D244D6A566855D109", hash_generated_field = "A47BFC49D3DFA51412A4721B935ED380")
 
     private static final String TAG = "DynamicDrawableSpan";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.172 -0400", hash_original_field = "F6EAFC51FAE78705C767466535901625", hash_generated_field = "CFDAC4B4FA2FA0CAE26A24C1FE0C997B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.978 -0400", hash_original_field = "F6EAFC51FAE78705C767466535901625", hash_generated_field = "CFDAC4B4FA2FA0CAE26A24C1FE0C997B")
 
     public static final int ALIGN_BOTTOM = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.172 -0400", hash_original_field = "4F1E6FE1D0F95C6A1D7E39C526119559", hash_generated_field = "0B46879B5351D289275BAF23DDB894B7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.978 -0400", hash_original_field = "4F1E6FE1D0F95C6A1D7E39C526119559", hash_generated_field = "0B46879B5351D289275BAF23DDB894B7")
 
     public static final int ALIGN_BASELINE = 1;
 }

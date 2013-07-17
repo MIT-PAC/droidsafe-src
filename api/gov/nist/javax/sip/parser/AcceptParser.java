@@ -10,8 +10,8 @@ import java.text.ParseException;
 
 public class AcceptParser extends ParametersParser {
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.700 -0400", hash_original_method = "E50D6CA61897C534ECF6BFE2E6C66EEB", hash_generated_method = "47E74533E30A5580A43C253EA52B779A")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.743 -0400", hash_original_method = "E50D6CA61897C534ECF6BFE2E6C66EEB", hash_generated_method = "47E74533E30A5580A43C253EA52B779A")
     public  AcceptParser(String accept) {
         super(accept);
         addTaint(accept.getTaint());
@@ -19,8 +19,8 @@ public class AcceptParser extends ParametersParser {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.700 -0400", hash_original_method = "B0740C746A8D55CA7E1BAB3B373D9F3B", hash_generated_method = "CFD5C41C299FA64BEF69A6D9AEDB1EB1")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.744 -0400", hash_original_method = "B0740C746A8D55CA7E1BAB3B373D9F3B", hash_generated_method = "CFD5C41C299FA64BEF69A6D9AEDB1EB1")
     protected  AcceptParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -28,10 +28,10 @@ public class AcceptParser extends ParametersParser {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.701 -0400", hash_original_method = "4B990F83EF66D5D2EAA453ED852E8DC7", hash_generated_method = "26A49E70B3BE27139A72FFE35BE3DE70")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.746 -0400", hash_original_method = "4B990F83EF66D5D2EAA453ED852E8DC7", hash_generated_method = "C78778BCD730BF0A20D4E231F4863A2A")
     public SIPHeader parse() throws ParseException {
-    if(debug)        
+        if(debug)        
         dbg_enter("AcceptParser.parse");
         AcceptList list = new AcceptList();
         try 
@@ -67,13 +67,13 @@ public class AcceptParser extends ParametersParser {
                 super.parse(accept);
                 list.add(accept);
             } //End block
-SIPHeader varED12C351C2E8CA4F85F097DDC7E77B4D_1273043867 =             list;
-            varED12C351C2E8CA4F85F097DDC7E77B4D_1273043867.addTaint(taint);
-            return varED12C351C2E8CA4F85F097DDC7E77B4D_1273043867;
+SIPHeader varED12C351C2E8CA4F85F097DDC7E77B4D_370106463 =             list;
+            varED12C351C2E8CA4F85F097DDC7E77B4D_370106463.addTaint(taint);
+            return varED12C351C2E8CA4F85F097DDC7E77B4D_370106463;
         } //End block
         finally 
         {
-    if(debug)            
+            if(debug)            
             dbg_leave("AcceptParser.parse");
         } //End block
         // ---------- Original Method ----------

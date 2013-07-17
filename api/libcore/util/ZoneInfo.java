@@ -11,29 +11,29 @@ import java.util.Formatter;
 import java.util.TimeZone;
 
 public final class ZoneInfo extends TimeZone {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.176 -0400", hash_original_field = "25533336D3CA3E874C41CD80205EFA67", hash_generated_field = "060566AE9D04406A02A61A31328950F2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.543 -0400", hash_original_field = "25533336D3CA3E874C41CD80205EFA67", hash_generated_field = "060566AE9D04406A02A61A31328950F2")
 
     private int mRawOffset;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.176 -0400", hash_original_field = "B4BFFBC0BD12D4825C0DAFC91CE85747", hash_generated_field = "35AB18A3BDD75B1565BCF1FBB4FD4AC9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.544 -0400", hash_original_field = "B4BFFBC0BD12D4825C0DAFC91CE85747", hash_generated_field = "35AB18A3BDD75B1565BCF1FBB4FD4AC9")
 
     private int mEarliestRawOffset;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.176 -0400", hash_original_field = "63FA859BF150B7311C562769D64669EC", hash_generated_field = "2949F8E2C658E0F9BB6150829DB0F1FB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.544 -0400", hash_original_field = "63FA859BF150B7311C562769D64669EC", hash_generated_field = "2949F8E2C658E0F9BB6150829DB0F1FB")
 
     private int[] mTransitions;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.176 -0400", hash_original_field = "B15C1D4EC7E997E0BBC5999C3706A3B1", hash_generated_field = "A77170E4D59B7DEF7933F555FC87B6C7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.544 -0400", hash_original_field = "B15C1D4EC7E997E0BBC5999C3706A3B1", hash_generated_field = "A77170E4D59B7DEF7933F555FC87B6C7")
 
     private int[] mOffsets;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.177 -0400", hash_original_field = "EA5AD045B4413F706AC3BC8F429DD15B", hash_generated_field = "284A583171EC8AE6481011AB384C8390")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.544 -0400", hash_original_field = "EA5AD045B4413F706AC3BC8F429DD15B", hash_generated_field = "284A583171EC8AE6481011AB384C8390")
 
     private byte[] mTypes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.177 -0400", hash_original_field = "965AB2D74A70F0A4F6ED607153EAA220", hash_generated_field = "65AF6E20C269E9E4FFFD83D02D26CACC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.544 -0400", hash_original_field = "965AB2D74A70F0A4F6ED607153EAA220", hash_generated_field = "65AF6E20C269E9E4FFFD83D02D26CACC")
 
     private byte[] mIsDsts;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.177 -0400", hash_original_field = "A8906AE3405550F41E9C3AAAC7750368", hash_generated_field = "6095C0BF9C908D345DF50444B88487B4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.544 -0400", hash_original_field = "A8906AE3405550F41E9C3AAAC7750368", hash_generated_field = "6095C0BF9C908D345DF50444B88487B4")
 
     private boolean mUseDst;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.179 -0400", hash_original_method = "7B585FDC58F35CED01D1FBB089EE95E4", hash_generated_method = "727133FC28FC441C8D650224D389BFC8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.546 -0400", hash_original_method = "7B585FDC58F35CED01D1FBB089EE95E4", hash_generated_method = "727133FC28FC441C8D650224D389BFC8")
       ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] isDsts) {
         addTaint(name.getTaint());
         mTransitions = transitions;
@@ -43,16 +43,16 @@ public final class ZoneInfo extends TimeZone {
         int lastStd;
 for(lastStd = mTransitions.length - 1;lastStd >= 0;lastStd--)
         {
-    if(mIsDsts[mTypes[lastStd] & 0xff] == 0)            
+            if(mIsDsts[mTypes[lastStd] & 0xff] == 0)            
             {
                 break;
             } //End block
         } //End block
-    if(lastStd < 0)        
+        if(lastStd < 0)        
         {
             lastStd = 0;
         } //End block
-    if(lastStd >= mTypes.length)        
+        if(lastStd >= mTypes.length)        
         {
             mRawOffset = gmtOffsets[0];
         } //End block
@@ -63,7 +63,7 @@ for(lastStd = mTransitions.length - 1;lastStd >= 0;lastStd--)
         int firstStd = -1;
 for(int i = 0;i < mTransitions.length;++i)
         {
-    if(mIsDsts[mTypes[i] & 0xff] == 0)            
+            if(mIsDsts[mTypes[i] & 0xff] == 0)            
             {
                 firstStd = i;
                 break;
@@ -77,10 +77,10 @@ for(int i = 0;i < mOffsets.length;i++)
         } //End block
         boolean usesDst = false;
         long currentUnixTime = System.currentTimeMillis() / 1000;
-    if(mTransitions.length > 0)        
+        if(mTransitions.length > 0)        
         {
             long latestScheduleTime = ((long) mTransitions[mTransitions.length - 1]) & 0xffffffff;
-    if(currentUnixTime < latestScheduleTime)            
+            if(currentUnixTime < latestScheduleTime)            
             {
                 usesDst = true;
             } //End block
@@ -93,7 +93,7 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.181 -0400", hash_original_method = "F24BAF6EEBE3E0E7B99D03D590A46295", hash_generated_method = "7330207AE2E30F2D9CE1257423857FBF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.548 -0400", hash_original_method = "F24BAF6EEBE3E0E7B99D03D590A46295", hash_generated_method = "E3DDE6DB58910D8DDA65E0EDE880D5EF")
     @Override
     public int getOffset(int era, int year, int month, int day, int dayOfWeek, int millis) {
         addTaint(millis);
@@ -106,7 +106,7 @@ for(int i = 0;i < mOffsets.length;i++)
         year %= 400;
         calc += year * (365 * MILLISECONDS_PER_DAY);
         calc += ((year + 3) / 4) * MILLISECONDS_PER_DAY;
-    if(year > 0)        
+        if(year > 0)        
         {
             calc -= ((year - 1) / 100) * MILLISECONDS_PER_DAY;
         } //End block
@@ -117,9 +117,9 @@ for(int i = 0;i < mOffsets.length;i++)
         calc += millis;
         calc -= mRawOffset;
         calc -= UNIX_OFFSET;
-        int var77AC55A80D74BA2DABC8752D59C53FC8_1022466825 = (getOffset(calc));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1887137551 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1887137551;
+        int var77AC55A80D74BA2DABC8752D59C53FC8_1824208674 = (getOffset(calc));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_726145619 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_726145619;
         // ---------- Original Method ----------
         //long calc = (year / 400) * MILLISECONDS_PER_400_YEARS;
         //year %= 400;
@@ -139,25 +139,25 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.181 -0400", hash_original_method = "1DD2E67C6E4C7148C355A1BA56BEEEAB", hash_generated_method = "6EBB7AA29B698A90AEF3581AD34EF899")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.548 -0400", hash_original_method = "1DD2E67C6E4C7148C355A1BA56BEEEAB", hash_generated_method = "D33EEE12A4BA22B78DB368B31CE32FB8")
     @Override
     public int getOffset(long when) {
         addTaint(when);
         int unix = (int) (when / 1000);
         int transition = Arrays.binarySearch(mTransitions, unix);
-    if(transition < 0)        
+        if(transition < 0)        
         {
             transition = ~transition - 1;
-    if(transition < 0)            
+            if(transition < 0)            
             {
-                int varB4BFFBC0BD12D4825C0DAFC91CE85747_925808404 = (mEarliestRawOffset);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1008324380 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1008324380;
+                int varB4BFFBC0BD12D4825C0DAFC91CE85747_1906147638 = (mEarliestRawOffset);
+                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1457189132 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1457189132;
             } //End block
         } //End block
-        int var1556019C7102B2245374710708528934_177749916 = (mRawOffset + mOffsets[mTypes[transition] & 0xff] * 1000);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_701699881 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_701699881;
+        int var1556019C7102B2245374710708528934_1165832476 = (mRawOffset + mOffsets[mTypes[transition] & 0xff] * 1000);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_230829919 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_230829919;
         // ---------- Original Method ----------
         //int unix = (int) (when / 1000);
         //int transition = Arrays.binarySearch(mTransitions, unix);
@@ -171,26 +171,26 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.182 -0400", hash_original_method = "B2B7B20D9A81D2665491427CA669DC48", hash_generated_method = "8DF6546E68E7F165925FE6F89C647F15")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.549 -0400", hash_original_method = "B2B7B20D9A81D2665491427CA669DC48", hash_generated_method = "77B00BAB7750529E57B663A78F103AB9")
     @Override
     public boolean inDaylightTime(Date time) {
         addTaint(time.getTaint());
         long when = time.getTime();
         int unix = (int) (when / 1000);
         int transition = Arrays.binarySearch(mTransitions, unix);
-    if(transition < 0)        
+        if(transition < 0)        
         {
             transition = ~transition - 1;
-    if(transition < 0)            
+            if(transition < 0)            
             {
-                boolean var68934A3E9455FA72420237EB05902327_1260270888 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_189138835 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_189138835;
+                boolean var68934A3E9455FA72420237EB05902327_133806814 = (false);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1839830482 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1839830482;
             } //End block
         } //End block
-        boolean varE59751AC6B823001D24AA365DDAF03E7_1866210782 = (mIsDsts[mTypes[transition] & 0xff] == 1);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1033121493 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1033121493;
+        boolean varE59751AC6B823001D24AA365DDAF03E7_1270894213 = (mIsDsts[mTypes[transition] & 0xff] == 1);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_627048430 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_627048430;
         // ---------- Original Method ----------
         //long when = time.getTime();
         //int unix = (int) (when / 1000);
@@ -205,20 +205,20 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.183 -0400", hash_original_method = "87352764C6114566CFCD3A7F913CA653", hash_generated_method = "793A288307EBBACB6B82F968AF260698")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.550 -0400", hash_original_method = "87352764C6114566CFCD3A7F913CA653", hash_generated_method = "E305B0A0B83E37BC37CCB246BA4E60B2")
     @Override
     public int getRawOffset() {
-        int var25533336D3CA3E874C41CD80205EFA67_591565042 = (mRawOffset);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2006372262 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2006372262;
+        int var25533336D3CA3E874C41CD80205EFA67_1331982194 = (mRawOffset);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_529081032 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_529081032;
         // ---------- Original Method ----------
         //return mRawOffset;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.183 -0400", hash_original_method = "AE2A1B68EBE1FCF14F7860BA64C34CCE", hash_generated_method = "079E0D8D6A4EFB8E0B2D948CAED07A5E")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.550 -0400", hash_original_method = "AE2A1B68EBE1FCF14F7860BA64C34CCE", hash_generated_method = "079E0D8D6A4EFB8E0B2D948CAED07A5E")
     @Override
     public void setRawOffset(int off) {
         mRawOffset = off;
@@ -227,48 +227,48 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.183 -0400", hash_original_method = "81F7D5AE987C5D23D9D894C0567E3722", hash_generated_method = "66D359DAB89553F9C15DFCEA24D27AA2")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.550 -0400", hash_original_method = "81F7D5AE987C5D23D9D894C0567E3722", hash_generated_method = "A95028D907EE261B91142F2E12C6E3E5")
     @Override
     public boolean useDaylightTime() {
-        boolean varA8906AE3405550F41E9C3AAAC7750368_2007946873 = (mUseDst);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1602027707 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1602027707;
+        boolean varA8906AE3405550F41E9C3AAAC7750368_628676474 = (mUseDst);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_881273985 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_881273985;
         // ---------- Original Method ----------
         //return mUseDst;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.184 -0400", hash_original_method = "73AAAC31DDE42029904964FC44B684BD", hash_generated_method = "16A2F4F9B7CFFF60F75D438AC33A32F0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.551 -0400", hash_original_method = "73AAAC31DDE42029904964FC44B684BD", hash_generated_method = "2ACE1B0179D3E21574D50896B6737943")
     @Override
     public boolean hasSameRules(TimeZone timeZone) {
         addTaint(timeZone.getTaint());
-    if(!(timeZone instanceof ZoneInfo))        
+        if(!(timeZone instanceof ZoneInfo))        
         {
-            boolean var68934A3E9455FA72420237EB05902327_1123512840 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_709706841 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_709706841;
+            boolean var68934A3E9455FA72420237EB05902327_1047334861 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_564778980 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_564778980;
         } //End block
         ZoneInfo other = (ZoneInfo) timeZone;
-    if(mUseDst != other.mUseDst)        
+        if(mUseDst != other.mUseDst)        
         {
-            boolean var68934A3E9455FA72420237EB05902327_1213970683 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2062221309 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2062221309;
+            boolean var68934A3E9455FA72420237EB05902327_706028841 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_256460068 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_256460068;
         } //End block
-    if(!mUseDst)        
+        if(!mUseDst)        
         {
-            boolean varE790F3138881CFC4593B92237141714D_1346215956 = (mRawOffset == other.mRawOffset);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1619894783 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1619894783;
+            boolean varE790F3138881CFC4593B92237141714D_1522759731 = (mRawOffset == other.mRawOffset);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_129134498 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_129134498;
         } //End block
-        boolean var57B18B391688B2FAE9EB0ABD9BECEED9_2064045174 = (mRawOffset == other.mRawOffset
+        boolean var57B18B391688B2FAE9EB0ABD9BECEED9_316596727 = (mRawOffset == other.mRawOffset
                 && Arrays.equals(mOffsets, other.mOffsets)
                 && Arrays.equals(mIsDsts, other.mIsDsts)
                 && Arrays.equals(mTypes, other.mTypes)
                 && Arrays.equals(mTransitions, other.mTransitions));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_718144727 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_718144727;
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1976553442 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1976553442;
         // ---------- Original Method ----------
         //if (!(timeZone instanceof ZoneInfo)) {
             //return false;
@@ -288,21 +288,21 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.185 -0400", hash_original_method = "ECC5255AD9E8EF75737AB68867396FFB", hash_generated_method = "5FCC2293AE0E583EFA748B7604DB4837")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.552 -0400", hash_original_method = "ECC5255AD9E8EF75737AB68867396FFB", hash_generated_method = "94AFD972B0A2938CDCFD5BD278AA746F")
     @Override
     public boolean equals(Object obj) {
         addTaint(obj.getTaint());
-    if(!(obj instanceof ZoneInfo))        
+        if(!(obj instanceof ZoneInfo))        
         {
-            boolean var68934A3E9455FA72420237EB05902327_330052195 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_171846972 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_171846972;
+            boolean var68934A3E9455FA72420237EB05902327_1644899649 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_174574771 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_174574771;
         } //End block
         ZoneInfo other = (ZoneInfo) obj;
-        boolean varAC81AD85115E032C172D6CA8BDF2D25B_230692773 = (getID().equals(other.getID()) && hasSameRules(other));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1070681601 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1070681601;
+        boolean varAC81AD85115E032C172D6CA8BDF2D25B_536920503 = (getID().equals(other.getID()) && hasSameRules(other));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1519048495 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1519048495;
         // ---------- Original Method ----------
         //if (!(obj instanceof ZoneInfo)) {
             //return false;
@@ -312,8 +312,8 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.186 -0400", hash_original_method = "8C2336163065486F5E05E5E7E360E4D3", hash_generated_method = "5D2A54E06390F9E11373C1C7E110FD61")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.552 -0400", hash_original_method = "8C2336163065486F5E05E5E7E360E4D3", hash_generated_method = "F3C82A5809776A067C54BA0BE0739E85")
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -325,9 +325,9 @@ for(int i = 0;i < mOffsets.length;i++)
         result = prime * result + Arrays.hashCode(mTransitions);
         result = prime * result + Arrays.hashCode(mTypes);
         result = prime * result + (mUseDst ? 1231 : 1237);
-        int varB4A88417B3D0170D754C647C30B7216A_958588672 = (result);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1787469802 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1787469802;
+        int varB4A88417B3D0170D754C647C30B7216A_1059098772 = (result);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_595523117 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_595523117;
         // ---------- Original Method ----------
         //final int prime = 31;
         //int result = 1;
@@ -342,8 +342,8 @@ for(int i = 0;i < mOffsets.length;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.186 -0400", hash_original_method = "0C13B49DB3B5709653F75D972BEB7E8A", hash_generated_method = "AFCE5774A4A34CF334B5140E5D4A8D05")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.553 -0400", hash_original_method = "0C13B49DB3B5709653F75D972BEB7E8A", hash_generated_method = "BE70981D989D3E8AED42D6A13DEA1B7A")
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -361,9 +361,9 @@ for(int i = 0;i < mTransitions.length;++i)
             f.format("%4d : time=%11d %s = %s isDst=%d offset=%5d gmtOffset=%d\n",
                     i, mTransitions[i], utcTime, localTime, mIsDsts[type], offset, gmtOffset);
         } //End block
-String var2460B846747F8B22185AD8BE722266A5_1748440814 =         sb.toString();
-        var2460B846747F8B22185AD8BE722266A5_1748440814.addTaint(taint);
-        return var2460B846747F8B22185AD8BE722266A5_1748440814;
+String var2460B846747F8B22185AD8BE722266A5_1706445766 =         sb.toString();
+        var2460B846747F8B22185AD8BE722266A5_1706445766.addTaint(taint);
+        return var2460B846747F8B22185AD8BE722266A5_1706445766;
         // ---------- Original Method ----------
         //StringBuilder sb = new StringBuilder();
         //sb.append(getClass().getName() + "[" + getID() + ",mRawOffset=" + mRawOffset +
@@ -383,7 +383,7 @@ String var2460B846747F8B22185AD8BE722266A5_1748440814 =         sb.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static String formatTime(int s, TimeZone tz) {
         SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd HH:mm:ss yyyy zzz");
         sdf.setTimeZone(tz);
@@ -392,21 +392,21 @@ String var2460B846747F8B22185AD8BE722266A5_1748440814 =         sb.toString();
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.187 -0400", hash_original_field = "4E37F5EF96F5FB5DC2D379BE76154EBD", hash_generated_field = "F90447479CBDC64DF2FB7D5461FD8925")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.554 -0400", hash_original_field = "4E37F5EF96F5FB5DC2D379BE76154EBD", hash_generated_field = "F90447479CBDC64DF2FB7D5461FD8925")
 
     private static final long MILLISECONDS_PER_DAY = 24 * 60 * 60 * 1000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.187 -0400", hash_original_field = "EE48681854129595789FA4BFEAF5AE09", hash_generated_field = "E3952B721A9A2B891A46AA950E0D275D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.554 -0400", hash_original_field = "EE48681854129595789FA4BFEAF5AE09", hash_generated_field = "E3952B721A9A2B891A46AA950E0D275D")
 
     private static final long MILLISECONDS_PER_400_YEARS = MILLISECONDS_PER_DAY * (400 * 365 + 100 - 3);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.187 -0400", hash_original_field = "215A8274816B56DD5475C83DCB58931C", hash_generated_field = "D229D7317C365A16CE1D72D8769A5141")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.554 -0400", hash_original_field = "215A8274816B56DD5475C83DCB58931C", hash_generated_field = "D229D7317C365A16CE1D72D8769A5141")
 
     private static final long UNIX_OFFSET = 62167219200000L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.187 -0400", hash_original_field = "2067C9577E3E7D0B0E123862C1BBDBD4", hash_generated_field = "22BEEDA8661AC3FEFCC2DD0FB611C6E4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.554 -0400", hash_original_field = "2067C9577E3E7D0B0E123862C1BBDBD4", hash_generated_field = "22BEEDA8661AC3FEFCC2DD0FB611C6E4")
 
     private static final int[] NORMAL = new int[] {
         0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334,
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.187 -0400", hash_original_field = "2F6AE912A2D47DF4C13CFDE63FA63311", hash_generated_field = "B12F84DFBC4C3EA8E5351AA3B43B9A98")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.554 -0400", hash_original_field = "2F6AE912A2D47DF4C13CFDE63FA63311", hash_generated_field = "B12F84DFBC4C3EA8E5351AA3B43B9A98")
 
     private static final int[] LEAP = new int[] {
         0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335,

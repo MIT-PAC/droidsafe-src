@@ -12,19 +12,19 @@ import android.view.accessibility.AccessibilityNodeInfo;
 
 class AccessibilityDelegateCompatIcs {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.688 -0400", hash_original_method = "879A5ED94FFF8E2596509D34ABD5C8D4", hash_generated_method = "879A5ED94FFF8E2596509D34ABD5C8D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.210 -0400", hash_original_method = "879A5ED94FFF8E2596509D34ABD5C8D4", hash_generated_method = "879A5ED94FFF8E2596509D34ABD5C8D4")
     public AccessibilityDelegateCompatIcs ()
     {
         //Synthesized constructor
     }
 
 
-        public static Object newAccessibilityDelegateDefaultImpl() {
+    public static Object newAccessibilityDelegateDefaultImpl() {
         return new AccessibilityDelegate();
     }
 
     
-        public static Object newAccessibilityDelegateBridge(final AccessibilityDelegateBridge bridge) {
+    public static Object newAccessibilityDelegateBridge(final AccessibilityDelegateBridge bridge) {
         return new AccessibilityDelegate() {
             @Override
             public boolean dispatchPopulateAccessibilityEvent(View host, AccessibilityEvent event) {
@@ -59,34 +59,34 @@ class AccessibilityDelegateCompatIcs {
     }
 
     
-        public static boolean dispatchPopulateAccessibilityEvent(Object delegate, View host,
+    public static boolean dispatchPopulateAccessibilityEvent(Object delegate, View host,
             AccessibilityEvent event) {
         return ((AccessibilityDelegate) delegate).dispatchPopulateAccessibilityEvent(host, event);
     }
 
     
-        public static void onInitializeAccessibilityEvent(Object delegate, View host,
+    public static void onInitializeAccessibilityEvent(Object delegate, View host,
             AccessibilityEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         ((AccessibilityDelegate) delegate).onInitializeAccessibilityEvent(host, event);
     }
 
     
-        public static void onInitializeAccessibilityNodeInfo(Object delegate, View host, Object info) {
+    public static void onInitializeAccessibilityNodeInfo(Object delegate, View host, Object info) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         ((AccessibilityDelegate) delegate).onInitializeAccessibilityNodeInfo(host,
                 (AccessibilityNodeInfo) info);
     }
 
     
-        public static void onPopulateAccessibilityEvent(Object delegate, View host,
+    public static void onPopulateAccessibilityEvent(Object delegate, View host,
             AccessibilityEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         ((AccessibilityDelegate) delegate).onPopulateAccessibilityEvent(host, event);
     }
 
     
-        public static boolean onRequestSendAccessibilityEvent(Object delegate, ViewGroup host,
+    public static boolean onRequestSendAccessibilityEvent(Object delegate, ViewGroup host,
             View child, AccessibilityEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         return ((AccessibilityDelegate) delegate).onRequestSendAccessibilityEvent(host, child,
@@ -94,12 +94,12 @@ class AccessibilityDelegateCompatIcs {
     }
 
     
-        public static void sendAccessibilityEvent(Object delegate, View host, int eventType) {
+    public static void sendAccessibilityEvent(Object delegate, View host, int eventType) {
         ((AccessibilityDelegate) delegate).sendAccessibilityEvent(host, eventType);
     }
 
     
-        public static void sendAccessibilityEventUnchecked(Object delegate, View host,
+    public static void sendAccessibilityEventUnchecked(Object delegate, View host,
             AccessibilityEvent event) {
         ((AccessibilityDelegate) delegate).sendAccessibilityEventUnchecked(host, event);
     }

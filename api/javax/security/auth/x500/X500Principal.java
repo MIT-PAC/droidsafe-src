@@ -14,20 +14,20 @@ import java.util.Map;
 import org.apache.harmony.security.x501.Name;
 
 public final class X500Principal implements Serializable, Principal {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.201 -0400", hash_original_field = "567C996739EDFA1CDBAD4C55A80580DF", hash_generated_field = "CFC846905F9BAB769B1824279452E9D4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.061 -0400", hash_original_field = "567C996739EDFA1CDBAD4C55A80580DF", hash_generated_field = "CFC846905F9BAB769B1824279452E9D4")
 
     private transient Name dn;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.201 -0400", hash_original_field = "3FD37E7C1754DA8004AB09E17AD51B85", hash_generated_field = "6B8880E941EC803BC6CC2DFD6A5E024B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.061 -0400", hash_original_field = "3FD37E7C1754DA8004AB09E17AD51B85", hash_generated_field = "6B8880E941EC803BC6CC2DFD6A5E024B")
 
     private transient String canonicalName;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.204 -0400", hash_original_method = "A3047134DA2BBFDCD9EABEAC496A6A0D", hash_generated_method = "BBE310B73D8A96B59CB31589263E9685")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.071 -0400", hash_original_method = "A3047134DA2BBFDCD9EABEAC496A6A0D", hash_generated_method = "71C9B942FA13C6142F257D881FE648B3")
     public  X500Principal(byte[] name) {
-    if(name == null)        
+        if(name == null)        
         {
-            IllegalArgumentException var4611648A39111752F4444BE2F12A2156_418841863 = new IllegalArgumentException("Name cannot be null");
-            var4611648A39111752F4444BE2F12A2156_418841863.addTaint(taint);
-            throw var4611648A39111752F4444BE2F12A2156_418841863;
+            IllegalArgumentException var4611648A39111752F4444BE2F12A2156_79592633 = new IllegalArgumentException("Name cannot be null");
+            var4611648A39111752F4444BE2F12A2156_79592633.addTaint(taint);
+            throw var4611648A39111752F4444BE2F12A2156_79592633;
         } //End block
         try 
         {
@@ -35,9 +35,9 @@ public final class X500Principal implements Serializable, Principal {
         } //End block
         catch (IOException e)
         {
-            java.lang.IllegalArgumentException varCBE615D094712B7C6E39025FB16B5668_1295602942 = incorrectInputEncoding(e);
-            varCBE615D094712B7C6E39025FB16B5668_1295602942.addTaint(taint);
-            throw varCBE615D094712B7C6E39025FB16B5668_1295602942;
+            java.lang.IllegalArgumentException varCBE615D094712B7C6E39025FB16B5668_1282160131 = incorrectInputEncoding(e);
+            varCBE615D094712B7C6E39025FB16B5668_1282160131.addTaint(taint);
+            throw varCBE615D094712B7C6E39025FB16B5668_1282160131;
         } //End block
         // ---------- Original Method ----------
         //if (name == null) {
@@ -51,13 +51,13 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.208 -0400", hash_original_method = "BF19E6A321D84C3196CD725DF225766B", hash_generated_method = "044C3FEBA5188538E6D68CE7A06F2CB6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.104 -0400", hash_original_method = "BF19E6A321D84C3196CD725DF225766B", hash_generated_method = "58D5451E864A7F45F3E14A584098CC86")
     public  X500Principal(InputStream in) {
-    if(in == null)        
+        if(in == null)        
         {
-            NullPointerException varF5E88630BAEB32AA1B2D44C55B908E4A_1432374836 = new NullPointerException("in == null");
-            varF5E88630BAEB32AA1B2D44C55B908E4A_1432374836.addTaint(taint);
-            throw varF5E88630BAEB32AA1B2D44C55B908E4A_1432374836;
+            NullPointerException varF5E88630BAEB32AA1B2D44C55B908E4A_1100852188 = new NullPointerException("in == null");
+            varF5E88630BAEB32AA1B2D44C55B908E4A_1100852188.addTaint(taint);
+            throw varF5E88630BAEB32AA1B2D44C55B908E4A_1100852188;
         } //End block
         try 
         {
@@ -65,9 +65,9 @@ public final class X500Principal implements Serializable, Principal {
         } //End block
         catch (IOException e)
         {
-            java.lang.IllegalArgumentException varCBE615D094712B7C6E39025FB16B5668_1952465625 = incorrectInputEncoding(e);
-            varCBE615D094712B7C6E39025FB16B5668_1952465625.addTaint(taint);
-            throw varCBE615D094712B7C6E39025FB16B5668_1952465625;
+            java.lang.IllegalArgumentException varCBE615D094712B7C6E39025FB16B5668_1727701994 = incorrectInputEncoding(e);
+            varCBE615D094712B7C6E39025FB16B5668_1727701994.addTaint(taint);
+            throw varCBE615D094712B7C6E39025FB16B5668_1727701994;
         } //End block
         // ---------- Original Method ----------
         //if (in == null) {
@@ -81,13 +81,13 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.211 -0400", hash_original_method = "4B12F08D986FED39E34C8D26B1B878DE", hash_generated_method = "7B198095A78382D56F14D483F5A9EC96")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.135 -0400", hash_original_method = "4B12F08D986FED39E34C8D26B1B878DE", hash_generated_method = "58C03B4E618301C756226F917093ECF9")
     public  X500Principal(String name) {
-    if(name == null)        
+        if(name == null)        
         {
-            NullPointerException varD55C34D141FD57420C78F6F4EB8B48E8_381408716 = new NullPointerException("Name cannot be null");
-            varD55C34D141FD57420C78F6F4EB8B48E8_381408716.addTaint(taint);
-            throw varD55C34D141FD57420C78F6F4EB8B48E8_381408716;
+            NullPointerException varD55C34D141FD57420C78F6F4EB8B48E8_1975858802 = new NullPointerException("Name cannot be null");
+            varD55C34D141FD57420C78F6F4EB8B48E8_1975858802.addTaint(taint);
+            throw varD55C34D141FD57420C78F6F4EB8B48E8_1975858802;
         } //End block
         try 
         {
@@ -95,9 +95,9 @@ public final class X500Principal implements Serializable, Principal {
         } //End block
         catch (IOException e)
         {
-            java.lang.IllegalArgumentException varF3BA263C43D67A9C283EE45F1DF671F7_1716858445 = incorrectInputName(e, name);
-            varF3BA263C43D67A9C283EE45F1DF671F7_1716858445.addTaint(taint);
-            throw varF3BA263C43D67A9C283EE45F1DF671F7_1716858445;
+            java.lang.IllegalArgumentException varF3BA263C43D67A9C283EE45F1DF671F7_1020333256 = incorrectInputName(e, name);
+            varF3BA263C43D67A9C283EE45F1DF671F7_1020333256.addTaint(taint);
+            throw varF3BA263C43D67A9C283EE45F1DF671F7_1020333256;
         } //End block
         // ---------- Original Method ----------
         //if (name == null) {
@@ -111,13 +111,13 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.217 -0400", hash_original_method = "2009C8B3D7F2D72E316D77325E1D8621", hash_generated_method = "ADE387DD6FC981CA8CD1567716B14331")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.152 -0400", hash_original_method = "2009C8B3D7F2D72E316D77325E1D8621", hash_generated_method = "46ACB32B13BD47CB01CB8C661672C48A")
     public  X500Principal(String name, Map<String,String> keywordMap) {
-    if(name == null)        
+        if(name == null)        
         {
-            NullPointerException varD55C34D141FD57420C78F6F4EB8B48E8_993316709 = new NullPointerException("Name cannot be null");
-            varD55C34D141FD57420C78F6F4EB8B48E8_993316709.addTaint(taint);
-            throw varD55C34D141FD57420C78F6F4EB8B48E8_993316709;
+            NullPointerException varD55C34D141FD57420C78F6F4EB8B48E8_1992296771 = new NullPointerException("Name cannot be null");
+            varD55C34D141FD57420C78F6F4EB8B48E8_1992296771.addTaint(taint);
+            throw varD55C34D141FD57420C78F6F4EB8B48E8_1992296771;
         } //End block
         try 
         {
@@ -125,9 +125,9 @@ public final class X500Principal implements Serializable, Principal {
         } //End block
         catch (IOException e)
         {
-            java.lang.IllegalArgumentException varF3BA263C43D67A9C283EE45F1DF671F7_307816010 = incorrectInputName(e, name);
-            varF3BA263C43D67A9C283EE45F1DF671F7_307816010.addTaint(taint);
-            throw varF3BA263C43D67A9C283EE45F1DF671F7_307816010;
+            java.lang.IllegalArgumentException varF3BA263C43D67A9C283EE45F1DF671F7_1068229304 = incorrectInputName(e, name);
+            varF3BA263C43D67A9C283EE45F1DF671F7_1068229304.addTaint(taint);
+            throw varF3BA263C43D67A9C283EE45F1DF671F7_1068229304;
         } //End block
         // ---------- Original Method ----------
         //if (name == null) {
@@ -141,7 +141,7 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.218 -0400", hash_original_method = "9E8384C79D62223409840D75AB5AB58E", hash_generated_method = "09EFF356EBDF39DF087EF8EC087C4E14")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.153 -0400", hash_original_method = "9E8384C79D62223409840D75AB5AB58E", hash_generated_method = "09EFF356EBDF39DF087EF8EC087C4E14")
     private IllegalArgumentException incorrectInputEncoding(IOException e) {
         addTaint(e.getTaint());
         IllegalArgumentException iae = new IllegalArgumentException("Incorrect input encoding");
@@ -155,7 +155,7 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.219 -0400", hash_original_method = "6436965683334E035C1CE670538AE7C6", hash_generated_method = "ABDA72E7CBEFE08540F89AF93F018AF2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.154 -0400", hash_original_method = "6436965683334E035C1CE670538AE7C6", hash_generated_method = "ABDA72E7CBEFE08540F89AF93F018AF2")
     private IllegalArgumentException incorrectInputName(IOException e, String name) {
         addTaint(name.getTaint());
         addTaint(e.getTaint());
@@ -170,15 +170,15 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.219 -0400", hash_original_method = "4587ED52F7AA726C7418DB94B8315A23", hash_generated_method = "A134BEA11A2228832DB0F0EC69336A9A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.154 -0400", hash_original_method = "4587ED52F7AA726C7418DB94B8315A23", hash_generated_method = "7661A1D74C9E8F17648EC4CB2286CF6F")
     private synchronized String getCanonicalName() {
-    if(canonicalName == null)        
+        if(canonicalName == null)        
         {
             canonicalName = dn.getName(CANONICAL);
         } //End block
-String var7E150FCC7E02D69327EC2754E827BBC0_1942694981 =         canonicalName;
-        var7E150FCC7E02D69327EC2754E827BBC0_1942694981.addTaint(taint);
-        return var7E150FCC7E02D69327EC2754E827BBC0_1942694981;
+String var7E150FCC7E02D69327EC2754E827BBC0_1762934192 =         canonicalName;
+        var7E150FCC7E02D69327EC2754E827BBC0_1762934192.addTaint(taint);
+        return var7E150FCC7E02D69327EC2754E827BBC0_1762934192;
         // ---------- Original Method ----------
         //if (canonicalName == null) {
             //canonicalName = dn.getName(CANONICAL);
@@ -187,26 +187,26 @@ String var7E150FCC7E02D69327EC2754E827BBC0_1942694981 =         canonicalName;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.219 -0400", hash_original_method = "16164FE0EFFEA9276C58202163E56457", hash_generated_method = "428133C4AEAB98EC37610A272337696B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.155 -0400", hash_original_method = "16164FE0EFFEA9276C58202163E56457", hash_generated_method = "398DB588BA1D39F2DE958FDAF526ACDA")
     @Override
     public boolean equals(Object o) {
         addTaint(o.getTaint());
-    if(this == o)        
+        if(this == o)        
         {
-            boolean varB326B5062B2F0E69046810717534CB09_1022790439 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1954906732 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1954906732;
+            boolean varB326B5062B2F0E69046810717534CB09_589956096 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1115347247 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1115347247;
         } //End block
-    if(o == null || this.getClass() != o.getClass())        
+        if(o == null || this.getClass() != o.getClass())        
         {
-            boolean var68934A3E9455FA72420237EB05902327_1630057361 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1301090744 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1301090744;
+            boolean var68934A3E9455FA72420237EB05902327_2040916446 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1430609959 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1430609959;
         } //End block
         X500Principal principal = (X500Principal) o;
-        boolean varBFB080AED0E2AF7359E60DC9CCF7D15B_1605151750 = (getCanonicalName().equals(principal.getCanonicalName()));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1831756980 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1831756980;
+        boolean varBFB080AED0E2AF7359E60DC9CCF7D15B_1161901849 = (getCanonicalName().equals(principal.getCanonicalName()));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_894473254 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_894473254;
         // ---------- Original Method ----------
         //if (this == o) {
             //return true;
@@ -219,14 +219,14 @@ String var7E150FCC7E02D69327EC2754E827BBC0_1942694981 =         canonicalName;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.220 -0400", hash_original_method = "0D44433D57FF4BE42B367E2D93A9CEDF", hash_generated_method = "F1DFB4AEE3A4565C7F652C0875F712D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.155 -0400", hash_original_method = "0D44433D57FF4BE42B367E2D93A9CEDF", hash_generated_method = "9F18D801B0D0BD88AE619CA61F782458")
     public byte[] getEncoded() {
         byte[] src = dn.getEncoded();
         byte[] dst = new byte[src.length];
         System.arraycopy(src, 0, dst, 0, dst.length);
-        byte[] var28E3D688A3C077B887921CEA3FB1DBC7_2146205188 = (dst);
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1521149589 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1521149589;
+        byte[] var28E3D688A3C077B887921CEA3FB1DBC7_2009735962 = (dst);
+                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1660523616 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1660523616;
         // ---------- Original Method ----------
         //byte[] src = dn.getEncoded();
         //byte[] dst = new byte[src.length];
@@ -235,28 +235,28 @@ String var7E150FCC7E02D69327EC2754E827BBC0_1942694981 =         canonicalName;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.220 -0400", hash_original_method = "2BCB4CFF6EEF485C6E2E6569B64BAD8B", hash_generated_method = "956B1359DD58B66C4F6A91B0BE284D87")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.156 -0400", hash_original_method = "2BCB4CFF6EEF485C6E2E6569B64BAD8B", hash_generated_method = "4273AAC63D413CCEF795547A25ED6BDE")
     public String getName() {
-String var08F6DAD71EC6EDB0BE0363A140D3B809_1153128483 =         dn.getName(RFC2253);
-        var08F6DAD71EC6EDB0BE0363A140D3B809_1153128483.addTaint(taint);
-        return var08F6DAD71EC6EDB0BE0363A140D3B809_1153128483;
+String var08F6DAD71EC6EDB0BE0363A140D3B809_1700881439 =         dn.getName(RFC2253);
+        var08F6DAD71EC6EDB0BE0363A140D3B809_1700881439.addTaint(taint);
+        return var08F6DAD71EC6EDB0BE0363A140D3B809_1700881439;
         // ---------- Original Method ----------
         //return dn.getName(RFC2253);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.221 -0400", hash_original_method = "DC6B95F939C1817F13ECF66B400795F1", hash_generated_method = "E07BF1E33C21AC4940245E34E745F8FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.156 -0400", hash_original_method = "DC6B95F939C1817F13ECF66B400795F1", hash_generated_method = "49BC7B1AFF94CF4D7BFC4963970F9F22")
     public String getName(String format) {
         addTaint(format.getTaint());
-    if(CANONICAL.equals(format))        
+        if(CANONICAL.equals(format))        
         {
-String var1C29F95F65985963179EA1C2D95D2CEA_753337713 =             getCanonicalName();
-            var1C29F95F65985963179EA1C2D95D2CEA_753337713.addTaint(taint);
-            return var1C29F95F65985963179EA1C2D95D2CEA_753337713;
+String var1C29F95F65985963179EA1C2D95D2CEA_1561629300 =             getCanonicalName();
+            var1C29F95F65985963179EA1C2D95D2CEA_1561629300.addTaint(taint);
+            return var1C29F95F65985963179EA1C2D95D2CEA_1561629300;
         } //End block
-String var2D5D2E4F12D8C4AC82C9F6D97E3483B0_1463862857 =         dn.getName(format);
-        var2D5D2E4F12D8C4AC82C9F6D97E3483B0_1463862857.addTaint(taint);
-        return var2D5D2E4F12D8C4AC82C9F6D97E3483B0_1463862857;
+String var2D5D2E4F12D8C4AC82C9F6D97E3483B0_2093643254 =         dn.getName(format);
+        var2D5D2E4F12D8C4AC82C9F6D97E3483B0_2093643254.addTaint(taint);
+        return var2D5D2E4F12D8C4AC82C9F6D97E3483B0_2093643254;
         // ---------- Original Method ----------
         //if (CANONICAL.equals(format)) {
             //return getCanonicalName();
@@ -265,14 +265,14 @@ String var2D5D2E4F12D8C4AC82C9F6D97E3483B0_1463862857 =         dn.getName(forma
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.222 -0400", hash_original_method = "F26EAC27584EEA69A397CAF64D802897", hash_generated_method = "DB40AE397DC49785DD7225433D99112A")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.158 -0400", hash_original_method = "F26EAC27584EEA69A397CAF64D802897", hash_generated_method = "46A315B808E3D9A75BEAD7C6CFA67334")
     public String getName(String format, Map<String, String> oidMap) {
         addTaint(oidMap.getTaint());
         addTaint(format.getTaint());
         String rfc1779Name = dn.getName(RFC1779);
         String rfc2253Name = dn.getName(RFC2253);
-    if(format.equalsIgnoreCase("RFC1779"))        
+        if(format.equalsIgnoreCase("RFC1779"))        
         {
             StringBuilder resultName = new StringBuilder(rfc1779Name);
             int fromIndex = resultName.length();
@@ -283,26 +283,26 @@ String var2D5D2E4F12D8C4AC82C9F6D97E3483B0_1463862857 =         dn.getName(forma
                 int commaIndex = resultName.lastIndexOf(",", equalIndex);
                 String subName = resultName.substring(commaIndex + 1,
                         equalIndex).trim();
-    if(subName.length() > 4
+                if(subName.length() > 4
                         && subName.substring(0, 4).equals("OID."))                
                 {
                     String subSubName = subName.substring(4);
-    if(oidMap.containsKey(subSubName))                    
+                    if(oidMap.containsKey(subSubName))                    
                     {
                         String replaceName = oidMap.get(subSubName);
-    if(commaIndex > 0)                        
+                        if(commaIndex > 0)                        
                         replaceName = " " + replaceName;
                         resultName.replace(commaIndex + 1, equalIndex, replaceName);
                     } //End block
                 } //End block
                 fromIndex = commaIndex;
             } //End block
-String var3318B6470F204095A1A93B089A3A90B2_1700999986 =             resultName.toString();
-            var3318B6470F204095A1A93B089A3A90B2_1700999986.addTaint(taint);
-            return var3318B6470F204095A1A93B089A3A90B2_1700999986;
+String var3318B6470F204095A1A93B089A3A90B2_13211977 =             resultName.toString();
+            var3318B6470F204095A1A93B089A3A90B2_13211977.addTaint(taint);
+            return var3318B6470F204095A1A93B089A3A90B2_13211977;
         } //End block
         else
-    if(format.equalsIgnoreCase("RFC2253"))        
+        if(format.equalsIgnoreCase("RFC2253"))        
         {
             StringBuilder resultName = new StringBuilder(rfc2253Name);
             StringBuilder subsidyName = new StringBuilder(rfc1779Name);
@@ -318,15 +318,15 @@ String var3318B6470F204095A1A93B089A3A90B2_1700999986 =             resultName.t
                 int commaIndex = resultName.lastIndexOf(",", equalIndex);
                 String subName = resultName.substring(commaIndex + 1,
                         equalIndex).trim();
-    if(oidMap.containsKey(subName))                
+                if(oidMap.containsKey(subName))                
                 {
                     int subOrignalEndIndex = resultName
                             .indexOf(",", equalIndex);
-    if(subOrignalEndIndex == -1)                    
+                    if(subOrignalEndIndex == -1)                    
                     subOrignalEndIndex = resultName.length();
                     int subGoalEndIndex = subsidyName.indexOf(",",
                             subsidyEqualIndex);
-    if(subGoalEndIndex == -1)                    
+                    if(subGoalEndIndex == -1)                    
                     subGoalEndIndex = subsidyName.length();
                     resultName.replace(equalIndex + 1, subOrignalEndIndex,
                             subsidyName.substring(subsidyEqualIndex + 1,
@@ -337,44 +337,44 @@ String var3318B6470F204095A1A93B089A3A90B2_1700999986 =             resultName.t
                 fromIndex = commaIndex;
                 subsidyFromIndex = subsidyEqualIndex - 1;
             } //End block
-String var3318B6470F204095A1A93B089A3A90B2_1024155405 =             resultName.toString();
-            var3318B6470F204095A1A93B089A3A90B2_1024155405.addTaint(taint);
-            return var3318B6470F204095A1A93B089A3A90B2_1024155405;
+String var3318B6470F204095A1A93B089A3A90B2_888095840 =             resultName.toString();
+            var3318B6470F204095A1A93B089A3A90B2_888095840.addTaint(taint);
+            return var3318B6470F204095A1A93B089A3A90B2_888095840;
         } //End block
         else
         {
-            IllegalArgumentException varF9C22D5169D99F66FED780168FB8177D_1292820258 = new IllegalArgumentException("invalid format specified: " + format);
-            varF9C22D5169D99F66FED780168FB8177D_1292820258.addTaint(taint);
-            throw varF9C22D5169D99F66FED780168FB8177D_1292820258;
+            IllegalArgumentException varF9C22D5169D99F66FED780168FB8177D_1997216476 = new IllegalArgumentException("invalid format specified: " + format);
+            varF9C22D5169D99F66FED780168FB8177D_1997216476.addTaint(taint);
+            throw varF9C22D5169D99F66FED780168FB8177D_1997216476;
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.223 -0400", hash_original_method = "4EF4800FE4F6884E38EE2C97450FA744", hash_generated_method = "A52E6B1E58114C020DF1B28C4897079B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.159 -0400", hash_original_method = "4EF4800FE4F6884E38EE2C97450FA744", hash_generated_method = "8716BD0635B04ED690B812DA8CA7C2EE")
     @Override
     public int hashCode() {
-        int varCA006599DDB1EBBCCF1A331311F932D0_308825492 = (getCanonicalName().hashCode());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_156242132 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_156242132;
+        int varCA006599DDB1EBBCCF1A331311F932D0_1941132940 = (getCanonicalName().hashCode());
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1088744868 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1088744868;
         // ---------- Original Method ----------
         //return getCanonicalName().hashCode();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.223 -0400", hash_original_method = "FEC69921702EBFC3E3DC123C0BE46430", hash_generated_method = "4812BA9F75EEB651598E056D087F3022")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.160 -0400", hash_original_method = "FEC69921702EBFC3E3DC123C0BE46430", hash_generated_method = "DF2098F70B86518100FD273BFAE6AAC2")
     @Override
     public String toString() {
-String var04328ADBCE8325DAA95AEC1783AFD17A_275641583 =         dn.getName(RFC1779);
-        var04328ADBCE8325DAA95AEC1783AFD17A_275641583.addTaint(taint);
-        return var04328ADBCE8325DAA95AEC1783AFD17A_275641583;
+String var04328ADBCE8325DAA95AEC1783AFD17A_455315863 =         dn.getName(RFC1779);
+        var04328ADBCE8325DAA95AEC1783AFD17A_455315863.addTaint(taint);
+        return var04328ADBCE8325DAA95AEC1783AFD17A_455315863;
         // ---------- Original Method ----------
         //return dn.getName(RFC1779);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.224 -0400", hash_original_method = "11CA04BE900A069B4C6C484CD5BEB982", hash_generated_method = "8FB4070FC90A2E7E6893E0A4FF922ED6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.160 -0400", hash_original_method = "11CA04BE900A069B4C6C484CD5BEB982", hash_generated_method = "8FB4070FC90A2E7E6893E0A4FF922ED6")
     private void writeObject(ObjectOutputStream out) throws IOException {
         addTaint(out.getTaint());
         out.writeObject(dn.getEncoded());
@@ -383,7 +383,7 @@ String var04328ADBCE8325DAA95AEC1783AFD17A_275641583 =         dn.getName(RFC177
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.224 -0400", hash_original_method = "8759D8976B48D4CB6209F3200BF3598B", hash_generated_method = "152ACDA71726E5032041ABE752F2EA68")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.160 -0400", hash_original_method = "8759D8976B48D4CB6209F3200BF3598B", hash_generated_method = "152ACDA71726E5032041ABE752F2EA68")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         dn = (Name) Name.ASN1.decode((byte[]) in.readObject());
         // ---------- Original Method ----------
@@ -391,8 +391,8 @@ String var04328ADBCE8325DAA95AEC1783AFD17A_275641583 =         dn.getName(RFC177
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.225 -0400", hash_original_method = "84EFD5BFB0134499160A2521897988D3", hash_generated_method = "A7896ABFF1F143AF29043ED4F53678B0")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.161 -0400", hash_original_method = "84EFD5BFB0134499160A2521897988D3", hash_generated_method = "C09F354362013FCF1AD51629340FE853")
     private String substituteNameFromMap(String name, Map<String, String> keywordMap) {
         addTaint(keywordMap.getTaint());
         addTaint(name.getTaint());
@@ -404,15 +404,15 @@ String var04328ADBCE8325DAA95AEC1783AFD17A_275641583 =         dn.getName(RFC177
         {
             int commaIndex = sbName.lastIndexOf(",", equalIndex);
             String subName = sbName.substring(commaIndex + 1, equalIndex).trim();
-    if(keywordMap.containsKey(subName))            
+            if(keywordMap.containsKey(subName))            
             {
                 sbName.replace(commaIndex + 1, equalIndex, keywordMap.get(subName));
             } //End block
             fromIndex = commaIndex;
         } //End block
-String var25FABEFC42C74DDAF545088033E64C8D_696445534 =         sbName.toString();
-        var25FABEFC42C74DDAF545088033E64C8D_696445534.addTaint(taint);
-        return var25FABEFC42C74DDAF545088033E64C8D_696445534;
+String var25FABEFC42C74DDAF545088033E64C8D_1580736073 =         sbName.toString();
+        var25FABEFC42C74DDAF545088033E64C8D_1580736073.addTaint(taint);
+        return var25FABEFC42C74DDAF545088033E64C8D_1580736073;
         // ---------- Original Method ----------
         //StringBuilder sbName = new StringBuilder(name);
         //int fromIndex = sbName.length();
@@ -429,16 +429,16 @@ String var25FABEFC42C74DDAF545088033E64C8D_696445534 =         sbName.toString()
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.225 -0400", hash_original_field = "8DD0850A45DD8279208B0A47E4970B1B", hash_generated_field = "26CAD3B6FC0EACF2E9B47D2D50E32979")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.161 -0400", hash_original_field = "8DD0850A45DD8279208B0A47E4970B1B", hash_generated_field = "26CAD3B6FC0EACF2E9B47D2D50E32979")
 
     private static final long serialVersionUID = -500463348111345721L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.225 -0400", hash_original_field = "43F9C433C6C27576D56B459CD29942CC", hash_generated_field = "82CE65EBAABC70666F50B8A10883BA7F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.161 -0400", hash_original_field = "43F9C433C6C27576D56B459CD29942CC", hash_generated_field = "82CE65EBAABC70666F50B8A10883BA7F")
 
     public static final String CANONICAL = "CANONICAL";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.225 -0400", hash_original_field = "E56BCDB17498A8325666AA28E444D830", hash_generated_field = "DBAC8AB28BADF6FBFEEA44C4163EFD9F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.161 -0400", hash_original_field = "E56BCDB17498A8325666AA28E444D830", hash_generated_field = "DBAC8AB28BADF6FBFEEA44C4163EFD9F")
 
     public static final String RFC1779 = "RFC1779";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.225 -0400", hash_original_field = "2A20ED380CA46C19AFB99FB1EE259E06", hash_generated_field = "C120F901C78A5D9CE52D3BC1A7B434D8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.161 -0400", hash_original_field = "2A20ED380CA46C19AFB99FB1EE259E06", hash_generated_field = "C120F901C78A5D9CE52D3BC1A7B434D8")
 
     public static final String RFC2253 = "RFC2253";
 }

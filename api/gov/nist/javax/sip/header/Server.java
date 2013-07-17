@@ -9,12 +9,12 @@ import javax.sip.header.*;
 import java.util.*;
 
 public class Server extends SIPHeader implements ServerHeader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.417 -0400", hash_original_field = "9688EFB908EECBA4C560247BC17C9D80", hash_generated_field = "23BE30BA77F76A348892FB57EBB6010B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.478 -0400", hash_original_field = "9688EFB908EECBA4C560247BC17C9D80", hash_generated_field = "23BE30BA77F76A348892FB57EBB6010B")
 
     protected List productTokens;
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.418 -0400", hash_original_method = "28A485C01704A957BCAF31556583EFBE", hash_generated_method = "305518061AF0A2CB840B318B99F5BA97")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.479 -0400", hash_original_method = "28A485C01704A957BCAF31556583EFBE", hash_generated_method = "305518061AF0A2CB840B318B99F5BA97")
     public  Server() {
         super(NAME);
         productTokens = new LinkedList();
@@ -23,8 +23,8 @@ public class Server extends SIPHeader implements ServerHeader {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.418 -0400", hash_original_method = "3BD03A3FDC86F025553E39D4B6A63060", hash_generated_method = "7E3246CB4EE47BE861BB5382651D6E14")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.480 -0400", hash_original_method = "3BD03A3FDC86F025553E39D4B6A63060", hash_generated_method = "3EF5237ACBA698035A0FAC9F02596B1E")
     private String encodeProduct() {
         StringBuffer tokens = new StringBuffer();
         ListIterator it = productTokens.listIterator();
@@ -32,14 +32,14 @@ public class Server extends SIPHeader implements ServerHeader {
 (it.hasNext())        
         {
             tokens.append((String) it.next());
-    if(it.hasNext())            
+            if(it.hasNext())            
             tokens.append('/');
             else
             break;
         } //End block
-String varD351E2BA7C978FE08B358585AC21E273_2066152546 =         tokens.toString();
-        varD351E2BA7C978FE08B358585AC21E273_2066152546.addTaint(taint);
-        return varD351E2BA7C978FE08B358585AC21E273_2066152546;
+String varD351E2BA7C978FE08B358585AC21E273_373325760 =         tokens.toString();
+        varD351E2BA7C978FE08B358585AC21E273_373325760.addTaint(taint);
+        return varD351E2BA7C978FE08B358585AC21E273_373325760;
         // ---------- Original Method ----------
         //StringBuffer tokens = new StringBuffer();
         //ListIterator it = productTokens.listIterator();
@@ -54,8 +54,8 @@ String varD351E2BA7C978FE08B358585AC21E273_2066152546 =         tokens.toString(
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.418 -0400", hash_original_method = "ABC17F5FB7BD95EF5278D9B937F06D5F", hash_generated_method = "B06CFE66F7E0739FE5681D991D4815CC")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.481 -0400", hash_original_method = "ABC17F5FB7BD95EF5278D9B937F06D5F", hash_generated_method = "B06CFE66F7E0739FE5681D991D4815CC")
     public void addProductToken(String pt) {
         addTaint(pt.getTaint());
         productTokens.add(pt);
@@ -64,31 +64,31 @@ String varD351E2BA7C978FE08B358585AC21E273_2066152546 =         tokens.toString(
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.419 -0400", hash_original_method = "C0BFA4AD92D4DEF654107ADD12EA3FEE", hash_generated_method = "1957C1B5A7330F5D446B57AE72F6D790")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.481 -0400", hash_original_method = "C0BFA4AD92D4DEF654107ADD12EA3FEE", hash_generated_method = "FB55DB210262EEE20A148A95CA941C5A")
     public String encodeBody() {
-String varF912B806A7ABDF5908FA63C29019CFE6_149947166 =         encodeProduct();
-        varF912B806A7ABDF5908FA63C29019CFE6_149947166.addTaint(taint);
-        return varF912B806A7ABDF5908FA63C29019CFE6_149947166;
+String varF912B806A7ABDF5908FA63C29019CFE6_255768343 =         encodeProduct();
+        varF912B806A7ABDF5908FA63C29019CFE6_255768343.addTaint(taint);
+        return varF912B806A7ABDF5908FA63C29019CFE6_255768343;
         // ---------- Original Method ----------
         //return encodeProduct();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.419 -0400", hash_original_method = "FCFEA9A6A04C032A17913D323F8D82A6", hash_generated_method = "69A0FD218E946154B8D9B5318BA97A8A")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.481 -0400", hash_original_method = "FCFEA9A6A04C032A17913D323F8D82A6", hash_generated_method = "44DAF916D55EB8141C14E196A13800E9")
     public ListIterator getProduct() {
-    if(productTokens == null || productTokens.isEmpty())        
+        if(productTokens == null || productTokens.isEmpty())        
         {
-ListIterator var540C13E9E156B687226421B24F2DF178_2055329942 =         null;
-        var540C13E9E156B687226421B24F2DF178_2055329942.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_2055329942;
+ListIterator var540C13E9E156B687226421B24F2DF178_121724918 =         null;
+        var540C13E9E156B687226421B24F2DF178_121724918.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_121724918;
         }
         else
         {
-ListIterator var1C927566297DCD1B995549CFC5460648_1888693802 =         productTokens.listIterator();
-        var1C927566297DCD1B995549CFC5460648_1888693802.addTaint(taint);
-        return var1C927566297DCD1B995549CFC5460648_1888693802;
+ListIterator var1C927566297DCD1B995549CFC5460648_1736948095 =         productTokens.listIterator();
+        var1C927566297DCD1B995549CFC5460648_1736948095.addTaint(taint);
+        return var1C927566297DCD1B995549CFC5460648_1736948095;
         }
         // ---------- Original Method ----------
         //if (productTokens == null || productTokens.isEmpty())
@@ -98,17 +98,17 @@ ListIterator var1C927566297DCD1B995549CFC5460648_1888693802 =         productTok
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.420 -0400", hash_original_method = "3D9ECE8DAEA4B32C617B95DA481A8348", hash_generated_method = "A10ED6CA123EED4DA1CAC4515F1F6CC1")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.482 -0400", hash_original_method = "3D9ECE8DAEA4B32C617B95DA481A8348", hash_generated_method = "4901BB3B87DDB09B93E3DDA0BB531DEC")
     public void setProduct(List product) throws ParseException {
-    if(product == null)        
+        if(product == null)        
         {
-        NullPointerException var41AB9066381D97BBFD2255B25B214088_1012173221 = new NullPointerException(
+        NullPointerException var41AB9066381D97BBFD2255B25B214088_2016136305 = new NullPointerException(
                 "JAIN-SIP Exception, UserAgent, "
                     + "setProduct(), the "
                     + " product parameter is null");
-        var41AB9066381D97BBFD2255B25B214088_1012173221.addTaint(taint);
-        throw var41AB9066381D97BBFD2255B25B214088_1012173221;
+        var41AB9066381D97BBFD2255B25B214088_2016136305.addTaint(taint);
+        throw var41AB9066381D97BBFD2255B25B214088_2016136305;
         }
         productTokens = product;
         // ---------- Original Method ----------
@@ -121,7 +121,7 @@ ListIterator var1C927566297DCD1B995549CFC5460648_1888693802 =         productTok
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.420 -0400", hash_original_field = "C650C2D202702263731A478D25505F7E", hash_generated_field = "C0E073D0311495EC10E3519402318717")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.482 -0400", hash_original_field = "C650C2D202702263731A478D25505F7E", hash_generated_field = "C0E073D0311495EC10E3519402318717")
 
     private static final long serialVersionUID = -3587764149383342973L;
 }

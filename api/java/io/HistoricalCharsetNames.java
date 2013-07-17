@@ -9,21 +9,21 @@ import java.util.HashMap;
 
 class HistoricalCharsetNames {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.745 -0400", hash_original_method = "CF7EE4F2AE73DFA7F7185F7E1C545121", hash_generated_method = "CF7EE4F2AE73DFA7F7185F7E1C545121")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.025 -0400", hash_original_method = "CF7EE4F2AE73DFA7F7185F7E1C545121", hash_generated_method = "CF7EE4F2AE73DFA7F7185F7E1C545121")
     public HistoricalCharsetNames ()
     {
         //Synthesized constructor
     }
 
 
-        public static String get(Charset charset) {
+    public static String get(Charset charset) {
         String modernName = charset.name();
         String result = historicalNames.get(modernName);
         return (result != null) ? result : modernName;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.747 -0400", hash_original_field = "781A619B61B6F09D4EEB5283206D8192", hash_generated_field = "A0C5A9379054FCFA9A110671A96EC39A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.025 -0400", hash_original_field = "781A619B61B6F09D4EEB5283206D8192", hash_generated_field = "A0C5A9379054FCFA9A110671A96EC39A")
 
     private static final HashMap<String, String> historicalNames = new HashMap<String, String>();
     static {

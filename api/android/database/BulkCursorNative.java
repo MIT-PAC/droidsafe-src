@@ -13,7 +13,7 @@ import android.os.RemoteException;
 
 public abstract class BulkCursorNative extends Binder implements IBulkCursor {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.959 -0400", hash_original_method = "DBBF6D4FB94E7243F8FE13872836805D", hash_generated_method = "49E124CE99C124C9C743BD828F75C77A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.474 -0400", hash_original_method = "DBBF6D4FB94E7243F8FE13872836805D", hash_generated_method = "49E124CE99C124C9C743BD828F75C77A")
     public  BulkCursorNative() {
         attachInterface(this, descriptor);
         // ---------- Original Method ----------
@@ -21,7 +21,7 @@ public abstract class BulkCursorNative extends Binder implements IBulkCursor {
     }
 
     
-        static public IBulkCursor asInterface(IBinder obj) {
+    static public IBulkCursor asInterface(IBinder obj) {
         if (obj == null) {
             return null;
         }
@@ -33,7 +33,7 @@ public abstract class BulkCursorNative extends Binder implements IBulkCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.960 -0400", hash_original_method = "974E69C0AD1811D8FB0AF6277EF80D39", hash_generated_method = "095FC31BE28120C6BD304C9E18D1975C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.476 -0400", hash_original_method = "974E69C0AD1811D8FB0AF6277EF80D39", hash_generated_method = "1E9077DD4B7AB7DF16E9076DE1E8612E")
     @Override
     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -50,7 +50,7 @@ switch(code){
                 int startPos = data.readInt();
                 CursorWindow window = getWindow(startPos);
                 reply.writeNoException();
-    if(window == null)                
+                if(window == null)                
                 {
                     reply.writeInt(0);
                 } //End block
@@ -59,9 +59,9 @@ switch(code){
                     reply.writeInt(1);
                     window.writeToParcel(reply, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
                 } //End block
-                boolean varB326B5062B2F0E69046810717534CB09_570176729 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_108535474 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_108535474;
+                boolean varB326B5062B2F0E69046810717534CB09_2048051987 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1530859521 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1530859521;
             } //End block
             case COUNT_TRANSACTION:
             {
@@ -69,9 +69,9 @@ switch(code){
                 int count = count();
                 reply.writeNoException();
                 reply.writeInt(count);
-                boolean varB326B5062B2F0E69046810717534CB09_1513044493 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2024351442 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_2024351442;
+                boolean varB326B5062B2F0E69046810717534CB09_1434212836 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_317863565 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_317863565;
             } //End block
             case GET_COLUMN_NAMES_TRANSACTION:
             {
@@ -84,27 +84,27 @@ for(int i = 0;i < length;i++)
                 {
                     reply.writeString(columnNames[i]);
                 } //End block
-                boolean varB326B5062B2F0E69046810717534CB09_1344279995 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1597154574 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1597154574;
+                boolean varB326B5062B2F0E69046810717534CB09_2001164614 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1545792215 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1545792215;
             } //End block
             case DEACTIVATE_TRANSACTION:
             {
                 data.enforceInterface(IBulkCursor.descriptor);
                 deactivate();
                 reply.writeNoException();
-                boolean varB326B5062B2F0E69046810717534CB09_1512652036 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2050662545 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_2050662545;
+                boolean varB326B5062B2F0E69046810717534CB09_1145752281 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1156705158 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1156705158;
             } //End block
             case CLOSE_TRANSACTION:
             {
                 data.enforceInterface(IBulkCursor.descriptor);
                 close();
                 reply.writeNoException();
-                boolean varB326B5062B2F0E69046810717534CB09_1556183125 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1165599817 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1165599817;
+                boolean varB326B5062B2F0E69046810717534CB09_578616050 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1852814559 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1852814559;
             } //End block
             case REQUERY_TRANSACTION:
             {
@@ -114,9 +114,9 @@ for(int i = 0;i < length;i++)
                 reply.writeNoException();
                 reply.writeInt(count);
                 reply.writeBundle(getExtras());
-                boolean varB326B5062B2F0E69046810717534CB09_190341173 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_911976955 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_911976955;
+                boolean varB326B5062B2F0E69046810717534CB09_1537518960 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1182300096 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1182300096;
             } //End block
             case ON_MOVE_TRANSACTION:
             {
@@ -124,9 +124,9 @@ for(int i = 0;i < length;i++)
                 int position = data.readInt();
                 onMove(position);
                 reply.writeNoException();
-                boolean varB326B5062B2F0E69046810717534CB09_770796205 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1832177823 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1832177823;
+                boolean varB326B5062B2F0E69046810717534CB09_743937510 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1677284866 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1677284866;
             } //End block
             case WANTS_ON_MOVE_TRANSACTION:
             {
@@ -134,9 +134,9 @@ for(int i = 0;i < length;i++)
                 boolean result = getWantsAllOnMoveCalls();
                 reply.writeNoException();
                 reply.writeInt(result ? 1 : 0);
-                boolean varB326B5062B2F0E69046810717534CB09_1628516062 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1006248648 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1006248648;
+                boolean varB326B5062B2F0E69046810717534CB09_1650015080 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_826097648 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_826097648;
             } //End block
             case GET_EXTRAS_TRANSACTION:
             {
@@ -144,9 +144,9 @@ for(int i = 0;i < length;i++)
                 Bundle extras = getExtras();
                 reply.writeNoException();
                 reply.writeBundle(extras);
-                boolean varB326B5062B2F0E69046810717534CB09_1026909131 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1313227263 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1313227263;
+                boolean varB326B5062B2F0E69046810717534CB09_995351594 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1836827936 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1836827936;
             } //End block
             case RESPOND_TRANSACTION:
             {
@@ -155,33 +155,33 @@ for(int i = 0;i < length;i++)
                 Bundle returnExtras = respond(extras);
                 reply.writeNoException();
                 reply.writeBundle(returnExtras);
-                boolean varB326B5062B2F0E69046810717534CB09_1378156910 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1014749056 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1014749056;
+                boolean varB326B5062B2F0E69046810717534CB09_1160322862 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_228146012 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_228146012;
             } //End block
 }
         } //End block
         catch (Exception e)
         {
             DatabaseUtils.writeExceptionToParcel(reply, e);
-            boolean varB326B5062B2F0E69046810717534CB09_1394635122 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1132236663 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1132236663;
+            boolean varB326B5062B2F0E69046810717534CB09_1634876947 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_417347661 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_417347661;
         } //End block
-        boolean var3B3A841664B2F7D5B8C0C4B7B8E31E3B_612169788 = (super.onTransact(code, data, reply, flags));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1195921449 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1195921449;
+        boolean var3B3A841664B2F7D5B8C0C4B7B8E31E3B_2090652835 = (super.onTransact(code, data, reply, flags));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1073565823 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1073565823;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.962 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "08F1BF28B99B183D621DCBF73A9D846B")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.478 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "98BFC6F0283ADC16A7FA9AF6731C4F1E")
     public IBinder asBinder() {
-IBinder var72A74007B2BE62B849F475C7BDA4658B_1307044544 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1307044544.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1307044544;
+IBinder var72A74007B2BE62B849F475C7BDA4658B_1449447870 =         this;
+        var72A74007B2BE62B849F475C7BDA4658B_1449447870.addTaint(taint);
+        return var72A74007B2BE62B849F475C7BDA4658B_1449447870;
         // ---------- Original Method ----------
         //return this;
     }
@@ -190,14 +190,14 @@ IBinder var72A74007B2BE62B849F475C7BDA4658B_1307044544 =         this;
 }
 
 final class BulkCursorProxy implements IBulkCursor {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.963 -0400", hash_original_field = "571FFBF4D13799B98890AF05D7751D0E", hash_generated_field = "5E1E2B7D69F0EB092684BFF6D1335CA5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.478 -0400", hash_original_field = "571FFBF4D13799B98890AF05D7751D0E", hash_generated_field = "5E1E2B7D69F0EB092684BFF6D1335CA5")
 
     private IBinder mRemote;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.963 -0400", hash_original_field = "45F5DC4EA541ED660CFEDA0032CA356C", hash_generated_field = "5596C79D633F3A9F64294D3BD6D43156")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.478 -0400", hash_original_field = "45F5DC4EA541ED660CFEDA0032CA356C", hash_generated_field = "5596C79D633F3A9F64294D3BD6D43156")
 
     private Bundle mExtras;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.963 -0400", hash_original_method = "D55E49E568C2A68373E38CCE4CBFBB39", hash_generated_method = "F4E2E7A3DCF84063D978A8615FEA3A5E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.479 -0400", hash_original_method = "D55E49E568C2A68373E38CCE4CBFBB39", hash_generated_method = "F4E2E7A3DCF84063D978A8615FEA3A5E")
     public  BulkCursorProxy(IBinder remote) {
         mRemote = remote;
         mExtras = null;
@@ -207,19 +207,19 @@ final class BulkCursorProxy implements IBulkCursor {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.964 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "803F7916C12CF2609F8901FA627EACC2")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.480 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "141ACE0FA3B24542A5BFF9FE4DE54200")
     public IBinder asBinder() {
-IBinder varF4936CA84F7841A48B466C9D273BE2EB_306998301 =         mRemote;
-        varF4936CA84F7841A48B466C9D273BE2EB_306998301.addTaint(taint);
-        return varF4936CA84F7841A48B466C9D273BE2EB_306998301;
+IBinder varF4936CA84F7841A48B466C9D273BE2EB_406247651 =         mRemote;
+        varF4936CA84F7841A48B466C9D273BE2EB_406247651.addTaint(taint);
+        return varF4936CA84F7841A48B466C9D273BE2EB_406247651;
         // ---------- Original Method ----------
         //return mRemote;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.964 -0400", hash_original_method = "7540C72731403A44B035590E58ED3901", hash_generated_method = "59C2E03676387DF7521D125BD4A83EB9")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.481 -0400", hash_original_method = "7540C72731403A44B035590E58ED3901", hash_generated_method = "975DD6B57F8A49C7BF0F92CE4D4A26F1")
     public CursorWindow getWindow(int startPos) throws RemoteException {
         addTaint(startPos);
         Parcel data = Parcel.obtain();
@@ -231,13 +231,13 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_306998301 =         mRemote;
             mRemote.transact(GET_CURSOR_WINDOW_TRANSACTION, data, reply, 0);
             DatabaseUtils.readExceptionFromParcel(reply);
             CursorWindow window = null;
-    if(reply.readInt() == 1)            
+            if(reply.readInt() == 1)            
             {
                 window = CursorWindow.newFromParcel(reply);
             } //End block
-CursorWindow var414B2CEBDF7E679ADF378DBBAB956EC0_2037581034 =             window;
-            var414B2CEBDF7E679ADF378DBBAB956EC0_2037581034.addTaint(taint);
-            return var414B2CEBDF7E679ADF378DBBAB956EC0_2037581034;
+CursorWindow var414B2CEBDF7E679ADF378DBBAB956EC0_1737347589 =             window;
+            var414B2CEBDF7E679ADF378DBBAB956EC0_1737347589.addTaint(taint);
+            return var414B2CEBDF7E679ADF378DBBAB956EC0_1737347589;
         } //End block
         finally 
         {
@@ -264,7 +264,7 @@ CursorWindow var414B2CEBDF7E679ADF378DBBAB956EC0_2037581034 =             window
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.965 -0400", hash_original_method = "874529548DF9EED6A9EA45E2FAC51D8E", hash_generated_method = "3A25E2CA29C678C2E9117CFABCC86AAD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.483 -0400", hash_original_method = "874529548DF9EED6A9EA45E2FAC51D8E", hash_generated_method = "3A25E2CA29C678C2E9117CFABCC86AAD")
     public void onMove(int position) throws RemoteException {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(position);
@@ -297,7 +297,7 @@ CursorWindow var414B2CEBDF7E679ADF378DBBAB956EC0_2037581034 =             window
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.966 -0400", hash_original_method = "0FF3A241CF7700F047C406946FE227F4", hash_generated_method = "D069AC5F83B9FB5D85B7869064F54D8F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.484 -0400", hash_original_method = "0FF3A241CF7700F047C406946FE227F4", hash_generated_method = "D346D44AF79D31E2D5D4DC0BA5F031D3")
     public int count() throws RemoteException {
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
@@ -307,7 +307,7 @@ CursorWindow var414B2CEBDF7E679ADF378DBBAB956EC0_2037581034 =             window
             boolean result = mRemote.transact(COUNT_TRANSACTION, data, reply, 0);
             DatabaseUtils.readExceptionFromParcel(reply);
             int count;
-    if(result == false)            
+            if(result == false)            
             {
                 count = -1;
             } //End block
@@ -315,9 +315,9 @@ CursorWindow var414B2CEBDF7E679ADF378DBBAB956EC0_2037581034 =             window
             {
                 count = reply.readInt();
             } //End block
-            int varE2942A04780E223B215EB8B663CF5353_230089290 = (count);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1473790890 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1473790890;
+            int varE2942A04780E223B215EB8B663CF5353_2075363687 = (count);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1447924350 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1447924350;
         } //End block
         finally 
         {
@@ -345,7 +345,7 @@ CursorWindow var414B2CEBDF7E679ADF378DBBAB956EC0_2037581034 =             window
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.966 -0400", hash_original_method = "55D53D666D124D26189F4C995847EE3B", hash_generated_method = "F24E437106B7AAEF510F975B583691CE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.485 -0400", hash_original_method = "55D53D666D124D26189F4C995847EE3B", hash_generated_method = "AA0905F70F23CA32C0F286E377C858D4")
     public String[] getColumnNames() throws RemoteException {
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
@@ -361,9 +361,9 @@ for(int i = 0;i < numColumns;i++)
             {
                 columnNames[i] = reply.readString();
             } //End block
-String[] var4DF41AA96E4B5CE54D79E2350D77438A_1131659374 =             columnNames;
-            var4DF41AA96E4B5CE54D79E2350D77438A_1131659374.addTaint(taint);
-            return var4DF41AA96E4B5CE54D79E2350D77438A_1131659374;
+String[] var4DF41AA96E4B5CE54D79E2350D77438A_112267419 =             columnNames;
+            var4DF41AA96E4B5CE54D79E2350D77438A_112267419.addTaint(taint);
+            return var4DF41AA96E4B5CE54D79E2350D77438A_112267419;
         } //End block
         finally 
         {
@@ -391,7 +391,7 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_1131659374 =             columnName
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.967 -0400", hash_original_method = "FD5E9EEC36BE8B65B5A00AF714CC54E0", hash_generated_method = "B5795C1CD612DC57C918E50A35075092")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.486 -0400", hash_original_method = "FD5E9EEC36BE8B65B5A00AF714CC54E0", hash_generated_method = "B5795C1CD612DC57C918E50A35075092")
     public void deactivate() throws RemoteException {
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
@@ -420,7 +420,7 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_1131659374 =             columnName
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.967 -0400", hash_original_method = "C12FD550BDAC8145B3664A864E5B60A0", hash_generated_method = "794ECD036839A74A6AE936598DC14BB4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.486 -0400", hash_original_method = "C12FD550BDAC8145B3664A864E5B60A0", hash_generated_method = "794ECD036839A74A6AE936598DC14BB4")
     public void close() throws RemoteException {
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
@@ -449,8 +449,8 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_1131659374 =             columnName
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.968 -0400", hash_original_method = "1C7F55EE59A84877DC54C93F1BEC1640", hash_generated_method = "4312EFDFA112A6513764DACC53C6EF1D")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.487 -0400", hash_original_method = "1C7F55EE59A84877DC54C93F1BEC1640", hash_generated_method = "E6DCD61483FCDCC5503A76E0E222C69F")
     public int requery(IContentObserver observer) throws RemoteException {
         addTaint(observer.getTaint());
         Parcel data = Parcel.obtain();
@@ -462,7 +462,7 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_1131659374 =             columnName
             boolean result = mRemote.transact(REQUERY_TRANSACTION, data, reply, 0);
             DatabaseUtils.readExceptionFromParcel(reply);
             int count;
-    if(!result)            
+            if(!result)            
             {
                 count = -1;
             } //End block
@@ -471,9 +471,9 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_1131659374 =             columnName
                 count = reply.readInt();
                 mExtras = reply.readBundle();
             } //End block
-            int varE2942A04780E223B215EB8B663CF5353_1792794785 = (count);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1117578731 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1117578731;
+            int varE2942A04780E223B215EB8B663CF5353_1375370701 = (count);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_984510655 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_984510655;
         } //End block
         finally 
         {
@@ -503,7 +503,7 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_1131659374 =             columnName
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.969 -0400", hash_original_method = "A152C23C891E00FCA22CAEB49B705CFA", hash_generated_method = "A42EE6E3EDEF7D03E863824A47DF8CD9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.489 -0400", hash_original_method = "A152C23C891E00FCA22CAEB49B705CFA", hash_generated_method = "DDDED5952E9308B5C8578599089DA6E1")
     public boolean getWantsAllOnMoveCalls() throws RemoteException {
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
@@ -513,9 +513,9 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_1131659374 =             columnName
             mRemote.transact(WANTS_ON_MOVE_TRANSACTION, data, reply, 0);
             DatabaseUtils.readExceptionFromParcel(reply);
             int result = reply.readInt();
-            boolean var48B2BB9B3785EB1DD7973635DF866605_72847310 = (result != 0);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_708522044 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_708522044;
+            boolean var48B2BB9B3785EB1DD7973635DF866605_210583596 = (result != 0);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1607425455 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1607425455;
         } //End block
         finally 
         {
@@ -538,9 +538,9 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_1131659374 =             columnName
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.969 -0400", hash_original_method = "0BFE1C1B4E3A75686DCBF1FFC3B2E52B", hash_generated_method = "FF6E6D4AE7ADE27BD6979543188B5A08")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.491 -0400", hash_original_method = "0BFE1C1B4E3A75686DCBF1FFC3B2E52B", hash_generated_method = "90574E105F06E699FEB1DB0BC78E2399")
     public Bundle getExtras() throws RemoteException {
-    if(mExtras == null)        
+        if(mExtras == null)        
         {
             Parcel data = Parcel.obtain();
             Parcel reply = Parcel.obtain();
@@ -557,9 +557,9 @@ String[] var4DF41AA96E4B5CE54D79E2350D77438A_1131659374 =             columnName
                 reply.recycle();
             } //End block
         } //End block
-Bundle var5E49E1FEC958658F846C38CDDBF16A8B_1968489598 =         mExtras;
-        var5E49E1FEC958658F846C38CDDBF16A8B_1968489598.addTaint(taint);
-        return var5E49E1FEC958658F846C38CDDBF16A8B_1968489598;
+Bundle var5E49E1FEC958658F846C38CDDBF16A8B_893179817 =         mExtras;
+        var5E49E1FEC958658F846C38CDDBF16A8B_893179817.addTaint(taint);
+        return var5E49E1FEC958658F846C38CDDBF16A8B_893179817;
         // ---------- Original Method ----------
         //if (mExtras == null) {
             //Parcel data = Parcel.obtain();
@@ -578,7 +578,7 @@ Bundle var5E49E1FEC958658F846C38CDDBF16A8B_1968489598 =         mExtras;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.970 -0400", hash_original_method = "482AF4EBF0254C22A07B37919043D33E", hash_generated_method = "3EDBFA6EF4C41694FA8D7B56D2F0608E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.492 -0400", hash_original_method = "482AF4EBF0254C22A07B37919043D33E", hash_generated_method = "7C31DD47122CC5C593434C8F5DC2702E")
     public Bundle respond(Bundle extras) throws RemoteException {
         addTaint(extras.getTaint());
         Parcel data = Parcel.obtain();
@@ -590,9 +590,9 @@ Bundle var5E49E1FEC958658F846C38CDDBF16A8B_1968489598 =         mExtras;
             mRemote.transact(RESPOND_TRANSACTION, data, reply, 0);
             DatabaseUtils.readExceptionFromParcel(reply);
             Bundle returnExtras = reply.readBundle();
-Bundle var8F472BA3FFE54B2054DC96B7BE02DF59_883707459 =             returnExtras;
-            var8F472BA3FFE54B2054DC96B7BE02DF59_883707459.addTaint(taint);
-            return var8F472BA3FFE54B2054DC96B7BE02DF59_883707459;
+Bundle var8F472BA3FFE54B2054DC96B7BE02DF59_453218111 =             returnExtras;
+            var8F472BA3FFE54B2054DC96B7BE02DF59_453218111.addTaint(taint);
+            return var8F472BA3FFE54B2054DC96B7BE02DF59_453218111;
         } //End block
         finally 
         {

@@ -16,47 +16,47 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 class FlyweightMapStorage extends AreaCodeMapStorageStrategy {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.413 -0400", hash_original_field = "0DE9A1D17B5CC9CA8CBC453E6D75DBEC", hash_generated_field = "F76986CA8B87BC245B249A85A8272854")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.557 -0400", hash_original_field = "0DE9A1D17B5CC9CA8CBC453E6D75DBEC", hash_generated_field = "F76986CA8B87BC245B249A85A8272854")
 
     private int prefixSizeInBytes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.413 -0400", hash_original_field = "E5EE5AE424871B3F62BFEA7F66E19ABA", hash_generated_field = "9301311B3EBB2C817FC2602DD9113DFE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.557 -0400", hash_original_field = "E5EE5AE424871B3F62BFEA7F66E19ABA", hash_generated_field = "9301311B3EBB2C817FC2602DD9113DFE")
 
     private int descIndexSizeInBytes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.413 -0400", hash_original_field = "0478D9B86559137B4E632D5910E2F2C6", hash_generated_field = "FB05A510369364A4962318241B573EEF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.557 -0400", hash_original_field = "0478D9B86559137B4E632D5910E2F2C6", hash_generated_field = "FB05A510369364A4962318241B573EEF")
 
     private ByteBuffer phoneNumberPrefixes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.414 -0400", hash_original_field = "935BB7D7BB6E6B95FAC76E850864958D", hash_generated_field = "8DD3BA710A227D567B0C909055F247B4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.557 -0400", hash_original_field = "935BB7D7BB6E6B95FAC76E850864958D", hash_generated_field = "8DD3BA710A227D567B0C909055F247B4")
 
     private ByteBuffer descriptionIndexes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.414 -0400", hash_original_field = "19BE5C311BDF1A1DA4FFFDE2B1DD7781", hash_generated_field = "3FD4D5B3EAEAE753A19E3DEE1164A725")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.557 -0400", hash_original_field = "19BE5C311BDF1A1DA4FFFDE2B1DD7781", hash_generated_field = "3FD4D5B3EAEAE753A19E3DEE1164A725")
 
     private String[] descriptionPool;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.414 -0400", hash_original_method = "17265440A4150496F4E4B3AED89DBE4A", hash_generated_method = "0B56FFACCBE5FD82AEECA13F4E299B52")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.557 -0400", hash_original_method = "17265440A4150496F4E4B3AED89DBE4A", hash_generated_method = "0B56FFACCBE5FD82AEECA13F4E299B52")
     public  FlyweightMapStorage() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.414 -0400", hash_original_method = "8579179DB51630AA1D46F39490760068", hash_generated_method = "9187FAC644D890FEE51323D5788E32F2")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.557 -0400", hash_original_method = "8579179DB51630AA1D46F39490760068", hash_generated_method = "C97E96A998DA615159B9EB5D3631DBB0")
     @Override
     public boolean isFlyweight() {
-        boolean varB326B5062B2F0E69046810717534CB09_311898154 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_670146487 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_670146487;
+        boolean varB326B5062B2F0E69046810717534CB09_912888845 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1449700440 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1449700440;
         // ---------- Original Method ----------
         //return true;
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static int getOptimalNumberOfBytesForValue(int value) {
         return value <= Short.MAX_VALUE ? SHORT_SIZE : INT_SIZE;
     }
 
     
-        private static void storeWordInBuffer(ByteBuffer buffer, int wordSize, int index, int value) {
+    private static void storeWordInBuffer(ByteBuffer buffer, int wordSize, int index, int value) {
         index *= wordSize;
         if (wordSize == SHORT_SIZE) {
       buffer.putShort(index, (short) value);
@@ -66,37 +66,37 @@ class FlyweightMapStorage extends AreaCodeMapStorageStrategy {
     }
 
     
-        private static int readWordFromBuffer(ByteBuffer buffer, int wordSize, int index) {
+    private static int readWordFromBuffer(ByteBuffer buffer, int wordSize, int index) {
         index *= wordSize;
         return wordSize == SHORT_SIZE ? buffer.getShort(index) : buffer.getInt(index);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.415 -0400", hash_original_method = "2F4ECD8A243390FA1987AE315BD02BED", hash_generated_method = "AD004F02C9ABE4E53FA930ED5B0BD7F2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.558 -0400", hash_original_method = "2F4ECD8A243390FA1987AE315BD02BED", hash_generated_method = "46D7D7808DDC8B89E6E388B8BF54DF38")
     @Override
     public int getPrefix(int index) {
         addTaint(index);
-        int var260D539EF7E4CBA16B9E7D7909112882_1413189993 = (readWordFromBuffer(phoneNumberPrefixes, prefixSizeInBytes, index));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_176623260 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_176623260;
+        int var260D539EF7E4CBA16B9E7D7909112882_1979869643 = (readWordFromBuffer(phoneNumberPrefixes, prefixSizeInBytes, index));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1156298731 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1156298731;
         // ---------- Original Method ----------
         //return readWordFromBuffer(phoneNumberPrefixes, prefixSizeInBytes, index);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.415 -0400", hash_original_method = "22178ADBDB18A4450F9D0DCE4A5B21CB", hash_generated_method = "B27E85BB83892C6E3B2A7AA810E8F038")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.559 -0400", hash_original_method = "22178ADBDB18A4450F9D0DCE4A5B21CB", hash_generated_method = "9DF970C1711B20DF4112C5E83EABFF8A")
     @Override
     public String getDescription(int index) {
         addTaint(index);
-String var241898A6DABBEF51A12E2D4BEDE5883D_741052448 =         descriptionPool[readWordFromBuffer(descriptionIndexes, descIndexSizeInBytes, index)];
-        var241898A6DABBEF51A12E2D4BEDE5883D_741052448.addTaint(taint);
-        return var241898A6DABBEF51A12E2D4BEDE5883D_741052448;
+String var241898A6DABBEF51A12E2D4BEDE5883D_766827521 =         descriptionPool[readWordFromBuffer(descriptionIndexes, descIndexSizeInBytes, index)];
+        var241898A6DABBEF51A12E2D4BEDE5883D_766827521.addTaint(taint);
+        return var241898A6DABBEF51A12E2D4BEDE5883D_766827521;
         // ---------- Original Method ----------
         //return descriptionPool[readWordFromBuffer(descriptionIndexes, descIndexSizeInBytes, index)];
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.418 -0400", hash_original_method = "5E35085461C9905BDA49B756DC2968D6", hash_generated_method = "F510343B2011A3DADC7CD8E9F6990593")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.560 -0400", hash_original_method = "5E35085461C9905BDA49B756DC2968D6", hash_generated_method = "F510343B2011A3DADC7CD8E9F6990593")
     @Override
     public void readFromSortedMap(SortedMap<Integer, String> sortedAreaCodeMap) {
         SortedSet<String> descriptionsSet = new TreeSet<String>();
@@ -131,7 +131,7 @@ for(int i = 0;i < numOfEntries;i++)
     }
 
     
-        private static void readExternalWord(ObjectInput objectInput, int wordSize,
+    private static void readExternalWord(ObjectInput objectInput, int wordSize,
                                        ByteBuffer outputBuffer, int index) throws IOException {
         index *= wordSize;
         if (wordSize == SHORT_SIZE) {
@@ -142,7 +142,7 @@ for(int i = 0;i < numOfEntries;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.420 -0400", hash_original_method = "34B883F6EE399DBE00C99A62ABAF8CA0", hash_generated_method = "DC402324F56477FCC77B40049CED3EE9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.562 -0400", hash_original_method = "34B883F6EE399DBE00C99A62ABAF8CA0", hash_generated_method = "DC402324F56477FCC77B40049CED3EE9")
     @Override
     public void readExternal(ObjectInput objectInput) throws IOException {
         prefixSizeInBytes = objectInput.readInt();
@@ -154,7 +154,7 @@ for(int i = 0;i < sizeOfLengths;i++)
             possibleLengths.add(objectInput.readInt());
         } //End block
         int descriptionPoolSize = objectInput.readInt();
-    if(descriptionPool == null || descriptionPool.length < descriptionPoolSize)        
+        if(descriptionPool == null || descriptionPool.length < descriptionPoolSize)        
         {
             descriptionPool = new String[descriptionPoolSize];
         } //End block
@@ -164,11 +164,11 @@ for(int i = 0;i < descriptionPoolSize;i++)
             descriptionPool[i] = description;
         } //End block
         numOfEntries = objectInput.readInt();
-    if(phoneNumberPrefixes == null || phoneNumberPrefixes.capacity() < numOfEntries)        
+        if(phoneNumberPrefixes == null || phoneNumberPrefixes.capacity() < numOfEntries)        
         {
             phoneNumberPrefixes = ByteBuffer.allocate(numOfEntries * prefixSizeInBytes);
         } //End block
-    if(descriptionIndexes == null || descriptionIndexes.capacity() < numOfEntries)        
+        if(descriptionIndexes == null || descriptionIndexes.capacity() < numOfEntries)        
         {
             descriptionIndexes = ByteBuffer.allocate(numOfEntries * descIndexSizeInBytes);
         } //End block
@@ -182,7 +182,7 @@ for(int i = 0;i < numOfEntries;i++)
     }
 
     
-        private static void writeExternalWord(ObjectOutput objectOutput, int wordSize,
+    private static void writeExternalWord(ObjectOutput objectOutput, int wordSize,
                                         ByteBuffer inputBuffer, int index) throws IOException {
         index *= wordSize;
         if (wordSize == SHORT_SIZE) {
@@ -193,7 +193,7 @@ for(int i = 0;i < numOfEntries;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.421 -0400", hash_original_method = "6F391CD50156CF53BBA3CDABE0E437A9", hash_generated_method = "1B502922A88C56D46136972CC9252B4E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.564 -0400", hash_original_method = "6F391CD50156CF53BBA3CDABE0E437A9", hash_generated_method = "1B502922A88C56D46136972CC9252B4E")
     @Override
     public void writeExternal(ObjectOutput objectOutput) throws IOException {
         addTaint(objectOutput.getTaint());
@@ -236,10 +236,10 @@ for(int i = 0;i < numOfEntries;i++)
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.421 -0400", hash_original_field = "56D011CE80777337DC240E00724FCA3A", hash_generated_field = "37950681DC02C7D8897292B6699B2A15")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.564 -0400", hash_original_field = "56D011CE80777337DC240E00724FCA3A", hash_generated_field = "37950681DC02C7D8897292B6699B2A15")
 
     private static final int SHORT_SIZE = Short.SIZE / 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.421 -0400", hash_original_field = "5374F447D3249A069A9B34714D259D87", hash_generated_field = "9B36A8CD72FCA278DBEC63477DFCC506")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.564 -0400", hash_original_field = "5374F447D3249A069A9B34714D259D87", hash_generated_field = "9B36A8CD72FCA278DBEC63477DFCC506")
 
     private static final int INT_SIZE = Integer.SIZE / 8;
 }

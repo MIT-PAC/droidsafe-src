@@ -9,36 +9,36 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class LegacyVpnInfo implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.845 -0400", hash_original_field = "3C6E0B8A9C15224A8228B9A98CA1531D", hash_generated_field = "9594FABAACFBD659AE1FC0B0C9AAFC8C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.404 -0400", hash_original_field = "3C6E0B8A9C15224A8228B9A98CA1531D", hash_generated_field = "9594FABAACFBD659AE1FC0B0C9AAFC8C")
 
     public String key;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.845 -0400", hash_original_field = "B13C44E6D5EBF461207B2405F8395031", hash_generated_field = "924108B50A94C58AFBCA8A5C60C836A0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.404 -0400", hash_original_field = "B13C44E6D5EBF461207B2405F8395031", hash_generated_field = "924108B50A94C58AFBCA8A5C60C836A0")
 
     public int state = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.845 -0400", hash_original_field = "FA48C7D544739BA0E46430E4BA366662", hash_generated_field = "31DE5AC1D3B2F19AF941DBEFA8955100")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.404 -0400", hash_original_field = "FA48C7D544739BA0E46430E4BA366662", hash_generated_field = "31DE5AC1D3B2F19AF941DBEFA8955100")
 
     public PendingIntent intent;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.845 -0400", hash_original_method = "1DAFF6D63CD8989C4DEAE95F675849A5", hash_generated_method = "1DAFF6D63CD8989C4DEAE95F675849A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.404 -0400", hash_original_method = "1DAFF6D63CD8989C4DEAE95F675849A5", hash_generated_method = "1DAFF6D63CD8989C4DEAE95F675849A5")
     public LegacyVpnInfo ()
     {
         //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.845 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E335084E28245D86B7D01C5E4B9DD241")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.404 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "97649CC980E66E9A4020A7D0149CB5B0")
     @Override
     public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_991640759 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_998593338 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_998593338;
+        int varCFCD208495D565EF66E7DFF9F98764DA_1713315067 = (0);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_24028153 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_24028153;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.846 -0400", hash_original_method = "25107BEE45DBA0B67087A892F5280105", hash_generated_method = "8B0A56B4A324F109891422492DA0A0DE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.405 -0400", hash_original_method = "25107BEE45DBA0B67087A892F5280105", hash_generated_method = "8B0A56B4A324F109891422492DA0A0DE")
     @Override
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);
@@ -53,25 +53,25 @@ public class LegacyVpnInfo implements Parcelable {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.846 -0400", hash_original_field = "2D50E5D85E482FA800E087638A951161", hash_generated_field = "84173E1866F23EE943EF8008ED8CFAFC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.405 -0400", hash_original_field = "2D50E5D85E482FA800E087638A951161", hash_generated_field = "84173E1866F23EE943EF8008ED8CFAFC")
 
     public static final int STATE_DISCONNECTED = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.846 -0400", hash_original_field = "375B43DCBA2E95256FCD63BC8A7B176E", hash_generated_field = "016514EB1A66CD51C2D290D20A5E5DC8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.405 -0400", hash_original_field = "375B43DCBA2E95256FCD63BC8A7B176E", hash_generated_field = "016514EB1A66CD51C2D290D20A5E5DC8")
 
     public static final int STATE_INITIALIZING = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.846 -0400", hash_original_field = "A557C7FFCE5597B603CBD2B12D1E2517", hash_generated_field = "2B29FF010792E2F84CB7FF35F9F85DB2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.405 -0400", hash_original_field = "A557C7FFCE5597B603CBD2B12D1E2517", hash_generated_field = "2B29FF010792E2F84CB7FF35F9F85DB2")
 
     public static final int STATE_CONNECTING = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.846 -0400", hash_original_field = "EFF9863FE4F990343B121C90EABFE87B", hash_generated_field = "F45CAA90922497D9AAAEEE9457397413")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.405 -0400", hash_original_field = "EFF9863FE4F990343B121C90EABFE87B", hash_generated_field = "F45CAA90922497D9AAAEEE9457397413")
 
     public static final int STATE_CONNECTED = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.846 -0400", hash_original_field = "99E3B7D7F8072E68D049E47470993498", hash_generated_field = "B2AE2095C3FC0C47E40CB9745CC51691")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.405 -0400", hash_original_field = "99E3B7D7F8072E68D049E47470993498", hash_generated_field = "B2AE2095C3FC0C47E40CB9745CC51691")
 
     public static final int STATE_TIMEOUT = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.846 -0400", hash_original_field = "A42B17C4417CC9707937EF3E9207B907", hash_generated_field = "9955981CE50F2033FFB238F1C66B89BF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.405 -0400", hash_original_field = "A42B17C4417CC9707937EF3E9207B907", hash_generated_field = "9955981CE50F2033FFB238F1C66B89BF")
 
     public static final int STATE_FAILED = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.846 -0400", hash_original_field = "FA0AC8AE4D497C7BADBA4EE7157745FE", hash_generated_field = "38D4AA579EFE31A36382C36119A7DA33")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.405 -0400", hash_original_field = "FA0AC8AE4D497C7BADBA4EE7157745FE", hash_generated_field = "38D4AA579EFE31A36382C36119A7DA33")
 
     public static final Parcelable.Creator<LegacyVpnInfo> CREATOR =
             new Parcelable.Creator<LegacyVpnInfo>() {

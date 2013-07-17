@@ -11,13 +11,13 @@ import javax.net.ssl.SSLSocketFactory;
 
 public class OpenSSLContextImpl extends SSLContextImpl {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.552 -0400", hash_original_method = "AC85303C5261AE8C561C9D0D813887D0", hash_generated_method = "BA56A83C11C4D548CDA5AAC3BEDBB357")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.727 -0400", hash_original_method = "AC85303C5261AE8C561C9D0D813887D0", hash_generated_method = "BA56A83C11C4D548CDA5AAC3BEDBB357")
     public  OpenSSLContextImpl() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.552 -0400", hash_original_method = "F07877C7A70CCB9546F67CAFD785B8D1", hash_generated_method = "4AB7A8A94F9DDD43C12E832C92955DE0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.727 -0400", hash_original_method = "F07877C7A70CCB9546F67CAFD785B8D1", hash_generated_method = "4AB7A8A94F9DDD43C12E832C92955DE0")
     protected  OpenSSLContextImpl(DefaultSSLContextImpl dummy) throws GeneralSecurityException, IOException {
         super(dummy);
         addTaint(dummy.getTaint());
@@ -25,18 +25,18 @@ public class OpenSSLContextImpl extends SSLContextImpl {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.552 -0400", hash_original_method = "A469C9A4B5A6A159DDADCF53650EE287", hash_generated_method = "9266BA43657CB91AF27FDA833DF46E87")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.727 -0400", hash_original_method = "A469C9A4B5A6A159DDADCF53650EE287", hash_generated_method = "4AD6452DB0275539DC96252564A0CB94")
     @Override
     public SSLSocketFactory engineGetSocketFactory() {
-    if(sslParameters == null)        
+        if(sslParameters == null)        
         {
-            IllegalStateException varC8351C8104E6525114445B68BAB6733B_245219106 = new IllegalStateException("SSLContext is not initialized.");
-            varC8351C8104E6525114445B68BAB6733B_245219106.addTaint(taint);
-            throw varC8351C8104E6525114445B68BAB6733B_245219106;
+            IllegalStateException varC8351C8104E6525114445B68BAB6733B_1893246103 = new IllegalStateException("SSLContext is not initialized.");
+            varC8351C8104E6525114445B68BAB6733B_1893246103.addTaint(taint);
+            throw varC8351C8104E6525114445B68BAB6733B_1893246103;
         } //End block
-SSLSocketFactory var82CD0BF44F938BA1AC3328FDCC51399C_1760615109 =         new OpenSSLSocketFactoryImpl(sslParameters);
-        var82CD0BF44F938BA1AC3328FDCC51399C_1760615109.addTaint(taint);
-        return var82CD0BF44F938BA1AC3328FDCC51399C_1760615109;
+SSLSocketFactory var82CD0BF44F938BA1AC3328FDCC51399C_1695954829 =         new OpenSSLSocketFactoryImpl(sslParameters);
+        var82CD0BF44F938BA1AC3328FDCC51399C_1695954829.addTaint(taint);
+        return var82CD0BF44F938BA1AC3328FDCC51399C_1695954829;
         // ---------- Original Method ----------
         //if (sslParameters == null) {
             //throw new IllegalStateException("SSLContext is not initialized.");
@@ -45,18 +45,18 @@ SSLSocketFactory var82CD0BF44F938BA1AC3328FDCC51399C_1760615109 =         new Op
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.552 -0400", hash_original_method = "7F20F3D24E73FCFDF0CE368826678110", hash_generated_method = "D9554F8FD123AEFE2080614E0C23B047")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.727 -0400", hash_original_method = "7F20F3D24E73FCFDF0CE368826678110", hash_generated_method = "08CF8AB2DBA652203155B63033A07980")
     @Override
     public SSLServerSocketFactory engineGetServerSocketFactory() {
-    if(sslParameters == null)        
+        if(sslParameters == null)        
         {
-            IllegalStateException varC8351C8104E6525114445B68BAB6733B_591409693 = new IllegalStateException("SSLContext is not initialized.");
-            varC8351C8104E6525114445B68BAB6733B_591409693.addTaint(taint);
-            throw varC8351C8104E6525114445B68BAB6733B_591409693;
+            IllegalStateException varC8351C8104E6525114445B68BAB6733B_833872737 = new IllegalStateException("SSLContext is not initialized.");
+            varC8351C8104E6525114445B68BAB6733B_833872737.addTaint(taint);
+            throw varC8351C8104E6525114445B68BAB6733B_833872737;
         } //End block
-SSLServerSocketFactory var8E47A225B0DEAB7C85AF9EA976791C8D_1778167178 =         new OpenSSLServerSocketFactoryImpl(sslParameters);
-        var8E47A225B0DEAB7C85AF9EA976791C8D_1778167178.addTaint(taint);
-        return var8E47A225B0DEAB7C85AF9EA976791C8D_1778167178;
+SSLServerSocketFactory var8E47A225B0DEAB7C85AF9EA976791C8D_1237657525 =         new OpenSSLServerSocketFactoryImpl(sslParameters);
+        var8E47A225B0DEAB7C85AF9EA976791C8D_1237657525.addTaint(taint);
+        return var8E47A225B0DEAB7C85AF9EA976791C8D_1237657525;
         // ---------- Original Method ----------
         //if (sslParameters == null) {
             //throw new IllegalStateException("SSLContext is not initialized.");

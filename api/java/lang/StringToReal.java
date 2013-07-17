@@ -7,7 +7,7 @@ import droidsafe.runtime.*;
 
 final class StringToReal {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.336 -0400", hash_original_method = "50763D5996F4E117B646112682AF8739", hash_generated_method = "50763D5996F4E117B646112682AF8739")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.327 -0400", hash_original_method = "50763D5996F4E117B646112682AF8739", hash_generated_method = "50763D5996F4E117B646112682AF8739")
     public StringToReal ()
     {
         //Synthesized constructor
@@ -26,12 +26,12 @@ final class StringToReal {
     }
 
     
-        private static NumberFormatException invalidReal(String s, boolean isDouble) {
+    private static NumberFormatException invalidReal(String s, boolean isDouble) {
         throw new NumberFormatException("Invalid " + (isDouble ? "double" : "float") + ": \"" + s + "\"");
     }
 
     
-        private static StringExponentPair initialParse(String s, int length, boolean isDouble) {
+    private static StringExponentPair initialParse(String s, int length, boolean isDouble) {
         StringExponentPair result = new StringExponentPair();
         if (length == 0) {
             throw invalidReal(s, isDouble);
@@ -140,7 +140,7 @@ final class StringToReal {
     }
 
     
-        private static float parseName(String name, boolean isDouble) {
+    private static float parseName(String name, boolean isDouble) {
         boolean negative = false;
         int i = 0;
         int length = name.length();
@@ -163,7 +163,7 @@ final class StringToReal {
     }
 
     
-        public static double parseDouble(String s) {
+    public static double parseDouble(String s) {
         s = s.trim();
         int length = s.length();
         if (length == 0) {
@@ -188,7 +188,7 @@ final class StringToReal {
     }
 
     
-        public static float parseFloat(String s) {
+    public static float parseFloat(String s) {
         s = s.trim();
         int length = s.length();
         if (length == 0) {
@@ -214,41 +214,41 @@ final class StringToReal {
 
     
     private static final class StringExponentPair {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.340 -0400", hash_original_field = "03C7C0ACE395D80182DB07AE2C30F034", hash_generated_field = "6F3CB884E38CB76988A52AA9FBE92CE9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.330 -0400", hash_original_field = "03C7C0ACE395D80182DB07AE2C30F034", hash_generated_field = "6F3CB884E38CB76988A52AA9FBE92CE9")
 
         String s;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.340 -0400", hash_original_field = "E1671797C52E15F763380B45E841EC32", hash_generated_field = "F35FFAA6A75D4ED13D3E1F7155A8CADC")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.330 -0400", hash_original_field = "E1671797C52E15F763380B45E841EC32", hash_generated_field = "F35FFAA6A75D4ED13D3E1F7155A8CADC")
 
         long e;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.340 -0400", hash_original_field = "228D6A97A9838DC800E58B3C74BA7B11", hash_generated_field = "D7F3A989FF2D2C369DC8DD3FAFC81E5F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.330 -0400", hash_original_field = "228D6A97A9838DC800E58B3C74BA7B11", hash_generated_field = "D7F3A989FF2D2C369DC8DD3FAFC81E5F")
 
         boolean negative;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.340 -0400", hash_original_field = "F2FDEE93271556E428DD9507B3DA7235", hash_generated_field = "0A5EBC5B0FCD11704FA7F7D3B79A6F6A")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.330 -0400", hash_original_field = "F2FDEE93271556E428DD9507B3DA7235", hash_generated_field = "0A5EBC5B0FCD11704FA7F7D3B79A6F6A")
 
         boolean infinity;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.340 -0400", hash_original_field = "D02C4C4CDE7AE76252540D116A40F23A", hash_generated_field = "8B6B687B2003A0D3B71E98348C954562")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.330 -0400", hash_original_field = "D02C4C4CDE7AE76252540D116A40F23A", hash_generated_field = "8B6B687B2003A0D3B71E98348C954562")
 
         boolean zero;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.340 -0400", hash_original_method = "08340FE99073C3A1F05DC2CE36487C0E", hash_generated_method = "08340FE99073C3A1F05DC2CE36487C0E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.330 -0400", hash_original_method = "08340FE99073C3A1F05DC2CE36487C0E", hash_generated_method = "08340FE99073C3A1F05DC2CE36487C0E")
         public StringExponentPair ()
         {
             //Synthesized constructor
         }
 
 
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.341 -0400", hash_original_method = "910639D1FB7C57E8188938A4D56F4369", hash_generated_method = "34C5601E7A11CF36CDA98BCC633F1A32")
+                @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.331 -0400", hash_original_method = "910639D1FB7C57E8188938A4D56F4369", hash_generated_method = "1E22A1725F128CCFFEE3AEAD8B8D97DE")
         public float specialValue() {
-    if(infinity)            
+            if(infinity)            
             {
-                float var58A293DBE41BE1FC7DA27C34389052B6_1850661140 = (negative ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY);
-                                float var546ADE640B6EDFBC8A086EF31347E768_766128125 = getTaintFloat();
-                return var546ADE640B6EDFBC8A086EF31347E768_766128125;
+                float var58A293DBE41BE1FC7DA27C34389052B6_381020269 = (negative ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY);
+                                float var546ADE640B6EDFBC8A086EF31347E768_1529689087 = getTaintFloat();
+                return var546ADE640B6EDFBC8A086EF31347E768_1529689087;
             } //End block
-            float var8EBD4BDE80414E3383036D59A456AD3A_2054280963 = (negative ? -0.0f : 0.0f);
-                        float var546ADE640B6EDFBC8A086EF31347E768_1098093663 = getTaintFloat();
-            return var546ADE640B6EDFBC8A086EF31347E768_1098093663;
+            float var8EBD4BDE80414E3383036D59A456AD3A_422079260 = (negative ? -0.0f : 0.0f);
+                        float var546ADE640B6EDFBC8A086EF31347E768_1728961998 = getTaintFloat();
+            return var546ADE640B6EDFBC8A086EF31347E768_1728961998;
             // ---------- Original Method ----------
             //if (infinity) {
                 //return negative ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY;

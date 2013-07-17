@@ -15,7 +15,7 @@ import java.nio.charset.CodingErrorAction;
 
 public final class NativeConverter {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:14.580 -0400", hash_original_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D", hash_generated_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.997 -0400", hash_original_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D", hash_generated_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D")
     public NativeConverter ()
     {
         //Synthesized constructor
@@ -190,7 +190,7 @@ public final class NativeConverter {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static int translateCodingErrorAction(CodingErrorAction action) {
         if (action == CodingErrorAction.REPORT) {
             return 0;
@@ -204,7 +204,7 @@ public final class NativeConverter {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int setCallbackDecode(long converterHandle, CharsetDecoder decoder) {
         return setCallbackDecode(converterHandle,
                 translateCodingErrorAction(decoder.malformedInputAction()),
@@ -220,7 +220,7 @@ public final class NativeConverter {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int setCallbackEncode(long converterHandle, CharsetEncoder encoder) {
         return setCallbackEncode(converterHandle,
                 translateCodingErrorAction(encoder.malformedInputAction()),

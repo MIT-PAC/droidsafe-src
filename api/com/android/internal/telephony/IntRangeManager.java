@@ -8,75 +8,75 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public abstract class IntRangeManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.876 -0400", hash_original_field = "2B355984BC5EB38E49D845FCB0D77019", hash_generated_field = "E43FB0C78759432184E49407A51B5267")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.466 -0400", hash_original_field = "2B355984BC5EB38E49D845FCB0D77019", hash_generated_field = "E43FB0C78759432184E49407A51B5267")
 
     private ArrayList<IntRange> mRanges = new ArrayList<IntRange>();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.876 -0400", hash_original_method = "362FA502CCB486C4D0A9F66987CBC492", hash_generated_method = "22D07BAE17359B60391CE9F4DA674915")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.466 -0400", hash_original_method = "362FA502CCB486C4D0A9F66987CBC492", hash_generated_method = "22D07BAE17359B60391CE9F4DA674915")
     protected  IntRangeManager() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.880 -0400", hash_original_method = "6ED59671D51F9C9BA7262BED5BB50C74", hash_generated_method = "53F6F9712BDD31CFDF86446426F881C1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.470 -0400", hash_original_method = "6ED59671D51F9C9BA7262BED5BB50C74", hash_generated_method = "F64EC28FF5201D94D5E25E08911CDDFE")
     public synchronized boolean enableRange(int startId, int endId, String client) {
         addTaint(client.getTaint());
         addTaint(endId);
         addTaint(startId);
         int len = mRanges.size();
-    if(len == 0)        
+        if(len == 0)        
         {
-    if(tryAddSingleRange(startId, endId, true))            
+            if(tryAddSingleRange(startId, endId, true))            
             {
                 mRanges.add(new IntRange(startId, endId, client));
-                boolean varB326B5062B2F0E69046810717534CB09_1341311134 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_678621476 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_678621476;
+                boolean varB326B5062B2F0E69046810717534CB09_185292284 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2063431088 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_2063431088;
             } //End block
             else
             {
-                boolean var68934A3E9455FA72420237EB05902327_1286627584 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2044124934 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_2044124934;
+                boolean var68934A3E9455FA72420237EB05902327_1590031140 = (false);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1593856435 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1593856435;
             } //End block
         } //End block
 for(int startIndex = 0;startIndex < len;startIndex++)
         {
             IntRange range = mRanges.get(startIndex);
-    if(startId < range.startId)            
+            if(startId < range.startId)            
             {
-    if((endId + 1) < range.startId)                
+                if((endId + 1) < range.startId)                
                 {
-    if(tryAddSingleRange(startId, endId, true))                    
+                    if(tryAddSingleRange(startId, endId, true))                    
                     {
                         mRanges.add(startIndex, new IntRange(startId, endId, client));
-                        boolean varB326B5062B2F0E69046810717534CB09_1826379292 = (true);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_647351967 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_647351967;
+                        boolean varB326B5062B2F0E69046810717534CB09_687668985 = (true);
+                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_543685802 = getTaintBoolean();
+                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_543685802;
                     } //End block
                     else
                     {
-                        boolean var68934A3E9455FA72420237EB05902327_450817259 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1579064691 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1579064691;
+                        boolean var68934A3E9455FA72420237EB05902327_693908639 = (false);
+                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1944244457 = getTaintBoolean();
+                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1944244457;
                     } //End block
                 } //End block
                 else
-    if(endId <= range.endId)                
+                if(endId <= range.endId)                
                 {
-    if(tryAddSingleRange(startId, range.startId - 1, true))                    
+                    if(tryAddSingleRange(startId, range.startId - 1, true))                    
                     {
                         range.startId = startId;
                         range.clients.add(0, new ClientRange(startId, endId, client));
-                        boolean varB326B5062B2F0E69046810717534CB09_92902718 = (true);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_411305575 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_411305575;
+                        boolean varB326B5062B2F0E69046810717534CB09_1987752964 = (true);
+                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1856678942 = getTaintBoolean();
+                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1856678942;
                     } //End block
                     else
                     {
-                        boolean var68934A3E9455FA72420237EB05902327_1891205371 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1648691772 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1648691772;
+                        boolean var68934A3E9455FA72420237EB05902327_1302057666 = (false);
+                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_826695178 = getTaintBoolean();
+                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_826695178;
                     } //End block
                 } //End block
                 else
@@ -84,9 +84,9 @@ for(int startIndex = 0;startIndex < len;startIndex++)
 for(int endIndex = startIndex+1;endIndex < len;endIndex++)
                     {
                         IntRange endRange = mRanges.get(endIndex);
-    if((endId + 1) < endRange.startId)                        
+                        if((endId + 1) < endRange.startId)                        
                         {
-    if(tryAddSingleRange(startId, endId, true))                            
+                            if(tryAddSingleRange(startId, endId, true))                            
                             {
                                 range.startId = startId;
                                 range.endId = endId;
@@ -98,21 +98,21 @@ for(int i = joinIndex;i < endIndex;i++)
                                     range.clients.addAll(joinRange.clients);
                                     mRanges.remove(joinRange);
                                 } //End block
-                                boolean varB326B5062B2F0E69046810717534CB09_198388575 = (true);
-                                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1016309142 = getTaintBoolean();
-                                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1016309142;
+                                boolean varB326B5062B2F0E69046810717534CB09_162956706 = (true);
+                                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1967708512 = getTaintBoolean();
+                                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1967708512;
                             } //End block
                             else
                             {
-                                boolean var68934A3E9455FA72420237EB05902327_169284039 = (false);
-                                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_880645399 = getTaintBoolean();
-                                return var84E2C64F38F78BA3EA5C905AB5A2DA27_880645399;
+                                boolean var68934A3E9455FA72420237EB05902327_1641957013 = (false);
+                                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1909268811 = getTaintBoolean();
+                                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1909268811;
                             } //End block
                         } //End block
                         else
-    if(endId <= endRange.endId)                        
+                        if(endId <= endRange.endId)                        
                         {
-    if(tryAddSingleRange(startId, endRange.startId - 1, true))                            
+                            if(tryAddSingleRange(startId, endRange.startId - 1, true))                            
                             {
                                 range.startId = startId;
                                 range.endId = endRange.endId;
@@ -124,19 +124,19 @@ for(int i = joinIndex;i <= endIndex;i++)
                                     range.clients.addAll(joinRange.clients);
                                     mRanges.remove(joinRange);
                                 } //End block
-                                boolean varB326B5062B2F0E69046810717534CB09_1105584859 = (true);
-                                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_243987637 = getTaintBoolean();
-                                return var84E2C64F38F78BA3EA5C905AB5A2DA27_243987637;
+                                boolean varB326B5062B2F0E69046810717534CB09_796638251 = (true);
+                                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_31021066 = getTaintBoolean();
+                                return var84E2C64F38F78BA3EA5C905AB5A2DA27_31021066;
                             } //End block
                             else
                             {
-                                boolean var68934A3E9455FA72420237EB05902327_265965423 = (false);
-                                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1066790580 = getTaintBoolean();
-                                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1066790580;
+                                boolean var68934A3E9455FA72420237EB05902327_733385272 = (false);
+                                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_742205771 = getTaintBoolean();
+                                return var84E2C64F38F78BA3EA5C905AB5A2DA27_742205771;
                             } //End block
                         } //End block
                     } //End block
-    if(tryAddSingleRange(startId, endId, true))                    
+                    if(tryAddSingleRange(startId, endId, true))                    
                     {
                         range.startId = startId;
                         range.endId = endId;
@@ -148,27 +148,27 @@ for(int i = joinIndex;i < len;i++)
                             range.clients.addAll(joinRange.clients);
                             mRanges.remove(joinRange);
                         } //End block
-                        boolean varB326B5062B2F0E69046810717534CB09_1006251487 = (true);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_666081910 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_666081910;
+                        boolean varB326B5062B2F0E69046810717534CB09_1014359717 = (true);
+                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_243570592 = getTaintBoolean();
+                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_243570592;
                     } //End block
                     else
                     {
-                        boolean var68934A3E9455FA72420237EB05902327_838944086 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1922523841 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1922523841;
+                        boolean var68934A3E9455FA72420237EB05902327_92196551 = (false);
+                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_283261222 = getTaintBoolean();
+                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_283261222;
                     } //End block
                 } //End block
             } //End block
             else
-    if((startId + 1) <= range.endId)            
+            if((startId + 1) <= range.endId)            
             {
-    if(endId <= range.endId)                
+                if(endId <= range.endId)                
                 {
                     range.insert(new ClientRange(startId, endId, client));
-                    boolean varB326B5062B2F0E69046810717534CB09_1988168179 = (true);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1957528350 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1957528350;
+                    boolean varB326B5062B2F0E69046810717534CB09_273040430 = (true);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1679327333 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1679327333;
                 } //End block
                 else
                 {
@@ -176,7 +176,7 @@ for(int i = joinIndex;i < len;i++)
 for(int testIndex = startIndex+1;testIndex < len;testIndex++)
                     {
                         IntRange testRange = mRanges.get(testIndex);
-    if((endId + 1) < testRange.startId)                        
+                        if((endId + 1) < testRange.startId)                        
                         {
                             break;
                         } //End block
@@ -185,26 +185,26 @@ for(int testIndex = startIndex+1;testIndex < len;testIndex++)
                             endIndex = testIndex;
                         } //End block
                     } //End block
-    if(endIndex == startIndex)                    
+                    if(endIndex == startIndex)                    
                     {
-    if(tryAddSingleRange(range.endId + 1, endId, true))                        
+                        if(tryAddSingleRange(range.endId + 1, endId, true))                        
                         {
                             range.endId = endId;
                             range.insert(new ClientRange(startId, endId, client));
-                            boolean varB326B5062B2F0E69046810717534CB09_1180567800 = (true);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1957280574 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1957280574;
+                            boolean varB326B5062B2F0E69046810717534CB09_1871854117 = (true);
+                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1421350246 = getTaintBoolean();
+                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1421350246;
                         } //End block
                         else
                         {
-                            boolean var68934A3E9455FA72420237EB05902327_695098606 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1105675790 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1105675790;
+                            boolean var68934A3E9455FA72420237EB05902327_1080652058 = (false);
+                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_484328455 = getTaintBoolean();
+                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_484328455;
                         } //End block
                     } //End block
                     IntRange endRange = mRanges.get(endIndex);
                     int newRangeEndId = (endId <= endRange.endId) ? endRange.startId - 1 : endId;
-    if(tryAddSingleRange(range.endId + 1, newRangeEndId, true))                    
+                    if(tryAddSingleRange(range.endId + 1, newRangeEndId, true))                    
                     {
                         range.endId = endId;
                         range.insert(new ClientRange(startId, endId, client));
@@ -215,38 +215,38 @@ for(int i = joinIndex;i < endIndex;i++)
                             range.clients.addAll(joinRange.clients);
                             mRanges.remove(joinRange);
                         } //End block
-                        boolean varB326B5062B2F0E69046810717534CB09_900235969 = (true);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_514550876 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_514550876;
+                        boolean varB326B5062B2F0E69046810717534CB09_2032895329 = (true);
+                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_790362797 = getTaintBoolean();
+                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_790362797;
                     } //End block
                     else
                     {
-                        boolean var68934A3E9455FA72420237EB05902327_1016696008 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1734730209 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1734730209;
+                        boolean var68934A3E9455FA72420237EB05902327_210755394 = (false);
+                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1997380039 = getTaintBoolean();
+                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1997380039;
                     } //End block
                 } //End block
             } //End block
         } //End block
-    if(tryAddSingleRange(startId, endId, true))        
+        if(tryAddSingleRange(startId, endId, true))        
         {
             mRanges.add(new IntRange(startId, endId, client));
-            boolean varB326B5062B2F0E69046810717534CB09_499483722 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_490803396 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_490803396;
+            boolean varB326B5062B2F0E69046810717534CB09_1917981382 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1231436139 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1231436139;
         } //End block
         else
         {
-            boolean var68934A3E9455FA72420237EB05902327_1731355318 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1465475512 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1465475512;
+            boolean var68934A3E9455FA72420237EB05902327_1861548518 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_757488469 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_757488469;
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.890 -0400", hash_original_method = "3E9B5A2BDD46323741EF7C361F65FFEC", hash_generated_method = "D71F54CF448D0D69B8D98797C8F81B11")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.475 -0400", hash_original_method = "3E9B5A2BDD46323741EF7C361F65FFEC", hash_generated_method = "B7785574D488F25318E6F263EFE2ED47")
     public synchronized boolean disableRange(int startId, int endId, String client) {
         addTaint(client.getTaint());
         addTaint(endId);
@@ -255,41 +255,41 @@ for(int i = joinIndex;i < endIndex;i++)
 for(int i=0;i < len;i++)
         {
             IntRange range = mRanges.get(i);
-    if(startId < range.startId)            
+            if(startId < range.startId)            
             {
-                boolean var68934A3E9455FA72420237EB05902327_1273699804 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1464402460 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1464402460;
+                boolean var68934A3E9455FA72420237EB05902327_806746937 = (false);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_877332213 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_877332213;
             } //End block
             else
-    if(endId <= range.endId)            
+            if(endId <= range.endId)            
             {
                 ArrayList<ClientRange> clients = range.clients;
                 int crLength = clients.size();
-    if(crLength == 1)                
+                if(crLength == 1)                
                 {
                     ClientRange cr = clients.get(0);
-    if(cr.startId == startId && cr.endId == endId && cr.client.equals(client))                    
+                    if(cr.startId == startId && cr.endId == endId && cr.client.equals(client))                    
                     {
-    if(tryAddSingleRange(startId, endId, false))                        
+                        if(tryAddSingleRange(startId, endId, false))                        
                         {
                             mRanges.remove(i);
-                            boolean varB326B5062B2F0E69046810717534CB09_888893645 = (true);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_79712346 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_79712346;
+                            boolean varB326B5062B2F0E69046810717534CB09_2041933825 = (true);
+                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2054630447 = getTaintBoolean();
+                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2054630447;
                         } //End block
                         else
                         {
-                            boolean var68934A3E9455FA72420237EB05902327_789635241 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_535488786 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_535488786;
+                            boolean var68934A3E9455FA72420237EB05902327_687499588 = (false);
+                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_413106904 = getTaintBoolean();
+                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_413106904;
                         } //End block
                     } //End block
                     else
                     {
-                        boolean var68934A3E9455FA72420237EB05902327_2073775258 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1997666411 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1997666411;
+                        boolean var68934A3E9455FA72420237EB05902327_1963439812 = (false);
+                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_359817144 = getTaintBoolean();
+                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_359817144;
                     } //End block
                 } //End block
                 int largestEndId = Integer.MIN_VALUE;
@@ -297,40 +297,40 @@ for(int i=0;i < len;i++)
 for(int crIndex=0;crIndex < crLength;crIndex++)
                 {
                     ClientRange cr = clients.get(crIndex);
-    if(cr.startId == startId && cr.endId == endId && cr.client.equals(client))                    
+                    if(cr.startId == startId && cr.endId == endId && cr.client.equals(client))                    
                     {
-    if(crIndex == crLength - 1)                        
+                        if(crIndex == crLength - 1)                        
                         {
-    if(range.endId == largestEndId)                            
+                            if(range.endId == largestEndId)                            
                             {
                                 clients.remove(crIndex);
-                                boolean varB326B5062B2F0E69046810717534CB09_1563120473 = (true);
-                                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1232268569 = getTaintBoolean();
-                                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1232268569;
+                                boolean varB326B5062B2F0E69046810717534CB09_1449031487 = (true);
+                                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2084866455 = getTaintBoolean();
+                                return var84E2C64F38F78BA3EA5C905AB5A2DA27_2084866455;
                             } //End block
                             else
                             {
-    if(tryAddSingleRange(largestEndId + 1, range.endId, false))                                
+                                if(tryAddSingleRange(largestEndId + 1, range.endId, false))                                
                                 {
                                     clients.remove(crIndex);
                                     range.endId = largestEndId;
-                                    boolean varB326B5062B2F0E69046810717534CB09_251692851 = (true);
-                                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1071119311 = getTaintBoolean();
-                                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1071119311;
+                                    boolean varB326B5062B2F0E69046810717534CB09_1351775241 = (true);
+                                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_794497525 = getTaintBoolean();
+                                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_794497525;
                                 } //End block
                                 else
                                 {
-                                    boolean var68934A3E9455FA72420237EB05902327_169903215 = (false);
-                                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1041056427 = getTaintBoolean();
-                                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1041056427;
+                                    boolean var68934A3E9455FA72420237EB05902327_1923279109 = (false);
+                                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_949758328 = getTaintBoolean();
+                                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_949758328;
                                 } //End block
                             } //End block
                         } //End block
                         IntRange rangeCopy = new IntRange(range, crIndex);
-    if(crIndex == 0)                        
+                        if(crIndex == 0)                        
                         {
                             int nextStartId = clients.get(1).startId;
-    if(nextStartId != range.startId)                            
+                            if(nextStartId != range.startId)                            
                             {
                                 startUpdate();
                                 updateStarted = true;
@@ -344,9 +344,9 @@ for(int crIndex=0;crIndex < crLength;crIndex++)
 for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
                         {
                             ClientRange nextCr = clients.get(nextIndex);
-    if(nextCr.startId > largestEndId + 1)                            
+                            if(nextCr.startId > largestEndId + 1)                            
                             {
-    if(!updateStarted)                                
+                                if(!updateStarted)                                
                                 {
                                     startUpdate();
                                     updateStarted = true;
@@ -360,14 +360,14 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
                             {
                                 currentRange.clients.add(nextCr);
                             } //End block
-    if(nextCr.endId > largestEndId)                            
+                            if(nextCr.endId > largestEndId)                            
                             {
                                 largestEndId = nextCr.endId;
                             } //End block
                         } //End block
-    if(largestEndId < endId)                        
+                        if(largestEndId < endId)                        
                         {
-    if(!updateStarted)                            
+                            if(!updateStarted)                            
                             {
                                 startUpdate();
                                 updateStarted = true;
@@ -376,21 +376,21 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
                             currentRange.endId = largestEndId;
                         } //End block
                         newRanges.add(currentRange);
-    if(updateStarted && !finishUpdate())                        
+                        if(updateStarted && !finishUpdate())                        
                         {
-                            boolean var68934A3E9455FA72420237EB05902327_1407177725 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_92006248 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_92006248;
+                            boolean var68934A3E9455FA72420237EB05902327_1248180248 = (false);
+                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1929236806 = getTaintBoolean();
+                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1929236806;
                         } //End block
                         mRanges.remove(i);
                         mRanges.addAll(i, newRanges);
-                        boolean varB326B5062B2F0E69046810717534CB09_1169924303 = (true);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_527473822 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_527473822;
+                        boolean varB326B5062B2F0E69046810717534CB09_1198114893 = (true);
+                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_676466259 = getTaintBoolean();
+                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_676466259;
                     } //End block
                     else
                     {
-    if(cr.endId > largestEndId)                        
+                        if(cr.endId > largestEndId)                        
                         {
                             largestEndId = cr.endId;
                         } //End block
@@ -398,19 +398,19 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
                 } //End block
             } //End block
         } //End block
-        boolean var68934A3E9455FA72420237EB05902327_476655555 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1662978078 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1662978078;
+        boolean var68934A3E9455FA72420237EB05902327_452812138 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1578416084 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1578416084;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.893 -0400", hash_original_method = "6D2ABBA8943E817B6A7F4354584C0478", hash_generated_method = "88C51EBDD06639A07A0FC92247C9B4FA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.477 -0400", hash_original_method = "6D2ABBA8943E817B6A7F4354584C0478", hash_generated_method = "BB2AFD05EF20B51EE006D7C0CDDE52BF")
     public boolean updateRanges() {
         startUpdate();
         Iterator<IntRange> iterator = mRanges.iterator();
-    if(iterator.hasNext())        
+        if(iterator.hasNext())        
         {
             IntRange range = iterator.next();
             int start = range.startId;
@@ -419,9 +419,9 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
 (iterator.hasNext())            
             {
                 IntRange nextNode = iterator.next();
-    if(nextNode.startId <= (end + 1))                
+                if(nextNode.startId <= (end + 1))                
                 {
-    if(nextNode.endId > end)                    
+                    if(nextNode.endId > end)                    
                     {
                         end = nextNode.endId;
                     } //End block
@@ -435,9 +435,9 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
             } //End block
             addRange(start, end, true);
         } //End block
-        boolean var4C3605E2FED9FB10BADCCCDB35A8BC62_264727433 = (finishUpdate());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1965178355 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1965178355;
+        boolean var4C3605E2FED9FB10BADCCCDB35A8BC62_538989566 = (finishUpdate());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1276732279 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1276732279;
         // ---------- Original Method ----------
         //startUpdate();
         //Iterator<IntRange> iterator = mRanges.iterator();
@@ -463,16 +463,16 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.893 -0400", hash_original_method = "66D9B78BD0A6572F2D23304F41F243DE", hash_generated_method = "254A82BFD062CC254F2325B156EC0BC7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.478 -0400", hash_original_method = "66D9B78BD0A6572F2D23304F41F243DE", hash_generated_method = "8577E280E3F439E9EE1DFE04987B3778")
     private boolean tryAddSingleRange(int startId, int endId, boolean selected) {
         addTaint(selected);
         addTaint(endId);
         addTaint(startId);
         startUpdate();
         addRange(startId, endId, selected);
-        boolean var4C3605E2FED9FB10BADCCCDB35A8BC62_1403463620 = (finishUpdate());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_293162675 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_293162675;
+        boolean var4C3605E2FED9FB10BADCCCDB35A8BC62_503382589 = (finishUpdate());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1070868092 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1070868092;
         // ---------- Original Method ----------
         //startUpdate();
         //addRange(startId, endId, selected);
@@ -480,11 +480,11 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.894 -0400", hash_original_method = "3535E42AC2A5B7497897BAD158CB88AF", hash_generated_method = "2311B614E913E74C86D58E4521BB0198")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.478 -0400", hash_original_method = "3535E42AC2A5B7497897BAD158CB88AF", hash_generated_method = "AB450A5AE37EB5595FC3FD76B5423B4F")
     public boolean isEmpty() {
-        boolean var4A182B3170A47CB458F8C45AB3739898_655847125 = (mRanges.isEmpty());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1837689875 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1837689875;
+        boolean var4A182B3170A47CB458F8C45AB3739898_2117226749 = (mRanges.isEmpty());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_573242658 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_573242658;
         // ---------- Original Method ----------
         //return mRanges.isEmpty();
     }
@@ -500,17 +500,17 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
 
     
     private class IntRange {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.895 -0400", hash_original_field = "1479C40F2636F6E3EEED28E17C8A08D9", hash_generated_field = "B575BF041CFA248D715BE93778A966DC")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.479 -0400", hash_original_field = "1479C40F2636F6E3EEED28E17C8A08D9", hash_generated_field = "B575BF041CFA248D715BE93778A966DC")
 
         int startId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.895 -0400", hash_original_field = "30E5A8439BA3B2DD50160927AB87D03D", hash_generated_field = "D469E1326C7C274FD4D56F815E4A1D73")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.479 -0400", hash_original_field = "30E5A8439BA3B2DD50160927AB87D03D", hash_generated_field = "D469E1326C7C274FD4D56F815E4A1D73")
 
         int endId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.895 -0400", hash_original_field = "FAC04CA68A48AF91F0290001604A2463", hash_generated_field = "DD30F90F1DFDA1050591F66AD1E9CE7F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.479 -0400", hash_original_field = "FAC04CA68A48AF91F0290001604A2463", hash_generated_field = "DD30F90F1DFDA1050591F66AD1E9CE7F")
 
         ArrayList<ClientRange> clients;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.895 -0400", hash_original_method = "F07B82A28B52231FBB76629ABCB97069", hash_generated_method = "FD85D7559ED4C2DA87E049FBBEC805FE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.479 -0400", hash_original_method = "F07B82A28B52231FBB76629ABCB97069", hash_generated_method = "FD85D7559ED4C2DA87E049FBBEC805FE")
           IntRange(int startId, int endId, String client) {
             addTaint(client.getTaint());
             this.startId = startId;
@@ -525,7 +525,7 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.896 -0400", hash_original_method = "BA7832996744AA8092A9A5E21086E160", hash_generated_method = "7BA355DFC1B6681CD4E3AA92366DAC86")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.480 -0400", hash_original_method = "BA7832996744AA8092A9A5E21086E160", hash_generated_method = "7BA355DFC1B6681CD4E3AA92366DAC86")
           IntRange(ClientRange clientRange) {
             startId = clientRange.startId;
             endId = clientRange.endId;
@@ -539,7 +539,7 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.897 -0400", hash_original_method = "A2EC39EA4DD73652B403D173FB1236C3", hash_generated_method = "44C32759AE6D6E3731B44420940816D3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.480 -0400", hash_original_method = "A2EC39EA4DD73652B403D173FB1236C3", hash_generated_method = "44C32759AE6D6E3731B44420940816D3")
           IntRange(IntRange intRange, int numElements) {
             addTaint(numElements);
             this.startId = intRange.startId;
@@ -559,16 +559,16 @@ for(int i=0;i < numElements;i++)
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.897 -0400", hash_original_method = "5E2FBB55D30010C4D5AE540EBBAC773C", hash_generated_method = "FCC2076617B797DAE19D182A91CC8E0E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.481 -0400", hash_original_method = "5E2FBB55D30010C4D5AE540EBBAC773C", hash_generated_method = "FCC2076617B797DAE19D182A91CC8E0E")
          void insert(ClientRange range) {
             addTaint(range.getTaint());
             int len = clients.size();
 for(int i=0;i < len;i++)
             {
                 ClientRange nextRange = clients.get(i);
-    if(range.startId <= nextRange.startId)                
+                if(range.startId <= nextRange.startId)                
                 {
-    if(!range.equals(nextRange))                    
+                    if(!range.equals(nextRange))                    
                     {
                         clients.add(i, range);
                     } //End block
@@ -596,17 +596,17 @@ for(int i=0;i < len;i++)
 
     
     private class ClientRange {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.898 -0400", hash_original_field = "1479C40F2636F6E3EEED28E17C8A08D9", hash_generated_field = "B575BF041CFA248D715BE93778A966DC")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.481 -0400", hash_original_field = "1479C40F2636F6E3EEED28E17C8A08D9", hash_generated_field = "B575BF041CFA248D715BE93778A966DC")
 
         int startId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.898 -0400", hash_original_field = "30E5A8439BA3B2DD50160927AB87D03D", hash_generated_field = "D469E1326C7C274FD4D56F815E4A1D73")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.481 -0400", hash_original_field = "30E5A8439BA3B2DD50160927AB87D03D", hash_generated_field = "D469E1326C7C274FD4D56F815E4A1D73")
 
         int endId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.898 -0400", hash_original_field = "62608E08ADC29A8D6DBC9754E659F125", hash_generated_field = "B53CFB15BD6573E83D2588E535C40087")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.481 -0400", hash_original_field = "62608E08ADC29A8D6DBC9754E659F125", hash_generated_field = "B53CFB15BD6573E83D2588E535C40087")
 
         String client;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.898 -0400", hash_original_method = "0233CEEC110E7548B64806A81A8747BD", hash_generated_method = "8A9C28D210140B4512C21C49AFDD4E38")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.481 -0400", hash_original_method = "0233CEEC110E7548B64806A81A8747BD", hash_generated_method = "8A9C28D210140B4512C21C49AFDD4E38")
           ClientRange(int startId, int endId, String client) {
             this.startId = startId;
             this.endId = endId;
@@ -618,24 +618,24 @@ for(int i=0;i < len;i++)
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.899 -0400", hash_original_method = "1032526D9DAEE515FA8C17531DBF15E9", hash_generated_method = "BAC0C8A79A3A09B3B2CEE765A8613313")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.481 -0400", hash_original_method = "1032526D9DAEE515FA8C17531DBF15E9", hash_generated_method = "D28323F08164C1046E14F8271E492993")
         @Override
         public boolean equals(Object o) {
             addTaint(o.getTaint());
-    if(o != null && o instanceof ClientRange)            
+            if(o != null && o instanceof ClientRange)            
             {
                 ClientRange other = (ClientRange) o;
-                boolean varAD32CB64BCB0205319B7E8E441350216_890617040 = (startId == other.startId &&
+                boolean varAD32CB64BCB0205319B7E8E441350216_982686301 = (startId == other.startId &&
                         endId == other.endId &&
                         client.equals(other.client));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_275866829 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_275866829;
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1254641423 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1254641423;
             } //End block
             else
             {
-                boolean var68934A3E9455FA72420237EB05902327_982989317 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2009481562 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_2009481562;
+                boolean var68934A3E9455FA72420237EB05902327_936158282 = (false);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_787880347 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_787880347;
             } //End block
             // ---------- Original Method ----------
             //if (o != null && o instanceof ClientRange) {
@@ -649,12 +649,12 @@ for(int i=0;i < len;i++)
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.899 -0400", hash_original_method = "0C827ECC35335C49789EB5A12C0D3470", hash_generated_method = "5636465A27ADF63A6AA74957D48A1333")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.482 -0400", hash_original_method = "0C827ECC35335C49789EB5A12C0D3470", hash_generated_method = "6623FA6D786FE85C76A7E9EF1204D982")
         @Override
         public int hashCode() {
-            int var4844D2584D9A8987A29943F2F0DD954C_921702960 = ((startId * 31 + endId) * 31 + client.hashCode());
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_479972 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_479972;
+            int var4844D2584D9A8987A29943F2F0DD954C_2144218452 = ((startId * 31 + endId) * 31 + client.hashCode());
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_609825716 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_609825716;
             // ---------- Original Method ----------
             //return (startId * 31 + endId) * 31 + client.hashCode();
         }
@@ -664,7 +664,7 @@ for(int i=0;i < len;i++)
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.899 -0400", hash_original_field = "34FA81EDAFCA80AF9B9CF345E4A5F242", hash_generated_field = "755EBFB204022DB38615C127DE53EE61")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.482 -0400", hash_original_field = "34FA81EDAFCA80AF9B9CF345E4A5F242", hash_generated_field = "755EBFB204022DB38615C127DE53EE61")
 
     private static final int INITIAL_CLIENTS_ARRAY_SIZE = 4;
 }

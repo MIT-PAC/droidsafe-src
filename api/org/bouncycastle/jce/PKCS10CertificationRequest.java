@@ -47,8 +47,8 @@ import org.bouncycastle.util.Strings;
 
 public class PKCS10CertificationRequest extends CertificationRequest {
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.472 -0400", hash_original_method = "3A41672F51C7647865E5A6F21420932E", hash_generated_method = "FF24829872F3AA31786B4DCB8CC254E0")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.249 -0400", hash_original_method = "3A41672F51C7647865E5A6F21420932E", hash_generated_method = "FF24829872F3AA31786B4DCB8CC254E0")
     public  PKCS10CertificationRequest(
         byte[]  bytes) {
         super(toDERSequence(bytes));
@@ -57,8 +57,8 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.473 -0400", hash_original_method = "E80E9113023CB84AD6D915B7A5F597A7", hash_generated_method = "4ABCE1760383597C1301750287ADF3F7")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.249 -0400", hash_original_method = "E80E9113023CB84AD6D915B7A5F597A7", hash_generated_method = "4ABCE1760383597C1301750287ADF3F7")
     public  PKCS10CertificationRequest(
         ASN1Sequence  sequence) {
         super(sequence);
@@ -67,8 +67,8 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.473 -0400", hash_original_method = "DCC234DC4AA32AD53B9F45C5CD92E5AA", hash_generated_method = "D6258080ABBCD93337111577476C7AD9")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.250 -0400", hash_original_method = "DCC234DC4AA32AD53B9F45C5CD92E5AA", hash_generated_method = "D6258080ABBCD93337111577476C7AD9")
     public  PKCS10CertificationRequest(
         String              signatureAlgorithm,
         X509Name            subject,
@@ -86,8 +86,8 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.474 -0400", hash_original_method = "8331D41600BE6136ABFAAFB9EC7881F5", hash_generated_method = "D6D6AE127A2EA6FF1A02E4C3D7F97044")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.250 -0400", hash_original_method = "8331D41600BE6136ABFAAFB9EC7881F5", hash_generated_method = "D6D6AE127A2EA6FF1A02E4C3D7F97044")
     public  PKCS10CertificationRequest(
         String              signatureAlgorithm,
         X500Principal       subject,
@@ -105,8 +105,8 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.474 -0400", hash_original_method = "47F27C3C5B072C1921CEA8CD2618865D", hash_generated_method = "6FDB8329B6328664E5F47F239FB24DF0")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.251 -0400", hash_original_method = "47F27C3C5B072C1921CEA8CD2618865D", hash_generated_method = "6FDB8329B6328664E5F47F239FB24DF0")
     public  PKCS10CertificationRequest(
         String              signatureAlgorithm,
         X500Principal       subject,
@@ -126,7 +126,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.477 -0400", hash_original_method = "9B8C4723941705C4AF87CD12244595BD", hash_generated_method = "9F12AC674BE51675A8EF1697F331BB4B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.253 -0400", hash_original_method = "9B8C4723941705C4AF87CD12244595BD", hash_generated_method = "74C86B98FE1BABF9D67598B0C39B0570")
     public  PKCS10CertificationRequest(
         String              signatureAlgorithm,
         X509Name            subject,
@@ -143,7 +143,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
         addTaint(signatureAlgorithm.getTaint());
         String algorithmName = Strings.toUpperCase(signatureAlgorithm);
         DERObjectIdentifier sigOID = (DERObjectIdentifier)algorithms.get(algorithmName);
-    if(sigOID == null)        
+        if(sigOID == null)        
         {
             try 
             {
@@ -151,29 +151,29 @@ public class PKCS10CertificationRequest extends CertificationRequest {
             } //End block
             catch (Exception e)
             {
-                IllegalArgumentException varB18074A21B8B08497C53127CA4DD90CB_90475335 = new IllegalArgumentException("Unknown signature type requested");
-                varB18074A21B8B08497C53127CA4DD90CB_90475335.addTaint(taint);
-                throw varB18074A21B8B08497C53127CA4DD90CB_90475335;
+                IllegalArgumentException varB18074A21B8B08497C53127CA4DD90CB_769871989 = new IllegalArgumentException("Unknown signature type requested");
+                varB18074A21B8B08497C53127CA4DD90CB_769871989.addTaint(taint);
+                throw varB18074A21B8B08497C53127CA4DD90CB_769871989;
             } //End block
         } //End block
-    if(subject == null)        
+        if(subject == null)        
         {
-            IllegalArgumentException varF7E6557D5CD0EEE16A97877333591AF9_2025393035 = new IllegalArgumentException("subject must not be null");
-            varF7E6557D5CD0EEE16A97877333591AF9_2025393035.addTaint(taint);
-            throw varF7E6557D5CD0EEE16A97877333591AF9_2025393035;
+            IllegalArgumentException varF7E6557D5CD0EEE16A97877333591AF9_2131166133 = new IllegalArgumentException("subject must not be null");
+            varF7E6557D5CD0EEE16A97877333591AF9_2131166133.addTaint(taint);
+            throw varF7E6557D5CD0EEE16A97877333591AF9_2131166133;
         } //End block
-    if(key == null)        
+        if(key == null)        
         {
-            IllegalArgumentException var7FA406A36111F20A2D59C5557337A99E_1767120896 = new IllegalArgumentException("public key must not be null");
-            var7FA406A36111F20A2D59C5557337A99E_1767120896.addTaint(taint);
-            throw var7FA406A36111F20A2D59C5557337A99E_1767120896;
+            IllegalArgumentException var7FA406A36111F20A2D59C5557337A99E_969321336 = new IllegalArgumentException("public key must not be null");
+            var7FA406A36111F20A2D59C5557337A99E_969321336.addTaint(taint);
+            throw var7FA406A36111F20A2D59C5557337A99E_969321336;
         } //End block
-    if(noParams.contains(sigOID))        
+        if(noParams.contains(sigOID))        
         {
             this.sigAlgId = new AlgorithmIdentifier(sigOID);
         } //End block
         else
-    if(params.containsKey(algorithmName))        
+        if(params.containsKey(algorithmName))        
         {
             this.sigAlgId = new AlgorithmIdentifier(sigOID, (DEREncodable)params.get(algorithmName));
         } //End block
@@ -188,12 +188,12 @@ public class PKCS10CertificationRequest extends CertificationRequest {
         } //End block
         catch (IOException e)
         {
-            IllegalArgumentException var19AFF07EBF0D285E6200B15847475545_1784027255 = new IllegalArgumentException("can't encode public key");
-            var19AFF07EBF0D285E6200B15847475545_1784027255.addTaint(taint);
-            throw var19AFF07EBF0D285E6200B15847475545_1784027255;
+            IllegalArgumentException var19AFF07EBF0D285E6200B15847475545_1866682171 = new IllegalArgumentException("can't encode public key");
+            var19AFF07EBF0D285E6200B15847475545_1866682171.addTaint(taint);
+            throw var19AFF07EBF0D285E6200B15847475545_1866682171;
         } //End block
         Signature sig;
-    if(provider == null)        
+        if(provider == null)        
         {
             sig = Signature.getInstance(signatureAlgorithm);
         } //End block
@@ -208,9 +208,9 @@ public class PKCS10CertificationRequest extends CertificationRequest {
         } //End block
         catch (Exception e)
         {
-            IllegalArgumentException var28DBE1BCED21F9B7B371B30A4EA3167D_591765047 = new IllegalArgumentException("exception encoding TBS cert request - " + e);
-            var28DBE1BCED21F9B7B371B30A4EA3167D_591765047.addTaint(taint);
-            throw var28DBE1BCED21F9B7B371B30A4EA3167D_591765047;
+            IllegalArgumentException var28DBE1BCED21F9B7B371B30A4EA3167D_1827584261 = new IllegalArgumentException("exception encoding TBS cert request - " + e);
+            var28DBE1BCED21F9B7B371B30A4EA3167D_1827584261.addTaint(taint);
+            throw var28DBE1BCED21F9B7B371B30A4EA3167D_1827584261;
         } //End block
         this.sigBits = new DERBitString(sig.sign());
         // ---------- Original Method ----------
@@ -218,7 +218,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static RSASSAPSSparams creatPSSParams(AlgorithmIdentifier hashAlgId, int saltSize) {
         return new RSASSAPSSparams(
             hashAlgId,
@@ -228,7 +228,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static ASN1Sequence toDERSequence(
         byte[]  bytes) {
         try
@@ -243,7 +243,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static X509Name convertName(
         X500Principal    name) {
         try
@@ -257,18 +257,18 @@ public class PKCS10CertificationRequest extends CertificationRequest {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.478 -0400", hash_original_method = "43324B511CA49EBF5AC84C5892E16660", hash_generated_method = "F8D5CFFC3BCB25EAA4A031505A24D244")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.255 -0400", hash_original_method = "43324B511CA49EBF5AC84C5892E16660", hash_generated_method = "35DBBE56CC6D0DFD5865FE4851463AF4")
     public PublicKey getPublicKey() throws NoSuchAlgorithmException, NoSuchProviderException, InvalidKeyException {
-PublicKey varC3D0D1C56178EDDD777C8C53EF7F0CE9_1985376175 =         getPublicKey(BouncyCastleProvider.PROVIDER_NAME);
-        varC3D0D1C56178EDDD777C8C53EF7F0CE9_1985376175.addTaint(taint);
-        return varC3D0D1C56178EDDD777C8C53EF7F0CE9_1985376175;
+PublicKey varC3D0D1C56178EDDD777C8C53EF7F0CE9_103346534 =         getPublicKey(BouncyCastleProvider.PROVIDER_NAME);
+        varC3D0D1C56178EDDD777C8C53EF7F0CE9_103346534.addTaint(taint);
+        return varC3D0D1C56178EDDD777C8C53EF7F0CE9_103346534;
         // ---------- Original Method ----------
         //return getPublicKey(BouncyCastleProvider.PROVIDER_NAME);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.478 -0400", hash_original_method = "B8875DFEFA5CEF760F6C887EECDEC741", hash_generated_method = "6C0A80D18407D5917819C773FAAC2D2D")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.256 -0400", hash_original_method = "B8875DFEFA5CEF760F6C887EECDEC741", hash_generated_method = "ADC68574CB07494A2E0419883103099A")
     public PublicKey getPublicKey(
         String  provider) throws NoSuchAlgorithmException, NoSuchProviderException,
                 InvalidKeyException {
@@ -280,35 +280,35 @@ PublicKey varC3D0D1C56178EDDD777C8C53EF7F0CE9_1985376175 =         getPublicKey(
         {
             try 
             {
-    if(provider == null)                
+                if(provider == null)                
                 {
-PublicKey var41DC99F01DD21ADDF0ABED61A14977D8_41528255 =                     KeyFactory.getInstance(keyAlg.getObjectId().getId()).generatePublic(xspec);
-                    var41DC99F01DD21ADDF0ABED61A14977D8_41528255.addTaint(taint);
-                    return var41DC99F01DD21ADDF0ABED61A14977D8_41528255;
+PublicKey var41DC99F01DD21ADDF0ABED61A14977D8_799186848 =                     KeyFactory.getInstance(keyAlg.getObjectId().getId()).generatePublic(xspec);
+                    var41DC99F01DD21ADDF0ABED61A14977D8_799186848.addTaint(taint);
+                    return var41DC99F01DD21ADDF0ABED61A14977D8_799186848;
                 } //End block
                 else
                 {
-PublicKey varEBB5C620BE73D7C58524D5E2E4FDA5D2_1242368700 =                     KeyFactory.getInstance(keyAlg.getObjectId().getId(), provider).generatePublic(xspec);
-                    varEBB5C620BE73D7C58524D5E2E4FDA5D2_1242368700.addTaint(taint);
-                    return varEBB5C620BE73D7C58524D5E2E4FDA5D2_1242368700;
+PublicKey varEBB5C620BE73D7C58524D5E2E4FDA5D2_692558561 =                     KeyFactory.getInstance(keyAlg.getObjectId().getId(), provider).generatePublic(xspec);
+                    varEBB5C620BE73D7C58524D5E2E4FDA5D2_692558561.addTaint(taint);
+                    return varEBB5C620BE73D7C58524D5E2E4FDA5D2_692558561;
                 } //End block
             } //End block
             catch (NoSuchAlgorithmException e)
             {
-    if(keyAlgorithms.get(keyAlg.getObjectId()) != null)                
+                if(keyAlgorithms.get(keyAlg.getObjectId()) != null)                
                 {
                     String keyAlgorithm = (String)keyAlgorithms.get(keyAlg.getObjectId());
-    if(provider == null)                    
+                    if(provider == null)                    
                     {
-PublicKey var819053A5996B66C1588BC8CB811D91A6_1776736558 =                         KeyFactory.getInstance(keyAlgorithm).generatePublic(xspec);
-                        var819053A5996B66C1588BC8CB811D91A6_1776736558.addTaint(taint);
-                        return var819053A5996B66C1588BC8CB811D91A6_1776736558;
+PublicKey var819053A5996B66C1588BC8CB811D91A6_924516791 =                         KeyFactory.getInstance(keyAlgorithm).generatePublic(xspec);
+                        var819053A5996B66C1588BC8CB811D91A6_924516791.addTaint(taint);
+                        return var819053A5996B66C1588BC8CB811D91A6_924516791;
                     } //End block
                     else
                     {
-PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                         KeyFactory.getInstance(keyAlgorithm, provider).generatePublic(xspec);
-                        var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142.addTaint(taint);
-                        return var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142;
+PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_2100554869 =                         KeyFactory.getInstance(keyAlgorithm, provider).generatePublic(xspec);
+                        var1984EAB4E1C296EE1F73B3B0EE5AB623_2100554869.addTaint(taint);
+                        return var1984EAB4E1C296EE1F73B3B0EE5AB623_2100554869;
                     } //End block
                 } //End block
                 e.addTaint(taint);
@@ -317,41 +317,41 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
         } //End block
         catch (InvalidKeySpecException e)
         {
-            InvalidKeyException varB47E630CF91EC6A257E24F063B634927_408904224 = new InvalidKeyException("error decoding public key");
-            varB47E630CF91EC6A257E24F063B634927_408904224.addTaint(taint);
-            throw varB47E630CF91EC6A257E24F063B634927_408904224;
+            InvalidKeyException varB47E630CF91EC6A257E24F063B634927_635991839 = new InvalidKeyException("error decoding public key");
+            varB47E630CF91EC6A257E24F063B634927_635991839.addTaint(taint);
+            throw varB47E630CF91EC6A257E24F063B634927_635991839;
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.479 -0400", hash_original_method = "76B4A35CDD087589FE1D86D8EB63F14C", hash_generated_method = "5D90B6BCD7F7FF1B0C579FEBFDFEB9AE")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.256 -0400", hash_original_method = "76B4A35CDD087589FE1D86D8EB63F14C", hash_generated_method = "E71B53D0E06CCB66C4C0E0856F141A0D")
     public boolean verify() throws NoSuchAlgorithmException, NoSuchProviderException,
                 InvalidKeyException, SignatureException {
-        boolean varDFDA2B739D43284084054634F274B202_468467013 = (verify(BouncyCastleProvider.PROVIDER_NAME));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_925372450 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_925372450;
+        boolean varDFDA2B739D43284084054634F274B202_855472976 = (verify(BouncyCastleProvider.PROVIDER_NAME));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1091076498 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1091076498;
         // ---------- Original Method ----------
         //return verify(BouncyCastleProvider.PROVIDER_NAME);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.479 -0400", hash_original_method = "EEEA1D6F83C84A4A1EBDD2FD7850BFFE", hash_generated_method = "C07101070A2529D7D1FA605A36FCD047")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.257 -0400", hash_original_method = "EEEA1D6F83C84A4A1EBDD2FD7850BFFE", hash_generated_method = "27339F45B910255DDC2F521BF4EAE835")
     public boolean verify(
         String provider) throws NoSuchAlgorithmException, NoSuchProviderException,
                 InvalidKeyException, SignatureException {
         addTaint(provider.getTaint());
-        boolean var870A8DDE759B8F2968C7A4D4A7FE5FFC_536726346 = (verify(this.getPublicKey(provider), provider));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1266718583 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1266718583;
+        boolean var870A8DDE759B8F2968C7A4D4A7FE5FFC_1053145651 = (verify(this.getPublicKey(provider), provider));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1633320468 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1633320468;
         // ---------- Original Method ----------
         //return verify(this.getPublicKey(provider), provider);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.480 -0400", hash_original_method = "23EDAE0C7E13C4B3F88052C2DB8B64F6", hash_generated_method = "8B6AB92CD35DE9E8190DF43CC1B2E06B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.258 -0400", hash_original_method = "23EDAE0C7E13C4B3F88052C2DB8B64F6", hash_generated_method = "8320E5446476AA6523E2561488742C80")
     public boolean verify(
         PublicKey pubKey,
         String provider) throws NoSuchAlgorithmException, NoSuchProviderException,
@@ -361,7 +361,7 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
         Signature sig;
         try 
         {
-    if(provider == null)            
+            if(provider == null)            
             {
                 sig = Signature.getInstance(getSignatureName(sigAlgId));
             } //End block
@@ -372,10 +372,10 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
         } //End block
         catch (NoSuchAlgorithmException e)
         {
-    if(oids.get(sigAlgId.getObjectId()) != null)            
+            if(oids.get(sigAlgId.getObjectId()) != null)            
             {
                 String signatureAlgorithm = (String)oids.get(sigAlgId.getObjectId());
-    if(provider == null)                
+                if(provider == null)                
                 {
                     sig = Signature.getInstance(signatureAlgorithm);
                 } //End block
@@ -398,32 +398,32 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
         } //End block
         catch (Exception e)
         {
-            SignatureException var50132ED7A0D04A650E1E6822352B6B4F_1642859339 = new SignatureException("exception encoding TBS cert request - " + e);
-            var50132ED7A0D04A650E1E6822352B6B4F_1642859339.addTaint(taint);
-            throw var50132ED7A0D04A650E1E6822352B6B4F_1642859339;
+            SignatureException var50132ED7A0D04A650E1E6822352B6B4F_2022522685 = new SignatureException("exception encoding TBS cert request - " + e);
+            var50132ED7A0D04A650E1E6822352B6B4F_2022522685.addTaint(taint);
+            throw var50132ED7A0D04A650E1E6822352B6B4F_2022522685;
         } //End block
-        boolean var55FC8C227B44C450556E137AA201B486_69676156 = (sig.verify(sigBits.getBytes()));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2031655124 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2031655124;
+        boolean var55FC8C227B44C450556E137AA201B486_963644722 = (sig.verify(sigBits.getBytes()));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_996900828 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_996900828;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.498 -0400", hash_original_method = "FFCAA10D74329AA15B8FE83335744F82", hash_generated_method = "3654BC0547305E30EAEFC3A85A49BF4D")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.258 -0400", hash_original_method = "FFCAA10D74329AA15B8FE83335744F82", hash_generated_method = "8BD4939D28737F166DA1C5DEEBDFEBAF")
     public byte[] getEncoded() {
         try 
         {
-            byte[] var75679B9D6E0C3BD65FFE938E240A5B3B_886470249 = (this.getEncoded(ASN1Encodable.DER));
-                        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_765545549 = {getTaintByte()};
-            return var2F9C81BC6E497382285CD6B7A7E33DE1_765545549;
+            byte[] var75679B9D6E0C3BD65FFE938E240A5B3B_10092271 = (this.getEncoded(ASN1Encodable.DER));
+                        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1975824700 = {getTaintByte()};
+            return var2F9C81BC6E497382285CD6B7A7E33DE1_1975824700;
         } //End block
         catch (IOException e)
         {
-            RuntimeException var7731B7FAF9DB516E410EE38D728795B2_744515759 = new RuntimeException(e.toString());
-            var7731B7FAF9DB516E410EE38D728795B2_744515759.addTaint(taint);
-            throw var7731B7FAF9DB516E410EE38D728795B2_744515759;
+            RuntimeException var7731B7FAF9DB516E410EE38D728795B2_400152887 = new RuntimeException(e.toString());
+            var7731B7FAF9DB516E410EE38D728795B2_400152887.addTaint(taint);
+            throw var7731B7FAF9DB516E410EE38D728795B2_400152887;
         } //End block
         // ---------- Original Method ----------
         //try
@@ -437,14 +437,14 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.498 -0400", hash_original_method = "572BCE240DBAD7E2FCA6B5178E7F9E48", hash_generated_method = "8438FDB6F4BF08B60222EDD8A4138D05")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.259 -0400", hash_original_method = "572BCE240DBAD7E2FCA6B5178E7F9E48", hash_generated_method = "ECA18CCBBB9FF4A7FC3B8B40F1D1D462")
     private void setSignatureParameters(
         Signature signature,
         DEREncodable params) throws NoSuchAlgorithmException, SignatureException, InvalidKeyException {
         addTaint(params.getTaint());
         addTaint(signature.getTaint());
-    if(params != null && !DERNull.INSTANCE.equals(params))        
+        if(params != null && !DERNull.INSTANCE.equals(params))        
         {
             AlgorithmParameters sigParams = AlgorithmParameters.getInstance(signature.getAlgorithm(), signature.getProvider());
             try 
@@ -453,11 +453,11 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
             } //End block
             catch (IOException e)
             {
-                SignatureException var4C6E34B998119F08550B28F7354D74CB_565667272 = new SignatureException("IOException decoding parameters: " + e.getMessage());
-                var4C6E34B998119F08550B28F7354D74CB_565667272.addTaint(taint);
-                throw var4C6E34B998119F08550B28F7354D74CB_565667272;
+                SignatureException var4C6E34B998119F08550B28F7354D74CB_1275589053 = new SignatureException("IOException decoding parameters: " + e.getMessage());
+                var4C6E34B998119F08550B28F7354D74CB_1275589053.addTaint(taint);
+                throw var4C6E34B998119F08550B28F7354D74CB_1275589053;
             } //End block
-    if(signature.getAlgorithm().endsWith("MGF1"))            
+            if(signature.getAlgorithm().endsWith("MGF1"))            
             {
                 try 
                 {
@@ -465,9 +465,9 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
                 } //End block
                 catch (GeneralSecurityException e)
                 {
-                    SignatureException var1A8C4267253B70F3D11993580B705F98_2107686842 = new SignatureException("Exception extracting parameters: " + e.getMessage());
-                    var1A8C4267253B70F3D11993580B705F98_2107686842.addTaint(taint);
-                    throw var1A8C4267253B70F3D11993580B705F98_2107686842;
+                    SignatureException var1A8C4267253B70F3D11993580B705F98_237323191 = new SignatureException("Exception extracting parameters: " + e.getMessage());
+                    var1A8C4267253B70F3D11993580B705F98_237323191.addTaint(taint);
+                    throw var1A8C4267253B70F3D11993580B705F98_237323191;
                 } //End block
             } //End block
         } //End block
@@ -476,7 +476,7 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     static String getSignatureName(
         AlgorithmIdentifier sigAlgId) {
         DEREncodable params = sigAlgId.getParameters();
@@ -492,7 +492,7 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
     }
 
     
-        private static String getDigestAlgName(
+    private static String getDigestAlgName(
         DERObjectIdentifier digestAlgOID) {
         if (PKCSObjectIdentifiers.md5.equals(digestAlgOID))
         {
@@ -521,19 +521,19 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.498 -0400", hash_original_field = "B39C3BE7546FA73A752B6C68B346E2B1", hash_generated_field = "2A7E0957EAD856B3315504481686A7DE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.260 -0400", hash_original_field = "B39C3BE7546FA73A752B6C68B346E2B1", hash_generated_field = "2A7E0957EAD856B3315504481686A7DE")
 
     private static Hashtable algorithms = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.498 -0400", hash_original_field = "0D433ED6AA05239AA7FFA603AE52EAF9", hash_generated_field = "3580C2237188FBF88703AFC814D06B98")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.260 -0400", hash_original_field = "0D433ED6AA05239AA7FFA603AE52EAF9", hash_generated_field = "3580C2237188FBF88703AFC814D06B98")
 
     private static Hashtable params = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.498 -0400", hash_original_field = "A13D3CE5CEDBFFEA1E23C07F3E99C13F", hash_generated_field = "C8FBF8B644E3B7297D2EC131F85F7B39")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.260 -0400", hash_original_field = "A13D3CE5CEDBFFEA1E23C07F3E99C13F", hash_generated_field = "C8FBF8B644E3B7297D2EC131F85F7B39")
 
     private static Hashtable keyAlgorithms = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.499 -0400", hash_original_field = "E4322C1573762E02D6AC3A68C442E016", hash_generated_field = "6D958D15EBDB3005FA7CB66D7A014B22")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.260 -0400", hash_original_field = "E4322C1573762E02D6AC3A68C442E016", hash_generated_field = "6D958D15EBDB3005FA7CB66D7A014B22")
 
     private static Hashtable oids = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.499 -0400", hash_original_field = "9599D5E70EEA113DAC00F7EA2B8AD147", hash_generated_field = "E222E546E7C245483C60E7B45F19B3A8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.260 -0400", hash_original_field = "9599D5E70EEA113DAC00F7EA2B8AD147", hash_generated_field = "E222E546E7C245483C60E7B45F19B3A8")
 
     private static Set noParams = new HashSet();
     static {

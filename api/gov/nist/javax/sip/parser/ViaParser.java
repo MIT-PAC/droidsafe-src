@@ -10,8 +10,8 @@ import java.text.ParseException;
 
 public class ViaParser extends HeaderParser {
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.564 -0400", hash_original_method = "0CA9F50F0D44148E6CD64450736B4031", hash_generated_method = "A595FA4AF354454E04B84C7828F56E64")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.545 -0400", hash_original_method = "0CA9F50F0D44148E6CD64450736B4031", hash_generated_method = "A595FA4AF354454E04B84C7828F56E64")
     public  ViaParser(String via) {
         super(via);
         addTaint(via.getTaint());
@@ -19,8 +19,8 @@ public class ViaParser extends HeaderParser {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.565 -0400", hash_original_method = "16747522FA7D80CA65EEE675350A9BF1", hash_generated_method = "AB2626686D9A6EC63ED495A950EFFDAC")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.545 -0400", hash_original_method = "16747522FA7D80CA65EEE675350A9BF1", hash_generated_method = "AB2626686D9A6EC63ED495A950EFFDAC")
     public  ViaParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -28,7 +28,7 @@ public class ViaParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.566 -0400", hash_original_method = "2208496A4921623C92FF093043E5D238", hash_generated_method = "4CF1DDF4452E0DFF92E3CE693246BB20")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.547 -0400", hash_original_method = "2208496A4921623C92FF093043E5D238", hash_generated_method = "34DA52AC96BD13820126702A933D1FEC")
     private void parseVia(Via v) throws ParseException {
         addTaint(v.getTaint());
         lexer.match(TokenTypes.ID);
@@ -62,20 +62,20 @@ public class ViaParser extends HeaderParser {
             this.lexer.SPorHT();
             NameValue nameValue = this.nameValue();
             String name = nameValue.getName();
-    if(name.equals(Via.BRANCH))            
+            if(name.equals(Via.BRANCH))            
             {
                 String branchId = (String) nameValue.getValueAsObject();
-    if(branchId == null)                
+                if(branchId == null)                
                 {
-                ParseException varE52C48940FC22DA57128553A5474BF5E_702081967 = new ParseException("null branch Id", lexer.getPtr());
-                varE52C48940FC22DA57128553A5474BF5E_702081967.addTaint(taint);
-                throw varE52C48940FC22DA57128553A5474BF5E_702081967;
+                ParseException varE52C48940FC22DA57128553A5474BF5E_1460866180 = new ParseException("null branch Id", lexer.getPtr());
+                varE52C48940FC22DA57128553A5474BF5E_1460866180.addTaint(taint);
+                throw varE52C48940FC22DA57128553A5474BF5E_1460866180;
                 }
             } //End block
             v.setParameter(nameValue);
             this.lexer.SPorHT();
         } //End block
-    if(lexer.lookAhead(0) == '(')        
+        if(lexer.lookAhead(0) == '(')        
         {
             this.lexer.selectLexer("charLexer");
             lexer.consume(1);
@@ -84,13 +84,13 @@ public class ViaParser extends HeaderParser {
 (true)            
             {
                 char ch = lexer.lookAhead(0);
-    if(ch == ')')                
+                if(ch == ')')                
                 {
                     lexer.consume(1);
                     break;
                 } //End block
                 else
-    if(ch == '\\')                
+                if(ch == '\\')                
                 {
                     Token tok = lexer.getNextToken();
                     comment.append(tok.getTokenValue());
@@ -100,7 +100,7 @@ public class ViaParser extends HeaderParser {
                     lexer.consume(1);
                 } //End block
                 else
-    if(ch == '\n')                
+                if(ch == '\n')                
                 {
                     break;
                 } //End block
@@ -117,9 +117,9 @@ public class ViaParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.569 -0400", hash_original_method = "5AA78E39B6EC64AD2F4CBC59769995CB", hash_generated_method = "D73D5225B99410AE1101FA5A32E35FD1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.548 -0400", hash_original_method = "5AA78E39B6EC64AD2F4CBC59769995CB", hash_generated_method = "18C0572B76BE5E89CC52AA975EC72351")
     protected NameValue nameValue() throws ParseException {
-    if(debug)        
+        if(debug)        
         dbg_enter("nameValue");
         try 
         {
@@ -130,18 +130,18 @@ public class ViaParser extends HeaderParser {
             {
                 boolean quoted = false;
                 char la = lexer.lookAhead(0);
-    if(la == '=')                
+                if(la == '=')                
                 {
                     lexer.consume(1);
                     lexer.SPorHT();
                     String str = null;
-    if(name.getTokenValue().compareToIgnoreCase(Via.RECEIVED) == 0)                    
+                    if(name.getTokenValue().compareToIgnoreCase(Via.RECEIVED) == 0)                    
                     {
                         str = lexer.byteStringNoSemicolon();
                     } //End block
                     else
                     {
-    if(lexer.lookAhead(0) == '\"')                        
+                        if(lexer.lookAhead(0) == '\"')                        
                         {
                             str = lexer.quotedString();
                             quoted = true;
@@ -155,30 +155,30 @@ public class ViaParser extends HeaderParser {
                     } //End block
                     NameValue nv = new NameValue(name.getTokenValue()
                             .toLowerCase(), str);
-    if(quoted)                    
+                    if(quoted)                    
                     nv.setQuotedValue();
-NameValue var8CDC8D1FFB0B29D7089B99B596CC9F85_1725069277 =                     nv;
-                    var8CDC8D1FFB0B29D7089B99B596CC9F85_1725069277.addTaint(taint);
-                    return var8CDC8D1FFB0B29D7089B99B596CC9F85_1725069277;
+NameValue var8CDC8D1FFB0B29D7089B99B596CC9F85_1920797659 =                     nv;
+                    var8CDC8D1FFB0B29D7089B99B596CC9F85_1920797659.addTaint(taint);
+                    return var8CDC8D1FFB0B29D7089B99B596CC9F85_1920797659;
                 } //End block
                 else
                 {
-NameValue var1B621EC7BECB3B67D1650544C7F9B8BD_532670432 =                     new NameValue(name.getTokenValue().toLowerCase(),
+NameValue var1B621EC7BECB3B67D1650544C7F9B8BD_67757227 =                     new NameValue(name.getTokenValue().toLowerCase(),
                             null);
-                    var1B621EC7BECB3B67D1650544C7F9B8BD_532670432.addTaint(taint);
-                    return var1B621EC7BECB3B67D1650544C7F9B8BD_532670432;
+                    var1B621EC7BECB3B67D1650544C7F9B8BD_67757227.addTaint(taint);
+                    return var1B621EC7BECB3B67D1650544C7F9B8BD_67757227;
                 } //End block
             } //End block
             catch (ParseException ex)
             {
-NameValue varAA6B0F6934A3DB1618778075C32053F2_1198911583 =                 new NameValue(name.getTokenValue(), null);
-                varAA6B0F6934A3DB1618778075C32053F2_1198911583.addTaint(taint);
-                return varAA6B0F6934A3DB1618778075C32053F2_1198911583;
+NameValue varAA6B0F6934A3DB1618778075C32053F2_1074837908 =                 new NameValue(name.getTokenValue(), null);
+                varAA6B0F6934A3DB1618778075C32053F2_1074837908.addTaint(taint);
+                return varAA6B0F6934A3DB1618778075C32053F2_1074837908;
             } //End block
         } //End block
         finally 
         {
-    if(debug)            
+            if(debug)            
             dbg_leave("nameValue");
         } //End block
         // ---------- Original Method ----------
@@ -186,9 +186,9 @@ NameValue varAA6B0F6934A3DB1618778075C32053F2_1198911583 =                 new N
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.570 -0400", hash_original_method = "2B03679359A52BF0E5FCCEF061A24457", hash_generated_method = "19C01BB2868F82EC407723EF102049DD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.549 -0400", hash_original_method = "2B03679359A52BF0E5FCCEF061A24457", hash_generated_method = "C171ABABC73DC6DB9C3C761EEA01B0BF")
     public SIPHeader parse() throws ParseException {
-    if(debug)        
+        if(debug)        
         dbg_enter("parse");
         try 
         {
@@ -204,22 +204,22 @@ NameValue varAA6B0F6934A3DB1618778075C32053F2_1198911583 =                 new N
                 parseVia(v);
                 viaList.add(v);
                 this.lexer.SPorHT();
-    if(this.lexer.lookAhead(0) == ',')                
+                if(this.lexer.lookAhead(0) == ',')                
                 {
                     this.lexer.consume(1);
                     this.lexer.SPorHT();
                 } //End block
-    if(this.lexer.lookAhead(0) == '\n')                
+                if(this.lexer.lookAhead(0) == '\n')                
                 break;
             } //End block
             this.lexer.match('\n');
-SIPHeader varE2A372C5D26EBDD07722713ECCD40253_354084958 =             viaList;
-            varE2A372C5D26EBDD07722713ECCD40253_354084958.addTaint(taint);
-            return varE2A372C5D26EBDD07722713ECCD40253_354084958;
+SIPHeader varE2A372C5D26EBDD07722713ECCD40253_873361120 =             viaList;
+            varE2A372C5D26EBDD07722713ECCD40253_873361120.addTaint(taint);
+            return varE2A372C5D26EBDD07722713ECCD40253_873361120;
         } //End block
         finally 
         {
-    if(debug)            
+            if(debug)            
             dbg_leave("parse");
         } //End block
         // ---------- Original Method ----------

@@ -19,21 +19,21 @@ import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 
 public class StringMsgParser {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.929 -0400", hash_original_field = "F6A0B614A3E3F2033445BCEBD36D070B", hash_generated_field = "7E0AA0556EE34EDC1E14E7271C2271D7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.869 -0400", hash_original_field = "F6A0B614A3E3F2033445BCEBD36D070B", hash_generated_field = "7E0AA0556EE34EDC1E14E7271C2271D7")
 
     protected boolean readBody;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.930 -0400", hash_original_field = "0E6EE533F6F7CB1037DB27980D2D40A6", hash_generated_field = "1B834CF99672F368DBE005CE727DA4BD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.869 -0400", hash_original_field = "0E6EE533F6F7CB1037DB27980D2D40A6", hash_generated_field = "1B834CF99672F368DBE005CE727DA4BD")
 
     private ParseExceptionListener parseExceptionListener;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.930 -0400", hash_original_field = "9C8E56B49859E77E66AE351926812318", hash_generated_field = "71F8C7FC9A6DFE4A45B8B3445B6FC291")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.869 -0400", hash_original_field = "9C8E56B49859E77E66AE351926812318", hash_generated_field = "71F8C7FC9A6DFE4A45B8B3445B6FC291")
 
     private String rawStringMessage;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.930 -0400", hash_original_field = "2133FD717402A7966EE88D06F9E0B792", hash_generated_field = "02B827874E8744100DF748B4791EB7C5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.869 -0400", hash_original_field = "2133FD717402A7966EE88D06F9E0B792", hash_generated_field = "02B827874E8744100DF748B4791EB7C5")
 
     private boolean strict;
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.931 -0400", hash_original_method = "03434E90443FF3CC6928C5F00042D419", hash_generated_method = "2EF648646CCD07FCEF63A7835151765E")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.869 -0400", hash_original_method = "03434E90443FF3CC6928C5F00042D419", hash_generated_method = "2EF648646CCD07FCEF63A7835151765E")
     public  StringMsgParser() {
         super();
         readBody = true;
@@ -42,7 +42,7 @@ public class StringMsgParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.932 -0400", hash_original_method = "84F5B97F6353CE6241343807C31ED063", hash_generated_method = "C119674FD94FFD6C811D4B6C9741DB1D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.870 -0400", hash_original_method = "84F5B97F6353CE6241343807C31ED063", hash_generated_method = "C119674FD94FFD6C811D4B6C9741DB1D")
     public  StringMsgParser(ParseExceptionListener exhandler) {
         this();
         parseExceptionListener = exhandler;
@@ -51,8 +51,8 @@ public class StringMsgParser {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.932 -0400", hash_original_method = "E7BB96D94C72A71CC55D419208731E5E", hash_generated_method = "20F944E1A059060117121AD4A329ED73")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.870 -0400", hash_original_method = "E7BB96D94C72A71CC55D419208731E5E", hash_generated_method = "20F944E1A059060117121AD4A329ED73")
     public void setParseExceptionListener(ParseExceptionListener pexhandler) {
         parseExceptionListener = pexhandler;
         // ---------- Original Method ----------
@@ -60,14 +60,14 @@ public class StringMsgParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.934 -0400", hash_original_method = "9C5089EA8774478643AAED9197A2D229", hash_generated_method = "3EA64095A4EBB20E2364B75CF54A553E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.872 -0400", hash_original_method = "9C5089EA8774478643AAED9197A2D229", hash_generated_method = "A7358246937510B9B5E6E1E0D6E123EC")
     public SIPMessage parseSIPMessage(byte[] msgBuffer) throws ParseException {
         addTaint(msgBuffer[0]);
-    if(msgBuffer == null || msgBuffer.length == 0)        
+        if(msgBuffer == null || msgBuffer.length == 0)        
         {
-SIPMessage var540C13E9E156B687226421B24F2DF178_826344044 =         null;
-        var540C13E9E156B687226421B24F2DF178_826344044.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_826344044;
+SIPMessage var540C13E9E156B687226421B24F2DF178_268222928 =         null;
+        var540C13E9E156B687226421B24F2DF178_268222928.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_268222928;
         }
         int i = 0;
         try 
@@ -78,9 +78,9 @@ SIPMessage var540C13E9E156B687226421B24F2DF178_826344044 =         null;
         } //End block
         catch (ArrayIndexOutOfBoundsException e)
         {
-SIPMessage var540C13E9E156B687226421B24F2DF178_1184372304 =             null;
-            var540C13E9E156B687226421B24F2DF178_1184372304.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1184372304;
+SIPMessage var540C13E9E156B687226421B24F2DF178_1288996888 =             null;
+            var540C13E9E156B687226421B24F2DF178_1288996888.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_1288996888;
         } //End block
         String currentLine = null;
         String currentHeader = null;
@@ -106,40 +106,40 @@ SIPMessage var540C13E9E156B687226421B24F2DF178_1184372304 =             null;
                 } //End block
                 catch (UnsupportedEncodingException e)
                 {
-                    ParseException varD69FD0E270D6364D4BBE2AAD578C2CB9_1760674255 = new ParseException("Bad message encoding!", 0);
-                    varD69FD0E270D6364D4BBE2AAD578C2CB9_1760674255.addTaint(taint);
-                    throw varD69FD0E270D6364D4BBE2AAD578C2CB9_1760674255;
+                    ParseException varD69FD0E270D6364D4BBE2AAD578C2CB9_2089144652 = new ParseException("Bad message encoding!", 0);
+                    varD69FD0E270D6364D4BBE2AAD578C2CB9_2089144652.addTaint(taint);
+                    throw varD69FD0E270D6364D4BBE2AAD578C2CB9_2089144652;
                 } //End block
                 currentLine = trimEndOfLine(currentLine);
-    if(currentLine.length() == 0)                
+                if(currentLine.length() == 0)                
                 {
-    if(currentHeader != null && message != null)                    
+                    if(currentHeader != null && message != null)                    
                     {
                         processHeader(currentHeader, message);
                     } //End block
                 } //End block
                 else
                 {
-    if(isFirstLine)                    
+                    if(isFirstLine)                    
                     {
                         message = processFirstLine(currentLine);
                     } //End block
                     else
                     {
                         char firstChar = currentLine.charAt(0);
-    if(firstChar == '\t' || firstChar == ' ')                        
+                        if(firstChar == '\t' || firstChar == ' ')                        
                         {
-    if(currentHeader == null)                            
+                            if(currentHeader == null)                            
                             {
-                            ParseException var6FD753E49E329EE8F88129DAE2071C93_2098310999 = new ParseException("Bad header continuation.", 0);
-                            var6FD753E49E329EE8F88129DAE2071C93_2098310999.addTaint(taint);
-                            throw var6FD753E49E329EE8F88129DAE2071C93_2098310999;
+                            ParseException var6FD753E49E329EE8F88129DAE2071C93_1663197888 = new ParseException("Bad header continuation.", 0);
+                            var6FD753E49E329EE8F88129DAE2071C93_1663197888.addTaint(taint);
+                            throw var6FD753E49E329EE8F88129DAE2071C93_1663197888;
                             }
                             currentHeader += currentLine.substring(1);
                         } //End block
                         else
                         {
-    if(currentHeader != null && message != null)                            
+                            if(currentHeader != null && message != null)                            
                             {
                                 processHeader(currentHeader, message);
                             } //End block
@@ -147,20 +147,20 @@ SIPMessage var540C13E9E156B687226421B24F2DF178_1184372304 =             null;
                         } //End block
                     } //End block
                 } //End block
-    if(msgBuffer[i] == '\r' && msgBuffer.length > i+1 && msgBuffer[i+1] == '\n')                
+                if(msgBuffer[i] == '\r' && msgBuffer.length > i+1 && msgBuffer[i+1] == '\n')                
                 i++;
                 i++;
                 isFirstLine = false;
             } //End block
 } while (currentLine.length() > 0);
-    if(message == null)        
+        if(message == null)        
         {
-        ParseException varD3C372BBFBB4E42FA6B4D23D9E2243DE_992067048 = new ParseException("Bad message", 0);
-        varD3C372BBFBB4E42FA6B4D23D9E2243DE_992067048.addTaint(taint);
-        throw varD3C372BBFBB4E42FA6B4D23D9E2243DE_992067048;
+        ParseException varD3C372BBFBB4E42FA6B4D23D9E2243DE_1923898396 = new ParseException("Bad message", 0);
+        varD3C372BBFBB4E42FA6B4D23D9E2243DE_1923898396.addTaint(taint);
+        throw varD3C372BBFBB4E42FA6B4D23D9E2243DE_1923898396;
         }
         message.setSize(i);
-    if(readBody && message.getContentLength() != null &&
+        if(readBody && message.getContentLength() != null &&
                 message.getContentLength().getContentLength() != 0)        
         {
             int bodyLength = msgBuffer.length - i;
@@ -168,21 +168,21 @@ SIPMessage var540C13E9E156B687226421B24F2DF178_1184372304 =             null;
             System.arraycopy(msgBuffer, i, body, 0, bodyLength);
             message.setMessageContent(body,computeContentLengthFromMessage ,message.getContentLength().getContentLength() );
         } //End block
-SIPMessage varFD182D7074F3848E773A38B067BBB880_1470864740 =         message;
-        varFD182D7074F3848E773A38B067BBB880_1470864740.addTaint(taint);
-        return varFD182D7074F3848E773A38B067BBB880_1470864740;
+SIPMessage varFD182D7074F3848E773A38B067BBB880_1720381556 =         message;
+        varFD182D7074F3848E773A38B067BBB880_1720381556.addTaint(taint);
+        return varFD182D7074F3848E773A38B067BBB880_1720381556;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.937 -0400", hash_original_method = "2180FC72509B511C247A77608998B3E2", hash_generated_method = "FF6ACB79259FD39E9B2041C31F7A59D5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.875 -0400", hash_original_method = "2180FC72509B511C247A77608998B3E2", hash_generated_method = "624841CDFBA564B5E7671D4B1EC2DAD0")
     public SIPMessage parseSIPMessage(String msgString) throws ParseException {
-    if(msgString == null || msgString.length() == 0)        
+        if(msgString == null || msgString.length() == 0)        
         {
-SIPMessage var540C13E9E156B687226421B24F2DF178_2036183240 =         null;
-        var540C13E9E156B687226421B24F2DF178_2036183240.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_2036183240;
+SIPMessage var540C13E9E156B687226421B24F2DF178_1769457096 =         null;
+        var540C13E9E156B687226421B24F2DF178_1769457096.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_1769457096;
         }
         rawStringMessage = msgString;
         int i = 0;
@@ -194,15 +194,15 @@ SIPMessage var540C13E9E156B687226421B24F2DF178_2036183240 =         null;
         } //End block
         catch (ArrayIndexOutOfBoundsException e)
         {
-SIPMessage var540C13E9E156B687226421B24F2DF178_373955916 =             null;
-            var540C13E9E156B687226421B24F2DF178_373955916.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_373955916;
+SIPMessage var540C13E9E156B687226421B24F2DF178_1217098219 =             null;
+            var540C13E9E156B687226421B24F2DF178_1217098219.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_1217098219;
         } //End block
         catch (StringIndexOutOfBoundsException ex)
         {
-SIPMessage var540C13E9E156B687226421B24F2DF178_884555774 =             null;
-            var540C13E9E156B687226421B24F2DF178_884555774.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_884555774;
+SIPMessage var540C13E9E156B687226421B24F2DF178_312006018 =             null;
+            var540C13E9E156B687226421B24F2DF178_312006018.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_312006018;
         } //End block
         String currentLine = null;
         String currentHeader = null;
@@ -228,35 +228,35 @@ SIPMessage var540C13E9E156B687226421B24F2DF178_884555774 =             null;
                 } //End block
                 currentLine = msgString.substring(lineStart, i);
                 currentLine = trimEndOfLine(currentLine);
-    if(currentLine.length() == 0)                
+                if(currentLine.length() == 0)                
                 {
-    if(currentHeader != null)                    
+                    if(currentHeader != null)                    
                     {
                         processHeader(currentHeader, message);
                     } //End block
                 } //End block
                 else
                 {
-    if(isFirstLine)                    
+                    if(isFirstLine)                    
                     {
                         message = processFirstLine(currentLine);
                     } //End block
                     else
                     {
                         char firstChar = currentLine.charAt(0);
-    if(firstChar == '\t' || firstChar == ' ')                        
+                        if(firstChar == '\t' || firstChar == ' ')                        
                         {
-    if(currentHeader == null)                            
+                            if(currentHeader == null)                            
                             {
-                            ParseException var6FD753E49E329EE8F88129DAE2071C93_2085671165 = new ParseException("Bad header continuation.", 0);
-                            var6FD753E49E329EE8F88129DAE2071C93_2085671165.addTaint(taint);
-                            throw var6FD753E49E329EE8F88129DAE2071C93_2085671165;
+                            ParseException var6FD753E49E329EE8F88129DAE2071C93_1089858715 = new ParseException("Bad header continuation.", 0);
+                            var6FD753E49E329EE8F88129DAE2071C93_1089858715.addTaint(taint);
+                            throw var6FD753E49E329EE8F88129DAE2071C93_1089858715;
                             }
                             currentHeader += currentLine.substring(1);
                         } //End block
                         else
                         {
-    if(currentHeader != null)                            
+                            if(currentHeader != null)                            
                             {
                                 processHeader(currentHeader, message);
                             } //End block
@@ -264,68 +264,68 @@ SIPMessage var540C13E9E156B687226421B24F2DF178_884555774 =             null;
                         } //End block
                     } //End block
                 } //End block
-    if(msgString.charAt(i) == '\r' && msgString.length() > i+1 && msgString.charAt(i+1) == '\n')                
+                if(msgString.charAt(i) == '\r' && msgString.length() > i+1 && msgString.charAt(i+1) == '\n')                
                 i++;
                 i++;
                 isFirstLine = false;
             } //End block
 } while (currentLine.length() > 0);
         message.setSize(i);
-    if(readBody && message.getContentLength() != null)        
+        if(readBody && message.getContentLength() != null)        
         {
-    if(message.getContentLength().getContentLength() != 0)            
+            if(message.getContentLength().getContentLength() != 0)            
             {
                 String body = msgString.substring(i);
                 message.setMessageContent(body,this.strict,computeContentLengthFromMessage,message.getContentLength().getContentLength());
             } //End block
             else
-    if(!computeContentLengthFromMessage && message.getContentLength().getContentLength() == 0 && !msgString.endsWith("\r\n\r\n"))            
+            if(!computeContentLengthFromMessage && message.getContentLength().getContentLength() == 0 && !msgString.endsWith("\r\n\r\n"))            
             {
-    if(strict)                
+                if(strict)                
                 {
-                    ParseException var263A08C68221F949D372365C8560497D_1813930885 = new ParseException("Extraneous characters at the end of the message ",i);
-                    var263A08C68221F949D372365C8560497D_1813930885.addTaint(taint);
-                    throw var263A08C68221F949D372365C8560497D_1813930885;
+                    ParseException var263A08C68221F949D372365C8560497D_1778181168 = new ParseException("Extraneous characters at the end of the message ",i);
+                    var263A08C68221F949D372365C8560497D_1778181168.addTaint(taint);
+                    throw var263A08C68221F949D372365C8560497D_1778181168;
                 } //End block
             } //End block
         } //End block
-SIPMessage varFD182D7074F3848E773A38B067BBB880_1841687280 =         message;
-        varFD182D7074F3848E773A38B067BBB880_1841687280.addTaint(taint);
-        return varFD182D7074F3848E773A38B067BBB880_1841687280;
+SIPMessage varFD182D7074F3848E773A38B067BBB880_257790948 =         message;
+        varFD182D7074F3848E773A38B067BBB880_257790948.addTaint(taint);
+        return varFD182D7074F3848E773A38B067BBB880_257790948;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.939 -0400", hash_original_method = "790601CAF711B74124A1DBA9FDFB3A7B", hash_generated_method = "3D98E3D46E36AA1F1D97ABDCED219253")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.875 -0400", hash_original_method = "790601CAF711B74124A1DBA9FDFB3A7B", hash_generated_method = "C1E416BD22558099882D35E77AFC6CDC")
     private String trimEndOfLine(String line) {
         addTaint(line.getTaint());
-    if(line == null)        
+        if(line == null)        
         {
-String var8B953730BA6E72E2869C9D0C2CC87CC8_102212162 =         line;
-        var8B953730BA6E72E2869C9D0C2CC87CC8_102212162.addTaint(taint);
-        return var8B953730BA6E72E2869C9D0C2CC87CC8_102212162;
+String var8B953730BA6E72E2869C9D0C2CC87CC8_529785209 =         line;
+        var8B953730BA6E72E2869C9D0C2CC87CC8_529785209.addTaint(taint);
+        return var8B953730BA6E72E2869C9D0C2CC87CC8_529785209;
         }
         int i = line.length() - 1;
         while
 (i >= 0 && line.charAt(i) <= 0x20)        
         i--;
-    if(i == line.length() - 1)        
+        if(i == line.length() - 1)        
         {
-String var8B953730BA6E72E2869C9D0C2CC87CC8_994343266 =         line;
-        var8B953730BA6E72E2869C9D0C2CC87CC8_994343266.addTaint(taint);
-        return var8B953730BA6E72E2869C9D0C2CC87CC8_994343266;
+String var8B953730BA6E72E2869C9D0C2CC87CC8_1384724490 =         line;
+        var8B953730BA6E72E2869C9D0C2CC87CC8_1384724490.addTaint(taint);
+        return var8B953730BA6E72E2869C9D0C2CC87CC8_1384724490;
         }
-    if(i == -1)        
+        if(i == -1)        
         {
-String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1925305548 =         "";
-        var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1925305548.addTaint(taint);
-        return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1925305548;
+String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1875279724 =         "";
+        var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1875279724.addTaint(taint);
+        return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1875279724;
         }
-String varE97A29D7786D12C0606A8113DDE9DC15_252120272 =         line.substring(0, i+1);
-        varE97A29D7786D12C0606A8113DDE9DC15_252120272.addTaint(taint);
-        return varE97A29D7786D12C0606A8113DDE9DC15_252120272;
+String varE97A29D7786D12C0606A8113DDE9DC15_1888224737 =         line.substring(0, i+1);
+        varE97A29D7786D12C0606A8113DDE9DC15_1888224737.addTaint(taint);
+        return varE97A29D7786D12C0606A8113DDE9DC15_1888224737;
         // ---------- Original Method ----------
         //if (line == null)
             //return line;
@@ -340,11 +340,11 @@ String varE97A29D7786D12C0606A8113DDE9DC15_252120272 =         line.substring(0,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.940 -0400", hash_original_method = "E1A152A7092436D65484E6472132234E", hash_generated_method = "8AC11B8F4E5BBBDAE9F39162A5D397F4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.876 -0400", hash_original_method = "E1A152A7092436D65484E6472132234E", hash_generated_method = "9037E95ECA36DCCB0C80CBA36BB3C2DE")
     private SIPMessage processFirstLine(String firstLine) throws ParseException {
         addTaint(firstLine.getTaint());
         SIPMessage message;
-    if(!firstLine.startsWith(SIPConstants.SIP_VERSION_STRING))        
+        if(!firstLine.startsWith(SIPConstants.SIP_VERSION_STRING))        
         {
             message = new SIPRequest();
             try 
@@ -355,7 +355,7 @@ String varE97A29D7786D12C0606A8113DDE9DC15_252120272 =         line.substring(0,
             } //End block
             catch (ParseException ex)
             {
-    if(this.parseExceptionListener != null)                
+                if(this.parseExceptionListener != null)                
                 this.parseExceptionListener.handleException(ex, message,
                             RequestLine.class, firstLine, rawStringMessage);
                 else
@@ -375,7 +375,7 @@ String varE97A29D7786D12C0606A8113DDE9DC15_252120272 =         line.substring(0,
             } //End block
             catch (ParseException ex)
             {
-    if(this.parseExceptionListener != null)                
+                if(this.parseExceptionListener != null)                
                 {
                     this.parseExceptionListener.handleException(ex, message,
                             StatusLine.class, firstLine, rawStringMessage);
@@ -387,20 +387,20 @@ String varE97A29D7786D12C0606A8113DDE9DC15_252120272 =         line.substring(0,
                 }
             } //End block
         } //End block
-SIPMessage varFD182D7074F3848E773A38B067BBB880_1672176919 =         message;
-        varFD182D7074F3848E773A38B067BBB880_1672176919.addTaint(taint);
-        return varFD182D7074F3848E773A38B067BBB880_1672176919;
+SIPMessage varFD182D7074F3848E773A38B067BBB880_649030540 =         message;
+        varFD182D7074F3848E773A38B067BBB880_649030540.addTaint(taint);
+        return varFD182D7074F3848E773A38B067BBB880_649030540;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.941 -0400", hash_original_method = "825D9502572A55E55AC5E33884E71C29", hash_generated_method = "5AC354A9CF877E28FAC2D711E8B9250D")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.877 -0400", hash_original_method = "825D9502572A55E55AC5E33884E71C29", hash_generated_method = "5AC354A9CF877E28FAC2D711E8B9250D")
     private void processHeader(String header, SIPMessage message) throws ParseException {
         addTaint(message.getTaint());
         addTaint(header.getTaint());
-    if(header == null || header.length() == 0)        
+        if(header == null || header.length() == 0)        
         return;
         HeaderParser headerParser = null;
         try 
@@ -420,11 +420,11 @@ SIPMessage varFD182D7074F3848E773A38B067BBB880_1672176919 =         message;
         } //End block
         catch (ParseException ex)
         {
-    if(this.parseExceptionListener != null)            
+            if(this.parseExceptionListener != null)            
             {
                 String headerName = Lexer.getHeaderName(header);
                 Class headerClass = NameMap.getClassFromName(headerName);
-    if(headerClass == null)                
+                if(headerClass == null)                
                 {
                     headerClass = ExtensionHeaderImpl.class;
                 } //End block
@@ -437,57 +437,57 @@ SIPMessage varFD182D7074F3848E773A38B067BBB880_1672176919 =         message;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.941 -0400", hash_original_method = "049BA210A39AB5443B08132FD51D457E", hash_generated_method = "43675A0A3C193691D3475E36F2D4CA13")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.878 -0400", hash_original_method = "049BA210A39AB5443B08132FD51D457E", hash_generated_method = "1560F0F5BFD15ABBC949EE63A5AE29C1")
     public AddressImpl parseAddress(String address) throws ParseException {
         addTaint(address.getTaint());
         AddressParser addressParser = new AddressParser(address);
-AddressImpl var38834A65BE845C655031CC23ACA4C772_694598808 =         addressParser.address(true);
-        var38834A65BE845C655031CC23ACA4C772_694598808.addTaint(taint);
-        return var38834A65BE845C655031CC23ACA4C772_694598808;
+AddressImpl var38834A65BE845C655031CC23ACA4C772_1337875766 =         addressParser.address(true);
+        var38834A65BE845C655031CC23ACA4C772_1337875766.addTaint(taint);
+        return var38834A65BE845C655031CC23ACA4C772_1337875766;
         // ---------- Original Method ----------
         //AddressParser addressParser = new AddressParser(address);
         //return addressParser.address(true);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.942 -0400", hash_original_method = "6E5629CC68B4185F1ADA3485008A15B3", hash_generated_method = "7F989A5F9C32F7FBB72B30EC2178B4E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.878 -0400", hash_original_method = "6E5629CC68B4185F1ADA3485008A15B3", hash_generated_method = "C046608B4E8C57D750CF62A5F0FF0ABA")
     public Host parseHost(String host) throws ParseException {
         addTaint(host.getTaint());
         Lexer lexer = new Lexer("charLexer", host);
-Host varBFDC80813AB4D3C174FE89D0FE5657A6_1309569484 =         new HostNameParser(lexer).host();
-        varBFDC80813AB4D3C174FE89D0FE5657A6_1309569484.addTaint(taint);
-        return varBFDC80813AB4D3C174FE89D0FE5657A6_1309569484;
+Host varBFDC80813AB4D3C174FE89D0FE5657A6_34832042 =         new HostNameParser(lexer).host();
+        varBFDC80813AB4D3C174FE89D0FE5657A6_34832042.addTaint(taint);
+        return varBFDC80813AB4D3C174FE89D0FE5657A6_34832042;
         // ---------- Original Method ----------
         //Lexer lexer = new Lexer("charLexer", host);
         //return new HostNameParser(lexer).host();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.942 -0400", hash_original_method = "FA67D7760B995854EEA852AD4B17EA85", hash_generated_method = "899CF25BE736CDAD63933F06667D4FB4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.879 -0400", hash_original_method = "FA67D7760B995854EEA852AD4B17EA85", hash_generated_method = "8546A7AF0428F814CA31236D48F45D97")
     public TelephoneNumber parseTelephoneNumber(String telephone_number) throws ParseException {
         addTaint(telephone_number.getTaint());
-TelephoneNumber var19E7CF3AFA993CEA6FC8BE2686AF0D09_528085699 =         new URLParser(telephone_number).parseTelephoneNumber(true);
-        var19E7CF3AFA993CEA6FC8BE2686AF0D09_528085699.addTaint(taint);
-        return var19E7CF3AFA993CEA6FC8BE2686AF0D09_528085699;
+TelephoneNumber var19E7CF3AFA993CEA6FC8BE2686AF0D09_556840835 =         new URLParser(telephone_number).parseTelephoneNumber(true);
+        var19E7CF3AFA993CEA6FC8BE2686AF0D09_556840835.addTaint(taint);
+        return var19E7CF3AFA993CEA6FC8BE2686AF0D09_556840835;
         // ---------- Original Method ----------
         //return new URLParser(telephone_number).parseTelephoneNumber(true);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.942 -0400", hash_original_method = "F49AF4817F29179E4378A66D59AF945F", hash_generated_method = "E5C4BE59CAD1BD405213970799F160EE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.879 -0400", hash_original_method = "F49AF4817F29179E4378A66D59AF945F", hash_generated_method = "62CF577284D35ECF893FA41D3E28BCCE")
     public SipUri parseSIPUrl(String url) throws ParseException {
         addTaint(url.getTaint());
         try 
         {
-SipUri var945CAFD84159019C48E6373757A24F78_897584717 =             new URLParser(url).sipURL(true);
-            var945CAFD84159019C48E6373757A24F78_897584717.addTaint(taint);
-            return var945CAFD84159019C48E6373757A24F78_897584717;
+SipUri var945CAFD84159019C48E6373757A24F78_787874223 =             new URLParser(url).sipURL(true);
+            var945CAFD84159019C48E6373757A24F78_787874223.addTaint(taint);
+            return var945CAFD84159019C48E6373757A24F78_787874223;
         } //End block
         catch (ClassCastException ex)
         {
-            ParseException var007E1D465BD35F2F74C467410EE7F33F_1751883525 = new ParseException(url + " Not a SIP URL ", 0);
-            var007E1D465BD35F2F74C467410EE7F33F_1751883525.addTaint(taint);
-            throw var007E1D465BD35F2F74C467410EE7F33F_1751883525;
+            ParseException var007E1D465BD35F2F74C467410EE7F33F_1167325663 = new ParseException(url + " Not a SIP URL ", 0);
+            var007E1D465BD35F2F74C467410EE7F33F_1167325663.addTaint(taint);
+            throw var007E1D465BD35F2F74C467410EE7F33F_1167325663;
         } //End block
         // ---------- Original Method ----------
         //try {
@@ -498,18 +498,18 @@ SipUri var945CAFD84159019C48E6373757A24F78_897584717 =             new URLParser
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.943 -0400", hash_original_method = "40F3B3649F989E59FAF074C2858F6B9B", hash_generated_method = "45463258F122407218FFCA1E7B575357")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.880 -0400", hash_original_method = "40F3B3649F989E59FAF074C2858F6B9B", hash_generated_method = "5068BFCFFAF0E4FD1DFA1B2F2365E1F6")
     public GenericURI parseUrl(String url) throws ParseException {
         addTaint(url.getTaint());
-GenericURI varE1262A481934EE776A587D0EE7911D31_627530314 =         new URLParser(url).parse();
-        varE1262A481934EE776A587D0EE7911D31_627530314.addTaint(taint);
-        return varE1262A481934EE776A587D0EE7911D31_627530314;
+GenericURI varE1262A481934EE776A587D0EE7911D31_1922450796 =         new URLParser(url).parse();
+        varE1262A481934EE776A587D0EE7911D31_1922450796.addTaint(taint);
+        return varE1262A481934EE776A587D0EE7911D31_1922450796;
         // ---------- Original Method ----------
         //return new URLParser(url).parse();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.944 -0400", hash_original_method = "6152413E77E62620D4330DAF5944A1B1", hash_generated_method = "26897C149DD57D15AA95400BDF136E0F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.881 -0400", hash_original_method = "6152413E77E62620D4330DAF5944A1B1", hash_generated_method = "24B2C53490E426334CC5D8E49A18CC04")
     public SIPHeader parseSIPHeader(String header) throws ParseException {
         addTaint(header.getTaint());
         int start = 0;
@@ -525,9 +525,9 @@ GenericURI varE1262A481934EE776A587D0EE7911D31_627530314 =         new URLParser
         } //End block
         catch (ArrayIndexOutOfBoundsException e)
         {
-            ParseException varD0054FCA0E60A07FCFE304524FBEBEF4_2052976954 = new ParseException("Empty header.", 0);
-            varD0054FCA0E60A07FCFE304524FBEBEF4_2052976954.addTaint(taint);
-            throw varD0054FCA0E60A07FCFE304524FBEBEF4_2052976954;
+            ParseException varD0054FCA0E60A07FCFE304524FBEBEF4_1213361582 = new ParseException("Empty header.", 0);
+            varD0054FCA0E60A07FCFE304524FBEBEF4_1213361582.addTaint(taint);
+            throw varD0054FCA0E60A07FCFE304524FBEBEF4_1213361582;
         } //End block
         StringBuffer buffer = new StringBuffer(end + 1);
         int i = start;
@@ -537,9 +537,9 @@ GenericURI varE1262A481934EE776A587D0EE7911D31_627530314 =         new URLParser
 (i <= end)        
         {
             char c = header.charAt(i);
-    if(c == '\r' || c == '\n')            
+            if(c == '\r' || c == '\n')            
             {
-    if(!endOfLine)                
+                if(!endOfLine)                
                 {
                     buffer.append(header.substring(lineStart, i));
                     endOfLine = true;
@@ -547,10 +547,10 @@ GenericURI varE1262A481934EE776A587D0EE7911D31_627530314 =         new URLParser
             } //End block
             else
             {
-    if(endOfLine)                
+                if(endOfLine)                
                 {
                     endOfLine = false;
-    if(c == ' ' || c == '\t')                    
+                    if(c == ' ' || c == '\t')                    
                     {
                         buffer.append(' ');
                         lineStart = i + 1;
@@ -566,54 +566,54 @@ GenericURI varE1262A481934EE776A587D0EE7911D31_627530314 =         new URLParser
         buffer.append(header.substring(lineStart, i));
         buffer.append('\n');
         HeaderParser hp = ParserFactory.createParser(buffer.toString());
-    if(hp == null)        
+        if(hp == null)        
         {
-        ParseException varE674F04EF8FE8ADF1D945F01FAD013AB_28527394 = new ParseException("could not create parser", 0);
-        varE674F04EF8FE8ADF1D945F01FAD013AB_28527394.addTaint(taint);
-        throw varE674F04EF8FE8ADF1D945F01FAD013AB_28527394;
+        ParseException varE674F04EF8FE8ADF1D945F01FAD013AB_2040748043 = new ParseException("could not create parser", 0);
+        varE674F04EF8FE8ADF1D945F01FAD013AB_2040748043.addTaint(taint);
+        throw varE674F04EF8FE8ADF1D945F01FAD013AB_2040748043;
         }
-SIPHeader varB31A57F2E73DE9124E0166DAEE7B8802_40068954 =         hp.parse();
-        varB31A57F2E73DE9124E0166DAEE7B8802_40068954.addTaint(taint);
-        return varB31A57F2E73DE9124E0166DAEE7B8802_40068954;
+SIPHeader varB31A57F2E73DE9124E0166DAEE7B8802_1720083336 =         hp.parse();
+        varB31A57F2E73DE9124E0166DAEE7B8802_1720083336.addTaint(taint);
+        return varB31A57F2E73DE9124E0166DAEE7B8802_1720083336;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.944 -0400", hash_original_method = "C661D43CA4BEB0154AFD6A7B8492896F", hash_generated_method = "B886B0DBC2BC09973E388CB1CAC38E8E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.881 -0400", hash_original_method = "C661D43CA4BEB0154AFD6A7B8492896F", hash_generated_method = "41108F12F31666C4292B188033DFD103")
     public RequestLine parseSIPRequestLine(String requestLine) throws ParseException {
         addTaint(requestLine.getTaint());
         requestLine += "\n";
-RequestLine var21E03B2AA1692429C9EF98FFF07ABBA2_2051535997 =         new RequestLineParser(requestLine).parse();
-        var21E03B2AA1692429C9EF98FFF07ABBA2_2051535997.addTaint(taint);
-        return var21E03B2AA1692429C9EF98FFF07ABBA2_2051535997;
+RequestLine var21E03B2AA1692429C9EF98FFF07ABBA2_721703916 =         new RequestLineParser(requestLine).parse();
+        var21E03B2AA1692429C9EF98FFF07ABBA2_721703916.addTaint(taint);
+        return var21E03B2AA1692429C9EF98FFF07ABBA2_721703916;
         // ---------- Original Method ----------
         //requestLine += "\n";
         //return new RequestLineParser(requestLine).parse();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.945 -0400", hash_original_method = "9FDE6314AF63D7F1DD1D0AE258CFAA9B", hash_generated_method = "ED47A6E404E8EB6264DBA92EA0BB9E4C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.881 -0400", hash_original_method = "9FDE6314AF63D7F1DD1D0AE258CFAA9B", hash_generated_method = "7DB47BD4F622E37B8CE9ED04E2A00495")
     public StatusLine parseSIPStatusLine(String statusLine) throws ParseException {
         addTaint(statusLine.getTaint());
         statusLine += "\n";
-StatusLine varC168C3AEA25683D36962B85515B113E0_1652888183 =         new StatusLineParser(statusLine).parse();
-        varC168C3AEA25683D36962B85515B113E0_1652888183.addTaint(taint);
-        return varC168C3AEA25683D36962B85515B113E0_1652888183;
+StatusLine varC168C3AEA25683D36962B85515B113E0_668512523 =         new StatusLineParser(statusLine).parse();
+        varC168C3AEA25683D36962B85515B113E0_668512523.addTaint(taint);
+        return varC168C3AEA25683D36962B85515B113E0_668512523;
         // ---------- Original Method ----------
         //statusLine += "\n";
         //return new StatusLineParser(statusLine).parse();
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void setComputeContentLengthFromMessage(
             boolean computeContentLengthFromMessage) {
         StringMsgParser.computeContentLengthFromMessage = computeContentLengthFromMessage;
     }
 
     
-        public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) throws ParseException {
         String messages[] = {
                 "SIP/2.0 200 OK\r\n"
                         + "To: \"The Little Blister\" <sip:LittleGuy@there.com>;tag=469bc066\r\n"
@@ -682,8 +682,8 @@ StatusLine varC168C3AEA25683D36962B85515B113E0_1652888183 =         new StatusLi
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.946 -0400", hash_original_method = "EC510198678EBDAFC45D82B058FF4015", hash_generated_method = "C6177A909B65F45400E04967CBC68CBF")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.882 -0400", hash_original_method = "EC510198678EBDAFC45D82B058FF4015", hash_generated_method = "C6177A909B65F45400E04967CBC68CBF")
     public void setStrict(boolean strict) {
         this.strict = strict;
         // ---------- Original Method ----------
@@ -691,7 +691,7 @@ StatusLine varC168C3AEA25683D36962B85515B113E0_1652888183 =         new StatusLi
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.946 -0400", hash_original_field = "6A0B46763BD9870CC46C4EF4641C6BDC", hash_generated_field = "A4CB644B81B9880592D43A90E29E3123")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.882 -0400", hash_original_field = "6A0B46763BD9870CC46C4EF4641C6BDC", hash_generated_field = "A4CB644B81B9880592D43A90E29E3123")
 
     private static boolean computeContentLengthFromMessage = false;
 }

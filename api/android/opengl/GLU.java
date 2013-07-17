@@ -8,14 +8,14 @@ import javax.microedition.khronos.opengles.GL10;
 
 public class GLU {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.596 -0400", hash_original_method = "81777980E1C12E67D555E59C0A8957E0", hash_generated_method = "81777980E1C12E67D555E59C0A8957E0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.361 -0400", hash_original_method = "81777980E1C12E67D555E59C0A8957E0", hash_generated_method = "81777980E1C12E67D555E59C0A8957E0")
     public GLU ()
     {
         //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static String gluErrorString(int error) {
         switch (error) {
         case GL10.GL_NO_ERROR:
@@ -38,7 +38,7 @@ public class GLU {
     }
 
     
-        public static void gluLookAt(GL10 gl, float eyeX, float eyeY, float eyeZ,
+    public static void gluLookAt(GL10 gl, float eyeX, float eyeY, float eyeZ,
             float centerX, float centerY, float centerZ, float upX, float upY,
             float upZ) {
         float[] scratch = sScratch;
@@ -50,13 +50,13 @@ public class GLU {
     }
 
     
-        public static void gluOrtho2D(GL10 gl, float left, float right,
+    public static void gluOrtho2D(GL10 gl, float left, float right,
             float bottom, float top) {
         gl.glOrthof(left, right, bottom, top, -1.0f, 1.0f);
     }
 
     
-        public static void gluPerspective(GL10 gl, float fovy, float aspect,
+    public static void gluPerspective(GL10 gl, float fovy, float aspect,
             float zNear, float zFar) {
         float top = zNear * (float) Math.tan(fovy * (Math.PI / 360.0));
         float bottom = -top;
@@ -66,7 +66,7 @@ public class GLU {
     }
 
     
-        public static int gluProject(float objX, float objY, float objZ,
+    public static int gluProject(float objX, float objY, float objZ,
             float[] model, int modelOffset, float[] project, int projectOffset,
             int[] view, int viewOffset, float[] win, int winOffset) {
         float[] scratch = sScratch;
@@ -100,7 +100,7 @@ public class GLU {
     }
 
     
-        public static int gluUnProject(float winX, float winY, float winZ,
+    public static int gluUnProject(float winX, float winY, float winZ,
             float[] model, int modelOffset, float[] project, int projectOffset,
             int[] view, int viewOffset, float[] obj, int objOffset) {
         float[] scratch = sScratch;
@@ -128,7 +128,7 @@ public class GLU {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.599 -0400", hash_original_field = "FBF4F52F41040A0A65CDDBF5F9BB5D07", hash_generated_field = "4C7E849CA192581CA2BD76D1C6206DA9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.364 -0400", hash_original_field = "FBF4F52F41040A0A65CDDBF5F9BB5D07", hash_generated_field = "4C7E849CA192581CA2BD76D1C6206DA9")
 
     private static final float[] sScratch = new float[32];
 }

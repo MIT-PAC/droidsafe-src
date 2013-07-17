@@ -7,11 +7,11 @@ import droidsafe.runtime.*;
 import java.io.IOException;
 
 public class PEMException extends IOException {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.221 -0400", hash_original_field = "4AB57483724829010C32E288B605D5E5", hash_generated_field = "C31C43ABE3D5D61AFE96A228698D8959")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.998 -0400", hash_original_field = "4AB57483724829010C32E288B605D5E5", hash_generated_field = "C31C43ABE3D5D61AFE96A228698D8959")
 
     Exception underlying;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.221 -0400", hash_original_method = "DBCE2D6935FCAE6513D26D3BE9F92180", hash_generated_method = "3B5A6E1FAC809290D7BA159E9C8E5806")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.998 -0400", hash_original_method = "DBCE2D6935FCAE6513D26D3BE9F92180", hash_generated_method = "3B5A6E1FAC809290D7BA159E9C8E5806")
     public  PEMException(
         String    message) {
         super(message);
@@ -20,7 +20,7 @@ public class PEMException extends IOException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.222 -0400", hash_original_method = "62F9842AAA557466DBCCBFAEB65A702E", hash_generated_method = "8684CFB22E02D8156ADEFBB1AF7A7F30")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.999 -0400", hash_original_method = "62F9842AAA557466DBCCBFAEB65A702E", hash_generated_method = "8684CFB22E02D8156ADEFBB1AF7A7F30")
     public  PEMException(
         String        message,
         Exception    underlying) {
@@ -32,23 +32,23 @@ public class PEMException extends IOException {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.222 -0400", hash_original_method = "8D4B98C08FC53F956480CC6A65685E20", hash_generated_method = "1B93EF2BA42B83A8797D34C142E642FF")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.000 -0400", hash_original_method = "8D4B98C08FC53F956480CC6A65685E20", hash_generated_method = "E1EACFE1D86FD9371F7559A3DB890B27")
     public Exception getUnderlyingException() {
-Exception var77A55F525D35035B29E3829296BB2E65_1803845219 =         underlying;
-        var77A55F525D35035B29E3829296BB2E65_1803845219.addTaint(taint);
-        return var77A55F525D35035B29E3829296BB2E65_1803845219;
+Exception var77A55F525D35035B29E3829296BB2E65_1124765657 =         underlying;
+        var77A55F525D35035B29E3829296BB2E65_1124765657.addTaint(taint);
+        return var77A55F525D35035B29E3829296BB2E65_1124765657;
         // ---------- Original Method ----------
         //return underlying;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.223 -0400", hash_original_method = "F2813220852B09056C9C149C0538BE80", hash_generated_method = "86DE7EBA85AF42BB9207CD69EC402079")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.001 -0400", hash_original_method = "F2813220852B09056C9C149C0538BE80", hash_generated_method = "48411B9D02B18DA3CD26CD71288764FC")
     public Throwable getCause() {
-Throwable var77A55F525D35035B29E3829296BB2E65_676516243 =         underlying;
-        var77A55F525D35035B29E3829296BB2E65_676516243.addTaint(taint);
-        return var77A55F525D35035B29E3829296BB2E65_676516243;
+Throwable var77A55F525D35035B29E3829296BB2E65_1578161549 =         underlying;
+        var77A55F525D35035B29E3829296BB2E65_1578161549.addTaint(taint);
+        return var77A55F525D35035B29E3829296BB2E65_1578161549;
         // ---------- Original Method ----------
         //return underlying;
     }

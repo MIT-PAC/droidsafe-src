@@ -8,42 +8,42 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public final class SyncResult implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.234 -0400", hash_original_field = "2F2EFE3175254AA8769886FBB83265D2", hash_generated_field = "BFD8A20F4C8DD7D4765EBA24654CDDFF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.702 -0400", hash_original_field = "2F2EFE3175254AA8769886FBB83265D2", hash_generated_field = "BFD8A20F4C8DD7D4765EBA24654CDDFF")
 
     public boolean syncAlreadyInProgress;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.234 -0400", hash_original_field = "3171EF0F7797317DF358FDA93E4CFAD3", hash_generated_field = "CF979CB696F4952381CD588FAF28D8C8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.702 -0400", hash_original_field = "3171EF0F7797317DF358FDA93E4CFAD3", hash_generated_field = "CF979CB696F4952381CD588FAF28D8C8")
 
     public boolean tooManyDeletions;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.234 -0400", hash_original_field = "6AC8D01A0D843D1EF20D6C6A8BBF16BE", hash_generated_field = "9E1F14B63E64AB3B8FE86B9ECF85BDF8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.702 -0400", hash_original_field = "6AC8D01A0D843D1EF20D6C6A8BBF16BE", hash_generated_field = "9E1F14B63E64AB3B8FE86B9ECF85BDF8")
 
     public boolean tooManyRetries;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.235 -0400", hash_original_field = "B3E788D045B0C02113CA7BB9EBE60A7E", hash_generated_field = "2AD2DD4B2337D671F2E174B85A6496D1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.702 -0400", hash_original_field = "B3E788D045B0C02113CA7BB9EBE60A7E", hash_generated_field = "2AD2DD4B2337D671F2E174B85A6496D1")
 
     public boolean databaseError;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.235 -0400", hash_original_field = "FF49CCF250C7250C8ACCB36A94EC155F", hash_generated_field = "436339CBC4C22C7F23F88B3E5A99EA3D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.702 -0400", hash_original_field = "FF49CCF250C7250C8ACCB36A94EC155F", hash_generated_field = "436339CBC4C22C7F23F88B3E5A99EA3D")
 
     public boolean fullSyncRequested;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.235 -0400", hash_original_field = "13BAC3659683FB6DE6C8C097F491F7A2", hash_generated_field = "84E1F34EBFFCDB4B1646B7A9635BC1B6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.702 -0400", hash_original_field = "13BAC3659683FB6DE6C8C097F491F7A2", hash_generated_field = "84E1F34EBFFCDB4B1646B7A9635BC1B6")
 
     public boolean partialSyncUnavailable;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.235 -0400", hash_original_field = "9BE9F4BFA4ADA6C36CA6ADB0A72BA2C3", hash_generated_field = "00EE69B9457A1BE039F1B1AA3795A676")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.703 -0400", hash_original_field = "9BE9F4BFA4ADA6C36CA6ADB0A72BA2C3", hash_generated_field = "00EE69B9457A1BE039F1B1AA3795A676")
 
     public boolean moreRecordsToGet;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.236 -0400", hash_original_field = "77D196B208370F23D20E064B8B1B5DA0", hash_generated_field = "34D6FB90E0771C5EFE225745790D4357")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.703 -0400", hash_original_field = "77D196B208370F23D20E064B8B1B5DA0", hash_generated_field = "34D6FB90E0771C5EFE225745790D4357")
 
     public long delayUntil;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.236 -0400", hash_original_field = "446501053769C06C565094B26D26E8EF", hash_generated_field = "2DA27E0BB7E62E76DC01A86038B45A30")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.703 -0400", hash_original_field = "446501053769C06C565094B26D26E8EF", hash_generated_field = "2DA27E0BB7E62E76DC01A86038B45A30")
 
     public SyncStats stats;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.236 -0400", hash_original_method = "74DBC91B11F83F26A5C8672BC9110150", hash_generated_method = "696D826DA747067EB7D4C0224C4748CF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.703 -0400", hash_original_method = "74DBC91B11F83F26A5C8672BC9110150", hash_generated_method = "696D826DA747067EB7D4C0224C4748CF")
     public  SyncResult() {
         this(false);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.239 -0400", hash_original_method = "A4EB0430511E7A235909D5D8195B83C3", hash_generated_method = "91BECAE191A031A094F0515DFDD12796")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.706 -0400", hash_original_method = "A4EB0430511E7A235909D5D8195B83C3", hash_generated_method = "91BECAE191A031A094F0515DFDD12796")
     private  SyncResult(boolean syncAlreadyInProgress) {
         this.syncAlreadyInProgress = syncAlreadyInProgress;
         this.tooManyDeletions = false;
@@ -65,7 +65,7 @@ public final class SyncResult implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.243 -0400", hash_original_method = "B695CA7A40C0F72A389E260A4C1183F2", hash_generated_method = "79661FDB89DDD261A68FCB658DDD1AB8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.710 -0400", hash_original_method = "B695CA7A40C0F72A389E260A4C1183F2", hash_generated_method = "79661FDB89DDD261A68FCB658DDD1AB8")
     private  SyncResult(Parcel parcel) {
         syncAlreadyInProgress = parcel.readInt() != 0;
         tooManyDeletions = parcel.readInt() != 0;
@@ -89,17 +89,17 @@ public final class SyncResult implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.244 -0400", hash_original_method = "BBFDB64A99265F3C16497008E73E4C9A", hash_generated_method = "C35E273BD8C6CF2CC651400F1BB3F1FF")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.712 -0400", hash_original_method = "BBFDB64A99265F3C16497008E73E4C9A", hash_generated_method = "DAF5662E2D6573255621D8F251F96AF6")
     public boolean hasHardError() {
-        boolean varC1E5348BDEDEF87650486371D9F53BCE_1766577784 = (stats.numParseExceptions > 0
+        boolean varC1E5348BDEDEF87650486371D9F53BCE_178199086 = (stats.numParseExceptions > 0
                 || stats.numConflictDetectedExceptions > 0
                 || stats.numAuthExceptions > 0
                 || tooManyDeletions
                 || tooManyRetries
                 || databaseError);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1263177965 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1263177965;
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1679086631 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1679086631;
         // ---------- Original Method ----------
         //return stats.numParseExceptions > 0
                 //|| stats.numConflictDetectedExceptions > 0
@@ -110,35 +110,35 @@ public final class SyncResult implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.245 -0400", hash_original_method = "E6525D3C6B30E4EB9644C9103954127F", hash_generated_method = "7873231CF829F8F7F2EE03B388F68B5C")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.714 -0400", hash_original_method = "E6525D3C6B30E4EB9644C9103954127F", hash_generated_method = "8E87FA4B4F425E2D1B5931E29D90C57D")
     public boolean hasSoftError() {
-        boolean varB24245B74C0818ECDFED556A8CFBDB85_1662761833 = (syncAlreadyInProgress || stats.numIoExceptions > 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_546158988 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_546158988;
+        boolean varB24245B74C0818ECDFED556A8CFBDB85_20310662 = (syncAlreadyInProgress || stats.numIoExceptions > 0);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1733561223 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1733561223;
         // ---------- Original Method ----------
         //return syncAlreadyInProgress || stats.numIoExceptions > 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.246 -0400", hash_original_method = "4476315D4E8DB7AB870F2DCC294654C2", hash_generated_method = "C2C309A7B5A7751123379A8830EE735B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.716 -0400", hash_original_method = "4476315D4E8DB7AB870F2DCC294654C2", hash_generated_method = "F9C81506218CE39C37A1491B0B9CFD65")
     public boolean hasError() {
-        boolean varA7CBEB8A9F801420526255EFB7B70B18_1011637908 = (hasSoftError() || hasHardError());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1577430153 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1577430153;
+        boolean varA7CBEB8A9F801420526255EFB7B70B18_1852847440 = (hasSoftError() || hasHardError());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_684670721 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_684670721;
         // ---------- Original Method ----------
         //return hasSoftError() || hasHardError();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.247 -0400", hash_original_method = "8205DB1BC4B4653595BD73EDC8C83B31", hash_generated_method = "139BD3AC5D3F5A2B553EC87BA5CDD903")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.716 -0400", hash_original_method = "8205DB1BC4B4653595BD73EDC8C83B31", hash_generated_method = "DEBDAE21F4B06D9D02218486B56AC135")
     public boolean madeSomeProgress() {
-        boolean varACF5483D3442CF7F9E8F05B96BCA3DA6_1648536966 = (((stats.numDeletes > 0) && !tooManyDeletions)
+        boolean varACF5483D3442CF7F9E8F05B96BCA3DA6_1134246352 = (((stats.numDeletes > 0) && !tooManyDeletions)
                 || stats.numInserts > 0
                 || stats.numUpdates > 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_151695651 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_151695651;
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_497028903 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_497028903;
         // ---------- Original Method ----------
         //return ((stats.numDeletes > 0) && !tooManyDeletions)
                 //|| stats.numInserts > 0
@@ -146,14 +146,14 @@ public final class SyncResult implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.250 -0400", hash_original_method = "2FCB3E59F9154933B8824104898248D1", hash_generated_method = "C48881B8D732E18DA0E05C67B521C4B8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.718 -0400", hash_original_method = "2FCB3E59F9154933B8824104898248D1", hash_generated_method = "C8042321F51466B1524807E7567285C9")
     public void clear() {
-    if(syncAlreadyInProgress)        
+        if(syncAlreadyInProgress)        
         {
-            UnsupportedOperationException var3CDB679B53FC17FAD7DF42A36EA298AC_926553778 = new UnsupportedOperationException(
+            UnsupportedOperationException var3CDB679B53FC17FAD7DF42A36EA298AC_1197964856 = new UnsupportedOperationException(
                     "you are not allowed to clear the ALREADY_IN_PROGRESS SyncStats");
-            var3CDB679B53FC17FAD7DF42A36EA298AC_926553778.addTaint(taint);
-            throw var3CDB679B53FC17FAD7DF42A36EA298AC_926553778;
+            var3CDB679B53FC17FAD7DF42A36EA298AC_1197964856.addTaint(taint);
+            throw var3CDB679B53FC17FAD7DF42A36EA298AC_1197964856;
         } //End block
         tooManyDeletions = false;
         tooManyRetries = false;
@@ -179,18 +179,18 @@ public final class SyncResult implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.250 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "981BA4D9823A5D844906E3F032A5E72A")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.718 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "B3BBF4F8430E78CA625F0F9C7C535354")
     public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_1599090844 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_242409809 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_242409809;
+        int varCFCD208495D565EF66E7DFF9F98764DA_1601661281 = (0);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_572093992 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_572093992;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.251 -0400", hash_original_method = "EE19136D87E129AE1F87F388C7ADFCD3", hash_generated_method = "708C3691B191D67B2BA3755433BD311E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.720 -0400", hash_original_method = "EE19136D87E129AE1F87F388C7ADFCD3", hash_generated_method = "708C3691B191D67B2BA3755433BD311E")
     public void writeToParcel(Parcel parcel, int flags) {
         addTaint(flags);
         addTaint(parcel.getTaint());
@@ -216,107 +216,107 @@ public final class SyncResult implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.252 -0400", hash_original_method = "7124545C2E1A8AB9232718D7A155D522", hash_generated_method = "05D47C5ED2188F4EB44DF6C34B555E82")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.722 -0400", hash_original_method = "7124545C2E1A8AB9232718D7A155D522", hash_generated_method = "3D4BDE326BD042CC5DD5F40C0DC058BF")
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("SyncResult:");
-    if(syncAlreadyInProgress)        
+        if(syncAlreadyInProgress)        
         {
             sb.append(" syncAlreadyInProgress: ").append(syncAlreadyInProgress);
         } //End block
-    if(tooManyDeletions)        
+        if(tooManyDeletions)        
         sb.append(" tooManyDeletions: ").append(tooManyDeletions);
-    if(tooManyRetries)        
+        if(tooManyRetries)        
         sb.append(" tooManyRetries: ").append(tooManyRetries);
-    if(databaseError)        
+        if(databaseError)        
         sb.append(" databaseError: ").append(databaseError);
-    if(fullSyncRequested)        
+        if(fullSyncRequested)        
         sb.append(" fullSyncRequested: ").append(fullSyncRequested);
-    if(partialSyncUnavailable)        
+        if(partialSyncUnavailable)        
         {
             sb.append(" partialSyncUnavailable: ").append(partialSyncUnavailable);
         } //End block
-    if(moreRecordsToGet)        
+        if(moreRecordsToGet)        
         sb.append(" moreRecordsToGet: ").append(moreRecordsToGet);
-    if(delayUntil > 0)        
+        if(delayUntil > 0)        
         sb.append(" delayUntil: ").append(delayUntil);
         sb.append(stats);
-String var2460B846747F8B22185AD8BE722266A5_985194332 =         sb.toString();
-        var2460B846747F8B22185AD8BE722266A5_985194332.addTaint(taint);
-        return var2460B846747F8B22185AD8BE722266A5_985194332;
+String var2460B846747F8B22185AD8BE722266A5_2037503970 =         sb.toString();
+        var2460B846747F8B22185AD8BE722266A5_2037503970.addTaint(taint);
+        return var2460B846747F8B22185AD8BE722266A5_2037503970;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.252 -0400", hash_original_method = "4BAB8C537F83CAF09BA4245CA1B5A6A2", hash_generated_method = "7E61A3305AA9352374C83E62B51BF5AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.725 -0400", hash_original_method = "4BAB8C537F83CAF09BA4245CA1B5A6A2", hash_generated_method = "F1240AE3D92C149AB1DCEC293F9B3444")
     public String toDebugString() {
         StringBuffer sb = new StringBuffer();
-    if(fullSyncRequested)        
+        if(fullSyncRequested)        
         {
             sb.append("f1");
         } //End block
-    if(partialSyncUnavailable)        
+        if(partialSyncUnavailable)        
         {
             sb.append("r1");
         } //End block
-    if(hasHardError())        
+        if(hasHardError())        
         {
             sb.append("X1");
         } //End block
-    if(stats.numParseExceptions > 0)        
+        if(stats.numParseExceptions > 0)        
         {
             sb.append("e").append(stats.numParseExceptions);
         } //End block
-    if(stats.numConflictDetectedExceptions > 0)        
+        if(stats.numConflictDetectedExceptions > 0)        
         {
             sb.append("c").append(stats.numConflictDetectedExceptions);
         } //End block
-    if(stats.numAuthExceptions > 0)        
+        if(stats.numAuthExceptions > 0)        
         {
             sb.append("a").append(stats.numAuthExceptions);
         } //End block
-    if(tooManyDeletions)        
+        if(tooManyDeletions)        
         {
             sb.append("D1");
         } //End block
-    if(tooManyRetries)        
+        if(tooManyRetries)        
         {
             sb.append("R1");
         } //End block
-    if(databaseError)        
+        if(databaseError)        
         {
             sb.append("b1");
         } //End block
-    if(hasSoftError())        
+        if(hasSoftError())        
         {
             sb.append("x1");
         } //End block
-    if(syncAlreadyInProgress)        
+        if(syncAlreadyInProgress)        
         {
             sb.append("l1");
         } //End block
-    if(stats.numIoExceptions > 0)        
+        if(stats.numIoExceptions > 0)        
         {
             sb.append("I").append(stats.numIoExceptions);
         } //End block
-String var2460B846747F8B22185AD8BE722266A5_2142946777 =         sb.toString();
-        var2460B846747F8B22185AD8BE722266A5_2142946777.addTaint(taint);
-        return var2460B846747F8B22185AD8BE722266A5_2142946777;
+String var2460B846747F8B22185AD8BE722266A5_489761175 =         sb.toString();
+        var2460B846747F8B22185AD8BE722266A5_489761175.addTaint(taint);
+        return var2460B846747F8B22185AD8BE722266A5_489761175;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.253 -0400", hash_original_field = "6D5119A348BD0CC32773C034FE96684C", hash_generated_field = "7027FBC7AA2E8EFBEEF08475D7C0847B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.726 -0400", hash_original_field = "6D5119A348BD0CC32773C034FE96684C", hash_generated_field = "7027FBC7AA2E8EFBEEF08475D7C0847B")
 
     public static final SyncResult ALREADY_IN_PROGRESS;
     static {
         ALREADY_IN_PROGRESS = new SyncResult(true);
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.253 -0400", hash_original_field = "78B42CBC7BB00AEC88D972EE0CA8E716", hash_generated_field = "0BFBE4FA78FD3B51E53BE26F718EB099")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.726 -0400", hash_original_field = "78B42CBC7BB00AEC88D972EE0CA8E716", hash_generated_field = "0BFBE4FA78FD3B51E53BE26F718EB099")
 
     public static final Creator<SyncResult> CREATOR = new Creator<SyncResult>() {
         public SyncResult createFromParcel(Parcel in) {

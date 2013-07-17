@@ -7,8 +7,8 @@ import droidsafe.runtime.*;
 
 public class ColorMatrixColorFilter extends ColorFilter {
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.215 -0400", hash_original_method = "92B387BCC5497E96DCF4BCCE85C5A491", hash_generated_method = "51F33EB5912D51F7349BD07120C17B07")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.156 -0400", hash_original_method = "92B387BCC5497E96DCF4BCCE85C5A491", hash_generated_method = "51F33EB5912D51F7349BD07120C17B07")
     public  ColorMatrixColorFilter(ColorMatrix matrix) {
         addTaint(matrix.getTaint());
         final float[] colorMatrix = matrix.getArray();
@@ -21,15 +21,15 @@ public class ColorMatrixColorFilter extends ColorFilter {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.215 -0400", hash_original_method = "2D0E3EA51658F535A9A5BDBE5AE078D8", hash_generated_method = "06945BA4000A9368E278CDFD95CF83E4")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.157 -0400", hash_original_method = "2D0E3EA51658F535A9A5BDBE5AE078D8", hash_generated_method = "4AAE22011098E322A5970F4D03C550FE")
     public  ColorMatrixColorFilter(float[] array) {
         addTaint(array[0]);
-    if(array.length < 20)        
+        if(array.length < 20)        
         {
-            ArrayIndexOutOfBoundsException var37DB57B1FEB1C9FBA644A093BFA8B678_1106077398 = new ArrayIndexOutOfBoundsException();
-            var37DB57B1FEB1C9FBA644A093BFA8B678_1106077398.addTaint(taint);
-            throw var37DB57B1FEB1C9FBA644A093BFA8B678_1106077398;
+            ArrayIndexOutOfBoundsException var37DB57B1FEB1C9FBA644A093BFA8B678_471226711 = new ArrayIndexOutOfBoundsException();
+            var37DB57B1FEB1C9FBA644A093BFA8B678_471226711.addTaint(taint);
+            throw var37DB57B1FEB1C9FBA644A093BFA8B678_471226711;
         } //End block
         native_instance = nativeColorMatrixFilter(array);
         nativeColorFilter = nColorMatrixFilter(native_instance, array);

@@ -7,18 +7,18 @@ import droidsafe.runtime.*;
 import java.text.ParseException;
 
 public class ContentEncoding extends SIPHeader implements javax.sip.header.ContentEncodingHeader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.246 -0400", hash_original_field = "8D5FC32AC7506D2C0AC6949566E3BBE2", hash_generated_field = "28D90C4A539A5E5930C5B1B3C4D77F57")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.232 -0400", hash_original_field = "8D5FC32AC7506D2C0AC6949566E3BBE2", hash_generated_field = "28D90C4A539A5E5930C5B1B3C4D77F57")
 
     protected String contentEncoding;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.247 -0400", hash_original_method = "AF3A83AEFF326F1AB1D055130F5C4343", hash_generated_method = "484568D4CE2DAF62679DC5CF40341916")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.232 -0400", hash_original_method = "AF3A83AEFF326F1AB1D055130F5C4343", hash_generated_method = "484568D4CE2DAF62679DC5CF40341916")
     public  ContentEncoding() {
         super(CONTENT_ENCODING);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.247 -0400", hash_original_method = "4F763B16EA587AFDD37717E0DDC46D04", hash_generated_method = "FE4323D4242D23A5C0F73B251A58E683")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.232 -0400", hash_original_method = "4F763B16EA587AFDD37717E0DDC46D04", hash_generated_method = "FE4323D4242D23A5C0F73B251A58E683")
     public  ContentEncoding(String enc) {
         super(CONTENT_ENCODING);
         contentEncoding = enc;
@@ -27,36 +27,36 @@ public class ContentEncoding extends SIPHeader implements javax.sip.header.Conte
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.247 -0400", hash_original_method = "762501862EB015269BBC405DBBAC5194", hash_generated_method = "CA9D50E0C7061F275FEAB55835FACD60")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.233 -0400", hash_original_method = "762501862EB015269BBC405DBBAC5194", hash_generated_method = "BA26EDC56CDB3D5059467667256DC40F")
     public String encodeBody() {
-String varB77403BF8D1FE544589F5EE718B4AD53_2091267711 =         contentEncoding;
-        varB77403BF8D1FE544589F5EE718B4AD53_2091267711.addTaint(taint);
-        return varB77403BF8D1FE544589F5EE718B4AD53_2091267711;
+String varB77403BF8D1FE544589F5EE718B4AD53_1047715672 =         contentEncoding;
+        varB77403BF8D1FE544589F5EE718B4AD53_1047715672.addTaint(taint);
+        return varB77403BF8D1FE544589F5EE718B4AD53_1047715672;
         // ---------- Original Method ----------
         //return contentEncoding;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.247 -0400", hash_original_method = "13F27076508F7754A69639743C7567EC", hash_generated_method = "9DE7ACA7C3D1F3E5B7CD9AC65272E62F")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.233 -0400", hash_original_method = "13F27076508F7754A69639743C7567EC", hash_generated_method = "B93071657F00148497DD2C0D33B046BF")
     public String getEncoding() {
-String varB77403BF8D1FE544589F5EE718B4AD53_1068949585 =         contentEncoding;
-        varB77403BF8D1FE544589F5EE718B4AD53_1068949585.addTaint(taint);
-        return varB77403BF8D1FE544589F5EE718B4AD53_1068949585;
+String varB77403BF8D1FE544589F5EE718B4AD53_1939077777 =         contentEncoding;
+        varB77403BF8D1FE544589F5EE718B4AD53_1939077777.addTaint(taint);
+        return varB77403BF8D1FE544589F5EE718B4AD53_1939077777;
         // ---------- Original Method ----------
         //return contentEncoding;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.248 -0400", hash_original_method = "250F948E1BF6921E6DE1D81CBA749729", hash_generated_method = "B74F1976F5352CCE44B60702E8F769F1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.233 -0400", hash_original_method = "250F948E1BF6921E6DE1D81CBA749729", hash_generated_method = "6EB923D25B29706303E8CC02C0201946")
     public void setEncoding(String encoding) throws ParseException {
-    if(encoding == null)        
+        if(encoding == null)        
         {
-        NullPointerException var9A42999D50208B50BE32AFF87EB6A8E8_1578938866 = new NullPointerException(
+        NullPointerException var9A42999D50208B50BE32AFF87EB6A8E8_1327361867 = new NullPointerException(
                 "JAIN-SIP Exception, " + " encoding is null");
-        var9A42999D50208B50BE32AFF87EB6A8E8_1578938866.addTaint(taint);
-        throw var9A42999D50208B50BE32AFF87EB6A8E8_1578938866;
+        var9A42999D50208B50BE32AFF87EB6A8E8_1327361867.addTaint(taint);
+        throw var9A42999D50208B50BE32AFF87EB6A8E8_1327361867;
         }
         contentEncoding = encoding;
         // ---------- Original Method ----------
@@ -67,7 +67,7 @@ String varB77403BF8D1FE544589F5EE718B4AD53_1068949585 =         contentEncoding;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.248 -0400", hash_original_field = "75D26B86C4230C10774E429E68B84D0B", hash_generated_field = "A6105BB7D9606B15FED8D5EA58524006")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.233 -0400", hash_original_field = "75D26B86C4230C10774E429E68B84D0B", hash_generated_field = "A6105BB7D9606B15FED8D5EA58524006")
 
     private static final long serialVersionUID = 2034230276579558857L;
 }

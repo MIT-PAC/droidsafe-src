@@ -7,24 +7,24 @@ import droidsafe.runtime.*;
 import android.view.HardwareRenderer;
 
 public class Path {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.655 -0400", hash_original_field = "29624343DB5BC876FA1D9DF3677A6ED3", hash_generated_field = "A385DF57FCDF6BC40C36AC929278C06B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.584 -0400", hash_original_field = "29624343DB5BC876FA1D9DF3677A6ED3", hash_generated_field = "A385DF57FCDF6BC40C36AC929278C06B")
 
     public int mNativePath;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.655 -0400", hash_original_field = "BBB9244AC68A5AE8F6E83F820B224A84", hash_generated_field = "250A69E67387663075BAE4FF6CF576D2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.585 -0400", hash_original_field = "BBB9244AC68A5AE8F6E83F820B224A84", hash_generated_field = "250A69E67387663075BAE4FF6CF576D2")
 
     public boolean isSimplePath = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.655 -0400", hash_original_field = "9E366C78B27FBDD9C0248431A83481D2", hash_generated_field = "407FA9D3A82E310B399E446D54E9EE3E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.585 -0400", hash_original_field = "9E366C78B27FBDD9C0248431A83481D2", hash_generated_field = "407FA9D3A82E310B399E446D54E9EE3E")
 
     public Region rects;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.655 -0400", hash_original_field = "3DEE1FD91D4FA98ABE970571DAF12576", hash_generated_field = "06EEE85B84C90F2AA9425935FBA31565")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.585 -0400", hash_original_field = "3DEE1FD91D4FA98ABE970571DAF12576", hash_generated_field = "06EEE85B84C90F2AA9425935FBA31565")
 
     private boolean mDetectSimplePaths;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.656 -0400", hash_original_field = "539749EABE9BA627327F84BD9DB0990A", hash_generated_field = "DC756050863566DEECE2CF58DA95FC7C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.585 -0400", hash_original_field = "539749EABE9BA627327F84BD9DB0990A", hash_generated_field = "DC756050863566DEECE2CF58DA95FC7C")
 
     private Direction mLastDirection = null;
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.656 -0400", hash_original_method = "E55892E9E32EE58ABA689C884DCC620A", hash_generated_method = "2516288491884B0595FC4CFC8A04A2E0")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.585 -0400", hash_original_method = "E55892E9E32EE58ABA689C884DCC620A", hash_generated_method = "2516288491884B0595FC4CFC8A04A2E0")
     public  Path() {
         mNativePath = init1();
         mDetectSimplePaths = HardwareRenderer.isAvailable();
@@ -34,12 +34,12 @@ public class Path {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.657 -0400", hash_original_method = "75D205ED700EB535C654F75061722DB2", hash_generated_method = "6C76EF4E23B4B68E5688BD1FBBB31DA6")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.585 -0400", hash_original_method = "75D205ED700EB535C654F75061722DB2", hash_generated_method = "6C76EF4E23B4B68E5688BD1FBBB31DA6")
     public  Path(Path src) {
         addTaint(src.getTaint());
         int valNative = 0;
-    if(src != null)        
+        if(src != null)        
         {
             valNative = src.mNativePath;
         } //End block
@@ -55,14 +55,14 @@ public class Path {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.657 -0400", hash_original_method = "2D6F810980DCFBBC547D7B9A11965950", hash_generated_method = "978526E65BEC3CC7CE5B0A38DBAA74FF")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.585 -0400", hash_original_method = "2D6F810980DCFBBC547D7B9A11965950", hash_generated_method = "978526E65BEC3CC7CE5B0A38DBAA74FF")
     public void reset() {
         isSimplePath = true;
-    if(mDetectSimplePaths)        
+        if(mDetectSimplePaths)        
         {
             mLastDirection = null;
-    if(rects != null)            
+            if(rects != null)            
             rects.setEmpty();
         } //End block
         native_reset(mNativePath);
@@ -76,14 +76,14 @@ public class Path {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.658 -0400", hash_original_method = "3CA9EEECBF523F762771968CCD0E129D", hash_generated_method = "0277DBDA0757BDADBEC65F71BF44B0EE")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.586 -0400", hash_original_method = "3CA9EEECBF523F762771968CCD0E129D", hash_generated_method = "0277DBDA0757BDADBEC65F71BF44B0EE")
     public void rewind() {
         isSimplePath = true;
-    if(mDetectSimplePaths)        
+        if(mDetectSimplePaths)        
         {
             mLastDirection = null;
-    if(rects != null)            
+            if(rects != null)            
             rects.setEmpty();
         } //End block
         native_rewind(mNativePath);
@@ -97,10 +97,10 @@ public class Path {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.659 -0400", hash_original_method = "B685542335E97A84BA9D0A3AD0CEB866", hash_generated_method = "7D497A89981C4569C6C9414D14D3AA84")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.586 -0400", hash_original_method = "B685542335E97A84BA9D0A3AD0CEB866", hash_generated_method = "7D497A89981C4569C6C9414D14D3AA84")
     public void set(Path src) {
-    if(this != src)        
+        if(this != src)        
         {
             isSimplePath = src.isSimplePath;
             native_set(mNativePath, src.mNativePath);
@@ -113,19 +113,19 @@ public class Path {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.659 -0400", hash_original_method = "756CBBEFC8F729432A1EDFB10FC9B142", hash_generated_method = "4B1EAE235E1DD82E0E7EB0AE9A9A4D04")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.586 -0400", hash_original_method = "756CBBEFC8F729432A1EDFB10FC9B142", hash_generated_method = "D76153384033580791053893C8886789")
     public FillType getFillType() {
-FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[native_getFillType(mNativePath)];
-        varA25260A40654CCF047769B01502CF7FA_32068267.addTaint(taint);
-        return varA25260A40654CCF047769B01502CF7FA_32068267;
+FillType varA25260A40654CCF047769B01502CF7FA_1356534010 =         sFillTypeArray[native_getFillType(mNativePath)];
+        varA25260A40654CCF047769B01502CF7FA_1356534010.addTaint(taint);
+        return varA25260A40654CCF047769B01502CF7FA_1356534010;
         // ---------- Original Method ----------
         //return sFillTypeArray[native_getFillType(mNativePath)];
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.659 -0400", hash_original_method = "5E380303FA17349F493701662250C5C9", hash_generated_method = "5153C0C8E0DB8CFB15CFE349440F5514")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.586 -0400", hash_original_method = "5E380303FA17349F493701662250C5C9", hash_generated_method = "5153C0C8E0DB8CFB15CFE349440F5514")
     public void setFillType(FillType ft) {
         addTaint(ft.getTaint());
         native_setFillType(mNativePath, ft.nativeInt);
@@ -134,21 +134,21 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.660 -0400", hash_original_method = "659A2CB8B4863836C5C292B196F32903", hash_generated_method = "CBA9EAB1A6B950E0E62FC081CD7764FB")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.586 -0400", hash_original_method = "659A2CB8B4863836C5C292B196F32903", hash_generated_method = "CD34EC78D931F2EFCF55AFBC121032BA")
     public boolean isInverseFillType() {
         final int ft = native_getFillType(mNativePath);
-        boolean var07924B37F89A123629529DC775F22843_1005211457 = ((ft & 2) != 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_922053610 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_922053610;
+        boolean var07924B37F89A123629529DC775F22843_1096565967 = ((ft & 2) != 0);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1767841322 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1767841322;
         // ---------- Original Method ----------
         //final int ft = native_getFillType(mNativePath);
         //return (ft & 2) != 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.660 -0400", hash_original_method = "B0C8497AF8D8E800E41ED12D1C4B68D2", hash_generated_method = "59720BE86F09EC269AE8F1A659A8BB00")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.587 -0400", hash_original_method = "B0C8497AF8D8E800E41ED12D1C4B68D2", hash_generated_method = "59720BE86F09EC269AE8F1A659A8BB00")
     public void toggleInverseFillType() {
         int ft = native_getFillType(mNativePath);
         ft ^= 2;
@@ -160,31 +160,31 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.660 -0400", hash_original_method = "7418BC5D1CF727D38A2258A36F4B5C15", hash_generated_method = "F65BC618D28F21C81EFF0522AEB55686")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.587 -0400", hash_original_method = "7418BC5D1CF727D38A2258A36F4B5C15", hash_generated_method = "36BAA124D7003230F63CB71C051A6EEA")
     public boolean isEmpty() {
-        boolean var12D9D9A45EE7F1929912B2DE78D89304_136159568 = (native_isEmpty(mNativePath));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1190620132 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1190620132;
+        boolean var12D9D9A45EE7F1929912B2DE78D89304_1450614361 = (native_isEmpty(mNativePath));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1293618603 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1293618603;
         // ---------- Original Method ----------
         //return native_isEmpty(mNativePath);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.661 -0400", hash_original_method = "B84E7088610242E6493E719E7ABEF1E6", hash_generated_method = "A5D8F68200CF01586B7380883B77E403")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.587 -0400", hash_original_method = "B84E7088610242E6493E719E7ABEF1E6", hash_generated_method = "753A0BAA9C8104B437A96AB162735979")
     public boolean isRect(RectF rect) {
         addTaint(rect.getTaint());
-        boolean var4BB4DB54F9B146EF8C10C80204B2AADA_420219654 = (native_isRect(mNativePath, rect));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_18451540 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_18451540;
+        boolean var4BB4DB54F9B146EF8C10C80204B2AADA_86887110 = (native_isRect(mNativePath, rect));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_190880877 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_190880877;
         // ---------- Original Method ----------
         //return native_isRect(mNativePath, rect);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.661 -0400", hash_original_method = "72B50A956CBF7B7731470BDB2A5220D2", hash_generated_method = "3A47A381E111EE8853F72FC4FEF2277C")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.587 -0400", hash_original_method = "72B50A956CBF7B7731470BDB2A5220D2", hash_generated_method = "3A47A381E111EE8853F72FC4FEF2277C")
     @SuppressWarnings({"UnusedDeclaration"})
     public void computeBounds(RectF bounds, boolean exact) {
         addTaint(exact);
@@ -195,8 +195,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.661 -0400", hash_original_method = "29BD172EB2F3A7AF9AFA9275279C4F54", hash_generated_method = "AA17543C8EF974775773B602CD5836B8")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.587 -0400", hash_original_method = "29BD172EB2F3A7AF9AFA9275279C4F54", hash_generated_method = "AA17543C8EF974775773B602CD5836B8")
     public void incReserve(int extraPtCount) {
         addTaint(extraPtCount);
         native_incReserve(mNativePath, extraPtCount);
@@ -205,8 +205,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.661 -0400", hash_original_method = "732AD0D6CB11A9ADE203372D23E48872", hash_generated_method = "5E3FE0E9A6DCAADA37294E42EC34265B")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.587 -0400", hash_original_method = "732AD0D6CB11A9ADE203372D23E48872", hash_generated_method = "5E3FE0E9A6DCAADA37294E42EC34265B")
     public void moveTo(float x, float y) {
         addTaint(y);
         addTaint(x);
@@ -216,8 +216,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.662 -0400", hash_original_method = "0933141A2BB19D63525BF81BE900CD97", hash_generated_method = "86D4849953C10E46C3B3EFB1AAC9FF31")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.587 -0400", hash_original_method = "0933141A2BB19D63525BF81BE900CD97", hash_generated_method = "86D4849953C10E46C3B3EFB1AAC9FF31")
     public void rMoveTo(float dx, float dy) {
         addTaint(dy);
         addTaint(dx);
@@ -227,8 +227,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.662 -0400", hash_original_method = "58E5C3E4C7F046934AC91F8FDFBACD2C", hash_generated_method = "E711381256F709BB1DC395E02C6F55C6")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.588 -0400", hash_original_method = "58E5C3E4C7F046934AC91F8FDFBACD2C", hash_generated_method = "E711381256F709BB1DC395E02C6F55C6")
     public void lineTo(float x, float y) {
         addTaint(y);
         addTaint(x);
@@ -240,8 +240,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.663 -0400", hash_original_method = "745591040780C0D8C5D54F59927D5E79", hash_generated_method = "B0F4A45C13B21CE5A918C7C04E97BB69")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.588 -0400", hash_original_method = "745591040780C0D8C5D54F59927D5E79", hash_generated_method = "B0F4A45C13B21CE5A918C7C04E97BB69")
     public void rLineTo(float dx, float dy) {
         addTaint(dy);
         addTaint(dx);
@@ -253,8 +253,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.664 -0400", hash_original_method = "CDE92CD41872F87599E772CCBEB9168F", hash_generated_method = "5684D0CAE9508B5567C7115CA90AF290")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.588 -0400", hash_original_method = "CDE92CD41872F87599E772CCBEB9168F", hash_generated_method = "5684D0CAE9508B5567C7115CA90AF290")
     public void quadTo(float x1, float y1, float x2, float y2) {
         addTaint(y2);
         addTaint(x2);
@@ -268,8 +268,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.664 -0400", hash_original_method = "F0FFAC3AAFD6A3822EB31C31A758C054", hash_generated_method = "68752B3575320259FFB9BF622D3CB16C")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.588 -0400", hash_original_method = "F0FFAC3AAFD6A3822EB31C31A758C054", hash_generated_method = "68752B3575320259FFB9BF622D3CB16C")
     public void rQuadTo(float dx1, float dy1, float dx2, float dy2) {
         addTaint(dy2);
         addTaint(dx2);
@@ -283,8 +283,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.665 -0400", hash_original_method = "680DEAF903653AA5E9334EFF44E1FB26", hash_generated_method = "BC02C6ABB852E92794BAD5E72B816066")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.589 -0400", hash_original_method = "680DEAF903653AA5E9334EFF44E1FB26", hash_generated_method = "BC02C6ABB852E92794BAD5E72B816066")
     public void cubicTo(float x1, float y1, float x2, float y2,
                         float x3, float y3) {
         addTaint(y3);
@@ -301,8 +301,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.666 -0400", hash_original_method = "7CE3D84B1219A8E32E8697E9D54626ED", hash_generated_method = "323668AE55824701820BF3E0DAB7D449")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.589 -0400", hash_original_method = "7CE3D84B1219A8E32E8697E9D54626ED", hash_generated_method = "323668AE55824701820BF3E0DAB7D449")
     public void rCubicTo(float x1, float y1, float x2, float y2,
                          float x3, float y3) {
         addTaint(y3);
@@ -319,8 +319,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.667 -0400", hash_original_method = "FF1AA715D5A76F97289F9771795F5B75", hash_generated_method = "54AF0D4C20924879CBA94E26472DBD41")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.589 -0400", hash_original_method = "FF1AA715D5A76F97289F9771795F5B75", hash_generated_method = "54AF0D4C20924879CBA94E26472DBD41")
     public void arcTo(RectF oval, float startAngle, float sweepAngle,
                       boolean forceMoveTo) {
         addTaint(forceMoveTo);
@@ -335,8 +335,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.668 -0400", hash_original_method = "48B980B599EE39F47888B8590B0311CC", hash_generated_method = "D9D4CB937CAF952B6C029256C3876AFB")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.589 -0400", hash_original_method = "48B980B599EE39F47888B8590B0311CC", hash_generated_method = "D9D4CB937CAF952B6C029256C3876AFB")
     public void arcTo(RectF oval, float startAngle, float sweepAngle) {
         addTaint(sweepAngle);
         addTaint(startAngle);
@@ -349,8 +349,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.669 -0400", hash_original_method = "E16C5D29E703AEBAB6CAF17A68A08F6B", hash_generated_method = "34D9621BE529F6E4B1748728F71F3FA6")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.590 -0400", hash_original_method = "E16C5D29E703AEBAB6CAF17A68A08F6B", hash_generated_method = "34D9621BE529F6E4B1748728F71F3FA6")
     public void close() {
         isSimplePath = false;
         native_close(mNativePath);
@@ -360,26 +360,26 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.670 -0400", hash_original_method = "4C4C77916FAC7E47D84337BC4A27AFDA", hash_generated_method = "03C3F9106318D79761CADDE43B31F645")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.590 -0400", hash_original_method = "4C4C77916FAC7E47D84337BC4A27AFDA", hash_generated_method = "03C3F9106318D79761CADDE43B31F645")
     private void detectSimplePath(float left, float top, float right, float bottom, Direction dir) {
         addTaint(bottom);
         addTaint(right);
         addTaint(top);
         addTaint(left);
-    if(mDetectSimplePaths)        
+        if(mDetectSimplePaths)        
         {
-    if(mLastDirection == null)            
+            if(mLastDirection == null)            
             {
                 mLastDirection = dir;
             } //End block
-    if(mLastDirection != dir)            
+            if(mLastDirection != dir)            
             {
                 isSimplePath = false;
             } //End block
             else
             {
-    if(rects == null)                
+                if(rects == null)                
                 rects = new Region();
                 rects.op((int) left, (int) top, (int) right, (int) bottom, Region.Op.UNION);
             } //End block
@@ -399,16 +399,16 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.671 -0400", hash_original_method = "4612527F52EC9CC57646B58789A81A83", hash_generated_method = "FA6CCC43EB74EEF96087E62D60750C9F")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.590 -0400", hash_original_method = "4612527F52EC9CC57646B58789A81A83", hash_generated_method = "B3EA38698AE637E606001063D79E4D52")
     public void addRect(RectF rect, Direction dir) {
         addTaint(dir.getTaint());
         addTaint(rect.getTaint());
-    if(rect == null)        
+        if(rect == null)        
         {
-            NullPointerException var20101AB4A823166AB07098470945D92B_1156761511 = new NullPointerException("need rect parameter");
-            var20101AB4A823166AB07098470945D92B_1156761511.addTaint(taint);
-            throw var20101AB4A823166AB07098470945D92B_1156761511;
+            NullPointerException var20101AB4A823166AB07098470945D92B_359571527 = new NullPointerException("need rect parameter");
+            var20101AB4A823166AB07098470945D92B_359571527.addTaint(taint);
+            throw var20101AB4A823166AB07098470945D92B_359571527;
         } //End block
         detectSimplePath(rect.left, rect.top, rect.right, rect.bottom, dir);
         native_addRect(mNativePath, rect, dir.nativeInt);
@@ -421,8 +421,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.672 -0400", hash_original_method = "B728DA55BB20CAF41F04A8721ACC9EB9", hash_generated_method = "559F11D2D375098B2B96A43B90DAF8A4")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.590 -0400", hash_original_method = "B728DA55BB20CAF41F04A8721ACC9EB9", hash_generated_method = "559F11D2D375098B2B96A43B90DAF8A4")
     public void addRect(float left, float top, float right, float bottom, Direction dir) {
         addTaint(dir.getTaint());
         addTaint(bottom);
@@ -437,16 +437,16 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.672 -0400", hash_original_method = "A39723146C675E0E04F715D6E89297CC", hash_generated_method = "81331B3F8F7774739AA13744AF57F380")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.591 -0400", hash_original_method = "A39723146C675E0E04F715D6E89297CC", hash_generated_method = "DEC05F3E93DCD639297D45B9C37078ED")
     public void addOval(RectF oval, Direction dir) {
         addTaint(dir.getTaint());
         addTaint(oval.getTaint());
-    if(oval == null)        
+        if(oval == null)        
         {
-            NullPointerException varE99607B1E8C84849DE34B3C387B9CCD7_1708625475 = new NullPointerException("need oval parameter");
-            varE99607B1E8C84849DE34B3C387B9CCD7_1708625475.addTaint(taint);
-            throw varE99607B1E8C84849DE34B3C387B9CCD7_1708625475;
+            NullPointerException varE99607B1E8C84849DE34B3C387B9CCD7_2145235769 = new NullPointerException("need oval parameter");
+            varE99607B1E8C84849DE34B3C387B9CCD7_2145235769.addTaint(taint);
+            throw varE99607B1E8C84849DE34B3C387B9CCD7_2145235769;
         } //End block
         isSimplePath = false;
         native_addOval(mNativePath, oval, dir.nativeInt);
@@ -459,8 +459,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.673 -0400", hash_original_method = "7256751168A905EF802B1EFF88D64306", hash_generated_method = "F2A09A2C2F64536729469E3C4A005381")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.591 -0400", hash_original_method = "7256751168A905EF802B1EFF88D64306", hash_generated_method = "F2A09A2C2F64536729469E3C4A005381")
     public void addCircle(float x, float y, float radius, Direction dir) {
         addTaint(dir.getTaint());
         addTaint(radius);
@@ -474,17 +474,17 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.674 -0400", hash_original_method = "BDC1F894C327354FF6BC9BE2A0106898", hash_generated_method = "5E4E0F332003C54C055DC41373CF91E0")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.591 -0400", hash_original_method = "BDC1F894C327354FF6BC9BE2A0106898", hash_generated_method = "ADB0078587C6E010DBCF77AF991B247E")
     public void addArc(RectF oval, float startAngle, float sweepAngle) {
         addTaint(sweepAngle);
         addTaint(startAngle);
         addTaint(oval.getTaint());
-    if(oval == null)        
+        if(oval == null)        
         {
-            NullPointerException varE99607B1E8C84849DE34B3C387B9CCD7_1348242510 = new NullPointerException("need oval parameter");
-            varE99607B1E8C84849DE34B3C387B9CCD7_1348242510.addTaint(taint);
-            throw varE99607B1E8C84849DE34B3C387B9CCD7_1348242510;
+            NullPointerException varE99607B1E8C84849DE34B3C387B9CCD7_2073987351 = new NullPointerException("need oval parameter");
+            varE99607B1E8C84849DE34B3C387B9CCD7_2073987351.addTaint(taint);
+            throw varE99607B1E8C84849DE34B3C387B9CCD7_2073987351;
         } //End block
         isSimplePath = false;
         native_addArc(mNativePath, oval, startAngle, sweepAngle);
@@ -497,18 +497,18 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.675 -0400", hash_original_method = "3ECD815B6409768DB15813B06CD42DD5", hash_generated_method = "5E15C7CEB52DFB503BC7B769C1869C9F")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.591 -0400", hash_original_method = "3ECD815B6409768DB15813B06CD42DD5", hash_generated_method = "386513203B515B425EC6B5764F1E2949")
     public void addRoundRect(RectF rect, float rx, float ry, Direction dir) {
         addTaint(dir.getTaint());
         addTaint(ry);
         addTaint(rx);
         addTaint(rect.getTaint());
-    if(rect == null)        
+        if(rect == null)        
         {
-            NullPointerException var20101AB4A823166AB07098470945D92B_2103052673 = new NullPointerException("need rect parameter");
-            var20101AB4A823166AB07098470945D92B_2103052673.addTaint(taint);
-            throw var20101AB4A823166AB07098470945D92B_2103052673;
+            NullPointerException var20101AB4A823166AB07098470945D92B_1077433015 = new NullPointerException("need rect parameter");
+            var20101AB4A823166AB07098470945D92B_1077433015.addTaint(taint);
+            throw var20101AB4A823166AB07098470945D92B_1077433015;
         } //End block
         isSimplePath = false;
         native_addRoundRect(mNativePath, rect, rx, ry, dir.nativeInt);
@@ -521,23 +521,23 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.677 -0400", hash_original_method = "543113738AC73676270E7FCF210EDB1F", hash_generated_method = "8D51203269D2E66B3C6974238299786B")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.592 -0400", hash_original_method = "543113738AC73676270E7FCF210EDB1F", hash_generated_method = "19D0823779661924E679A463BA8C4034")
     public void addRoundRect(RectF rect, float[] radii, Direction dir) {
         addTaint(dir.getTaint());
         addTaint(radii[0]);
         addTaint(rect.getTaint());
-    if(rect == null)        
+        if(rect == null)        
         {
-            NullPointerException var20101AB4A823166AB07098470945D92B_1696087912 = new NullPointerException("need rect parameter");
-            var20101AB4A823166AB07098470945D92B_1696087912.addTaint(taint);
-            throw var20101AB4A823166AB07098470945D92B_1696087912;
+            NullPointerException var20101AB4A823166AB07098470945D92B_1536851097 = new NullPointerException("need rect parameter");
+            var20101AB4A823166AB07098470945D92B_1536851097.addTaint(taint);
+            throw var20101AB4A823166AB07098470945D92B_1536851097;
         } //End block
-    if(radii.length < 8)        
+        if(radii.length < 8)        
         {
-            ArrayIndexOutOfBoundsException var418E46122F39025F32A1446196BF386E_1685978337 = new ArrayIndexOutOfBoundsException("radii[] needs 8 values");
-            var418E46122F39025F32A1446196BF386E_1685978337.addTaint(taint);
-            throw var418E46122F39025F32A1446196BF386E_1685978337;
+            ArrayIndexOutOfBoundsException var418E46122F39025F32A1446196BF386E_128505050 = new ArrayIndexOutOfBoundsException("radii[] needs 8 values");
+            var418E46122F39025F32A1446196BF386E_128505050.addTaint(taint);
+            throw var418E46122F39025F32A1446196BF386E_128505050;
         } //End block
         isSimplePath = false;
         native_addRoundRect(mNativePath, rect, radii, dir.nativeInt);
@@ -553,8 +553,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.679 -0400", hash_original_method = "E4CA114D3203375891711738ECF0A722", hash_generated_method = "069850A6C6E425EFBC502F4F9F0088BA")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.592 -0400", hash_original_method = "E4CA114D3203375891711738ECF0A722", hash_generated_method = "069850A6C6E425EFBC502F4F9F0088BA")
     public void addPath(Path src, float dx, float dy) {
         addTaint(dy);
         addTaint(dx);
@@ -567,8 +567,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.680 -0400", hash_original_method = "543B497D09485FEEC00989CA21E8A572", hash_generated_method = "32E1AC3D8B750CF29A4A5DB44E3F3CCC")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.592 -0400", hash_original_method = "543B497D09485FEEC00989CA21E8A572", hash_generated_method = "32E1AC3D8B750CF29A4A5DB44E3F3CCC")
     public void addPath(Path src) {
         addTaint(src.getTaint());
         isSimplePath = false;
@@ -579,12 +579,12 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.681 -0400", hash_original_method = "D7DB7FC66FA71E8C80EBAD3AE821E2C4", hash_generated_method = "0E67C22A086AF65F7F98160704149241")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.592 -0400", hash_original_method = "D7DB7FC66FA71E8C80EBAD3AE821E2C4", hash_generated_method = "0E67C22A086AF65F7F98160704149241")
     public void addPath(Path src, Matrix matrix) {
         addTaint(matrix.getTaint());
         addTaint(src.getTaint());
-    if(!src.isSimplePath)        
+        if(!src.isSimplePath)        
         isSimplePath = false;
         native_addPath(mNativePath, src.mNativePath, matrix.native_instance);
         // ---------- Original Method ----------
@@ -593,14 +593,14 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.682 -0400", hash_original_method = "300271373C98AD70F0D1DFEC9CC1821E", hash_generated_method = "EC2162628929B3CA8A98F48DFDE954E6")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.593 -0400", hash_original_method = "300271373C98AD70F0D1DFEC9CC1821E", hash_generated_method = "EC2162628929B3CA8A98F48DFDE954E6")
     public void offset(float dx, float dy, Path dst) {
         addTaint(dst.getTaint());
         addTaint(dy);
         addTaint(dx);
         int dstNative = 0;
-    if(dst != null)        
+        if(dst != null)        
         {
             dstNative = dst.mNativePath;
         } //End block
@@ -614,8 +614,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.682 -0400", hash_original_method = "84AAB7006BE97BBDBF66CEB78BE6403B", hash_generated_method = "C7EF102895276FAC7172DEBA45A68C3D")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.593 -0400", hash_original_method = "84AAB7006BE97BBDBF66CEB78BE6403B", hash_generated_method = "C7EF102895276FAC7172DEBA45A68C3D")
     public void offset(float dx, float dy) {
         addTaint(dy);
         addTaint(dx);
@@ -625,8 +625,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.683 -0400", hash_original_method = "DE0F6A19984A9351DC908B14944CEA04", hash_generated_method = "C747E9F1D81C86765EAF8DF7406059B5")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.593 -0400", hash_original_method = "DE0F6A19984A9351DC908B14944CEA04", hash_generated_method = "C747E9F1D81C86765EAF8DF7406059B5")
     public void setLastPoint(float dx, float dy) {
         addTaint(dy);
         addTaint(dx);
@@ -638,13 +638,13 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.684 -0400", hash_original_method = "C6EADCEB56E45A061E81B3D824529855", hash_generated_method = "3C623C0C76397DD9E82AFB048C23EF95")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.594 -0400", hash_original_method = "C6EADCEB56E45A061E81B3D824529855", hash_generated_method = "3C623C0C76397DD9E82AFB048C23EF95")
     public void transform(Matrix matrix, Path dst) {
         addTaint(dst.getTaint());
         addTaint(matrix.getTaint());
         int dstNative = 0;
-    if(dst != null)        
+        if(dst != null)        
         {
             dstNative = dst.mNativePath;
         } //End block
@@ -658,8 +658,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.684 -0400", hash_original_method = "E2E9E79308A321DB0305128A17F8E66B", hash_generated_method = "1817257E491253CE81C196BBE55DD424")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.594 -0400", hash_original_method = "E2E9E79308A321DB0305128A17F8E66B", hash_generated_method = "1817257E491253CE81C196BBE55DD424")
     public void transform(Matrix matrix) {
         addTaint(matrix.getTaint());
         native_transform(mNativePath, matrix.native_instance);
@@ -668,8 +668,8 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.685 -0400", hash_original_method = "F7200B02D28E5C321C9E159FC014E915", hash_generated_method = "B63DF27303A34F6912C29DAE9DF797C8")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.594 -0400", hash_original_method = "F7200B02D28E5C321C9E159FC014E915", hash_generated_method = "B63DF27303A34F6912C29DAE9DF797C8")
     protected void finalize() throws Throwable {
         try 
         {
@@ -688,11 +688,11 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.685 -0400", hash_original_method = "A7A62D46D1AC389C59E8D1EF0EC6AB35", hash_generated_method = "FF6AC127F21A0D691A31E3950A6A3C70")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.594 -0400", hash_original_method = "A7A62D46D1AC389C59E8D1EF0EC6AB35", hash_generated_method = "2601AA401F33456BBC830585809D0647")
     final int ni() {
-        int var29624343DB5BC876FA1D9DF3677A6ED3_1019024410 = (mNativePath);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1719878540 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1719878540;
+        int var29624343DB5BC876FA1D9DF3677A6ED3_2035467395 = (mNativePath);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_476711246 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_476711246;
         // ---------- Original Method ----------
         //return mNativePath;
     }
@@ -906,7 +906,6 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
         EVEN_ODD        (1),
         INVERSE_WINDING (2),
         INVERSE_EVEN_ODD(3);
-        @DSModeled(DSC.SAFE)
         FillType(int ni) {
             nativeInt = ni;
         }
@@ -917,7 +916,6 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     public enum Direction {
         CW  (0),    
         CCW (1);    
-        @DSModeled(DSC.SAFE)
         Direction(int ni) {
             nativeInt = ni;
         }
@@ -925,7 +923,7 @@ FillType varA25260A40654CCF047769B01502CF7FA_32068267 =         sFillTypeArray[n
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.699 -0400", hash_original_field = "B19F48D0AF5FF74743B0986B97B54BD5", hash_generated_field = "66C300B8D77E06A5BCE8FE4DD0DAFB70")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.606 -0400", hash_original_field = "B19F48D0AF5FF74743B0986B97B54BD5", hash_generated_field = "66C300B8D77E06A5BCE8FE4DD0DAFB70")
 
     static final FillType[] sFillTypeArray = {
         FillType.WINDING,

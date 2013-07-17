@@ -10,8 +10,8 @@ import gov.nist.javax.sip.header.*;
 
 public class RequestLineParser extends Parser {
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.652 -0400", hash_original_method = "9E54F2AF74A618ACEB8F17B65C16A48F", hash_generated_method = "FB8FE551FA5D181ADCB5FE9C481BD6ED")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.546 -0400", hash_original_method = "9E54F2AF74A618ACEB8F17B65C16A48F", hash_generated_method = "FB8FE551FA5D181ADCB5FE9C481BD6ED")
     public  RequestLineParser(String requestLine) {
         addTaint(requestLine.getTaint());
         this.lexer = new Lexer("method_keywordLexer", requestLine);
@@ -20,8 +20,8 @@ public class RequestLineParser extends Parser {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.653 -0400", hash_original_method = "A6666834E60C7B51DE2E6BABDAF9B193", hash_generated_method = "219D76BC983E87B19D174293804330B6")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.547 -0400", hash_original_method = "A6666834E60C7B51DE2E6BABDAF9B193", hash_generated_method = "219D76BC983E87B19D174293804330B6")
     public  RequestLineParser(Lexer lexer) {
         addTaint(lexer.getTaint());
         this.lexer = lexer;
@@ -32,10 +32,10 @@ public class RequestLineParser extends Parser {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.655 -0400", hash_original_method = "3F5CD164E270AAF338C0D4B97DF78E19", hash_generated_method = "818E255CAF929F559386CB4FABB3CB21")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.549 -0400", hash_original_method = "3F5CD164E270AAF338C0D4B97DF78E19", hash_generated_method = "1499F00D9A76D57C02C0C877E606EC26")
     public RequestLine parse() throws ParseException {
-    if(debug)        
+        if(debug)        
         dbg_enter("parse");
         try 
         {
@@ -53,13 +53,13 @@ public class RequestLineParser extends Parser {
             retval.setSipVersion(v);
             lexer.SPorHT();
             lexer.match('\n');
-RequestLine varF9E19AD6135C970F387F77C6F3DE4477_1977756574 =             retval;
-            varF9E19AD6135C970F387F77C6F3DE4477_1977756574.addTaint(taint);
-            return varF9E19AD6135C970F387F77C6F3DE4477_1977756574;
+RequestLine varF9E19AD6135C970F387F77C6F3DE4477_1840565442 =             retval;
+            varF9E19AD6135C970F387F77C6F3DE4477_1840565442.addTaint(taint);
+            return varF9E19AD6135C970F387F77C6F3DE4477_1840565442;
         } //End block
         finally 
         {
-    if(debug)            
+            if(debug)            
             dbg_leave("parse");
         } //End block
         // ---------- Original Method ----------
@@ -88,7 +88,7 @@ RequestLine varF9E19AD6135C970F387F77C6F3DE4477_1977756574 =             retval;
     }
 
     
-        public static void main(String args[]) throws ParseException {
+    public static void main(String args[]) throws ParseException {
         String requestLines[] = {
                 "REGISTER sip:192.168.0.68 SIP/2.0\n",
                 "REGISTER sip:company.com SIP/2.0\n",

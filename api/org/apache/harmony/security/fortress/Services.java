@@ -14,14 +14,14 @@ import java.util.Map;
 
 public class Services {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.090 -0400", hash_original_method = "719D73AD00F3F6FC30282996B569C5B0", hash_generated_method = "719D73AD00F3F6FC30282996B569C5B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.030 -0400", hash_original_method = "719D73AD00F3F6FC30282996B569C5B0", hash_generated_method = "719D73AD00F3F6FC30282996B569C5B0")
     public Services ()
     {
         //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     private static void loadProviders() {
         String providerClassName = null;
         int i = 1;
@@ -45,18 +45,18 @@ public class Services {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static Provider[] getProviders() {
         return providers.toArray(new Provider[providers.size()]);
     }
 
     
-        public static List<Provider> getProvidersList() {
+    public static List<Provider> getProvidersList() {
         return new ArrayList<Provider>(providers);
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static Provider getProvider(String name) {
         if (name == null) {
             return null;
@@ -65,7 +65,7 @@ public class Services {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static int insertProviderAt(Provider provider, int position) {
         int size = providers.size();
         if ((position < 1) || (position > size)) {
@@ -78,7 +78,7 @@ public class Services {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static void removeProvider(int providerNumber) {
         Provider p = providers.remove(providerNumber - 1);
         providersNames.remove(p.getName());
@@ -86,7 +86,7 @@ public class Services {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static void initServiceInfo(Provider p) {
         for (Provider.Service serv : p.getServices()) {
             String type = serv.getType();
@@ -107,7 +107,7 @@ public class Services {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static void updateServiceInfo() {
         services.clear();
         secureRandom = null;
@@ -118,30 +118,30 @@ public class Services {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static boolean isEmpty() {
         return services.isEmpty();
     }
 
     
-        public static Provider.Service getService(String key) {
+    public static Provider.Service getService(String key) {
         return services.get(key);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static Provider.Service getSecureRandomService() {
         return secureRandom;
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void setNeedRefresh() {
         needRefresh = true;
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static void refresh() {
         if (needRefresh) {
             refreshNumber++;
@@ -150,22 +150,22 @@ public class Services {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.093 -0400", hash_original_field = "D8D0A2D1EC47DC8C7B79D750C2B9003F", hash_generated_field = "4436E90DA2FD51C4017B6FFF3C234299")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.033 -0400", hash_original_field = "D8D0A2D1EC47DC8C7B79D750C2B9003F", hash_generated_field = "4436E90DA2FD51C4017B6FFF3C234299")
 
     private static final Map<String, Provider.Service> services = new HashMap<String, Provider.Service>(600);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.093 -0400", hash_original_field = "7A369DC18E63D8C3EA510B9B660A072D", hash_generated_field = "26B31BC298C6961DC97AEDA887767040")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.033 -0400", hash_original_field = "7A369DC18E63D8C3EA510B9B660A072D", hash_generated_field = "26B31BC298C6961DC97AEDA887767040")
 
     private static Provider.Service secureRandom;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.093 -0400", hash_original_field = "BF6A04D9D455D227547E0462114A9DDA", hash_generated_field = "C6172C74BF02D5F0ECE4932F6F8B1A6B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.033 -0400", hash_original_field = "BF6A04D9D455D227547E0462114A9DDA", hash_generated_field = "C6172C74BF02D5F0ECE4932F6F8B1A6B")
 
     private static boolean needRefresh;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.093 -0400", hash_original_field = "BFABA1F9DDCCD1015B660402467D46E3", hash_generated_field = "3C3CAE17DC7A09A348AAAF9335F2BAEB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.033 -0400", hash_original_field = "BFABA1F9DDCCD1015B660402467D46E3", hash_generated_field = "3C3CAE17DC7A09A348AAAF9335F2BAEB")
 
     static int refreshNumber = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.094 -0400", hash_original_field = "8FD27C6FD4C1AB33EB50B652D92371E9", hash_generated_field = "6992D9625D8447117993A67702566D3A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.033 -0400", hash_original_field = "8FD27C6FD4C1AB33EB50B652D92371E9", hash_generated_field = "6992D9625D8447117993A67702566D3A")
 
     private static final List<Provider> providers = new ArrayList<Provider>(20);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.094 -0400", hash_original_field = "F2254891D7AEE8429397AAC3863B565A", hash_generated_field = "D71751A222777AE8A346CE3A9755FFCA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.034 -0400", hash_original_field = "F2254891D7AEE8429397AAC3863B565A", hash_generated_field = "D71751A222777AE8A346CE3A9755FFCA")
 
     private static final Map<String, Provider> providersNames = new HashMap<String, Provider>(20);
     static {

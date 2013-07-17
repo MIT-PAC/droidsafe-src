@@ -11,31 +11,31 @@ import java.text.ParseException;
 import java.io.*;
 
 public final class PipelinedMsgParser implements Runnable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.433 -0400", hash_original_field = "0BFCB22B0FA3021CB632B75985A84AE3", hash_generated_field = "E951DA693006702904D44903EC071300")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.302 -0400", hash_original_field = "0BFCB22B0FA3021CB632B75985A84AE3", hash_generated_field = "E951DA693006702904D44903EC071300")
 
     protected SIPMessageListener sipMessageListener;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.433 -0400", hash_original_field = "9842605C72E3BC73DA5398CE4B5EB840", hash_generated_field = "8890F3B68DD2F65EEDEBEEF6284B3EE1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.302 -0400", hash_original_field = "9842605C72E3BC73DA5398CE4B5EB840", hash_generated_field = "8890F3B68DD2F65EEDEBEEF6284B3EE1")
 
     private Thread mythread;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.433 -0400", hash_original_field = "2759837858165AEB83DF72AAAD1EDF36", hash_generated_field = "EE0974413FD18213D1855469CB35ED3B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.302 -0400", hash_original_field = "2759837858165AEB83DF72AAAD1EDF36", hash_generated_field = "EE0974413FD18213D1855469CB35ED3B")
 
     private Pipeline rawInputStream;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.433 -0400", hash_original_field = "BF1B271FFDC69F10249067CA74EC9584", hash_generated_field = "6056A74FE8111EC12B2D46373C91E6E1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.302 -0400", hash_original_field = "BF1B271FFDC69F10249067CA74EC9584", hash_generated_field = "6056A74FE8111EC12B2D46373C91E6E1")
 
     private int maxMessageSize;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.433 -0400", hash_original_field = "00E1B751A8E3E1D3B531BBBCD4E40948", hash_generated_field = "87B02180527F6273015739A99F276EBD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.302 -0400", hash_original_field = "00E1B751A8E3E1D3B531BBBCD4E40948", hash_generated_field = "87B02180527F6273015739A99F276EBD")
 
     private int sizeCounter;
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.434 -0400", hash_original_method = "E22CE959BAB24F19C875E84872180E07", hash_generated_method = "362C6A06EBFCC475DC7BD25EA8D59893")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.303 -0400", hash_original_method = "E22CE959BAB24F19C875E84872180E07", hash_generated_method = "362C6A06EBFCC475DC7BD25EA8D59893")
     protected  PipelinedMsgParser() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.435 -0400", hash_original_method = "A3AB807F1456A67D8271D731B6987080", hash_generated_method = "BD9DE796F5D2FEC781FD56D51A7F9912")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.304 -0400", hash_original_method = "A3AB807F1456A67D8271D731B6987080", hash_generated_method = "BD9DE796F5D2FEC781FD56D51A7F9912")
     public  PipelinedMsgParser(SIPMessageListener sipMessageListener,
             Pipeline in, boolean debug, int maxMessageSize) {
         this();
@@ -54,7 +54,7 @@ public final class PipelinedMsgParser implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.436 -0400", hash_original_method = "BDF51C7E7DDD69BD9B7D7DBBB57B9FF1", hash_generated_method = "221A6DCBA2C7DAFFC85ECEE9ADDCFEE7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.305 -0400", hash_original_method = "BDF51C7E7DDD69BD9B7D7DBBB57B9FF1", hash_generated_method = "221A6DCBA2C7DAFFC85ECEE9ADDCFEE7")
     public  PipelinedMsgParser(SIPMessageListener mhandler, Pipeline in,
             int maxMsgSize) {
         this(mhandler, in, false, maxMsgSize);
@@ -65,7 +65,7 @@ public final class PipelinedMsgParser implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.437 -0400", hash_original_method = "748DD8A3EFE43FF431548555AB3BE25D", hash_generated_method = "3038AA5B53537C11A13D7FA6558B7FA2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.305 -0400", hash_original_method = "748DD8A3EFE43FF431548555AB3BE25D", hash_generated_method = "3038AA5B53537C11A13D7FA6558B7FA2")
     public  PipelinedMsgParser(Pipeline in) {
         this(null, in, false, 0);
         addTaint(in.getTaint());
@@ -73,14 +73,14 @@ public final class PipelinedMsgParser implements Runnable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static synchronized int getNewUid() {
         return uid++;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.438 -0400", hash_original_method = "AFB6FAED7CE2C798D2C88DCB60C1E3BA", hash_generated_method = "5A7C2DED95E3A949F3D0D6A47527D147")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.306 -0400", hash_original_method = "AFB6FAED7CE2C798D2C88DCB60C1E3BA", hash_generated_method = "5A7C2DED95E3A949F3D0D6A47527D147")
     public void processInput() {
         mythread.start();
         // ---------- Original Method ----------
@@ -88,17 +88,17 @@ public final class PipelinedMsgParser implements Runnable {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.439 -0400", hash_original_method = "7B58421AA7682D1CD65CE1288FB2F0E9", hash_generated_method = "D0EF6DB3757C5769542AB4550A799B66")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.308 -0400", hash_original_method = "7B58421AA7682D1CD65CE1288FB2F0E9", hash_generated_method = "6795FC094AAF471ABF770F09C3B7DBE6")
     protected Object clone() {
         PipelinedMsgParser p = new PipelinedMsgParser();
         p.rawInputStream = this.rawInputStream;
         p.sipMessageListener = this.sipMessageListener;
         Thread mythread = new Thread(p);
         mythread.setName("PipelineThread");
-Object var74E4690D9F2A026504928C017944E149_1052112470 =         p;
-        var74E4690D9F2A026504928C017944E149_1052112470.addTaint(taint);
-        return var74E4690D9F2A026504928C017944E149_1052112470;
+Object var74E4690D9F2A026504928C017944E149_149281408 =         p;
+        var74E4690D9F2A026504928C017944E149_149281408.addTaint(taint);
+        return var74E4690D9F2A026504928C017944E149_149281408;
         // ---------- Original Method ----------
         //PipelinedMsgParser p = new PipelinedMsgParser();
         //p.rawInputStream = this.rawInputStream;
@@ -109,8 +109,8 @@ Object var74E4690D9F2A026504928C017944E149_1052112470 =         p;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.440 -0400", hash_original_method = "AE1DFBE29C50512ACC863FBFFDC539ED", hash_generated_method = "853BB09F699662204A7FAC41D98CD659")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.309 -0400", hash_original_method = "AE1DFBE29C50512ACC863FBFFDC539ED", hash_generated_method = "853BB09F699662204A7FAC41D98CD659")
     public void setMessageListener(SIPMessageListener mlistener) {
         sipMessageListener = mlistener;
         // ---------- Original Method ----------
@@ -118,7 +118,7 @@ Object var74E4690D9F2A026504928C017944E149_1052112470 =         p;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.440 -0400", hash_original_method = "CA26412E58B11F2830D7673D2CC5E1EF", hash_generated_method = "B40505A96BB12C347FA43FFD9FEA30D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.310 -0400", hash_original_method = "CA26412E58B11F2830D7673D2CC5E1EF", hash_generated_method = "9F7A26902C941701466974C623B38E65")
     private String readLine(InputStream inputStream) throws IOException {
         addTaint(inputStream.getTaint());
         StringBuffer retval = new StringBuffer("");
@@ -127,34 +127,34 @@ Object var74E4690D9F2A026504928C017944E149_1052112470 =         p;
         {
             char ch;
             int i = inputStream.read();
-    if(i == -1)            
+            if(i == -1)            
             {
-                IOException varC66D24A26061D49450FA56EB3E7BB066_582528756 = new IOException("End of stream");
-                varC66D24A26061D49450FA56EB3E7BB066_582528756.addTaint(taint);
-                throw varC66D24A26061D49450FA56EB3E7BB066_582528756;
+                IOException varC66D24A26061D49450FA56EB3E7BB066_1606266054 = new IOException("End of stream");
+                varC66D24A26061D49450FA56EB3E7BB066_1606266054.addTaint(taint);
+                throw varC66D24A26061D49450FA56EB3E7BB066_1606266054;
             } //End block
             else
             ch = (char) i;
-    if(this.maxMessageSize > 0)            
+            if(this.maxMessageSize > 0)            
             {
                 this.sizeCounter--;
-    if(this.sizeCounter <= 0)                
+                if(this.sizeCounter <= 0)                
                 {
-                IOException var2096C78080BB34E8F80BA52B746DF290_1492702578 = new IOException("Max size exceeded!");
-                var2096C78080BB34E8F80BA52B746DF290_1492702578.addTaint(taint);
-                throw var2096C78080BB34E8F80BA52B746DF290_1492702578;
+                IOException var2096C78080BB34E8F80BA52B746DF290_201323919 = new IOException("Max size exceeded!");
+                var2096C78080BB34E8F80BA52B746DF290_201323919.addTaint(taint);
+                throw var2096C78080BB34E8F80BA52B746DF290_201323919;
                 }
             } //End block
-    if(ch != '\r')            
+            if(ch != '\r')            
             retval.append(ch);
-    if(ch == '\n')            
+            if(ch == '\n')            
             {
                 break;
             } //End block
         } //End block
-String var1B324365A764C077A55854483509F4AB_1835986132 =         retval.toString();
-        var1B324365A764C077A55854483509F4AB_1835986132.addTaint(taint);
-        return var1B324365A764C077A55854483509F4AB_1835986132;
+String var1B324365A764C077A55854483509F4AB_267726068 =         retval.toString();
+        var1B324365A764C077A55854483509F4AB_267726068.addTaint(taint);
+        return var1B324365A764C077A55854483509F4AB_267726068;
         // ---------- Original Method ----------
         //StringBuffer retval = new StringBuffer("");
         //while (true) {
@@ -179,7 +179,7 @@ String var1B324365A764C077A55854483509F4AB_1835986132 =         retval.toString(
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.444 -0400", hash_original_method = "4591706E6DAAE4ED54EAE930623099BB", hash_generated_method = "FDA85F84C593795ED1A4189CAB96ACDF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.314 -0400", hash_original_method = "4591706E6DAAE4ED54EAE930623099BB", hash_generated_method = "FDA85F84C593795ED1A4189CAB96ACDF")
     public void run() {
         Pipeline inputStream = this.rawInputStream;
         try 
@@ -189,7 +189,7 @@ String var1B324365A764C077A55854483509F4AB_1835986132 =         retval.toString(
             {
                 this.sizeCounter = this.maxMessageSize;
                 StringBuffer inputBuffer = new StringBuffer();
-    if(Debug.parserDebug)                
+                if(Debug.parserDebug)                
                 Debug.println("Starting parse!");
                 String line1;
                 String line2 = null;
@@ -199,9 +199,9 @@ String var1B324365A764C077A55854483509F4AB_1835986132 =         retval.toString(
                     try 
                     {
                         line1 = readLine(inputStream);
-    if(line1.equals("\n"))                        
+                        if(line1.equals("\n"))                        
                         {
-    if(Debug.parserDebug)                            
+                            if(Debug.parserDebug)                            
                             {
                                 Debug.println("Discarding blank line. ");
                             } //End block
@@ -227,7 +227,7 @@ String var1B324365A764C077A55854483509F4AB_1835986132 =         retval.toString(
                     {
                         line2 = readLine(inputStream);
                         inputBuffer.append(line2);
-    if(line2.trim().equals(""))                        
+                        if(line2.trim().equals(""))                        
                         break;
                     } //End block
                     catch (IOException ex)
@@ -244,12 +244,12 @@ String var1B324365A764C077A55854483509F4AB_1835986132 =         retval.toString(
                 SIPMessage sipMessage = null;
                 try 
                 {
-    if(Debug.debug)                    
+                    if(Debug.debug)                    
                     {
                         Debug.println("About to parse : " + inputBuffer.toString());
                     } //End block
                     sipMessage = smp.parseSIPMessage(inputBuffer.toString());
-    if(sipMessage == null)                    
+                    if(sipMessage == null)                    
                     {
                         this.rawInputStream.stopTimer();
                         continue;
@@ -260,14 +260,14 @@ String var1B324365A764C077A55854483509F4AB_1835986132 =         retval.toString(
                     Debug.logError("Detected a parse error", ex);
                     continue;
                 } //End block
-    if(Debug.debug)                
+                if(Debug.debug)                
                 {
                     Debug.println("Completed parsing message");
                 } //End block
                 ContentLength cl = (ContentLength) sipMessage
                         .getContentLength();
                 int contentLength = 0;
-    if(cl != null)                
+                if(cl != null)                
                 {
                     contentLength = cl.getContentLength();
                 } //End block
@@ -275,16 +275,16 @@ String var1B324365A764C077A55854483509F4AB_1835986132 =         retval.toString(
                 {
                     contentLength = 0;
                 } //End block
-    if(Debug.debug)                
+                if(Debug.debug)                
                 {
                     Debug.println("contentLength " + contentLength);
                 } //End block
-    if(contentLength == 0)                
+                if(contentLength == 0)                
                 {
                     sipMessage.removeContent();
                 } //End block
                 else
-    if(maxMessageSize == 0
+                if(maxMessageSize == 0
                         || contentLength < this.sizeCounter)                
                 {
                     byte[] message_body = new byte[contentLength];
@@ -297,7 +297,7 @@ String var1B324365A764C077A55854483509F4AB_1835986132 =         retval.toString(
                         {
                             int readlength = inputStream.read(message_body,
                                     nread, contentLength - nread);
-    if(readlength > 0)                            
+                            if(readlength > 0)                            
                             {
                                 nread += readlength;
                             } //End block
@@ -318,7 +318,7 @@ String var1B324365A764C077A55854483509F4AB_1835986132 =         retval.toString(
                     } //End block
                     sipMessage.setMessageContent(message_body);
                 } //End block
-    if(sipMessageListener != null)                
+                if(sipMessageListener != null)                
                 {
                     try 
                     {
@@ -347,8 +347,8 @@ String var1B324365A764C077A55854483509F4AB_1835986132 =         retval.toString(
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.447 -0400", hash_original_method = "CD7CB4D97896F4DDC9750ED4F3C04317", hash_generated_method = "192A77C307E1B0090303A5E8F33C3527")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.318 -0400", hash_original_method = "CD7CB4D97896F4DDC9750ED4F3C04317", hash_generated_method = "192A77C307E1B0090303A5E8F33C3527")
     public void close() {
         try 
         {
@@ -365,7 +365,7 @@ String var1B324365A764C077A55854483509F4AB_1835986132 =         retval.toString(
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.447 -0400", hash_original_field = "0CB100AF67BD2EB1F0E2A464C0F12B08", hash_generated_field = "C945ED2D87187C29A8B309C59A8903B9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.318 -0400", hash_original_field = "0CB100AF67BD2EB1F0E2A464C0F12B08", hash_generated_field = "C945ED2D87187C29A8B309C59A8903B9")
 
     private static int uid = 0;
 }

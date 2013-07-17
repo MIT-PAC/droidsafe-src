@@ -15,14 +15,14 @@ import java.util.Vector;
 
 public class ECNamedCurveTable {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.432 -0400", hash_original_method = "BD64543C1F72D4D2B4CE5D415F2B3F42", hash_generated_method = "BD64543C1F72D4D2B4CE5D415F2B3F42")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.196 -0400", hash_original_method = "BD64543C1F72D4D2B4CE5D415F2B3F42", hash_generated_method = "BD64543C1F72D4D2B4CE5D415F2B3F42")
     public ECNamedCurveTable ()
     {
         //Synthesized constructor
     }
 
 
-        public static ECNamedCurveParameterSpec getParameterSpec(
+    public static ECNamedCurveParameterSpec getParameterSpec(
         String  name) {
         X9ECParameters  ecP = X962NamedCurves.getByName(name);
         if (ecP == null)
@@ -67,7 +67,7 @@ public class ECNamedCurveTable {
     }
 
     
-        public static Enumeration getNames() {
+    public static Enumeration getNames() {
         Vector v = new Vector();
         addEnumeration(v, X962NamedCurves.getNames());
         addEnumeration(v, SECNamedCurves.getNames());
@@ -76,7 +76,7 @@ public class ECNamedCurveTable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static void addEnumeration(
         Vector v, 
         Enumeration e) {

@@ -20,13 +20,13 @@ import java.util.Date;
 
 public abstract class X509Certificate extends Certificate {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.277 -0400", hash_original_method = "0337B060243DB2E8E059CE304C023100", hash_generated_method = "9BA920E90C5C7EE22A37FD86BC262ED2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.217 -0400", hash_original_method = "0337B060243DB2E8E059CE304C023100", hash_generated_method = "9BA920E90C5C7EE22A37FD86BC262ED2")
     public  X509Certificate() {
         // ---------- Original Method ----------
     }
 
     
-        public static final X509Certificate getInstance(InputStream inStream) throws CertificateException {
+    public static final X509Certificate getInstance(InputStream inStream) throws CertificateException {
         if (inStream == null) {
             throw new CertificateException("inStream == null");
         }
@@ -142,7 +142,7 @@ public abstract class X509Certificate extends Certificate {
     }
 
     
-        public static final X509Certificate getInstance(byte[] certData) throws CertificateException {
+    public static final X509Certificate getInstance(byte[] certData) throws CertificateException {
         if (certData == null) {
             throw new CertificateException("certData == null");
         }
@@ -186,7 +186,7 @@ public abstract class X509Certificate extends Certificate {
     public abstract byte[] getSigAlgParams();
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.278 -0400", hash_original_field = "6CA268371EEB5D93EEFEB68F96157666", hash_generated_field = "2112A4F4A023E8F770192D2021400B78")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.219 -0400", hash_original_field = "6CA268371EEB5D93EEFEB68F96157666", hash_generated_field = "2112A4F4A023E8F770192D2021400B78")
 
     private static Constructor constructor;
     static {

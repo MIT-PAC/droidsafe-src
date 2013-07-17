@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 public class Base64Encoder implements Encoder {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.497 -0400", hash_original_field = "26679137600502689C8A177F50F164AC", hash_generated_field = "477367DCA11A991FB18CE4EB6F2C01EF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.285 -0400", hash_original_field = "26679137600502689C8A177F50F164AC", hash_generated_field = "477367DCA11A991FB18CE4EB6F2C01EF")
 
     protected final byte[] encodingTable = {
             (byte)'A', (byte)'B', (byte)'C', (byte)'D', (byte)'E', (byte)'F', (byte)'G',
@@ -24,14 +24,14 @@ public class Base64Encoder implements Encoder {
             (byte)'7', (byte)'8', (byte)'9',
             (byte)'+', (byte)'/'
         };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.497 -0400", hash_original_field = "6BFC228E0751465901E4098F8966DFFF", hash_generated_field = "6470484C1DBA83A435D7A06D16D20315")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.285 -0400", hash_original_field = "6BFC228E0751465901E4098F8966DFFF", hash_generated_field = "6470484C1DBA83A435D7A06D16D20315")
 
     protected byte padding = (byte)'=';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.497 -0400", hash_original_field = "22173E2A74F154E91BA0F39198C1B226", hash_generated_field = "C5A9E5FA83A75FCB14FF277263CBAED5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.285 -0400", hash_original_field = "22173E2A74F154E91BA0F39198C1B226", hash_generated_field = "C5A9E5FA83A75FCB14FF277263CBAED5")
 
     protected final byte[] decodingTable = new byte[128];
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.497 -0400", hash_original_method = "680D3875922DD4E67C0EE2E950D928BD", hash_generated_method = "AABF19D4D0BC5EA370D8438ED4D196CF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.285 -0400", hash_original_method = "680D3875922DD4E67C0EE2E950D928BD", hash_generated_method = "AABF19D4D0BC5EA370D8438ED4D196CF")
     public  Base64Encoder() {
         initialiseDecodingTable();
         // ---------- Original Method ----------
@@ -39,8 +39,8 @@ public class Base64Encoder implements Encoder {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.498 -0400", hash_original_method = "21DA0B3C66110012AEC4B0EF8A985DB1", hash_generated_method = "0AC011AA0E77EEFDD36DBDA6E3F424E5")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.285 -0400", hash_original_method = "21DA0B3C66110012AEC4B0EF8A985DB1", hash_generated_method = "0AC011AA0E77EEFDD36DBDA6E3F424E5")
     protected void initialiseDecodingTable() {
 for(int i = 0;i < encodingTable.length;i++)
         {
@@ -54,8 +54,8 @@ for(int i = 0;i < encodingTable.length;i++)
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.500 -0400", hash_original_method = "9CA1F48AAB7841E0E0CBD16E0BA7D360", hash_generated_method = "76D54AAFEC5B08FC17D83035834EC381")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.287 -0400", hash_original_method = "9CA1F48AAB7841E0E0CBD16E0BA7D360", hash_generated_method = "51BDB6C475D34FEB03E40A5A0D85396A")
     public int encode(
         byte[]                data,
         int                    off,
@@ -108,28 +108,28 @@ switch(modulus){
         out.write(encodingTable[b3]);
         out.write(padding);
         break;
-}        int var4DA29C35F37089457FCA797F0BEA148D_2092792260 = ((dataLength / 3) * 4 + ((modulus == 0) ? 0 : 4));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_599340497 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_599340497;
+}        int var4DA29C35F37089457FCA797F0BEA148D_1067431217 = ((dataLength / 3) * 4 + ((modulus == 0) ? 0 : 4));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1077451575 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1077451575;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.501 -0400", hash_original_method = "1B2A7D609CA1F47FC87AA118398B5C86", hash_generated_method = "928FEEC3F4E9F57E02AE5B20005A8F16")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.288 -0400", hash_original_method = "1B2A7D609CA1F47FC87AA118398B5C86", hash_generated_method = "E892F4AC16155E798D32FE2FE0958F14")
     private boolean ignore(
         char    c) {
         addTaint(c);
-        boolean var0813D1039B08197476EB8CFDC63ADF39_2134207657 = ((c == '\n' || c =='\r' || c == '\t' || c == ' '));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1796539115 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1796539115;
+        boolean var0813D1039B08197476EB8CFDC63ADF39_25752719 = ((c == '\n' || c =='\r' || c == '\t' || c == ' '));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1786080723 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1786080723;
         // ---------- Original Method ----------
         //return (c == '\n' || c =='\r' || c == '\t' || c == ' ');
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.504 -0400", hash_original_method = "211C1414D28F35039504B68D95AB9ED9", hash_generated_method = "64A740D331B2CF22E07865C9817BF137")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.291 -0400", hash_original_method = "211C1414D28F35039504B68D95AB9ED9", hash_generated_method = "B4DC106BB9967A4D274C97608644B113")
     public int decode(
         byte[]          data,
         int             off,
@@ -148,7 +148,7 @@ switch(modulus){
         while
 (end > off)        
         {
-    if(!ignore((char)data[end - 1]))            
+            if(!ignore((char)data[end - 1]))            
             {
                 break;
             } //End block
@@ -174,15 +174,15 @@ switch(modulus){
             i = nextI(data, i, finish);
         } //End block
         outLen += decodeLastBlock(out, (char)data[end - 4], (char)data[end - 3], (char)data[end - 2], (char)data[end - 1]);
-        int var504BA8911EA515F30CAFCF90C1129E92_213250293 = (outLen);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_479262077 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_479262077;
+        int var504BA8911EA515F30CAFCF90C1129E92_2137720436 = (outLen);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_775441045 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_775441045;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.505 -0400", hash_original_method = "1225BA5A886EEC007862013ADD842450", hash_generated_method = "DFEA89DE7612FA4775B04787523F6A87")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.291 -0400", hash_original_method = "1225BA5A886EEC007862013ADD842450", hash_generated_method = "A1787F1CEBC703C244CCB67761E928AE")
     private int nextI(byte[] data, int i, int finish) {
         addTaint(finish);
         addTaint(i);
@@ -192,9 +192,9 @@ switch(modulus){
         {
             i++;
         } //End block
-        int var865C0C0B4AB0E063E5CAA3387C1A8741_1960217104 = (i);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1172176830 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1172176830;
+        int var865C0C0B4AB0E063E5CAA3387C1A8741_2088655177 = (i);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_234760137 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_234760137;
         // ---------- Original Method ----------
         //while ((i < finish) && ignore((char)data[i]))
         //{
@@ -204,8 +204,8 @@ switch(modulus){
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.507 -0400", hash_original_method = "304E01512ABEE5D32E29AD105C8F9759", hash_generated_method = "363721EB151E60B8DDE5860EBEF8D7AB")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.293 -0400", hash_original_method = "304E01512ABEE5D32E29AD105C8F9759", hash_generated_method = "7162470B5BBAC047DAD0E4ABD69057E2")
     public int decode(
         String          data,
         OutputStream    out) throws IOException {
@@ -220,7 +220,7 @@ switch(modulus){
         while
 (end > 0)        
         {
-    if(!ignore(data.charAt(end - 1)))            
+            if(!ignore(data.charAt(end - 1)))            
             {
                 break;
             } //End block
@@ -246,15 +246,15 @@ switch(modulus){
             i = nextI(data, i, finish);
         } //End block
         length += decodeLastBlock(out, data.charAt(end - 4), data.charAt(end - 3), data.charAt(end - 2), data.charAt(end - 1));
-        int var2FA47F7C65FEC19CC163B195725E3844_581049772 = (length);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_104399181 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_104399181;
+        int var2FA47F7C65FEC19CC163B195725E3844_1550756256 = (length);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_576160064 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_576160064;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.508 -0400", hash_original_method = "9E52D5CA91DB497317BE2B1E69827671", hash_generated_method = "F719F433A963F2C42079D08A5CEA442F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.295 -0400", hash_original_method = "9E52D5CA91DB497317BE2B1E69827671", hash_generated_method = "1B4D8C574A35758920D159D0A2D80974")
     private int decodeLastBlock(OutputStream out, char c1, char c2, char c3, char c4) throws IOException {
         addTaint(c4);
         addTaint(c3);
@@ -265,26 +265,26 @@ switch(modulus){
         byte b2;
         byte b3;
         byte b4;
-    if(c3 == padding)        
+        if(c3 == padding)        
         {
             b1 = decodingTable[c1];
             b2 = decodingTable[c2];
             out.write((b1 << 2) | (b2 >> 4));
-            int varC4CA4238A0B923820DCC509A6F75849B_1735184894 = (1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_58610022 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_58610022;
+            int varC4CA4238A0B923820DCC509A6F75849B_651986237 = (1);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1564581169 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1564581169;
         } //End block
         else
-    if(c4 == padding)        
+        if(c4 == padding)        
         {
             b1 = decodingTable[c1];
             b2 = decodingTable[c2];
             b3 = decodingTable[c3];
             out.write((b1 << 2) | (b2 >> 4));
             out.write((b2 << 4) | (b3 >> 2));
-            int varC81E728D9D4C2F636F067F89CC14862C_696710321 = (2);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_174214429 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_174214429;
+            int varC81E728D9D4C2F636F067F89CC14862C_602472290 = (2);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1218481192 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1218481192;
         } //End block
         else
         {
@@ -295,16 +295,16 @@ switch(modulus){
             out.write((b1 << 2) | (b2 >> 4));
             out.write((b2 << 4) | (b3 >> 2));
             out.write((b3 << 6) | b4);
-            int varECCBC87E4B5CE2FE28308FD9F2A7BAF3_112482690 = (3);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1200199299 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1200199299;
+            int varECCBC87E4B5CE2FE28308FD9F2A7BAF3_599743532 = (3);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_228216480 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_228216480;
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.508 -0400", hash_original_method = "4A002F2B2C5A42BB007C07A5E9BC2D50", hash_generated_method = "B35726B6DBE187E5AE08A6C87BD6527E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.295 -0400", hash_original_method = "4A002F2B2C5A42BB007C07A5E9BC2D50", hash_generated_method = "DC06BE4C832B9D28A3C0F6E8E1180A09")
     private int nextI(String data, int i, int finish) {
         addTaint(finish);
         addTaint(i);
@@ -314,9 +314,9 @@ switch(modulus){
         {
             i++;
         } //End block
-        int var865C0C0B4AB0E063E5CAA3387C1A8741_249635041 = (i);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_561649145 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_561649145;
+        int var865C0C0B4AB0E063E5CAA3387C1A8741_1896640747 = (i);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1112686567 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1112686567;
         // ---------- Original Method ----------
         //while ((i < finish) && ignore(data.charAt(i)))
         //{

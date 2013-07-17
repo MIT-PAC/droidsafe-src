@@ -27,29 +27,29 @@ import org.apache.http.io.SessionOutputBuffer;
 import org.apache.http.params.HttpParams;
 
 public abstract class AbstractHttpClientConnection implements HttpClientConnection {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.994 -0400", hash_original_field = "34C401953BC184959C583775D7C02C06", hash_generated_field = "AB3FDC91331A5753EE17C338AC9D0381")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.297 -0400", hash_original_field = "34C401953BC184959C583775D7C02C06", hash_generated_field = "AB3FDC91331A5753EE17C338AC9D0381")
 
     private EntitySerializer entityserializer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.994 -0400", hash_original_field = "77792E7E7655F0E861F5CAD282D40817", hash_generated_field = "18C47D09329E968B5EC7364123601CF5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.297 -0400", hash_original_field = "77792E7E7655F0E861F5CAD282D40817", hash_generated_field = "18C47D09329E968B5EC7364123601CF5")
 
     private EntityDeserializer entitydeserializer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.994 -0400", hash_original_field = "DC681AA2DD2A0BE47CBDD78540D5A8BD", hash_generated_field = "B0D6D00F71FC030A17C26A2601F3BE87")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.297 -0400", hash_original_field = "DC681AA2DD2A0BE47CBDD78540D5A8BD", hash_generated_field = "B0D6D00F71FC030A17C26A2601F3BE87")
 
     private SessionInputBuffer inbuffer = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.994 -0400", hash_original_field = "2CF5A5642A030530FB530CE6AD73F644", hash_generated_field = "10B58CBE3BBA8B7201F396357A83D45E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.297 -0400", hash_original_field = "2CF5A5642A030530FB530CE6AD73F644", hash_generated_field = "10B58CBE3BBA8B7201F396357A83D45E")
 
     private SessionOutputBuffer outbuffer = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.994 -0400", hash_original_field = "DB8812B4E966D02D51AD945C2DE68D19", hash_generated_field = "0B27CE0B99168065998D8DF5303269B9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.297 -0400", hash_original_field = "DB8812B4E966D02D51AD945C2DE68D19", hash_generated_field = "0B27CE0B99168065998D8DF5303269B9")
 
     private HttpMessageParser responseParser = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.994 -0400", hash_original_field = "715711ECB9730DA286C315F4B203F1D7", hash_generated_field = "F323E9D16DC81146FC2969062D7F8C7E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.297 -0400", hash_original_field = "715711ECB9730DA286C315F4B203F1D7", hash_generated_field = "F323E9D16DC81146FC2969062D7F8C7E")
 
     private HttpMessageWriter requestWriter = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.994 -0400", hash_original_field = "E6899A7B60D3CD0F0F3E11DDE4844FF7", hash_generated_field = "EE4B08A08CEE9A462065794CA86E6F61")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.297 -0400", hash_original_field = "E6899A7B60D3CD0F0F3E11DDE4844FF7", hash_generated_field = "EE4B08A08CEE9A462065794CA86E6F61")
 
     private HttpConnectionMetricsImpl metrics = null;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.994 -0400", hash_original_method = "69689155BD098727A81CB27002CF309C", hash_generated_method = "41F36C3FEDE28B35D52F3A06E3DE2D75")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.298 -0400", hash_original_method = "69689155BD098727A81CB27002CF309C", hash_generated_method = "41F36C3FEDE28B35D52F3A06E3DE2D75")
     public  AbstractHttpClientConnection() {
         super();
         this.entityserializer = createEntitySerializer();
@@ -63,37 +63,37 @@ public abstract class AbstractHttpClientConnection implements HttpClientConnecti
     protected abstract void assertOpen() throws IllegalStateException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.994 -0400", hash_original_method = "DBD25E48E38888EDD7F8AA52F5A67EB4", hash_generated_method = "0823A32C5DDF39DC2B41FB058578D467")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.299 -0400", hash_original_method = "DBD25E48E38888EDD7F8AA52F5A67EB4", hash_generated_method = "07286968242AB408AA1609FDC2BF7CF2")
     protected EntityDeserializer createEntityDeserializer() {
-EntityDeserializer varD8277C9FB64D708D6AAEC33B5D57A8C1_266519651 =         new EntityDeserializer(new LaxContentLengthStrategy());
-        varD8277C9FB64D708D6AAEC33B5D57A8C1_266519651.addTaint(taint);
-        return varD8277C9FB64D708D6AAEC33B5D57A8C1_266519651;
+EntityDeserializer varD8277C9FB64D708D6AAEC33B5D57A8C1_133569803 =         new EntityDeserializer(new LaxContentLengthStrategy());
+        varD8277C9FB64D708D6AAEC33B5D57A8C1_133569803.addTaint(taint);
+        return varD8277C9FB64D708D6AAEC33B5D57A8C1_133569803;
         // ---------- Original Method ----------
         //return new EntityDeserializer(new LaxContentLengthStrategy());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.995 -0400", hash_original_method = "FD78F978388B59B364B21C2EBA485800", hash_generated_method = "2CA0089775789D269CEB5AEF94469D3B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.299 -0400", hash_original_method = "FD78F978388B59B364B21C2EBA485800", hash_generated_method = "DC28F4A05188798D0BBB072D7F5569BB")
     protected EntitySerializer createEntitySerializer() {
-EntitySerializer var73E805B24B914F947FB8A61049CA1B74_876298595 =         new EntitySerializer(new StrictContentLengthStrategy());
-        var73E805B24B914F947FB8A61049CA1B74_876298595.addTaint(taint);
-        return var73E805B24B914F947FB8A61049CA1B74_876298595;
+EntitySerializer var73E805B24B914F947FB8A61049CA1B74_528489240 =         new EntitySerializer(new StrictContentLengthStrategy());
+        var73E805B24B914F947FB8A61049CA1B74_528489240.addTaint(taint);
+        return var73E805B24B914F947FB8A61049CA1B74_528489240;
         // ---------- Original Method ----------
         //return new EntitySerializer(new StrictContentLengthStrategy());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.995 -0400", hash_original_method = "104F821730DDF9B7746DC5273A66A390", hash_generated_method = "0B716DF8E66A8A10EF43CAAF3AF2D94B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.299 -0400", hash_original_method = "104F821730DDF9B7746DC5273A66A390", hash_generated_method = "D1073259ED8C439E609993F042B46C9B")
     protected HttpResponseFactory createHttpResponseFactory() {
-HttpResponseFactory varBC11667D6421859A3157C95B024F6BD9_993574027 =         new DefaultHttpResponseFactory();
-        varBC11667D6421859A3157C95B024F6BD9_993574027.addTaint(taint);
-        return varBC11667D6421859A3157C95B024F6BD9_993574027;
+HttpResponseFactory varBC11667D6421859A3157C95B024F6BD9_955145070 =         new DefaultHttpResponseFactory();
+        varBC11667D6421859A3157C95B024F6BD9_955145070.addTaint(taint);
+        return varBC11667D6421859A3157C95B024F6BD9_955145070;
         // ---------- Original Method ----------
         //return new DefaultHttpResponseFactory();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.995 -0400", hash_original_method = "590F41C6A05F783E2ACF6324D4108D68", hash_generated_method = "738F49587A9A0AD1F4454ECDF52401AF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.300 -0400", hash_original_method = "590F41C6A05F783E2ACF6324D4108D68", hash_generated_method = "BD9CCF19442E08D79A208BA6D193EF1E")
     protected HttpMessageParser createResponseParser(
             final SessionInputBuffer buffer,
             final HttpResponseFactory responseFactory,
@@ -101,44 +101,44 @@ HttpResponseFactory varBC11667D6421859A3157C95B024F6BD9_993574027 =         new 
         addTaint(params.getTaint());
         addTaint(responseFactory.getTaint());
         addTaint(buffer.getTaint());
-HttpMessageParser varB490B2FFBF849B1B42A29CDAF85ABF94_1305803939 =         new HttpResponseParser(buffer, null, responseFactory, params);
-        varB490B2FFBF849B1B42A29CDAF85ABF94_1305803939.addTaint(taint);
-        return varB490B2FFBF849B1B42A29CDAF85ABF94_1305803939;
+HttpMessageParser varB490B2FFBF849B1B42A29CDAF85ABF94_1767259958 =         new HttpResponseParser(buffer, null, responseFactory, params);
+        varB490B2FFBF849B1B42A29CDAF85ABF94_1767259958.addTaint(taint);
+        return varB490B2FFBF849B1B42A29CDAF85ABF94_1767259958;
         // ---------- Original Method ----------
         //return new HttpResponseParser(buffer, null, responseFactory, params);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.995 -0400", hash_original_method = "C896FAADCB31646EC56EC7195247A646", hash_generated_method = "E959E42A3D3FD65E0ADD0F3A43A921E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.301 -0400", hash_original_method = "C896FAADCB31646EC56EC7195247A646", hash_generated_method = "A18F91E3E570F1DB5862FEE81881F679")
     protected HttpMessageWriter createRequestWriter(
             final SessionOutputBuffer buffer,
             final HttpParams params) {
         addTaint(params.getTaint());
         addTaint(buffer.getTaint());
-HttpMessageWriter var04F23D93A84A9612B54CC0F1D40D1AB2_938552430 =         new HttpRequestWriter(buffer, null, params);
-        var04F23D93A84A9612B54CC0F1D40D1AB2_938552430.addTaint(taint);
-        return var04F23D93A84A9612B54CC0F1D40D1AB2_938552430;
+HttpMessageWriter var04F23D93A84A9612B54CC0F1D40D1AB2_1681998378 =         new HttpRequestWriter(buffer, null, params);
+        var04F23D93A84A9612B54CC0F1D40D1AB2_1681998378.addTaint(taint);
+        return var04F23D93A84A9612B54CC0F1D40D1AB2_1681998378;
         // ---------- Original Method ----------
         //return new HttpRequestWriter(buffer, null, params);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.995 -0400", hash_original_method = "93CFFEDE975E0BAA8FD0589F36E92815", hash_generated_method = "FEE8F91D3672665AA0937315B61334FF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.303 -0400", hash_original_method = "93CFFEDE975E0BAA8FD0589F36E92815", hash_generated_method = "DC1047D41AFBCA4E2C94DCA7C31DDEAE")
     protected void init(
             final SessionInputBuffer inbuffer,
             final SessionOutputBuffer outbuffer,
             final HttpParams params) {
-    if(inbuffer == null)        
+        if(inbuffer == null)        
         {
-            IllegalArgumentException var09E8CD37474729E64903391667436F8D_1193771496 = new IllegalArgumentException("Input session buffer may not be null");
-            var09E8CD37474729E64903391667436F8D_1193771496.addTaint(taint);
-            throw var09E8CD37474729E64903391667436F8D_1193771496;
+            IllegalArgumentException var09E8CD37474729E64903391667436F8D_2093321219 = new IllegalArgumentException("Input session buffer may not be null");
+            var09E8CD37474729E64903391667436F8D_2093321219.addTaint(taint);
+            throw var09E8CD37474729E64903391667436F8D_2093321219;
         } //End block
-    if(outbuffer == null)        
+        if(outbuffer == null)        
         {
-            IllegalArgumentException varB4FD2758188C99A80EE7A5FBD554B10A_1760803103 = new IllegalArgumentException("Output session buffer may not be null");
-            varB4FD2758188C99A80EE7A5FBD554B10A_1760803103.addTaint(taint);
-            throw varB4FD2758188C99A80EE7A5FBD554B10A_1760803103;
+            IllegalArgumentException varB4FD2758188C99A80EE7A5FBD554B10A_795343413 = new IllegalArgumentException("Output session buffer may not be null");
+            varB4FD2758188C99A80EE7A5FBD554B10A_795343413.addTaint(taint);
+            throw varB4FD2758188C99A80EE7A5FBD554B10A_795343413;
         } //End block
         this.inbuffer = inbuffer;
         this.outbuffer = outbuffer;
@@ -172,27 +172,27 @@ HttpMessageWriter var04F23D93A84A9612B54CC0F1D40D1AB2_938552430 =         new Ht
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.995 -0400", hash_original_method = "EC2664454103C0151B5CF1E9311C3275", hash_generated_method = "B7006AA679278B8D20190229156E8E26")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.304 -0400", hash_original_method = "EC2664454103C0151B5CF1E9311C3275", hash_generated_method = "995A0BEC6DAED5E21A792107AD435D1C")
     public boolean isResponseAvailable(int timeout) throws IOException {
         addTaint(timeout);
         assertOpen();
-        boolean varE7A1AA20D93B96AA0ABFF4C7890ED8BA_19823413 = (this.inbuffer.isDataAvailable(timeout));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1524698610 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1524698610;
+        boolean varE7A1AA20D93B96AA0ABFF4C7890ED8BA_1566270163 = (this.inbuffer.isDataAvailable(timeout));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1998467330 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1998467330;
         // ---------- Original Method ----------
         //assertOpen();
         //return this.inbuffer.isDataAvailable(timeout);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.996 -0400", hash_original_method = "9CF9D3D7B73D0AA22EE5EB3E861EF60E", hash_generated_method = "0BB9C3DF4E44E13CEF2E43B1A4CCCB2E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.305 -0400", hash_original_method = "9CF9D3D7B73D0AA22EE5EB3E861EF60E", hash_generated_method = "B2B647112606C1C28C95FA9CAF53BDB1")
     public void sendRequestHeader(final HttpRequest request) throws HttpException, IOException {
         addTaint(request.getTaint());
-    if(request == null)        
+        if(request == null)        
         {
-            IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_1039025705 = new IllegalArgumentException("HTTP request may not be null");
-            varF07DEF4BA25028D1DB51C0BA629AF0B4_1039025705.addTaint(taint);
-            throw varF07DEF4BA25028D1DB51C0BA629AF0B4_1039025705;
+            IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_113762833 = new IllegalArgumentException("HTTP request may not be null");
+            varF07DEF4BA25028D1DB51C0BA629AF0B4_113762833.addTaint(taint);
+            throw varF07DEF4BA25028D1DB51C0BA629AF0B4_113762833;
         } //End block
         assertOpen();
         this.requestWriter.write(request);
@@ -207,17 +207,17 @@ HttpMessageWriter var04F23D93A84A9612B54CC0F1D40D1AB2_938552430 =         new Ht
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.996 -0400", hash_original_method = "73C1557906EF5C67B1A62D382FCB88AB", hash_generated_method = "D19CF93E4E74E3A79850E4AF8723E76B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.306 -0400", hash_original_method = "73C1557906EF5C67B1A62D382FCB88AB", hash_generated_method = "68BFFBF866E310C08F9730D4BCF3B1BA")
     public void sendRequestEntity(final HttpEntityEnclosingRequest request) throws HttpException, IOException {
         addTaint(request.getTaint());
-    if(request == null)        
+        if(request == null)        
         {
-            IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_974569537 = new IllegalArgumentException("HTTP request may not be null");
-            varF07DEF4BA25028D1DB51C0BA629AF0B4_974569537.addTaint(taint);
-            throw varF07DEF4BA25028D1DB51C0BA629AF0B4_974569537;
+            IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_128202919 = new IllegalArgumentException("HTTP request may not be null");
+            varF07DEF4BA25028D1DB51C0BA629AF0B4_128202919.addTaint(taint);
+            throw varF07DEF4BA25028D1DB51C0BA629AF0B4_128202919;
         } //End block
         assertOpen();
-    if(request.getEntity() == null)        
+        if(request.getEntity() == null)        
         {
             return;
         } //End block
@@ -240,7 +240,7 @@ HttpMessageWriter var04F23D93A84A9612B54CC0F1D40D1AB2_938552430 =         new Ht
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.996 -0400", hash_original_method = "DE0B8B580EE6D4219521C9A2503EB8AB", hash_generated_method = "4D1A2508A821B55E0B18D024D4D93DA1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.307 -0400", hash_original_method = "DE0B8B580EE6D4219521C9A2503EB8AB", hash_generated_method = "4D1A2508A821B55E0B18D024D4D93DA1")
     protected void doFlush() throws IOException {
         this.outbuffer.flush();
         // ---------- Original Method ----------
@@ -248,7 +248,7 @@ HttpMessageWriter var04F23D93A84A9612B54CC0F1D40D1AB2_938552430 =         new Ht
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.996 -0400", hash_original_method = "166CB1CAE087E4752127F8680D07EE90", hash_generated_method = "C32057FFD327A27B41D17512113B46BE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.307 -0400", hash_original_method = "166CB1CAE087E4752127F8680D07EE90", hash_generated_method = "C32057FFD327A27B41D17512113B46BE")
     public void flush() throws IOException {
         assertOpen();
         doFlush();
@@ -258,17 +258,17 @@ HttpMessageWriter var04F23D93A84A9612B54CC0F1D40D1AB2_938552430 =         new Ht
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.996 -0400", hash_original_method = "D806319F8045D19DF3AF6D1ED4567F14", hash_generated_method = "DC7E1105652A2BF83B44024D9CF6D3B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.307 -0400", hash_original_method = "D806319F8045D19DF3AF6D1ED4567F14", hash_generated_method = "529901393D7BF29C2DBC414616F82766")
     public HttpResponse receiveResponseHeader() throws HttpException, IOException {
         assertOpen();
         HttpResponse response = (HttpResponse) this.responseParser.parse();
-    if(response.getStatusLine().getStatusCode() >= 200)        
+        if(response.getStatusLine().getStatusCode() >= 200)        
         {
             this.metrics.incrementResponseCount();
         } //End block
-HttpResponse var2A1114F4272D753FE23A36E3D68CD293_1234810780 =         response;
-        var2A1114F4272D753FE23A36E3D68CD293_1234810780.addTaint(taint);
-        return var2A1114F4272D753FE23A36E3D68CD293_1234810780;
+HttpResponse var2A1114F4272D753FE23A36E3D68CD293_813298892 =         response;
+        var2A1114F4272D753FE23A36E3D68CD293_813298892.addTaint(taint);
+        return var2A1114F4272D753FE23A36E3D68CD293_813298892;
         // ---------- Original Method ----------
         //assertOpen();
         //HttpResponse response = (HttpResponse) this.responseParser.parse();
@@ -279,14 +279,14 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_1234810780 =         response;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.996 -0400", hash_original_method = "2E1029469FDE3C3BDBC517B380DCF73B", hash_generated_method = "8B6AB16012681ACB97F89A5693AFE1E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.307 -0400", hash_original_method = "2E1029469FDE3C3BDBC517B380DCF73B", hash_generated_method = "4FA662FFC2B24DD46E69F89D023CEA71")
     public void receiveResponseEntity(final HttpResponse response) throws HttpException, IOException {
         addTaint(response.getTaint());
-    if(response == null)        
+        if(response == null)        
         {
-            IllegalArgumentException var81F7C558D1B895656E1A076743F59C7C_1307326503 = new IllegalArgumentException("HTTP response may not be null");
-            var81F7C558D1B895656E1A076743F59C7C_1307326503.addTaint(taint);
-            throw var81F7C558D1B895656E1A076743F59C7C_1307326503;
+            IllegalArgumentException var81F7C558D1B895656E1A076743F59C7C_801792406 = new IllegalArgumentException("HTTP response may not be null");
+            var81F7C558D1B895656E1A076743F59C7C_801792406.addTaint(taint);
+            throw var81F7C558D1B895656E1A076743F59C7C_801792406;
         } //End block
         assertOpen();
         HttpEntity entity = this.entitydeserializer.deserialize(this.inbuffer, response);
@@ -301,32 +301,32 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_1234810780 =         response;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.996 -0400", hash_original_method = "DD669E10200A1B56B0064A07B14E647E", hash_generated_method = "262DFA76302D523BD6B7647FB5D17287")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.308 -0400", hash_original_method = "DD669E10200A1B56B0064A07B14E647E", hash_generated_method = "502C567E7D783DE6E98521A7853E8774")
     public boolean isStale() {
-    if(!isOpen())        
+        if(!isOpen())        
         {
-            boolean varB326B5062B2F0E69046810717534CB09_1732567260 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1023915455 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1023915455;
+            boolean varB326B5062B2F0E69046810717534CB09_1561782732 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_516033011 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_516033011;
         } //End block
         try 
         {
-    if(inbuffer instanceof SocketInputBuffer)            
+            if(inbuffer instanceof SocketInputBuffer)            
             {
-                boolean var70981A13FF8F12123AAC043584711ABC_465114182 = (((SocketInputBuffer) inbuffer).isStale());
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_19660021 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_19660021;
+                boolean var70981A13FF8F12123AAC043584711ABC_2038488335 = (((SocketInputBuffer) inbuffer).isStale());
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_827880612 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_827880612;
             } //End block
             this.inbuffer.isDataAvailable(1);
-            boolean var68934A3E9455FA72420237EB05902327_1128760513 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1406786014 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1406786014;
+            boolean var68934A3E9455FA72420237EB05902327_1228223312 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_505134442 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_505134442;
         } //End block
         catch (IOException ex)
         {
-            boolean varB326B5062B2F0E69046810717534CB09_2093733089 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_468958800 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_468958800;
+            boolean varB326B5062B2F0E69046810717534CB09_725178573 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_563816026 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_563816026;
         } //End block
         // ---------- Original Method ----------
         //if (!isOpen()) {
@@ -344,12 +344,12 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_1234810780 =         response;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.997 -0400", hash_original_method = "B4ACF96912B4372C3DFCBFF37024F952", hash_generated_method = "1ABEBB2A7F6D24E4E333693B5E878426")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.308 -0400", hash_original_method = "B4ACF96912B4372C3DFCBFF37024F952", hash_generated_method = "FC5DEE89E5A895A6EB1EB8B65F4CE819")
     public HttpConnectionMetrics getMetrics() {
-HttpConnectionMetrics varFC1AE2E8C2526EA66FBB8E6B024A2CB6_1205790256 =         this.metrics;
-        varFC1AE2E8C2526EA66FBB8E6B024A2CB6_1205790256.addTaint(taint);
-        return varFC1AE2E8C2526EA66FBB8E6B024A2CB6_1205790256;
+HttpConnectionMetrics varFC1AE2E8C2526EA66FBB8E6B024A2CB6_1223124634 =         this.metrics;
+        varFC1AE2E8C2526EA66FBB8E6B024A2CB6_1223124634.addTaint(taint);
+        return varFC1AE2E8C2526EA66FBB8E6B024A2CB6_1223124634;
         // ---------- Original Method ----------
         //return this.metrics;
     }

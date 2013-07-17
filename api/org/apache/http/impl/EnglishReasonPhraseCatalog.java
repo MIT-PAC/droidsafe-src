@@ -10,31 +10,31 @@ import org.apache.http.ReasonPhraseCatalog;
 
 public class EnglishReasonPhraseCatalog implements ReasonPhraseCatalog {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.031 -0400", hash_original_method = "7E219D4204F52B71BC25A968ECCA9516", hash_generated_method = "B7F389F477620D30D508A0713D2A466A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.339 -0400", hash_original_method = "7E219D4204F52B71BC25A968ECCA9516", hash_generated_method = "B7F389F477620D30D508A0713D2A466A")
     protected  EnglishReasonPhraseCatalog() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.032 -0400", hash_original_method = "4DBCBC4442F2A5E0C839147542392D36", hash_generated_method = "D7E0E2D28C5911042204A30876A211B1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.340 -0400", hash_original_method = "4DBCBC4442F2A5E0C839147542392D36", hash_generated_method = "A3BB6041BC303F400FC276B80D3BAFF3")
     public String getReason(int status, Locale loc) {
         addTaint(loc.getTaint());
         addTaint(status);
-    if((status < 100) || (status >= 600))        
+        if((status < 100) || (status >= 600))        
         {
-            IllegalArgumentException var29C44D8F7746F3313015E7D6995B3353_234171724 = new IllegalArgumentException
+            IllegalArgumentException var29C44D8F7746F3313015E7D6995B3353_1133272239 = new IllegalArgumentException
                 ("Unknown category for status code " + status + ".");
-            var29C44D8F7746F3313015E7D6995B3353_234171724.addTaint(taint);
-            throw var29C44D8F7746F3313015E7D6995B3353_234171724;
+            var29C44D8F7746F3313015E7D6995B3353_1133272239.addTaint(taint);
+            throw var29C44D8F7746F3313015E7D6995B3353_1133272239;
         } //End block
         final int category = status / 100;
         final int subcode = status - 100*category;
         String reason = null;
-    if(REASON_PHRASES[category].length > subcode)        
+        if(REASON_PHRASES[category].length > subcode)        
         reason = REASON_PHRASES[category][subcode];
-String varD602C4C1684F7464133CA1A6851CC44A_387996384 =         reason;
-        varD602C4C1684F7464133CA1A6851CC44A_387996384.addTaint(taint);
-        return varD602C4C1684F7464133CA1A6851CC44A_387996384;
+String varD602C4C1684F7464133CA1A6851CC44A_797259413 =         reason;
+        varD602C4C1684F7464133CA1A6851CC44A_797259413.addTaint(taint);
+        return varD602C4C1684F7464133CA1A6851CC44A_797259413;
         // ---------- Original Method ----------
         //if ((status < 100) || (status >= 600)) {
             //throw new IllegalArgumentException
@@ -49,7 +49,7 @@ String varD602C4C1684F7464133CA1A6851CC44A_387996384 =         reason;
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static void setReason(int status, String reason) {
         final int category = status / 100;
         final int subcode  = status - 100*category;
@@ -57,11 +57,11 @@ String varD602C4C1684F7464133CA1A6851CC44A_387996384 =         reason;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.032 -0400", hash_original_field = "E2DE488DB38893EE28317061D8B6A367", hash_generated_field = "0300F07CA0C9570BD3547AEAE24AE263")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.340 -0400", hash_original_field = "E2DE488DB38893EE28317061D8B6A367", hash_generated_field = "0300F07CA0C9570BD3547AEAE24AE263")
 
     public final static EnglishReasonPhraseCatalog INSTANCE =
         new EnglishReasonPhraseCatalog();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.032 -0400", hash_original_field = "57A5A1B8340254B4D85331038E93BEFD", hash_generated_field = "0AF8F9600212ED6C05BE344BC451D7F8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.340 -0400", hash_original_field = "57A5A1B8340254B4D85331038E93BEFD", hash_generated_field = "0AF8F9600212ED6C05BE344BC451D7F8")
 
     private static final String[][] REASON_PHRASES = new String[][]{
         null,

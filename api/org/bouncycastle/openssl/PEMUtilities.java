@@ -28,14 +28,14 @@ import org.bouncycastle.crypto.params.KeyParameter;
 
 final class PEMUtilities {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.336 -0400", hash_original_method = "5344C5F9BC7B07765B0DBE5794533466", hash_generated_method = "5344C5F9BC7B07765B0DBE5794533466")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.115 -0400", hash_original_method = "5344C5F9BC7B07765B0DBE5794533466", hash_generated_method = "5344C5F9BC7B07765B0DBE5794533466")
     public PEMUtilities ()
     {
         //Synthesized constructor
     }
 
 
-        static int getKeySize(String algorithm) {
+    static int getKeySize(String algorithm) {
         if (!KEYSIZES.containsKey(algorithm))
         {
             throw new IllegalStateException("no key size for algorithm: " + algorithm);
@@ -44,22 +44,22 @@ final class PEMUtilities {
     }
 
     
-        static boolean isPKCS5Scheme1(DERObjectIdentifier algOid) {
+    static boolean isPKCS5Scheme1(DERObjectIdentifier algOid) {
         return PKCS5_SCHEME_1.contains(algOid);
     }
 
     
-        static boolean isPKCS5Scheme2(DERObjectIdentifier algOid) {
+    static boolean isPKCS5Scheme2(DERObjectIdentifier algOid) {
         return PKCS5_SCHEME_2.contains(algOid);
     }
 
     
-        static boolean isPKCS12(DERObjectIdentifier algOid) {
+    static boolean isPKCS12(DERObjectIdentifier algOid) {
         return algOid.getId().startsWith(PKCSObjectIdentifiers.pkcs_12PbeIds.getId());
     }
 
     
-        static SecretKey generateSecretKeyForPKCS5Scheme2(String algorithm, char[] password, byte[] salt, int iterationCount) {
+    static SecretKey generateSecretKeyForPKCS5Scheme2(String algorithm, char[] password, byte[] salt, int iterationCount) {
         PBEParametersGenerator generator = new PKCS5S2ParametersGenerator();
         generator.init(
             PBEParametersGenerator.PKCS5PasswordToBytes(password),
@@ -69,7 +69,7 @@ final class PEMUtilities {
     }
 
     
-        static byte[] crypt(
+    static byte[] crypt(
         boolean encrypt,
         String provider,
         byte[]  bytes,
@@ -89,7 +89,7 @@ final class PEMUtilities {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     static byte[] crypt(
         boolean encrypt,
         Provider provider,
@@ -211,7 +211,7 @@ final class PEMUtilities {
     }
 
     
-        private static SecretKey getKey(
+    private static SecretKey getKey(
         char[]  password,
         String  algorithm,
         int     keyLength,
@@ -220,7 +220,7 @@ final class PEMUtilities {
     }
 
     
-        private static SecretKey getKey(
+    private static SecretKey getKey(
         char[]  password,
         String  algorithm,
         int     keyLength,
@@ -239,13 +239,13 @@ final class PEMUtilities {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.338 -0400", hash_original_field = "2581F8E8D8EAC34D6BAA8775FC5C9993", hash_generated_field = "59DE7C0FF16B4A36BE35AABB63DACF47")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.117 -0400", hash_original_field = "2581F8E8D8EAC34D6BAA8775FC5C9993", hash_generated_field = "59DE7C0FF16B4A36BE35AABB63DACF47")
 
     private static final Map KEYSIZES = new HashMap();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.338 -0400", hash_original_field = "2FA31FB335BBC8C31CAFD396289B97CE", hash_generated_field = "BE567AD10D1F7D6C85E969D51D033952")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.117 -0400", hash_original_field = "2FA31FB335BBC8C31CAFD396289B97CE", hash_generated_field = "BE567AD10D1F7D6C85E969D51D033952")
 
     private static final Set PKCS5_SCHEME_1 = new HashSet();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.339 -0400", hash_original_field = "3B5F523E2F13A1F193A9251985277744", hash_generated_field = "A0492B9D5EAA50DDC0AA688C093ED0E0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.117 -0400", hash_original_field = "3B5F523E2F13A1F193A9251985277744", hash_generated_field = "A0492B9D5EAA50DDC0AA688C093ED0E0")
 
     private static final Set PKCS5_SCHEME_2 = new HashSet();
     static {

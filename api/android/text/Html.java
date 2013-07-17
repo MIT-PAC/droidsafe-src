@@ -41,20 +41,20 @@ import java.util.HashMap;
 
 public class Html {
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.977 -0400", hash_original_method = "488A9EC3609F7D856C4CDBBB151F13E2", hash_generated_method = "03497373D06A453313C747AE9BCD9BA5")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.649 -0400", hash_original_method = "488A9EC3609F7D856C4CDBBB151F13E2", hash_generated_method = "03497373D06A453313C747AE9BCD9BA5")
     private  Html() {
         // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static Spanned fromHtml(String source) {
         return fromHtml(source, null, null);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static Spanned fromHtml(String source, ImageGetter imageGetter,
                                    TagHandler tagHandler) {
         Parser parser = new Parser();
@@ -72,7 +72,7 @@ public class Html {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static String toHtml(Spanned text) {
         StringBuilder out = new StringBuilder();
         withinHtml(out, text);
@@ -80,7 +80,7 @@ public class Html {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static void withinHtml(StringBuilder out, Spanned text) {
         int len = text.length();
         int next;
@@ -114,7 +114,7 @@ public class Html {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static void withinDiv(StringBuilder out, Spanned text,
             int start, int end) {
         int next;
@@ -132,7 +132,7 @@ public class Html {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static void withinBlockquote(StringBuilder out, Spanned text,
                                          int start, int end) {
         out.append("<p>");
@@ -153,7 +153,7 @@ public class Html {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static void withinParagraph(StringBuilder out, Spanned text,
                                         int start, int end, int nl,
                                         boolean last) {
@@ -271,7 +271,7 @@ public class Html {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static void withinStyle(StringBuilder out, Spanned text,
                                     int start, int end) {
         for (int i = start; i < end; i++) {
@@ -299,14 +299,14 @@ public class Html {
     
     private static class HtmlParser {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.980 -0400", hash_original_method = "2BD8172A597CA1F4EC32CC40B5134462", hash_generated_method = "2BD8172A597CA1F4EC32CC40B5134462")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.650 -0400", hash_original_method = "2BD8172A597CA1F4EC32CC40B5134462", hash_generated_method = "2BD8172A597CA1F4EC32CC40B5134462")
         public HtmlParser ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.980 -0400", hash_original_field = "6E4DDA0794A1CCE8D6F2FA6811420D43", hash_generated_field = "BAC597DD251A1106E8D35E0F6302B278")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.650 -0400", hash_original_field = "6E4DDA0794A1CCE8D6F2FA6811420D43", hash_generated_field = "BAC597DD251A1106E8D35E0F6302B278")
 
         private static final HTMLSchema schema = new HTMLSchema();
     }
@@ -327,23 +327,23 @@ public class Html {
 }
 
 class HtmlToSpannedConverter implements ContentHandler {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.980 -0400", hash_original_field = "6917951DFB797D97827BAAA584F128DE", hash_generated_field = "5EB2E77F51594E2C1DE90F3545DAFA8A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.651 -0400", hash_original_field = "6917951DFB797D97827BAAA584F128DE", hash_generated_field = "5EB2E77F51594E2C1DE90F3545DAFA8A")
 
     private String mSource;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.980 -0400", hash_original_field = "5424551D2079C84D9F9DE456A622364D", hash_generated_field = "9F664E317A344F99238051D2F1903E54")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.651 -0400", hash_original_field = "5424551D2079C84D9F9DE456A622364D", hash_generated_field = "9F664E317A344F99238051D2F1903E54")
 
     private XMLReader mReader;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.980 -0400", hash_original_field = "4B465DB347FF24306351EC1CAD85D0E6", hash_generated_field = "F52BFE7C8AABC90420173998C2780B6F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.651 -0400", hash_original_field = "4B465DB347FF24306351EC1CAD85D0E6", hash_generated_field = "F52BFE7C8AABC90420173998C2780B6F")
 
     private SpannableStringBuilder mSpannableStringBuilder;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.980 -0400", hash_original_field = "D6904A1F7372BFB73B20A639D27CE5A5", hash_generated_field = "BEF214E2C597894208A5D89455A16592")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.651 -0400", hash_original_field = "D6904A1F7372BFB73B20A639D27CE5A5", hash_generated_field = "BEF214E2C597894208A5D89455A16592")
 
     private Html.ImageGetter mImageGetter;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.980 -0400", hash_original_field = "7349FBA43B42948D8A0510E7FC223B0E", hash_generated_field = "11FCD8A3816FE593E534934FCEA6171D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.651 -0400", hash_original_field = "7349FBA43B42948D8A0510E7FC223B0E", hash_generated_field = "11FCD8A3816FE593E534934FCEA6171D")
 
     private Html.TagHandler mTagHandler;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.980 -0400", hash_original_method = "BFBE9CD4145DCE3991FF308298481129", hash_generated_method = "23D4FCF052973F1BD05CE2C9C4218B3E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.651 -0400", hash_original_method = "BFBE9CD4145DCE3991FF308298481129", hash_generated_method = "23D4FCF052973F1BD05CE2C9C4218B3E")
     public  HtmlToSpannedConverter(
             String source, Html.ImageGetter imageGetter, Html.TagHandler tagHandler,
             Parser parser) {
@@ -361,7 +361,7 @@ class HtmlToSpannedConverter implements ContentHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.980 -0400", hash_original_method = "E9DCA093295E5055C16F068195A6DE9F", hash_generated_method = "B82D119F046A87BE526B21A415A77C07")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.651 -0400", hash_original_method = "E9DCA093295E5055C16F068195A6DE9F", hash_generated_method = "3146FB3BAA153E912FD904A547AE57D2")
     public Spanned convert() {
         mReader.setContentHandler(this);
         try 
@@ -370,30 +370,30 @@ class HtmlToSpannedConverter implements ContentHandler {
         } //End block
         catch (IOException e)
         {
-            RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1270934518 = new RuntimeException(e);
-            varC76ADF009CE2FEDD948F7A54F409BA37_1270934518.addTaint(taint);
-            throw varC76ADF009CE2FEDD948F7A54F409BA37_1270934518;
+            RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_168709792 = new RuntimeException(e);
+            varC76ADF009CE2FEDD948F7A54F409BA37_168709792.addTaint(taint);
+            throw varC76ADF009CE2FEDD948F7A54F409BA37_168709792;
         } //End block
         catch (SAXException e)
         {
-            RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_86266762 = new RuntimeException(e);
-            varC76ADF009CE2FEDD948F7A54F409BA37_86266762.addTaint(taint);
-            throw varC76ADF009CE2FEDD948F7A54F409BA37_86266762;
+            RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_132808414 = new RuntimeException(e);
+            varC76ADF009CE2FEDD948F7A54F409BA37_132808414.addTaint(taint);
+            throw varC76ADF009CE2FEDD948F7A54F409BA37_132808414;
         } //End block
         Object[] obj = mSpannableStringBuilder.getSpans(0, mSpannableStringBuilder.length(), ParagraphStyle.class);
 for(int i = 0;i < obj.length;i++)
         {
             int start = mSpannableStringBuilder.getSpanStart(obj[i]);
             int end = mSpannableStringBuilder.getSpanEnd(obj[i]);
-    if(end - 2 >= 0)            
+            if(end - 2 >= 0)            
             {
-    if(mSpannableStringBuilder.charAt(end - 1) == '\n' &&
+                if(mSpannableStringBuilder.charAt(end - 1) == '\n' &&
                     mSpannableStringBuilder.charAt(end - 2) == '\n')                
                 {
                     end--;
                 } //End block
             } //End block
-    if(end == start)            
+            if(end == start)            
             {
                 mSpannableStringBuilder.removeSpan(obj[i]);
             } //End block
@@ -402,109 +402,109 @@ for(int i = 0;i < obj.length;i++)
                 mSpannableStringBuilder.setSpan(obj[i], start, end, Spannable.SPAN_PARAGRAPH);
             } //End block
         } //End block
-Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_240413960 =         mSpannableStringBuilder;
-        var5DE6A418D0AEB3D551F8691794A0FC8B_240413960.addTaint(taint);
-        return var5DE6A418D0AEB3D551F8691794A0FC8B_240413960;
+Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_408056746 =         mSpannableStringBuilder;
+        var5DE6A418D0AEB3D551F8691794A0FC8B_408056746.addTaint(taint);
+        return var5DE6A418D0AEB3D551F8691794A0FC8B_408056746;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.981 -0400", hash_original_method = "D9F0F9B119583626825989DD5C2C535C", hash_generated_method = "46BEFAF18F77B93C762E0C66460036B5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.652 -0400", hash_original_method = "D9F0F9B119583626825989DD5C2C535C", hash_generated_method = "46BEFAF18F77B93C762E0C66460036B5")
     private void handleStartTag(String tag, Attributes attributes) {
         addTaint(attributes.getTaint());
         addTaint(tag.getTaint());
-    if(tag.equalsIgnoreCase("br"))        
+        if(tag.equalsIgnoreCase("br"))        
         {
         } //End block
         else
-    if(tag.equalsIgnoreCase("p"))        
-        {
-            handleP(mSpannableStringBuilder);
-        } //End block
-        else
-    if(tag.equalsIgnoreCase("div"))        
+        if(tag.equalsIgnoreCase("p"))        
         {
             handleP(mSpannableStringBuilder);
         } //End block
         else
-    if(tag.equalsIgnoreCase("strong"))        
+        if(tag.equalsIgnoreCase("div"))        
+        {
+            handleP(mSpannableStringBuilder);
+        } //End block
+        else
+        if(tag.equalsIgnoreCase("strong"))        
         {
             start(mSpannableStringBuilder, new Bold());
         } //End block
         else
-    if(tag.equalsIgnoreCase("b"))        
+        if(tag.equalsIgnoreCase("b"))        
         {
             start(mSpannableStringBuilder, new Bold());
         } //End block
         else
-    if(tag.equalsIgnoreCase("em"))        
+        if(tag.equalsIgnoreCase("em"))        
         {
             start(mSpannableStringBuilder, new Italic());
         } //End block
         else
-    if(tag.equalsIgnoreCase("cite"))        
+        if(tag.equalsIgnoreCase("cite"))        
         {
             start(mSpannableStringBuilder, new Italic());
         } //End block
         else
-    if(tag.equalsIgnoreCase("dfn"))        
+        if(tag.equalsIgnoreCase("dfn"))        
         {
             start(mSpannableStringBuilder, new Italic());
         } //End block
         else
-    if(tag.equalsIgnoreCase("i"))        
+        if(tag.equalsIgnoreCase("i"))        
         {
             start(mSpannableStringBuilder, new Italic());
         } //End block
         else
-    if(tag.equalsIgnoreCase("big"))        
+        if(tag.equalsIgnoreCase("big"))        
         {
             start(mSpannableStringBuilder, new Big());
         } //End block
         else
-    if(tag.equalsIgnoreCase("small"))        
+        if(tag.equalsIgnoreCase("small"))        
         {
             start(mSpannableStringBuilder, new Small());
         } //End block
         else
-    if(tag.equalsIgnoreCase("font"))        
+        if(tag.equalsIgnoreCase("font"))        
         {
             startFont(mSpannableStringBuilder, attributes);
         } //End block
         else
-    if(tag.equalsIgnoreCase("blockquote"))        
+        if(tag.equalsIgnoreCase("blockquote"))        
         {
             handleP(mSpannableStringBuilder);
             start(mSpannableStringBuilder, new Blockquote());
         } //End block
         else
-    if(tag.equalsIgnoreCase("tt"))        
+        if(tag.equalsIgnoreCase("tt"))        
         {
             start(mSpannableStringBuilder, new Monospace());
         } //End block
         else
-    if(tag.equalsIgnoreCase("a"))        
+        if(tag.equalsIgnoreCase("a"))        
         {
             startA(mSpannableStringBuilder, attributes);
         } //End block
         else
-    if(tag.equalsIgnoreCase("u"))        
+        if(tag.equalsIgnoreCase("u"))        
         {
             start(mSpannableStringBuilder, new Underline());
         } //End block
         else
-    if(tag.equalsIgnoreCase("sup"))        
+        if(tag.equalsIgnoreCase("sup"))        
         {
             start(mSpannableStringBuilder, new Super());
         } //End block
         else
-    if(tag.equalsIgnoreCase("sub"))        
+        if(tag.equalsIgnoreCase("sub"))        
         {
             start(mSpannableStringBuilder, new Sub());
         } //End block
         else
-    if(tag.length() == 2 &&
+        if(tag.length() == 2 &&
                    Character.toLowerCase(tag.charAt(0)) == 'h' &&
                    tag.charAt(1) >= '1' && tag.charAt(1) <= '6')        
         {
@@ -512,12 +512,12 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_240413960 =         mSpannableString
             start(mSpannableStringBuilder, new Header(tag.charAt(1) - '1'));
         } //End block
         else
-    if(tag.equalsIgnoreCase("img"))        
+        if(tag.equalsIgnoreCase("img"))        
         {
             startImg(mSpannableStringBuilder, attributes, mImageGetter);
         } //End block
         else
-    if(mTagHandler != null)        
+        if(mTagHandler != null)        
         {
             mTagHandler.handleTag(true, tag, mSpannableStringBuilder, mReader);
         } //End block
@@ -526,102 +526,102 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_240413960 =         mSpannableString
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.982 -0400", hash_original_method = "6B986DC33BF60A186B7109194B660A70", hash_generated_method = "DCCD9F9DB769FB75E89FBD5FDBF8CDB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.653 -0400", hash_original_method = "6B986DC33BF60A186B7109194B660A70", hash_generated_method = "DCCD9F9DB769FB75E89FBD5FDBF8CDB1")
     private void handleEndTag(String tag) {
         addTaint(tag.getTaint());
-    if(tag.equalsIgnoreCase("br"))        
+        if(tag.equalsIgnoreCase("br"))        
         {
             handleBr(mSpannableStringBuilder);
         } //End block
         else
-    if(tag.equalsIgnoreCase("p"))        
+        if(tag.equalsIgnoreCase("p"))        
         {
             handleP(mSpannableStringBuilder);
         } //End block
         else
-    if(tag.equalsIgnoreCase("div"))        
+        if(tag.equalsIgnoreCase("div"))        
         {
             handleP(mSpannableStringBuilder);
         } //End block
         else
-    if(tag.equalsIgnoreCase("strong"))        
+        if(tag.equalsIgnoreCase("strong"))        
         {
             end(mSpannableStringBuilder, Bold.class, new StyleSpan(Typeface.BOLD));
         } //End block
         else
-    if(tag.equalsIgnoreCase("b"))        
+        if(tag.equalsIgnoreCase("b"))        
         {
             end(mSpannableStringBuilder, Bold.class, new StyleSpan(Typeface.BOLD));
         } //End block
         else
-    if(tag.equalsIgnoreCase("em"))        
+        if(tag.equalsIgnoreCase("em"))        
         {
             end(mSpannableStringBuilder, Italic.class, new StyleSpan(Typeface.ITALIC));
         } //End block
         else
-    if(tag.equalsIgnoreCase("cite"))        
+        if(tag.equalsIgnoreCase("cite"))        
         {
             end(mSpannableStringBuilder, Italic.class, new StyleSpan(Typeface.ITALIC));
         } //End block
         else
-    if(tag.equalsIgnoreCase("dfn"))        
+        if(tag.equalsIgnoreCase("dfn"))        
         {
             end(mSpannableStringBuilder, Italic.class, new StyleSpan(Typeface.ITALIC));
         } //End block
         else
-    if(tag.equalsIgnoreCase("i"))        
+        if(tag.equalsIgnoreCase("i"))        
         {
             end(mSpannableStringBuilder, Italic.class, new StyleSpan(Typeface.ITALIC));
         } //End block
         else
-    if(tag.equalsIgnoreCase("big"))        
+        if(tag.equalsIgnoreCase("big"))        
         {
             end(mSpannableStringBuilder, Big.class, new RelativeSizeSpan(1.25f));
         } //End block
         else
-    if(tag.equalsIgnoreCase("small"))        
+        if(tag.equalsIgnoreCase("small"))        
         {
             end(mSpannableStringBuilder, Small.class, new RelativeSizeSpan(0.8f));
         } //End block
         else
-    if(tag.equalsIgnoreCase("font"))        
+        if(tag.equalsIgnoreCase("font"))        
         {
             endFont(mSpannableStringBuilder);
         } //End block
         else
-    if(tag.equalsIgnoreCase("blockquote"))        
+        if(tag.equalsIgnoreCase("blockquote"))        
         {
             handleP(mSpannableStringBuilder);
             end(mSpannableStringBuilder, Blockquote.class, new QuoteSpan());
         } //End block
         else
-    if(tag.equalsIgnoreCase("tt"))        
+        if(tag.equalsIgnoreCase("tt"))        
         {
             end(mSpannableStringBuilder, Monospace.class,
                     new TypefaceSpan("monospace"));
         } //End block
         else
-    if(tag.equalsIgnoreCase("a"))        
+        if(tag.equalsIgnoreCase("a"))        
         {
             endA(mSpannableStringBuilder);
         } //End block
         else
-    if(tag.equalsIgnoreCase("u"))        
+        if(tag.equalsIgnoreCase("u"))        
         {
             end(mSpannableStringBuilder, Underline.class, new UnderlineSpan());
         } //End block
         else
-    if(tag.equalsIgnoreCase("sup"))        
+        if(tag.equalsIgnoreCase("sup"))        
         {
             end(mSpannableStringBuilder, Super.class, new SuperscriptSpan());
         } //End block
         else
-    if(tag.equalsIgnoreCase("sub"))        
+        if(tag.equalsIgnoreCase("sub"))        
         {
             end(mSpannableStringBuilder, Sub.class, new SubscriptSpan());
         } //End block
         else
-    if(tag.length() == 2 &&
+        if(tag.length() == 2 &&
                 Character.toLowerCase(tag.charAt(0)) == 'h' &&
                 tag.charAt(1) >= '1' && tag.charAt(1) <= '6')        
         {
@@ -629,7 +629,7 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_240413960 =         mSpannableString
             endHeader(mSpannableStringBuilder);
         } //End block
         else
-    if(mTagHandler != null)        
+        if(mTagHandler != null)        
         {
             mTagHandler.handleTag(false, tag, mSpannableStringBuilder, mReader);
         } //End block
@@ -638,7 +638,7 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_240413960 =         mSpannableString
     }
 
     
-        private static void handleP(SpannableStringBuilder text) {
+    private static void handleP(SpannableStringBuilder text) {
         int len = text.length();
         if (len >= 1 && text.charAt(len - 1) == '\n') {
             if (len >= 2 && text.charAt(len - 2) == '\n') {
@@ -653,12 +653,12 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_240413960 =         mSpannableString
     }
 
     
-        private static void handleBr(SpannableStringBuilder text) {
+    private static void handleBr(SpannableStringBuilder text) {
         text.append("\n");
     }
 
     
-        private static Object getLast(Spanned text, Class kind) {
+    private static Object getLast(Spanned text, Class kind) {
         Object[] objs = text.getSpans(0, text.length(), kind);
         if (objs.length == 0) {
             return null;
@@ -668,13 +668,13 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_240413960 =         mSpannableString
     }
 
     
-        private static void start(SpannableStringBuilder text, Object mark) {
+    private static void start(SpannableStringBuilder text, Object mark) {
         int len = text.length();
         text.setSpan(mark, len, len, Spannable.SPAN_MARK_MARK);
     }
 
     
-        private static void end(SpannableStringBuilder text, Class kind,
+    private static void end(SpannableStringBuilder text, Class kind,
                             Object repl) {
         int len = text.length();
         Object obj = getLast(text, kind);
@@ -687,7 +687,7 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_240413960 =         mSpannableString
     }
 
     
-        private static void startImg(SpannableStringBuilder text,
+    private static void startImg(SpannableStringBuilder text,
                                  Attributes attributes, Html.ImageGetter img) {
         String src = attributes.getValue("", "src");
         Drawable d = null;
@@ -706,7 +706,7 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_240413960 =         mSpannableString
     }
 
     
-        private static void startFont(SpannableStringBuilder text,
+    private static void startFont(SpannableStringBuilder text,
                                   Attributes attributes) {
         String color = attributes.getValue("", "color");
         String face = attributes.getValue("", "face");
@@ -715,7 +715,7 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_240413960 =         mSpannableString
     }
 
     
-        private static void endFont(SpannableStringBuilder text) {
+    private static void endFont(SpannableStringBuilder text) {
         int len = text.length();
         Object obj = getLast(text, Font.class);
         int where = text.getSpanStart(obj);
@@ -750,14 +750,14 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_240413960 =         mSpannableString
     }
 
     
-        private static void startA(SpannableStringBuilder text, Attributes attributes) {
+    private static void startA(SpannableStringBuilder text, Attributes attributes) {
         String href = attributes.getValue("", "href");
         int len = text.length();
         text.setSpan(new Href(href), len, len, Spannable.SPAN_MARK_MARK);
     }
 
     
-        private static void endA(SpannableStringBuilder text) {
+    private static void endA(SpannableStringBuilder text) {
         int len = text.length();
         Object obj = getLast(text, Href.class);
         int where = text.getSpanStart(obj);
@@ -772,7 +772,7 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_240413960 =         mSpannableString
     }
 
     
-        private static void endHeader(SpannableStringBuilder text) {
+    private static void endHeader(SpannableStringBuilder text) {
         int len = text.length();
         Object obj = getLast(text, Header.class);
         int where = text.getSpanStart(obj);
@@ -790,30 +790,30 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_240413960 =         mSpannableString
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.983 -0400", hash_original_method = "764EC710ED4FDFB68C9E6FE9ED249649", hash_generated_method = "8982242C86C53DDD9F8374B3C93C1CFB")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.654 -0400", hash_original_method = "764EC710ED4FDFB68C9E6FE9ED249649", hash_generated_method = "8982242C86C53DDD9F8374B3C93C1CFB")
     public void setDocumentLocator(Locator locator) {
         addTaint(locator.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.983 -0400", hash_original_method = "FAA725B72A2ADC391C781CAB49B849AD", hash_generated_method = "F5ABC17320CB17FAFC02F6F62510312E")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.654 -0400", hash_original_method = "FAA725B72A2ADC391C781CAB49B849AD", hash_generated_method = "F5ABC17320CB17FAFC02F6F62510312E")
     public void startDocument() throws SAXException {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.983 -0400", hash_original_method = "08AD4CBC251CA96B103DE58FB6AA2921", hash_generated_method = "3ACBE0E14DE791A4A89F8374A54B4D72")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.654 -0400", hash_original_method = "08AD4CBC251CA96B103DE58FB6AA2921", hash_generated_method = "3ACBE0E14DE791A4A89F8374A54B4D72")
     public void endDocument() throws SAXException {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.984 -0400", hash_original_method = "9A8DBFCDD6673580DBBCEDB8AE69733A", hash_generated_method = "20857BED78DD6479B3F78F4A256F1BE5")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.654 -0400", hash_original_method = "9A8DBFCDD6673580DBBCEDB8AE69733A", hash_generated_method = "20857BED78DD6479B3F78F4A256F1BE5")
     public void startPrefixMapping(String prefix, String uri) throws SAXException {
         addTaint(uri.getTaint());
         addTaint(prefix.getTaint());
@@ -821,15 +821,15 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_240413960 =         mSpannableString
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.984 -0400", hash_original_method = "0E90E85A66154559EA3C98CC7177C34F", hash_generated_method = "5B3A24B5853AE441BDBBB759C4F775AE")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.654 -0400", hash_original_method = "0E90E85A66154559EA3C98CC7177C34F", hash_generated_method = "5B3A24B5853AE441BDBBB759C4F775AE")
     public void endPrefixMapping(String prefix) throws SAXException {
         addTaint(prefix.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.984 -0400", hash_original_method = "5AB19A89F0F12F22375CE28650E01E88", hash_generated_method = "EB440CCEC741ABD6D7A347D2F451C4B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.654 -0400", hash_original_method = "5AB19A89F0F12F22375CE28650E01E88", hash_generated_method = "EB440CCEC741ABD6D7A347D2F451C4B7")
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         addTaint(attributes.getTaint());
         addTaint(qName.getTaint());
@@ -841,7 +841,7 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_240413960 =         mSpannableString
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.984 -0400", hash_original_method = "56FD9F5B493653CBD1D9C50AD3B3D114", hash_generated_method = "2E29CFB35996A9818C2CB9605C18AF00")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.654 -0400", hash_original_method = "56FD9F5B493653CBD1D9C50AD3B3D114", hash_generated_method = "2E29CFB35996A9818C2CB9605C18AF00")
     public void endElement(String uri, String localName, String qName) throws SAXException {
         addTaint(qName.getTaint());
         addTaint(localName.getTaint());
@@ -852,7 +852,7 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_240413960 =         mSpannableString
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.984 -0400", hash_original_method = "CA8066E430EFB34465AFA28815B509C0", hash_generated_method = "AA87CC8138ABA28B2B330DC300DBC233")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.655 -0400", hash_original_method = "CA8066E430EFB34465AFA28815B509C0", hash_generated_method = "AA87CC8138ABA28B2B330DC300DBC233")
     public void characters(char ch[], int start, int length) throws SAXException {
         addTaint(length);
         addTaint(start);
@@ -861,14 +861,14 @@ Spanned var5DE6A418D0AEB3D551F8691794A0FC8B_240413960 =         mSpannableString
 for(int i = 0;i < length;i++)
         {
             char c = ch[i + start];
-    if(c == ' ' || c == '\n')            
+            if(c == ' ' || c == '\n')            
             {
                 char pred;
                 int len = sb.length();
-    if(len == 0)                
+                if(len == 0)                
                 {
                     len = mSpannableStringBuilder.length();
-    if(len == 0)                    
+                    if(len == 0)                    
                     {
                         pred = '\n';
                     } //End block
@@ -881,7 +881,7 @@ for(int i = 0;i < length;i++)
                 {
                     pred = sb.charAt(len - 1);
                 } //End block
-    if(pred != ' ' && pred != '\n')                
+                if(pred != ' ' && pred != '\n')                
                 {
                     sb.append(' ');
                 } //End block
@@ -897,7 +897,7 @@ for(int i = 0;i < length;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.984 -0400", hash_original_method = "9049C36C2683070F72629A8BA1D4C193", hash_generated_method = "E804F1D7B5EF34836B1823F580D6DE63")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.655 -0400", hash_original_method = "9049C36C2683070F72629A8BA1D4C193", hash_generated_method = "E804F1D7B5EF34836B1823F580D6DE63")
     public void ignorableWhitespace(char ch[], int start, int length) throws SAXException {
         addTaint(length);
         addTaint(start);
@@ -906,8 +906,8 @@ for(int i = 0;i < length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.984 -0400", hash_original_method = "D7C64873BD0FC0A0449628F53B089507", hash_generated_method = "BEB1DCA8CBE8BFAF869A1EA04F4CBAE4")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.655 -0400", hash_original_method = "D7C64873BD0FC0A0449628F53B089507", hash_generated_method = "BEB1DCA8CBE8BFAF869A1EA04F4CBAE4")
     public void processingInstruction(String target, String data) throws SAXException {
         addTaint(data.getTaint());
         addTaint(target.getTaint());
@@ -915,15 +915,15 @@ for(int i = 0;i < length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.985 -0400", hash_original_method = "1616136BE44E483876717F8A446FD8E6", hash_generated_method = "78177C3306D49108B776A6C694C380AB")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.655 -0400", hash_original_method = "1616136BE44E483876717F8A446FD8E6", hash_generated_method = "78177C3306D49108B776A6C694C380AB")
     public void skippedEntity(String name) throws SAXException {
         addTaint(name.getTaint());
         // ---------- Original Method ----------
     }
 
     
-        private static HashMap<String,Integer> buildColorMap() {
+    private static HashMap<String,Integer> buildColorMap() {
         HashMap<String,Integer> map = new HashMap<String,Integer>();
         map.put("aqua", 0x00FFFF);
         map.put("black", 0x000000);
@@ -945,7 +945,7 @@ for(int i = 0;i < length;i++)
     }
 
     
-        private static int getHtmlColor(String color) {
+    private static int getHtmlColor(String color) {
         Integer i = COLORS.get(color.toLowerCase());
         if (i != null) {
             return i;
@@ -961,7 +961,7 @@ for(int i = 0;i < length;i++)
     
     private static class Bold {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.985 -0400", hash_original_method = "360EF21B8D8783EFA444B4BE5FDC6AD7", hash_generated_method = "360EF21B8D8783EFA444B4BE5FDC6AD7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.655 -0400", hash_original_method = "360EF21B8D8783EFA444B4BE5FDC6AD7", hash_generated_method = "360EF21B8D8783EFA444B4BE5FDC6AD7")
         public Bold ()
         {
             //Synthesized constructor
@@ -974,7 +974,7 @@ for(int i = 0;i < length;i++)
     
     private static class Italic {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.985 -0400", hash_original_method = "49A8CF03F12E3553DCC23BB27643EAFC", hash_generated_method = "49A8CF03F12E3553DCC23BB27643EAFC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.655 -0400", hash_original_method = "49A8CF03F12E3553DCC23BB27643EAFC", hash_generated_method = "49A8CF03F12E3553DCC23BB27643EAFC")
         public Italic ()
         {
             //Synthesized constructor
@@ -987,7 +987,7 @@ for(int i = 0;i < length;i++)
     
     private static class Underline {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.985 -0400", hash_original_method = "84D51255F87B8DD26833841AC6851E69", hash_generated_method = "84D51255F87B8DD26833841AC6851E69")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "84D51255F87B8DD26833841AC6851E69", hash_generated_method = "84D51255F87B8DD26833841AC6851E69")
         public Underline ()
         {
             //Synthesized constructor
@@ -1000,7 +1000,7 @@ for(int i = 0;i < length;i++)
     
     private static class Big {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.985 -0400", hash_original_method = "273608B63D858A3552D83E6F68A870F3", hash_generated_method = "273608B63D858A3552D83E6F68A870F3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "273608B63D858A3552D83E6F68A870F3", hash_generated_method = "273608B63D858A3552D83E6F68A870F3")
         public Big ()
         {
             //Synthesized constructor
@@ -1013,7 +1013,7 @@ for(int i = 0;i < length;i++)
     
     private static class Small {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.985 -0400", hash_original_method = "30BB2E22576FED131404001997B90E83", hash_generated_method = "30BB2E22576FED131404001997B90E83")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "30BB2E22576FED131404001997B90E83", hash_generated_method = "30BB2E22576FED131404001997B90E83")
         public Small ()
         {
             //Synthesized constructor
@@ -1026,7 +1026,7 @@ for(int i = 0;i < length;i++)
     
     private static class Monospace {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.985 -0400", hash_original_method = "9E34A0C6710AE2CB78083EA433BD9375", hash_generated_method = "9E34A0C6710AE2CB78083EA433BD9375")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "9E34A0C6710AE2CB78083EA433BD9375", hash_generated_method = "9E34A0C6710AE2CB78083EA433BD9375")
         public Monospace ()
         {
             //Synthesized constructor
@@ -1039,7 +1039,7 @@ for(int i = 0;i < length;i++)
     
     private static class Blockquote {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.985 -0400", hash_original_method = "8510635EE940E5512FA9DD7C2C1B8599", hash_generated_method = "8510635EE940E5512FA9DD7C2C1B8599")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "8510635EE940E5512FA9DD7C2C1B8599", hash_generated_method = "8510635EE940E5512FA9DD7C2C1B8599")
         public Blockquote ()
         {
             //Synthesized constructor
@@ -1052,7 +1052,7 @@ for(int i = 0;i < length;i++)
     
     private static class Super {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.985 -0400", hash_original_method = "7F9EC2B6EDB6C576D6E7F20FD0DA4CCE", hash_generated_method = "7F9EC2B6EDB6C576D6E7F20FD0DA4CCE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "7F9EC2B6EDB6C576D6E7F20FD0DA4CCE", hash_generated_method = "7F9EC2B6EDB6C576D6E7F20FD0DA4CCE")
         public Super ()
         {
             //Synthesized constructor
@@ -1065,7 +1065,7 @@ for(int i = 0;i < length;i++)
     
     private static class Sub {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.985 -0400", hash_original_method = "35CBF4C3F1CE0FC70451AFA9D19DB301", hash_generated_method = "35CBF4C3F1CE0FC70451AFA9D19DB301")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "35CBF4C3F1CE0FC70451AFA9D19DB301", hash_generated_method = "35CBF4C3F1CE0FC70451AFA9D19DB301")
         public Sub ()
         {
             //Synthesized constructor
@@ -1077,14 +1077,14 @@ for(int i = 0;i < length;i++)
 
     
     private static class Font {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.985 -0400", hash_original_field = "D2A5DB085B68088532B9E8FB544C2EAD", hash_generated_field = "2C22DB162080CAE82C8D78A913DED9F7")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_field = "D2A5DB085B68088532B9E8FB544C2EAD", hash_generated_field = "2C22DB162080CAE82C8D78A913DED9F7")
 
         public String mColor;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.986 -0400", hash_original_field = "001A605783B748C535B6127A31F8F3EE", hash_generated_field = "9EF83681A7C49CB0E73C741AE3D0F05C")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_field = "001A605783B748C535B6127A31F8F3EE", hash_generated_field = "9EF83681A7C49CB0E73C741AE3D0F05C")
 
         public String mFace;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.986 -0400", hash_original_method = "C4B068F2F67D5AD4645AF1A9761F50CA", hash_generated_method = "0045DC1451596B8D8072989C438E2861")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "C4B068F2F67D5AD4645AF1A9761F50CA", hash_generated_method = "0045DC1451596B8D8072989C438E2861")
         public  Font(String color, String face) {
             mColor = color;
             mFace = face;
@@ -1099,11 +1099,11 @@ for(int i = 0;i < length;i++)
 
     
     private static class Href {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.986 -0400", hash_original_field = "CE33A8F3A41D743FE3E46C5E1C560A65", hash_generated_field = "2F16E5D3AF055919B45CF87232A38369")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_field = "CE33A8F3A41D743FE3E46C5E1C560A65", hash_generated_field = "2F16E5D3AF055919B45CF87232A38369")
 
         public String mHref;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.986 -0400", hash_original_method = "1859394720661AA4B03D475EFD821F3A", hash_generated_method = "41EF2A9AC6A4FA312215BBCF14E58CAD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "1859394720661AA4B03D475EFD821F3A", hash_generated_method = "41EF2A9AC6A4FA312215BBCF14E58CAD")
         public  Href(String href) {
             mHref = href;
             // ---------- Original Method ----------
@@ -1116,11 +1116,11 @@ for(int i = 0;i < length;i++)
 
     
     private static class Header {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.986 -0400", hash_original_field = "D3512852EA3D6B78A96B5192CDA7B029", hash_generated_field = "75109DE7AA3B41B03299C7AED8804A2F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.768 -0400", hash_original_field = "D3512852EA3D6B78A96B5192CDA7B029", hash_generated_field = "75109DE7AA3B41B03299C7AED8804A2F")
 
         private int mLevel;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.986 -0400", hash_original_method = "9C6EFC5AFAADDC937EF8FD6D30D1EF2D", hash_generated_method = "19FC55A0458E0C1D397B9A48B86FB54E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.768 -0400", hash_original_method = "9C6EFC5AFAADDC937EF8FD6D30D1EF2D", hash_generated_method = "19FC55A0458E0C1D397B9A48B86FB54E")
         public  Header(int level) {
             mLevel = level;
             // ---------- Original Method ----------
@@ -1132,12 +1132,12 @@ for(int i = 0;i < length;i++)
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.986 -0400", hash_original_field = "D49A5EA828DDE4A015E6CB159896312A", hash_generated_field = "86AF0AEED37DBA73030BAFAE6316F8A7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.768 -0400", hash_original_field = "D49A5EA828DDE4A015E6CB159896312A", hash_generated_field = "86AF0AEED37DBA73030BAFAE6316F8A7")
 
     private static final float[] HEADER_SIZES = {
         1.5f, 1.4f, 1.3f, 1.2f, 1.1f, 1f,
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.986 -0400", hash_original_field = "5289A74433A08D80C65F1716485A5C4F", hash_generated_field = "B4FEF6E9838FF422A3FE4BD8FF30796B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.768 -0400", hash_original_field = "5289A74433A08D80C65F1716485A5C4F", hash_generated_field = "B4FEF6E9838FF422A3FE4BD8FF30796B")
 
     private static HashMap<String,Integer> COLORS = buildColorMap();
 }

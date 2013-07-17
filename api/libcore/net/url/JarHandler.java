@@ -12,28 +12,28 @@ import java.net.URLStreamHandler;
 
 public class JarHandler extends URLStreamHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.021 -0400", hash_original_method = "0A284EE1D1173C3D5D1EE186B211FF85", hash_generated_method = "0A284EE1D1173C3D5D1EE186B211FF85")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.324 -0400", hash_original_method = "0A284EE1D1173C3D5D1EE186B211FF85", hash_generated_method = "0A284EE1D1173C3D5D1EE186B211FF85")
     public JarHandler ()
     {
         //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.022 -0400", hash_original_method = "BD0D54E815B3E8434D2BE4AD1DDC7411", hash_generated_method = "6F8022D6E8C552FB7BB2192388996C99")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.325 -0400", hash_original_method = "BD0D54E815B3E8434D2BE4AD1DDC7411", hash_generated_method = "689204F9794709363BC4139FB0066FA9")
     @Override
     protected URLConnection openConnection(URL u) throws IOException {
         addTaint(u.getTaint());
-URLConnection varBC9830C330B4B1BAF8EE432E94D30CE4_848329010 =         new JarURLConnectionImpl(u);
-        varBC9830C330B4B1BAF8EE432E94D30CE4_848329010.addTaint(taint);
-        return varBC9830C330B4B1BAF8EE432E94D30CE4_848329010;
+URLConnection varBC9830C330B4B1BAF8EE432E94D30CE4_932355748 =         new JarURLConnectionImpl(u);
+        varBC9830C330B4B1BAF8EE432E94D30CE4_932355748.addTaint(taint);
+        return varBC9830C330B4B1BAF8EE432E94D30CE4_932355748;
         // ---------- Original Method ----------
         //return new JarURLConnectionImpl(u);
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.024 -0400", hash_original_method = "57C5D17E5E318F4D460452A0FAAB1E77", hash_generated_method = "B59F23773568468B2EC6536F9C67AD24")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.327 -0400", hash_original_method = "57C5D17E5E318F4D460452A0FAAB1E77", hash_generated_method = "52F7D06F01DE2F1B4CE25E1BAC7B0747")
     @Override
     protected void parseURL(URL url, String spec, int start, int limit) {
         addTaint(limit);
@@ -41,11 +41,11 @@ URLConnection varBC9830C330B4B1BAF8EE432E94D30CE4_848329010 =         new JarURL
         addTaint(spec.getTaint());
         addTaint(url.getTaint());
         String file = url.getFile();
-    if(file == null)        
+        if(file == null)        
         {
             file = "";
         } //End block
-    if(limit > start)        
+        if(limit > start)        
         {
             spec = spec.substring(start, limit);
         } //End block
@@ -53,18 +53,18 @@ URLConnection varBC9830C330B4B1BAF8EE432E94D30CE4_848329010 =         new JarURL
         {
             spec = "";
         } //End block
-    if(spec.indexOf("!/") == -1 && (file.indexOf("!/") == -1))        
+        if(spec.indexOf("!/") == -1 && (file.indexOf("!/") == -1))        
         {
-            NullPointerException var075CFF3EB490981A8C60E519EA96B814_895068997 = new NullPointerException("Cannot find \"!/\"");
-            var075CFF3EB490981A8C60E519EA96B814_895068997.addTaint(taint);
-            throw var075CFF3EB490981A8C60E519EA96B814_895068997;
+            NullPointerException var075CFF3EB490981A8C60E519EA96B814_383516115 = new NullPointerException("Cannot find \"!/\"");
+            var075CFF3EB490981A8C60E519EA96B814_383516115.addTaint(taint);
+            throw var075CFF3EB490981A8C60E519EA96B814_383516115;
         } //End block
-    if(file.isEmpty())        
+        if(file.isEmpty())        
         {
             file = spec;
         } //End block
         else
-    if(spec.charAt(0) == '/')        
+        if(spec.charAt(0) == '/')        
         {
             file = file.substring(0, file.indexOf('!') + 1) + spec;
         } //End block
@@ -81,9 +81,9 @@ URLConnection varBC9830C330B4B1BAF8EE432E94D30CE4_848329010 =         new JarURL
         } //End block
         catch (MalformedURLException e)
         {
-            NullPointerException var5806EDD1B41BE5211379EE89A3B93889_2049227130 = new NullPointerException(e.toString());
-            var5806EDD1B41BE5211379EE89A3B93889_2049227130.addTaint(taint);
-            throw var5806EDD1B41BE5211379EE89A3B93889_2049227130;
+            NullPointerException var5806EDD1B41BE5211379EE89A3B93889_1509129767 = new NullPointerException(e.toString());
+            var5806EDD1B41BE5211379EE89A3B93889_1509129767.addTaint(taint);
+            throw var5806EDD1B41BE5211379EE89A3B93889_1509129767;
         } //End block
         setURL(url, "jar", "", -1, null, null, file, null, null);
         // ---------- Original Method ----------
@@ -91,8 +91,8 @@ URLConnection varBC9830C330B4B1BAF8EE432E94D30CE4_848329010 =         new JarURL
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.025 -0400", hash_original_method = "F692A804EFA22D479A24DA08ED26F838", hash_generated_method = "33716B123F6946D77DBAA1AD8C9C95A5")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.328 -0400", hash_original_method = "F692A804EFA22D479A24DA08ED26F838", hash_generated_method = "E4A84F165325C6C8EA6E3FF5DE3691C3")
     @Override
     protected String toExternalForm(URL url) {
         addTaint(url.getTaint());
@@ -100,13 +100,13 @@ URLConnection varBC9830C330B4B1BAF8EE432E94D30CE4_848329010 =         new JarURL
         sb.append("jar:");
         sb.append(url.getFile());
         String ref = url.getRef();
-    if(ref != null)        
+        if(ref != null)        
         {
             sb.append(ref);
         } //End block
-String var2460B846747F8B22185AD8BE722266A5_407690457 =         sb.toString();
-        var2460B846747F8B22185AD8BE722266A5_407690457.addTaint(taint);
-        return var2460B846747F8B22185AD8BE722266A5_407690457;
+String var2460B846747F8B22185AD8BE722266A5_524910826 =         sb.toString();
+        var2460B846747F8B22185AD8BE722266A5_524910826.addTaint(taint);
+        return var2460B846747F8B22185AD8BE722266A5_524910826;
         // ---------- Original Method ----------
         //StringBuilder sb = new StringBuilder();
         //sb.append("jar:");

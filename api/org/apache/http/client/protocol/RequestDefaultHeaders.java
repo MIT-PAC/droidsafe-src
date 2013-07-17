@@ -15,26 +15,26 @@ import org.apache.http.protocol.HttpContext;
 
 public class RequestDefaultHeaders implements HttpRequestInterceptor {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.247 -0400", hash_original_method = "A692411AA68D5698704806EAFB0D6447", hash_generated_method = "BC9A54616EA56C3FB9CBB65BD3CE817E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.524 -0400", hash_original_method = "A692411AA68D5698704806EAFB0D6447", hash_generated_method = "BC9A54616EA56C3FB9CBB65BD3CE817E")
     public  RequestDefaultHeaders() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.247 -0400", hash_original_method = "BC6D4315FE478105CC299FA29DDE20AF", hash_generated_method = "22E8F5A84C462058C94F4862D68CD85E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.525 -0400", hash_original_method = "BC6D4315FE478105CC299FA29DDE20AF", hash_generated_method = "04A61F8264D55758D1856387FBF4BF4F")
     public void process(final HttpRequest request, final HttpContext context) throws HttpException, IOException {
         addTaint(context.getTaint());
         addTaint(request.getTaint());
-    if(request == null)        
+        if(request == null)        
         {
-            IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_1065650527 = new IllegalArgumentException("HTTP request may not be null");
-            varF07DEF4BA25028D1DB51C0BA629AF0B4_1065650527.addTaint(taint);
-            throw varF07DEF4BA25028D1DB51C0BA629AF0B4_1065650527;
+            IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_355779953 = new IllegalArgumentException("HTTP request may not be null");
+            varF07DEF4BA25028D1DB51C0BA629AF0B4_355779953.addTaint(taint);
+            throw varF07DEF4BA25028D1DB51C0BA629AF0B4_355779953;
         } //End block
         Collection<?> defHeaders = (Collection<?>) request.getParams().getParameter(
                 ClientPNames.DEFAULT_HEADERS);
-    if(defHeaders != null)        
+        if(defHeaders != null)        
         {
 for(Object defHeader : defHeaders)
             {

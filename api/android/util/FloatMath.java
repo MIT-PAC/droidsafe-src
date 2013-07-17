@@ -7,7 +7,7 @@ import droidsafe.runtime.*;
 
 public class FloatMath {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.906 -0400", hash_original_method = "1F13790E730E0CCC2AC5BFBAA0385051", hash_generated_method = "D48FCD0E22A30AE22D8E0CFA1293CBCE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.709 -0400", hash_original_method = "1F13790E730E0CCC2AC5BFBAA0385051", hash_generated_method = "D48FCD0E22A30AE22D8E0CFA1293CBCE")
     private  FloatMath() {
         // ---------- Original Method ----------
     }

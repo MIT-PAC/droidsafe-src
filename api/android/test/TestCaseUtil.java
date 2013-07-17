@@ -19,13 +19,13 @@ import java.util.Set;
 
 public class TestCaseUtil {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.249 -0400", hash_original_method = "8B3FB0DB9AA59378E1F246FBF0E78671", hash_generated_method = "3AE31D122ABA53FDBBC70130B76C3925")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.924 -0400", hash_original_method = "8B3FB0DB9AA59378E1F246FBF0E78671", hash_generated_method = "3AE31D122ABA53FDBBC70130B76C3925")
     private  TestCaseUtil() {
         // ---------- Original Method ----------
     }
 
     
-        @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     public static List<String> getTestCaseNames(Test test, boolean flatten) {
         List<Test> tests = (List<Test>) getTests(test, flatten);
         List<String> testCaseNames = Lists.newArrayList();
@@ -36,12 +36,12 @@ public class TestCaseUtil {
     }
 
     
-        public static List<? extends Test> getTests(Test test, boolean flatten) {
+    public static List<? extends Test> getTests(Test test, boolean flatten) {
         return getTests(test, flatten, new HashSet<Class<?>>());
     }
 
     
-        private static List<? extends Test> getTests(Test test, boolean flatten,
+    private static List<? extends Test> getTests(Test test, boolean flatten,
             Set<Class<?>> seen) {
         List<Test> testCases = Lists.newArrayList();
         if (test != null) {
@@ -73,7 +73,7 @@ public class TestCaseUtil {
     }
 
     
-        private static Test invokeSuiteMethodIfPossible(Class testClass,
+    private static Test invokeSuiteMethodIfPossible(Class testClass,
             Set<Class<?>> seen) {
         try {
             Method suiteMethod = testClass.getMethod(
@@ -93,7 +93,7 @@ public class TestCaseUtil {
     }
 
     
-        public static String getTestName(Test test) {
+    public static String getTestName(Test test) {
         if (test instanceof TestCase) {
             TestCase testCase = (TestCase) test;
             return testCase.getName();
@@ -113,7 +113,7 @@ public class TestCaseUtil {
     }
 
     
-        public static Test getTestAtIndex(TestSuite testSuite, int position) {
+    public static Test getTestAtIndex(TestSuite testSuite, int position) {
         int index = 0;
         Enumeration enumeration = testSuite.tests();
         while (enumeration.hasMoreElements()) {
@@ -127,7 +127,7 @@ public class TestCaseUtil {
     }
 
     
-        public static TestSuite createTestSuite(Class<? extends Test> testClass) throws InstantiationException, IllegalAccessException {
+    public static TestSuite createTestSuite(Class<? extends Test> testClass) throws InstantiationException, IllegalAccessException {
         Test test = invokeSuiteMethodIfPossible(testClass, 
                 new HashSet<Class<?>>());
         if (test == null) {

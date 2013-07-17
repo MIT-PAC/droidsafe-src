@@ -9,53 +9,53 @@ import java.lang.Comparable;
 import android.telephony.PhoneNumberUtils;
 
 public class DriverCall implements Comparable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.708 -0400", hash_original_field = "6A992D5529F459A44FEE58C733255E86", hash_generated_field = "AE1343475DB0F2C28979E182E3B11BCC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.242 -0400", hash_original_field = "6A992D5529F459A44FEE58C733255E86", hash_generated_field = "AE1343475DB0F2C28979E182E3B11BCC")
 
     public int index;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.708 -0400", hash_original_field = "29B792D576B1CEF92259AA1D29B9F3FD", hash_generated_field = "1A0B53EAA247DC6719F4EC7AD9624134")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.242 -0400", hash_original_field = "29B792D576B1CEF92259AA1D29B9F3FD", hash_generated_field = "1A0B53EAA247DC6719F4EC7AD9624134")
 
     public boolean isMT;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.708 -0400", hash_original_field = "9ED39E2EA931586B6A985A6942EF573E", hash_generated_field = "B721BC48DDB182AF0928FEBCA7FA4E6F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.242 -0400", hash_original_field = "9ED39E2EA931586B6A985A6942EF573E", hash_generated_field = "B721BC48DDB182AF0928FEBCA7FA4E6F")
 
     public State state;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.708 -0400", hash_original_field = "9F6A5BA9DC1BC6518D717E5056AA93BD", hash_generated_field = "5597A2BC6D4A0BF542E9B87403689D72")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.242 -0400", hash_original_field = "9F6A5BA9DC1BC6518D717E5056AA93BD", hash_generated_field = "5597A2BC6D4A0BF542E9B87403689D72")
 
     public boolean isMpty;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.708 -0400", hash_original_field = "B1BC248A7FF2B2E95569F56DE68615DF", hash_generated_field = "35C5A82434F6EB5F96609BC97C13822F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.242 -0400", hash_original_field = "B1BC248A7FF2B2E95569F56DE68615DF", hash_generated_field = "35C5A82434F6EB5F96609BC97C13822F")
 
     public String number;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.708 -0400", hash_original_field = "39C3867BC992E67140BEC331F3007B98", hash_generated_field = "195906E00D55E129634D3DD1275757F6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.243 -0400", hash_original_field = "39C3867BC992E67140BEC331F3007B98", hash_generated_field = "195906E00D55E129634D3DD1275757F6")
 
     public int TOA;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.708 -0400", hash_original_field = "25A592F74F5BD1F7C3D19B4F2496237D", hash_generated_field = "8B156B469FEE8F94B916262DE52D2D33")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.243 -0400", hash_original_field = "25A592F74F5BD1F7C3D19B4F2496237D", hash_generated_field = "8B156B469FEE8F94B916262DE52D2D33")
 
     public boolean isVoice;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.708 -0400", hash_original_field = "F39DD7C66200B31D992F0757D45FB8C9", hash_generated_field = "97DCB49DD9336A67AD545FC983BB6020")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.243 -0400", hash_original_field = "F39DD7C66200B31D992F0757D45FB8C9", hash_generated_field = "97DCB49DD9336A67AD545FC983BB6020")
 
     public boolean isVoicePrivacy;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.708 -0400", hash_original_field = "C3955CF318F60D815066DAA73A622297", hash_generated_field = "1646A9C49DEAD15E3295B8D01B9977F8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.243 -0400", hash_original_field = "C3955CF318F60D815066DAA73A622297", hash_generated_field = "1646A9C49DEAD15E3295B8D01B9977F8")
 
     public int als;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.708 -0400", hash_original_field = "F00A6033EECCE0EBD17BDAAC2E6671A9", hash_generated_field = "6CB3D906347F781338EC2DA9AF9D3365")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.243 -0400", hash_original_field = "F00A6033EECCE0EBD17BDAAC2E6671A9", hash_generated_field = "6CB3D906347F781338EC2DA9AF9D3365")
 
     public int numberPresentation;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.708 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.243 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
 
     public String name;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.708 -0400", hash_original_field = "2EA6554455FD669EC0582028CFF50FED", hash_generated_field = "7E759DEFD9070D930A5C3E6F52204FE3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.243 -0400", hash_original_field = "2EA6554455FD669EC0582028CFF50FED", hash_generated_field = "7E759DEFD9070D930A5C3E6F52204FE3")
 
     public int namePresentation;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.708 -0400", hash_original_field = "B06E6373CFB44BD5F02CE42C64608D89", hash_generated_field = "AD0525E103DB38F174D56C60CB9BD86E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.243 -0400", hash_original_field = "B06E6373CFB44BD5F02CE42C64608D89", hash_generated_field = "AD0525E103DB38F174D56C60CB9BD86E")
 
     public UUSInfo uusInfo;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.709 -0400", hash_original_method = "DF91F81E80FDB939BBEABFE9635EC975", hash_generated_method = "A0F6DD97DA81B4F7A55DEAA088C14728")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.243 -0400", hash_original_method = "DF91F81E80FDB939BBEABFE9635EC975", hash_generated_method = "A0F6DD97DA81B4F7A55DEAA088C14728")
     public  DriverCall() {
         // ---------- Original Method ----------
     }
 
     
-        static DriverCall fromCLCCLine(String line) {
+    static DriverCall fromCLCCLine(String line) {
         DriverCall ret = new DriverCall();
         ATResponseParser p = new ATResponseParser(line);
         try {
@@ -82,9 +82,9 @@ public class DriverCall implements Comparable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.710 -0400", hash_original_method = "7AA84AC8F947102F8EF05D3C97C1753D", hash_generated_method = "26862FAF5417F2D35217E63421E200F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.244 -0400", hash_original_method = "7AA84AC8F947102F8EF05D3C97C1753D", hash_generated_method = "56A4960B1309083FC987E9E4C439C06D")
     public String toString() {
-String var73E2365DCE80719343796B149C5DF735_2026198323 =         "id=" + index + ","
+String var73E2365DCE80719343796B149C5DF735_528768870 =         "id=" + index + ","
                 + state + ","
                 + "toa=" + TOA + ","
                 + (isMpty ? "conf" : "norm") + ","
@@ -94,8 +94,8 @@ String var73E2365DCE80719343796B149C5DF735_2026198323 =         "id=" + index + 
                 + (isVoicePrivacy ? "evp" : "noevp") + ","
                  + ",cli=" + numberPresentation + ","
                  + "," + namePresentation;
-        var73E2365DCE80719343796B149C5DF735_2026198323.addTaint(taint);
-        return var73E2365DCE80719343796B149C5DF735_2026198323;
+        var73E2365DCE80719343796B149C5DF735_528768870.addTaint(taint);
+        return var73E2365DCE80719343796B149C5DF735_528768870;
         // ---------- Original Method ----------
         //return "id=" + index + ","
                 //+ state + ","
@@ -110,7 +110,7 @@ String var73E2365DCE80719343796B149C5DF735_2026198323 =         "id=" + index + 
     }
 
     
-        public static State stateFromCLCC(int state) throws ATParseEx {
+    public static State stateFromCLCC(int state) throws ATParseEx {
         switch(state) {
             case 0: return State.ACTIVE;
             case 1: return State.HOLDING;
@@ -124,7 +124,7 @@ String var73E2365DCE80719343796B149C5DF735_2026198323 =         "id=" + index + 
     }
 
     
-        public static int presentationFromCLIP(int cli) throws ATParseEx {
+    public static int presentationFromCLIP(int cli) throws ATParseEx {
         switch(cli) {
             case 0: return Connection.PRESENTATION_ALLOWED;
             case 1: return Connection.PRESENTATION_RESTRICTED;
@@ -136,30 +136,30 @@ String var73E2365DCE80719343796B149C5DF735_2026198323 =         "id=" + index + 
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.711 -0400", hash_original_method = "7A57313C9AA4F0F08ECFF99E7B6FC0B1", hash_generated_method = "079678F34F08CF6B5C6BF4E4FB8D5233")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.244 -0400", hash_original_method = "7A57313C9AA4F0F08ECFF99E7B6FC0B1", hash_generated_method = "97F2D1E38F0EFDF7C2B3A2F9963376F2")
     public int compareTo(Object o) {
         addTaint(o.getTaint());
         DriverCall dc;
         dc = (DriverCall)o;
-    if(index < dc.index)        
+        if(index < dc.index)        
         {
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_1587830972 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_959393180 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_959393180;
+            int var6BB61E3B7BCE0931DA574D19D1D82C88_1652024515 = (-1);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_313588667 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_313588667;
         } //End block
         else
-    if(index == dc.index)        
+        if(index == dc.index)        
         {
-            int varCFCD208495D565EF66E7DFF9F98764DA_1653476 = (0);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_99158285 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_99158285;
+            int varCFCD208495D565EF66E7DFF9F98764DA_1261808755 = (0);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2110889278 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2110889278;
         } //End block
         else
         {
-            int varC4CA4238A0B923820DCC509A6F75849B_1849279687 = (1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1591522230 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1591522230;
+            int varC4CA4238A0B923820DCC509A6F75849B_973773017 = (1);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1394944807 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1394944807;
         } //End block
         // ---------- Original Method ----------
         //DriverCall dc;
@@ -184,7 +184,7 @@ String var73E2365DCE80719343796B149C5DF735_2026198323 =         "id=" + index + 
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.711 -0400", hash_original_field = "4DBD40250117FD6239DF36E7EBA17FD5", hash_generated_field = "DB7A35D86E816F9CDE58D28E944FC412")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.244 -0400", hash_original_field = "4DBD40250117FD6239DF36E7EBA17FD5", hash_generated_field = "DB7A35D86E816F9CDE58D28E944FC412")
 
     static final String LOG_TAG = "RILB";
 }

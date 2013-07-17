@@ -15,41 +15,41 @@ import java.lang.Runnable;
 import java.util.List;
 
 final class DeviceOrientationService implements SensorEventListener {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.926 -0400", hash_original_field = "3ED8275DCE79E42B3B02ABEA2442432B", hash_generated_field = "9C5FFC7AB264A9E2409475E7791D4532")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.314 -0400", hash_original_field = "3ED8275DCE79E42B3B02ABEA2442432B", hash_generated_field = "9C5FFC7AB264A9E2409475E7791D4532")
 
     private float[] mGravityVector;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.926 -0400", hash_original_field = "7AE8C37126C35170590102A57FD32B35", hash_generated_field = "0130128FE056DC76160B4827D4BE644E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.314 -0400", hash_original_field = "7AE8C37126C35170590102A57FD32B35", hash_generated_field = "0130128FE056DC76160B4827D4BE644E")
 
     private float[] mMagneticFieldVector;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.926 -0400", hash_original_field = "1D4FD4FBF6080AF66D4D90562FE06036", hash_generated_field = "66D108DFC043A6E0A2844E4843186070")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.314 -0400", hash_original_field = "1D4FD4FBF6080AF66D4D90562FE06036", hash_generated_field = "66D108DFC043A6E0A2844E4843186070")
 
     private DeviceMotionAndOrientationManager mManager;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.926 -0400", hash_original_field = "130D713CAF236B328B5223DFA18F1488", hash_generated_field = "B2DDC5809B05187D32A84097DC68019C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.314 -0400", hash_original_field = "130D713CAF236B328B5223DFA18F1488", hash_generated_field = "B2DDC5809B05187D32A84097DC68019C")
 
     private boolean mIsRunning;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.926 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.314 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
 
     private Handler mHandler;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.926 -0400", hash_original_field = "8CDFC97B128FB94D2A2F11FDAFFE50EA", hash_generated_field = "D8CC5B9F3DF5D78484C533BB7CDDA85C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.314 -0400", hash_original_field = "8CDFC97B128FB94D2A2F11FDAFFE50EA", hash_generated_field = "D8CC5B9F3DF5D78484C533BB7CDDA85C")
 
     private SensorManager mSensorManager;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.926 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.314 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
     private Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.926 -0400", hash_original_field = "7574041472B9B2E76867A37482E74343", hash_generated_field = "0A23F4655A3DFB9C9E452D889EBE9404")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.314 -0400", hash_original_field = "7574041472B9B2E76867A37482E74343", hash_generated_field = "0A23F4655A3DFB9C9E452D889EBE9404")
 
     private Double mAlpha;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.927 -0400", hash_original_field = "6A50E75BFB2FD3E51E931E0FB19516A2", hash_generated_field = "64234C701661B0D83F7238BD4569B56F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.314 -0400", hash_original_field = "6A50E75BFB2FD3E51E931E0FB19516A2", hash_generated_field = "64234C701661B0D83F7238BD4569B56F")
 
     private Double mBeta;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.927 -0400", hash_original_field = "D0E25905791C4A3739FADA1C0E52A041", hash_generated_field = "9EEB92A35AEC39199205F7CE49B953F3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.314 -0400", hash_original_field = "D0E25905791C4A3739FADA1C0E52A041", hash_generated_field = "9EEB92A35AEC39199205F7CE49B953F3")
 
     private Double mGamma;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.927 -0400", hash_original_field = "2C3606D875A88A4154C18923EE3485CF", hash_generated_field = "16AAE3611879142DAF4D4972E6DBF92E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.314 -0400", hash_original_field = "2C3606D875A88A4154C18923EE3485CF", hash_generated_field = "16AAE3611879142DAF4D4972E6DBF92E")
 
     private boolean mHaveSentErrorEvent;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.927 -0400", hash_original_method = "4D8FCE308D7FC749FF19FBAE89D7CA70", hash_generated_method = "87D6AFD046F32ED648775F26C5959B17")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.315 -0400", hash_original_method = "4D8FCE308D7FC749FF19FBAE89D7CA70", hash_generated_method = "87D6AFD046F32ED648775F26C5959B17")
     public  DeviceOrientationService(DeviceMotionAndOrientationManager manager, Context context) {
         mManager = manager;
         mContext = context;
@@ -61,7 +61,7 @@ final class DeviceOrientationService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.927 -0400", hash_original_method = "4CC8267164C7FA2FF7A54409829F5B3F", hash_generated_method = "1271AEFE8C3FFFE0936AD75B93E923E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.316 -0400", hash_original_method = "4CC8267164C7FA2FF7A54409829F5B3F", hash_generated_method = "1271AEFE8C3FFFE0936AD75B93E923E4")
     public void start() {
         mIsRunning = true;
         registerForSensors();
@@ -71,7 +71,7 @@ final class DeviceOrientationService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.928 -0400", hash_original_method = "E95AF6342D982D1129097C11892774DC", hash_generated_method = "574593EF3A6A5CC6922E3DFC8DCA805B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.316 -0400", hash_original_method = "E95AF6342D982D1129097C11892774DC", hash_generated_method = "574593EF3A6A5CC6922E3DFC8DCA805B")
     public void stop() {
         mIsRunning = false;
         unregisterFromSensors();
@@ -81,9 +81,9 @@ final class DeviceOrientationService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.928 -0400", hash_original_method = "D444E72BAE4BC67A93A8D811E5903DC0", hash_generated_method = "C883279CD5E1305CF1724780C166A59B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.317 -0400", hash_original_method = "D444E72BAE4BC67A93A8D811E5903DC0", hash_generated_method = "C883279CD5E1305CF1724780C166A59B")
     public void suspend() {
-    if(mIsRunning)        
+        if(mIsRunning)        
         {
             unregisterFromSensors();
         } //End block
@@ -94,9 +94,9 @@ final class DeviceOrientationService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.928 -0400", hash_original_method = "13F627D50D1CD4F6B5F8D936ACD57861", hash_generated_method = "3117D756CAF8B65FBD016E23A95BDACB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.317 -0400", hash_original_method = "13F627D50D1CD4F6B5F8D936ACD57861", hash_generated_method = "3117D756CAF8B65FBD016E23A95BDACB")
     public void resume() {
-    if(mIsRunning)        
+        if(mIsRunning)        
         {
             registerForSensors();
         } //End block
@@ -107,17 +107,17 @@ final class DeviceOrientationService implements SensorEventListener {
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.929 -0400", hash_original_method = "C4E19FEB85A20B838CCD6120912B24F7", hash_generated_method = "A7E67A6E76B1F10B2C3579EEC8072463")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.318 -0400", hash_original_method = "C4E19FEB85A20B838CCD6120912B24F7", hash_generated_method = "ABEAB5B3E2E12E12C119B904BB044706")
     private void sendErrorEvent() {
-    if(mHaveSentErrorEvent)        
+        if(mHaveSentErrorEvent)        
         return;
         mHaveSentErrorEvent = true;
         mHandler.post(new Runnable() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.929 -0400", hash_original_method = "1621C64DF7C2F75E1B41A795930D55FE", hash_generated_method = "159DA07BF2E63017CDEBCB598DD661E0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.318 -0400", hash_original_method = "1621C64DF7C2F75E1B41A795930D55FE", hash_generated_method = "159DA07BF2E63017CDEBCB598DD661E0")
         @Override
         public void run() {
-    if(mIsRunning)            
+            if(mIsRunning)            
             {
                 mManager.onOrientationChange(null, null, null);
             } //End block
@@ -145,13 +145,13 @@ final class DeviceOrientationService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.930 -0400", hash_original_method = "A01419D47FD253423887BAF542AEFD8C", hash_generated_method = "B7C539EED17301F99C7F75A7F4191932")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.319 -0400", hash_original_method = "A01419D47FD253423887BAF542AEFD8C", hash_generated_method = "B7C539EED17301F99C7F75A7F4191932")
     private void registerForSensors() {
-    if(mHandler == null)        
+        if(mHandler == null)        
         {
             mHandler = new Handler();
         } //End block
-    if(!registerForAccelerometerSensor() || !registerForMagneticFieldSensor())        
+        if(!registerForAccelerometerSensor() || !registerForMagneticFieldSensor())        
         {
             unregisterFromSensors();
             sendErrorEvent();
@@ -167,14 +167,14 @@ final class DeviceOrientationService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.930 -0400", hash_original_method = "A3B30EF17FDC8C38C5B1B85F341CAEE6", hash_generated_method = "F89677568426AB4B7FB8C9E9AE566DF4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.320 -0400", hash_original_method = "A3B30EF17FDC8C38C5B1B85F341CAEE6", hash_generated_method = "F89677568426AB4B7FB8C9E9AE566DF4")
     private void getOrientationUsingGetRotationMatrix() {
-    if(mGravityVector == null || mMagneticFieldVector == null)        
+        if(mGravityVector == null || mMagneticFieldVector == null)        
         {
             return;
         } //End block
         float[] deviceRotationMatrix = new float[9];
-    if(!SensorManager.getRotationMatrix(
+        if(!SensorManager.getRotationMatrix(
                 deviceRotationMatrix, null, mGravityVector, mMagneticFieldVector))        
         {
             return;
@@ -221,15 +221,15 @@ final class DeviceOrientationService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.931 -0400", hash_original_method = "D09B23AC902B5D9C0E49BB52A156F918", hash_generated_method = "4AB05E152A44E625063023CC1A818436")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.322 -0400", hash_original_method = "D09B23AC902B5D9C0E49BB52A156F918", hash_generated_method = "225149FBEE566755F3B686C87EE9F7F9")
     private SensorManager getSensorManager() {
-    if(mSensorManager == null)        
+        if(mSensorManager == null)        
         {
             mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
         } //End block
-SensorManager varAF949C78846D4F076444FE5DD86DE06F_625863409 =         mSensorManager;
-        varAF949C78846D4F076444FE5DD86DE06F_625863409.addTaint(taint);
-        return varAF949C78846D4F076444FE5DD86DE06F_625863409;
+SensorManager varAF949C78846D4F076444FE5DD86DE06F_1776423920 =         mSensorManager;
+        varAF949C78846D4F076444FE5DD86DE06F_1776423920.addTaint(taint);
+        return varAF949C78846D4F076444FE5DD86DE06F_1776423920;
         // ---------- Original Method ----------
         //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
         //if (mSensorManager == null) {
@@ -239,19 +239,19 @@ SensorManager varAF949C78846D4F076444FE5DD86DE06F_625863409 =         mSensorMan
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.931 -0400", hash_original_method = "B3284C523F8E8DEDA1572FA7CE19585B", hash_generated_method = "C3DE443A5B93BD1F4A5FA37E80648A5D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.323 -0400", hash_original_method = "B3284C523F8E8DEDA1572FA7CE19585B", hash_generated_method = "7459FC141BF55EA41336E0E2C606D79A")
     private boolean registerForAccelerometerSensor() {
         List<Sensor> sensors = getSensorManager().getSensorList(Sensor.TYPE_ACCELEROMETER);
-    if(sensors.isEmpty())        
+        if(sensors.isEmpty())        
         {
-            boolean var68934A3E9455FA72420237EB05902327_821396564 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1984405047 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1984405047;
+            boolean var68934A3E9455FA72420237EB05902327_269427576 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_796019598 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_796019598;
         } //End block
-        boolean var320D0CCDEA6DF6796F8BA2DEE97A55AA_1722352746 = (getSensorManager().registerListener(
+        boolean var320D0CCDEA6DF6796F8BA2DEE97A55AA_1761816893 = (getSensorManager().registerListener(
                 this, sensors.get(0), SensorManager.SENSOR_DELAY_FASTEST, mHandler));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_591947194 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_591947194;
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_270197456 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_270197456;
         // ---------- Original Method ----------
         //List<Sensor> sensors = getSensorManager().getSensorList(Sensor.TYPE_ACCELEROMETER);
         //if (sensors.isEmpty()) {
@@ -262,19 +262,19 @@ SensorManager varAF949C78846D4F076444FE5DD86DE06F_625863409 =         mSensorMan
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.931 -0400", hash_original_method = "DFE78C89ABF5437F78B53A9E5486BEA8", hash_generated_method = "57E4F1E906D2BAB13137D3ADF9E66966")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.323 -0400", hash_original_method = "DFE78C89ABF5437F78B53A9E5486BEA8", hash_generated_method = "5667CF9F377410C95FA65FFE95910D98")
     private boolean registerForMagneticFieldSensor() {
         List<Sensor> sensors = getSensorManager().getSensorList(Sensor.TYPE_MAGNETIC_FIELD);
-    if(sensors.isEmpty())        
+        if(sensors.isEmpty())        
         {
-            boolean var68934A3E9455FA72420237EB05902327_681508029 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1332331622 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1332331622;
+            boolean var68934A3E9455FA72420237EB05902327_843806934 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1222832640 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1222832640;
         } //End block
-        boolean var320D0CCDEA6DF6796F8BA2DEE97A55AA_1079349694 = (getSensorManager().registerListener(
+        boolean var320D0CCDEA6DF6796F8BA2DEE97A55AA_98997650 = (getSensorManager().registerListener(
                 this, sensors.get(0), SensorManager.SENSOR_DELAY_FASTEST, mHandler));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1484481836 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1484481836;
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_643817904 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_643817904;
         // ---------- Original Method ----------
         //List<Sensor> sensors = getSensorManager().getSensorList(Sensor.TYPE_MAGNETIC_FIELD);
         //if (sensors.isEmpty()) {
@@ -285,7 +285,7 @@ SensorManager varAF949C78846D4F076444FE5DD86DE06F_625863409 =         mSensorMan
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.932 -0400", hash_original_method = "3017DC11BC04FDEC5E6982352A18F2D7", hash_generated_method = "D951C525941C25B5CE19BA545AA9B4D8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.324 -0400", hash_original_method = "3017DC11BC04FDEC5E6982352A18F2D7", hash_generated_method = "D951C525941C25B5CE19BA545AA9B4D8")
     private void unregisterFromSensors() {
         getSensorManager().unregisterListener(this);
         // ---------- Original Method ----------
@@ -293,10 +293,10 @@ SensorManager varAF949C78846D4F076444FE5DD86DE06F_625863409 =         mSensorMan
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.932 -0400", hash_original_method = "B4ADD48907D203A526782697C56D84A1", hash_generated_method = "3C1A1EC0C343A6858CE51FA636390E27")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.324 -0400", hash_original_method = "B4ADD48907D203A526782697C56D84A1", hash_generated_method = "3C1A1EC0C343A6858CE51FA636390E27")
     private void maybeSendChange(double alpha, double beta, double gamma) {
-    if(mAlpha == null || mBeta == null || mGamma == null
+        if(mAlpha == null || mBeta == null || mGamma == null
                 || Math.abs(alpha - mAlpha) > DELTA_DEGRESS
                 || Math.abs(beta - mBeta) > DELTA_DEGRESS
                 || Math.abs(gamma - mGamma) > DELTA_DEGRESS)        
@@ -322,17 +322,17 @@ SensorManager varAF949C78846D4F076444FE5DD86DE06F_625863409 =         mSensorMan
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.934 -0400", hash_original_method = "2695E209DFB6DD433B7C6CE1A619CE79", hash_generated_method = "4B78C89890BD75034BFA745D6F3B71B4")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.326 -0400", hash_original_method = "2695E209DFB6DD433B7C6CE1A619CE79", hash_generated_method = "4B78C89890BD75034BFA745D6F3B71B4")
     public void onSensorChanged(SensorEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-    if(!mIsRunning)        
+        if(!mIsRunning)        
         {
             return;
         } //End block
 switch(event.sensor.getType()){
         case Sensor.TYPE_ACCELEROMETER:
-    if(mGravityVector == null)        
+        if(mGravityVector == null)        
         {
             mGravityVector = new float[3];
         } //End block
@@ -342,7 +342,7 @@ switch(event.sensor.getType()){
         getOrientationUsingGetRotationMatrix();
         break;
         case Sensor.TYPE_MAGNETIC_FIELD:
-    if(mMagneticFieldVector == null)        
+        if(mMagneticFieldVector == null)        
         {
             mMagneticFieldVector = new float[3];
         } //End block
@@ -358,8 +358,8 @@ switch(event.sensor.getType()){
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.934 -0400", hash_original_method = "4C77A6863BACF480F39B2826F5CA663C", hash_generated_method = "3B735DACA44A7088C201CD04E68BCC26")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.326 -0400", hash_original_method = "4C77A6863BACF480F39B2826F5CA663C", hash_generated_method = "3B735DACA44A7088C201CD04E68BCC26")
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(accuracy);
@@ -369,7 +369,7 @@ switch(event.sensor.getType()){
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.934 -0400", hash_original_field = "7FDCB9E51A150844B0E9DB43E2297EE0", hash_generated_field = "4E3D251C42A5CB0D1F6817ECA2EF0DA8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.327 -0400", hash_original_field = "7FDCB9E51A150844B0E9DB43E2297EE0", hash_generated_field = "4E3D251C42A5CB0D1F6817ECA2EF0DA8")
 
     private static final double DELTA_DEGRESS = 1.0;
 }

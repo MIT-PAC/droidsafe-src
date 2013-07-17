@@ -18,58 +18,58 @@ import org.apache.http.ProtocolException;
 
 public class RequestTargetHost implements HttpRequestInterceptor {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:38.007 -0400", hash_original_method = "8E392018972A7DBBBF7C8FCDEC2420D5", hash_generated_method = "6517A03037392B0D34A56F3318F3EB95")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.403 -0400", hash_original_method = "8E392018972A7DBBBF7C8FCDEC2420D5", hash_generated_method = "6517A03037392B0D34A56F3318F3EB95")
     public  RequestTargetHost() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:38.009 -0400", hash_original_method = "EFFA06EA6DD5102576B15EFE0500FD3E", hash_generated_method = "25FF8F4C715769B8F60A8C971F1FD5F2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.404 -0400", hash_original_method = "EFFA06EA6DD5102576B15EFE0500FD3E", hash_generated_method = "A66E0C9BC9E07A1E8436A74D997701D1")
     public void process(final HttpRequest request, final HttpContext context) throws HttpException, IOException {
         addTaint(context.getTaint());
         addTaint(request.getTaint());
-    if(request == null)        
+        if(request == null)        
         {
-            IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_2067715678 = new IllegalArgumentException("HTTP request may not be null");
-            varF07DEF4BA25028D1DB51C0BA629AF0B4_2067715678.addTaint(taint);
-            throw varF07DEF4BA25028D1DB51C0BA629AF0B4_2067715678;
+            IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_1018222714 = new IllegalArgumentException("HTTP request may not be null");
+            varF07DEF4BA25028D1DB51C0BA629AF0B4_1018222714.addTaint(taint);
+            throw varF07DEF4BA25028D1DB51C0BA629AF0B4_1018222714;
         } //End block
-    if(context == null)        
+        if(context == null)        
         {
-            IllegalArgumentException var313A469DAA78732DF88285478241413C_1123239893 = new IllegalArgumentException("HTTP context may not be null");
-            var313A469DAA78732DF88285478241413C_1123239893.addTaint(taint);
-            throw var313A469DAA78732DF88285478241413C_1123239893;
+            IllegalArgumentException var313A469DAA78732DF88285478241413C_835394645 = new IllegalArgumentException("HTTP context may not be null");
+            var313A469DAA78732DF88285478241413C_835394645.addTaint(taint);
+            throw var313A469DAA78732DF88285478241413C_835394645;
         } //End block
-    if(!request.containsHeader(HTTP.TARGET_HOST))        
+        if(!request.containsHeader(HTTP.TARGET_HOST))        
         {
             HttpHost targethost = (HttpHost) context
                 .getAttribute(ExecutionContext.HTTP_TARGET_HOST);
-    if(targethost == null)            
+            if(targethost == null)            
             {
                 HttpConnection conn = (HttpConnection) context
                     .getAttribute(ExecutionContext.HTTP_CONNECTION);
-    if(conn instanceof HttpInetConnection)                
+                if(conn instanceof HttpInetConnection)                
                 {
                     InetAddress address = ((HttpInetConnection) conn).getRemoteAddress();
                     int port = ((HttpInetConnection) conn).getRemotePort();
-    if(address != null)                    
+                    if(address != null)                    
                     {
                         targethost = new HttpHost(address.getHostName(), port);
                     } //End block
                 } //End block
-    if(targethost == null)                
+                if(targethost == null)                
                 {
                     ProtocolVersion ver = request.getRequestLine().getProtocolVersion();
-    if(ver.lessEquals(HttpVersion.HTTP_1_0))                    
+                    if(ver.lessEquals(HttpVersion.HTTP_1_0))                    
                     {
                         return;
                     } //End block
                     else
                     {
-                        ProtocolException varA557E6481C232D003289F510B5D5329E_1769046764 = new ProtocolException("Target host missing");
-                        varA557E6481C232D003289F510B5D5329E_1769046764.addTaint(taint);
-                        throw varA557E6481C232D003289F510B5D5329E_1769046764;
+                        ProtocolException varA557E6481C232D003289F510B5D5329E_395866015 = new ProtocolException("Target host missing");
+                        varA557E6481C232D003289F510B5D5329E_395866015.addTaint(taint);
+                        throw varA557E6481C232D003289F510B5D5329E_395866015;
                     } //End block
                 } //End block
             } //End block

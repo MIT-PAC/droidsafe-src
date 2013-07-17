@@ -13,7 +13,7 @@ import android.util.Log;
 
 public class NetworkUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.283 -0400", hash_original_method = "F1C492907C316113D8B010C69392B76F", hash_generated_method = "F1C492907C316113D8B010C69392B76F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.046 -0400", hash_original_method = "F1C492907C316113D8B010C69392B76F", hash_generated_method = "F1C492907C316113D8B010C69392B76F")
     public NetworkUtils ()
     {
         //Synthesized constructor
@@ -75,7 +75,7 @@ public class NetworkUtils {
     }
 
     
-        public static InetAddress intToInetAddress(int hostAddress) {
+    public static InetAddress intToInetAddress(int hostAddress) {
         byte[] addressBytes = { (byte)(0xff & hostAddress),
                                 (byte)(0xff & (hostAddress >> 8)),
                                 (byte)(0xff & (hostAddress >> 16)),
@@ -88,7 +88,7 @@ public class NetworkUtils {
     }
 
     
-        public static int inetAddressToInt(InetAddress inetAddr) throws IllegalArgumentException {
+    public static int inetAddressToInt(InetAddress inetAddr) throws IllegalArgumentException {
         byte [] addr = inetAddr.getAddress();
         if (addr.length != 4) {
             throw new IllegalArgumentException("Not an IPv4 address");
@@ -98,7 +98,7 @@ public class NetworkUtils {
     }
 
     
-        public static int prefixLengthToNetmaskInt(int prefixLength) throws IllegalArgumentException {
+    public static int prefixLengthToNetmaskInt(int prefixLength) throws IllegalArgumentException {
         if (prefixLength < 0 || prefixLength > 32) {
             throw new IllegalArgumentException("Invalid prefix length (0 <= prefix <= 32)");
         }
@@ -107,17 +107,17 @@ public class NetworkUtils {
     }
 
     
-        public static int netmaskIntToPrefixLength(int netmask) {
+    public static int netmaskIntToPrefixLength(int netmask) {
         return Integer.bitCount(netmask);
     }
 
     
-        public static InetAddress numericToInetAddress(String addrString) throws IllegalArgumentException {
+    public static InetAddress numericToInetAddress(String addrString) throws IllegalArgumentException {
         return InetAddress.parseNumericAddress(addrString);
     }
 
     
-        public static InetAddress getNetworkPart(InetAddress address, int prefixLength) {
+    public static InetAddress getNetworkPart(InetAddress address, int prefixLength) {
         if (address == null) {
             throw new RuntimeException("getNetworkPart doesn't accept null address");
         }
@@ -143,14 +143,14 @@ public class NetworkUtils {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static boolean addressTypeMatches(InetAddress left, InetAddress right) {
         return (((left instanceof Inet4Address) && (right instanceof Inet4Address)) ||
                 ((left instanceof Inet6Address) && (right instanceof Inet6Address)));
     }
 
     
-        public static InetAddress hexToInet6Address(String addrHexString) throws IllegalArgumentException {
+    public static InetAddress hexToInet6Address(String addrHexString) throws IllegalArgumentException {
         try {
             return numericToInetAddress(String.format("%s:%s:%s:%s:%s:%s:%s:%s",
                     addrHexString.substring(0,4),   addrHexString.substring(4,8),
@@ -164,7 +164,7 @@ public class NetworkUtils {
     }
 
     
-        public static String[] makeStrings(Collection<InetAddress> addrs) {
+    public static String[] makeStrings(Collection<InetAddress> addrs) {
         String[] result = new String[addrs.size()];
         int i = 0;
         for (InetAddress addr : addrs) {
@@ -174,7 +174,7 @@ public class NetworkUtils {
     }
 
     
-        public static String trimV4AddrZeros(String addr) {
+    public static String trimV4AddrZeros(String addr) {
         if (addr == null) return null;
         String[] octets = addr.split("\\.");
         if (octets.length != 4) return addr;
@@ -194,16 +194,16 @@ public class NetworkUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.288 -0400", hash_original_field = "EFD2DD51969EAC667D6C714A3D10B805", hash_generated_field = "1105638891056CB5B9AE23205F9644BD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.052 -0400", hash_original_field = "EFD2DD51969EAC667D6C714A3D10B805", hash_generated_field = "1105638891056CB5B9AE23205F9644BD")
 
     private static final String TAG = "NetworkUtils";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.288 -0400", hash_original_field = "18B1CA92461CE22E7B205EC8EE808BF5", hash_generated_field = "8527B95E11967191DF76627972EC8F1C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.052 -0400", hash_original_field = "18B1CA92461CE22E7B205EC8EE808BF5", hash_generated_field = "8527B95E11967191DF76627972EC8F1C")
 
     public static final int RESET_IPV4_ADDRESSES = 0x01;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.288 -0400", hash_original_field = "AAE4005003B639A4069F3999D66E8066", hash_generated_field = "EEC5561B124BB21A0A9EE1CFD725F6EF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.052 -0400", hash_original_field = "AAE4005003B639A4069F3999D66E8066", hash_generated_field = "EEC5561B124BB21A0A9EE1CFD725F6EF")
 
     public static final int RESET_IPV6_ADDRESSES = 0x02;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.288 -0400", hash_original_field = "04DACDA903C1AF2936B97BED81ED3BA0", hash_generated_field = "658E35BA939EA603B8ACD3CD0142AFF1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.052 -0400", hash_original_field = "04DACDA903C1AF2936B97BED81ED3BA0", hash_generated_field = "658E35BA939EA603B8ACD3CD0142AFF1")
 
     public static final int RESET_ALL_ADDRESSES = RESET_IPV4_ADDRESSES | RESET_IPV6_ADDRESSES;
 }

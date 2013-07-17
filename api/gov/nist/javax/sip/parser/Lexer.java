@@ -12,8 +12,8 @@ import java.util.Hashtable;
 
 public class Lexer extends LexerCore {
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.720 -0400", hash_original_method = "1890ACF170ADFCBA047D359B33ABA230", hash_generated_method = "7AD0628F236553F5847A73488C6F1B5F")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.759 -0400", hash_original_method = "1890ACF170ADFCBA047D359B33ABA230", hash_generated_method = "7AD0628F236553F5847A73488C6F1B5F")
     public  Lexer(String lexerName, String buffer) {
         super(lexerName, buffer);
         addTaint(buffer.getTaint());
@@ -24,7 +24,7 @@ public class Lexer extends LexerCore {
     }
 
     
-        public static String getHeaderName(String line) {
+    public static String getHeaderName(String line) {
         if (line == null)
             return null;
         String headerName = null;
@@ -40,7 +40,7 @@ public class Lexer extends LexerCore {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static String getHeaderValue(String line) {
         if (line == null)
             return null;
@@ -55,17 +55,17 @@ public class Lexer extends LexerCore {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.724 -0400", hash_original_method = "524EFDA3A3BEC88BDD052CB8EB3761F7", hash_generated_method = "0EB5C0F95D2A88875ACE2347C5727BB0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.763 -0400", hash_original_method = "524EFDA3A3BEC88BDD052CB8EB3761F7", hash_generated_method = "0EB5C0F95D2A88875ACE2347C5727BB0")
     public void selectLexer(String lexerName) {
         addTaint(lexerName.getTaint());
         synchronized
 (lexerTables)        {
             currentLexer = (Hashtable) lexerTables.get(lexerName);
             this.currentLexerName = lexerName;
-    if(currentLexer == null)            
+            if(currentLexer == null)            
             {
                 addLexer(lexerName);
-    if(lexerName.equals("method_keywordLexer"))                
+                if(lexerName.equals("method_keywordLexer"))                
                 {
                     addKeyword(TokenNames.REGISTER, TokenTypes.REGISTER);
                     addKeyword(TokenNames.ACK, TokenTypes.ACK);
@@ -80,7 +80,7 @@ public class Lexer extends LexerCore {
                     addKeyword(TokenNames.PUBLISH, TokenTypes.PUBLISH);
                 } //End block
                 else
-    if(lexerName.equals("command_keywordLexer"))                
+                if(lexerName.equals("command_keywordLexer"))                
                 {
                     addKeyword(ErrorInfoHeader.NAME.toUpperCase(),
                             TokenTypes.ERROR_INFO);
@@ -249,17 +249,17 @@ public class Lexer extends LexerCore {
                     addKeyword(ReferencesHeader.NAME.toUpperCase(),TokenTypes.REFERENCES);
                 } //End block
                 else
-    if(lexerName.equals("status_lineLexer"))                
+                if(lexerName.equals("status_lineLexer"))                
                 {
                     addKeyword(TokenNames.SIP.toUpperCase(), TokenTypes.SIP);
                 } //End block
                 else
-    if(lexerName.equals("request_lineLexer"))                
+                if(lexerName.equals("request_lineLexer"))                
                 {
                     addKeyword(TokenNames.SIP.toUpperCase(), TokenTypes.SIP);
                 } //End block
                 else
-    if(lexerName.equals("sip_urlLexer"))                
+                if(lexerName.equals("sip_urlLexer"))                
                 {
                     addKeyword(TokenNames.TEL.toUpperCase(), TokenTypes.TEL);
                     addKeyword(TokenNames.SIP.toUpperCase(), TokenTypes.SIP);

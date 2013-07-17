@@ -25,22 +25,22 @@ import javax.net.ssl.SSLSocket;
 
 public abstract class AbstractVerifier implements X509HostnameVerifier {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.702 -0400", hash_original_method = "F9761A2E230B965E685AB0F097FC8BA3", hash_generated_method = "B512B82EB5D4AD689C485137CF7AD9E0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.042 -0400", hash_original_method = "F9761A2E230B965E685AB0F097FC8BA3", hash_generated_method = "B512B82EB5D4AD689C485137CF7AD9E0")
     public  AbstractVerifier() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.702 -0400", hash_original_method = "A023267D72420C341ECC242060C387E3", hash_generated_method = "D382D86A2CCFFAFBF9F1511D57B5EBA0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.042 -0400", hash_original_method = "A023267D72420C341ECC242060C387E3", hash_generated_method = "C7607A7B95325859FF8AC721406D9048")
     public final void verify(String host, SSLSocket ssl) throws IOException {
         addTaint(ssl.getTaint());
         addTaint(host.getTaint());
-    if(host == null)        
+        if(host == null)        
         {
-            NullPointerException var3BB76A6D73CB84B2B487DF16075DE90E_1022210385 = new NullPointerException("host to verify is null");
-            var3BB76A6D73CB84B2B487DF16075DE90E_1022210385.addTaint(taint);
-            throw var3BB76A6D73CB84B2B487DF16075DE90E_1022210385;
+            NullPointerException var3BB76A6D73CB84B2B487DF16075DE90E_1898120888 = new NullPointerException("host to verify is null");
+            var3BB76A6D73CB84B2B487DF16075DE90E_1898120888.addTaint(taint);
+            throw var3BB76A6D73CB84B2B487DF16075DE90E_1898120888;
         } //End block
         SSLSession session = ssl.getSession();
         Certificate[] certs = session.getPeerCertificates();
@@ -57,7 +57,7 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.703 -0400", hash_original_method = "43EDB91BF0A5D9A44DF28C7ADED9E98C", hash_generated_method = "CA65FE3B3B515B665CE60CE60C873BDC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.043 -0400", hash_original_method = "43EDB91BF0A5D9A44DF28C7ADED9E98C", hash_generated_method = "C76AB7FF121B2E2F400F083FAE95E4ED")
     public final boolean verify(String host, SSLSession session) {
         addTaint(session.getTaint());
         addTaint(host.getTaint());
@@ -66,15 +66,15 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
             Certificate[] certs = session.getPeerCertificates();
             X509Certificate x509 = (X509Certificate) certs[0];
             verify(host, x509);
-            boolean varB326B5062B2F0E69046810717534CB09_1682207036 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1782334862 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1782334862;
+            boolean varB326B5062B2F0E69046810717534CB09_460635515 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_763044039 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_763044039;
         } //End block
         catch (SSLException e)
         {
-            boolean var68934A3E9455FA72420237EB05902327_23271174 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2100663337 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2100663337;
+            boolean var68934A3E9455FA72420237EB05902327_685923369 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_678999619 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_678999619;
         } //End block
         // ---------- Original Method ----------
         //try {
@@ -89,7 +89,7 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.703 -0400", hash_original_method = "08CBAD509C26DA74CD541E0020FFDCD1", hash_generated_method = "DDAC0DADC0C636F9C963A041DE582BB7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.043 -0400", hash_original_method = "08CBAD509C26DA74CD541E0020FFDCD1", hash_generated_method = "DDAC0DADC0C636F9C963A041DE582BB7")
     public final void verify(String host, X509Certificate cert) throws SSLException {
         addTaint(cert.getTaint());
         addTaint(host.getTaint());
@@ -103,7 +103,7 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.705 -0400", hash_original_method = "9A07FB90ABAE18EA37F4E80ACC04FEE0", hash_generated_method = "0A7842016C1C7142187CDFFB2D41689C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.044 -0400", hash_original_method = "9A07FB90ABAE18EA37F4E80ACC04FEE0", hash_generated_method = "7CF5308918796D5B9A9677F59D477CAE")
     public final void verify(final String host, final String[] cns,
                              final String[] subjectAlts,
                              final boolean strictWithSubDomains) throws SSLException {
@@ -112,26 +112,26 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
         addTaint(cns[0].getTaint());
         addTaint(host.getTaint());
         LinkedList<String> names = new LinkedList<String>();
-    if(cns != null && cns.length > 0 && cns[0] != null)        
+        if(cns != null && cns.length > 0 && cns[0] != null)        
         {
             names.add(cns[0]);
         } //End block
-    if(subjectAlts != null)        
+        if(subjectAlts != null)        
         {
 for(String subjectAlt : subjectAlts)
             {
-    if(subjectAlt != null)                
+                if(subjectAlt != null)                
                 {
                     names.add(subjectAlt);
                 } //End block
             } //End block
         } //End block
-    if(names.isEmpty())        
+        if(names.isEmpty())        
         {
             String msg = "Certificate for <" + host + "> doesn't contain CN or DNS subjectAlt";
-            SSLException var0BFA7FEBA6B92E90F4D898F185A2E909_1382149579 = new SSLException(msg);
-            var0BFA7FEBA6B92E90F4D898F185A2E909_1382149579.addTaint(taint);
-            throw var0BFA7FEBA6B92E90F4D898F185A2E909_1382149579;
+            SSLException var0BFA7FEBA6B92E90F4D898F185A2E909_1182124527 = new SSLException(msg);
+            var0BFA7FEBA6B92E90F4D898F185A2E909_1182124527.addTaint(taint);
+            throw var0BFA7FEBA6B92E90F4D898F185A2E909_1182124527;
         } //End block
         StringBuffer buf = new StringBuffer();
         String hostName = host.trim().toLowerCase(Locale.ENGLISH);
@@ -143,7 +143,7 @@ for(Iterator<String> it = names.iterator();it.hasNext();)
             buf.append(" <");
             buf.append(cn);
             buf.append('>');
-    if(it.hasNext())            
+            if(it.hasNext())            
             {
                 buf.append(" OR");
             } //End block
@@ -151,10 +151,10 @@ for(Iterator<String> it = names.iterator();it.hasNext();)
                                  cn.indexOf('.', 2) != -1 &&
                                  acceptableCountryWildcard(cn) &&
                                  !InetAddressUtils.isIPv4Address(host);
-    if(doWildcard)            
+            if(doWildcard)            
             {
                 match = hostName.endsWith(cn.substring(1));
-    if(match && strictWithSubDomains)                
+                if(match && strictWithSubDomains)                
                 {
                     match = countDots(hostName) == countDots(cn);
                 } //End block
@@ -163,23 +163,23 @@ for(Iterator<String> it = names.iterator();it.hasNext();)
             {
                 match = hostName.equals(cn);
             } //End block
-    if(match)            
+            if(match)            
             {
                 break;
             } //End block
         } //End block
-    if(!match)        
+        if(!match)        
         {
-            SSLException var69568A3CBCF7D574078C6D84DF2EC977_1926292310 = new SSLException("hostname in certificate didn't match: <" + host + "> !=" + buf);
-            var69568A3CBCF7D574078C6D84DF2EC977_1926292310.addTaint(taint);
-            throw var69568A3CBCF7D574078C6D84DF2EC977_1926292310;
+            SSLException var69568A3CBCF7D574078C6D84DF2EC977_2106581592 = new SSLException("hostname in certificate didn't match: <" + host + "> !=" + buf);
+            var69568A3CBCF7D574078C6D84DF2EC977_2106581592.addTaint(taint);
+            throw var69568A3CBCF7D574078C6D84DF2EC977_2106581592;
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static boolean acceptableCountryWildcard(String cn) {
         int cnLen = cn.length();
         if(cnLen >= 7 && cnLen <= 9) {
@@ -193,7 +193,7 @@ for(Iterator<String> it = names.iterator();it.hasNext();)
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static String[] getCNs(X509Certificate cert) {
         LinkedList<String> cnList = new LinkedList<String>();
         String subjectPrincipal = cert.getSubjectX500Principal().toString();
@@ -215,7 +215,7 @@ for(Iterator<String> it = names.iterator();it.hasNext();)
     }
 
     
-        public static String[] getDNSSubjectAlts(X509Certificate cert) {
+    public static String[] getDNSSubjectAlts(X509Certificate cert) {
         LinkedList<String> subjectAltList = new LinkedList<String>();
         Collection<List<?>> c = null;
         try {
@@ -245,7 +245,7 @@ for(Iterator<String> it = names.iterator();it.hasNext();)
     }
 
     
-        public static int countDots(final String s) {
+    public static int countDots(final String s) {
         int count = 0;
         for(int i = 0; i < s.length(); i++) {
             if(s.charAt(i) == '.') {
@@ -256,7 +256,7 @@ for(Iterator<String> it = names.iterator();it.hasNext();)
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.707 -0400", hash_original_field = "76B1D705F0ADC634FC0CFCB99B6D9F38", hash_generated_field = "6968AEDC2C31A50F6ADB7A7EFEF7EBAD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.046 -0400", hash_original_field = "76B1D705F0ADC634FC0CFCB99B6D9F38", hash_generated_field = "6968AEDC2C31A50F6ADB7A7EFEF7EBAD")
 
     private final static String[] BAD_COUNTRY_2LDS = { "ac", "co", "com", "ed", "edu", "go", "gouv", "gov", "info",
             "lg", "ne", "net", "or", "org" };

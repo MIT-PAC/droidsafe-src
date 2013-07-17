@@ -24,18 +24,18 @@ import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.conn.scheme.SocketFactory;
 
 public class DefaultClientConnectionOperator implements ClientConnectionOperator {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.803 -0400", hash_original_field = "1D823F19EC944D016B48B105C3632412", hash_generated_field = "262A27B6B6B1CBF25439CFECC3909997")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.090 -0400", hash_original_field = "1D823F19EC944D016B48B105C3632412", hash_generated_field = "262A27B6B6B1CBF25439CFECC3909997")
 
     protected SchemeRegistry schemeRegistry;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.804 -0400", hash_original_method = "564A7128C5B00F982644F6E1BD9B5118", hash_generated_method = "DD1642709AB41EF002044864C8D74D2A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.091 -0400", hash_original_method = "564A7128C5B00F982644F6E1BD9B5118", hash_generated_method = "8265D304914E0FE690265899B76F1ECB")
     public  DefaultClientConnectionOperator(SchemeRegistry schemes) {
-    if(schemes == null)        
+        if(schemes == null)        
         {
-            IllegalArgumentException var9D0DCFA9FB8D2370B81F25E8E10E412A_240621843 = new IllegalArgumentException
+            IllegalArgumentException var9D0DCFA9FB8D2370B81F25E8E10E412A_2107515088 = new IllegalArgumentException
                 ("Scheme registry must not be null.");
-            var9D0DCFA9FB8D2370B81F25E8E10E412A_240621843.addTaint(taint);
-            throw var9D0DCFA9FB8D2370B81F25E8E10E412A_240621843;
+            var9D0DCFA9FB8D2370B81F25E8E10E412A_2107515088.addTaint(taint);
+            throw var9D0DCFA9FB8D2370B81F25E8E10E412A_2107515088;
         } //End block
         schemeRegistry = schemes;
         // ---------- Original Method ----------
@@ -47,17 +47,17 @@ public class DefaultClientConnectionOperator implements ClientConnectionOperator
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.804 -0400", hash_original_method = "A7AF136A36340299371F158C25AED0D2", hash_generated_method = "E3547F561063ABDB1FE87AD896645760")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.091 -0400", hash_original_method = "A7AF136A36340299371F158C25AED0D2", hash_generated_method = "780E834E0404362105D9AB566277688E")
     public OperatedClientConnection createConnection() {
-OperatedClientConnection varB7F75C6A5AEFC78EC04959C9746E7695_1170696350 =         new DefaultClientConnection();
-        varB7F75C6A5AEFC78EC04959C9746E7695_1170696350.addTaint(taint);
-        return varB7F75C6A5AEFC78EC04959C9746E7695_1170696350;
+OperatedClientConnection varB7F75C6A5AEFC78EC04959C9746E7695_1665772296 =         new DefaultClientConnection();
+        varB7F75C6A5AEFC78EC04959C9746E7695_1665772296.addTaint(taint);
+        return varB7F75C6A5AEFC78EC04959C9746E7695_1665772296;
         // ---------- Original Method ----------
         //return new DefaultClientConnection();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.806 -0400", hash_original_method = "3035FF1473A97381B4AFABBF5B73F76A", hash_generated_method = "B84B83DCFCC6F34E78398C98BE06A52B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.092 -0400", hash_original_method = "3035FF1473A97381B4AFABBF5B73F76A", hash_generated_method = "FE8684CB0865AF31ABEFDAF4700B2D28")
     public void openConnection(OperatedClientConnection conn,
                                HttpHost target,
                                InetAddress local,
@@ -68,39 +68,39 @@ OperatedClientConnection varB7F75C6A5AEFC78EC04959C9746E7695_1170696350 =       
         addTaint(local.getTaint());
         addTaint(target.getTaint());
         addTaint(conn.getTaint());
-    if(conn == null)        
+        if(conn == null)        
         {
-            IllegalArgumentException varEE0931985C4077C40A6DEC3DEB45BA63_1240242638 = new IllegalArgumentException
+            IllegalArgumentException varEE0931985C4077C40A6DEC3DEB45BA63_2146022473 = new IllegalArgumentException
                 ("Connection must not be null.");
-            varEE0931985C4077C40A6DEC3DEB45BA63_1240242638.addTaint(taint);
-            throw varEE0931985C4077C40A6DEC3DEB45BA63_1240242638;
+            varEE0931985C4077C40A6DEC3DEB45BA63_2146022473.addTaint(taint);
+            throw varEE0931985C4077C40A6DEC3DEB45BA63_2146022473;
         } //End block
-    if(target == null)        
+        if(target == null)        
         {
-            IllegalArgumentException varEC83656C97A1AEE534C63E8749A9F3F6_867365704 = new IllegalArgumentException
+            IllegalArgumentException varEC83656C97A1AEE534C63E8749A9F3F6_1192590859 = new IllegalArgumentException
                 ("Target host must not be null.");
-            varEC83656C97A1AEE534C63E8749A9F3F6_867365704.addTaint(taint);
-            throw varEC83656C97A1AEE534C63E8749A9F3F6_867365704;
+            varEC83656C97A1AEE534C63E8749A9F3F6_1192590859.addTaint(taint);
+            throw varEC83656C97A1AEE534C63E8749A9F3F6_1192590859;
         } //End block
-    if(params == null)        
+        if(params == null)        
         {
-            IllegalArgumentException var08D38DBCA08B6FB4CC571675E42E3D3C_707729953 = new IllegalArgumentException
+            IllegalArgumentException var08D38DBCA08B6FB4CC571675E42E3D3C_1390461017 = new IllegalArgumentException
                 ("Parameters must not be null.");
-            var08D38DBCA08B6FB4CC571675E42E3D3C_707729953.addTaint(taint);
-            throw var08D38DBCA08B6FB4CC571675E42E3D3C_707729953;
+            var08D38DBCA08B6FB4CC571675E42E3D3C_1390461017.addTaint(taint);
+            throw var08D38DBCA08B6FB4CC571675E42E3D3C_1390461017;
         } //End block
-    if(conn.isOpen())        
+        if(conn.isOpen())        
         {
-            IllegalArgumentException varE99A0414E35FADD7209110E9DC35FDC4_619605505 = new IllegalArgumentException
+            IllegalArgumentException varE99A0414E35FADD7209110E9DC35FDC4_467012850 = new IllegalArgumentException
                 ("Connection must not be open.");
-            varE99A0414E35FADD7209110E9DC35FDC4_619605505.addTaint(taint);
-            throw varE99A0414E35FADD7209110E9DC35FDC4_619605505;
+            varE99A0414E35FADD7209110E9DC35FDC4_467012850.addTaint(taint);
+            throw varE99A0414E35FADD7209110E9DC35FDC4_467012850;
         } //End block
         final Scheme schm = schemeRegistry.getScheme(target.getSchemeName());
         final SocketFactory sf = schm.getSocketFactory();
         SocketFactory plain_sf;
         LayeredSocketFactory layered_sf;
-    if(sf instanceof LayeredSocketFactory)        
+        if(sf instanceof LayeredSocketFactory)        
         {
             plain_sf = staticPlainSocketFactory;
             layered_sf = (LayeredSocketFactory)sf;
@@ -121,19 +121,19 @@ for(int i = 0;i < addresses.length;++i)
                     addresses[i].getHostAddress(),
                     schm.resolvePort(target.getPort()),
                     local, 0, params);
-    if(sock != connsock)                
+                if(sock != connsock)                
                 {
                     sock = connsock;
                     conn.opening(sock, target);
                 } //End block
                 prepareSocket(sock, context, params);
-    if(layered_sf != null)                
+                if(layered_sf != null)                
                 {
                     Socket layeredsock = layered_sf.createSocket(sock,
                         target.getHostName(),
                         schm.resolvePort(target.getPort()),
                         true);
-    if(layeredsock != sock)                    
+                    if(layeredsock != sock)                    
                     {
                         conn.opening(layeredsock, target);
                     } //End block
@@ -147,18 +147,18 @@ for(int i = 0;i < addresses.length;++i)
             } //End block
             catch (SocketException ex)
             {
-    if(i == addresses.length - 1)                
+                if(i == addresses.length - 1)                
                 {
                     ConnectException cause = ex instanceof ConnectException
                             ? (ConnectException) ex : new ConnectException(ex.getMessage(), ex);
-                    HttpHostConnectException var9013BD2F333EDC7603EB273BF6B33D82_126525461 = new HttpHostConnectException(target, cause);
-                    var9013BD2F333EDC7603EB273BF6B33D82_126525461.addTaint(taint);
-                    throw var9013BD2F333EDC7603EB273BF6B33D82_126525461;
+                    HttpHostConnectException var9013BD2F333EDC7603EB273BF6B33D82_1932410761 = new HttpHostConnectException(target, cause);
+                    var9013BD2F333EDC7603EB273BF6B33D82_1932410761.addTaint(taint);
+                    throw var9013BD2F333EDC7603EB273BF6B33D82_1932410761;
                 } //End block
             } //End block
             catch (ConnectTimeoutException ex)
             {
-    if(i == addresses.length - 1)                
+                if(i == addresses.length - 1)                
                 {
                     ex.addTaint(taint);
                     throw ex;
@@ -170,7 +170,7 @@ for(int i = 0;i < addresses.length;++i)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.809 -0400", hash_original_method = "B263843ECB367B56A8B3543219BABBA8", hash_generated_method = "F8EDF1D862F6B3EF7F6718FD41531FDE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.093 -0400", hash_original_method = "B263843ECB367B56A8B3543219BABBA8", hash_generated_method = "BA2520BD83EDC420147A01F62BFB73F9")
     public void updateSecureConnection(OperatedClientConnection conn,
                                        HttpHost target,
                                        HttpContext context,
@@ -179,42 +179,42 @@ for(int i = 0;i < addresses.length;++i)
         addTaint(context.getTaint());
         addTaint(target.getTaint());
         addTaint(conn.getTaint());
-    if(conn == null)        
+        if(conn == null)        
         {
-            IllegalArgumentException varEE0931985C4077C40A6DEC3DEB45BA63_2123073884 = new IllegalArgumentException
+            IllegalArgumentException varEE0931985C4077C40A6DEC3DEB45BA63_1449288766 = new IllegalArgumentException
                 ("Connection must not be null.");
-            varEE0931985C4077C40A6DEC3DEB45BA63_2123073884.addTaint(taint);
-            throw varEE0931985C4077C40A6DEC3DEB45BA63_2123073884;
+            varEE0931985C4077C40A6DEC3DEB45BA63_1449288766.addTaint(taint);
+            throw varEE0931985C4077C40A6DEC3DEB45BA63_1449288766;
         } //End block
-    if(target == null)        
+        if(target == null)        
         {
-            IllegalArgumentException varEC83656C97A1AEE534C63E8749A9F3F6_257273070 = new IllegalArgumentException
+            IllegalArgumentException varEC83656C97A1AEE534C63E8749A9F3F6_566370907 = new IllegalArgumentException
                 ("Target host must not be null.");
-            varEC83656C97A1AEE534C63E8749A9F3F6_257273070.addTaint(taint);
-            throw varEC83656C97A1AEE534C63E8749A9F3F6_257273070;
+            varEC83656C97A1AEE534C63E8749A9F3F6_566370907.addTaint(taint);
+            throw varEC83656C97A1AEE534C63E8749A9F3F6_566370907;
         } //End block
-    if(params == null)        
+        if(params == null)        
         {
-            IllegalArgumentException var08D38DBCA08B6FB4CC571675E42E3D3C_937098425 = new IllegalArgumentException
+            IllegalArgumentException var08D38DBCA08B6FB4CC571675E42E3D3C_1453880963 = new IllegalArgumentException
                 ("Parameters must not be null.");
-            var08D38DBCA08B6FB4CC571675E42E3D3C_937098425.addTaint(taint);
-            throw var08D38DBCA08B6FB4CC571675E42E3D3C_937098425;
+            var08D38DBCA08B6FB4CC571675E42E3D3C_1453880963.addTaint(taint);
+            throw var08D38DBCA08B6FB4CC571675E42E3D3C_1453880963;
         } //End block
-    if(!conn.isOpen())        
+        if(!conn.isOpen())        
         {
-            IllegalArgumentException var3FC106620C2F669DF3AA6AB529A6D958_1414096672 = new IllegalArgumentException
+            IllegalArgumentException var3FC106620C2F669DF3AA6AB529A6D958_963063166 = new IllegalArgumentException
                 ("Connection must be open.");
-            var3FC106620C2F669DF3AA6AB529A6D958_1414096672.addTaint(taint);
-            throw var3FC106620C2F669DF3AA6AB529A6D958_1414096672;
+            var3FC106620C2F669DF3AA6AB529A6D958_963063166.addTaint(taint);
+            throw var3FC106620C2F669DF3AA6AB529A6D958_963063166;
         } //End block
         final Scheme schm = schemeRegistry.getScheme(target.getSchemeName());
-    if(!(schm.getSocketFactory() instanceof LayeredSocketFactory))        
+        if(!(schm.getSocketFactory() instanceof LayeredSocketFactory))        
         {
-            IllegalArgumentException var164C817E75C4DF376FE08E5BA46DE128_1860016003 = new IllegalArgumentException
+            IllegalArgumentException var164C817E75C4DF376FE08E5BA46DE128_351105944 = new IllegalArgumentException
                 ("Target scheme (" + schm.getName() +
                  ") must have layered socket factory.");
-            var164C817E75C4DF376FE08E5BA46DE128_1860016003.addTaint(taint);
-            throw var164C817E75C4DF376FE08E5BA46DE128_1860016003;
+            var164C817E75C4DF376FE08E5BA46DE128_351105944.addTaint(taint);
+            throw var164C817E75C4DF376FE08E5BA46DE128_351105944;
         } //End block
         final LayeredSocketFactory lsf = (LayeredSocketFactory) schm.getSocketFactory();
         Socket sock;
@@ -225,9 +225,9 @@ for(int i = 0;i < addresses.length;++i)
         } //End block
         catch (ConnectException ex)
         {
-            HttpHostConnectException varC75EB74B85814145957679B765BD7655_950206392 = new HttpHostConnectException(target, ex);
-            varC75EB74B85814145957679B765BD7655_950206392.addTaint(taint);
-            throw varC75EB74B85814145957679B765BD7655_950206392;
+            HttpHostConnectException varC75EB74B85814145957679B765BD7655_795663356 = new HttpHostConnectException(target, ex);
+            varC75EB74B85814145957679B765BD7655_795663356.addTaint(taint);
+            throw varC75EB74B85814145957679B765BD7655_795663356;
         } //End block
         prepareSocket(sock, context, params);
         conn.update(sock, target, lsf.isSecure(sock), params);
@@ -236,8 +236,8 @@ for(int i = 0;i < addresses.length;++i)
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.810 -0400", hash_original_method = "EEE63DC836F5AA81B1ECC566DDEA88C5", hash_generated_method = "59042B2CF1FC4CDCDBDD66CFB82220B7")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.094 -0400", hash_original_method = "EEE63DC836F5AA81B1ECC566DDEA88C5", hash_generated_method = "59042B2CF1FC4CDCDBDD66CFB82220B7")
     protected void prepareSocket(Socket sock, HttpContext context,
                                  HttpParams params) throws IOException {
         addTaint(params.getTaint());
@@ -246,7 +246,7 @@ for(int i = 0;i < addresses.length;++i)
         sock.setTcpNoDelay(HttpConnectionParams.getTcpNoDelay(params));
         sock.setSoTimeout(HttpConnectionParams.getSoTimeout(params));
         int linger = HttpConnectionParams.getLinger(params);
-    if(linger >= 0)        
+        if(linger >= 0)        
         {
             sock.setSoLinger(linger > 0, linger);
         } //End block
@@ -260,7 +260,7 @@ for(int i = 0;i < addresses.length;++i)
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.810 -0400", hash_original_field = "BB491613B2AC25774C0C6E92214BF9B8", hash_generated_field = "117D19A17E0FA862F4540CD5E143142A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.094 -0400", hash_original_field = "BB491613B2AC25774C0C6E92214BF9B8", hash_generated_field = "117D19A17E0FA862F4540CD5E143142A")
 
     private static final PlainSocketFactory staticPlainSocketFactory = new PlainSocketFactory();
 }

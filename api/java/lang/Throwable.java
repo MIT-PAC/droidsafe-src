@@ -14,24 +14,24 @@ import java.util.List;
 import libcore.util.EmptyArray;
 
 public class Throwable implements java.io.Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.711 -0400", hash_original_field = "2444D5A1A0CC057BD6374C3E9B4D0F41", hash_generated_field = "5F933F283197F636E634092890034B15")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.615 -0400", hash_original_field = "2444D5A1A0CC057BD6374C3E9B4D0F41", hash_generated_field = "5F933F283197F636E634092890034B15")
 
     private String detailMessage;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.711 -0400", hash_original_field = "537E0C2318AE4467324D6EEC7309FB4E", hash_generated_field = "6C1FA207B061A6741951FC650E75192F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.615 -0400", hash_original_field = "537E0C2318AE4467324D6EEC7309FB4E", hash_generated_field = "6C1FA207B061A6741951FC650E75192F")
 
     private Throwable cause = this;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.711 -0400", hash_original_field = "D5FA27B193D534D5AD5A49CD1674F13A", hash_generated_field = "DE9A96CD1773A127DE8B75F7745CAF86")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.615 -0400", hash_original_field = "D5FA27B193D534D5AD5A49CD1674F13A", hash_generated_field = "DE9A96CD1773A127DE8B75F7745CAF86")
 
     private List<Throwable> suppressedExceptions = new ArrayList<Throwable>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.712 -0400", hash_original_field = "666085C8F3DC985E339BC454CD720C07", hash_generated_field = "5F29D314996BC5D7FD0952BE7C7301C2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.615 -0400", hash_original_field = "666085C8F3DC985E339BC454CD720C07", hash_generated_field = "5F29D314996BC5D7FD0952BE7C7301C2")
 
     private volatile Object stackState;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.712 -0400", hash_original_field = "FCD4E36FD80F450979495718DBDDAACF", hash_generated_field = "3998EFB68B1CCA38FEA7032A25D26EC5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.615 -0400", hash_original_field = "FCD4E36FD80F450979495718DBDDAACF", hash_generated_field = "3998EFB68B1CCA38FEA7032A25D26EC5")
 
     private StackTraceElement[] stackTrace;
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.712 -0400", hash_original_method = "8CAF8D74185B0F181EC07276079C4966", hash_generated_method = "ACE1512A04AE15D2CD3E4D74C045CEF1")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.615 -0400", hash_original_method = "8CAF8D74185B0F181EC07276079C4966", hash_generated_method = "ACE1512A04AE15D2CD3E4D74C045CEF1")
     public  Throwable() {
         fillInStackTrace();
         // ---------- Original Method ----------
@@ -39,8 +39,8 @@ public class Throwable implements java.io.Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.713 -0400", hash_original_method = "22D8176BCA749706DC2B313EF94A4BA5", hash_generated_method = "C53B6C21B245FD8522B6A4526E3446CC")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.616 -0400", hash_original_method = "22D8176BCA749706DC2B313EF94A4BA5", hash_generated_method = "C53B6C21B245FD8522B6A4526E3446CC")
     public  Throwable(String detailMessage) {
         this();
         this.detailMessage = detailMessage;
@@ -49,8 +49,8 @@ public class Throwable implements java.io.Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.713 -0400", hash_original_method = "60881CAC7A5ED0481A49F5467094E82C", hash_generated_method = "ABF63812C746C36205FAAB0BFD541C77")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.617 -0400", hash_original_method = "60881CAC7A5ED0481A49F5467094E82C", hash_generated_method = "ABF63812C746C36205FAAB0BFD541C77")
     public  Throwable(String detailMessage, Throwable throwable) {
         this();
         this.detailMessage = detailMessage;
@@ -61,8 +61,8 @@ public class Throwable implements java.io.Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.714 -0400", hash_original_method = "1CFFD54DEC9660238586E7A30681A82F", hash_generated_method = "EB00FCD528A423742D80C0AB8B1295C6")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.618 -0400", hash_original_method = "1CFFD54DEC9660238586E7A30681A82F", hash_generated_method = "EB00FCD528A423742D80C0AB8B1295C6")
     public  Throwable(Throwable throwable) {
         this();
         this.detailMessage = throwable == null ? null : throwable.toString();
@@ -73,14 +73,14 @@ public class Throwable implements java.io.Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.715 -0400", hash_original_method = "E90AFC6F1FC322D1AB2CAA72835C3192", hash_generated_method = "F59C306B1BC63EC8029895A88BBF35D8")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.619 -0400", hash_original_method = "E90AFC6F1FC322D1AB2CAA72835C3192", hash_generated_method = "F59C306B1BC63EC8029895A88BBF35D8")
     protected  Throwable(String detailMessage, Throwable throwable, boolean enableSuppression) {
         this(detailMessage, throwable);
         addTaint(enableSuppression);
         addTaint(throwable.getTaint());
         addTaint(detailMessage.getTaint());
-    if(!enableSuppression)        
+        if(!enableSuppression)        
         {
             this.suppressedExceptions = null;
         } //End block
@@ -91,14 +91,14 @@ public class Throwable implements java.io.Serializable {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.715 -0400", hash_original_method = "1BF0D9E451222474F2DDB047C74BA127", hash_generated_method = "686349A5EE57F05743F625752BC26B33")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.620 -0400", hash_original_method = "1BF0D9E451222474F2DDB047C74BA127", hash_generated_method = "1F75BFA71B994B51A8F11B6A3FC3E3E8")
     public Throwable fillInStackTrace() {
         stackState = nativeFillInStackTrace();
         stackTrace = null;
-Throwable var72A74007B2BE62B849F475C7BDA4658B_565210774 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_565210774.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_565210774;
+Throwable var72A74007B2BE62B849F475C7BDA4658B_1606023924 =         this;
+        var72A74007B2BE62B849F475C7BDA4658B_1606023924.addTaint(taint);
+        return var72A74007B2BE62B849F475C7BDA4658B_1606023924;
         // ---------- Original Method ----------
         //stackState = nativeFillInStackTrace();
         //stackTrace = null;
@@ -106,51 +106,51 @@ Throwable var72A74007B2BE62B849F475C7BDA4658B_565210774 =         this;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.716 -0400", hash_original_method = "DB11282615D634E343F956A1D91DEDE9", hash_generated_method = "D460754CE243182A20A6D334D37C2CDF")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.620 -0400", hash_original_method = "DB11282615D634E343F956A1D91DEDE9", hash_generated_method = "EEB9F0BC96779E0561D300FFBFB881C4")
     public String getMessage() {
-String var914F0E3A6F3E0C9A3F7C87C0A85A26CF_1517944061 =         detailMessage;
-        var914F0E3A6F3E0C9A3F7C87C0A85A26CF_1517944061.addTaint(taint);
-        return var914F0E3A6F3E0C9A3F7C87C0A85A26CF_1517944061;
+String var914F0E3A6F3E0C9A3F7C87C0A85A26CF_1674407605 =         detailMessage;
+        var914F0E3A6F3E0C9A3F7C87C0A85A26CF_1674407605.addTaint(taint);
+        return var914F0E3A6F3E0C9A3F7C87C0A85A26CF_1674407605;
         // ---------- Original Method ----------
         //return detailMessage;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.716 -0400", hash_original_method = "A2EE7B7852887DFBE3A27B61B4F72974", hash_generated_method = "64D14B54A2C27638B8F19721EC33FE09")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.621 -0400", hash_original_method = "A2EE7B7852887DFBE3A27B61B4F72974", hash_generated_method = "2F1158EC0F6791A276BBFA6918A845DA")
     public String getLocalizedMessage() {
-String var161DE919C6E3D4B838448EC95B86CE9B_1424866743 =         getMessage();
-        var161DE919C6E3D4B838448EC95B86CE9B_1424866743.addTaint(taint);
-        return var161DE919C6E3D4B838448EC95B86CE9B_1424866743;
+String var161DE919C6E3D4B838448EC95B86CE9B_1636571261 =         getMessage();
+        var161DE919C6E3D4B838448EC95B86CE9B_1636571261.addTaint(taint);
+        return var161DE919C6E3D4B838448EC95B86CE9B_1636571261;
         // ---------- Original Method ----------
         //return getMessage();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.716 -0400", hash_original_method = "45FE0FF583AFF2392C672B8C003FC38F", hash_generated_method = "5CB97548124838E66A42D2A06028AA8D")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.621 -0400", hash_original_method = "45FE0FF583AFF2392C672B8C003FC38F", hash_generated_method = "A873520F7DDCA9730040D42ADC7EF742")
     public StackTraceElement[] getStackTrace() {
-StackTraceElement[] var5697AB0544D7BD869395C498F717468B_269524125 =         getInternalStackTrace().clone();
-        var5697AB0544D7BD869395C498F717468B_269524125.addTaint(taint);
-        return var5697AB0544D7BD869395C498F717468B_269524125;
+StackTraceElement[] var5697AB0544D7BD869395C498F717468B_358984184 =         getInternalStackTrace().clone();
+        var5697AB0544D7BD869395C498F717468B_358984184.addTaint(taint);
+        return var5697AB0544D7BD869395C498F717468B_358984184;
         // ---------- Original Method ----------
         //return getInternalStackTrace().clone();
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.717 -0400", hash_original_method = "5E6079B0EA3605E8298E1D15C30F6678", hash_generated_method = "6615A20AAA21E3AB5AA6B13B7CF14D4C")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.623 -0400", hash_original_method = "5E6079B0EA3605E8298E1D15C30F6678", hash_generated_method = "8F5011A0C22E83C977794986C020214A")
     public void setStackTrace(StackTraceElement[] trace) {
         addTaint(trace[0].getTaint());
         StackTraceElement[] newTrace = trace.clone();
 for(StackTraceElement element : newTrace)
         {
-    if(element == null)            
+            if(element == null)            
             {
-                NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_327322945 = new NullPointerException();
-                var7338BC9F48D81FE0BBD6183F4014DCC4_327322945.addTaint(taint);
-                throw var7338BC9F48D81FE0BBD6183F4014DCC4_327322945;
+                NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1058601312 = new NullPointerException();
+                var7338BC9F48D81FE0BBD6183F4014DCC4_1058601312.addTaint(taint);
+                throw var7338BC9F48D81FE0BBD6183F4014DCC4_1058601312;
             } //End block
         } //End block
         stackTrace = newTrace;
@@ -165,8 +165,8 @@ for(StackTraceElement element : newTrace)
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.717 -0400", hash_original_method = "325BA3C27FA0D6128256227B9178A07C", hash_generated_method = "0A8D9DAF6B72F03425FA01ACFEA76A6C")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.624 -0400", hash_original_method = "325BA3C27FA0D6128256227B9178A07C", hash_generated_method = "0A8D9DAF6B72F03425FA01ACFEA76A6C")
     public void printStackTrace() {
         printStackTrace(System.err);
         // ---------- Original Method ----------
@@ -174,7 +174,7 @@ for(StackTraceElement element : newTrace)
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static int countDuplicates(StackTraceElement[] currentStack,
             StackTraceElement[] parentStack) {
         int duplicates = 0;
@@ -191,17 +191,17 @@ for(StackTraceElement element : newTrace)
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.718 -0400", hash_original_method = "5A8373E0D01D66F3E38F3485979BD426", hash_generated_method = "88E4AFC365BF7D4D43331B8901F246E7")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.625 -0400", hash_original_method = "5A8373E0D01D66F3E38F3485979BD426", hash_generated_method = "CA40D027FB0933464078815A8A279275")
     private StackTraceElement[] getInternalStackTrace() {
-    if(stackTrace == null)        
+        if(stackTrace == null)        
         {
             stackTrace = nativeGetStackTrace(stackState);
             stackState = null;
         } //End block
-StackTraceElement[] var34BB737E13D79EA416E90CF26ABC237E_1673852945 =         stackTrace;
-        var34BB737E13D79EA416E90CF26ABC237E_1673852945.addTaint(taint);
-        return var34BB737E13D79EA416E90CF26ABC237E_1673852945;
+StackTraceElement[] var34BB737E13D79EA416E90CF26ABC237E_1378528702 =         stackTrace;
+        var34BB737E13D79EA416E90CF26ABC237E_1378528702.addTaint(taint);
+        return var34BB737E13D79EA416E90CF26ABC237E_1378528702;
         // ---------- Original Method ----------
         //if (stackTrace == null) {
             //stackTrace = nativeGetStackTrace(stackState);
@@ -211,8 +211,8 @@ StackTraceElement[] var34BB737E13D79EA416E90CF26ABC237E_1673852945 =         sta
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.719 -0400", hash_original_method = "721611E9E00924F0C591FE9FD87A98DF", hash_generated_method = "79F6EB6CAD4D1E695726C7B79FFA3B73")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.626 -0400", hash_original_method = "721611E9E00924F0C591FE9FD87A98DF", hash_generated_method = "A3A15664E8292EA1C653493A9B7664F4")
     public void printStackTrace(PrintStream err) {
         addTaint(err.getTaint());
         try 
@@ -221,9 +221,9 @@ StackTraceElement[] var34BB737E13D79EA416E90CF26ABC237E_1673852945 =         sta
         } //End block
         catch (IOException e)
         {
-            AssertionError varA81442E36297E737EB908877E58260E8_837614141 = new AssertionError();
-            varA81442E36297E737EB908877E58260E8_837614141.addTaint(taint);
-            throw varA81442E36297E737EB908877E58260E8_837614141;
+            AssertionError varA81442E36297E737EB908877E58260E8_241256347 = new AssertionError();
+            varA81442E36297E737EB908877E58260E8_241256347.addTaint(taint);
+            throw varA81442E36297E737EB908877E58260E8_241256347;
         } //End block
         // ---------- Original Method ----------
         //try {
@@ -234,8 +234,8 @@ StackTraceElement[] var34BB737E13D79EA416E90CF26ABC237E_1673852945 =         sta
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.719 -0400", hash_original_method = "83BBC2719839E738869257F8A62E26AC", hash_generated_method = "E268C945D037814DF2CFE21ACEC1BA85")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.627 -0400", hash_original_method = "83BBC2719839E738869257F8A62E26AC", hash_generated_method = "B3E6605B6B6B9377A80F8A793776B01A")
     public void printStackTrace(PrintWriter err) {
         addTaint(err.getTaint());
         try 
@@ -244,9 +244,9 @@ StackTraceElement[] var34BB737E13D79EA416E90CF26ABC237E_1673852945 =         sta
         } //End block
         catch (IOException e)
         {
-            AssertionError varA81442E36297E737EB908877E58260E8_1893438214 = new AssertionError();
-            varA81442E36297E737EB908877E58260E8_1893438214.addTaint(taint);
-            throw varA81442E36297E737EB908877E58260E8_1893438214;
+            AssertionError varA81442E36297E737EB908877E58260E8_778494787 = new AssertionError();
+            varA81442E36297E737EB908877E58260E8_778494787.addTaint(taint);
+            throw varA81442E36297E737EB908877E58260E8_778494787;
         } //End block
         // ---------- Original Method ----------
         //try {
@@ -257,8 +257,8 @@ StackTraceElement[] var34BB737E13D79EA416E90CF26ABC237E_1673852945 =         sta
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.720 -0400", hash_original_method = "9161BE82060982591CF587E371FF5EC1", hash_generated_method = "A69A1B0472FD5DA53C293B7A5B8152EF")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.629 -0400", hash_original_method = "9161BE82060982591CF587E371FF5EC1", hash_generated_method = "A69A1B0472FD5DA53C293B7A5B8152EF")
     private void printStackTrace(Appendable err, String indent, StackTraceElement[] parentStack) throws IOException {
         addTaint(parentStack[0].getTaint());
         addTaint(indent.getTaint());
@@ -266,7 +266,7 @@ StackTraceElement[] var34BB737E13D79EA416E90CF26ABC237E_1673852945 =         sta
         err.append(toString());
         err.append("\n");
         StackTraceElement[] stack = getInternalStackTrace();
-    if(stack != null)        
+        if(stack != null)        
         {
             int duplicates = parentStack != null ? countDuplicates(stack, parentStack) : 0;
 for(int i = 0;i < stack.length - duplicates;i++)
@@ -276,7 +276,7 @@ for(int i = 0;i < stack.length - duplicates;i++)
                 err.append(stack[i].toString());
                 err.append("\n");
             } //End block
-    if(duplicates > 0)            
+            if(duplicates > 0)            
             {
                 err.append(indent);
                 err.append("\t... ");
@@ -284,7 +284,7 @@ for(int i = 0;i < stack.length - duplicates;i++)
                 err.append(" more\n");
             } //End block
         } //End block
-    if(suppressedExceptions != null)        
+        if(suppressedExceptions != null)        
         {
 for(Throwable throwable : suppressedExceptions)
             {
@@ -294,7 +294,7 @@ for(Throwable throwable : suppressedExceptions)
             } //End block
         } //End block
         Throwable cause = getCause();
-    if(cause != null)        
+        if(cause != null)        
         {
             err.append(indent);
             err.append("Caused by: ");
@@ -305,21 +305,21 @@ for(Throwable throwable : suppressedExceptions)
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.721 -0400", hash_original_method = "D135C496474AE8F48C2BC1E13C422ADC", hash_generated_method = "9F5ECA74A6BBBAC9399BE3721E9B6BF1")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.631 -0400", hash_original_method = "D135C496474AE8F48C2BC1E13C422ADC", hash_generated_method = "74FD90071B4FA1A30ED8D4EFD3EFBB43")
     @Override
     public String toString() {
         String msg = getLocalizedMessage();
         String name = getClass().getName();
-    if(msg == null)        
+        if(msg == null)        
         {
-String varB017984728AC60AD1F0BF8734F33F15C_83226322 =             name;
-            varB017984728AC60AD1F0BF8734F33F15C_83226322.addTaint(taint);
-            return varB017984728AC60AD1F0BF8734F33F15C_83226322;
+String varB017984728AC60AD1F0BF8734F33F15C_1736303080 =             name;
+            varB017984728AC60AD1F0BF8734F33F15C_1736303080.addTaint(taint);
+            return varB017984728AC60AD1F0BF8734F33F15C_1736303080;
         } //End block
-String var35530EECD2FCDEAD41FFCFC99552BF10_937744039 =         name + ": " + msg;
-        var35530EECD2FCDEAD41FFCFC99552BF10_937744039.addTaint(taint);
-        return var35530EECD2FCDEAD41FFCFC99552BF10_937744039;
+String var35530EECD2FCDEAD41FFCFC99552BF10_145925295 =         name + ": " + msg;
+        var35530EECD2FCDEAD41FFCFC99552BF10_145925295.addTaint(taint);
+        return var35530EECD2FCDEAD41FFCFC99552BF10_145925295;
         // ---------- Original Method ----------
         //String msg = getLocalizedMessage();
         //String name = getClass().getName();
@@ -330,25 +330,25 @@ String var35530EECD2FCDEAD41FFCFC99552BF10_937744039 =         name + ": " + msg
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.721 -0400", hash_original_method = "C6146D344F8C29A6B259252212744901", hash_generated_method = "109F3F923CE04BFE709714BA342AE18B")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.631 -0400", hash_original_method = "C6146D344F8C29A6B259252212744901", hash_generated_method = "C5FA19F35FE8BC99CF81D1D910759AC7")
     public Throwable initCause(Throwable throwable) {
-    if(cause != this)        
+        if(cause != this)        
         {
-            IllegalStateException var3F41D29A62A76FDCE33DF5C6FB6B6F7D_615861638 = new IllegalStateException("Cause already initialized");
-            var3F41D29A62A76FDCE33DF5C6FB6B6F7D_615861638.addTaint(taint);
-            throw var3F41D29A62A76FDCE33DF5C6FB6B6F7D_615861638;
+            IllegalStateException var3F41D29A62A76FDCE33DF5C6FB6B6F7D_674764054 = new IllegalStateException("Cause already initialized");
+            var3F41D29A62A76FDCE33DF5C6FB6B6F7D_674764054.addTaint(taint);
+            throw var3F41D29A62A76FDCE33DF5C6FB6B6F7D_674764054;
         } //End block
-    if(throwable == this)        
+        if(throwable == this)        
         {
-            IllegalArgumentException var1965C38C7B755512BFCCD2A47B240FDA_1387554790 = new IllegalArgumentException("throwable == this");
-            var1965C38C7B755512BFCCD2A47B240FDA_1387554790.addTaint(taint);
-            throw var1965C38C7B755512BFCCD2A47B240FDA_1387554790;
+            IllegalArgumentException var1965C38C7B755512BFCCD2A47B240FDA_1585532537 = new IllegalArgumentException("throwable == this");
+            var1965C38C7B755512BFCCD2A47B240FDA_1585532537.addTaint(taint);
+            throw var1965C38C7B755512BFCCD2A47B240FDA_1585532537;
         } //End block
         cause = throwable;
-Throwable var72A74007B2BE62B849F475C7BDA4658B_707003474 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_707003474.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_707003474;
+Throwable var72A74007B2BE62B849F475C7BDA4658B_1689600004 =         this;
+        var72A74007B2BE62B849F475C7BDA4658B_1689600004.addTaint(taint);
+        return var72A74007B2BE62B849F475C7BDA4658B_1689600004;
         // ---------- Original Method ----------
         //if (cause != this) {
             //throw new IllegalStateException("Cause already initialized");
@@ -361,18 +361,18 @@ Throwable var72A74007B2BE62B849F475C7BDA4658B_707003474 =         this;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.722 -0400", hash_original_method = "22464C579A8BDBBA630699F5CFE21CE6", hash_generated_method = "5766EC51FCF26B4BA7A6F587E3415853")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.632 -0400", hash_original_method = "22464C579A8BDBBA630699F5CFE21CE6", hash_generated_method = "D5FBC3D2820A705CD496B0A0702D5C2D")
     public Throwable getCause() {
-    if(cause == this)        
+        if(cause == this)        
         {
-Throwable var540C13E9E156B687226421B24F2DF178_1425059502 =             null;
-            var540C13E9E156B687226421B24F2DF178_1425059502.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1425059502;
+Throwable var540C13E9E156B687226421B24F2DF178_1025994416 =             null;
+            var540C13E9E156B687226421B24F2DF178_1025994416.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_1025994416;
         } //End block
-Throwable var3C8F3313F49435961542E8707E527956_291286503 =         cause;
-        var3C8F3313F49435961542E8707E527956_291286503.addTaint(taint);
-        return var3C8F3313F49435961542E8707E527956_291286503;
+Throwable var3C8F3313F49435961542E8707E527956_1458256153 =         cause;
+        var3C8F3313F49435961542E8707E527956_1458256153.addTaint(taint);
+        return var3C8F3313F49435961542E8707E527956_1458256153;
         // ---------- Original Method ----------
         //if (cause == this) {
             //return null;
@@ -381,22 +381,22 @@ Throwable var3C8F3313F49435961542E8707E527956_291286503 =         cause;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.722 -0400", hash_original_method = "FE7E0A038916A44CD2EDEB98621E4496", hash_generated_method = "CD51E169EEA065B22DBFB1A11F59C2CF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.632 -0400", hash_original_method = "FE7E0A038916A44CD2EDEB98621E4496", hash_generated_method = "436F8FDD701EDD1BFA95D48667315EE2")
     public final void addSuppressed(Throwable throwable) {
         addTaint(throwable.getTaint());
-    if(throwable == this)        
+        if(throwable == this)        
         {
-            IllegalArgumentException var0D83DF8785B43495C5AF1B3C951249A3_771854916 = new IllegalArgumentException("suppressed == this");
-            var0D83DF8785B43495C5AF1B3C951249A3_771854916.addTaint(taint);
-            throw var0D83DF8785B43495C5AF1B3C951249A3_771854916;
+            IllegalArgumentException var0D83DF8785B43495C5AF1B3C951249A3_157912188 = new IllegalArgumentException("suppressed == this");
+            var0D83DF8785B43495C5AF1B3C951249A3_157912188.addTaint(taint);
+            throw var0D83DF8785B43495C5AF1B3C951249A3_157912188;
         } //End block
-    if(throwable == null)        
+        if(throwable == null)        
         {
-            NullPointerException var229669F0A2699659A1AE1A55ECDE7868_261709029 = new NullPointerException("suppressed == null");
-            var229669F0A2699659A1AE1A55ECDE7868_261709029.addTaint(taint);
-            throw var229669F0A2699659A1AE1A55ECDE7868_261709029;
+            NullPointerException var229669F0A2699659A1AE1A55ECDE7868_1320097088 = new NullPointerException("suppressed == null");
+            var229669F0A2699659A1AE1A55ECDE7868_1320097088.addTaint(taint);
+            throw var229669F0A2699659A1AE1A55ECDE7868_1320097088;
         } //End block
-    if(suppressedExceptions != null)        
+        if(suppressedExceptions != null)        
         {
             suppressedExceptions.add(throwable);
         } //End block
@@ -413,13 +413,13 @@ Throwable var3C8F3313F49435961542E8707E527956_291286503 =         cause;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.723 -0400", hash_original_method = "8B184B5B883F2271AE4A6DCD97FDDD74", hash_generated_method = "5BE9416469BA69486838F79467E4644E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.633 -0400", hash_original_method = "8B184B5B883F2271AE4A6DCD97FDDD74", hash_generated_method = "C79E6C1B6074A8ABF867B44AA0A63F96")
     public final Throwable[] getSuppressed() {
-Throwable[] var3A15AFB91A649D7F40FA832976B63DE8_1051302500 =         (suppressedExceptions != null)
+Throwable[] var3A15AFB91A649D7F40FA832976B63DE8_675596110 =         (suppressedExceptions != null)
                 ? suppressedExceptions.toArray(new Throwable[suppressedExceptions.size()])
                 : EmptyArray.THROWABLE;
-        var3A15AFB91A649D7F40FA832976B63DE8_1051302500.addTaint(taint);
-        return var3A15AFB91A649D7F40FA832976B63DE8_1051302500;
+        var3A15AFB91A649D7F40FA832976B63DE8_675596110.addTaint(taint);
+        return var3A15AFB91A649D7F40FA832976B63DE8_675596110;
         // ---------- Original Method ----------
         //return (suppressedExceptions != null)
                 //? suppressedExceptions.toArray(new Throwable[suppressedExceptions.size()])
@@ -427,8 +427,8 @@ Throwable[] var3A15AFB91A649D7F40FA832976B63DE8_1051302500 =         (suppressed
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.730 -0400", hash_original_method = "9B67B0A60488A3B6BF6B1F8E333B2B37", hash_generated_method = "69B9BD3E909BC1656E915C2D03DA1729")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.633 -0400", hash_original_method = "9B67B0A60488A3B6BF6B1F8E333B2B37", hash_generated_method = "69B9BD3E909BC1656E915C2D03DA1729")
     private void writeObject(ObjectOutputStream out) throws IOException {
         addTaint(out.getTaint());
         getInternalStackTrace();
@@ -439,12 +439,12 @@ Throwable[] var3A15AFB91A649D7F40FA832976B63DE8_1051302500 =         (suppressed
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.731 -0400", hash_original_method = "D9E2A8DEA9D5CE3A923EF2188BD1E0E9", hash_generated_method = "B93F62DC035F095BBCAF219EA2AC3384")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.633 -0400", hash_original_method = "D9E2A8DEA9D5CE3A923EF2188BD1E0E9", hash_generated_method = "B93F62DC035F095BBCAF219EA2AC3384")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         addTaint(in.getTaint());
         in.defaultReadObject();
-    if(suppressedExceptions != null)        
+        if(suppressedExceptions != null)        
         {
             suppressedExceptions = new ArrayList<Throwable>(suppressedExceptions);
         } //End block
@@ -470,7 +470,7 @@ Throwable[] var3A15AFB91A649D7F40FA832976B63DE8_1051302500 =         (suppressed
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.735 -0400", hash_original_field = "148A70AC82907F97956B1718282EB51D", hash_generated_field = "02CA67A79E3766B4E9DFDCEAEB0383C0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.634 -0400", hash_original_field = "148A70AC82907F97956B1718282EB51D", hash_generated_field = "02CA67A79E3766B4E9DFDCEAEB0383C0")
 
     private static final long serialVersionUID = -3042686055658047285L;
 }
