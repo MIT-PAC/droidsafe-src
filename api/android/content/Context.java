@@ -66,6 +66,12 @@ public abstract class Context {
         return getTheme().obtainStyledAttributes(set, attrs, 0, 0);
     }
 	
+	/*** Droidsafe Hook */
+	@DSModeled
+	void __ds__registerIntentFilter() {
+		
+	}
+	
 	/* Abstract Methods */
 	public abstract Object getSystemService(String name);
 	public abstract boolean bindService(Intent service, ServiceConnection conn,
