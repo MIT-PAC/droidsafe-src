@@ -9,14 +9,14 @@ import org.apache.http.protocol.HTTP;
 
 public final class AuthParams {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.096 -0400", hash_original_method = "EB9D982BD9B9623A4B896B6B8960ED16", hash_generated_method = "E97EEB74B9E097B6DD9930287DD2A388")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.341 -0400", hash_original_method = "EB9D982BD9B9623A4B896B6B8960ED16", hash_generated_method = "E97EEB74B9E097B6DD9930287DD2A388")
     private  AuthParams() {
         super();
         // ---------- Original Method ----------
     }
 
     
-        public static String getCredentialCharset(final HttpParams params) {
+    public static String getCredentialCharset(final HttpParams params) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }
@@ -29,7 +29,7 @@ public final class AuthParams {
     }
 
     
-        public static void setCredentialCharset(final HttpParams params, final String charset) {
+    public static void setCredentialCharset(final HttpParams params, final String charset) {
         if (params == null) {
             throw new IllegalArgumentException("HTTP parameters may not be null");
         }

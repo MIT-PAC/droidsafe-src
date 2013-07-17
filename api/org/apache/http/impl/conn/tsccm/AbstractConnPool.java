@@ -21,32 +21,32 @@ import org.apache.http.conn.routing.HttpRoute;
 import org.apache.http.impl.conn.IdleConnectionHandler;
 
 public abstract class AbstractConnPool implements RefQueueHandler {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.976 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.290 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
 
     private final Log log = LogFactory.getLog(getClass());
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.976 -0400", hash_original_field = "BB45480D134359D22C0418B5C7FB5E3B", hash_generated_field = "89BB43C794864E61314387B43B6FF59C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.290 -0400", hash_original_field = "BB45480D134359D22C0418B5C7FB5E3B", hash_generated_field = "89BB43C794864E61314387B43B6FF59C")
 
     protected Lock poolLock;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.976 -0400", hash_original_field = "9349352E06EF5D6E72E672CBF9EA89A9", hash_generated_field = "A0FE2E9181E5A1497BEE93B62E29B3A1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.290 -0400", hash_original_field = "9349352E06EF5D6E72E672CBF9EA89A9", hash_generated_field = "A0FE2E9181E5A1497BEE93B62E29B3A1")
 
     protected Set<BasicPoolEntryRef> issuedConnections;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.976 -0400", hash_original_field = "6070A315A4FC63D44EABB4D9ABF1D7CE", hash_generated_field = "55EE522AC0C1CB0DA5968035C4BCC85D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.290 -0400", hash_original_field = "6070A315A4FC63D44EABB4D9ABF1D7CE", hash_generated_field = "55EE522AC0C1CB0DA5968035C4BCC85D")
 
     protected IdleConnectionHandler idleConnHandler;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.976 -0400", hash_original_field = "EC37B3D66CC45ECC733525D3988188FE", hash_generated_field = "329E7708843E3730009ED3B91C5F4D39")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.290 -0400", hash_original_field = "EC37B3D66CC45ECC733525D3988188FE", hash_generated_field = "329E7708843E3730009ED3B91C5F4D39")
 
     protected int numConnections;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.976 -0400", hash_original_field = "B82FB46AF129A517A66F7204F172DDA9", hash_generated_field = "60A7C2B675EA491A9BF5C18637CD724D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.291 -0400", hash_original_field = "B82FB46AF129A517A66F7204F172DDA9", hash_generated_field = "60A7C2B675EA491A9BF5C18637CD724D")
 
     protected ReferenceQueue<Object> refQueue;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.976 -0400", hash_original_field = "8C1110C9C69404D1963F025E378F57FC", hash_generated_field = "E5D3DE402E8B1BA965AA00AC6191EDD8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.291 -0400", hash_original_field = "8C1110C9C69404D1963F025E378F57FC", hash_generated_field = "E5D3DE402E8B1BA965AA00AC6191EDD8")
 
     private RefQueueWorker refWorker;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.977 -0400", hash_original_field = "39E5F82929A2140F9EAABEA99A57C705", hash_generated_field = "F15F5E1E3CD7B6799921EE9E4A605FC3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.291 -0400", hash_original_field = "39E5F82929A2140F9EAABEA99A57C705", hash_generated_field = "F15F5E1E3CD7B6799921EE9E4A605FC3")
 
     protected volatile boolean isShutDown;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.977 -0400", hash_original_method = "51DB8B1C7B1E70F4AD996E9EEB946CC0", hash_generated_method = "317EC406D39A1E88200CB24360D31222")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.291 -0400", hash_original_method = "51DB8B1C7B1E70F4AD996E9EEB946CC0", hash_generated_method = "317EC406D39A1E88200CB24360D31222")
     protected  AbstractConnPool() {
         issuedConnections = new HashSet<BasicPoolEntryRef>();
         idleConnHandler = new IdleConnectionHandler();
@@ -60,22 +60,22 @@ public abstract class AbstractConnPool implements RefQueueHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.978 -0400", hash_original_method = "68FD2DF4471AB38D5F7B2F768AE2EB0E", hash_generated_method = "E46ADC0DC9824EB465B7E8939DBE0E18")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.292 -0400", hash_original_method = "68FD2DF4471AB38D5F7B2F768AE2EB0E", hash_generated_method = "076EA61CD3E1FEF68521F6183A3A9956")
     public void enableConnectionGC() throws IllegalStateException {
-    if(refQueue != null)        
+        if(refQueue != null)        
         {
-            IllegalStateException var74A550C9AE115FA1532625DFD833582A_855273808 = new IllegalStateException("Connection GC already enabled.");
-            var74A550C9AE115FA1532625DFD833582A_855273808.addTaint(taint);
-            throw var74A550C9AE115FA1532625DFD833582A_855273808;
+            IllegalStateException var74A550C9AE115FA1532625DFD833582A_538225142 = new IllegalStateException("Connection GC already enabled.");
+            var74A550C9AE115FA1532625DFD833582A_538225142.addTaint(taint);
+            throw var74A550C9AE115FA1532625DFD833582A_538225142;
         } //End block
         poolLock.lock();
         try 
         {
-    if(numConnections > 0)            
+            if(numConnections > 0)            
             {
-                IllegalStateException varFE4EF1FD0E298DF11EAAD56523CEB196_348622370 = new IllegalStateException("Pool already in use.");
-                varFE4EF1FD0E298DF11EAAD56523CEB196_348622370.addTaint(taint);
-                throw varFE4EF1FD0E298DF11EAAD56523CEB196_348622370;
+                IllegalStateException varFE4EF1FD0E298DF11EAAD56523CEB196_1790830526 = new IllegalStateException("Pool already in use.");
+                varFE4EF1FD0E298DF11EAAD56523CEB196_1790830526.addTaint(taint);
+                throw varFE4EF1FD0E298DF11EAAD56523CEB196_1790830526;
             } //End block
         } //End block
         finally 
@@ -109,7 +109,7 @@ public abstract class AbstractConnPool implements RefQueueHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.979 -0400", hash_original_method = "0742A6A1F2B8CF3FE44B75781825E20C", hash_generated_method = "BFA11CED72453F0276E6C58D4EEDC4F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.293 -0400", hash_original_method = "0742A6A1F2B8CF3FE44B75781825E20C", hash_generated_method = "8B7759024FC08E0215867FA37F4DFDBB")
     public final BasicPoolEntry getEntry(
                 HttpRoute route, 
                 Object state,
@@ -119,9 +119,9 @@ public abstract class AbstractConnPool implements RefQueueHandler {
         addTaint(timeout);
         addTaint(state.getTaint());
         addTaint(route.getTaint());
-BasicPoolEntry var3A1E30D37A22B88BA6A543ACA5D0FAD4_412864387 =         requestPoolEntry(route, state).getPoolEntry(timeout, tunit);
-        var3A1E30D37A22B88BA6A543ACA5D0FAD4_412864387.addTaint(taint);
-        return var3A1E30D37A22B88BA6A543ACA5D0FAD4_412864387;
+BasicPoolEntry var3A1E30D37A22B88BA6A543ACA5D0FAD4_750013007 =         requestPoolEntry(route, state).getPoolEntry(timeout, tunit);
+        var3A1E30D37A22B88BA6A543ACA5D0FAD4_750013007.addTaint(taint);
+        return var3A1E30D37A22B88BA6A543ACA5D0FAD4_750013007;
         // ---------- Original Method ----------
         //return requestPoolEntry(route, state).getPoolEntry(timeout, tunit);
     }
@@ -134,19 +134,19 @@ BasicPoolEntry var3A1E30D37A22B88BA6A543ACA5D0FAD4_412864387 =         requestPo
         ;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.979 -0400", hash_original_method = "005D09627953355817D3D23BD1B8063B", hash_generated_method = "9486B47AE94F470673E052636BAD086C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.293 -0400", hash_original_method = "005D09627953355817D3D23BD1B8063B", hash_generated_method = "9486B47AE94F470673E052636BAD086C")
     public void handleReference(Reference ref) {
         addTaint(ref.getTaint());
         poolLock.lock();
         try 
         {
-    if(ref instanceof BasicPoolEntryRef)            
+            if(ref instanceof BasicPoolEntryRef)            
             {
                 final boolean lost = issuedConnections.remove(ref);
-    if(lost)                
+                if(lost)                
                 {
                     final HttpRoute route = ((BasicPoolEntryRef)ref).getRoute();
-    if(log.isDebugEnabled())                    
+                    if(log.isDebugEnabled())                    
                     {
                         log.debug("Connection garbage collected. " + route);
                     } //End block
@@ -182,15 +182,15 @@ BasicPoolEntry var3A1E30D37A22B88BA6A543ACA5D0FAD4_412864387 =         requestPo
         ;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.980 -0400", hash_original_method = "B6A3F225A0D4D9B69A4C0D73B6FA8390", hash_generated_method = "17CEFCA57B87BA365C4CCC505D71DE80")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.294 -0400", hash_original_method = "B6A3F225A0D4D9B69A4C0D73B6FA8390", hash_generated_method = "FE2DA3F5C400174E56FC58EF016355FE")
     public void closeIdleConnections(long idletime, TimeUnit tunit) {
         addTaint(tunit.getTaint());
         addTaint(idletime);
-    if(tunit == null)        
+        if(tunit == null)        
         {
-            IllegalArgumentException var1E3A26647533CD72883EC80C4F4E6594_320068211 = new IllegalArgumentException("Time unit must not be null.");
-            var1E3A26647533CD72883EC80C4F4E6594_320068211.addTaint(taint);
-            throw var1E3A26647533CD72883EC80C4F4E6594_320068211;
+            IllegalArgumentException var1E3A26647533CD72883EC80C4F4E6594_135134607 = new IllegalArgumentException("Time unit must not be null.");
+            var1E3A26647533CD72883EC80C4F4E6594_135134607.addTaint(taint);
+            throw var1E3A26647533CD72883EC80C4F4E6594_135134607;
         } //End block
         poolLock.lock();
         try 
@@ -214,7 +214,7 @@ BasicPoolEntry var3A1E30D37A22B88BA6A543ACA5D0FAD4_412864387 =         requestPo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.980 -0400", hash_original_method = "9DA7FEECE19DD407DF46C6AFBD499B72", hash_generated_method = "F7BA16EF71C26C6BD53A5B22944401AE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.295 -0400", hash_original_method = "9DA7FEECE19DD407DF46C6AFBD499B72", hash_generated_method = "F7BA16EF71C26C6BD53A5B22944401AE")
     public void closeExpiredConnections() {
         poolLock.lock();
         try 
@@ -239,14 +239,14 @@ BasicPoolEntry var3A1E30D37A22B88BA6A543ACA5D0FAD4_412864387 =         requestPo
         ;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.981 -0400", hash_original_method = "74B1E1F35A0ABEB335D073A37540DF82", hash_generated_method = "3EDF97E11A391666E0A5AADF14A31952")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.296 -0400", hash_original_method = "74B1E1F35A0ABEB335D073A37540DF82", hash_generated_method = "3EDF97E11A391666E0A5AADF14A31952")
     public void shutdown() {
         poolLock.lock();
         try 
         {
-    if(isShutDown)            
+            if(isShutDown)            
             return;
-    if(refWorker != null)            
+            if(refWorker != null)            
             refWorker.shutdown();
             Iterator<BasicPoolEntryRef> iter = issuedConnections.iterator();
             while
@@ -255,7 +255,7 @@ BasicPoolEntry var3A1E30D37A22B88BA6A543ACA5D0FAD4_412864387 =         requestPo
                 BasicPoolEntryRef per = iter.next();
                 iter.remove();
                 BasicPoolEntry entry = per.get();
-    if(entry != null)                
+                if(entry != null)                
                 {
                     closeConnection(entry.getConnection());
                 } //End block
@@ -291,10 +291,10 @@ BasicPoolEntry var3A1E30D37A22B88BA6A543ACA5D0FAD4_412864387 =         requestPo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.982 -0400", hash_original_method = "88CD04F545A262F2432C3D0F1CF09056", hash_generated_method = "7743E3279BF8249E67A0B6E4ECC931B9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.297 -0400", hash_original_method = "88CD04F545A262F2432C3D0F1CF09056", hash_generated_method = "7743E3279BF8249E67A0B6E4ECC931B9")
     protected void closeConnection(final OperatedClientConnection conn) {
         addTaint(conn.getTaint());
-    if(conn != null)        
+        if(conn != null)        
         {
             try 
             {

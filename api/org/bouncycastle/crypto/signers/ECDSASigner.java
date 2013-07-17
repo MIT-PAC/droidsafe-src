@@ -17,29 +17,29 @@ import org.bouncycastle.math.ec.ECConstants;
 import org.bouncycastle.math.ec.ECPoint;
 
 public class ECDSASigner implements ECConstants, DSA {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.405 -0400", hash_original_field = "3C6E0B8A9C15224A8228B9A98CA1531D", hash_generated_field = "7932DEDC4CDEDAFB3B5643FD9FB304D6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.158 -0400", hash_original_field = "3C6E0B8A9C15224A8228B9A98CA1531D", hash_generated_field = "7932DEDC4CDEDAFB3B5643FD9FB304D6")
 
     ECKeyParameters key;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.405 -0400", hash_original_field = "7DDF32E17A6AC5CE04A8ECBF782CA509", hash_generated_field = "DB0BFD07E76FA22D79EF92D3D20AD0C9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.158 -0400", hash_original_field = "7DDF32E17A6AC5CE04A8ECBF782CA509", hash_generated_field = "DB0BFD07E76FA22D79EF92D3D20AD0C9")
 
     SecureRandom random;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.405 -0400", hash_original_method = "C1322FCAE454F44B8363BD2382FAD546", hash_generated_method = "C1322FCAE454F44B8363BD2382FAD546")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.158 -0400", hash_original_method = "C1322FCAE454F44B8363BD2382FAD546", hash_generated_method = "C1322FCAE454F44B8363BD2382FAD546")
     public ECDSASigner ()
     {
         //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.406 -0400", hash_original_method = "7C8BB5DB49DEBEADD4F3AE9B9DC1372A", hash_generated_method = "5B9F3CECBEC5DD7F6FF9FEA0E90278F7")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.159 -0400", hash_original_method = "7C8BB5DB49DEBEADD4F3AE9B9DC1372A", hash_generated_method = "5B9F3CECBEC5DD7F6FF9FEA0E90278F7")
     public void init(
         boolean                 forSigning,
         CipherParameters        param) {
         addTaint(forSigning);
-    if(forSigning)        
+        if(forSigning)        
         {
-    if(param instanceof ParametersWithRandom)            
+            if(param instanceof ParametersWithRandom)            
             {
                 ParametersWithRandom rParam = (ParametersWithRandom)param;
                 this.random = rParam.getRandom();
@@ -77,7 +77,7 @@ public class ECDSASigner implements ECConstants, DSA {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.407 -0400", hash_original_method = "FB5DF316F460707F8207D2FB11462865", hash_generated_method = "0AABF76A6417D157D90CE53565E0DB33")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.162 -0400", hash_original_method = "FB5DF316F460707F8207D2FB11462865", hash_generated_method = "193A5E5600BD67E3D04168ED61548346")
     public BigInteger[] generateSignature(
         byte[] message) {
         addTaint(message[0]);
@@ -108,15 +108,15 @@ public class ECDSASigner implements ECConstants, DSA {
         BigInteger[] res = new BigInteger[2];
         res[0] = r;
         res[1] = s;
-BigInteger[] varB5053E025797B3BF768F5C37934C244D_733768322 =         res;
-        varB5053E025797B3BF768F5C37934C244D_733768322.addTaint(taint);
-        return varB5053E025797B3BF768F5C37934C244D_733768322;
+BigInteger[] varB5053E025797B3BF768F5C37934C244D_662778947 =         res;
+        varB5053E025797B3BF768F5C37934C244D_662778947.addTaint(taint);
+        return varB5053E025797B3BF768F5C37934C244D_662778947;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.408 -0400", hash_original_method = "16EB9D1F1ED26940A9147EEAE266AF00", hash_generated_method = "582FB93F4E7A9C8CDA7A9863E5D05F36")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.163 -0400", hash_original_method = "16EB9D1F1ED26940A9147EEAE266AF00", hash_generated_method = "7A1627501787E03B0FC8351007B2F42A")
     public boolean verifySignature(
         byte[]      message,
         BigInteger  r,
@@ -126,17 +126,17 @@ BigInteger[] varB5053E025797B3BF768F5C37934C244D_733768322 =         res;
         addTaint(message[0]);
         BigInteger n = key.getParameters().getN();
         BigInteger e = calculateE(n, message);
-    if(r.compareTo(ONE) < 0 || r.compareTo(n) >= 0)        
+        if(r.compareTo(ONE) < 0 || r.compareTo(n) >= 0)        
         {
-            boolean var68934A3E9455FA72420237EB05902327_178620004 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_942402946 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_942402946;
+            boolean var68934A3E9455FA72420237EB05902327_778341875 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_108998703 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_108998703;
         } //End block
-    if(s.compareTo(ONE) < 0 || s.compareTo(n) >= 0)        
+        if(s.compareTo(ONE) < 0 || s.compareTo(n) >= 0)        
         {
-            boolean var68934A3E9455FA72420237EB05902327_1208822641 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1139230099 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1139230099;
+            boolean var68934A3E9455FA72420237EB05902327_80248670 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1584604438 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1584604438;
         } //End block
         BigInteger c = s.modInverse(n);
         BigInteger u1 = e.multiply(c).mod(n);
@@ -145,9 +145,9 @@ BigInteger[] varB5053E025797B3BF768F5C37934C244D_733768322 =         res;
         ECPoint Q = ((ECPublicKeyParameters)key).getQ();
         ECPoint point = ECAlgorithms.sumOfTwoMultiplies(G, u1, Q, u2);
         BigInteger v = point.getX().toBigInteger().mod(n);
-        boolean var0DB0FBCFAB98A173AE959039A84C881B_1496540495 = (v.equals(r));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_328756327 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_328756327;
+        boolean var0DB0FBCFAB98A173AE959039A84C881B_1900918304 = (v.equals(r));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1528193179 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1528193179;
         // ---------- Original Method ----------
         //BigInteger n = key.getParameters().getN();
         //BigInteger e = calculateE(n, message);
@@ -170,28 +170,28 @@ BigInteger[] varB5053E025797B3BF768F5C37934C244D_733768322 =         res;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.409 -0400", hash_original_method = "D79E78A694EF1FC7CCC97532E7031B66", hash_generated_method = "A5BC2AEF217DF04E15FFFD02C5C5A995")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.165 -0400", hash_original_method = "D79E78A694EF1FC7CCC97532E7031B66", hash_generated_method = "238CA63E9D6390A7795CA9E8893AB969")
     private BigInteger calculateE(BigInteger n, byte[] message) {
         addTaint(message[0]);
         addTaint(n.getTaint());
-    if(n.bitLength() > message.length * 8)        
+        if(n.bitLength() > message.length * 8)        
         {
-BigInteger var2A58862D25CF80D0C74EED713D3F25E0_1221433584 =             new BigInteger(1, message);
-            var2A58862D25CF80D0C74EED713D3F25E0_1221433584.addTaint(taint);
-            return var2A58862D25CF80D0C74EED713D3F25E0_1221433584;
+BigInteger var2A58862D25CF80D0C74EED713D3F25E0_4933526 =             new BigInteger(1, message);
+            var2A58862D25CF80D0C74EED713D3F25E0_4933526.addTaint(taint);
+            return var2A58862D25CF80D0C74EED713D3F25E0_4933526;
         } //End block
         else
         {
             int messageBitLength = message.length * 8;
             BigInteger trunc = new BigInteger(1, message);
-    if(messageBitLength - n.bitLength() > 0)            
+            if(messageBitLength - n.bitLength() > 0)            
             {
                 trunc = trunc.shiftRight(messageBitLength - n.bitLength());
             } //End block
-BigInteger varAB34F6DE565C1B6F3B64505651718BEC_1776318518 =             trunc;
-            varAB34F6DE565C1B6F3B64505651718BEC_1776318518.addTaint(taint);
-            return varAB34F6DE565C1B6F3B64505651718BEC_1776318518;
+BigInteger varAB34F6DE565C1B6F3B64505651718BEC_424566347 =             trunc;
+            varAB34F6DE565C1B6F3B64505651718BEC_424566347.addTaint(taint);
+            return varAB34F6DE565C1B6F3B64505651718BEC_424566347;
         } //End block
         // ---------- Original Method ----------
         //if (n.bitLength() > message.length * 8)

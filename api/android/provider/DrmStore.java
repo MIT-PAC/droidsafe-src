@@ -22,14 +22,14 @@ import java.io.OutputStream;
 
 public final class DrmStore {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.302 -0400", hash_original_method = "794F8F649F74858E61C047D8FF367CC2", hash_generated_method = "794F8F649F74858E61C047D8FF367CC2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.341 -0400", hash_original_method = "794F8F649F74858E61C047D8FF367CC2", hash_generated_method = "794F8F649F74858E61C047D8FF367CC2")
     public DrmStore ()
     {
         //Synthesized constructor
     }
 
 
-        public static final Intent addDrmFile(ContentResolver cr, File file, String title) {
+    public static final Intent addDrmFile(ContentResolver cr, File file, String title) {
         FileInputStream fis = null;
         Intent result = null;
         try {
@@ -56,7 +56,7 @@ public final class DrmStore {
     }
 
     
-        public static final Intent addDrmFile(ContentResolver cr, FileInputStream fis, String title) {
+    public static final Intent addDrmFile(ContentResolver cr, FileInputStream fis, String title) {
         OutputStream os = null;
         Intent result = null;
         try {
@@ -108,7 +108,7 @@ public final class DrmStore {
     }
 
     
-        public static void enforceAccessDrmPermission(Context context) {
+    public static void enforceAccessDrmPermission(Context context) {
         if (context.checkCallingOrSelfPermission(ACCESS_DRM_PERMISSION) !=
                 PackageManager.PERMISSION_GRANTED) {
             throw new SecurityException("Requires DRM permission");
@@ -141,13 +141,13 @@ public final class DrmStore {
         public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/audio");
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.303 -0400", hash_original_field = "394272B77C3DAE9BDC785AD624DEC0E9", hash_generated_field = "432FBE01DD1C069C6C057D9BD9F228FE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.342 -0400", hash_original_field = "394272B77C3DAE9BDC785AD624DEC0E9", hash_generated_field = "432FBE01DD1C069C6C057D9BD9F228FE")
 
     private static final String TAG = "DrmStore";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.303 -0400", hash_original_field = "D609D8CF11EE866474EB8BAE16A25719", hash_generated_field = "F95243080EDD554C30FC0476DD98FCCD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.343 -0400", hash_original_field = "D609D8CF11EE866474EB8BAE16A25719", hash_generated_field = "F95243080EDD554C30FC0476DD98FCCD")
 
     public static final String AUTHORITY = "drm";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.303 -0400", hash_original_field = "C26FC84FF8F07EAE1758F08FFC4D975E", hash_generated_field = "A4BF6B5761EC4106BC7C8CE9325687FB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.343 -0400", hash_original_field = "C26FC84FF8F07EAE1758F08FFC4D975E", hash_generated_field = "A4BF6B5761EC4106BC7C8CE9325687FB")
 
     private static final String ACCESS_DRM_PERMISSION = "android.permission.ACCESS_DRM";
 }

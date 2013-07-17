@@ -16,20 +16,20 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public final class Streams {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.926 -0400", hash_original_method = "C77AFB36715A9D022AA555F8E2CA0E65", hash_generated_method = "1AA6BD22E66D64175A500F429CBE1AC9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.789 -0400", hash_original_method = "C77AFB36715A9D022AA555F8E2CA0E65", hash_generated_method = "1AA6BD22E66D64175A500F429CBE1AC9")
     private  Streams() {
         // ---------- Original Method ----------
     }
 
     
-        public static int readSingleByte(InputStream in) throws IOException {
+    public static int readSingleByte(InputStream in) throws IOException {
         byte[] buffer = new byte[1];
         int result = in.read(buffer, 0, 1);
         return (result != -1) ? buffer[0] & 0xff : -1;
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static void writeSingleByte(OutputStream out, int b) throws IOException {
         byte[] buffer = new byte[1];
         buffer[0] = (byte) (b & 0xff);
@@ -37,13 +37,13 @@ public final class Streams {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static void readFully(InputStream in, byte[] dst) throws IOException {
         readFully(in, dst, 0, dst.length);
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static void readFully(InputStream in, byte[] dst, int offset, int byteCount) throws IOException {
         if (byteCount == 0) {
             return;
@@ -66,7 +66,7 @@ public final class Streams {
     }
 
     
-        public static byte[] readFully(InputStream in) throws IOException {
+    public static byte[] readFully(InputStream in) throws IOException {
         try {
             return readFullyNoClose(in);
         } finally {
@@ -75,7 +75,7 @@ public final class Streams {
     }
 
     
-        public static byte[] readFullyNoClose(InputStream in) throws IOException {
+    public static byte[] readFullyNoClose(InputStream in) throws IOException {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         byte[] buffer = new byte[1024];
         int count;
@@ -86,7 +86,7 @@ public final class Streams {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static String readFully(Reader reader) throws IOException {
         try {
             StringWriter writer = new StringWriter();
@@ -102,14 +102,14 @@ public final class Streams {
     }
 
     
-        public static void skipAll(InputStream in) throws IOException {
+    public static void skipAll(InputStream in) throws IOException {
         do {
             in.skip(Long.MAX_VALUE);
         } while (in.read() != -1);
     }
 
     
-        public static long skipByReading(InputStream in, long byteCount) throws IOException {
+    public static long skipByReading(InputStream in, long byteCount) throws IOException {
         byte[] buffer = skipBuffer.getAndSet(null);
         if (buffer == null) {
             buffer = new byte[4096];
@@ -131,7 +131,7 @@ public final class Streams {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int copy(InputStream in, OutputStream out) throws IOException {
         int total = 0;
         byte[] buffer = new byte[8192];
@@ -144,7 +144,7 @@ public final class Streams {
     }
 
     
-        public static String readAsciiLine(InputStream in) throws IOException {
+    public static String readAsciiLine(InputStream in) throws IOException {
         StringBuilder result = new StringBuilder(80);
         while (true) {
             int c = in.read();
@@ -163,7 +163,7 @@ public final class Streams {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.930 -0400", hash_original_field = "7E66C7F1643D8F7E2422DC85895A15FA", hash_generated_field = "A1B1A5BE6021D69F6851622BFC79A5B3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.790 -0400", hash_original_field = "7E66C7F1643D8F7E2422DC85895A15FA", hash_generated_field = "A1B1A5BE6021D69F6851622BFC79A5B3")
 
     private static AtomicReference<byte[]> skipBuffer = new AtomicReference<byte[]>();
 }

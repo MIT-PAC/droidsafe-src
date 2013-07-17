@@ -10,8 +10,8 @@ import java.text.ParseException;
 
 public abstract class ParametersParser extends HeaderParser {
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.948 -0400", hash_original_method = "8DB209633D35B91A05910E58BFF524C0", hash_generated_method = "60EECF453E8AEF1F96199531012AB464")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.918 -0400", hash_original_method = "8DB209633D35B91A05910E58BFF524C0", hash_generated_method = "60EECF453E8AEF1F96199531012AB464")
     protected  ParametersParser(Lexer lexer) {
         super((Lexer) lexer);
         addTaint(lexer.getTaint());
@@ -19,8 +19,8 @@ public abstract class ParametersParser extends HeaderParser {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.948 -0400", hash_original_method = "1337D3E6D061A128A8E8534FBF59A488", hash_generated_method = "C4F88D2E99DE3DC3430895330CA3BC8E")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.919 -0400", hash_original_method = "1337D3E6D061A128A8E8534FBF59A488", hash_generated_method = "C4F88D2E99DE3DC3430895330CA3BC8E")
     protected  ParametersParser(String buffer) {
         super(buffer);
         addTaint(buffer.getTaint());
@@ -28,8 +28,8 @@ public abstract class ParametersParser extends HeaderParser {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.948 -0400", hash_original_method = "D7D1ED3794D3EF5845398404979DE69B", hash_generated_method = "776F3D8F5F4BDE4004E634BC09BAD823")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.919 -0400", hash_original_method = "D7D1ED3794D3EF5845398404979DE69B", hash_generated_method = "776F3D8F5F4BDE4004E634BC09BAD823")
     protected void parse(ParametersHeader parametersHeader) throws ParseException {
         addTaint(parametersHeader.getTaint());
         this.lexer.SPorHT();
@@ -54,8 +54,8 @@ public abstract class ParametersParser extends HeaderParser {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.949 -0400", hash_original_method = "F0B8EED12E7201B6D65F9EE76F7129AE", hash_generated_method = "703A9073FDCC74319A70A8CB40B735B8")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.920 -0400", hash_original_method = "F0B8EED12E7201B6D65F9EE76F7129AE", hash_generated_method = "703A9073FDCC74319A70A8CB40B735B8")
     protected void parseNameValueList(ParametersHeader parametersHeader) throws ParseException {
         addTaint(parametersHeader.getTaint());
         parametersHeader.removeParameters();
@@ -66,7 +66,7 @@ public abstract class ParametersParser extends HeaderParser {
             NameValue nv = nameValue();
             parametersHeader.setParameter(nv.getName(), (String) nv.getValueAsObject());
             this.lexer.SPorHT();
-    if(lexer.lookAhead(0) != ';')            
+            if(lexer.lookAhead(0) != ';')            
             break;
             else
             lexer.consume(1);

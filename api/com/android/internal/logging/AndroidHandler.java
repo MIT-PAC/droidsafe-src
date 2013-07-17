@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 
 public class AndroidHandler extends Handler implements DalvikLogHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.682 -0400", hash_original_method = "3144D6BF2066D661F792BBA409558AA4", hash_generated_method = "499BDCB128B25531C4DD756ECC316A4F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.250 -0400", hash_original_method = "3144D6BF2066D661F792BBA409558AA4", hash_generated_method = "499BDCB128B25531C4DD756ECC316A4F")
     public  AndroidHandler() {
         setFormatter(THE_FORMATTER);
         // ---------- Original Method ----------
@@ -25,29 +25,29 @@ public class AndroidHandler extends Handler implements DalvikLogHandler {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.682 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1A3F8C083102602A57FB2D0CBE40EA76")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.250 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1A3F8C083102602A57FB2D0CBE40EA76")
     @Override
     public void close() {
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.682 -0400", hash_original_method = "336EB9AA03C5B902D3CE726BD69F433F", hash_generated_method = "4A4713C8ADAF7778CF4E4BBDA39355C2")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.251 -0400", hash_original_method = "336EB9AA03C5B902D3CE726BD69F433F", hash_generated_method = "4A4713C8ADAF7778CF4E4BBDA39355C2")
     @Override
     public void flush() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.683 -0400", hash_original_method = "CEA54EC9759DF54F81D3C4C5F0B6BD15", hash_generated_method = "246215A133F1BFE6B0FFEC419C6FC955")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.252 -0400", hash_original_method = "CEA54EC9759DF54F81D3C4C5F0B6BD15", hash_generated_method = "246215A133F1BFE6B0FFEC419C6FC955")
     @Override
     public void publish(LogRecord record) {
         addTaint(record.getTaint());
         int level = getAndroidLevel(record.getLevel());
         String tag = DalvikLogging.loggerNameToTag(record.getLoggerName());
-    if(!Log.isLoggable(tag, level))        
+        if(!Log.isLoggable(tag, level))        
         {
             return;
         } //End block
@@ -74,14 +74,14 @@ public class AndroidHandler extends Handler implements DalvikLogHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.683 -0400", hash_original_method = "23FAB086781713B49A4D1AC40EDC6A51", hash_generated_method = "025FD5B6A24F75086E4C8B6757718A47")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.253 -0400", hash_original_method = "23FAB086781713B49A4D1AC40EDC6A51", hash_generated_method = "025FD5B6A24F75086E4C8B6757718A47")
     public void publish(Logger source, String tag, Level level, String message) {
         addTaint(message.getTaint());
         addTaint(level.getTaint());
         addTaint(tag.getTaint());
         addTaint(source.getTaint());
         int priority = getAndroidLevel(level);
-    if(!Log.isLoggable(tag, priority))        
+        if(!Log.isLoggable(tag, priority))        
         {
             return;
         } //End block
@@ -105,7 +105,7 @@ public class AndroidHandler extends Handler implements DalvikLogHandler {
     }
 
     
-        static int getAndroidLevel(Level level) {
+    static int getAndroidLevel(Level level) {
         int value = level.intValue();
         if (value >= 1000) { 
             return Log.ERROR;

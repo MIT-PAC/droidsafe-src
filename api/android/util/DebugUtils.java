@@ -9,14 +9,14 @@ import java.lang.reflect.InvocationTargetException;
 
 public class DebugUtils {
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.821 -0400", hash_original_method = "4AD5C036447EEE6EF322222D7F2F6DED", hash_generated_method = "40067A418DEF2AF784763164D3515C4D")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.631 -0400", hash_original_method = "4AD5C036447EEE6EF322222D7F2F6DED", hash_generated_method = "40067A418DEF2AF784763164D3515C4D")
     public  DebugUtils() {
         // ---------- Original Method ----------
     }
 
     
-        public static boolean isObjectSelected(Object object) {
+    public static boolean isObjectSelected(Object object) {
         boolean match = false;
         String s = System.getenv("ANDROID_OBJECT_FILTER");
         if (s != null && s.length() > 0) {
@@ -55,7 +55,7 @@ public class DebugUtils {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void buildShortClassTag(Object cls, StringBuilder out) {
         if (cls == null) {
             out.append("null");

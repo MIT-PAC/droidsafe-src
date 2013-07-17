@@ -13,45 +13,45 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.524 -0400", hash_original_field = "C778FABC1A5FC38BFB2983B44747E15A", hash_generated_field = "2E33D99F5B4A20B25B98A154596BE936")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.701 -0400", hash_original_field = "C778FABC1A5FC38BFB2983B44747E15A", hash_generated_field = "2E33D99F5B4A20B25B98A154596BE936")
 
     private PhoneNumberUtil phoneUtil;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.524 -0400", hash_original_field = "1CB251EC0D568DE6A929B520C4AED8D1", hash_generated_field = "5FBEDC86BE77699C3F0DD393BD5C241B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.701 -0400", hash_original_field = "1CB251EC0D568DE6A929B520C4AED8D1", hash_generated_field = "5FBEDC86BE77699C3F0DD393BD5C241B")
 
     private CharSequence text;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.524 -0400", hash_original_field = "EFE6F8DFDD2D3B9FA45039EFE1DB04D5", hash_generated_field = "919257B95C0A2873677AF8F369A2FD23")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.701 -0400", hash_original_field = "EFE6F8DFDD2D3B9FA45039EFE1DB04D5", hash_generated_field = "919257B95C0A2873677AF8F369A2FD23")
 
     private String preferredRegion;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.525 -0400", hash_original_field = "F314A8846D8834145E57CA30D0A4D221", hash_generated_field = "1901EB03238813E3A90CAB00F8F24531")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.701 -0400", hash_original_field = "F314A8846D8834145E57CA30D0A4D221", hash_generated_field = "1901EB03238813E3A90CAB00F8F24531")
 
     private Leniency leniency;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.525 -0400", hash_original_field = "28EA10ABCB0F4024E06EDA308866AFF1", hash_generated_field = "5BD507CEE6539816D66E14C52F3CEA0F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.701 -0400", hash_original_field = "28EA10ABCB0F4024E06EDA308866AFF1", hash_generated_field = "5BD507CEE6539816D66E14C52F3CEA0F")
 
     private long maxTries;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.525 -0400", hash_original_field = "9F6A36C706759B1454C5A8AD55B2804D", hash_generated_field = "D868360155DE4E01C861A8C867061965")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.701 -0400", hash_original_field = "9F6A36C706759B1454C5A8AD55B2804D", hash_generated_field = "D868360155DE4E01C861A8C867061965")
 
     private State state = State.NOT_READY;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.525 -0400", hash_original_field = "79FC9F825508163FEF8B1FAC1497582A", hash_generated_field = "CD2E461A3543C1B081C303C6BA322BB5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.701 -0400", hash_original_field = "79FC9F825508163FEF8B1FAC1497582A", hash_generated_field = "CD2E461A3543C1B081C303C6BA322BB5")
 
     private PhoneNumberMatch lastMatch = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.525 -0400", hash_original_field = "A758B7341ECA03CD3A029BF7B37F751F", hash_generated_field = "73A01B8956D34AAB07FB4276843E3EFF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.701 -0400", hash_original_field = "A758B7341ECA03CD3A029BF7B37F751F", hash_generated_field = "73A01B8956D34AAB07FB4276843E3EFF")
 
     private int searchIndex = 0;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.526 -0400", hash_original_method = "1C998965C70C11F4F601639EB7EFDC0A", hash_generated_method = "7B54DDC196F757A01B37F36A3044086E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.703 -0400", hash_original_method = "1C998965C70C11F4F601639EB7EFDC0A", hash_generated_method = "EBE4856C151778B0A1399EF9B1F1CAB6")
       PhoneNumberMatcher(PhoneNumberUtil util, CharSequence text, String country, Leniency leniency,
       long maxTries) {
-    if((util == null) || (leniency == null))        
+        if((util == null) || (leniency == null))        
         {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_532627118 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_532627118.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_532627118;
+            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1638246438 = new NullPointerException();
+            var7338BC9F48D81FE0BBD6183F4014DCC4_1638246438.addTaint(taint);
+            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1638246438;
         } //End block
-    if(maxTries < 0)        
+        if(maxTries < 0)        
         {
-            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_397142679 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_397142679.addTaint(taint);
-            throw var5783EF97022AA508B74A1E3EA38534AF_397142679;
+            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1991008594 = new IllegalArgumentException();
+            var5783EF97022AA508B74A1E3EA38534AF_1991008594.addTaint(taint);
+            throw var5783EF97022AA508B74A1E3EA38534AF_1991008594;
         } //End block
         this.phoneUtil = util;
         this.text = (text != null) ? text : "";
@@ -73,7 +73,7 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
     }
 
     
-        private static String limit(int lower, int upper) {
+    private static String limit(int lower, int upper) {
         if ((lower < 0) || (upper <= 0) || (upper < lower)) {
       throw new IllegalArgumentException();
     }
@@ -81,12 +81,12 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.528 -0400", hash_original_method = "2A2342D3C783955CFC983767F5F149A5", hash_generated_method = "849E408A6444121BE7E679FABA446493")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.704 -0400", hash_original_method = "2A2342D3C783955CFC983767F5F149A5", hash_generated_method = "F3DB61B138B521414BBA507719E01DDF")
     public boolean hasNext() {
-    if(state == State.NOT_READY)        
+        if(state == State.NOT_READY)        
         {
             lastMatch = find(searchIndex);
-    if(lastMatch == null)            
+            if(lastMatch == null)            
             {
                 state = State.DONE;
             } //End block
@@ -96,9 +96,9 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
                 state = State.READY;
             } //End block
         } //End block
-        boolean var38881D6FDDCA3C1D66798834FF18C49F_619536668 = (state == State.READY);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_736342247 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_736342247;
+        boolean var38881D6FDDCA3C1D66798834FF18C49F_44150349 = (state == State.READY);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1377103308 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1377103308;
         // ---------- Original Method ----------
         //if (state == State.NOT_READY) {
       //lastMatch = find(searchIndex);
@@ -113,20 +113,20 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.528 -0400", hash_original_method = "41BA4BAFF42817F4E65D9346C9FF2DB0", hash_generated_method = "0F95CF64BA2587CB8675471E23EBED02")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.705 -0400", hash_original_method = "41BA4BAFF42817F4E65D9346C9FF2DB0", hash_generated_method = "C04DC874A3832E6EB289A5AA806DF56A")
     public PhoneNumberMatch next() {
-    if(!hasNext())        
+        if(!hasNext())        
         {
-            NoSuchElementException var28D00AB599969908D71F102AF992D49A_1317598435 = new NoSuchElementException();
-            var28D00AB599969908D71F102AF992D49A_1317598435.addTaint(taint);
-            throw var28D00AB599969908D71F102AF992D49A_1317598435;
+            NoSuchElementException var28D00AB599969908D71F102AF992D49A_1326930629 = new NoSuchElementException();
+            var28D00AB599969908D71F102AF992D49A_1326930629.addTaint(taint);
+            throw var28D00AB599969908D71F102AF992D49A_1326930629;
         } //End block
         PhoneNumberMatch result = lastMatch;
         lastMatch = null;
         state = State.NOT_READY;
-PhoneNumberMatch varDC838461EE2FA0CA4C9BBB70A15456B0_1144279987 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_1144279987.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_1144279987;
+PhoneNumberMatch varDC838461EE2FA0CA4C9BBB70A15456B0_855783461 =         result;
+        varDC838461EE2FA0CA4C9BBB70A15456B0_855783461.addTaint(taint);
+        return varDC838461EE2FA0CA4C9BBB70A15456B0_855783461;
         // ---------- Original Method ----------
         //if (!hasNext()) {
       //throw new NoSuchElementException();
@@ -138,7 +138,7 @@ PhoneNumberMatch varDC838461EE2FA0CA4C9BBB70A15456B0_1144279987 =         result
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.529 -0400", hash_original_method = "100C9BD21D85AF1E644A5205A8C5603D", hash_generated_method = "592EBC499C70C0F24995B025A0313C45")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.706 -0400", hash_original_method = "100C9BD21D85AF1E644A5205A8C5603D", hash_generated_method = "D7515F330BC289E0F03459B12AC14EFF")
     private PhoneNumberMatch find(int index) {
         addTaint(index);
         Matcher matcher = PATTERN.matcher(text);
@@ -149,18 +149,18 @@ PhoneNumberMatch varDC838461EE2FA0CA4C9BBB70A15456B0_1144279987 =         result
             CharSequence candidate = text.subSequence(start, matcher.end());
             candidate = trimAfterFirstMatch(PhoneNumberUtil.SECOND_NUMBER_START_PATTERN, candidate);
             PhoneNumberMatch match = extractMatch(candidate, start);
-    if(match != null)            
+            if(match != null)            
             {
-PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_109110983 =                 match;
-                varED81284B0460DBAE2301CCD33AC92E85_109110983.addTaint(taint);
-                return varED81284B0460DBAE2301CCD33AC92E85_109110983;
+PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_1459666368 =                 match;
+                varED81284B0460DBAE2301CCD33AC92E85_1459666368.addTaint(taint);
+                return varED81284B0460DBAE2301CCD33AC92E85_1459666368;
             } //End block
             index = start + candidate.length();
             maxTries--;
         } //End block
-PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_2056865701 =         null;
-        var540C13E9E156B687226421B24F2DF178_2056865701.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_2056865701;
+PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_164927099 =         null;
+        var540C13E9E156B687226421B24F2DF178_164927099.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_164927099;
         // ---------- Original Method ----------
         //Matcher matcher = PATTERN.matcher(text);
         //while ((maxTries > 0) && matcher.find(index)) {
@@ -178,7 +178,7 @@ PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_2056865701 =         null;
     }
 
     
-        private static CharSequence trimAfterFirstMatch(Pattern pattern, CharSequence candidate) {
+    private static CharSequence trimAfterFirstMatch(Pattern pattern, CharSequence candidate) {
         Matcher trailingCharsMatcher = pattern.matcher(candidate);
         if (trailingCharsMatcher.find()) {
       candidate = candidate.subSequence(0, trailingCharsMatcher.start());
@@ -187,7 +187,7 @@ PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_2056865701 =         null;
     }
 
     
-        static boolean isLatinLetter(char letter) {
+    static boolean isLatinLetter(char letter) {
         if (!Character.isLetter(letter) && Character.getType(letter) != Character.NON_SPACING_MARK) {
       return false;
     }
@@ -201,32 +201,32 @@ PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_2056865701 =         null;
     }
 
     
-        private static boolean isCurrencySymbol(char character) {
+    private static boolean isCurrencySymbol(char character) {
         return Character.getType(character) == Character.CURRENCY_SYMBOL;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.530 -0400", hash_original_method = "5043FAFCBC10DCDD5AF37AD628E27369", hash_generated_method = "BC95A5E7B67BBFB05EA8C0FE6FCCE7A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.707 -0400", hash_original_method = "5043FAFCBC10DCDD5AF37AD628E27369", hash_generated_method = "3B1B5A3DDE0A9C237F7B8BD867CDCE47")
     private PhoneNumberMatch extractMatch(CharSequence candidate, int offset) {
         addTaint(offset);
         addTaint(candidate.getTaint());
-    if(PUB_PAGES.matcher(candidate).find() || SLASH_SEPARATED_DATES.matcher(candidate).find())        
+        if(PUB_PAGES.matcher(candidate).find() || SLASH_SEPARATED_DATES.matcher(candidate).find())        
         {
-PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_238998892 =             null;
-            var540C13E9E156B687226421B24F2DF178_238998892.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_238998892;
+PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_110073298 =             null;
+            var540C13E9E156B687226421B24F2DF178_110073298.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_110073298;
         } //End block
         String rawString = candidate.toString();
         PhoneNumberMatch match = parseAndVerify(rawString, offset);
-    if(match != null)        
+        if(match != null)        
         {
-PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_591899162 =             match;
-            varED81284B0460DBAE2301CCD33AC92E85_591899162.addTaint(taint);
-            return varED81284B0460DBAE2301CCD33AC92E85_591899162;
+PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_31851240 =             match;
+            varED81284B0460DBAE2301CCD33AC92E85_31851240.addTaint(taint);
+            return varED81284B0460DBAE2301CCD33AC92E85_31851240;
         } //End block
-PhoneNumberMatch var0A837D42E9B84724F42B85C9D42F107F_1071894051 =         extractInnerMatch(rawString, offset);
-        var0A837D42E9B84724F42B85C9D42F107F_1071894051.addTaint(taint);
-        return var0A837D42E9B84724F42B85C9D42F107F_1071894051;
+PhoneNumberMatch var0A837D42E9B84724F42B85C9D42F107F_2037011663 =         extractInnerMatch(rawString, offset);
+        var0A837D42E9B84724F42B85C9D42F107F_2037011663.addTaint(taint);
+        return var0A837D42E9B84724F42B85C9D42F107F_2037011663;
         // ---------- Original Method ----------
         //if (PUB_PAGES.matcher(candidate).find() || SLASH_SEPARATED_DATES.matcher(candidate).find()) {
       //return null;
@@ -240,22 +240,22 @@ PhoneNumberMatch var0A837D42E9B84724F42B85C9D42F107F_1071894051 =         extrac
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.532 -0400", hash_original_method = "45043172935915C3E3D944888FE8A1AA", hash_generated_method = "36432F944FCC8396D1AA074429B29D66")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.709 -0400", hash_original_method = "45043172935915C3E3D944888FE8A1AA", hash_generated_method = "6E0E022887421172DE60E5E05CF40988")
     private PhoneNumberMatch extractInnerMatch(String candidate, int offset) {
         addTaint(offset);
         addTaint(candidate.getTaint());
         Matcher groupMatcher = GROUP_SEPARATOR.matcher(candidate);
-    if(groupMatcher.find())        
+        if(groupMatcher.find())        
         {
             CharSequence firstGroupOnly = candidate.substring(0, groupMatcher.start());
             firstGroupOnly = trimAfterFirstMatch(PhoneNumberUtil.UNWANTED_END_CHAR_PATTERN,
                                            firstGroupOnly);
             PhoneNumberMatch match = parseAndVerify(firstGroupOnly.toString(), offset);
-    if(match != null)            
+            if(match != null)            
             {
-PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_1573045270 =                 match;
-                varED81284B0460DBAE2301CCD33AC92E85_1573045270.addTaint(taint);
-                return varED81284B0460DBAE2301CCD33AC92E85_1573045270;
+PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_115456497 =                 match;
+                varED81284B0460DBAE2301CCD33AC92E85_115456497.addTaint(taint);
+                return varED81284B0460DBAE2301CCD33AC92E85_115456497;
             } //End block
             maxTries--;
             int withoutFirstGroupStart = groupMatcher.end();
@@ -263,14 +263,14 @@ PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_1573045270 =               
             withoutFirstGroup = trimAfterFirstMatch(PhoneNumberUtil.UNWANTED_END_CHAR_PATTERN,
                                               withoutFirstGroup);
             match = parseAndVerify(withoutFirstGroup.toString(), offset + withoutFirstGroupStart);
-    if(match != null)            
+            if(match != null)            
             {
-PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_413115021 =                 match;
-                varED81284B0460DBAE2301CCD33AC92E85_413115021.addTaint(taint);
-                return varED81284B0460DBAE2301CCD33AC92E85_413115021;
+PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_723357187 =                 match;
+                varED81284B0460DBAE2301CCD33AC92E85_723357187.addTaint(taint);
+                return varED81284B0460DBAE2301CCD33AC92E85_723357187;
             } //End block
             maxTries--;
-    if(maxTries > 0)            
+            if(maxTries > 0)            
             {
                 int lastGroupStart = withoutFirstGroupStart;
                 while
@@ -281,90 +281,90 @@ PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_413115021 =                
                 CharSequence withoutLastGroup = candidate.substring(0, lastGroupStart);
                 withoutLastGroup = trimAfterFirstMatch(PhoneNumberUtil.UNWANTED_END_CHAR_PATTERN,
                                                withoutLastGroup);
-    if(withoutLastGroup.equals(firstGroupOnly))                
+                if(withoutLastGroup.equals(firstGroupOnly))                
                 {
-PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_1792397468 =                     null;
-                    var540C13E9E156B687226421B24F2DF178_1792397468.addTaint(taint);
-                    return var540C13E9E156B687226421B24F2DF178_1792397468;
+PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_108514687 =                     null;
+                    var540C13E9E156B687226421B24F2DF178_108514687.addTaint(taint);
+                    return var540C13E9E156B687226421B24F2DF178_108514687;
                 } //End block
                 match = parseAndVerify(withoutLastGroup.toString(), offset);
-    if(match != null)                
+                if(match != null)                
                 {
-PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_1297489192 =                     match;
-                    varED81284B0460DBAE2301CCD33AC92E85_1297489192.addTaint(taint);
-                    return varED81284B0460DBAE2301CCD33AC92E85_1297489192;
+PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_1311529820 =                     match;
+                    varED81284B0460DBAE2301CCD33AC92E85_1311529820.addTaint(taint);
+                    return varED81284B0460DBAE2301CCD33AC92E85_1311529820;
                 } //End block
                 maxTries--;
             } //End block
         } //End block
-PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_1036636710 =         null;
-        var540C13E9E156B687226421B24F2DF178_1036636710.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1036636710;
+PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_1335905192 =         null;
+        var540C13E9E156B687226421B24F2DF178_1335905192.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_1335905192;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.532 -0400", hash_original_method = "0BFC8BA6757CC1FCC573CFBBF7AB3349", hash_generated_method = "F6E98C4DCEFA9E3D4892E65C5497201C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.709 -0400", hash_original_method = "0BFC8BA6757CC1FCC573CFBBF7AB3349", hash_generated_method = "C77036E3359E826742E5881A5795C015")
     private PhoneNumberMatch parseAndVerify(String candidate, int offset) {
         addTaint(offset);
         addTaint(candidate.getTaint());
         try 
         {
-    if(!MATCHING_BRACKETS.matcher(candidate).matches())            
+            if(!MATCHING_BRACKETS.matcher(candidate).matches())            
             {
-PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_842961663 =                 null;
-                var540C13E9E156B687226421B24F2DF178_842961663.addTaint(taint);
-                return var540C13E9E156B687226421B24F2DF178_842961663;
+PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_635447837 =                 null;
+                var540C13E9E156B687226421B24F2DF178_635447837.addTaint(taint);
+                return var540C13E9E156B687226421B24F2DF178_635447837;
             } //End block
-    if(leniency.compareTo(Leniency.VALID) >= 0)            
+            if(leniency.compareTo(Leniency.VALID) >= 0)            
             {
-    if(offset > 0 && !LEAD_CLASS.matcher(candidate).lookingAt())                
+                if(offset > 0 && !LEAD_CLASS.matcher(candidate).lookingAt())                
                 {
                     char previousChar = text.charAt(offset - 1);
-    if(isCurrencySymbol(previousChar) || isLatinLetter(previousChar))                    
+                    if(isCurrencySymbol(previousChar) || isLatinLetter(previousChar))                    
                     {
-PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_1507245678 =                         null;
-                        var540C13E9E156B687226421B24F2DF178_1507245678.addTaint(taint);
-                        return var540C13E9E156B687226421B24F2DF178_1507245678;
+PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_124876457 =                         null;
+                        var540C13E9E156B687226421B24F2DF178_124876457.addTaint(taint);
+                        return var540C13E9E156B687226421B24F2DF178_124876457;
                     } //End block
                 } //End block
                 int lastCharIndex = offset + candidate.length();
-    if(lastCharIndex < text.length())                
+                if(lastCharIndex < text.length())                
                 {
                     char nextChar = text.charAt(lastCharIndex);
-    if(isCurrencySymbol(nextChar) || isLatinLetter(nextChar))                    
+                    if(isCurrencySymbol(nextChar) || isLatinLetter(nextChar))                    
                     {
-PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_400175726 =                         null;
-                        var540C13E9E156B687226421B24F2DF178_400175726.addTaint(taint);
-                        return var540C13E9E156B687226421B24F2DF178_400175726;
+PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_65447908 =                         null;
+                        var540C13E9E156B687226421B24F2DF178_65447908.addTaint(taint);
+                        return var540C13E9E156B687226421B24F2DF178_65447908;
                     } //End block
                 } //End block
             } //End block
             PhoneNumber number = phoneUtil.parse(candidate, preferredRegion);
-    if(leniency.verify(number, candidate, phoneUtil))            
+            if(leniency.verify(number, candidate, phoneUtil))            
             {
-PhoneNumberMatch varCED9B25A3AB1D8962524DF252B5BEC1B_489898508 =                 new PhoneNumberMatch(offset, candidate, number);
-                varCED9B25A3AB1D8962524DF252B5BEC1B_489898508.addTaint(taint);
-                return varCED9B25A3AB1D8962524DF252B5BEC1B_489898508;
+PhoneNumberMatch varCED9B25A3AB1D8962524DF252B5BEC1B_190963566 =                 new PhoneNumberMatch(offset, candidate, number);
+                varCED9B25A3AB1D8962524DF252B5BEC1B_190963566.addTaint(taint);
+                return varCED9B25A3AB1D8962524DF252B5BEC1B_190963566;
             } //End block
         } //End block
         catch (NumberParseException e)
         {
         } //End block
-PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_1426072402 =         null;
-        var540C13E9E156B687226421B24F2DF178_1426072402.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1426072402;
+PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_262661934 =         null;
+        var540C13E9E156B687226421B24F2DF178_262661934.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_262661934;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.533 -0400", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "44F5C0A069C778729D6BD123405A4A10")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.710 -0400", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "EF5394225C932C10E6494AD27CF9B24A")
     public void remove() {
-        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_633839006 = new UnsupportedOperationException();
-        var81FA7E299EEE7F062EBFBEEF08B0464D_633839006.addTaint(taint);
-        throw var81FA7E299EEE7F062EBFBEEF08B0464D_633839006;
+        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1052370502 = new UnsupportedOperationException();
+        var81FA7E299EEE7F062EBFBEEF08B0464D_1052370502.addTaint(taint);
+        throw var81FA7E299EEE7F062EBFBEEF08B0464D_1052370502;
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
@@ -375,22 +375,22 @@ PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_1426072402 =         null;
   }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.533 -0400", hash_original_field = "04AB50CD8FFC1031A09AC85AA6C5F76A", hash_generated_field = "B67DB8AD534231B3DFBCDC8FADB87CD9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.710 -0400", hash_original_field = "04AB50CD8FFC1031A09AC85AA6C5F76A", hash_generated_field = "B67DB8AD534231B3DFBCDC8FADB87CD9")
 
     private static Pattern PATTERN;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.533 -0400", hash_original_field = "6F18EB7998D9F329CF99C23BDBD27384", hash_generated_field = "AFDD5A0D3478F459E19A9B28F0825662")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.710 -0400", hash_original_field = "6F18EB7998D9F329CF99C23BDBD27384", hash_generated_field = "AFDD5A0D3478F459E19A9B28F0825662")
 
     private static final Pattern PUB_PAGES = Pattern.compile("\\d{1,5}-+\\d{1,5}\\s{0,4}\\(\\d{1,4}");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.533 -0400", hash_original_field = "1EE7ACB354316DCABA38EB9E7409261D", hash_generated_field = "64624B78B0314B7CE8F5D8865FF30674")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.710 -0400", hash_original_field = "1EE7ACB354316DCABA38EB9E7409261D", hash_generated_field = "64624B78B0314B7CE8F5D8865FF30674")
 
     private static final Pattern SLASH_SEPARATED_DATES = Pattern.compile("(?:(?:[0-3]?\\d/[01]?\\d)|(?:[01]?\\d/[0-3]?\\d))/(?:[12]\\d)?\\d{2}");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.533 -0400", hash_original_field = "AEDD33FF1E1212064B71A25BB0BA490F", hash_generated_field = "0E3E98A4E9E55E5D5355E96742720F77")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.710 -0400", hash_original_field = "AEDD33FF1E1212064B71A25BB0BA490F", hash_generated_field = "0E3E98A4E9E55E5D5355E96742720F77")
 
     private static Pattern MATCHING_BRACKETS;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.533 -0400", hash_original_field = "A9A2D43AF81AFB7530616D2656DF1087", hash_generated_field = "07B48D8DD762837F8558D15A298E7F7C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.710 -0400", hash_original_field = "A9A2D43AF81AFB7530616D2656DF1087", hash_generated_field = "07B48D8DD762837F8558D15A298E7F7C")
 
     private static Pattern GROUP_SEPARATOR;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.533 -0400", hash_original_field = "0D3DC01484B6FE6CACF6229991DF96AE", hash_generated_field = "BFF4C6D5BA3233E2F2554B8CEE31C6BF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.710 -0400", hash_original_field = "0D3DC01484B6FE6CACF6229991DF96AE", hash_generated_field = "BFF4C6D5BA3233E2F2554B8CEE31C6BF")
 
     private static Pattern LEAD_CLASS;
     static {

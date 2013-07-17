@@ -21,26 +21,26 @@ import org.apache.http.conn.ManagedClientConnection;
 import org.apache.http.conn.ClientConnectionManager;
 
 public abstract class AbstractClientConnAdapter implements ManagedClientConnection {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.699 -0400", hash_original_field = "785590630ABBC51419662A1F6C90EC57", hash_generated_field = "93A1502471BEBD8A1D320A124A64C925")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.967 -0400", hash_original_field = "785590630ABBC51419662A1F6C90EC57", hash_generated_field = "93A1502471BEBD8A1D320A124A64C925")
 
     private Thread executionThread;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.699 -0400", hash_original_field = "7094FDC3C48BF4047F1C3E46D7A0B7D4", hash_generated_field = "5B1DB60EB737FCE9D8CE8B7EB0423FFA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.967 -0400", hash_original_field = "7094FDC3C48BF4047F1C3E46D7A0B7D4", hash_generated_field = "5B1DB60EB737FCE9D8CE8B7EB0423FFA")
 
     private volatile ClientConnectionManager connManager;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.699 -0400", hash_original_field = "2C3321C55B26FA40A2F649D6D19A092C", hash_generated_field = "917911B52507F6EAD6ABB3C534C08061")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.967 -0400", hash_original_field = "2C3321C55B26FA40A2F649D6D19A092C", hash_generated_field = "917911B52507F6EAD6ABB3C534C08061")
 
     private volatile OperatedClientConnection wrappedConnection;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.699 -0400", hash_original_field = "77035017D39C20BF71D208F4896BC5CA", hash_generated_field = "536CD81D74826635B01647B1F98CB897")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.967 -0400", hash_original_field = "77035017D39C20BF71D208F4896BC5CA", hash_generated_field = "536CD81D74826635B01647B1F98CB897")
 
     private volatile boolean markedReusable;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.699 -0400", hash_original_field = "DFB7069BFC6E0064A6C667626ECA07B4", hash_generated_field = "E6C2D59700A91862A935CE6ECAB4AE34")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.967 -0400", hash_original_field = "DFB7069BFC6E0064A6C667626ECA07B4", hash_generated_field = "E6C2D59700A91862A935CE6ECAB4AE34")
 
     private volatile boolean aborted;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.700 -0400", hash_original_field = "B85EC314BF443B797EF8A66B3B03F8A4", hash_generated_field = "E04672A216F0A14E9EF0EC0ECFC2A7EA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.967 -0400", hash_original_field = "B85EC314BF443B797EF8A66B3B03F8A4", hash_generated_field = "E04672A216F0A14E9EF0EC0ECFC2A7EA")
 
     private volatile long duration;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.701 -0400", hash_original_method = "F19F8D1447EDBBE8B1DB0973B5A52449", hash_generated_method = "AA89DA589BAF87371C0A1B2B9D3961F3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.968 -0400", hash_original_method = "F19F8D1447EDBBE8B1DB0973B5A52449", hash_generated_method = "AA89DA589BAF87371C0A1B2B9D3961F3")
     protected  AbstractClientConnAdapter(ClientConnectionManager mgr,
                                         OperatedClientConnection conn) {
         super();
@@ -60,8 +60,8 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.702 -0400", hash_original_method = "5CCC2D76AB339C78C9BD8A2A561C74E1", hash_generated_method = "C05FA2E5875C4FAD66CDB84286BB9B34")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.969 -0400", hash_original_method = "5CCC2D76AB339C78C9BD8A2A561C74E1", hash_generated_method = "C05FA2E5875C4FAD66CDB84286BB9B34")
     protected void detach() {
         wrappedConnection = null;
         connManager = null;
@@ -73,35 +73,35 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.703 -0400", hash_original_method = "6A8409740777F9B554371FD5CA23B84B", hash_generated_method = "2FD9B2D0BF06975373AEE74C561BA9DC")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.969 -0400", hash_original_method = "6A8409740777F9B554371FD5CA23B84B", hash_generated_method = "2C8A5692938C942151272D506333381F")
     protected OperatedClientConnection getWrappedConnection() {
-OperatedClientConnection var67BFE8639BF4D54D36BCCAB7D2BDEA1E_673752894 =         wrappedConnection;
-        var67BFE8639BF4D54D36BCCAB7D2BDEA1E_673752894.addTaint(taint);
-        return var67BFE8639BF4D54D36BCCAB7D2BDEA1E_673752894;
+OperatedClientConnection var67BFE8639BF4D54D36BCCAB7D2BDEA1E_1852837932 =         wrappedConnection;
+        var67BFE8639BF4D54D36BCCAB7D2BDEA1E_1852837932.addTaint(taint);
+        return var67BFE8639BF4D54D36BCCAB7D2BDEA1E_1852837932;
         // ---------- Original Method ----------
         //return wrappedConnection;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.703 -0400", hash_original_method = "D124AA8CBEEBBCAB0459F467E40DD04B", hash_generated_method = "BE8B08BF6F012565B9D3D94BAF11112F")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.970 -0400", hash_original_method = "D124AA8CBEEBBCAB0459F467E40DD04B", hash_generated_method = "740F1493535A1C055168E488282E97CE")
     protected ClientConnectionManager getManager() {
-ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1263756657 =         connManager;
-        varA3F19198A23DEA30D08223E00C8A3A82_1263756657.addTaint(taint);
-        return varA3F19198A23DEA30D08223E00C8A3A82_1263756657;
+ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1349615508 =         connManager;
+        varA3F19198A23DEA30D08223E00C8A3A82_1349615508.addTaint(taint);
+        return varA3F19198A23DEA30D08223E00C8A3A82_1349615508;
         // ---------- Original Method ----------
         //return connManager;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.704 -0400", hash_original_method = "9979A78C8840F79217BFF27E2D058EEC", hash_generated_method = "16679223E2A609573BC647CFA59EACB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.970 -0400", hash_original_method = "9979A78C8840F79217BFF27E2D058EEC", hash_generated_method = "8DA54D4F789844FFC9201E5B3CC21399")
     protected final void assertNotAborted() throws InterruptedIOException {
-    if(aborted)        
+        if(aborted)        
         {
-            InterruptedIOException var5B27A46B909A31111E8F9174329C2770_206844204 = new InterruptedIOException("Connection has been shut down.");
-            var5B27A46B909A31111E8F9174329C2770_206844204.addTaint(taint);
-            throw var5B27A46B909A31111E8F9174329C2770_206844204;
+            InterruptedIOException var5B27A46B909A31111E8F9174329C2770_1431602807 = new InterruptedIOException("Connection has been shut down.");
+            var5B27A46B909A31111E8F9174329C2770_1431602807.addTaint(taint);
+            throw var5B27A46B909A31111E8F9174329C2770_1431602807;
         } //End block
         // ---------- Original Method ----------
         //if (aborted) {
@@ -110,15 +110,15 @@ ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1263756657 =        
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.704 -0400", hash_original_method = "948816836115B6F212C1F0250C125169", hash_generated_method = "7FAED01491F0DA2013212339CC164AB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.970 -0400", hash_original_method = "948816836115B6F212C1F0250C125169", hash_generated_method = "0205B0A6683231EC091AB6E65661EBF0")
     protected final void assertValid(
             final OperatedClientConnection wrappedConn) {
         addTaint(wrappedConn.getTaint());
-    if(wrappedConn == null)        
+        if(wrappedConn == null)        
         {
-            IllegalStateException var4F64B52FA212B6D9F221A3F109CFE0F8_1461056774 = new IllegalStateException("No wrapped connection.");
-            var4F64B52FA212B6D9F221A3F109CFE0F8_1461056774.addTaint(taint);
-            throw var4F64B52FA212B6D9F221A3F109CFE0F8_1461056774;
+            IllegalStateException var4F64B52FA212B6D9F221A3F109CFE0F8_253828378 = new IllegalStateException("No wrapped connection.");
+            var4F64B52FA212B6D9F221A3F109CFE0F8_253828378.addTaint(taint);
+            throw var4F64B52FA212B6D9F221A3F109CFE0F8_253828378;
         } //End block
         // ---------- Original Method ----------
         //if (wrappedConn == null) {
@@ -127,18 +127,18 @@ ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1263756657 =        
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.705 -0400", hash_original_method = "2FF9625B0864983A43D78C23BFFFC0A5", hash_generated_method = "5A497851D891FF13D2400CD74D04F052")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.970 -0400", hash_original_method = "2FF9625B0864983A43D78C23BFFFC0A5", hash_generated_method = "9248DDDBAA1A8BAC3BB561159E00F975")
     public boolean isOpen() {
         OperatedClientConnection conn = getWrappedConnection();
-    if(conn == null)        
+        if(conn == null)        
         {
-        boolean var68934A3E9455FA72420237EB05902327_1585978897 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1648552275 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1648552275;
+        boolean var68934A3E9455FA72420237EB05902327_664468249 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_7365625 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_7365625;
         }
-        boolean var160D40DABB921BD72607FBE1DD13336F_66567089 = (conn.isOpen());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_224624335 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_224624335;
+        boolean var160D40DABB921BD72607FBE1DD13336F_1224982511 = (conn.isOpen());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_443930111 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_443930111;
         // ---------- Original Method ----------
         //OperatedClientConnection conn = getWrappedConnection();
         //if (conn == null)
@@ -147,24 +147,24 @@ ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1263756657 =        
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.705 -0400", hash_original_method = "90FAABB6F73024DC33344558EFAA1B46", hash_generated_method = "7245D84C442F83EC6277584BF73E01F1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.971 -0400", hash_original_method = "90FAABB6F73024DC33344558EFAA1B46", hash_generated_method = "A02266357DFDA86D460292CAF9DBD74F")
     public boolean isStale() {
-    if(aborted)        
+        if(aborted)        
         {
-        boolean varB326B5062B2F0E69046810717534CB09_1362393623 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_213764695 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_213764695;
+        boolean varB326B5062B2F0E69046810717534CB09_812076642 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1799527733 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1799527733;
         }
         OperatedClientConnection conn = getWrappedConnection();
-    if(conn == null)        
+        if(conn == null)        
         {
-        boolean varB326B5062B2F0E69046810717534CB09_1660788016 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_919123664 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_919123664;
+        boolean varB326B5062B2F0E69046810717534CB09_1222942278 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_226024356 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_226024356;
         }
-        boolean var25BF3D1354E39595C509CB31111EF97B_2005436400 = (conn.isStale());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_471979061 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_471979061;
+        boolean var25BF3D1354E39595C509CB31111EF97B_314783484 = (conn.isStale());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1018071018 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1018071018;
         // ---------- Original Method ----------
         //if (aborted)
             //return true;
@@ -175,7 +175,7 @@ ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1263756657 =        
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.706 -0400", hash_original_method = "B78291A4996D117FD5B4CC742670B408", hash_generated_method = "FE1CCF25BDB1D72ADA3A2DA45CAD165C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.971 -0400", hash_original_method = "B78291A4996D117FD5B4CC742670B408", hash_generated_method = "FE1CCF25BDB1D72ADA3A2DA45CAD165C")
     public void setSocketTimeout(int timeout) {
         addTaint(timeout);
         OperatedClientConnection conn = getWrappedConnection();
@@ -188,13 +188,13 @@ ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1263756657 =        
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.706 -0400", hash_original_method = "BE23B10B196A5676F79C60CBBEA5CE71", hash_generated_method = "DC3608A99349B2A2FB37727D6999B7B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.972 -0400", hash_original_method = "BE23B10B196A5676F79C60CBBEA5CE71", hash_generated_method = "A37C657F7032C9B101E964F4969056FC")
     public int getSocketTimeout() {
         OperatedClientConnection conn = getWrappedConnection();
         assertValid(conn);
-        int var95FFA445D5A9A4BC36AB1DC44BAE0D85_2102113468 = (conn.getSocketTimeout());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2032381219 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2032381219;
+        int var95FFA445D5A9A4BC36AB1DC44BAE0D85_599720566 = (conn.getSocketTimeout());
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1924902099 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1924902099;
         // ---------- Original Method ----------
         //OperatedClientConnection conn = getWrappedConnection();
         //assertValid(conn);
@@ -202,13 +202,13 @@ ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1263756657 =        
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.707 -0400", hash_original_method = "E00A8936DFAA9158B267C15F614D75D2", hash_generated_method = "2FC62CA15023263089D650174F62BE3C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.972 -0400", hash_original_method = "E00A8936DFAA9158B267C15F614D75D2", hash_generated_method = "17287771588EC906E34AC094094FB357")
     public HttpConnectionMetrics getMetrics() {
         OperatedClientConnection conn = getWrappedConnection();
         assertValid(conn);
-HttpConnectionMetrics varEB4189BE8F03207E4416B4772007C2FF_1793846969 =         conn.getMetrics();
-        varEB4189BE8F03207E4416B4772007C2FF_1793846969.addTaint(taint);
-        return varEB4189BE8F03207E4416B4772007C2FF_1793846969;
+HttpConnectionMetrics varEB4189BE8F03207E4416B4772007C2FF_1967927531 =         conn.getMetrics();
+        varEB4189BE8F03207E4416B4772007C2FF_1967927531.addTaint(taint);
+        return varEB4189BE8F03207E4416B4772007C2FF_1967927531;
         // ---------- Original Method ----------
         //OperatedClientConnection conn = getWrappedConnection();
         //assertValid(conn);
@@ -216,7 +216,7 @@ HttpConnectionMetrics varEB4189BE8F03207E4416B4772007C2FF_1793846969 =         c
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.707 -0400", hash_original_method = "4AF00870D9F2520B9D9724B955A54108", hash_generated_method = "6A0F716E66F5A1D2A895FECF6E36BA7E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.972 -0400", hash_original_method = "4AF00870D9F2520B9D9724B955A54108", hash_generated_method = "6A0F716E66F5A1D2A895FECF6E36BA7E")
     public void flush() throws IOException {
         assertNotAborted();
         OperatedClientConnection conn = getWrappedConnection();
@@ -230,15 +230,15 @@ HttpConnectionMetrics varEB4189BE8F03207E4416B4772007C2FF_1793846969 =         c
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.708 -0400", hash_original_method = "25E2D0AFEEAE4A9FF0C3D2AE265B1F31", hash_generated_method = "ACC31C6BD4F0A138E102A358BC4BBA1B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.972 -0400", hash_original_method = "25E2D0AFEEAE4A9FF0C3D2AE265B1F31", hash_generated_method = "70AB7BA45A99B085B270DD9DA1C565C9")
     public boolean isResponseAvailable(int timeout) throws IOException {
         addTaint(timeout);
         assertNotAborted();
         OperatedClientConnection conn = getWrappedConnection();
         assertValid(conn);
-        boolean var8EF05C19AD6A8E1E89B4F486FD4CC329_1404441566 = (conn.isResponseAvailable(timeout));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1326319082 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1326319082;
+        boolean var8EF05C19AD6A8E1E89B4F486FD4CC329_583279657 = (conn.isResponseAvailable(timeout));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_206986414 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_206986414;
         // ---------- Original Method ----------
         //assertNotAborted();
         //OperatedClientConnection conn = getWrappedConnection();
@@ -247,7 +247,7 @@ HttpConnectionMetrics varEB4189BE8F03207E4416B4772007C2FF_1793846969 =         c
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.708 -0400", hash_original_method = "329A88989F2294EA414AFD573C61A83C", hash_generated_method = "3B628F6B3AAAE629019115D28EBF76AD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.972 -0400", hash_original_method = "329A88989F2294EA414AFD573C61A83C", hash_generated_method = "3B628F6B3AAAE629019115D28EBF76AD")
     public void receiveResponseEntity(HttpResponse response) throws HttpException, IOException {
         addTaint(response.getTaint());
         assertNotAborted();
@@ -264,15 +264,15 @@ HttpConnectionMetrics varEB4189BE8F03207E4416B4772007C2FF_1793846969 =         c
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.708 -0400", hash_original_method = "DE944D48C7CF4AE77CB8336F5E9ECC2B", hash_generated_method = "FE359FBB26FAF036A0D421D5E0FA83AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.973 -0400", hash_original_method = "DE944D48C7CF4AE77CB8336F5E9ECC2B", hash_generated_method = "586E00100177AEA24EDF925556AEB1DB")
     public HttpResponse receiveResponseHeader() throws HttpException, IOException {
         assertNotAborted();
         OperatedClientConnection conn = getWrappedConnection();
         assertValid(conn);
         unmarkReusable();
-HttpResponse varE063336E2071DB69DB08B2CDD9CDA3CC_769436373 =         conn.receiveResponseHeader();
-        varE063336E2071DB69DB08B2CDD9CDA3CC_769436373.addTaint(taint);
-        return varE063336E2071DB69DB08B2CDD9CDA3CC_769436373;
+HttpResponse varE063336E2071DB69DB08B2CDD9CDA3CC_1005260817 =         conn.receiveResponseHeader();
+        varE063336E2071DB69DB08B2CDD9CDA3CC_1005260817.addTaint(taint);
+        return varE063336E2071DB69DB08B2CDD9CDA3CC_1005260817;
         // ---------- Original Method ----------
         //assertNotAborted();
         //OperatedClientConnection conn = getWrappedConnection();
@@ -282,7 +282,7 @@ HttpResponse varE063336E2071DB69DB08B2CDD9CDA3CC_769436373 =         conn.receiv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.708 -0400", hash_original_method = "BB213D1ED83C696B5F4C4C57285E4F37", hash_generated_method = "F60E52111B2F23EC9C72B8B9CC9FE379")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.973 -0400", hash_original_method = "BB213D1ED83C696B5F4C4C57285E4F37", hash_generated_method = "F60E52111B2F23EC9C72B8B9CC9FE379")
     public void sendRequestEntity(HttpEntityEnclosingRequest request) throws HttpException, IOException {
         addTaint(request.getTaint());
         assertNotAborted();
@@ -299,7 +299,7 @@ HttpResponse varE063336E2071DB69DB08B2CDD9CDA3CC_769436373 =         conn.receiv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.709 -0400", hash_original_method = "54941B5E0F36540E3C9EF8677D0A50F2", hash_generated_method = "FA8C2D3C033E81E5A665B69F72B1F98A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.973 -0400", hash_original_method = "54941B5E0F36540E3C9EF8677D0A50F2", hash_generated_method = "FA8C2D3C033E81E5A665B69F72B1F98A")
     public void sendRequestHeader(HttpRequest request) throws HttpException, IOException {
         addTaint(request.getTaint());
         assertNotAborted();
@@ -316,13 +316,13 @@ HttpResponse varE063336E2071DB69DB08B2CDD9CDA3CC_769436373 =         conn.receiv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.709 -0400", hash_original_method = "24C66DF3AC644AC2F2EBA8DCA3FC4629", hash_generated_method = "BE0F3B587E58A92267829CF273328973")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.974 -0400", hash_original_method = "24C66DF3AC644AC2F2EBA8DCA3FC4629", hash_generated_method = "7A876427C0C16309439565B23C3A21C0")
     public InetAddress getLocalAddress() {
         OperatedClientConnection conn = getWrappedConnection();
         assertValid(conn);
-InetAddress varCDFAB36BFB4DA07291E03E81DE197703_784569213 =         conn.getLocalAddress();
-        varCDFAB36BFB4DA07291E03E81DE197703_784569213.addTaint(taint);
-        return varCDFAB36BFB4DA07291E03E81DE197703_784569213;
+InetAddress varCDFAB36BFB4DA07291E03E81DE197703_299570086 =         conn.getLocalAddress();
+        varCDFAB36BFB4DA07291E03E81DE197703_299570086.addTaint(taint);
+        return varCDFAB36BFB4DA07291E03E81DE197703_299570086;
         // ---------- Original Method ----------
         //OperatedClientConnection conn = getWrappedConnection();
         //assertValid(conn);
@@ -330,13 +330,13 @@ InetAddress varCDFAB36BFB4DA07291E03E81DE197703_784569213 =         conn.getLoca
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.709 -0400", hash_original_method = "CFFC28C49AC23EFEB6812E81E4BB886D", hash_generated_method = "B7D8544E868C9FEDEEC394F72B3519A1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.974 -0400", hash_original_method = "CFFC28C49AC23EFEB6812E81E4BB886D", hash_generated_method = "51AFCCACF2F5E883382770199DBB7413")
     public int getLocalPort() {
         OperatedClientConnection conn = getWrappedConnection();
         assertValid(conn);
-        int varA232E3DF66EF4784D674D13BEA784FF7_701427354 = (conn.getLocalPort());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1304980211 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1304980211;
+        int varA232E3DF66EF4784D674D13BEA784FF7_1716033156 = (conn.getLocalPort());
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1626383569 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1626383569;
         // ---------- Original Method ----------
         //OperatedClientConnection conn = getWrappedConnection();
         //assertValid(conn);
@@ -344,13 +344,13 @@ InetAddress varCDFAB36BFB4DA07291E03E81DE197703_784569213 =         conn.getLoca
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.710 -0400", hash_original_method = "600F3FFEA838B52DB2FC8A00D0FD1454", hash_generated_method = "B98DB07E119081E843B26AF0BFA331A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.974 -0400", hash_original_method = "600F3FFEA838B52DB2FC8A00D0FD1454", hash_generated_method = "2CACB8E642A346719FA8C36C493C26A8")
     public InetAddress getRemoteAddress() {
         OperatedClientConnection conn = getWrappedConnection();
         assertValid(conn);
-InetAddress varC665637F3EB55A5589053A929E6B6A83_2014786125 =         conn.getRemoteAddress();
-        varC665637F3EB55A5589053A929E6B6A83_2014786125.addTaint(taint);
-        return varC665637F3EB55A5589053A929E6B6A83_2014786125;
+InetAddress varC665637F3EB55A5589053A929E6B6A83_1492725337 =         conn.getRemoteAddress();
+        varC665637F3EB55A5589053A929E6B6A83_1492725337.addTaint(taint);
+        return varC665637F3EB55A5589053A929E6B6A83_1492725337;
         // ---------- Original Method ----------
         //OperatedClientConnection conn = getWrappedConnection();
         //assertValid(conn);
@@ -358,13 +358,13 @@ InetAddress varC665637F3EB55A5589053A929E6B6A83_2014786125 =         conn.getRem
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.710 -0400", hash_original_method = "8BDC367E1BB67504AED838B12612BDA6", hash_generated_method = "650F2086B6FC3CEEC8DE9AED7A0A52C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.974 -0400", hash_original_method = "8BDC367E1BB67504AED838B12612BDA6", hash_generated_method = "3E89D98923FC4DD12A46F5DA3A8D5CA0")
     public int getRemotePort() {
         OperatedClientConnection conn = getWrappedConnection();
         assertValid(conn);
-        int var7C19380A7B4AEDEFF30B3FCBB4DEFBBC_718078397 = (conn.getRemotePort());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1261030417 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1261030417;
+        int var7C19380A7B4AEDEFF30B3FCBB4DEFBBC_1271077728 = (conn.getRemotePort());
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_703721861 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_703721861;
         // ---------- Original Method ----------
         //OperatedClientConnection conn = getWrappedConnection();
         //assertValid(conn);
@@ -372,13 +372,13 @@ InetAddress varC665637F3EB55A5589053A929E6B6A83_2014786125 =         conn.getRem
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.710 -0400", hash_original_method = "4D12F5B41CA786A718C0CE38C40DC2DA", hash_generated_method = "623069D012EAC706F1451EBE2EBEB8AE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.975 -0400", hash_original_method = "4D12F5B41CA786A718C0CE38C40DC2DA", hash_generated_method = "23A5E4032CBE96105685B688FAA4007C")
     public boolean isSecure() {
         OperatedClientConnection conn = getWrappedConnection();
         assertValid(conn);
-        boolean var79772CEFF0063644ED296D0AE2ECD1B3_1814817982 = (conn.isSecure());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1706561883 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1706561883;
+        boolean var79772CEFF0063644ED296D0AE2ECD1B3_714483322 = (conn.isSecure());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_504286974 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_504286974;
         // ---------- Original Method ----------
         //OperatedClientConnection conn = getWrappedConnection();
         //assertValid(conn);
@@ -386,25 +386,25 @@ InetAddress varC665637F3EB55A5589053A929E6B6A83_2014786125 =         conn.getRem
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.711 -0400", hash_original_method = "08E9B3DBCD970FB9C319F7E659C9D167", hash_generated_method = "DBDE1931D2984BB4F4A6E5F267EA0DBC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.975 -0400", hash_original_method = "08E9B3DBCD970FB9C319F7E659C9D167", hash_generated_method = "5646B39DFF4AEC220058BCB39556DBCF")
     public SSLSession getSSLSession() {
         OperatedClientConnection conn = getWrappedConnection();
         assertValid(conn);
-    if(!isOpen())        
+        if(!isOpen())        
         {
-SSLSession var540C13E9E156B687226421B24F2DF178_539965491 =         null;
-        var540C13E9E156B687226421B24F2DF178_539965491.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_539965491;
+SSLSession var540C13E9E156B687226421B24F2DF178_1380207897 =         null;
+        var540C13E9E156B687226421B24F2DF178_1380207897.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_1380207897;
         }
         SSLSession result = null;
         Socket sock = conn.getSocket();
-    if(sock instanceof SSLSocket)        
+        if(sock instanceof SSLSocket)        
         {
             result = ((SSLSocket)sock).getSession();
         } //End block
-SSLSession varDC838461EE2FA0CA4C9BBB70A15456B0_1102524970 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_1102524970.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_1102524970;
+SSLSession varDC838461EE2FA0CA4C9BBB70A15456B0_2097197077 =         result;
+        varDC838461EE2FA0CA4C9BBB70A15456B0_2097197077.addTaint(taint);
+        return varDC838461EE2FA0CA4C9BBB70A15456B0_2097197077;
         // ---------- Original Method ----------
         //OperatedClientConnection conn = getWrappedConnection();
         //assertValid(conn);
@@ -419,8 +419,8 @@ SSLSession varDC838461EE2FA0CA4C9BBB70A15456B0_1102524970 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.711 -0400", hash_original_method = "839709285FE118C452FA26DE879FFB1D", hash_generated_method = "7BE665094380AED20128BA3103013769")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.975 -0400", hash_original_method = "839709285FE118C452FA26DE879FFB1D", hash_generated_method = "7BE665094380AED20128BA3103013769")
     public void markReusable() {
         markedReusable = true;
         // ---------- Original Method ----------
@@ -428,8 +428,8 @@ SSLSession varDC838461EE2FA0CA4C9BBB70A15456B0_1102524970 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.712 -0400", hash_original_method = "7923E01503297FB76AA22E34EEF6FDF5", hash_generated_method = "F127E589DEE28AC35FB277B0F37C1F36")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.976 -0400", hash_original_method = "7923E01503297FB76AA22E34EEF6FDF5", hash_generated_method = "F127E589DEE28AC35FB277B0F37C1F36")
     public void unmarkReusable() {
         markedReusable = false;
         // ---------- Original Method ----------
@@ -437,20 +437,20 @@ SSLSession varDC838461EE2FA0CA4C9BBB70A15456B0_1102524970 =         result;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.712 -0400", hash_original_method = "2387742F6BF9638BB6ECF14FF1FDB0EE", hash_generated_method = "DDA269BF6DFDC5344333820FE3FBB008")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.976 -0400", hash_original_method = "2387742F6BF9638BB6ECF14FF1FDB0EE", hash_generated_method = "A55DFC5E8D45BFC8DE27F139AA0E05EA")
     public boolean isMarkedReusable() {
-        boolean var77035017D39C20BF71D208F4896BC5CA_1855628578 = (markedReusable);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_630475367 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_630475367;
+        boolean var77035017D39C20BF71D208F4896BC5CA_96743063 = (markedReusable);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1193599792 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1193599792;
         // ---------- Original Method ----------
         //return markedReusable;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.713 -0400", hash_original_method = "37F53EE2ADE585D06847009D28379E6D", hash_generated_method = "40B744060463D29495B29E6820310F4D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.976 -0400", hash_original_method = "37F53EE2ADE585D06847009D28379E6D", hash_generated_method = "40B744060463D29495B29E6820310F4D")
     public void setIdleDuration(long duration, TimeUnit unit) {
-    if(duration > 0)        
+        if(duration > 0)        
         {
             this.duration = unit.toMillis(duration);
         } //End block
@@ -467,9 +467,9 @@ SSLSession varDC838461EE2FA0CA4C9BBB70A15456B0_1102524970 =         result;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.713 -0400", hash_original_method = "6E364751B79392C296E473C8CD17B57B", hash_generated_method = "C2ED76AB0A08FB328E14071FA50B1B32")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.977 -0400", hash_original_method = "6E364751B79392C296E473C8CD17B57B", hash_generated_method = "C2ED76AB0A08FB328E14071FA50B1B32")
     public void releaseConnection() {
-    if(connManager != null)        
+        if(connManager != null)        
         {
             connManager.releaseConnection(this, duration, TimeUnit.MILLISECONDS);
         } //End block
@@ -480,9 +480,9 @@ SSLSession varDC838461EE2FA0CA4C9BBB70A15456B0_1102524970 =         result;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.714 -0400", hash_original_method = "8C46EA9A337087A0A63A85A9D3E05177", hash_generated_method = "198814D7DEB6D71E0D2BA763D7BD7C66")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.977 -0400", hash_original_method = "8C46EA9A337087A0A63A85A9D3E05177", hash_generated_method = "198814D7DEB6D71E0D2BA763D7BD7C66")
     public void abortConnection() {
-    if(aborted)        
+        if(aborted)        
         {
             return;
         } //End block
@@ -495,7 +495,7 @@ SSLSession varDC838461EE2FA0CA4C9BBB70A15456B0_1102524970 =         result;
         catch (IOException ignore)
         {
         } //End block
-    if(executionThread.equals(Thread.currentThread()))        
+        if(executionThread.equals(Thread.currentThread()))        
         {
             releaseConnection();
         } //End block

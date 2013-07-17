@@ -27,20 +27,20 @@ import libcore.util.MutableLong;
 import static libcore.io.OsConstants.*;
 
 final class FileChannelImpl extends FileChannel {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.344 -0400", hash_original_field = "F7B44CFAFD5C52223D5498196C8A2E7B", hash_generated_field = "6DF85966286B5A79BC125BD24D7FC97F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.717 -0400", hash_original_field = "F7B44CFAFD5C52223D5498196C8A2E7B", hash_generated_field = "6DF85966286B5A79BC125BD24D7FC97F")
 
     private Object stream;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.344 -0400", hash_original_field = "36EBA1E1E343279857EA7F69A597324E", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.717 -0400", hash_original_field = "36EBA1E1E343279857EA7F69A597324E", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
 
     private FileDescriptor fd;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.344 -0400", hash_original_field = "15D61712450A686A7F365ADF4FEF581F", hash_generated_field = "D6093ADED541044A414FEED81979F5E2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.717 -0400", hash_original_field = "15D61712450A686A7F365ADF4FEF581F", hash_generated_field = "D6093ADED541044A414FEED81979F5E2")
 
     private int mode;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.344 -0400", hash_original_field = "6534500F3CBE19A8D61109391469B658", hash_generated_field = "41CABECFE29C1BC14C56B2F0C987CEF1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.717 -0400", hash_original_field = "6534500F3CBE19A8D61109391469B658", hash_generated_field = "41CABECFE29C1BC14C56B2F0C987CEF1")
 
     private final SortedSet<FileLock> locks = new TreeSet<FileLock>(LOCK_COMPARATOR);
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.345 -0400", hash_original_method = "2735A1029D285B5D3DE10DB0E230E666", hash_generated_method = "F6F44BF98254D27848329B7C58999156")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.717 -0400", hash_original_method = "2735A1029D285B5D3DE10DB0E230E666", hash_generated_method = "F6F44BF98254D27848329B7C58999156")
     public  FileChannelImpl(Object stream, FileDescriptor fd, int mode) {
         this.fd = fd;
         this.stream = stream;
@@ -52,14 +52,14 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.345 -0400", hash_original_method = "6E6D3E88914C52E71D3EAF93EC51DF72", hash_generated_method = "7F1069953BCBAED92619E164B6D50D1F")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.718 -0400", hash_original_method = "6E6D3E88914C52E71D3EAF93EC51DF72", hash_generated_method = "0D7F97E60BF6E6A0A21E47C571C2F41D")
     private void checkOpen() throws ClosedChannelException {
-    if(!isOpen())        
+        if(!isOpen())        
         {
-            ClosedChannelException var553E3C0ED28F94CE76A7A8061DFFDCF3_430965500 = new ClosedChannelException();
-            var553E3C0ED28F94CE76A7A8061DFFDCF3_430965500.addTaint(taint);
-            throw var553E3C0ED28F94CE76A7A8061DFFDCF3_430965500;
+            ClosedChannelException var553E3C0ED28F94CE76A7A8061DFFDCF3_429070106 = new ClosedChannelException();
+            var553E3C0ED28F94CE76A7A8061DFFDCF3_429070106.addTaint(taint);
+            throw var553E3C0ED28F94CE76A7A8061DFFDCF3_429070106;
         } //End block
         // ---------- Original Method ----------
         //if (!isOpen()) {
@@ -68,14 +68,14 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.346 -0400", hash_original_method = "48C6D0CA0A11D20CF44BD79CC21BDD35", hash_generated_method = "F8BFDFE162A27494F66DAF99358570FC")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.718 -0400", hash_original_method = "48C6D0CA0A11D20CF44BD79CC21BDD35", hash_generated_method = "0980FE734D235194CA03944D40240997")
     private void checkReadable() {
-    if((mode & O_ACCMODE) == O_WRONLY)        
+        if((mode & O_ACCMODE) == O_WRONLY)        
         {
-            NonReadableChannelException var0514EC2D1DF01A7C0FEA2CC12F9B10D5_1563907409 = new NonReadableChannelException();
-            var0514EC2D1DF01A7C0FEA2CC12F9B10D5_1563907409.addTaint(taint);
-            throw var0514EC2D1DF01A7C0FEA2CC12F9B10D5_1563907409;
+            NonReadableChannelException var0514EC2D1DF01A7C0FEA2CC12F9B10D5_818451141 = new NonReadableChannelException();
+            var0514EC2D1DF01A7C0FEA2CC12F9B10D5_818451141.addTaint(taint);
+            throw var0514EC2D1DF01A7C0FEA2CC12F9B10D5_818451141;
         } //End block
         // ---------- Original Method ----------
         //if ((mode & O_ACCMODE) == O_WRONLY) {
@@ -84,14 +84,14 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.346 -0400", hash_original_method = "B5384AE1DC067BB9B7371F695174CE9F", hash_generated_method = "426F2AE03CCED3DF77B7E5B60060090B")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.719 -0400", hash_original_method = "B5384AE1DC067BB9B7371F695174CE9F", hash_generated_method = "0DE8AEFAC0E498417518C26A82283D08")
     private void checkWritable() {
-    if((mode & O_ACCMODE) == O_RDONLY)        
+        if((mode & O_ACCMODE) == O_RDONLY)        
         {
-            NonWritableChannelException var15CCC24BBCA9E1CFEF326F26183D5D87_1570211633 = new NonWritableChannelException();
-            var15CCC24BBCA9E1CFEF326F26183D5D87_1570211633.addTaint(taint);
-            throw var15CCC24BBCA9E1CFEF326F26183D5D87_1570211633;
+            NonWritableChannelException var15CCC24BBCA9E1CFEF326F26183D5D87_1267418274 = new NonWritableChannelException();
+            var15CCC24BBCA9E1CFEF326F26183D5D87_1267418274.addTaint(taint);
+            throw var15CCC24BBCA9E1CFEF326F26183D5D87_1267418274;
         } //End block
         // ---------- Original Method ----------
         //if ((mode & O_ACCMODE) == O_RDONLY) {
@@ -100,10 +100,10 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.347 -0400", hash_original_method = "906DDDB64CDCD744F2CC12CE5FEEB0F8", hash_generated_method = "6EB05301FCB33E7A57707386F9D29587")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.719 -0400", hash_original_method = "906DDDB64CDCD744F2CC12CE5FEEB0F8", hash_generated_method = "6EB05301FCB33E7A57707386F9D29587")
     protected void implCloseChannel() throws IOException {
-    if(stream instanceof Closeable)        
+        if(stream instanceof Closeable)        
         {
             ((Closeable) stream).close();
         } //End block
@@ -114,38 +114,38 @@ final class FileChannelImpl extends FileChannel {
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.364 -0400", hash_original_method = "7E2D5FC994D104072ED63DC91E4C8FE1", hash_generated_method = "45FC64394FA5DAED033E277FF18595C8")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.743 -0400", hash_original_method = "7E2D5FC994D104072ED63DC91E4C8FE1", hash_generated_method = "479266149936620AC722BC83B00A0873")
     private FileLock basicLock(long position, long size, boolean shared, boolean wait) throws IOException {
         addTaint(wait);
         addTaint(shared);
         addTaint(size);
         addTaint(position);
         int accessMode = (mode & O_ACCMODE);
-    if(accessMode == O_RDONLY)        
+        if(accessMode == O_RDONLY)        
         {
-    if(!shared)            
+            if(!shared)            
             {
-                NonWritableChannelException var15CCC24BBCA9E1CFEF326F26183D5D87_1371025875 = new NonWritableChannelException();
-                var15CCC24BBCA9E1CFEF326F26183D5D87_1371025875.addTaint(taint);
-                throw var15CCC24BBCA9E1CFEF326F26183D5D87_1371025875;
+                NonWritableChannelException var15CCC24BBCA9E1CFEF326F26183D5D87_1991434143 = new NonWritableChannelException();
+                var15CCC24BBCA9E1CFEF326F26183D5D87_1991434143.addTaint(taint);
+                throw var15CCC24BBCA9E1CFEF326F26183D5D87_1991434143;
             } //End block
         } //End block
         else
-    if(accessMode == O_WRONLY)        
+        if(accessMode == O_WRONLY)        
         {
-    if(shared)            
+            if(shared)            
             {
-                NonReadableChannelException var0514EC2D1DF01A7C0FEA2CC12F9B10D5_1738227805 = new NonReadableChannelException();
-                var0514EC2D1DF01A7C0FEA2CC12F9B10D5_1738227805.addTaint(taint);
-                throw var0514EC2D1DF01A7C0FEA2CC12F9B10D5_1738227805;
+                NonReadableChannelException var0514EC2D1DF01A7C0FEA2CC12F9B10D5_162345958 = new NonReadableChannelException();
+                var0514EC2D1DF01A7C0FEA2CC12F9B10D5_162345958.addTaint(taint);
+                throw var0514EC2D1DF01A7C0FEA2CC12F9B10D5_162345958;
             } //End block
         } //End block
-    if(position < 0 || size < 0)        
+        if(position < 0 || size < 0)        
         {
-            IllegalArgumentException varA7BF545D69BE95E752F6432B3D51C98F_2093966272 = new IllegalArgumentException("position=" + position + " size=" + size);
-            varA7BF545D69BE95E752F6432B3D51C98F_2093966272.addTaint(taint);
-            throw varA7BF545D69BE95E752F6432B3D51C98F_2093966272;
+            IllegalArgumentException varA7BF545D69BE95E752F6432B3D51C98F_328210296 = new IllegalArgumentException("position=" + position + " size=" + size);
+            varA7BF545D69BE95E752F6432B3D51C98F_328210296.addTaint(taint);
+            throw varA7BF545D69BE95E752F6432B3D51C98F_328210296;
         } //End block
         FileLock pendingLock = new FileLockImpl(this, position, size, shared);
         addLock(pendingLock);
@@ -161,32 +161,32 @@ final class FileChannelImpl extends FileChannel {
         } //End block
         catch (ErrnoException errnoException)
         {
-            java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_232404416 = errnoException.rethrowAsIOException();
-            var533DBF3F7D78874DC97ED285C3BC3B22_232404416.addTaint(taint);
-            throw var533DBF3F7D78874DC97ED285C3BC3B22_232404416;
+            java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_2135244781 = errnoException.rethrowAsIOException();
+            var533DBF3F7D78874DC97ED285C3BC3B22_2135244781.addTaint(taint);
+            throw var533DBF3F7D78874DC97ED285C3BC3B22_2135244781;
         } //End block
         finally 
         {
-    if(!success)            
+            if(!success)            
             {
                 removeLock(pendingLock);
             } //End block
         } //End block
-FileLock var049A21A38D12A7336D7F2DB1250835F9_700653710 =         success ? pendingLock : null;
-        var049A21A38D12A7336D7F2DB1250835F9_700653710.addTaint(taint);
-        return var049A21A38D12A7336D7F2DB1250835F9_700653710;
+FileLock var049A21A38D12A7336D7F2DB1250835F9_1067829065 =         success ? pendingLock : null;
+        var049A21A38D12A7336D7F2DB1250835F9_1067829065.addTaint(taint);
+        return var049A21A38D12A7336D7F2DB1250835F9_1067829065;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static long translateLockLength(long byteCount) {
         return (byteCount == Long.MAX_VALUE) ? 0 : byteCount;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.365 -0400", hash_original_method = "2D9781ECA7693E91068070ABFFE1E1EC", hash_generated_method = "C1953DD7DE100BA4B84A3AE67B031A04")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.745 -0400", hash_original_method = "2D9781ECA7693E91068070ABFFE1E1EC", hash_generated_method = "7A179B2ED2F87B17ABB93B7340B1CB2C")
     public final FileLock lock(long position, long size, boolean shared) throws IOException {
         addTaint(shared);
         addTaint(size);
@@ -206,9 +206,9 @@ FileLock var049A21A38D12A7336D7F2DB1250835F9_700653710 =         success ? pendi
                 end(completed);
             } //End block
         } //End block
-FileLock varE16DDA8EC42666DE89700F0F1309BBA6_1607956475 =         resultLock;
-        varE16DDA8EC42666DE89700F0F1309BBA6_1607956475.addTaint(taint);
-        return varE16DDA8EC42666DE89700F0F1309BBA6_1607956475;
+FileLock varE16DDA8EC42666DE89700F0F1309BBA6_1204898008 =         resultLock;
+        varE16DDA8EC42666DE89700F0F1309BBA6_1204898008.addTaint(taint);
+        return varE16DDA8EC42666DE89700F0F1309BBA6_1204898008;
         // ---------- Original Method ----------
         //checkOpen();
         //FileLock resultLock = null;
@@ -226,22 +226,22 @@ FileLock varE16DDA8EC42666DE89700F0F1309BBA6_1607956475 =         resultLock;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.366 -0400", hash_original_method = "EEB7B11B25906F0628185BB3DA938264", hash_generated_method = "9B8692D87E0357C41DD2E5CE6C500A05")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.746 -0400", hash_original_method = "EEB7B11B25906F0628185BB3DA938264", hash_generated_method = "9EFE36D9C13E83E5186D2D9598EAD655")
     public final FileLock tryLock(long position, long size, boolean shared) throws IOException {
         addTaint(shared);
         addTaint(size);
         addTaint(position);
         checkOpen();
-FileLock var65AFB6040D93DB11DD2DD18B4F112230_731354049 =         basicLock(position, size, shared, false);
-        var65AFB6040D93DB11DD2DD18B4F112230_731354049.addTaint(taint);
-        return var65AFB6040D93DB11DD2DD18B4F112230_731354049;
+FileLock var65AFB6040D93DB11DD2DD18B4F112230_1594879659 =         basicLock(position, size, shared, false);
+        var65AFB6040D93DB11DD2DD18B4F112230_1594879659.addTaint(taint);
+        return var65AFB6040D93DB11DD2DD18B4F112230_1594879659;
         // ---------- Original Method ----------
         //checkOpen();
         //return basicLock(position, size, shared, false);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.372 -0400", hash_original_method = "62214805062DB6ECE1A1C9B69D272F36", hash_generated_method = "37D51D83871C431DCDD196AF51C5A59C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.754 -0400", hash_original_method = "62214805062DB6ECE1A1C9B69D272F36", hash_generated_method = "BF1A9BD8AFDC3721CAA208BD4151B9C4")
     public void release(FileLock lock) throws IOException {
         addTaint(lock.getTaint());
         checkOpen();
@@ -256,9 +256,9 @@ FileLock var65AFB6040D93DB11DD2DD18B4F112230_731354049 =         basicLock(posit
         } //End block
         catch (ErrnoException errnoException)
         {
-            java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_2113109728 = errnoException.rethrowAsIOException();
-            var533DBF3F7D78874DC97ED285C3BC3B22_2113109728.addTaint(taint);
-            throw var533DBF3F7D78874DC97ED285C3BC3B22_2113109728;
+            java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_1095319587 = errnoException.rethrowAsIOException();
+            var533DBF3F7D78874DC97ED285C3BC3B22_1095319587.addTaint(taint);
+            throw var533DBF3F7D78874DC97ED285C3BC3B22_1095319587;
         } //End block
         removeLock(lock);
         // ---------- Original Method ----------
@@ -277,16 +277,16 @@ FileLock var65AFB6040D93DB11DD2DD18B4F112230_731354049 =         basicLock(posit
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.385 -0400", hash_original_method = "66F727B932913E59560F8F92301E4A0B", hash_generated_method = "353B814C5B9A14E456E12C86FF2B2F50")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.761 -0400", hash_original_method = "66F727B932913E59560F8F92301E4A0B", hash_generated_method = "B081E061EE54D1873EFA179B83C3F8B5")
     public void force(boolean metadata) throws IOException {
         addTaint(metadata);
         checkOpen();
-    if((mode & O_ACCMODE) != O_RDONLY)        
+        if((mode & O_ACCMODE) != O_RDONLY)        
         {
             try 
             {
-    if(metadata)                
+                if(metadata)                
                 {
                     Libcore.os.fsync(fd);
                 } //End block
@@ -297,9 +297,9 @@ FileLock var65AFB6040D93DB11DD2DD18B4F112230_731354049 =         basicLock(posit
             } //End block
             catch (ErrnoException errnoException)
             {
-                java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_1413631711 = errnoException.rethrowAsIOException();
-                var533DBF3F7D78874DC97ED285C3BC3B22_1413631711.addTaint(taint);
-                throw var533DBF3F7D78874DC97ED285C3BC3B22_1413631711;
+                java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_1477346553 = errnoException.rethrowAsIOException();
+                var533DBF3F7D78874DC97ED285C3BC3B22_1477346553.addTaint(taint);
+                throw var533DBF3F7D78874DC97ED285C3BC3B22_1477346553;
             } //End block
         } //End block
         // ---------- Original Method ----------
@@ -318,42 +318,42 @@ FileLock var65AFB6040D93DB11DD2DD18B4F112230_731354049 =         basicLock(posit
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.404 -0400", hash_original_method = "5452C18A8AEE816635F14172EC065A87", hash_generated_method = "1FFBBB3EAC3A6B99752683B338C4412B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.782 -0400", hash_original_method = "5452C18A8AEE816635F14172EC065A87", hash_generated_method = "ACB2E77DC927ACDC24325E27A67144A2")
     public final MappedByteBuffer map(MapMode mapMode, long position, long size) throws IOException {
         addTaint(size);
         addTaint(position);
         addTaint(mapMode.getTaint());
         checkOpen();
-    if(mapMode == null)        
+        if(mapMode == null)        
         {
-            NullPointerException var1E9244F8EEBC147307D3B593C8F4EB52_1259306807 = new NullPointerException("mapMode == null");
-            var1E9244F8EEBC147307D3B593C8F4EB52_1259306807.addTaint(taint);
-            throw var1E9244F8EEBC147307D3B593C8F4EB52_1259306807;
+            NullPointerException var1E9244F8EEBC147307D3B593C8F4EB52_1262189641 = new NullPointerException("mapMode == null");
+            var1E9244F8EEBC147307D3B593C8F4EB52_1262189641.addTaint(taint);
+            throw var1E9244F8EEBC147307D3B593C8F4EB52_1262189641;
         } //End block
-    if(position < 0 || size < 0 || size > Integer.MAX_VALUE)        
+        if(position < 0 || size < 0 || size > Integer.MAX_VALUE)        
         {
-            IllegalArgumentException varA7BF545D69BE95E752F6432B3D51C98F_641385701 = new IllegalArgumentException("position=" + position + " size=" + size);
-            varA7BF545D69BE95E752F6432B3D51C98F_641385701.addTaint(taint);
-            throw varA7BF545D69BE95E752F6432B3D51C98F_641385701;
+            IllegalArgumentException varA7BF545D69BE95E752F6432B3D51C98F_61393239 = new IllegalArgumentException("position=" + position + " size=" + size);
+            varA7BF545D69BE95E752F6432B3D51C98F_61393239.addTaint(taint);
+            throw varA7BF545D69BE95E752F6432B3D51C98F_61393239;
         } //End block
         int accessMode = (mode & O_ACCMODE);
-    if(accessMode == O_RDONLY)        
+        if(accessMode == O_RDONLY)        
         {
-    if(mapMode != MapMode.READ_ONLY)            
+            if(mapMode != MapMode.READ_ONLY)            
             {
-                NonWritableChannelException var15CCC24BBCA9E1CFEF326F26183D5D87_1947820512 = new NonWritableChannelException();
-                var15CCC24BBCA9E1CFEF326F26183D5D87_1947820512.addTaint(taint);
-                throw var15CCC24BBCA9E1CFEF326F26183D5D87_1947820512;
+                NonWritableChannelException var15CCC24BBCA9E1CFEF326F26183D5D87_528802188 = new NonWritableChannelException();
+                var15CCC24BBCA9E1CFEF326F26183D5D87_528802188.addTaint(taint);
+                throw var15CCC24BBCA9E1CFEF326F26183D5D87_528802188;
             } //End block
         } //End block
         else
-    if(accessMode == O_WRONLY)        
+        if(accessMode == O_WRONLY)        
         {
-            NonReadableChannelException var0514EC2D1DF01A7C0FEA2CC12F9B10D5_1839324143 = new NonReadableChannelException();
-            var0514EC2D1DF01A7C0FEA2CC12F9B10D5_1839324143.addTaint(taint);
-            throw var0514EC2D1DF01A7C0FEA2CC12F9B10D5_1839324143;
+            NonReadableChannelException var0514EC2D1DF01A7C0FEA2CC12F9B10D5_1372603539 = new NonReadableChannelException();
+            var0514EC2D1DF01A7C0FEA2CC12F9B10D5_1372603539.addTaint(taint);
+            throw var0514EC2D1DF01A7C0FEA2CC12F9B10D5_1372603539;
         } //End block
-    if(position + size > size())        
+        if(position + size > size())        
         {
             try 
             {
@@ -361,37 +361,37 @@ FileLock var65AFB6040D93DB11DD2DD18B4F112230_731354049 =         basicLock(posit
             } //End block
             catch (ErrnoException errnoException)
             {
-                java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_732191323 = errnoException.rethrowAsIOException();
-                var533DBF3F7D78874DC97ED285C3BC3B22_732191323.addTaint(taint);
-                throw var533DBF3F7D78874DC97ED285C3BC3B22_732191323;
+                java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_86534857 = errnoException.rethrowAsIOException();
+                var533DBF3F7D78874DC97ED285C3BC3B22_86534857.addTaint(taint);
+                throw var533DBF3F7D78874DC97ED285C3BC3B22_86534857;
             } //End block
         } //End block
         long alignment = position - position % Libcore.os.sysconf(_SC_PAGE_SIZE);
         int offset = (int) (position - alignment);
         MemoryBlock block = MemoryBlock.mmap(fd, alignment, size + offset, mapMode);
-MappedByteBuffer var4EBBFE48E7946B1E3B7FC7E668B1DB18_1927321008 =         new MappedByteBufferAdapter(block, (int) size, offset, mapMode);
-        var4EBBFE48E7946B1E3B7FC7E668B1DB18_1927321008.addTaint(taint);
-        return var4EBBFE48E7946B1E3B7FC7E668B1DB18_1927321008;
+MappedByteBuffer var4EBBFE48E7946B1E3B7FC7E668B1DB18_2009894487 =         new MappedByteBufferAdapter(block, (int) size, offset, mapMode);
+        var4EBBFE48E7946B1E3B7FC7E668B1DB18_2009894487.addTaint(taint);
+        return var4EBBFE48E7946B1E3B7FC7E668B1DB18_2009894487;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.409 -0400", hash_original_method = "2294C6BEF1501D1EBDDF8CC0BA1CBE45", hash_generated_method = "FE8D0C24A5E9C134ECA8B5281C09E1DF")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.791 -0400", hash_original_method = "2294C6BEF1501D1EBDDF8CC0BA1CBE45", hash_generated_method = "CFADCA10DC4559B81020430898ED2BB7")
     public long position() throws IOException {
         checkOpen();
         try 
         {
-            long var7BC510F6F7CB14449C552BCB6CAF281B_1276732860 = (Libcore.os.lseek(fd, 0L, SEEK_CUR));
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_2003140111 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_2003140111;
+            long var7BC510F6F7CB14449C552BCB6CAF281B_341371826 = (Libcore.os.lseek(fd, 0L, SEEK_CUR));
+                        long var0F5264038205EDFB1AC05FBB0E8C5E94_719019986 = getTaintLong();
+            return var0F5264038205EDFB1AC05FBB0E8C5E94_719019986;
         } //End block
         catch (ErrnoException errnoException)
         {
-            java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_570103502 = errnoException.rethrowAsIOException();
-            var533DBF3F7D78874DC97ED285C3BC3B22_570103502.addTaint(taint);
-            throw var533DBF3F7D78874DC97ED285C3BC3B22_570103502;
+            java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_919056349 = errnoException.rethrowAsIOException();
+            var533DBF3F7D78874DC97ED285C3BC3B22_919056349.addTaint(taint);
+            throw var533DBF3F7D78874DC97ED285C3BC3B22_919056349;
         } //End block
         // ---------- Original Method ----------
         //checkOpen();
@@ -403,16 +403,16 @@ MappedByteBuffer var4EBBFE48E7946B1E3B7FC7E668B1DB18_1927321008 =         new Ma
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.414 -0400", hash_original_method = "38E87DF17F47600879F85DE74B488325", hash_generated_method = "ADA7A61DCF6D3C5AFEADFD6D0F673289")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.804 -0400", hash_original_method = "38E87DF17F47600879F85DE74B488325", hash_generated_method = "3211136606ED7A6794F43698531A8E83")
     public FileChannel position(long newPosition) throws IOException {
         addTaint(newPosition);
         checkOpen();
-    if(newPosition < 0)        
+        if(newPosition < 0)        
         {
-            IllegalArgumentException varDCDBC3E8A498F7C4D6C283675CCE8AB3_1487672092 = new IllegalArgumentException("position: " + newPosition);
-            varDCDBC3E8A498F7C4D6C283675CCE8AB3_1487672092.addTaint(taint);
-            throw varDCDBC3E8A498F7C4D6C283675CCE8AB3_1487672092;
+            IllegalArgumentException varDCDBC3E8A498F7C4D6C283675CCE8AB3_54311975 = new IllegalArgumentException("position: " + newPosition);
+            varDCDBC3E8A498F7C4D6C283675CCE8AB3_54311975.addTaint(taint);
+            throw varDCDBC3E8A498F7C4D6C283675CCE8AB3_54311975;
         } //End block
         try 
         {
@@ -420,13 +420,13 @@ MappedByteBuffer var4EBBFE48E7946B1E3B7FC7E668B1DB18_1927321008 =         new Ma
         } //End block
         catch (ErrnoException errnoException)
         {
-            java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_1747352050 = errnoException.rethrowAsIOException();
-            var533DBF3F7D78874DC97ED285C3BC3B22_1747352050.addTaint(taint);
-            throw var533DBF3F7D78874DC97ED285C3BC3B22_1747352050;
+            java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_814667920 = errnoException.rethrowAsIOException();
+            var533DBF3F7D78874DC97ED285C3BC3B22_814667920.addTaint(taint);
+            throw var533DBF3F7D78874DC97ED285C3BC3B22_814667920;
         } //End block
-FileChannel var72A74007B2BE62B849F475C7BDA4658B_154166187 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_154166187.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_154166187;
+FileChannel var72A74007B2BE62B849F475C7BDA4658B_1620352505 =         this;
+        var72A74007B2BE62B849F475C7BDA4658B_1620352505.addTaint(taint);
+        return var72A74007B2BE62B849F475C7BDA4658B_1620352505;
         // ---------- Original Method ----------
         //checkOpen();
         //if (newPosition < 0) {
@@ -441,20 +441,20 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_154166187 =         this;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.415 -0400", hash_original_method = "CBC403D41CEC137F7E33592DD6647C43", hash_generated_method = "26DAD9CE592BDDF3376EFA77CFF2C533")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.806 -0400", hash_original_method = "CBC403D41CEC137F7E33592DD6647C43", hash_generated_method = "51A3929A3556F24B3D9704922EF7C778")
     public int read(ByteBuffer buffer, long position) throws IOException {
         addTaint(position);
         addTaint(buffer.getTaint());
-    if(position < 0)        
+        if(position < 0)        
         {
-            IllegalArgumentException var6116670AA73B0429FDB8C9E658F70CE6_1653905319 = new IllegalArgumentException("position: " + position);
-            var6116670AA73B0429FDB8C9E658F70CE6_1653905319.addTaint(taint);
-            throw var6116670AA73B0429FDB8C9E658F70CE6_1653905319;
+            IllegalArgumentException var6116670AA73B0429FDB8C9E658F70CE6_1223579628 = new IllegalArgumentException("position: " + position);
+            var6116670AA73B0429FDB8C9E658F70CE6_1223579628.addTaint(taint);
+            throw var6116670AA73B0429FDB8C9E658F70CE6_1223579628;
         } //End block
-        int varB7AA9A6C39A70493B4F9DDFBDCA0190E_1807286928 = (readImpl(buffer, position));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_289530469 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_289530469;
+        int varB7AA9A6C39A70493B4F9DDFBDCA0190E_697467658 = (readImpl(buffer, position));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1801425053 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1801425053;
         // ---------- Original Method ----------
         //if (position < 0) {
             //throw new IllegalArgumentException("position: " + position);
@@ -463,31 +463,31 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_154166187 =         this;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.415 -0400", hash_original_method = "5BE7BADF8838BD61276F9CD3980F7CA7", hash_generated_method = "F9BDB9ADD3836ABE09E9F2F4CF4DFFA5")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.806 -0400", hash_original_method = "5BE7BADF8838BD61276F9CD3980F7CA7", hash_generated_method = "288BF19C9C6B43DBE4A85D4DD0963929")
     public int read(ByteBuffer buffer) throws IOException {
         addTaint(buffer.getTaint());
-        int var1D00D2835DD568FE7223BE7C062139E4_1523047542 = (readImpl(buffer, -1));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_159328090 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_159328090;
+        int var1D00D2835DD568FE7223BE7C062139E4_859992106 = (readImpl(buffer, -1));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_768734323 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_768734323;
         // ---------- Original Method ----------
         //return readImpl(buffer, -1);
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.431 -0400", hash_original_method = "B09A36EC89FDAA97AACE4894ACCEC4C2", hash_generated_method = "FF48E9FC663BBC4F3B959AB011717E9C")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.831 -0400", hash_original_method = "B09A36EC89FDAA97AACE4894ACCEC4C2", hash_generated_method = "73E96C143967799820FFFB0F0E53D029")
     private int readImpl(ByteBuffer buffer, long position) throws IOException {
         addTaint(position);
         addTaint(buffer.getTaint());
         buffer.checkWritable();
         checkOpen();
         checkReadable();
-    if(!buffer.hasRemaining())        
+        if(!buffer.hasRemaining())        
         {
-            int varCFCD208495D565EF66E7DFF9F98764DA_1059951131 = (0);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1459399156 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1459399156;
+            int varCFCD208495D565EF66E7DFF9F98764DA_1479211016 = (0);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730240024 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730240024;
         } //End block
         int bytesRead = 0;
         boolean completed = false;
@@ -496,7 +496,7 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_154166187 =         this;
             begin();
             try 
             {
-    if(position == -1)                
+                if(position == -1)                
                 {
                     bytesRead = Libcore.os.read(fd, buffer);
                 } //End block
@@ -504,22 +504,22 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_154166187 =         this;
                 {
                     bytesRead = Libcore.os.pread(fd, buffer, position);
                 } //End block
-    if(bytesRead == 0)                
+                if(bytesRead == 0)                
                 {
                     bytesRead = -1;
                 } //End block
             } //End block
             catch (ErrnoException errnoException)
             {
-    if(errnoException.errno == EAGAIN)                
+                if(errnoException.errno == EAGAIN)                
                 {
                     bytesRead = 0;
                 } //End block
                 else
                 {
-                    java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_683302934 = errnoException.rethrowAsIOException();
-                    var533DBF3F7D78874DC97ED285C3BC3B22_683302934.addTaint(taint);
-                    throw var533DBF3F7D78874DC97ED285C3BC3B22_683302934;
+                    java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_1167126514 = errnoException.rethrowAsIOException();
+                    var533DBF3F7D78874DC97ED285C3BC3B22_1167126514.addTaint(taint);
+                    throw var533DBF3F7D78874DC97ED285C3BC3B22_1167126514;
                 } //End block
             } //End block
             completed = true;
@@ -528,27 +528,27 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_154166187 =         this;
         {
             end(completed && bytesRead >= 0);
         } //End block
-    if(bytesRead > 0)        
+        if(bytesRead > 0)        
         {
             buffer.position(buffer.position() + bytesRead);
         } //End block
-        int varD871906E18D7E876E6494103DA4BEEBD_1193696098 = (bytesRead);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_779847841 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_779847841;
+        int varD871906E18D7E876E6494103DA4BEEBD_654223146 = (bytesRead);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1065686967 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1065686967;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.432 -0400", hash_original_method = "4AF9CF697EB56447960A29F46F724C12", hash_generated_method = "FEAEE3BF498ECD65B6E1194CDD992829")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.832 -0400", hash_original_method = "4AF9CF697EB56447960A29F46F724C12", hash_generated_method = "19C94A956AE5997EA3D93A0EAA8C0217")
     private int transferIoVec(IoVec ioVec) throws IOException {
         addTaint(ioVec.getTaint());
-    if(ioVec.init() == 0)        
+        if(ioVec.init() == 0)        
         {
-            int varCFCD208495D565EF66E7DFF9F98764DA_992558233 = (0);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1345240942 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1345240942;
+            int varCFCD208495D565EF66E7DFF9F98764DA_197034634 = (0);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_489926480 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_489926480;
         } //End block
         int bytesTransferred = 0;
         boolean completed = false;
@@ -563,9 +563,9 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_154166187 =         this;
             end(completed);
         } //End block
         ioVec.didTransfer(bytesTransferred);
-        int var3CB7FB76A0EEB1CC4DE9CC54B28CCAB8_1898292257 = (bytesTransferred);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_52065843 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_52065843;
+        int var3CB7FB76A0EEB1CC4DE9CC54B28CCAB8_1773145694 = (bytesTransferred);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1064425802 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1064425802;
         // ---------- Original Method ----------
         //if (ioVec.init() == 0) {
             //return 0;
@@ -584,8 +584,8 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_154166187 =         this;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.433 -0400", hash_original_method = "C19453CFF2AA37841406A95ED2CF0809", hash_generated_method = "9BE124ED106B7B4CC5B6F26DB6BB89C4")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.833 -0400", hash_original_method = "C19453CFF2AA37841406A95ED2CF0809", hash_generated_method = "1DA78A78C2826A427A3FBD2BF3EE9B98")
     public long read(ByteBuffer[] buffers, int offset, int length) throws IOException {
         addTaint(length);
         addTaint(offset);
@@ -593,9 +593,9 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_154166187 =         this;
         Arrays.checkOffsetAndCount(buffers.length, offset, length);
         checkOpen();
         checkReadable();
-        long var865979E7AB3B60E0843D300F5C1AE69E_27723585 = (transferIoVec(new IoVec(buffers, offset, length, IoVec.Direction.READV)));
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1310705112 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1310705112;
+        long var865979E7AB3B60E0843D300F5C1AE69E_1213180939 = (transferIoVec(new IoVec(buffers, offset, length, IoVec.Direction.READV)));
+                long var0F5264038205EDFB1AC05FBB0E8C5E94_1753905531 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1753905531;
         // ---------- Original Method ----------
         //Arrays.checkOffsetAndCount(buffers.length, offset, length);
         //checkOpen();
@@ -604,21 +604,21 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_154166187 =         this;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.438 -0400", hash_original_method = "BF0F3D7AEFAA2AFACA7A21CBB184DE89", hash_generated_method = "876F2D6F0B8868B2A0ADB8D91CF176A3")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.848 -0400", hash_original_method = "BF0F3D7AEFAA2AFACA7A21CBB184DE89", hash_generated_method = "62C110368A464477F27B26F0923AA0A2")
     public long size() throws IOException {
         checkOpen();
         try 
         {
-            long varE497182731DBBCFBFD01D5C3B5A54B92_1369847155 = (Libcore.os.fstat(fd).st_size);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_2066828306 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_2066828306;
+            long varE497182731DBBCFBFD01D5C3B5A54B92_1543055177 = (Libcore.os.fstat(fd).st_size);
+                        long var0F5264038205EDFB1AC05FBB0E8C5E94_639668228 = getTaintLong();
+            return var0F5264038205EDFB1AC05FBB0E8C5E94_639668228;
         } //End block
         catch (ErrnoException errnoException)
         {
-            java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_888489619 = errnoException.rethrowAsIOException();
-            var533DBF3F7D78874DC97ED285C3BC3B22_888489619.addTaint(taint);
-            throw var533DBF3F7D78874DC97ED285C3BC3B22_888489619;
+            java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_1446505432 = errnoException.rethrowAsIOException();
+            var533DBF3F7D78874DC97ED285C3BC3B22_1446505432.addTaint(taint);
+            throw var533DBF3F7D78874DC97ED285C3BC3B22_1446505432;
         } //End block
         // ---------- Original Method ----------
         //checkOpen();
@@ -630,33 +630,33 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_154166187 =         this;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.439 -0400", hash_original_method = "80C3AD203B1B9D1C1064C9E60FE9152A", hash_generated_method = "EDE15E573AECF4ACB329D8D5ABEFB0CF")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.849 -0400", hash_original_method = "80C3AD203B1B9D1C1064C9E60FE9152A", hash_generated_method = "026BC26C45D75F32A9B42E31F010AC75")
     public long transferFrom(ReadableByteChannel src, long position, long count) throws IOException {
         addTaint(count);
         addTaint(position);
         addTaint(src.getTaint());
         checkOpen();
-    if(!src.isOpen())        
+        if(!src.isOpen())        
         {
-            ClosedChannelException var553E3C0ED28F94CE76A7A8061DFFDCF3_178157247 = new ClosedChannelException();
-            var553E3C0ED28F94CE76A7A8061DFFDCF3_178157247.addTaint(taint);
-            throw var553E3C0ED28F94CE76A7A8061DFFDCF3_178157247;
+            ClosedChannelException var553E3C0ED28F94CE76A7A8061DFFDCF3_1516464572 = new ClosedChannelException();
+            var553E3C0ED28F94CE76A7A8061DFFDCF3_1516464572.addTaint(taint);
+            throw var553E3C0ED28F94CE76A7A8061DFFDCF3_1516464572;
         } //End block
         checkWritable();
-    if(position < 0 || count < 0 || count > Integer.MAX_VALUE)        
+        if(position < 0 || count < 0 || count > Integer.MAX_VALUE)        
         {
-            IllegalArgumentException varCC671663C7B1C7D1D6AA9D691A1AECC2_764833489 = new IllegalArgumentException("position=" + position + " count=" + count);
-            varCC671663C7B1C7D1D6AA9D691A1AECC2_764833489.addTaint(taint);
-            throw varCC671663C7B1C7D1D6AA9D691A1AECC2_764833489;
+            IllegalArgumentException varCC671663C7B1C7D1D6AA9D691A1AECC2_202088733 = new IllegalArgumentException("position=" + position + " count=" + count);
+            varCC671663C7B1C7D1D6AA9D691A1AECC2_202088733.addTaint(taint);
+            throw varCC671663C7B1C7D1D6AA9D691A1AECC2_202088733;
         } //End block
-    if(position > size())        
+        if(position > size())        
         {
-            long varCFCD208495D565EF66E7DFF9F98764DA_21554992 = (0);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_351503500 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_351503500;
+            long varCFCD208495D565EF66E7DFF9F98764DA_1327392332 = (0);
+                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1618357947 = getTaintLong();
+            return var0F5264038205EDFB1AC05FBB0E8C5E94_1618357947;
         } //End block
-    if(src instanceof FileChannel)        
+        if(src instanceof FileChannel)        
         {
             FileChannel fileSrc = (FileChannel) src;
             long size = fileSrc.size();
@@ -666,9 +666,9 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_154166187 =         this;
             try 
             {
                 fileSrc.position(filePosition + count);
-                long var5777F80E5FF8A0EA8D673AFD2E535293_626389940 = (write(buffer, position));
-                                long var0F5264038205EDFB1AC05FBB0E8C5E94_1404816690 = getTaintLong();
-                return var0F5264038205EDFB1AC05FBB0E8C5E94_1404816690;
+                long var5777F80E5FF8A0EA8D673AFD2E535293_1930049772 = (write(buffer, position));
+                                long var0F5264038205EDFB1AC05FBB0E8C5E94_243846649 = getTaintLong();
+                return var0F5264038205EDFB1AC05FBB0E8C5E94_243846649;
             } //End block
             finally 
             {
@@ -678,47 +678,47 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_154166187 =         this;
         ByteBuffer buffer = ByteBuffer.allocate((int) count);
         src.read(buffer);
         buffer.flip();
-        long var5777F80E5FF8A0EA8D673AFD2E535293_875239791 = (write(buffer, position));
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1979222761 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1979222761;
+        long var5777F80E5FF8A0EA8D673AFD2E535293_1310986876 = (write(buffer, position));
+                long var0F5264038205EDFB1AC05FBB0E8C5E94_1638006176 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1638006176;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.459 -0400", hash_original_method = "66697B5A4B32B4AD2132D8B7D53DF0CD", hash_generated_method = "01C2FC0DBC6E5794820F0931191D4843")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.872 -0400", hash_original_method = "66697B5A4B32B4AD2132D8B7D53DF0CD", hash_generated_method = "CA7E1B62E80010BC3B868E8D0C8FD751")
     public long transferTo(long position, long count, WritableByteChannel target) throws IOException {
         addTaint(target.getTaint());
         addTaint(count);
         addTaint(position);
         checkOpen();
-    if(!target.isOpen())        
+        if(!target.isOpen())        
         {
-            ClosedChannelException var553E3C0ED28F94CE76A7A8061DFFDCF3_149051206 = new ClosedChannelException();
-            var553E3C0ED28F94CE76A7A8061DFFDCF3_149051206.addTaint(taint);
-            throw var553E3C0ED28F94CE76A7A8061DFFDCF3_149051206;
+            ClosedChannelException var553E3C0ED28F94CE76A7A8061DFFDCF3_1259427890 = new ClosedChannelException();
+            var553E3C0ED28F94CE76A7A8061DFFDCF3_1259427890.addTaint(taint);
+            throw var553E3C0ED28F94CE76A7A8061DFFDCF3_1259427890;
         } //End block
         checkReadable();
-    if(target instanceof FileChannelImpl)        
+        if(target instanceof FileChannelImpl)        
         {
             ((FileChannelImpl) target).checkWritable();
         } //End block
-    if(position < 0 || count < 0)        
+        if(position < 0 || count < 0)        
         {
-            IllegalArgumentException varCC671663C7B1C7D1D6AA9D691A1AECC2_252758057 = new IllegalArgumentException("position=" + position + " count=" + count);
-            varCC671663C7B1C7D1D6AA9D691A1AECC2_252758057.addTaint(taint);
-            throw varCC671663C7B1C7D1D6AA9D691A1AECC2_252758057;
+            IllegalArgumentException varCC671663C7B1C7D1D6AA9D691A1AECC2_1783530590 = new IllegalArgumentException("position=" + position + " count=" + count);
+            varCC671663C7B1C7D1D6AA9D691A1AECC2_1783530590.addTaint(taint);
+            throw varCC671663C7B1C7D1D6AA9D691A1AECC2_1783530590;
         } //End block
-    if(count == 0 || position >= size())        
+        if(count == 0 || position >= size())        
         {
-            long varCFCD208495D565EF66E7DFF9F98764DA_1346033400 = (0);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_879312534 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_879312534;
+            long varCFCD208495D565EF66E7DFF9F98764DA_1785150125 = (0);
+                        long var0F5264038205EDFB1AC05FBB0E8C5E94_5105255 = getTaintLong();
+            return var0F5264038205EDFB1AC05FBB0E8C5E94_5105255;
         } //End block
         count = Math.min(count, size() - position);
         boolean completed = false;
-    if(target instanceof SocketChannelImpl)        
+        if(target instanceof SocketChannelImpl)        
         {
             FileDescriptor outFd = ((SocketChannelImpl) target).getFD();
             try 
@@ -729,17 +729,17 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_154166187 =         this;
                     MutableLong offset = new MutableLong(position);
                     long rc = Libcore.os.sendfile(outFd, fd, offset, count);
                     completed = true;
-                    long varFF78648BE52A4E79513F4E70B266C62A_257471438 = (rc);
-                                        long var0F5264038205EDFB1AC05FBB0E8C5E94_672380875 = getTaintLong();
-                    return var0F5264038205EDFB1AC05FBB0E8C5E94_672380875;
+                    long varFF78648BE52A4E79513F4E70B266C62A_338733460 = (rc);
+                                        long var0F5264038205EDFB1AC05FBB0E8C5E94_2022366064 = getTaintLong();
+                    return var0F5264038205EDFB1AC05FBB0E8C5E94_2022366064;
                 } //End block
                 catch (ErrnoException errnoException)
                 {
-    if(errnoException.errno != ENOSYS && errnoException.errno != EINVAL)                    
+                    if(errnoException.errno != ENOSYS && errnoException.errno != EINVAL)                    
                     {
-                        java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_159122745 = errnoException.rethrowAsIOException();
-                        var533DBF3F7D78874DC97ED285C3BC3B22_159122745.addTaint(taint);
-                        throw var533DBF3F7D78874DC97ED285C3BC3B22_159122745;
+                        java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_1916322329 = errnoException.rethrowAsIOException();
+                        var533DBF3F7D78874DC97ED285C3BC3B22_1916322329.addTaint(taint);
+                        throw var533DBF3F7D78874DC97ED285C3BC3B22_1916322329;
                     } //End block
                 } //End block
             } //End block
@@ -752,9 +752,9 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_154166187 =         this;
         try 
         {
             buffer = map(MapMode.READ_ONLY, position, count);
-            long varD3B96EE17DC3534845E4FB68676CB62D_1099410022 = (target.write(buffer));
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_859080895 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_859080895;
+            long varD3B96EE17DC3534845E4FB68676CB62D_1127767188 = (target.write(buffer));
+                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1922682200 = getTaintLong();
+            return var0F5264038205EDFB1AC05FBB0E8C5E94_1922682200;
         } //End block
         finally 
         {
@@ -765,19 +765,19 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_154166187 =         this;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.470 -0400", hash_original_method = "062BFFD7E484D8312E945E8E43437F48", hash_generated_method = "1DAE3FE049D398E7F8A9B895069F1832")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.882 -0400", hash_original_method = "062BFFD7E484D8312E945E8E43437F48", hash_generated_method = "7896C88A96333FFB486F7508B73A49F6")
     public FileChannel truncate(long size) throws IOException {
         addTaint(size);
         checkOpen();
-    if(size < 0)        
+        if(size < 0)        
         {
-            IllegalArgumentException var20154F838DC7F2C22FC90A835CD4F108_1305029093 = new IllegalArgumentException("size: " + size);
-            var20154F838DC7F2C22FC90A835CD4F108_1305029093.addTaint(taint);
-            throw var20154F838DC7F2C22FC90A835CD4F108_1305029093;
+            IllegalArgumentException var20154F838DC7F2C22FC90A835CD4F108_2126827134 = new IllegalArgumentException("size: " + size);
+            var20154F838DC7F2C22FC90A835CD4F108_2126827134.addTaint(taint);
+            throw var20154F838DC7F2C22FC90A835CD4F108_2126827134;
         } //End block
         checkWritable();
-    if(size < size())        
+        if(size < size())        
         {
             try 
             {
@@ -785,14 +785,14 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_154166187 =         this;
             } //End block
             catch (ErrnoException errnoException)
             {
-                java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_113686582 = errnoException.rethrowAsIOException();
-                var533DBF3F7D78874DC97ED285C3BC3B22_113686582.addTaint(taint);
-                throw var533DBF3F7D78874DC97ED285C3BC3B22_113686582;
+                java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_1976227078 = errnoException.rethrowAsIOException();
+                var533DBF3F7D78874DC97ED285C3BC3B22_1976227078.addTaint(taint);
+                throw var533DBF3F7D78874DC97ED285C3BC3B22_1976227078;
             } //End block
         } //End block
-FileChannel var72A74007B2BE62B849F475C7BDA4658B_1876276793 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1876276793.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1876276793;
+FileChannel var72A74007B2BE62B849F475C7BDA4658B_1031436473 =         this;
+        var72A74007B2BE62B849F475C7BDA4658B_1031436473.addTaint(taint);
+        return var72A74007B2BE62B849F475C7BDA4658B_1031436473;
         // ---------- Original Method ----------
         //checkOpen();
         //if (size < 0) {
@@ -810,20 +810,20 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_1876276793 =         this;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.471 -0400", hash_original_method = "D694A533B6DF57B5FA961A08FD2C2C8C", hash_generated_method = "708A8F84E6343B7AE6C79F77CAB517C5")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.883 -0400", hash_original_method = "D694A533B6DF57B5FA961A08FD2C2C8C", hash_generated_method = "82FE3EC1290DB6BDDC88F9A790436025")
     public int write(ByteBuffer buffer, long position) throws IOException {
         addTaint(position);
         addTaint(buffer.getTaint());
-    if(position < 0)        
+        if(position < 0)        
         {
-            IllegalArgumentException var6116670AA73B0429FDB8C9E658F70CE6_355563545 = new IllegalArgumentException("position: " + position);
-            var6116670AA73B0429FDB8C9E658F70CE6_355563545.addTaint(taint);
-            throw var6116670AA73B0429FDB8C9E658F70CE6_355563545;
+            IllegalArgumentException var6116670AA73B0429FDB8C9E658F70CE6_1238847576 = new IllegalArgumentException("position: " + position);
+            var6116670AA73B0429FDB8C9E658F70CE6_1238847576.addTaint(taint);
+            throw var6116670AA73B0429FDB8C9E658F70CE6_1238847576;
         } //End block
-        int var073BB21C1CCA02EF8918FBD1E5A22510_1365071308 = (writeImpl(buffer, position));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_818534746 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_818534746;
+        int var073BB21C1CCA02EF8918FBD1E5A22510_155597392 = (writeImpl(buffer, position));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1186182172 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1186182172;
         // ---------- Original Method ----------
         //if (position < 0) {
             //throw new IllegalArgumentException("position: " + position);
@@ -832,36 +832,36 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_1876276793 =         this;
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.471 -0400", hash_original_method = "50D91170AD5AAA80BF5888A2631505BE", hash_generated_method = "703DB3A7C405A4D8EB9C68301C9C9B4D")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.884 -0400", hash_original_method = "50D91170AD5AAA80BF5888A2631505BE", hash_generated_method = "507C35A9E1E5CF79054DF229FF93CF7B")
     public int write(ByteBuffer buffer) throws IOException {
         addTaint(buffer.getTaint());
-        int var858811FB21BD232E6AC0BEA84831881E_1085106757 = (writeImpl(buffer, -1));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_327452894 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_327452894;
+        int var858811FB21BD232E6AC0BEA84831881E_247741788 = (writeImpl(buffer, -1));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_643066033 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_643066033;
         // ---------- Original Method ----------
         //return writeImpl(buffer, -1);
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.484 -0400", hash_original_method = "B7C7E18920DBBA232C5F1428FFA4A3EB", hash_generated_method = "B33BA536D5E6BA85976D87F1FD3A9A54")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.926 -0400", hash_original_method = "B7C7E18920DBBA232C5F1428FFA4A3EB", hash_generated_method = "A832C54A4E09C5F8838E86FBE1003426")
     private int writeImpl(ByteBuffer buffer, long position) throws IOException {
         addTaint(position);
         addTaint(buffer.getTaint());
         checkOpen();
         checkWritable();
-    if(buffer == null)        
+        if(buffer == null)        
         {
-            NullPointerException varD1F0B530B211C354FD4DD40207900970_299275131 = new NullPointerException("buffer == null");
-            varD1F0B530B211C354FD4DD40207900970_299275131.addTaint(taint);
-            throw varD1F0B530B211C354FD4DD40207900970_299275131;
+            NullPointerException varD1F0B530B211C354FD4DD40207900970_213467399 = new NullPointerException("buffer == null");
+            varD1F0B530B211C354FD4DD40207900970_213467399.addTaint(taint);
+            throw varD1F0B530B211C354FD4DD40207900970_213467399;
         } //End block
-    if(!buffer.hasRemaining())        
+        if(!buffer.hasRemaining())        
         {
-            int varCFCD208495D565EF66E7DFF9F98764DA_605101314 = (0);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1977828717 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1977828717;
+            int varCFCD208495D565EF66E7DFF9F98764DA_1957604109 = (0);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1228468808 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1228468808;
         } //End block
         int bytesWritten = 0;
         boolean completed = false;
@@ -870,7 +870,7 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_1876276793 =         this;
             begin();
             try 
             {
-    if(position == -1)                
+                if(position == -1)                
                 {
                     bytesWritten = Libcore.os.write(fd, buffer);
                 } //End block
@@ -881,9 +881,9 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_1876276793 =         this;
             } //End block
             catch (ErrnoException errnoException)
             {
-                java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_2059884746 = errnoException.rethrowAsIOException();
-                var533DBF3F7D78874DC97ED285C3BC3B22_2059884746.addTaint(taint);
-                throw var533DBF3F7D78874DC97ED285C3BC3B22_2059884746;
+                java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_1497082657 = errnoException.rethrowAsIOException();
+                var533DBF3F7D78874DC97ED285C3BC3B22_1497082657.addTaint(taint);
+                throw var533DBF3F7D78874DC97ED285C3BC3B22_1497082657;
             } //End block
             completed = true;
         } //End block
@@ -891,20 +891,20 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_1876276793 =         this;
         {
             end(completed);
         } //End block
-    if(bytesWritten > 0)        
+        if(bytesWritten > 0)        
         {
             buffer.position(buffer.position() + bytesWritten);
         } //End block
-        int varAE887C29C29F5CA22060DCB00E0FB057_1851905403 = (bytesWritten);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1651503545 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1651503545;
+        int varAE887C29C29F5CA22060DCB00E0FB057_1690483398 = (bytesWritten);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_315746316 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_315746316;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.485 -0400", hash_original_method = "066AEC24C5D5FCB3A90F301EFD66C198", hash_generated_method = "46412568CDF1B3A8C2380D3ECDDE92C0")
+        @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.931 -0400", hash_original_method = "066AEC24C5D5FCB3A90F301EFD66C198", hash_generated_method = "D81FA7EB5AA27AC80030DE5A7312C72E")
     public long write(ByteBuffer[] buffers, int offset, int length) throws IOException {
         addTaint(length);
         addTaint(offset);
@@ -912,9 +912,9 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_1876276793 =         this;
         Arrays.checkOffsetAndCount(buffers.length, offset, length);
         checkOpen();
         checkWritable();
-        long var6EE2D1EA75CCFC01E2882598D1F8AF78_711539906 = (transferIoVec(new IoVec(buffers, offset, length, IoVec.Direction.WRITEV)));
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1167438022 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1167438022;
+        long var6EE2D1EA75CCFC01E2882598D1F8AF78_1998695572 = (transferIoVec(new IoVec(buffers, offset, length, IoVec.Direction.WRITEV)));
+                long var0F5264038205EDFB1AC05FBB0E8C5E94_1241964012 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1241964012;
         // ---------- Original Method ----------
         //Arrays.checkOffsetAndCount(buffers.length, offset, length);
         //checkOpen();
@@ -923,7 +923,7 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_1876276793 =         this;
     }
 
     
-        static int calculateTotalRemaining(ByteBuffer[] buffers, int offset, int length, boolean copyingIn) {
+    static int calculateTotalRemaining(ByteBuffer[] buffers, int offset, int length, boolean copyingIn) {
         int count = 0;
         for (int i = offset; i < offset + length; ++i) {
             count += buffers[i].remaining();
@@ -935,32 +935,32 @@ FileChannel var72A74007B2BE62B849F475C7BDA4658B_1876276793 =         this;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.486 -0400", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "42D83A2A3DD4C15D5CA4E4012CA6889D")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.936 -0400", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "67C03669644FCF3D671426E216BB934B")
     public FileDescriptor getFD() {
-FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1126675568 =         fd;
-        var020F72FC5D1BB0511CAD11CC0AA674A0_1126675568.addTaint(taint);
-        return var020F72FC5D1BB0511CAD11CC0AA674A0_1126675568;
+FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_2091354658 =         fd;
+        var020F72FC5D1BB0511CAD11CC0AA674A0_2091354658.addTaint(taint);
+        return var020F72FC5D1BB0511CAD11CC0AA674A0_2091354658;
         // ---------- Original Method ----------
         //return fd;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.487 -0400", hash_original_method = "F902144182B3E2AF28D0016B48F7903B", hash_generated_method = "6748B72EF67C614DB54A8C992AB922A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.936 -0400", hash_original_method = "F902144182B3E2AF28D0016B48F7903B", hash_generated_method = "88F2E43FA9CF8352726F6AA181CAFD75")
     private synchronized void addLock(FileLock lock) throws OverlappingFileLockException {
         addTaint(lock.getTaint());
         long lockEnd = lock.position() + lock.size();
 for(FileLock existingLock : locks)
         {
-    if(existingLock.position() > lockEnd)            
+            if(existingLock.position() > lockEnd)            
             {
                 break;
             } //End block
-    if(existingLock.overlaps(lock.position(), lock.size()))            
+            if(existingLock.overlaps(lock.position(), lock.size()))            
             {
-                OverlappingFileLockException varBBCC2444149A97B60460B69FEA70806D_1330427635 = new OverlappingFileLockException();
-                varBBCC2444149A97B60460B69FEA70806D_1330427635.addTaint(taint);
-                throw varBBCC2444149A97B60460B69FEA70806D_1330427635;
+                OverlappingFileLockException varBBCC2444149A97B60460B69FEA70806D_143024632 = new OverlappingFileLockException();
+                varBBCC2444149A97B60460B69FEA70806D_143024632.addTaint(taint);
+                throw varBBCC2444149A97B60460B69FEA70806D_143024632;
             } //End block
         } //End block
         locks.add(lock);
@@ -978,7 +978,7 @@ for(FileLock existingLock : locks)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.487 -0400", hash_original_method = "AE9E3F40D0EE8D3948C9955DBE0083E8", hash_generated_method = "89395557843AF8F624E2E77B4F1639FE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.941 -0400", hash_original_method = "AE9E3F40D0EE8D3948C9955DBE0083E8", hash_generated_method = "89395557843AF8F624E2E77B4F1639FE")
     private synchronized void removeLock(FileLock lock) {
         addTaint(lock.getTaint());
         locks.remove(lock);
@@ -988,11 +988,11 @@ for(FileLock existingLock : locks)
 
     
     private static final class FileLockImpl extends FileLock {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.487 -0400", hash_original_field = "54A67E24EC9ED4A409BC3E533D36FB19", hash_generated_field = "4E02554B0BEBB8127D76AE5D5E6B5FAD")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.944 -0400", hash_original_field = "54A67E24EC9ED4A409BC3E533D36FB19", hash_generated_field = "4E02554B0BEBB8127D76AE5D5E6B5FAD")
 
         private boolean isReleased = false;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.488 -0400", hash_original_method = "DBB23F8476AE80F00EB4C7CF229EA4B9", hash_generated_method = "70C66EA4F38E83A5CFA92D920F720393")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.944 -0400", hash_original_method = "DBB23F8476AE80F00EB4C7CF229EA4B9", hash_generated_method = "70C66EA4F38E83A5CFA92D920F720393")
         public  FileLockImpl(FileChannel channel, long position, long size, boolean shared) {
             super(channel, position, size, shared);
             addTaint(shared);
@@ -1003,27 +1003,27 @@ for(FileLock existingLock : locks)
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.488 -0400", hash_original_method = "AAE954E5885EFA2B8D6D7679145B1DEF", hash_generated_method = "4652F894A690F9444F922E6329268D3E")
+                @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.949 -0400", hash_original_method = "AAE954E5885EFA2B8D6D7679145B1DEF", hash_generated_method = "2CDA7E909247EE34861B805F5EC75935")
         public boolean isValid() {
-            boolean var51F46452F2C2981ED17B7318FDFFA3F5_480221059 = (!isReleased && channel().isOpen());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_906271527 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_906271527;
+            boolean var51F46452F2C2981ED17B7318FDFFA3F5_1634387947 = (!isReleased && channel().isOpen());
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_993889031 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_993889031;
             // ---------- Original Method ----------
             //return !isReleased && channel().isOpen();
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.488 -0400", hash_original_method = "7DF971FEA31B34CE257DD1638735950E", hash_generated_method = "980978D564AF623D0E7EE0294F3218BA")
+                @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.951 -0400", hash_original_method = "7DF971FEA31B34CE257DD1638735950E", hash_generated_method = "983F3C3A7B8D5DE9543913D483F99E4E")
         public void release() throws IOException {
-    if(!channel().isOpen())            
+            if(!channel().isOpen())            
             {
-                ClosedChannelException var553E3C0ED28F94CE76A7A8061DFFDCF3_1522242649 = new ClosedChannelException();
-                var553E3C0ED28F94CE76A7A8061DFFDCF3_1522242649.addTaint(taint);
-                throw var553E3C0ED28F94CE76A7A8061DFFDCF3_1522242649;
+                ClosedChannelException var553E3C0ED28F94CE76A7A8061DFFDCF3_1288112523 = new ClosedChannelException();
+                var553E3C0ED28F94CE76A7A8061DFFDCF3_1288112523.addTaint(taint);
+                throw var553E3C0ED28F94CE76A7A8061DFFDCF3_1288112523;
             } //End block
-    if(!isReleased)            
+            if(!isReleased)            
             {
                 ((FileChannelImpl) channel()).release(this);
                 isReleased = true;

@@ -11,19 +11,19 @@ import libcore.net.UriCodec;
 
 public class URLEncoder {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:55.380 -0400", hash_original_method = "B41CBCC9C76AA809E0DC45FDBBA0D268", hash_generated_method = "A6F2D9E84EF75199314CB290B61AC175")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.087 -0400", hash_original_method = "B41CBCC9C76AA809E0DC45FDBBA0D268", hash_generated_method = "A6F2D9E84EF75199314CB290B61AC175")
     private  URLEncoder() {
         // ---------- Original Method ----------
     }
 
     
-        @Deprecated
+    @Deprecated
     public static String encode(String s) {
         return ENCODER.encode(s, Charsets.UTF_8);
     }
 
     
-        public static String encode(String s, String charsetName) throws UnsupportedEncodingException {
+    public static String encode(String s, String charsetName) throws UnsupportedEncodingException {
         return ENCODER.encode(s, Charset.forName(charsetName));
     }
 

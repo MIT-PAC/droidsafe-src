@@ -8,14 +8,14 @@ import android.database.Cursor;
 import android.os.RemoteException;
 
 public abstract class CursorEntityIterator implements EntityIterator {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.150 -0400", hash_original_field = "F54BB255BEA99BFE91A331B490610EDF", hash_generated_field = "6E649D5858461199DBD67FE0A0D43789")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.492 -0400", hash_original_field = "F54BB255BEA99BFE91A331B490610EDF", hash_generated_field = "6E649D5858461199DBD67FE0A0D43789")
 
     private Cursor mCursor;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.150 -0400", hash_original_field = "42C51B2F76146A5EC92C9811D57ACF10", hash_generated_field = "A6BB6E42C38AE7C525A0832B55750D8F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.492 -0400", hash_original_field = "42C51B2F76146A5EC92C9811D57ACF10", hash_generated_field = "A6BB6E42C38AE7C525A0832B55750D8F")
 
     private boolean mIsClosed;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.151 -0400", hash_original_method = "76B86F8C1E31679F8727B434E61B14CB", hash_generated_method = "B0CDFD30A5D8289392A197569989206F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.492 -0400", hash_original_method = "76B86F8C1E31679F8727B434E61B14CB", hash_generated_method = "B0CDFD30A5D8289392A197569989206F")
     public  CursorEntityIterator(Cursor cursor) {
         mIsClosed = false;
         mCursor = cursor;
@@ -30,17 +30,17 @@ public abstract class CursorEntityIterator implements EntityIterator {
     public abstract Entity getEntityAndIncrementCursor(Cursor cursor) throws RemoteException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.152 -0400", hash_original_method = "EFC615883F392C5E7B7F6E9EF3393B85", hash_generated_method = "951F0B6D32287F57132CBA7037CE2942")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.492 -0400", hash_original_method = "EFC615883F392C5E7B7F6E9EF3393B85", hash_generated_method = "615271A9F440649387636AA3AD1F6FE7")
     public final boolean hasNext() {
-    if(mIsClosed)        
+        if(mIsClosed)        
         {
-            IllegalStateException var994C5FDCB689CD476D720223C1A2E97C_1392251958 = new IllegalStateException("calling hasNext() when the iterator is closed");
-            var994C5FDCB689CD476D720223C1A2E97C_1392251958.addTaint(taint);
-            throw var994C5FDCB689CD476D720223C1A2E97C_1392251958;
+            IllegalStateException var994C5FDCB689CD476D720223C1A2E97C_1542407664 = new IllegalStateException("calling hasNext() when the iterator is closed");
+            var994C5FDCB689CD476D720223C1A2E97C_1542407664.addTaint(taint);
+            throw var994C5FDCB689CD476D720223C1A2E97C_1542407664;
         } //End block
-        boolean varA900E63D2652380A0AE5EC5450C680D1_907053977 = (!mCursor.isAfterLast());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1743442562 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1743442562;
+        boolean varA900E63D2652380A0AE5EC5450C680D1_2026531991 = (!mCursor.isAfterLast());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_736286325 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_736286325;
         // ---------- Original Method ----------
         //if (mIsClosed) {
             //throw new IllegalStateException("calling hasNext() when the iterator is closed");
@@ -49,31 +49,31 @@ public abstract class CursorEntityIterator implements EntityIterator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.153 -0400", hash_original_method = "D761CE40C9BF5BACB311C894FE3131D0", hash_generated_method = "44D4AC1BDEA2EE4D9AF5F0C05E83EEF6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.493 -0400", hash_original_method = "D761CE40C9BF5BACB311C894FE3131D0", hash_generated_method = "E69C7FE396FBF487669DC0A4275B461F")
     public Entity next() {
-    if(mIsClosed)        
+        if(mIsClosed)        
         {
-            IllegalStateException var12E76C3A9A7CEE219DB8C76087FF564B_656516136 = new IllegalStateException("calling next() when the iterator is closed");
-            var12E76C3A9A7CEE219DB8C76087FF564B_656516136.addTaint(taint);
-            throw var12E76C3A9A7CEE219DB8C76087FF564B_656516136;
+            IllegalStateException var12E76C3A9A7CEE219DB8C76087FF564B_713154180 = new IllegalStateException("calling next() when the iterator is closed");
+            var12E76C3A9A7CEE219DB8C76087FF564B_713154180.addTaint(taint);
+            throw var12E76C3A9A7CEE219DB8C76087FF564B_713154180;
         } //End block
-    if(!hasNext())        
+        if(!hasNext())        
         {
-            IllegalStateException varE20C7FA15E48B005588D91906DC67B5F_1350683974 = new IllegalStateException("you may only call next() if hasNext() is true");
-            varE20C7FA15E48B005588D91906DC67B5F_1350683974.addTaint(taint);
-            throw varE20C7FA15E48B005588D91906DC67B5F_1350683974;
+            IllegalStateException varE20C7FA15E48B005588D91906DC67B5F_832914009 = new IllegalStateException("you may only call next() if hasNext() is true");
+            varE20C7FA15E48B005588D91906DC67B5F_832914009.addTaint(taint);
+            throw varE20C7FA15E48B005588D91906DC67B5F_832914009;
         } //End block
         try 
         {
-Entity var89A776ACF604CF5B8BF8FB402D39F0BE_476195013 =             getEntityAndIncrementCursor(mCursor);
-            var89A776ACF604CF5B8BF8FB402D39F0BE_476195013.addTaint(taint);
-            return var89A776ACF604CF5B8BF8FB402D39F0BE_476195013;
+Entity var89A776ACF604CF5B8BF8FB402D39F0BE_656514421 =             getEntityAndIncrementCursor(mCursor);
+            var89A776ACF604CF5B8BF8FB402D39F0BE_656514421.addTaint(taint);
+            return var89A776ACF604CF5B8BF8FB402D39F0BE_656514421;
         } //End block
         catch (RemoteException e)
         {
-            RuntimeException varA9C8EAB58C0973C3C3455840A2CBB98C_744357115 = new RuntimeException("caught a remote exception, this process will die soon", e);
-            varA9C8EAB58C0973C3C3455840A2CBB98C_744357115.addTaint(taint);
-            throw varA9C8EAB58C0973C3C3455840A2CBB98C_744357115;
+            RuntimeException varA9C8EAB58C0973C3C3455840A2CBB98C_257334363 = new RuntimeException("caught a remote exception, this process will die soon", e);
+            varA9C8EAB58C0973C3C3455840A2CBB98C_257334363.addTaint(taint);
+            throw varA9C8EAB58C0973C3C3455840A2CBB98C_257334363;
         } //End block
         // ---------- Original Method ----------
         //if (mIsClosed) {
@@ -90,23 +90,23 @@ Entity var89A776ACF604CF5B8BF8FB402D39F0BE_476195013 =             getEntityAndI
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.154 -0400", hash_original_method = "2158F00E167F00121D9D2190C01FAABB", hash_generated_method = "EB7C1BC92835ED2AFADA70D51FAC1993")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.493 -0400", hash_original_method = "2158F00E167F00121D9D2190C01FAABB", hash_generated_method = "079DFC141AAC73FA45B9C248EB02DE6E")
     public void remove() {
-        UnsupportedOperationException var3507AD2E5185A524A543CF22C0250BAC_113463133 = new UnsupportedOperationException("remove not supported by EntityIterators");
-        var3507AD2E5185A524A543CF22C0250BAC_113463133.addTaint(taint);
-        throw var3507AD2E5185A524A543CF22C0250BAC_113463133;
+        UnsupportedOperationException var3507AD2E5185A524A543CF22C0250BAC_1298754522 = new UnsupportedOperationException("remove not supported by EntityIterators");
+        var3507AD2E5185A524A543CF22C0250BAC_1298754522.addTaint(taint);
+        throw var3507AD2E5185A524A543CF22C0250BAC_1298754522;
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException("remove not supported by EntityIterators");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.154 -0400", hash_original_method = "D0360F07FA873653A69218CB10B6D78C", hash_generated_method = "688EED22A1F5FB9B134DB53FA840ED43")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.493 -0400", hash_original_method = "D0360F07FA873653A69218CB10B6D78C", hash_generated_method = "B230BABD808BEAE19CD0AE46FE64A3B0")
     public final void reset() {
-    if(mIsClosed)        
+        if(mIsClosed)        
         {
-            IllegalStateException var47A5740EFD7F765F130EF9990EDEC229_1405883229 = new IllegalStateException("calling reset() when the iterator is closed");
-            var47A5740EFD7F765F130EF9990EDEC229_1405883229.addTaint(taint);
-            throw var47A5740EFD7F765F130EF9990EDEC229_1405883229;
+            IllegalStateException var47A5740EFD7F765F130EF9990EDEC229_1347989156 = new IllegalStateException("calling reset() when the iterator is closed");
+            var47A5740EFD7F765F130EF9990EDEC229_1347989156.addTaint(taint);
+            throw var47A5740EFD7F765F130EF9990EDEC229_1347989156;
         } //End block
         mCursor.moveToFirst();
         // ---------- Original Method ----------
@@ -117,13 +117,13 @@ Entity var89A776ACF604CF5B8BF8FB402D39F0BE_476195013 =             getEntityAndI
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.155 -0400", hash_original_method = "B24D9E2E069589E778F23FCBC29406BF", hash_generated_method = "4EAE44561F6A9A4148F17AEFFAA1FF15")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.493 -0400", hash_original_method = "B24D9E2E069589E778F23FCBC29406BF", hash_generated_method = "C3809F69E058058F0178670A46CC07E2")
     public final void close() {
-    if(mIsClosed)        
+        if(mIsClosed)        
         {
-            IllegalStateException varC011F9740FCC2D0357D3F5533DD6D908_1771050521 = new IllegalStateException("closing when already closed");
-            varC011F9740FCC2D0357D3F5533DD6D908_1771050521.addTaint(taint);
-            throw varC011F9740FCC2D0357D3F5533DD6D908_1771050521;
+            IllegalStateException varC011F9740FCC2D0357D3F5533DD6D908_612880557 = new IllegalStateException("closing when already closed");
+            varC011F9740FCC2D0357D3F5533DD6D908_612880557.addTaint(taint);
+            throw varC011F9740FCC2D0357D3F5533DD6D908_612880557;
         } //End block
         mIsClosed = true;
         mCursor.close();

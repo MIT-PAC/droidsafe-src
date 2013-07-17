@@ -8,14 +8,14 @@ import java.math.BigInteger;
 
 public class ECAlgorithms {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.623 -0400", hash_original_method = "70F9F0F5BEFD5512C9E75259E8F999A7", hash_generated_method = "70F9F0F5BEFD5512C9E75259E8F999A7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.369 -0400", hash_original_method = "70F9F0F5BEFD5512C9E75259E8F999A7", hash_generated_method = "70F9F0F5BEFD5512C9E75259E8F999A7")
     public ECAlgorithms ()
     {
         //Synthesized constructor
     }
 
 
-        public static ECPoint sumOfTwoMultiplies(ECPoint P, BigInteger a,
+    public static ECPoint sumOfTwoMultiplies(ECPoint P, BigInteger a,
         ECPoint Q, BigInteger b) {
         ECCurve c = P.getCurve();
         if (!c.equals(Q.getCurve()))
@@ -34,7 +34,7 @@ public class ECAlgorithms {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static ECPoint shamirsTrick(ECPoint P, BigInteger k,
         ECPoint Q, BigInteger l) {
         if (!P.getCurve().equals(Q.getCurve()))
@@ -45,7 +45,7 @@ public class ECAlgorithms {
     }
 
     
-        private static ECPoint implShamirsTrick(ECPoint P, BigInteger k,
+    private static ECPoint implShamirsTrick(ECPoint P, BigInteger k,
         ECPoint Q, BigInteger l) {
         int m = Math.max(k.bitLength(), l.bitLength());
         ECPoint Z = P.add(Q);

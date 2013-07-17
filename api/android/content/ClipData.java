@@ -18,25 +18,25 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class ClipData implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.241 -0400", hash_original_field = "C18C91213C987999CDB9110CD9126E6F", hash_generated_field = "BD054FDEC655C28C2D1BA2544910FE2F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.539 -0400", hash_original_field = "C18C91213C987999CDB9110CD9126E6F", hash_generated_field = "BD054FDEC655C28C2D1BA2544910FE2F")
 
     ClipDescription mClipDescription;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.241 -0400", hash_original_field = "1A265556E59DF15CAEC4E55FB61E68C7", hash_generated_field = "EC076BF50357690C1FC8AB2DC0D41329")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.539 -0400", hash_original_field = "1A265556E59DF15CAEC4E55FB61E68C7", hash_generated_field = "EC076BF50357690C1FC8AB2DC0D41329")
 
     Bitmap mIcon;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.242 -0400", hash_original_field = "9A2B48118B27FC7163B411FED67908AC", hash_generated_field = "642CB554EA43ABB4F05AD892541D7330")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.539 -0400", hash_original_field = "9A2B48118B27FC7163B411FED67908AC", hash_generated_field = "642CB554EA43ABB4F05AD892541D7330")
 
     final ArrayList<Item> mItems = new ArrayList<Item>();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.243 -0400", hash_original_method = "EBF505A176A1691C0AFF349A48F88B72", hash_generated_method = "D88C90A019247B9615714D09A179AEF5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.542 -0400", hash_original_method = "EBF505A176A1691C0AFF349A48F88B72", hash_generated_method = "E6ED0B9282DF85D02872FC17FFDC44A2")
     public  ClipData(CharSequence label, String[] mimeTypes, Item item) {
         addTaint(item.getTaint());
         mClipDescription = new ClipDescription(label, mimeTypes);
-    if(item == null)        
+        if(item == null)        
         {
-            NullPointerException var7AB68A07996D71FE90F8DD58F021F543_701845800 = new NullPointerException("item is null");
-            var7AB68A07996D71FE90F8DD58F021F543_701845800.addTaint(taint);
-            throw var7AB68A07996D71FE90F8DD58F021F543_701845800;
+            NullPointerException var7AB68A07996D71FE90F8DD58F021F543_71329769 = new NullPointerException("item is null");
+            var7AB68A07996D71FE90F8DD58F021F543_71329769.addTaint(taint);
+            throw var7AB68A07996D71FE90F8DD58F021F543_71329769;
         } //End block
         mIcon = null;
         mItems.add(item);
@@ -50,15 +50,15 @@ public class ClipData implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.244 -0400", hash_original_method = "07F73711C3AF49FFEB328A8FE4F43045", hash_generated_method = "4DDDDCB251B7200543929ED9650671BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.544 -0400", hash_original_method = "07F73711C3AF49FFEB328A8FE4F43045", hash_generated_method = "6EDC485D82689B70E4F80BD1122C8A7A")
     public  ClipData(ClipDescription description, Item item) {
         addTaint(item.getTaint());
         mClipDescription = description;
-    if(item == null)        
+        if(item == null)        
         {
-            NullPointerException var7AB68A07996D71FE90F8DD58F021F543_989410613 = new NullPointerException("item is null");
-            var7AB68A07996D71FE90F8DD58F021F543_989410613.addTaint(taint);
-            throw var7AB68A07996D71FE90F8DD58F021F543_989410613;
+            NullPointerException var7AB68A07996D71FE90F8DD58F021F543_1685767111 = new NullPointerException("item is null");
+            var7AB68A07996D71FE90F8DD58F021F543_1685767111.addTaint(taint);
+            throw var7AB68A07996D71FE90F8DD58F021F543_1685767111;
         } //End block
         mIcon = null;
         mItems.add(item);
@@ -72,10 +72,10 @@ public class ClipData implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.245 -0400", hash_original_method = "58D4E89221B1347651A83B7DDCBD7718", hash_generated_method = "207929556FD17766E89481E87DC0B7EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.548 -0400", hash_original_method = "58D4E89221B1347651A83B7DDCBD7718", hash_generated_method = "207929556FD17766E89481E87DC0B7EF")
       ClipData(Parcel in) {
         mClipDescription = new ClipDescription(in);
-    if(in.readInt() != 0)        
+        if(in.readInt() != 0)        
         {
             mIcon = Bitmap.CREATOR.createFromParcel(in);
         } //End block
@@ -108,20 +108,20 @@ for(int i=0;i<N;i++)
     }
 
     
-        static public ClipData newPlainText(CharSequence label, CharSequence text) {
+    static public ClipData newPlainText(CharSequence label, CharSequence text) {
         Item item = new Item(text);
         return new ClipData(label, MIMETYPES_TEXT_PLAIN, item);
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     static public ClipData newIntent(CharSequence label, Intent intent) {
         Item item = new Item(intent);
         return new ClipData(label, MIMETYPES_TEXT_INTENT, item);
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     static public ClipData newUri(ContentResolver resolver, CharSequence label,
             Uri uri) {
         Item item = new Item(uri);
@@ -152,32 +152,32 @@ for(int i=0;i<N;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     static public ClipData newRawUri(CharSequence label, Uri uri) {
         Item item = new Item(uri);
         return new ClipData(label, MIMETYPES_TEXT_URILIST, item);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.248 -0400", hash_original_method = "8475A7793CA47249207DFD30E601781C", hash_generated_method = "72D9D2B261814C64A2F85BDB0D857B9C")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.552 -0400", hash_original_method = "8475A7793CA47249207DFD30E601781C", hash_generated_method = "8B4BB06CDB3A5A41BDAE158BE57B19E3")
     public ClipDescription getDescription() {
-ClipDescription var66737B70E012D8A6A7B87AF89D5A9D5F_283119724 =         mClipDescription;
-        var66737B70E012D8A6A7B87AF89D5A9D5F_283119724.addTaint(taint);
-        return var66737B70E012D8A6A7B87AF89D5A9D5F_283119724;
+ClipDescription var66737B70E012D8A6A7B87AF89D5A9D5F_123166857 =         mClipDescription;
+        var66737B70E012D8A6A7B87AF89D5A9D5F_123166857.addTaint(taint);
+        return var66737B70E012D8A6A7B87AF89D5A9D5F_123166857;
         // ---------- Original Method ----------
         //return mClipDescription;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.248 -0400", hash_original_method = "150F076539D3E4866582D984173D26A6", hash_generated_method = "1497677FD5D2C0F521025A228B0BE0E5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.553 -0400", hash_original_method = "150F076539D3E4866582D984173D26A6", hash_generated_method = "18856106234B5847427CFB6765EB3FF9")
     public void addItem(Item item) {
         addTaint(item.getTaint());
-    if(item == null)        
+        if(item == null)        
         {
-            NullPointerException var7AB68A07996D71FE90F8DD58F021F543_1174067529 = new NullPointerException("item is null");
-            var7AB68A07996D71FE90F8DD58F021F543_1174067529.addTaint(taint);
-            throw var7AB68A07996D71FE90F8DD58F021F543_1174067529;
+            NullPointerException var7AB68A07996D71FE90F8DD58F021F543_1334226683 = new NullPointerException("item is null");
+            var7AB68A07996D71FE90F8DD58F021F543_1334226683.addTaint(taint);
+            throw var7AB68A07996D71FE90F8DD58F021F543_1334226683;
         } //End block
         mItems.add(item);
         // ---------- Original Method ----------
@@ -188,57 +188,57 @@ ClipDescription var66737B70E012D8A6A7B87AF89D5A9D5F_283119724 =         mClipDes
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.249 -0400", hash_original_method = "229D9D1026C0301FD9A4AD50AC984F17", hash_generated_method = "7D74DB5683DBA8BE851C2BD0BE550817")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.553 -0400", hash_original_method = "229D9D1026C0301FD9A4AD50AC984F17", hash_generated_method = "619D6AF15E17EB441EEB2BEC33C01001")
     public Bitmap getIcon() {
-Bitmap var664A3A1F0DCFF82F0A8D0B798A32C3B0_1787955001 =         mIcon;
-        var664A3A1F0DCFF82F0A8D0B798A32C3B0_1787955001.addTaint(taint);
-        return var664A3A1F0DCFF82F0A8D0B798A32C3B0_1787955001;
+Bitmap var664A3A1F0DCFF82F0A8D0B798A32C3B0_102245789 =         mIcon;
+        var664A3A1F0DCFF82F0A8D0B798A32C3B0_102245789.addTaint(taint);
+        return var664A3A1F0DCFF82F0A8D0B798A32C3B0_102245789;
         // ---------- Original Method ----------
         //return mIcon;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.249 -0400", hash_original_method = "2908203B9FEFAA3035EA88685E6DC23A", hash_generated_method = "46458642F295D67635853486DFEC867D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.554 -0400", hash_original_method = "2908203B9FEFAA3035EA88685E6DC23A", hash_generated_method = "A0932EA32519F1A4EB6316C3BFC094A5")
     public int getItemCount() {
-        int var9B434FD456AC2D14B6AB22377BFF1926_388397218 = (mItems.size());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1852463493 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1852463493;
+        int var9B434FD456AC2D14B6AB22377BFF1926_1523178918 = (mItems.size());
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1385282256 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1385282256;
         // ---------- Original Method ----------
         //return mItems.size();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.249 -0400", hash_original_method = "79B4F12EE34F43C8036D233ADFF72DDF", hash_generated_method = "30054F36D64494472B1AC45647008696")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.554 -0400", hash_original_method = "79B4F12EE34F43C8036D233ADFF72DDF", hash_generated_method = "7084D32C69EFCF81974B5ECB09FFD19F")
     public Item getItemAt(int index) {
         addTaint(index);
-Item var955C9579A8231EA8752336C152243F31_1921877989 =         mItems.get(index);
-        var955C9579A8231EA8752336C152243F31_1921877989.addTaint(taint);
-        return var955C9579A8231EA8752336C152243F31_1921877989;
+Item var955C9579A8231EA8752336C152243F31_2065174624 =         mItems.get(index);
+        var955C9579A8231EA8752336C152243F31_2065174624.addTaint(taint);
+        return var955C9579A8231EA8752336C152243F31_2065174624;
         // ---------- Original Method ----------
         //return mItems.get(index);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.250 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "367CC80F9F6E8BCC65C53602A4AB1AC9")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.555 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "766666AA26DE67265321D45ACAF30585")
     @Override
     public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_2040298659 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1681170170 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1681170170;
+        int varCFCD208495D565EF66E7DFF9F98764DA_690726707 = (0);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2015772903 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2015772903;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.250 -0400", hash_original_method = "0C9FB932279AD72A7EC79D2538384FC0", hash_generated_method = "C27D3B1BBC9B3CDDFDA0A83D0F34FA47")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.555 -0400", hash_original_method = "0C9FB932279AD72A7EC79D2538384FC0", hash_generated_method = "C27D3B1BBC9B3CDDFDA0A83D0F34FA47")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
         addTaint(dest.getTaint());
         mClipDescription.writeToParcel(dest, flags);
-    if(mIcon != null)        
+        if(mIcon != null)        
         {
             dest.writeInt(1);
             mIcon.writeToParcel(dest, flags);
@@ -253,7 +253,7 @@ for(int i=0;i<N;i++)
         {
             Item item = mItems.get(i);
             TextUtils.writeToParcel(item.mText, dest, flags);
-    if(item.mIntent != null)            
+            if(item.mIntent != null)            
             {
                 dest.writeInt(1);
                 item.mIntent.writeToParcel(dest, flags);
@@ -262,7 +262,7 @@ for(int i=0;i<N;i++)
             {
                 dest.writeInt(0);
             } //End block
-    if(item.mUri != null)            
+            if(item.mUri != null)            
             {
                 dest.writeInt(1);
                 item.mUri.writeToParcel(dest, flags);
@@ -302,17 +302,17 @@ for(int i=0;i<N;i++)
 
     
     public static class Item {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.251 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "A59BBC07E5E46996D793B2F37E80BD24")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.556 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "A59BBC07E5E46996D793B2F37E80BD24")
 
         CharSequence mText;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.251 -0400", hash_original_field = "B1135DD88C82BCDD4DCD8391BCD99883", hash_generated_field = "1811495D939DB843870F6315E04555CC")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.556 -0400", hash_original_field = "B1135DD88C82BCDD4DCD8391BCD99883", hash_generated_field = "1811495D939DB843870F6315E04555CC")
 
         Intent mIntent;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.252 -0400", hash_original_field = "5FBE3730DCFF234F97B15868D5CE649D", hash_generated_field = "49226456B4CE4E55A779249DE3DC63D4")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.556 -0400", hash_original_field = "5FBE3730DCFF234F97B15868D5CE649D", hash_generated_field = "49226456B4CE4E55A779249DE3DC63D4")
 
         Uri mUri;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.252 -0400", hash_original_method = "4A009EFCCF51C2EA640445D87C84D900", hash_generated_method = "F5679DD9C9B02BBE86AE8D02CB384497")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.557 -0400", hash_original_method = "4A009EFCCF51C2EA640445D87C84D900", hash_generated_method = "F5679DD9C9B02BBE86AE8D02CB384497")
         public  Item(CharSequence text) {
             mText = text;
             mIntent = null;
@@ -324,8 +324,8 @@ for(int i=0;i<N;i++)
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.253 -0400", hash_original_method = "11EC393E75756EFF910C83D0B79625D8", hash_generated_method = "B2819D5E3832B4449B5964548646CA2E")
+                @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.557 -0400", hash_original_method = "11EC393E75756EFF910C83D0B79625D8", hash_generated_method = "B2819D5E3832B4449B5964548646CA2E")
         public  Item(Intent intent) {
             mText = null;
             mIntent = intent;
@@ -337,8 +337,8 @@ for(int i=0;i<N;i++)
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.257 -0400", hash_original_method = "C0C0DA6EE7D207BF80500DD7F8FC5437", hash_generated_method = "689B67F56845AB695374FCBA9B58C5EA")
+                @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.558 -0400", hash_original_method = "C0C0DA6EE7D207BF80500DD7F8FC5437", hash_generated_method = "689B67F56845AB695374FCBA9B58C5EA")
         public  Item(Uri uri) {
             mText = null;
             mIntent = null;
@@ -350,8 +350,8 @@ for(int i=0;i<N;i++)
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.259 -0400", hash_original_method = "40EC9D6AF0E3564A5C6CD681E96DEE48", hash_generated_method = "8323B86D23D0D4C05CBDB8CA988DDE3A")
+                @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.559 -0400", hash_original_method = "40EC9D6AF0E3564A5C6CD681E96DEE48", hash_generated_method = "8323B86D23D0D4C05CBDB8CA988DDE3A")
         public  Item(CharSequence text, Intent intent, Uri uri) {
             mText = text;
             mIntent = intent;
@@ -363,49 +363,49 @@ for(int i=0;i<N;i++)
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.259 -0400", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "9B6CE575E11621D931A08DC8A6E927DB")
+                @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.559 -0400", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "8EF4FEE12C3079BC4F94DBABA648AD3D")
         public CharSequence getText() {
-CharSequence var7F7ECB4B14362FFBA020956966B29A66_807284972 =             mText;
-            var7F7ECB4B14362FFBA020956966B29A66_807284972.addTaint(taint);
-            return var7F7ECB4B14362FFBA020956966B29A66_807284972;
+CharSequence var7F7ECB4B14362FFBA020956966B29A66_842746090 =             mText;
+            var7F7ECB4B14362FFBA020956966B29A66_842746090.addTaint(taint);
+            return var7F7ECB4B14362FFBA020956966B29A66_842746090;
             // ---------- Original Method ----------
             //return mText;
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.260 -0400", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "F269A679633EEA861B0DD8700F50B188")
+                @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.560 -0400", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "53B89584CD39D584B1B623FCF5BD9A64")
         public Intent getIntent() {
-Intent var4DCF8E3D75AE0B94CDA94656DCE16BCE_1670900416 =             mIntent;
-            var4DCF8E3D75AE0B94CDA94656DCE16BCE_1670900416.addTaint(taint);
-            return var4DCF8E3D75AE0B94CDA94656DCE16BCE_1670900416;
+Intent var4DCF8E3D75AE0B94CDA94656DCE16BCE_1208120419 =             mIntent;
+            var4DCF8E3D75AE0B94CDA94656DCE16BCE_1208120419.addTaint(taint);
+            return var4DCF8E3D75AE0B94CDA94656DCE16BCE_1208120419;
             // ---------- Original Method ----------
             //return mIntent;
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.260 -0400", hash_original_method = "225259AA593B6A59F476A2C569F1B075", hash_generated_method = "8DD77BA842FF8B3DE4E14E9984063945")
+                @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.560 -0400", hash_original_method = "225259AA593B6A59F476A2C569F1B075", hash_generated_method = "B39529CEC38FA4A8B45EF79A85B68763")
         public Uri getUri() {
-Uri var7D41D50876117CE5D7DFAD684A455037_365991867 =             mUri;
-            var7D41D50876117CE5D7DFAD684A455037_365991867.addTaint(taint);
-            return var7D41D50876117CE5D7DFAD684A455037_365991867;
+Uri var7D41D50876117CE5D7DFAD684A455037_1499616776 =             mUri;
+            var7D41D50876117CE5D7DFAD684A455037_1499616776.addTaint(taint);
+            return var7D41D50876117CE5D7DFAD684A455037_1499616776;
             // ---------- Original Method ----------
             //return mUri;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.261 -0400", hash_original_method = "2A1795F61A3E14A1308A3A7CD55951FC", hash_generated_method = "730A1F8C7D7E3490D939C1EC11D92CB6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.561 -0400", hash_original_method = "2A1795F61A3E14A1308A3A7CD55951FC", hash_generated_method = "85AB775B76E20B860227EFBA050EE68F")
         public CharSequence coerceToText(Context context) {
             addTaint(context.getTaint());
-    if(mText != null)            
+            if(mText != null)            
             {
-CharSequence var7F7ECB4B14362FFBA020956966B29A66_2123408296 =                 mText;
-                var7F7ECB4B14362FFBA020956966B29A66_2123408296.addTaint(taint);
-                return var7F7ECB4B14362FFBA020956966B29A66_2123408296;
+CharSequence var7F7ECB4B14362FFBA020956966B29A66_550503945 =                 mText;
+                var7F7ECB4B14362FFBA020956966B29A66_550503945.addTaint(taint);
+                return var7F7ECB4B14362FFBA020956966B29A66_550503945;
             } //End block
-    if(mUri != null)            
+            if(mUri != null)            
             {
                 FileInputStream stream = null;
                 try 
@@ -422,22 +422,22 @@ CharSequence var7F7ECB4B14362FFBA020956966B29A66_2123408296 =                 mT
                     {
                         builder.append(buffer, 0, len);
                     } //End block
-CharSequence varF4CF030572656354ACFDF83FEE21D7A6_986040384 =                     builder.toString();
-                    varF4CF030572656354ACFDF83FEE21D7A6_986040384.addTaint(taint);
-                    return varF4CF030572656354ACFDF83FEE21D7A6_986040384;
+CharSequence varF4CF030572656354ACFDF83FEE21D7A6_60369522 =                     builder.toString();
+                    varF4CF030572656354ACFDF83FEE21D7A6_60369522.addTaint(taint);
+                    return varF4CF030572656354ACFDF83FEE21D7A6_60369522;
                 } //End block
                 catch (FileNotFoundException e)
                 {
                 } //End block
                 catch (IOException e)
                 {
-CharSequence varB1071CD0E076C663B32B4BA8A95F73F2_1388067581 =                     e.toString();
-                    varB1071CD0E076C663B32B4BA8A95F73F2_1388067581.addTaint(taint);
-                    return varB1071CD0E076C663B32B4BA8A95F73F2_1388067581;
+CharSequence varB1071CD0E076C663B32B4BA8A95F73F2_408294804 =                     e.toString();
+                    varB1071CD0E076C663B32B4BA8A95F73F2_408294804.addTaint(taint);
+                    return varB1071CD0E076C663B32B4BA8A95F73F2_408294804;
                 } //End block
                 finally 
                 {
-    if(stream != null)                    
+                    if(stream != null)                    
                     {
                         try 
                         {
@@ -448,19 +448,19 @@ CharSequence varB1071CD0E076C663B32B4BA8A95F73F2_1388067581 =                   
                         } //End block
                     } //End block
                 } //End block
-CharSequence varB2005789EAA9176832EA559C3023D52A_1216758018 =                 mUri.toString();
-                varB2005789EAA9176832EA559C3023D52A_1216758018.addTaint(taint);
-                return varB2005789EAA9176832EA559C3023D52A_1216758018;
+CharSequence varB2005789EAA9176832EA559C3023D52A_1206927439 =                 mUri.toString();
+                varB2005789EAA9176832EA559C3023D52A_1206927439.addTaint(taint);
+                return varB2005789EAA9176832EA559C3023D52A_1206927439;
             } //End block
-    if(mIntent != null)            
+            if(mIntent != null)            
             {
-CharSequence varCD147CD666D21033AEEBC64FDBDD4AE6_851294511 =                 mIntent.toUri(Intent.URI_INTENT_SCHEME);
-                varCD147CD666D21033AEEBC64FDBDD4AE6_851294511.addTaint(taint);
-                return varCD147CD666D21033AEEBC64FDBDD4AE6_851294511;
+CharSequence varCD147CD666D21033AEEBC64FDBDD4AE6_482034403 =                 mIntent.toUri(Intent.URI_INTENT_SCHEME);
+                varCD147CD666D21033AEEBC64FDBDD4AE6_482034403.addTaint(taint);
+                return varCD147CD666D21033AEEBC64FDBDD4AE6_482034403;
             } //End block
-CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1058590254 =             "";
-            var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1058590254.addTaint(taint);
-            return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1058590254;
+CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1202350329 =             "";
+            var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1202350329.addTaint(taint);
+            return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1202350329;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
@@ -470,19 +470,19 @@ CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1058590254 =             "";
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.261 -0400", hash_original_field = "D3F0628814080CA40397E45440265A07", hash_generated_field = "FFD278290163FA53346E9B463D548F25")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.562 -0400", hash_original_field = "D3F0628814080CA40397E45440265A07", hash_generated_field = "FFD278290163FA53346E9B463D548F25")
 
     static final String[] MIMETYPES_TEXT_PLAIN = new String[] {
         ClipDescription.MIMETYPE_TEXT_PLAIN };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.261 -0400", hash_original_field = "D5509B042F96236C47759856FEB2FE0C", hash_generated_field = "0081E14CF2E7DA589C4FFF459050BDC6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.562 -0400", hash_original_field = "D5509B042F96236C47759856FEB2FE0C", hash_generated_field = "0081E14CF2E7DA589C4FFF459050BDC6")
 
     static final String[] MIMETYPES_TEXT_URILIST = new String[] {
         ClipDescription.MIMETYPE_TEXT_URILIST };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.262 -0400", hash_original_field = "E757FCA750885867688751998961A34A", hash_generated_field = "DD2F391B9027C3620AF732A9D8A52B0F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.562 -0400", hash_original_field = "E757FCA750885867688751998961A34A", hash_generated_field = "DD2F391B9027C3620AF732A9D8A52B0F")
 
     static final String[] MIMETYPES_TEXT_INTENT = new String[] {
         ClipDescription.MIMETYPE_TEXT_INTENT };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.262 -0400", hash_original_field = "3BBA404F84527DE1C18693556D0F0F97", hash_generated_field = "354B16FF6CC203D912D18248606A7B92")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.562 -0400", hash_original_field = "3BBA404F84527DE1C18693556D0F0F97", hash_generated_field = "354B16FF6CC203D912D18248606A7B92")
 
     public static final Parcelable.Creator<ClipData> CREATOR =
         new Parcelable.Creator<ClipData>() {

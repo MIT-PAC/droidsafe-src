@@ -14,13 +14,13 @@ import java.util.Properties;
 
 public final class MimeUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.994 -0400", hash_original_method = "4573469ED61E6670894E512E558CEEE0", hash_generated_method = "A4660306B18E6B2B3A8E8D9DE7F28302")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.837 -0400", hash_original_method = "4573469ED61E6670894E512E558CEEE0", hash_generated_method = "A4660306B18E6B2B3A8E8D9DE7F28302")
     private  MimeUtils() {
         // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     private static void add(String mimeType, String extension) {
         if (!mimeTypeToExtensionMap.containsKey(mimeType)) {
             mimeTypeToExtensionMap.put(mimeType, extension);
@@ -29,7 +29,7 @@ public final class MimeUtils {
     }
 
     
-        private static InputStream getContentTypesPropertiesStream() {
+    private static InputStream getContentTypesPropertiesStream() {
         String userTable = System.getProperty("content.types.user.table");
         if (userTable != null) {
             File f = new File(userTable);
@@ -51,7 +51,7 @@ public final class MimeUtils {
     }
 
     
-        private static void applyOverrides() {
+    private static void applyOverrides() {
         InputStream stream = getContentTypesPropertiesStream();
         if (stream == null) {
             return;
@@ -73,7 +73,7 @@ public final class MimeUtils {
     }
 
     
-        public static boolean hasMimeType(String mimeType) {
+    public static boolean hasMimeType(String mimeType) {
         if (mimeType == null || mimeType.isEmpty()) {
             return false;
         }
@@ -81,7 +81,7 @@ public final class MimeUtils {
     }
 
     
-        public static String guessMimeTypeFromExtension(String extension) {
+    public static String guessMimeTypeFromExtension(String extension) {
         if (extension == null || extension.isEmpty()) {
             return null;
         }
@@ -89,7 +89,7 @@ public final class MimeUtils {
     }
 
     
-        public static boolean hasExtension(String extension) {
+    public static boolean hasExtension(String extension) {
         if (extension == null || extension.isEmpty()) {
             return false;
         }
@@ -97,7 +97,7 @@ public final class MimeUtils {
     }
 
     
-        public static String guessExtensionFromMimeType(String mimeType) {
+    public static String guessExtensionFromMimeType(String mimeType) {
         if (mimeType == null || mimeType.isEmpty()) {
             return null;
         }
@@ -105,10 +105,10 @@ public final class MimeUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.996 -0400", hash_original_field = "07933D583F1502FF2767DB6CF9A5812D", hash_generated_field = "980D104AA2B72735F5F011F93DF611F4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.839 -0400", hash_original_field = "07933D583F1502FF2767DB6CF9A5812D", hash_generated_field = "980D104AA2B72735F5F011F93DF611F4")
 
     private static final Map<String, String> mimeTypeToExtensionMap = new HashMap<String, String>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.996 -0400", hash_original_field = "C471A4169EC6FD28B2B962C7E38FFCEE", hash_generated_field = "7842830AD3F69A21CFE5A45DD420D95A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.839 -0400", hash_original_field = "C471A4169EC6FD28B2B962C7E38FFCEE", hash_generated_field = "7842830AD3F69A21CFE5A45DD420D95A")
 
     private static final Map<String, String> extensionToMimeTypeMap = new HashMap<String, String>();
     static {

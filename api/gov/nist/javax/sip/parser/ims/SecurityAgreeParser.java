@@ -15,7 +15,7 @@ import java.text.ParseException;
 
 public class SecurityAgreeParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.287 -0400", hash_original_method = "3C9B744CAD21A5FF0128608065B78D3C", hash_generated_method = "CC9828D5309CF88A17780C7D47A7AC99")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.112 -0400", hash_original_method = "3C9B744CAD21A5FF0128608065B78D3C", hash_generated_method = "CC9828D5309CF88A17780C7D47A7AC99")
     public  SecurityAgreeParser(String security) {
         super(security);
         addTaint(security.getTaint());
@@ -23,7 +23,7 @@ public class SecurityAgreeParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.288 -0400", hash_original_method = "901019111A521E611D0FA754D5F384A4", hash_generated_method = "DFEE8107DE9D6223B0CDE8A1E6B1EECC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.112 -0400", hash_original_method = "901019111A521E611D0FA754D5F384A4", hash_generated_method = "DFEE8107DE9D6223B0CDE8A1E6B1EECC")
     protected  SecurityAgreeParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -31,10 +31,10 @@ public class SecurityAgreeParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.289 -0400", hash_original_method = "F5B0772594CADDF674D010ACA1204B13", hash_generated_method = "634F5424E1BC0DC9ACFD5EF7F2751253")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.112 -0400", hash_original_method = "F5B0772594CADDF674D010ACA1204B13", hash_generated_method = "634F5424E1BC0DC9ACFD5EF7F2751253")
     protected void parseParameter(SecurityAgree header) throws ParseException {
         addTaint(header.getTaint());
-    if(debug)        
+        if(debug)        
         dbg_enter("parseParameter");
         try 
         {
@@ -43,7 +43,7 @@ public class SecurityAgreeParser extends HeaderParser {
         } //End block
         finally 
         {
-    if(debug)            
+            if(debug)            
             dbg_leave("parseParameter");
         } //End block
         // ---------- Original Method ----------
@@ -59,29 +59,29 @@ public class SecurityAgreeParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.294 -0400", hash_original_method = "12664C139391D128E477218D3F3EA9C3", hash_generated_method = "6FACF4BF55B7DF3981150EE16C4970EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.116 -0400", hash_original_method = "12664C139391D128E477218D3F3EA9C3", hash_generated_method = "D3770F893701749A53158521978B4259")
     public SIPHeaderList parse(SecurityAgree header) throws ParseException {
         addTaint(header.getTaint());
         SIPHeaderList list;
-    if(header.getClass().isInstance(new SecurityClient()))        
+        if(header.getClass().isInstance(new SecurityClient()))        
         {
             list = new SecurityClientList();
         } //End block
         else
-    if(header.getClass().isInstance(new SecurityServer()))        
+        if(header.getClass().isInstance(new SecurityServer()))        
         {
             list = new SecurityServerList();
         } //End block
         else
-    if(header.getClass().isInstance(new SecurityVerify()))        
+        if(header.getClass().isInstance(new SecurityVerify()))        
         {
             list = new SecurityVerifyList();
         } //End block
         else
         {
-SIPHeaderList var540C13E9E156B687226421B24F2DF178_417713938 =         null;
-        var540C13E9E156B687226421B24F2DF178_417713938.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_417713938;
+SIPHeaderList var540C13E9E156B687226421B24F2DF178_1037655735 =         null;
+        var540C13E9E156B687226421B24F2DF178_1037655735.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_1037655735;
         }
         this.lexer.SPorHT();
         lexer.match(TokenTypes.ID);
@@ -89,15 +89,15 @@ SIPHeaderList var540C13E9E156B687226421B24F2DF178_417713938 =         null;
         header.setSecurityMechanism(type.getTokenValue());
         this.lexer.SPorHT();
         char la = lexer.lookAhead(0);
-    if(la == '\n')        
+        if(la == '\n')        
         {
             list.add(header);
-SIPHeaderList varED12C351C2E8CA4F85F097DDC7E77B4D_922793288 =             list;
-            varED12C351C2E8CA4F85F097DDC7E77B4D_922793288.addTaint(taint);
-            return varED12C351C2E8CA4F85F097DDC7E77B4D_922793288;
+SIPHeaderList varED12C351C2E8CA4F85F097DDC7E77B4D_1405565469 =             list;
+            varED12C351C2E8CA4F85F097DDC7E77B4D_1405565469.addTaint(taint);
+            return varED12C351C2E8CA4F85F097DDC7E77B4D_1405565469;
         } //End block
         else
-    if(la == ';')        
+        if(la == ';')        
         this.lexer.match(';');
         this.lexer.SPorHT();
         try 
@@ -108,23 +108,23 @@ SIPHeaderList varED12C351C2E8CA4F85F097DDC7E77B4D_922793288 =             list;
                 this.parseParameter(header);
                 this.lexer.SPorHT();
                 char laInLoop = lexer.lookAhead(0);
-    if(laInLoop == '\n' || laInLoop == '\0')                
+                if(laInLoop == '\n' || laInLoop == '\0')                
                 break;
                 else
-    if(laInLoop == ',')                
+                if(laInLoop == ',')                
                 {
                     list.add(header);
-    if(header.getClass().isInstance(new SecurityClient()))                    
+                    if(header.getClass().isInstance(new SecurityClient()))                    
                     {
                         header = new SecurityClient();
                     } //End block
                     else
-    if(header.getClass().isInstance(new SecurityServer()))                    
+                    if(header.getClass().isInstance(new SecurityServer()))                    
                     {
                         header = new SecurityServer();
                     } //End block
                     else
-    if(header.getClass().isInstance(new SecurityVerify()))                    
+                    if(header.getClass().isInstance(new SecurityVerify()))                    
                     {
                         header = new SecurityVerify();
                     } //End block
@@ -135,14 +135,14 @@ SIPHeaderList varED12C351C2E8CA4F85F097DDC7E77B4D_922793288 =             list;
                     header.setSecurityMechanism(type.getTokenValue());
                 } //End block
                 this.lexer.SPorHT();
-    if(lexer.lookAhead(0) == ';')                
+                if(lexer.lookAhead(0) == ';')                
                 this.lexer.match(';');
                 this.lexer.SPorHT();
             } //End block
             list.add(header);
-SIPHeaderList varED12C351C2E8CA4F85F097DDC7E77B4D_1438813774 =             list;
-            varED12C351C2E8CA4F85F097DDC7E77B4D_1438813774.addTaint(taint);
-            return varED12C351C2E8CA4F85F097DDC7E77B4D_1438813774;
+SIPHeaderList varED12C351C2E8CA4F85F097DDC7E77B4D_1620130409 =             list;
+            varED12C351C2E8CA4F85F097DDC7E77B4D_1620130409.addTaint(taint);
+            return varED12C351C2E8CA4F85F097DDC7E77B4D_1620130409;
         } //End block
         catch (ParseException ex)
         {

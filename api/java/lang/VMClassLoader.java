@@ -11,14 +11,14 @@ import java.util.List;
 
 class VMClassLoader {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.788 -0400", hash_original_method = "4AEDA864BABA59DB003EAC2DE676238C", hash_generated_method = "4AEDA864BABA59DB003EAC2DE676238C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.695 -0400", hash_original_method = "4AEDA864BABA59DB003EAC2DE676238C", hash_generated_method = "4AEDA864BABA59DB003EAC2DE676238C")
     public VMClassLoader ()
     {
         //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     static URL getResource(String name) {
         int numEntries = getBootClassPathSize();
         for (int i = 0; i < numEntries; i++) {
@@ -35,7 +35,7 @@ class VMClassLoader {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     static List<URL> getResources(String name) {
         ArrayList<URL> list = new ArrayList<URL>();
         int numEntries = getBootClassPathSize();

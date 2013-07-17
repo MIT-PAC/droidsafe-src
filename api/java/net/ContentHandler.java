@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public abstract class ContentHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.479 -0400", hash_original_method = "34235149EC6F1F14A33FF6A78502D340", hash_generated_method = "34235149EC6F1F14A33FF6A78502D340")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.311 -0400", hash_original_method = "34235149EC6F1F14A33FF6A78502D340", hash_generated_method = "34235149EC6F1F14A33FF6A78502D340")
     public ContentHandler ()
     {
         //Synthesized constructor
@@ -18,7 +18,7 @@ public abstract class ContentHandler {
     public abstract Object getContent(URLConnection uConn) throws IOException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.480 -0400", hash_original_method = "8659195BC6B56411F2DC6C9C918B5FC3", hash_generated_method = "F9BF668C9276FDCE94BAB3489AF1F26B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.312 -0400", hash_original_method = "8659195BC6B56411F2DC6C9C918B5FC3", hash_generated_method = "6A257C485467202AD44E19FA7C9FC62D")
     @SuppressWarnings("unchecked")
     public Object getContent(URLConnection uConn, Class[] types) throws IOException {
         addTaint(types[0].getTaint());
@@ -26,16 +26,16 @@ public abstract class ContentHandler {
         Object content = getContent(uConn);
 for(int i = 0;i < types.length;i++)
         {
-    if(types[i].isInstance(content))            
+            if(types[i].isInstance(content))            
             {
-Object varD442C91479410F76C84B872DA6AAE139_1305453201 =                 content;
-                varD442C91479410F76C84B872DA6AAE139_1305453201.addTaint(taint);
-                return varD442C91479410F76C84B872DA6AAE139_1305453201;
+Object varD442C91479410F76C84B872DA6AAE139_841645560 =                 content;
+                varD442C91479410F76C84B872DA6AAE139_841645560.addTaint(taint);
+                return varD442C91479410F76C84B872DA6AAE139_841645560;
             } //End block
         } //End block
-Object var540C13E9E156B687226421B24F2DF178_1061965971 =         null;
-        var540C13E9E156B687226421B24F2DF178_1061965971.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1061965971;
+Object var540C13E9E156B687226421B24F2DF178_1057333194 =         null;
+        var540C13E9E156B687226421B24F2DF178_1057333194.addTaint(taint);
+        return var540C13E9E156B687226421B24F2DF178_1057333194;
         // ---------- Original Method ----------
         //Object content = getContent(uConn);
         //for (int i = 0; i < types.length; i++) {

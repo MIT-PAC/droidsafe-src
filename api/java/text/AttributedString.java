@@ -16,22 +16,22 @@ import java.util.Map;
 import java.util.Set;
 
 public class AttributedString {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.910 -0400", hash_original_field = "1CB251EC0D568DE6A929B520C4AED8D1", hash_generated_field = "9EF4B8A5DE4B8BD37EE465C3BB62CC6C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.529 -0400", hash_original_field = "1CB251EC0D568DE6A929B520C4AED8D1", hash_generated_field = "9EF4B8A5DE4B8BD37EE465C3BB62CC6C")
 
     String text;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.910 -0400", hash_original_field = "EC5B70424D6106D0D37EACD23354A330", hash_generated_field = "EA3CF0028C57B0F0FB6C371B620465D1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.529 -0400", hash_original_field = "EC5B70424D6106D0D37EACD23354A330", hash_generated_field = "EA3CF0028C57B0F0FB6C371B620465D1")
 
     Map<AttributedCharacterIterator.Attribute, List<Range>> attributeMap;
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.911 -0400", hash_original_method = "5638BBE38DFF9B04A672F4EC9A02409B", hash_generated_method = "A51193DACC009B9A0F49FC0DA5615B57")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.530 -0400", hash_original_method = "5638BBE38DFF9B04A672F4EC9A02409B", hash_generated_method = "975AC590DC6B1FC3FFDF581028A8E302")
     public  AttributedString(AttributedCharacterIterator iterator) {
         addTaint(iterator.getTaint());
-    if(iterator.getBeginIndex() > iterator.getEndIndex())        
+        if(iterator.getBeginIndex() > iterator.getEndIndex())        
         {
-            IllegalArgumentException varEA5C1AA17767DA731A134E095AD75FCD_1341637838 = new IllegalArgumentException("Invalid substring range");
-            varEA5C1AA17767DA731A134E095AD75FCD_1341637838.addTaint(taint);
-            throw varEA5C1AA17767DA731A134E095AD75FCD_1341637838;
+            IllegalArgumentException varEA5C1AA17767DA731A134E095AD75FCD_1220951520 = new IllegalArgumentException("Invalid substring range");
+            varEA5C1AA17767DA731A134E095AD75FCD_1220951520.addTaint(taint);
+            throw varEA5C1AA17767DA731A134E095AD75FCD_1220951520;
         } //End block
         StringBuilder buffer = new StringBuilder();
 for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
@@ -42,7 +42,7 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
         text = buffer.toString();
         Set<AttributedCharacterIterator.Attribute> attributes = iterator
                 .getAllAttributeKeys();
-    if(attributes == null)        
+        if(attributes == null)        
         {
             return;
         } //End block
@@ -60,7 +60,7 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
                 int start = iterator.getRunStart(attribute);
                 int limit = iterator.getRunLimit(attribute);
                 Object value = iterator.getAttribute(attribute);
-    if(value != null)                
+                if(value != null)                
                 {
                     addAttribute(attribute, value, start, limit);
                 } //End block
@@ -72,20 +72,20 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.913 -0400", hash_original_method = "3A8973AD4EBE1F3B94E1633368C42F9D", hash_generated_method = "634949131C186B03865C2B115F846E2A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.531 -0400", hash_original_method = "3A8973AD4EBE1F3B94E1633368C42F9D", hash_generated_method = "C411FA53F84E9C9DE5B8293C340E514E")
     private  AttributedString(AttributedCharacterIterator iterator, int start,
             int end, Set<Attribute> attributes) {
         addTaint(end);
         addTaint(start);
         addTaint(iterator.getTaint());
-    if(start < iterator.getBeginIndex() || end > iterator.getEndIndex()
+        if(start < iterator.getBeginIndex() || end > iterator.getEndIndex()
                 || start > end)        
         {
-            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_2086677229 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_2086677229.addTaint(taint);
-            throw var5783EF97022AA508B74A1E3EA38534AF_2086677229;
+            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_192807246 = new IllegalArgumentException();
+            var5783EF97022AA508B74A1E3EA38534AF_192807246.addTaint(taint);
+            throw var5783EF97022AA508B74A1E3EA38534AF_192807246;
         } //End block
-    if(attributes == null)        
+        if(attributes == null)        
         {
             return;
         } //End block
@@ -112,7 +112,7 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
                 Object value = iterator.getAttribute(attribute);
                 int runStart = iterator.getRunStart(attribute);
                 int limit = iterator.getRunLimit(attribute);
-    if((value instanceof Annotation && runStart >= start && limit <= end)
+                if((value instanceof Annotation && runStart >= start && limit <= end)
                         || (value != null && !(value instanceof Annotation)))                
                 {
                     addAttribute(attribute, value, (runStart < start ? start
@@ -127,8 +127,8 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.913 -0400", hash_original_method = "D0E1FC5545253EA6E008AE3675A9452F", hash_generated_method = "4626B692A0BDADD9D4B59FC620D439B6")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.532 -0400", hash_original_method = "D0E1FC5545253EA6E008AE3675A9452F", hash_generated_method = "4626B692A0BDADD9D4B59FC620D439B6")
     public  AttributedString(AttributedCharacterIterator iterator, int start,
             int end) {
         this(iterator, start, end, iterator.getAllAttributeKeys());
@@ -139,7 +139,7 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.914 -0400", hash_original_method = "B4766721E168BC843A6EA06CFE59500E", hash_generated_method = "928450B8D7368B8EFBED1CDD7867A1D1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.532 -0400", hash_original_method = "B4766721E168BC843A6EA06CFE59500E", hash_generated_method = "928450B8D7368B8EFBED1CDD7867A1D1")
     public  AttributedString(AttributedCharacterIterator iterator, int start,
             int end, AttributedCharacterIterator.Attribute[] attributes) {
         this(iterator, start, end, (attributes == null
@@ -153,14 +153,14 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.914 -0400", hash_original_method = "A0ACF5D97B9D79B3295575A771939692", hash_generated_method = "319732FF47A4CEFFA4C9FF2E51344E0F")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.533 -0400", hash_original_method = "A0ACF5D97B9D79B3295575A771939692", hash_generated_method = "B225F961263305229750A0346BC5840B")
     public  AttributedString(String value) {
-    if(value == null)        
+        if(value == null)        
         {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1947582763 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_1947582763.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1947582763;
+            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_900660594 = new NullPointerException();
+            var7338BC9F48D81FE0BBD6183F4014DCC4_900660594.addTaint(taint);
+            throw var7338BC9F48D81FE0BBD6183F4014DCC4_900660594;
         } //End block
         text = value;
         attributeMap = new HashMap<Attribute, List<Range>>(11);
@@ -173,20 +173,20 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.915 -0400", hash_original_method = "85CF866984BA31F6F3E97322323F86BA", hash_generated_method = "C47CE75053A78F4DC130372A5DC69BDC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.534 -0400", hash_original_method = "85CF866984BA31F6F3E97322323F86BA", hash_generated_method = "2AD5E6B08D8448D8B46866E95E7C8F86")
     public  AttributedString(String value,
             Map<? extends AttributedCharacterIterator.Attribute, ?> attributes) {
-    if(value == null)        
+        if(value == null)        
         {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1691901318 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_1691901318.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1691901318;
+            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_607912725 = new NullPointerException();
+            var7338BC9F48D81FE0BBD6183F4014DCC4_607912725.addTaint(taint);
+            throw var7338BC9F48D81FE0BBD6183F4014DCC4_607912725;
         } //End block
-    if(value.length() == 0 && !attributes.isEmpty())        
+        if(value.length() == 0 && !attributes.isEmpty())        
         {
-            IllegalArgumentException var931412BA27CF9259672C9348B0271FBB_353773640 = new IllegalArgumentException("Cannot add attributes to empty string");
-            var931412BA27CF9259672C9348B0271FBB_353773640.addTaint(taint);
-            throw var931412BA27CF9259672C9348B0271FBB_353773640;
+            IllegalArgumentException var931412BA27CF9259672C9348B0271FBB_198837075 = new IllegalArgumentException("Cannot add attributes to empty string");
+            var931412BA27CF9259672C9348B0271FBB_198837075.addTaint(taint);
+            throw var931412BA27CF9259672C9348B0271FBB_198837075;
         } //End block
         text = value;
         attributeMap = new HashMap<Attribute, List<Range>>(
@@ -222,25 +222,25 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.916 -0400", hash_original_method = "F800EB2F1E580436E49CB51D04E3F37C", hash_generated_method = "7633FED047BFD9AD18953C5FC98D7E7D")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.535 -0400", hash_original_method = "F800EB2F1E580436E49CB51D04E3F37C", hash_generated_method = "03CCA7BAC8E68AAB6382EF208B73CFBB")
     public void addAttribute(AttributedCharacterIterator.Attribute attribute, Object value) {
         addTaint(value.getTaint());
         addTaint(attribute.getTaint());
-    if(attribute == null)        
+        if(attribute == null)        
         {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_45511544 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_45511544.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_45511544;
+            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1198645199 = new NullPointerException();
+            var7338BC9F48D81FE0BBD6183F4014DCC4_1198645199.addTaint(taint);
+            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1198645199;
         } //End block
-    if(text.length() == 0)        
+        if(text.length() == 0)        
         {
-            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_111674605 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_111674605.addTaint(taint);
-            throw var5783EF97022AA508B74A1E3EA38534AF_111674605;
+            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1233429261 = new IllegalArgumentException();
+            var5783EF97022AA508B74A1E3EA38534AF_1233429261.addTaint(taint);
+            throw var5783EF97022AA508B74A1E3EA38534AF_1233429261;
         } //End block
         List<Range> ranges = attributeMap.get(attribute);
-    if(ranges == null)        
+        if(ranges == null)        
         {
             ranges = new ArrayList<Range>(1);
             attributeMap.put(attribute, ranges);
@@ -268,32 +268,32 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.919 -0400", hash_original_method = "1EA9CE9DE6197B4051F39E120F823C8E", hash_generated_method = "5FFB2050816CC48C33B16024C4DA4E93")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.537 -0400", hash_original_method = "1EA9CE9DE6197B4051F39E120F823C8E", hash_generated_method = "FC34D431FA28974CA8FA161C4ED157B9")
     public void addAttribute(AttributedCharacterIterator.Attribute attribute,
             Object value, int start, int end) {
         addTaint(end);
         addTaint(start);
         addTaint(value.getTaint());
         addTaint(attribute.getTaint());
-    if(attribute == null)        
+        if(attribute == null)        
         {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_885191343 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_885191343.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_885191343;
+            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1773968660 = new NullPointerException();
+            var7338BC9F48D81FE0BBD6183F4014DCC4_1773968660.addTaint(taint);
+            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1773968660;
         } //End block
-    if(start < 0 || end > text.length() || start >= end)        
+        if(start < 0 || end > text.length() || start >= end)        
         {
-            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_209364810 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_209364810.addTaint(taint);
-            throw var5783EF97022AA508B74A1E3EA38534AF_209364810;
+            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1297642445 = new IllegalArgumentException();
+            var5783EF97022AA508B74A1E3EA38534AF_1297642445.addTaint(taint);
+            throw var5783EF97022AA508B74A1E3EA38534AF_1297642445;
         } //End block
-    if(value == null)        
+        if(value == null)        
         {
             return;
         } //End block
         List<Range> ranges = attributeMap.get(attribute);
-    if(ranges == null)        
+        if(ranges == null)        
         {
             ranges = new ArrayList<Range>(1);
             ranges.add(new Range(start, end, value));
@@ -305,13 +305,13 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
 (it.hasNext())        
         {
             Range range = it.next();
-    if(end <= range.start)            
+            if(end <= range.start)            
             {
                 it.previous();
                 break;
             } //End block
             else
-    if(start < range.end
+            if(start < range.end
                     || (start == range.end && value.equals(range.value)))            
             {
                 Range r1 = null;
@@ -323,9 +323,9 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
 (end > range.end && it.hasNext())                
                 {
                     range = it.next();
-    if(end <= range.end)                    
+                    if(end <= range.end)                    
                     {
-    if(end > range.start
+                        if(end > range.start
                                 || (end == range.start && value.equals(range.value)))                        
                         {
                             it.remove();
@@ -338,9 +338,9 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
                         it.remove();
                     } //End block
                 } //End block
-    if(value.equals(r1.value))                
+                if(value.equals(r1.value))                
                 {
-    if(value.equals(r3.value))                    
+                    if(value.equals(r3.value))                    
                     {
                         it.add(new Range(r1.start < start ? r1.start : start,
                                 r3.end > end ? r3.end : end, r1.value));
@@ -349,7 +349,7 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
                     {
                         it.add(new Range(r1.start < start ? r1.start : start,
                                 end, r1.value));
-    if(r3.start < r3.end)                        
+                        if(r3.start < r3.end)                        
                         {
                             it.add(r3);
                         } //End block
@@ -357,9 +357,9 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
                 } //End block
                 else
                 {
-    if(value.equals(r3.value))                    
+                    if(value.equals(r3.value))                    
                     {
-    if(r1.start < r1.end)                        
+                        if(r1.start < r1.end)                        
                         {
                             it.add(r1);
                         } //End block
@@ -368,12 +368,12 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
                     } //End block
                     else
                     {
-    if(r1.start < r1.end)                        
+                        if(r1.start < r1.end)                        
                         {
                             it.add(r1);
                         } //End block
                         it.add(new Range(start, end, value));
-    if(r3.start < r3.end)                        
+                        if(r3.start < r3.end)                        
                         {
                             it.add(r3);
                         } //End block
@@ -388,7 +388,7 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.920 -0400", hash_original_method = "9BDF8CEEC650CFF21B203033378C7411", hash_generated_method = "8A7D4B516825A215343DE33607637FAD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.539 -0400", hash_original_method = "9BDF8CEEC650CFF21B203033378C7411", hash_generated_method = "8A7D4B516825A215343DE33607637FAD")
     public void addAttributes(
             Map<? extends AttributedCharacterIterator.Attribute, ?> attributes,
             int start, int end) {
@@ -415,56 +415,56 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.920 -0400", hash_original_method = "3C3A14639543169375B4E8491231683C", hash_generated_method = "1120B6D0F2D978667C97CD8D127B3AB1")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.539 -0400", hash_original_method = "3C3A14639543169375B4E8491231683C", hash_generated_method = "8DB01ECC397EAE15F4124B5956E9311A")
     public AttributedCharacterIterator getIterator() {
-AttributedCharacterIterator var46DD1405AD0D5C49D9EFCF18E2C00E51_1392194245 =         new AttributedIterator(this);
-        var46DD1405AD0D5C49D9EFCF18E2C00E51_1392194245.addTaint(taint);
-        return var46DD1405AD0D5C49D9EFCF18E2C00E51_1392194245;
+AttributedCharacterIterator var46DD1405AD0D5C49D9EFCF18E2C00E51_1319171419 =         new AttributedIterator(this);
+        var46DD1405AD0D5C49D9EFCF18E2C00E51_1319171419.addTaint(taint);
+        return var46DD1405AD0D5C49D9EFCF18E2C00E51_1319171419;
         // ---------- Original Method ----------
         //return new AttributedIterator(this);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.921 -0400", hash_original_method = "AFA08901CAEF730E40B185484FAABB29", hash_generated_method = "53033B866CEBCBDAC2D12DCC4D8A6BD6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.539 -0400", hash_original_method = "AFA08901CAEF730E40B185484FAABB29", hash_generated_method = "51B1EF82FD86735A6ED9F09B52B6A07E")
     public AttributedCharacterIterator getIterator(
             AttributedCharacterIterator.Attribute[] attributes) {
         addTaint(attributes[0].getTaint());
-AttributedCharacterIterator var52C3F1C9CCF48C54D0F98704FFC0C943_958515193 =         new AttributedIterator(this, attributes, 0, text.length());
-        var52C3F1C9CCF48C54D0F98704FFC0C943_958515193.addTaint(taint);
-        return var52C3F1C9CCF48C54D0F98704FFC0C943_958515193;
+AttributedCharacterIterator var52C3F1C9CCF48C54D0F98704FFC0C943_403331709 =         new AttributedIterator(this, attributes, 0, text.length());
+        var52C3F1C9CCF48C54D0F98704FFC0C943_403331709.addTaint(taint);
+        return var52C3F1C9CCF48C54D0F98704FFC0C943_403331709;
         // ---------- Original Method ----------
         //return new AttributedIterator(this, attributes, 0, text.length());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.921 -0400", hash_original_method = "EF8FB9411A496C9D99CDE8B83C48CE6B", hash_generated_method = "563E28E3EFC7CF3C254245D3732DA26D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.540 -0400", hash_original_method = "EF8FB9411A496C9D99CDE8B83C48CE6B", hash_generated_method = "0BC40C6AC1F0127AEC45AC157B38962C")
     public AttributedCharacterIterator getIterator(
             AttributedCharacterIterator.Attribute[] attributes, int start,
             int end) {
         addTaint(end);
         addTaint(start);
         addTaint(attributes[0].getTaint());
-AttributedCharacterIterator var04CD81DC23CA8D46DA7FC302651498EC_785872935 =         new AttributedIterator(this, attributes, start, end);
-        var04CD81DC23CA8D46DA7FC302651498EC_785872935.addTaint(taint);
-        return var04CD81DC23CA8D46DA7FC302651498EC_785872935;
+AttributedCharacterIterator var04CD81DC23CA8D46DA7FC302651498EC_1728950227 =         new AttributedIterator(this, attributes, start, end);
+        var04CD81DC23CA8D46DA7FC302651498EC_1728950227.addTaint(taint);
+        return var04CD81DC23CA8D46DA7FC302651498EC_1728950227;
         // ---------- Original Method ----------
         //return new AttributedIterator(this, attributes, start, end);
     }
 
     
     static class Range {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.922 -0400", hash_original_field = "EA2B2676C28C0DB26D39331A336C6B92", hash_generated_field = "A420862623A673AB42FCEC90A616158F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.540 -0400", hash_original_field = "EA2B2676C28C0DB26D39331A336C6B92", hash_generated_field = "A420862623A673AB42FCEC90A616158F")
 
         int start;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.922 -0400", hash_original_field = "7F021A1415B86F2D013B2618FB31AE53", hash_generated_field = "302E5A3147803830441A79AED31F4022")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.540 -0400", hash_original_field = "7F021A1415B86F2D013B2618FB31AE53", hash_generated_field = "302E5A3147803830441A79AED31F4022")
 
         int end;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.922 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "01495BEB834F5098BB0B06183674C819")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.540 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "01495BEB834F5098BB0B06183674C819")
 
         Object value;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.923 -0400", hash_original_method = "9919123D3D1FFC7D42BA1CB1CAFB2DA5", hash_generated_method = "8228AF779F86680294F263E155884242")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.541 -0400", hash_original_method = "9919123D3D1FFC7D42BA1CB1CAFB2DA5", hash_generated_method = "8228AF779F86680294F263E155884242")
           Range(int s, int e, Object v) {
             start = s;
             end = e;
@@ -481,23 +481,23 @@ AttributedCharacterIterator var04CD81DC23CA8D46DA7FC302651498EC_785872935 =     
 
     
     static class AttributedIterator implements AttributedCharacterIterator {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.923 -0400", hash_original_field = "8D589AFA4DFAEEED85FFF5AA78E5FF6A", hash_generated_field = "D0C174A901D805EE41B6CF46156FC355")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.541 -0400", hash_original_field = "8D589AFA4DFAEEED85FFF5AA78E5FF6A", hash_generated_field = "D0C174A901D805EE41B6CF46156FC355")
 
         private int begin;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.923 -0400", hash_original_field = "7F021A1415B86F2D013B2618FB31AE53", hash_generated_field = "BDD622074D0B9CD7867B17F38BB0017C")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.541 -0400", hash_original_field = "7F021A1415B86F2D013B2618FB31AE53", hash_generated_field = "BDD622074D0B9CD7867B17F38BB0017C")
 
         private int end;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.923 -0400", hash_original_field = "7A86C157EE9713C34FBD7A1EE40F0C5A", hash_generated_field = "EA4C80BAC452228E60AC0DA2D3E0C953")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.541 -0400", hash_original_field = "7A86C157EE9713C34FBD7A1EE40F0C5A", hash_generated_field = "EA4C80BAC452228E60AC0DA2D3E0C953")
 
         private int offset;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.923 -0400", hash_original_field = "2C8BD562555E6AE4F52959440C6BA23B", hash_generated_field = "D02499DC7F8023F8CAFDC0A4B220FECC")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.541 -0400", hash_original_field = "2C8BD562555E6AE4F52959440C6BA23B", hash_generated_field = "D02499DC7F8023F8CAFDC0A4B220FECC")
 
         private AttributedString attrString;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.923 -0400", hash_original_field = "FF2C1866830EA081CCEAD6E49749026E", hash_generated_field = "8E1D222DFFE5F062ACF483541B60F0D5")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.541 -0400", hash_original_field = "FF2C1866830EA081CCEAD6E49749026E", hash_generated_field = "8E1D222DFFE5F062ACF483541B60F0D5")
 
         private HashSet<Attribute> attributesAllowed;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.924 -0400", hash_original_method = "E441422DE6FDEDB0F1BB74606A67171C", hash_generated_method = "7AE495FC46AA7C0AB1D4C3ED30DBE5AF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.542 -0400", hash_original_method = "E441422DE6FDEDB0F1BB74606A67171C", hash_generated_method = "7AE495FC46AA7C0AB1D4C3ED30DBE5AF")
           AttributedIterator(AttributedString attrString) {
             this.attrString = attrString;
             begin = 0;
@@ -511,22 +511,22 @@ AttributedCharacterIterator var04CD81DC23CA8D46DA7FC302651498EC_785872935 =     
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.925 -0400", hash_original_method = "43841E67E512106866A3902EDBE2D718", hash_generated_method = "B2786005CCAF9086EF649619D1238525")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.543 -0400", hash_original_method = "43841E67E512106866A3902EDBE2D718", hash_generated_method = "F2BD11736D7C6FA1689BAFD861862459")
           AttributedIterator(AttributedString attrString,
                 AttributedCharacterIterator.Attribute[] attributes, int begin,
                 int end) {
             addTaint(attributes[0].getTaint());
-    if(begin < 0 || end > attrString.text.length() || begin > end)            
+            if(begin < 0 || end > attrString.text.length() || begin > end)            
             {
-                IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1504699577 = new IllegalArgumentException();
-                var5783EF97022AA508B74A1E3EA38534AF_1504699577.addTaint(taint);
-                throw var5783EF97022AA508B74A1E3EA38534AF_1504699577;
+                IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1747418786 = new IllegalArgumentException();
+                var5783EF97022AA508B74A1E3EA38534AF_1747418786.addTaint(taint);
+                throw var5783EF97022AA508B74A1E3EA38534AF_1747418786;
             } //End block
             this.begin = begin;
             this.end = end;
             offset = begin;
             this.attrString = attrString;
-    if(attributes != null)            
+            if(attributes != null)            
             {
                 HashSet<Attribute> set = new HashSet<Attribute>(
                         (attributes.length * 4 / 3) + 1);
@@ -555,27 +555,27 @@ for(int i = attributes.length;--i >= 0;)
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.926 -0400", hash_original_method = "CC2190075ADAC44CCBDC93141CA9BE6C", hash_generated_method = "0E65C9E6C10B14D21D3B9D1DBC476162")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.543 -0400", hash_original_method = "CC2190075ADAC44CCBDC93141CA9BE6C", hash_generated_method = "1EDC0ED4D4A27930241BD0A6204FB34C")
         @Override
         @SuppressWarnings("unchecked")
         public Object clone() {
             try 
             {
                 AttributedIterator clone = (AttributedIterator) super.clone();
-    if(attributesAllowed != null)                
+                if(attributesAllowed != null)                
                 {
                     clone.attributesAllowed = (HashSet<Attribute>) attributesAllowed
                             .clone();
                 } //End block
-Object var3DE52045BFD3C1BF3742F994ED6139AD_1686079388 =                 clone;
-                var3DE52045BFD3C1BF3742F994ED6139AD_1686079388.addTaint(taint);
-                return var3DE52045BFD3C1BF3742F994ED6139AD_1686079388;
+Object var3DE52045BFD3C1BF3742F994ED6139AD_932780858 =                 clone;
+                var3DE52045BFD3C1BF3742F994ED6139AD_932780858.addTaint(taint);
+                return var3DE52045BFD3C1BF3742F994ED6139AD_932780858;
             } //End block
             catch (CloneNotSupportedException e)
             {
-                AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_692300071 = new AssertionError(e);
-                varA5A331D65C8C3F32D42E49D64BCF4109_692300071.addTaint(taint);
-                throw varA5A331D65C8C3F32D42E49D64BCF4109_692300071;
+                AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_83863785 = new AssertionError(e);
+                varA5A331D65C8C3F32D42E49D64BCF4109_83863785.addTaint(taint);
+                throw varA5A331D65C8C3F32D42E49D64BCF4109_83863785;
             } //End block
             // ---------- Original Method ----------
             //try {
@@ -591,18 +591,18 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1686079388 =                 clone;
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.927 -0400", hash_original_method = "81A9D498AF1F73C3D962F8C3EDD6D3D9", hash_generated_method = "CBA664F93A8C4F618FCA06C3C9D48E21")
+                @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.543 -0400", hash_original_method = "81A9D498AF1F73C3D962F8C3EDD6D3D9", hash_generated_method = "190EC57A6B933097C68D21C51A5DD8EC")
         public char current() {
-    if(offset == end)            
+            if(offset == end)            
             {
-                char var2BA22E58CA17BB728D522BBA36CF8350_502576063 = (DONE);
-                                char varA87DEB01C5F539E6BDA34829C8EF2368_1983125840 = getTaintChar();
-                return varA87DEB01C5F539E6BDA34829C8EF2368_1983125840;
+                char var2BA22E58CA17BB728D522BBA36CF8350_1356560132 = (DONE);
+                                char varA87DEB01C5F539E6BDA34829C8EF2368_1034996216 = getTaintChar();
+                return varA87DEB01C5F539E6BDA34829C8EF2368_1034996216;
             } //End block
-            char varD4DF8E0D19A4AC464C0D3F857EEA5AE1_675209609 = (attrString.text.charAt(offset));
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_1724640942 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_1724640942;
+            char varD4DF8E0D19A4AC464C0D3F857EEA5AE1_1952149396 = (attrString.text.charAt(offset));
+                        char varA87DEB01C5F539E6BDA34829C8EF2368_1763183966 = getTaintChar();
+            return varA87DEB01C5F539E6BDA34829C8EF2368_1763183966;
             // ---------- Original Method ----------
             //if (offset == end) {
                 //return DONE;
@@ -611,19 +611,19 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1686079388 =                 clone;
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.927 -0400", hash_original_method = "4AF9D055D17E58470820B415A8EBAFA4", hash_generated_method = "8878C71750ADBC03B29137C36A4AC803")
+                @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.544 -0400", hash_original_method = "4AF9D055D17E58470820B415A8EBAFA4", hash_generated_method = "C46A08D99628B74D125A157718C354A1")
         public char first() {
-    if(begin == end)            
+            if(begin == end)            
             {
-                char var2BA22E58CA17BB728D522BBA36CF8350_1993588190 = (DONE);
-                                char varA87DEB01C5F539E6BDA34829C8EF2368_365495974 = getTaintChar();
-                return varA87DEB01C5F539E6BDA34829C8EF2368_365495974;
+                char var2BA22E58CA17BB728D522BBA36CF8350_1315940370 = (DONE);
+                                char varA87DEB01C5F539E6BDA34829C8EF2368_1372209619 = getTaintChar();
+                return varA87DEB01C5F539E6BDA34829C8EF2368_1372209619;
             } //End block
             offset = begin;
-            char varD4DF8E0D19A4AC464C0D3F857EEA5AE1_413822779 = (attrString.text.charAt(offset));
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_645388508 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_645388508;
+            char varD4DF8E0D19A4AC464C0D3F857EEA5AE1_1329361645 = (attrString.text.charAt(offset));
+                        char varA87DEB01C5F539E6BDA34829C8EF2368_954216126 = getTaintChar();
+            return varA87DEB01C5F539E6BDA34829C8EF2368_954216126;
             // ---------- Original Method ----------
             //if (begin == end) {
                 //return DONE;
@@ -633,53 +633,53 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1686079388 =                 clone;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.928 -0400", hash_original_method = "1D4D2C19F23B97FE6ECF3D3284916FD4", hash_generated_method = "14A14435D407A61DF3E5517780C46282")
+                @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.544 -0400", hash_original_method = "1D4D2C19F23B97FE6ECF3D3284916FD4", hash_generated_method = "937F5C981D67B88DEEAC9D17E0149AB2")
         public int getBeginIndex() {
-            int var8D589AFA4DFAEEED85FFF5AA78E5FF6A_267467491 = (begin);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1149476209 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1149476209;
+            int var8D589AFA4DFAEEED85FFF5AA78E5FF6A_126831578 = (begin);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_977096157 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_977096157;
             // ---------- Original Method ----------
             //return begin;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.928 -0400", hash_original_method = "2693C2AA223CB37D0504CD257C6327BC", hash_generated_method = "6C00364052DDBCA52C0A1CDECF8304BF")
+                @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.544 -0400", hash_original_method = "2693C2AA223CB37D0504CD257C6327BC", hash_generated_method = "C8B8879117930770D92D21554569DC21")
         public int getEndIndex() {
-            int var7F021A1415B86F2D013B2618FB31AE53_1722303095 = (end);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_797804399 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_797804399;
+            int var7F021A1415B86F2D013B2618FB31AE53_731006887 = (end);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_125076435 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_125076435;
             // ---------- Original Method ----------
             //return end;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.928 -0400", hash_original_method = "0952456464DB8DF9DBB7507E3C2ED53C", hash_generated_method = "39FDBE312C15DAD59C710AC297822C2F")
+                @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.544 -0400", hash_original_method = "0952456464DB8DF9DBB7507E3C2ED53C", hash_generated_method = "E332C6A415BE5653745153ADB8167D82")
         public int getIndex() {
-            int var7A86C157EE9713C34FBD7A1EE40F0C5A_1567795764 = (offset);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_260528493 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_260528493;
+            int var7A86C157EE9713C34FBD7A1EE40F0C5A_1232238429 = (offset);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1902701748 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1902701748;
             // ---------- Original Method ----------
             //return offset;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.929 -0400", hash_original_method = "20101C80E99D94E4CD68776989F0B447", hash_generated_method = "C694B04986642EE497449285EE42A925")
+                @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.565 -0400", hash_original_method = "20101C80E99D94E4CD68776989F0B447", hash_generated_method = "83B7A4B1FE66725A6A8200ED558401EE")
         private boolean inRange(Range range) {
             addTaint(range.getTaint());
-    if(!(range.value instanceof Annotation))            
+            if(!(range.value instanceof Annotation))            
             {
-                boolean varB326B5062B2F0E69046810717534CB09_169234368 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_953243430 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_953243430;
+                boolean varB326B5062B2F0E69046810717534CB09_752566008 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_72418257 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_72418257;
             } //End block
-            boolean var62A7BFAE3446FF68A4D9D5F636A17930_1606237427 = (range.start >= begin && range.start < end
+            boolean var62A7BFAE3446FF68A4D9D5F636A17930_231468962 = (range.start >= begin && range.start < end
                     && range.end > begin && range.end <= end);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_452785419 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_452785419;
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1110459416 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1110459416;
             // ---------- Original Method ----------
             //if (!(range.value instanceof Annotation)) {
                 //return true;
@@ -689,7 +689,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1686079388 =                 clone;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.929 -0400", hash_original_method = "D282867E9466B5652FFBD5F7BCA71B9B", hash_generated_method = "5988B924AE24292AF2438F307788BB57")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.566 -0400", hash_original_method = "D282867E9466B5652FFBD5F7BCA71B9B", hash_generated_method = "B7BA13ED47D370C7C51160D86548B0C8")
         private boolean inRange(List<Range> ranges) {
             addTaint(ranges.getTaint());
             Iterator<Range> it = ranges.iterator();
@@ -697,25 +697,25 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1686079388 =                 clone;
 (it.hasNext())            
             {
                 Range range = it.next();
-    if(range.start >= begin && range.start < end)                
+                if(range.start >= begin && range.start < end)                
                 {
-                    boolean var56EC510F15525296BCCE24CE7196981D_496280250 = (!(range.value instanceof Annotation)
+                    boolean var56EC510F15525296BCCE24CE7196981D_1406944720 = (!(range.value instanceof Annotation)
                             || (range.end > begin && range.end <= end));
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_367349089 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_367349089;
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1651744762 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1651744762;
                 } //End block
                 else
-    if(range.end > begin && range.end <= end)                
+                if(range.end > begin && range.end <= end)                
                 {
-                    boolean varCB1279ACCFA4A38C846532FD1C58550A_1352536084 = (!(range.value instanceof Annotation)
+                    boolean varCB1279ACCFA4A38C846532FD1C58550A_1543749568 = (!(range.value instanceof Annotation)
                             || (range.start >= begin && range.start < end));
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_971342278 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_971342278;
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_35419430 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_35419430;
                 } //End block
             } //End block
-            boolean var68934A3E9455FA72420237EB05902327_1999031688 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_456182213 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_456182213;
+            boolean var68934A3E9455FA72420237EB05902327_859616424 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_57351661 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_57351661;
             // ---------- Original Method ----------
             //Iterator<Range> it = ranges.iterator();
             //while (it.hasNext()) {
@@ -732,14 +732,14 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1686079388 =                 clone;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.930 -0400", hash_original_method = "1F90FC3406D3E88B418E6F5A05B249D4", hash_generated_method = "F468F7D5118877E498B789B7330879AE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.566 -0400", hash_original_method = "1F90FC3406D3E88B418E6F5A05B249D4", hash_generated_method = "7A26C4DB6559D94816947511DA79A645")
         public Set<AttributedIterator.Attribute> getAllAttributeKeys() {
-    if(begin == 0 && end == attrString.text.length()
+            if(begin == 0 && end == attrString.text.length()
                     && attributesAllowed == null)            
             {
-Set<AttributedIterator.Attribute> varAF881EDCE1569E28E17DBC7776AF3CBE_449274833 =                 attrString.attributeMap.keySet();
-                varAF881EDCE1569E28E17DBC7776AF3CBE_449274833.addTaint(taint);
-                return varAF881EDCE1569E28E17DBC7776AF3CBE_449274833;
+Set<AttributedIterator.Attribute> varAF881EDCE1569E28E17DBC7776AF3CBE_1882664349 =                 attrString.attributeMap.keySet();
+                varAF881EDCE1569E28E17DBC7776AF3CBE_1882664349.addTaint(taint);
+                return varAF881EDCE1569E28E17DBC7776AF3CBE_1882664349;
             } //End block
             Set<AttributedIterator.Attribute> result = new HashSet<Attribute>(
                     (attrString.attributeMap.size() * 4 / 3) + 1);
@@ -749,25 +749,25 @@ Set<AttributedIterator.Attribute> varAF881EDCE1569E28E17DBC7776AF3CBE_449274833 
 (it.hasNext())            
             {
                 Map.Entry<Attribute, List<Range>> entry = it.next();
-    if(attributesAllowed == null
+                if(attributesAllowed == null
                         || attributesAllowed.contains(entry.getKey()))                
                 {
                     List<Range> ranges = entry.getValue();
-    if(inRange(ranges))                    
+                    if(inRange(ranges))                    
                     {
                         result.add(entry.getKey());
                     } //End block
                 } //End block
             } //End block
-Set<AttributedIterator.Attribute> varDC838461EE2FA0CA4C9BBB70A15456B0_1589386340 =             result;
-            varDC838461EE2FA0CA4C9BBB70A15456B0_1589386340.addTaint(taint);
-            return varDC838461EE2FA0CA4C9BBB70A15456B0_1589386340;
+Set<AttributedIterator.Attribute> varDC838461EE2FA0CA4C9BBB70A15456B0_606233894 =             result;
+            varDC838461EE2FA0CA4C9BBB70A15456B0_606233894.addTaint(taint);
+            return varDC838461EE2FA0CA4C9BBB70A15456B0_606233894;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.931 -0400", hash_original_method = "7F47FD199B74CEDC765420E2B0AD1B85", hash_generated_method = "60CA4530505984836FEC98C9886381DC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.566 -0400", hash_original_method = "7F47FD199B74CEDC765420E2B0AD1B85", hash_generated_method = "C60283ACFE619CB7E557000762FFEAE0")
         private Object currentValue(List<Range> ranges) {
             addTaint(ranges.getTaint());
             Iterator<Range> it = ranges.iterator();
@@ -775,16 +775,16 @@ Set<AttributedIterator.Attribute> varDC838461EE2FA0CA4C9BBB70A15456B0_1589386340
 (it.hasNext())            
             {
                 Range range = it.next();
-    if(offset >= range.start && offset < range.end)                
+                if(offset >= range.start && offset < range.end)                
                 {
-Object varB67D0A824E88AD91A910EE769EA3F925_737099070 =                     inRange(range) ? range.value : null;
-                    varB67D0A824E88AD91A910EE769EA3F925_737099070.addTaint(taint);
-                    return varB67D0A824E88AD91A910EE769EA3F925_737099070;
+Object varB67D0A824E88AD91A910EE769EA3F925_893875366 =                     inRange(range) ? range.value : null;
+                    varB67D0A824E88AD91A910EE769EA3F925_893875366.addTaint(taint);
+                    return varB67D0A824E88AD91A910EE769EA3F925_893875366;
                 } //End block
             } //End block
-Object var540C13E9E156B687226421B24F2DF178_1753050163 =             null;
-            var540C13E9E156B687226421B24F2DF178_1753050163.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1753050163;
+Object var540C13E9E156B687226421B24F2DF178_1783333192 =             null;
+            var540C13E9E156B687226421B24F2DF178_1783333192.addTaint(taint);
+            return var540C13E9E156B687226421B24F2DF178_1783333192;
             // ---------- Original Method ----------
             //Iterator<Range> it = ranges.iterator();
             //while (it.hasNext()) {
@@ -797,28 +797,28 @@ Object var540C13E9E156B687226421B24F2DF178_1753050163 =             null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.931 -0400", hash_original_method = "9256DFDAE9CB8C43C18A44C8B3AC6DAC", hash_generated_method = "F86E84706ECF3EA2F51CE49C407805E5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.567 -0400", hash_original_method = "9256DFDAE9CB8C43C18A44C8B3AC6DAC", hash_generated_method = "74C2393D775666E348A871E22FC94CFC")
         public Object getAttribute(
                 AttributedCharacterIterator.Attribute attribute) {
             addTaint(attribute.getTaint());
-    if(attributesAllowed != null
+            if(attributesAllowed != null
                     && !attributesAllowed.contains(attribute))            
             {
-Object var540C13E9E156B687226421B24F2DF178_17709050 =                 null;
-                var540C13E9E156B687226421B24F2DF178_17709050.addTaint(taint);
-                return var540C13E9E156B687226421B24F2DF178_17709050;
+Object var540C13E9E156B687226421B24F2DF178_1450351835 =                 null;
+                var540C13E9E156B687226421B24F2DF178_1450351835.addTaint(taint);
+                return var540C13E9E156B687226421B24F2DF178_1450351835;
             } //End block
             ArrayList<Range> ranges = (ArrayList<Range>) attrString.attributeMap
                     .get(attribute);
-    if(ranges == null)            
+            if(ranges == null)            
             {
-Object var540C13E9E156B687226421B24F2DF178_543111615 =                 null;
-                var540C13E9E156B687226421B24F2DF178_543111615.addTaint(taint);
-                return var540C13E9E156B687226421B24F2DF178_543111615;
+Object var540C13E9E156B687226421B24F2DF178_1314016369 =                 null;
+                var540C13E9E156B687226421B24F2DF178_1314016369.addTaint(taint);
+                return var540C13E9E156B687226421B24F2DF178_1314016369;
             } //End block
-Object var4BF3C7A8DC3CB9DB5225B86D6F9EDADE_1114071949 =             currentValue(ranges);
-            var4BF3C7A8DC3CB9DB5225B86D6F9EDADE_1114071949.addTaint(taint);
-            return var4BF3C7A8DC3CB9DB5225B86D6F9EDADE_1114071949;
+Object var4BF3C7A8DC3CB9DB5225B86D6F9EDADE_23684027 =             currentValue(ranges);
+            var4BF3C7A8DC3CB9DB5225B86D6F9EDADE_23684027.addTaint(taint);
+            return var4BF3C7A8DC3CB9DB5225B86D6F9EDADE_23684027;
             // ---------- Original Method ----------
             //if (attributesAllowed != null
                     //&& !attributesAllowed.contains(attribute)) {
@@ -833,7 +833,7 @@ Object var4BF3C7A8DC3CB9DB5225B86D6F9EDADE_1114071949 =             currentValue
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.932 -0400", hash_original_method = "AAAFE2E009783E25A93A8B590538D893", hash_generated_method = "EBDE108DE5699D446419B5742A3631C2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.567 -0400", hash_original_method = "AAAFE2E009783E25A93A8B590538D893", hash_generated_method = "AE7F14082C0A9E1545F9821DB28D37B2")
         public Map<Attribute, Object> getAttributes() {
             Map<Attribute, Object> result = new HashMap<Attribute, Object>(
                     (attrString.attributeMap.size() * 4 / 3) + 1);
@@ -843,19 +843,19 @@ Object var4BF3C7A8DC3CB9DB5225B86D6F9EDADE_1114071949 =             currentValue
 (it.hasNext())            
             {
                 Map.Entry<Attribute, List<Range>> entry = it.next();
-    if(attributesAllowed == null
+                if(attributesAllowed == null
                         || attributesAllowed.contains(entry.getKey()))                
                 {
                     Object value = currentValue(entry.getValue());
-    if(value != null)                    
+                    if(value != null)                    
                     {
                         result.put(entry.getKey(), value);
                     } //End block
                 } //End block
             } //End block
-Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_2013142045 =             result;
-            varDC838461EE2FA0CA4C9BBB70A15456B0_2013142045.addTaint(taint);
-            return varDC838461EE2FA0CA4C9BBB70A15456B0_2013142045;
+Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_1212282340 =             result;
+            varDC838461EE2FA0CA4C9BBB70A15456B0_1212282340.addTaint(taint);
+            return varDC838461EE2FA0CA4C9BBB70A15456B0_1212282340;
             // ---------- Original Method ----------
             //Map<Attribute, Object> result = new HashMap<Attribute, Object>(
                     //(attrString.attributeMap.size() * 4 / 3) + 1);
@@ -875,18 +875,18 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_2013142045 =         
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.932 -0400", hash_original_method = "B67CDF67136100A9ADF2991D47BD9A14", hash_generated_method = "5DA3D83EFBA94A55A5673E2C0259E4AF")
+                @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.567 -0400", hash_original_method = "B67CDF67136100A9ADF2991D47BD9A14", hash_generated_method = "3F322BF505FE36B659F53178032F0A0E")
         public int getRunLimit() {
-            int varF48E71281B9957BEF8C9D8BC031D9F77_242084258 = (getRunLimit(getAllAttributeKeys()));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_807425939 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_807425939;
+            int varF48E71281B9957BEF8C9D8BC031D9F77_1372122685 = (getRunLimit(getAllAttributeKeys()));
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_977154566 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_977154566;
             // ---------- Original Method ----------
             //return getRunLimit(getAllAttributeKeys());
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.933 -0400", hash_original_method = "40F484258D42E498FCA29FFC5F596001", hash_generated_method = "FFA58E3E784E2E1F3D3F34EEC491D94E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.567 -0400", hash_original_method = "40F484258D42E498FCA29FFC5F596001", hash_generated_method = "C0B6066A7B7B170D599DA3CD3F5AE957")
         private int runLimit(List<Range> ranges) {
             addTaint(ranges.getTaint());
             int result = end;
@@ -895,26 +895,26 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_2013142045 =         
 (it.hasPrevious())            
             {
                 Range range = it.previous();
-    if(range.end <= begin)                
+                if(range.end <= begin)                
                 {
                     break;
                 } //End block
-    if(offset >= range.start && offset < range.end)                
+                if(offset >= range.start && offset < range.end)                
                 {
-                    int var3AA2D2BBBB2DE1BB01F490FA3C462E8A_910693316 = (inRange(range) ? range.end : result);
-                                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2040783877 = getTaintInt();
-                    return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2040783877;
+                    int var3AA2D2BBBB2DE1BB01F490FA3C462E8A_371893410 = (inRange(range) ? range.end : result);
+                                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1485623232 = getTaintInt();
+                    return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1485623232;
                 } //End block
                 else
-    if(offset >= range.end)                
+                if(offset >= range.end)                
                 {
                     break;
                 } //End block
                 result = range.start;
             } //End block
-            int varB4A88417B3D0170D754C647C30B7216A_57570889 = (result);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1090430655 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1090430655;
+            int varB4A88417B3D0170D754C647C30B7216A_1861427923 = (result);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1318281353 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1318281353;
             // ---------- Original Method ----------
             //int result = end;
             //ListIterator<Range> it = ranges.listIterator(ranges.size());
@@ -934,27 +934,27 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_2013142045 =         
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.934 -0400", hash_original_method = "F819F4AC98ED7B00F15856104CEA6D7F", hash_generated_method = "AA4B2289EF77C42348389AC42A78CE53")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.567 -0400", hash_original_method = "F819F4AC98ED7B00F15856104CEA6D7F", hash_generated_method = "05D829CADAB60820BD5A2FDCFCAE40F0")
         public int getRunLimit(AttributedCharacterIterator.Attribute attribute) {
             addTaint(attribute.getTaint());
-    if(attributesAllowed != null
+            if(attributesAllowed != null
                     && !attributesAllowed.contains(attribute))            
             {
-                int var7F021A1415B86F2D013B2618FB31AE53_1237422439 = (end);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_632211460 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_632211460;
+                int var7F021A1415B86F2D013B2618FB31AE53_1165527177 = (end);
+                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2004100396 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2004100396;
             } //End block
             ArrayList<Range> ranges = (ArrayList<Range>) attrString.attributeMap
                     .get(attribute);
-    if(ranges == null)            
+            if(ranges == null)            
             {
-                int var7F021A1415B86F2D013B2618FB31AE53_1405674069 = (end);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1732428931 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1732428931;
+                int var7F021A1415B86F2D013B2618FB31AE53_2045023747 = (end);
+                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1657536417 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1657536417;
             } //End block
-            int var195F39D37541819E68527A355035B59E_1452450415 = (runLimit(ranges));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_447715842 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_447715842;
+            int var195F39D37541819E68527A355035B59E_1534442556 = (runLimit(ranges));
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1254140530 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1254140530;
             // ---------- Original Method ----------
             //if (attributesAllowed != null
                     //&& !attributesAllowed.contains(attribute)) {
@@ -969,7 +969,7 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_2013142045 =         
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.935 -0400", hash_original_method = "39CD1571C1B0AAE61A932D3B1E130DFE", hash_generated_method = "83B3E6C18209CADD2DB6CE378C013669")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.568 -0400", hash_original_method = "39CD1571C1B0AAE61A932D3B1E130DFE", hash_generated_method = "64EB03F74188701A17F738718A89F70B")
         public int getRunLimit(Set<? extends Attribute> attributes) {
             addTaint(attributes.getTaint());
             int limit = end;
@@ -979,14 +979,14 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_2013142045 =         
             {
                 AttributedCharacterIterator.Attribute attribute = it.next();
                 int newLimit = getRunLimit(attribute);
-    if(newLimit < limit)                
+                if(newLimit < limit)                
                 {
                     limit = newLimit;
                 } //End block
             } //End block
-            int varAA9F73EEA60A006820D0F8768BC8A3FC_2056047779 = (limit);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_166416101 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_166416101;
+            int varAA9F73EEA60A006820D0F8768BC8A3FC_1339338475 = (limit);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_461662656 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_461662656;
             // ---------- Original Method ----------
             //int limit = end;
             //Iterator<? extends Attribute> it = attributes.iterator();
@@ -1001,18 +1001,18 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_2013142045 =         
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.935 -0400", hash_original_method = "FE3F08CD8D40BCC02EAAB9CF9D349F73", hash_generated_method = "93850A8ACF47C7F47C9D3FE87B584ED2")
+                @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.568 -0400", hash_original_method = "FE3F08CD8D40BCC02EAAB9CF9D349F73", hash_generated_method = "24C197821E96FB2ECC4EB0007FE51CFB")
         public int getRunStart() {
-            int var66EF06154BA045D7B60A2F9B84A03690_1413160013 = (getRunStart(getAllAttributeKeys()));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_716420709 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_716420709;
+            int var66EF06154BA045D7B60A2F9B84A03690_796571034 = (getRunStart(getAllAttributeKeys()));
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1621075805 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1621075805;
             // ---------- Original Method ----------
             //return getRunStart(getAllAttributeKeys());
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.936 -0400", hash_original_method = "3940F742081E74CA234FF11DA5FD3120", hash_generated_method = "AF22B320C0D2616FD16928B471F0886A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.568 -0400", hash_original_method = "3940F742081E74CA234FF11DA5FD3120", hash_generated_method = "1B2ECBF777A2D0DB15B58D7B9D784527")
         private int runStart(List<Range> ranges) {
             addTaint(ranges.getTaint());
             int result = begin;
@@ -1021,26 +1021,26 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_2013142045 =         
 (it.hasNext())            
             {
                 Range range = it.next();
-    if(range.start >= end)                
+                if(range.start >= end)                
                 {
                     break;
                 } //End block
-    if(offset >= range.start && offset < range.end)                
+                if(offset >= range.start && offset < range.end)                
                 {
-                    int var00C82408181A96F2AA3DB07594325758_588710385 = (inRange(range) ? range.start : result);
-                                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_171804383 = getTaintInt();
-                    return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_171804383;
+                    int var00C82408181A96F2AA3DB07594325758_1384912562 = (inRange(range) ? range.start : result);
+                                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1214443453 = getTaintInt();
+                    return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1214443453;
                 } //End block
                 else
-    if(offset < range.start)                
+                if(offset < range.start)                
                 {
                     break;
                 } //End block
                 result = range.end;
             } //End block
-            int varB4A88417B3D0170D754C647C30B7216A_964188825 = (result);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_976990319 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_976990319;
+            int varB4A88417B3D0170D754C647C30B7216A_131463800 = (result);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1725492716 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1725492716;
             // ---------- Original Method ----------
             //int result = begin;
             //Iterator<Range> it = ranges.iterator();
@@ -1060,27 +1060,27 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_2013142045 =         
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.938 -0400", hash_original_method = "D8F9F8B7D0C4F74D05FEF10E27E7F588", hash_generated_method = "DD1E24A5FC550526627E5CB508F35F5E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.568 -0400", hash_original_method = "D8F9F8B7D0C4F74D05FEF10E27E7F588", hash_generated_method = "1F724F50844537700EA6DEBC93CF3EAF")
         public int getRunStart(AttributedCharacterIterator.Attribute attribute) {
             addTaint(attribute.getTaint());
-    if(attributesAllowed != null
+            if(attributesAllowed != null
                     && !attributesAllowed.contains(attribute))            
             {
-                int var8D589AFA4DFAEEED85FFF5AA78E5FF6A_1605614962 = (begin);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1214212921 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1214212921;
+                int var8D589AFA4DFAEEED85FFF5AA78E5FF6A_288499179 = (begin);
+                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1187159541 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1187159541;
             } //End block
             ArrayList<Range> ranges = (ArrayList<Range>) attrString.attributeMap
                     .get(attribute);
-    if(ranges == null)            
+            if(ranges == null)            
             {
-                int var8D589AFA4DFAEEED85FFF5AA78E5FF6A_1826624786 = (begin);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1750330866 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1750330866;
+                int var8D589AFA4DFAEEED85FFF5AA78E5FF6A_1635849653 = (begin);
+                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2088949001 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2088949001;
             } //End block
-            int varDCA12829FF4A29F1C1BB61C7F4648109_1608890186 = (runStart(ranges));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1445013376 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1445013376;
+            int varDCA12829FF4A29F1C1BB61C7F4648109_1837900955 = (runStart(ranges));
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_575532465 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_575532465;
             // ---------- Original Method ----------
             //if (attributesAllowed != null
                     //&& !attributesAllowed.contains(attribute)) {
@@ -1095,7 +1095,7 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_2013142045 =         
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.939 -0400", hash_original_method = "62E2E3A1AAFB276945B722FDB547D45B", hash_generated_method = "86ECCC729F395CA9335CF67120A9D63D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.568 -0400", hash_original_method = "62E2E3A1AAFB276945B722FDB547D45B", hash_generated_method = "2BF0CAC4E4BEF9F74EBD2610FCBA4E78")
         public int getRunStart(Set<? extends Attribute> attributes) {
             addTaint(attributes.getTaint());
             int start = begin;
@@ -1105,14 +1105,14 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_2013142045 =         
             {
                 AttributedCharacterIterator.Attribute attribute = it.next();
                 int newStart = getRunStart(attribute);
-    if(newStart > start)                
+                if(newStart > start)                
                 {
                     start = newStart;
                 } //End block
             } //End block
-            int varEA2B2676C28C0DB26D39331A336C6B92_1497633251 = (start);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1086600508 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1086600508;
+            int varEA2B2676C28C0DB26D39331A336C6B92_2051941907 = (start);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_331961454 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_331961454;
             // ---------- Original Method ----------
             //int start = begin;
             //Iterator<? extends Attribute> it = attributes.iterator();
@@ -1127,19 +1127,19 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_2013142045 =         
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.939 -0400", hash_original_method = "6CAD62DAB178D2919A2036BE42DEC497", hash_generated_method = "E975A70429735BF57E7D241395D38CE0")
+                @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.569 -0400", hash_original_method = "6CAD62DAB178D2919A2036BE42DEC497", hash_generated_method = "DA4931286B580DE064422EC7BFC82844")
         public char last() {
-    if(begin == end)            
+            if(begin == end)            
             {
-                char var2BA22E58CA17BB728D522BBA36CF8350_1616022734 = (DONE);
-                                char varA87DEB01C5F539E6BDA34829C8EF2368_1261413790 = getTaintChar();
-                return varA87DEB01C5F539E6BDA34829C8EF2368_1261413790;
+                char var2BA22E58CA17BB728D522BBA36CF8350_1051655123 = (DONE);
+                                char varA87DEB01C5F539E6BDA34829C8EF2368_1675134224 = getTaintChar();
+                return varA87DEB01C5F539E6BDA34829C8EF2368_1675134224;
             } //End block
             offset = end - 1;
-            char varD4DF8E0D19A4AC464C0D3F857EEA5AE1_2027407320 = (attrString.text.charAt(offset));
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_796087839 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_796087839;
+            char varD4DF8E0D19A4AC464C0D3F857EEA5AE1_1559981586 = (attrString.text.charAt(offset));
+                        char varA87DEB01C5F539E6BDA34829C8EF2368_1615145733 = getTaintChar();
+            return varA87DEB01C5F539E6BDA34829C8EF2368_1615145733;
             // ---------- Original Method ----------
             //if (begin == end) {
                 //return DONE;
@@ -1149,19 +1149,19 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_2013142045 =         
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.940 -0400", hash_original_method = "B623F272BE854A8CF15368B2FE2B8A97", hash_generated_method = "F69284B7830F38BF50C3BA189D13A6BE")
+                @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.569 -0400", hash_original_method = "B623F272BE854A8CF15368B2FE2B8A97", hash_generated_method = "CF7166F5EEEBA855EEFFA40520B57578")
         public char next() {
-    if(offset >= (end - 1))            
+            if(offset >= (end - 1))            
             {
                 offset = end;
-                char var2BA22E58CA17BB728D522BBA36CF8350_1992856504 = (DONE);
-                                char varA87DEB01C5F539E6BDA34829C8EF2368_1712091670 = getTaintChar();
-                return varA87DEB01C5F539E6BDA34829C8EF2368_1712091670;
+                char var2BA22E58CA17BB728D522BBA36CF8350_1015178241 = (DONE);
+                                char varA87DEB01C5F539E6BDA34829C8EF2368_855408109 = getTaintChar();
+                return varA87DEB01C5F539E6BDA34829C8EF2368_855408109;
             } //End block
-            char var419DAA10799C8553B92F177610E8E624_1456945489 = (attrString.text.charAt(++offset));
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_538232820 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_538232820;
+            char var419DAA10799C8553B92F177610E8E624_61369751 = (attrString.text.charAt(++offset));
+                        char varA87DEB01C5F539E6BDA34829C8EF2368_988910216 = getTaintChar();
+            return varA87DEB01C5F539E6BDA34829C8EF2368_988910216;
             // ---------- Original Method ----------
             //if (offset >= (end - 1)) {
                 //offset = end;
@@ -1171,18 +1171,18 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_2013142045 =         
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.940 -0400", hash_original_method = "E77E60DF0F891730B03F44D98923AB66", hash_generated_method = "AFCB65AA5998100D3B540EF76F6F921D")
+                @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.569 -0400", hash_original_method = "E77E60DF0F891730B03F44D98923AB66", hash_generated_method = "2BC3A18D915BE1C9FB958E2CE6E65C53")
         public char previous() {
-    if(offset == begin)            
+            if(offset == begin)            
             {
-                char var2BA22E58CA17BB728D522BBA36CF8350_1693693948 = (DONE);
-                                char varA87DEB01C5F539E6BDA34829C8EF2368_450257118 = getTaintChar();
-                return varA87DEB01C5F539E6BDA34829C8EF2368_450257118;
+                char var2BA22E58CA17BB728D522BBA36CF8350_712999783 = (DONE);
+                                char varA87DEB01C5F539E6BDA34829C8EF2368_2069179935 = getTaintChar();
+                return varA87DEB01C5F539E6BDA34829C8EF2368_2069179935;
             } //End block
-            char var4A3BCB83410616D4485C3C43959A26B4_490294526 = (attrString.text.charAt(--offset));
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_154178431 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_154178431;
+            char var4A3BCB83410616D4485C3C43959A26B4_1358895573 = (attrString.text.charAt(--offset));
+                        char varA87DEB01C5F539E6BDA34829C8EF2368_1810920607 = getTaintChar();
+            return varA87DEB01C5F539E6BDA34829C8EF2368_1810920607;
             // ---------- Original Method ----------
             //if (offset == begin) {
                 //return DONE;
@@ -1191,25 +1191,25 @@ Map<Attribute, Object> varDC838461EE2FA0CA4C9BBB70A15456B0_2013142045 =         
         }
 
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.941 -0400", hash_original_method = "C542CEFF91217DDB3083AD983C51F194", hash_generated_method = "568BBEE500D5D88035E254CF4D7CBC8B")
+                @DSModeled(DSC.SPEC)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.569 -0400", hash_original_method = "C542CEFF91217DDB3083AD983C51F194", hash_generated_method = "C69BB1AD4474917F75F42637EF18114B")
         public char setIndex(int location) {
-    if(location < begin || location > end)            
+            if(location < begin || location > end)            
             {
-                IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1696507123 = new IllegalArgumentException();
-                var5783EF97022AA508B74A1E3EA38534AF_1696507123.addTaint(taint);
-                throw var5783EF97022AA508B74A1E3EA38534AF_1696507123;
+                IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1487570251 = new IllegalArgumentException();
+                var5783EF97022AA508B74A1E3EA38534AF_1487570251.addTaint(taint);
+                throw var5783EF97022AA508B74A1E3EA38534AF_1487570251;
             } //End block
             offset = location;
-    if(offset == end)            
+            if(offset == end)            
             {
-                char var2BA22E58CA17BB728D522BBA36CF8350_1577363919 = (DONE);
-                                char varA87DEB01C5F539E6BDA34829C8EF2368_2081655643 = getTaintChar();
-                return varA87DEB01C5F539E6BDA34829C8EF2368_2081655643;
+                char var2BA22E58CA17BB728D522BBA36CF8350_1039084096 = (DONE);
+                                char varA87DEB01C5F539E6BDA34829C8EF2368_201395824 = getTaintChar();
+                return varA87DEB01C5F539E6BDA34829C8EF2368_201395824;
             } //End block
-            char varD4DF8E0D19A4AC464C0D3F857EEA5AE1_1862038761 = (attrString.text.charAt(offset));
-                        char varA87DEB01C5F539E6BDA34829C8EF2368_682504957 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_682504957;
+            char varD4DF8E0D19A4AC464C0D3F857EEA5AE1_789707723 = (attrString.text.charAt(offset));
+                        char varA87DEB01C5F539E6BDA34829C8EF2368_1142188586 = getTaintChar();
+            return varA87DEB01C5F539E6BDA34829C8EF2368_1142188586;
             // ---------- Original Method ----------
             //if (location < begin || location > end) {
                 //throw new IllegalArgumentException();

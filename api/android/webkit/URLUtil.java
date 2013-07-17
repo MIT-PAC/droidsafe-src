@@ -14,14 +14,14 @@ import android.util.Log;
 
 public final class URLUtil {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.305 -0400", hash_original_method = "581EF9FF4A1E1085E3970232802A3705", hash_generated_method = "581EF9FF4A1E1085E3970232802A3705")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.216 -0400", hash_original_method = "581EF9FF4A1E1085E3970232802A3705", hash_generated_method = "581EF9FF4A1E1085E3970232802A3705")
     public URLUtil ()
     {
         //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static String guessUrl(String inUrl) {
         String retVal = inUrl;
         WebAddress webAddress;
@@ -49,7 +49,7 @@ public final class URLUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static String composeSearchUrl(String inQuery, String template,
                                           String queryPlaceHolder) {
         int placeHolderIndex = template.indexOf(queryPlaceHolder);
@@ -71,7 +71,7 @@ public final class URLUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static byte[] decode(byte[] url) throws IllegalArgumentException {
         if (url.length == 0) {
             return new byte[0];
@@ -97,7 +97,7 @@ public final class URLUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     static boolean verifyURLEncoding(String url) {
         int count = url.length();
         if (count == 0) {
@@ -121,7 +121,7 @@ public final class URLUtil {
     }
 
     
-        private static int parseHex(byte b) {
+    private static int parseHex(byte b) {
         if (b >= '0' && b <= '9') return (b - '0');
         if (b >= 'A' && b <= 'F') return (b - 'A' + 10);
         if (b >= 'a' && b <= 'f') return (b - 'a' + 10);
@@ -129,51 +129,51 @@ public final class URLUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static boolean isAssetUrl(String url) {
         return (null != url) && url.startsWith(ASSET_BASE);
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static boolean isResourceUrl(String url) {
         return (null != url) && url.startsWith(RESOURCE_BASE);
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     @Deprecated
     public static boolean isCookielessProxyUrl(String url) {
         return (null != url) && url.startsWith(PROXY_BASE);
     }
 
     
-        public static boolean isFileUrl(String url) {
+    public static boolean isFileUrl(String url) {
         return (null != url) && (url.startsWith(FILE_BASE) &&
                                  !url.startsWith(ASSET_BASE) &&
                                  !url.startsWith(PROXY_BASE));
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static boolean isAboutUrl(String url) {
         return (null != url) && url.startsWith("about:");
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static boolean isDataUrl(String url) {
         return (null != url) && url.startsWith("data:");
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static boolean isJavaScriptUrl(String url) {
         return (null != url) && url.startsWith("javascript:");
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static boolean isHttpUrl(String url) {
         return (null != url) &&
                (url.length() > 6) &&
@@ -181,7 +181,7 @@ public final class URLUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static boolean isHttpsUrl(String url) {
         return (null != url) &&
                (url.length() > 7) &&
@@ -189,7 +189,7 @@ public final class URLUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static boolean isNetworkUrl(String url) {
         if (url == null || url.length() == 0) {
             return false;
@@ -198,13 +198,13 @@ public final class URLUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static boolean isContentUrl(String url) {
         return (null != url) && url.startsWith("content:");
     }
 
     
-        public static boolean isValidUrl(String url) {
+    public static boolean isValidUrl(String url) {
         if (url == null || url.length() == 0) {
             return false;
         }
@@ -219,7 +219,7 @@ public final class URLUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static String stripAnchor(String url) {
         int anchorIndex = url.indexOf('#');
         if (anchorIndex != -1) {
@@ -229,7 +229,7 @@ public final class URLUtil {
     }
 
     
-        public static final String guessFileName(
+    public static final String guessFileName(
             String url,
             String contentDisposition,
             String mimeType) {
@@ -302,7 +302,7 @@ public final class URLUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     static String parseContentDisposition(String contentDisposition) {
         try {
             Matcher m = CONTENT_DISPOSITION_PATTERN.matcher(contentDisposition);
@@ -315,22 +315,22 @@ public final class URLUtil {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.310 -0400", hash_original_field = "9722F24E24D81405093C0E61AAF58518", hash_generated_field = "061362C112C980EB4954480FBAFBE378")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.219 -0400", hash_original_field = "9722F24E24D81405093C0E61AAF58518", hash_generated_field = "061362C112C980EB4954480FBAFBE378")
 
     private static final String LOGTAG = "webkit";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.310 -0400", hash_original_field = "BACD749C65C027DBF29226FBBB30A932", hash_generated_field = "2E352A21C2E8AA2180D7AADA5AD3F445")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.219 -0400", hash_original_field = "BACD749C65C027DBF29226FBBB30A932", hash_generated_field = "2E352A21C2E8AA2180D7AADA5AD3F445")
 
     static final String ASSET_BASE = "file:///android_asset/";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.310 -0400", hash_original_field = "9376DDBC43C10F9E023EFBC3708B397C", hash_generated_field = "94490EFDDE96CFA02BB10BB275BC4D3E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.219 -0400", hash_original_field = "9376DDBC43C10F9E023EFBC3708B397C", hash_generated_field = "94490EFDDE96CFA02BB10BB275BC4D3E")
 
     static final String RESOURCE_BASE = "file:///android_res/";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.310 -0400", hash_original_field = "B7A11B6B0F190799195F07BEE76A8891", hash_generated_field = "4C4EBAD751642DB37C255157F2A97244")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.219 -0400", hash_original_field = "B7A11B6B0F190799195F07BEE76A8891", hash_generated_field = "4C4EBAD751642DB37C255157F2A97244")
 
     static final String FILE_BASE = "file://";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.310 -0400", hash_original_field = "04B24A8C89E94214A450F2E3B193AF72", hash_generated_field = "104E441706A1DF8685818DA8868D49C9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.219 -0400", hash_original_field = "04B24A8C89E94214A450F2E3B193AF72", hash_generated_field = "104E441706A1DF8685818DA8868D49C9")
 
     static final String PROXY_BASE = "file:///cookieless_proxy/";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.310 -0400", hash_original_field = "91C530073C1D8723C9CBBE1EE5BB80A9", hash_generated_field = "54A966242246C6999ED8F8A4812598B6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.219 -0400", hash_original_field = "91C530073C1D8723C9CBBE1EE5BB80A9", hash_generated_field = "54A966242246C6999ED8F8A4812598B6")
 
     private static final Pattern CONTENT_DISPOSITION_PATTERN = Pattern.compile("attachment;\\s*filename\\s*=\\s*(\"?)([^\"]*)\\1\\s*$",
             Pattern.CASE_INSENSITIVE);

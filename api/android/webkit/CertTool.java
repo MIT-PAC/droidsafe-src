@@ -18,19 +18,19 @@ import java.util.HashMap;
 
 final class CertTool {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.485 -0400", hash_original_method = "1838D0FEFA9E4F93A3624A1092DC54F1", hash_generated_method = "A2E73AC90715BF3F494182DD5E1CE810")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.931 -0400", hash_original_method = "1838D0FEFA9E4F93A3624A1092DC54F1", hash_generated_method = "A2E73AC90715BF3F494182DD5E1CE810")
     private  CertTool() {
         // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     static String[] getKeyStrengthList() {
         return new String[] {"High Grade", "Medium Grade"};
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     static String getSignedPublicKey(Context context, int index, String challenge) {
         try {
             KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
@@ -49,23 +49,23 @@ final class CertTool {
     }
 
     
-        static void addCertificate(Context context, String type, byte[] value) {
+    static void addCertificate(Context context, String type, byte[] value) {
         Credentials.getInstance().install(context, type, value);
     }
 
     
-        static String getCertType(String mimeType) {
+    static String getCertType(String mimeType) {
         return sCertificateTypeMap.get(mimeType);
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.486 -0400", hash_original_field = "89C8B1A9F5BADC5D1ADAA84ED60862F8", hash_generated_field = "205D15FAC42FD8B1401CE817A71B270D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.932 -0400", hash_original_field = "89C8B1A9F5BADC5D1ADAA84ED60862F8", hash_generated_field = "205D15FAC42FD8B1401CE817A71B270D")
 
     private static final String LOGTAG = "CertTool";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.486 -0400", hash_original_field = "318F1DC73517352936F4221B8029EA95", hash_generated_field = "CD5933C3A9B5A26C387D6522BB21C57D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.932 -0400", hash_original_field = "318F1DC73517352936F4221B8029EA95", hash_generated_field = "CD5933C3A9B5A26C387D6522BB21C57D")
 
     private static final AlgorithmIdentifier MD5_WITH_RSA = new AlgorithmIdentifier(PKCSObjectIdentifiers.md5WithRSAEncryption);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.486 -0400", hash_original_field = "A8C5B10CBD5CDBF8A9F516DE7ACC2826", hash_generated_field = "4B6102789B0D3F567AE83CB481B398FF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.932 -0400", hash_original_field = "A8C5B10CBD5CDBF8A9F516DE7ACC2826", hash_generated_field = "4B6102789B0D3F567AE83CB481B398FF")
 
     private static HashMap<String, String> sCertificateTypeMap;
     static {

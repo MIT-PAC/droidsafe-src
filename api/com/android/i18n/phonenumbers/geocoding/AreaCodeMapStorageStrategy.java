@@ -11,15 +11,15 @@ import java.util.SortedMap;
 import java.util.TreeSet;
 
 abstract class AreaCodeMapStorageStrategy {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.315 -0400", hash_original_field = "69F496FCE87C6BC7DC2D0257BB43A268", hash_generated_field = "A8A65EF4F8315577299BC66787FEAF93")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.448 -0400", hash_original_field = "69F496FCE87C6BC7DC2D0257BB43A268", hash_generated_field = "A8A65EF4F8315577299BC66787FEAF93")
 
     protected int numOfEntries = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.315 -0400", hash_original_field = "EB8252013E98AADDBA6044825CEFC6EF", hash_generated_field = "117D2F6B6B0CD3E3A98E981A0FE51C20")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.448 -0400", hash_original_field = "EB8252013E98AADDBA6044825CEFC6EF", hash_generated_field = "117D2F6B6B0CD3E3A98E981A0FE51C20")
 
     protected final TreeSet<Integer> possibleLengths = new TreeSet<Integer>();
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.315 -0400", hash_original_method = "552FE922C6186E104B342E1C364AC348", hash_generated_method = "78F311E4855CBA2D4A156E20751234C3")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.449 -0400", hash_original_method = "552FE922C6186E104B342E1C364AC348", hash_generated_method = "78F311E4855CBA2D4A156E20751234C3")
     public  AreaCodeMapStorageStrategy() {
         // ---------- Original Method ----------
     }
@@ -28,22 +28,22 @@ abstract class AreaCodeMapStorageStrategy {
     public abstract boolean isFlyweight();
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.316 -0400", hash_original_method = "67028691C3A13A3B8C6995CB53BC17C2", hash_generated_method = "2A5F3F9620821C974A06206D27132648")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.449 -0400", hash_original_method = "67028691C3A13A3B8C6995CB53BC17C2", hash_generated_method = "71FFF1C3B61284938355ABE6E576A614")
     public int getNumOfEntries() {
-        int var881EB9BA7A3B2170EFED470F473D8D5B_267675265 = (numOfEntries);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_583812330 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_583812330;
+        int var881EB9BA7A3B2170EFED470F473D8D5B_1933079006 = (numOfEntries);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_88253866 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_88253866;
         // ---------- Original Method ----------
         //return numOfEntries;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.316 -0400", hash_original_method = "9B53A77A841456041603E3D119D30EB4", hash_generated_method = "F5138CB051FC3BA61285E02604F38B73")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.450 -0400", hash_original_method = "9B53A77A841456041603E3D119D30EB4", hash_generated_method = "7727A06155BF871AA5728A790B0D6566")
     public TreeSet<Integer> getPossibleLengths() {
-TreeSet<Integer> var439F4A98FBDEDBC4D02BC8BC3F605BAF_2046447022 =         possibleLengths;
-        var439F4A98FBDEDBC4D02BC8BC3F605BAF_2046447022.addTaint(taint);
-        return var439F4A98FBDEDBC4D02BC8BC3F605BAF_2046447022;
+TreeSet<Integer> var439F4A98FBDEDBC4D02BC8BC3F605BAF_598450754 =         possibleLengths;
+        var439F4A98FBDEDBC4D02BC8BC3F605BAF_598450754.addTaint(taint);
+        return var439F4A98FBDEDBC4D02BC8BC3F605BAF_598450754;
         // ---------- Original Method ----------
         //return possibleLengths;
     }
@@ -64,8 +64,8 @@ TreeSet<Integer> var439F4A98FBDEDBC4D02BC8BC3F605BAF_2046447022 =         possib
     public abstract void writeExternal(ObjectOutput objectOutput) throws IOException;
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.317 -0400", hash_original_method = "4D596518D97EDAAEB28E920BC89837B3", hash_generated_method = "C2B04EC839960647F17C83C5A07953E9")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.453 -0400", hash_original_method = "4D596518D97EDAAEB28E920BC89837B3", hash_generated_method = "92E410D9085EAE1E50FAC4EE2C40DB22")
     @Override
     public String toString() {
         StringBuilder output = new StringBuilder();
@@ -77,9 +77,9 @@ for(int i = 0;i < numOfEntries;i++)
             output.append(getDescription(i));
             output.append("\n");
         } //End block
-String varEBF0387156E2D98F471F997058C674A5_191312654 =         output.toString();
-        varEBF0387156E2D98F471F997058C674A5_191312654.addTaint(taint);
-        return varEBF0387156E2D98F471F997058C674A5_191312654;
+String varEBF0387156E2D98F471F997058C674A5_1034171401 =         output.toString();
+        varEBF0387156E2D98F471F997058C674A5_1034171401.addTaint(taint);
+        return varEBF0387156E2D98F471F997058C674A5_1034171401;
         // ---------- Original Method ----------
         //StringBuilder output = new StringBuilder();
         //int numOfEntries = getNumOfEntries();

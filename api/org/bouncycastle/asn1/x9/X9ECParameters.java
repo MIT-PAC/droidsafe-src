@@ -16,34 +16,34 @@ import org.bouncycastle.math.ec.ECPoint;
 import java.math.BigInteger;
 
 public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.493 -0400", hash_original_field = "D87F5109F111FEC49B0D2349C971D42D", hash_generated_field = "161E0CD2A331703CED55991AA7670409")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.342 -0400", hash_original_field = "D87F5109F111FEC49B0D2349C971D42D", hash_generated_field = "161E0CD2A331703CED55991AA7670409")
 
     private X9FieldID fieldID;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.494 -0400", hash_original_field = "4EFA264F5EF3E1A5C95736E07544EBF0", hash_generated_field = "D4FD3D236F6822F3201F264EA949068E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.343 -0400", hash_original_field = "4EFA264F5EF3E1A5C95736E07544EBF0", hash_generated_field = "D4FD3D236F6822F3201F264EA949068E")
 
     private ECCurve curve;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.494 -0400", hash_original_field = "B2F5FF47436671B6E533D8DC3614845D", hash_generated_field = "1F461AF19CABD1B00959F9F3AD8297A2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.343 -0400", hash_original_field = "B2F5FF47436671B6E533D8DC3614845D", hash_generated_field = "1F461AF19CABD1B00959F9F3AD8297A2")
 
     private ECPoint g;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.494 -0400", hash_original_field = "7B8B965AD4BCA0E41AB51DE7B31363A1", hash_generated_field = "28997BC83DA18A620109895922F10617")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.343 -0400", hash_original_field = "7B8B965AD4BCA0E41AB51DE7B31363A1", hash_generated_field = "28997BC83DA18A620109895922F10617")
 
     private BigInteger n;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.494 -0400", hash_original_field = "2510C39011C5BE704182423E3A695E91", hash_generated_field = "2BC612FFF03C8C6BFD81D1617A7F7383")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.343 -0400", hash_original_field = "2510C39011C5BE704182423E3A695E91", hash_generated_field = "2BC612FFF03C8C6BFD81D1617A7F7383")
 
     private BigInteger h;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.494 -0400", hash_original_field = "FE4C0F30AA359C41D9F9A5F69C8C4192", hash_generated_field = "84A0CB03E1AA0B2A11E3988D98BBE452")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.343 -0400", hash_original_field = "FE4C0F30AA359C41D9F9A5F69C8C4192", hash_generated_field = "84A0CB03E1AA0B2A11E3988D98BBE452")
 
     private byte[] seed;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.496 -0400", hash_original_method = "38D6105F07283EB5F8B3605923A2D06B", hash_generated_method = "363F69B49C021B5B223BE503A7EE31C6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.345 -0400", hash_original_method = "38D6105F07283EB5F8B3605923A2D06B", hash_generated_method = "881DE6A87710177125792979883E8786")
     public  X9ECParameters(
         ASN1Sequence  seq) {
-    if(!(seq.getObjectAt(0) instanceof DERInteger)
+        if(!(seq.getObjectAt(0) instanceof DERInteger)
            || !((DERInteger)seq.getObjectAt(0)).getValue().equals(ONE))        
         {
-            IllegalArgumentException var45F0FAE8DF83E31016D229CCBF4B1E0F_343414644 = new IllegalArgumentException("bad version in X9ECParameters");
-            var45F0FAE8DF83E31016D229CCBF4B1E0F_343414644.addTaint(taint);
-            throw var45F0FAE8DF83E31016D229CCBF4B1E0F_343414644;
+            IllegalArgumentException var45F0FAE8DF83E31016D229CCBF4B1E0F_1194636228 = new IllegalArgumentException("bad version in X9ECParameters");
+            var45F0FAE8DF83E31016D229CCBF4B1E0F_1194636228.addTaint(taint);
+            throw var45F0FAE8DF83E31016D229CCBF4B1E0F_1194636228;
         } //End block
         X9Curve x9c = new X9Curve(
                         new X9FieldID((ASN1Sequence)seq.getObjectAt(1)),
@@ -52,7 +52,7 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
         this.g = new X9ECPoint(curve, (ASN1OctetString)seq.getObjectAt(3)).getPoint();
         this.n = ((DERInteger)seq.getObjectAt(4)).getValue();
         this.seed = x9c.getSeed();
-    if(seq.size() == 6)        
+        if(seq.size() == 6)        
         {
             this.h = ((DERInteger)seq.getObjectAt(5)).getValue();
         } //End block
@@ -76,7 +76,7 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.496 -0400", hash_original_method = "739112175432B7FC1F3897612DAEA859", hash_generated_method = "0F944A9E4DC39D01B3DB0F036F433885")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.347 -0400", hash_original_method = "739112175432B7FC1F3897612DAEA859", hash_generated_method = "0F944A9E4DC39D01B3DB0F036F433885")
     public  X9ECParameters(
         ECCurve     curve,
         ECPoint     g,
@@ -89,7 +89,7 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.497 -0400", hash_original_method = "7F13F9D9B68D09FF2E2DEF2F93290D05", hash_generated_method = "6CEEC71B8EF9947BA1AC6A4755291D53")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.347 -0400", hash_original_method = "7F13F9D9B68D09FF2E2DEF2F93290D05", hash_generated_method = "6CEEC71B8EF9947BA1AC6A4755291D53")
     public  X9ECParameters(
         ECCurve     curve,
         ECPoint     g,
@@ -104,7 +104,7 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.498 -0400", hash_original_method = "1843E539ACF8FE39D46257BC325E0DC6", hash_generated_method = "A39EF16D26FE302B8F67ECD0C233F5FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.349 -0400", hash_original_method = "1843E539ACF8FE39D46257BC325E0DC6", hash_generated_method = "A39EF16D26FE302B8F67ECD0C233F5FD")
     public  X9ECParameters(
         ECCurve     curve,
         ECPoint     g,
@@ -116,13 +116,13 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
         this.n = n;
         this.h = h;
         this.seed = seed;
-    if(curve instanceof ECCurve.Fp)        
+        if(curve instanceof ECCurve.Fp)        
         {
             this.fieldID = new X9FieldID(((ECCurve.Fp)curve).getQ());
         } //End block
         else
         {
-    if(curve instanceof ECCurve.F2m)            
+            if(curve instanceof ECCurve.F2m)            
             {
                 ECCurve.F2m curveF2m = (ECCurve.F2m)curve;
                 this.fieldID = new X9FieldID(curveF2m.getM(), curveF2m.getK1(),
@@ -151,51 +151,51 @@ public class X9ECParameters extends ASN1Encodable implements X9ObjectIdentifiers
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.499 -0400", hash_original_method = "C3733AEA1B7056ED3896C5DBEA3E645D", hash_generated_method = "CEE723B547A3F6E4A719B65B3CA8CD79")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.349 -0400", hash_original_method = "C3733AEA1B7056ED3896C5DBEA3E645D", hash_generated_method = "0973760B241267A416E48FB58AF88C47")
     public ECCurve getCurve() {
-ECCurve varCB08C04A7A1DB77E60E6F93B4C766067_2031538005 =         curve;
-        varCB08C04A7A1DB77E60E6F93B4C766067_2031538005.addTaint(taint);
-        return varCB08C04A7A1DB77E60E6F93B4C766067_2031538005;
+ECCurve varCB08C04A7A1DB77E60E6F93B4C766067_389755728 =         curve;
+        varCB08C04A7A1DB77E60E6F93B4C766067_389755728.addTaint(taint);
+        return varCB08C04A7A1DB77E60E6F93B4C766067_389755728;
         // ---------- Original Method ----------
         //return curve;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.499 -0400", hash_original_method = "F49644298FFD38F2CFD5B0D378F29102", hash_generated_method = "63CA24BF974E1E58AF815B13D448AB45")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.349 -0400", hash_original_method = "F49644298FFD38F2CFD5B0D378F29102", hash_generated_method = "5C38DCEC8094205FDADAE0BA7B29E594")
     public ECPoint getG() {
-ECPoint var96B5EDC7D356FCBAF3C926D8A70305DA_1266244486 =         g;
-        var96B5EDC7D356FCBAF3C926D8A70305DA_1266244486.addTaint(taint);
-        return var96B5EDC7D356FCBAF3C926D8A70305DA_1266244486;
+ECPoint var96B5EDC7D356FCBAF3C926D8A70305DA_189680800 =         g;
+        var96B5EDC7D356FCBAF3C926D8A70305DA_189680800.addTaint(taint);
+        return var96B5EDC7D356FCBAF3C926D8A70305DA_189680800;
         // ---------- Original Method ----------
         //return g;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.499 -0400", hash_original_method = "30674A850FAA3528D3976F32A0E4EE43", hash_generated_method = "A6525733BB57A36FF352FFFC1F62D7A0")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.350 -0400", hash_original_method = "30674A850FAA3528D3976F32A0E4EE43", hash_generated_method = "33EDE4674070006A651051977860548F")
     public BigInteger getN() {
-BigInteger var041154653C812B0D1663EC287BE4C757_1431153311 =         n;
-        var041154653C812B0D1663EC287BE4C757_1431153311.addTaint(taint);
-        return var041154653C812B0D1663EC287BE4C757_1431153311;
+BigInteger var041154653C812B0D1663EC287BE4C757_1073329663 =         n;
+        var041154653C812B0D1663EC287BE4C757_1073329663.addTaint(taint);
+        return var041154653C812B0D1663EC287BE4C757_1073329663;
         // ---------- Original Method ----------
         //return n;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.500 -0400", hash_original_method = "9DE3987FDD4335D5C0BE76F667E07DA1", hash_generated_method = "527A379838E8D5F8EF95AC43F2511E16")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.350 -0400", hash_original_method = "9DE3987FDD4335D5C0BE76F667E07DA1", hash_generated_method = "E2CD3AF67A21B205BA4A0D332E7FC438")
     public BigInteger getH() {
-    if(h == null)        
+        if(h == null)        
         {
-BigInteger varBAE09D6A693103980CCD98582008583B_1482563071 =             ONE;
-            varBAE09D6A693103980CCD98582008583B_1482563071.addTaint(taint);
-            return varBAE09D6A693103980CCD98582008583B_1482563071;
+BigInteger varBAE09D6A693103980CCD98582008583B_536377587 =             ONE;
+            varBAE09D6A693103980CCD98582008583B_536377587.addTaint(taint);
+            return varBAE09D6A693103980CCD98582008583B_536377587;
         } //End block
-BigInteger var81CECAAA363C2B26C476DE4A79F58961_2068272264 =         h;
-        var81CECAAA363C2B26C476DE4A79F58961_2068272264.addTaint(taint);
-        return var81CECAAA363C2B26C476DE4A79F58961_2068272264;
+BigInteger var81CECAAA363C2B26C476DE4A79F58961_1136126032 =         h;
+        var81CECAAA363C2B26C476DE4A79F58961_1136126032.addTaint(taint);
+        return var81CECAAA363C2B26C476DE4A79F58961_1136126032;
         // ---------- Original Method ----------
         //if (h == null)
         //{
@@ -205,18 +205,18 @@ BigInteger var81CECAAA363C2B26C476DE4A79F58961_2068272264 =         h;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.500 -0400", hash_original_method = "B051A8408593F9E1275AB818DE8E2A80", hash_generated_method = "051BEABDB41F17309C3BF3BF79490992")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.350 -0400", hash_original_method = "B051A8408593F9E1275AB818DE8E2A80", hash_generated_method = "D557D03A857BF9959FFB79A6A77C9C5B")
     public byte[] getSeed() {
-        byte[] varFE4C0F30AA359C41D9F9A5F69C8C4192_61948294 = (seed);
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1645837433 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1645837433;
+        byte[] varFE4C0F30AA359C41D9F9A5F69C8C4192_296891158 = (seed);
+                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_519267437 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_519267437;
         // ---------- Original Method ----------
         //return seed;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.501 -0400", hash_original_method = "8FEF0683FB02574D7DCECBAD72741893", hash_generated_method = "EFCC84DD6F9A788F473AE8B51DDBF75C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.351 -0400", hash_original_method = "8FEF0683FB02574D7DCECBAD72741893", hash_generated_method = "C98C89887BC528CA6CC936131500FC0A")
     public DERObject toASN1Object() {
         ASN1EncodableVector v = new ASN1EncodableVector();
         v.add(new DERInteger(1));
@@ -224,13 +224,13 @@ BigInteger var81CECAAA363C2B26C476DE4A79F58961_2068272264 =         h;
         v.add(new X9Curve(curve, seed));
         v.add(new X9ECPoint(g));
         v.add(new DERInteger(n));
-    if(h != null)        
+        if(h != null)        
         {
             v.add(new DERInteger(h));
         } //End block
-DERObject var0B338F106E3279986C87B595B0F4A439_1224784620 =         new DERSequence(v);
-        var0B338F106E3279986C87B595B0F4A439_1224784620.addTaint(taint);
-        return var0B338F106E3279986C87B595B0F4A439_1224784620;
+DERObject var0B338F106E3279986C87B595B0F4A439_1985138879 =         new DERSequence(v);
+        var0B338F106E3279986C87B595B0F4A439_1985138879.addTaint(taint);
+        return var0B338F106E3279986C87B595B0F4A439_1985138879;
         // ---------- Original Method ----------
         //ASN1EncodableVector v = new ASN1EncodableVector();
         //v.add(new DERInteger(1));
@@ -246,7 +246,7 @@ DERObject var0B338F106E3279986C87B595B0F4A439_1224784620 =         new DERSequen
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.501 -0400", hash_original_field = "ADD10266D801BA1050DC92ABCE3C6C53", hash_generated_field = "A2EFE0CE5423F8076AF20D5B76F7D97A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.351 -0400", hash_original_field = "ADD10266D801BA1050DC92ABCE3C6C53", hash_generated_field = "A2EFE0CE5423F8076AF20D5B76F7D97A")
 
     private static final BigInteger ONE = BigInteger.valueOf(1);
 }

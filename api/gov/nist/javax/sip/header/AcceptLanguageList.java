@@ -8,23 +8,23 @@ import javax.sip.header.*;
 
 public class AcceptLanguageList extends SIPHeaderList<AcceptLanguage> {
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.690 -0400", hash_original_method = "240BB3B9B24C078BD16B4E527289E882", hash_generated_method = "11DB9C05848E7350775B5746176F17CF")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.684 -0400", hash_original_method = "240BB3B9B24C078BD16B4E527289E882", hash_generated_method = "11DB9C05848E7350775B5746176F17CF")
     public  AcceptLanguageList() {
         super(AcceptLanguage.class, AcceptLanguageHeader.NAME);
         // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.691 -0400", hash_original_method = "D59E3796661CC485086FCE096143E912", hash_generated_method = "17A2BA5FCCCB6DF5BD378811E637D73B")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.684 -0400", hash_original_method = "D59E3796661CC485086FCE096143E912", hash_generated_method = "2B1531DF775746F0C118016F8F483666")
     @Override
     public Object clone() {
         AcceptLanguageList retval = new AcceptLanguageList();
         retval.clonehlist(this.hlist);
-Object varF9E19AD6135C970F387F77C6F3DE4477_1949219861 =         retval;
-        varF9E19AD6135C970F387F77C6F3DE4477_1949219861.addTaint(taint);
-        return varF9E19AD6135C970F387F77C6F3DE4477_1949219861;
+Object varF9E19AD6135C970F387F77C6F3DE4477_551470139 =         retval;
+        varF9E19AD6135C970F387F77C6F3DE4477_551470139.addTaint(taint);
+        return varF9E19AD6135C970F387F77C6F3DE4477_551470139;
         // ---------- Original Method ----------
         //AcceptLanguageList retval = new AcceptLanguageList();
         //retval.clonehlist(this.hlist);
@@ -32,21 +32,21 @@ Object varF9E19AD6135C970F387F77C6F3DE4477_1949219861 =         retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.691 -0400", hash_original_method = "4EAA649C6A43B8603903A57164247286", hash_generated_method = "883A2F371ED0926AD57062F1BF4912B4")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.685 -0400", hash_original_method = "4EAA649C6A43B8603903A57164247286", hash_generated_method = "DF4274CC819A0C699F72404CFF27A02C")
     public AcceptLanguage getFirst() {
         AcceptLanguage retval = (AcceptLanguage) super.getFirst();
-    if(retval != null)        
+        if(retval != null)        
         {
-AcceptLanguage varF9E19AD6135C970F387F77C6F3DE4477_567250190 =         retval;
-        varF9E19AD6135C970F387F77C6F3DE4477_567250190.addTaint(taint);
-        return varF9E19AD6135C970F387F77C6F3DE4477_567250190;
+AcceptLanguage varF9E19AD6135C970F387F77C6F3DE4477_2113607288 =         retval;
+        varF9E19AD6135C970F387F77C6F3DE4477_2113607288.addTaint(taint);
+        return varF9E19AD6135C970F387F77C6F3DE4477_2113607288;
         }
         else
         {
-AcceptLanguage varE6C39D00C284C00444956A3AA96F5918_1568613459 =         new AcceptLanguage();
-        varE6C39D00C284C00444956A3AA96F5918_1568613459.addTaint(taint);
-        return varE6C39D00C284C00444956A3AA96F5918_1568613459;
+AcceptLanguage varE6C39D00C284C00444956A3AA96F5918_165716485 =         new AcceptLanguage();
+        varE6C39D00C284C00444956A3AA96F5918_165716485.addTaint(taint);
+        return varE6C39D00C284C00444956A3AA96F5918_165716485;
         }
         // ---------- Original Method ----------
         //AcceptLanguage retval = (AcceptLanguage) super.getFirst();
@@ -57,21 +57,21 @@ AcceptLanguage varE6C39D00C284C00444956A3AA96F5918_1568613459 =         new Acce
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.691 -0400", hash_original_method = "D3074C13DEFE0D00E21551F82106E50D", hash_generated_method = "B1A8A7FB049CDCA724D68206AC7CAB02")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.685 -0400", hash_original_method = "D3074C13DEFE0D00E21551F82106E50D", hash_generated_method = "0DBE0663024309A6956364FBDBA17E85")
     public AcceptLanguage getLast() {
         AcceptLanguage retval = (AcceptLanguage) super.getLast();
-    if(retval != null)        
+        if(retval != null)        
         {
-AcceptLanguage varF9E19AD6135C970F387F77C6F3DE4477_457527595 =         retval;
-        varF9E19AD6135C970F387F77C6F3DE4477_457527595.addTaint(taint);
-        return varF9E19AD6135C970F387F77C6F3DE4477_457527595;
+AcceptLanguage varF9E19AD6135C970F387F77C6F3DE4477_194773564 =         retval;
+        varF9E19AD6135C970F387F77C6F3DE4477_194773564.addTaint(taint);
+        return varF9E19AD6135C970F387F77C6F3DE4477_194773564;
         }
         else
         {
-AcceptLanguage varE6C39D00C284C00444956A3AA96F5918_2051898570 =         new AcceptLanguage();
-        varE6C39D00C284C00444956A3AA96F5918_2051898570.addTaint(taint);
-        return varE6C39D00C284C00444956A3AA96F5918_2051898570;
+AcceptLanguage varE6C39D00C284C00444956A3AA96F5918_1210039141 =         new AcceptLanguage();
+        varE6C39D00C284C00444956A3AA96F5918_1210039141.addTaint(taint);
+        return varE6C39D00C284C00444956A3AA96F5918_1210039141;
         }
         // ---------- Original Method ----------
         //AcceptLanguage retval = (AcceptLanguage) super.getLast();
@@ -82,7 +82,7 @@ AcceptLanguage varE6C39D00C284C00444956A3AA96F5918_2051898570 =         new Acce
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.692 -0400", hash_original_field = "2DC0C9505B6601CC65D202A5B3F50DF0", hash_generated_field = "7EA90335ABAD53EEB534CFBDFF1F0433")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.685 -0400", hash_original_field = "2DC0C9505B6601CC65D202A5B3F50DF0", hash_generated_field = "7EA90335ABAD53EEB534CFBDFF1F0433")
 
     private static final long serialVersionUID = -3289606805203488840L;
 }

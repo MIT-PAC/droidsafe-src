@@ -25,29 +25,29 @@ import org.apache.harmony.security.utils.AlgNameMapper;
 import org.apache.harmony.security.x509.AlgorithmIdentifier;
 
 public class EncryptedPrivateKeyInfo {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.127 -0400", hash_original_field = "CDE54E566F514F637B77F1C0B5BA9798", hash_generated_field = "660D008EA392E932E9C27E468BE1012B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.103 -0400", hash_original_field = "CDE54E566F514F637B77F1C0B5BA9798", hash_generated_field = "660D008EA392E932E9C27E468BE1012B")
 
     private String algName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.127 -0400", hash_original_field = "7C84309AC8E9D8F6A788665EE8BFA306", hash_generated_field = "F067F90327B8A01DE7755B4FD06CC969")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.103 -0400", hash_original_field = "7C84309AC8E9D8F6A788665EE8BFA306", hash_generated_field = "F067F90327B8A01DE7755B4FD06CC969")
 
     private AlgorithmParameters algParameters;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.127 -0400", hash_original_field = "FD9F143D24DD0F6855EAA19A35811499", hash_generated_field = "B29484238F58CF38DC30E0B9CE6E09D3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.103 -0400", hash_original_field = "FD9F143D24DD0F6855EAA19A35811499", hash_generated_field = "B29484238F58CF38DC30E0B9CE6E09D3")
 
     private byte[] encryptedData;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.127 -0400", hash_original_field = "130F43112BB8A7A7790EBFC08EE9D6AF", hash_generated_field = "D745B114B0A51171DAD36F87C0CC38B4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.103 -0400", hash_original_field = "130F43112BB8A7A7790EBFC08EE9D6AF", hash_generated_field = "D745B114B0A51171DAD36F87C0CC38B4")
 
     private String oid;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.127 -0400", hash_original_field = "4B719ACEE4A1D5E30577F59E80D06205", hash_generated_field = "30CBCFF31EBF02BAF8CCE8746893E2BE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.103 -0400", hash_original_field = "4B719ACEE4A1D5E30577F59E80D06205", hash_generated_field = "30CBCFF31EBF02BAF8CCE8746893E2BE")
 
     private volatile byte[] encoded;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.128 -0400", hash_original_method = "5968D7DC318FA4818B0D7FF4BA782716", hash_generated_method = "F9DC98C2370ACFAD81E7ABE081069519")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.105 -0400", hash_original_method = "5968D7DC318FA4818B0D7FF4BA782716", hash_generated_method = "0637BF5FB441996002D6004F0787946E")
     public  EncryptedPrivateKeyInfo(byte[] encoded) throws IOException {
-    if(encoded == null)        
+        if(encoded == null)        
         {
-            NullPointerException varF215BBBAFF3B22123B6E74A3B33D768B_1627676774 = new NullPointerException("encoded == null");
-            varF215BBBAFF3B22123B6E74A3B33D768B_1627676774.addTaint(taint);
-            throw varF215BBBAFF3B22123B6E74A3B33D768B_1627676774;
+            NullPointerException varF215BBBAFF3B22123B6E74A3B33D768B_2122259890 = new NullPointerException("encoded == null");
+            varF215BBBAFF3B22123B6E74A3B33D768B_2122259890.addTaint(taint);
+            throw varF215BBBAFF3B22123B6E74A3B33D768B_2122259890;
         } //End block
         this.encoded = new byte[encoded.length];
         System.arraycopy(encoded, 0, this.encoded, 0, encoded.length);
@@ -58,13 +58,13 @@ public class EncryptedPrivateKeyInfo {
         boolean mappingExists = mapAlgName();
         AlgorithmParameters aParams = null;
         byte[] params = aId.getParameters();
-    if(params != null && !isNullValue(params))        
+        if(params != null && !isNullValue(params))        
         {
             try 
             {
                 aParams = AlgorithmParameters.getInstance(algName);
                 aParams.init(aId.getParameters());
-    if(!mappingExists)                
+                if(!mappingExists)                
                 {
                     algName = aParams.getAlgorithm();
                 } //End block
@@ -80,32 +80,32 @@ public class EncryptedPrivateKeyInfo {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.130 -0400", hash_original_method = "C009D0E8F0D5EB33E14FDFB24A942703", hash_generated_method = "2CD6BCECAA8A5ECB95888841C1C1DDFE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.107 -0400", hash_original_method = "C009D0E8F0D5EB33E14FDFB24A942703", hash_generated_method = "CFCE54FD7871608BF94103CCE398F36F")
     public  EncryptedPrivateKeyInfo(String encrAlgName, byte[] encryptedData) throws NoSuchAlgorithmException {
-    if(encrAlgName == null)        
+        if(encrAlgName == null)        
         {
-            NullPointerException var40EA0D6626268DAB57CC8B921E71592D_2106317018 = new NullPointerException("the algName parameter is null");
-            var40EA0D6626268DAB57CC8B921E71592D_2106317018.addTaint(taint);
-            throw var40EA0D6626268DAB57CC8B921E71592D_2106317018;
+            NullPointerException var40EA0D6626268DAB57CC8B921E71592D_1049891173 = new NullPointerException("the algName parameter is null");
+            var40EA0D6626268DAB57CC8B921E71592D_1049891173.addTaint(taint);
+            throw var40EA0D6626268DAB57CC8B921E71592D_1049891173;
         } //End block
         this.algName = encrAlgName;
-    if(!mapAlgName())        
+        if(!mapAlgName())        
         {
-            NoSuchAlgorithmException var12BBD33B192D793F4E3FDBF9C38549C1_2072461289 = new NoSuchAlgorithmException("Unsupported algorithm: " + this.algName);
-            var12BBD33B192D793F4E3FDBF9C38549C1_2072461289.addTaint(taint);
-            throw var12BBD33B192D793F4E3FDBF9C38549C1_2072461289;
+            NoSuchAlgorithmException var12BBD33B192D793F4E3FDBF9C38549C1_1605031398 = new NoSuchAlgorithmException("Unsupported algorithm: " + this.algName);
+            var12BBD33B192D793F4E3FDBF9C38549C1_1605031398.addTaint(taint);
+            throw var12BBD33B192D793F4E3FDBF9C38549C1_1605031398;
         } //End block
-    if(encryptedData == null)        
+        if(encryptedData == null)        
         {
-            NullPointerException var399146B293373E9C584B69D8F28976CF_1173375007 = new NullPointerException("encryptedData == null");
-            var399146B293373E9C584B69D8F28976CF_1173375007.addTaint(taint);
-            throw var399146B293373E9C584B69D8F28976CF_1173375007;
+            NullPointerException var399146B293373E9C584B69D8F28976CF_1535072721 = new NullPointerException("encryptedData == null");
+            var399146B293373E9C584B69D8F28976CF_1535072721.addTaint(taint);
+            throw var399146B293373E9C584B69D8F28976CF_1535072721;
         } //End block
-    if(encryptedData.length == 0)        
+        if(encryptedData.length == 0)        
         {
-            IllegalArgumentException varF35971D54A9625AB80D211A6F849BA56_556682315 = new IllegalArgumentException("encryptedData.length == 0");
-            varF35971D54A9625AB80D211A6F849BA56_556682315.addTaint(taint);
-            throw varF35971D54A9625AB80D211A6F849BA56_556682315;
+            IllegalArgumentException varF35971D54A9625AB80D211A6F849BA56_1327384091 = new IllegalArgumentException("encryptedData.length == 0");
+            varF35971D54A9625AB80D211A6F849BA56_1327384091.addTaint(taint);
+            throw varF35971D54A9625AB80D211A6F849BA56_1327384091;
         } //End block
         this.encryptedData = new byte[encryptedData.length];
         System.arraycopy(encryptedData, 0,
@@ -132,36 +132,36 @@ public class EncryptedPrivateKeyInfo {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.131 -0400", hash_original_method = "5A4FF1B4B6EE8C8ABD405D2DD33761E1", hash_generated_method = "750567E9D725AA4AE632DA7804F3C7D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.109 -0400", hash_original_method = "5A4FF1B4B6EE8C8ABD405D2DD33761E1", hash_generated_method = "518CCACE5B8E0C2184D34F896CF0A7BF")
     public  EncryptedPrivateKeyInfo(AlgorithmParameters algParams, byte[] encryptedData) throws NoSuchAlgorithmException {
-    if(algParams == null)        
+        if(algParams == null)        
         {
-            NullPointerException varA153525986867739EB7A00966E51D0C2_1087298113 = new NullPointerException("algParams == null");
-            varA153525986867739EB7A00966E51D0C2_1087298113.addTaint(taint);
-            throw varA153525986867739EB7A00966E51D0C2_1087298113;
+            NullPointerException varA153525986867739EB7A00966E51D0C2_740357814 = new NullPointerException("algParams == null");
+            varA153525986867739EB7A00966E51D0C2_740357814.addTaint(taint);
+            throw varA153525986867739EB7A00966E51D0C2_740357814;
         } //End block
         this.algParameters = algParams;
-    if(encryptedData == null)        
+        if(encryptedData == null)        
         {
-            NullPointerException var399146B293373E9C584B69D8F28976CF_359218810 = new NullPointerException("encryptedData == null");
-            var399146B293373E9C584B69D8F28976CF_359218810.addTaint(taint);
-            throw var399146B293373E9C584B69D8F28976CF_359218810;
+            NullPointerException var399146B293373E9C584B69D8F28976CF_776845494 = new NullPointerException("encryptedData == null");
+            var399146B293373E9C584B69D8F28976CF_776845494.addTaint(taint);
+            throw var399146B293373E9C584B69D8F28976CF_776845494;
         } //End block
-    if(encryptedData.length == 0)        
+        if(encryptedData.length == 0)        
         {
-            IllegalArgumentException varF35971D54A9625AB80D211A6F849BA56_1647268502 = new IllegalArgumentException("encryptedData.length == 0");
-            varF35971D54A9625AB80D211A6F849BA56_1647268502.addTaint(taint);
-            throw varF35971D54A9625AB80D211A6F849BA56_1647268502;
+            IllegalArgumentException varF35971D54A9625AB80D211A6F849BA56_1071780059 = new IllegalArgumentException("encryptedData.length == 0");
+            varF35971D54A9625AB80D211A6F849BA56_1071780059.addTaint(taint);
+            throw varF35971D54A9625AB80D211A6F849BA56_1071780059;
         } //End block
         this.encryptedData = new byte[encryptedData.length];
         System.arraycopy(encryptedData, 0,
                 this.encryptedData, 0, encryptedData.length);
         this.algName = this.algParameters.getAlgorithm();
-    if(!mapAlgName())        
+        if(!mapAlgName())        
         {
-            NoSuchAlgorithmException var12BBD33B192D793F4E3FDBF9C38549C1_1280622202 = new NoSuchAlgorithmException("Unsupported algorithm: " + this.algName);
-            var12BBD33B192D793F4E3FDBF9C38549C1_1280622202.addTaint(taint);
-            throw var12BBD33B192D793F4E3FDBF9C38549C1_1280622202;
+            NoSuchAlgorithmException var12BBD33B192D793F4E3FDBF9C38549C1_969473334 = new NoSuchAlgorithmException("Unsupported algorithm: " + this.algName);
+            var12BBD33B192D793F4E3FDBF9C38549C1_969473334.addTaint(taint);
+            throw var12BBD33B192D793F4E3FDBF9C38549C1_969473334;
         } //End block
         // ---------- Original Method ----------
         //if (algParams == null) {
@@ -184,41 +184,41 @@ public class EncryptedPrivateKeyInfo {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static boolean isNullValue(byte[] toCheck) {
         return toCheck[0] == 5 && toCheck[1] == 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.132 -0400", hash_original_method = "099B16E0CAD27366561935338A7E9D49", hash_generated_method = "D7F10DC269DDDC06E45BBE998A24E93D")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.110 -0400", hash_original_method = "099B16E0CAD27366561935338A7E9D49", hash_generated_method = "99935109597E12FE52D4A84EF4B0A7ED")
     public String getAlgName() {
-String var519B4DA5D12B38800F4F5DBB6B79043D_1922266275 =         algName;
-        var519B4DA5D12B38800F4F5DBB6B79043D_1922266275.addTaint(taint);
-        return var519B4DA5D12B38800F4F5DBB6B79043D_1922266275;
+String var519B4DA5D12B38800F4F5DBB6B79043D_1570416719 =         algName;
+        var519B4DA5D12B38800F4F5DBB6B79043D_1570416719.addTaint(taint);
+        return var519B4DA5D12B38800F4F5DBB6B79043D_1570416719;
         // ---------- Original Method ----------
         //return algName;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.132 -0400", hash_original_method = "E53778AACD7278B4FF9EA916DFF39F89", hash_generated_method = "4E7CF39CEA198A3C9B19A11E33A6AAD6")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.111 -0400", hash_original_method = "E53778AACD7278B4FF9EA916DFF39F89", hash_generated_method = "2D3F0D23266DD7DACF96145613EBD457")
     public AlgorithmParameters getAlgParameters() {
-AlgorithmParameters var7FA38C5FF35ACD628F2BF4AA12BE3376_1312749342 =         algParameters;
-        var7FA38C5FF35ACD628F2BF4AA12BE3376_1312749342.addTaint(taint);
-        return var7FA38C5FF35ACD628F2BF4AA12BE3376_1312749342;
+AlgorithmParameters var7FA38C5FF35ACD628F2BF4AA12BE3376_1384042003 =         algParameters;
+        var7FA38C5FF35ACD628F2BF4AA12BE3376_1384042003.addTaint(taint);
+        return var7FA38C5FF35ACD628F2BF4AA12BE3376_1384042003;
         // ---------- Original Method ----------
         //return algParameters;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.132 -0400", hash_original_method = "953A1BC97C4FC2CA6B0BC7CB45B78971", hash_generated_method = "5306C79BDBC7BC39F9386B75ABD5B840")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.111 -0400", hash_original_method = "953A1BC97C4FC2CA6B0BC7CB45B78971", hash_generated_method = "8B8F5E5EE5054B5A10FBED2169C2A5F0")
     public byte[] getEncryptedData() {
         byte[] ret = new byte[encryptedData.length];
         System.arraycopy(encryptedData, 0, ret, 0, encryptedData.length);
-        byte[] var2CB9DF9898E55FD0AD829DC202DDBD1C_1848077626 = (ret);
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1557779423 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1557779423;
+        byte[] var2CB9DF9898E55FD0AD829DC202DDBD1C_1022591169 = (ret);
+                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_40113102 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_40113102;
         // ---------- Original Method ----------
         //byte[] ret = new byte[encryptedData.length];
         //System.arraycopy(encryptedData, 0, ret, 0, encryptedData.length);
@@ -226,14 +226,14 @@ AlgorithmParameters var7FA38C5FF35ACD628F2BF4AA12BE3376_1312749342 =         alg
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.133 -0400", hash_original_method = "5E7E74DFC3F27253F408C7A3D7CB1593", hash_generated_method = "583C9E5E77A53D695EA2353FAC47E757")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.112 -0400", hash_original_method = "5E7E74DFC3F27253F408C7A3D7CB1593", hash_generated_method = "E3374C5488045E3C7BECC7E52C6BD845")
     public PKCS8EncodedKeySpec getKeySpec(Cipher cipher) throws InvalidKeySpecException {
         addTaint(cipher.getTaint());
-    if(cipher == null)        
+        if(cipher == null)        
         {
-            NullPointerException var5462C0B463A6B343F81D444EF806FE06_2113813096 = new NullPointerException("cipher == null");
-            var5462C0B463A6B343F81D444EF806FE06_2113813096.addTaint(taint);
-            throw var5462C0B463A6B343F81D444EF806FE06_2113813096;
+            NullPointerException var5462C0B463A6B343F81D444EF806FE06_658668863 = new NullPointerException("cipher == null");
+            var5462C0B463A6B343F81D444EF806FE06_658668863.addTaint(taint);
+            throw var5462C0B463A6B343F81D444EF806FE06_658668863;
         } //End block
         try 
         {
@@ -244,51 +244,51 @@ AlgorithmParameters var7FA38C5FF35ACD628F2BF4AA12BE3376_1312749342 =         alg
             } //End block
             catch (IOException e1)
             {
-                InvalidKeySpecException varF9DDC305B41705A7314EA0DC86840BE6_819354092 = new InvalidKeySpecException("Decrypted data does not represent valid PKCS#8 PrivateKeyInfo");
-                varF9DDC305B41705A7314EA0DC86840BE6_819354092.addTaint(taint);
-                throw varF9DDC305B41705A7314EA0DC86840BE6_819354092;
+                InvalidKeySpecException varF9DDC305B41705A7314EA0DC86840BE6_269759521 = new InvalidKeySpecException("Decrypted data does not represent valid PKCS#8 PrivateKeyInfo");
+                varF9DDC305B41705A7314EA0DC86840BE6_269759521.addTaint(taint);
+                throw varF9DDC305B41705A7314EA0DC86840BE6_269759521;
             } //End block
-PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_1664723374 =             new PKCS8EncodedKeySpec(decryptedData);
-            var257F2893BD2E1A5430A153E3F5D4DD31_1664723374.addTaint(taint);
-            return var257F2893BD2E1A5430A153E3F5D4DD31_1664723374;
+PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_410462408 =             new PKCS8EncodedKeySpec(decryptedData);
+            var257F2893BD2E1A5430A153E3F5D4DD31_410462408.addTaint(taint);
+            return var257F2893BD2E1A5430A153E3F5D4DD31_410462408;
         } //End block
         catch (IllegalStateException e)
         {
-            InvalidKeySpecException var04706F3A4E57FF6D873A7C34FD2A26F0_695406318 = new InvalidKeySpecException(e.getMessage());
-            var04706F3A4E57FF6D873A7C34FD2A26F0_695406318.addTaint(taint);
-            throw var04706F3A4E57FF6D873A7C34FD2A26F0_695406318;
+            InvalidKeySpecException var04706F3A4E57FF6D873A7C34FD2A26F0_626833416 = new InvalidKeySpecException(e.getMessage());
+            var04706F3A4E57FF6D873A7C34FD2A26F0_626833416.addTaint(taint);
+            throw var04706F3A4E57FF6D873A7C34FD2A26F0_626833416;
         } //End block
         catch (IllegalBlockSizeException e)
         {
-            InvalidKeySpecException var04706F3A4E57FF6D873A7C34FD2A26F0_1418145344 = new InvalidKeySpecException(e.getMessage());
-            var04706F3A4E57FF6D873A7C34FD2A26F0_1418145344.addTaint(taint);
-            throw var04706F3A4E57FF6D873A7C34FD2A26F0_1418145344;
+            InvalidKeySpecException var04706F3A4E57FF6D873A7C34FD2A26F0_689759149 = new InvalidKeySpecException(e.getMessage());
+            var04706F3A4E57FF6D873A7C34FD2A26F0_689759149.addTaint(taint);
+            throw var04706F3A4E57FF6D873A7C34FD2A26F0_689759149;
         } //End block
         catch (BadPaddingException e)
         {
-            InvalidKeySpecException var04706F3A4E57FF6D873A7C34FD2A26F0_1151644024 = new InvalidKeySpecException(e.getMessage());
-            var04706F3A4E57FF6D873A7C34FD2A26F0_1151644024.addTaint(taint);
-            throw var04706F3A4E57FF6D873A7C34FD2A26F0_1151644024;
+            InvalidKeySpecException var04706F3A4E57FF6D873A7C34FD2A26F0_1434484544 = new InvalidKeySpecException(e.getMessage());
+            var04706F3A4E57FF6D873A7C34FD2A26F0_1434484544.addTaint(taint);
+            throw var04706F3A4E57FF6D873A7C34FD2A26F0_1434484544;
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.163 -0400", hash_original_method = "E86A0445ED0DCCD02C804E7FA87DE046", hash_generated_method = "F2BD85C5E599BA7ACB7D1A4E4C39D317")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.139 -0400", hash_original_method = "E86A0445ED0DCCD02C804E7FA87DE046", hash_generated_method = "3A227065BCAE4EF208555AF2B9F1C773")
     public PKCS8EncodedKeySpec getKeySpec(Key decryptKey) throws NoSuchAlgorithmException,
                InvalidKeyException {
         addTaint(decryptKey.getTaint());
-    if(decryptKey == null)        
+        if(decryptKey == null)        
         {
-            NullPointerException var5891ACF6470AC015DA4F66FD42139803_1968593918 = new NullPointerException("decryptKey == null");
-            var5891ACF6470AC015DA4F66FD42139803_1968593918.addTaint(taint);
-            throw var5891ACF6470AC015DA4F66FD42139803_1968593918;
+            NullPointerException var5891ACF6470AC015DA4F66FD42139803_188957476 = new NullPointerException("decryptKey == null");
+            var5891ACF6470AC015DA4F66FD42139803_188957476.addTaint(taint);
+            throw var5891ACF6470AC015DA4F66FD42139803_188957476;
         } //End block
         try 
         {
             Cipher cipher = Cipher.getInstance(algName);
-    if(algParameters == null)            
+            if(algParameters == null)            
             {
                 cipher.init(Cipher.DECRYPT_MODE, decryptKey);
             } //End block
@@ -303,71 +303,71 @@ PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_1664723374 =            
             } //End block
             catch (IOException e1)
             {
-                java.security.InvalidKeyException var834709554883F625E20CDB39EFD63D42_1242126437 = invalidKey();
-                var834709554883F625E20CDB39EFD63D42_1242126437.addTaint(taint);
-                throw var834709554883F625E20CDB39EFD63D42_1242126437;
+                java.security.InvalidKeyException var834709554883F625E20CDB39EFD63D42_1580236873 = invalidKey();
+                var834709554883F625E20CDB39EFD63D42_1580236873.addTaint(taint);
+                throw var834709554883F625E20CDB39EFD63D42_1580236873;
             } //End block
-PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_1513638301 =             new PKCS8EncodedKeySpec(decryptedData);
-            var257F2893BD2E1A5430A153E3F5D4DD31_1513638301.addTaint(taint);
-            return var257F2893BD2E1A5430A153E3F5D4DD31_1513638301;
+PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_1502893277 =             new PKCS8EncodedKeySpec(decryptedData);
+            var257F2893BD2E1A5430A153E3F5D4DD31_1502893277.addTaint(taint);
+            return var257F2893BD2E1A5430A153E3F5D4DD31_1502893277;
         } //End block
         catch (NoSuchPaddingException e)
         {
-            NoSuchAlgorithmException var953D3C7B019DBC323626D6C459595541_829415414 = new NoSuchAlgorithmException(e.getMessage());
-            var953D3C7B019DBC323626D6C459595541_829415414.addTaint(taint);
-            throw var953D3C7B019DBC323626D6C459595541_829415414;
+            NoSuchAlgorithmException var953D3C7B019DBC323626D6C459595541_832906113 = new NoSuchAlgorithmException(e.getMessage());
+            var953D3C7B019DBC323626D6C459595541_832906113.addTaint(taint);
+            throw var953D3C7B019DBC323626D6C459595541_832906113;
         } //End block
         catch (InvalidAlgorithmParameterException e)
         {
-            NoSuchAlgorithmException var953D3C7B019DBC323626D6C459595541_1313150403 = new NoSuchAlgorithmException(e.getMessage());
-            var953D3C7B019DBC323626D6C459595541_1313150403.addTaint(taint);
-            throw var953D3C7B019DBC323626D6C459595541_1313150403;
+            NoSuchAlgorithmException var953D3C7B019DBC323626D6C459595541_2099489792 = new NoSuchAlgorithmException(e.getMessage());
+            var953D3C7B019DBC323626D6C459595541_2099489792.addTaint(taint);
+            throw var953D3C7B019DBC323626D6C459595541_2099489792;
         } //End block
         catch (IllegalStateException e)
         {
-            InvalidKeyException var424E73DD072FDBD96F0A28FC7414F89B_96244909 = new InvalidKeyException(e.getMessage());
-            var424E73DD072FDBD96F0A28FC7414F89B_96244909.addTaint(taint);
-            throw var424E73DD072FDBD96F0A28FC7414F89B_96244909;
+            InvalidKeyException var424E73DD072FDBD96F0A28FC7414F89B_1473794584 = new InvalidKeyException(e.getMessage());
+            var424E73DD072FDBD96F0A28FC7414F89B_1473794584.addTaint(taint);
+            throw var424E73DD072FDBD96F0A28FC7414F89B_1473794584;
         } //End block
         catch (IllegalBlockSizeException e)
         {
-            InvalidKeyException var424E73DD072FDBD96F0A28FC7414F89B_1605454381 = new InvalidKeyException(e.getMessage());
-            var424E73DD072FDBD96F0A28FC7414F89B_1605454381.addTaint(taint);
-            throw var424E73DD072FDBD96F0A28FC7414F89B_1605454381;
+            InvalidKeyException var424E73DD072FDBD96F0A28FC7414F89B_258290399 = new InvalidKeyException(e.getMessage());
+            var424E73DD072FDBD96F0A28FC7414F89B_258290399.addTaint(taint);
+            throw var424E73DD072FDBD96F0A28FC7414F89B_258290399;
         } //End block
         catch (BadPaddingException e)
         {
-            InvalidKeyException var424E73DD072FDBD96F0A28FC7414F89B_2023873017 = new InvalidKeyException(e.getMessage());
-            var424E73DD072FDBD96F0A28FC7414F89B_2023873017.addTaint(taint);
-            throw var424E73DD072FDBD96F0A28FC7414F89B_2023873017;
+            InvalidKeyException var424E73DD072FDBD96F0A28FC7414F89B_615594229 = new InvalidKeyException(e.getMessage());
+            var424E73DD072FDBD96F0A28FC7414F89B_615594229.addTaint(taint);
+            throw var424E73DD072FDBD96F0A28FC7414F89B_615594229;
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.194 -0400", hash_original_method = "B712B7178E60AED4791DB32F07137FE5", hash_generated_method = "7EFEDE58AC49B12CCE0EF9C8FF4EE9DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.168 -0400", hash_original_method = "B712B7178E60AED4791DB32F07137FE5", hash_generated_method = "D294784F6CAF0422FE587530E1F9813D")
     public PKCS8EncodedKeySpec getKeySpec(Key decryptKey, String providerName) throws NoSuchProviderException,
                NoSuchAlgorithmException,
                InvalidKeyException {
         addTaint(providerName.getTaint());
         addTaint(decryptKey.getTaint());
-    if(decryptKey == null)        
+        if(decryptKey == null)        
         {
-            NullPointerException var5891ACF6470AC015DA4F66FD42139803_1910354502 = new NullPointerException("decryptKey == null");
-            var5891ACF6470AC015DA4F66FD42139803_1910354502.addTaint(taint);
-            throw var5891ACF6470AC015DA4F66FD42139803_1910354502;
+            NullPointerException var5891ACF6470AC015DA4F66FD42139803_1044114342 = new NullPointerException("decryptKey == null");
+            var5891ACF6470AC015DA4F66FD42139803_1044114342.addTaint(taint);
+            throw var5891ACF6470AC015DA4F66FD42139803_1044114342;
         } //End block
-    if(providerName == null)        
+        if(providerName == null)        
         {
-            NullPointerException varDBFC90318C4520101EAD3D6C0F16E457_1745175761 = new NullPointerException("providerName == null");
-            varDBFC90318C4520101EAD3D6C0F16E457_1745175761.addTaint(taint);
-            throw varDBFC90318C4520101EAD3D6C0F16E457_1745175761;
+            NullPointerException varDBFC90318C4520101EAD3D6C0F16E457_471826870 = new NullPointerException("providerName == null");
+            varDBFC90318C4520101EAD3D6C0F16E457_471826870.addTaint(taint);
+            throw varDBFC90318C4520101EAD3D6C0F16E457_471826870;
         } //End block
         try 
         {
             Cipher cipher = Cipher.getInstance(algName, providerName);
-    if(algParameters == null)            
+            if(algParameters == null)            
             {
                 cipher.init(Cipher.DECRYPT_MODE, decryptKey);
             } //End block
@@ -382,70 +382,70 @@ PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_1513638301 =            
             } //End block
             catch (IOException e1)
             {
-                java.security.InvalidKeyException var834709554883F625E20CDB39EFD63D42_234116608 = invalidKey();
-                var834709554883F625E20CDB39EFD63D42_234116608.addTaint(taint);
-                throw var834709554883F625E20CDB39EFD63D42_234116608;
+                java.security.InvalidKeyException var834709554883F625E20CDB39EFD63D42_11248363 = invalidKey();
+                var834709554883F625E20CDB39EFD63D42_11248363.addTaint(taint);
+                throw var834709554883F625E20CDB39EFD63D42_11248363;
             } //End block
-PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_1427033793 =             new PKCS8EncodedKeySpec(decryptedData);
-            var257F2893BD2E1A5430A153E3F5D4DD31_1427033793.addTaint(taint);
-            return var257F2893BD2E1A5430A153E3F5D4DD31_1427033793;
+PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_1118771816 =             new PKCS8EncodedKeySpec(decryptedData);
+            var257F2893BD2E1A5430A153E3F5D4DD31_1118771816.addTaint(taint);
+            return var257F2893BD2E1A5430A153E3F5D4DD31_1118771816;
         } //End block
         catch (NoSuchPaddingException e)
         {
-            NoSuchAlgorithmException var953D3C7B019DBC323626D6C459595541_724819287 = new NoSuchAlgorithmException(e.getMessage());
-            var953D3C7B019DBC323626D6C459595541_724819287.addTaint(taint);
-            throw var953D3C7B019DBC323626D6C459595541_724819287;
+            NoSuchAlgorithmException var953D3C7B019DBC323626D6C459595541_2134022459 = new NoSuchAlgorithmException(e.getMessage());
+            var953D3C7B019DBC323626D6C459595541_2134022459.addTaint(taint);
+            throw var953D3C7B019DBC323626D6C459595541_2134022459;
         } //End block
         catch (InvalidAlgorithmParameterException e)
         {
-            NoSuchAlgorithmException var953D3C7B019DBC323626D6C459595541_791178220 = new NoSuchAlgorithmException(e.getMessage());
-            var953D3C7B019DBC323626D6C459595541_791178220.addTaint(taint);
-            throw var953D3C7B019DBC323626D6C459595541_791178220;
+            NoSuchAlgorithmException var953D3C7B019DBC323626D6C459595541_1901732659 = new NoSuchAlgorithmException(e.getMessage());
+            var953D3C7B019DBC323626D6C459595541_1901732659.addTaint(taint);
+            throw var953D3C7B019DBC323626D6C459595541_1901732659;
         } //End block
         catch (IllegalStateException e)
         {
-            InvalidKeyException var424E73DD072FDBD96F0A28FC7414F89B_1899658022 = new InvalidKeyException(e.getMessage());
-            var424E73DD072FDBD96F0A28FC7414F89B_1899658022.addTaint(taint);
-            throw var424E73DD072FDBD96F0A28FC7414F89B_1899658022;
+            InvalidKeyException var424E73DD072FDBD96F0A28FC7414F89B_1746308266 = new InvalidKeyException(e.getMessage());
+            var424E73DD072FDBD96F0A28FC7414F89B_1746308266.addTaint(taint);
+            throw var424E73DD072FDBD96F0A28FC7414F89B_1746308266;
         } //End block
         catch (IllegalBlockSizeException e)
         {
-            InvalidKeyException var424E73DD072FDBD96F0A28FC7414F89B_1979401802 = new InvalidKeyException(e.getMessage());
-            var424E73DD072FDBD96F0A28FC7414F89B_1979401802.addTaint(taint);
-            throw var424E73DD072FDBD96F0A28FC7414F89B_1979401802;
+            InvalidKeyException var424E73DD072FDBD96F0A28FC7414F89B_974104488 = new InvalidKeyException(e.getMessage());
+            var424E73DD072FDBD96F0A28FC7414F89B_974104488.addTaint(taint);
+            throw var424E73DD072FDBD96F0A28FC7414F89B_974104488;
         } //End block
         catch (BadPaddingException e)
         {
-            InvalidKeyException var424E73DD072FDBD96F0A28FC7414F89B_835224113 = new InvalidKeyException(e.getMessage());
-            var424E73DD072FDBD96F0A28FC7414F89B_835224113.addTaint(taint);
-            throw var424E73DD072FDBD96F0A28FC7414F89B_835224113;
+            InvalidKeyException var424E73DD072FDBD96F0A28FC7414F89B_954414428 = new InvalidKeyException(e.getMessage());
+            var424E73DD072FDBD96F0A28FC7414F89B_954414428.addTaint(taint);
+            throw var424E73DD072FDBD96F0A28FC7414F89B_954414428;
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.222 -0400", hash_original_method = "90A968B6E2258355BD8D757E8E7A32BF", hash_generated_method = "E392E7C8391145C9FDAE166BEB0BAA03")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.190 -0400", hash_original_method = "90A968B6E2258355BD8D757E8E7A32BF", hash_generated_method = "41A41B1CE4C0894F3B59CF9CA7927E78")
     public PKCS8EncodedKeySpec getKeySpec(Key decryptKey, Provider provider) throws NoSuchAlgorithmException,
                InvalidKeyException {
         addTaint(provider.getTaint());
         addTaint(decryptKey.getTaint());
-    if(decryptKey == null)        
+        if(decryptKey == null)        
         {
-            NullPointerException var5891ACF6470AC015DA4F66FD42139803_1218614494 = new NullPointerException("decryptKey == null");
-            var5891ACF6470AC015DA4F66FD42139803_1218614494.addTaint(taint);
-            throw var5891ACF6470AC015DA4F66FD42139803_1218614494;
+            NullPointerException var5891ACF6470AC015DA4F66FD42139803_2112058319 = new NullPointerException("decryptKey == null");
+            var5891ACF6470AC015DA4F66FD42139803_2112058319.addTaint(taint);
+            throw var5891ACF6470AC015DA4F66FD42139803_2112058319;
         } //End block
-    if(provider == null)        
+        if(provider == null)        
         {
-            NullPointerException var4CD3912908FC8E41F08E5C91F8B14110_949880214 = new NullPointerException("provider == null");
-            var4CD3912908FC8E41F08E5C91F8B14110_949880214.addTaint(taint);
-            throw var4CD3912908FC8E41F08E5C91F8B14110_949880214;
+            NullPointerException var4CD3912908FC8E41F08E5C91F8B14110_297913062 = new NullPointerException("provider == null");
+            var4CD3912908FC8E41F08E5C91F8B14110_297913062.addTaint(taint);
+            throw var4CD3912908FC8E41F08E5C91F8B14110_297913062;
         } //End block
         try 
         {
             Cipher cipher = Cipher.getInstance(algName, provider);
-    if(algParameters == null)            
+            if(algParameters == null)            
             {
                 cipher.init(Cipher.DECRYPT_MODE, decryptKey);
             } //End block
@@ -460,72 +460,72 @@ PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_1427033793 =            
             } //End block
             catch (IOException e1)
             {
-                java.security.InvalidKeyException var834709554883F625E20CDB39EFD63D42_1652264432 = invalidKey();
-                var834709554883F625E20CDB39EFD63D42_1652264432.addTaint(taint);
-                throw var834709554883F625E20CDB39EFD63D42_1652264432;
+                java.security.InvalidKeyException var834709554883F625E20CDB39EFD63D42_1809651627 = invalidKey();
+                var834709554883F625E20CDB39EFD63D42_1809651627.addTaint(taint);
+                throw var834709554883F625E20CDB39EFD63D42_1809651627;
             } //End block
-PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_213783041 =             new PKCS8EncodedKeySpec(decryptedData);
-            var257F2893BD2E1A5430A153E3F5D4DD31_213783041.addTaint(taint);
-            return var257F2893BD2E1A5430A153E3F5D4DD31_213783041;
+PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_2093323626 =             new PKCS8EncodedKeySpec(decryptedData);
+            var257F2893BD2E1A5430A153E3F5D4DD31_2093323626.addTaint(taint);
+            return var257F2893BD2E1A5430A153E3F5D4DD31_2093323626;
         } //End block
         catch (NoSuchPaddingException e)
         {
-            NoSuchAlgorithmException var953D3C7B019DBC323626D6C459595541_1914886693 = new NoSuchAlgorithmException(e.getMessage());
-            var953D3C7B019DBC323626D6C459595541_1914886693.addTaint(taint);
-            throw var953D3C7B019DBC323626D6C459595541_1914886693;
+            NoSuchAlgorithmException var953D3C7B019DBC323626D6C459595541_961011072 = new NoSuchAlgorithmException(e.getMessage());
+            var953D3C7B019DBC323626D6C459595541_961011072.addTaint(taint);
+            throw var953D3C7B019DBC323626D6C459595541_961011072;
         } //End block
         catch (InvalidAlgorithmParameterException e)
         {
-            NoSuchAlgorithmException var953D3C7B019DBC323626D6C459595541_445001904 = new NoSuchAlgorithmException(e.getMessage());
-            var953D3C7B019DBC323626D6C459595541_445001904.addTaint(taint);
-            throw var953D3C7B019DBC323626D6C459595541_445001904;
+            NoSuchAlgorithmException var953D3C7B019DBC323626D6C459595541_1870702560 = new NoSuchAlgorithmException(e.getMessage());
+            var953D3C7B019DBC323626D6C459595541_1870702560.addTaint(taint);
+            throw var953D3C7B019DBC323626D6C459595541_1870702560;
         } //End block
         catch (IllegalStateException e)
         {
-            InvalidKeyException var424E73DD072FDBD96F0A28FC7414F89B_2136849765 = new InvalidKeyException(e.getMessage());
-            var424E73DD072FDBD96F0A28FC7414F89B_2136849765.addTaint(taint);
-            throw var424E73DD072FDBD96F0A28FC7414F89B_2136849765;
+            InvalidKeyException var424E73DD072FDBD96F0A28FC7414F89B_1223078374 = new InvalidKeyException(e.getMessage());
+            var424E73DD072FDBD96F0A28FC7414F89B_1223078374.addTaint(taint);
+            throw var424E73DD072FDBD96F0A28FC7414F89B_1223078374;
         } //End block
         catch (IllegalBlockSizeException e)
         {
-            InvalidKeyException var424E73DD072FDBD96F0A28FC7414F89B_405083810 = new InvalidKeyException(e.getMessage());
-            var424E73DD072FDBD96F0A28FC7414F89B_405083810.addTaint(taint);
-            throw var424E73DD072FDBD96F0A28FC7414F89B_405083810;
+            InvalidKeyException var424E73DD072FDBD96F0A28FC7414F89B_1018070725 = new InvalidKeyException(e.getMessage());
+            var424E73DD072FDBD96F0A28FC7414F89B_1018070725.addTaint(taint);
+            throw var424E73DD072FDBD96F0A28FC7414F89B_1018070725;
         } //End block
         catch (BadPaddingException e)
         {
-            InvalidKeyException var424E73DD072FDBD96F0A28FC7414F89B_1802348061 = new InvalidKeyException(e.getMessage());
-            var424E73DD072FDBD96F0A28FC7414F89B_1802348061.addTaint(taint);
-            throw var424E73DD072FDBD96F0A28FC7414F89B_1802348061;
+            InvalidKeyException var424E73DD072FDBD96F0A28FC7414F89B_277347482 = new InvalidKeyException(e.getMessage());
+            var424E73DD072FDBD96F0A28FC7414F89B_277347482.addTaint(taint);
+            throw var424E73DD072FDBD96F0A28FC7414F89B_277347482;
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.224 -0400", hash_original_method = "F2C8E0AE199C63E108D40A2C42D8E5F5", hash_generated_method = "D5C63AA6DA446F7B8CF8463A0C61BC6B")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.190 -0400", hash_original_method = "F2C8E0AE199C63E108D40A2C42D8E5F5", hash_generated_method = "9D071966545943DF1C6EC0E035663AD2")
     private InvalidKeyException invalidKey() throws InvalidKeyException {
-        InvalidKeyException varB88FC85BF2AB94E1CB7ED53A5595DB16_777326906 = new InvalidKeyException("Decrypted data does not represent valid PKCS#8 PrivateKeyInfo");
-        varB88FC85BF2AB94E1CB7ED53A5595DB16_777326906.addTaint(taint);
-        throw varB88FC85BF2AB94E1CB7ED53A5595DB16_777326906;
+        InvalidKeyException varB88FC85BF2AB94E1CB7ED53A5595DB16_1975010713 = new InvalidKeyException("Decrypted data does not represent valid PKCS#8 PrivateKeyInfo");
+        varB88FC85BF2AB94E1CB7ED53A5595DB16_1975010713.addTaint(taint);
+        throw varB88FC85BF2AB94E1CB7ED53A5595DB16_1975010713;
         // ---------- Original Method ----------
         //throw new InvalidKeyException("Decrypted data does not represent valid PKCS#8 PrivateKeyInfo");
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.225 -0400", hash_original_method = "64506A3A148BFB8614C90465965B2E22", hash_generated_method = "F5AA5E3CA409264FE03E820D20177D36")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.191 -0400", hash_original_method = "64506A3A148BFB8614C90465965B2E22", hash_generated_method = "1DDEC8C4319A7ABB507656835A476D8D")
     public byte[] getEncoded() throws IOException {
-    if(encoded == null)        
+        if(encoded == null)        
         {
             encoded = asn1.encode(this);
         } //End block
         byte[] ret = new byte[encoded.length];
         System.arraycopy(encoded, 0, ret, 0, encoded.length);
-        byte[] var2CB9DF9898E55FD0AD829DC202DDBD1C_1010432400 = (ret);
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1528170929 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1528170929;
+        byte[] var2CB9DF9898E55FD0AD829DC202DDBD1C_1597068751 = (ret);
+                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1015539331 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1015539331;
         // ---------- Original Method ----------
         //if (encoded == null) {
             //encoded = asn1.encode(this);
@@ -536,13 +536,13 @@ PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_213783041 =             
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.226 -0400", hash_original_method = "BB96A16B2E5B8AF0DEB9007883ABA8DF", hash_generated_method = "71333B6F9D9794C46FC3FA33020B52AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.192 -0400", hash_original_method = "BB96A16B2E5B8AF0DEB9007883ABA8DF", hash_generated_method = "08E7CB67140B65B45072E8447AF87A89")
     private boolean mapAlgName() {
-    if(AlgNameMapper.isOID(this.algName))        
+        if(AlgNameMapper.isOID(this.algName))        
         {
             this.oid = AlgNameMapper.normalize(this.algName);
             this.algName = AlgNameMapper.map2AlgName(this.oid);
-    if(this.algName == null)            
+            if(this.algName == null)            
             {
                 this.algName = this.oid;
             } //End block
@@ -551,45 +551,45 @@ PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_213783041 =             
         {
             String stdName = AlgNameMapper.getStandardName(this.algName);
             this.oid = AlgNameMapper.map2OID(this.algName);
-    if(this.oid == null)            
+            if(this.oid == null)            
             {
-    if(stdName == null)                
+                if(stdName == null)                
                 {
-                    boolean var68934A3E9455FA72420237EB05902327_2144401894 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1859413880 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1859413880;
+                    boolean var68934A3E9455FA72420237EB05902327_1219448913 = (false);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_901436090 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_901436090;
                 } //End block
                 this.oid = AlgNameMapper.map2OID(stdName);
-    if(this.oid == null)                
+                if(this.oid == null)                
                 {
-                    boolean var68934A3E9455FA72420237EB05902327_2023535077 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1375615039 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1375615039;
+                    boolean var68934A3E9455FA72420237EB05902327_29302673 = (false);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_501349562 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_501349562;
                 } //End block
                 this.algName = stdName;
             } //End block
             else
-    if(stdName != null)            
+            if(stdName != null)            
             {
                 this.algName = stdName;
             } //End block
         } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_276569685 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_815448285 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_815448285;
+        boolean varB326B5062B2F0E69046810717534CB09_1500156323 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_462371295 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_462371295;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.227 -0400", hash_original_field = "6AA04665C95BAC4F8B2726709C882614", hash_generated_field = "3A2EA36C19E988E0FC8D93DEFFFC7188")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.193 -0400", hash_original_field = "6AA04665C95BAC4F8B2726709C882614", hash_generated_field = "3A2EA36C19E988E0FC8D93DEFFFC7188")
 
     private static final byte[] nullParam = new byte[] { 5, 0 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.228 -0400", hash_original_field = "3915FFC8629FD83CE2C58F175000FC30", hash_generated_field = "EE440CD25937F7CB2C430915ECB06D37")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.195 -0400", hash_original_field = "3915FFC8629FD83CE2C58F175000FC30", hash_generated_field = "60288359336523FE1C59A5FB75AA0AE8")
 
     private static final ASN1Sequence asn1 = new ASN1Sequence(new ASN1Type[] {
             AlgorithmIdentifier.ASN1, ASN1OctetString.getInstance() }) {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.228 -0400", hash_original_method = "C7B48C01EA9BD54A7C386B9C416EAF20", hash_generated_method = "3F8D62B50AC33BFCA5AB734B08078167")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.194 -0400", hash_original_method = "C7B48C01EA9BD54A7C386B9C416EAF20", hash_generated_method = "08F72077AAEF1EB6834FA5F016975C20")
         @Override
         protected void getValues(Object object, Object[] values) {
             addTaint(values[0].getTaint());
@@ -604,9 +604,9 @@ PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_213783041 =             
             } //End block
             catch (IOException e)
             {
-                RuntimeException varA6D199C19CBE64AA2A19B34C68199308_1109700630 = new RuntimeException(e.getMessage());
-                varA6D199C19CBE64AA2A19B34C68199308_1109700630.addTaint(taint);
-                throw varA6D199C19CBE64AA2A19B34C68199308_1109700630;
+                RuntimeException varA6D199C19CBE64AA2A19B34C68199308_12159957 = new RuntimeException(e.getMessage());
+                varA6D199C19CBE64AA2A19B34C68199308_12159957.addTaint(taint);
+                throw varA6D199C19CBE64AA2A19B34C68199308_12159957;
             } //End block
             // ---------- Original Method ----------
             //EncryptedPrivateKeyInfo epki = (EncryptedPrivateKeyInfo) object;
@@ -622,10 +622,10 @@ PKCS8EncodedKeySpec var257F2893BD2E1A5430A153E3F5D4DD31_213783041 =             
 
         
 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.228 -0400", hash_original_field = "322955F150D3A21F5C610454F488686A", hash_generated_field = "3DFCA1D232BF5550494DE371B7E7671D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.195 -0400", hash_original_field = "322955F150D3A21F5C610454F488686A", hash_generated_field = "3DFCA1D232BF5550494DE371B7E7671D")
 
     private static final ASN1SetOf ASN1Attributes = new ASN1SetOf(ASN1Any.getInstance());
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.229 -0400", hash_original_field = "3248A567E2B98D0A32398D43BF6B9F11", hash_generated_field = "65FF448CE0D4A9AB522AE9C1871BCFA3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.195 -0400", hash_original_field = "3248A567E2B98D0A32398D43BF6B9F11", hash_generated_field = "65FF448CE0D4A9AB522AE9C1871BCFA3")
 
     private static final ASN1Sequence ASN1PrivateKeyInfo = new ASN1Sequence(
             new ASN1Type[] { ASN1Integer.getInstance(), AlgorithmIdentifier.ASN1,

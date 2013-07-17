@@ -10,20 +10,20 @@ import java.util.Map;
 
 public abstract class CookieHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.487 -0400", hash_original_method = "88D15E3335299CEFE37CA24D0A89E063", hash_generated_method = "88D15E3335299CEFE37CA24D0A89E063")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.319 -0400", hash_original_method = "88D15E3335299CEFE37CA24D0A89E063", hash_generated_method = "88D15E3335299CEFE37CA24D0A89E063")
     public CookieHandler ()
     {
         //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static CookieHandler getDefault() {
         return systemWideCookieHandler;
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void setDefault(CookieHandler cHandler) {
         systemWideCookieHandler = cHandler;
     }
@@ -37,7 +37,7 @@ public abstract class CookieHandler {
             throws IOException;
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.488 -0400", hash_original_field = "E1D260A0A6B209A220BDA69A447458C5", hash_generated_field = "8C9BF4ECEE0FD776A81C187004A66852")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.320 -0400", hash_original_field = "E1D260A0A6B209A220BDA69A447458C5", hash_generated_field = "8C9BF4ECEE0FD776A81C187004A66852")
 
     private static CookieHandler systemWideCookieHandler;
 }

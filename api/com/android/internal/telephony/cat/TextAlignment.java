@@ -11,7 +11,6 @@ public enum TextAlignment {
     RIGHT(0x2),
     DEFAULT(0x3);
     private int mValue;
-    @DSModeled(DSC.SAFE)
     TextAlignment(int value) {
         mValue = value;
     }

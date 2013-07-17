@@ -7,17 +7,17 @@ import droidsafe.runtime.*;
 
 public class AvoidXfermode extends Xfermode {
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.671 -0400", hash_original_method = "293A98A7728721725813AFA29BD3A029", hash_generated_method = "A240F39A65C0D1F14017A81FDF3C80D3")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.529 -0400", hash_original_method = "293A98A7728721725813AFA29BD3A029", hash_generated_method = "44FEE3223085ABB38C8871E0F02F7BA8")
     public  AvoidXfermode(int opColor, int tolerance, Mode mode) {
         addTaint(mode.getTaint());
         addTaint(tolerance);
         addTaint(opColor);
-    if(tolerance < 0 || tolerance > 255)        
+        if(tolerance < 0 || tolerance > 255)        
         {
-            IllegalArgumentException var1055A444EADED692008EF1EEFB985FCC_986623807 = new IllegalArgumentException("tolerance must be 0..255");
-            var1055A444EADED692008EF1EEFB985FCC_986623807.addTaint(taint);
-            throw var1055A444EADED692008EF1EEFB985FCC_986623807;
+            IllegalArgumentException var1055A444EADED692008EF1EEFB985FCC_1170729442 = new IllegalArgumentException("tolerance must be 0..255");
+            var1055A444EADED692008EF1EEFB985FCC_1170729442.addTaint(taint);
+            throw var1055A444EADED692008EF1EEFB985FCC_1170729442;
         } //End block
         native_instance = nativeCreate(opColor, tolerance, mode.nativeInt);
         // ---------- Original Method ----------
@@ -39,7 +39,6 @@ public class AvoidXfermode extends Xfermode {
     public enum Mode {
         AVOID   (0),    
         TARGET  (1);    
-        @DSModeled(DSC.SAFE)
         Mode(int nativeInt) {
             this.nativeInt = nativeInt;
         }

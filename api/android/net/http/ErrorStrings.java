@@ -9,19 +9,19 @@ import android.util.Log;
 
 public class ErrorStrings {
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.059 -0400", hash_original_method = "15196F3BFA8B9637883B8AE296FFF8F2", hash_generated_method = "0498F89C8088675FDFC23A8A118F14B3")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.029 -0400", hash_original_method = "15196F3BFA8B9637883B8AE296FFF8F2", hash_generated_method = "0498F89C8088675FDFC23A8A118F14B3")
     private  ErrorStrings() {
         // ---------- Original Method ----------
     }
 
     
-        public static String getString(int errorCode, Context context) {
+    public static String getString(int errorCode, Context context) {
         return context.getText(getResource(errorCode)).toString();
     }
 
     
-        public static int getResource(int errorCode) {
+    public static int getResource(int errorCode) {
         switch(errorCode) {
             case EventHandler.OK:
                 return com.android.internal.R.string.httpErrorOk;
@@ -62,7 +62,7 @@ public class ErrorStrings {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.060 -0400", hash_original_field = "612150595DFE4003266A71271894AF14", hash_generated_field = "26F6F5D2EF35FA86B8698978CE2FD0C9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.030 -0400", hash_original_field = "612150595DFE4003266A71271894AF14", hash_generated_field = "26F6F5D2EF35FA86B8698978CE2FD0C9")
 
     private static final String LOGTAG = "Http";
 }

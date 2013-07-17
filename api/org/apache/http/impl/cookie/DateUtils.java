@@ -16,23 +16,23 @@ import java.util.TimeZone;
 
 public final class DateUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.535 -0400", hash_original_method = "48D34D966FD8EAADA4B9042FB2D410CB", hash_generated_method = "F2D2192E1AB0D80DE38C401BF608C353")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.864 -0400", hash_original_method = "48D34D966FD8EAADA4B9042FB2D410CB", hash_generated_method = "F2D2192E1AB0D80DE38C401BF608C353")
     private  DateUtils() {
         // ---------- Original Method ----------
     }
 
     
-        public static Date parseDate(String dateValue) throws DateParseException {
+    public static Date parseDate(String dateValue) throws DateParseException {
         return parseDate(dateValue, null, null);
     }
 
     
-        public static Date parseDate(final String dateValue, String[] dateFormats) throws DateParseException {
+    public static Date parseDate(final String dateValue, String[] dateFormats) throws DateParseException {
         return parseDate(dateValue, dateFormats, null);
     }
 
     
-        public static Date parseDate(
+    public static Date parseDate(
         String dateValue, 
         String[] dateFormats,
         Date startDate 
@@ -64,12 +64,12 @@ public final class DateUtils {
     }
 
     
-        public static String formatDate(Date date) {
+    public static String formatDate(Date date) {
         return formatDate(date, PATTERN_RFC1123);
     }
 
     
-        public static String formatDate(Date date, String pattern) {
+    public static String formatDate(Date date, String pattern) {
         if (date == null) throw new IllegalArgumentException("date is null");
         if (pattern == null) throw new IllegalArgumentException("pattern is null");
         SimpleDateFormat formatter = DateFormatHolder.formatFor(pattern);
@@ -79,14 +79,14 @@ public final class DateUtils {
     
     final static class DateFormatHolder {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.536 -0400", hash_original_method = "6FB3E28AC91977E78E839268C5DC660F", hash_generated_method = "6FB3E28AC91977E78E839268C5DC660F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.866 -0400", hash_original_method = "6FB3E28AC91977E78E839268C5DC660F", hash_generated_method = "6FB3E28AC91977E78E839268C5DC660F")
         public DateFormatHolder ()
         {
             //Synthesized constructor
         }
 
 
-                public static SimpleDateFormat formatFor(String pattern) {
+        public static SimpleDateFormat formatFor(String pattern) {
             SoftReference<Map<String, SimpleDateFormat>> ref = THREADLOCAL_FORMATS.get();
             Map<String, SimpleDateFormat> formats = ref.get();
             if (formats == null) {
@@ -126,26 +126,26 @@ public final class DateUtils {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.537 -0400", hash_original_field = "8385826B3234ECEB289CAA862FF1A4B2", hash_generated_field = "4C394D5CADCD628D7373F95DB7006036")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.866 -0400", hash_original_field = "8385826B3234ECEB289CAA862FF1A4B2", hash_generated_field = "4C394D5CADCD628D7373F95DB7006036")
 
     public static final String PATTERN_RFC1123 = "EEE, dd MMM yyyy HH:mm:ss zzz";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.537 -0400", hash_original_field = "738C731AEFD7A71F84D06C5D256C466E", hash_generated_field = "B80A298901B78AFE77638CA599BCD6A0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.866 -0400", hash_original_field = "738C731AEFD7A71F84D06C5D256C466E", hash_generated_field = "B80A298901B78AFE77638CA599BCD6A0")
 
     public static final String PATTERN_RFC1036 = "EEEE, dd-MMM-yy HH:mm:ss zzz";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.537 -0400", hash_original_field = "B9B9F39F84AC1CC81FFD7BC2D3D1DE39", hash_generated_field = "2FAAFA8A33A639A51D421B0A22227474")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.866 -0400", hash_original_field = "B9B9F39F84AC1CC81FFD7BC2D3D1DE39", hash_generated_field = "2FAAFA8A33A639A51D421B0A22227474")
 
     public static final String PATTERN_ASCTIME = "EEE MMM d HH:mm:ss yyyy";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.537 -0400", hash_original_field = "444C2DA544FF1A5C0659716DCB5ECF34", hash_generated_field = "4BA37EA834B7C65E3B0C18FFD5AC8C26")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.867 -0400", hash_original_field = "444C2DA544FF1A5C0659716DCB5ECF34", hash_generated_field = "4BA37EA834B7C65E3B0C18FFD5AC8C26")
 
     private static final String[] DEFAULT_PATTERNS = new String[] {
     	PATTERN_RFC1036,
     	PATTERN_RFC1123,
         PATTERN_ASCTIME
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.537 -0400", hash_original_field = "CE304DC78F351ECFD06CD7D303B3C51B", hash_generated_field = "5E940A040DBE4448C9671F88AC75ED62")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.867 -0400", hash_original_field = "CE304DC78F351ECFD06CD7D303B3C51B", hash_generated_field = "5E940A040DBE4448C9671F88AC75ED62")
 
     private static Date DEFAULT_TWO_DIGIT_YEAR_START;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.537 -0400", hash_original_field = "E12B34FD92B4631CB840A76131270F12", hash_generated_field = "3A278BEAEB75318EBD87EA7DAAF24AD0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.867 -0400", hash_original_field = "E12B34FD92B4631CB840A76131270F12", hash_generated_field = "3A278BEAEB75318EBD87EA7DAAF24AD0")
 
     public static final TimeZone GMT = TimeZone.getTimeZone("GMT");
     static {

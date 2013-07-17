@@ -6,18 +6,18 @@ import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
 public class MissingFormatWidthException extends IllegalFormatException {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.253 -0400", hash_original_field = "03C7C0ACE395D80182DB07AE2C30F034", hash_generated_field = "E79B5AF8B4B7B1E184AA763B4F896620")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.307 -0400", hash_original_field = "03C7C0ACE395D80182DB07AE2C30F034", hash_generated_field = "E79B5AF8B4B7B1E184AA763B4F896620")
 
     private String s;
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.254 -0400", hash_original_method = "3B5695383AF45988D55F3947C3C6E408", hash_generated_method = "80BB9836BFF3BB7F8C03187DBB29022B")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.307 -0400", hash_original_method = "3B5695383AF45988D55F3947C3C6E408", hash_generated_method = "2A12ED6A2A640DFCDA50D36271E175DF")
     public  MissingFormatWidthException(String s) {
-    if(s == null)        
+        if(s == null)        
         {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_656526667 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_656526667.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_656526667;
+            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1255101354 = new NullPointerException();
+            var7338BC9F48D81FE0BBD6183F4014DCC4_1255101354.addTaint(taint);
+            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1255101354;
         } //End block
         this.s = s;
         // ---------- Original Method ----------
@@ -28,30 +28,30 @@ public class MissingFormatWidthException extends IllegalFormatException {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.254 -0400", hash_original_method = "4D96301902AD0649417B90D095E1EDFD", hash_generated_method = "E97A86A8F7E631C357289E7F09C6A4D0")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.308 -0400", hash_original_method = "4D96301902AD0649417B90D095E1EDFD", hash_generated_method = "1B4BDA91B4310A72FC51A7FB888B85C7")
     public String getFormatSpecifier() {
-String var0478718F0636FB61899C13801CE9FE09_329733792 =         s;
-        var0478718F0636FB61899C13801CE9FE09_329733792.addTaint(taint);
-        return var0478718F0636FB61899C13801CE9FE09_329733792;
+String var0478718F0636FB61899C13801CE9FE09_1189016927 =         s;
+        var0478718F0636FB61899C13801CE9FE09_1189016927.addTaint(taint);
+        return var0478718F0636FB61899C13801CE9FE09_1189016927;
         // ---------- Original Method ----------
         //return s;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.254 -0400", hash_original_method = "0A4C8E3EAB801D8800E3A2D920D74C80", hash_generated_method = "31166B51A5D3BEA791D4D09539097064")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.308 -0400", hash_original_method = "0A4C8E3EAB801D8800E3A2D920D74C80", hash_generated_method = "085C0ADA3161835A8C0A144CD2182236")
     @Override
     public String getMessage() {
-String var0478718F0636FB61899C13801CE9FE09_620229218 =         s;
-        var0478718F0636FB61899C13801CE9FE09_620229218.addTaint(taint);
-        return var0478718F0636FB61899C13801CE9FE09_620229218;
+String var0478718F0636FB61899C13801CE9FE09_736111647 =         s;
+        var0478718F0636FB61899C13801CE9FE09_736111647.addTaint(taint);
+        return var0478718F0636FB61899C13801CE9FE09_736111647;
         // ---------- Original Method ----------
         //return s;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.254 -0400", hash_original_field = "7188EA7B1AC1322298AB17D61EF9C2EB", hash_generated_field = "9262A014094776552C1DB27AFE71EDD8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.308 -0400", hash_original_field = "7188EA7B1AC1322298AB17D61EF9C2EB", hash_generated_field = "9262A014094776552C1DB27AFE71EDD8")
 
     private static final long serialVersionUID = 15560123L;
 }

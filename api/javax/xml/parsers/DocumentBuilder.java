@@ -17,21 +17,21 @@ import org.xml.sax.SAXException;
 
 public abstract class DocumentBuilder {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.365 -0400", hash_original_method = "A55CBA234E1648A7F9C09E5B63DC560C", hash_generated_method = "BA105E34266083D2C63C902BC6535525")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.668 -0400", hash_original_method = "A55CBA234E1648A7F9C09E5B63DC560C", hash_generated_method = "BA105E34266083D2C63C902BC6535525")
     protected  DocumentBuilder() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.366 -0400", hash_original_method = "B05B5D751774CA5E926948E22CD07EE8", hash_generated_method = "1427D653FF21B3AA841DF9835282179D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.668 -0400", hash_original_method = "B05B5D751774CA5E926948E22CD07EE8", hash_generated_method = "B93C4366999C08EC6C838DE2538B844B")
     public void reset() {
-        UnsupportedOperationException varD57A366DA765BBC5B5CB8D1F17AA41CA_257499705 = new UnsupportedOperationException(
+        UnsupportedOperationException varD57A366DA765BBC5B5CB8D1F17AA41CA_1503439086 = new UnsupportedOperationException(
             "This DocumentBuilder, \"" + this.getClass().getName() + "\", does not support the reset functionality."
             + "  Specification \"" + this.getClass().getPackage().getSpecificationTitle() + "\""
             + " version \"" + this.getClass().getPackage().getSpecificationVersion() + "\""
             );
-        varD57A366DA765BBC5B5CB8D1F17AA41CA_257499705.addTaint(taint);
-        throw varD57A366DA765BBC5B5CB8D1F17AA41CA_257499705;
+        varD57A366DA765BBC5B5CB8D1F17AA41CA_1503439086.addTaint(taint);
+        throw varD57A366DA765BBC5B5CB8D1F17AA41CA_1503439086;
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException(
             //"This DocumentBuilder, \"" + this.getClass().getName() + "\", does not support the reset functionality."
@@ -41,19 +41,19 @@ public abstract class DocumentBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.366 -0400", hash_original_method = "95E59CF6F0A1DFE242840282B735E195", hash_generated_method = "ED2F88E014A0334714F65A529311FDF7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.669 -0400", hash_original_method = "95E59CF6F0A1DFE242840282B735E195", hash_generated_method = "2EF99C1D795AAC3B61D79F7CC4612DFD")
     public Document parse(InputStream is) throws SAXException, IOException {
         addTaint(is.getTaint());
-    if(is == null)        
+        if(is == null)        
         {
-            IllegalArgumentException varC815381FE103054CE280DFD5B97A6E37_350679484 = new IllegalArgumentException("InputStream cannot be null");
-            varC815381FE103054CE280DFD5B97A6E37_350679484.addTaint(taint);
-            throw varC815381FE103054CE280DFD5B97A6E37_350679484;
+            IllegalArgumentException varC815381FE103054CE280DFD5B97A6E37_424805687 = new IllegalArgumentException("InputStream cannot be null");
+            varC815381FE103054CE280DFD5B97A6E37_424805687.addTaint(taint);
+            throw varC815381FE103054CE280DFD5B97A6E37_424805687;
         } //End block
         InputSource in = new InputSource(is);
-Document var8BBF39D47F9CE28DC6E7F629ED464CBB_646125927 =         parse(in);
-        var8BBF39D47F9CE28DC6E7F629ED464CBB_646125927.addTaint(taint);
-        return var8BBF39D47F9CE28DC6E7F629ED464CBB_646125927;
+Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1098687120 =         parse(in);
+        var8BBF39D47F9CE28DC6E7F629ED464CBB_1098687120.addTaint(taint);
+        return var8BBF39D47F9CE28DC6E7F629ED464CBB_1098687120;
         // ---------- Original Method ----------
         //if (is == null) {
             //throw new IllegalArgumentException("InputStream cannot be null");
@@ -63,21 +63,21 @@ Document var8BBF39D47F9CE28DC6E7F629ED464CBB_646125927 =         parse(in);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.367 -0400", hash_original_method = "EA811CE95A08B04D15381504F667910C", hash_generated_method = "FB43D00E07592D6187C5B64709674779")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.669 -0400", hash_original_method = "EA811CE95A08B04D15381504F667910C", hash_generated_method = "0BA2CB7D38778C6C1CC5E0BDA5C3DFAE")
     public Document parse(InputStream is, String systemId) throws SAXException, IOException {
         addTaint(systemId.getTaint());
         addTaint(is.getTaint());
-    if(is == null)        
+        if(is == null)        
         {
-            IllegalArgumentException varC815381FE103054CE280DFD5B97A6E37_2125217235 = new IllegalArgumentException("InputStream cannot be null");
-            varC815381FE103054CE280DFD5B97A6E37_2125217235.addTaint(taint);
-            throw varC815381FE103054CE280DFD5B97A6E37_2125217235;
+            IllegalArgumentException varC815381FE103054CE280DFD5B97A6E37_1836479405 = new IllegalArgumentException("InputStream cannot be null");
+            varC815381FE103054CE280DFD5B97A6E37_1836479405.addTaint(taint);
+            throw varC815381FE103054CE280DFD5B97A6E37_1836479405;
         } //End block
         InputSource in = new InputSource(is);
         in.setSystemId(systemId);
-Document var8BBF39D47F9CE28DC6E7F629ED464CBB_768983779 =         parse(in);
-        var8BBF39D47F9CE28DC6E7F629ED464CBB_768983779.addTaint(taint);
-        return var8BBF39D47F9CE28DC6E7F629ED464CBB_768983779;
+Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1832750748 =         parse(in);
+        var8BBF39D47F9CE28DC6E7F629ED464CBB_1832750748.addTaint(taint);
+        return var8BBF39D47F9CE28DC6E7F629ED464CBB_1832750748;
         // ---------- Original Method ----------
         //if (is == null) {
             //throw new IllegalArgumentException("InputStream cannot be null");
@@ -88,19 +88,19 @@ Document var8BBF39D47F9CE28DC6E7F629ED464CBB_768983779 =         parse(in);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.367 -0400", hash_original_method = "595BF8AC63AB584AD723E5F0FBAE035E", hash_generated_method = "1D6A7FA6A033258C057B1C8A120A3AA7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.669 -0400", hash_original_method = "595BF8AC63AB584AD723E5F0FBAE035E", hash_generated_method = "DC78036C2890191FF461EB4FF61AE232")
     public Document parse(String uri) throws SAXException, IOException {
         addTaint(uri.getTaint());
-    if(uri == null)        
+        if(uri == null)        
         {
-            IllegalArgumentException varF6E0E2AFA82B103FC9C391721448DB47_587315946 = new IllegalArgumentException("URI cannot be null");
-            varF6E0E2AFA82B103FC9C391721448DB47_587315946.addTaint(taint);
-            throw varF6E0E2AFA82B103FC9C391721448DB47_587315946;
+            IllegalArgumentException varF6E0E2AFA82B103FC9C391721448DB47_1508082224 = new IllegalArgumentException("URI cannot be null");
+            varF6E0E2AFA82B103FC9C391721448DB47_1508082224.addTaint(taint);
+            throw varF6E0E2AFA82B103FC9C391721448DB47_1508082224;
         } //End block
         InputSource in = new InputSource(uri);
-Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1737582690 =         parse(in);
-        var8BBF39D47F9CE28DC6E7F629ED464CBB_1737582690.addTaint(taint);
-        return var8BBF39D47F9CE28DC6E7F629ED464CBB_1737582690;
+Document var8BBF39D47F9CE28DC6E7F629ED464CBB_428407042 =         parse(in);
+        var8BBF39D47F9CE28DC6E7F629ED464CBB_428407042.addTaint(taint);
+        return var8BBF39D47F9CE28DC6E7F629ED464CBB_428407042;
         // ---------- Original Method ----------
         //if (uri == null) {
             //throw new IllegalArgumentException("URI cannot be null");
@@ -110,24 +110,24 @@ Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1737582690 =         parse(in);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.368 -0400", hash_original_method = "F95298F4448DE156B1C85F49780E514D", hash_generated_method = "085263CEA736544E2F602A43033F4966")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.670 -0400", hash_original_method = "F95298F4448DE156B1C85F49780E514D", hash_generated_method = "21318756401FDAF740788D1C9C403ACD")
     public Document parse(File f) throws SAXException, IOException {
         addTaint(f.getTaint());
-    if(f == null)        
+        if(f == null)        
         {
-            IllegalArgumentException varFEC080412D1250CB64DE25E01D0B1780_1359339912 = new IllegalArgumentException("File cannot be null");
-            varFEC080412D1250CB64DE25E01D0B1780_1359339912.addTaint(taint);
-            throw varFEC080412D1250CB64DE25E01D0B1780_1359339912;
+            IllegalArgumentException varFEC080412D1250CB64DE25E01D0B1780_104459582 = new IllegalArgumentException("File cannot be null");
+            varFEC080412D1250CB64DE25E01D0B1780_104459582.addTaint(taint);
+            throw varFEC080412D1250CB64DE25E01D0B1780_104459582;
         } //End block
         String escapedURI = FilePathToURI.filepath2URI(f.getAbsolutePath());
-    if(DEBUG)        
+        if(DEBUG)        
         {
             System.out.println("Escaped URI = " + escapedURI);
         } //End block
         InputSource in = new InputSource(escapedURI);
-Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1165156594 =         parse(in);
-        var8BBF39D47F9CE28DC6E7F629ED464CBB_1165156594.addTaint(taint);
-        return var8BBF39D47F9CE28DC6E7F629ED464CBB_1165156594;
+Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1702325885 =         parse(in);
+        var8BBF39D47F9CE28DC6E7F629ED464CBB_1702325885.addTaint(taint);
+        return var8BBF39D47F9CE28DC6E7F629ED464CBB_1702325885;
         // ---------- Original Method ----------
         //if (f == null) {
             //throw new IllegalArgumentException("File cannot be null");
@@ -163,17 +163,17 @@ Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1165156594 =         parse(in);
     public abstract DOMImplementation getDOMImplementation();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.369 -0400", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "92F648BFA3AB6E7096F61C163FAB2FDA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.672 -0400", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "67782BB5ADC01CDBDE8FEE9AB5E2CEC2")
     public Schema getSchema() {
-        UnsupportedOperationException varE9742D55AB47AEF31209978AAE994BE9_1156412758 = new UnsupportedOperationException(
+        UnsupportedOperationException varE9742D55AB47AEF31209978AAE994BE9_1958264661 = new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()
             + "\" version \""
             + this.getClass().getPackage().getSpecificationVersion()
             + "\""
             );
-        varE9742D55AB47AEF31209978AAE994BE9_1156412758.addTaint(taint);
-        throw varE9742D55AB47AEF31209978AAE994BE9_1156412758;
+        varE9742D55AB47AEF31209978AAE994BE9_1958264661.addTaint(taint);
+        throw varE9742D55AB47AEF31209978AAE994BE9_1958264661;
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException(
             //"This parser does not support specification \""
@@ -185,17 +185,17 @@ Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1165156594 =         parse(in);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.370 -0400", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "FD1912ED403E532783B2E007C3AD5590")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.672 -0400", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "25F8C6E1FC17BC94AB2228F7A124C6A9")
     public boolean isXIncludeAware() {
-        UnsupportedOperationException varE9742D55AB47AEF31209978AAE994BE9_433446108 = new UnsupportedOperationException(
+        UnsupportedOperationException varE9742D55AB47AEF31209978AAE994BE9_1952587041 = new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()
             + "\" version \""
             + this.getClass().getPackage().getSpecificationVersion()
             + "\""
             );
-        varE9742D55AB47AEF31209978AAE994BE9_433446108.addTaint(taint);
-        throw varE9742D55AB47AEF31209978AAE994BE9_433446108;
+        varE9742D55AB47AEF31209978AAE994BE9_1952587041.addTaint(taint);
+        throw varE9742D55AB47AEF31209978AAE994BE9_1952587041;
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException(
             //"This parser does not support specification \""
@@ -207,7 +207,7 @@ Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1165156594 =         parse(in);
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.370 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.672 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
     private static final boolean DEBUG = false;
 }

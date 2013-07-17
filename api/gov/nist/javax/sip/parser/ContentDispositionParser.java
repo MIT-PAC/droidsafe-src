@@ -10,8 +10,8 @@ import java.text.ParseException;
 
 public class ContentDispositionParser extends ParametersParser {
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.005 -0400", hash_original_method = "04008A13B0A5E88C87B63AAF08ED822A", hash_generated_method = "690DFA335DDBFB3F5251BBC4962C114D")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.038 -0400", hash_original_method = "04008A13B0A5E88C87B63AAF08ED822A", hash_generated_method = "690DFA335DDBFB3F5251BBC4962C114D")
     public  ContentDispositionParser(String contentDisposition) {
         super(contentDisposition);
         addTaint(contentDisposition.getTaint());
@@ -19,8 +19,8 @@ public class ContentDispositionParser extends ParametersParser {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.020 -0400", hash_original_method = "7D9894E3DD1592FE62F944EB2803724D", hash_generated_method = "523EE1F84C89EE7708D60186E2EC3461")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.039 -0400", hash_original_method = "7D9894E3DD1592FE62F944EB2803724D", hash_generated_method = "523EE1F84C89EE7708D60186E2EC3461")
     protected  ContentDispositionParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -28,9 +28,9 @@ public class ContentDispositionParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.052 -0400", hash_original_method = "C25B69CBC1412EAEFB170FBF9B530EF5", hash_generated_method = "EBACF7A9B8D01574559FC347E14025B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.091 -0400", hash_original_method = "C25B69CBC1412EAEFB170FBF9B530EF5", hash_generated_method = "C850C3D417E1FEDBE760BFF338ECE625")
     public SIPHeader parse() throws ParseException {
-    if(debug)        
+        if(debug)        
         dbg_enter("ContentDispositionParser.parse");
         try 
         {
@@ -45,19 +45,19 @@ public class ContentDispositionParser extends ParametersParser {
             super.parse(cd);
             this.lexer.SPorHT();
             this.lexer.match('\n');
-SIPHeader var001A6EEFB4DC63CD7C230871097073C8_1527786846 =             cd;
-            var001A6EEFB4DC63CD7C230871097073C8_1527786846.addTaint(taint);
-            return var001A6EEFB4DC63CD7C230871097073C8_1527786846;
+SIPHeader var001A6EEFB4DC63CD7C230871097073C8_1893789385 =             cd;
+            var001A6EEFB4DC63CD7C230871097073C8_1893789385.addTaint(taint);
+            return var001A6EEFB4DC63CD7C230871097073C8_1893789385;
         } //End block
         catch (ParseException ex)
         {
-            java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1918394645 = createParseException(ex.getMessage());
-            varB8C80F72F95BF6A850D07F4EC5726C09_1918394645.addTaint(taint);
-            throw varB8C80F72F95BF6A850D07F4EC5726C09_1918394645;
+            java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_135305603 = createParseException(ex.getMessage());
+            varB8C80F72F95BF6A850D07F4EC5726C09_135305603.addTaint(taint);
+            throw varB8C80F72F95BF6A850D07F4EC5726C09_135305603;
         } //End block
         finally 
         {
-    if(debug)            
+            if(debug)            
             dbg_leave("ContentDispositionParser.parse");
         } //End block
         // ---------- Original Method ----------

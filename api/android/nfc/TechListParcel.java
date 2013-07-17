@@ -8,11 +8,11 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class TechListParcel implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.777 -0400", hash_original_field = "65E8F261CDFB5B09FDC146D238F5202C", hash_generated_field = "C36B9D5CB222403FE3E00F43AA3D1F77")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.410 -0400", hash_original_field = "65E8F261CDFB5B09FDC146D238F5202C", hash_generated_field = "C36B9D5CB222403FE3E00F43AA3D1F77")
 
     private String[][] mTechLists;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.778 -0400", hash_original_method = "6AB5FDB623A6EE108E2E4847F2947558", hash_generated_method = "29ED8984ECDC1B919999AD1AE8CACA72")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.412 -0400", hash_original_method = "6AB5FDB623A6EE108E2E4847F2947558", hash_generated_method = "29ED8984ECDC1B919999AD1AE8CACA72")
     public  TechListParcel(String[]... strings) {
         mTechLists = strings;
         // ---------- Original Method ----------
@@ -20,30 +20,30 @@ public class TechListParcel implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.778 -0400", hash_original_method = "6EF67533858F398D5EC0425F1D475F89", hash_generated_method = "AC8DB8CDE1C2FC5EFD31303A56D5B56C")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.413 -0400", hash_original_method = "6EF67533858F398D5EC0425F1D475F89", hash_generated_method = "D6B0C8410C535C8B32FB3D41C30CB383")
     public String[][] getTechLists() {
-String[][] var56AA0989E3CC6CA3FAE900904C158736_168993499 =         mTechLists;
-        var56AA0989E3CC6CA3FAE900904C158736_168993499.addTaint(taint);
-        return var56AA0989E3CC6CA3FAE900904C158736_168993499;
+String[][] var56AA0989E3CC6CA3FAE900904C158736_1578422647 =         mTechLists;
+        var56AA0989E3CC6CA3FAE900904C158736_1578422647.addTaint(taint);
+        return var56AA0989E3CC6CA3FAE900904C158736_1578422647;
         // ---------- Original Method ----------
         //return mTechLists;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.779 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "F39F6D7560C3618581D5E90E25932665")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.413 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "9442794EA05BD512EED929DD333DDC8A")
     @Override
     public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_1892772330 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_24644026 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_24644026;
+        int varCFCD208495D565EF66E7DFF9F98764DA_1169875341 = (0);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_706622231 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_706622231;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.779 -0400", hash_original_method = "B19E49B45A2ACFBF18675BF33A9FB41F", hash_generated_method = "C7AD5E61CF40D85AB54C8170AEFE0267")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.415 -0400", hash_original_method = "B19E49B45A2ACFBF18675BF33A9FB41F", hash_generated_method = "C7AD5E61CF40D85AB54C8170AEFE0267")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -65,7 +65,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.779 -0400", hash_original_field = "3EF1D37F275B16491C644A6C6C17DFAE", hash_generated_field = "26E56EC2A9AB9ADBEAAD9C9C0A9E8ECF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.415 -0400", hash_original_field = "3EF1D37F275B16491C644A6C6C17DFAE", hash_generated_field = "26E56EC2A9AB9ADBEAAD9C9C0A9E8ECF")
 
     public static final Creator<TechListParcel> CREATOR = new Creator<TechListParcel>() {
         @Override

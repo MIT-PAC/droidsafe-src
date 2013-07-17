@@ -10,11 +10,11 @@ import org.apache.http.auth.Credentials;
 import org.apache.http.client.CredentialsProvider;
 
 public class BasicCredentialsProvider implements CredentialsProvider {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.320 -0400", hash_original_field = "74CEE513FFFAA74DACEC65FAB85A3105", hash_generated_field = "4CB8755C3EC5F46FD31D578864B43B48")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.636 -0400", hash_original_field = "74CEE513FFFAA74DACEC65FAB85A3105", hash_generated_field = "4CB8755C3EC5F46FD31D578864B43B48")
 
     private HashMap<AuthScope, Credentials> credMap;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.320 -0400", hash_original_method = "5972EEB8CE88F96A462831B5B8532572", hash_generated_method = "BABD4A71FDA2BEC7C45B048FBE26AE3C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.636 -0400", hash_original_method = "5972EEB8CE88F96A462831B5B8532572", hash_generated_method = "BABD4A71FDA2BEC7C45B048FBE26AE3C")
     public  BasicCredentialsProvider() {
         super();
         this.credMap = new HashMap<AuthScope, Credentials>();
@@ -23,17 +23,17 @@ public class BasicCredentialsProvider implements CredentialsProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.321 -0400", hash_original_method = "7BEE1753C2713BAF18AAEA2B93F376C4", hash_generated_method = "60493FE73BADEE018AB9D7804172B40F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.637 -0400", hash_original_method = "7BEE1753C2713BAF18AAEA2B93F376C4", hash_generated_method = "C02985C51952FEBF384894B5A041D875")
     public synchronized void setCredentials(
             final AuthScope authscope, 
             final Credentials credentials) {
         addTaint(credentials.getTaint());
         addTaint(authscope.getTaint());
-    if(authscope == null)        
+        if(authscope == null)        
         {
-            IllegalArgumentException varF3C54A3920ACABC473232E4B61A3EC9F_1363804195 = new IllegalArgumentException("Authentication scope may not be null");
-            varF3C54A3920ACABC473232E4B61A3EC9F_1363804195.addTaint(taint);
-            throw varF3C54A3920ACABC473232E4B61A3EC9F_1363804195;
+            IllegalArgumentException varF3C54A3920ACABC473232E4B61A3EC9F_1155552501 = new IllegalArgumentException("Authentication scope may not be null");
+            varF3C54A3920ACABC473232E4B61A3EC9F_1155552501.addTaint(taint);
+            throw varF3C54A3920ACABC473232E4B61A3EC9F_1155552501;
         } //End block
         credMap.put(authscope, credentials);
         // ---------- Original Method ----------
@@ -44,7 +44,7 @@ public class BasicCredentialsProvider implements CredentialsProvider {
     }
 
     
-        private static Credentials matchCredentials(
+    private static Credentials matchCredentials(
             final HashMap<AuthScope, Credentials> map, 
             final AuthScope authscope) {
         Credentials creds = map.get(authscope);
@@ -66,18 +66,18 @@ public class BasicCredentialsProvider implements CredentialsProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.322 -0400", hash_original_method = "AB70A2CF4AFF279D0378510F4C86443E", hash_generated_method = "51D4F537DE8D738FB253A8510683C590")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.637 -0400", hash_original_method = "AB70A2CF4AFF279D0378510F4C86443E", hash_generated_method = "7747ABD7D4C5D25041A98CC2E7B1D2E6")
     public synchronized Credentials getCredentials(final AuthScope authscope) {
         addTaint(authscope.getTaint());
-    if(authscope == null)        
+        if(authscope == null)        
         {
-            IllegalArgumentException varF3C54A3920ACABC473232E4B61A3EC9F_1692343487 = new IllegalArgumentException("Authentication scope may not be null");
-            varF3C54A3920ACABC473232E4B61A3EC9F_1692343487.addTaint(taint);
-            throw varF3C54A3920ACABC473232E4B61A3EC9F_1692343487;
+            IllegalArgumentException varF3C54A3920ACABC473232E4B61A3EC9F_122454253 = new IllegalArgumentException("Authentication scope may not be null");
+            varF3C54A3920ACABC473232E4B61A3EC9F_122454253.addTaint(taint);
+            throw varF3C54A3920ACABC473232E4B61A3EC9F_122454253;
         } //End block
-Credentials var9FEAE3DE7DACA4ACD3468E0C1D91FB57_447892253 =         matchCredentials(this.credMap, authscope);
-        var9FEAE3DE7DACA4ACD3468E0C1D91FB57_447892253.addTaint(taint);
-        return var9FEAE3DE7DACA4ACD3468E0C1D91FB57_447892253;
+Credentials var9FEAE3DE7DACA4ACD3468E0C1D91FB57_2132784250 =         matchCredentials(this.credMap, authscope);
+        var9FEAE3DE7DACA4ACD3468E0C1D91FB57_2132784250.addTaint(taint);
+        return var9FEAE3DE7DACA4ACD3468E0C1D91FB57_2132784250;
         // ---------- Original Method ----------
         //if (authscope == null) {
             //throw new IllegalArgumentException("Authentication scope may not be null");
@@ -86,19 +86,19 @@ Credentials var9FEAE3DE7DACA4ACD3468E0C1D91FB57_447892253 =         matchCredent
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.322 -0400", hash_original_method = "E402ADC687ADEF99C9686D482448AD0B", hash_generated_method = "CB2935EC5CBF136C72A7D117F5A7E1DB")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.637 -0400", hash_original_method = "E402ADC687ADEF99C9686D482448AD0B", hash_generated_method = "CC0812857403AC3B2801BE6E312F1A1F")
     @Override
     public String toString() {
-String var3ABE431499056EAEA366DD605462395E_2032166986 =         credMap.toString();
-        var3ABE431499056EAEA366DD605462395E_2032166986.addTaint(taint);
-        return var3ABE431499056EAEA366DD605462395E_2032166986;
+String var3ABE431499056EAEA366DD605462395E_1666665672 =         credMap.toString();
+        var3ABE431499056EAEA366DD605462395E_1666665672.addTaint(taint);
+        return var3ABE431499056EAEA366DD605462395E_1666665672;
         // ---------- Original Method ----------
         //return credMap.toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.322 -0400", hash_original_method = "B811CBD1AC15B296829E7D50AE8C3355", hash_generated_method = "F819287B754D53E25A1D3BFC60FCEF93")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.637 -0400", hash_original_method = "B811CBD1AC15B296829E7D50AE8C3355", hash_generated_method = "F819287B754D53E25A1D3BFC60FCEF93")
     public synchronized void clear() {
         this.credMap.clear();
         // ---------- Original Method ----------

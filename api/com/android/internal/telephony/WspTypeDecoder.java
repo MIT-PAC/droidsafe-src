@@ -7,23 +7,23 @@ import droidsafe.runtime.*;
 import java.util.HashMap;
 
 public class WspTypeDecoder {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.639 -0400", hash_original_field = "87B087375EA22EC6DF3C6E6687D91C30", hash_generated_field = "8290EB0F02CFA38CB47A5B024440BD48")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.606 -0400", hash_original_field = "87B087375EA22EC6DF3C6E6687D91C30", hash_generated_field = "8290EB0F02CFA38CB47A5B024440BD48")
 
     byte[] wspData;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.639 -0400", hash_original_field = "8099F621661FD70FB137BCB82175502F", hash_generated_field = "C2C63300DBA8596D9F7506F440BE0C4D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.606 -0400", hash_original_field = "8099F621661FD70FB137BCB82175502F", hash_generated_field = "C2C63300DBA8596D9F7506F440BE0C4D")
 
     int dataLength;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.639 -0400", hash_original_field = "7AD31D85AAE2172A581FDA7D1EAB5B0A", hash_generated_field = "3CB5D92C1A42DDEDB166C653EEBE8D94")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.606 -0400", hash_original_field = "7AD31D85AAE2172A581FDA7D1EAB5B0A", hash_generated_field = "3CB5D92C1A42DDEDB166C653EEBE8D94")
 
     long unsigned32bit;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.639 -0400", hash_original_field = "5B57AB60C984EEC4BC98143F6D1E8775", hash_generated_field = "E14F733129C447B5EE9E173FE8A7AECF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.606 -0400", hash_original_field = "5B57AB60C984EEC4BC98143F6D1E8775", hash_generated_field = "E14F733129C447B5EE9E173FE8A7AECF")
 
     String stringValue;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.639 -0400", hash_original_field = "4F8C35A54550B9400D66946BC5378404", hash_generated_field = "99E7FB2AD756216059D191866E496D5B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.606 -0400", hash_original_field = "4F8C35A54550B9400D66946BC5378404", hash_generated_field = "99E7FB2AD756216059D191866E496D5B")
 
     HashMap<String, String> contentParameters;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.639 -0400", hash_original_method = "5272930664D9B8230407C0BE43B28A37", hash_generated_method = "64FBC31D7C3F545B7475044B7FFE92E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.607 -0400", hash_original_method = "5272930664D9B8230407C0BE43B28A37", hash_generated_method = "64FBC31D7C3F545B7475044B7FFE92E1")
     public  WspTypeDecoder(byte[] pdu) {
         wspData = pdu;
         // ---------- Original Method ----------
@@ -31,7 +31,7 @@ public class WspTypeDecoder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.641 -0400", hash_original_method = "AD9CBD08D1B6621762343776ED03C203", hash_generated_method = "A3733DF956D02BD139450198BFBDFAD8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.608 -0400", hash_original_method = "AD9CBD08D1B6621762343776ED03C203", hash_generated_method = "B8910E62FFEAB774C32112D4836BFD6A")
     public boolean decodeTextString(int startIndex) {
         int index = startIndex;
         while
@@ -40,7 +40,7 @@ public class WspTypeDecoder {
             index++;
         } //End block
         dataLength = index - startIndex + 1;
-    if(wspData[startIndex] == 127)        
+        if(wspData[startIndex] == 127)        
         {
             stringValue = new String(wspData, startIndex + 1, dataLength - 2);
         } //End block
@@ -48,9 +48,9 @@ public class WspTypeDecoder {
         {
             stringValue = new String(wspData, startIndex, dataLength - 1);
         } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_426664246 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1030907961 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1030907961;
+        boolean varB326B5062B2F0E69046810717534CB09_1083494229 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_887856697 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_887856697;
         // ---------- Original Method ----------
         //int index = startIndex;
         //while (wspData[index] != 0) {
@@ -66,7 +66,7 @@ public class WspTypeDecoder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.643 -0400", hash_original_method = "3D6D7F94DFC73BF2A0EB1C158A6FC357", hash_generated_method = "B977720B43AEFB67C9F7D4B985ACAF1A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.609 -0400", hash_original_method = "3D6D7F94DFC73BF2A0EB1C158A6FC357", hash_generated_method = "F1D2ED3C3B31F5EF17A8AB7965FD27B5")
     public boolean decodeTokenText(int startIndex) {
         int index = startIndex;
         while
@@ -76,9 +76,9 @@ public class WspTypeDecoder {
         } //End block
         dataLength = index - startIndex + 1;
         stringValue = new String(wspData, startIndex, dataLength - 1);
-        boolean varB326B5062B2F0E69046810717534CB09_1048885085 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1327197728 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1327197728;
+        boolean varB326B5062B2F0E69046810717534CB09_669558228 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_84101901 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_84101901;
         // ---------- Original Method ----------
         //int index = startIndex;
         //while (wspData[index] != 0) {
@@ -90,20 +90,20 @@ public class WspTypeDecoder {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.645 -0400", hash_original_method = "83D32C5BCB0549BFFFB2F2ED18850933", hash_generated_method = "CEE9E8839587FD2310E87221E966A4D6")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.611 -0400", hash_original_method = "83D32C5BCB0549BFFFB2F2ED18850933", hash_generated_method = "965AF126C3D413FAF7A0F61A23444CE6")
     public boolean decodeShortInteger(int startIndex) {
-    if((wspData[startIndex] & 0x80) == 0)        
+        if((wspData[startIndex] & 0x80) == 0)        
         {
-            boolean var68934A3E9455FA72420237EB05902327_713694302 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2048137600 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2048137600;
+            boolean var68934A3E9455FA72420237EB05902327_392839948 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_223988541 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_223988541;
         } //End block
         unsigned32bit = wspData[startIndex] & 0x7f;
         dataLength = 1;
-        boolean varB326B5062B2F0E69046810717534CB09_572290256 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2030139958 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2030139958;
+        boolean varB326B5062B2F0E69046810717534CB09_1096291519 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_747721868 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_747721868;
         // ---------- Original Method ----------
         //if ((wspData[startIndex] & 0x80) == 0) {
             //return false;
@@ -114,15 +114,15 @@ public class WspTypeDecoder {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.646 -0400", hash_original_method = "B3FA7CC1597D63764316082CF6F63FFB", hash_generated_method = "CED7773DD501D2C367BAD49CB4BAC4F5")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.613 -0400", hash_original_method = "B3FA7CC1597D63764316082CF6F63FFB", hash_generated_method = "0EA0AAB10433C6FEDCA8B1FF6C7AF8A3")
     public boolean decodeLongInteger(int startIndex) {
         int lengthMultiOctet = wspData[startIndex] & 0xff;
-    if(lengthMultiOctet > WAP_PDU_SHORT_LENGTH_MAX)        
+        if(lengthMultiOctet > WAP_PDU_SHORT_LENGTH_MAX)        
         {
-            boolean var68934A3E9455FA72420237EB05902327_1587477810 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1624930904 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1624930904;
+            boolean var68934A3E9455FA72420237EB05902327_1366953932 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_247342185 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_247342185;
         } //End block
         unsigned32bit = 0;
 for(int i = 1;i <= lengthMultiOctet;i++)
@@ -130,9 +130,9 @@ for(int i = 1;i <= lengthMultiOctet;i++)
             unsigned32bit = (unsigned32bit << 8) | (wspData[startIndex + i] & 0xff);
         } //End block
         dataLength = 1 + lengthMultiOctet;
-        boolean varB326B5062B2F0E69046810717534CB09_1533109847 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_626129501 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_626129501;
+        boolean varB326B5062B2F0E69046810717534CB09_1512425308 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_93695929 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_93695929;
         // ---------- Original Method ----------
         //int lengthMultiOctet = wspData[startIndex] & 0xff;
         //if (lengthMultiOctet > WAP_PDU_SHORT_LENGTH_MAX) {
@@ -147,18 +147,18 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.647 -0400", hash_original_method = "7B23A3D94A21E730AAD2DD6C619E091C", hash_generated_method = "6169F435C3FBE3DB651CE70631A97C8E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.614 -0400", hash_original_method = "7B23A3D94A21E730AAD2DD6C619E091C", hash_generated_method = "ABAB61B9F20BF50C08D1E06978F9E71D")
     public boolean decodeIntegerValue(int startIndex) {
         addTaint(startIndex);
-    if(decodeShortInteger(startIndex) == true)        
+        if(decodeShortInteger(startIndex) == true)        
         {
-            boolean varB326B5062B2F0E69046810717534CB09_1946311993 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_171889408 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_171889408;
+            boolean varB326B5062B2F0E69046810717534CB09_232346481 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_998101389 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_998101389;
         } //End block
-        boolean var8033954622ED2C7C3E6DF63209C71DC8_1182103365 = (decodeLongInteger(startIndex));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_692744010 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_692744010;
+        boolean var8033954622ED2C7C3E6DF63209C71DC8_1960336073 = (decodeLongInteger(startIndex));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2015201471 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2015201471;
         // ---------- Original Method ----------
         //if (decodeShortInteger(startIndex) == true) {
             //return true;
@@ -167,28 +167,28 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.649 -0400", hash_original_method = "C4B929220DC6CCE2C4298A937E6A511E", hash_generated_method = "55CB7CFAECD20ABE4BA8462782C9F242")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.615 -0400", hash_original_method = "C4B929220DC6CCE2C4298A937E6A511E", hash_generated_method = "6A0F0673CF1B84F0E983275290B55696")
     public boolean decodeUintvarInteger(int startIndex) {
         int index = startIndex;
         unsigned32bit = 0;
         while
 ((wspData[index] & 0x80) != 0)        
         {
-    if((index - startIndex) >= 4)            
+            if((index - startIndex) >= 4)            
             {
-                boolean var68934A3E9455FA72420237EB05902327_693244764 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2112498349 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_2112498349;
+                boolean var68934A3E9455FA72420237EB05902327_1832690178 = (false);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_388491953 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_388491953;
             } //End block
             unsigned32bit = (unsigned32bit << 7) | (wspData[index] & 0x7f);
             index++;
         } //End block
         unsigned32bit = (unsigned32bit << 7) | (wspData[index] & 0x7f);
         dataLength = index - startIndex + 1;
-        boolean varB326B5062B2F0E69046810717534CB09_654078509 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1467367605 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1467367605;
+        boolean varB326B5062B2F0E69046810717534CB09_551451147 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_423341398 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_423341398;
         // ---------- Original Method ----------
         //int index = startIndex;
         //unsigned32bit = 0;
@@ -205,15 +205,15 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.649 -0400", hash_original_method = "EAB4DD919BF3841A91E98F99540A239A", hash_generated_method = "E044E6D3E23B709F874089C43F6773C6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.616 -0400", hash_original_method = "EAB4DD919BF3841A91E98F99540A239A", hash_generated_method = "B6C0AA6F6D2206B911A30C095FE8A116")
     public boolean decodeValueLength(int startIndex) {
-    if((wspData[startIndex] & 0xff) > WAP_PDU_LENGTH_QUOTE)        
+        if((wspData[startIndex] & 0xff) > WAP_PDU_LENGTH_QUOTE)        
         {
-            boolean var68934A3E9455FA72420237EB05902327_1442205699 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2084998103 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2084998103;
+            boolean var68934A3E9455FA72420237EB05902327_627287002 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1149126315 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1149126315;
         } //End block
-    if(wspData[startIndex] < WAP_PDU_LENGTH_QUOTE)        
+        if(wspData[startIndex] < WAP_PDU_LENGTH_QUOTE)        
         {
             unsigned32bit = wspData[startIndex];
             dataLength = 1;
@@ -223,9 +223,9 @@ for(int i = 1;i <= lengthMultiOctet;i++)
             decodeUintvarInteger(startIndex + 1);
             dataLength++;
         } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_582658556 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1167419133 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1167419133;
+        boolean varB326B5062B2F0E69046810717534CB09_1096287057 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1194523699 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1194523699;
         // ---------- Original Method ----------
         //if ((wspData[startIndex] & 0xff) > WAP_PDU_LENGTH_QUOTE) {
             //return false;
@@ -241,7 +241,7 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.651 -0400", hash_original_method = "EF88FEA15C53B4BFAD6A7F9FD25E8828", hash_generated_method = "514984C3657AB70B843A05AC2DEA2EC1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.617 -0400", hash_original_method = "EF88FEA15C53B4BFAD6A7F9FD25E8828", hash_generated_method = "7DC7FD1FCDC13324D5F20750B0FD20F0")
     public boolean decodeExtensionMedia(int startIndex) {
         int index = startIndex;
         dataLength = 0;
@@ -255,9 +255,9 @@ for(int i = 1;i <= lengthMultiOctet;i++)
         } //End block
         dataLength = index - startIndex + 1;
         stringValue = new String(wspData, startIndex, dataLength - 1);
-        boolean varD5E08F13445DBE37781C555C27C687A1_323134789 = (rtrn);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_15617277 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_15617277;
+        boolean varD5E08F13445DBE37781C555C27C687A1_931836168 = (rtrn);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2136726362 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2136726362;
         // ---------- Original Method ----------
         //int index = startIndex;
         //dataLength = 0;
@@ -273,19 +273,19 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.651 -0400", hash_original_method = "996125374865CC4B3A630D89D596F543", hash_generated_method = "5ADB37B33969AA64CB5833788F356C1F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.618 -0400", hash_original_method = "996125374865CC4B3A630D89D596F543", hash_generated_method = "09FA388F3EEE793CDD4C78D8F49950DB")
     public boolean decodeConstrainedEncoding(int startIndex) {
         addTaint(startIndex);
-    if(decodeShortInteger(startIndex) == true)        
+        if(decodeShortInteger(startIndex) == true)        
         {
             stringValue = null;
-            boolean varB326B5062B2F0E69046810717534CB09_1964324943 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1599374506 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1599374506;
+            boolean varB326B5062B2F0E69046810717534CB09_190069991 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1464827534 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1464827534;
         } //End block
-        boolean var8BC14E9D2A2004401925017CFD06D048_2015025356 = (decodeExtensionMedia(startIndex));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1652324400 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1652324400;
+        boolean var8BC14E9D2A2004401925017CFD06D048_437562 = (decodeExtensionMedia(startIndex));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_605422656 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_605422656;
         // ---------- Original Method ----------
         //if (decodeShortInteger(startIndex) == true) {
             //stringValue = null;
@@ -295,27 +295,27 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.653 -0400", hash_original_method = "DFA72F248348DAACE561F2A4664CE110", hash_generated_method = "F19082E8BAD9B6A3DA7855250EAFFDCD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.619 -0400", hash_original_method = "DFA72F248348DAACE561F2A4664CE110", hash_generated_method = "3E72E33A047A0A60B078018A80E18AB6")
     public boolean decodeContentType(int startIndex) {
         addTaint(startIndex);
         int mediaPrefixLength;
         contentParameters = new HashMap<String, String>();
         try 
         {
-    if(decodeValueLength(startIndex) == false)            
+            if(decodeValueLength(startIndex) == false)            
             {
                 boolean found = decodeConstrainedEncoding(startIndex);
-    if(found)                
+                if(found)                
                 {
                     expandWellKnownMimeType();
                 } //End block
-                boolean var6CFE61694EE1BB13AE719D47C2F80B7A_943571450 = (found);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1919277299 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1919277299;
+                boolean var6CFE61694EE1BB13AE719D47C2F80B7A_806245347 = (found);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_288602838 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_288602838;
             } //End block
             int headersLength = (int) unsigned32bit;
             mediaPrefixLength = getDecodedDataLength();
-    if(decodeIntegerValue(startIndex + mediaPrefixLength) == true)            
+            if(decodeIntegerValue(startIndex + mediaPrefixLength) == true)            
             {
                 dataLength += mediaPrefixLength;
                 int readLength = dataLength;
@@ -323,64 +323,64 @@ for(int i = 1;i <= lengthMultiOctet;i++)
                 expandWellKnownMimeType();
                 long wellKnownValue = unsigned32bit;
                 String mimeType = stringValue;
-    if(readContentParameters(startIndex + dataLength,
+                if(readContentParameters(startIndex + dataLength,
                         (headersLength - (dataLength - mediaPrefixLength)), 0))                
                 {
                     dataLength += readLength;
                     unsigned32bit = wellKnownValue;
                     stringValue = mimeType;
-                    boolean varB326B5062B2F0E69046810717534CB09_58480283 = (true);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1338617524 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1338617524;
+                    boolean varB326B5062B2F0E69046810717534CB09_1058389917 = (true);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_244328057 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_244328057;
                 } //End block
-                boolean var68934A3E9455FA72420237EB05902327_1248637526 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1133694092 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1133694092;
+                boolean var68934A3E9455FA72420237EB05902327_1192297709 = (false);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_803378909 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_803378909;
             } //End block
-    if(decodeExtensionMedia(startIndex + mediaPrefixLength) == true)            
+            if(decodeExtensionMedia(startIndex + mediaPrefixLength) == true)            
             {
                 dataLength += mediaPrefixLength;
                 int readLength = dataLength;
                 expandWellKnownMimeType();
                 long wellKnownValue = unsigned32bit;
                 String mimeType = stringValue;
-    if(readContentParameters(startIndex + dataLength,
+                if(readContentParameters(startIndex + dataLength,
                         (headersLength - (dataLength - mediaPrefixLength)), 0))                
                 {
                     dataLength += readLength;
                     unsigned32bit = wellKnownValue;
                     stringValue = mimeType;
-                    boolean varB326B5062B2F0E69046810717534CB09_472830233 = (true);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1984975659 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1984975659;
+                    boolean varB326B5062B2F0E69046810717534CB09_279507918 = (true);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_964438122 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_964438122;
                 } //End block
             } //End block
         } //End block
         catch (ArrayIndexOutOfBoundsException e)
         {
-            boolean var68934A3E9455FA72420237EB05902327_1938725128 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_40822219 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_40822219;
+            boolean var68934A3E9455FA72420237EB05902327_1873203522 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_819123433 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_819123433;
         } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1916086410 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2097860313 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2097860313;
+        boolean var68934A3E9455FA72420237EB05902327_1078428956 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_687607252 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_687607252;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.656 -0400", hash_original_method = "C75EA04BE4FCD731CE2D1E2104C2BFC7", hash_generated_method = "ADA6C876413B62DD66C0ACB10E16D86E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.622 -0400", hash_original_method = "C75EA04BE4FCD731CE2D1E2104C2BFC7", hash_generated_method = "C3913431D681E28E419FC65A2CB47484")
     private boolean readContentParameters(int startIndex, int leftToRead, int accumulator) {
         addTaint(leftToRead);
         addTaint(startIndex);
         int totalRead = 0;
-    if(leftToRead > 0)        
+        if(leftToRead > 0)        
         {
             byte nextByte = wspData[startIndex];
             String value = null;
             String param = null;
-    if((nextByte & 0x80) == 0x00 && nextByte > 31)            
+            if((nextByte & 0x80) == 0x00 && nextByte > 31)            
             {
                 decodeTokenText(startIndex);
                 param = stringValue;
@@ -388,53 +388,53 @@ for(int i = 1;i <= lengthMultiOctet;i++)
             } //End block
             else
             {
-    if(decodeIntegerValue(startIndex))                
+                if(decodeIntegerValue(startIndex))                
                 {
                     totalRead += dataLength;
                     int wellKnownParameterValue = (int) unsigned32bit;
                     param = WELL_KNOWN_PARAMETERS.get(wellKnownParameterValue);
-    if(param == null)                    
+                    if(param == null)                    
                     {
                         param = "unassigned/0x" + Long.toHexString(wellKnownParameterValue);
                     } //End block
-    if(wellKnownParameterValue == Q_VALUE)                    
+                    if(wellKnownParameterValue == Q_VALUE)                    
                     {
-    if(decodeUintvarInteger(startIndex + totalRead))                        
+                        if(decodeUintvarInteger(startIndex + totalRead))                        
                         {
                             totalRead += dataLength;
                             value = String.valueOf(unsigned32bit);
                             contentParameters.put(param, value);
-                            boolean var644C7CF034738F0F8D9A0FA2055400C5_1329417656 = (readContentParameters(startIndex + totalRead, leftToRead
+                            boolean var644C7CF034738F0F8D9A0FA2055400C5_1212062632 = (readContentParameters(startIndex + totalRead, leftToRead
                                                             - totalRead, accumulator + totalRead));
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_623016326 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_623016326;
+                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_17819252 = getTaintBoolean();
+                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_17819252;
                         } //End block
                         else
                         {
-                            boolean var68934A3E9455FA72420237EB05902327_342934115 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_943079000 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_943079000;
+                            boolean var68934A3E9455FA72420237EB05902327_702377607 = (false);
+                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1882855238 = getTaintBoolean();
+                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1882855238;
                         } //End block
                     } //End block
                 } //End block
                 else
                 {
-                    boolean var68934A3E9455FA72420237EB05902327_820040636 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1590922324 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1590922324;
+                    boolean var68934A3E9455FA72420237EB05902327_664131450 = (false);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1469436985 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1469436985;
                 } //End block
             } //End block
-    if(decodeNoValue(startIndex + totalRead))            
+            if(decodeNoValue(startIndex + totalRead))            
             {
                 totalRead += dataLength;
                 value = null;
             } //End block
             else
-    if(decodeIntegerValue(startIndex + totalRead))            
+            if(decodeIntegerValue(startIndex + totalRead))            
             {
                 totalRead += dataLength;
                 int intValue = (int) unsigned32bit;
-    if(intValue == 0)                
+                if(intValue == 0)                
                 {
                     value = "";
                 } //End block
@@ -448,45 +448,45 @@ for(int i = 1;i <= lengthMultiOctet;i++)
                 decodeTokenText(startIndex + totalRead);
                 totalRead += dataLength;
                 value = stringValue;
-    if(value.startsWith("\""))                
+                if(value.startsWith("\""))                
                 {
                     value = value.substring(1);
                 } //End block
             } //End block
             contentParameters.put(param, value);
-            boolean var3FE1C4D8D7EFFA1D4DF50EE46AADF783_202914955 = (readContentParameters(startIndex + totalRead, leftToRead - totalRead,
+            boolean var3FE1C4D8D7EFFA1D4DF50EE46AADF783_831336408 = (readContentParameters(startIndex + totalRead, leftToRead - totalRead,
                                             accumulator + totalRead));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_616521885 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_616521885;
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1845235197 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1845235197;
         } //End block
         else
         {
             dataLength = accumulator;
-            boolean varB326B5062B2F0E69046810717534CB09_1885224664 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_57018823 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_57018823;
+            boolean varB326B5062B2F0E69046810717534CB09_718279067 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_329082884 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_329082884;
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.657 -0400", hash_original_method = "7291D1B6F4C3ED0E6F576F289818668E", hash_generated_method = "286976349CCC597E8945E6562D62BE5D")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.624 -0400", hash_original_method = "7291D1B6F4C3ED0E6F576F289818668E", hash_generated_method = "BD4707CA292BD18C168EEB268DBAE654")
     private boolean decodeNoValue(int startIndex) {
         addTaint(startIndex);
-    if(wspData[startIndex] == 0)        
+        if(wspData[startIndex] == 0)        
         {
             dataLength = 1;
-            boolean varB326B5062B2F0E69046810717534CB09_471953558 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1095578410 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1095578410;
+            boolean varB326B5062B2F0E69046810717534CB09_1781367845 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1780731987 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1780731987;
         } //End block
         else
         {
-            boolean var68934A3E9455FA72420237EB05902327_774670448 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_608322213 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_608322213;
+            boolean var68934A3E9455FA72420237EB05902327_1670568688 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_242216985 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_242216985;
         } //End block
         // ---------- Original Method ----------
         //if (wspData[startIndex] == 0) {
@@ -498,9 +498,9 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.658 -0400", hash_original_method = "CE7AFD5926883ED0297E0E8EC7A7D731", hash_generated_method = "8EF9E10B622BAA7271DF6C50594218BC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.625 -0400", hash_original_method = "CE7AFD5926883ED0297E0E8EC7A7D731", hash_generated_method = "8EF9E10B622BAA7271DF6C50594218BC")
     private void expandWellKnownMimeType() {
-    if(stringValue == null)        
+        if(stringValue == null)        
         {
             int binaryContentType = (int) unsigned32bit;
             stringValue = WELL_KNOWN_MIME_TYPES.get(binaryContentType);
@@ -519,41 +519,41 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.658 -0400", hash_original_method = "6DB17C60367E4FD9EA73FA0EFFFEAB7B", hash_generated_method = "F559B01EE67891D9A19B2C72A28BF2C4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.626 -0400", hash_original_method = "6DB17C60367E4FD9EA73FA0EFFFEAB7B", hash_generated_method = "083C80CF102275705AAC6F8F7360D41F")
     public boolean decodeContentLength(int startIndex) {
         addTaint(startIndex);
-        boolean var08FAF2B09D4897B60CA982086268C257_851822721 = (decodeIntegerValue(startIndex));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2061470284 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2061470284;
+        boolean var08FAF2B09D4897B60CA982086268C257_1611251175 = (decodeIntegerValue(startIndex));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_70901093 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_70901093;
         // ---------- Original Method ----------
         //return decodeIntegerValue(startIndex);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.658 -0400", hash_original_method = "B28E495795E9250815D18C95A5C9BAB3", hash_generated_method = "7E9BAE3B1C69EC8C97E47B6B0392969E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.626 -0400", hash_original_method = "B28E495795E9250815D18C95A5C9BAB3", hash_generated_method = "44C2B306D4F565BAA502230534C03CFF")
     public boolean decodeContentLocation(int startIndex) {
         addTaint(startIndex);
-        boolean varD0063709730E2936081256DB7CE2954A_1645170 = (decodeTextString(startIndex));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1686208330 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1686208330;
+        boolean varD0063709730E2936081256DB7CE2954A_1147018340 = (decodeTextString(startIndex));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_57576714 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_57576714;
         // ---------- Original Method ----------
         //return decodeTextString(startIndex);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.659 -0400", hash_original_method = "AEF025906C652297B5F2A3BDE834B061", hash_generated_method = "37BA22B5AF7E97DECD9E7C64EFCA4DE9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.626 -0400", hash_original_method = "AEF025906C652297B5F2A3BDE834B061", hash_generated_method = "A2985885F80222D9718DCEC126B5CBB3")
     public boolean decodeXWapApplicationId(int startIndex) {
         addTaint(startIndex);
-    if(decodeIntegerValue(startIndex) == true)        
+        if(decodeIntegerValue(startIndex) == true)        
         {
             stringValue = null;
-            boolean varB326B5062B2F0E69046810717534CB09_656591724 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_553310711 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_553310711;
+            boolean varB326B5062B2F0E69046810717534CB09_601353746 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_815953653 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_815953653;
         } //End block
-        boolean varD0063709730E2936081256DB7CE2954A_1194921595 = (decodeTextString(startIndex));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1817540047 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1817540047;
+        boolean varD0063709730E2936081256DB7CE2954A_1506426985 = (decodeTextString(startIndex));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1571883708 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1571883708;
         // ---------- Original Method ----------
         //if (decodeIntegerValue(startIndex) == true) {
             //stringValue = null;
@@ -563,7 +563,7 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.660 -0400", hash_original_method = "BA996E98F19E8451E86BBFBC5F7B64F6", hash_generated_method = "AE04EFA7DBF1056BE36706700BCEE7F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.627 -0400", hash_original_method = "BA996E98F19E8451E86BBFBC5F7B64F6", hash_generated_method = "AD454604267AD46548BAFDAA46252C91")
     public boolean seekXWapApplicationId(int startIndex, int endIndex) {
         addTaint(endIndex);
         addTaint(startIndex);
@@ -572,64 +572,64 @@ for(int i = 1;i <= lengthMultiOctet;i++)
         {
 for(index = startIndex;index <= endIndex;)
             {
-    if(decodeIntegerValue(index))                
+                if(decodeIntegerValue(index))                
                 {
                     int fieldValue = (int) getValue32();
-    if(fieldValue == PARAMETER_ID_X_WAP_APPLICATION_ID)                    
+                    if(fieldValue == PARAMETER_ID_X_WAP_APPLICATION_ID)                    
                     {
                         unsigned32bit = index + 1;
-                        boolean varB326B5062B2F0E69046810717534CB09_1257495473 = (true);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1530079974 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1530079974;
+                        boolean varB326B5062B2F0E69046810717534CB09_1068834196 = (true);
+                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1880588910 = getTaintBoolean();
+                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1880588910;
                     } //End block
                 } //End block
                 else
                 {
-    if(!decodeTextString(index))                    
+                    if(!decodeTextString(index))                    
                     {
-                    boolean var68934A3E9455FA72420237EB05902327_1826046277 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_687382422 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_687382422;
+                    boolean var68934A3E9455FA72420237EB05902327_417803151 = (false);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_103441889 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_103441889;
                     }
                 } //End block
                 index += getDecodedDataLength();
-    if(index > endIndex)                
+                if(index > endIndex)                
                 {
-                boolean var68934A3E9455FA72420237EB05902327_450242224 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_824257978 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_824257978;
+                boolean var68934A3E9455FA72420237EB05902327_1176167371 = (false);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1802016010 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1802016010;
                 }
                 byte val = wspData[index];
-    if(0 <= val && val <= WAP_PDU_SHORT_LENGTH_MAX)                
+                if(0 <= val && val <= WAP_PDU_SHORT_LENGTH_MAX)                
                 {
                     index += wspData[index] + 1;
                 } //End block
                 else
-    if(val == WAP_PDU_LENGTH_QUOTE)                
+                if(val == WAP_PDU_LENGTH_QUOTE)                
                 {
-    if(index + 1 >= endIndex)                    
+                    if(index + 1 >= endIndex)                    
                     {
-                    boolean var68934A3E9455FA72420237EB05902327_898934799 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2112605909 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_2112605909;
+                    boolean var68934A3E9455FA72420237EB05902327_1139687032 = (false);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2054381915 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_2054381915;
                     }
                     index++;
-    if(!decodeUintvarInteger(index))                    
+                    if(!decodeUintvarInteger(index))                    
                     {
-                    boolean var68934A3E9455FA72420237EB05902327_1418440223 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2131190776 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_2131190776;
+                    boolean var68934A3E9455FA72420237EB05902327_1968275490 = (false);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1875906222 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1875906222;
                     }
                     index += getDecodedDataLength();
                 } //End block
                 else
-    if(WAP_PDU_LENGTH_QUOTE < val && val <= 127)                
+                if(WAP_PDU_LENGTH_QUOTE < val && val <= 127)                
                 {
-    if(!decodeTextString(index))                    
+                    if(!decodeTextString(index))                    
                     {
-                    boolean var68934A3E9455FA72420237EB05902327_1682559150 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1687527663 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1687527663;
+                    boolean var68934A3E9455FA72420237EB05902327_1625536053 = (false);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2071185680 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_2071185680;
                     }
                     index += getDecodedDataLength();
                 } //End block
@@ -641,105 +641,105 @@ for(index = startIndex;index <= endIndex;)
         } //End block
         catch (ArrayIndexOutOfBoundsException e)
         {
-            boolean var68934A3E9455FA72420237EB05902327_382133964 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_37933931 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_37933931;
+            boolean var68934A3E9455FA72420237EB05902327_1698111164 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1587941120 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1587941120;
         } //End block
-        boolean var68934A3E9455FA72420237EB05902327_7262654 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_543081949 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_543081949;
+        boolean var68934A3E9455FA72420237EB05902327_920551097 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1909387236 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1909387236;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.661 -0400", hash_original_method = "ABD97DC4CA444BF0EFE71949DA3B86E2", hash_generated_method = "7D08250B43914FD1749E9865992F0348")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.628 -0400", hash_original_method = "ABD97DC4CA444BF0EFE71949DA3B86E2", hash_generated_method = "79DB56A867221F9ED52A47B7635B1796")
     public boolean decodeXWapContentURI(int startIndex) {
         addTaint(startIndex);
-        boolean varD0063709730E2936081256DB7CE2954A_857728771 = (decodeTextString(startIndex));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1662478898 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1662478898;
+        boolean varD0063709730E2936081256DB7CE2954A_661226762 = (decodeTextString(startIndex));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_139624440 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_139624440;
         // ---------- Original Method ----------
         //return decodeTextString(startIndex);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.661 -0400", hash_original_method = "E928D18936C3E8793DB3C75F90F53AE7", hash_generated_method = "728D978858A01E035974F0CF54884A06")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.628 -0400", hash_original_method = "E928D18936C3E8793DB3C75F90F53AE7", hash_generated_method = "E4E29F649124B7EAF89793C99CCB200C")
     public boolean decodeXWapInitiatorURI(int startIndex) {
         addTaint(startIndex);
-        boolean varD0063709730E2936081256DB7CE2954A_253369548 = (decodeTextString(startIndex));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2063622901 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2063622901;
+        boolean varD0063709730E2936081256DB7CE2954A_959777819 = (decodeTextString(startIndex));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_923931932 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_923931932;
         // ---------- Original Method ----------
         //return decodeTextString(startIndex);
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.662 -0400", hash_original_method = "097EE97643EAEF3891CA5DC97464AC94", hash_generated_method = "5B8BF74906ECD66C686376D6CB106436")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.628 -0400", hash_original_method = "097EE97643EAEF3891CA5DC97464AC94", hash_generated_method = "6FCC12FCB3545B4E340C3DDB54E32561")
     public int getDecodedDataLength() {
-        int var8099F621661FD70FB137BCB82175502F_2025364773 = (dataLength);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1144785066 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1144785066;
+        int var8099F621661FD70FB137BCB82175502F_1632478166 = (dataLength);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_711890140 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_711890140;
         // ---------- Original Method ----------
         //return dataLength;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.662 -0400", hash_original_method = "222353B4CE9A8EDC30DC1C12168B96BB", hash_generated_method = "80D2A15BF6DDC6F175A6CEEC71284B40")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.628 -0400", hash_original_method = "222353B4CE9A8EDC30DC1C12168B96BB", hash_generated_method = "5622257285D6967F10ECD8972521083B")
     public long getValue32() {
-        long var7AD31D85AAE2172A581FDA7D1EAB5B0A_1522708344 = (unsigned32bit);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_445996299 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_445996299;
+        long var7AD31D85AAE2172A581FDA7D1EAB5B0A_996198005 = (unsigned32bit);
+                long var0F5264038205EDFB1AC05FBB0E8C5E94_1950429 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1950429;
         // ---------- Original Method ----------
         //return unsigned32bit;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.662 -0400", hash_original_method = "8109E4DB1588BAB17F9AEE1B35CA6B07", hash_generated_method = "6D140BBAFA69B812C1F02741705B7323")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.628 -0400", hash_original_method = "8109E4DB1588BAB17F9AEE1B35CA6B07", hash_generated_method = "22720B3F34D6AC4935C384E2FCD145DA")
     public String getValueString() {
-String varFF91E0F0881095C075E75F0EB79E58BA_515678672 =         stringValue;
-        varFF91E0F0881095C075E75F0EB79E58BA_515678672.addTaint(taint);
-        return varFF91E0F0881095C075E75F0EB79E58BA_515678672;
+String varFF91E0F0881095C075E75F0EB79E58BA_1726284603 =         stringValue;
+        varFF91E0F0881095C075E75F0EB79E58BA_1726284603.addTaint(taint);
+        return varFF91E0F0881095C075E75F0EB79E58BA_1726284603;
         // ---------- Original Method ----------
         //return stringValue;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.662 -0400", hash_original_method = "F1FCA07D8088CB011EA83E53B391A96C", hash_generated_method = "5B802C5181897524A836176527857FAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.628 -0400", hash_original_method = "F1FCA07D8088CB011EA83E53B391A96C", hash_generated_method = "A35E21BE85DF0CA6CA8C65173EF056A8")
     public HashMap<String, String> getContentParameters() {
-HashMap<String, String> varC17DA6B8CB924FDB4B9347F320DA03D2_1670621884 =         contentParameters;
-        varC17DA6B8CB924FDB4B9347F320DA03D2_1670621884.addTaint(taint);
-        return varC17DA6B8CB924FDB4B9347F320DA03D2_1670621884;
+HashMap<String, String> varC17DA6B8CB924FDB4B9347F320DA03D2_1739051153 =         contentParameters;
+        varC17DA6B8CB924FDB4B9347F320DA03D2_1739051153.addTaint(taint);
+        return varC17DA6B8CB924FDB4B9347F320DA03D2_1739051153;
         // ---------- Original Method ----------
         //return contentParameters;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.663 -0400", hash_original_field = "964A97571D63A0AE4749BFDF31F84435", hash_generated_field = "4F6BB777BDC875F4310534E9146342C6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.628 -0400", hash_original_field = "964A97571D63A0AE4749BFDF31F84435", hash_generated_field = "4F6BB777BDC875F4310534E9146342C6")
 
     private static final int WAP_PDU_SHORT_LENGTH_MAX = 30;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.663 -0400", hash_original_field = "D462A4FAE5F635BB10AD018D71FFF675", hash_generated_field = "46631EBD41809AE082E75C1CC8779D4E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.628 -0400", hash_original_field = "D462A4FAE5F635BB10AD018D71FFF675", hash_generated_field = "46631EBD41809AE082E75C1CC8779D4E")
 
     private static final int WAP_PDU_LENGTH_QUOTE = 31;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.663 -0400", hash_original_field = "ADA62C1416CCF70A475348DF41F02D6C", hash_generated_field = "F67180C752D65206BDD9E13836C7D7DA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.628 -0400", hash_original_field = "ADA62C1416CCF70A475348DF41F02D6C", hash_generated_field = "F67180C752D65206BDD9E13836C7D7DA")
 
     public static final int PDU_TYPE_PUSH = 0x06;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.663 -0400", hash_original_field = "39E84628362C30B24B2B0F8B056DF0C2", hash_generated_field = "8B50E6D79FF4EAAE11A4EAFF8CB9C391")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.628 -0400", hash_original_field = "39E84628362C30B24B2B0F8B056DF0C2", hash_generated_field = "8B50E6D79FF4EAAE11A4EAFF8CB9C391")
 
     public static final int PDU_TYPE_CONFIRMED_PUSH = 0x07;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.663 -0400", hash_original_field = "5E381E15128FE3CF13099C94BC13CC9D", hash_generated_field = "74BC2112327D6DF2EED1706E173921EA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.628 -0400", hash_original_field = "5E381E15128FE3CF13099C94BC13CC9D", hash_generated_field = "74BC2112327D6DF2EED1706E173921EA")
 
     private final static HashMap<Integer, String> WELL_KNOWN_MIME_TYPES = new HashMap<Integer, String>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.663 -0400", hash_original_field = "4925E42664D7E5D9E30FCDC14770BC4F", hash_generated_field = "D895CB481798D1C8E4ED40299841B480")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.628 -0400", hash_original_field = "4925E42664D7E5D9E30FCDC14770BC4F", hash_generated_field = "D895CB481798D1C8E4ED40299841B480")
 
     private final static HashMap<Integer, String> WELL_KNOWN_PARAMETERS = new HashMap<Integer, String>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.663 -0400", hash_original_field = "50FED79CAECC86960E5974F84D61AFF5", hash_generated_field = "BC518E54BB1177BA8736BADC7A57ED44")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.628 -0400", hash_original_field = "50FED79CAECC86960E5974F84D61AFF5", hash_generated_field = "BC518E54BB1177BA8736BADC7A57ED44")
 
     public static final int PARAMETER_ID_X_WAP_APPLICATION_ID = 0x2f;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.663 -0400", hash_original_field = "ACEF663A39B141424AAA293CBEFAA9A2", hash_generated_field = "64F5379E14B56A016C5EE441C8ABE3C3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.629 -0400", hash_original_field = "ACEF663A39B141424AAA293CBEFAA9A2", hash_generated_field = "64F5379E14B56A016C5EE441C8ABE3C3")
 
     private static final int Q_VALUE = 0x00;
     static {
@@ -892,13 +892,13 @@ HashMap<String, String> varC17DA6B8CB924FDB4B9347F320DA03D2_1670621884 =        
         WELL_KNOWN_PARAMETERS.put(0x1D, "Path");
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.664 -0400", hash_original_field = "59B3B5B7A655E77C4FD204F6827F65C8", hash_generated_field = "14E991E823DE7ACB83EEE5DC7F027D18")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.629 -0400", hash_original_field = "59B3B5B7A655E77C4FD204F6827F65C8", hash_generated_field = "14E991E823DE7ACB83EEE5DC7F027D18")
 
     public static final String CONTENT_TYPE_B_PUSH_CO = "application/vnd.wap.coc";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.664 -0400", hash_original_field = "F97FC57303985A9ABF27BBC06719A8C2", hash_generated_field = "5F0B8A7CFD7D9E331890C88C73AA57E8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.629 -0400", hash_original_field = "F97FC57303985A9ABF27BBC06719A8C2", hash_generated_field = "5F0B8A7CFD7D9E331890C88C73AA57E8")
 
     public static final String CONTENT_TYPE_B_MMS = "application/vnd.wap.mms-message";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.664 -0400", hash_original_field = "B25CCEE30EB601FE8F066D50875C2297", hash_generated_field = "C046414E5CAA77A1305073B53831F037")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.629 -0400", hash_original_field = "B25CCEE30EB601FE8F066D50875C2297", hash_generated_field = "C046414E5CAA77A1305073B53831F037")
 
     public static final String CONTENT_TYPE_B_PUSH_SYNCML_NOTI = "application/vnd.syncml.notification";
 }

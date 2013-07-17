@@ -10,8 +10,8 @@ import java.text.ParseException;
 
 public class ContentEncodingParser extends HeaderParser {
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.064 -0400", hash_original_method = "025E1AD213DC2532673CB1D1FC75B1CC", hash_generated_method = "FFAAEC346361910DA318E1B0118C932F")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.103 -0400", hash_original_method = "025E1AD213DC2532673CB1D1FC75B1CC", hash_generated_method = "FFAAEC346361910DA318E1B0118C932F")
     public  ContentEncodingParser(String contentEncoding) {
         super(contentEncoding);
         addTaint(contentEncoding.getTaint());
@@ -19,8 +19,8 @@ public class ContentEncodingParser extends HeaderParser {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.064 -0400", hash_original_method = "15007428AB3C93C7C47122E74B782E26", hash_generated_method = "AF577344E81FCFEAE8DA389C0D71631C")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.104 -0400", hash_original_method = "15007428AB3C93C7C47122E74B782E26", hash_generated_method = "AF577344E81FCFEAE8DA389C0D71631C")
     protected  ContentEncodingParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -28,10 +28,10 @@ public class ContentEncodingParser extends HeaderParser {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.127 -0400", hash_original_method = "8ACC6861A4ACA970AEBA8CCFE6984687", hash_generated_method = "A769B38FE7031267BC0DA0E8809E8B82")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.178 -0400", hash_original_method = "8ACC6861A4ACA970AEBA8CCFE6984687", hash_generated_method = "012AB41C28403B26B6CD60A3550274BB")
     public SIPHeader parse() throws ParseException {
-    if(debug)        
+        if(debug)        
         dbg_enter("ContentEncodingParser.parse");
         ContentEncodingList list = new ContentEncodingList();
         try 
@@ -62,19 +62,19 @@ public class ContentEncodingParser extends HeaderParser {
                     list.add(cl);
                 } //End block
             } //End block
-SIPHeader varED12C351C2E8CA4F85F097DDC7E77B4D_2000548333 =             list;
-            varED12C351C2E8CA4F85F097DDC7E77B4D_2000548333.addTaint(taint);
-            return varED12C351C2E8CA4F85F097DDC7E77B4D_2000548333;
+SIPHeader varED12C351C2E8CA4F85F097DDC7E77B4D_1070799665 =             list;
+            varED12C351C2E8CA4F85F097DDC7E77B4D_1070799665.addTaint(taint);
+            return varED12C351C2E8CA4F85F097DDC7E77B4D_1070799665;
         } //End block
         catch (ParseException ex)
         {
-            java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1983780203 = createParseException(ex.getMessage());
-            varB8C80F72F95BF6A850D07F4EC5726C09_1983780203.addTaint(taint);
-            throw varB8C80F72F95BF6A850D07F4EC5726C09_1983780203;
+            java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1598971405 = createParseException(ex.getMessage());
+            varB8C80F72F95BF6A850D07F4EC5726C09_1598971405.addTaint(taint);
+            throw varB8C80F72F95BF6A850D07F4EC5726C09_1598971405;
         } //End block
         finally 
         {
-    if(debug)            
+            if(debug)            
             dbg_leave("ContentEncodingParser.parse");
         } //End block
         // ---------- Original Method ----------

@@ -7,14 +7,14 @@ import droidsafe.runtime.*;
 
 class JSON {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.393 -0400", hash_original_method = "4E4E4AE7CF91B852034C25B487459E58", hash_generated_method = "4E4E4AE7CF91B852034C25B487459E58")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.206 -0400", hash_original_method = "4E4E4AE7CF91B852034C25B487459E58", hash_generated_method = "4E4E4AE7CF91B852034C25B487459E58")
     public JSON ()
     {
         //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     static double checkDouble(double d) throws JSONException {
         if (Double.isInfinite(d) || Double.isNaN(d)) {
             throw new JSONException("Forbidden numeric value: " + d);
@@ -23,7 +23,7 @@ class JSON {
     }
 
     
-        static Boolean toBoolean(Object value) {
+    static Boolean toBoolean(Object value) {
         if (value instanceof Boolean) {
             return (Boolean) value;
         } else if (value instanceof String) {
@@ -38,7 +38,7 @@ class JSON {
     }
 
     
-        static Double toDouble(Object value) {
+    static Double toDouble(Object value) {
         if (value instanceof Double) {
             return (Double) value;
         } else if (value instanceof Number) {
@@ -53,7 +53,7 @@ class JSON {
     }
 
     
-        static Integer toInteger(Object value) {
+    static Integer toInteger(Object value) {
         if (value instanceof Integer) {
             return (Integer) value;
         } else if (value instanceof Number) {
@@ -68,7 +68,7 @@ class JSON {
     }
 
     
-        static Long toLong(Object value) {
+    static Long toLong(Object value) {
         if (value instanceof Long) {
             return (Long) value;
         } else if (value instanceof Number) {
@@ -83,7 +83,7 @@ class JSON {
     }
 
     
-        static String toString(Object value) {
+    static String toString(Object value) {
         if (value instanceof String) {
             return (String) value;
         } else if (value != null) {
@@ -93,7 +93,7 @@ class JSON {
     }
 
     
-        public static JSONException typeMismatch(Object indexOrName, Object actual,
+    public static JSONException typeMismatch(Object indexOrName, Object actual,
             String requiredType) throws JSONException {
         if (actual == null) {
             throw new JSONException("Value at " + indexOrName + " is null.");
@@ -105,7 +105,7 @@ class JSON {
     }
 
     
-        public static JSONException typeMismatch(Object actual, String requiredType) throws JSONException {
+    public static JSONException typeMismatch(Object actual, String requiredType) throws JSONException {
         if (actual == null) {
             throw new JSONException("Value is null.");
         } else {

@@ -10,14 +10,14 @@ import java.util.Hashtable;
 
 public class NameMap implements SIPHeaderNames, PackageNames {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.621 -0400", hash_original_method = "4E6FA555129DB964A8E35D51AC605671", hash_generated_method = "4E6FA555129DB964A8E35D51AC605671")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.605 -0400", hash_original_method = "4E6FA555129DB964A8E35D51AC605671", hash_generated_method = "4E6FA555129DB964A8E35D51AC605671")
     public NameMap ()
     {
         //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     protected static void putNameMap(String headerName, String className) {
         nameMap.put(
             headerName.toLowerCase(),
@@ -25,7 +25,7 @@ public class NameMap implements SIPHeaderNames, PackageNames {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static Class getClassFromName(String headerName) {
         String className = (String) nameMap.get(headerName.toLowerCase());
         if (className == null)
@@ -40,14 +40,14 @@ public class NameMap implements SIPHeaderNames, PackageNames {
     }
 
     
-        public static void addExtensionHeader(
+    public static void addExtensionHeader(
         String headerName,
         String className) {
         nameMap.put(headerName.toLowerCase(), className);
     }
 
     
-        private static void initializeNameMap() {
+    private static void initializeNameMap() {
         nameMap = new Hashtable();
         putNameMap(MinExpires.NAME, MinExpires.class.getName());
         putNameMap(ErrorInfo.NAME, ErrorInfo.class.getName());
@@ -115,7 +115,7 @@ public class NameMap implements SIPHeaderNames, PackageNames {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.622 -0400", hash_original_field = "C45F42D8E26367D12A9961EAC2595CDF", hash_generated_field = "531CBEFD115E0D8DD45BF7A253D5B3F3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.607 -0400", hash_original_field = "C45F42D8E26367D12A9961EAC2595CDF", hash_generated_field = "531CBEFD115E0D8DD45BF7A253D5B3F3")
 
     static Hashtable nameMap;
     static {

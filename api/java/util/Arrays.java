@@ -9,25 +9,25 @@ import java.lang.reflect.Array;
 
 public class Arrays {
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.500 -0400", hash_original_method = "F55A33B7721183458366770FE1A5E43D", hash_generated_method = "49F223D555836B7BADC6EB97733A13D3")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.970 -0400", hash_original_method = "F55A33B7721183458366770FE1A5E43D", hash_generated_method = "49F223D555836B7BADC6EB97733A13D3")
     private  Arrays() {
         // ---------- Original Method ----------
     }
 
     
-        public static <T> List<T> asList(T... array) {
+    public static <T> List<T> asList(T... array) {
         return new ArrayList<T>(array);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int binarySearch(byte[] array, byte value) {
         return binarySearch(array, 0, array.length, value);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int binarySearch(byte[] array, int startIndex, int endIndex, byte value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
@@ -47,13 +47,13 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int binarySearch(char[] array, char value) {
         return binarySearch(array, 0, array.length, value);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int binarySearch(char[] array, int startIndex, int endIndex, char value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
@@ -73,13 +73,13 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int binarySearch(double[] array, double value) {
         return binarySearch(array, 0, array.length, value);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int binarySearch(double[] array, int startIndex, int endIndex, double value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
@@ -109,13 +109,13 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int binarySearch(float[] array, float value) {
         return binarySearch(array, 0, array.length, value);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int binarySearch(float[] array, int startIndex, int endIndex, float value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
@@ -145,13 +145,13 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int binarySearch(int[] array, int value) {
         return binarySearch(array, 0, array.length, value);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int binarySearch(int[] array, int startIndex, int endIndex, int value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
@@ -171,13 +171,13 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int binarySearch(long[] array, long value) {
         return binarySearch(array, 0, array.length, value);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int binarySearch(long[] array, int startIndex, int endIndex, long value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
@@ -197,13 +197,13 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int binarySearch(Object[] array, Object value) {
         return binarySearch(array, 0, array.length, value);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int binarySearch(Object[] array, int startIndex, int endIndex, Object value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
@@ -224,12 +224,12 @@ public class Arrays {
     }
 
     
-        public static <T> int binarySearch(T[] array, T value, Comparator<? super T> comparator) {
+    public static <T> int binarySearch(T[] array, T value, Comparator<? super T> comparator) {
         return binarySearch(array, 0, array.length, value, comparator);
     }
 
     
-        public static <T> int binarySearch(T[] array, int startIndex, int endIndex, T value,
+    public static <T> int binarySearch(T[] array, int startIndex, int endIndex, T value,
             Comparator<? super T> comparator) {
         if (comparator == null) {
             return binarySearch(array, startIndex, endIndex, value);
@@ -252,13 +252,13 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int binarySearch(short[] array, short value) {
         return binarySearch(array, 0, array.length, value);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int binarySearch(short[] array, int startIndex, int endIndex, short value) {
         checkBinarySearchBounds(startIndex, endIndex, array.length);
         int lo = startIndex;
@@ -278,7 +278,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static void checkBinarySearchBounds(int startIndex, int endIndex, int length) {
         if (startIndex > endIndex) {
             throw new IllegalArgumentException();
@@ -289,7 +289,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void fill(byte[] array, byte value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
@@ -297,7 +297,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void fill(byte[] array, int start, int end, byte value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
@@ -306,7 +306,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void fill(short[] array, short value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
@@ -314,7 +314,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void fill(short[] array, int start, int end, short value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
@@ -323,7 +323,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void fill(char[] array, char value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
@@ -331,7 +331,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void fill(char[] array, int start, int end, char value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
@@ -340,7 +340,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void fill(int[] array, int value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
@@ -348,7 +348,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void fill(int[] array, int start, int end, int value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
@@ -357,7 +357,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void fill(long[] array, long value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
@@ -365,7 +365,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void fill(long[] array, int start, int end, long value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
@@ -374,7 +374,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void fill(float[] array, float value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
@@ -382,7 +382,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void fill(float[] array, int start, int end, float value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
@@ -391,7 +391,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void fill(double[] array, double value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
@@ -399,7 +399,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void fill(double[] array, int start, int end, double value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
@@ -408,7 +408,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void fill(boolean[] array, boolean value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
@@ -416,7 +416,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void fill(boolean[] array, int start, int end, boolean value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
@@ -425,7 +425,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void fill(Object[] array, Object value) {
         for (int i = 0; i < array.length; i++) {
             array[i] = value;
@@ -433,7 +433,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void fill(Object[] array, int start, int end, Object value) {
         Arrays.checkStartAndEnd(array.length, start, end);
         for (int i = start; i < end; i++) {
@@ -442,7 +442,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int hashCode(boolean[] array) {
         if (array == null) {
             return 0;
@@ -455,7 +455,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int hashCode(int[] array) {
         if (array == null) {
             return 0;
@@ -468,7 +468,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int hashCode(short[] array) {
         if (array == null) {
             return 0;
@@ -481,7 +481,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int hashCode(char[] array) {
         if (array == null) {
             return 0;
@@ -494,7 +494,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int hashCode(byte[] array) {
         if (array == null) {
             return 0;
@@ -507,7 +507,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int hashCode(long[] array) {
         if (array == null) {
             return 0;
@@ -521,7 +521,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int hashCode(float[] array) {
         if (array == null) {
             return 0;
@@ -534,7 +534,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int hashCode(double[] array) {
         if (array == null) {
             return 0;
@@ -548,7 +548,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int hashCode(Object[] array) {
         if (array == null) {
             return 0;
@@ -567,7 +567,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int deepHashCode(Object[] array) {
         if (array == null) {
             return 0;
@@ -581,7 +581,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static int deepHashCodeElement(Object element) {
         Class<?> cl;
         if (element == null) {
@@ -619,7 +619,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static boolean equals(byte[] array1, byte[] array2) {
         if (array1 == array2) {
             return true;
@@ -636,7 +636,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static boolean equals(short[] array1, short[] array2) {
         if (array1 == array2) {
             return true;
@@ -653,7 +653,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static boolean equals(char[] array1, char[] array2) {
         if (array1 == array2) {
             return true;
@@ -670,7 +670,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static boolean equals(int[] array1, int[] array2) {
         if (array1 == array2) {
             return true;
@@ -687,7 +687,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static boolean equals(long[] array1, long[] array2) {
         if (array1 == array2) {
             return true;
@@ -704,7 +704,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static boolean equals(float[] array1, float[] array2) {
         if (array1 == array2) {
             return true;
@@ -722,7 +722,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static boolean equals(double[] array1, double[] array2) {
         if (array1 == array2) {
             return true;
@@ -740,7 +740,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static boolean equals(boolean[] array1, boolean[] array2) {
         if (array1 == array2) {
             return true;
@@ -757,7 +757,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static boolean equals(Object[] array1, Object[] array2) {
         if (array1 == array2) {
             return true;
@@ -775,7 +775,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static boolean deepEquals(Object[] array1, Object[] array2) {
         if (array1 == array2) {
             return true;
@@ -793,7 +793,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static boolean deepEqualsElements(Object e1, Object e2) {
         Class<?> cl1, cl2;
         if (e1 == e2) {
@@ -838,19 +838,19 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void sort(byte[] array) {
         DualPivotQuicksort.sort(array);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void sort(byte[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void checkOffsetAndCount(int arrayLength, int offset, int count) {
         if ((offset | count) < 0 || offset > arrayLength || arrayLength - offset < count) {
             throw new ArrayIndexOutOfBoundsException(arrayLength, offset,
@@ -859,7 +859,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void checkStartAndEnd(int len, int start, int end) {
         if (start < 0 || end > len) {
             throw new ArrayIndexOutOfBoundsException("start < 0 || end > len."
@@ -871,101 +871,101 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void sort(char[] array) {
         DualPivotQuicksort.sort(array);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void sort(char[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void sort(double[] array) {
         DualPivotQuicksort.sort(array);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void sort(double[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void sort(float[] array) {
         DualPivotQuicksort.sort(array);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void sort(float[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void sort(int[] array) {
         DualPivotQuicksort.sort(array);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void sort(int[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void sort(long[] array) {
         DualPivotQuicksort.sort(array);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void sort(long[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void sort(short[] array) {
         DualPivotQuicksort.sort(array);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void sort(short[] array, int start, int end) {
         DualPivotQuicksort.sort(array, start, end);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void sort(Object[] array) {
         ComparableTimSort.sort(array);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static void sort(Object[] array, int start, int end) {
         ComparableTimSort.sort(array, start, end);
     }
 
     
-        public static <T> void sort(T[] array, int start, int end, Comparator<? super T> comparator) {
+    public static <T> void sort(T[] array, int start, int end, Comparator<? super T> comparator) {
         TimSort.sort(array, start, end, comparator);
     }
 
     
-        public static <T> void sort(T[] array, Comparator<? super T> comparator) {
+    public static <T> void sort(T[] array, Comparator<? super T> comparator) {
         TimSort.sort(array, comparator);
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static String toString(boolean[] array) {
         if (array == null) {
             return "null";
@@ -985,7 +985,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static String toString(byte[] array) {
         if (array == null) {
             return "null";
@@ -1005,7 +1005,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static String toString(char[] array) {
         if (array == null) {
             return "null";
@@ -1025,7 +1025,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static String toString(double[] array) {
         if (array == null) {
             return "null";
@@ -1045,7 +1045,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static String toString(float[] array) {
         if (array == null) {
             return "null";
@@ -1065,7 +1065,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static String toString(int[] array) {
         if (array == null) {
             return "null";
@@ -1085,7 +1085,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static String toString(long[] array) {
         if (array == null) {
             return "null";
@@ -1105,7 +1105,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static String toString(short[] array) {
         if (array == null) {
             return "null";
@@ -1125,7 +1125,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static String toString(Object[] array) {
         if (array == null) {
             return "null";
@@ -1145,7 +1145,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static String deepToString(Object[] array) {
         if (array == null) {
             return "null";
@@ -1156,7 +1156,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static void deepToStringImpl(Object[] array, Object[] origArrays,
             StringBuilder sb) {
         if (array == null) {
@@ -1217,7 +1217,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static boolean deepToStringImplContains(Object[] origArrays,
             Object array) {
         if (origArrays == null || origArrays.length == 0) {
@@ -1232,7 +1232,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static boolean[] copyOf(boolean[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
@@ -1241,7 +1241,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static byte[] copyOf(byte[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
@@ -1250,7 +1250,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static char[] copyOf(char[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
@@ -1259,7 +1259,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static double[] copyOf(double[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
@@ -1268,7 +1268,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static float[] copyOf(float[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
@@ -1277,7 +1277,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int[] copyOf(int[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
@@ -1286,7 +1286,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static long[] copyOf(long[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
@@ -1295,7 +1295,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static short[] copyOf(short[] original, int newLength) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
@@ -1304,7 +1304,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static <T> T[] copyOf(T[] original, int newLength) {
         if (original == null) {
             throw new NullPointerException();
@@ -1316,7 +1316,7 @@ public class Arrays {
     }
 
     
-        public static <T, U> T[] copyOf(U[] original, int newLength, Class<? extends T[]> newType) {
+    public static <T, U> T[] copyOf(U[] original, int newLength, Class<? extends T[]> newType) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
         }
@@ -1324,7 +1324,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static boolean[] copyOfRange(boolean[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
@@ -1341,7 +1341,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static byte[] copyOfRange(byte[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
@@ -1358,7 +1358,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static char[] copyOfRange(char[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
@@ -1375,7 +1375,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static double[] copyOfRange(double[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
@@ -1392,7 +1392,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static float[] copyOfRange(float[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
@@ -1409,7 +1409,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static int[] copyOfRange(int[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
@@ -1426,7 +1426,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static long[] copyOfRange(long[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
@@ -1443,7 +1443,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static short[] copyOfRange(short[] original, int start, int end) {
         if (start > end) {
             throw new IllegalArgumentException();
@@ -1460,7 +1460,7 @@ public class Arrays {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T> T[] copyOfRange(T[] original, int start, int end) {
         int originalLength = original.length;
@@ -1478,7 +1478,7 @@ public class Arrays {
     }
 
     
-        @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     public static <T, U> T[] copyOfRange(U[] original, int start, int end, Class<? extends T[]> newType) {
         if (start > end) {
             throw new IllegalArgumentException();
@@ -1496,18 +1496,18 @@ public class Arrays {
 
     
     private static class ArrayList<E> extends AbstractList<E> implements List<E>, Serializable, RandomAccess {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.515 -0400", hash_original_field = "0CC175B9C0F1B6A831C399E269772661", hash_generated_field = "59D3CDBB1380FC0BC14279DCD13B4432")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.994 -0400", hash_original_field = "0CC175B9C0F1B6A831C399E269772661", hash_generated_field = "59D3CDBB1380FC0BC14279DCD13B4432")
 
         private E[] a;
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.516 -0400", hash_original_method = "28401D48F15218543E5E002CE4B26D15", hash_generated_method = "6C8E7B3C9CFFF01A4CA812F9F9575AC1")
+                @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.995 -0400", hash_original_method = "28401D48F15218543E5E002CE4B26D15", hash_generated_method = "27B21DD0ECA3827F8D6B0EAAF859F751")
           ArrayList(E[] storage) {
-    if(storage == null)            
+            if(storage == null)            
             {
-                NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_977382392 = new NullPointerException();
-                var7338BC9F48D81FE0BBD6183F4014DCC4_977382392.addTaint(taint);
-                throw var7338BC9F48D81FE0BBD6183F4014DCC4_977382392;
+                NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_234179137 = new NullPointerException();
+                var7338BC9F48D81FE0BBD6183F4014DCC4_234179137.addTaint(taint);
+                throw var7338BC9F48D81FE0BBD6183F4014DCC4_234179137;
             } //End block
             a = storage;
             // ---------- Original Method ----------
@@ -1518,20 +1518,20 @@ public class Arrays {
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.516 -0400", hash_original_method = "60C2CE78869B52DAF166079897D78161", hash_generated_method = "3B077A1D74DB429D81FCE793275B1892")
+                @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.995 -0400", hash_original_method = "60C2CE78869B52DAF166079897D78161", hash_generated_method = "B315BB4634966A4BE9CC724DFA655D52")
         @Override
         public boolean contains(Object object) {
             addTaint(object.getTaint());
-    if(object != null)            
+            if(object != null)            
             {
 for(E element : a)
                 {
-    if(object.equals(element))                    
+                    if(object.equals(element))                    
                     {
-                        boolean varB326B5062B2F0E69046810717534CB09_91594763 = (true);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1520986940 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1520986940;
+                        boolean varB326B5062B2F0E69046810717534CB09_12235900 = (true);
+                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_836557851 = getTaintBoolean();
+                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_836557851;
                     } //End block
                 } //End block
             } //End block
@@ -1539,17 +1539,17 @@ for(E element : a)
             {
 for(E element : a)
                 {
-    if(element == null)                    
+                    if(element == null)                    
                     {
-                        boolean varB326B5062B2F0E69046810717534CB09_1408554482 = (true);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_855714460 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_855714460;
+                        boolean varB326B5062B2F0E69046810717534CB09_527647182 = (true);
+                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_514209282 = getTaintBoolean();
+                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_514209282;
                     } //End block
                 } //End block
             } //End block
-            boolean var68934A3E9455FA72420237EB05902327_1145736889 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_669594283 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_669594283;
+            boolean var68934A3E9455FA72420237EB05902327_1347088337 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_117397534 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_117397534;
             // ---------- Original Method ----------
             //if (object != null) {
                 //for (E element : a) {
@@ -1594,20 +1594,20 @@ E varE9389EE2200B2620B656A8101CB528EA_471271096 =                 a[location];
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.518 -0400", hash_original_method = "2A691ADB93209815384C011B6281A9FB", hash_generated_method = "62F98370F1423D0000C081103E1F71CE")
+                @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.999 -0400", hash_original_method = "2A691ADB93209815384C011B6281A9FB", hash_generated_method = "F3FA423AE009FC3FB972E4BB95DC73B3")
         @Override
         public int indexOf(Object object) {
             addTaint(object.getTaint());
-    if(object != null)            
+            if(object != null)            
             {
 for(int i = 0;i < a.length;i++)
                 {
-    if(object.equals(a[i]))                    
+                    if(object.equals(a[i]))                    
                     {
-                        int var865C0C0B4AB0E063E5CAA3387C1A8741_904042024 = (i);
-                                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_939112485 = getTaintInt();
-                        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_939112485;
+                        int var865C0C0B4AB0E063E5CAA3387C1A8741_2124195378 = (i);
+                                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1792711137 = getTaintInt();
+                        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1792711137;
                     } //End block
                 } //End block
             } //End block
@@ -1615,17 +1615,17 @@ for(int i = 0;i < a.length;i++)
             {
 for(int i = 0;i < a.length;i++)
                 {
-    if(a[i] == null)                    
+                    if(a[i] == null)                    
                     {
-                        int var865C0C0B4AB0E063E5CAA3387C1A8741_566084654 = (i);
-                                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_792359982 = getTaintInt();
-                        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_792359982;
+                        int var865C0C0B4AB0E063E5CAA3387C1A8741_552905831 = (i);
+                                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809931636 = getTaintInt();
+                        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809931636;
                     } //End block
                 } //End block
             } //End block
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_1846717273 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1003547032 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1003547032;
+            int var6BB61E3B7BCE0931DA574D19D1D82C88_1689433901 = (-1);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1410326503 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1410326503;
             // ---------- Original Method ----------
             //if (object != null) {
                 //for (int i = 0; i < a.length; i++) {
@@ -1644,20 +1644,20 @@ for(int i = 0;i < a.length;i++)
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.519 -0400", hash_original_method = "0667C423DABE9154AC3C7F87378CA39A", hash_generated_method = "9D81FBB5B7A5848A193DFB31720EF54E")
+                @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.000 -0400", hash_original_method = "0667C423DABE9154AC3C7F87378CA39A", hash_generated_method = "5A763082D72A13CF95932A73699CB8C2")
         @Override
         public int lastIndexOf(Object object) {
             addTaint(object.getTaint());
-    if(object != null)            
+            if(object != null)            
             {
 for(int i = a.length - 1;i >= 0;i--)
                 {
-    if(object.equals(a[i]))                    
+                    if(object.equals(a[i]))                    
                     {
-                        int var865C0C0B4AB0E063E5CAA3387C1A8741_1107384538 = (i);
-                                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1149676907 = getTaintInt();
-                        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1149676907;
+                        int var865C0C0B4AB0E063E5CAA3387C1A8741_2077483472 = (i);
+                                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1989960678 = getTaintInt();
+                        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1989960678;
                     } //End block
                 } //End block
             } //End block
@@ -1665,17 +1665,17 @@ for(int i = a.length - 1;i >= 0;i--)
             {
 for(int i = a.length - 1;i >= 0;i--)
                 {
-    if(a[i] == null)                    
+                    if(a[i] == null)                    
                     {
-                        int var865C0C0B4AB0E063E5CAA3387C1A8741_905129385 = (i);
-                                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_13765905 = getTaintInt();
-                        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_13765905;
+                        int var865C0C0B4AB0E063E5CAA3387C1A8741_380166862 = (i);
+                                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1426416927 = getTaintInt();
+                        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1426416927;
                     } //End block
                 } //End block
             } //End block
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_128429791 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372729576 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372729576;
+            int var6BB61E3B7BCE0931DA574D19D1D82C88_2130062343 = (-1);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_128728776 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_128728776;
             // ---------- Original Method ----------
             //if (object != null) {
                 //for (int i = a.length - 1; i >= 0; i--) {
@@ -1694,15 +1694,15 @@ for(int i = a.length - 1;i >= 0;i--)
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.519 -0400", hash_original_method = "34158A3678F4541935DDD01AA8496683", hash_generated_method = "E5F9158DEDD7CBA7B1F38DB60E48A479")
+                @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.000 -0400", hash_original_method = "34158A3678F4541935DDD01AA8496683", hash_generated_method = "55C6D3EC7DC29A107EE26F06D7DCF1E6")
         @Override
         public E set(int location, E object) {
             E result = a[location];
             a[location] = object;
-E varDC838461EE2FA0CA4C9BBB70A15456B0_1465601843 =             result;
-            varDC838461EE2FA0CA4C9BBB70A15456B0_1465601843.addTaint(taint);
-            return varDC838461EE2FA0CA4C9BBB70A15456B0_1465601843;
+E varDC838461EE2FA0CA4C9BBB70A15456B0_1050941589 =             result;
+            varDC838461EE2FA0CA4C9BBB70A15456B0_1050941589.addTaint(taint);
+            return varDC838461EE2FA0CA4C9BBB70A15456B0_1050941589;
             // ---------- Original Method ----------
             //E result = a[location];
             //a[location] = object;
@@ -1710,50 +1710,50 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1465601843 =             result;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.519 -0400", hash_original_method = "E1955A04BFD4754737F2A0E48B09DBE4", hash_generated_method = "2F2DC16CD73C5321C0B9640B2850CA57")
+                @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.000 -0400", hash_original_method = "E1955A04BFD4754737F2A0E48B09DBE4", hash_generated_method = "A4CD18C6B619BEC2ABE8538573914DA7")
         @Override
         public int size() {
-            int var61F7368DB9A29D8E9C70F407210E1C84_569709843 = (a.length);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2106176908 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2106176908;
+            int var61F7368DB9A29D8E9C70F407210E1C84_1750870361 = (a.length);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1411455983 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1411455983;
             // ---------- Original Method ----------
             //return a.length;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.520 -0400", hash_original_method = "4819818080CBECF7C6E758DFD111EA84", hash_generated_method = "3B80557504683C5CC2CDEF21DFC76438")
+                @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.000 -0400", hash_original_method = "4819818080CBECF7C6E758DFD111EA84", hash_generated_method = "C2DBF9E46B2AC63105764EB046D80AE4")
         @Override
         public Object[] toArray() {
-Object[] var0F7A32B248065CE004C94D59A2988880_1366636397 =             a.clone();
-            var0F7A32B248065CE004C94D59A2988880_1366636397.addTaint(taint);
-            return var0F7A32B248065CE004C94D59A2988880_1366636397;
+Object[] var0F7A32B248065CE004C94D59A2988880_1467673765 =             a.clone();
+            var0F7A32B248065CE004C94D59A2988880_1467673765.addTaint(taint);
+            return var0F7A32B248065CE004C94D59A2988880_1467673765;
             // ---------- Original Method ----------
             //return a.clone();
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.520 -0400", hash_original_method = "7C6C61B0D92D6FAC6E5A876622A28815", hash_generated_method = "97C46A1ACE61DD332D251E56C2DD7721")
+                @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.001 -0400", hash_original_method = "7C6C61B0D92D6FAC6E5A876622A28815", hash_generated_method = "F8735DB7EA6ECCE9326BD99AA6BFFDD0")
         @Override
         @SuppressWarnings({"unchecked", "SuspiciousSystemArraycopy"})
         public <T> T[] toArray(T[] contents) {
             addTaint(contents[0].getTaint());
             int size = size();
-    if(size > contents.length)            
+            if(size > contents.length)            
             {
                 Class<?> ct = contents.getClass().getComponentType();
                 contents = (T[]) Array.newInstance(ct, size);
             } //End block
             System.arraycopy(a, 0, contents, 0, size);
-    if(size < contents.length)            
+            if(size < contents.length)            
             {
                 contents[size] = null;
             } //End block
-T[] var5DC9C33EDB9F81CF1216538024B770BE_1085950504 =             contents;
-            var5DC9C33EDB9F81CF1216538024B770BE_1085950504.addTaint(taint);
-            return var5DC9C33EDB9F81CF1216538024B770BE_1085950504;
+T[] var5DC9C33EDB9F81CF1216538024B770BE_763551582 =             contents;
+            var5DC9C33EDB9F81CF1216538024B770BE_763551582.addTaint(taint);
+            return var5DC9C33EDB9F81CF1216538024B770BE_763551582;
             // ---------- Original Method ----------
             //int size = size();
             //if (size > contents.length) {
@@ -1768,7 +1768,7 @@ T[] var5DC9C33EDB9F81CF1216538024B770BE_1085950504 =             contents;
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.520 -0400", hash_original_field = "9722346E49DFE0324A719B44FDFE9526", hash_generated_field = "534D9DD3A0BE09C3AE46777ECEF6E48A")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.001 -0400", hash_original_field = "9722346E49DFE0324A719B44FDFE9526", hash_generated_field = "534D9DD3A0BE09C3AE46777ECEF6E48A")
 
         private static final long serialVersionUID = -2764017481108945198L;
     }

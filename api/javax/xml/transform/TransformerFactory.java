@@ -7,13 +7,13 @@ import droidsafe.runtime.*;
 
 public abstract class TransformerFactory {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.065 -0400", hash_original_method = "882398A945C9CF8F9D3ABF21E7DFDBFC", hash_generated_method = "2BC7FF716052BC1AB7666C5153E272F2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.108 -0400", hash_original_method = "882398A945C9CF8F9D3ABF21E7DFDBFC", hash_generated_method = "2BC7FF716052BC1AB7666C5153E272F2")
     protected  TransformerFactory() {
         // ---------- Original Method ----------
     }
 
     
-        public static TransformerFactory newInstance() throws TransformerFactoryConfigurationError {
+    public static TransformerFactory newInstance() throws TransformerFactoryConfigurationError {
         String className = "org.apache.xalan.processor.TransformerFactoryImpl";
         try {
             return (TransformerFactory) Class.forName(className).newInstance();
@@ -23,7 +23,7 @@ public abstract class TransformerFactory {
     }
 
     
-        @DSModeled(DSC.BAN)
+    @DSModeled(DSC.BAN)
     public static TransformerFactory newInstance(String factoryClassName, ClassLoader classLoader) throws TransformerFactoryConfigurationError {
         if (factoryClassName == null) {
             throw new TransformerFactoryConfigurationError("factoryClassName == null");

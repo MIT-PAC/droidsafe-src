@@ -8,23 +8,23 @@ import java.io.UnsupportedEncodingException;
 
 public class Base64 {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.736 -0400", hash_original_method = "B12DC6BE1A1E2EB3A4F484EDEACB8E03", hash_generated_method = "96F9E0BDD170E9FC5C3951236F2EB54E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.562 -0400", hash_original_method = "B12DC6BE1A1E2EB3A4F484EDEACB8E03", hash_generated_method = "96F9E0BDD170E9FC5C3951236F2EB54E")
     private  Base64() {
         // ---------- Original Method ----------
     }
 
     
-        public static byte[] decode(String str, int flags) {
+    public static byte[] decode(String str, int flags) {
         return decode(str.getBytes(), flags);
     }
 
     
-        public static byte[] decode(byte[] input, int flags) {
+    public static byte[] decode(byte[] input, int flags) {
         return decode(input, 0, input.length, flags);
     }
 
     
-        public static byte[] decode(byte[] input, int offset, int len, int flags) {
+    public static byte[] decode(byte[] input, int offset, int len, int flags) {
         Decoder decoder = new Decoder(flags, new byte[len*3/4]);
         if (!decoder.process(input, offset, len, true)) {
             throw new IllegalArgumentException("bad base-64");
@@ -38,7 +38,7 @@ public class Base64 {
     }
 
     
-        public static String encodeToString(byte[] input, int flags) {
+    public static String encodeToString(byte[] input, int flags) {
         try {
             return new String(encode(input, flags), "US-ASCII");
         } catch (UnsupportedEncodingException e) {
@@ -47,7 +47,7 @@ public class Base64 {
     }
 
     
-        public static String encodeToString(byte[] input, int offset, int len, int flags) {
+    public static String encodeToString(byte[] input, int offset, int len, int flags) {
         try {
             return new String(encode(input, offset, len, flags), "US-ASCII");
         } catch (UnsupportedEncodingException e) {
@@ -56,12 +56,12 @@ public class Base64 {
     }
 
     
-        public static byte[] encode(byte[] input, int flags) {
+    public static byte[] encode(byte[] input, int flags) {
         return encode(input, 0, input.length, flags);
     }
 
     
-        public static byte[] encode(byte[] input, int offset, int len, int flags) {
+    public static byte[] encode(byte[] input, int offset, int len, int flags) {
         Encoder encoder = new Encoder(flags, null);
         int output_len = len / 3 * 4;
         if (encoder.do_padding) {
@@ -87,14 +87,14 @@ public class Base64 {
 
     
     static abstract class Coder {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.738 -0400", hash_original_field = "78E6221F6393D1356681DB398F14CE6D", hash_generated_field = "D105CC424D01A80053DB00A4050DABF0")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.575 -0400", hash_original_field = "78E6221F6393D1356681DB398F14CE6D", hash_generated_field = "D105CC424D01A80053DB00A4050DABF0")
 
         public byte[] output;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.738 -0400", hash_original_field = "11D8C28A64490A987612F2332502467F", hash_generated_field = "2CC8ED7F6ECA7F350E8D1039E35F5E73")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.575 -0400", hash_original_field = "11D8C28A64490A987612F2332502467F", hash_generated_field = "2CC8ED7F6ECA7F350E8D1039E35F5E73")
 
         public int op;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.738 -0400", hash_original_method = "1EFD9A0D338C10B7A776AFC361894E38", hash_generated_method = "1EFD9A0D338C10B7A776AFC361894E38")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.575 -0400", hash_original_method = "1EFD9A0D338C10B7A776AFC361894E38", hash_generated_method = "1EFD9A0D338C10B7A776AFC361894E38")
         public Coder ()
         {
             //Synthesized constructor
@@ -112,17 +112,17 @@ public class Base64 {
 
     
     static class Decoder extends Coder {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.738 -0400", hash_original_field = "9ED39E2EA931586B6A985A6942EF573E", hash_generated_field = "26F20A2ED327951B7F331D22F1CEEC90")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.575 -0400", hash_original_field = "9ED39E2EA931586B6A985A6942EF573E", hash_generated_field = "26F20A2ED327951B7F331D22F1CEEC90")
 
         private int state;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.739 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "810C3DA5CE7DA1BA423D6BE76816E5C9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.575 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "810C3DA5CE7DA1BA423D6BE76816E5C9")
 
         private int value;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.739 -0400", hash_original_field = "CAFC7170ED01C2F5C972CAC7CDE6E932", hash_generated_field = "B4B64C8D6FAE0E02F5E7C4A49CB38458")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.575 -0400", hash_original_field = "CAFC7170ED01C2F5C972CAC7CDE6E932", hash_generated_field = "B4B64C8D6FAE0E02F5E7C4A49CB38458")
 
         private int[] alphabet;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.739 -0400", hash_original_method = "28200CA179B3214BB831C341BA07009C", hash_generated_method = "D841E8FE41DB211EFB6CA8EFEC89CA61")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.575 -0400", hash_original_method = "28200CA179B3214BB831C341BA07009C", hash_generated_method = "D841E8FE41DB211EFB6CA8EFEC89CA61")
         public  Decoder(int flags, byte[] output) {
             addTaint(output[0]);
             this.output = output;
@@ -137,30 +137,30 @@ public class Base64 {
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.740 -0400", hash_original_method = "006B314D1443F75FACC9C9CF957F4174", hash_generated_method = "92E11B3D7F0CDB00CAA297B330E97868")
+                @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.576 -0400", hash_original_method = "006B314D1443F75FACC9C9CF957F4174", hash_generated_method = "7F0D147570D91F5FBF76FAC1A602C443")
         public int maxOutputSize(int len) {
             addTaint(len);
-            int var2696DBD0CF405B815A4B08291CE1C595_770163176 = (len * 3/4 + 10);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1245726307 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1245726307;
+            int var2696DBD0CF405B815A4B08291CE1C595_797473231 = (len * 3/4 + 10);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1458789235 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1458789235;
             // ---------- Original Method ----------
             //return len * 3/4 + 10;
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.745 -0400", hash_original_method = "5E49CA254C7BA97645BE526448794F2D", hash_generated_method = "20CC8F0A016261CA2DC1298D14C83F58")
+                @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.577 -0400", hash_original_method = "5E49CA254C7BA97645BE526448794F2D", hash_generated_method = "EADED4294A9B7E5A6509E08354DE8595")
         public boolean process(byte[] input, int offset, int len, boolean finish) {
             addTaint(finish);
             addTaint(len);
             addTaint(offset);
             addTaint(input[0]);
-    if(this.state == 6)            
+            if(this.state == 6)            
             {
-            boolean var68934A3E9455FA72420237EB05902327_1265427206 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_546843775 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_546843775;
+            boolean var68934A3E9455FA72420237EB05902327_1638559945 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_494867824 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_494867824;
             }
             int p = offset;
             len += offset;
@@ -172,7 +172,7 @@ public class Base64 {
             while
 (p < len)            
             {
-    if(state == 0)                
+                if(state == 0)                
                 {
                     while
 (p+4 <= len &&
@@ -187,64 +187,64 @@ public class Base64 {
                         op += 3;
                         p += 4;
                     } //End block
-    if(p >= len)                    
+                    if(p >= len)                    
                     break;
                 } //End block
                 int d = alphabet[input[p++] & 0xff];
 switch(state){
                 case 0:
-    if(d >= 0)                
+                if(d >= 0)                
                 {
                     value = d;
                     ++state;
                 } //End block
                 else
-    if(d != SKIP)                
+                if(d != SKIP)                
                 {
                     this.state = 6;
-                    boolean var68934A3E9455FA72420237EB05902327_939308704 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1175969902 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1175969902;
+                    boolean var68934A3E9455FA72420237EB05902327_332475444 = (false);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_689027165 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_689027165;
                 } //End block
                 break;
                 case 1:
-    if(d >= 0)                
+                if(d >= 0)                
                 {
                     value = (value << 6) | d;
                     ++state;
                 } //End block
                 else
-    if(d != SKIP)                
+                if(d != SKIP)                
                 {
                     this.state = 6;
-                    boolean var68934A3E9455FA72420237EB05902327_1193409511 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1844068471 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1844068471;
+                    boolean var68934A3E9455FA72420237EB05902327_610206431 = (false);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1807985352 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1807985352;
                 } //End block
                 break;
                 case 2:
-    if(d >= 0)                
+                if(d >= 0)                
                 {
                     value = (value << 6) | d;
                     ++state;
                 } //End block
                 else
-    if(d == EQUALS)                
+                if(d == EQUALS)                
                 {
                     output[op++] = (byte) (value >> 4);
                     state = 4;
                 } //End block
                 else
-    if(d != SKIP)                
+                if(d != SKIP)                
                 {
                     this.state = 6;
-                    boolean var68934A3E9455FA72420237EB05902327_135984228 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1970227011 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1970227011;
+                    boolean var68934A3E9455FA72420237EB05902327_814631859 = (false);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_183759499 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_183759499;
                 } //End block
                 break;
                 case 3:
-    if(d >= 0)                
+                if(d >= 0)                
                 {
                     value = (value << 6) | d;
                     output[op+2] = (byte) value;
@@ -254,7 +254,7 @@ switch(state){
                     state = 0;
                 } //End block
                 else
-    if(d == EQUALS)                
+                if(d == EQUALS)                
                 {
                     output[op+1] = (byte) (value >> 2);
                     output[op] = (byte) (value >> 10);
@@ -262,56 +262,56 @@ switch(state){
                     state = 5;
                 } //End block
                 else
-    if(d != SKIP)                
+                if(d != SKIP)                
                 {
                     this.state = 6;
-                    boolean var68934A3E9455FA72420237EB05902327_1183214320 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1831533460 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1831533460;
+                    boolean var68934A3E9455FA72420237EB05902327_2089262246 = (false);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_483478455 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_483478455;
                 } //End block
                 break;
                 case 4:
-    if(d == EQUALS)                
+                if(d == EQUALS)                
                 {
                     ++state;
                 } //End block
                 else
-    if(d != SKIP)                
+                if(d != SKIP)                
                 {
                     this.state = 6;
-                    boolean var68934A3E9455FA72420237EB05902327_1814030564 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_274820782 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_274820782;
+                    boolean var68934A3E9455FA72420237EB05902327_1558943342 = (false);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1850099494 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1850099494;
                 } //End block
                 break;
                 case 5:
-    if(d != SKIP)                
+                if(d != SKIP)                
                 {
                     this.state = 6;
-                    boolean var68934A3E9455FA72420237EB05902327_504540675 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1853277200 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1853277200;
+                    boolean var68934A3E9455FA72420237EB05902327_282582495 = (false);
+                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_818362804 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_818362804;
                 } //End block
                 break;
 }
             } //End block
-    if(!finish)            
+            if(!finish)            
             {
                 this.state = state;
                 this.value = value;
                 this.op = op;
-                boolean varB326B5062B2F0E69046810717534CB09_189817141 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_607941947 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_607941947;
+                boolean varB326B5062B2F0E69046810717534CB09_418174981 = (true);
+                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1483480197 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1483480197;
             } //End block
 switch(state){
             case 0:
             break;
             case 1:
             this.state = 6;
-            boolean var68934A3E9455FA72420237EB05902327_993855180 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1158727949 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1158727949;
+            boolean var68934A3E9455FA72420237EB05902327_1830764209 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_554518035 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_554518035;
             case 2:
             output[op++] = (byte) (value >> 4);
             break;
@@ -321,22 +321,22 @@ switch(state){
             break;
             case 4:
             this.state = 6;
-            boolean var68934A3E9455FA72420237EB05902327_1056947463 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_467415083 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_467415083;
+            boolean var68934A3E9455FA72420237EB05902327_1456252139 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_863088880 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_863088880;
             case 5:
             break;
 }            this.state = state;
             this.op = op;
-            boolean varB326B5062B2F0E69046810717534CB09_429001334 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_937584572 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_937584572;
+            boolean varB326B5062B2F0E69046810717534CB09_52073182 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_615114883 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_615114883;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.746 -0400", hash_original_field = "611F478DA6534A752DBC5AF0D44769F3", hash_generated_field = "C476360DF9D857A2925681052DA07C19")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.578 -0400", hash_original_field = "611F478DA6534A752DBC5AF0D44769F3", hash_generated_field = "C476360DF9D857A2925681052DA07C19")
 
         private static final int DECODE[] = {
             -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
@@ -356,7 +356,7 @@ switch(state){
             -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
             -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
         };
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.747 -0400", hash_original_field = "F34C7E32E25EF2F32AA59D57BCF5197A", hash_generated_field = "D484883C2C35399CF99348476C2D0A97")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.578 -0400", hash_original_field = "F34C7E32E25EF2F32AA59D57BCF5197A", hash_generated_field = "D484883C2C35399CF99348476C2D0A97")
 
         private static final int DECODE_WEBSAFE[] = {
             -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
@@ -376,10 +376,10 @@ switch(state){
             -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
             -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
         };
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.747 -0400", hash_original_field = "7AD47BEDDF225CA8CF388685F0ABBB5F", hash_generated_field = "4F546CF4B8E245683DB60010E7DCC5AA")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.578 -0400", hash_original_field = "7AD47BEDDF225CA8CF388685F0ABBB5F", hash_generated_field = "4F546CF4B8E245683DB60010E7DCC5AA")
 
         private static final int SKIP = -1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.747 -0400", hash_original_field = "270EC1947A9493FCCA3C4F63536B2E8A", hash_generated_field = "15968FF04D715A124A2832120101F3DA")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.578 -0400", hash_original_field = "270EC1947A9493FCCA3C4F63536B2E8A", hash_generated_field = "15968FF04D715A124A2832120101F3DA")
 
         private static final int EQUALS = -2;
     }
@@ -387,29 +387,29 @@ switch(state){
 
     
     static class Encoder extends Coder {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.747 -0400", hash_original_field = "7AEA2552DFE7EB84B9443B6FC9BA6E01", hash_generated_field = "3976D48215D9CD369B9FF1E7AF7204AD")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.578 -0400", hash_original_field = "7AEA2552DFE7EB84B9443B6FC9BA6E01", hash_generated_field = "3976D48215D9CD369B9FF1E7AF7204AD")
 
         private byte[] tail;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.748 -0400", hash_original_field = "8BCD185842634B14855CACA64EEE03BB", hash_generated_field = "7F978AE0FA51DCF6FD5C73F0C45A5FAC")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.578 -0400", hash_original_field = "8BCD185842634B14855CACA64EEE03BB", hash_generated_field = "7F978AE0FA51DCF6FD5C73F0C45A5FAC")
 
         int tailLen;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.748 -0400", hash_original_field = "E2942A04780E223B215EB8B663CF5353", hash_generated_field = "82CC849FCF58347832EA6BB917282DBE")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.578 -0400", hash_original_field = "E2942A04780E223B215EB8B663CF5353", hash_generated_field = "82CC849FCF58347832EA6BB917282DBE")
 
         private int count;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.748 -0400", hash_original_field = "1281B7A56518CE6647ECC1C8D9ACC4DA", hash_generated_field = "4E0FC1C064D8F3218FE12A1DD5866176")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.578 -0400", hash_original_field = "1281B7A56518CE6647ECC1C8D9ACC4DA", hash_generated_field = "4E0FC1C064D8F3218FE12A1DD5866176")
 
         public boolean do_padding;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.748 -0400", hash_original_field = "BE5050F79710D26588B78A51D2196B92", hash_generated_field = "232A0ACDB2D945A1E8AF0B685CCC1422")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.578 -0400", hash_original_field = "BE5050F79710D26588B78A51D2196B92", hash_generated_field = "232A0ACDB2D945A1E8AF0B685CCC1422")
 
         public boolean do_newline;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.748 -0400", hash_original_field = "7988A80F8118ABF3532380CF22F0DC8E", hash_generated_field = "C3A36DCB9AD646054DE6D44BB1B8EC47")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.578 -0400", hash_original_field = "7988A80F8118ABF3532380CF22F0DC8E", hash_generated_field = "C3A36DCB9AD646054DE6D44BB1B8EC47")
 
         public boolean do_cr;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.748 -0400", hash_original_field = "CAFC7170ED01C2F5C972CAC7CDE6E932", hash_generated_field = "01F03DE41626851E3A4CAC48E94745D3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.578 -0400", hash_original_field = "CAFC7170ED01C2F5C972CAC7CDE6E932", hash_generated_field = "01F03DE41626851E3A4CAC48E94745D3")
 
         private byte[] alphabet;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.749 -0400", hash_original_method = "248AE984D731F285F53C3C8EA52608A3", hash_generated_method = "8C6E94385E5C97C018E423BAAF588674")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.579 -0400", hash_original_method = "248AE984D731F285F53C3C8EA52608A3", hash_generated_method = "8C6E94385E5C97C018E423BAAF588674")
         public  Encoder(int flags, byte[] output) {
             addTaint(output[0]);
             this.output = output;
@@ -432,19 +432,19 @@ switch(state){
         }
 
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.749 -0400", hash_original_method = "9D3D65123317D09985A4DE210ACBFBB3", hash_generated_method = "6213963919350540069660E8BBAF4049")
+                @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.579 -0400", hash_original_method = "9D3D65123317D09985A4DE210ACBFBB3", hash_generated_method = "F9775C2A12A7323CB8221B30518EE9F7")
         public int maxOutputSize(int len) {
             addTaint(len);
-            int varBDA77988D3102AF821F5AD4D081E7C2F_921621461 = (len * 8/5 + 10);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_639256487 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_639256487;
+            int varBDA77988D3102AF821F5AD4D081E7C2F_468559914 = (len * 8/5 + 10);
+                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_172642546 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_172642546;
             // ---------- Original Method ----------
             //return len * 8/5 + 10;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.756 -0400", hash_original_method = "551D84DD57FDEAF562D9C2C55207FB04", hash_generated_method = "497229866A00503071B6B501E9D0F51B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.581 -0400", hash_original_method = "551D84DD57FDEAF562D9C2C55207FB04", hash_generated_method = "10A561BCDE94230FE0BBE95759C56831")
         public boolean process(byte[] input, int offset, int len, boolean finish) {
             addTaint(finish);
             addTaint(len);
@@ -460,7 +460,7 @@ switch(tailLen){
             case 0:
             break;
             case 1:
-    if(p+2 <= len)            
+            if(p+2 <= len)            
             {
                 v = ((tail[0] & 0xff) << 16) |
                             ((input[p++] & 0xff) << 8) |
@@ -470,7 +470,7 @@ switch(tailLen){
             ;
             break;
             case 2:
-    if(p+1 <= len)            
+            if(p+1 <= len)            
             {
                 v = ((tail[0] & 0xff) << 16) |
                             ((tail[1] & 0xff) << 8) |
@@ -478,15 +478,15 @@ switch(tailLen){
                 tailLen = 0;
             } //End block
             break;
-}    if(v != -1)            
+}            if(v != -1)            
             {
                 output[op++] = alphabet[(v >> 18) & 0x3f];
                 output[op++] = alphabet[(v >> 12) & 0x3f];
                 output[op++] = alphabet[(v >> 6) & 0x3f];
                 output[op++] = alphabet[v & 0x3f];
-    if(--count == 0)                
+                if(--count == 0)                
                 {
-    if(do_cr)                    
+                    if(do_cr)                    
                     output[op++] = '\r';
                     output[op++] = '\n';
                     count = LINE_GROUPS;
@@ -504,37 +504,37 @@ switch(tailLen){
                 output[op+3] = alphabet[v & 0x3f];
                 p += 3;
                 op += 4;
-    if(--count == 0)                
+                if(--count == 0)                
                 {
-    if(do_cr)                    
+                    if(do_cr)                    
                     output[op++] = '\r';
                     output[op++] = '\n';
                     count = LINE_GROUPS;
                 } //End block
             } //End block
-    if(finish)            
+            if(finish)            
             {
-    if(p-tailLen == len-1)                
+                if(p-tailLen == len-1)                
                 {
                     int t = 0;
                     v = ((tailLen > 0 ? tail[t++] : input[p++]) & 0xff) << 4;
                     tailLen -= t;
                     output[op++] = alphabet[(v >> 6) & 0x3f];
                     output[op++] = alphabet[v & 0x3f];
-    if(do_padding)                    
+                    if(do_padding)                    
                     {
                         output[op++] = '=';
                         output[op++] = '=';
                     } //End block
-    if(do_newline)                    
+                    if(do_newline)                    
                     {
-    if(do_cr)                        
+                        if(do_cr)                        
                         output[op++] = '\r';
                         output[op++] = '\n';
                     } //End block
                 } //End block
                 else
-    if(p-tailLen == len-2)                
+                if(p-tailLen == len-2)                
                 {
                     int t = 0;
                     v = (((tailLen > 1 ? tail[t++] : input[p++]) & 0xff) << 10) |
@@ -543,33 +543,33 @@ switch(tailLen){
                     output[op++] = alphabet[(v >> 12) & 0x3f];
                     output[op++] = alphabet[(v >> 6) & 0x3f];
                     output[op++] = alphabet[v & 0x3f];
-    if(do_padding)                    
+                    if(do_padding)                    
                     {
                         output[op++] = '=';
                     } //End block
-    if(do_newline)                    
+                    if(do_newline)                    
                     {
-    if(do_cr)                        
+                        if(do_cr)                        
                         output[op++] = '\r';
                         output[op++] = '\n';
                     } //End block
                 } //End block
                 else
-    if(do_newline && op > 0 && count != LINE_GROUPS)                
+                if(do_newline && op > 0 && count != LINE_GROUPS)                
                 {
-    if(do_cr)                    
+                    if(do_cr)                    
                     output[op++] = '\r';
                     output[op++] = '\n';
                 } //End block
             } //End block
             else
             {
-    if(p == len-1)                
+                if(p == len-1)                
                 {
                     tail[tailLen++] = input[p];
                 } //End block
                 else
-    if(p == len-2)                
+                if(p == len-2)                
                 {
                     tail[tailLen++] = input[p];
                     tail[tailLen++] = input[p+1];
@@ -577,18 +577,18 @@ switch(tailLen){
             } //End block
             this.op = op;
             this.count = count;
-            boolean varB326B5062B2F0E69046810717534CB09_1286336717 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1802376602 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1802376602;
+            boolean varB326B5062B2F0E69046810717534CB09_528054871 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_472406853 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_472406853;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.757 -0400", hash_original_field = "1E5B476D78E4826DF81F960BC0323F2B", hash_generated_field = "AEA37AD1BAA7CFE9FF857DBCC9155C6B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.581 -0400", hash_original_field = "1E5B476D78E4826DF81F960BC0323F2B", hash_generated_field = "AEA37AD1BAA7CFE9FF857DBCC9155C6B")
 
         public static final int LINE_GROUPS = 19;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.757 -0400", hash_original_field = "BAA4DC55A7729372B7E92EF38AF267DD", hash_generated_field = "99FC3B7700D42E7A1429B46B2DABA37C")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.581 -0400", hash_original_field = "BAA4DC55A7729372B7E92EF38AF267DD", hash_generated_field = "99FC3B7700D42E7A1429B46B2DABA37C")
 
         private static final byte ENCODE[] = {
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
@@ -596,7 +596,7 @@ switch(tailLen){
             'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
             'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/',
         };
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.757 -0400", hash_original_field = "FAE67F9513FCD5EDF24DB79B0A052717", hash_generated_field = "DD402FEA9A4EE03692FE1322010C2742")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.582 -0400", hash_original_field = "FAE67F9513FCD5EDF24DB79B0A052717", hash_generated_field = "DD402FEA9A4EE03692FE1322010C2742")
 
         private static final byte ENCODE_WEBSAFE[] = {
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
@@ -608,22 +608,22 @@ switch(tailLen){
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.757 -0400", hash_original_field = "D8C7884D3AEEE28E1825BF7A4F3346D4", hash_generated_field = "F5A513FC09A88F617602B5914AAD8A90")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.582 -0400", hash_original_field = "D8C7884D3AEEE28E1825BF7A4F3346D4", hash_generated_field = "F5A513FC09A88F617602B5914AAD8A90")
 
     public static final int DEFAULT = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.757 -0400", hash_original_field = "EA1F2804AD1F11E3261D3E3990F4FD35", hash_generated_field = "90B2069C15AB13D219B27D01B76F7345")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.582 -0400", hash_original_field = "EA1F2804AD1F11E3261D3E3990F4FD35", hash_generated_field = "90B2069C15AB13D219B27D01B76F7345")
 
     public static final int NO_PADDING = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.757 -0400", hash_original_field = "1D95CC0BA605FE020E1A018B6C1976F1", hash_generated_field = "DD1DB73525C3F37E3BC419AB114C4B75")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.582 -0400", hash_original_field = "1D95CC0BA605FE020E1A018B6C1976F1", hash_generated_field = "DD1DB73525C3F37E3BC419AB114C4B75")
 
     public static final int NO_WRAP = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.758 -0400", hash_original_field = "55C6EBE04BB0B590CDC9899AAD1BAB2B", hash_generated_field = "2556AB718F122F12992982C57F5C3502")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.582 -0400", hash_original_field = "55C6EBE04BB0B590CDC9899AAD1BAB2B", hash_generated_field = "2556AB718F122F12992982C57F5C3502")
 
     public static final int CRLF = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.758 -0400", hash_original_field = "63E4702376A879728ACA1554C9D56A6F", hash_generated_field = "E5A3AC6BA5190912C47BD41618AC8C0F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.582 -0400", hash_original_field = "63E4702376A879728ACA1554C9D56A6F", hash_generated_field = "E5A3AC6BA5190912C47BD41618AC8C0F")
 
     public static final int URL_SAFE = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.758 -0400", hash_original_field = "8A0D61CC7072AE999645132AC9B7DF00", hash_generated_field = "F8D813B2752942D8E0142FAF2E00BDCC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.582 -0400", hash_original_field = "8A0D61CC7072AE999645132AC9B7DF00", hash_generated_field = "F8D813B2752942D8E0142FAF2E00BDCC")
 
     public static final int NO_CLOSE = 16;
 }

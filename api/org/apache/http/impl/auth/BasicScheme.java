@@ -17,11 +17,11 @@ import org.apache.http.util.CharArrayBuffer;
 import org.apache.http.util.EncodingUtils;
 
 public class BasicScheme extends RFC2617Scheme {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.107 -0400", hash_original_field = "D9A22D7A8178D5B42A8750123CBFE5B1", hash_generated_field = "F226924E4DACD94115C3FB4783C05FA4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.381 -0400", hash_original_field = "D9A22D7A8178D5B42A8750123CBFE5B1", hash_generated_field = "F226924E4DACD94115C3FB4783C05FA4")
 
     private boolean complete;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.107 -0400", hash_original_method = "34C51F903ABE689F4DFB975D927E1D44", hash_generated_method = "5ADEF4710B7BD7D06C1D20BCC3325A54")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.382 -0400", hash_original_method = "34C51F903ABE689F4DFB975D927E1D44", hash_generated_method = "5ADEF4710B7BD7D06C1D20BCC3325A54")
     public  BasicScheme() {
         super();
         this.complete = false;
@@ -30,18 +30,18 @@ public class BasicScheme extends RFC2617Scheme {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.107 -0400", hash_original_method = "456652B0A19A82DBC909302CFB2200F1", hash_generated_method = "388F5C1C772B94710724A1E849A7F0D7")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.382 -0400", hash_original_method = "456652B0A19A82DBC909302CFB2200F1", hash_generated_method = "58F30D81F84C497272B6F6967FAF47B1")
     public String getSchemeName() {
-String varC223609D18BB55F930AA94C44D8E4264_815773655 =         "basic";
-        varC223609D18BB55F930AA94C44D8E4264_815773655.addTaint(taint);
-        return varC223609D18BB55F930AA94C44D8E4264_815773655;
+String varC223609D18BB55F930AA94C44D8E4264_73867107 =         "basic";
+        varC223609D18BB55F930AA94C44D8E4264_73867107.addTaint(taint);
+        return varC223609D18BB55F930AA94C44D8E4264_73867107;
         // ---------- Original Method ----------
         //return "basic";
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.108 -0400", hash_original_method = "B3A99E56E7F7C8BB825E320F08AA1BAE", hash_generated_method = "C6FBF167D63BA030CF528752EDABD27D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.382 -0400", hash_original_method = "B3A99E56E7F7C8BB825E320F08AA1BAE", hash_generated_method = "C6FBF167D63BA030CF528752EDABD27D")
     @Override
     public void processChallenge(
             final Header header) throws MalformedChallengeException {
@@ -54,50 +54,50 @@ String varC223609D18BB55F930AA94C44D8E4264_815773655 =         "basic";
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.108 -0400", hash_original_method = "2000A91F89DD442E06AD762821BFEEA3", hash_generated_method = "55F297D8F03182901153C40DE976D667")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.382 -0400", hash_original_method = "2000A91F89DD442E06AD762821BFEEA3", hash_generated_method = "18F1A8BD172E46C64624E3CDA1D94633")
     public boolean isComplete() {
-        boolean varF04431E2940FB2099EE63A9B8E626BFD_1376477476 = (this.complete);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_172713477 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_172713477;
+        boolean varF04431E2940FB2099EE63A9B8E626BFD_1203833680 = (this.complete);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1466470716 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1466470716;
         // ---------- Original Method ----------
         //return this.complete;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.108 -0400", hash_original_method = "52FB523EE33548A5337713590AB1DF72", hash_generated_method = "2FE624D476337A9A71BC0B305EE55B9D")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.382 -0400", hash_original_method = "52FB523EE33548A5337713590AB1DF72", hash_generated_method = "D2BA69CC86467B881BE3D5E0A9B16E0B")
     public boolean isConnectionBased() {
-        boolean var68934A3E9455FA72420237EB05902327_944673243 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_727648275 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_727648275;
+        boolean var68934A3E9455FA72420237EB05902327_1125714158 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1588659518 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1588659518;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.109 -0400", hash_original_method = "29881E2E3CE612A2D14B025CB6CBAAB9", hash_generated_method = "B252B411AC988BC46A134179C9FAABE5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.382 -0400", hash_original_method = "29881E2E3CE612A2D14B025CB6CBAAB9", hash_generated_method = "47B9C54A077BF15ED05D440763F84CF1")
     public Header authenticate(
             final Credentials credentials, 
             final HttpRequest request) throws AuthenticationException {
         addTaint(request.getTaint());
         addTaint(credentials.getTaint());
-    if(credentials == null)        
+        if(credentials == null)        
         {
-            IllegalArgumentException varD8A19DCE85FA03BB6CE5F603E7A4C74C_1311592898 = new IllegalArgumentException("Credentials may not be null");
-            varD8A19DCE85FA03BB6CE5F603E7A4C74C_1311592898.addTaint(taint);
-            throw varD8A19DCE85FA03BB6CE5F603E7A4C74C_1311592898;
+            IllegalArgumentException varD8A19DCE85FA03BB6CE5F603E7A4C74C_2139743302 = new IllegalArgumentException("Credentials may not be null");
+            varD8A19DCE85FA03BB6CE5F603E7A4C74C_2139743302.addTaint(taint);
+            throw varD8A19DCE85FA03BB6CE5F603E7A4C74C_2139743302;
         } //End block
-    if(request == null)        
+        if(request == null)        
         {
-            IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_2083731098 = new IllegalArgumentException("HTTP request may not be null");
-            varF07DEF4BA25028D1DB51C0BA629AF0B4_2083731098.addTaint(taint);
-            throw varF07DEF4BA25028D1DB51C0BA629AF0B4_2083731098;
+            IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_1692899330 = new IllegalArgumentException("HTTP request may not be null");
+            varF07DEF4BA25028D1DB51C0BA629AF0B4_1692899330.addTaint(taint);
+            throw varF07DEF4BA25028D1DB51C0BA629AF0B4_1692899330;
         } //End block
         String charset = AuthParams.getCredentialCharset(request.getParams());
-Header var8AEE839CAE1B1C47635E3A116D25EFDD_1766431463 =         authenticate(credentials, charset, isProxy());
-        var8AEE839CAE1B1C47635E3A116D25EFDD_1766431463.addTaint(taint);
-        return var8AEE839CAE1B1C47635E3A116D25EFDD_1766431463;
+Header var8AEE839CAE1B1C47635E3A116D25EFDD_220060510 =         authenticate(credentials, charset, isProxy());
+        var8AEE839CAE1B1C47635E3A116D25EFDD_220060510.addTaint(taint);
+        return var8AEE839CAE1B1C47635E3A116D25EFDD_220060510;
         // ---------- Original Method ----------
         //if (credentials == null) {
             //throw new IllegalArgumentException("Credentials may not be null");
@@ -110,7 +110,7 @@ Header var8AEE839CAE1B1C47635E3A116D25EFDD_1766431463 =         authenticate(cre
     }
 
     
-        public static Header authenticate(
+    public static Header authenticate(
             final Credentials credentials, 
             final String charset, 
             boolean proxy) {

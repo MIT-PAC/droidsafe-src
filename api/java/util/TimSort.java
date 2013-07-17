@@ -6,29 +6,29 @@ import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
 class TimSort<T> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.194 -0400", hash_original_field = "0CC175B9C0F1B6A831C399E269772661", hash_generated_field = "CF7F5D48E7F71C306147BBEE1EA5A17F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.747 -0400", hash_original_field = "0CC175B9C0F1B6A831C399E269772661", hash_generated_field = "CF7F5D48E7F71C306147BBEE1EA5A17F")
 
     private T[] a;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.194 -0400", hash_original_field = "4A8A08F09D37B73795649038408B5F33", hash_generated_field = "A025EB897824D14A001F926C10174850")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.747 -0400", hash_original_field = "4A8A08F09D37B73795649038408B5F33", hash_generated_field = "A025EB897824D14A001F926C10174850")
 
     private Comparator<? super T> c;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.194 -0400", hash_original_field = "1723F00AEB55EB29D345BB8FC560DDDD", hash_generated_field = "4AEA7058F4222AE4711A0802F956E706")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.747 -0400", hash_original_field = "1723F00AEB55EB29D345BB8FC560DDDD", hash_generated_field = "4AEA7058F4222AE4711A0802F956E706")
 
     private int minGallop = MIN_GALLOP;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.195 -0400", hash_original_field = "FA816EDB83E95BF0C8DA580BDFD491EF", hash_generated_field = "C6E45FF9610B4696CAF8B5553FA688C6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.747 -0400", hash_original_field = "FA816EDB83E95BF0C8DA580BDFD491EF", hash_generated_field = "C6E45FF9610B4696CAF8B5553FA688C6")
 
     private T[] tmp;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.195 -0400", hash_original_field = "D756571CC98275F49C20580A59B44F17", hash_generated_field = "D6178E85D65285FC9BE783DCA3A89A35")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.747 -0400", hash_original_field = "D756571CC98275F49C20580A59B44F17", hash_generated_field = "D6178E85D65285FC9BE783DCA3A89A35")
 
     private int stackSize = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.195 -0400", hash_original_field = "BCD0032E9C5292693B10DFF6E98018C6", hash_generated_field = "A46172EB2BFB60FE7750E3A2D782A167")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.747 -0400", hash_original_field = "BCD0032E9C5292693B10DFF6E98018C6", hash_generated_field = "A46172EB2BFB60FE7750E3A2D782A167")
 
     private int[] runBase;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.195 -0400", hash_original_field = "00BAF48D4AB09F7E1E16965DEC3C2EED", hash_generated_field = "C560C98366AB8D77B05FAE57238ADA8D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.747 -0400", hash_original_field = "00BAF48D4AB09F7E1E16965DEC3C2EED", hash_generated_field = "C560C98366AB8D77B05FAE57238ADA8D")
 
     private int[] runLen;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.196 -0400", hash_original_method = "8363F88EAB5D9C5F21C7C4CB08C10AC9", hash_generated_method = "D91E2365B07B976776AABCB7ABF00067")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.748 -0400", hash_original_method = "8363F88EAB5D9C5F21C7C4CB08C10AC9", hash_generated_method = "D91E2365B07B976776AABCB7ABF00067")
     private  TimSort(T[] a, Comparator<? super T> c) {
         this.a = a;
         this.c = c;
@@ -57,12 +57,12 @@ class TimSort<T> {
     }
 
     
-        static <T> void sort(T[] a, Comparator<? super T> c) {
+    static <T> void sort(T[] a, Comparator<? super T> c) {
         sort(a, 0, a.length, c);
     }
 
     
-        static <T> void sort(T[] a, int lo, int hi, Comparator<? super T> c) {
+    static <T> void sort(T[] a, int lo, int hi, Comparator<? super T> c) {
         if (c == null) {
             Arrays.sort(a, lo, hi);
             return;
@@ -96,7 +96,7 @@ class TimSort<T> {
     }
 
     
-        @SuppressWarnings("fallthrough")
+    @SuppressWarnings("fallthrough")
     private static <T> void binarySort(T[] a, int lo, int hi, int start,
                                        Comparator<? super T> c) {
         if (DEBUG) assert lo <= start && start <= hi;
@@ -127,7 +127,7 @@ class TimSort<T> {
     }
 
     
-        private static <T> int countRunAndMakeAscending(T[] a, int lo, int hi,
+    private static <T> int countRunAndMakeAscending(T[] a, int lo, int hi,
                                                     Comparator<? super T> c) {
         if (DEBUG) assert lo < hi;
         int runHi = lo + 1;
@@ -145,7 +145,7 @@ class TimSort<T> {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static void reverseRange(Object[] a, int lo, int hi) {
         hi--;
         while (lo < hi) {
@@ -156,7 +156,7 @@ class TimSort<T> {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     private static int minRunLength(int n) {
         if (DEBUG) assert n >= 0;
         int r = 0;
@@ -168,8 +168,8 @@ class TimSort<T> {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.200 -0400", hash_original_method = "4FF06135DA529EA5945D38DB9DEC9B0E", hash_generated_method = "E03E6E0EE5B596D8BA339D7D8B426933")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.750 -0400", hash_original_method = "4FF06135DA529EA5945D38DB9DEC9B0E", hash_generated_method = "E03E6E0EE5B596D8BA339D7D8B426933")
     private void pushRun(int runBase, int runLen) {
         this.runBase[stackSize] = runBase;
         this.runLen[stackSize] = runLen;
@@ -181,20 +181,20 @@ class TimSort<T> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.200 -0400", hash_original_method = "3156E5829AEB14A787F26082DFE50344", hash_generated_method = "580643CA6C172D607F1F2CA5E85F1871")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.750 -0400", hash_original_method = "3156E5829AEB14A787F26082DFE50344", hash_generated_method = "580643CA6C172D607F1F2CA5E85F1871")
     private void mergeCollapse() {
         while
 (stackSize > 1)        
         {
             int n = stackSize - 2;
-    if(n > 0 && runLen[n-1] <= runLen[n] + runLen[n+1])            
+            if(n > 0 && runLen[n-1] <= runLen[n] + runLen[n+1])            
             {
-    if(runLen[n - 1] < runLen[n + 1])                
+                if(runLen[n - 1] < runLen[n + 1])                
                 n--;
                 mergeAt(n);
             } //End block
             else
-    if(runLen[n] <= runLen[n + 1])            
+            if(runLen[n] <= runLen[n + 1])            
             {
                 mergeAt(n);
             } //End block
@@ -219,13 +219,13 @@ class TimSort<T> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.201 -0400", hash_original_method = "97921B5E4166F5AC1B7B582C04340D66", hash_generated_method = "20BE957EE6198C35C2069073816FC05C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.751 -0400", hash_original_method = "97921B5E4166F5AC1B7B582C04340D66", hash_generated_method = "20BE957EE6198C35C2069073816FC05C")
     private void mergeForceCollapse() {
         while
 (stackSize > 1)        
         {
             int n = stackSize - 2;
-    if(n > 0 && runLen[n - 1] < runLen[n + 1])            
+            if(n > 0 && runLen[n - 1] < runLen[n + 1])            
             n--;
             mergeAt(n);
         } //End block
@@ -239,28 +239,28 @@ class TimSort<T> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.202 -0400", hash_original_method = "8940A54787C662CE81882AD52921A328", hash_generated_method = "9D146F5276FE7C4BEA12FE5758748B20")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.751 -0400", hash_original_method = "8940A54787C662CE81882AD52921A328", hash_generated_method = "9D146F5276FE7C4BEA12FE5758748B20")
     private void mergeAt(int i) {
-    if(DEBUG){ }    if(DEBUG){ }    if(DEBUG){ }        int base1 = runBase[i];
+        if(DEBUG){ }        if(DEBUG){ }        if(DEBUG){ }        int base1 = runBase[i];
         int len1 = runLen[i];
         int base2 = runBase[i + 1];
         int len2 = runLen[i + 1];
-    if(DEBUG){ }    if(DEBUG){ }        runLen[i] = len1 + len2;
-    if(i == stackSize - 3)        
+        if(DEBUG){ }        if(DEBUG){ }        runLen[i] = len1 + len2;
+        if(i == stackSize - 3)        
         {
             runBase[i + 1] = runBase[i + 2];
             runLen[i + 1] = runLen[i + 2];
         } //End block
         stackSize--;
         int k = gallopRight(a[base2], a, base1, len1, 0, c);
-    if(DEBUG){ }        base1 += k;
+        if(DEBUG){ }        base1 += k;
         len1 -= k;
-    if(len1 == 0)        
+        if(len1 == 0)        
         return;
         len2 = gallopLeft(a[base1 + len1 - 1], a, base2, len2, len2 - 1, c);
-    if(DEBUG){ }    if(len2 == 0)        
+        if(DEBUG){ }        if(len2 == 0)        
         return;
-    if(len1 <= len2)        
+        if(len1 <= len2)        
         mergeLo(base1, len1, base2, len2);
         else
         mergeHi(base1, len1, base2, len2);
@@ -269,7 +269,7 @@ class TimSort<T> {
     }
 
     
-        private static <T> int gallopLeft(T key, T[] a, int base, int len, int hint,
+    private static <T> int gallopLeft(T key, T[] a, int base, int len, int hint,
                                       Comparator<? super T> c) {
         if (DEBUG) assert len > 0 && hint >= 0 && hint < len;
         int lastOfs = 0;
@@ -314,7 +314,7 @@ class TimSort<T> {
     }
 
     
-        private static <T> int gallopRight(T key, T[] a, int base, int len,
+    private static <T> int gallopRight(T key, T[] a, int base, int len,
                                        int hint, Comparator<? super T> c) {
         if (DEBUG) assert len > 0 && hint >= 0 && hint < len;
         int ofs = 1;
@@ -359,24 +359,24 @@ class TimSort<T> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.207 -0400", hash_original_method = "28B33299F4BA824C1BCFC057E41834D8", hash_generated_method = "2DC820DC0AFA3C3FE3FD1A34E6C5FE6A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.755 -0400", hash_original_method = "28B33299F4BA824C1BCFC057E41834D8", hash_generated_method = "3468CC925D24A32D3B7B3A3037921D37")
     private void mergeLo(int base1, int len1, int base2, int len2) {
         addTaint(base2);
         addTaint(len1);
         addTaint(base1);
-    if(DEBUG){ }        T[] a = this.a;
+        if(DEBUG){ }        T[] a = this.a;
         T[] tmp = ensureCapacity(len1);
         System.arraycopy(a, base1, tmp, 0, len1);
         int cursor1 = 0;
         int cursor2 = base2;
         int dest = base1;
         a[dest++] = a[cursor2++];
-    if(--len2 == 0)        
+        if(--len2 == 0)        
         {
             System.arraycopy(tmp, cursor1, a, dest, len1);
             return;
         } //End block
-    if(len1 == 1)        
+        if(len1 == 1)        
         {
             System.arraycopy(a, cursor2, a, dest, len2);
             a[dest + len2] = tmp[cursor1];
@@ -384,7 +384,7 @@ class TimSort<T> {
         } //End block
         Comparator<? super T> c = this.c;
         int minGallop = this.minGallop;
-    outer        :
+        outer        :
         while
 (true)        
         {
@@ -392,12 +392,12 @@ class TimSort<T> {
             int count2 = 0;
             do {
                 {
-    if(DEBUG){ }    if(c.compare(a[cursor2], tmp[cursor1]) < 0)                    
+                    if(DEBUG){ }                    if(c.compare(a[cursor2], tmp[cursor1]) < 0)                    
                     {
                         a[dest++] = a[cursor2++];
                         count2++;
                         count1 = 0;
-    if(--len2 == 0)                        
+                        if(--len2 == 0)                        
                         break outer;
                     } //End block
                     else
@@ -405,88 +405,88 @@ class TimSort<T> {
                         a[dest++] = tmp[cursor1++];
                         count1++;
                         count2 = 0;
-    if(--len1 == 1)                        
+                        if(--len1 == 1)                        
                         break outer;
                     } //End block
                 } //End block
 } while ((count1 | count2) < minGallop);
             do {
                 {
-    if(DEBUG){ }                    count1 = gallopRight(a[cursor2], tmp, cursor1, len1, 0, c);
-    if(count1 != 0)                    
+                    if(DEBUG){ }                    count1 = gallopRight(a[cursor2], tmp, cursor1, len1, 0, c);
+                    if(count1 != 0)                    
                     {
                         System.arraycopy(tmp, cursor1, a, dest, count1);
                         dest += count1;
                         cursor1 += count1;
                         len1 -= count1;
-    if(len1 <= 1)                        
+                        if(len1 <= 1)                        
                         break outer;
                     } //End block
                     a[dest++] = a[cursor2++];
-    if(--len2 == 0)                    
+                    if(--len2 == 0)                    
                     break outer;
                     count2 = gallopLeft(tmp[cursor1], a, cursor2, len2, 0, c);
-    if(count2 != 0)                    
+                    if(count2 != 0)                    
                     {
                         System.arraycopy(a, cursor2, a, dest, count2);
                         dest += count2;
                         cursor2 += count2;
                         len2 -= count2;
-    if(len2 == 0)                        
+                        if(len2 == 0)                        
                         break outer;
                     } //End block
                     a[dest++] = tmp[cursor1++];
-    if(--len1 == 1)                    
+                    if(--len1 == 1)                    
                     break outer;
                     minGallop--;
                 } //End block
 } while (count1 >= MIN_GALLOP | count2 >= MIN_GALLOP);
-    if(minGallop < 0)            
+            if(minGallop < 0)            
             minGallop = 0;
             minGallop += 2;
         } //End block
         this.minGallop = minGallop < 1 ? 1 : minGallop;
-    if(len1 == 1)        
+        if(len1 == 1)        
         {
-    if(DEBUG){ }            System.arraycopy(a, cursor2, a, dest, len2);
+            if(DEBUG){ }            System.arraycopy(a, cursor2, a, dest, len2);
             a[dest + len2] = tmp[cursor1];
         } //End block
         else
-    if(len1 == 0)        
+        if(len1 == 0)        
         {
-            IllegalArgumentException var41FEEFC1D775C629D485FDC0BE07D5A2_606592286 = new IllegalArgumentException(
+            IllegalArgumentException var41FEEFC1D775C629D485FDC0BE07D5A2_136390648 = new IllegalArgumentException(
                 "Comparison method violates its general contract!");
-            var41FEEFC1D775C629D485FDC0BE07D5A2_606592286.addTaint(taint);
-            throw var41FEEFC1D775C629D485FDC0BE07D5A2_606592286;
+            var41FEEFC1D775C629D485FDC0BE07D5A2_136390648.addTaint(taint);
+            throw var41FEEFC1D775C629D485FDC0BE07D5A2_136390648;
         } //End block
         else
         {
-    if(DEBUG){ }    if(DEBUG){ }            System.arraycopy(tmp, cursor1, a, dest, len1);
+            if(DEBUG){ }            if(DEBUG){ }            System.arraycopy(tmp, cursor1, a, dest, len1);
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.211 -0400", hash_original_method = "D6C962299FDFC629DCB3EC52DDA4C6D9", hash_generated_method = "55F5373BDBE4E7C5D1C6CD0F9B87CB7A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.758 -0400", hash_original_method = "D6C962299FDFC629DCB3EC52DDA4C6D9", hash_generated_method = "F2C7CC00BB12DED379A2AFC03CE6EA02")
     private void mergeHi(int base1, int len1, int base2, int len2) {
         addTaint(len2);
         addTaint(base2);
         addTaint(len1);
         addTaint(base1);
-    if(DEBUG){ }        T[] a = this.a;
+        if(DEBUG){ }        T[] a = this.a;
         T[] tmp = ensureCapacity(len2);
         System.arraycopy(a, base2, tmp, 0, len2);
         int cursor1 = base1 + len1 - 1;
         int cursor2 = len2 - 1;
         int dest = base2 + len2 - 1;
         a[dest--] = a[cursor1--];
-    if(--len1 == 0)        
+        if(--len1 == 0)        
         {
             System.arraycopy(tmp, 0, a, dest - (len2 - 1), len2);
             return;
         } //End block
-    if(len2 == 1)        
+        if(len2 == 1)        
         {
             dest -= len1;
             cursor1 -= len1;
@@ -496,7 +496,7 @@ class TimSort<T> {
         } //End block
         Comparator<? super T> c = this.c;
         int minGallop = this.minGallop;
-    outer        :
+        outer        :
         while
 (true)        
         {
@@ -504,12 +504,12 @@ class TimSort<T> {
             int count2 = 0;
             do {
                 {
-    if(DEBUG){ }    if(c.compare(tmp[cursor2], a[cursor1]) < 0)                    
+                    if(DEBUG){ }                    if(c.compare(tmp[cursor2], a[cursor1]) < 0)                    
                     {
                         a[dest--] = a[cursor1--];
                         count1++;
                         count2 = 0;
-    if(--len1 == 0)                        
+                        if(--len1 == 0)                        
                         break outer;
                     } //End block
                     else
@@ -517,75 +517,75 @@ class TimSort<T> {
                         a[dest--] = tmp[cursor2--];
                         count2++;
                         count1 = 0;
-    if(--len2 == 1)                        
+                        if(--len2 == 1)                        
                         break outer;
                     } //End block
                 } //End block
 } while ((count1 | count2) < minGallop);
             do {
                 {
-    if(DEBUG){ }                    count1 = len1 - gallopRight(tmp[cursor2], a, base1, len1, len1 - 1, c);
-    if(count1 != 0)                    
+                    if(DEBUG){ }                    count1 = len1 - gallopRight(tmp[cursor2], a, base1, len1, len1 - 1, c);
+                    if(count1 != 0)                    
                     {
                         dest -= count1;
                         cursor1 -= count1;
                         len1 -= count1;
                         System.arraycopy(a, cursor1 + 1, a, dest + 1, count1);
-    if(len1 == 0)                        
+                        if(len1 == 0)                        
                         break outer;
                     } //End block
                     a[dest--] = tmp[cursor2--];
-    if(--len2 == 1)                    
+                    if(--len2 == 1)                    
                     break outer;
                     count2 = len2 - gallopLeft(a[cursor1], tmp, 0, len2, len2 - 1, c);
-    if(count2 != 0)                    
+                    if(count2 != 0)                    
                     {
                         dest -= count2;
                         cursor2 -= count2;
                         len2 -= count2;
                         System.arraycopy(tmp, cursor2 + 1, a, dest + 1, count2);
-    if(len2 <= 1)                        
+                        if(len2 <= 1)                        
                         break outer;
                     } //End block
                     a[dest--] = a[cursor1--];
-    if(--len1 == 0)                    
+                    if(--len1 == 0)                    
                     break outer;
                     minGallop--;
                 } //End block
 } while (count1 >= MIN_GALLOP | count2 >= MIN_GALLOP);
-    if(minGallop < 0)            
+            if(minGallop < 0)            
             minGallop = 0;
             minGallop += 2;
         } //End block
         this.minGallop = minGallop < 1 ? 1 : minGallop;
-    if(len2 == 1)        
+        if(len2 == 1)        
         {
-    if(DEBUG){ }            dest -= len1;
+            if(DEBUG){ }            dest -= len1;
             cursor1 -= len1;
             System.arraycopy(a, cursor1 + 1, a, dest + 1, len1);
             a[dest] = tmp[cursor2];
         } //End block
         else
-    if(len2 == 0)        
+        if(len2 == 0)        
         {
-            IllegalArgumentException var41FEEFC1D775C629D485FDC0BE07D5A2_432089427 = new IllegalArgumentException(
+            IllegalArgumentException var41FEEFC1D775C629D485FDC0BE07D5A2_965505358 = new IllegalArgumentException(
                 "Comparison method violates its general contract!");
-            var41FEEFC1D775C629D485FDC0BE07D5A2_432089427.addTaint(taint);
-            throw var41FEEFC1D775C629D485FDC0BE07D5A2_432089427;
+            var41FEEFC1D775C629D485FDC0BE07D5A2_965505358.addTaint(taint);
+            throw var41FEEFC1D775C629D485FDC0BE07D5A2_965505358;
         } //End block
         else
         {
-    if(DEBUG){ }    if(DEBUG){ }            System.arraycopy(tmp, 0, a, dest - (len2 - 1), len2);
+            if(DEBUG){ }            if(DEBUG){ }            System.arraycopy(tmp, 0, a, dest - (len2 - 1), len2);
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.213 -0400", hash_original_method = "DEB75D9E243CF808689902CC0AE95AB4", hash_generated_method = "BC7B947F4BE098FB9E3ED1F5D298E9D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.759 -0400", hash_original_method = "DEB75D9E243CF808689902CC0AE95AB4", hash_generated_method = "98893F5CE5B12AAF4AC591D4435DC3D0")
     private T[] ensureCapacity(int minCapacity) {
         addTaint(minCapacity);
-    if(tmp.length < minCapacity)        
+        if(tmp.length < minCapacity)        
         {
             int newSize = minCapacity;
             newSize |= newSize >> 1;
@@ -594,16 +594,16 @@ class TimSort<T> {
             newSize |= newSize >> 8;
             newSize |= newSize >> 16;
             newSize++;
-    if(newSize < 0)            
+            if(newSize < 0)            
             newSize = minCapacity;
             else
             newSize = Math.min(newSize, a.length >>> 1);
             @SuppressWarnings({"unchecked", "UnnecessaryLocalVariable"}) T[] newArray = (T[]) new Object[newSize];
             tmp = newArray;
         } //End block
-T[] var3F12A0424932F6B5155AA6C49B63FE6E_1810338546 =         tmp;
-        var3F12A0424932F6B5155AA6C49B63FE6E_1810338546.addTaint(taint);
-        return var3F12A0424932F6B5155AA6C49B63FE6E_1810338546;
+T[] var3F12A0424932F6B5155AA6C49B63FE6E_1357928223 =         tmp;
+        var3F12A0424932F6B5155AA6C49B63FE6E_1357928223.addTaint(taint);
+        return var3F12A0424932F6B5155AA6C49B63FE6E_1357928223;
         // ---------- Original Method ----------
         //if (tmp.length < minCapacity) {
             //int newSize = minCapacity;
@@ -625,16 +625,16 @@ T[] var3F12A0424932F6B5155AA6C49B63FE6E_1810338546 =         tmp;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.213 -0400", hash_original_field = "4A490259FC4AAE2038058967988E5B8B", hash_generated_field = "1A1060B28D1C27E15E432236A4693699")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.759 -0400", hash_original_field = "4A490259FC4AAE2038058967988E5B8B", hash_generated_field = "1A1060B28D1C27E15E432236A4693699")
 
     private static final int MIN_MERGE = 32;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.213 -0400", hash_original_field = "A6ABC415A6B00555997959B418653BE3", hash_generated_field = "0A02EC7FDA0A1C3141333E8D07B6EF69")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.759 -0400", hash_original_field = "A6ABC415A6B00555997959B418653BE3", hash_generated_field = "0A02EC7FDA0A1C3141333E8D07B6EF69")
 
     private static final int MIN_GALLOP = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.213 -0400", hash_original_field = "BA59E61BD2B58B5E9EC1C9B9EE84017A", hash_generated_field = "9DD7294B2FF4DA861EF4EC84065C8162")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.759 -0400", hash_original_field = "BA59E61BD2B58B5E9EC1C9B9EE84017A", hash_generated_field = "9DD7294B2FF4DA861EF4EC84065C8162")
 
     private static final int INITIAL_TMP_STORAGE_LENGTH = 256;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.213 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.759 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
     private static final boolean DEBUG = false;
 }

@@ -13,26 +13,26 @@ import java.net.Inet6Address;
 import java.util.Collection;
 
 public class RouteInfo implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.422 -0400", hash_original_field = "20FA5FDA87CAF7DA2AF783B06FECA0CC", hash_generated_field = "E49ACA82B1444E6526072819A9167A9F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.216 -0400", hash_original_field = "20FA5FDA87CAF7DA2AF783B06FECA0CC", hash_generated_field = "E49ACA82B1444E6526072819A9167A9F")
 
     private LinkAddress mDestination;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.423 -0400", hash_original_field = "A3011FC9B1E2E4E1F51ADA03BB8E2709", hash_generated_field = "7CC3B75FF58A17722EF6B89CB1C05CD5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.217 -0400", hash_original_field = "A3011FC9B1E2E4E1F51ADA03BB8E2709", hash_generated_field = "7CC3B75FF58A17722EF6B89CB1C05CD5")
 
     private InetAddress mGateway;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.423 -0400", hash_original_field = "75283F9EF09855A8ADC5A1F98FCF1F5C", hash_generated_field = "37F4FF220768DADFAC04D15463D51A4A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.217 -0400", hash_original_field = "75283F9EF09855A8ADC5A1F98FCF1F5C", hash_generated_field = "37F4FF220768DADFAC04D15463D51A4A")
 
     private boolean mIsDefault;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.423 -0400", hash_original_field = "E09EAA67E50D034EFD051379F631DEF3", hash_generated_field = "9DEB0F47D4D95D76C37945712CE421B8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.217 -0400", hash_original_field = "E09EAA67E50D034EFD051379F631DEF3", hash_generated_field = "9DEB0F47D4D95D76C37945712CE421B8")
 
     private boolean mIsHost;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.424 -0400", hash_original_method = "E18B95CB9612527F42443FCFFAAF42E3", hash_generated_method = "507A145437AA4B5FF3F0FE4682190968")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.218 -0400", hash_original_method = "E18B95CB9612527F42443FCFFAAF42E3", hash_generated_method = "A3E4B0436CD803812923ABBACF405CFE")
     public  RouteInfo(LinkAddress destination, InetAddress gateway) {
-    if(destination == null)        
+        if(destination == null)        
         {
-    if(gateway != null)            
+            if(gateway != null)            
             {
-    if(gateway instanceof Inet4Address)                
+                if(gateway instanceof Inet4Address)                
                 {
                     destination = new LinkAddress(Inet4Address.ANY, 0);
                 } //End block
@@ -43,14 +43,14 @@ public class RouteInfo implements Parcelable {
             } //End block
             else
             {
-                RuntimeException var0F436CE62D3E74AB33F0F05B1F07477A_1204708012 = new RuntimeException("Invalid arguments passed in.");
-                var0F436CE62D3E74AB33F0F05B1F07477A_1204708012.addTaint(taint);
-                throw var0F436CE62D3E74AB33F0F05B1F07477A_1204708012;
+                RuntimeException var0F436CE62D3E74AB33F0F05B1F07477A_1014350402 = new RuntimeException("Invalid arguments passed in.");
+                var0F436CE62D3E74AB33F0F05B1F07477A_1014350402.addTaint(taint);
+                throw var0F436CE62D3E74AB33F0F05B1F07477A_1014350402;
             } //End block
         } //End block
-    if(gateway == null)        
+        if(gateway == null)        
         {
-    if(destination.getAddress() instanceof Inet4Address)            
+            if(destination.getAddress() instanceof Inet4Address)            
             {
                 gateway = Inet4Address.ANY;
             } //End block
@@ -69,7 +69,7 @@ public class RouteInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.425 -0400", hash_original_method = "69D5DE546AFD98D206E268F1C948A647", hash_generated_method = "8FC1A9AD84B436766E8F7826A0FC6230")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.236 -0400", hash_original_method = "69D5DE546AFD98D206E268F1C948A647", hash_generated_method = "8FC1A9AD84B436766E8F7826A0FC6230")
     public  RouteInfo(InetAddress gateway) {
         this(null, gateway);
         addTaint(gateway.getTaint());
@@ -77,12 +77,12 @@ public class RouteInfo implements Parcelable {
     }
 
     
-        public static RouteInfo makeHostRoute(InetAddress host) {
+    public static RouteInfo makeHostRoute(InetAddress host) {
         return makeHostRoute(host, null);
     }
 
     
-        public static RouteInfo makeHostRoute(InetAddress host, InetAddress gateway) {
+    public static RouteInfo makeHostRoute(InetAddress host, InetAddress gateway) {
         if (host == null) return null;
         if (host instanceof Inet4Address) {
             return new RouteInfo(new LinkAddress(host, 32), gateway);
@@ -92,22 +92,22 @@ public class RouteInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.426 -0400", hash_original_method = "BB5D6BF5854981BD1DD4B0D75DB6E8C7", hash_generated_method = "393209D811B2CF7F1EB4A6B713489F18")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.237 -0400", hash_original_method = "BB5D6BF5854981BD1DD4B0D75DB6E8C7", hash_generated_method = "B48B433582A57B9A2023163683031997")
     private boolean isHost() {
-        boolean varFF746EBC5176A4B2B72BB69BB861F7D2_1654392981 = ((mGateway.equals(Inet4Address.ANY) || mGateway.equals(Inet6Address.ANY)));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_741197183 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_741197183;
+        boolean varFF746EBC5176A4B2B72BB69BB861F7D2_1758220762 = ((mGateway.equals(Inet4Address.ANY) || mGateway.equals(Inet6Address.ANY)));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2042308532 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2042308532;
         // ---------- Original Method ----------
         //return (mGateway.equals(Inet4Address.ANY) || mGateway.equals(Inet6Address.ANY));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.426 -0400", hash_original_method = "FAF1A1F97A113F82E8429CDDF8F77F02", hash_generated_method = "33723101ED37AB1E718582ADD799BED9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.237 -0400", hash_original_method = "FAF1A1F97A113F82E8429CDDF8F77F02", hash_generated_method = "76E1CBC74261849B270ABE1212C721A3")
     private boolean isDefault() {
         boolean val = false;
-    if(mGateway != null)        
+        if(mGateway != null)        
         {
-    if(mGateway instanceof Inet4Address)            
+            if(mGateway instanceof Inet4Address)            
             {
                 val = (mDestination == null || mDestination.getNetworkPrefixLength() == 0);
             } //End block
@@ -116,9 +116,9 @@ public class RouteInfo implements Parcelable {
                 val = (mDestination == null || mDestination.getNetworkPrefixLength() == 0);
             } //End block
         } //End block
-        boolean var3A6D0284E743DC4A9B86F97D6DD1A3BF_787690823 = (val);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1986459967 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1986459967;
+        boolean var3A6D0284E743DC4A9B86F97D6DD1A3BF_741829938 = (val);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1895252350 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1895252350;
         // ---------- Original Method ----------
         //boolean val = false;
         //if (mGateway != null) {
@@ -132,60 +132,60 @@ public class RouteInfo implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.427 -0400", hash_original_method = "1DFF4C9A700CC3886F6C70CFCDBFA85F", hash_generated_method = "E3C57887FB3CE120FB596600BC455F44")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.237 -0400", hash_original_method = "1DFF4C9A700CC3886F6C70CFCDBFA85F", hash_generated_method = "FA0CA5E40F8E771A63FCF523BDA84B16")
     public LinkAddress getDestination() {
-LinkAddress var1651AAAB4F528E3F559D89910825A761_176686523 =         mDestination;
-        var1651AAAB4F528E3F559D89910825A761_176686523.addTaint(taint);
-        return var1651AAAB4F528E3F559D89910825A761_176686523;
+LinkAddress var1651AAAB4F528E3F559D89910825A761_1235816825 =         mDestination;
+        var1651AAAB4F528E3F559D89910825A761_1235816825.addTaint(taint);
+        return var1651AAAB4F528E3F559D89910825A761_1235816825;
         // ---------- Original Method ----------
         //return mDestination;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.427 -0400", hash_original_method = "EBF08E83FF9E78B73EDA9A9990BB8494", hash_generated_method = "7420C8EDAFEC503542F881B0D4B3EBE2")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.237 -0400", hash_original_method = "EBF08E83FF9E78B73EDA9A9990BB8494", hash_generated_method = "BF807F87417CEDF6268601BBD3B04BEC")
     public InetAddress getGateway() {
-InetAddress var8DEDA131532E3CB530C9A7D0E0654CCE_1280139257 =         mGateway;
-        var8DEDA131532E3CB530C9A7D0E0654CCE_1280139257.addTaint(taint);
-        return var8DEDA131532E3CB530C9A7D0E0654CCE_1280139257;
+InetAddress var8DEDA131532E3CB530C9A7D0E0654CCE_1773637548 =         mGateway;
+        var8DEDA131532E3CB530C9A7D0E0654CCE_1773637548.addTaint(taint);
+        return var8DEDA131532E3CB530C9A7D0E0654CCE_1773637548;
         // ---------- Original Method ----------
         //return mGateway;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.427 -0400", hash_original_method = "E1C93CD9EE24D2AA8F06A9C7E7B28049", hash_generated_method = "29CC5695051D73657BFAD5A85A7E9595")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.238 -0400", hash_original_method = "E1C93CD9EE24D2AA8F06A9C7E7B28049", hash_generated_method = "00FB9C560D174A09DECCB35253C8C4C9")
     public boolean isDefaultRoute() {
-        boolean var75283F9EF09855A8ADC5A1F98FCF1F5C_91411230 = (mIsDefault);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1535293160 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1535293160;
+        boolean var75283F9EF09855A8ADC5A1F98FCF1F5C_662093835 = (mIsDefault);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1225626099 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1225626099;
         // ---------- Original Method ----------
         //return mIsDefault;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.427 -0400", hash_original_method = "2A05D2869C11595F53C52D7E29A06E41", hash_generated_method = "F9299CEF47FE0D8C7E5D94C9824E6556")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.238 -0400", hash_original_method = "2A05D2869C11595F53C52D7E29A06E41", hash_generated_method = "522CE2E22E00E5E5F92588A5E61EFF9D")
     public boolean isHostRoute() {
-        boolean varE09EAA67E50D034EFD051379F631DEF3_1223124370 = (mIsHost);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_950696249 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_950696249;
+        boolean varE09EAA67E50D034EFD051379F631DEF3_891064133 = (mIsHost);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_268891219 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_268891219;
         // ---------- Original Method ----------
         //return mIsHost;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.428 -0400", hash_original_method = "0AA1B383C324478F235BB186C8938BCB", hash_generated_method = "3830B9FD8229CAA6894FEC8FD274140A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.238 -0400", hash_original_method = "0AA1B383C324478F235BB186C8938BCB", hash_generated_method = "76DE9011E7DAC7EF7648B31AF2D4FF5F")
     public String toString() {
         String val = "";
-    if(mDestination != null)        
+        if(mDestination != null)        
         val = mDestination.toString();
-    if(mGateway != null)        
+        if(mGateway != null)        
         val += " -> " + mGateway.getHostAddress();
-String varD943F4EF06EF0FF7F541DA63567F3076_279096601 =         val;
-        varD943F4EF06EF0FF7F541DA63567F3076_279096601.addTaint(taint);
-        return varD943F4EF06EF0FF7F541DA63567F3076_279096601;
+String varD943F4EF06EF0FF7F541DA63567F3076_547608906 =         val;
+        varD943F4EF06EF0FF7F541DA63567F3076_547608906.addTaint(taint);
+        return varD943F4EF06EF0FF7F541DA63567F3076_547608906;
         // ---------- Original Method ----------
         //String val = "";
         //if (mDestination != null) val = mDestination.toString();
@@ -194,22 +194,22 @@ String varD943F4EF06EF0FF7F541DA63567F3076_279096601 =         val;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.429 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "A85A1E546B1FCB4232BF6841999EDAA5")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.238 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8FCD00A083F3FC1B346F407464379C55")
     public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_494170455 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_196203679 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_196203679;
+        int varCFCD208495D565EF66E7DFF9F98764DA_1722079254 = (0);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1694489213 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1694489213;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.429 -0400", hash_original_method = "75D0FB165031E3DBB8B900D70000DB62", hash_generated_method = "26E61C371F634F8FE7EEB224E2CCE504")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.238 -0400", hash_original_method = "75D0FB165031E3DBB8B900D70000DB62", hash_generated_method = "26E61C371F634F8FE7EEB224E2CCE504")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
         addTaint(dest.getTaint());
-    if(mDestination == null)        
+        if(mDestination == null)        
         {
             dest.writeByte((byte) 0);
         } //End block
@@ -219,7 +219,7 @@ String varD943F4EF06EF0FF7F541DA63567F3076_279096601 =         val;
             dest.writeByteArray(mDestination.getAddress().getAddress());
             dest.writeInt(mDestination.getNetworkPrefixLength());
         } //End block
-    if(mGateway == null)        
+        if(mGateway == null)        
         {
             dest.writeByte((byte) 0);
         } //End block
@@ -245,21 +245,21 @@ String varD943F4EF06EF0FF7F541DA63567F3076_279096601 =         val;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.430 -0400", hash_original_method = "5CF3A2DBAE721423A1CBA779912D2779", hash_generated_method = "21C64E86AD45ECAAB27C1DCBDF2A4ADD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.239 -0400", hash_original_method = "5CF3A2DBAE721423A1CBA779912D2779", hash_generated_method = "BD40483FDD0F145B0E7A3F8F151CFBDD")
     @Override
     public boolean equals(Object obj) {
         addTaint(obj.getTaint());
-    if(this == obj)        
+        if(this == obj)        
         {
-        boolean varB326B5062B2F0E69046810717534CB09_809405817 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2060528169 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2060528169;
+        boolean varB326B5062B2F0E69046810717534CB09_527903421 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1146425991 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1146425991;
         }
-    if(!(obj instanceof RouteInfo))        
+        if(!(obj instanceof RouteInfo))        
         {
-        boolean var68934A3E9455FA72420237EB05902327_1772439284 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2115247760 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2115247760;
+        boolean var68934A3E9455FA72420237EB05902327_336258936 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1989744676 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1989744676;
         }
         RouteInfo target = (RouteInfo) obj;
         boolean sameDestination = ( mDestination == null) ?
@@ -268,10 +268,10 @@ String varD943F4EF06EF0FF7F541DA63567F3076_279096601 =         val;
         boolean sameAddress = (mGateway == null) ?
                 target.getGateway() == null
                 : mGateway.equals(target.getGateway());
-        boolean varC220D51DBB9ED6BFBE06E2A3D608BD3F_2033924821 = (sameDestination && sameAddress
+        boolean varC220D51DBB9ED6BFBE06E2A3D608BD3F_652412208 = (sameDestination && sameAddress
             && mIsDefault == target.mIsDefault);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1765727439 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1765727439;
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2059029125 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2059029125;
         // ---------- Original Method ----------
         //if (this == obj) return true;
         //if (!(obj instanceof RouteInfo)) return false;
@@ -287,14 +287,14 @@ String varD943F4EF06EF0FF7F541DA63567F3076_279096601 =         val;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.430 -0400", hash_original_method = "BB776300BCED21F4485D8738DE0E6814", hash_generated_method = "174AF3F2F36257601A64D84CB69E5E3C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.239 -0400", hash_original_method = "BB776300BCED21F4485D8738DE0E6814", hash_generated_method = "CF11CECF46D4EBC966C0C1052C068DEF")
     @Override
     public int hashCode() {
-        int varEB7CF23688D390869F84D01BFB676E77_1081541055 = ((mDestination == null ? 0 : mDestination.hashCode())
+        int varEB7CF23688D390869F84D01BFB676E77_1495108065 = ((mDestination == null ? 0 : mDestination.hashCode())
             + (mGateway == null ? 0 :mGateway.hashCode())
             + (mIsDefault ? 3 : 7));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_626160653 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_626160653;
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2060706236 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2060706236;
         // ---------- Original Method ----------
         //return (mDestination == null ? 0 : mDestination.hashCode())
             //+ (mGateway == null ? 0 :mGateway.hashCode())
@@ -302,26 +302,26 @@ String varD943F4EF06EF0FF7F541DA63567F3076_279096601 =         val;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.430 -0400", hash_original_method = "CBA981572951BCD1DD27D7FBA4D7D8C9", hash_generated_method = "FEF39BDA21E996D600252BC0FFB530FF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.239 -0400", hash_original_method = "CBA981572951BCD1DD27D7FBA4D7D8C9", hash_generated_method = "EDFC5D1A4CE193AB82DC377B26403EB9")
     private boolean matches(InetAddress destination) {
         addTaint(destination.getTaint());
-    if(destination == null)        
+        if(destination == null)        
         {
-        boolean var68934A3E9455FA72420237EB05902327_1425247547 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1587972809 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1587972809;
+        boolean var68934A3E9455FA72420237EB05902327_912650514 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1856264700 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1856264700;
         }
-    if(isDefault())        
+        if(isDefault())        
         {
-        boolean varB326B5062B2F0E69046810717534CB09_379658504 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_305264132 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_305264132;
+        boolean varB326B5062B2F0E69046810717534CB09_1644693980 = (true);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_449379603 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_449379603;
         }
         InetAddress dstNet = NetworkUtils.getNetworkPart(destination,
                 mDestination.getNetworkPrefixLength());
-        boolean var08BA79ABE14C9DD356127E0F297B77F6_723605513 = (mDestination.getAddress().equals(dstNet));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_264656200 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_264656200;
+        boolean var08BA79ABE14C9DD356127E0F297B77F6_482725739 = (mDestination.getAddress().equals(dstNet));
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1910711358 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1910711358;
         // ---------- Original Method ----------
         //if (destination == null) return false;
         //if (isDefault()) return true;
@@ -331,7 +331,7 @@ String varD943F4EF06EF0FF7F541DA63567F3076_279096601 =         val;
     }
 
     
-        public static RouteInfo selectBestRoute(Collection<RouteInfo> routes, InetAddress dest) {
+    public static RouteInfo selectBestRoute(Collection<RouteInfo> routes, InetAddress dest) {
         if ((routes == null) || (dest == null)) return null;
         RouteInfo bestRoute = null;
         for (RouteInfo route : routes) {
@@ -348,7 +348,7 @@ String varD943F4EF06EF0FF7F541DA63567F3076_279096601 =         val;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.431 -0400", hash_original_field = "021D8C9C5A7781A8A38C32808BDD3610", hash_generated_field = "128F0AA00E42EAC56D7B0EF75CE1AD19")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.239 -0400", hash_original_field = "021D8C9C5A7781A8A38C32808BDD3610", hash_generated_field = "128F0AA00E42EAC56D7B0EF75CE1AD19")
 
     public static final Creator<RouteInfo> CREATOR =
         new Creator<RouteInfo>() {

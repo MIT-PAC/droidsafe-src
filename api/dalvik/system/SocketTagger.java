@@ -10,8 +10,7 @@ import java.net.SocketException;
 
 public abstract class SocketTagger {
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.883 -0400", hash_original_method = "3FCBFB017A056A47E7F458C1C015DE98", hash_generated_method = "3FCBFB017A056A47E7F458C1C015DE98")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.818 -0400", hash_original_method = "3FCBFB017A056A47E7F458C1C015DE98", hash_generated_method = "3FCBFB017A056A47E7F458C1C015DE98")
     public SocketTagger ()
     {
         //Synthesized constructor
@@ -24,10 +23,10 @@ public abstract class SocketTagger {
     public abstract void untag(FileDescriptor socketDescriptor) throws SocketException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.886 -0400", hash_original_method = "6DADFCEFEAC71C05F27C21DEA87D02DB", hash_generated_method = "DDC00633D2D9EC1D94B2A8F60DC571AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.819 -0400", hash_original_method = "6DADFCEFEAC71C05F27C21DEA87D02DB", hash_generated_method = "DDC00633D2D9EC1D94B2A8F60DC571AB")
     public final void tag(Socket socket) throws SocketException {
         addTaint(socket.getTaint());
-    if(!socket.isClosed())        
+        if(!socket.isClosed())        
         {
             tag(socket.getFileDescriptor$());
         } //End block
@@ -38,10 +37,10 @@ public abstract class SocketTagger {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.889 -0400", hash_original_method = "54DD0CF9051E663B674E2F8CC129A4E5", hash_generated_method = "11DB0139D656E16CF8014AF5BA170B57")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.819 -0400", hash_original_method = "54DD0CF9051E663B674E2F8CC129A4E5", hash_generated_method = "11DB0139D656E16CF8014AF5BA170B57")
     public final void untag(Socket socket) throws SocketException {
         addTaint(socket.getTaint());
-    if(!socket.isClosed())        
+        if(!socket.isClosed())        
         {
             untag(socket.getFileDescriptor$());
         } //End block
@@ -52,7 +51,7 @@ public abstract class SocketTagger {
     }
 
     
-        @DSModeled(DSC.BAN)
+    @DSModeled(DSC.BAN)
     public static synchronized void set(SocketTagger tagger) {
         if (tagger == null) {
             throw new NullPointerException("tagger == null");
@@ -61,7 +60,7 @@ public abstract class SocketTagger {
     }
 
     
-        @DSModeled(DSC.BAN)
+    @DSModeled(DSC.BAN)
     public static synchronized SocketTagger get() {
         return tagger;
     }

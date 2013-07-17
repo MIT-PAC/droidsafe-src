@@ -9,7 +9,7 @@ import java.util.Enumeration;
 
 public class BERTaggedObject extends DERTaggedObject {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.834 -0400", hash_original_method = "C31FB64F3B4373F22983AB0E8A924F45", hash_generated_method = "1BDFE6029FA7A9657F1B649820F56AC9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.009 -0400", hash_original_method = "C31FB64F3B4373F22983AB0E8A924F45", hash_generated_method = "1BDFE6029FA7A9657F1B649820F56AC9")
     public  BERTaggedObject(
         int             tagNo,
         DEREncodable    obj) {
@@ -20,7 +20,7 @@ public class BERTaggedObject extends DERTaggedObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.834 -0400", hash_original_method = "F5B7A80AD1A003D34ED6FD9BD184C1A3", hash_generated_method = "3CD1D05A7C82A6562BE1FCDE27C07862")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.010 -0400", hash_original_method = "F5B7A80AD1A003D34ED6FD9BD184C1A3", hash_generated_method = "3CD1D05A7C82A6562BE1FCDE27C07862")
     public  BERTaggedObject(
         boolean         explicit,
         int             tagNo,
@@ -33,8 +33,8 @@ public class BERTaggedObject extends DERTaggedObject {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.834 -0400", hash_original_method = "6F574A26D6DB1C59B77D339A09CC5651", hash_generated_method = "EADAE545A6D448B2C6F1DC545BE8A8F7")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.010 -0400", hash_original_method = "6F574A26D6DB1C59B77D339A09CC5651", hash_generated_method = "EADAE545A6D448B2C6F1DC545BE8A8F7")
     public  BERTaggedObject(
         int             tagNo) {
         super(false, tagNo, new BERSequence());
@@ -43,23 +43,23 @@ public class BERTaggedObject extends DERTaggedObject {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.835 -0400", hash_original_method = "7D1415DBFEACA82B062C25744BEBEEC4", hash_generated_method = "5EEBB432CC94C55B6B4B5B34267871D2")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.011 -0400", hash_original_method = "7D1415DBFEACA82B062C25744BEBEEC4", hash_generated_method = "A1F939B19639226DE058E590C3BE5148")
      void encode(
         DEROutputStream  out) throws IOException {
         addTaint(out.getTaint());
-    if(out instanceof ASN1OutputStream || out instanceof BEROutputStream)        
+        if(out instanceof ASN1OutputStream || out instanceof BEROutputStream)        
         {
             out.writeTag(CONSTRUCTED | TAGGED, tagNo);
             out.write(0x80);
-    if(!empty)            
+            if(!empty)            
             {
-    if(!explicit)                
+                if(!explicit)                
                 {
                     Enumeration e;
-    if(obj instanceof ASN1OctetString)                    
+                    if(obj instanceof ASN1OctetString)                    
                     {
-    if(obj instanceof BERConstructedOctetString)                        
+                        if(obj instanceof BERConstructedOctetString)                        
                         {
                             e = ((BERConstructedOctetString)obj).getObjects();
                         } //End block
@@ -71,20 +71,20 @@ public class BERTaggedObject extends DERTaggedObject {
                         } //End block
                     } //End block
                     else
-    if(obj instanceof ASN1Sequence)                    
+                    if(obj instanceof ASN1Sequence)                    
                     {
                         e = ((ASN1Sequence)obj).getObjects();
                     } //End block
                     else
-    if(obj instanceof ASN1Set)                    
+                    if(obj instanceof ASN1Set)                    
                     {
                         e = ((ASN1Set)obj).getObjects();
                     } //End block
                     else
                     {
-                        RuntimeException var41BDC878CD450F8A941BC74FE9A368FD_2033865783 = new RuntimeException("not implemented: " + obj.getClass().getName());
-                        var41BDC878CD450F8A941BC74FE9A368FD_2033865783.addTaint(taint);
-                        throw var41BDC878CD450F8A941BC74FE9A368FD_2033865783;
+                        RuntimeException var41BDC878CD450F8A941BC74FE9A368FD_1348884982 = new RuntimeException("not implemented: " + obj.getClass().getName());
+                        var41BDC878CD450F8A941BC74FE9A368FD_1348884982.addTaint(taint);
+                        throw var41BDC878CD450F8A941BC74FE9A368FD_1348884982;
                     } //End block
                     while
 (e.hasMoreElements())                    

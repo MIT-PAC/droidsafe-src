@@ -17,13 +17,13 @@ import com.android.internal.util.XmlUtils;
 
 public class TimeUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.408 -0400", hash_original_method = "90FFA2BDF77FA646318F5F30EF504BD2", hash_generated_method = "011199797FD3B540ED86DA17205AFF1D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.275 -0400", hash_original_method = "90FFA2BDF77FA646318F5F30EF504BD2", hash_generated_method = "011199797FD3B540ED86DA17205AFF1D")
     public  TimeUtils() {
         // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static TimeZone getTimeZone(int offset, boolean dst, long when, String country) {
         if (country == null) {
             return null;
@@ -74,12 +74,12 @@ public class TimeUtils {
     }
 
     
-        public static String getTimeZoneDatabaseVersion() {
+    public static String getTimeZoneDatabaseVersion() {
         return ZoneInfoDB.getVersion();
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     static private int accumField(int amt, int suffix, boolean always, int zeropad) {
         if (amt > 99 || (always && zeropad >= 3)) {
             return 3+suffix;
@@ -94,7 +94,7 @@ public class TimeUtils {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     static private int printField(char[] formatStr, int amt, char suffix, int pos,
             boolean always, int zeropad) {
         if (always || amt > 0) {
@@ -120,7 +120,7 @@ public class TimeUtils {
     }
 
     
-        private static int formatDurationLocked(long duration, int fieldLen) {
+    private static int formatDurationLocked(long duration, int fieldLen) {
         if (sFormatStr.length < fieldLen) {
             sFormatStr = new char[fieldLen];
         }
@@ -183,7 +183,7 @@ public class TimeUtils {
     }
 
     
-        public static void formatDuration(long duration, StringBuilder builder) {
+    public static void formatDuration(long duration, StringBuilder builder) {
         synchronized (sFormatSync) {
             int len = formatDurationLocked(duration, 0);
             builder.append(sFormatStr, 0, len);
@@ -191,7 +191,7 @@ public class TimeUtils {
     }
 
     
-        public static void formatDuration(long duration, PrintWriter pw, int fieldLen) {
+    public static void formatDuration(long duration, PrintWriter pw, int fieldLen) {
         synchronized (sFormatSync) {
             int len = formatDurationLocked(duration, fieldLen);
             pw.print(new String(sFormatStr, 0, len));
@@ -199,12 +199,12 @@ public class TimeUtils {
     }
 
     
-        public static void formatDuration(long duration, PrintWriter pw) {
+    public static void formatDuration(long duration, PrintWriter pw) {
         formatDuration(duration, pw, 0);
     }
 
     
-        public static void formatDuration(long time, long now, PrintWriter pw) {
+    public static void formatDuration(long time, long now, PrintWriter pw) {
         if (time == 0) {
             pw.print("--");
             return;
@@ -213,25 +213,25 @@ public class TimeUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.411 -0400", hash_original_field = "2C9DBBB61E206F14FFD73174F05A8667", hash_generated_field = "A8D43672FE1DF54C2E9BEE03AC76E5B4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.294 -0400", hash_original_field = "2C9DBBB61E206F14FFD73174F05A8667", hash_generated_field = "A8D43672FE1DF54C2E9BEE03AC76E5B4")
 
     private static final String TAG = "TimeUtils";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.411 -0400", hash_original_field = "4BD1A217FD230CDD43CFFB71E099EC84", hash_generated_field = "AA8754543EDE9EF090339F4F4DB754BC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.294 -0400", hash_original_field = "4BD1A217FD230CDD43CFFB71E099EC84", hash_generated_field = "AA8754543EDE9EF090339F4F4DB754BC")
 
     public static final int HUNDRED_DAY_FIELD_LEN = 19;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.411 -0400", hash_original_field = "6DF9C5AB42E1E0E9960BE792F6F8A042", hash_generated_field = "B4A690B48563C09FDB0833103369D4EF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.294 -0400", hash_original_field = "6DF9C5AB42E1E0E9960BE792F6F8A042", hash_generated_field = "B4A690B48563C09FDB0833103369D4EF")
 
     private static final int SECONDS_PER_MINUTE = 60;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.411 -0400", hash_original_field = "684A237ED847F645256FBA1485351335", hash_generated_field = "EE6A9733E692805B2E523E6D33DA4ACC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.294 -0400", hash_original_field = "684A237ED847F645256FBA1485351335", hash_generated_field = "EE6A9733E692805B2E523E6D33DA4ACC")
 
     private static final int SECONDS_PER_HOUR = 60 * 60;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.411 -0400", hash_original_field = "85D87D41138F9BD13B31F986F32BFCBF", hash_generated_field = "9A0BD6EC4A8335B331F784B15445E7E6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.294 -0400", hash_original_field = "85D87D41138F9BD13B31F986F32BFCBF", hash_generated_field = "9A0BD6EC4A8335B331F784B15445E7E6")
 
     private static final int SECONDS_PER_DAY = 24 * 60 * 60;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.412 -0400", hash_original_field = "C2324637B57092049D7068095D7E9185", hash_generated_field = "B62D876955C414BB9350CE4A9427EEC8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.294 -0400", hash_original_field = "C2324637B57092049D7068095D7E9185", hash_generated_field = "B62D876955C414BB9350CE4A9427EEC8")
 
     private static final Object sFormatSync = new Object();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.412 -0400", hash_original_field = "7F8EE94BEA697832BE6AFEC9AD753453", hash_generated_field = "23A1022E9F725A0F3BAADDA607255C69")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.294 -0400", hash_original_field = "7F8EE94BEA697832BE6AFEC9AD753453", hash_generated_field = "23A1022E9F725A0F3BAADDA607255C69")
 
     private static char[] sFormatStr = new char[HUNDRED_DAY_FIELD_LEN+5];
 }

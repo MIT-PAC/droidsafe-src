@@ -10,11 +10,11 @@ import java.util.Date;
 import java.util.regex.Pattern;
 
 public class Timestamp extends Date {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.103 -0400", hash_original_field = "C86DC03A2B4847378E26EED64B8AE3ED", hash_generated_field = "02AA9EFEAC0A700829C2BFFE89AB3713")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.220 -0400", hash_original_field = "C86DC03A2B4847378E26EED64B8AE3ED", hash_generated_field = "02AA9EFEAC0A700829C2BFFE89AB3713")
 
     private int nanos;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.103 -0400", hash_original_method = "48500113F421714EC43BE387D502DA70", hash_generated_method = "7F0E0D0B3049973F2A885E4A2054A36D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.220 -0400", hash_original_method = "48500113F421714EC43BE387D502DA70", hash_generated_method = "BF2AB5EB539294F91593391AFD12BBBD")
     @SuppressWarnings("deprecation")
     @Deprecated
     public  Timestamp(int theYear, int theMonth, int theDate, int theHour,
@@ -26,11 +26,11 @@ public class Timestamp extends Date {
         addTaint(theDate);
         addTaint(theMonth);
         addTaint(theYear);
-    if(theNano < 0 || theNano > 999999999)        
+        if(theNano < 0 || theNano > 999999999)        
         {
-            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_288187890 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_288187890.addTaint(taint);
-            throw var5783EF97022AA508B74A1E3EA38534AF_288187890;
+            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1257589732 = new IllegalArgumentException();
+            var5783EF97022AA508B74A1E3EA38534AF_1257589732.addTaint(taint);
+            throw var5783EF97022AA508B74A1E3EA38534AF_1257589732;
         } //End block
         nanos = theNano;
         // ---------- Original Method ----------
@@ -41,7 +41,7 @@ public class Timestamp extends Date {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.104 -0400", hash_original_method = "86C700BF2C693DDDD6950F4A0D10E64A", hash_generated_method = "84330280926F7AD4D6E75A5D229E7A6E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.221 -0400", hash_original_method = "86C700BF2C693DDDD6950F4A0D10E64A", hash_generated_method = "84330280926F7AD4D6E75A5D229E7A6E")
     public  Timestamp(long theTime) {
         super(theTime);
         addTaint(theTime);
@@ -51,36 +51,36 @@ public class Timestamp extends Date {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.104 -0400", hash_original_method = "BA6D499959EBEE9331B456EE3E086445", hash_generated_method = "D95439C1A64EECE96068DA7957869A96")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.232 -0400", hash_original_method = "BA6D499959EBEE9331B456EE3E086445", hash_generated_method = "88DD815B8269F71D8161AC11EBBA1712")
     public boolean after(Timestamp theTimestamp) {
         addTaint(theTimestamp.getTaint());
         long thisTime = this.getTime();
         long compareTime = theTimestamp.getTime();
-    if(thisTime > compareTime)        
+        if(thisTime > compareTime)        
         {
-            boolean varB326B5062B2F0E69046810717534CB09_1521823709 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_870909193 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_870909193;
+            boolean varB326B5062B2F0E69046810717534CB09_1349736789 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2035764549 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2035764549;
         } //End block
         else
-    if(thisTime < compareTime)        
+        if(thisTime < compareTime)        
         {
-            boolean var68934A3E9455FA72420237EB05902327_172918293 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_689854499 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_689854499;
+            boolean var68934A3E9455FA72420237EB05902327_1087715655 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1233265626 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1233265626;
         } //End block
         else
-    if(this.getNanos() > theTimestamp.getNanos())        
+        if(this.getNanos() > theTimestamp.getNanos())        
         {
-            boolean varB326B5062B2F0E69046810717534CB09_993886813 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_264116464 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_264116464;
+            boolean varB326B5062B2F0E69046810717534CB09_437122110 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_896047986 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_896047986;
         } //End block
         else
         {
-            boolean var68934A3E9455FA72420237EB05902327_592730694 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1931780436 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1931780436;
+            boolean var68934A3E9455FA72420237EB05902327_21045314 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_311129204 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_311129204;
         } //End block
         // ---------- Original Method ----------
         //long thisTime = this.getTime();
@@ -99,36 +99,36 @@ public class Timestamp extends Date {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.105 -0400", hash_original_method = "C18CB1ECE736F4CE544A02EE2F0A015C", hash_generated_method = "7496AF2BCB9AEBF47E47929ACD750042")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.264 -0400", hash_original_method = "C18CB1ECE736F4CE544A02EE2F0A015C", hash_generated_method = "367E9C64307C8E994B1AABB118D5DA35")
     public boolean before(Timestamp theTimestamp) {
         addTaint(theTimestamp.getTaint());
         long thisTime = this.getTime();
         long compareTime = theTimestamp.getTime();
-    if(thisTime < compareTime)        
+        if(thisTime < compareTime)        
         {
-            boolean varB326B5062B2F0E69046810717534CB09_959113413 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_679632439 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_679632439;
+            boolean varB326B5062B2F0E69046810717534CB09_1471369257 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_446615179 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_446615179;
         } //End block
         else
-    if(thisTime > compareTime)        
+        if(thisTime > compareTime)        
         {
-            boolean var68934A3E9455FA72420237EB05902327_1947414248 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_251317992 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_251317992;
+            boolean var68934A3E9455FA72420237EB05902327_1072138883 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2027243944 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2027243944;
         } //End block
         else
-    if(this.getNanos() < theTimestamp.getNanos())        
+        if(this.getNanos() < theTimestamp.getNanos())        
         {
-            boolean varB326B5062B2F0E69046810717534CB09_2074780922 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_117609966 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_117609966;
+            boolean varB326B5062B2F0E69046810717534CB09_116530819 = (true);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1240472949 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1240472949;
         } //End block
         else
         {
-            boolean var68934A3E9455FA72420237EB05902327_1541572587 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1425804839 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1425804839;
+            boolean var68934A3E9455FA72420237EB05902327_144010251 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1835820642 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1835820642;
         } //End block
         // ---------- Original Method ----------
         //long thisTime = this.getTime();
@@ -147,49 +147,49 @@ public class Timestamp extends Date {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.105 -0400", hash_original_method = "05A91DEA116C3E2F5603F3F0D29353F9", hash_generated_method = "DA82088270C39D89DFCB27F8253663DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.264 -0400", hash_original_method = "05A91DEA116C3E2F5603F3F0D29353F9", hash_generated_method = "F1A2421495770EF3CF7EA772D467DA8B")
     @Override
     public int compareTo(Date theObject) throws ClassCastException {
         addTaint(theObject.getTaint());
-        int varA7B650528C4FDA9DE26FC930D880E43B_1036571845 = (this.compareTo((Timestamp) theObject));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_521348159 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_521348159;
+        int varA7B650528C4FDA9DE26FC930D880E43B_584002675 = (this.compareTo((Timestamp) theObject));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1696922896 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1696922896;
         // ---------- Original Method ----------
         //return this.compareTo((Timestamp) theObject);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.106 -0400", hash_original_method = "5F716ED3C44AF0E8E5B469B5E8E10C8F", hash_generated_method = "A523F18AF38C6E2093B68A769265F481")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.264 -0400", hash_original_method = "5F716ED3C44AF0E8E5B469B5E8E10C8F", hash_generated_method = "5B16723A407B4535D42A246088D1959B")
     public int compareTo(Timestamp theTimestamp) {
         addTaint(theTimestamp.getTaint());
         int result = super.compareTo(theTimestamp);
-    if(result == 0)        
+        if(result == 0)        
         {
             int thisNano = this.getNanos();
             int thatNano = theTimestamp.getNanos();
-    if(thisNano > thatNano)            
+            if(thisNano > thatNano)            
             {
-                int varC4CA4238A0B923820DCC509A6F75849B_1850513383 = (1);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_581083022 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_581083022;
+                int varC4CA4238A0B923820DCC509A6F75849B_411280577 = (1);
+                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_532994053 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_532994053;
             } //End block
             else
-    if(thisNano == thatNano)            
+            if(thisNano == thatNano)            
             {
-                int varCFCD208495D565EF66E7DFF9F98764DA_1789235603 = (0);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_484511304 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_484511304;
+                int varCFCD208495D565EF66E7DFF9F98764DA_28253963 = (0);
+                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_421256388 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_421256388;
             } //End block
             else
             {
-                int var6BB61E3B7BCE0931DA574D19D1D82C88_153028238 = (-1);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_744739991 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_744739991;
+                int var6BB61E3B7BCE0931DA574D19D1D82C88_1829481328 = (-1);
+                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1482185349 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1482185349;
             } //End block
         } //End block
-        int varB4A88417B3D0170D754C647C30B7216A_800368543 = (result);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1160970402 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1160970402;
+        int varB4A88417B3D0170D754C647C30B7216A_744276294 = (result);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1081720798 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1081720798;
         // ---------- Original Method ----------
         //int result = super.compareTo(theTimestamp);
         //if (result == 0) {
@@ -207,19 +207,19 @@ public class Timestamp extends Date {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.107 -0400", hash_original_method = "94CEF17B9A7A2098B0DD6F205E7F606C", hash_generated_method = "433A5E65F9E2894218CBF4C3450E99BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.265 -0400", hash_original_method = "94CEF17B9A7A2098B0DD6F205E7F606C", hash_generated_method = "31C6AB0C5A5E9B54A0950ADA6B39E3A5")
     @Override
     public boolean equals(Object theObject) {
         addTaint(theObject.getTaint());
-    if(theObject instanceof Timestamp)        
+        if(theObject instanceof Timestamp)        
         {
-            boolean var7FF9EFB5886E232BC0F5ED29599DD02B_748082763 = (equals((Timestamp) theObject));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2119169555 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2119169555;
+            boolean var7FF9EFB5886E232BC0F5ED29599DD02B_1480646864 = (equals((Timestamp) theObject));
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_772077937 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_772077937;
         } //End block
-        boolean var68934A3E9455FA72420237EB05902327_2010543566 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1491038823 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1491038823;
+        boolean var68934A3E9455FA72420237EB05902327_1760757253 = (false);
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_538811092 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_538811092;
         // ---------- Original Method ----------
         //if (theObject instanceof Timestamp) {
             //return equals((Timestamp) theObject);
@@ -228,19 +228,19 @@ public class Timestamp extends Date {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.107 -0400", hash_original_method = "42296DC9EADFEA8A232AFEC4CE089FE4", hash_generated_method = "A4E333831AC6BC96D9E1049D9E7434AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.265 -0400", hash_original_method = "42296DC9EADFEA8A232AFEC4CE089FE4", hash_generated_method = "58AE621BA3BDB06B5F2FBE2C7DF9129B")
     public boolean equals(Timestamp theTimestamp) {
         addTaint(theTimestamp.getTaint());
-    if(theTimestamp == null)        
+        if(theTimestamp == null)        
         {
-            boolean var68934A3E9455FA72420237EB05902327_1213306941 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1065977486 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1065977486;
+            boolean var68934A3E9455FA72420237EB05902327_609969267 = (false);
+                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2111163976 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2111163976;
         } //End block
-        boolean var977037762EAFF8411442F8122B3582E8_955574290 = ((this.getTime() == theTimestamp.getTime())
+        boolean var977037762EAFF8411442F8122B3582E8_1608292490 = ((this.getTime() == theTimestamp.getTime())
                 && (this.getNanos() == theTimestamp.getNanos()));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_591352305 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_591352305;
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1192687933 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1192687933;
         // ---------- Original Method ----------
         //if (theTimestamp == null) {
             //return false;
@@ -250,25 +250,25 @@ public class Timestamp extends Date {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.108 -0400", hash_original_method = "B1AC9E2AEA3FCD014890A3BD86F2475F", hash_generated_method = "10C8F6508A4136D76EC3C0FC5E51A923")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.265 -0400", hash_original_method = "B1AC9E2AEA3FCD014890A3BD86F2475F", hash_generated_method = "A564F5D35742332A835E9B91AB842599")
     public int getNanos() {
-        int varC86DC03A2B4847378E26EED64B8AE3ED_1559453710 = (nanos);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1258174910 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1258174910;
+        int varC86DC03A2B4847378E26EED64B8AE3ED_1503098612 = (nanos);
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1644915303 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1644915303;
         // ---------- Original Method ----------
         //return nanos;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.108 -0400", hash_original_method = "66C377BC30C9278F77FB30382314DC3B", hash_generated_method = "8C9A4614330F733F60AEA539E1164E22")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.265 -0400", hash_original_method = "66C377BC30C9278F77FB30382314DC3B", hash_generated_method = "0A36C16872D2F7D911ED6C9EB14B57A9")
     @Override
     public long getTime() {
         long theTime = super.getTime();
         theTime = theTime + (nanos / 1000000);
-        long varE26C8DED340AE9B01E278D81BE18E9A2_1235174470 = (theTime);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1144722273 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1144722273;
+        long varE26C8DED340AE9B01E278D81BE18E9A2_648544556 = (theTime);
+                long var0F5264038205EDFB1AC05FBB0E8C5E94_1587564167 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1587564167;
         // ---------- Original Method ----------
         //long theTime = super.getTime();
         //theTime = theTime + (nanos / 1000000);
@@ -276,13 +276,13 @@ public class Timestamp extends Date {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.109 -0400", hash_original_method = "37C2FDD9B2CBC513E6901A3C5AB99296", hash_generated_method = "757B382B582DCA0207F047D3D0C7AA80")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.265 -0400", hash_original_method = "37C2FDD9B2CBC513E6901A3C5AB99296", hash_generated_method = "C7B115E3FDC6D59D077C52C31DD920E3")
     public void setNanos(int n) throws IllegalArgumentException {
-    if((n < 0) || (n > 999999999))        
+        if((n < 0) || (n > 999999999))        
         {
-            IllegalArgumentException var7B0EF1CF5B4106FB746E6A999DFB2A76_1939340798 = new IllegalArgumentException("Value out of range");
-            var7B0EF1CF5B4106FB746E6A999DFB2A76_1939340798.addTaint(taint);
-            throw var7B0EF1CF5B4106FB746E6A999DFB2A76_1939340798;
+            IllegalArgumentException var7B0EF1CF5B4106FB746E6A999DFB2A76_564070913 = new IllegalArgumentException("Value out of range");
+            var7B0EF1CF5B4106FB746E6A999DFB2A76_564070913.addTaint(taint);
+            throw var7B0EF1CF5B4106FB746E6A999DFB2A76_564070913;
         } //End block
         nanos = n;
         // ---------- Original Method ----------
@@ -293,7 +293,7 @@ public class Timestamp extends Date {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.109 -0400", hash_original_method = "3EB39E1DE2409F6F629FCF4F69DCED8F", hash_generated_method = "87402F5134D21F7283A10FB9F5092411")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.265 -0400", hash_original_method = "3EB39E1DE2409F6F629FCF4F69DCED8F", hash_generated_method = "87402F5134D21F7283A10FB9F5092411")
     @Override
     public void setTime(long theTime) {
         addTaint(theTime);
@@ -303,12 +303,12 @@ public class Timestamp extends Date {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.110 -0400", hash_original_method = "359A4BB179960D3D4DBBF4A52D3B05F3", hash_generated_method = "3F7BC2954FAF3FF9DEFB2575BEC40B8E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.265 -0400", hash_original_method = "359A4BB179960D3D4DBBF4A52D3B05F3", hash_generated_method = "3F7BC2954FAF3FF9DEFB2575BEC40B8E")
     private void setTimeImpl(long theTime) {
         addTaint(theTime);
         int milliseconds = (int) (theTime % 1000);
         theTime = theTime - milliseconds;
-    if(milliseconds < 0)        
+        if(milliseconds < 0)        
         {
             theTime = theTime - 1000;
             milliseconds = 1000 + milliseconds;
@@ -327,7 +327,7 @@ public class Timestamp extends Date {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.110 -0400", hash_original_method = "2B0509572F21FC3F2C9AAE0AC4AFD2F5", hash_generated_method = "E0118828DB229CFD0FD38E4DB2F0D9AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.266 -0400", hash_original_method = "2B0509572F21FC3F2C9AAE0AC4AFD2F5", hash_generated_method = "294C67EF0ADA1EB046B3D441E6E81E19")
     @SuppressWarnings("deprecation")
     @Override
     public String toString() {
@@ -344,7 +344,7 @@ public class Timestamp extends Date {
         sb.append(':');
         format(getSeconds(), 2, sb);
         sb.append('.');
-    if(nanos == 0)        
+        if(nanos == 0)        
         {
             sb.append('0');
         } //End block
@@ -357,9 +357,9 @@ public class Timestamp extends Date {
                 sb.setLength(sb.length() - 1);
             } //End block
         } //End block
-String var2460B846747F8B22185AD8BE722266A5_889933813 =         sb.toString();
-        var2460B846747F8B22185AD8BE722266A5_889933813.addTaint(taint);
-        return var2460B846747F8B22185AD8BE722266A5_889933813;
+String var2460B846747F8B22185AD8BE722266A5_1413189233 =         sb.toString();
+        var2460B846747F8B22185AD8BE722266A5_1413189233.addTaint(taint);
+        return var2460B846747F8B22185AD8BE722266A5_1413189233;
         // ---------- Original Method ----------
         //StringBuilder sb = new StringBuilder(29);
         //format((getYear() + 1900), 4, sb);
@@ -386,13 +386,13 @@ String var2460B846747F8B22185AD8BE722266A5_889933813 =         sb.toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.110 -0400", hash_original_method = "D5825B232A74B71A26A12413148003F7", hash_generated_method = "3B6BC052A730CD4CC839ACA88FCF6674")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.266 -0400", hash_original_method = "D5825B232A74B71A26A12413148003F7", hash_generated_method = "3B6BC052A730CD4CC839ACA88FCF6674")
     private void format(int date, int digits, StringBuilder sb) {
         addTaint(sb.getTaint());
         addTaint(digits);
         addTaint(date);
         String str = String.valueOf(date);
-    if(digits - str.length() > 0)        
+        if(digits - str.length() > 0)        
         {
             sb.append(PADDING.substring(0, digits - str.length()));
         } //End block
@@ -406,7 +406,7 @@ String var2460B846747F8B22185AD8BE722266A5_889933813 =         sb.toString();
     }
 
     
-        public static Timestamp valueOf(String s) throws IllegalArgumentException {
+    public static Timestamp valueOf(String s) throws IllegalArgumentException {
         if (s == null) {
             throw new IllegalArgumentException("Argument cannot be null");
         }
@@ -461,19 +461,19 @@ String var2460B846747F8B22185AD8BE722266A5_889933813 =         sb.toString();
     }
 
     
-        private static IllegalArgumentException badTimestampString(String s) {
+    private static IllegalArgumentException badTimestampString(String s) {
         throw new IllegalArgumentException("Timestamp format must be " +
                 "yyyy-MM-dd HH:mm:ss.fffffffff; was '" + s + "'");
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.111 -0400", hash_original_field = "E73AFFAE12B7444132A15838F22C0E12", hash_generated_field = "5666E37C9E24829F13915667F1E900D0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.266 -0400", hash_original_field = "E73AFFAE12B7444132A15838F22C0E12", hash_generated_field = "5666E37C9E24829F13915667F1E900D0")
 
     private static final long serialVersionUID = 2745179027874758501L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.111 -0400", hash_original_field = "C8A95E01A46ECE8D65AC7ED966ECBDCA", hash_generated_field = "1DE35ED5D2701F5BA25ACDF3A3E82857")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.266 -0400", hash_original_field = "C8A95E01A46ECE8D65AC7ED966ECBDCA", hash_generated_field = "1DE35ED5D2701F5BA25ACDF3A3E82857")
 
     private static final String TIME_FORMAT_REGEX = "[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}.*";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.111 -0400", hash_original_field = "B880144999036D9B2CDE9F1014519FEA", hash_generated_field = "7CD6F5F30BFE0B9B9FCAF17A4B57A1F7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.266 -0400", hash_original_field = "B880144999036D9B2CDE9F1014519FEA", hash_generated_field = "7CD6F5F30BFE0B9B9FCAF17A4B57A1F7")
 
     private static final String PADDING = "000000000";
 }

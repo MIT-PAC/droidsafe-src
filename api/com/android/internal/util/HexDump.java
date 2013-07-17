@@ -7,19 +7,19 @@ import droidsafe.runtime.*;
 
 public class HexDump {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.728 -0400", hash_original_method = "41D5EB93F66EEE1C2A5191C2288E5263", hash_generated_method = "41D5EB93F66EEE1C2A5191C2288E5263")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.746 -0400", hash_original_method = "41D5EB93F66EEE1C2A5191C2288E5263", hash_generated_method = "41D5EB93F66EEE1C2A5191C2288E5263")
     public HexDump ()
     {
         //Synthesized constructor
     }
 
 
-        public static String dumpHexString(byte[] array) {
+    public static String dumpHexString(byte[] array) {
         return dumpHexString(array, 0, array.length);
     }
 
     
-        public static String dumpHexString(byte[] array, int offset, int length) {
+    public static String dumpHexString(byte[] array, int offset, int length) {
         StringBuilder result = new StringBuilder();
         byte[] line = new byte[16];
         int lineIndex = 0;
@@ -75,17 +75,17 @@ public class HexDump {
     }
 
     
-        public static String toHexString(byte b) {
+    public static String toHexString(byte b) {
         return toHexString(toByteArray(b));
     }
 
     
-        public static String toHexString(byte[] array) {
+    public static String toHexString(byte[] array) {
         return toHexString(array, 0, array.length);
     }
 
     
-        public static String toHexString(byte[] array, int offset, int length) {
+    public static String toHexString(byte[] array, int offset, int length) {
         char[] buf = new char[length * 2];
         int bufIndex = 0;
         for (int i = offset ; i < offset + length; i++) 
@@ -98,12 +98,12 @@ public class HexDump {
     }
 
     
-        public static String toHexString(int i) {
+    public static String toHexString(int i) {
         return toHexString(toByteArray(i));
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static byte[] toByteArray(byte b) {
         byte[] array = new byte[1];
         array[0] = b;
@@ -111,7 +111,7 @@ public class HexDump {
     }
 
     
-        @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public static byte[] toByteArray(int i) {
         byte[] array = new byte[4];
         array[3] = (byte)(i & 0xFF);
@@ -122,7 +122,7 @@ public class HexDump {
     }
 
     
-        private static int toByte(char c) {
+    private static int toByte(char c) {
         if (c >= '0' && c <= '9') return (c - '0');
         if (c >= 'A' && c <= 'F') return (c - 'A' + 10);
         if (c >= 'a' && c <= 'f') return (c - 'a' + 10);
@@ -130,7 +130,7 @@ public class HexDump {
     }
 
     
-        public static byte[] hexStringToByteArray(String hexString) {
+    public static byte[] hexStringToByteArray(String hexString) {
         int length = hexString.length();
         byte[] buffer = new byte[length / 2];
         for (int i = 0 ; i < length ; i += 2)
@@ -141,7 +141,7 @@ public class HexDump {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.731 -0400", hash_original_field = "D78F278747594EC807E5754C9D20F198", hash_generated_field = "13725BDB05CFF8B147726B2CE8E01291")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.748 -0400", hash_original_field = "D78F278747594EC807E5754C9D20F198", hash_generated_field = "13725BDB05CFF8B147726B2CE8E01291")
 
     private final static char[] HEX_DIGITS = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
 }

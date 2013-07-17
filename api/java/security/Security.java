@@ -21,13 +21,13 @@ import org.apache.harmony.security.fortress.Services;
 
 public final class Security {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.484 -0400", hash_original_method = "8A23448EE3E63F2FDD1EDADC770A872E", hash_generated_method = "F38A362CCE128359797141D3F83E6272")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.455 -0400", hash_original_method = "8A23448EE3E63F2FDD1EDADC770A872E", hash_generated_method = "F38A362CCE128359797141D3F83E6272")
     private  Security() {
         // ---------- Original Method ----------
     }
 
     
-        private static void registerDefaultProviders() {
+    private static void registerDefaultProviders() {
         secprops.put("security.provider.1", "org.apache.harmony.xnet.provider.jsse.OpenSSLProvider");
         secprops.put("security.provider.2", "org.apache.harmony.security.provider.cert.DRLCertFactory");
         secprops.put("security.provider.3", "org.bouncycastle.jce.provider.BouncyCastleProvider");
@@ -36,7 +36,7 @@ public final class Security {
     }
 
     
-        @Deprecated
+    @Deprecated
     public static String getAlgorithmProperty(String algName, String propName) {
         if (algName == null || propName == null) {
             return null;
@@ -55,7 +55,7 @@ public final class Security {
     }
 
     
-        public static synchronized int insertProviderAt(Provider provider, int position) {
+    public static synchronized int insertProviderAt(Provider provider, int position) {
         if (getProvider(provider.getName()) != null) {
             return -1;
         }
@@ -65,12 +65,12 @@ public final class Security {
     }
 
     
-        public static int addProvider(Provider provider) {
+    public static int addProvider(Provider provider) {
         return insertProviderAt(provider, 0);
     }
 
     
-        public static synchronized void removeProvider(String name) {
+    public static synchronized void removeProvider(String name) {
         Provider p;
         if ((name == null) || (name.length() == 0)) {
             return;
@@ -85,17 +85,17 @@ public final class Security {
     }
 
     
-        public static synchronized Provider[] getProviders() {
+    public static synchronized Provider[] getProviders() {
         return Services.getProviders();
     }
 
     
-        public static synchronized Provider getProvider(String name) {
+    public static synchronized Provider getProvider(String name) {
         return Services.getProvider(name);
     }
 
     
-        public static Provider[] getProviders(String filter) {
+    public static Provider[] getProviders(String filter) {
         if (filter == null) {
             throw new NullPointerException();
         }
@@ -116,7 +116,7 @@ public final class Security {
     }
 
     
-        public static synchronized Provider[] getProviders(Map<String,String> filter) {
+    public static synchronized Provider[] getProviders(Map<String,String> filter) {
         if (filter == null) {
             throw new NullPointerException();
         }
@@ -175,7 +175,7 @@ public final class Security {
     }
 
     
-        public static String getProperty(String key) {
+    public static String getProperty(String key) {
         if (key == null) {
             throw new NullPointerException("key == null");
         }
@@ -187,12 +187,12 @@ public final class Security {
     }
 
     
-        public static void setProperty(String key, String value) {
+    public static void setProperty(String key, String value) {
         secprops.put(key, value);
     }
 
     
-        public static Set<String> getAlgorithms(String serviceName) {
+    public static Set<String> getAlgorithms(String serviceName) {
         Set<String> result = new HashSet<String>();
         if (serviceName == null) {
             return result;
@@ -208,7 +208,7 @@ public final class Security {
     }
 
     
-        private static void renumProviders() {
+    private static void renumProviders() {
         Provider[] p = Services.getProviders();
         for (int i = 0; i < p.length; i++) {
             p[i].setProviderNumber(i + 1);
@@ -218,14 +218,14 @@ public final class Security {
     
     private static class SecurityDoor implements SecurityAccess {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.489 -0400", hash_original_method = "65CA8440349C4BCE4680F5FB73F99876", hash_generated_method = "65CA8440349C4BCE4680F5FB73F99876")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.458 -0400", hash_original_method = "65CA8440349C4BCE4680F5FB73F99876", hash_generated_method = "65CA8440349C4BCE4680F5FB73F99876")
         public SecurityDoor ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.490 -0400", hash_original_method = "CC38396CF5E2C0D8624B241063796894", hash_generated_method = "CB29F99BA7A9E1FCCA38171345383D55")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.458 -0400", hash_original_method = "CC38396CF5E2C0D8624B241063796894", hash_generated_method = "CB29F99BA7A9E1FCCA38171345383D55")
         public void renumProviders() {
             Security.renumProviders();
             // ---------- Original Method ----------
@@ -233,24 +233,24 @@ public final class Security {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.490 -0400", hash_original_method = "F916F94BFF4DBDA09034B4A04EAFBC9D", hash_generated_method = "C704CAE3A67D22979F46EC5ADB88C15B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.458 -0400", hash_original_method = "F916F94BFF4DBDA09034B4A04EAFBC9D", hash_generated_method = "EC338BCCD526D5A587138022C8E1100D")
         public List<String> getAliases(Provider.Service s) {
             addTaint(s.getTaint());
-List<String> varFB798771B5D9FDB202B7BDE0A3A47609_506834003 =             s.getAliases();
-            varFB798771B5D9FDB202B7BDE0A3A47609_506834003.addTaint(taint);
-            return varFB798771B5D9FDB202B7BDE0A3A47609_506834003;
+List<String> varFB798771B5D9FDB202B7BDE0A3A47609_1920516095 =             s.getAliases();
+            varFB798771B5D9FDB202B7BDE0A3A47609_1920516095.addTaint(taint);
+            return varFB798771B5D9FDB202B7BDE0A3A47609_1920516095;
             // ---------- Original Method ----------
             //return s.getAliases();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.491 -0400", hash_original_method = "413349B417A4FA3254048F8CD1980744", hash_generated_method = "600403429EDB44F47F6BA0E7FF1E0696")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.458 -0400", hash_original_method = "413349B417A4FA3254048F8CD1980744", hash_generated_method = "DC564837117BFAF8DA49F16A0BCD6E39")
         public Provider.Service getService(Provider p, String type) {
             addTaint(type.getTaint());
             addTaint(p.getTaint());
-Provider.Service var97654D0B775FC299036FDFBB664F9A11_770030087 =             p.getService(type);
-            var97654D0B775FC299036FDFBB664F9A11_770030087.addTaint(taint);
-            return var97654D0B775FC299036FDFBB664F9A11_770030087;
+Provider.Service var97654D0B775FC299036FDFBB664F9A11_1691116119 =             p.getService(type);
+            var97654D0B775FC299036FDFBB664F9A11_1691116119.addTaint(taint);
+            return var97654D0B775FC299036FDFBB664F9A11_1691116119;
             // ---------- Original Method ----------
             //return p.getService(type);
         }
@@ -260,7 +260,7 @@ Provider.Service var97654D0B775FC299036FDFBB664F9A11_770030087 =             p.g
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.491 -0400", hash_original_field = "1F34466A8CFB3BC13EDE42CA83574114", hash_generated_field = "A93753A56D3EA0009297A4F944A7CCCC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.459 -0400", hash_original_field = "1F34466A8CFB3BC13EDE42CA83574114", hash_generated_field = "A93753A56D3EA0009297A4F944A7CCCC")
 
     private static final Properties secprops = new Properties();
     static {

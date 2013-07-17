@@ -11,14 +11,14 @@ import java.io.OutputStream;
 
 public final class Streams {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.777 -0400", hash_original_method = "E89EB8DDFA560D5750506701D7919D33", hash_generated_method = "E89EB8DDFA560D5750506701D7919D33")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.352 -0400", hash_original_method = "E89EB8DDFA560D5750506701D7919D33", hash_generated_method = "E89EB8DDFA560D5750506701D7919D33")
     public Streams ()
     {
         //Synthesized constructor
     }
 
 
-        public static void drain(InputStream inStr) throws IOException {
+    public static void drain(InputStream inStr) throws IOException {
         byte[] bs = new byte[BUFFER_SIZE];
         while (inStr.read(bs, 0, bs.length) >= 0)
         {
@@ -26,26 +26,26 @@ public final class Streams {
     }
 
     
-        public static byte[] readAll(InputStream inStr) throws IOException {
+    public static byte[] readAll(InputStream inStr) throws IOException {
         ByteArrayOutputStream buf = new ByteArrayOutputStream();
         pipeAll(inStr, buf);
         return buf.toByteArray();
     }
 
     
-        public static byte[] readAllLimited(InputStream inStr, int limit) throws IOException {
+    public static byte[] readAllLimited(InputStream inStr, int limit) throws IOException {
         ByteArrayOutputStream buf = new ByteArrayOutputStream();
         pipeAllLimited(inStr, limit, buf);
         return buf.toByteArray();
     }
 
     
-        public static int readFully(InputStream inStr, byte[] buf) throws IOException {
+    public static int readFully(InputStream inStr, byte[] buf) throws IOException {
         return readFully(inStr, buf, 0, buf.length);
     }
 
     
-        public static int readFully(InputStream inStr, byte[] buf, int off, int len) throws IOException {
+    public static int readFully(InputStream inStr, byte[] buf, int off, int len) throws IOException {
         int totalRead = 0;
         while (totalRead < len)
         {
@@ -60,7 +60,7 @@ public final class Streams {
     }
 
     
-        public static void pipeAll(InputStream inStr, OutputStream outStr) throws IOException {
+    public static void pipeAll(InputStream inStr, OutputStream outStr) throws IOException {
         byte[] bs = new byte[BUFFER_SIZE];
         int numRead;
         while ((numRead = inStr.read(bs, 0, bs.length)) >= 0)
@@ -70,7 +70,7 @@ public final class Streams {
     }
 
     
-        public static long pipeAllLimited(InputStream inStr, long limit, OutputStream outStr) throws IOException {
+    public static long pipeAllLimited(InputStream inStr, long limit, OutputStream outStr) throws IOException {
         long total = 0;
         byte[] bs = new byte[BUFFER_SIZE];
         int numRead;
@@ -87,7 +87,7 @@ public final class Streams {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.781 -0400", hash_original_field = "5D3C490B372A9DB5949892DFE283391D", hash_generated_field = "750618C8814E79503D809C74376A5474")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.355 -0400", hash_original_field = "5D3C490B372A9DB5949892DFE283391D", hash_generated_field = "750618C8814E79503D809C74376A5474")
 
     private static int BUFFER_SIZE = 512;
 }

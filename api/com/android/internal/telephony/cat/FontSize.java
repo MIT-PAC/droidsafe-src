@@ -10,11 +10,9 @@ public enum FontSize {
     LARGE(0x1),
     SMALL(0x2);
     private int mValue;
-    @DSModeled(DSC.SAFE)
     FontSize(int value) {
         mValue = value;
     }
-    @DSModeled(DSC.SAFE)
     public static FontSize fromInt(int value) {
         for (FontSize e : FontSize.values()) {
             if (e.mValue == value) {

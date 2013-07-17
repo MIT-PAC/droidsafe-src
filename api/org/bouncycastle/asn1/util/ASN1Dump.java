@@ -42,14 +42,14 @@ import org.bouncycastle.util.encoders.Hex;
 
 public class ASN1Dump {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.675 -0400", hash_original_method = "3C39DC3F42F8284331A1E50F07E6A630", hash_generated_method = "3C39DC3F42F8284331A1E50F07E6A630")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.277 -0400", hash_original_method = "3C39DC3F42F8284331A1E50F07E6A630", hash_generated_method = "3C39DC3F42F8284331A1E50F07E6A630")
     public ASN1Dump ()
     {
         //Synthesized constructor
     }
 
 
-        static void _dumpAsString(
+    static void _dumpAsString(
         String      indent,
         boolean     verbose,
         DERObject   obj,
@@ -299,7 +299,7 @@ public class ASN1Dump {
     }
 
     
-        private static String outputApplicationSpecific(String type, String indent, boolean verbose, DERObject obj, String nl) {
+    private static String outputApplicationSpecific(String type, String indent, boolean verbose, DERObject obj, String nl) {
         DERApplicationSpecific app = (DERApplicationSpecific)obj;
         StringBuffer buf = new StringBuffer();
         if (app.isConstructed())
@@ -323,14 +323,14 @@ public class ASN1Dump {
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static String dumpAsString(
         Object   obj) {
         return dumpAsString(obj, false);
     }
 
     
-        public static String dumpAsString(
+    public static String dumpAsString(
         Object   obj,
         boolean  verbose) {
         StringBuffer buf = new StringBuffer();
@@ -350,7 +350,7 @@ public class ASN1Dump {
     }
 
     
-        private static String dumpBinaryDataAsString(String indent, byte[] bytes) {
+    private static String dumpBinaryDataAsString(String indent, byte[] bytes) {
         String nl = System.getProperty("line.separator");
         StringBuffer buf = new StringBuffer();
         indent += TAB;
@@ -382,7 +382,7 @@ public class ASN1Dump {
     }
 
     
-        private static String calculateAscString(byte[] bytes, int off, int len) {
+    private static String calculateAscString(byte[] bytes, int off, int len) {
         StringBuffer buf = new StringBuffer();
         for (int i = off; i != off + len; i++)
         {
@@ -395,10 +395,10 @@ public class ASN1Dump {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.676 -0400", hash_original_field = "633168FFC8FC39CA03D7A4991058214D", hash_generated_field = "A38D576A197CBBF0C244B1F346CC2E3F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.279 -0400", hash_original_field = "633168FFC8FC39CA03D7A4991058214D", hash_generated_field = "A38D576A197CBBF0C244B1F346CC2E3F")
 
     private static final String TAB = "    ";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.676 -0400", hash_original_field = "9351A2B3EACAB6291A50C024DD53CE21", hash_generated_field = "400B646519ABB7EFD5C377C33E8EFD31")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.279 -0400", hash_original_field = "9351A2B3EACAB6291A50C024DD53CE21", hash_generated_field = "400B646519ABB7EFD5C377C33E8EFD31")
 
     private static final int SAMPLE_SIZE = 32;
 }

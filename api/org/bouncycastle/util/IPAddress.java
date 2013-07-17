@@ -7,28 +7,28 @@ import droidsafe.runtime.*;
 
 public class IPAddress {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.412 -0400", hash_original_method = "5836548C92C6B5CB4E6ABB2C3D2D08AC", hash_generated_method = "5836548C92C6B5CB4E6ABB2C3D2D08AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.201 -0400", hash_original_method = "5836548C92C6B5CB4E6ABB2C3D2D08AC", hash_generated_method = "5836548C92C6B5CB4E6ABB2C3D2D08AC")
     public IPAddress ()
     {
         //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static boolean isValid(
         String address) {
         return isValidIPv4(address) || isValidIPv6(address);
     }
 
     
-        @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SPEC)
     public static boolean isValidWithNetMask(
         String address) {
         return isValidIPv4WithNetmask(address) || isValidIPv6WithNetmask(address);
     }
 
     
-        public static boolean isValidIPv4(
+    public static boolean isValidIPv4(
         String address) {
         if (address.length() == 0)
         {
@@ -65,7 +65,7 @@ public class IPAddress {
     }
 
     
-        public static boolean isValidIPv4WithNetmask(
+    public static boolean isValidIPv4WithNetmask(
         String address) {
         int index = address.indexOf("/");
         String mask = address.substring(index + 1);
@@ -74,7 +74,7 @@ public class IPAddress {
     }
 
     
-        public static boolean isValidIPv6WithNetmask(
+    public static boolean isValidIPv6WithNetmask(
         String address) {
         int index = address.indexOf("/");
         String mask = address.substring(index + 1);
@@ -83,7 +83,7 @@ public class IPAddress {
     }
 
     
-        private static boolean isMaskValue(String component, int size) {
+    private static boolean isMaskValue(String component, int size) {
         try
         {
             int value = Integer.parseInt(component);
@@ -96,7 +96,7 @@ public class IPAddress {
     }
 
     
-        public static boolean isValidIPv6(
+    public static boolean isValidIPv6(
         String address) {
         if (address.length() == 0)
         {

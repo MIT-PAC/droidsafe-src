@@ -15,11 +15,11 @@ import android.util.Log;
 import com.google.android.gles_jni.EGLImpl;
 
 public abstract class ManagedEGLContext {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.634 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "5F205B80EE2B67A11B019B523ECA191F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.406 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "5F205B80EE2B67A11B019B523ECA191F")
 
     EGLContext mContext;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.635 -0400", hash_original_method = "9D266735F37ADE970716DE5C813A7490", hash_generated_method = "F7B11D8BD9EF7F0A5140DBD6FF57A603")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.407 -0400", hash_original_method = "9D266735F37ADE970716DE5C813A7490", hash_generated_method = "F7B11D8BD9EF7F0A5140DBD6FF57A603")
     public  ManagedEGLContext(EGLContext context) {
         mContext = context;
         synchronized
@@ -34,18 +34,18 @@ public abstract class ManagedEGLContext {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.635 -0400", hash_original_method = "0BA5CAD8B17303B4C3A912EF0F9065A7", hash_generated_method = "1E247494C50004D6D856CE13263E9CD1")
+        @DSModeled(DSC.SAFE)
+@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.407 -0400", hash_original_method = "0BA5CAD8B17303B4C3A912EF0F9065A7", hash_generated_method = "267E36C465557AA223C76C57B412ADBC")
     public EGLContext getContext() {
-EGLContext var178E2AD52D6FBBB503F908168856B574_969427356 =         mContext;
-        var178E2AD52D6FBBB503F908168856B574_969427356.addTaint(taint);
-        return var178E2AD52D6FBBB503F908168856B574_969427356;
+EGLContext var178E2AD52D6FBBB503F908168856B574_2128029169 =         mContext;
+        var178E2AD52D6FBBB503F908168856B574_2128029169.addTaint(taint);
+        return var178E2AD52D6FBBB503F908168856B574_2128029169;
         // ---------- Original Method ----------
         //return mContext;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.636 -0400", hash_original_method = "3A3C884C8DD72479D5B7016BF0489D57", hash_generated_method = "418519E6B0AAFC40765D5AFF890A67AE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.407 -0400", hash_original_method = "3A3C884C8DD72479D5B7016BF0489D57", hash_generated_method = "418519E6B0AAFC40765D5AFF890A67AE")
     public void terminate() {
         execTerminate();
         // ---------- Original Method ----------
@@ -53,7 +53,7 @@ EGLContext var178E2AD52D6FBBB503F908168856B574_969427356 =         mContext;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.636 -0400", hash_original_method = "B8E737E7A559452A0DBE946D6943CE60", hash_generated_method = "B6770F67CF9038CAE7126511421AF7E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.407 -0400", hash_original_method = "B8E737E7A559452A0DBE946D6943CE60", hash_generated_method = "B6770F67CF9038CAE7126511421AF7E1")
      void execTerminate() {
         onTerminate(mContext);
         // ---------- Original Method ----------
@@ -64,7 +64,7 @@ EGLContext var178E2AD52D6FBBB503F908168856B574_969427356 =         mContext;
     public abstract void onTerminate(EGLContext context);
 
     
-        public static boolean doTerminate() {
+    public static boolean doTerminate() {
         ArrayList<ManagedEGLContext> active;
         if (Looper.getMainLooper() != Looper.myLooper()) {
             throw new IllegalStateException("Called on wrong thread");
@@ -94,10 +94,10 @@ EGLContext var178E2AD52D6FBBB503F908168856B574_969427356 =         mContext;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.636 -0400", hash_original_field = "C32C7EFB226A1237656FB484619788F2", hash_generated_field = "AA7820E70BB513EA18D582B7C663D5F7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.408 -0400", hash_original_field = "C32C7EFB226A1237656FB484619788F2", hash_generated_field = "AA7820E70BB513EA18D582B7C663D5F7")
 
     static final String TAG = "ManagedEGLContext";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.636 -0400", hash_original_field = "57EF06F27E8024F8C91B1EE5646F021E", hash_generated_field = "6F26B317B7D1B34F8FDEAC7200D5F188")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.408 -0400", hash_original_field = "57EF06F27E8024F8C91B1EE5646F021E", hash_generated_field = "6F26B317B7D1B34F8FDEAC7200D5F188")
 
     static final ArrayList<ManagedEGLContext> sActive = new ArrayList<ManagedEGLContext>();
 }

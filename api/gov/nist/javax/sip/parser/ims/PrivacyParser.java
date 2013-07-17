@@ -16,7 +16,7 @@ import gov.nist.javax.sip.header.ims.SIPHeaderNamesIms;
 
 public class PrivacyParser extends HeaderParser implements TokenTypes {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.272 -0400", hash_original_method = "1B46B2A155C790BA09FFD6B4EE4B1531", hash_generated_method = "C52570F1CB1987207E05DDE691DF8A74")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.091 -0400", hash_original_method = "1B46B2A155C790BA09FFD6B4EE4B1531", hash_generated_method = "C52570F1CB1987207E05DDE691DF8A74")
     public  PrivacyParser(String privacyType) {
         super(privacyType);
         addTaint(privacyType.getTaint());
@@ -24,7 +24,7 @@ public class PrivacyParser extends HeaderParser implements TokenTypes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.272 -0400", hash_original_method = "4EC8E3CAF2B7BCDD5010285F1AA3D090", hash_generated_method = "B6191BCF2DD7124A6A14CC9328DDB2C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.092 -0400", hash_original_method = "4EC8E3CAF2B7BCDD5010285F1AA3D090", hash_generated_method = "B6191BCF2DD7124A6A14CC9328DDB2C9")
     protected  PrivacyParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -32,9 +32,9 @@ public class PrivacyParser extends HeaderParser implements TokenTypes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.273 -0400", hash_original_method = "8BE7913EB9359A0AA04D67D7439E50B1", hash_generated_method = "A1BA63CDBD423E633C9438AFE710F535")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.094 -0400", hash_original_method = "8BE7913EB9359A0AA04D67D7439E50B1", hash_generated_method = "E01D18141BBFCA440B8423CD111A504D")
     public SIPHeader parse() throws ParseException {
-    if(debug)        
+        if(debug)        
         dbg_enter("PrivacyParser.parse");
         PrivacyList privacyList = new PrivacyList();
         try 
@@ -64,13 +64,13 @@ public class PrivacyParser extends HeaderParser implements TokenTypes {
                     privacyList.add(privacy);
                 } //End block
             } //End block
-SIPHeader varBC40B48158CF46DAFC762B89C302D71E_1510168961 =             privacyList;
-            varBC40B48158CF46DAFC762B89C302D71E_1510168961.addTaint(taint);
-            return varBC40B48158CF46DAFC762B89C302D71E_1510168961;
+SIPHeader varBC40B48158CF46DAFC762B89C302D71E_1893648069 =             privacyList;
+            varBC40B48158CF46DAFC762B89C302D71E_1893648069.addTaint(taint);
+            return varBC40B48158CF46DAFC762B89C302D71E_1893648069;
         } //End block
         finally 
         {
-    if(debug)            
+            if(debug)            
             dbg_leave("PrivacyParser.parse");
         } //End block
         // ---------- Original Method ----------
@@ -78,7 +78,7 @@ SIPHeader varBC40B48158CF46DAFC762B89C302D71E_1510168961 =             privacyLi
     }
 
     
-        public static void main(String args[]) throws ParseException {
+    public static void main(String args[]) throws ParseException {
         String rou[] = {
                 "Privacy: none\n",
                 "Privacy: none;id;user\n"
