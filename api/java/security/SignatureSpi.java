@@ -19,10 +19,12 @@ public abstract class SignatureSpi {
     }
 
 
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInitVerify(PublicKey publicKey)
             throws InvalidKeyException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInitSign(PrivateKey privateKey)
             throws InvalidKeyException;
 
@@ -38,9 +40,11 @@ public abstract class SignatureSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineUpdate(byte b) throws SignatureException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineUpdate(byte[] b, int off, int len)
             throws SignatureException;
 
@@ -114,6 +118,7 @@ public abstract class SignatureSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract byte[] engineSign() throws SignatureException;
 
     
@@ -171,6 +176,7 @@ public abstract class SignatureSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract boolean engineVerify(byte[] sigBytes)
             throws SignatureException;
 
@@ -192,6 +198,7 @@ public abstract class SignatureSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
 protected abstract void engineSetParameter(String param, Object value)
             throws InvalidParameterException;
@@ -218,6 +225,7 @@ protected abstract void engineSetParameter(String param, Object value)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
 protected abstract Object engineGetParameter(String param)
             throws InvalidParameterException;

@@ -16,6 +16,7 @@ public class ThreadLocal<T> {
 
     private final int hash = hashCounter.getAndAdd(0x61c88647 * 2);
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.571 -0400", hash_original_method = "CCBA978684365F19FBD68BD48C79C23F", hash_generated_method = "A892989B2AACDC92217F9E3C26407114")
     public  ThreadLocal() {
         // ---------- Original Method ----------

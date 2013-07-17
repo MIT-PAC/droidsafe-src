@@ -636,6 +636,7 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_87944170 =         tabView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.219 -0400", hash_original_method = "ABAE53FB2582432DFD925A1EB74EEC53", hash_generated_method = "62984736880CAC76A8EB431CC994B1B9")
     @Override
     public void onNothingSelected(AdapterView<?> parent) {

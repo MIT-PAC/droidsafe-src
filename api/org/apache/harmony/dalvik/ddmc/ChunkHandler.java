@@ -15,12 +15,15 @@ public abstract class ChunkHandler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void connected();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void disconnected();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Chunk handleChunk(Chunk request);
 
     

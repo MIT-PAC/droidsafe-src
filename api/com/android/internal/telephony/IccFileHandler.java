@@ -459,12 +459,15 @@ String varF9EB698F99A9BDFF5C272E2D1596B263_1607366801 =         MF_SIM + DF_TELE
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract String getEFPath(int efid);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void logd(String s);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void loge(String s);
 
     

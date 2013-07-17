@@ -131,6 +131,7 @@ public class Xml {
         UTF_16("UTF-16"),
         ISO_8859_1("ISO-8859-1");
         final String expatName;
+        @DSModeled(DSC.SAFE)
         Encoding(String expatName) {
             this.expatName = expatName;
         }

@@ -70,6 +70,7 @@ final class DexPathList {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static ArrayList<File> splitDexPath(String path) {
         return splitPaths(path, null, false);
     }
@@ -83,6 +84,7 @@ final class DexPathList {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static ArrayList<File> splitPaths(String path1, String path2,
             boolean wantDirectories) {
         ArrayList<File> result = new ArrayList<File>();
@@ -92,6 +94,7 @@ final class DexPathList {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void splitAndAdd(String path, boolean wantDirectories,
             ArrayList<File> resultList) {
         if (path == null) {
@@ -246,6 +249,7 @@ URL var540C13E9E156B687226421B24F2DF178_987613333 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.806 -0400", hash_original_method = "804A7034A2DFDDBE0ECC495815CB31BB", hash_generated_method = "E2F7BAE305AA4F992699E94F0F707B4D")
     public Enumeration<URL> findResources(String name) {
         addTaint(name.getTaint());

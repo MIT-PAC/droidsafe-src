@@ -40,6 +40,7 @@ public class WaitingThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.498 -0400", hash_original_method = "06148A18B01DA630C8E9D1BE56535730", hash_generated_method = "7C298436A208FB7C1EA84C48779AED06")
     public final Condition getCondition() {
 Condition var8E3679EF6AFF44D2ADE75707730E246F_952510130 =         this.cond;
@@ -50,6 +51,7 @@ Condition var8E3679EF6AFF44D2ADE75707730E246F_952510130 =         this.cond;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.498 -0400", hash_original_method = "7ACEF95834A46E1067A2FCD807704A00", hash_generated_method = "CCAA026FC26C458AA459F6DABC61F4B5")
     public final RouteSpecificPool getPool() {
 RouteSpecificPool var3D7A8FEF66EC1D1D80E6ECD3302B47BC_111884384 =         this.pool;
@@ -60,6 +62,7 @@ RouteSpecificPool var3D7A8FEF66EC1D1D80E6ECD3302B47BC_111884384 =         this.p
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.499 -0400", hash_original_method = "71CC45999E743AA15F11389550D41BFD", hash_generated_method = "9C69197045411E42839FAC71CA909F2D")
     public final Thread getThread() {
 Thread var760B1EA155F5CA2BBA827AEB44D8EA68_282244282 =         this.waiter;

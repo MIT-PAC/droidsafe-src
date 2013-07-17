@@ -25,6 +25,7 @@ abstract class AreaCodeMapStorageStrategy {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isFlyweight();
 
     
@@ -39,6 +40,7 @@ abstract class AreaCodeMapStorageStrategy {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.450 -0400", hash_original_method = "9B53A77A841456041603E3D119D30EB4", hash_generated_method = "7727A06155BF871AA5728A790B0D6566")
     public TreeSet<Integer> getPossibleLengths() {
 TreeSet<Integer> var439F4A98FBDEDBC4D02BC8BC3F605BAF_598450754 =         possibleLengths;
@@ -49,18 +51,23 @@ TreeSet<Integer> var439F4A98FBDEDBC4D02BC8BC3F605BAF_598450754 =         possibl
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getPrefix(int index);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getDescription(int index);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void readFromSortedMap(SortedMap<Integer, String> sortedAreaCodeMap);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void readExternal(ObjectInput objectInput) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void writeExternal(ObjectOutput objectOutput) throws IOException;
 
     

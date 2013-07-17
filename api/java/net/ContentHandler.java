@@ -15,6 +15,7 @@ public abstract class ContentHandler {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract Object getContent(URLConnection uConn) throws IOException;
 
     

@@ -413,6 +413,7 @@ NameValue var6D5B9855993E18BC4C470CBB87EC89C7_1522892198 =         (NameValue) t
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.124 -0400", hash_original_method = "F30302CB3EB3055DF74F33593B8201EA", hash_generated_method = "F7326A51892A312E72D0F94095226C8D")
     public Collection<NameValue> values() {
 Collection<NameValue> var0EAA2656FF6694E38E984612E9842F13_414531271 =         this.nameValueMap.values();

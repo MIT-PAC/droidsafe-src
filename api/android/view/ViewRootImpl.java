@@ -939,6 +939,7 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1342880318 =         mView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.677 -0400", hash_original_method = "6C3085A5B27688C16B5F48D71E61D048", hash_generated_method = "69C03ACE6D067CAAA80EFBD807CAD7DF")
     final WindowLeaked getLocation() {
 WindowLeaked varC67D9EAB8F8C7974312627C3F915A447_1138292045 =         mLocation;

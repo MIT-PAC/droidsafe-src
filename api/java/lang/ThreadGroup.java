@@ -190,6 +190,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.518 -0400", hash_original_method = "9AC5D8EF15BD7837ACD785C0772615A1", hash_generated_method = "58C0335FEF548999868CED53D4078AEE")
     public final void checkAccess() {
         // ---------- Original Method ----------
@@ -377,6 +378,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.523 -0400", hash_original_method = "DB664BE89D62AA134945B6EEF3A0CB00", hash_generated_method = "CE5631FA6943CD85BE78E172A741F754")
     public final int getMaxPriority() {
         int var605B899CE7517A7E2B487FD888B3B34B_1955545235 = (maxPriority);
@@ -387,6 +389,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.523 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "75C0174093D8612056464926D5AC8531")
     public final String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_923082809 =         name;
@@ -397,6 +400,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_923082809 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.523 -0400", hash_original_method = "8A85A1BC7F9CDC3D0187C50787EE4700", hash_generated_method = "D802CFBD9570F25E3CD7D0D48BA52C65")
     public final ThreadGroup getParent() {
 ThreadGroup var0F49909EA73F8892C338E4DCA6EB9906_1316588857 =         parent;
@@ -437,6 +441,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.524 -0400", hash_original_method = "5976FB7C02B0576FC514CB127C4662D8", hash_generated_method = "64C24DF38B63CE74943FAD9D8A508D5B")
     public final boolean isDaemon() {
         boolean var1CFEB9E5381AE97C57DD59616C5FA3B7_1505028832 = (isDaemon);
@@ -521,6 +526,7 @@ for(int i = 0;i < levels;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.526 -0400", hash_original_method = "47457D8FCC611743893B7B7E5D80876A", hash_generated_method = "1D764DCA95932D8A8D4D087366D91FBE")
     public final boolean parentOf(ThreadGroup g) {
         addTaint(g.getTaint());
@@ -611,6 +617,7 @@ for(ThreadGroup group : groups)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.527 -0400", hash_original_method = "8335FAF0BC3ED6B3C58B58617340A520", hash_generated_method = "41930952754EA7B18095BC1B8F27AACA")
     public final void setDaemon(boolean isDaemon) {
         this.isDaemon = isDaemon;

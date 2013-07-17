@@ -14,12 +14,15 @@ public abstract class ClipboardManager {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract CharSequence getText();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setText(CharSequence text);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean hasText();
 
     

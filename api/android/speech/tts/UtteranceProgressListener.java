@@ -14,12 +14,15 @@ public abstract class UtteranceProgressListener {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract void onStart(String utteranceId);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void onDone(String utteranceId);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void onError(String utteranceId);
 
     

@@ -14,9 +14,11 @@ public abstract class KeyPairGeneratorSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract KeyPair generateKeyPair();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void initialize(int keysize, SecureRandom random);
 
     

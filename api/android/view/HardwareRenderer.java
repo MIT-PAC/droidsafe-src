@@ -55,36 +55,47 @@ public abstract class HardwareRenderer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void destroy(boolean full);
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean initialize(SurfaceHolder holder) throws Surface.OutOfResourcesException;
 
     
+    @DSModeled(DSC.SAFE)
     abstract void updateSurface(SurfaceHolder holder) throws Surface.OutOfResourcesException;
 
     
+    @DSModeled(DSC.SAFE)
     abstract void destroyLayers(View view);
 
     
+    @DSModeled(DSC.SAFE)
     abstract void destroyHardwareResources(View view);
 
     
+    @DSModeled(DSC.SAFE)
     abstract void invalidate(SurfaceHolder holder);
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean validate();
 
     
+    @DSModeled(DSC.SAFE)
     abstract void setup(int width, int height);
 
     
+    @DSModeled(DSC.SAFE)
     abstract int getWidth();
 
     
+    @DSModeled(DSC.SAFE)
     abstract int getHeight();
 
     
+    @DSModeled(DSC.SAFE)
     abstract HardwareCanvas getCanvas();
 
     
@@ -98,19 +109,24 @@ public abstract class HardwareRenderer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean draw(View view, View.AttachInfo attachInfo, HardwareDrawCallbacks callbacks,
             Rect dirty);
 
     
+    @DSModeled(DSC.SAFE)
     abstract DisplayList createDisplayList();
 
     
+    @DSModeled(DSC.SAFE)
     abstract HardwareLayer createHardwareLayer(boolean isOpaque);
 
     
+    @DSModeled(DSC.SAFE)
     abstract HardwareLayer createHardwareLayer(int width, int height, boolean isOpaque);
 
     
+    @DSModeled(DSC.SAFE)
     abstract SurfaceTexture createSurfaceTexture(HardwareLayer layer);
 
     
@@ -372,9 +388,11 @@ public abstract class HardwareRenderer {
         }
 
         
+        @DSModeled(DSC.SAFE)
         abstract GLES20Canvas createCanvas();
 
         
+        @DSModeled(DSC.SAFE)
         abstract int[] getConfig(boolean dirtyRegions);
 
         
@@ -566,6 +584,7 @@ GL var6B3D9F1DEC3427303F21E6CDA2CD8137_262782479 =             mEglContext.getGL
         }
 
         
+        @DSModeled(DSC.SAFE)
         abstract void initCaches();
 
         

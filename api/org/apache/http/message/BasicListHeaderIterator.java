@@ -138,6 +138,7 @@ Header varBA8BA1200FF1A61953A763AB5ECE3DC8_1960906549 =         (Header) this.al
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.005 -0400", hash_original_method = "52795801AD2FF0B406EF0189CBA87E8B", hash_generated_method = "686D0C4AF838D31B816DA5CFE97582F1")
     public final Object next() throws NoSuchElementException {
 Object var1A3FA08BBA40440D4CB2F4072E1F7431_1758495786 =         nextHeader();

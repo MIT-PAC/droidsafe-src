@@ -29,6 +29,7 @@ public abstract class FragmentPagerAdapter extends PagerAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Fragment getItem(int position);
 
     

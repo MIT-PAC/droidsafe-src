@@ -61,6 +61,7 @@ public abstract class URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void connect() throws IOException;
 
     

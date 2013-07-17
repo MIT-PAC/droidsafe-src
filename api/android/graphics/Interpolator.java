@@ -66,6 +66,7 @@ public class Interpolator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.223 -0400", hash_original_method = "89BB77AE086853608E25F99A94348DC0", hash_generated_method = "08F9B6933EBC8525504645E04D829003")
     public final int getKeyFrameCount() {
         int varEDB3186346B1612B7704D58A9CAAE15F_462752270 = (mFrameCount);
@@ -76,6 +77,7 @@ public class Interpolator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.223 -0400", hash_original_method = "776BE84F4731B9CD4E842330007BED2A", hash_generated_method = "3B9547BF51C46D08AD2B9C70DA3BF2AA")
     public final int getValueCount() {
         int var9DD1709B968485B920C9BE604E78F1F8_725202617 = (mValueCount);

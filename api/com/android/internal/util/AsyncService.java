@@ -30,6 +30,7 @@ abstract public class AsyncService extends Service {
     }
 
 
+    @DSModeled(DSC.SAFE)
     abstract public AsyncServiceInfo createHandler();
 
     

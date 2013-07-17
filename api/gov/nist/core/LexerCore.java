@@ -355,6 +355,7 @@ Token var4F2F48FA7E0E08F3309FEA0E4F1D3813_1116266735 =         this.currentMatch
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final boolean isTokenChar( char c ) {
         if ( isAlphaDigit(c) ) return true;
         else switch (c)

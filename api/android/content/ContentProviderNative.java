@@ -48,6 +48,7 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getProviderName();
 
     

@@ -588,12 +588,15 @@ HttpContext var12C73152C7871DEFD35EAD04C5DEFC45_1686996982 =         mHttpContex
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract String getScheme();
 
     
+    @DSModeled(DSC.SAFE)
     abstract void closeConnection();
 
     
+    @DSModeled(DSC.SAFE)
     abstract AndroidHttpClientConnection openConnection(Request req) throws IOException;
 
     

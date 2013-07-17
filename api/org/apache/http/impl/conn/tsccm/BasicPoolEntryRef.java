@@ -35,6 +35,7 @@ public class BasicPoolEntryRef extends WeakReference<BasicPoolEntry> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.329 -0400", hash_original_method = "70D653A6C3CCC37B9D27B2DACB554C85", hash_generated_method = "222C2D58F0C8F791B053E8E8BE798AD9")
     public final HttpRoute getRoute() {
 HttpRoute varB98EE6416538ED05061231EA0E9F2622_1500046608 =         this.route;

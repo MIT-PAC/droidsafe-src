@@ -53,6 +53,7 @@ for(int i = 0;i < spans.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.477 -0400", hash_original_method = "9A68249D01A4FE1CBD4D535668FCEB6F", hash_generated_method = "1720F237ECF3D9373CF6880DFA887629")
     public final int length() {
         int varDC3F5DE2558DF3D25118F6362DE3EB1B_1558426193 = (mText.length());
@@ -63,6 +64,7 @@ for(int i = 0;i < spans.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.477 -0400", hash_original_method = "9584624FC2131094C464C9F194744C46", hash_generated_method = "228DD205B66BEBA8EA1619CA5FE82246")
     public final char charAt(int i) {
         addTaint(i);
@@ -74,6 +76,7 @@ for(int i = 0;i < spans.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.477 -0400", hash_original_method = "F8827D354B3A7F2AC0C2613E8BEFB45B", hash_generated_method = "D620D74733E511BEED73B3C77C2B91B9")
     public final String toString() {
 String var7F7ECB4B14362FFBA020956966B29A66_833585453 =         mText;
@@ -84,6 +87,7 @@ String var7F7ECB4B14362FFBA020956966B29A66_833585453 =         mText;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.478 -0400", hash_original_method = "E3364302A15643D598F9B7C454DC0AA8", hash_generated_method = "448040C1AC60C1A51BC220C0CB8E3C75")
     public final void getChars(int start, int end, char[] dest, int off) {
         addTaint(off);

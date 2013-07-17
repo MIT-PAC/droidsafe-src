@@ -161,6 +161,7 @@ Logger var221D8F3514DCB5DB275CC33A419F7FF7_1613151480 =         loggers.get(name
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.198 -0400", hash_original_method = "A3ADDC952F848C9366B53F69C5A416F6", hash_generated_method = "64C5A716AE726A8BF6F9D167E79F4C9F")
     public synchronized Enumeration<String> getLoggerNames() {
 Enumeration<String> var4E30A2D52E210CF3B5F426F6FA97D29F_414076122 =         loggers.keys();

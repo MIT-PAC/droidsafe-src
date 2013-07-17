@@ -266,6 +266,7 @@ for(int i = 0;i < choiceLimits.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final double nextDouble(double value) {
         if (value == Double.POSITIVE_INFINITY) {
             return value;
@@ -320,6 +321,7 @@ Number var96FCA40988E63EBA31357867B6B325E4_482790010 =         new Double(Double
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final double previousDouble(double value) {
         if (value == Double.NEGATIVE_INFINITY) {
             return value;

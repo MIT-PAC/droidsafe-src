@@ -34,6 +34,7 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.615 -0400", hash_original_method = "93505B8C7EE8964F6C5155AF365C502B", hash_generated_method = "DFEBA78A95D0516D403F922B372621E3")
     public final int size() {
         if(written < 0)        

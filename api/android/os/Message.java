@@ -64,6 +64,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Message obtain(Message orig) {
         Message m = obtain();
         m.what = orig.what;
@@ -80,6 +81,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Message obtain(Handler h) {
         Message m = obtain();
         m.target = h;
@@ -87,6 +89,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Message obtain(Handler h, Runnable callback) {
         Message m = obtain();
         m.target = h;
@@ -95,6 +98,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Message obtain(Handler h, int what) {
         Message m = obtain();
         m.target = h;
@@ -103,6 +107,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Message obtain(Handler h, int what, Object obj) {
         Message m = obtain();
         m.target = h;
@@ -112,6 +117,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Message obtain(Handler h, int what, int arg1, int arg2) {
         Message m = obtain();
         m.target = h;
@@ -122,6 +128,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Message obtain(Handler h, int what, 
             int arg1, int arg2, Object obj) {
         Message m = obtain();
@@ -158,6 +165,7 @@ public final class Message implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.579 -0400", hash_original_method = "964842F017E82BDA48950DE2BC18315A", hash_generated_method = "9472B6CB70CA26D88794646C7BF1E8E9")
     public void copyFrom(Message o) {
         this.flags = o.flags & ~FLAGS_TO_CLEAR_ON_COPY_FROM;
@@ -231,6 +239,7 @@ Runnable var221B6914C84D3DFBD8B1EDBBC49B8CE3_1101428577 =         callback;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.582 -0400", hash_original_method = "1D2563192E30736CE7AB1C4867F66034", hash_generated_method = "6EB5592B083977D0B1C76769E6F006FD")
     public Bundle getData() {
         if(data == null)        
@@ -268,6 +277,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_782719798 =         data;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.583 -0400", hash_original_method = "2D3F3759D60A7A1CBA79B8F487061097", hash_generated_method = "3B7F287400275060A2AE0E3943AFE99E")
     public void sendToTarget() {
         target.sendMessage(this);

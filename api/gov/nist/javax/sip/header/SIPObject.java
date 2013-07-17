@@ -29,6 +29,7 @@ public abstract class SIPObject extends GenericObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String encode();
 
     

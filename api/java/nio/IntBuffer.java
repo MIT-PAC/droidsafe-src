@@ -42,6 +42,7 @@ public abstract class IntBuffer extends Buffer implements Comparable<IntBuffer> 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.145 -0400", hash_original_method = "D78164E532496862518F1BC4BDE62DEB", hash_generated_method = "98418B2A36CE3D3A044C12FD219EE92B")
     public final int[] array() {
         int[] var68B89E48382A0AA51B25AC59599E2EB0_212699667 = (protectedArray());
@@ -52,6 +53,7 @@ public abstract class IntBuffer extends Buffer implements Comparable<IntBuffer> 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.146 -0400", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "8566E1FCAE73BE912DF46A3F5C78E21A")
     public final int arrayOffset() {
         int var0B794CE56A38A9F3BFDD2D53E83BB109_960044091 = (protectedArrayOffset());
@@ -62,9 +64,11 @@ public abstract class IntBuffer extends Buffer implements Comparable<IntBuffer> 
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract IntBuffer asReadOnlyBuffer();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract IntBuffer compact();
 
     
@@ -116,6 +120,7 @@ public abstract class IntBuffer extends Buffer implements Comparable<IntBuffer> 
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract IntBuffer duplicate();
 
     
@@ -166,6 +171,7 @@ public abstract class IntBuffer extends Buffer implements Comparable<IntBuffer> 
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int get();
 
     
@@ -213,9 +219,11 @@ IntBuffer var72A74007B2BE62B849F475C7BDA4658B_704659596 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int get(int index);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.152 -0400", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "420BB3C8D449383876B8B7B86842522F")
     public final boolean hasArray() {
         boolean var55B7C03E3C1EBABD22606AD17EE923C3_2058430727 = (protectedHasArray());
@@ -250,24 +258,31 @@ IntBuffer var72A74007B2BE62B849F475C7BDA4658B_704659596 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isDirect();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteOrder order();
 
     
+    @DSModeled(DSC.SAFE)
     abstract int[] protectedArray();
 
     
+    @DSModeled(DSC.SAFE)
     abstract int protectedArrayOffset();
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean protectedHasArray();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract IntBuffer put(int i);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.154 -0400", hash_original_method = "C57984865448BE8CC42F7EA5DB727833", hash_generated_method = "E5811B8E21B67B15B362A16101A6B7B0")
     public final IntBuffer put(int[] src) {
         addTaint(src[0]);
@@ -347,9 +362,11 @@ IntBuffer var72A74007B2BE62B849F475C7BDA4658B_1962116745 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract IntBuffer put(int index, int i);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract IntBuffer slice();
 
     

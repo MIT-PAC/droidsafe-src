@@ -16,6 +16,7 @@ abstract class ValueObject {
     }
 
 
+    @DSModeled(DSC.SAFE)
     abstract ComprehensionTlvTag getTag();
 
     

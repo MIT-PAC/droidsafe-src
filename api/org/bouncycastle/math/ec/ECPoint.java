@@ -170,18 +170,23 @@ ECFieldElement var01417B0442ECD521584E2B7EFB9FC218_946597247 =         y;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte[] getEncoded();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECPoint add(ECPoint b);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECPoint subtract(ECPoint b);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECPoint negate();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECPoint twice();
 
     

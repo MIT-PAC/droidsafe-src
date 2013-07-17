@@ -78,6 +78,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_869660410 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.074 -0400", hash_original_method = "EF0593622B27F345C7E5884D7EB53A09", hash_generated_method = "F0B03B4FFB089BA687946FA1247A4610")
     public final Object next() throws NoSuchElementException, ParseException {
 Object var1E85D5DD28517B6F091CC30DA1235BD1_1127962497 =         nextToken();

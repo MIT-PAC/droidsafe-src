@@ -18,6 +18,7 @@ public abstract class ASN1StringType extends ASN1Type {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.424 -0400", hash_original_method = "C1B77E79BF2CF152F3FF34DFE43DC50B", hash_generated_method = "1BCD94E2DC8B1BFE306AF1096A4A6B1A")
     public final boolean checkTag(int identifier) {
         addTaint(identifier);

@@ -16,6 +16,7 @@ public class BasicNameValuePair implements NameValuePair, Cloneable {
 
     private String value;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.023 -0400", hash_original_method = "9B16B3F0FD8B0C655E61EA7019E7F0C5", hash_generated_method = "028C6F5A6ABFF2627683D88B217460D2")
     public  BasicNameValuePair(final String name, final String value) {
         super();

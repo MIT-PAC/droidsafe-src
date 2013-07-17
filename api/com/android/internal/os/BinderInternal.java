@@ -25,6 +25,7 @@ public class BinderInternal {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static final void joinThreadPool() {
     }
 
@@ -35,15 +36,18 @@ public class BinderInternal {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final IBinder getContextObject() {
     	return new Binder();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void disableBackgroundScheduling(boolean disable) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static final void handleGc() {
     }
 

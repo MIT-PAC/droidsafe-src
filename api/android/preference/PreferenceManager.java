@@ -121,6 +121,7 @@ PreferenceFragment var5DA1096D62F21920EA3FC00E046E5678_295272075 =         mFrag
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.792 -0400", hash_original_method = "6682C9F88019B1A37FE99B0D2B3B34A2", hash_generated_method = "AA7BA6E2DF06979AB79CF3B6E657C5E5")
     private List<ResolveInfo> queryIntentActivities(Intent queryIntent) {
         addTaint(queryIntent.getTaint());

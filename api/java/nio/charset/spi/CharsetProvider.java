@@ -15,9 +15,11 @@ public abstract class CharsetProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Iterator<Charset> charsets();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Charset charsetForName(String charsetName);
 
     

@@ -37,6 +37,7 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.337 -0400", hash_original_method = "B098D2E33834ACCBC46AD074E583FD9B", hash_generated_method = "7E6FDE3C96DB2CF76F30A6BE453CB260")
     @Override
     public final SelectorProvider provider() {
@@ -171,9 +172,11 @@ for(SelectionKey key : keyList)
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void implCloseSelectableChannel() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.340 -0400", hash_original_method = "7EB3EC6F0C2C581F383895C93FAEB7C8", hash_generated_method = "3E58774005EA277B9BCBAE4FE68E0322")
     @Override
     public final boolean isBlocking() {
@@ -190,6 +193,7 @@ for(SelectionKey key : keyList)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.340 -0400", hash_original_method = "CF2B6308C435D16AFC21EE86C3F92787", hash_generated_method = "2B49F99CF9851BC3ED1064AA987430E3")
     @Override
     public final Object blockingLock() {
@@ -248,6 +252,7 @@ SelectableChannel var72A74007B2BE62B849F475C7BDA4658B_1197868880 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void implConfigureBlocking(boolean blocking) throws IOException;
 
     

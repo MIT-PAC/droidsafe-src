@@ -190,6 +190,7 @@ Class<?> var8C6A66A89969D061B1ECE468EDE00B0A_604514584 =         cl;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.039 -0400", hash_original_method = "1261A37E9B201158D41DADA58D3D498E", hash_generated_method = "E387E4BFC1F9BB28A1A022B9229436AB")
     private char typeCodeOf(Class<?> type) {
         addTaint(type.getTaint());

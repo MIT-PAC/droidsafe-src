@@ -7,6 +7,7 @@ import droidsafe.runtime.*;
 
 public final class VMStack {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.859 -0400", hash_original_method = "48F2A5F5D0FB61BCDEE57F0E62DA7F3A", hash_generated_method = "48F2A5F5D0FB61BCDEE57F0E62DA7F3A")
     public VMStack ()
     {
@@ -20,7 +21,7 @@ public final class VMStack {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public static Class<?> getStackClass2() {
     	return Object.class;
     }

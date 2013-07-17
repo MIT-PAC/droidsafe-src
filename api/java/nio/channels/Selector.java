@@ -21,30 +21,39 @@ public abstract class Selector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void close() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isOpen();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Set<SelectionKey> keys();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SelectorProvider provider();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int select() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int select(long timeout) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Set<SelectionKey> selectedKeys();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int selectNow() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Selector wakeup();
 
     

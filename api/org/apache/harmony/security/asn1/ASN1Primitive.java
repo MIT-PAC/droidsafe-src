@@ -16,6 +16,7 @@ public abstract class ASN1Primitive extends ASN1Type {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.385 -0400", hash_original_method = "C1AED137C8D8FCE0695617840DD29190", hash_generated_method = "916474361C039CFEC28A70FA0D9D089A")
     public final boolean checkTag(int identifier) {
         addTaint(identifier);

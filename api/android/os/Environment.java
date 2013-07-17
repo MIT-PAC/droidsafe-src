@@ -79,6 +79,7 @@ public class Environment {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static File getExternalStoragePublicDirectory(String type) {
         return new File(getExternalStorageDirectory(), type);
     }

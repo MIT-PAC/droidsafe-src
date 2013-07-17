@@ -614,6 +614,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.811 -0400", hash_original_method = "EC73055689DC3CDB2DE15C42C77CE8EF", hash_generated_method = "848A216038F955C83F09EBF76DA6DD88")
     public List<Animation> getAnimations() {
 List<Animation> var2FFA33FE67F05C81C7BA6EEA1AA0C608_1974255028 =         mAnimations;

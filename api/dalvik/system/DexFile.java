@@ -124,6 +124,7 @@ Class varC24D0AC4FF8441C0BBB3D1483BDE602C_1783661781 =         defineClass(name,
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.726 -0400", hash_original_method = "51AB769B18373F25E42ACAB5FC64B8CC", hash_generated_method = "9C6A55B14DB0D4AECC5F236B4A83D0D5")
     public Enumeration<String> entries() {
 Enumeration<String> varF0AC681DBC38559533F072C2E2850F9B_1493649008 =         new DFEnum(this);

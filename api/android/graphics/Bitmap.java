@@ -141,6 +141,7 @@ public final class Bitmap implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.685 -0400", hash_original_method = "B80D9A696720D276C6AF21D39513741E", hash_generated_method = "D2935EC93514CAA99C3362FF1A551A60")
     public final boolean isRecycled() {
         boolean var1212A62D731F217836716E35FA12386C_1928204081 = (mRecycled);
@@ -542,6 +543,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_170768732 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.689 -0400", hash_original_method = "AC5E4B63287018AAA83AB6875AD71BA5", hash_generated_method = "13B94DDFD8F8503FFD31D09C7BF747BA")
     public final boolean isMutable() {
         boolean varE62BED608586C761CD92607B7C2EF1FD_123703890 = (mIsMutable);
@@ -552,6 +554,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_170768732 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.690 -0400", hash_original_method = "9273E6434E2E49D8D6A7BEF0351E82F0", hash_generated_method = "2298E413A4F81CE951235CB74FF18840")
     public final int getWidth() {
         int var3BF51128621ABF9C3888D634FE9E8234_699205759 = (mWidth == -1 ? mWidth = nativeWidth(mNativeBitmap) : mWidth);
@@ -562,6 +565,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_170768732 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.690 -0400", hash_original_method = "C9C832E0F45CC5A7AD0241E8F16710F4", hash_generated_method = "1C2099FE1E649773A1F839C2F6E89E6A")
     public final int getHeight() {
         int var0EF81288FB722485D30D70622DFC52F2_1060197017 = (mHeight == -1 ? mHeight = nativeHeight(mNativeBitmap) : mHeight);
@@ -653,6 +657,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_170768732 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.691 -0400", hash_original_method = "12640FDEC394A62871A05E7C4EB570D4", hash_generated_method = "53CE87B354D121B6901D90085926E3BA")
     public final int getRowBytes() {
         int varB5360D2236BEDFE453A38C0C68B391D5_1258966413 = (nativeRowBytes(mNativeBitmap));
@@ -663,6 +668,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_170768732 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.691 -0400", hash_original_method = "64813EB6D6A92E85FDB72E109CDAF838", hash_generated_method = "FC74587E675CC6A2E06981C4AEA50D63")
     public final int getByteCount() {
         int var0819CDDA81535248F4D66ADD730B8D4E_1675226394 = (getRowBytes() * getHeight());
@@ -673,6 +679,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_170768732 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.692 -0400", hash_original_method = "2965E803C3174189F0506D62E1B543D4", hash_generated_method = "7020AEB4C0DFA39C79F72904661F27AE")
     public final Config getConfig() {
 Config varBA92FAE805FBA986A16BE9B5925B7B62_1047710337 =         Config.nativeToConfig(nativeConfig(mNativeBitmap));
@@ -683,6 +690,7 @@ Config varBA92FAE805FBA986A16BE9B5925B7B62_1047710337 =         Config.nativeToC
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.692 -0400", hash_original_method = "A9E6FFBE96B704702B1F2A7EDD472B86", hash_generated_method = "ADD67A0E70679E2F35C428F8B353CE74")
     public final boolean hasAlpha() {
         boolean varDC5C2DACE33E0A3296C291EC9442951A_744492641 = (nativeHasAlpha(mNativeBitmap));
@@ -1159,6 +1167,7 @@ Bitmap varB8E43D5ABE5A56CEFCFBA2D810F6046C_1685555735 =         bm;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.699 -0400", hash_original_method = "C9F7301125E447423E7DB3CDD9C42E7E", hash_generated_method = "8A6781C6EE02443147A19C6110608BC4")
     final int ni() {
         int varF16492AD902BDE58E3AAF1B990115133_6881730 = (mNativeBitmap);
@@ -1180,9 +1189,11 @@ Bitmap varB8E43D5ABE5A56CEFCFBA2D810F6046C_1685555735 =         bm;
         private static Config sConfigs[] = {
             null, null, ALPHA_8, null, RGB_565, ARGB_4444, ARGB_8888
         };
+        @DSModeled(DSC.SAFE)
         Config(int ni) {
             this.nativeInt = ni;
         }
+        @DSModeled(DSC.SAFE)
         static Config nativeToConfig(int ni) {
             return sConfigs[ni];
         }
@@ -1193,6 +1204,7 @@ Bitmap varB8E43D5ABE5A56CEFCFBA2D810F6046C_1685555735 =         bm;
         JPEG    (0),
         PNG     (1),
         WEBP    (2);
+        @DSModeled(DSC.SAFE)
         CompressFormat(int nativeInt) {
             this.nativeInt = nativeInt;
         }
@@ -1270,6 +1282,7 @@ Bitmap varB8E43D5ABE5A56CEFCFBA2D810F6046C_1685555735 =         bm;
         }
     };
     // orphaned legacy method
+    @DSModeled(DSC.SAFE)
     public Bitmap() {
 
 	}

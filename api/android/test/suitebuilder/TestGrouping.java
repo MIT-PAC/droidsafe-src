@@ -79,6 +79,7 @@ List<Method> var625C4BA6F2C797C1B5A159EA338B6BDA_1410288328 =         select(met
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.177 -0400", hash_original_method = "33F5ECA31F61AACED3C9710C1D8342FC", hash_generated_method = "5105946E0D4A42112EAF1615AFC787FE")
      SortedSet<Class<? extends TestCase>> getTestCaseClasses() {
 SortedSet<Class<? extends TestCase>> varE3DDA91219760C874204BD71102F4461_1438815053 =         testCaseClasses;

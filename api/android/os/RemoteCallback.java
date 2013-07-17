@@ -42,6 +42,7 @@ public abstract class RemoteCallback implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onResult(Bundle bundle);
 
     

@@ -838,6 +838,7 @@ SIPResponse var2036E7FD3A3D966BDBCD4AA1915E2AF6_901504981 =         newResponse;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.375 -0400", hash_original_method = "B9BF2BAEBA19E8A2F042C98E4A2B8D22", hash_generated_method = "7FFC272B997F1412228FABC073822499")
     private final boolean mustCopyRR( int code ) {
         addTaint(code);
@@ -1001,6 +1002,7 @@ SIPRequest var843B90BB67BB5454D25E3643EF8010AB_62415544 =         newRequest;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.380 -0400", hash_original_method = "7B881B99117D66C1BDF145A59ABEA2E4", hash_generated_method = "197D3478876413FF3C2985D9B1E9CD2A")
     public final SIPRequest createErrorAck(To responseToHeader) throws SipException,
             ParseException {

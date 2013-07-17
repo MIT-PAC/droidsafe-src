@@ -21,6 +21,7 @@ public final class ASN1Any extends ASN1Type {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.159 -0400", hash_original_method = "0A9787140DA63C802B73071FD0FF80EC", hash_generated_method = "213EB9AE69913113877FA2808F8B687C")
     public final boolean checkTag(int identifier) {
         addTaint(identifier);

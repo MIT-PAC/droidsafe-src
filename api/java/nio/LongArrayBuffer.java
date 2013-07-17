@@ -102,6 +102,7 @@ LongBuffer var72A74007B2BE62B849F475C7BDA4658B_521928492 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.237 -0400", hash_original_method = "5B6C9F359344527666A57577F107BCAE", hash_generated_method = "FBE3B57131451A979FEC5BE77660D83E")
     @Override
     public final boolean isDirect() {

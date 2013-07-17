@@ -93,6 +93,7 @@ public abstract class AbstractHttpClient implements HttpClient {
 
     private UserTokenHandler userTokenHandler;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.567 -0400", hash_original_method = "649332244E1BD2DC633E57F283CE534F", hash_generated_method = "7B5BB166B285F69B9BDACA31B48312B6")
     protected  AbstractHttpClient(
             final ClientConnectionManager conman,
@@ -105,57 +106,75 @@ public abstract class AbstractHttpClient implements HttpClient {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract HttpParams createHttpParams();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract HttpContext createHttpContext();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract HttpRequestExecutor createRequestExecutor();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract ClientConnectionManager createClientConnectionManager();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract AuthSchemeRegistry createAuthSchemeRegistry();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract CookieSpecRegistry createCookieSpecRegistry();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract ConnectionReuseStrategy createConnectionReuseStrategy();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract ConnectionKeepAliveStrategy createConnectionKeepAliveStrategy();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract BasicHttpProcessor createHttpProcessor();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract HttpRequestRetryHandler createHttpRequestRetryHandler();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract RedirectHandler createRedirectHandler();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract AuthenticationHandler createTargetAuthenticationHandler();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract AuthenticationHandler createProxyAuthenticationHandler();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract CookieStore createCookieStore();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract CredentialsProvider createCredentialsProvider();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract HttpRoutePlanner createHttpRoutePlanner();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract UserTokenHandler createUserTokenHandler();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.572 -0400", hash_original_method = "0E1E8210CC0DE78C7527875CB41BF658", hash_generated_method = "9F083B80D868282A92BF3C41CD4313A0")
     public synchronized final HttpParams getParams() {
         if(defaultParams == null)        
@@ -182,6 +201,7 @@ HttpParams var44B488213C6710CAA88E56A7B52636A1_510823127 =         defaultParams
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.574 -0400", hash_original_method = "E70C09A1B7F6B835A029131A4BD8CF65", hash_generated_method = "212FBC1A56123B6B4DAB5AA07FCFA83A")
     public synchronized final ClientConnectionManager getConnectionManager() {
         if(connManager == null)        
@@ -199,6 +219,7 @@ ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1041187094 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.574 -0400", hash_original_method = "E135DC176345D99818B1545EC3559BB7", hash_generated_method = "98AD030F49FAD4B88DD7EEDA264733A8")
     public synchronized final HttpRequestExecutor getRequestExecutor() {
         if(requestExec == null)        
@@ -216,6 +237,7 @@ HttpRequestExecutor var8DBD400D59E485565CB5FE9A1AB57B3B_647855367 =         requ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.574 -0400", hash_original_method = "B64B8CBD2A41A037238B1FA9106B9C55", hash_generated_method = "747E457BB7148A16B4AF2515C95ADFD1")
     public synchronized final AuthSchemeRegistry getAuthSchemes() {
         if(supportedAuthSchemes == null)        
@@ -241,6 +263,7 @@ AuthSchemeRegistry var1D6A0ADE255A698E8F43B1E2D290AEE8_349352746 =         suppo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.574 -0400", hash_original_method = "13CF1774C0163AC97C4FE09A957F51BE", hash_generated_method = "31F978FA5C3573413117C2ECAAF3FC00")
     public synchronized final CookieSpecRegistry getCookieSpecs() {
         if(supportedCookieSpecs == null)        
@@ -266,6 +289,7 @@ CookieSpecRegistry var03DD863D201DBFCBCC9315ABE44F665D_1103312737 =         supp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.575 -0400", hash_original_method = "280140DA9BF4BB510F1D77AFF1FE6E38", hash_generated_method = "0A4CA6AB7990C55D2D380C17DD14F3FD")
     public synchronized final ConnectionReuseStrategy getConnectionReuseStrategy() {
         if(reuseStrategy == null)        
@@ -291,6 +315,7 @@ ConnectionReuseStrategy varC37844E15433FF489CCF7DF2085601AF_1893986479 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.575 -0400", hash_original_method = "0109C95DAAF90D45512D49D44811C1BC", hash_generated_method = "C2CD8CC30681B1973710F1AE5488461F")
     public synchronized final ConnectionKeepAliveStrategy getConnectionKeepAliveStrategy() {
         if(keepAliveStrategy == null)        
@@ -316,6 +341,7 @@ ConnectionKeepAliveStrategy var350D15DC240AE1CEBE26AA8C1FB91B5D_438466984 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.575 -0400", hash_original_method = "EDC64C630F8C9BB9424AE860B2C098D2", hash_generated_method = "93742427C3BB5251353BE15D3A072A07")
     public synchronized final HttpRequestRetryHandler getHttpRequestRetryHandler() {
         if(retryHandler == null)        
@@ -341,6 +367,7 @@ HttpRequestRetryHandler var27CFE2B9CEAB74F4158D32BF7CE29442_1120576827 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.576 -0400", hash_original_method = "33F9D2B028213B54FFCD534F34C4B977", hash_generated_method = "F5523BA74689FA91DDE1B5A035973DA8")
     public synchronized final RedirectHandler getRedirectHandler() {
         if(redirectHandler == null)        
@@ -366,6 +393,7 @@ RedirectHandler var969FF4899AC3037F7E626C3A09754AB9_634206803 =         redirect
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.576 -0400", hash_original_method = "DCBE39367A729541D3366A866F88A6B5", hash_generated_method = "F921AF0A1D39041D467B346C346276B8")
     public synchronized final AuthenticationHandler getTargetAuthenticationHandler() {
         if(targetAuthHandler == null)        
@@ -392,6 +420,7 @@ AuthenticationHandler var14FEB6F269E494F8F61E59AA40ABA915_1426458496 =         t
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.577 -0400", hash_original_method = "FE6A31C4BC47B922AE7100411D6D3962", hash_generated_method = "1A482334E2A6D9A7C5AB03CF37E44331")
     public synchronized final AuthenticationHandler getProxyAuthenticationHandler() {
         if(proxyAuthHandler == null)        
@@ -418,6 +447,7 @@ AuthenticationHandler var9EB5A7EC5E1A637214C662B32FCF2B73_689530338 =         pr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.577 -0400", hash_original_method = "CED19DC63F5DFF3B80D2B1F10482E892", hash_generated_method = "9780D7EF7A44F24946F073B8E0A641EF")
     public synchronized final CookieStore getCookieStore() {
         if(cookieStore == null)        
@@ -443,6 +473,7 @@ CookieStore varEF8955D9725B20580D54DFD94C0772B2_86808192 =         cookieStore;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.577 -0400", hash_original_method = "98E8D6F59FD454CB3C7069127AA5844B", hash_generated_method = "BB522908B5549FADE9B71B350A092234")
     public synchronized final CredentialsProvider getCredentialsProvider() {
         if(credsProvider == null)        
@@ -468,6 +499,7 @@ CredentialsProvider var8211F985665B1FE67F6F01527CAE769E_1831122548 =         cre
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.578 -0400", hash_original_method = "70B10D4ECA33F90F2399EBBBDBCB28FD", hash_generated_method = "19D14B712CFEA809BAF73B5E69BDB148")
     public synchronized final HttpRoutePlanner getRoutePlanner() {
         if(this.routePlanner == null)        
@@ -493,6 +525,7 @@ HttpRoutePlanner var2417A831E17E58CB597F83300D761324_1025955725 =         this.r
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.578 -0400", hash_original_method = "7975319476225B5506DDD068000CD697", hash_generated_method = "FCF65300360E3CE128EB91192004EC98")
     public synchronized final UserTokenHandler getUserTokenHandler() {
         if(this.userTokenHandler == null)        
@@ -518,6 +551,7 @@ UserTokenHandler varD1124753873EE6AAD5C43849D9B4A3C0_1946165668 =         this.u
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.578 -0400", hash_original_method = "A054071B5C703A0BBBB93F177E316F94", hash_generated_method = "6D1E415A2DC2AAD37A7C05849DCFB715")
     protected synchronized final BasicHttpProcessor getHttpProcessor() {
         if(httpProcessor == null)        
@@ -657,6 +691,7 @@ HttpRequestInterceptor varBB4763CB0F25016809DFE65E2B809ED2_982709927 =         g
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.579 -0400", hash_original_method = "8C5414A352E96D69F8672C617A799B3F", hash_generated_method = "6057D21DFC3306CD36EF15C12DA18855")
     public final HttpResponse execute(HttpUriRequest request) throws IOException, ClientProtocolException {
         addTaint(request.getTaint());
@@ -668,6 +703,7 @@ HttpResponse varDD0A9081FBDD6C3CFDDAD9B9C9245845_881557001 =         execute(req
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.580 -0400", hash_original_method = "DFABA59EDA546A2813170916E96DC886", hash_generated_method = "F72773D5557D2D89EE65D1E8D9868DEC")
     public final HttpResponse execute(HttpUriRequest request,
                                       HttpContext context) throws IOException, ClientProtocolException {
@@ -720,6 +756,7 @@ HttpHost varA7DD35DE8EDE4A2FCAF77CE202E687B3_969844382 =         target;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.580 -0400", hash_original_method = "7C51BA6300B6898AA66ADB20A5FEE58B", hash_generated_method = "7E20AAB31EE8D225ACAD8AE3F8DB366A")
     public final HttpResponse execute(HttpHost target, HttpRequest request) throws IOException, ClientProtocolException {
         addTaint(request.getTaint());
@@ -732,6 +769,7 @@ HttpResponse var1E0ADA5609F1551DD904433FC94E0E29_361942657 =         execute(tar
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.580 -0400", hash_original_method = "831E31825E37427A81D59F1020149460", hash_generated_method = "8A6595D13AB4A18DE477836245493EF5")
     public final HttpResponse execute(HttpHost target, HttpRequest request,
                                       HttpContext context) throws IOException, ClientProtocolException {

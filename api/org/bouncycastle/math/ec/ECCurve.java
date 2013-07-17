@@ -22,18 +22,23 @@ public abstract class ECCurve {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract int getFieldSize();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECFieldElement fromBigInteger(BigInteger x);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECPoint createPoint(BigInteger x, BigInteger y, boolean withCompression);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECPoint decodePoint(byte[] encoded);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECPoint getInfinity();
 
     

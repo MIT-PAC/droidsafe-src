@@ -38,6 +38,7 @@ public abstract class FragmentManager {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction beginTransaction();
 
     
@@ -52,54 +53,71 @@ FragmentTransaction var0C52C1DD23EDCBCDDE04269B6A21160A_1066549475 =         beg
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean executePendingTransactions();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Fragment findFragmentById(int id);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Fragment findFragmentByTag(String tag);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void popBackStack();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean popBackStackImmediate();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void popBackStack(String name, int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean popBackStackImmediate(String name, int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void popBackStack(int id, int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean popBackStackImmediate(int id, int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getBackStackEntryCount();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract BackStackEntry getBackStackEntryAt(int index);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void addOnBackStackChangedListener(OnBackStackChangedListener listener);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void removeOnBackStackChangedListener(OnBackStackChangedListener listener);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void putFragment(Bundle bundle, String key, Fragment fragment);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Fragment getFragment(Bundle bundle, String key);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Fragment.SavedState saveFragmentInstanceState(Fragment f);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args);
 
     

@@ -16,6 +16,7 @@ public final class InfoAccessSyntax extends ExtensionValue {
 
     private List<?> accessDescriptions;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.400 -0400", hash_original_method = "4CEC0F2DDF7912449CE6AD3ED26DAD30", hash_generated_method = "B2D15DF2D768110F682400EF6ED92BE7")
     private  InfoAccessSyntax(List<?> accessDescriptions, byte[] encoding) throws IOException {
         addTaint(encoding[0]);

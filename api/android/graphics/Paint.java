@@ -253,6 +253,7 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.494 -0400", hash_original_method = "5965A0E7316AAA95881AE3D055547B57", hash_generated_method = "0F495CF34858BA566CB7ACB1300CA30C")
     public final boolean isAntiAlias() {
         boolean var642B1B77578F5B92DFE12743626FDDB3_1062122543 = ((getFlags() & ANTI_ALIAS_FLAG) != 0);
@@ -269,6 +270,7 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.495 -0400", hash_original_method = "365AF52E63589F5A5C820D079E688641", hash_generated_method = "DA1818438401F750A837FAF7F0DCB2D6")
     public final boolean isDither() {
         boolean var3935C3521043228D582B5346E9A3ED0C_1477685742 = ((getFlags() & DITHER_FLAG) != 0);
@@ -285,6 +287,7 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.496 -0400", hash_original_method = "9B687614DCB13072E0D397A968085B41", hash_generated_method = "7CDDC79E71357D5724D7FE3E0495CBFA")
     public final boolean isLinearText() {
         boolean var7CF7C722E4323F681C755D27FF58C13F_1330800417 = ((getFlags() & LINEAR_TEXT_FLAG) != 0);
@@ -301,6 +304,7 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.497 -0400", hash_original_method = "8BAC5D567D23AEF728D22298071CB50B", hash_generated_method = "EE9F51CAD6C9F480B6A36C5D2B86ABA3")
     public final boolean isSubpixelText() {
         boolean var750E17719AD0F45546FE3847F5A43055_1901433131 = ((getFlags() & SUBPIXEL_TEXT_FLAG) != 0);
@@ -317,6 +321,7 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.498 -0400", hash_original_method = "540058EB824CF1779470649F70CA731D", hash_generated_method = "5613A0C37E33A1B256898449644989AF")
     public final boolean isUnderlineText() {
         boolean var8F4035594F35F50D509088F3DD2A2DB2_980572811 = ((getFlags() & UNDERLINE_TEXT_FLAG) != 0);
@@ -333,6 +338,7 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.498 -0400", hash_original_method = "4D8DFD32FB0492CC10F2A4C48D6AABE0", hash_generated_method = "74286C7FCCCA0BC97E5C492ED65A0142")
     public final boolean isStrikeThruText() {
         boolean varFEA105DBA375C0A2F032B236A0A2E7F0_1261163342 = ((getFlags() & STRIKE_THRU_TEXT_FLAG) != 0);
@@ -349,6 +355,7 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.499 -0400", hash_original_method = "64C8195C0C6E03DDD3FCE77D9F18F499", hash_generated_method = "B299B2EB6F5DD370FBED019E0AC996B5")
     public final boolean isFakeBoldText() {
         boolean var15B427FFF4C33E421851BAED92E8DAFF_1598002899 = ((getFlags() & FAKE_BOLD_TEXT_FLAG) != 0);
@@ -365,6 +372,7 @@ public class Paint {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.514 -0400", hash_original_method = "69EBEFD820D698F0EA00B7F4C8854ABB", hash_generated_method = "F3CAC0281385BC28052E580B0E85D534")
     public final boolean isFilterBitmap() {
         boolean var819608BAF0AAB38A96B8B58084D72F3C_1476010279 = ((getFlags() & FILTER_BITMAP_FLAG) != 0);
@@ -2389,6 +2397,7 @@ for(int i = advancesIndex, e = i + (end - start);i < e;i++)
         FILL            (0),
         STROKE          (1),
         FILL_AND_STROKE (2);
+        @DSModeled(DSC.SAFE)
         Style(int nativeInt) {
             this.nativeInt = nativeInt;
         }
@@ -2400,6 +2409,7 @@ for(int i = advancesIndex, e = i + (end - start);i < e;i++)
         BUTT    (0),
         ROUND   (1),
         SQUARE  (2);
+        @DSModeled(DSC.SAFE)
         private Cap(int nativeInt) {
             this.nativeInt = nativeInt;
         }
@@ -2411,6 +2421,7 @@ for(int i = advancesIndex, e = i + (end - start);i < e;i++)
         MITER   (0),
         ROUND   (1),
         BEVEL   (2);
+        @DSModeled(DSC.SAFE)
         private Join(int nativeInt) {
             this.nativeInt = nativeInt;
         }
@@ -2422,6 +2433,7 @@ for(int i = advancesIndex, e = i + (end - start);i < e;i++)
         LEFT    (0),
         CENTER  (1),
         RIGHT   (2);
+        @DSModeled(DSC.SAFE)
         private Align(int nativeInt) {
             this.nativeInt = nativeInt;
         }
@@ -2446,6 +2458,7 @@ for(int i = advancesIndex, e = i + (end - start);i < e;i++)
 
         public float leading;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.547 -0400", hash_original_method = "9D0F6E676FD14A88D6B94EA1234A3DC2", hash_generated_method = "9D0F6E676FD14A88D6B94EA1234A3DC2")
         public FontMetrics ()
         {
@@ -2474,6 +2487,7 @@ for(int i = advancesIndex, e = i + (end - start);i < e;i++)
 
         public int leading;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.548 -0400", hash_original_method = "8179D96EF0A0532FF84A77E27487BF14", hash_generated_method = "8179D96EF0A0532FF84A77E27487BF14")
         public FontMetricsInt ()
         {

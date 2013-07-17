@@ -76,6 +76,7 @@ public final class MediaStore {
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static final Uri getContentUri(String volumeName,
                 long rowId) {
             return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
@@ -90,6 +91,7 @@ public final class MediaStore {
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static final Uri getMtpObjectsUri(String volumeName,
                 long fileId) {
             return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
@@ -97,6 +99,7 @@ public final class MediaStore {
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static final Uri getMtpReferencesUri(String volumeName,
                 long fileId) {
             return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
@@ -326,11 +329,13 @@ public final class MediaStore {
             }
 
 
+            @DSModeled(DSC.SPEC)
             public static final Cursor query(ContentResolver cr, Uri uri, String[] projection) {
                 return cr.query(uri, projection, null, null, DEFAULT_SORT_ORDER);
             }
 
             
+            @DSModeled(DSC.SPEC)
             public static final Cursor query(ContentResolver cr, Uri uri, String[] projection,
                     String where, String orderBy) {
                 return cr.query(uri, projection, where,
@@ -345,6 +350,7 @@ public final class MediaStore {
             }
 
             
+            @DSModeled(DSC.SPEC)
             public static final Bitmap getBitmap(ContentResolver cr, Uri url) throws FileNotFoundException, IOException {
                 InputStream input = cr.openInputStream(url);
                 Bitmap bitmap = BitmapFactory.decodeStream(input);
@@ -480,11 +486,13 @@ public final class MediaStore {
             }
 
 
+            @DSModeled(DSC.SPEC)
             public static final Cursor query(ContentResolver cr, Uri uri, String[] projection) {
                 return cr.query(uri, projection, null, null, DEFAULT_SORT_ORDER);
             }
 
             
+            @DSModeled(DSC.SPEC)
             public static final Cursor queryMiniThumbnails(ContentResolver cr, Uri uri, int kind,
                     String[] projection) {
                 return cr.query(uri, projection, "kind = " + kind, null, DEFAULT_SORT_ORDER);
@@ -747,6 +755,7 @@ public final class MediaStore {
                 }
 
 
+                @DSModeled(DSC.SPEC)
                 public static final Uri getContentUri(String volumeName,
                         long genreId) {
                     return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
@@ -816,6 +825,7 @@ public final class MediaStore {
                 }
 
 
+                @DSModeled(DSC.SPEC)
                 public static final Uri getContentUri(String volumeName,
                         long playlistId) {
                     return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
@@ -905,6 +915,7 @@ public final class MediaStore {
                 }
 
 
+                @DSModeled(DSC.SPEC)
                 public static final Uri getContentUri(String volumeName,
                         long artistId) {
                     return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
@@ -1113,6 +1124,7 @@ public final class MediaStore {
         }
 
 
+        @DSModeled(DSC.SPEC)
         public static final Cursor query(ContentResolver cr, Uri uri, String[] projection) {
             return cr.query(uri, projection, null, null, DEFAULT_SORT_ORDER);
         }

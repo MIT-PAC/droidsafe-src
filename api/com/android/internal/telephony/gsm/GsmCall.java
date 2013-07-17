@@ -48,6 +48,7 @@ class GsmCall extends Call {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.942 -0400", hash_original_method = "DA46D72C53A8C0722B0E4038E55B8A9F", hash_generated_method = "4540B32D68C2EB9F7EF357FF5513E436")
     public List<Connection> getConnections() {
 List<Connection> varD8B91E18CFFE05D77A84C03EDA812BE2_632131949 =         connections;

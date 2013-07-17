@@ -15,6 +15,7 @@ public abstract class InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getDeviceId();
 
     
@@ -28,24 +29,31 @@ InputDevice var6CAF134A410F580D974FCD91E6F3C893_1344692404 =         InputDevice
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getSource();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setSource(int source);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract InputEvent copy();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void recycle();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isTainted();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setTainted(boolean tainted);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long getEventTimeNano();
 
     

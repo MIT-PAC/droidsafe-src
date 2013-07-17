@@ -2828,6 +2828,7 @@ SIPResponse varB79F2C108A34EA379E0E4ADD4F794C06_1802813606 =         lastRespons
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final boolean optionPresent(ListIterator l, String option) {
         while (l.hasNext()) {
             OptionTag opt = (OptionTag) l.next();

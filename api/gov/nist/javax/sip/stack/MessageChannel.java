@@ -52,51 +52,67 @@ public abstract class MessageChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void close();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SIPTransactionStack getSIPStack();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getTransport();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isReliable();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isSecure();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void sendMessage(SIPMessage sipMessage) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getPeerAddress();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract InetAddress getPeerInetAddress();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract String getPeerProtocol();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getPeerPort();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getPeerPacketSourcePort();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract InetAddress getPeerPacketSourceAddress();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getKey();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getViaHost();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getViaPort();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void sendMessage(byte[] message, InetAddress receiverAddress,
             int receiverPort, boolean reconnectFlag) throws IOException;
 
@@ -451,6 +467,7 @@ String var4FC680801218E6372BC708D6FA44AE60_366987094 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final boolean copyHeader(String name, String fromReq, StringBuffer buf) {
         int start = fromReq.indexOf(name);
         if (start != -1) {
@@ -464,6 +481,7 @@ String var4FC680801218E6372BC708D6FA44AE60_366987094 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final boolean copyViaHeaders(String fromReq, StringBuffer buf) {
         int start = fromReq.indexOf(ViaHeader.NAME);
         boolean found = false;

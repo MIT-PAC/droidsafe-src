@@ -39,6 +39,7 @@ public class AvoidXfermode extends Xfermode {
     public enum Mode {
         AVOID   (0),    
         TARGET  (1);    
+        @DSModeled(DSC.SAFE)
         Mode(int nativeInt) {
             this.nativeInt = nativeInt;
         }

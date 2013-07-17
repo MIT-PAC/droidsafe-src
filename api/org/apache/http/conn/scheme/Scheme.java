@@ -73,6 +73,7 @@ public final class Scheme {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.983 -0400", hash_original_method = "CA86BB3AB3ACF92C5C19618DD925F5A0", hash_generated_method = "E4A86969BDCD6994E2B0A1CAA0F90191")
     public final int getDefaultPort() {
         int varAD9869ADBCCEEFF5A73F8163B0777153_144172361 = (defaultPort);
@@ -83,6 +84,7 @@ public final class Scheme {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.983 -0400", hash_original_method = "8D53BDBBDB5B8DACC183C2C5A3A2FE13", hash_generated_method = "CA0368CA6FC0C2C3A9B0F66599A30F09")
     public final SocketFactory getSocketFactory() {
 SocketFactory varCAA2E01CECD165A7D5546943D524E87F_1883153220 =         socketFactory;
@@ -93,6 +95,7 @@ SocketFactory varCAA2E01CECD165A7D5546943D524E87F_1883153220 =         socketFac
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.984 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "58552318E799BF92A6971460AE049C7E")
     public final String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_1482962945 =         name;
@@ -103,6 +106,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1482962945 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.984 -0400", hash_original_method = "9614A7277DEC14D06C0E4E046469A079", hash_generated_method = "2AF9AF52F80443F228046614C7E61D4B")
     public final boolean isLayered() {
         boolean var9442E6482C63DEF4C35BC13B704C52E2_1901247012 = (layered);
@@ -113,6 +117,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1482962945 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.984 -0400", hash_original_method = "64F6A6BD8BE8E9634AE7594AC6F06F64", hash_generated_method = "F1B971D865B633DBC7AFC7FAEF837F6F")
     public final int resolvePort(int port) {
         addTaint(port);

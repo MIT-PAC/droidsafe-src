@@ -27,6 +27,7 @@ public class AtomicInteger extends Number implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.128 -0400", hash_original_method = "2C5A1089E8025181868581E48D922F38", hash_generated_method = "FC93DDD2EF606E3BC107447448DECD9B")
     public final int get() {
         int var2063C1608D6E0BAF80249C42E2BE5804_1103157334 = (value);
@@ -37,6 +38,7 @@ public class AtomicInteger extends Number implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.128 -0400", hash_original_method = "E51FD8A91C159D9D3ED3BF52073569AD", hash_generated_method = "046E83718895B73384C8E1C3323B55FE")
     public final void set(int newValue) {
         value = newValue;
@@ -45,6 +47,7 @@ public class AtomicInteger extends Number implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.128 -0400", hash_original_method = "77EB9E59BE67AA43485FF3A0F0492CB7", hash_generated_method = "46BA68458653DC90C264E06F353E734F")
     public final void lazySet(int newValue) {
         addTaint(newValue);
@@ -54,6 +57,7 @@ public class AtomicInteger extends Number implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.129 -0400", hash_original_method = "EFF79965BA8CD7578F2A5616273687C7", hash_generated_method = "6A25897A84C05D771F829B7D847D3314")
     public final int getAndSet(int newValue) {
         addTaint(newValue);
@@ -76,6 +80,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.129 -0400", hash_original_method = "3CF6D7A3DD4EDBE8D1648E756B160F53", hash_generated_method = "BC2AA5013E9CE8B494BEFE2AF7FCB471")
     public final boolean compareAndSet(int expect, int update) {
         addTaint(update);
@@ -88,6 +93,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.130 -0400", hash_original_method = "22EC2300FEC70C46ECF009D542FC9430", hash_generated_method = "1685F1A3D906944F3BC127C9B4C5FC1F")
     public final boolean weakCompareAndSet(int expect, int update) {
         addTaint(update);
@@ -100,6 +106,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.130 -0400", hash_original_method = "621C33BC86CD3122044A53600F895B29", hash_generated_method = "8FE5CDA8B7032B56B87370716CFC7CD8")
     public final int getAndIncrement() {
 for(;;)
@@ -123,6 +130,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.131 -0400", hash_original_method = "D5257E8A410056D1BB1DB7447390EAE5", hash_generated_method = "FF1DAD75F8A21F137F6E2FB36CE9F03D")
     public final int getAndDecrement() {
 for(;;)
@@ -146,6 +154,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.131 -0400", hash_original_method = "4B803B85C89B0C062A735FA86D4518AE", hash_generated_method = "5DE91F1ACBDCD0991DA5AFAD77CB1BC1")
     public final int getAndAdd(int delta) {
         addTaint(delta);
@@ -170,6 +179,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.132 -0400", hash_original_method = "6DC45C427ABFB1C3B7D74803EAAF22FF", hash_generated_method = "D606A4FF8FA927C00DC20CBE7A3E9140")
     public final int incrementAndGet() {
 for(;;)
@@ -193,6 +203,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.132 -0400", hash_original_method = "4357F9DD6725F5F393683EE2EA89C677", hash_generated_method = "5E2DCBDEFD1BE2C04405DC76B68012BD")
     public final int decrementAndGet() {
 for(;;)
@@ -216,6 +227,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.132 -0400", hash_original_method = "5280B98EAB69F2A556138E3D06C4D0D3", hash_generated_method = "0A82FF45A849CB7BFF8E8EE83E75438C")
     public final int addAndGet(int delta) {
         addTaint(delta);

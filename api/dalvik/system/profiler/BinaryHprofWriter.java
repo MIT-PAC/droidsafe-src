@@ -306,6 +306,7 @@ switch(e.type){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.897 -0400", hash_original_method = "759EEA3A3B19BFF3937058AF4EFC13EB", hash_generated_method = "A65B2C6364814B2F3D5658A0D7708771")
     private void writeCpuSamples(int totalSamples, Set<HprofData.Sample> samples) throws IOException {
         addTaint(samples.getTaint());

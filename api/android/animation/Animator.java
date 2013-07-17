@@ -39,21 +39,27 @@ public abstract class Animator implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long getStartDelay();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setStartDelay(long startDelay);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Animator setDuration(long duration);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long getDuration();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setInterpolator(TimeInterpolator value);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isRunning();
 
     
@@ -106,6 +112,7 @@ public abstract class Animator implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.840 -0400", hash_original_method = "A0C570F4990D85172FF1B2594590DE80", hash_generated_method = "80EB6D23C0E183B892E0E9305C327579")
     public ArrayList<AnimatorListener> getListeners() {
 ArrayList<AnimatorListener> var6F226E74DAC534764C2244A2BF49F27C_7535036 =         mListeners;

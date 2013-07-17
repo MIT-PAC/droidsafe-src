@@ -61,6 +61,7 @@ EGLContext var178E2AD52D6FBBB503F908168856B574_2128029169 =         mContext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void onTerminate(EGLContext context);
 
     

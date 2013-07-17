@@ -74,6 +74,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1596496749 =             clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int compare(String string1, String string2);
 
     
@@ -120,6 +121,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1596496749 =             clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CollationKey getCollationKey(String string);
 
     
@@ -160,6 +162,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1596496749 =             clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 public abstract int hashCode();
 

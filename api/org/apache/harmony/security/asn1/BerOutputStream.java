@@ -26,6 +26,7 @@ public class BerOutputStream {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.818 -0400", hash_original_method = "C86EAD42221FC89550F7365AC0B9ACF2", hash_generated_method = "8C50C1347AD93FE0E9C32BE573486808")
     public final void encodeTag(int tag) {
         encoded[offset++] = (byte) tag;

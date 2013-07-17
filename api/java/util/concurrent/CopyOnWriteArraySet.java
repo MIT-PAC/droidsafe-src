@@ -20,6 +20,7 @@ public class CopyOnWriteArraySet<E> extends AbstractSet<E> implements java.io.Se
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.884 -0400", hash_original_method = "A905F7DF70B1EDD8621789C3C3A6CD84", hash_generated_method = "AF148E3BB9B3105E752B2DF2ECA0FF4B")
     public  CopyOnWriteArraySet(Collection<? extends E> c) {
         addTaint(c.getTaint());
@@ -120,6 +121,7 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1385790034 =         al.toArray(a);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.886 -0400", hash_original_method = "BAD19EAB09738DBB9663648D63DFE74C", hash_generated_method = "6E768E546926F759CD87326459A7B1F5")
     public boolean containsAll(Collection<?> c) {
         addTaint(c.getTaint());
@@ -131,6 +133,7 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1385790034 =         al.toArray(a);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.886 -0400", hash_original_method = "B7022E0CB9EF549D20482BA7616126CF", hash_generated_method = "9085EE0B27DBF76AF74D496066CFC56E")
     public boolean addAll(Collection<? extends E> c) {
         addTaint(c.getTaint());
@@ -142,6 +145,7 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1385790034 =         al.toArray(a);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.886 -0400", hash_original_method = "66AA12EE71C1D65DECB2FC917ACDE24D", hash_generated_method = "DEE13E6E5D254B0A1AC1815A569D941E")
     public boolean removeAll(Collection<?> c) {
         addTaint(c.getTaint());
@@ -153,6 +157,7 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1385790034 =         al.toArray(a);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.887 -0400", hash_original_method = "D0A4CF23F1E9AE32CFAA8649387F142B", hash_generated_method = "514123490E166B00AB7F08BBFD6A17AB")
     public boolean retainAll(Collection<?> c) {
         addTaint(c.getTaint());
@@ -164,6 +169,7 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1385790034 =         al.toArray(a);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.887 -0400", hash_original_method = "1D191D7F570684E003696ECD55ECD643", hash_generated_method = "22156E87E644851A7EDF50146C5059B3")
     public Iterator<E> iterator() {
 Iterator<E> var9170DAE396001991D3A16AF07A4247B9_536686804 =         al.iterator();

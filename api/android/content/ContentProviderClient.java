@@ -155,6 +155,7 @@ AssetFileDescriptor var3E8AB6117448C893939DA92355B04E2A_1191743236 =         mCo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.861 -0400", hash_original_method = "BE665D47389B6568CACD4F1C34360A55", hash_generated_method = "A01386C2FECD005D4B9263128274432C")
     public final AssetFileDescriptor openTypedAssetFileDescriptor(Uri uri,
             String mimeType, Bundle opts) throws RemoteException, FileNotFoundException {

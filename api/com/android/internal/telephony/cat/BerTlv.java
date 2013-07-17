@@ -24,6 +24,7 @@ class BerTlv {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.658 -0400", hash_original_method = "4DB54AB9F503DA894E5725BF1F0BC01C", hash_generated_method = "5F87E2A79FB0FDE0420251F34D16BA64")
     public List<ComprehensionTlv> getComprehensionTlvs() {
 List<ComprehensionTlv> varEED3324DF316BCB609D1536A9D775114_540080039 =         mCompTlvs;

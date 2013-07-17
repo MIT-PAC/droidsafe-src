@@ -47,6 +47,7 @@ public enum ResultCode {
     ResultCode(int code) {
         mCode = code;
     }
+    @DSModeled(DSC.SAFE)
     public int value() {
         return mCode;
     }

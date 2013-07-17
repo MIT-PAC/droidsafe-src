@@ -9,6 +9,7 @@ import android.text.InputType;
 
 public class TimeKeyListener extends NumberKeyListener {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.781 -0400", hash_original_method = "B9206F846F22DC573861D1007C9C3102", hash_generated_method = "B9206F846F22DC573861D1007C9C3102")
     public TimeKeyListener ()
     {

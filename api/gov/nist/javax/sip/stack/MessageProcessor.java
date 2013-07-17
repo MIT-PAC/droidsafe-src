@@ -66,6 +66,7 @@ public abstract class MessageProcessor implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.616 -0400", hash_original_method = "BB334E9937075E417D8A338E6797F33B", hash_generated_method = "ED29D178453B86BC05795D284108548D")
     public final void initialize( InetAddress ipAddress, int port,
 			SIPTransactionStack transactionStack ) {
@@ -317,35 +318,45 @@ String varD51D88094686E0D480B6E2DDA4DFBAA7_1285420835 =         this.sentBy;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SIPTransactionStack getSIPStack();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract MessageChannel createMessageChannel(HostPort targetHostPort)
             throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract MessageChannel createMessageChannel(InetAddress targetHost,
             int port) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void start() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void stop();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getDefaultTargetPort();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isSecure();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getMaximumMessageSize();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean inUse();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void run();
 
     

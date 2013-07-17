@@ -22,6 +22,7 @@ public class Handler {
 
     IMessenger mMessenger;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.182 -0400", hash_original_method = "BF99A47DD8BD9030B611C5F1BD90EC8F", hash_generated_method = "ADB181AE50C1210FEB4DD228DF6C5B25")
     public  Handler() {
         if(FIND_POTENTIAL_LEAKS)        
@@ -61,6 +62,7 @@ public class Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.183 -0400", hash_original_method = "4145BBA061FAEF73002F915149455D35", hash_generated_method = "BE3567660A33D7ED1E7E70050DC9D0DA")
     public  Handler(Callback callback) {
         if(FIND_POTENTIAL_LEAKS)        
@@ -100,6 +102,7 @@ public class Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.183 -0400", hash_original_method = "878DD6FD2A8B0F6865454043C68D5888", hash_generated_method = "9B81A69A46DF15261D6C68147933E52E")
     public  Handler(Looper looper) {
         mLooper = looper;
@@ -112,6 +115,7 @@ public class Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.184 -0400", hash_original_method = "0F1A18EF6331120AB094322F735FD8FC", hash_generated_method = "43AB9E70D0EFEBDC964E78082CA1DB45")
     public  Handler(Looper looper, Callback callback) {
         mLooper = looper;
@@ -244,6 +248,7 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1004158441 =         Message.obtain(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.189 -0400", hash_original_method = "6A0575D5625A2B33566AA17E837BEE40", hash_generated_method = "000B9D64CD31CB3C3813F912C1C88337")
     public final boolean post(Runnable r) {
         addTaint(r.getTaint());
@@ -322,6 +327,7 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1004158441 =         Message.obtain(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.191 -0400", hash_original_method = "A97266028157506969A5B89288A9C9BC", hash_generated_method = "D8973093541F30FD8C5C6A82A7F7B27F")
     public final boolean sendMessage(Message msg) {
         addTaint(msg.getTaint());
@@ -333,6 +339,7 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1004158441 =         Message.obtain(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.191 -0400", hash_original_method = "A52967DD531D2E9895F5558692B5D99D", hash_generated_method = "1685BC216927A55C3D8557C8D2E67D8C")
     public final boolean sendEmptyMessage(int what) {
         addTaint(what);
@@ -344,6 +351,7 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1004158441 =         Message.obtain(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.192 -0400", hash_original_method = "C345E8B6D42103BAB2779DE84E2F8005", hash_generated_method = "D23A61A5BD5036ABCE9731C91A406F45")
     public final boolean sendEmptyMessageDelayed(int what, long delayMillis) {
         addTaint(delayMillis);
@@ -360,6 +368,7 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1004158441 =         Message.obtain(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.192 -0400", hash_original_method = "0234DAD2CAD8EF6B170E56EDA713A580", hash_generated_method = "8FD8BAD9CC977CB0B9816D10251BC3E4")
     public final boolean sendEmptyMessageAtTime(int what, long uptimeMillis) {
         addTaint(uptimeMillis);
@@ -376,6 +385,7 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1004158441 =         Message.obtain(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.193 -0400", hash_original_method = "F32DF35552A73512081963AF1F333EEC", hash_generated_method = "D938876CBAAA0559E74560D4CFA7A2F4")
     public final boolean sendMessageDelayed(Message msg, long delayMillis) {
         addTaint(delayMillis);
@@ -395,6 +405,7 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1004158441 =         Message.obtain(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.193 -0400", hash_original_method = "9EBABACA140C9DF9A34851CFCEDCA0D2", hash_generated_method = "A70FB8AF6135A3A4CE1683988EEAD4D2")
     public boolean sendMessageAtTime(Message msg, long uptimeMillis) {
         addTaint(uptimeMillis);
@@ -515,6 +526,7 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1004158441 =         Message.obtain(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.196 -0400", hash_original_method = "6CA5860A95ACD9BB8C844ECC1E567192", hash_generated_method = "E9497F0FDCE64AD0255EB0DAF1FFF654")
     public final Looper getLooper() {
 Looper var0D78717954912E9F181D5C0583378DCC_1240597851 =         mLooper;
@@ -589,6 +601,7 @@ IMessenger var8654BE9299324672E260B3FAC70B3CD7_1697484095 =             mMesseng
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.198 -0400", hash_original_method = "9DFB5128F30D3CFE7C2F086A6667AA29", hash_generated_method = "7A0E38B0CA114937C88B63C9667B1189")
     private final Message getPostMessage(Runnable r) {
         addTaint(r.getTaint());

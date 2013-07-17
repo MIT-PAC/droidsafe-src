@@ -221,6 +221,7 @@ View var71C21EAF51F71E74CDDCB5F8C6AA9443_1843933953 =         (View) itemView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void bindItemView(MenuItemImpl item, MenuView.ItemView itemView);
 
     

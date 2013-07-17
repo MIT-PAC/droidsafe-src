@@ -264,27 +264,35 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract Phone getPhone();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void handlePollStateResult(int what, AsyncResult ar);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void updateSpnDisplay();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void setPowerStateToDesired();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void log(String s);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void loge(String s);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getCurrentDataConnectionState();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isConcurrentVoiceAndDataAllowed();
 
     
@@ -511,6 +519,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void hangupAndPowerOff();
 
     

@@ -211,6 +211,7 @@ for(int j = pdu.length+1;j < IccConstants.SMS_RECORD_LENGTH;j++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void log(String msg);
 
     

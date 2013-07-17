@@ -57,6 +57,7 @@ public final class ASN1Implicit extends ASN1Type {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.320 -0400", hash_original_method = "D92B272BF30997E81DA1469852FE3C4F", hash_generated_method = "5F6305743E8EBD2B13F76B265DFC66BD")
     public final boolean checkTag(int identifier) {
         addTaint(identifier);

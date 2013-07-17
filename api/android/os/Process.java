@@ -207,31 +207,37 @@ public class Process {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final long getElapsedCpuTime() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int myPid() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int myTid() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int myUid() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getUidForName(String name) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getGidForName(String name) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -255,42 +261,51 @@ public class Process {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void setThreadPriority(int tid, int priority) throws IllegalArgumentException, SecurityException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void setCanSelfBackground(boolean backgroundOk) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void setThreadGroup(int tid, int group) throws IllegalArgumentException, SecurityException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void setProcessGroup(int pid, int group) throws IllegalArgumentException, SecurityException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void setThreadPriority(int priority) throws IllegalArgumentException, SecurityException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getThreadPriority(int tid) throws IllegalArgumentException {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static final boolean supportsProcesses() {
         return true;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final boolean setOomAdj(int pid, int amt) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void setArgV0(String text) {
     }
 
@@ -300,16 +315,19 @@ public class Process {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int setUid(int uid) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int setGid(int uid) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void sendSignal(int pid, int signal) {
     }
 
@@ -319,38 +337,45 @@ public class Process {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void sendSignalQuiet(int pid, int signal) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final long getFreeMemory() {
         return DSUtils.UNKNOWN_LONG;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void readProcLines(String path,
             String[] reqFields, long[] outSizes) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int[] getPids(String path, int[] lastArray) {
         int[] ret = {DSUtils.UNKNOWN_INT};
         return ret;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final boolean readProcFile(String file, int[] format,
             String[] outStrings, long[] outLongs, float[] outFloats) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final boolean parseProcLine(byte[] buffer, int startIndex, 
             int endIndex, int[] format, String[] outStrings, long[] outLongs, float[] outFloats) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final long getPss(int pid) {
         return DSUtils.UNKNOWN_LONG;
     }

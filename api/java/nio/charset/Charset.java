@@ -157,15 +157,19 @@ for(String alias : aliases)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean contains(Charset charset);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CharsetEncoder newEncoder();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CharsetDecoder newDecoder();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.418 -0400", hash_original_method = "C591AF6945C669FCF4033528E86B2077", hash_generated_method = "C74E64431D10ECEB3F795E0CF5CDC2CF")
     public final String name() {
 String var10DFEB18F9F7F9CEB3FED88506D04E0A_1650019795 =         this.canonicalName;

@@ -207,6 +207,7 @@ public abstract class ResourceBundle {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Enumeration<String> getKeys();
 
     
@@ -221,6 +222,7 @@ Locale varB14E682FEAD06D8198D8ADBCBD62DEDB_928376589 =         locale;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.656 -0400", hash_original_method = "5F9FE4637FD5B65A8B96E90EE5158818", hash_generated_method = "7FFFBD42901DC1895859A910874564B2")
     public final Object getObject(String key) {
         addTaint(key.getTaint());
@@ -256,6 +258,7 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_1838364522 =                     resu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.656 -0400", hash_original_method = "BF93FB2083E0950C32E8F3481E34A9FB", hash_generated_method = "48C6E04F0427674014EC9B95B7F3E8FA")
     public final String getString(String key) {
         addTaint(key.getTaint());
@@ -267,6 +270,7 @@ String varD204E0C65B2B0E45572451A6C1DD3E0D_335743302 =         (String) getObjec
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.656 -0400", hash_original_method = "D1E41ED4E95B94C38D8DBD0F59139218", hash_generated_method = "48E3C42C91BE082E93496C80255BEBB6")
     public final String[] getStringArray(String key) {
         addTaint(key.getTaint());
@@ -352,6 +356,7 @@ String[] var1FF9BC54310AD0C730E0C72ED9975A7A_63457826 =         (String[]) getOb
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Hashtable<String, ResourceBundle> getLoaderCache(Object cacheKey) {
         synchronized (cache) {
             Hashtable<String, ResourceBundle> loaderCache = cache.get(cacheKey);
@@ -364,6 +369,7 @@ String[] var1FF9BC54310AD0C730E0C72ED9975A7A_63457826 =         (String[]) getOb
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract Object handleGetObject(String key);
 
     
@@ -439,6 +445,7 @@ String[] var1FF9BC54310AD0C730E0C72ED9975A7A_63457826 =         (String[]) getOb
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.659 -0400", hash_original_method = "D187399FB44FEACCB04758A5D261BC63", hash_generated_method = "BB7DC72E560712206F36C5DA8D55781A")
     public Set<String> keySet() {
         Set<String> ret = new HashSet<String>();
@@ -461,6 +468,7 @@ Set<String> varEDFF4FBBF053B5DC2B444ADFA049EE0F_529533229 =         ret;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.659 -0400", hash_original_method = "DE22A4C1E400841A42E2FCE258F58109", hash_generated_method = "18BE1094CFB45FE3E4C595305512FB2B")
     protected Set<String> handleKeySet() {
         Set<String> set = keySet();
@@ -496,6 +504,7 @@ Set<String> varEDFF4FBBF053B5DC2B444ADFA049EE0F_1416478491 =         ret;
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.660 -0400", hash_original_method = "FAC6F24BFEFF063353B4F824D489D5CA", hash_generated_method = "B55887BA158521D2E654B866AF81C870")
         @Override
         public Enumeration<String> getKeys() {
@@ -540,6 +549,7 @@ Object var540C13E9E156B687226421B24F2DF178_1513393463 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.660 -0400", hash_original_method = "EC736F9DA869A1318E5C5EA158F0C9E2", hash_generated_method = "F7A0E4FA84F6FDBAFE939CF7B11CA15F")
         public  NoFallbackControl(List<String> list) {
             addTaint(list.getTaint());
@@ -628,6 +638,7 @@ Locale var540C13E9E156B687226421B24F2DF178_302042592 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static Control getControl(List<String> formats) {
             switch (formats.size()) {
             case 1:
@@ -648,6 +659,7 @@ Locale var540C13E9E156B687226421B24F2DF178_302042592 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static Control getNoFallbackControl(List<String> formats) {
             switch (formats.size()) {
             case 1:
@@ -668,6 +680,7 @@ Locale var540C13E9E156B687226421B24F2DF178_302042592 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.661 -0400", hash_original_method = "45631C4F246F185145A9ED45ADEA49D4", hash_generated_method = "46F06B1E672AC353E20AFE4767061C27")
         public List<Locale> getCandidateLocales(String baseName, Locale locale) {
             addTaint(locale.getTaint());
@@ -720,6 +733,7 @@ List<Locale> varA110E9DDFA014144C3D0FD6BB853B42C_1790917567 =             retLis
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.661 -0400", hash_original_method = "84F7301A6175FB80884F0D8355AEA589", hash_generated_method = "8296B2E87760E4B3FA27DBD37B865B4E")
         public List<String> getFormats(String baseName) {
             addTaint(baseName.getTaint());
@@ -1026,6 +1040,7 @@ String varBF0416CC9C97BA8F7D7771199729A131_188560417 =             ret.toString(
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.663 -0400", hash_original_method = "FCB3528CF98D643CACA491DF306BC818", hash_generated_method = "C9851B30ED9CE2D316A78F4ADE5F6CEF")
         public final String toResourceName(String bundleName, String suffix) {
             addTaint(suffix.getTaint());

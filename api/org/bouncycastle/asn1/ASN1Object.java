@@ -49,12 +49,15 @@ public abstract class ASN1Object extends DERObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int hashCode();
 
     
+    @DSModeled(DSC.SAFE)
     abstract void encode(DEROutputStream out) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean asn1Equals(DERObject o);
 
     

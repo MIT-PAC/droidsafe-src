@@ -94,6 +94,7 @@ public abstract class ConnectionState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract byte[] encrypt
         (byte type, byte[] fragment, int offset, int len);
 
@@ -110,6 +111,7 @@ public abstract class ConnectionState {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract byte[] decrypt
         (byte type, byte[] fragment, int offset, int len);
 

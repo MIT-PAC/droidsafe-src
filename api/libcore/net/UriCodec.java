@@ -18,6 +18,7 @@ public abstract class UriCodec {
     }
 
 
+    @DSModeled(DSC.SAFE)
     protected abstract boolean isRetained(char c);
 
     

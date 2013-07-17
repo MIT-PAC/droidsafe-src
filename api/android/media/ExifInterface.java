@@ -142,6 +142,7 @@ String var984FA96876C228843C10ABE1B24ED2DB_1300832654 =         mAttributes.get(
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.152 -0400", hash_original_method = "474FB660182ACB1A473AAF22149475E2", hash_generated_method = "CA83713130F6843BC82148FA453FDFA3")
     private void loadAttributes() throws IOException {
         mAttributes = new HashMap<String, String>();

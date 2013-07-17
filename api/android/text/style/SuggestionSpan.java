@@ -74,6 +74,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.211 -0400", hash_original_method = "A25B331A60DB2E24929C6ECDB825D631", hash_generated_method = "A004D61977C92E7599910C9E9363EDFF")
     public  SuggestionSpan(Context context, Locale locale, String[] suggestions, int flags,
             Class<?> notificationTargetClass) {

@@ -23,6 +23,7 @@ public enum TextColor {
     BRIGHT_BLUE(0xe),
     BRIGHT_MAGENTA(0xf);
     private int mValue;
+    @DSModeled(DSC.SAFE)
     TextColor(int value) {
         mValue = value;
     }

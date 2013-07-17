@@ -62,6 +62,7 @@ public class ArrayBlockingQueue<E> extends AbstractQueue<E> implements BlockingQ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.280 -0400", hash_original_method = "27F14E8862A13463ECADB9F13ABB8363", hash_generated_method = "1A4AB006F45191EFDB1A5CC6399AE462")
     public  ArrayBlockingQueue(int capacity, boolean fair,
                               Collection<? extends E> c) {
@@ -115,6 +116,7 @@ for(E e : c)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.281 -0400", hash_original_method = "225BF2AA9DF4D481E4497FC0C844BC07", hash_generated_method = "2A0C3A9C4C07A709278032C5E51DBEAC")
     final int inc(int i) {
         addTaint(i);
@@ -126,6 +128,7 @@ for(E e : c)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.281 -0400", hash_original_method = "3E735D41E2F85E8ACC700EB7ACA7DBFD", hash_generated_method = "1F9407E9BED595B12ECBEBD890A4D126")
     final int dec(int i) {
         addTaint(i);
@@ -144,6 +147,7 @@ for(E e : c)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.281 -0400", hash_original_method = "D27765FC19695D3D1037FEAF928DE057", hash_generated_method = "BB239A07227E7E789B4350B4B973A036")
     final E itemAt(int i) {
         addTaint(i);
@@ -995,6 +999,7 @@ for(int i = takeIndex, k = count;k > 0;i = inc(i),k--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.294 -0400", hash_original_method = "756A0449DBEE27B15290EF9912B6D98E", hash_generated_method = "CFE6B5FC0E76874884191A6FC87C5084")
     public Iterator<E> iterator() {
 Iterator<E> varB10D928EC6DDAEBFD727C2EDCEC6EDF5_1534803965 =         new Itr();

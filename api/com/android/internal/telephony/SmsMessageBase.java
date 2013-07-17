@@ -133,6 +133,7 @@ String var5D6A012E3EF316E3C3E5BCB26D5E53FC_803995810 =         messageBody;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract MessageClass getMessageClass();
 
     
@@ -214,21 +215,27 @@ String varA948FCDBBF98CC7E4A7212A0C59F6386_2066306201 =         emailFrom;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getProtocolIdentifier();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isReplace();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isCphsMwiMessage();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isMWIClearMessage();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isMWISetMessage();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isMwiDontStore();
 
     
@@ -265,12 +272,15 @@ SmsHeader varC667C99DB117EC88666F8C8FC671A339_2114390902 =         userDataHeade
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getStatus();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isStatusReportMessage();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isReplyPathPresent();
 
     

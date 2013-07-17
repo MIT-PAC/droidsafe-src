@@ -49,6 +49,7 @@ public abstract class Drawable {
 
     private boolean mVisible = true;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.573 -0400", hash_original_method = "31C0F11C44C8FA6382C02786623A036E", hash_generated_method = "31C0F11C44C8FA6382C02786623A036E")
     public Drawable ()
     {
@@ -56,6 +57,7 @@ public abstract class Drawable {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract void draw(Canvas canvas);
 
     
@@ -100,6 +102,7 @@ public abstract class Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.576 -0400", hash_original_method = "2860BC8F60A9356A6AA851AD0EDF9049", hash_generated_method = "95DA61BAF274EF47CF43C9B2491CED24")
     public final void copyBounds(Rect bounds) {
         addTaint(bounds.getTaint());
@@ -109,6 +112,7 @@ public abstract class Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.576 -0400", hash_original_method = "A623AF26CC98262C126F58F99B918C3F", hash_generated_method = "D459D8FFC8EAB99C5F08BA3B7C5F7FEB")
     public final Rect copyBounds() {
 Rect var0110879CA9D488CC9507AE40C5F5AB46_1120600347 =         new Rect(mBounds);
@@ -119,6 +123,7 @@ Rect var0110879CA9D488CC9507AE40C5F5AB46_1120600347 =         new Rect(mBounds);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.577 -0400", hash_original_method = "F9C4E095C08A855B9547E5FC046C50BF", hash_generated_method = "C603556991299BFEED02457A66C5A4A5")
     public final Rect getBounds() {
         if(mBounds == ZERO_BOUNDS_RECT)        
@@ -172,6 +177,7 @@ Rect var0C44887561B1EECCACD21E74409C43BB_568284881 =         mBounds;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.579 -0400", hash_original_method = "59192F5DE8ED3EA14FF77E774B104DE3", hash_generated_method = "5E55B460A30793DB0A8FC8DC0A3072A3")
     public final void setCallback(Callback cb) {
         mCallback = new WeakReference<Callback>(cb);
@@ -273,9 +279,11 @@ Callback var540C13E9E156B687226421B24F2DF178_1944825498 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setAlpha(int alpha);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setColorFilter(ColorFilter cf);
 
     
@@ -360,6 +368,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_1525060685 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.585 -0400", hash_original_method = "9037BFCAC5FB09B2A9E758C0533961C8", hash_generated_method = "0463CED238AC2646B1A472EB54A35B9D")
     public final boolean setLevel(int level) {
         if(mLevel != level)        
@@ -381,6 +390,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_1525060685 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.585 -0400", hash_original_method = "3688C6710C4CB9729612AA02E692BC0A", hash_generated_method = "776E761346ED14C6D9FC3D6EB2C894EA")
     public final int getLevel() {
         int varD3512852EA3D6B78A96B5192CDA7B029_2091710884 = (mLevel);
@@ -414,6 +424,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_1525060685 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.586 -0400", hash_original_method = "5E5A2EDE31F4C9B537E19F3E9904B493", hash_generated_method = "C11F55C1411829B5FBE8D266008ABE32")
     public final boolean isVisible() {
         boolean var807A18BD291896E7D3B58F90DB9F75FD_842332170 = (mVisible);
@@ -424,6 +435,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_1525060685 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getOpacity();
 
     
@@ -728,6 +740,7 @@ ConstantState var540C13E9E156B687226421B24F2DF178_1421985647 =         null;
     
     public static abstract class ConstantState {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.603 -0400", hash_original_method = "1DBA432D049F8FB288727BCBD6197568", hash_generated_method = "1DBA432D049F8FB288727BCBD6197568")
         public ConstantState ()
         {
@@ -735,6 +748,7 @@ ConstantState var540C13E9E156B687226421B24F2DF178_1421985647 =         null;
         }
 
 
+        @DSModeled(DSC.SAFE)
         public abstract Drawable newDrawable();
 
         
@@ -750,6 +764,7 @@ Drawable varB7C8EDA33AD2387A4E08E6A01D533089_1985116402 =             newDrawabl
         }
 
         
+        @DSModeled(DSC.SAFE)
         public abstract int getChangingConfigurations();
 
         

@@ -16,10 +16,12 @@ public abstract class SSLInputStream extends InputStream {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @Override
 public abstract int available() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 public abstract int read() throws IOException;
 

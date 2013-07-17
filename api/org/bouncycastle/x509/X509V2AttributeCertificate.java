@@ -261,6 +261,7 @@ for(int i = 0;i != boolId.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.660 -0400", hash_original_method = "00EE60C525B48F0703DB78FF90B15573", hash_generated_method = "94C2E7827CBC84A034C251CEBBB24018")
     public final void verify(
             PublicKey   key,

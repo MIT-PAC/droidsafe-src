@@ -29,10 +29,12 @@ public abstract class ResponseCache {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public abstract CacheResponse get(URI uri, String requestMethod,
             Map<String, List<String>> requestHeaders) throws IOException;
 
     
+    @DSModeled(DSC.SPEC)
     public abstract CacheRequest put(URI uri, URLConnection connection) throws IOException;
 
     

@@ -43,6 +43,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
 
     private Drawable mLastDrawable;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.691 -0400", hash_original_method = "094684F7E86BAEC8B113ECD0EF1A35E3", hash_generated_method = "094684F7E86BAEC8B113ECD0EF1A35E3")
     public DrawableContainer ()
     {
@@ -925,6 +926,7 @@ for(int i=0;i<N;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.723 -0400", hash_original_method = "1DF96DB91DC15ED3AA2CD90CE63D5DEA", hash_generated_method = "2D8A52568D9F64F2670D9BB5BD6B4F47")
         public final int addChild(Drawable dr) {
             final int pos = mNumChildren;
@@ -964,6 +966,7 @@ for(int i=0;i<N;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.724 -0400", hash_original_method = "58D23B7CD1BBD3B06877382B700017CE", hash_generated_method = "0A575CAB0F86B9626ABA362C98206D9B")
         public final int getChildCount() {
             int varB2A189B31612476BCCDDB62DFD55B139_2003763805 = (mNumChildren);
@@ -974,6 +977,7 @@ for(int i=0;i<N;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.725 -0400", hash_original_method = "F5C2CB0FAF6BF41EBD2EF1D322F89AD5", hash_generated_method = "C1DDBE41BC633D84648C054699F573AC")
         public final Drawable[] getChildren() {
 Drawable[] var35D22BAB465DA49F0AADC06B9FD0EF41_106165840 =             mDrawables;
@@ -984,6 +988,7 @@ Drawable[] var35D22BAB465DA49F0AADC06B9FD0EF41_106165840 =             mDrawable
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.725 -0400", hash_original_method = "291079EAD380D117FACCF8E598F58B57", hash_generated_method = "9E63340C83EEEB40E3F74E85F49DB546")
         public final void setVariablePadding(boolean variable) {
             mVariablePadding = variable;
@@ -992,6 +997,7 @@ Drawable[] var35D22BAB465DA49F0AADC06B9FD0EF41_106165840 =             mDrawable
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.728 -0400", hash_original_method = "F49D2F39EC6FEC96BF9263C8B9281632", hash_generated_method = "5300554B174548B06130A041FA7B303C")
         public final Rect getConstantPadding() {
             if(mVariablePadding)            
@@ -1035,6 +1041,7 @@ Rect varC03C031612CF744A6ECEF348B89D22D9_2022689884 =             (mConstantPadd
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.729 -0400", hash_original_method = "1BEAC422BABD76426588E9F434C2D5CD", hash_generated_method = "0B85399E5ECA2518EC987CAE64EFA9F0")
         public final void setConstantSize(boolean constant) {
             mConstantSize = constant;
@@ -1043,6 +1050,7 @@ Rect varC03C031612CF744A6ECEF348B89D22D9_2022689884 =             (mConstantPadd
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.729 -0400", hash_original_method = "23D6FDB773CAAECCFEA4282EEDA0FF8B", hash_generated_method = "9D4FA38B6784CB27BF71689E15A00E3E")
         public final boolean isConstantSize() {
             boolean var8B731A337FAE0FFD46E10065F5C3D468_1232880081 = (mConstantSize);
@@ -1053,6 +1061,7 @@ Rect varC03C031612CF744A6ECEF348B89D22D9_2022689884 =             (mConstantPadd
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.730 -0400", hash_original_method = "AEDD9F8F931AA0310C6AB599B9490E0C", hash_generated_method = "4783AE5340C1033C6C415794E07019D8")
         public final int getConstantWidth() {
             if(!mComputedConstantSize)            
@@ -1070,6 +1079,7 @@ Rect varC03C031612CF744A6ECEF348B89D22D9_2022689884 =             (mConstantPadd
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.730 -0400", hash_original_method = "A117A0F50DACA3E076E36F6E0FD5A697", hash_generated_method = "33BF12918188824712BFBDAD9E541A83")
         public final int getConstantHeight() {
             if(!mComputedConstantSize)            
@@ -1087,6 +1097,7 @@ Rect varC03C031612CF744A6ECEF348B89D22D9_2022689884 =             (mConstantPadd
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.731 -0400", hash_original_method = "DA23CD9C0D969BCBC5A31F19CEBA2FA0", hash_generated_method = "9C302C1BD0BFA7386927F9693E75770B")
         public final int getConstantMinimumWidth() {
             if(!mComputedConstantSize)            
@@ -1104,6 +1115,7 @@ Rect varC03C031612CF744A6ECEF348B89D22D9_2022689884 =             (mConstantPadd
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.731 -0400", hash_original_method = "9AAB9DC0F579B2E57159CF0852B151D2", hash_generated_method = "9ECEDD326F3AC80F5BAD552FAE010FE7")
         public final int getConstantMinimumHeight() {
             if(!mComputedConstantSize)            
@@ -1165,6 +1177,7 @@ for(int i = 0;i < N;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.733 -0400", hash_original_method = "C7A92F60FC2D3E73CF200C7144A831FD", hash_generated_method = "31EA4832DE115AD3D1ED2D154F4F3A0E")
         public final void setEnterFadeDuration(int duration) {
             mEnterFadeDuration = duration;
@@ -1173,6 +1186,7 @@ for(int i = 0;i < N;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.733 -0400", hash_original_method = "47A305314E1265D4F19BD4B53B739910", hash_generated_method = "AF3BDA1D1F15FEC26D4BD563893E0EE3")
         public final int getEnterFadeDuration() {
             int var7EF73DB740A09C72072F895C234DF078_393102276 = (mEnterFadeDuration);
@@ -1183,6 +1197,7 @@ for(int i = 0;i < N;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.734 -0400", hash_original_method = "1ED7E9EB98364255825D9EFA32269162", hash_generated_method = "93C0A2E6B640F643574AA208A98DA016")
         public final void setExitFadeDuration(int duration) {
             mExitFadeDuration = duration;
@@ -1191,6 +1206,7 @@ for(int i = 0;i < N;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.734 -0400", hash_original_method = "8AF957428721C92A0DFF9444CB2E7B41", hash_generated_method = "5081B13B97F58B8FD3F72AB25ACA09F7")
         public final int getExitFadeDuration() {
             int var35F39F9E1FFCE54C39871C49C674BB21_806084939 = (mExitFadeDuration);
@@ -1201,6 +1217,7 @@ for(int i = 0;i < N;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.735 -0400", hash_original_method = "C3CEC4829800E9DBA4286BAEED120A24", hash_generated_method = "3E0FE35618B9C4D8E663E6BE751E9C0C")
         public final int getOpacity() {
             if(mHaveOpacity)            
@@ -1237,6 +1254,7 @@ for(int i = 1;i < N;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.736 -0400", hash_original_method = "CFE0AE04764A8B8DC9358FA475490068", hash_generated_method = "2DB1B2BE933E2EEFB1232AF8E2ED5434")
         public final boolean isStateful() {
             if(mHaveStateful)            

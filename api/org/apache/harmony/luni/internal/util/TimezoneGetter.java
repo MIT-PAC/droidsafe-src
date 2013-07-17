@@ -28,6 +28,7 @@ public abstract class TimezoneGetter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getId();
 
     

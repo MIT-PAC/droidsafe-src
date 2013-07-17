@@ -32,6 +32,7 @@ public class BaseDexClassLoader extends ClassLoader {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.685 -0400", hash_original_method = "521C939EE5D3EB6850693DC0AA73197C", hash_generated_method = "B7E8D36EE3BAA216C3ABCE7A39A5F953")
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
@@ -68,6 +69,7 @@ URL var711A2659EF8169CA1ACFB499F3D267C6_1240364158 =         pathList.findResour
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.686 -0400", hash_original_method = "7D0FB955FF80F0A3807920CE00840D77", hash_generated_method = "663CE98D4C9A06BC948E995C5B1850A9")
     @Override
     protected Enumeration<URL> findResources(String name) {

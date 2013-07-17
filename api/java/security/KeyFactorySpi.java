@@ -16,10 +16,12 @@ public abstract class KeyFactorySpi {
     }
 
 
+    @DSModeled(DSC.SAFE)
     protected abstract PublicKey engineGeneratePublic(KeySpec keySpec)
                                     throws InvalidKeySpecException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract PrivateKey engineGeneratePrivate(KeySpec keySpec)
                                     throws InvalidKeySpecException;
 
@@ -28,6 +30,7 @@ public abstract class KeyFactorySpi {
                                     throws InvalidKeySpecException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract Key engineTranslateKey(Key key) throws InvalidKeyException;
 
     

@@ -111,6 +111,7 @@ public final class RouteTracker implements RouteInfo, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.919 -0400", hash_original_method = "E27069CB33BE85EAA2A2A23BD0F575F7", hash_generated_method = "8F44723C2C33C36D3EBA623984B7CE59")
     public final void tunnelTarget(boolean secure) {
         if(!this.connected)        
@@ -206,6 +207,7 @@ public final class RouteTracker implements RouteInfo, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.923 -0400", hash_original_method = "00F8E4422BF57DE6758D681F4A99BDB6", hash_generated_method = "0F0F03282FFC8CA149488AFFD043D67F")
     public final HttpHost getTargetHost() {
 HttpHost var67C71439C5981484698447EE93E1A003_1453220130 =         this.targetHost;
@@ -216,6 +218,7 @@ HttpHost var67C71439C5981484698447EE93E1A003_1453220130 =         this.targetHos
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.923 -0400", hash_original_method = "28495B9032685860E947A62701D0E919", hash_generated_method = "19C77BD7AD1FFE103445A5EEC97590A3")
     public final InetAddress getLocalAddress() {
 InetAddress varD252CCE80C2F3B9DE81EE46EA65F5895_1545736463 =         this.localAddress;
@@ -226,6 +229,7 @@ InetAddress varD252CCE80C2F3B9DE81EE46EA65F5895_1545736463 =         this.localA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.924 -0400", hash_original_method = "6ABB5CCC8F0E8E8F1BDF34E043639F85", hash_generated_method = "37046C7962046851E42482A02303EF3D")
     public final int getHopCount() {
         int hops = 0;
@@ -251,6 +255,7 @@ InetAddress varD252CCE80C2F3B9DE81EE46EA65F5895_1545736463 =         this.localA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.925 -0400", hash_original_method = "CFC4B3441FDC551CC1F391519968AE1F", hash_generated_method = "FC86257485D333EB890386DD7A00422D")
     public final HttpHost getHopTarget(int hop) {
         addTaint(hop);
@@ -297,6 +302,7 @@ HttpHost varDC838461EE2FA0CA4C9BBB70A15456B0_1962763159 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.926 -0400", hash_original_method = "E9E1E8AC6D9C2477F7E0F63BF0C4ED60", hash_generated_method = "131E32B6482E8A8099DB4F436EFA627A")
     public final HttpHost getProxyHost() {
 HttpHost varF8CC471EE86A19D0A727D1FC9C328686_1175552183 =         (this.proxyChain == null) ? null : this.proxyChain[0];
@@ -307,6 +313,7 @@ HttpHost varF8CC471EE86A19D0A727D1FC9C328686_1175552183 =         (this.proxyCha
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.926 -0400", hash_original_method = "42622BE2571C040A9FEE72D0CCBA0217", hash_generated_method = "DDFCD61D25B7227CA28F9CBA0205460E")
     public final boolean isConnected() {
         boolean varB72E10DC8F160FCBA9062C311E010F86_21075167 = (this.connected);
@@ -317,6 +324,7 @@ HttpHost varF8CC471EE86A19D0A727D1FC9C328686_1175552183 =         (this.proxyCha
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.927 -0400", hash_original_method = "350E5C2EB4A104FE6F444729C8CD5444", hash_generated_method = "95072EE34F32CE78BDDFBE90A83D948C")
     public final TunnelType getTunnelType() {
 TunnelType var2217FBB31A61A2BC06264383F23E2C7F_1821141208 =         this.tunnelled;
@@ -327,6 +335,7 @@ TunnelType var2217FBB31A61A2BC06264383F23E2C7F_1821141208 =         this.tunnell
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.927 -0400", hash_original_method = "5CD3D72A708D2B06B9BD542F01F3D0EE", hash_generated_method = "2F104F6CE2D765EB0BA46AB08DD32E9D")
     public final boolean isTunnelled() {
         boolean var6E17A163EAADFAAEEF827D05D550510F_1045013786 = ((this.tunnelled == TunnelType.TUNNELLED));
@@ -337,6 +346,7 @@ TunnelType var2217FBB31A61A2BC06264383F23E2C7F_1821141208 =         this.tunnell
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.928 -0400", hash_original_method = "24DDB6A6987422E004B186B027F8E19E", hash_generated_method = "90742058E4A9C386D9AD83ACC8D42269")
     public final LayerType getLayerType() {
 LayerType var0B365440B9E6602F90569354BDD2D5AF_1530682020 =         this.layered;
@@ -347,6 +357,7 @@ LayerType var0B365440B9E6602F90569354BDD2D5AF_1530682020 =         this.layered;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.928 -0400", hash_original_method = "90484F935FB331F087FF42A42BD08719", hash_generated_method = "7AD1D6EFDBDAD044ECFE1F4376592287")
     public final boolean isLayered() {
         boolean var78483962D1129A47EBB9F287858CE500_1311015258 = ((this.layered == LayerType.LAYERED));
@@ -357,6 +368,7 @@ LayerType var0B365440B9E6602F90569354BDD2D5AF_1530682020 =         this.layered;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.929 -0400", hash_original_method = "F448B780707B5356535204966A8ECD14", hash_generated_method = "462157B6EA50BFE1AD9207DADBCF6FAE")
     public final boolean isSecure() {
         boolean var1A6CF3022022F86E5EAF7A933D51276A_2124339138 = (this.secure);

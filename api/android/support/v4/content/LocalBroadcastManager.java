@@ -382,6 +382,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_771655950 =             builder.toStr
 
         ArrayList<ReceiverRecord> receivers;
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.934 -0400", hash_original_method = "AA1A90161822F4E9C86DDF136B615F55", hash_generated_method = "BBEA8E4A968954170762D1941E5579F8")
           BroadcastRecord(Intent _intent, ArrayList<ReceiverRecord> _receivers) {
             intent = _intent;

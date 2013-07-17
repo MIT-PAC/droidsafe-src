@@ -74,6 +74,7 @@ public final class Currency implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Set<Currency> getAvailableCurrencies() {
         Set<Currency> result = new LinkedHashSet<Currency>();
         String[] currencyCodes = ICU.getAvailableCurrencyCodes();

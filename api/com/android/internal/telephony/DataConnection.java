@@ -135,16 +135,20 @@ public abstract class DataConnection extends StateMachine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 public abstract String toString();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onConnect(ConnectionParams cp);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract boolean isDnsOk(String[] domainNameServers);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void log(String s);
 
     
@@ -670,9 +674,11 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_113861393 =        
         FailCause(int errorCode) {
             mErrorCode = errorCode;
         }
+        @DSModeled(DSC.SAFE)
         int getErrorCode() {
             return mErrorCode;
         }
+        @DSModeled(DSC.SAFE)
         public boolean isPermanentFail() {
             return (this == OPERATOR_BARRED) || (this == MISSING_UNKNOWN_APN) ||
                    (this == UNKNOWN_PDP_ADDRESS_TYPE) || (this == USER_AUTHENTICATION) ||
@@ -680,6 +686,7 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_113861393 =        
                    (this == SERVICE_OPTION_NOT_SUBSCRIBED) || (this == NSAPI_IN_USE) ||
                    (this == PROTOCOL_ERRORS);
         }
+        @DSModeled(DSC.SAFE)
         public boolean isEventLoggable() {
             return (this == OPERATOR_BARRED) || (this == INSUFFICIENT_RESOURCES) ||
                     (this == UNKNOWN_PDP_ADDRESS_TYPE) || (this == USER_AUTHENTICATION) ||

@@ -27,6 +27,7 @@ public final class CertificatePolicies extends ExtensionValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.948 -0400", hash_original_method = "96307D3270AEFEAD70E1FBA0E6122CDE", hash_generated_method = "291C5527D4B0C336C8ABE03770958C2A")
     private  CertificatePolicies(List<PolicyInformation> policyInformations, byte[] encoding) {
         this.policyInformations = policyInformations;

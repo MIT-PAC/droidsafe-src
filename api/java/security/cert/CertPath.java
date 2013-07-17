@@ -126,17 +126,21 @@ String var2460B846747F8B22185AD8BE722266A5_891863046 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract List<? extends Certificate> getCertificates();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte[] getEncoded()
         throws CertificateEncodingException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte[] getEncoded(String encoding)
         throws CertificateEncodingException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Iterator<String> getEncodings();
 
     

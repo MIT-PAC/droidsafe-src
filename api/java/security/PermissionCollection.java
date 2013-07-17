@@ -18,12 +18,15 @@ public abstract class PermissionCollection implements Serializable {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract void add(Permission permission);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Enumeration<Permission> elements();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean implies(Permission permission);
 
     

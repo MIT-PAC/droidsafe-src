@@ -66,6 +66,7 @@ public class KeyFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.896 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "6E55E4006EBE02521B404F83AF94BF7A")
     public final Provider getProvider() {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_410944347 =         provider;
@@ -76,6 +77,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_410944347 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.896 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "E75948D8CCD6CEB50418C5FA5E54CB98")
     public final String getAlgorithm() {
 String var44A46B4003FC81ACB0223385BA1FA818_1637404213 =         algorithm;

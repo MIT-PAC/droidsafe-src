@@ -92,6 +92,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.765 -0400", hash_original_method = "2EE844E85177CE8B8519EE788449061C", hash_generated_method = "1E11D11D51E0154BB7749FEDA5280BAF")
     protected void annotateClass(Class<?> aClass) throws IOException {
         addTaint(aClass.getTaint());
@@ -99,6 +100,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.766 -0400", hash_original_method = "6D36FCC856EE4705ED65F6105201ADD2", hash_generated_method = "A5E98127E91E49198B235D1BD1806995")
     protected void annotateProxyClass(Class<?> aClass) throws IOException {
         addTaint(aClass.getTaint());
@@ -1633,33 +1635,43 @@ ObjectStreamClass var3497C6F192F17384DEAA3543897C005A_1952026876 =         class
         }
 
 
+        @DSModeled(DSC.SAFE)
         public abstract void put(String name, boolean value);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract void put(String name, char value);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract void put(String name, byte value);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract void put(String name, short value);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract void put(String name, int value);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract void put(String name, long value);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract void put(String name, float value);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract void put(String name, double value);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract void put(String name, Object value);
 
         
+        @DSModeled(DSC.SAFE)
         @Deprecated
 public abstract void write(ObjectOutput out) throws IOException;
 

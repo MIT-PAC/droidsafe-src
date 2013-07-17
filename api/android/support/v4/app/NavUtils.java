@@ -56,6 +56,7 @@ public class NavUtils {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent getParentActivityIntent(Context context, Class<?> sourceActivityClass) throws NameNotFoundException {
         String parentActivity = getParentActivityName(context,
                 new ComponentName(context, sourceActivityClass));

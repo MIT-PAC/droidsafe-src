@@ -75,6 +75,7 @@ public abstract class CallTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void handlePollCalls(AsyncResult ar);
 
     
@@ -117,21 +118,27 @@ Message var7D44CBDF570B5CB81D544F0887CE90C1_450677238 =         obtainMessage(wh
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void handleMessage (Message msg);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void registerForVoiceCallStarted(Handler h, int what, Object obj);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void unregisterForVoiceCallStarted(Handler h);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void registerForVoiceCallEnded(Handler h, int what, Object obj);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void unregisterForVoiceCallEnded(Handler h);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void log(String msg);
 
     

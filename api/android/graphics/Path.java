@@ -688,6 +688,7 @@ FillType varA25260A40654CCF047769B01502CF7FA_1356534010 =         sFillTypeArray
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.594 -0400", hash_original_method = "A7A62D46D1AC389C59E8D1EF0EC6AB35", hash_generated_method = "2601AA401F33456BBC830585809D0647")
     final int ni() {
         int var29624343DB5BC876FA1D9DF3677A6ED3_2035467395 = (mNativePath);
@@ -906,6 +907,7 @@ FillType varA25260A40654CCF047769B01502CF7FA_1356534010 =         sFillTypeArray
         EVEN_ODD        (1),
         INVERSE_WINDING (2),
         INVERSE_EVEN_ODD(3);
+        @DSModeled(DSC.SAFE)
         FillType(int ni) {
             nativeInt = ni;
         }
@@ -916,6 +918,7 @@ FillType varA25260A40654CCF047769B01502CF7FA_1356534010 =         sFillTypeArray
     public enum Direction {
         CW  (0),    
         CCW (1);    
+        @DSModeled(DSC.SAFE)
         Direction(int ni) {
             nativeInt = ni;
         }

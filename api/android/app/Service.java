@@ -44,6 +44,7 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.133 -0400", hash_original_method = "510D23D8CF054FDAE1D1426C6A1A1500", hash_generated_method = "111C0048367322ADBCC25584E31E6C43")
     public final Application getApplication() {
 Application varF254F0ADF054F0318B65674CA3670A5E_2075624035 =         mApplication;
@@ -124,6 +125,7 @@ Application varF254F0ADF054F0318B65674CA3670A5E_2075624035 =         mApplicatio
     }
 
     
+    @DSModeled(DSC.SPEC)
     public abstract IBinder onBind(Intent intent);
 
     
@@ -319,6 +321,7 @@ Application varF254F0ADF054F0318B65674CA3670A5E_2075624035 =         mApplicatio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.155 -0400", hash_original_method = "8DA57A133C364DA0C4CA877026045103", hash_generated_method = "E158674E6D2CA0B64D23CEC4AB6CE7D1")
     final String getClassName() {
 String varDD9C2143734A2F5CB66BF5CFBE75CE5F_736001360 =         mClassName;

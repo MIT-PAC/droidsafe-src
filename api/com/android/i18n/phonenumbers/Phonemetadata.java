@@ -134,6 +134,7 @@ NumberFormat var72A74007B2BE62B849F475C7BDA4658B_126411052 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.180 -0400", hash_original_method = "E6A52876E9E1328523A23CDD4ADD6081", hash_generated_method = "EAEF8B5650B3437893D22B9DF74D0071")
         public java.util.List<String> leadingDigitPatterns() {
 java.util.List<String> var7D1236E1B21A497AFD6C2FC374C6D184_1040292059 =             leadingDigitsPattern_;
@@ -1721,6 +1722,7 @@ PhoneMetadata var72A74007B2BE62B849F475C7BDA4658B_309080051 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.204 -0400", hash_original_method = "84A1634AEDD3ABF2CF1A3014B5D415EB", hash_generated_method = "1D7C666E027BE999719076818918937D")
         public java.util.List<NumberFormat> numberFormats() {
 java.util.List<NumberFormat> var702269FAB9B8E162744A1FBA938D46B8_274056869 =             numberFormat_;
@@ -1777,6 +1779,7 @@ PhoneMetadata var72A74007B2BE62B849F475C7BDA4658B_1449151958 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.205 -0400", hash_original_method = "AE158E1AC846181939D70DB177BF740E", hash_generated_method = "31803467D6D08AAE494456BBE63105A0")
         public java.util.List<NumberFormat> intlNumberFormats() {
 java.util.List<NumberFormat> varB0366A78C2DAD208E15B4E68FFB4A87E_657202 =             intlNumberFormat_;
@@ -2265,6 +2268,7 @@ PhoneMetadata var72A74007B2BE62B849F475C7BDA4658B_792392782 =                 th
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.241 -0400", hash_original_method = "C5ECD645F70FA9D5A2A9EB8CBA32ADEF", hash_generated_method = "AC26030A7B95406DE206A0B848FFD1F7")
         public java.util.List<PhoneMetadata> getMetadataList() {
 java.util.List<PhoneMetadata> var408FE00FE1CE1B7F862D9C0F3191C4A3_1226069768 =             metadata_;

@@ -144,6 +144,7 @@ List<Cookie> var244203BCE4724537DC84FE61D4419CE6_1405685498 =         parse(elem
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.108 -0400", hash_original_method = "67F48779D521683257B0CC0E930A401A", hash_generated_method = "75F5511B7701B8D84CC21A66D5781579")
     public List<Header> formatCookies(List<Cookie> cookies) {
         addTaint(cookies.getTaint());

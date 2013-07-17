@@ -436,6 +436,7 @@ CharSequence varAB46AC10AF20400ACC82DD97491C87AF_2110379561 =         new Spanne
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int nativeCreate(byte[] data,
                                                  int offset,
                                                  int size) {
@@ -443,11 +444,13 @@ CharSequence varAB46AC10AF20400ACC82DD97491C87AF_2110379561 =         new Spanne
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int nativeGetSize(int obj) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final String nativeGetString(int obj, int idx) {
         	String ret = new String();
         	ret.addTaint(obj);
@@ -456,12 +459,14 @@ CharSequence varAB46AC10AF20400ACC82DD97491C87AF_2110379561 =         new Spanne
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int[] nativeGetStyle(int obj, int idx) {
         int[] ret = {DSUtils.UNKNOWN_INT};
         return ret;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final void nativeDestroy(int obj) {
     }
 

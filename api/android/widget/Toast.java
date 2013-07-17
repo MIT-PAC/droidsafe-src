@@ -35,6 +35,7 @@ public class Toast {
 
     View mNextView;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.964 -0400", hash_original_method = "2A3FE9273E86BBACFA2AB5C5898C3146", hash_generated_method = "04A913AEB2170F506F817368C7F98503")
     public  Toast(Context context) {
         mContext = context;
@@ -49,6 +50,7 @@ public class Toast {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.965 -0400", hash_original_method = "EBD8B8572362DD92CF984D93DE6E4FF9", hash_generated_method = "BDA097CA89C7D0AA7419CDE84DFA6D71")
     public void show() {
         if(mNextView == null)        
@@ -83,6 +85,7 @@ public class Toast {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.966 -0400", hash_original_method = "905E110A9D66070AD259EFE2B60EBDFA", hash_generated_method = "5E755949284AFD2F0E09AB46034EB948")
     public void cancel() {
         mTN.hide();
@@ -210,6 +213,7 @@ View varB9FC41AB8A20AAABE72BE5364175B5CC_1986367406 =         mNextView;
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Toast makeText(Context context, CharSequence text, int duration) {
         Toast result = new Toast(context);
         LayoutInflater inflate = (LayoutInflater)
@@ -223,11 +227,13 @@ View varB9FC41AB8A20AAABE72BE5364175B5CC_1986367406 =         mNextView;
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Toast makeText(Context context, int resId, int duration) throws Resources.NotFoundException {
         return makeText(context, context.getResources().getText(resId), duration);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.973 -0400", hash_original_method = "FD3914B9295A9EB352EBE416E97ECCF2", hash_generated_method = "E882ED36A19594361178A72F7D2FB9D1")
     public void setText(int resId) {
         addTaint(resId);
@@ -237,6 +243,7 @@ View varB9FC41AB8A20AAABE72BE5364175B5CC_1986367406 =         mNextView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.974 -0400", hash_original_method = "75C0E785CBEB5D5B8434AF0D1C3897A8", hash_generated_method = "6C819C5E957A680327C5C24E0E0F9FCA")
     public void setText(CharSequence s) {
         addTaint(s.getTaint());

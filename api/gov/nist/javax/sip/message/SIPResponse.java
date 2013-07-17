@@ -707,6 +707,7 @@ String var00A359C12D3BB90F4D7EAC5F002493EE_1249660882 =         retval.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.509 -0400", hash_original_method = "20A80D2C7777E602FB41086859FCE7A8", hash_generated_method = "28919BF5ADE6028FFE59E682C0032210")
     private final void setBranch( Via via, String method ) {
         addTaint(method.getTaint());

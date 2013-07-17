@@ -101,9 +101,11 @@ public class Base64 {
         }
 
 
+        @DSModeled(DSC.SAFE)
         public abstract boolean process(byte[] input, int offset, int len, boolean finish);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract int maxOutputSize(int len);
 
         

@@ -38,6 +38,7 @@ public class WifiP2pDeviceList implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.649 -0400", hash_original_method = "A6AECDF562D4D05BB14FD089AEB17F29", hash_generated_method = "ACFD9ABDDD28805B0DD4E8C386740AC9")
     public  WifiP2pDeviceList(ArrayList<WifiP2pDevice> devices) {
         addTaint(devices.getTaint());

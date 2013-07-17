@@ -16,13 +16,16 @@ public abstract class TrustManagerFactorySpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(KeyStore ks) throws KeyStoreException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(ManagerFactoryParameters spec)
             throws InvalidAlgorithmParameterException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract TrustManager[] engineGetTrustManagers();
 
     

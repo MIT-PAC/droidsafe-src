@@ -192,6 +192,7 @@ View var73F89FAC8F369DF0913D10C37C1E0EA1_1981619032 =             b;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.170 -0400", hash_original_method = "DE59A8E1295F8E334D75F62942CFDC7D", hash_generated_method = "C19C921F45A2F951C325B20250D2E739")
         public final int getCount() {
             int varEA81FFBB75952D26DCB258293ABA8690_1709994060 = (mOptions.length());
@@ -202,6 +203,7 @@ View var73F89FAC8F369DF0913D10C37C1E0EA1_1981619032 =             b;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.170 -0400", hash_original_method = "8B0C0E62DBC532F544A3C62A19BF4060", hash_generated_method = "C1B7DF46DCB8BB17ED6EE06FD9AAE2FE")
         public final Object getItem(int position) {
             addTaint(position);
@@ -213,6 +215,7 @@ Object var87AE1E24DC46164AD61DEEB89268C372_494025095 =             String.valueO
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.171 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "0770264674DC77A707E9BE8D97F885B7")
         public final long getItemId(int position) {
             addTaint(position);

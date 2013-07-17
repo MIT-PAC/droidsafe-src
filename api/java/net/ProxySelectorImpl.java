@@ -37,6 +37,7 @@ final class ProxySelectorImpl extends ProxySelector {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.347 -0400", hash_original_method = "28B2C18C3900BEE8EC547F5A9EDC2C1E", hash_generated_method = "4EADF19695883EDACAB57EB67D397E50")
     @Override
     public List<Proxy> select(URI uri) {

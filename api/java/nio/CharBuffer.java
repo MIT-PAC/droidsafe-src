@@ -61,6 +61,7 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.343 -0400", hash_original_method = "B8788BC8872EF40BE08078E90206AB2A", hash_generated_method = "4B3EB7C5A7339B4751BA6AD79FFA4959")
     public final char[] array() {
         char[] var68B89E48382A0AA51B25AC59599E2EB0_1721196672 = (protectedArray());
@@ -71,6 +72,7 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.343 -0400", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "5AFCA57E3D990504305579858CB063A1")
     public final int arrayOffset() {
         int var0B794CE56A38A9F3BFDD2D53E83BB109_561538584 = (protectedArrayOffset());
@@ -81,9 +83,11 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CharBuffer asReadOnlyBuffer();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.344 -0400", hash_original_method = "064ED2665DC7B0A0ED1B4C93428755B4", hash_generated_method = "635113519BFFD581A3FCED197832E942")
     public final char charAt(int index) {
         addTaint(index);
@@ -104,6 +108,7 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CharBuffer compact();
 
     
@@ -155,6 +160,7 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CharBuffer duplicate();
 
     
@@ -205,6 +211,7 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract char get();
 
     
@@ -252,9 +259,11 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_432142668 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract char get(int index);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.348 -0400", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "56EF58C76B4ADF7CCBE8E9FE8771782A")
     public final boolean hasArray() {
         boolean var55B7C03E3C1EBABD22606AD17EE923C3_1334326882 = (protectedHasArray());
@@ -289,9 +298,11 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_432142668 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isDirect();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.348 -0400", hash_original_method = "C49AE9EB347B20902074CA3EBA57FA96", hash_generated_method = "853D5F2E07CC9E7C205D722F989B4D3B")
     public final int length() {
         int varDDC5A90D80216ADD8FAE07957BE5782C_1396683064 = (remaining());
@@ -302,21 +313,27 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_432142668 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteOrder order();
 
     
+    @DSModeled(DSC.SAFE)
     abstract char[] protectedArray();
 
     
+    @DSModeled(DSC.SAFE)
     abstract int protectedArrayOffset();
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean protectedHasArray();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CharBuffer put(char c);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.348 -0400", hash_original_method = "470B54D034ECB079323054E5FA7FB003", hash_generated_method = "D94461FCC1893D02B546A333278CE5F2")
     public final CharBuffer put(char[] src) {
         addTaint(src[0]);
@@ -396,9 +413,11 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_98317293 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CharBuffer put(int index, char c);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.349 -0400", hash_original_method = "E7006B831E6768B620311924466DB7A4", hash_generated_method = "FB743D1E23D119BD8F97C4B7EBF14B38")
     public final CharBuffer put(String str) {
         addTaint(str.getTaint());
@@ -451,9 +470,11 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_184787133 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CharBuffer slice();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CharSequence subSequence(int start, int end);
 
     

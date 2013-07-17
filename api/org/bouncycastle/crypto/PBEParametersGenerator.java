@@ -72,12 +72,15 @@ public abstract class PBEParametersGenerator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CipherParameters generateDerivedParameters(int keySize);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CipherParameters generateDerivedParameters(int keySize, int ivSize);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CipherParameters generateDerivedMacParameters(int keySize);
 
     

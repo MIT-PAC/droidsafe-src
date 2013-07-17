@@ -17,18 +17,22 @@ public abstract class CertificateFactorySpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Certificate engineGenerateCertificate(InputStream inStream)
             throws CertificateException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Collection<? extends Certificate>
         engineGenerateCertificates(InputStream inStream) throws CertificateException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CRL engineGenerateCRL(InputStream inStream)
             throws CRLException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Collection<? extends CRL>
         engineGenerateCRLs(InputStream inStream) throws CRLException;
 

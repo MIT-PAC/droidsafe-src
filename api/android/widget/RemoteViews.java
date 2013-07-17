@@ -834,6 +834,7 @@ for(int i=0;i<count;i++)
         }
 
 
+        @DSModeled(DSC.SAFE)
         public abstract void apply(View root, ViewGroup rootParent) throws ActionException;
 
         

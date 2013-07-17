@@ -22,6 +22,7 @@ public abstract class PagerAdapter {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract int getCount();
 
     
@@ -130,6 +131,7 @@ Object varDBAD8988DF87318F1C8F9884B635F560_1868528150 =         instantiateItem(
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isViewFromObject(View view, Object object);
 
     

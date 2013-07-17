@@ -23,17 +23,21 @@ public abstract class LoaderManager {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract <D> Loader<D> initLoader(int id, Bundle args,
             LoaderManager.LoaderCallbacks<D> callback);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract <D> Loader<D> restartLoader(int id, Bundle args,
             LoaderManager.LoaderCallbacks<D> callback);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void destroyLoader(int id);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract <D> Loader<D> getLoader(int id);
 
     

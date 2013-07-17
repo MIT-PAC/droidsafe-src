@@ -60,6 +60,7 @@ public abstract class AbstractHttpClientConnection implements HttpClientConnecti
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void assertOpen() throws IllegalStateException;
 
     

@@ -495,16 +495,19 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getBinderLocalObjectCount() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getBinderProxyObjectCount() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getBinderDeathObjectCount() {
         return DSUtils.UNKNOWN_INT;
     }

@@ -26,6 +26,7 @@ public class AudioStream extends RtpStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.028 -0400", hash_original_method = "254DAECE553220B60B3DDCDB0D3A9A7B", hash_generated_method = "C291D10BC96CB0C84C5A7B70B8455D8F")
     @Override
     public final boolean isBusy() {

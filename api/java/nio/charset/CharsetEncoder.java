@@ -110,6 +110,7 @@ public abstract class CharsetEncoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.582 -0400", hash_original_method = "A746602428AC27FECC8176A57B5A2933", hash_generated_method = "A8131B1231438749A25A52B066E8AF26")
     public final float averageBytesPerChar() {
         float var692DC57502FA0F1ADE68D2F2AECF7494_504823372 = (averageBytesPerChar);
@@ -213,6 +214,7 @@ public abstract class CharsetEncoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.585 -0400", hash_original_method = "B98730A31745049759B27FC27542555A", hash_generated_method = "F4AC1382D6BDD78668181B90896888ED")
     public final Charset charset() {
 Charset varE661418CFE0D2CECDB5DF6FE0739403D_215751605 =         cs;
@@ -446,6 +448,7 @@ CoderResult varDC838461EE2FA0CA4C9BBB70A15456B0_378050707 =                     
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract CoderResult encodeLoop(CharBuffer in, ByteBuffer out);
 
     
@@ -560,6 +563,7 @@ CodingErrorAction var84571F1E1ACF9C5432CDAA5F78A66531_944092079 =         malfor
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.591 -0400", hash_original_method = "F4624CD8E2F5B5C085387046C0856D44", hash_generated_method = "4F9328747D98813249626DDBD2A01093")
     public final float maxBytesPerChar() {
         float varC6086AD8B30BBFB38F0CCB4A5C59689F_1357924915 = (maxBytesPerChar);
@@ -618,6 +622,7 @@ CharsetEncoder var72A74007B2BE62B849F475C7BDA4658B_1697650201 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.593 -0400", hash_original_method = "D4DB6E703F0B5C3D24041A00F1C8C203", hash_generated_method = "52C5E001243603B28AFC086BCFBC39B0")
     public final byte[] replacement() {
         byte[] varF9CC17F581C3F36A520F3F5943689734_732063995 = (replacementBytes);

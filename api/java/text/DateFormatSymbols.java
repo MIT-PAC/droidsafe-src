@@ -117,11 +117,13 @@ String[][] varEBF7F37D366F40A93466E6A48C2F7696_1504360394 =         zoneStrings;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final DateFormatSymbols getInstance() {
         return getInstance(Locale.getDefault());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final DateFormatSymbols getInstance(Locale locale) {
         if (locale == null) {
             throw new NullPointerException();

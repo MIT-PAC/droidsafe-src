@@ -42,9 +42,11 @@ abstract class StreamLoader implements Handler.Callback {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract boolean setupStreamAndSendStatus();
 
     
+    @DSModeled(DSC.SAFE)
     abstract protected void buildHeaders(Headers headers);
 
     

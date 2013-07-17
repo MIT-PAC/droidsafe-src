@@ -43,6 +43,7 @@ public abstract class FileLock {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.191 -0400", hash_original_method = "51CC76EF226D8C9ED837839CEF3A7EEC", hash_generated_method = "4E63C680E81B793798F4969E2A8F8466")
     public final FileChannel channel() {
 FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_1480987053 =         channel;
@@ -53,6 +54,7 @@ FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_1480987053 =         channel;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.192 -0400", hash_original_method = "B51039013FACF3B9BE83986840749101", hash_generated_method = "38F5782B17269729EF586DF0CBFF690A")
     public final long position() {
         long var4757FE07FD492A8BE0EA6A760D683D6E_2140177084 = (position);
@@ -63,6 +65,7 @@ FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_1480987053 =         channel;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.192 -0400", hash_original_method = "EA3441215E7ACDF721D34D006EDC791B", hash_generated_method = "7BD6F966375549015102387D60F06DAD")
     public final long size() {
         long varF7BD60B75B29D79B660A2859395C1A24_1685486664 = (size);
@@ -73,6 +76,7 @@ FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_1480987053 =         channel;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.192 -0400", hash_original_method = "9101EDDE96E9CB8A45C7075BA466C705", hash_generated_method = "253B7E77CB7BB16C779C2539CE2F2C87")
     public final boolean isShared() {
         boolean var9E81E7B963C71363E2FB3EEFCFECFC0E_422022562 = (shared);
@@ -83,6 +87,7 @@ FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_1480987053 =         channel;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.193 -0400", hash_original_method = "BD91EA1BF31FE8BEA01F707FE570CF9B", hash_generated_method = "A3CE1D14B763EE15C56811946EAC426A")
     public final boolean overlaps(long start, long length) {
         addTaint(length);
@@ -108,9 +113,11 @@ FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_1480987053 =         channel;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isValid();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void release() throws IOException;
 
     

@@ -62,12 +62,15 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract void onUpdateSurface();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void onRelayoutContainer();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean onAllowLockCanvas();
 
     

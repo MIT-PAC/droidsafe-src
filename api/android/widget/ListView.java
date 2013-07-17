@@ -79,6 +79,7 @@ public class ListView extends AbsListView {
 
     private FocusSelector mFocusSelector;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.136 -0400", hash_original_method = "90B4B4BF6E484BC26800C5A789F4708D", hash_generated_method = "2C921861B94DD394D15F8C9171AE49D3")
     public  ListView(Context context) {
         this(context, null);
@@ -424,6 +425,7 @@ ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1597762530 =         mAdapter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.146 -0400", hash_original_method = "41402E7D77C488BF4C279E76F34BC4E2", hash_generated_method = "8C597AE1707AE997F0234433CD0E2C3A")
     @Override
     public void setAdapter(ListAdapter adapter) {
@@ -1060,6 +1062,7 @@ View var7B839F21D0245BE275F8017F44DD4441_1514289879 =         sel;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.156 -0400", hash_original_method = "CB33E140CB7C8CB590395A9B1EF6CC8D", hash_generated_method = "DD7EC8D972CC14DB2BCD5266608BA136")
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {

@@ -19,6 +19,7 @@ public abstract class Message {
     }
 
 
+    @DSModeled(DSC.SAFE)
     abstract int getType();
 
     
@@ -33,6 +34,7 @@ public abstract class Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void send(HandshakeIODataStream out);
 
     

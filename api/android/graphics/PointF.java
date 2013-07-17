@@ -45,6 +45,7 @@ public class PointF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.658 -0400", hash_original_method = "F7BA2399A270106D49FE9F3CEDD1B64C", hash_generated_method = "B0E694476E38ED79FABC23526B838C6D")
     public final void set(float x, float y) {
         this.x = x;
@@ -55,6 +56,7 @@ public class PointF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.659 -0400", hash_original_method = "A2C2BCEEF90AD29E71702879AF68EB5C", hash_generated_method = "96A58945F4EF52A0FB3CB5D99420723A")
     public final void set(PointF p) {
         this.x = p.x;
@@ -65,6 +67,7 @@ public class PointF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.659 -0400", hash_original_method = "47D8F51D6A8BFCBDB23B0F8D5AF788FE", hash_generated_method = "2BF53EC3544A2E6062446424007D905E")
     public final void negate() {
         x = -x;
@@ -75,6 +78,7 @@ public class PointF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.659 -0400", hash_original_method = "21ADDAD001104B37D18E0BE298F2ECD3", hash_generated_method = "56FA0F865850BB9DC11AE7749279A41D")
     public final void offset(float dx, float dy) {
         x += dx;
@@ -85,6 +89,7 @@ public class PointF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.659 -0400", hash_original_method = "F82621D2FAA57E05F2C4A4E11E1CB185", hash_generated_method = "0804E605A068C8C62AE08D18EBB10363")
     public final boolean equals(float x, float y) {
         addTaint(y);
@@ -97,6 +102,7 @@ public class PointF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.659 -0400", hash_original_method = "892A2B0E26A7F5CA4781A7DDEBBD33D8", hash_generated_method = "BF5CB70AFAB9EECAC90B150571363E89")
     public final float length() {
         float varC11B68AE7548069FC83496CE2CEF8ED0_1160653047 = (length(x, y));

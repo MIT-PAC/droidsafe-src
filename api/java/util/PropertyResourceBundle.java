@@ -46,6 +46,7 @@ public class PropertyResourceBundle extends ResourceBundle {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.507 -0400", hash_original_method = "18F63E7C5AB3934B8351CB4BC2CE0CC3", hash_generated_method = "6A84E7D2947BB0F7C2BAF1ADE4ECE47D")
     protected Set<String> handleKeySet() {
 Set<String> var0EAA476BE58006F42D4C65D603A3959B_708214916 =         resources.stringPropertyNames();
@@ -56,6 +57,7 @@ Set<String> var0EAA476BE58006F42D4C65D603A3959B_708214916 =         resources.st
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.507 -0400", hash_original_method = "94C0F4CF2CD414C406604EC575DAD3DD", hash_generated_method = "95E3F1EAAAE7EA9BF9CB2133A7BF3ABA")
     @SuppressWarnings("unchecked")
     private Enumeration<String> getLocalKeys() {
@@ -67,6 +69,7 @@ Enumeration<String> varA865D04F5518808831D04C06BBF9E25E_2015124119 =         (En
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.509 -0400", hash_original_method = "8070DEE7B7CBE3EB8E3AF8AF6FE9DBC6", hash_generated_method = "3D01932958A4F18257C01F21A74B1E7B")
     @Override
     public Enumeration<String> getKeys() {

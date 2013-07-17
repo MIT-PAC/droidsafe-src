@@ -45,6 +45,7 @@ public abstract class Reference<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.781 -0400", hash_original_method = "26440EC338F5668042D20BF591B8B96C", hash_generated_method = "FF108BB461017778A89E95EC17F820D6")
     public final synchronized boolean enqueueInternal() {
         if(queue != null && queueNext == null)        

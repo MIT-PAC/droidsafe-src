@@ -382,6 +382,7 @@ String var4FC680801218E6372BC708D6FA44AE60_678367590 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.503 -0400", hash_original_method = "8BE6B36212848E97AA53F8A83F869F11", hash_generated_method = "FA7429830B44E0704AB94BD49757D1C6")
     final boolean hasTextContent(Node child) {
         addTaint(child.getTaint());

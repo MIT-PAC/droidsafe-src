@@ -59,12 +59,15 @@ public abstract class HttpsURLConnection extends HttpURLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getCipherSuite();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Certificate[] getLocalCertificates();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Certificate[] getServerCertificates() throws SSLPeerUnverifiedException;
 
     

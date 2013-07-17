@@ -22,6 +22,7 @@ public class Looper {
 
     private Printer mLogging = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.442 -0400", hash_original_method = "6D5C1375C6658BE56B40A9307D923CFE", hash_generated_method = "8417B18BC4C5ECFABCBA976EC6312D5F")
     private  Looper() {
         mQueue = new MessageQueue();
@@ -108,6 +109,7 @@ public class Looper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Looper myLooper() {
         return sThreadLocal.get();
     }

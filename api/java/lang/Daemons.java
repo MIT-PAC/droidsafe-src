@@ -67,6 +67,7 @@ public final class Daemons {
         }
 
         
+        @DSModeled(DSC.SAFE)
         public abstract void run();
 
         

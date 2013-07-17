@@ -521,6 +521,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.160 -0400", hash_original_method = "B0B8C66B3B0796135E0E0BD2E6D5E306", hash_generated_method = "88A06A4237B4C404B85728812147EBE1")
     public void setVideoURI(Uri uri, Map<String, String> headers) {
         mUri = uri;

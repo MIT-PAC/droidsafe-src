@@ -306,6 +306,7 @@ View var540C13E9E156B687226421B24F2DF178_1901397022 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.358 -0400", hash_original_method = "15B2ED72F970B566935619473880B5EF", hash_generated_method = "BA512EB5D2761BE8B0438D5D592FEEEA")
     public void getVisitedHistory(ValueCallback<String[]> callback) {
         addTaint(callback.getTaint());

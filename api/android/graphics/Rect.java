@@ -228,6 +228,7 @@ String var2460B846747F8B22185AD8BE722266A5_660970240 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.869 -0400", hash_original_method = "D667CC92208C0C47552A2E0207FE57FF", hash_generated_method = "05C954C22B000AA077F671C559B7BFB2")
     public final boolean isEmpty() {
         boolean var5BA6ADEF85521CC0A2916760814FCF93_1397384928 = (left >= right || top >= bottom);
@@ -238,6 +239,7 @@ String var2460B846747F8B22185AD8BE722266A5_660970240 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.870 -0400", hash_original_method = "B5C8F76194FE5E52EC67584A55326566", hash_generated_method = "E9378ED69DABED79CBEE953AC6EE479B")
     public final int width() {
         int var88F0E5CB3EAA647E9260CF3FB49CC290_595128349 = (right - left);
@@ -248,6 +250,7 @@ String var2460B846747F8B22185AD8BE722266A5_660970240 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.870 -0400", hash_original_method = "D9A224C01D56297419D0F0D6874F94EA", hash_generated_method = "A5306B08F4EBBE59FAD9372DCDAA6FAD")
     public final int height() {
         int varF8C4A5D78D17BACD13F5BFF4ECA44EC8_1491176541 = (bottom - top);
@@ -258,6 +261,7 @@ String var2460B846747F8B22185AD8BE722266A5_660970240 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.870 -0400", hash_original_method = "4477F17CB09FCCCFE520309EAF855087", hash_generated_method = "E9BD77DB8FA754070D130F99CEDCFAB3")
     public final int centerX() {
         int var92EF6AEFD28AA0928BAE4C5CF0995515_818899453 = ((left + right) >> 1);
@@ -268,6 +272,7 @@ String var2460B846747F8B22185AD8BE722266A5_660970240 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.870 -0400", hash_original_method = "F7808A0BCBFDE1BA24C3C6993963C7E5", hash_generated_method = "B06A68E65034725C2CDEEB80B4EA9C86")
     public final int centerY() {
         int varAF749E2D1EDAEE04450DC215F13A9316_136853310 = ((top + bottom) >> 1);
@@ -278,6 +283,7 @@ String var2460B846747F8B22185AD8BE722266A5_660970240 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.870 -0400", hash_original_method = "5A810E92794653D48F616BBA8E2AA992", hash_generated_method = "AD68EA030C0DB3CE075BA40E41C8A304")
     public final float exactCenterX() {
         float varA4632249F58E4F4D11727DB1456053B9_390037360 = ((left + right) * 0.5f);
@@ -288,6 +294,7 @@ String var2460B846747F8B22185AD8BE722266A5_660970240 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.870 -0400", hash_original_method = "E508041D41FDDDFC9E9DB1768DECEB0F", hash_generated_method = "67E8D8900DBBC68CAE5FE62A8A578BCC")
     public final float exactCenterY() {
         float var3AE3C0970807829B301DA0A4EED9B2B7_2068378170 = ((top + bottom) * 0.5f);

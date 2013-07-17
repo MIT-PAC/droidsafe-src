@@ -144,6 +144,7 @@ public abstract class HandshakeProtocol {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void start();
 
     
@@ -239,15 +240,19 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_298374620 =         session;
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void receiveChangeCipherSpec();
 
     
+    @DSModeled(DSC.SAFE)
     abstract void makeFinished();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void unwrap(byte[] bytes);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void unwrapSSLv2(byte[] bytes);
 
     

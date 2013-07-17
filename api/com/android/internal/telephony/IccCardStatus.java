@@ -287,6 +287,7 @@ String var2460B846747F8B22185AD8BE722266A5_880815449 =         sb.toString();
         CARDSTATE_ABSENT,
         CARDSTATE_PRESENT,
         CARDSTATE_ERROR;
+        @DSModeled(DSC.SAFE)
         boolean isCardPresent() {
             return this == CARDSTATE_PRESENT;
         }
@@ -300,12 +301,15 @@ String var2460B846747F8B22185AD8BE722266A5_880815449 =         sb.toString();
         PINSTATE_DISABLED,
         PINSTATE_ENABLED_BLOCKED,
         PINSTATE_ENABLED_PERM_BLOCKED;
+        @DSModeled(DSC.SAFE)
         boolean isPermBlocked() {
             return this == PINSTATE_ENABLED_PERM_BLOCKED;
         }
+        @DSModeled(DSC.SAFE)
         boolean isPinRequired() {
             return this == PINSTATE_ENABLED_NOT_VERIFIED;
         }
+        @DSModeled(DSC.SAFE)
         boolean isPukRequired() {
             return this == PINSTATE_ENABLED_BLOCKED;
         }

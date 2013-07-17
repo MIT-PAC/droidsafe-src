@@ -53,9 +53,11 @@ public abstract class SSLServerSocketFactory extends ServerSocketFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] getDefaultCipherSuites();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] getSupportedCipherSuites();
 
     

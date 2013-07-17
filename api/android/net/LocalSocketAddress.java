@@ -61,7 +61,8 @@ Namespace varF28472CCCF41AB611991133D8001D83B_1341393879 =         namespace;
         Namespace (int id) {
             this.id = id;
         }
-         int getId() {
+         @DSModeled(DSC.SAFE)
+        int getId() {
             return id;
         }
     }

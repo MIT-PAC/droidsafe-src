@@ -1595,6 +1595,7 @@ SearchBox var1389521C14C0F3148BEF0EC494B180A9_1515375469 =         mSearchBox;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.302 -0400", hash_original_method = "6C44E95231996B5164D16D96A5AF9CAD", hash_generated_method = "F293DD4C3989DC497C60C424BC165890")
     private void nativeLoadUrl(String url, Map<String, String> headers) {
     }

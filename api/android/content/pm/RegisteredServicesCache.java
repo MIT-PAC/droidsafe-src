@@ -141,6 +141,7 @@ for(ServiceInfo info : services.values())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.556 -0400", hash_original_method = "D8F0001D796B123F3D4D73C4471FA428", hash_generated_method = "BE20450A7E4F9EB1D504FCA0BBF9884F")
     public RegisteredServicesCacheListener<V> getListener() {
         synchronized

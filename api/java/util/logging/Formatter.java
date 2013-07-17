@@ -16,6 +16,7 @@ public abstract class Formatter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String format(LogRecord r);
 
     

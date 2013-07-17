@@ -31,6 +31,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
         if (gSharedTempPointerCoords == null
                 || gSharedTempPointerCoords.length < desiredCapacity) {
@@ -426,6 +427,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.764 -0400", hash_original_method = "187F7D3A42078A42C8212C3EFE0E8B16", hash_generated_method = "B5993FF85078ECCF8FA62AB69B6F4EEE")
     public final void recycle() {
         if(TRACK_RECYCLED_LOCATION)        
@@ -479,6 +481,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.764 -0400", hash_original_method = "A082C8E505553F853E56AAFC11CF0CDA", hash_generated_method = "7607C4622D338DF7A6F483ECCB464AFD")
     public final void scale(float scale) {
         addTaint(scale);
@@ -488,6 +491,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.764 -0400", hash_original_method = "E51EA2AB032E4C79CC226174E2601818", hash_generated_method = "54F12DC50C23959A034424BE29DE222E")
     @Override
     public final int getDeviceId() {
@@ -499,6 +503,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.765 -0400", hash_original_method = "44501F684180CAB98F3511C2614C7994", hash_generated_method = "B3E688D4D76419A256A7718E00615F11")
     @Override
     public final int getSource() {
@@ -510,6 +515,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.765 -0400", hash_original_method = "1502AF3F26B6DD95879512031D9FB73E", hash_generated_method = "07A1FD7FD3D3FD477882D5EF4A4A6E49")
     @Override
     public final void setSource(int source) {
@@ -520,6 +526,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.765 -0400", hash_original_method = "FA5880EB8F61D955AC5922ACE620FCE2", hash_generated_method = "ED1013841C248D8FEA98F00C51C92E68")
     public final int getAction() {
         int var80A98A7BBE69E4DF94992B8C4CCEB9C8_1465204828 = (nativeGetAction(mNativePtr));
@@ -530,6 +537,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.765 -0400", hash_original_method = "268411790684740D49A019DF59E1FFBB", hash_generated_method = "845CE5F44A92E85F87C047A9FCA94AF2")
     public final int getActionMasked() {
         int varACC094C520CCDFB8E868FFF09CB65B46_245484013 = (nativeGetAction(mNativePtr) & ACTION_MASK);
@@ -540,6 +548,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.765 -0400", hash_original_method = "464EE1689B645958C6F5E17990D5ECA4", hash_generated_method = "98F6FF23B0123E5DACFC477BD6155FFE")
     public final int getActionIndex() {
         int var7500415F7360866D42A5FB7EE3347BCF_121730432 = ((nativeGetAction(mNativePtr) & ACTION_POINTER_INDEX_MASK)
@@ -552,6 +561,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.765 -0400", hash_original_method = "3A9CDEA51D903248E7ACBBA8C3F57155", hash_generated_method = "29FE3AF9DF4DC4A53809421B23F6D675")
     public final boolean isTouchEvent() {
         boolean varDFE61C24DD01208F966A163BDD38A4CD_763986490 = (nativeIsTouchEvent(mNativePtr));
@@ -562,6 +572,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.765 -0400", hash_original_method = "A25E485C356A262F519C0A5841CFA47B", hash_generated_method = "7249C44305B2C9A81C744C042A01BCAD")
     public final int getFlags() {
         int varA526BA649589E0CDCE94D6C8B3100B23_346371018 = (nativeGetFlags(mNativePtr));
@@ -572,6 +583,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.765 -0400", hash_original_method = "24A8A0C0077001C335E0B5C917301FE4", hash_generated_method = "DE3C3D95A2490110A6039ABB70C2E54F")
     @Override
     public final boolean isTainted() {
@@ -585,6 +597,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.766 -0400", hash_original_method = "96C1138F844BE852B50B0529E539E061", hash_generated_method = "57EF329636FE9540DF3DC82261F2E901")
     @Override
     public final void setTainted(boolean tainted) {
@@ -597,6 +610,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.766 -0400", hash_original_method = "5F4C05CD4E223E38846D15A6EA0DF305", hash_generated_method = "BD8F615DF238A9D30A130D0183ACB38C")
     public final long getDownTime() {
         long var11BA13D60255B6CD28CC817BD12A69DC_1388766154 = (nativeGetDownTimeNanos(mNativePtr) / NS_PER_MS);
@@ -607,6 +621,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.766 -0400", hash_original_method = "97B3432DE604A4A8C3339017F5056697", hash_generated_method = "204CBCF8A37B0B817930F4C634EFA42C")
     public final void setDownTime(long downTime) {
         addTaint(downTime);
@@ -616,6 +631,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.766 -0400", hash_original_method = "CCF6A1C7FFBA398090457272FB07E7C9", hash_generated_method = "617589CD889869502FEDB69472ED8909")
     public final long getEventTime() {
         long var2B7CDB1B7E0B9584D608D19D659E6265_1327842437 = (nativeGetEventTimeNanos(mNativePtr, HISTORY_CURRENT) / NS_PER_MS);
@@ -626,6 +642,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.766 -0400", hash_original_method = "9EB1FC24DA069289850F91A3F8734D9A", hash_generated_method = "4F051836F91DBB2A1A68CA60F07F3BDE")
     public final long getEventTimeNano() {
         long varB79ED88242A7E101FD2975DEAA6D4999_1187871124 = (nativeGetEventTimeNanos(mNativePtr, HISTORY_CURRENT));
@@ -636,6 +653,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.766 -0400", hash_original_method = "4BF6642E766343B332FD98949BC6C582", hash_generated_method = "B985C63393B6EF6104BCBDB3031CC359")
     public final float getX() {
         float var3EF7A7583F95AE482084502D0DB5A8CD_75610388 = (nativeGetAxisValue(mNativePtr, AXIS_X, 0, HISTORY_CURRENT));
@@ -646,6 +664,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.766 -0400", hash_original_method = "91A63DEAB3A8AC7438EA04466792BD82", hash_generated_method = "9B765CBB9CA853344709D367D297F3BC")
     public final float getY() {
         float var7709F8DC42991A9E1DFD10831DB35973_527341509 = (nativeGetAxisValue(mNativePtr, AXIS_Y, 0, HISTORY_CURRENT));
@@ -656,6 +675,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.767 -0400", hash_original_method = "6675B94FFDE5461AE8829AF0934758CB", hash_generated_method = "0A2346F4CB687D9925F864CA87E2BCA6")
     public final float getPressure() {
         float varC8B9B3D4B8B60D775828193450E8BE3F_471805044 = (nativeGetAxisValue(mNativePtr, AXIS_PRESSURE, 0, HISTORY_CURRENT));
@@ -666,6 +686,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.767 -0400", hash_original_method = "04BA234B263118C319F9FB3039E4C966", hash_generated_method = "7E7AC1A2F3892F1156C190CE0EF3D79A")
     public final float getSize() {
         float var6E061C316CD065948A93F098D1140243_170123024 = (nativeGetAxisValue(mNativePtr, AXIS_SIZE, 0, HISTORY_CURRENT));
@@ -676,6 +697,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.767 -0400", hash_original_method = "7EDCA08C9EC8F904EE9855CC249509CB", hash_generated_method = "DE53E1B91B45E4A43EA645879DB94B0E")
     public final float getTouchMajor() {
         float varBDD96393822720D4B1BFA1D54C6BD258_181297461 = (nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MAJOR, 0, HISTORY_CURRENT));
@@ -686,6 +708,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.767 -0400", hash_original_method = "0D1B5526DE02F52B1563B7D7F6F58090", hash_generated_method = "8E1FE6C4ADC072B3BB66E23EDBF580A2")
     public final float getTouchMinor() {
         float var1F412634D4A047597000DDD05740D35E_1179010665 = (nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MINOR, 0, HISTORY_CURRENT));
@@ -696,6 +719,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.767 -0400", hash_original_method = "88DA06A5CC2E8F8456F3789E8A68ED44", hash_generated_method = "D99AFB246ECA8992DA6721B613F802C4")
     public final float getToolMajor() {
         float var1F91C2975A484921DAC7E89073521880_945209371 = (nativeGetAxisValue(mNativePtr, AXIS_TOOL_MAJOR, 0, HISTORY_CURRENT));
@@ -706,6 +730,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.767 -0400", hash_original_method = "68541C2106990EEA679DCE03A62D7FCC", hash_generated_method = "A461C280FE6C59E43C7C818397427278")
     public final float getToolMinor() {
         float varF9BF461A999AEC47E41774F9DA67773D_1264323762 = (nativeGetAxisValue(mNativePtr, AXIS_TOOL_MINOR, 0, HISTORY_CURRENT));
@@ -716,6 +741,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.767 -0400", hash_original_method = "6DB87F8256212E2B4D49883D1C47D372", hash_generated_method = "1C59325723287F8886933939733CCD04")
     public final float getOrientation() {
         float var6737447A3971B8877C8DF74C50D93D2F_1631952659 = (nativeGetAxisValue(mNativePtr, AXIS_ORIENTATION, 0, HISTORY_CURRENT));
@@ -726,6 +752,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.767 -0400", hash_original_method = "630AA047225B25427528E4D32F567B17", hash_generated_method = "5E38F503A45958F88DDCFC9DFC9482C7")
     public final float getAxisValue(int axis) {
         addTaint(axis);
@@ -737,6 +764,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.767 -0400", hash_original_method = "2050CCC0293D52B162C880AD9BC3C6F6", hash_generated_method = "69D94D77427BCDC4FEC7F4829652EEBC")
     public final int getPointerCount() {
         int var7A4B6F285807138C0798AE2E9C4D751D_164721999 = (nativeGetPointerCount(mNativePtr));
@@ -747,6 +775,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.768 -0400", hash_original_method = "43D465AFB7AC0153BC6ACD556C5FF613", hash_generated_method = "E11127DE2054BEC8893F6659E489ED2F")
     public final int getPointerId(int pointerIndex) {
         addTaint(pointerIndex);
@@ -758,6 +787,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.768 -0400", hash_original_method = "4F4E823E6A973C2A4D85C86C0A6A2D9D", hash_generated_method = "159F085AB9D93F70B1985C47AFB3632F")
     public final int getToolType(int pointerIndex) {
         addTaint(pointerIndex);
@@ -769,6 +799,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.768 -0400", hash_original_method = "396B4C03ADE41E49E928286EB7438AA9", hash_generated_method = "0243526694D94528B3079B2792898326")
     public final int findPointerIndex(int pointerId) {
         addTaint(pointerId);
@@ -780,6 +811,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.768 -0400", hash_original_method = "13E56CEAC1D2714A9A1790EF5117F935", hash_generated_method = "A4F3A33D9588D47BD607219149950F7B")
     public final float getX(int pointerIndex) {
         addTaint(pointerIndex);
@@ -791,6 +823,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.768 -0400", hash_original_method = "9A0C47F653E064961B232F3274CD29C9", hash_generated_method = "83F977A39CF05AD6742C4B61A78005E7")
     public final float getY(int pointerIndex) {
         addTaint(pointerIndex);
@@ -802,6 +835,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.768 -0400", hash_original_method = "36E2BAC74F4F826870F428D93CA1D371", hash_generated_method = "31AE75079036FE0292B0CE373C59AEDE")
     public final float getPressure(int pointerIndex) {
         addTaint(pointerIndex);
@@ -813,6 +847,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.768 -0400", hash_original_method = "50DE00A69645B3335E8383A50AB1EB05", hash_generated_method = "4A394BF56B8256E955B3E256D7A7AFD4")
     public final float getSize(int pointerIndex) {
         addTaint(pointerIndex);
@@ -824,6 +859,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.768 -0400", hash_original_method = "28BED69B39230D6E2E593658DA262948", hash_generated_method = "0704A5E7AC75FC43A5F8B332A5F1A10B")
     public final float getTouchMajor(int pointerIndex) {
         addTaint(pointerIndex);
@@ -835,6 +871,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.768 -0400", hash_original_method = "2C1FBE2BFEFC6BD6A6EFC25F55DD94B0", hash_generated_method = "8BA31B738A536893D1FD62D6A540D907")
     public final float getTouchMinor(int pointerIndex) {
         addTaint(pointerIndex);
@@ -846,6 +883,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.768 -0400", hash_original_method = "66B849A9DC257EF38185AFB935434C46", hash_generated_method = "C1BBA4101F7C09B87217776E2E688437")
     public final float getToolMajor(int pointerIndex) {
         addTaint(pointerIndex);
@@ -857,6 +895,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.769 -0400", hash_original_method = "F39564D767A71A1EAACBC920B100E436", hash_generated_method = "8AE72D0AFA99289AFEB5141E5FEFE917")
     public final float getToolMinor(int pointerIndex) {
         addTaint(pointerIndex);
@@ -868,6 +907,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.769 -0400", hash_original_method = "A9038F286A5A1470BB26B4145360A2CC", hash_generated_method = "A4F568D2FFD6D934EFC51D79B2B6076A")
     public final float getOrientation(int pointerIndex) {
         addTaint(pointerIndex);
@@ -879,6 +919,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.769 -0400", hash_original_method = "3434CDF166CDB98F83BC4BA0F4722E7E", hash_generated_method = "367199BAFA68F2513F6C2761F56C1B50")
     public final float getAxisValue(int axis, int pointerIndex) {
         addTaint(pointerIndex);
@@ -891,6 +932,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.769 -0400", hash_original_method = "33DE471947CC053A5003BB5AAC41F910", hash_generated_method = "E7823BC7B19A0EC5CE34184C01125684")
     public final void getPointerCoords(int pointerIndex, PointerCoords outPointerCoords) {
         addTaint(outPointerCoords.getTaint());
@@ -901,6 +943,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.769 -0400", hash_original_method = "FC8907B12AF62543F5FA0564EA522E62", hash_generated_method = "DE55870116B99FA0B12E297135A7A19B")
     public final void getPointerProperties(int pointerIndex,
             PointerProperties outPointerProperties) {
@@ -912,6 +955,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.769 -0400", hash_original_method = "38A68962B5CFD92D43EE16A436EABCF2", hash_generated_method = "8B69FB5349030EB7F9BECBA82F330992")
     public final int getMetaState() {
         int var8B31B809A1E02B825F144CA38A97CC53_369873563 = (nativeGetMetaState(mNativePtr));
@@ -922,6 +966,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.769 -0400", hash_original_method = "C8458CE15D5B2817F47A4FD377CE1968", hash_generated_method = "8C1D6E7CB409E4373333FD34AF807761")
     public final int getButtonState() {
         int var9B60F673C42B84E229E1898D796679E0_1217979475 = (nativeGetButtonState(mNativePtr));
@@ -932,6 +977,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.769 -0400", hash_original_method = "6E457CC599C66DF6B9AC57A3DF3B8E7E", hash_generated_method = "24E9507715AA5B26CF0034CDFE0DB921")
     public final float getRawX() {
         float var0D854522731FBDAB87403300A649F3D3_1067711276 = (nativeGetRawAxisValue(mNativePtr, AXIS_X, 0, HISTORY_CURRENT));
@@ -942,6 +988,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.770 -0400", hash_original_method = "C18C1837908CE668DE325D32328DA600", hash_generated_method = "01CFF570AB2C41C5E1223FEB0F9C880B")
     public final float getRawY() {
         float var52B0E43324F1F3642461105A906C8523_1986156642 = (nativeGetRawAxisValue(mNativePtr, AXIS_Y, 0, HISTORY_CURRENT));
@@ -952,6 +999,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.770 -0400", hash_original_method = "32503B0D7203271814D12FFB8906664F", hash_generated_method = "517322C3EAE0AC2E790EE60C53BEAC14")
     public final float getXPrecision() {
         float var2A7917A86613FB742B65FF142C135D3E_628438830 = (nativeGetXPrecision(mNativePtr));
@@ -962,6 +1010,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.770 -0400", hash_original_method = "77B44C5CFF493101D20AF55AA249AFB4", hash_generated_method = "EDAB879031CFF9CAB9BE318804571076")
     public final float getYPrecision() {
         float varE236F74B3ABE497BD8C08E81B74F9DD0_1703123036 = (nativeGetYPrecision(mNativePtr));
@@ -972,6 +1021,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.770 -0400", hash_original_method = "B4D273F4D2084C890DE19B631E3ED869", hash_generated_method = "CD6D08546E20AF52EED98DC8B5CE7CC5")
     public final int getHistorySize() {
         int var066A735E1D7E1073E9C19404D62C6B62_435977999 = (nativeGetHistorySize(mNativePtr));
@@ -982,6 +1032,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.770 -0400", hash_original_method = "4F37DFE9294EB232F86D1F83C2ADDC74", hash_generated_method = "D7B5C8DB239066EF1395870D6550AF85")
     public final long getHistoricalEventTime(int pos) {
         addTaint(pos);
@@ -993,6 +1044,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.770 -0400", hash_original_method = "52641DCD8C1505610834B8CDD1492B06", hash_generated_method = "C0D5DCEFA0D0BA3FE0F88CDDC8CEE7A1")
     public final float getHistoricalX(int pos) {
         addTaint(pos);
@@ -1004,6 +1056,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.770 -0400", hash_original_method = "456D8725235AB4DBC45E47B4ADD23013", hash_generated_method = "CB16A7A92E7F3ECDFA7827C0B66B1A5F")
     public final float getHistoricalY(int pos) {
         addTaint(pos);
@@ -1015,6 +1068,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.770 -0400", hash_original_method = "E822398D8AD69E2A637D6F0BC07F61D8", hash_generated_method = "90808BBFBE871772340A6F2B67A187C1")
     public final float getHistoricalPressure(int pos) {
         addTaint(pos);
@@ -1026,6 +1080,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.771 -0400", hash_original_method = "A43A8374A73078EDB84358D609B2C354", hash_generated_method = "41DBB045601E18BD73609E13BC0D42BD")
     public final float getHistoricalSize(int pos) {
         addTaint(pos);
@@ -1037,6 +1092,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.771 -0400", hash_original_method = "192AC6C55C0D7020BB0EA3AE5DE4FD65", hash_generated_method = "08D219D29F9280CC4093715671DF3C98")
     public final float getHistoricalTouchMajor(int pos) {
         addTaint(pos);
@@ -1048,6 +1104,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.771 -0400", hash_original_method = "122C0ECAA119AC26B3F087E871FFA312", hash_generated_method = "C8EA3CF35A36263CB0BAE59CE774F28E")
     public final float getHistoricalTouchMinor(int pos) {
         addTaint(pos);
@@ -1059,6 +1116,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.771 -0400", hash_original_method = "8097CEA35B3273816C6109CC76A9BC74", hash_generated_method = "F6DD6E130E3FE1BF9CB31FA99C24C7F3")
     public final float getHistoricalToolMajor(int pos) {
         addTaint(pos);
@@ -1070,6 +1128,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.771 -0400", hash_original_method = "E0365AAE3D6BF704A796F5D4E7964FB9", hash_generated_method = "277FA43CC49EEC7952CA26F73CDE7F38")
     public final float getHistoricalToolMinor(int pos) {
         addTaint(pos);
@@ -1081,6 +1140,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.772 -0400", hash_original_method = "DC8FCE9CD404D08D0BFF0CC77CEE87C1", hash_generated_method = "54BD7BBF5639A2AACE3BEA6E2050CFCC")
     public final float getHistoricalOrientation(int pos) {
         addTaint(pos);
@@ -1092,6 +1152,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.772 -0400", hash_original_method = "697532A0192D8868F2E3AE618301BF20", hash_generated_method = "CD9CDAC5BFAB3F89CB87EE25016D731F")
     public final float getHistoricalAxisValue(int axis, int pos) {
         addTaint(pos);
@@ -1104,6 +1165,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.772 -0400", hash_original_method = "8BFA09569623FF1F941D2134C3D47F02", hash_generated_method = "5FF0877F5C456F0FD3D2FDDB0B748E19")
     public final float getHistoricalX(int pointerIndex, int pos) {
         addTaint(pos);
@@ -1116,6 +1178,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.772 -0400", hash_original_method = "9787FE8A43AC5153EC8D7EC463FC985B", hash_generated_method = "9516A4ABD79A8EE2895C842DE1CD35AD")
     public final float getHistoricalY(int pointerIndex, int pos) {
         addTaint(pos);
@@ -1128,6 +1191,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.772 -0400", hash_original_method = "A8F703E0BCBA29F53C62C25AACD436ED", hash_generated_method = "695AD7A1407D48AA859FCC275EF4F495")
     public final float getHistoricalPressure(int pointerIndex, int pos) {
         addTaint(pos);
@@ -1140,6 +1204,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.772 -0400", hash_original_method = "66A9DA10859CF6933D658F61BE53F70F", hash_generated_method = "8F8112D048D2AFE4CE3741A61BF3692B")
     public final float getHistoricalSize(int pointerIndex, int pos) {
         addTaint(pos);
@@ -1152,6 +1217,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.773 -0400", hash_original_method = "38D72D2E0F00AE5C39667CDDD41B271D", hash_generated_method = "D9CAF2DB0C281E72B180F24FDCC272C9")
     public final float getHistoricalTouchMajor(int pointerIndex, int pos) {
         addTaint(pos);
@@ -1164,6 +1230,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.773 -0400", hash_original_method = "F3D94A1F01A3ECEF6DEDEA9361640BF9", hash_generated_method = "5E0D0BA87BD6CDBBC17BF998BC100067")
     public final float getHistoricalTouchMinor(int pointerIndex, int pos) {
         addTaint(pos);
@@ -1176,6 +1243,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.773 -0400", hash_original_method = "78FB77773CB43A5420D0F24849B540AD", hash_generated_method = "89E18EDDA6B56B77DBB5AFC84A26422E")
     public final float getHistoricalToolMajor(int pointerIndex, int pos) {
         addTaint(pos);
@@ -1188,6 +1256,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.773 -0400", hash_original_method = "4AB7745853006A3796DAD0E637CCA598", hash_generated_method = "64BFB6224E93E312E91345F0804A502F")
     public final float getHistoricalToolMinor(int pointerIndex, int pos) {
         addTaint(pos);
@@ -1200,6 +1269,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.774 -0400", hash_original_method = "160C0106DB8A4C6FBAA9569ABA0D68E8", hash_generated_method = "36897BB7B83197380277F3BC51B9DAD4")
     public final float getHistoricalOrientation(int pointerIndex, int pos) {
         addTaint(pos);
@@ -1212,6 +1282,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.774 -0400", hash_original_method = "F645AABE3B2CF14D2790BA051F9F3FF1", hash_generated_method = "69698ABAF7FF6C338D857BCCDD0F4CE7")
     public final float getHistoricalAxisValue(int axis, int pointerIndex, int pos) {
         addTaint(pos);
@@ -1225,6 +1296,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.774 -0400", hash_original_method = "D80ADCD256759644414D5CBEC3C57D0B", hash_generated_method = "CE6881A87663F4E9E04A9F00FBC88289")
     public final void getHistoricalPointerCoords(int pointerIndex, int pos,
             PointerCoords outPointerCoords) {
@@ -1237,6 +1309,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.774 -0400", hash_original_method = "26EA400A9751805DFF1D4CEEB005645B", hash_generated_method = "C494BF29960E344A51EB00A0E7460E04")
     public final int getEdgeFlags() {
         int var1F1A88DFEB524E5410CE9FDD29B55811_720260723 = (nativeGetEdgeFlags(mNativePtr));
@@ -1247,6 +1320,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.775 -0400", hash_original_method = "348B6A1C5666102E94291FA4791C249A", hash_generated_method = "EA090D97895AD6564575A4AFA6B859B5")
     public final void setEdgeFlags(int flags) {
         addTaint(flags);
@@ -1256,6 +1330,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.775 -0400", hash_original_method = "34CE363FC32882BC3BBCF2E8ABF2B5B0", hash_generated_method = "F19B003A8A5DCF26BEDE0687FC59DBBE")
     public final void setAction(int action) {
         addTaint(action);
@@ -1265,6 +1340,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.775 -0400", hash_original_method = "117CE161431F2ECDED077AD7F7467ADD", hash_generated_method = "A43AFFD412B7469BD843E7F8AC77342F")
     public final void offsetLocation(float deltaX, float deltaY) {
         addTaint(deltaY);
@@ -1275,6 +1351,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.777 -0400", hash_original_method = "D9D9F7662138ADF2F9591F7DFAEB3F74", hash_generated_method = "4B343E5D10F32270E24CB92BB72969F7")
     public final void setLocation(float x, float y) {
         addTaint(y);
@@ -1289,6 +1366,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.777 -0400", hash_original_method = "622D19544C973DA41E1BE7D7819B5A41", hash_generated_method = "B526B313EECACB61293EDCBF9D94087D")
     public final void transform(Matrix matrix) {
         addTaint(matrix.getTaint());
@@ -1307,6 +1385,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.778 -0400", hash_original_method = "F001981BC7F115C74B7EB0136965714D", hash_generated_method = "B86CC0D9EC9660C246B11A2BA6B03DB4")
     public final void addBatch(long eventTime, float x, float y,
             float pressure, float size, int metaState) {
@@ -1341,6 +1420,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.778 -0400", hash_original_method = "06E22018450E3E0892CD70DE9E19F211", hash_generated_method = "4D90FFB2F0E581C77625DC7738D7AAB0")
     public final void addBatch(long eventTime, PointerCoords[] pointerCoords, int metaState) {
         addTaint(metaState);
@@ -1352,6 +1432,7 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1446976778 =         obtain(this
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.778 -0400", hash_original_method = "542474DD15BDDADB068A65C6A3EEA8E2", hash_generated_method = "9FC0BA1A8E705CC83EBC4C1D62C0A07C")
     public final boolean isWithinBoundsNoHistory(float left, float top,
             float right, float bottom) {
@@ -1387,6 +1468,7 @@ for(int i = 0;i < pointerCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final float clamp(float value, float low, float high) {
         if (value < low) {
             return low;
@@ -1397,6 +1479,7 @@ for(int i = 0;i < pointerCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.780 -0400", hash_original_method = "C00E6E79D43678980DA0F4144A65F6A2", hash_generated_method = "12FB9FC8A1DED9DF8DAC7AFA2261E87E")
     public final MotionEvent clampNoHistory(float left, float top, float right, float bottom) {
         addTaint(bottom);
@@ -1436,6 +1519,7 @@ MotionEvent var589F943EB1E905D6F47E9BDE80F73551_1327258170 =             ev;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.781 -0400", hash_original_method = "FBF170B15B2FFBEE1AB1D4E32A8773CA", hash_generated_method = "92B748DD5FDCA9FDF54DE391F46E363B")
     public final int getPointerIdBits() {
         int idBits = 0;
@@ -1457,6 +1541,7 @@ for(int i = 0;i < pointerCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.783 -0400", hash_original_method = "4F0FF8B26009CA9D26EE500AEFE507EC", hash_generated_method = "C69B9F3F9BDD6610297F374D69A3C0AF")
     public final MotionEvent split(int idBits) {
         addTaint(idBits);

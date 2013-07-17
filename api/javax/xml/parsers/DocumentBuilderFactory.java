@@ -62,6 +62,7 @@ public abstract class DocumentBuilderFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract DocumentBuilder newDocumentBuilder()
         throws ParserConfigurationException;
 
@@ -186,18 +187,22 @@ public abstract class DocumentBuilderFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setAttribute(String name, Object value)
                 throws IllegalArgumentException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Object getAttribute(String name)
                 throws IllegalArgumentException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setFeature(String name, boolean value)
         throws ParserConfigurationException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean getFeature(String name)
         throws ParserConfigurationException;
 

@@ -107,6 +107,7 @@ Annotation[] varDC6E62BDE5B39FEF5193138B49323593_1295394920 =         NO_ANNOTAT
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.416 -0400", hash_original_method = "5232C7D94E7B41515E39CA253236284F", hash_generated_method = "20533B19DBBDF52415FA56B59DA54652")
     public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
         addTaint(annotationType.getTaint());

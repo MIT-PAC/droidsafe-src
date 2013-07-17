@@ -826,7 +826,7 @@ String var2460B846747F8B22185AD8BE722266A5_1801032401 =         sb.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.SPEC)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.328 -0400", hash_original_method = "29B0241D689448242FFD9C9D7DE21563", hash_generated_method = "15CC57087C95B7D9B74DEAC06F3C409E")
     protected void finalize() throws Throwable {
         finalizer(native_instance);
@@ -835,6 +835,7 @@ String var2460B846747F8B22185AD8BE722266A5_1801032401 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.328 -0400", hash_original_method = "2C87051DCC7759A2331039EEC0434516", hash_generated_method = "D04AE3C7CF2A052E841A391BBFF7274D")
     final int ni() {
         int var7E2E7BFEC42581BDE25254C4BB512478_1240566173 = (native_instance);
@@ -1115,6 +1116,7 @@ String var2460B846747F8B22185AD8BE722266A5_1801032401 =         sb.toString();
         START   (1),
         CENTER  (2),
         END     (3);
+        @DSModeled(DSC.SAFE)
         ScaleToFit(int nativeInt) {
             this.nativeInt = nativeInt;
         }

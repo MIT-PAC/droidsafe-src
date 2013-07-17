@@ -35,9 +35,11 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void close() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void flush() throws IOException;
 
     
@@ -50,6 +52,7 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void write(char[] buf, int offset, int count) throws IOException;
 
     

@@ -13,6 +13,7 @@ public abstract class Property<T, V> {
 
     private Class<V> mType;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.023 -0400", hash_original_method = "74C6113835E416F987A9EF157CFAA5F3", hash_generated_method = "9BC8D81123C569546DBA273A46924C06")
     public  Property(Class<V> type, String name) {
         mName = name;
@@ -65,6 +66,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_2084512381 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.039 -0400", hash_original_method = "016782D9983A30CCA54FD921B5345587", hash_generated_method = "4491967907C0B0EA2F651496FD47024F")
     public Class<V> getType() {
 Class<V> var4BA7381699FCDF343F6526506FD5D65C_1908784369 =         mType;

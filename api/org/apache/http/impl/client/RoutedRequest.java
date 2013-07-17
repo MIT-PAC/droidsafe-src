@@ -25,6 +25,7 @@ public class RoutedRequest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.932 -0400", hash_original_method = "EEED72C5B947069252F55B1761C3E136", hash_generated_method = "645D4CAAE903F70FFE211C2DEF8B7E68")
     public final RequestWrapper getRequest() {
 RequestWrapper varCA5195E6E15F740103A7066F05C33A8B_1119403460 =         request;
@@ -35,6 +36,7 @@ RequestWrapper varCA5195E6E15F740103A7066F05C33A8B_1119403460 =         request;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.932 -0400", hash_original_method = "A51AC1237DD43D471744BBD4E881146C", hash_generated_method = "AC72AE2DE1CF0D138B7964EFA8EDCEFB")
     public final HttpRoute getRoute() {
 HttpRoute var6679678B82FF79D06F753D1737D68FA6_1770143293 =         route;

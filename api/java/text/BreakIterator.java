@@ -117,30 +117,39 @@ public abstract class BreakIterator implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int current();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int first();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int following(int offset);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CharacterIterator getText();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int last();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int next();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int next(int n);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int previous();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setText(CharacterIterator newText);
 
     

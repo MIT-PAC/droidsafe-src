@@ -54,6 +54,7 @@ public abstract class AbstractMessageWriter implements HttpMessageWriter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void writeHeadLine(HttpMessage message)
         throws IOException
         ;

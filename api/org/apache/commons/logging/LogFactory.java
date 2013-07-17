@@ -27,26 +27,33 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Object getAttribute(String name);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] getAttributeNames();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Log getInstance(Class clazz)
         throws LogConfigurationException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Log getInstance(String name)
         throws LogConfigurationException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void release();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void removeAttribute(String name);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setAttribute(String name, Object value);
 
     
@@ -603,6 +610,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static final Properties getConfigurationFile(
             ClassLoader classLoader, String fileName) {
         Properties props = null;

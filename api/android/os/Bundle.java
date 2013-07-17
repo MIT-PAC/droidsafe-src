@@ -44,6 +44,7 @@ public final class Bundle implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.825 -0400", hash_original_method = "DB07395F523937B25016D60988A66D69", hash_generated_method = "84401EF7C5E724C9A0A8712DD56C891C")
       Bundle(Parcel parcelledData) {
         addTaint(parcelledData.getTaint());
@@ -53,6 +54,7 @@ public final class Bundle implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.825 -0400", hash_original_method = "4CBA8A75160127E76B9D77B8452C524A", hash_generated_method = "5325D673E1E11CEF8833CE6FAD5B0719")
       Bundle(Parcel parcelledData, int length) {
         addTaint(length);
@@ -74,6 +76,7 @@ public final class Bundle implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.826 -0400", hash_original_method = "1CEDEB07DCD1E2A2BE2C52C76F89017C", hash_generated_method = "2B27A067BF7B2EDAA4C66221F6D6260E")
     public  Bundle(int capacity) {
         mMap = new HashMap<String, Object>(capacity);
@@ -84,6 +87,7 @@ public final class Bundle implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.827 -0400", hash_original_method = "418D42BD4A8F16B387F3064B9218EE53", hash_generated_method = "11F544B121F75AF0D84F3AB92D420B7B")
     public  Bundle(Bundle b) {
         if(b.mParcelledData != null)        
@@ -549,6 +553,7 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.840 -0400", hash_original_method = "E7336EB9055C9F862A0B8D336BB5AE0F", hash_generated_method = "FB618D2195B1DE7959F738C2433A3309")
     public void putString(String key, String value) {
         addTaint(value.getTaint());
@@ -667,6 +672,7 @@ for(int n = array.size() - 1;n >= 0;n--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.844 -0400", hash_original_method = "C647C81034119067E2383CA02CF65D5F", hash_generated_method = "2A4FB1229722946DE91D4EF0E38C280D")
     public void putSerializable(String key, Serializable value) {
         addTaint(value.getTaint());
@@ -1493,6 +1499,7 @@ Bundle var540C13E9E156B687226421B24F2DF178_1718718728 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.879 -0400", hash_original_method = "3B646958426B4FA703D61CD64DB4127C", hash_generated_method = "125D4CE5C9D8B241BF5E70C624AE3452")
     public <T extends Parcelable> T getParcelable(String key) {
         addTaint(key.getTaint());

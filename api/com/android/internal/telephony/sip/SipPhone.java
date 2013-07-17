@@ -765,6 +765,7 @@ Phone var09CC006EC348D98EBFB275C7D31607EA_260295885 =             SipPhone.this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.304 -0400", hash_original_method = "B38C364E01AF490301B03DAE11EB1509", hash_generated_method = "D605BF32DD681EF006BCCFDE9BFCB423")
         @Override
         public List<Connection> getConnections() {
@@ -1786,9 +1787,11 @@ Phone var2410533D03C0DAB45909CE129323CB92_1223168012 =             mOwner.getPho
         }
 
 
+        @DSModeled(DSC.SAFE)
         protected abstract void onCallEnded(Connection.DisconnectCause cause);
 
         
+        @DSModeled(DSC.SAFE)
         protected abstract void onError(Connection.DisconnectCause cause);
 
         

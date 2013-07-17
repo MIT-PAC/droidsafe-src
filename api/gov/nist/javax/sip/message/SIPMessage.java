@@ -240,9 +240,11 @@ String var2D67BB46AD10FAB14B45E2CB0673323E_1501656117 =         contentLengthHea
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String encodeMessage();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getDialogId(boolean isServerTransaction);
 
     
@@ -650,6 +652,7 @@ String var8D11C2D110975896438D6F91C60E6D6F_180011674 =         stringRepresentat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.168 -0400", hash_original_method = "DC88726E428D89A7A7082B0D5F94DA0F", hash_generated_method = "AFACD4C2AFD6ECE1B27F26BC3ED3414C")
     public void setHeaders(java.util.List<SIPHeader> headers) {
         addTaint(headers.getTaint());
@@ -1961,6 +1964,7 @@ String var1E8D6A1AFE73FE2CAA8B49D42AEF9694_1077360347 =         toHeader == null
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getFirstLine();
 
     
@@ -2506,6 +2510,7 @@ CSeqHeader varA6B6B804DB86DE21D039C99E75A063C6_1304013659 =         this.cSeqHea
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.193 -0400", hash_original_method = "5D0D1F0E94EB86910B32FB17BCD97869", hash_generated_method = "CEF24CD18B0309C55C23788EA182D52D")
     protected final String getCharset() {
         ContentType ct = getContentTypeHeader();
@@ -2551,12 +2556,15 @@ String var1813311D7651DBE75E34FA9918664FA9_193110026 =         contentEncodingCh
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setSIPVersion(String sipVersion) throws ParseException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getSIPVersion();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String toString();
 
     

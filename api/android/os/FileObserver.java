@@ -77,6 +77,7 @@ public abstract class FileObserver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void onEvent(int event, String path);
 
     

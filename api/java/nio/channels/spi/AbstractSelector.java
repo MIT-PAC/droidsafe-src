@@ -57,6 +57,7 @@ public abstract class AbstractSelector extends Selector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void implCloseSelector() throws IOException;
 
     
@@ -71,6 +72,7 @@ public abstract class AbstractSelector extends Selector {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.362 -0400", hash_original_method = "B098D2E33834ACCBC46AD074E583FD9B", hash_generated_method = "82D31879B24FF672CDC49F68CB222206")
     @Override
     public final SelectorProvider provider() {
@@ -82,6 +84,7 @@ SelectorProvider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1389013230 =         provid
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.362 -0400", hash_original_method = "DC10B929A0DF63912817926BA3679882", hash_generated_method = "3E41E6263215AD1127CBF06B032B029F")
     protected final Set<SelectionKey> cancelledKeys() {
 Set<SelectionKey> var091462B1A8133F0DFC29D67499143648_305077311 =         cancelledKeysSet;
@@ -92,6 +95,7 @@ Set<SelectionKey> var091462B1A8133F0DFC29D67499143648_305077311 =         cancel
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SelectionKey register(AbstractSelectableChannel channel,
             int operations, Object attachment);
 

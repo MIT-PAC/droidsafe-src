@@ -27,6 +27,7 @@ public class AtomicReference<V> implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.170 -0400", hash_original_method = "479D74F52EAA9F8F31AB11658696490B", hash_generated_method = "05CA9BAB0198F73B518D8AFB251D89D1")
     public final V get() {
 V varAF280DA2BC37D8BE783D8499160168DE_1735997127 =         value;
@@ -37,6 +38,7 @@ V varAF280DA2BC37D8BE783D8499160168DE_1735997127 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.170 -0400", hash_original_method = "1165CC32E796F42C2841421B342AA16F", hash_generated_method = "9C8571AF8F60E12C4A3246C4368A02A4")
     public final void set(V newValue) {
         value = newValue;
@@ -45,6 +47,7 @@ V varAF280DA2BC37D8BE783D8499160168DE_1735997127 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.170 -0400", hash_original_method = "5F145FC62F46FF5FAD786BED834DE8D5", hash_generated_method = "8114606CD5414A1E7F9E20E488CCACC7")
     public final void lazySet(V newValue) {
         addTaint(newValue.getTaint());
@@ -54,6 +57,7 @@ V varAF280DA2BC37D8BE783D8499160168DE_1735997127 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.171 -0400", hash_original_method = "069E7BB7A98500BAF130264F81E7ADC7", hash_generated_method = "7DE5E0343E04ABAE5FB2B783EEE8DF3A")
     public final boolean compareAndSet(V expect, V update) {
         addTaint(update.getTaint());
@@ -66,6 +70,7 @@ V varAF280DA2BC37D8BE783D8499160168DE_1735997127 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.171 -0400", hash_original_method = "801403A92781688D40B445FC7E652974", hash_generated_method = "0D51E2ECA2CC8779F3B1C99C753A4F6E")
     public final boolean weakCompareAndSet(V expect, V update) {
         addTaint(update.getTaint());
@@ -78,6 +83,7 @@ V varAF280DA2BC37D8BE783D8499160168DE_1735997127 =         value;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.171 -0400", hash_original_method = "FD7BCDEFF552AB71FCB964A4983AD19B", hash_generated_method = "AD66135E7A55BD0684A004721996A125")
     public final V getAndSet(V newValue) {
         addTaint(newValue.getTaint());

@@ -52,12 +52,15 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Call getForegroundCall();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Call getBackgroundCall();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Call getRingingCall();
 
     
@@ -745,6 +748,7 @@ IccCard var540C13E9E156B687226421B24F2DF178_1654792406 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.392 -0400", hash_original_method = "A299C26C55A9C3CB073E39A9CEBA941C", hash_generated_method = "C9F847D4B82923EFF7438598A6E111D7")
     public List<DataConnection> getCurrentDataConnectionList() {
 List<DataConnection> var540C13E9E156B687226421B24F2DF178_2023700822 =         null;

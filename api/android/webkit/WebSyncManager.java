@@ -205,6 +205,7 @@ abstract class WebSyncManager implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void syncFromRamToFlash();
 
     

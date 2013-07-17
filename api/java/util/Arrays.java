@@ -224,11 +224,13 @@ public class Arrays {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> int binarySearch(T[] array, T value, Comparator<? super T> comparator) {
         return binarySearch(array, 0, array.length, value, comparator);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> int binarySearch(T[] array, int startIndex, int endIndex, T value,
             Comparator<? super T> comparator) {
         if (comparator == null) {
@@ -955,11 +957,13 @@ public class Arrays {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> void sort(T[] array, int start, int end, Comparator<? super T> comparator) {
         TimSort.sort(array, start, end, comparator);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> void sort(T[] array, Comparator<? super T> comparator) {
         TimSort.sort(array, comparator);
     }
@@ -1478,6 +1482,7 @@ public class Arrays {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T, U> T[] copyOfRange(U[] original, int start, int end, Class<? extends T[]> newType) {
         if (start > end) {

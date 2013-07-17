@@ -113,6 +113,7 @@ public abstract class TimerTask implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void run();
 
     

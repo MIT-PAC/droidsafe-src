@@ -14,6 +14,7 @@ import android.view.KeyCharacterMap;
 
 public abstract class MetaKeyKeyListener {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.374 -0400", hash_original_method = "50168EE5CC1513DB2EA8BA89DC077CDF", hash_generated_method = "50168EE5CC1513DB2EA8BA89DC077CDF")
     public MetaKeyKeyListener ()
     {
@@ -30,6 +31,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getMetaState(CharSequence text) {
         return getActive(text, CAP, META_SHIFT_ON, META_CAP_LOCKED) |
                getActive(text, ALT, META_ALT_ON, META_ALT_LOCKED) |
@@ -38,6 +40,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getMetaState(CharSequence text, int meta) {
         switch (meta) {
             case META_SHIFT_ON:
@@ -339,6 +342,7 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getMetaState(long state) {
         int result = 0;
         if ((state & META_CAP_LOCKED) != 0) {
@@ -360,6 +364,7 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getMetaState(long state, int meta) {
         switch (meta) {
             case META_SHIFT_ON:

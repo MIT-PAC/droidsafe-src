@@ -388,6 +388,7 @@ String var3AC7A0B6507C070325418D20C396FDAC_1536079929 =         new String(codeP
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.520 -0400", hash_original_method = "A5B2DC9A6DACFA347C16D8B42A67BD03", hash_generated_method = "EC97EDD5FB7C2E4D1C259743CD8A274D")
         @Override
         protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {

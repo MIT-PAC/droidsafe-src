@@ -152,6 +152,7 @@ Canvas var1D97605435A680D4B9EC641401BFF9EE_814837629 =         mRecordingCanvas;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.623 -0400", hash_original_method = "C2445D1D52466847173519B3E77D61F5", hash_generated_method = "FAF12BDD52883B15305D8BE218C42AA1")
     final int ni() {
         int varEB3D0953DBC0B65EBA1482F45D0B169C_847908178 = (mNativePicture);

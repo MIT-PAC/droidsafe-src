@@ -26,6 +26,7 @@ public class PKCS8EncodedKeySpec extends EncodedKeySpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.075 -0400", hash_original_method = "CC009CA66A5AFAFE0E87AA4EEC147948", hash_generated_method = "04BBF7E378F94502BC297EB00C879AFD")
     public final String getFormat() {
 String var686AFE2B0ECF96FA2A9E09461660945E_1857855840 =         "PKCS#8";

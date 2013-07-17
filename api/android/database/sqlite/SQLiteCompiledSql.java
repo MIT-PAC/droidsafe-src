@@ -204,6 +204,7 @@ String varA8F8BFF7B1F2F52B225C2C2411606CA3_376188164 =             buff.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.229 -0400", hash_original_method = "957AE60D3A9CE570CB89C0AA6C75F6C8", hash_generated_method = "8658583CAA11B5DE376BF83B036DBA9E")
     private final void native_compile(String sql) {
     }

@@ -428,6 +428,7 @@ for(int i = 0;i != len;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void encode(DEROutputStream out)
             throws IOException;
 

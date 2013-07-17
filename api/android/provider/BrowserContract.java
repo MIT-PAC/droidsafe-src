@@ -64,6 +64,7 @@ public class BrowserContract {
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static final Uri buildFolderUri(long folderId) {
             return ContentUris.withAppendedId(CONTENT_URI_DEFAULT_FOLDER, folderId);
         }

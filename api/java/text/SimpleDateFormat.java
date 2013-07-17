@@ -344,6 +344,7 @@ AttributedCharacterIterator varE3ABF6B4C0DDC070CF0843A4557F5D73_1783374642 =    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.268 -0400", hash_original_method = "1377B288F93939E9FA031027B23EE480", hash_generated_method = "98B0E2D984CED8D778A83E98930AA13C")
     private StringBuffer formatImpl(Date date, StringBuffer buffer,
             FieldPosition field, List<FieldPosition> fields) {
@@ -423,6 +424,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_435617145 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.270 -0400", hash_original_method = "60C88CC31EC17788C6D13B63E0E097AB", hash_generated_method = "A0A0F57DB4805571C2014D05F3EB106E")
     private void append(StringBuffer buffer, FieldPosition position,
             List<FieldPosition> fields, char format, int count) {

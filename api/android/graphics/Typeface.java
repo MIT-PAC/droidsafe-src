@@ -41,6 +41,7 @@ public class Typeface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.203 -0400", hash_original_method = "F9C5D984693E715CACA8B421F6CE6BD8", hash_generated_method = "C493E411038B6E89FA4E25244D78EF82")
     public final boolean isBold() {
         boolean var22FB91444A43EC94B14A455A2BAAC963_1441694835 = ((getStyle() & BOLD) != 0);
@@ -51,6 +52,7 @@ public class Typeface {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.203 -0400", hash_original_method = "55AE9D2665222680CD04F733708ADD28", hash_generated_method = "88148EA2AC94580890039C1F2E5EAC27")
     public final boolean isItalic() {
         boolean var31DE17569930B7690D33C8D6EEF228C7_855282288 = ((getStyle() & ITALIC) != 0);

@@ -98,6 +98,7 @@ String var82C9B5BC7FA60F6DCC8553D2D26588E9_197700264 =             IntegralToStr
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.398 -0400", hash_original_method = "26BABC03D3AA785CC6E3BF7FEFF80D9A", hash_generated_method = "4A8B8FCA8531026BBFF5F83D30AFB19D")
     @Override
     public CacheResponse get(URI uri, String requestMethod,
@@ -797,6 +798,7 @@ for(Certificate certificate : certificates)
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.413 -0400", hash_original_method = "2AD3F915E507834605A6A4131E76D62C", hash_generated_method = "A3C61BEDA4DD7507B8C4ABB27934B53B")
         public boolean matches(URI uri, String requestMethod,
                 Map<String, List<String>> requestHeaders) {

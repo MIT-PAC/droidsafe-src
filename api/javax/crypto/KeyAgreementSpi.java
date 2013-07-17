@@ -19,27 +19,33 @@ public abstract class KeyAgreementSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract Key engineDoPhase(Key key, boolean lastPhase)
             throws InvalidKeyException, IllegalStateException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract byte[] engineGenerateSecret()
             throws IllegalStateException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract int engineGenerateSecret(byte[] sharedSecret, int offset)
             throws IllegalStateException, ShortBufferException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SecretKey engineGenerateSecret(String algorithm)
             throws IllegalStateException, NoSuchAlgorithmException,
             InvalidKeyException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(Key key, SecureRandom random)
             throws InvalidKeyException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(Key key, AlgorithmParameterSpec params,
             SecureRandom random) throws InvalidKeyException,
             InvalidAlgorithmParameterException;

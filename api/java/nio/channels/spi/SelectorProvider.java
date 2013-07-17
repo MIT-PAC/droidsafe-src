@@ -43,19 +43,24 @@ public abstract class SelectorProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract DatagramChannel openDatagramChannel() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Pipe openPipe() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract AbstractSelector openSelector() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ServerSocketChannel openServerSocketChannel()
             throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SocketChannel openSocketChannel() throws IOException;
 
     

@@ -126,9 +126,11 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void logd(String msg);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void loge(String msg);
 
     
@@ -214,6 +216,7 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int[] getAdnRecordsSize(int efid);
 
     

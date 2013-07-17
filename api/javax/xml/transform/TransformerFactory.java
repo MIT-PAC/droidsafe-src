@@ -46,18 +46,22 @@ public abstract class TransformerFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Transformer newTransformer(Source source)
         throws TransformerConfigurationException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Transformer newTransformer()
         throws TransformerConfigurationException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Templates newTemplates(Source source)
         throws TransformerConfigurationException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Source getAssociatedStylesheet(
         Source source,
         String media,
@@ -66,28 +70,36 @@ public abstract class TransformerFactory {
         throws TransformerConfigurationException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setURIResolver(URIResolver resolver);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract URIResolver getURIResolver();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setFeature(String name, boolean value)
         throws TransformerConfigurationException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean getFeature(String name);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setAttribute(String name, Object value);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Object getAttribute(String name);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setErrorListener(ErrorListener listener);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ErrorListener getErrorListener();
 
     

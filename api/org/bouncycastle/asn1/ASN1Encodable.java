@@ -140,6 +140,7 @@ DERObject var15B299BB545D52AE6F55579E211C4634_554182251 =         this.toASN1Obj
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract DERObject toASN1Object();
 
     

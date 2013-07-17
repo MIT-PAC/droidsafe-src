@@ -43,27 +43,32 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static boolean is12Key(char c) {
         return (c >= '0' && c <= '9') || c == '*' || c == '#';
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static boolean isDialable(char c) {
         return (c >= '0' && c <= '9') || c == '*' || c == '#' || c == '+' || c == WILD;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static boolean isReallyDialable(char c) {
         return (c >= '0' && c <= '9') || c == '*' || c == '#' || c == '+';
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static boolean isNonSeparator(char c) {
         return (c >= '0' && c <= '9') || c == '*' || c == '#' || c == '+'
                 || c == WILD || c == WAIT || c == PAUSE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static boolean isStartsPostDial(char c) {
         return c == PAUSE || c == WAIT;
     }

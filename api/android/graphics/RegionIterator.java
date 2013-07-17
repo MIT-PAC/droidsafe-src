@@ -19,6 +19,7 @@ public class RegionIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.111 -0400", hash_original_method = "93D64F5EF378037039049B9C8BD2BE17", hash_generated_method = "1428A396EC7A04ECED6EAFC1046D984A")
     public final boolean next(Rect r) {
         addTaint(r.getTaint());

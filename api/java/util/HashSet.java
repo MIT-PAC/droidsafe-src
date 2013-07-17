@@ -41,6 +41,7 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Ser
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.220 -0400", hash_original_method = "B287B339899074AD24911C01E3E019EA", hash_generated_method = "A6086E0532F712E31587B9655BDF6775")
     public  HashSet(Collection<? extends E> collection) {
         this(new HashMap<E, HashSet<E>>(collection.size() < 6 ? 11 : collection
@@ -57,6 +58,7 @@ for(E e : collection)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.220 -0400", hash_original_method = "03A7D4D479B1CF6DDF3EDEC66129252B", hash_generated_method = "D7B41D5A1CE8285E2C28BDFFB6A190DA")
       HashSet(HashMap<E, HashSet<E>> backingMap) {
         this.backingMap = backingMap;
@@ -142,6 +144,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1471403832 =             clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.222 -0400", hash_original_method = "B45AC88DE7B9594C8371B21B65FAB594", hash_generated_method = "299D67C2421138B7C16C9D2BB5FC64BA")
     @Override
     public Iterator<E> iterator() {
@@ -230,6 +233,7 @@ for(int i = elementCount;--i >= 0;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.225 -0400", hash_original_method = "A913AB5E1402F7BC175E965B0D92FA39", hash_generated_method = "E9EDCB8FA21CB01CE2C6E9762136EF19")
      HashMap<E, HashSet<E>> createBackingMap(int capacity, float loadFactor) {
         addTaint(loadFactor);

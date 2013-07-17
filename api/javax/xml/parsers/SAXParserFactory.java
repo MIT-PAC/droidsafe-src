@@ -53,6 +53,7 @@ public abstract class SAXParserFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SAXParser newSAXParser()
         throws ParserConfigurationException, SAXException;
 
@@ -97,11 +98,13 @@ public abstract class SAXParserFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setFeature(String name, boolean value)
         throws ParserConfigurationException, SAXNotRecognizedException,
                 SAXNotSupportedException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean getFeature(String name)
         throws ParserConfigurationException, SAXNotRecognizedException,
                 SAXNotSupportedException;

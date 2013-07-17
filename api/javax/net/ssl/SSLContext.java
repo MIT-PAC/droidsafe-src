@@ -91,6 +91,7 @@ public class SSLContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.660 -0400", hash_original_method = "A74773FBD6292704847794FB8A3C1AB0", hash_generated_method = "6766F640C3ED7E37C90737EC0D67C5A4")
     public final String getProtocol() {
 String varDD56EE388A0FA5696BF9686AC14D2DB9_1743735854 =         protocol;
@@ -101,6 +102,7 @@ String varDD56EE388A0FA5696BF9686AC14D2DB9_1743735854 =         protocol;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.661 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "C6F3E9C85372A0C4582761018BBE2261")
     public final Provider getProvider() {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1853891129 =         provider;

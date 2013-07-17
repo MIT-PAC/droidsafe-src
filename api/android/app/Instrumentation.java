@@ -822,6 +822,7 @@ Application var462AA7D74A15F95A3674E0E27E1A513F_903707710 =         newApplicati
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.460 -0400", hash_original_method = "A9111F868862B9E251C99947D42ADECF", hash_generated_method = "0661DDE788D25827D7C1652950098891")
     public Activity newActivity(Class<?> clazz, Context context, 
             IBinder token, Application application, Intent intent, ActivityInfo info, 
@@ -1438,6 +1439,7 @@ ActivityResult var540C13E9E156B687226421B24F2DF178_1080214768 =         null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.472 -0400", hash_original_method = "5CEC767AFA0B77CA42139688DDFFE7D0", hash_generated_method = "FEE62BFE31DD9488F4C330687825B35E")
         public final IntentFilter getFilter() {
 IntentFilter var7A6583B89023FF3098B73650E09B0508_2059896465 =             mWhich;
@@ -1448,6 +1450,7 @@ IntentFilter var7A6583B89023FF3098B73650E09B0508_2059896465 =             mWhich
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.472 -0400", hash_original_method = "907D5A2A73ED7959ACD2198F97C8DDFD", hash_generated_method = "EC756532B2F1DBF7058A209528026E67")
         public final ActivityResult getResult() {
 ActivityResult var8EC17D26103D23643357521909BC2C9A_1345944200 =             mResult;
@@ -1458,6 +1461,7 @@ ActivityResult var8EC17D26103D23643357521909BC2C9A_1345944200 =             mRes
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.472 -0400", hash_original_method = "6E6027F9B3B42A9863ABB214525B0A55", hash_generated_method = "13F2B6F264285CD64C91652E0CCD2D2E")
         public final boolean isBlocking() {
             boolean varE5ADD54C021234204DB48E99A01961D7_476377963 = (mBlock);
@@ -1468,6 +1472,7 @@ ActivityResult var8EC17D26103D23643357521909BC2C9A_1345944200 =             mRes
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.472 -0400", hash_original_method = "6A2B57F4CCAF664CD709CE454AF8AF4E", hash_generated_method = "6C3715C72F913358063DE1428A72C59F")
         public final int getHits() {
             int var5ECB2354C5ACBBFBE9428ACC00A6CC57_2066880689 = (mHits);
@@ -1478,6 +1483,7 @@ ActivityResult var8EC17D26103D23643357521909BC2C9A_1345944200 =             mRes
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.472 -0400", hash_original_method = "1AD813C5DE346D876C42D8A64F1E0FB4", hash_generated_method = "7E32B77C47F9527820BCE8C0BB615FD3")
         public final Activity getLastActivity() {
 Activity varB2DA8B7B053D8CC25E96301AE1CAB7FD_339645640 =             mLastActivity;
@@ -1573,6 +1579,7 @@ Activity varB5053E025797B3BF768F5C37934C244D_1958701943 =                     re
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.474 -0400", hash_original_method = "81CE78024E25171646CA4AFCDB286C47", hash_generated_method = "3FC207E8CCBF97E67E384742600A82CE")
         final boolean match(Context who,
                             Activity activity,

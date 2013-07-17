@@ -72,30 +72,39 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1832678251 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean requiresNetwork();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean requiresSatellite();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean requiresCell();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean hasMonetaryCost();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean supportsAltitude();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean supportsSpeed();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean supportsBearing();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getPowerRequirement();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getAccuracy();
 
     

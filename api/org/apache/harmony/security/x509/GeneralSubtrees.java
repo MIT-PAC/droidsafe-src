@@ -19,6 +19,7 @@ public final class GeneralSubtrees {
 
     private byte[] encoding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.383 -0400", hash_original_method = "2635B7CAB7F4197126741D8B5E9A6725", hash_generated_method = "C3A2A15D403107D1B4897DD6AE5129D3")
     public  GeneralSubtrees(List<GeneralSubtree> generalSubtrees) {
         this.generalSubtrees = generalSubtrees;

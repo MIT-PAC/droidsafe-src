@@ -55,12 +55,15 @@ public abstract class SSLSocketFactory extends SocketFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] getDefaultCipherSuites();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] getSupportedCipherSuites();
 
     
+    @DSModeled(DSC.SPEC)
     public abstract Socket createSocket(Socket s, String host, int port, boolean autoClose)
             throws IOException;
 

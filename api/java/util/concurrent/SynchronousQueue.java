@@ -464,6 +464,7 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_368967572 =         a;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static long objectFieldOffset(sun.misc.Unsafe UNSAFE,
                                   String field, Class<?> klazz) {
         try {
@@ -485,6 +486,7 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_368967572 =         a;
         }
 
 
+        @DSModeled(DSC.SAFE)
         abstract Object transfer(Object e, boolean timed, long nanos);
 
         

@@ -86,6 +86,7 @@ Map<String, Header> var16A0D6FA6CCA40A72F4213E7169FA153_1056412866 =         map
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.526 -0400", hash_original_method = "8FECC262A845210AB3069E334FB88F27", hash_generated_method = "B51A65178BBB7541B38233948059B4B3")
     protected List<String> getAuthPreferences() {
 List<String> var2B9683BFFB8A6468D0E659E64C20929F_1537507344 =         DEFAULT_SCHEME_PRIORITY;

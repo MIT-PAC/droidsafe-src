@@ -35,6 +35,7 @@ X9ECParameters varD15CEB6F45B18F7EB233792D020C6115_2008282775 =         params;
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract X9ECParameters createParameters();
 
     

@@ -6,21 +6,21 @@ import android.app.ContextImpl;
 import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.os.Bundle;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
 
 
 public class DroidSafeAndroidRuntime {
 	public static boolean control = new Random().nextBoolean();
 	public static int switchControl = new Random().nextInt();
 
-	@DSModeled
+	@DSModeled(DSC.SPEC)
 	
 	public static void main() {
 		
 	}
 	
-	@DSModeled
 	
+	@DSModeled(DSC.SPEC)
 	public static void modelActivity(android.app.Activity activity) {
 		ContextImpl context = new ContextImpl();
 		
@@ -48,7 +48,7 @@ public class DroidSafeAndroidRuntime {
 		
 	}
 	
-	@DSModeled
+	@DSModeled(DSC.SPEC)
 	public static void modelBroadCastReceiver(BroadcastReceiver receiver) {
 		receiver.onReceive(new ContextImpl(), new Intent());
 	}

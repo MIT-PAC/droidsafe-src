@@ -427,6 +427,7 @@ Object var2050B6E3550B605C703FF0CF43049C54_299126770 =         getDefaultValue(d
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.124 -0400", hash_original_method = "747BEFE9985C4AF4EE3D5630B62185EA", hash_generated_method = "52625AE21E0899BD90A3565112F86E50")
     public Class<?> getDeclaringClass() {
 Class<?> var55840ACAE88F5536515BB8E6ADD923C6_1894096704 =         declaringClass;
@@ -495,6 +496,7 @@ Class<?>[] var5C3F1AD275E23F393681FEA8A66E0F80_95340465 =         parameterTypes
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.125 -0400", hash_original_method = "952CC59854183D9751F85A9597A378CE", hash_generated_method = "8301BBBF10052441A735A0B37E30F76C")
     public Class<?> getReturnType() {
 Class<?> varDC9AC92D1699491F328099759E5C37AE_2007676233 =         returnType;

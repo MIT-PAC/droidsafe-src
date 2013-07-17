@@ -14,7 +14,7 @@ public class IllegalStateException extends RuntimeException {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.SPEC)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.044 -0400", hash_original_method = "F14466412D9BB118D44B7BD1FD4B4021", hash_generated_method = "A5F36BE7CB5D7DAB70401E4669633775")
     public  IllegalStateException(String detailMessage) {
         super(detailMessage);
@@ -23,7 +23,7 @@ public class IllegalStateException extends RuntimeException {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.SPEC)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.044 -0400", hash_original_method = "6F3B5205BA771B0DF92BD44831C586ED", hash_generated_method = "226EAA2C0EBA2E2BD0A446F19B6F5FD9")
     public  IllegalStateException(String message, Throwable cause) {
         super(message, cause);

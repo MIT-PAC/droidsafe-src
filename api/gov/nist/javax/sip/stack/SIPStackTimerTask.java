@@ -15,6 +15,7 @@ public abstract class SIPStackTimerTask extends TimerTask {
     }
 
 
+    @DSModeled(DSC.SAFE)
     protected abstract void runTask();
 
     

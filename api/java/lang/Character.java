@@ -1125,6 +1125,7 @@ String varE1C269B12AA3B951D8A9B8058A1CED16_936961933 =         String.valueOf(va
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.417 -0400", hash_original_method = "4C72D63DD7600BBEA68526CF4A3E7570", hash_generated_method = "E4FD41B188BEF0EE4143B1C95AD91D70")
         @Override
         public final boolean equals(Object object) {
@@ -1137,6 +1138,7 @@ String varE1C269B12AA3B951D8A9B8058A1CED16_936961933 =         String.valueOf(va
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.417 -0400", hash_original_method = "BBCDAD7BF06FB621822DBBAD11355700", hash_generated_method = "80460BB5B4BAF1B6A0B4961E514738A8")
         @Override
         public final int hashCode() {
@@ -1148,6 +1150,7 @@ String varE1C269B12AA3B951D8A9B8058A1CED16_936961933 =         String.valueOf(va
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.417 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "BA7419FA7B44CF05E0F627BFAB48392A")
         @Override
         public final String toString() {

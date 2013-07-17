@@ -15,6 +15,7 @@ public abstract class BaseTestRunner implements TestListener {
 
     boolean fLoading = true;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.387 -0400", hash_original_method = "7AE9B4E2779E68829E6E78655AC68035", hash_generated_method = "7AE9B4E2779E68829E6E78655AC68035")
     public BaseTestRunner ()
     {
@@ -102,12 +103,15 @@ public abstract class BaseTestRunner implements TestListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void testStarted(String testName);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void testEnded(String testName);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void testFailed(int status, Test test, Throwable t);
 
     
@@ -300,6 +304,7 @@ String varF57DF2C3C72C0BA8574176BD3A4AA127_1921868751 =         className;
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void runFailed(String message);
 
     

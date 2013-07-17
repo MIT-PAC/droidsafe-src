@@ -65,6 +65,7 @@ public final class CollationElementIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int primaryOrder(int order) {
         return CollationElementIteratorICU.primaryOrder(order);
     }
@@ -79,6 +80,7 @@ public final class CollationElementIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final short secondaryOrder(int order) {
         return (short) CollationElementIteratorICU.secondaryOrder(order);
     }
@@ -114,6 +116,7 @@ public final class CollationElementIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final short tertiaryOrder(int order) {
         return (short) CollationElementIteratorICU.tertiaryOrder(order);
     }

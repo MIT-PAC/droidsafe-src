@@ -272,6 +272,7 @@ TestResult varB1D52DB2FC7B844B35F46763F5119AF7_186386494 =         new TestResul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.350 -0400", hash_original_method = "88882B49F41F9B7FE520559A2C518CF5", hash_generated_method = "543AF49E01E3C2C86938D3E7E98AF350")
     public List<TestCase> getTestCases() {
 List<TestCase> var8F97DD99F42FF73EAB8CDB477DFEE3E9_811917267 =         mTestCases;

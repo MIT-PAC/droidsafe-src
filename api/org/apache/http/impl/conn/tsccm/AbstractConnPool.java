@@ -127,9 +127,11 @@ BasicPoolEntry var3A1E30D37A22B88BA6A543ACA5D0FAD4_750013007 =         requestPo
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract PoolEntryRequest requestPoolEntry(HttpRoute route, Object state);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void freeEntry(BasicPoolEntry entry, boolean reusable, long validDuration, TimeUnit timeUnit)
         ;
 
@@ -178,6 +180,7 @@ BasicPoolEntry var3A1E30D37A22B88BA6A543ACA5D0FAD4_750013007 =         requestPo
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void handleLostEntry(HttpRoute route)
         ;
 
@@ -235,6 +238,7 @@ BasicPoolEntry var3A1E30D37A22B88BA6A543ACA5D0FAD4_750013007 =         requestPo
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void deleteClosedConnections()
         ;
 

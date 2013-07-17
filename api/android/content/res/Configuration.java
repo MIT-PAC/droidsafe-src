@@ -78,6 +78,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
 
     public int seq;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.401 -0400", hash_original_method = "7E58BC7E066573DB3913F9DCCD9EE638", hash_generated_method = "91F3585416146E7055FAB87D152FFB0B")
     public  Configuration() {
         setToDefaults();
@@ -86,6 +87,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.401 -0400", hash_original_method = "152BBD78ACB87D16BE4EC07F107E0DF8", hash_generated_method = "A68F53CFC14610AF9FC07737002EDB35")
     public  Configuration(Configuration o) {
         addTaint(o.getTaint());
@@ -125,6 +127,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.407 -0400", hash_original_method = "0746F8F2DFB5C09A503AAF70E445D6DB", hash_generated_method = "42D96478ACD942C3B147D0DDD2F4399D")
     public void setTo(Configuration o) {
         fontScale = o.fontScale;
@@ -157,6 +160,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.409 -0400", hash_original_method = "D48CF32F0604807A2B9F35AE6E9C5375", hash_generated_method = "9BD5896FE2C21FFC76BEF1B6CAB10D14")
     public String toString() {
         StringBuilder sb = new StringBuilder(128);
@@ -441,6 +445,7 @@ String var2460B846747F8B22185AD8BE722266A5_577557764 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.425 -0400", hash_original_method = "B89305EEF1411ADF7E3555A325399492", hash_generated_method = "A850619E5CCADAC8B26D6E07C95C6070")
     public int updateFrom(Configuration delta) {
         int changed = 0;

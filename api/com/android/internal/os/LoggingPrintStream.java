@@ -46,6 +46,7 @@ abstract class LoggingPrintStream extends PrintStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void log(String line);
 
     

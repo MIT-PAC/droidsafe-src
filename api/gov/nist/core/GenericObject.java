@@ -907,6 +907,7 @@ String varF9E19AD6135C970F387F77C6F3DE4477_141646998 =         retval;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String encode();
 
     

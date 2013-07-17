@@ -4416,6 +4416,7 @@ for(int i = childCount - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void fillGap(boolean down);
 
     
@@ -4473,6 +4474,7 @@ for(int i = childCount - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract int findMotionRow(int y);
 
     
@@ -4535,6 +4537,7 @@ for(int i = childCount - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void setSelectionInt(int position);
 
     

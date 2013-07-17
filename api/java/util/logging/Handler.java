@@ -187,12 +187,15 @@ Object var8501EF1A6479596C53E60F4A91E85184_295018790 =         c.newInstance();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void close();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void flush();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void publish(LogRecord record);
 
     

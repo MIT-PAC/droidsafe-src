@@ -45,6 +45,7 @@ public class RectShape extends Shape {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.811 -0400", hash_original_method = "B472369E445B34AFDD84E5B389A9601D", hash_generated_method = "55A97005DF57FAE45C1D373FCC0BC040")
     protected final RectF rect() {
 RectF var23E085E00370717E44C5AC6A506C1823_902565364 =         mRect;

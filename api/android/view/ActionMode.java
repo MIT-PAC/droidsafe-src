@@ -37,39 +37,51 @@ Object varD6A25044F8E609F6CD67330C1523D33D_2083384432 =         mTag;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setTitle(CharSequence title);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setTitle(int resId);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setSubtitle(CharSequence subtitle);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setSubtitle(int resId);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setCustomView(View view);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void invalidate();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void finish();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Menu getMenu();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CharSequence getTitle();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CharSequence getSubtitle();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract View getCustomView();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract MenuInflater getMenuInflater();
 
     

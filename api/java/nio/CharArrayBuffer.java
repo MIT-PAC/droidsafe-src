@@ -102,6 +102,7 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1418860762 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.300 -0400", hash_original_method = "5B6C9F359344527666A57577F107BCAE", hash_generated_method = "A8294D6D2CF868B49C9B480B055F1F70")
     @Override
     public final boolean isDirect() {

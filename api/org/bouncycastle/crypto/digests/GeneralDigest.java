@@ -171,12 +171,15 @@ for(int i = 0;i < xBuf.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void processWord(byte[] in, int inOff);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void processLength(long bitLength);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void processBlock();
 
     

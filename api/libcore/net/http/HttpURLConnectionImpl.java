@@ -738,6 +738,7 @@ InetAddress varD46BBB19BBDDFD810185B2CBF9A3750A_1196579454 =         usingProxy(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.579 -0400", hash_original_method = "CA86BB3AB3ACF92C5C19618DD925F5A0", hash_generated_method = "DBB5516448E6FF2FDD55E8EF5EF15111")
     final int getDefaultPort() {
         int varAD9869ADBCCEEFF5A73F8163B0777153_614998496 = (defaultPort);
@@ -748,6 +749,7 @@ InetAddress varD46BBB19BBDDFD810185B2CBF9A3750A_1196579454 =         usingProxy(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.579 -0400", hash_original_method = "3D0FB6F793A38CF78094814B08E28C50", hash_generated_method = "12AD58F11AF844A0DC89253CE0F2E207")
     final int getFixedContentLength() {
         int var85C6846C0A594942A26E857E8E0FB74D_1107303806 = (fixedContentLength);
@@ -758,6 +760,7 @@ InetAddress varD46BBB19BBDDFD810185B2CBF9A3750A_1196579454 =         usingProxy(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.587 -0400", hash_original_method = "4A001CCB8DCF47A598AF69D3AEEFDD47", hash_generated_method = "A10C278E32C91CD47800975C03BF5C6A")
     final int getChunkLength() {
         int varCC64A8DA322DC52D44A247834F646DEC_547205105 = (chunkLength);
@@ -768,6 +771,7 @@ InetAddress varD46BBB19BBDDFD810185B2CBF9A3750A_1196579454 =         usingProxy(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.587 -0400", hash_original_method = "19AE87D83FEEE8E799F844F8A7A84495", hash_generated_method = "19E7C2DDA470635917C1EF1EA42650DA")
     final Proxy getProxy() {
 Proxy var60FC9F22F7E863EBFD33B2ADB8462743_1433572373 =         proxy;
@@ -778,6 +782,7 @@ Proxy var60FC9F22F7E863EBFD33B2ADB8462743_1433572373 =         proxy;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.587 -0400", hash_original_method = "AA3CF596E23C06E2ACCB3F9CB3C07696", hash_generated_method = "8F3413271570AEBF18F485ACB70ADDF9")
     final void setProxy(Proxy proxy) {
         this.proxy = proxy;

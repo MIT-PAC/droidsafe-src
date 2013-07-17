@@ -37,6 +37,7 @@ public abstract class Reader implements Readable, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void close() throws IOException;
 
     
@@ -99,6 +100,7 @@ public abstract class Reader implements Readable, Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int read(char[] buf, int offset, int count) throws IOException;
 
     

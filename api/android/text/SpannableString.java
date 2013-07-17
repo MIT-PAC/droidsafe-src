@@ -60,6 +60,7 @@ public class SpannableString extends SpannableStringInternal implements CharSequ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.166 -0400", hash_original_method = "2D77EB0B8B2B37960A9B77E6DDEED655", hash_generated_method = "CF8513136D86C3297E9B6E17F5D3220D")
     public final CharSequence subSequence(int start, int end) {
         addTaint(end);

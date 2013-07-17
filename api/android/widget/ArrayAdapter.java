@@ -69,6 +69,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.586 -0400", hash_original_method = "0DF55CD51396FFBE8E2D3620B337DDA2", hash_generated_method = "9F3552473E409CDC70C3F78CA54E2BCF")
     public  ArrayAdapter(Context context, int textViewResourceId, T[] objects) {
         addTaint(objects[0].getTaint());
@@ -92,6 +93,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.586 -0400", hash_original_method = "223AE4BB7D76AAEAE470FF2DB97AEEF6", hash_generated_method = "DD11C5A81EFE6DF4FD1647D1D1ACBC58")
     public  ArrayAdapter(Context context, int textViewResourceId, List<T> objects) {
         addTaint(objects.getTaint());
@@ -115,6 +117,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.587 -0400", hash_original_method = "576CB9C40229B2A1A68C443644828160", hash_generated_method = "B1EEEF55436439C5964563B3D4F378AB")
     public void add(T object) {
         addTaint(object.getTaint());
@@ -311,6 +314,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.591 -0400", hash_original_method = "4B6963AC4824E23107C3535DF32052A8", hash_generated_method = "B498C1B15F4E1C97F48F52763590B81C")
     @Override
     public void notifyDataSetChanged() {
@@ -331,6 +335,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.592 -0400", hash_original_method = "0AB52E86A6B570420A2DD21D48564743", hash_generated_method = "2E9BCD700482CBFCE630F7DA8D860DD7")
     private void init(Context context, int resource, int textViewResourceId, List<T> objects) {
         mContext = context;

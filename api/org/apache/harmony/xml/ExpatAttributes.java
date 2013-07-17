@@ -15,12 +15,15 @@ abstract class ExpatAttributes implements Attributes {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract int getLength();
 
     
+    @DSModeled(DSC.SAFE)
     abstract int getParserPointer();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getPointer();
 
     

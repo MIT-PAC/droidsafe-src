@@ -117,6 +117,7 @@ Attributes varBEDFED3E3A699A1253CAF5B0DC778D41_1508800905 =         getEntries()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.042 -0400", hash_original_method = "AD5E8B028D2F33E921C50CB4C1BDCE39", hash_generated_method = "630EECF0E1693237057417E25EDA357B")
     public Map<String, Attributes> getEntries() {
 Map<String, Attributes> var0AAD0D341A96E603A0F87B9A9B535A71_23513659 =         entries;

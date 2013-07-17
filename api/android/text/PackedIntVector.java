@@ -316,6 +316,7 @@ for(int i = 0;i < columns;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.075 -0400", hash_original_method = "6D74A2161397D319519D26FF483664C7", hash_generated_method = "3AB19E5EF5F4BDA3FC54AB9BB6B39235")
     private final void moveValueGapTo(int column, int where) {
         addTaint(where);
@@ -362,6 +363,7 @@ for(int i = where;i < valuegap[column];i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.079 -0400", hash_original_method = "6D396DEEC3DAD541F2D5DA5D46CC7D37", hash_generated_method = "A2F11BF6138504881F84DB80D0E37A77")
     private final void moveRowGapTo(int where) {
         if(where == mRowGapStart)        

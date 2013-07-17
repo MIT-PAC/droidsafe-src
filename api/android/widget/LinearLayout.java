@@ -94,7 +94,7 @@ public class LinearLayout extends ViewGroup {
 
     private int mDividerPadding;
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.SPEC)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.513 -0400", hash_original_method = "FE94B0C3331DC48DD922B45C9927A2E5", hash_generated_method = "5599C5BD2C841CC6FACAC31E386AB809")
     public  LinearLayout(Context context) {
         super(context);
@@ -149,6 +149,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.515 -0400", hash_original_method = "DE827128F1412AED640E145E58E9E69C", hash_generated_method = "7CBA722ED125D93A9D7BB408D7EDB08D")
     public void setShowDividers(int showDividers) {
         if(showDividers != mShowDividers)        
@@ -176,7 +177,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.SPEC)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.516 -0400", hash_original_method = "81C750B99B14EF38CA21D36808CD7086", hash_generated_method = "7B8FE8557E6FCC34D185D466DC80C841")
     public int getShowDividers() {
         int var570DF19833C5FFBC7225A5E90145E2AD_697468340 = (mShowDividers);
@@ -187,6 +188,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.517 -0400", hash_original_method = "7357A0D71E9A27E2C8DA29FA77A144AF", hash_generated_method = "82782E560D2870C7945ABF58D1F3CD80")
     public void setDividerDrawable(Drawable divider) {
         if(divider == mDivider)        

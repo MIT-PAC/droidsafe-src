@@ -187,11 +187,13 @@ public final class System {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getProperty(String propertyName) {
         return getProperty(propertyName, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getProperty(String prop, String defaultValue) {
         if (prop.isEmpty()) {
             throw new IllegalArgumentException();

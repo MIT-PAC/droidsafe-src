@@ -21,44 +21,55 @@ public abstract class CipherSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineSetMode(String mode)
             throws NoSuchAlgorithmException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineSetPadding(String padding)
             throws NoSuchPaddingException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract int engineGetBlockSize();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract int engineGetOutputSize(int inputLen);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract byte[] engineGetIV();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract AlgorithmParameters engineGetParameters();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(int opmode, Key key, SecureRandom random)
             throws InvalidKeyException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(int opmode, Key key,
             AlgorithmParameterSpec params, SecureRandom random)
             throws InvalidKeyException, InvalidAlgorithmParameterException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(int opmode, Key key,
             AlgorithmParameters params, SecureRandom random)
             throws InvalidKeyException, InvalidAlgorithmParameterException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract byte[] engineUpdate(byte[] input, int inputOffset,
             int inputLen);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract int engineUpdate(byte[] input, int inputOffset,
             int inputLen, byte[] output, int outputOffset)
             throws ShortBufferException;
@@ -133,10 +144,12 @@ public abstract class CipherSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract byte[] engineDoFinal(byte[] input, int inputOffset,
             int inputLen) throws IllegalBlockSizeException, BadPaddingException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract int engineDoFinal(byte[] input, int inputOffset,
             int inputLen, byte[] output, int outputOffset)
             throws ShortBufferException, IllegalBlockSizeException,

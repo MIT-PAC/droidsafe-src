@@ -37,6 +37,7 @@ public abstract class EncodedKeySpec implements KeySpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getFormat();
 
     

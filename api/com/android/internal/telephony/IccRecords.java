@@ -73,9 +73,11 @@ public abstract class IccRecords extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void dispose();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onRadioOffOrNotAvailable();
 
     
@@ -196,6 +198,7 @@ String var45568158EF0C540A1756B7B70BA9D156_1447635608 =         spn;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setVoiceMailNumber(String alphaTag, String voiceNumber,
             Message onComplete);
 
@@ -211,6 +214,7 @@ String var1EB462B75D8B935982B4AE1475F7B8DA_552556596 =         voiceMailTag;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setVoiceMessageWaiting(int line, int countWaiting);
 
     
@@ -236,6 +240,7 @@ String var1EB462B75D8B935982B4AE1475F7B8DA_552556596 =         voiceMailTag;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void onRefresh(boolean fileChanged, int[] fileList);
 
     
@@ -301,12 +306,15 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onRecordLoaded();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onAllRecordsLoaded();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getDisplayRule(String plmn);
 
     
@@ -363,9 +371,11 @@ String var540C13E9E156B687226421B24F2DF178_1369680717 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void log(String s);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void loge(String s);
 
     

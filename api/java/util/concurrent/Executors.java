@@ -137,6 +137,7 @@ public class Executors {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Callable<Object> callable(Runnable task) {
         if (task == null)
             throw new NullPointerException();
@@ -160,6 +161,7 @@ public class Executors {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> Callable<T> privilegedCallable(Callable<T> callable) {
         if (callable == null)
             throw new NullPointerException();
@@ -167,6 +169,7 @@ public class Executors {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> Callable<T> privilegedCallableUsingCurrentClassLoader(Callable<T> callable) {
         if (callable == null)
             throw new NullPointerException();

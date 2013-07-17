@@ -660,6 +660,7 @@ Drawable var70B51CA0E2F73DDDAEA1517FCDBBB53D_1592718143 =             new ShapeD
     
     public static abstract class ShaderFactory {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.650 -0400", hash_original_method = "3BAAD89D982163CC2C371B74D92AB9C1", hash_generated_method = "3BAAD89D982163CC2C371B74D92AB9C1")
         public ShaderFactory ()
         {
@@ -667,6 +668,7 @@ Drawable var70B51CA0E2F73DDDAEA1517FCDBBB53D_1592718143 =             new ShapeD
         }
 
 
+        @DSModeled(DSC.SAFE)
         public abstract Shader resize(int width, int height);
 
         

@@ -37,6 +37,7 @@ public class SecretKeyFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.314 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "B33FFEC4B0B12187CE31235F832326D0")
     public final String getAlgorithm() {
 String var44A46B4003FC81ACB0223385BA1FA818_1210439744 =         algorithm;
@@ -47,6 +48,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_1210439744 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.314 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "BF822E2B024E7C06BA902685EC33B8EF")
     public final Provider getProvider() {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_356439642 =         provider;

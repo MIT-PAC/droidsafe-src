@@ -93,25 +93,30 @@ for(int i=0;i<array.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte[] getEncoded()
             throws CertificateEncodingException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void verify(PublicKey key)
             throws CertificateException, NoSuchAlgorithmException,
                    InvalidKeyException, NoSuchProviderException,
                    SignatureException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void verify(PublicKey key, String sigProvider)
             throws CertificateException, NoSuchAlgorithmException,
                    InvalidKeyException, NoSuchProviderException,
                    SignatureException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String toString();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract PublicKey getPublicKey();
 
     

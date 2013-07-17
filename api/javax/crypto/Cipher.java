@@ -198,6 +198,7 @@ public class Cipher {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.992 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "96792F8E1B67739CF403DFCF1ADB46B7")
     public final Provider getProvider() {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_177358375 =         provider;
@@ -208,6 +209,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_177358375 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.992 -0400", hash_original_method = "8DF6BCF87B142C85CC5BB8E6263E3718", hash_generated_method = "D7AB71403B9C23A122B56659FBC90817")
     public final String getAlgorithm() {
 String var6472AF3EC4810156446ED9616CC1EE8E_1198396030 =         transformation;
@@ -268,6 +270,7 @@ AlgorithmParameters varDDF010DE7E5B16986942A6D470695726_1572153909 =         spi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.993 -0400", hash_original_method = "8BD6E3BF151C3D35A58DA717088B655C", hash_generated_method = "FEF079763938CCDFDB34B983A966A20A")
     public final ExemptionMechanism getExemptionMechanism() {
 ExemptionMechanism var540C13E9E156B687226421B24F2DF178_540801893 =         null;
@@ -465,6 +468,7 @@ for(String oid : ce)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.995 -0400", hash_original_method = "D2539732F50CEA46903EFE3EE2FFBB7D", hash_generated_method = "13A8727D3173075C0011E33FDE6EE684")
     public final byte[] update(byte[] input) {
         addTaint(input[0]);

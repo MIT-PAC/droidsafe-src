@@ -55,6 +55,7 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.261 -0400", hash_original_method = "7344C3769A78C71213763E627C382A16", hash_generated_method = "85C2D518D94CD35D397F5476986E4025")
     public final byte[] array() {
         byte[] var68B89E48382A0AA51B25AC59599E2EB0_633114288 = (protectedArray());
@@ -65,6 +66,7 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.262 -0400", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "E7FD797B9044DEDD8225037A6B1E7D43")
     public final int arrayOffset() {
         int var0B794CE56A38A9F3BFDD2D53E83BB109_1726503359 = (protectedArrayOffset());
@@ -75,27 +77,35 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CharBuffer asCharBuffer();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract DoubleBuffer asDoubleBuffer();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FloatBuffer asFloatBuffer();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract IntBuffer asIntBuffer();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract LongBuffer asLongBuffer();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteBuffer asReadOnlyBuffer();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ShortBuffer asShortBuffer();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteBuffer compact();
 
     
@@ -147,6 +157,7 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteBuffer duplicate();
 
     
@@ -197,6 +208,7 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte get();
 
     
@@ -244,45 +256,59 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1829228306 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte get(int index);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract char getChar();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract char getChar(int index);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract double getDouble();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract double getDouble(int index);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract float getFloat();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract float getFloat(int index);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getInt();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getInt(int index);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long getLong();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long getLong(int index);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract short getShort();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract short getShort(int index);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.273 -0400", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "B2FF06B6E6C9D9541DC1A623E8D787B2")
     public final boolean hasArray() {
         boolean var55B7C03E3C1EBABD22606AD17EE923C3_662991332 = (protectedHasArray());
@@ -317,9 +343,11 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1829228306 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isDirect();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.274 -0400", hash_original_method = "65B1A3EBEA253AF86057FAE15F6D4DB5", hash_generated_method = "57A7496EA23AF55A274CF296CC88D7AC")
     public final ByteOrder order() {
 ByteOrder var23C56E10BB5D9B298C705EBA6A502E06_1381362824 =         order;
@@ -359,18 +387,23 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_524078327 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract byte[] protectedArray();
 
     
+    @DSModeled(DSC.SAFE)
     abstract int protectedArrayOffset();
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean protectedHasArray();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteBuffer put(byte b);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.276 -0400", hash_original_method = "D20A20C1C5EFB26E81C8757F39019CA4", hash_generated_method = "837F97DD7C1D1249BAE0EAB536C48B7F")
     public final ByteBuffer put(byte[] src) {
         addTaint(src[0]);
@@ -455,45 +488,59 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_512558538 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteBuffer put(int index, byte b);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteBuffer putChar(char value);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteBuffer putChar(int index, char value);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteBuffer putDouble(double value);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteBuffer putDouble(int index, double value);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteBuffer putFloat(float value);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteBuffer putFloat(int index, float value);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteBuffer putInt(int value);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteBuffer putInt(int index, int value);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteBuffer putLong(long value);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteBuffer putLong(int index, long value);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteBuffer putShort(short value);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteBuffer putShort(int index, short value);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteBuffer slice();
 
     

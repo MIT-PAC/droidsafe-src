@@ -45,6 +45,7 @@ public final class SignerInfo {
 
     private List<?> unauthenticatedAttributes;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.113 -0400", hash_original_method = "27DB92A863E4BE605C04757E557D0CAB", hash_generated_method = "FDD2499C988C6171942A52245ABD14B8")
     private  SignerInfo(int version,
             Object[] issuerAndSerialNumber,

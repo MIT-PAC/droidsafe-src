@@ -1194,6 +1194,7 @@ RejectedExecutionHandler var3E73215C2EA435E7F052AAB7C8597D27_979701696 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.078 -0400", hash_original_method = "BD8FCC0E1F95E7B090761BC333422796", hash_generated_method = "1105907D8E22818DA9D8E3426F0AFE13")
     public BlockingQueue<Runnable> getQueue() {
 BlockingQueue<Runnable> var29887FCBEA17534A0106FF38266D9590_638554153 =         workQueue;

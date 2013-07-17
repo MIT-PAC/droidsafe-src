@@ -29,10 +29,12 @@ public abstract class CookieHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public abstract Map<String, List<String>> get(URI uri,
             Map<String, List<String>> requestHeaders) throws IOException;
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void put(URI uri, Map<String, List<String>> responseHeaders)
             throws IOException;
 

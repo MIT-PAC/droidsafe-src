@@ -82,6 +82,7 @@ public class CertificateFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.731 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "76922A5682C8EEDDEEF72AB17137D055")
     public final Provider getProvider() {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_317946582 =         provider;
@@ -92,6 +93,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_317946582 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.731 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "9BA72280F80A8069227505BDA3037714")
     public final String getType() {
 String varC5B9F25B4EEAD3E8E2C33F9429204397_1909359034 =         type;

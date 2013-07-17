@@ -52,6 +52,7 @@ public abstract class InputStream extends Object implements Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int read() throws IOException;
 
     

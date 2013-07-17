@@ -122,6 +122,7 @@ IBinder var540C13E9E156B687226421B24F2DF178_1575286293 =         null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     protected abstract void onHandleIntent(Intent intent);
 
     

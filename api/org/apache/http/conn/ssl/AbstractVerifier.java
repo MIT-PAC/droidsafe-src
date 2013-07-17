@@ -32,6 +32,7 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.042 -0400", hash_original_method = "A023267D72420C341ECC242060C387E3", hash_generated_method = "C7607A7B95325859FF8AC721406D9048")
     public final void verify(String host, SSLSocket ssl) throws IOException {
         addTaint(ssl.getTaint());

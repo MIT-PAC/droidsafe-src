@@ -980,6 +980,7 @@ ResolveInfo var53CD1929C11A1EFD4D6D1E47C7C7A408_491368764 =             mPM.reso
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.510 -0400", hash_original_method = "613ED89A001624360A0EB6B3BD081707", hash_generated_method = "A298F7957AB6CB8A7341CC27BBC3B688")
     @Override
     public List<ResolveInfo> queryIntentActivities(Intent intent,
@@ -1063,6 +1064,7 @@ List<ResolveInfo> var98A7E75C8E2130DCDDB36B3CBCB21C1D_1253778286 =             m
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.514 -0400", hash_original_method = "2B65A8BDA3BE53DC3296D1F5CA76CDFC", hash_generated_method = "D98C226CD8F20B7383C3E9591374F8E6")
     @Override
     public List<ResolveInfo> queryBroadcastReceivers(Intent intent, int flags) {
@@ -1128,6 +1130,7 @@ ResolveInfo var8DF144ADA7D834C2B6445C66A11819F1_2124453721 =             mPM.res
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.516 -0400", hash_original_method = "EEB4EB852740846BAD76CCDE5FC0C613", hash_generated_method = "17F454501B84748CE6E38EF9F120463B")
     @Override
     public List<ResolveInfo> queryIntentServices(Intent intent, int flags) {

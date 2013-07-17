@@ -294,6 +294,7 @@ Annotation[][] varAD240742A5BFADFDA08547188EAD9960_233613996 =         parameter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.944 -0400", hash_original_method = "CE10C7360422171346CFCFE4390D0CD4", hash_generated_method = "EB064B6FFF79EFE1FDCB563168406E22")
     public Class<T> getDeclaringClass() {
 Class<T> var55840ACAE88F5536515BB8E6ADD923C6_998531833 =         declaringClass;

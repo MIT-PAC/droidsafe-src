@@ -94,6 +94,7 @@ public abstract class AuthSchemeBase implements AuthScheme {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void parseChallenge(
             CharArrayBuffer buffer, int pos, int len) throws MalformedChallengeException;
 

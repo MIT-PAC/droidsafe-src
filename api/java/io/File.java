@@ -23,6 +23,7 @@ public class File implements Serializable, Comparable<File> {
 
     private String path;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.817 -0400", hash_original_method = "A8210D76C41C6A4AAFC6BE2371A42886", hash_generated_method = "B8606CB2576065F12192D6BF4E3AC213")
     public  File(File dir, String name) {
         this(dir == null ? null : dir.getPath(), name);
@@ -32,6 +33,7 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.817 -0400", hash_original_method = "2175D562A2B588CC53D616403013683C", hash_generated_method = "F0CF2469DAAFA8B053A90565BD5CE965")
     public  File(String path) {
         this.path = fixSlashes(path);
@@ -40,6 +42,7 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.818 -0400", hash_original_method = "133C96EC98AEE8D59630F091A182C267", hash_generated_method = "C9D8EA190E6F5B02442A96B63D4BAB8F")
     public  File(String dirPath, String name) {
         if(name == null)        

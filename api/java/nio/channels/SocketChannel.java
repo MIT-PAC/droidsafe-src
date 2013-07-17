@@ -35,6 +35,7 @@ public abstract class SocketChannel extends AbstractSelectableChannel implements
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.302 -0400", hash_original_method = "329D33F04038C44D432D32526ECC7D14", hash_generated_method = "F254124F9CF8B51160723AB6D501F5C2")
     @Override
     public final int validOps() {
@@ -46,21 +47,27 @@ public abstract class SocketChannel extends AbstractSelectableChannel implements
     }
 
     
+    @DSModeled(DSC.SPEC)
     public abstract Socket socket();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isConnected();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isConnectionPending();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean connect(SocketAddress address) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean finishConnect() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int read(ByteBuffer target) throws IOException;
 
     
@@ -78,6 +85,7 @@ public abstract class SocketChannel extends AbstractSelectableChannel implements
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int write(ByteBuffer source) throws IOException;
 
     

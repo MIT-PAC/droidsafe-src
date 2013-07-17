@@ -40,6 +40,7 @@ public class ColorMatrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.125 -0400", hash_original_method = "C51050FB528280ED78B19148B7D68B9E", hash_generated_method = "14388CEC64EDF5FBF4BD4F2F61506FB5")
     public final float[] getArray() {
         float[] var982501881A3C318D6605E92D3AB0ADBA_508493859 = (mArray);

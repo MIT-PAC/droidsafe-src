@@ -15,6 +15,7 @@ import android.view.View;
 
 public abstract class ReplacementTransformationMethod implements TransformationMethod {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.683 -0400", hash_original_method = "1B7B28F98DAC94187572CC248AC52BB7", hash_generated_method = "1B7B28F98DAC94187572CC248AC52BB7")
     public ReplacementTransformationMethod ()
     {
@@ -22,9 +23,11 @@ public abstract class ReplacementTransformationMethod implements TransformationM
     }
 
 
+    @DSModeled(DSC.SAFE)
     protected abstract char[] getOriginal();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract char[] getReplacement();
 
     
@@ -273,6 +276,7 @@ CharSequence varE28690A64C217C05112E541C85F69946_862224860 =             new Spa
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.694 -0400", hash_original_method = "E8AB479016A2E00AFF48AA43F345FA2A", hash_generated_method = "758D85525E0EBDD586EED24B4A89DE1C")
         public <T> T[] getSpans(int start, int end, Class<T> type) {
             addTaint(type.getTaint());

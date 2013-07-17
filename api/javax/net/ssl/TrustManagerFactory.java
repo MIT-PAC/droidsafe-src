@@ -75,6 +75,7 @@ public class TrustManagerFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.837 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "A941BC0E072CF4E9AE7EBE1274539219")
     public final String getAlgorithm() {
 String var44A46B4003FC81ACB0223385BA1FA818_799261858 =         algorithm;
@@ -85,6 +86,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_799261858 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.837 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "28911C18498CFE04435ED980B4CF4785")
     public final Provider getProvider() {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1232121125 =         provider;

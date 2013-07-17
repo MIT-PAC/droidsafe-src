@@ -17,6 +17,7 @@ final class AuthenticatedAttributes {
 
     private List<AttributeTypeAndValue> authenticatedAttributes;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.042 -0400", hash_original_method = "56322F0DE2F5B85A8944FA9A9F9F5ADE", hash_generated_method = "160A13FCA6726717A1B9C3D9A09862BE")
     private  AuthenticatedAttributes(byte[] encoding,
             List<AttributeTypeAndValue> authenticatedAttributes) {

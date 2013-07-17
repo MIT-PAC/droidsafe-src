@@ -146,6 +146,7 @@ Manifest varD6A473F34A9B589697EE5BB39DA55A84_413545800 =         (Manifest)getJa
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract JarFile getJarFile() throws java.io.IOException;
 
     

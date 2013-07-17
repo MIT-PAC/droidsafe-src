@@ -44,6 +44,7 @@ public final class TBSCertList {
 
     private byte[] encoding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.891 -0400", hash_original_method = "31062813EF8734E09BA3D189CC3AAF0B", hash_generated_method = "A4ED463E22612FB239D52B5DA01F0A61")
     private  TBSCertList(int version, AlgorithmIdentifier signature,
             Name issuer, Date thisUpdate, Date nextUpdate,

@@ -130,10 +130,12 @@ public class CamcorderProfile {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final void native_init() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final CamcorderProfile native_get_camcorder_profile(
             int cameraId, int quality) {
     	CamcorderProfile cp = new CamcorderProfile(DSUtils.UNKNOWN_INT, DSUtils.UNKNOWN_INT, DSUtils.UNKNOWN_INT,
@@ -145,6 +147,7 @@ public class CamcorderProfile {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final boolean native_has_camcorder_profile(
             int cameraId, int quality) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1356549571 = DSUtils.UNKNOWN_BOOLEAN;

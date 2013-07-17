@@ -18,6 +18,7 @@ public abstract class CRL {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.590 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "2C8C8E7F8DE017B63C46726F4267CD7D")
     public final String getType() {
 String varC5B9F25B4EEAD3E8E2C33F9429204397_1161594478 =         type;
@@ -28,9 +29,11 @@ String varC5B9F25B4EEAD3E8E2C33F9429204397_1161594478 =         type;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isRevoked(Certificate cert);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String toString();
 
     

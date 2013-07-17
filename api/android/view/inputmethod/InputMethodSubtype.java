@@ -239,6 +239,7 @@ CharSequence varF1554E4544B9FE124AB662A8FBD78003_1680960415 =             locale
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.824 -0400", hash_original_method = "2837AE7076837B91930C208632EE903B", hash_generated_method = "F0DA07CA3B712F6D38EE0DC0190F6B6E")
     private HashMap<String, String> getExtraValueHashMap() {
         if(mExtraValueHashMapCache == null)        

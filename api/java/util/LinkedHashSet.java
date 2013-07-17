@@ -35,6 +35,7 @@ public class LinkedHashSet<E> extends HashSet<E> implements Set<E>, Cloneable, S
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.761 -0400", hash_original_method = "04F711D7424A0EA0A6EA304747ABA554", hash_generated_method = "8B59B2B9DCF36FC27AA99B0F9BADC9B8")
     public  LinkedHashSet(Collection<? extends E> collection) {
         super(new LinkedHashMap<E, HashSet<E>>(collection.size() < 6 ? 11
@@ -51,6 +52,7 @@ for(E e : collection)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.762 -0400", hash_original_method = "C32DAC3A2A4103476079105397490F9A", hash_generated_method = "67FB52CFF4A7CA27DA5B3100F8C4A76A")
     @Override
      HashMap<E, HashSet<E>> createBackingMap(int capacity, float loadFactor) {

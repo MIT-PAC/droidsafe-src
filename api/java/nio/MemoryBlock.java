@@ -361,6 +361,7 @@ class MemoryBlock {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.405 -0400", hash_original_method = "11B5DC04BCE6D59B1BB47A0D96ED6DD0", hash_generated_method = "98BBDA40D1F97FBCDFB4193C74523044")
     public final int toInt() {
         int var884D9804999FC47A3C2694E49AD2536A_457475786 = (address);
@@ -381,6 +382,7 @@ String var9B6496D1EFD2B56F2C6FB54568E0E325_1431854467 =         getClass().getNa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.406 -0400", hash_original_method = "25EF411BA02CBCB0F772C5374653B5E7", hash_generated_method = "892BD3F78A57DBD64CE0CD681796B993")
     public final long getSize() {
         long varF7BD60B75B29D79B660A2859395C1A24_553852771 = (size);

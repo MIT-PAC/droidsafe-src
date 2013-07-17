@@ -490,12 +490,15 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void startUpdate();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void addRange(int startId, int endId, boolean selected);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract boolean finishUpdate();
 
     

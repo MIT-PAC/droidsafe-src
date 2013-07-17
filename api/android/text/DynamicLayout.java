@@ -421,6 +421,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.538 -0400", hash_original_method = "632C7F2120605B5CA7A1A3052A452575", hash_generated_method = "9C3D85BC31E00CCE593C5EB9C48B5366")
     @Override
     public final Directions getLineDirections(int line) {

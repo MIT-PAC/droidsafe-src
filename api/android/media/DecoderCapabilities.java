@@ -35,25 +35,30 @@ public class DecoderCapabilities {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final void native_init() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int native_get_num_video_decoders() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int native_get_video_decoder_type(int index) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int native_get_num_audio_decoders() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int native_get_audio_decoder_type(int index) {
         return DSUtils.UNKNOWN_INT;
     }

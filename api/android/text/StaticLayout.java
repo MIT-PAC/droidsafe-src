@@ -583,6 +583,7 @@ for(int j = spanStart;j < spanEnd;j++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final boolean isIdeographic(char c, boolean includeNonStarters) {
         if (c >= '\u2E80' && c <= '\u2FFF') {
             return true; 
@@ -1090,6 +1091,7 @@ for(left = 0;left < right;left++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.710 -0400", hash_original_method = "E4C2D852DF30293005E76B99E82745CD", hash_generated_method = "34F91CDA86BA91A2DB21445DD0EED3BE")
     @Override
     public final Directions getLineDirections(int line) {

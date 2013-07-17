@@ -19,6 +19,7 @@ public abstract class CollationKey implements Comparable<CollationKey> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int compareTo(CollationKey value);
 
     
@@ -33,6 +34,7 @@ String var87D92E4D22D3928BDE6A72969186AF86_1173455990 =         source;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte[] toByteArray();
 
     

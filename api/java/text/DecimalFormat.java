@@ -320,6 +320,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_434701930 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.096 -0400", hash_original_method = "9F0187C663B029586FEAEE5997EF0E8A", hash_generated_method = "18E9B231B9B9C59193DDAD1DCE4D8663")
     @Override
     public final StringBuffer format(Object number, StringBuffer buffer, FieldPosition position) {

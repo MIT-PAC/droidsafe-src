@@ -102,6 +102,7 @@ DoubleBuffer var72A74007B2BE62B849F475C7BDA4658B_185333783 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.558 -0400", hash_original_method = "5B6C9F359344527666A57577F107BCAE", hash_generated_method = "12555E4005A9FDE757D64E52D4D715CB")
     @Override
     public final boolean isDirect() {

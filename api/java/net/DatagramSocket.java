@@ -852,6 +852,7 @@ DatagramChannel var540C13E9E156B687226421B24F2DF178_1506503413 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.423 -0400", hash_original_method = "90C19CEBA6BBC20B430C1F399D6443A6", hash_generated_method = "3EF8543353E5D764A4E6932613DE0250")
     public final FileDescriptor getFileDescriptor$() {
 FileDescriptor var90D0CD7641DADE7AC7C643EE2F281FD7_1630363246 =         impl.fd;

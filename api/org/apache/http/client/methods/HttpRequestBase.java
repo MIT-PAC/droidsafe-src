@@ -36,6 +36,7 @@ public abstract class HttpRequestBase extends AbstractHttpMessage implements Htt
 
     private ConnectionReleaseTrigger releaseTrigger;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.439 -0400", hash_original_method = "F072003D9D59EEA9F49CAFB14589B2C0", hash_generated_method = "CB3BE9D25173B20027CFD7818BE8A532")
     public  HttpRequestBase() {
         super();
@@ -45,6 +46,7 @@ public abstract class HttpRequestBase extends AbstractHttpMessage implements Htt
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getMethod();
 
     

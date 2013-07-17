@@ -27,6 +27,7 @@ public abstract class CursorEntityIterator implements EntityIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Entity getEntityAndIncrementCursor(Cursor cursor) throws RemoteException;
 
     

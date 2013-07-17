@@ -16,25 +16,32 @@ public abstract class SSLContextSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(KeyManager[] km, TrustManager[] tm, SecureRandom sr)
             throws KeyManagementException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SSLSocketFactory engineGetSocketFactory();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SSLServerSocketFactory engineGetServerSocketFactory();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SSLEngine engineCreateSSLEngine(String host, int port);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SSLEngine engineCreateSSLEngine();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SSLSessionContext engineGetServerSessionContext();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SSLSessionContext engineGetClientSessionContext();
 
     

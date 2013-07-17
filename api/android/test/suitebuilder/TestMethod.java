@@ -96,6 +96,7 @@ T var540C13E9E156B687226421B24F2DF178_876805713 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.223 -0400", hash_original_method = "560FD95528D8BB515E717AAB73D6F7F9", hash_generated_method = "FAE032F1B9F727BE6E398E8B90B76680")
     @SuppressWarnings("unchecked")
     public Class<? extends TestCase> getEnclosingClass() {

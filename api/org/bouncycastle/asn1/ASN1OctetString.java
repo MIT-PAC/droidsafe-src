@@ -164,6 +164,7 @@ DERObject var637323B1C4EE7CAF17B2CD40E14254B5_1149423658 =         this.getDEROb
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void encode(DEROutputStream out)
         throws IOException;
 

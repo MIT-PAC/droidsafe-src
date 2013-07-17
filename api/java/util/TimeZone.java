@@ -201,10 +201,12 @@ String varA5429A949488C23EB72A92C2F2C63667_1345483823 =         ID;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getOffset(int era, int year, int month, int day,
             int dayOfWeek, int timeOfDayMillis);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getRawOffset();
 
     
@@ -301,6 +303,7 @@ String varA5429A949488C23EB72A92C2F2C63667_1345483823 =         ID;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean inDaylightTime(Date time);
 
     
@@ -338,9 +341,11 @@ String varA5429A949488C23EB72A92C2F2C63667_1345483823 =         ID;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setRawOffset(int offsetMillis);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean useDaylightTime();
 
     

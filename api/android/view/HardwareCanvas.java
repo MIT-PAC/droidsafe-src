@@ -43,18 +43,23 @@ public abstract class HardwareCanvas extends Canvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void onPreDraw(Rect dirty);
 
     
+    @DSModeled(DSC.SAFE)
     abstract void onPostDraw();
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean drawDisplayList(DisplayList displayList, int width, int height, Rect dirty);
 
     
+    @DSModeled(DSC.SAFE)
     abstract void outputDisplayList(DisplayList displayList);
 
     
+    @DSModeled(DSC.SAFE)
     abstract void drawHardwareLayer(HardwareLayer layer, float x, float y, Paint paint);
 
     

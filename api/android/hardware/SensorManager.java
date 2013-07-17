@@ -223,6 +223,7 @@ List<Sensor> varED12C351C2E8CA4F85F097DDC7E77B4D_1965970 =         list;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.624 -0400", hash_original_method = "051BFE8F8271F52ABA0B8E99C6E74461", hash_generated_method = "0942E3F3AB92114B1CE1B6F9FCF160F7")
     public Sensor getDefaultSensor(int type) {
         addTaint(type);
@@ -443,6 +444,7 @@ for(ListenerDelegate i : sListeners)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.626 -0400", hash_original_method = "C9A0C02866BC64B5017A48A301526982", hash_generated_method = "1502D0CEFC5B388F8606A11069993F75")
     public void unregisterListener(SensorEventListener listener) {
         addTaint(listener.getTaint());
@@ -452,6 +454,7 @@ for(ListenerDelegate i : sListeners)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.626 -0400", hash_original_method = "EEA9FC3069A1CEC2680F553E722797E3", hash_generated_method = "1F4EB0066DD477B81CBBF043285551EA")
     public boolean registerListener(SensorEventListener listener, Sensor sensor, int rate) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -498,6 +501,7 @@ for(ListenerDelegate i : sListeners)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.627 -0400", hash_original_method = "4F96C2E0F6181D20ADA1404B28BE0C37", hash_generated_method = "7E5F8C192E4F26905D634B2C4239A35E")
     private boolean disableSensorLocked(Sensor sensor) {
         addTaint(sensor.getTaint());
@@ -658,6 +662,7 @@ for(int i=0;i<size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.628 -0400", hash_original_method = "63ADCF337C7E30C1A2DEC34D1892CFB3", hash_generated_method = "68342696E256FFB630E591DD91963849")
     private void unregisterListener(Object listener) {
         addTaint(listener.getTaint());
@@ -1393,6 +1398,7 @@ Object varFAD396F42DA56E191298301CDF4D94E9_785108404 =             mSensorEventL
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.643 -0400", hash_original_method = "DA37BCA933FDDA4900146E3A50CD9005", hash_generated_method = "49A6A722942C82C938EA87E6A8B6420C")
          List<Sensor> getSensors() {
 List<Sensor> var36B0792504C876866982C584D92C4023_983730792 =             mSensorList;

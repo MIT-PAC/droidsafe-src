@@ -18,9 +18,11 @@ public abstract class CacheResponse {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract InputStream getBody() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Map<String, List<String>> getHeaders() throws IOException;
 
     

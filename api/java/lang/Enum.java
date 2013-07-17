@@ -29,6 +29,7 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.883 -0400", hash_original_method = "B829A2DCF2B6B038F9421827E4B40BDF", hash_generated_method = "8A30242CE8D0CB02E57E58DCDA24F567")
     public final String name() {
 String varB017984728AC60AD1F0BF8734F33F15C_757045605 =         name;
@@ -39,6 +40,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_757045605 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.883 -0400", hash_original_method = "F85866CCC5D845B1D53CAF0C5BA97CF5", hash_generated_method = "EF8D0A297BAABEB927165E73292CBAB7")
     public final int ordinal() {
         int var281858037F7DCF7ED49271BB92C60526_998066655 = (ordinal);
@@ -61,6 +63,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_260720592 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.884 -0400", hash_original_method = "75011B979FEDB2DAAF1F1F1C2C24B4BF", hash_generated_method = "B583E0ADA66D824780621E405990FBFE")
     @Override
     public final boolean equals(Object other) {
@@ -73,6 +76,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_260720592 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.884 -0400", hash_original_method = "EA441E584394EE19D2A56603F808DF7D", hash_generated_method = "B06EC22335759DBCCCD8FE540B2969CD")
     @Override
     public final int hashCode() {
@@ -84,6 +88,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_260720592 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.884 -0400", hash_original_method = "E819DB208756D0A4B5DFB72B3A772B65", hash_generated_method = "9B119528F2A1B8082DAB33EF18F80266")
     @Override
     protected final Object clone() throws CloneNotSupportedException {
@@ -106,6 +111,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_260720592 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.885 -0400", hash_original_method = "0D462A5B0CC7E5E79CA20DB4952DBB5B", hash_generated_method = "A1C39A8D489C80F6E7D350EDA2F474AC")
     @SuppressWarnings("unchecked")
     public final Class<E> getDeclaringClass() {
@@ -152,6 +158,7 @@ Class<E> var8F6953680D8F9BB6E774268F02FC3AA7_2002885057 =         (Class<E>)mySu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.886 -0400", hash_original_method = "3012BD4162FEB4D4063E0B4E3944BED9", hash_generated_method = "FE1C663109CE5DFABF002048A3AF339A")
     @Override
     @SuppressWarnings("FinalizeDoesntCallSuperFinalize")

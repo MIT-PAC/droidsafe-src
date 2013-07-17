@@ -97,6 +97,7 @@ public class SyncStateContract {
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static Pair<Uri, byte[]> getWithUri(ContentProviderClient provider, Uri uri,
                 Account account) throws RemoteException {
             Cursor c = provider.query(uri, DATA_PROJECTION, SELECT_BY_ACCOUNT,

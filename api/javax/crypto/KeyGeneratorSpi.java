@@ -16,16 +16,20 @@ public abstract class KeyGeneratorSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SecretKey engineGenerateKey();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(AlgorithmParameterSpec params,
             SecureRandom random) throws InvalidAlgorithmParameterException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(int keysize, SecureRandom random);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(SecureRandom random);
 
     

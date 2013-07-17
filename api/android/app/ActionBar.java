@@ -25,73 +25,96 @@ public abstract class ActionBar {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract void setCustomView(View view);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setCustomView(View view, LayoutParams layoutParams);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setCustomView(int resId);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setIcon(int resId);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setIcon(Drawable icon);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setLogo(int resId);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setLogo(Drawable logo);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setListNavigationCallbacks(SpinnerAdapter adapter,
             OnNavigationListener callback);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setSelectedNavigationItem(int position);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getSelectedNavigationIndex();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getNavigationItemCount();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setTitle(CharSequence title);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setTitle(int resId);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setSubtitle(CharSequence subtitle);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setSubtitle(int resId);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setDisplayOptions(int options);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setDisplayOptions(int options, int mask);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setDisplayUseLogoEnabled(boolean useLogo);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setDisplayShowHomeEnabled(boolean showHome);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setDisplayHomeAsUpEnabled(boolean showHomeAsUp);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setDisplayShowTitleEnabled(boolean showTitle);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setDisplayShowCustomEnabled(boolean showCustom);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setBackgroundDrawable(Drawable d);
 
     
@@ -111,75 +134,99 @@ public abstract class ActionBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract View getCustomView();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CharSequence getTitle();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CharSequence getSubtitle();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getNavigationMode();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setNavigationMode(int mode);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getDisplayOptions();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Tab newTab();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void addTab(Tab tab);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void addTab(Tab tab, boolean setSelected);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void addTab(Tab tab, int position);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void addTab(Tab tab, int position, boolean setSelected);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void removeTab(Tab tab);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void removeTabAt(int position);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void removeAllTabs();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void selectTab(Tab tab);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Tab getSelectedTab();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Tab getTabAt(int index);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getTabCount();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getHeight();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void show();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void hide();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isShowing();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void addOnMenuVisibilityListener(OnMenuVisibilityListener listener);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void removeOnMenuVisibilityListener(OnMenuVisibilityListener listener);
 
     
@@ -211,54 +258,71 @@ Context var540C13E9E156B687226421B24F2DF178_1562418328 =         null;
         }
 
 
+        @DSModeled(DSC.SAFE)
         public abstract int getPosition();
 
         
+        @DSModeled(DSC.SAFE)
         public abstract Drawable getIcon();
 
         
+        @DSModeled(DSC.SAFE)
         public abstract CharSequence getText();
 
         
+        @DSModeled(DSC.SAFE)
         public abstract Tab setIcon(Drawable icon);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract Tab setIcon(int resId);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract Tab setText(CharSequence text);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract Tab setText(int resId);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract Tab setCustomView(View view);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract Tab setCustomView(int layoutResId);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract View getCustomView();
 
         
+        @DSModeled(DSC.SAFE)
         public abstract Tab setTag(Object obj);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract Object getTag();
 
         
+        @DSModeled(DSC.SAFE)
         public abstract Tab setTabListener(TabListener listener);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract void select();
 
         
+        @DSModeled(DSC.SAFE)
         public abstract Tab setContentDescription(int resId);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract Tab setContentDescription(CharSequence contentDesc);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract CharSequence getContentDescription();
 
         

@@ -18,14 +18,17 @@ public abstract class KeyManagerFactorySpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(KeyStore ks, char[] password) throws KeyStoreException,
             NoSuchAlgorithmException, UnrecoverableKeyException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(ManagerFactoryParameters spec)
             throws InvalidAlgorithmParameterException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract KeyManager[] engineGetKeyManagers();
 
     

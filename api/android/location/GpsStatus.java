@@ -134,6 +134,7 @@ for(int i = 0;i < mSatellites.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.145 -0400", hash_original_method = "8623867703A7BB23EDE8EB2AB29E2B88", hash_generated_method = "8894DDB6A8736A3475E4044E6EB183B5")
     public Iterable<GpsSatellite> getSatellites() {
 Iterable<GpsSatellite> varE7F4188585FE55A58108466B6F8F81B3_1596348753 =         mSatelliteList;

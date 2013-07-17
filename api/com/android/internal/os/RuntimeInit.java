@@ -125,6 +125,7 @@ public class RuntimeInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void finishInit() {
     }
 
@@ -166,15 +167,18 @@ public class RuntimeInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void zygoteInitNative() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int isComputerOn() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void turnComputerOn() {
     }
 
@@ -198,11 +202,13 @@ public class RuntimeInit {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void setApplicationObject(IBinder app) {
         mApplicationObject = app;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final IBinder getApplicationObject() {
         return mApplicationObject;
     }

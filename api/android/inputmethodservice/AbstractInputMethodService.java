@@ -40,9 +40,11 @@ KeyEvent.DispatcherState var020BED5B281694EFFFEB80FA04419B7B_903050134 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract AbstractInputMethodImpl onCreateInputMethodInterface();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract AbstractInputMethodSessionImpl onCreateInputMethodSessionInterface();
 
     
@@ -57,6 +59,7 @@ KeyEvent.DispatcherState var020BED5B281694EFFFEB80FA04419B7B_903050134 =        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.081 -0400", hash_original_method = "A37FBA98B4D1A366D99013E441DCBD11", hash_generated_method = "F27B9C1D6C362A44F766836EEAD91AFB")
     @Override
     final public IBinder onBind(Intent intent) {

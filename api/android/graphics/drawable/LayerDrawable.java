@@ -1145,6 +1145,7 @@ Drawable var7F5C6E283EA30BC97CCB22A157315149_2006673640 =             new LayerD
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.216 -0400", hash_original_method = "C863EE1513D5FAC46B3A54079EE22BC7", hash_generated_method = "51ACE5FC3F74FE1949FC0E2309D88F8F")
         public final int getOpacity() {
             if(mHaveOpacity)            
@@ -1179,6 +1180,7 @@ for(int i = 1;i < N;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.216 -0400", hash_original_method = "302772CF3A9A555DFD32DC83A81CA17A", hash_generated_method = "854FA4C51D0F77A4727EBCEF384B1843")
         public final boolean isStateful() {
             if(mHaveStateful)            

@@ -14,6 +14,7 @@ public class AudioSystem {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static final int getNumStreamTypes() {
         return NUM_STREAM_TYPES;
     }

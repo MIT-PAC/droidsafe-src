@@ -37,6 +37,7 @@ public class BasicPoolEntry extends AbstractPoolEntry {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.319 -0400", hash_original_method = "833089AC155D5F0DD92B0C74A18F2763", hash_generated_method = "AB66B5291C6C7BD851189997D069BA50")
     protected final OperatedClientConnection getConnection() {
 OperatedClientConnection var5BFA9F3364143AB41D8297B301DBEBFA_956021652 =         super.connection;
@@ -47,6 +48,7 @@ OperatedClientConnection var5BFA9F3364143AB41D8297B301DBEBFA_956021652 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.319 -0400", hash_original_method = "F928965F3078B3981FAC8F2BBDABCB11", hash_generated_method = "D14FED9B8A5AE184FD4873D0263CD73E")
     protected final HttpRoute getPlannedRoute() {
 HttpRoute varC5F10401C07B57E7F878A1A1BA05EB57_1654771705 =         super.route;
@@ -57,6 +59,7 @@ HttpRoute varC5F10401C07B57E7F878A1A1BA05EB57_1654771705 =         super.route;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.320 -0400", hash_original_method = "A5F0662ECC443ACB4B44B4D02A3B5BBC", hash_generated_method = "5C91004207B98C1314A2FF08C35B4621")
     protected final BasicPoolEntryRef getWeakRef() {
 BasicPoolEntryRef var29BAF2A5D8FE5ED926C67F1F68BB834A_1142818898 =         this.reference;

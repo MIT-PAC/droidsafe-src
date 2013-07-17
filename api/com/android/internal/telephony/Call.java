@@ -25,15 +25,19 @@ public abstract class Call {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract List<Connection> getConnections();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Phone getPhone();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isMultiparty();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void hangup() throws CallStateException;
 
     
@@ -323,12 +327,15 @@ Connection varDEE35CB9DB0BFEF9D56920E04FD88CE7_103872785 =         latest;
     
     public enum State {
         IDLE, ACTIVE, HOLDING, DIALING, ALERTING, INCOMING, WAITING, DISCONNECTED, DISCONNECTING;
+        @DSModeled(DSC.SAFE)
         public boolean isAlive() {
             return !(this == IDLE || this == DISCONNECTED || this == DISCONNECTING);
         }
+        @DSModeled(DSC.SAFE)
         public boolean isRinging() {
             return this == INCOMING || this == WAITING;
         }
+        @DSModeled(DSC.SAFE)
         public boolean isDialing() {
             return this == DIALING || this == ALERTING;
         }

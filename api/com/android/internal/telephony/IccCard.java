@@ -532,6 +532,7 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1021399970 =         State.UNKNOWN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getServiceProviderName();
 
     
@@ -1039,9 +1040,11 @@ for(int i = 0;i < mIccCardStatus.getNumApplications();i++)
         READY,
         NOT_READY,
         PERM_DISABLED;
+        @DSModeled(DSC.SAFE)
         public boolean isPinLocked() {
             return ((this == PIN_REQUIRED) || (this == PUK_REQUIRED));
         }
+        @DSModeled(DSC.SAFE)
         public boolean iccCardExist() {
             return ((this == PIN_REQUIRED) || (this == PUK_REQUIRED)
                     || (this == NETWORK_LOCKED) || (this == READY)

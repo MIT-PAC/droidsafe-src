@@ -66,6 +66,7 @@ public class TextDirectionHeuristics {
         }
 
         
+        @DSModeled(DSC.SAFE)
         abstract protected boolean defaultIsRtl();
 
         

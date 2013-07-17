@@ -333,6 +333,7 @@ View var540C13E9E156B687226421B24F2DF178_703980693 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract View newView(Context context, Cursor cursor, ViewGroup parent);
 
     
@@ -349,6 +350,7 @@ View varA7C7FCEE76C2BB6CDF25D7E759116C4C_1984143685 =         newView(context, c
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void bindView(View view, Context context, Cursor cursor);
 
     

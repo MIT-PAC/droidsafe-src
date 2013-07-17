@@ -18,6 +18,7 @@ public abstract class SQLiteClosable {
     }
 
 
+    @DSModeled(DSC.SAFE)
     protected abstract void onAllReferencesReleased();
 
     

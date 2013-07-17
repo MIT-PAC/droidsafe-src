@@ -257,6 +257,7 @@ Bitmap var09EE212372AEDF5BF1A18C39AF757758_995130384 =         getFrameAtTime(-1
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.545 -0400", hash_original_method = "B81676966F6941B90240D7A24C9E2FD3", hash_generated_method = "BE94CB6DE9EDBEEF7D151AA52A7096EC")
     private final void native_finalize() {
     }

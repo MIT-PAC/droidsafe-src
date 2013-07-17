@@ -782,6 +782,7 @@ public class Contacts {
         }
 
 
+        @DSModeled(DSC.SAFE)
         @Deprecated
         public static final int getPresenceIconResourceId(int status) {
             switch (status) {

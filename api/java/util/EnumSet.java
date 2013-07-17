@@ -11,6 +11,7 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
 
     Class<E> elementClass;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.893 -0400", hash_original_method = "39015C507ACAACD362C6AF5AEC7D9CF8", hash_generated_method = "A30DF7F45610C591D70BF68AB99C63B7")
       EnumSet(Class<E> cls) {
         elementClass = cls;
@@ -19,6 +20,7 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> noneOf(Class<E> elementType) {
         if (!elementType.isEnum()) {
             throw new ClassCastException(elementType.getClass().getName() + " is not an Enum");
@@ -31,6 +33,7 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> allOf(Class<E> elementType) {
         EnumSet<E> set = noneOf(elementType);
         set.complement();
@@ -38,6 +41,7 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> copyOf(EnumSet<E> s) {
         EnumSet<E> set = EnumSet.noneOf(s.elementClass);
         set.addAll(s);
@@ -45,6 +49,7 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> copyOf(Collection<E> c) {
         if (c instanceof EnumSet) {
             return copyOf((EnumSet<E>) c);
@@ -63,6 +68,7 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> complementOf(EnumSet<E> s) {
         EnumSet<E> set = EnumSet.noneOf(s.elementClass);
         set.addAll(s);
@@ -71,6 +77,7 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void complement();
 
     
@@ -128,9 +135,11 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void setRange(E start, E end);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.897 -0400", hash_original_method = "37C8AB3D6E991A765CF2ADF4E1FAB73C", hash_generated_method = "636C731AF07C87A06EA2B4CF35727CF2")
     @SuppressWarnings("unchecked")
     @Override

@@ -159,9 +159,11 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1342670806 =         getDecodedObject
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getIndex(Object object);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Object getObjectToEncode(Object object);
 
     

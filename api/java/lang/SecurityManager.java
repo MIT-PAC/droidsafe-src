@@ -110,6 +110,7 @@ public class SecurityManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.611 -0400", hash_original_method = "8873C7B5DD5CF23CB18ABA2720E20660", hash_generated_method = "9159A263BC1C8C1C153D947DCF946C6F")
     public void checkMemberAccess(Class<?> cls, int type) {
         addTaint(type);
@@ -303,6 +304,7 @@ ClassLoader var540C13E9E156B687226421B24F2DF178_404839252 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.617 -0400", hash_original_method = "971A50644C25A1AA23F94C545B2EFE88", hash_generated_method = "E16ED876C10D2264176AD070085E75EA")
     @Deprecated
     protected Class<?> currentLoadedClass() {

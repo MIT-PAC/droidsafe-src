@@ -20,9 +20,11 @@ public abstract class IccServiceTable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract String getTag();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract Object[] getValues();
 
     

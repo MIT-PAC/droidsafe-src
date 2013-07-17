@@ -23,6 +23,7 @@ public class InstantiationException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.087 -0400", hash_original_method = "6F408C13CB22C61379FA2022EB73B671", hash_generated_method = "977D14F1D6A052030A3E1B44F8E5929D")
       InstantiationException(Class<?> clazz) {
         super(clazz.getName());

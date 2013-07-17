@@ -133,6 +133,7 @@ public abstract class AbstractMessageParser implements HttpMessageParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract HttpMessage parseHead(SessionInputBuffer sessionBuffer) 
         throws IOException, HttpException, ParseException;
 

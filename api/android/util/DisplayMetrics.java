@@ -47,6 +47,7 @@ public class DisplayMetrics {
 
     public float noncompatYdpi;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.648 -0400", hash_original_method = "72B3D95037FCF3814777C19051FFD99D", hash_generated_method = "2E9FDC4700C3C30CD4E712DF6E2BF6E3")
     public  DisplayMetrics() {
         // ---------- Original Method ----------
@@ -111,6 +112,7 @@ public class DisplayMetrics {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.654 -0400", hash_original_method = "C565A2D49552DFC4E4E40856CD671AE3", hash_generated_method = "C9201EE53517ECF16C0EAAEF8690C8A3")
     @Override
     public String toString() {
@@ -126,7 +128,7 @@ String varB7BF8DE5B505C57E0EF72407430C5108_196524151 =         "DisplayMetrics{d
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     private static int getDeviceDensity() {
         return SystemProperties.getInt("qemu.sf.lcd_density",
                 SystemProperties.getInt("ro.sf.lcd_density", DENSITY_DEFAULT));

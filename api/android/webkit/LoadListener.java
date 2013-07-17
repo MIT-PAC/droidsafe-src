@@ -1004,6 +1004,7 @@ SslError varC06B1D712E386771D5CA99DC6DD229BD_2146670641 =         mSslError;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.483 -0400", hash_original_method = "0354530277F06C2F68A7F9A147112FDC", hash_generated_method = "B9828203D5B8AB72FF779428888DC616")
      void setRequestData(String method, Map<String, String> headers, 
             byte[] postData) {

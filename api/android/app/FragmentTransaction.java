@@ -14,76 +14,100 @@ public abstract class FragmentTransaction {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction add(Fragment fragment, String tag);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction add(int containerViewId, Fragment fragment);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction add(int containerViewId, Fragment fragment, String tag);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction replace(int containerViewId, Fragment fragment);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction replace(int containerViewId, Fragment fragment, String tag);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction remove(Fragment fragment);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction hide(Fragment fragment);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction show(Fragment fragment);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction detach(Fragment fragment);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction attach(Fragment fragment);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isEmpty();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction setCustomAnimations(int enter, int exit);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction setCustomAnimations(int enter, int exit,
             int popEnter, int popExit);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction setTransition(int transit);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction setTransitionStyle(int styleRes);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction addToBackStack(String name);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isAddToBackStackAllowed();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction disallowAddToBackStack();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction setBreadCrumbTitle(int res);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction setBreadCrumbTitle(CharSequence text);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction setBreadCrumbShortTitle(int res);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FragmentTransaction setBreadCrumbShortTitle(CharSequence text);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int commit();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int commitAllowingStateLoss();
 
     

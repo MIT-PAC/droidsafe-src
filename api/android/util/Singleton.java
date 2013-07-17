@@ -17,9 +17,11 @@ public abstract class Singleton<T> {
     }
 
 
+    @DSModeled(DSC.SAFE)
     protected abstract T create();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.072 -0400", hash_original_method = "CF8212F11D8E5F22A25C4FBFDDF16383", hash_generated_method = "12AF1D299B0076642AE6D9BBABA46B96")
     public final T get() {
         synchronized

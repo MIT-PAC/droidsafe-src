@@ -1214,6 +1214,7 @@ String var540C13E9E156B687226421B24F2DF178_614732304 =         null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.328 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "55C2F72DB88F35E1C8A58C64BE8FC6BF")
         public final String getType() {
 String varC5B9F25B4EEAD3E8E2C33F9429204397_500193164 =             type;
@@ -1224,6 +1225,7 @@ String varC5B9F25B4EEAD3E8E2C33F9429204397_500193164 =             type;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.328 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "122BA87087EF36BC4629AEE0BDD7F8D5")
         public final String getAlgorithm() {
 String var44A46B4003FC81ACB0223385BA1FA818_989127464 =             algorithm;
@@ -1234,6 +1236,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_989127464 =             algorithm;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.328 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "E15F8E0D6765959A1235D9EA2981F60D")
         public final Provider getProvider() {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1001293568 =             provider;
@@ -1244,6 +1247,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1001293568 =             provider;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.328 -0400", hash_original_method = "8415940D3A1E5651F883E391EC68DA41", hash_generated_method = "0CA6FCDFBABF593DF39A45DD65C36AFB")
         public final String getClassName() {
 String varF57DF2C3C72C0BA8574176BD3A4AA127_1334609813 =             className;

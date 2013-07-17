@@ -18,6 +18,7 @@ public abstract class ActionProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract View onCreateActionView();
 
     

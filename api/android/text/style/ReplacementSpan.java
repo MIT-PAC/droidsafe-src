@@ -10,6 +10,7 @@ import android.text.TextPaint;
 
 public abstract class ReplacementSpan extends MetricAffectingSpan {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.082 -0400", hash_original_method = "2ECC8F1A2253E21B3B9AB67FC300FA22", hash_generated_method = "2ECC8F1A2253E21B3B9AB67FC300FA22")
     public ReplacementSpan ()
     {
@@ -17,11 +18,13 @@ public abstract class ReplacementSpan extends MetricAffectingSpan {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract int getSize(Paint paint, CharSequence text,
                          int start, int end,
                          Paint.FontMetricsInt fm);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void draw(Canvas canvas, CharSequence text,
                      int start, int end, float x,
                      int top, int y, int bottom, Paint paint);

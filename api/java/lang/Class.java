@@ -36,6 +36,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
 
     private transient String name;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.490 -0400", hash_original_method = "290C4C92EA00F4559290C8F8CF6D9B35", hash_generated_method = "E946603C401B0F4C9A405067C69B1976")
 	public  Class() {
         // ---------- Original Method ----------
@@ -77,6 +78,7 @@ String var2F8E51633C4B934C6A6871930033C26B_2107392196 =         StringUtils.comb
     }
 
     
+    @DSModeled(DSC.BAN)
     public static Class<?> forName(String className, boolean initializeBoolean,
             ClassLoader classLoader) throws ClassNotFoundException {
         if (classLoader == null) {
@@ -97,7 +99,7 @@ String var2F8E51633C4B934C6A6871930033C26B_2107392196 =         StringUtils.comb
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static Class<?> classForName(String className, boolean initializeBoolean,
             ClassLoader classLoader) throws ClassNotFoundException {
     	Class<?> cl = Object.class;
@@ -297,7 +299,7 @@ ClassLoader varCF4789975F8C078EDDC0A2EE6321BC19_697004622 =         loader == nu
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static ClassLoader getClassLoader(Class<?> clazz) {
     	return clazz.getClassLoader();
     }
@@ -324,6 +326,7 @@ Constructor<T> var47E06E3838B21F4A2F3DABBEB5CEAF67_137831484 =         (Construc
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.629 -0400", hash_original_method = "4EF95E7321A9A3F23E7914021D1D63A7", hash_generated_method = "DA8179D78C8ECEF5A1CD6846841BC252")
     private Member getConstructorOrMethod(String name, boolean recursive,
             boolean publicOnly, Class<?>[] parameterTypes) throws NoSuchMethodException {
@@ -373,6 +376,7 @@ Member varDC838461EE2FA0CA4C9BBB70A15456B0_37218051 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.630 -0400", hash_original_method = "388841491B60993DDBB0AE9912E3B4BA", hash_generated_method = "3281140ECD1E1C0F0D5988CE4375C0EC")
     private Member getPublicConstructorOrMethodRecursive(String name, Class<?>[] parameterTypes) {
         addTaint(parameterTypes[0].getTaint());
@@ -449,6 +453,7 @@ Constructor<?>[] varA9159445F27BE5BF96D07DDC5E555495_1540592959 =         getDec
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.631 -0400", hash_original_method = "172017F5B780130A5E2B4C50427437CE", hash_generated_method = "53C538F592E38246CBBA117245307E84")
     private boolean isDeclaredAnnotationPresent(Class<? extends Annotation> annotationClass) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_255707121 = getTaintBoolean();
@@ -582,7 +587,7 @@ Field[] varB13318B8B62F8154F0AA694406899EAD_732481342 =         getDeclaredField
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static Field[] getDeclaredFields(Class<?> clazz, boolean publicOnly) {
     	Field[] ret = new Field[0];
     	ret.addTaint(clazz.taint);
@@ -591,7 +596,7 @@ Field[] varB13318B8B62F8154F0AA694406899EAD_732481342 =         getDeclaredField
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static Field getDeclaredField(Class<?> clazz, String name) {
     	Field ret = new Field();
     	ret.addTaint(clazz.taint);
@@ -634,7 +639,7 @@ Method[] var25212F30F28FFBC38919078B7CC0EB00_1791002978 =         getDeclaredMet
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     static Method[] getDeclaredMethods(Class<?> clazz, boolean publicOnly) {
     	Method[] ret = new Method[0];
     	ret[0].addTaint(clazz.taint);
@@ -669,7 +674,7 @@ Method[] var25212F30F28FFBC38919078B7CC0EB00_1791002978 =         getDeclaredMet
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.717 -0400", hash_original_method = "66CD711920ADA841CC04EC44C476AA92", hash_generated_method = "E9EFFA224CF0890C33C432913B5CDC4A")
     public Constructor<?> getEnclosingConstructor() {
     	Constructor  ret = new Constructor();
@@ -960,6 +965,7 @@ for(Class<?> ifc : c.getInterfaces())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.636 -0400", hash_original_method = "187913D585B2E6CDD83B5D111AE83BCF", hash_generated_method = "EA739B3003F4C912DEAA33B13691CFA1")
     public String getName() {
         String result = name;
@@ -980,6 +986,7 @@ String var4C566AF6B2791407A05E4F4E371A49A8_1464709607 =         (result == null)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.636 -0400", hash_original_method = "74B632DBB542B67A6D43387B2BA8D973", hash_generated_method = "FE62B6D1677B962A9E8D7239D728DFF5")
     public String getSimpleName() {
         if(isArray())        
@@ -1173,6 +1180,7 @@ Object[] var540C13E9E156B687226421B24F2DF178_1667293101 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.762 -0400", hash_original_method = "D842DF476A1BD7D94C0F81A98F8160A2", hash_generated_method = "6D7E91A123530C9789871A175E332FE3")
     public Class<? super T> getSuperclass() {
     	Class ret = (Class)new Object();
@@ -1276,6 +1284,7 @@ for(Class<?> sup = getSuperclass();sup != null;sup = sup.getSuperclass())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.647 -0400", hash_original_method = "A1982F53FFC7DDA0FE0A72AB5EB8A2B7", hash_generated_method = "47530057220D3DBD7FD8E1731E59904C")
     public boolean isAssignableFrom(Class<?> cls) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_6366830 = getTaintBoolean();

@@ -19,6 +19,7 @@ public class SensorEvent {
 
     public long timestamp;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.313 -0400", hash_original_method = "70E99143ED23AB543A4BC023624913AA", hash_generated_method = "61F2DC68074AC669893F0BE5944FEDBC")
 	public
       SensorEvent(int size) {

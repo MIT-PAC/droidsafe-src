@@ -235,6 +235,7 @@ public class TextUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static CharSequence join(Iterable<CharSequence> list) {
         final CharSequence delimiter = Resources.getSystem().getText(R.string.list_delimeter);
         return join(delimiter, list);
@@ -1070,6 +1071,7 @@ public class TextUtils {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.321 -0400", hash_original_method = "D653FD0D00864F21EDFF9CBFE1E1B8FB", hash_generated_method = "A6AF9B732E38B641DE10CD92A3FE4A65")
         public Iterator<String> iterator() {
 Iterator<String> var72A74007B2BE62B849F475C7BDA4658B_289140907 =             this;
@@ -1080,7 +1082,7 @@ Iterator<String> var72A74007B2BE62B849F475C7BDA4658B_289140907 =             thi
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.SPEC)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.321 -0400", hash_original_method = "675B2012EE41806104DFB06FA586494D", hash_generated_method = "43D0B1DF92600605144584A3DBB5B14A")
         public boolean hasNext() {
             boolean var08931E0A660193FE88B5CCE4F34F221C_1231498231 = (mPosition < mLength);

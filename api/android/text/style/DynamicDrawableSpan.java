@@ -50,6 +50,7 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Drawable getDrawable();
 
     

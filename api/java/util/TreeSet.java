@@ -17,6 +17,7 @@ public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Clone
 
     private transient NavigableSet<E> descendingSet;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.545 -0400", hash_original_method = "B468A43994310DE7D91A1366853F3908", hash_generated_method = "713D545DDA5D47E810CF2A8F6B76FB4D")
       TreeSet(NavigableMap<E, Object> map) {
         backingMap = map;
@@ -34,6 +35,7 @@ public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Clone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.545 -0400", hash_original_method = "98B2B75BFA703DD0E35ED82DE7014603", hash_generated_method = "9295DFAB1B2A4F093CB6CC0F48F4D93E")
     public  TreeSet(Collection<? extends E> collection) {
         this();
@@ -44,6 +46,7 @@ public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Clone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.546 -0400", hash_original_method = "8C746452C9FB7802CDFBFB3337D39F4C", hash_generated_method = "CFEA0A2BC2DBD194D4AE909A3DEB5CC0")
     public  TreeSet(Comparator<? super E> comparator) {
         backingMap = new TreeMap<E, Object>(comparator);
@@ -52,6 +55,7 @@ public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Clone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.546 -0400", hash_original_method = "A9811B2E808509DC9D16313E2A4EF959", hash_generated_method = "8579ACDFD797832733E22A12F5CADD5D")
     public  TreeSet(SortedSet<E> set) {
         this(set.comparator());
@@ -82,6 +86,7 @@ public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Clone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.547 -0400", hash_original_method = "1BB1690ADD81CF07967EA6BF52306E20", hash_generated_method = "599CB330DFCA58CE4EDF5DCEF03A6B22")
     @Override
     public boolean addAll(Collection<? extends E> collection) {
@@ -147,6 +152,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1057165913 =             clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.548 -0400", hash_original_method = "15725AB8DA5A973CA6D3756CF495713E", hash_generated_method = "AC2CCB2E1CBF3EE1A2CA3B0AF0832D9C")
     public Comparator<? super E> comparator() {
 Comparator<? super E> var0DBA3D9CD77859DED745A0BFA4F2ACEF_1105889057 =         backingMap.comparator();
@@ -182,6 +188,7 @@ Comparator<? super E> var0DBA3D9CD77859DED745A0BFA4F2ACEF_1105889057 =         b
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.549 -0400", hash_original_method = "B45AC88DE7B9594C8371B21B65FAB594", hash_generated_method = "861FF20C39960260BA63816D3660E6B9")
     @Override
     public Iterator<E> iterator() {
@@ -193,6 +200,7 @@ Iterator<E> var286E0827A1FF5574E4CA8F3B053AEA56_1494551388 =         backingMap.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.549 -0400", hash_original_method = "5A7C74B47E5E24EDAEF18CEBD56ECC34", hash_generated_method = "985B1000856FE0C2D90F59DE62A312F9")
     public Iterator<E> descendingIterator() {
 Iterator<E> varD3454307C396409E194901FB5FF7ED83_1681334023 =         descendingSet().iterator();
@@ -324,6 +332,7 @@ E var1BCF47557897205FD48AB0A73F410791_1417494054 =         backingMap.floorKey(e
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.553 -0400", hash_original_method = "A6CC6F36D568F252AE741D0349E41073", hash_generated_method = "DD83900825108D4E442830D3999352EE")
     public NavigableSet<E> descendingSet() {
 NavigableSet<E> varBE5ABA3BE0A68913A56946E2DC797D44_1158308659 =         (descendingSet != null) ? descendingSet
@@ -336,6 +345,7 @@ NavigableSet<E> varBE5ABA3BE0A68913A56946E2DC797D44_1158308659 =         (descen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.553 -0400", hash_original_method = "ED81F074F474A876A14D172DD54F12F1", hash_generated_method = "6EE2F8493B1393AB0F36589D523F5D04")
     @SuppressWarnings("unchecked")
     public NavigableSet<E> subSet(E start, boolean startInclusive, E end,
@@ -369,6 +379,7 @@ NavigableSet<E> varDC3CDC9203794F796454BC9DF4EF62E9_315077516 =             new 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.554 -0400", hash_original_method = "F84D7A45054DBC97192AC73FC2432832", hash_generated_method = "1881FA7FCDACC7CDCD408DAD6506257F")
     @SuppressWarnings("unchecked")
     public NavigableSet<E> headSet(E end, boolean endInclusive) {
@@ -397,6 +408,7 @@ NavigableSet<E> varE70D8A145633D64A8635027DBE800D01_249483838 =         new Tree
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.554 -0400", hash_original_method = "663A99D3FA4C192D3A7FF25E6DB9D983", hash_generated_method = "C365C88D8A0503D2D14EE4F8A8C21ECB")
     @SuppressWarnings("unchecked")
     public NavigableSet<E> tailSet(E start, boolean startInclusive) {

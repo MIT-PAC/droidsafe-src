@@ -62,6 +62,7 @@ public class EditorInfo implements InputType, Parcelable {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.353 -0400", hash_original_method = "3C6DC9D32EA44A62EDD92C5C9BF78DEF", hash_generated_method = "2E5A3009BA164BFB29FC5F9C34C9386D")
     public final void makeCompatible(int targetSdkVersion) {
         addTaint(targetSdkVersion);

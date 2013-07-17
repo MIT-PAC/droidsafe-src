@@ -118,6 +118,7 @@ String varDFAC709EF682E7EE77A36551B3D5FA40_753282632 =         mTables;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.000 -0400", hash_original_method = "DDD8D9F6C39192C696789E3C5816355A", hash_generated_method = "52ECEFBD4BAF572978D68E44F502DFAD")
     public void setProjectionMap(Map<String, String> columnMap) {
         mProjectionMap = columnMap;

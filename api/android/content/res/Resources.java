@@ -107,6 +107,7 @@ public class Resources {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.752 -0400", hash_original_method = "647BD0141CFE00480058A00B761B8E30", hash_generated_method = "E7B264666C51F87CBE8DFE8E5E5422AA")
     private  Resources() {
         mAssets = AssetManager.getSystem();
@@ -125,6 +126,7 @@ public class Resources {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     private static <T> LongSparseArray<T> emptySparseArray() {
         return (LongSparseArray<T>) EMPTY_ARRAY;
@@ -155,6 +157,7 @@ public class Resources {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Resources getSystem() {
         synchronized (mSync) {
             Resources ret = mSystem;
@@ -255,7 +258,7 @@ NativePluralRules var745A77A9F3BF173FE40F422A3E58ECD9_177478962 =             mP
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     private static int attrForQuantityCode(int quantityCode) {
         switch (quantityCode) {
             case NativePluralRules.ZERO: return 0x01000005;
@@ -268,7 +271,7 @@ NativePluralRules var745A77A9F3BF173FE40F422A3E58ECD9_177478962 =             mP
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     private static String stringForQuantityCode(int quantityCode) {
         switch (quantityCode) {
             case NativePluralRules.ZERO: return "zero";
@@ -281,6 +284,7 @@ NativePluralRules var745A77A9F3BF173FE40F422A3E58ECD9_177478962 =             mP
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.758 -0400", hash_original_method = "537EFC002B8A40B3B7F76596758B9963", hash_generated_method = "12D536593BB4788ABA3074D5086B2819")
     public String getString(int id) throws NotFoundException {
         addTaint(id);
@@ -305,6 +309,7 @@ String varEC7EB75EF3C7FA633C54FC66A0358174_312856460 =             res.toString(
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.759 -0400", hash_original_method = "2EEC36CFDBF61FC5501B8B9376C5F95E", hash_generated_method = "703C5354832DDCBF99CDA0038AF0FEEB")
     public String getString(int id, Object... formatArgs) throws NotFoundException {
         addTaint(formatArgs[0].getTaint());
@@ -319,6 +324,7 @@ String var33B19924FA3F9D0E8B5FFBC42817D886_543701231 =         String.format(mCo
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.759 -0400", hash_original_method = "3050F7A6F3C08BB33AB97951F94A1A35", hash_generated_method = "C7C7B615EF87965C87C479EC40D54DC9")
     public String getQuantityString(int id, int quantity, Object... formatArgs) throws NotFoundException {
         addTaint(formatArgs[0].getTaint());
@@ -334,6 +340,7 @@ String var33B19924FA3F9D0E8B5FFBC42817D886_1267190071 =         String.format(mC
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.760 -0400", hash_original_method = "81877842C4E2FEF0D9FCD2095374BD66", hash_generated_method = "A57D5928BAEDEE60F566CC9CC4212E5F")
     public String getQuantityString(int id, int quantity) throws NotFoundException {
         addTaint(quantity);
@@ -346,6 +353,7 @@ String var724E61EC080BBFF977358DDD6A3D5CFA_1574370903 =         getQuantityText(
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.760 -0400", hash_original_method = "9E76804CDFB0982D016B6CE6163D7455", hash_generated_method = "8FF0FCEDD70CD403F5F7274448F3255F")
     public CharSequence getText(int id, CharSequence def) {
         addTaint(def.getTaint());
@@ -360,6 +368,7 @@ CharSequence varA3751E1BC5C02A90C35BA3618166E18D_139533751 =         res != null
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.760 -0400", hash_original_method = "2FECA5C28D9DC41170E2F1E5700277A0", hash_generated_method = "E30329B367166D60591B484D0A2A4C28")
     public CharSequence[] getTextArray(int id) throws NotFoundException {
         addTaint(id);
@@ -384,6 +393,7 @@ CharSequence[] varB5053E025797B3BF768F5C37934C244D_1166888684 =             res;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.761 -0400", hash_original_method = "426431DC420CF2DD39FFAF8B295D8654", hash_generated_method = "A1B565464476E6E83B633BD94C294CC9")
     public String[] getStringArray(int id) throws NotFoundException {
         addTaint(id);
@@ -408,6 +418,7 @@ String[] varB5053E025797B3BF768F5C37934C244D_887435566 =             res;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.761 -0400", hash_original_method = "65AEFB7747626FD934E6275803D2C392", hash_generated_method = "8F4F1C94D4941EC45931FE8230A4D565")
     public int[] getIntArray(int id) throws NotFoundException {
         addTaint(id);
@@ -432,6 +443,7 @@ String[] varB5053E025797B3BF768F5C37934C244D_887435566 =             res;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.762 -0400", hash_original_method = "8E5AB34336560F1D8FA12EC65FB34D2E", hash_generated_method = "05A5710124ABB727E105840F0D29C647")
     public TypedArray obtainTypedArray(int id) throws NotFoundException {
         addTaint(id);
@@ -462,6 +474,7 @@ TypedArray var1270D5B74B756F17D644A15D775499D9_420426034 =         array;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.763 -0400", hash_original_method = "179671F1A37C23E822373A76E19D42EA", hash_generated_method = "7BF9162DFD0B012DFE008B7DE12843BE")
     public float getDimension(int id) throws NotFoundException {
         addTaint(id);
@@ -495,6 +508,7 @@ TypedArray var1270D5B74B756F17D644A15D775499D9_420426034 =         array;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.763 -0400", hash_original_method = "1833FD2ED6DCA9CF6DFDBF7D9BC0478B", hash_generated_method = "6C9BCA8E71021FE7C2FCDE79766131C7")
     public int getDimensionPixelOffset(int id) throws NotFoundException {
         addTaint(id);
@@ -530,6 +544,7 @@ TypedArray var1270D5B74B756F17D644A15D775499D9_420426034 =         array;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.764 -0400", hash_original_method = "E2B2A30088D0238C29DEA7CD0218F3E5", hash_generated_method = "A4F1281678F86B76A420510496BA1C9A")
     public int getDimensionPixelSize(int id) throws NotFoundException {
         addTaint(id);
@@ -565,6 +580,7 @@ TypedArray var1270D5B74B756F17D644A15D775499D9_420426034 =         array;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.765 -0400", hash_original_method = "A2DCBF1A3DEF525CC233A65EC473B403", hash_generated_method = "DBCAC76C633B668EAA7FF94B4142764D")
     public float getFraction(int id, int base, int pbase) {
         addTaint(pbase);
@@ -600,6 +616,7 @@ TypedArray var1270D5B74B756F17D644A15D775499D9_420426034 =         array;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.765 -0400", hash_original_method = "40531A8693FC775C03E22F5835EB733B", hash_generated_method = "54612A19C1165F98F2FADD5EC2D01AE3")
     public Drawable getDrawable(int id) throws NotFoundException {
         addTaint(id);
@@ -620,6 +637,7 @@ Drawable var8273798533EF7C8CE47A48774686B041_757856238 =             loadDrawabl
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.766 -0400", hash_original_method = "D08D33B833687D530F432098EC5CCB38", hash_generated_method = "98CB3C7BA25FF1F0550D8150F43A5C65")
     public Drawable getDrawableForDensity(int id, int density) throws NotFoundException {
         addTaint(density);
@@ -659,6 +677,7 @@ Drawable var8273798533EF7C8CE47A48774686B041_1363409570 =             loadDrawab
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.768 -0400", hash_original_method = "973C0EDB6E14C8355746DA3A02A0EBD1", hash_generated_method = "72ADD022F468466FCA85222157173400")
     public Movie getMovie(int id) throws NotFoundException {
         addTaint(id);
@@ -686,6 +705,7 @@ Movie var3EEC64298AA85EC99C654E377AAC0920_198538801 =         movie;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.769 -0400", hash_original_method = "CDFC75613D2F871DC3B09D1CE60F98A4", hash_generated_method = "FC7D63202162EE0CCAD5AA9DF779D58A")
     public int getColor(int id) throws NotFoundException {
         addTaint(id);
@@ -732,6 +752,7 @@ Movie var3EEC64298AA85EC99C654E377AAC0920_198538801 =         movie;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.770 -0400", hash_original_method = "F237EF4FA0AE2D448FCC64592DABDD8D", hash_generated_method = "EDEBA34BF55B74FCE0BA6AD3ED64C47A")
     public ColorStateList getColorStateList(int id) throws NotFoundException {
         addTaint(id);
@@ -752,6 +773,7 @@ ColorStateList var8F0C404272DDD9BC21D5C9ECE71B2946_1470237233 =             load
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.771 -0400", hash_original_method = "5C68CA666BA42061546BF98D8883861D", hash_generated_method = "FB2F459E829CEE822C21326B0EFCAD82")
     public boolean getBoolean(int id) throws NotFoundException {
         addTaint(id);
@@ -787,6 +809,7 @@ ColorStateList var8F0C404272DDD9BC21D5C9ECE71B2946_1470237233 =             load
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.771 -0400", hash_original_method = "CB2B32F0600F2299579C79C7526A8896", hash_generated_method = "1C60ACB363D7923BCAF94DC32E3E8727")
     public int getInteger(int id) throws NotFoundException {
         addTaint(id);
@@ -822,6 +845,7 @@ ColorStateList var8F0C404272DDD9BC21D5C9ECE71B2946_1470237233 =             load
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.772 -0400", hash_original_method = "53A788F1DE83214BAFCB022ED9363AAC", hash_generated_method = "E5D10DA8BE508E23C67E3D354CBBD1F2")
     public XmlResourceParser getLayout(int id) throws NotFoundException {
         addTaint(id);
@@ -833,6 +857,7 @@ XmlResourceParser var6DD4D2CF915780284DEA58D4D0825D56_1695192272 =         loadX
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.772 -0400", hash_original_method = "C3417F93CB7498AF5B43E94B98075C78", hash_generated_method = "FB3E1479B71728368D24EB7F0B680DF4")
     public XmlResourceParser getAnimation(int id) throws NotFoundException {
         addTaint(id);
@@ -844,6 +869,7 @@ XmlResourceParser var88FEBEC60FCAA9E9B7093A5C94ED312C_1686387117 =         loadX
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.773 -0400", hash_original_method = "66568C58C76DE1C95FED15C8056E4335", hash_generated_method = "92587AC3ABD12386B7EC10C35CD2D50F")
     public XmlResourceParser getXml(int id) throws NotFoundException {
         addTaint(id);
@@ -855,6 +881,7 @@ XmlResourceParser var55A3A1C774FCD88CFA6C7AED76ED12F3_560979372 =         loadXm
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.773 -0400", hash_original_method = "2A38C8042909AD0B3921F8B41C50BFD0", hash_generated_method = "BAA9D179B6D88FAEC5B54B0076E54CDD")
     public InputStream openRawResource(int id) throws NotFoundException {
         addTaint(id);
@@ -871,6 +898,7 @@ InputStream var88537B797D5D9430D1F565B1E6499441_121209657 =             openRawR
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.774 -0400", hash_original_method = "2E256A4CBCC4636EC939F62266AB39BC", hash_generated_method = "C3D1297A6DA736D3911A26C26E276CDA")
     public InputStream openRawResource(int id, TypedValue value) throws NotFoundException {
         addTaint(value.getTaint());
@@ -905,6 +933,7 @@ InputStream var4BD66E3715CE0A3782D091D65F0C6E2B_438922522 =             mAssets.
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.774 -0400", hash_original_method = "7A496359623417DAF484E4884A244E4E", hash_generated_method = "DA67C3BCC945DC9133E20950DD38A6EC")
     public AssetFileDescriptor openRawResourceFd(int id) throws NotFoundException {
         addTaint(id);
@@ -949,6 +978,7 @@ AssetFileDescriptor varDAEC0B14551BAA3E5AD806065109B0A4_555876539 =             
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.775 -0400", hash_original_method = "286538764BE9255E72B90D7B13646A2E", hash_generated_method = "CF24C803BAAF145B1F6AA35E4265C206")
     public void getValue(int id, TypedValue outValue, boolean resolveRefs) throws NotFoundException {
         addTaint(resolveRefs);
@@ -973,6 +1003,7 @@ AssetFileDescriptor varDAEC0B14551BAA3E5AD806065109B0A4_555876539 =             
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.776 -0400", hash_original_method = "FF0649F49CF780958319F2862D12B017", hash_generated_method = "B273F240869B93A288F6B027CAB3E29E")
     public void getValueForDensity(int id, int density, TypedValue outValue, boolean resolveRefs) throws NotFoundException {
         addTaint(resolveRefs);
@@ -996,6 +1027,7 @@ AssetFileDescriptor varDAEC0B14551BAA3E5AD806065109B0A4_555876539 =             
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.777 -0400", hash_original_method = "A4F8C6B97749A99408C92371916352C6", hash_generated_method = "645A0842E1670F57125862590DA42031")
     public void getValue(String name, TypedValue outValue, boolean resolveRefs) throws NotFoundException {
         addTaint(resolveRefs);
@@ -1501,6 +1533,7 @@ String var061B89662D09DE43FE2A2D88636258A2_1626312072 =         str;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.794 -0400", hash_original_method = "B655DEE21C3816C25C0AC2AC9EDD1950", hash_generated_method = "11E38FA8C15AE5A657886EC3DF3BB29F")
     public final AssetManager getAssets() {
 AssetManager var21520AA84C01698557E63CB551651EC9_745039881 =         mAssets;

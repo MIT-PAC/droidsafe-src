@@ -422,6 +422,7 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final String[] getDefaultCompressionMethods() {
         return new String[] { SUPPORTED_COMPRESSION_METHOD_NULL };
     }

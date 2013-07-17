@@ -233,6 +233,7 @@ for(int i = mPool.size() - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.138 -0400", hash_original_method = "94796DA212EFDAF0BC89ABDE3263411C", hash_generated_method = "9B4464315F1C999CA287CA8A4E1E82C6")
      ArrayList<PoolObj> getPool() {
 ArrayList<PoolObj> varB4506CA02789EEFE1322E696990510A4_1488361759 =         mPool;

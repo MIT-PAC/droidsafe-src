@@ -129,6 +129,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.242 -0400", hash_original_method = "49F7EEB7DFDAB588B69DE97F89E77EAC", hash_generated_method = "913D23CDD86DFFE09244E5E0E825E7BB")
     public final int getThemeResource() {
         int var5E9EB5D6F5D164D54626760DFA37457B_275874577 = (theme != 0 ? theme : applicationInfo.theme);

@@ -15,12 +15,15 @@ public abstract class SecureRandomSpi implements Serializable {
     }
 
 
+    @DSModeled(DSC.SAFE)
     protected abstract void engineSetSeed(byte[] seed);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineNextBytes(byte[] bytes);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract byte[] engineGenerateSeed(int numBytes);
 
     

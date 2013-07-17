@@ -17,20 +17,25 @@ public abstract class SecureCacheResponse extends CacheResponse {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getCipherSuite();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract List<Certificate> getLocalCertificateChain();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract List<Certificate> getServerCertificateChain()
             throws SSLPeerUnverifiedException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Principal getPeerPrincipal()
             throws SSLPeerUnverifiedException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Principal getLocalPrincipal();
 
     

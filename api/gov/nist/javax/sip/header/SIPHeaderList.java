@@ -328,6 +328,7 @@ ListIterator<HDR> varB6858C2A0A5D5DA33796D38FD73E73F3_35324220 =         hlist.l
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.318 -0400", hash_original_method = "23B9304014C757503CC0D5B9D6DB550F", hash_generated_method = "B52967299638535006F513B062474563")
     protected void setMyClass(Class<HDR> cl) {
         this.myClass = cl;

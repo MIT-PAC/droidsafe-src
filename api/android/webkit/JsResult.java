@@ -42,6 +42,7 @@ public class JsResult {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.258 -0400", hash_original_method = "600681B39DE4E67D9402AFEDAC93A2DE", hash_generated_method = "B2F187C8CA1B1351329BBAAAFCBDC899")
     public final void confirm() {
         mResult = true;
@@ -52,6 +53,7 @@ public class JsResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.258 -0400", hash_original_method = "B19201A589B2161C860E375BCFC73111", hash_generated_method = "BB6599011510D175F17CF6B7177618AE")
     final boolean getResult() {
         boolean var313AEF43C06545BCEAC152A1C285EBE1_1936925141 = (mResult);

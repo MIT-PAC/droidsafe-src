@@ -15,9 +15,11 @@ public abstract class CacheRequest {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void abort();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract OutputStream getBody() throws IOException;
 
     

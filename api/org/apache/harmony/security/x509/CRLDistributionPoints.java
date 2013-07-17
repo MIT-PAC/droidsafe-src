@@ -19,6 +19,7 @@ public final class CRLDistributionPoints extends ExtensionValue {
 
     private byte[] encoding;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.856 -0400", hash_original_method = "A85C2ECCECA3DBD03B41866807FEA9E1", hash_generated_method = "48FD99AAFF0763BC2F31C9959DCF5462")
     private  CRLDistributionPoints(List<DistributionPoint> distributionPoints, byte[] encoding) {
         if((distributionPoints == null) || (distributionPoints.size() == 0))        

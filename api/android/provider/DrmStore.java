@@ -29,6 +29,7 @@ public final class DrmStore {
     }
 
 
+    @DSModeled(DSC.SPEC)
     public static final Intent addDrmFile(ContentResolver cr, File file, String title) {
         FileInputStream fis = null;
         Intent result = null;
@@ -56,6 +57,7 @@ public final class DrmStore {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static final Intent addDrmFile(ContentResolver cr, FileInputStream fis, String title) {
         OutputStream os = null;
         Intent result = null;

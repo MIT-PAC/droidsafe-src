@@ -220,6 +220,7 @@ ApnSetting var01A54A38EEF0967D304A8B3F91C82FE0_1067729519 =         apn;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:12.977 -0400", hash_original_method = "3EEE20ABAF340D832C1A12335FDE6C3B", hash_generated_method = "6699F25BE37B1B7A186104EE2B5CC57F")
     public synchronized ArrayList<ApnSetting> getWaitingApns() {
 ArrayList<ApnSetting> var2EB2A36DE5330F22DFCB107B459341D5_2142277218 =         mWaitingApns;

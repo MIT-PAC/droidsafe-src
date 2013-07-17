@@ -21,6 +21,7 @@ public abstract class AbstractHttpEntity implements HttpEntity {
 
     protected boolean chunked;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.192 -0400", hash_original_method = "7092D401475F156326EB612012D50800", hash_generated_method = "8090890FE04071B33C38618871FDA9FD")
     protected  AbstractHttpEntity() {
         super();

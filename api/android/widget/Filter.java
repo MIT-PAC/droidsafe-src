@@ -83,9 +83,11 @@ public abstract class Filter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract FilterResults performFiltering(CharSequence constraint);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void publishResults(CharSequence constraint,
             FilterResults results);
 

@@ -21,9 +21,11 @@ public abstract class Pipe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SinkChannel sink();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SourceChannel source();
 
     
@@ -37,6 +39,7 @@ public abstract class Pipe {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.246 -0400", hash_original_method = "C028D25CCC7628B8923253B7D8B4C45A", hash_generated_method = "5678EAF84A8EE85979DC14D88223D018")
         @Override
         public final int validOps() {
@@ -62,6 +65,7 @@ public abstract class Pipe {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.248 -0400", hash_original_method = "D2EA48B97033CCCA8D2B0ECC7F0D7822", hash_generated_method = "D2C69C211E2C5158B83CDBE936CFD2D3")
         @Override
         public final int validOps() {

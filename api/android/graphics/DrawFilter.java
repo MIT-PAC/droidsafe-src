@@ -10,6 +10,7 @@ public class DrawFilter {
 
     int mNativeInt;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.204 -0400", hash_original_method = "6C5CDA0A99FCB0DEAFDD9ABA6ADEF22E", hash_generated_method = "6C5CDA0A99FCB0DEAFDD9ABA6ADEF22E")
     public DrawFilter ()
     {

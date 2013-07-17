@@ -279,9 +279,11 @@ SQLiteDatabase var8D37BF836D5C80F645159E6565338BF6_779912361 =             mData
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void onCreate(SQLiteDatabase db);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion);
 
     

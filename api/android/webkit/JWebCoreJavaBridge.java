@@ -472,6 +472,7 @@ String var1EE236BB903DF73F2308F7F9F181EF48_1936949001 =         jUri.getLastPath
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.205 -0400", hash_original_method = "E5A69925BDA73DD9E81D8A1F8F42F257", hash_generated_method = "FC09152D312FECD521F2567721C332CC")
     public void addPackageNames(Set<String> packageNames) {
     }

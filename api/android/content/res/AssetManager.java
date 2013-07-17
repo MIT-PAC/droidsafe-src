@@ -495,7 +495,7 @@ AssetFileDescriptor varBF59062CA5609D0A51AB7CA763EFD373_1903399915 =            
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.101 -0400", hash_original_method = "BFE0DD4127D11EE8C7DC2AF7F1625EB3", hash_generated_method = "5671ABB042797CD529E276FD90C5DEDA")
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public final String[] list(String path) throws IOException {
     	String[] ret = {path};
     	return ret;
@@ -807,6 +807,7 @@ for(RuntimeException e : mRefStacks.values())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.015 -0400", hash_original_method = "18B8C5816FBF862D1286972549E79177", hash_generated_method = "6216652761DFDE75251284C6669B244F")
     public final int addAssetPath(String path) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1214364667 = getTaintInt();
@@ -843,6 +844,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.016 -0400", hash_original_method = "6E60478B72DEC0ABE7A87F31E1844E8F", hash_generated_method = "A61B6145FA6017B375138F80D8CD0E18")
     public final boolean isUpToDate() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_114331951 = getTaintBoolean();
@@ -850,11 +852,13 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.016 -0400", hash_original_method = "14770B9914BD8F1A300B2311A4083869", hash_generated_method = "E69921EE5BD0C2E8AB59F1AA37229149")
     public final void setLocale(String locale) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.349 -0400", hash_original_method = "3CB696CCF0EE1BB70EEADB93E6432982", hash_generated_method = "2A1885B1024F713A5324E14BAEA805ED")
     public final String[] getLocales() {
     	String[] mockArray = {""};
@@ -862,6 +866,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.018 -0400", hash_original_method = "0D7945B64E12882B3ACBA2198421753F", hash_generated_method = "78BC2DBE0FC59033588CFB86A02BD2F9")
     public final void setConfiguration(int mcc, int mnc, String locale,
             int orientation, int touchscreen, int density, int keyboard,
@@ -871,6 +876,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.019 -0400", hash_original_method = "09A813727514834940DA6C6317E3DBCE", hash_generated_method = "9FB107021AE595F0ABBB050E9B3ED746")
     final int getResourceIdentifier(String type,
                                                        String name,
@@ -881,33 +887,34 @@ for(int i = 0;i < paths.length;i++)
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.368 -0400", hash_original_method = "A5876C7E6082BC9F857AB889162EC8D3", hash_generated_method = "FBAAE168C828C7BA370F62A92E8BDE92")
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     final String getResourceName(int resid) {
     	return "";
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.369 -0400", hash_original_method = "B7E19874BAD16ADDD401F7BE2B2EFFAD", hash_generated_method = "1B222EBFB81E92383980BFED3C95FEF1")
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     final String getResourcePackageName(int resid) {
     	return "";
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.369 -0400", hash_original_method = "D3A87104246875F54A734A7CED9F3792", hash_generated_method = "FB0BED0BADF159555D7AAA9D63E79093")
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     final String getResourceTypeName(int resid) {
     	return "";
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.370 -0400", hash_original_method = "7C2D2224C9B46B19401BE8615244E9F1", hash_generated_method = "DCC8904351055C288FCFF6D931A8C8F9")
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     final String getResourceEntryName(int resid) {
     	return "";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.021 -0400", hash_original_method = "CCB6CD4213F7E59AA2D59934C9160368", hash_generated_method = "A40759E222B1A21CF63630F3F29A26AB")
     private final int openAsset(String fileName, int accessMode) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1627561239 = getTaintInt();
@@ -916,13 +923,14 @@ for(int i = 0;i < paths.length;i++)
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.374 -0400", hash_original_method = "9CBF0316C59A074D9238537266A4CF39", hash_generated_method = "1E5C5B867FCBA6692FC4FC36ABE4480B")
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     private final ParcelFileDescriptor openAssetFd(String fileName,
             long[] outOffsets) throws IOException {
     	return ParcelFileDescriptor.open(new File(fileName), ParcelFileDescriptor.MODE_READ_WRITE);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.022 -0400", hash_original_method = "81CCCE789A5081BAF563B4B2EE08FF05", hash_generated_method = "510D2840327ED39EE37A7A4931F8A585")
     private final int openNonAssetNative(int cookie, String fileName,
             int accessMode) {
@@ -939,11 +947,13 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.024 -0400", hash_original_method = "97A034179950872E547C89DFB8D9E922", hash_generated_method = "7C837E96C8BBDC9D87F899C6B59F14DF")
     private final void destroyAsset(int asset) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.024 -0400", hash_original_method = "5F1E2DF7C91A7E126E188B382F4854C7", hash_generated_method = "F8D817B30F35E7B6C690A8A8FF554FFB")
     private final int readAssetChar(int asset) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_293213739 = getTaintInt();
@@ -951,6 +961,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.024 -0400", hash_original_method = "47F4B97BBBCCF733A9E22BF028AA8D70", hash_generated_method = "6DD810D6515179507BA08313C78D7C1C")
     private final int readAsset(int asset, byte[] b, int off, int len) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_834253144 = getTaintInt();
@@ -958,6 +969,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.025 -0400", hash_original_method = "B3BCAF9697DD27514E76657171CAECEC", hash_generated_method = "D92B1A5ADA273C5F269010CCEAB588A9")
     private final long seekAsset(int asset, long offset, int whence) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1752765527 = getTaintLong();
@@ -965,6 +977,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.025 -0400", hash_original_method = "A83D0C436C33F4BEE2F972AC578D7A68", hash_generated_method = "8FD1CBCFBD3E988052143BDD2630E325")
     private final long getAssetLength(int asset) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1053764240 = getTaintLong();
@@ -972,6 +985,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.026 -0400", hash_original_method = "7F3AC582AA5F20EF55343463044A3085", hash_generated_method = "85008B39E1689919F4D015DEE662E4A0")
     private final long getAssetRemainingLength(int asset) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1780099642 = getTaintLong();
@@ -979,6 +993,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.026 -0400", hash_original_method = "27B70155371A7D816D4F089317C25CF6", hash_generated_method = "15E3B6BF9F549C626B53230B279F9F3B")
     private final int loadResourceValue(int ident, short density, TypedValue outValue,
             boolean resolve) {
@@ -987,6 +1002,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.027 -0400", hash_original_method = "F08D438D948FB59FEDF35DA42629554E", hash_generated_method = "A75D9C8DCB0AEB8ACDDB03FB34695CD8")
     private final int loadResourceBagValue(int ident, int bagEntryId, TypedValue outValue,
                                                boolean resolve) {
@@ -995,6 +1011,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     static final boolean applyStyle(int theme,
             int defStyleAttr, int defStyleRes, int xmlParser,
             int[] inAttrs, int[] outValues, int[] outIndices) {
@@ -1002,6 +1019,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.028 -0400", hash_original_method = "12B5557C9EEBFED6DAC54E4D9FC20DDD", hash_generated_method = "5E0D98E49E5D70432C2D2FBEC3CF885B")
     final boolean retrieveAttributes(
             int xmlParser, int[] inAttrs, int[] outValues, int[] outIndices) {
@@ -1010,6 +1028,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.028 -0400", hash_original_method = "34A3EC70D4ACE5655FFEE77E96A0F3BC", hash_generated_method = "6065B936320D52FA0007567A01B35803")
     final int getArraySize(int resource) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1370251662 = getTaintInt();
@@ -1017,6 +1036,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.028 -0400", hash_original_method = "6AA3B6ADCA3DD4B26249D05025D281C3", hash_generated_method = "326720A43176CF85C37FBE6F403EECE6")
     final int retrieveArray(int resource, int[] outValues) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1085686726 = getTaintInt();
@@ -1024,6 +1044,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.028 -0400", hash_original_method = "8643075126929A48F7EB079E8C4278DD", hash_generated_method = "4F37F8AB22AF36B276DA6CC622D5AF9E")
     private final int getStringBlockCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_45133732 = getTaintInt();
@@ -1031,6 +1052,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.029 -0400", hash_original_method = "FB0E199BF31B4B98A791A0A97B553C67", hash_generated_method = "B397F9224D7B0ADBC2D77FCC12EF4B97")
     private final int getNativeStringBlock(int block) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1244029255 = getTaintInt();
@@ -1039,27 +1061,31 @@ for(int i = 0;i < paths.length;i++)
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.442 -0400", hash_original_method = "4BCE1B9C1615D4EB059442B0FC3D8208", hash_generated_method = "B12B3AC485F057CA49E8D0EDA1BD9B08")
-    @DSModeled(DSC.BAN)
+    @DSModeled(DSC.SAFE)
     public final String getCookieName(int cookie) {
     	return "";
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getGlobalAssetCount() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final String getAssetAllocations() {
         	return "";
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getGlobalAssetManagerCount() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.030 -0400", hash_original_method = "4A1BDBE10C6D7479DE706205ED3F0C83", hash_generated_method = "979B27F64DE61FBB05CD831FE72E608F")
     private final int newTheme() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1611431378 = getTaintInt();
@@ -1067,19 +1093,23 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.030 -0400", hash_original_method = "CA31B66AC1745FBADC98731EBEE7AB46", hash_generated_method = "B5983DB9C7B891CB2391E729342FB143")
     private final void deleteTheme(int theme) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static final void applyThemeStyle(int theme, int styleRes, boolean force) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static final void copyTheme(int dest, int source) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static final int loadThemeAttributeValue(int theme, int ident,
                                                                 TypedValue outValue,
                                                                 boolean resolve) {
@@ -1087,10 +1117,12 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     static final void dumpTheme(int theme, int priority, String tag, String prefix) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.032 -0400", hash_original_method = "F8A041F054DE87147DC380F35C857F31", hash_generated_method = "6A90B444D0C55CB191A3934A8FB1F93B")
     private final int openXmlAssetNative(int cookie, String fileName) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1888464920 = getTaintInt();
@@ -1098,6 +1130,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.457 -0400", hash_original_method = "8CA605217ABF9ACD4B0F75B79941D8AD", hash_generated_method = "5F37EF7284C2ED80B62ED2FD114F081D")
     private final String[] getArrayStringResource(int arrayRes) {
     	String[] ret = {""};
@@ -1105,6 +1138,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.034 -0400", hash_original_method = "341A9383D92FC9E302B0B298621A3766", hash_generated_method = "77F99831F777B58AB7D1550486BE3D2B")
     private final int[] getArrayStringInfo(int arrayRes) {
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1139777469 = {getTaintInt()};
@@ -1112,6 +1146,7 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.034 -0400", hash_original_method = "BCA05693B8244B417FF82C9EDF7FB611", hash_generated_method = "60509EA3DD5E9DC33893E8C680C6A0F7")
     final int[] getArrayIntResource(int arrayRes) {
         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_55174861 = {getTaintInt()};
@@ -1119,16 +1154,19 @@ for(int i = 0;i < paths.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.034 -0400", hash_original_method = "0DE93EF32C53D091768788DCA0E281FD", hash_generated_method = "9921D3E675F5E10CBA9EBD66FA021538")
     private final void init() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.035 -0400", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "15731F8D3959A4577DA5453E16C6C563")
     private final void destroy() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.035 -0400", hash_original_method = "8CCD44610E895D23EA7CFE3FA359ACA0", hash_generated_method = "DE1751660204E7F09A57FDCA36D93D5A")
     private final void incRefsLocked(int id) {
         addTaint(id);
@@ -1200,6 +1238,7 @@ for(int i = 0;i < paths.length;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.037 -0400", hash_original_method = "E464EBBB8C3DAC741E7C7914FE6096F4", hash_generated_method = "789B1071DFE643346C65920EA8E303D2")
         public final int getAssetInt() {
             int var8D5507884B6C9BEABDB04A59A4DBA58B_1574985218 = (mAsset);
@@ -1220,6 +1259,7 @@ for(int i = 0;i < paths.length;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.037 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "1FABE2962E167CDD2DA85D7F0FF16FFE")
         public final boolean markSupported() {
             boolean varB326B5062B2F0E69046810717534CB09_1136450817 = (true);

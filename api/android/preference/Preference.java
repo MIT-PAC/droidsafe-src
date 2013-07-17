@@ -1026,6 +1026,7 @@ SharedPreferences.Editor varABFFF7131D023FF0D5B41102CA064E26_347965212 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.511 -0400", hash_original_method = "6457E3944D02DD03B8855B0556ABBC63", hash_generated_method = "E2BE31D553581E6027B8A65C18170CE5")
     final void setOnPreferenceChangeInternalListener(OnPreferenceChangeInternalListener listener) {
         mListener = listener;

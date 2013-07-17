@@ -29,6 +29,7 @@ public class ContextWrapper extends Context {
 
     Context mBase;
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.468 -0400", hash_original_method = "10030D2DB2A8F36EE12AB3354BCBF9E2", hash_generated_method = "6955E83EDFF1B7CDF47D712DAA27309B")
     public  ContextWrapper(Context base) {
         mBase = base;
@@ -55,7 +56,7 @@ public class ContextWrapper extends Context {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.SPEC)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.469 -0400", hash_original_method = "348D9A1AC27363C49C4D9EF878F36A33", hash_generated_method = "B2CEF60BF4C763A517BBEFB439868C6F")
     public Context getBaseContext() {
 Context varA148490A8BFC4E02B4B251DB8934259F_937948670 =         mBase;
@@ -66,6 +67,7 @@ Context varA148490A8BFC4E02B4B251DB8934259F_937948670 =         mBase;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.469 -0400", hash_original_method = "207324BD2179C2BB1CD4C22794703A9D", hash_generated_method = "480993D861F31E203B6AB04E04B0F6D8")
     @Override
     public AssetManager getAssets() {
@@ -77,6 +79,7 @@ AssetManager var76C3CF86EE6D54B30C36C32803928372_489430778 =         mBase.getAs
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.469 -0400", hash_original_method = "47F2A94B0203C279563273E1E0895D4D", hash_generated_method = "3B26FAB507C9022601BF740F386A33B5")
     @Override
     public Resources getResources() {
@@ -99,6 +102,7 @@ PackageManager var2460232D63BA9F10997363947D615C09_933490083 =         mBase.get
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.470 -0400", hash_original_method = "8EDC66E2D77BCDC119853EA41EA3296B", hash_generated_method = "A81339EE45A8599750511D276622A0B3")
     @Override
     public ContentResolver getContentResolver() {
@@ -770,6 +774,7 @@ ComponentName var3735A6AF9994E0412D2412319D7B8378_1651651434 =         mBase.sta
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.481 -0400", hash_original_method = "4DFF381EBA248BD85BCC25FEFAAD92DA", hash_generated_method = "C6C1FF1E499F93F82C167557A7C8A4FA")
     @Override
     public Object getSystemService(String name) {

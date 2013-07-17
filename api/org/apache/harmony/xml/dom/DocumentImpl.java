@@ -818,6 +818,7 @@ DOMConfiguration var0D370929C0EBAAB3536D872023877E23_1291644338 =         domCon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.377 -0400", hash_original_method = "83962F2DF698AAA6D760C50C082C5A3C", hash_generated_method = "01325DB84780D2BD89B418DB0C964DE5")
      Map<String, UserData> getUserDataMap(NodeImpl node) {
         addTaint(node.getTaint());
@@ -847,6 +848,7 @@ Map<String, UserData> varC9322CB19A196C9D9117A684D649D268_908379247 =         us
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.378 -0400", hash_original_method = "8B5F30F59CCBC9322DB0F048DEF01A52", hash_generated_method = "70E14C5D9F2A6DB7058A6FCC67B0A0AC")
      Map<String, UserData> getUserDataMapForRead(NodeImpl node) {
         addTaint(node.getTaint());

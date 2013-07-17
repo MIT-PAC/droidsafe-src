@@ -30,195 +30,249 @@ public abstract class PackageManager {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract PackageInfo getPackageInfo(String packageName, int flags)
             throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] currentToCanonicalPackageNames(String[] names);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] canonicalToCurrentPackageNames(String[] names);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract Intent getLaunchIntentForPackage(String packageName);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int[] getPackageGids(String packageName)
             throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract PermissionInfo getPermissionInfo(String name, int flags)
             throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract List<PermissionInfo> queryPermissionsByGroup(String group,
             int flags) throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract PermissionGroupInfo getPermissionGroupInfo(String name,
             int flags) throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract List<PermissionGroupInfo> getAllPermissionGroups(int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ApplicationInfo getApplicationInfo(String packageName,
             int flags) throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ActivityInfo getActivityInfo(ComponentName component,
             int flags) throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ActivityInfo getReceiverInfo(ComponentName component,
             int flags) throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ServiceInfo getServiceInfo(ComponentName component,
             int flags) throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ProviderInfo getProviderInfo(ComponentName component,
             int flags) throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract List<PackageInfo> getInstalledPackages(int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int checkPermission(String permName, String pkgName);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean addPermission(PermissionInfo info);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean addPermissionAsync(PermissionInfo info);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void removePermission(String name);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int checkSignatures(String pkg1, String pkg2);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int checkSignatures(int uid1, int uid2);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] getPackagesForUid(int uid);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getNameForUid(int uid);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getUidForSharedUser(String sharedUserName)
             throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract List<ApplicationInfo> getInstalledApplications(int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] getSystemSharedLibraryNames();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FeatureInfo[] getSystemAvailableFeatures();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean hasSystemFeature(String name);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract ResolveInfo resolveActivity(Intent intent, int flags);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract List<ResolveInfo> queryIntentActivities(Intent intent,
             int flags);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract List<ResolveInfo> queryIntentActivityOptions(
             ComponentName caller, Intent[] specifics, Intent intent, int flags);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract List<ResolveInfo> queryBroadcastReceivers(Intent intent,
             int flags);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract ResolveInfo resolveService(Intent intent, int flags);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract List<ResolveInfo> queryIntentServices(Intent intent,
             int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ProviderInfo resolveContentProvider(String name,
             int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract List<ProviderInfo> queryContentProviders(
             String processName, int uid, int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract InstrumentationInfo getInstrumentationInfo(
             ComponentName className, int flags) throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract List<InstrumentationInfo> queryInstrumentation(
             String targetPackage, int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Drawable getDrawable(String packageName, int resid,
             ApplicationInfo appInfo);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Drawable getActivityIcon(ComponentName activityName)
             throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SPEC)
     public abstract Drawable getActivityIcon(Intent intent)
             throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Drawable getDefaultActivityIcon();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Drawable getApplicationIcon(ApplicationInfo info);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Drawable getApplicationIcon(String packageName)
             throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Drawable getActivityLogo(ComponentName activityName)
             throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SPEC)
     public abstract Drawable getActivityLogo(Intent intent)
             throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Drawable getApplicationLogo(ApplicationInfo info);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Drawable getApplicationLogo(String packageName)
             throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CharSequence getText(String packageName, int resid,
             ApplicationInfo appInfo);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract XmlResourceParser getXml(String packageName, int resid,
             ApplicationInfo appInfo);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CharSequence getApplicationLabel(ApplicationInfo info);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Resources getResourcesForActivity(ComponentName activityName)
             throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Resources getResourcesForApplication(ApplicationInfo app)
             throws NameNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Resources getResourcesForApplication(String appPackageName)
             throws NameNotFoundException;
 
@@ -263,69 +317,86 @@ PackageInfo var5AE978B2B8E8AB8649F1BCEEB6A3CE29_1300871783 =         PackagePars
     }
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void installPackage(
             Uri packageURI, IPackageInstallObserver observer, int flags,
             String installerPackageName);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void installPackageWithVerification(Uri packageURI,
             IPackageInstallObserver observer, int flags, String installerPackageName,
             Uri verificationURI, ManifestDigest manifestDigest);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void verifyPendingInstall(int id, int verificationCode);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setInstallerPackageName(String targetPackage,
             String installerPackageName);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void deletePackage(
             String packageName, IPackageDeleteObserver observer, int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getInstallerPackageName(String packageName);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void clearApplicationUserData(String packageName,
             IPackageDataObserver observer);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void deleteApplicationCacheFiles(String packageName,
             IPackageDataObserver observer);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void freeStorageAndNotify(long freeStorageSize, IPackageDataObserver observer);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void freeStorage(long freeStorageSize, IntentSender pi);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void getPackageSizeInfo(String packageName,
             IPackageStatsObserver observer);
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
 public abstract void addPackageToPreferred(String packageName);
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
 public abstract void removePackageFromPreferred(String packageName);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract List<PackageInfo> getPreferredPackages(int flags);
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
 public abstract void addPreferredActivity(IntentFilter filter, int match,
             ComponentName[] set, ComponentName activity);
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
 public abstract void replacePreferredActivity(IntentFilter filter, int match,
             ComponentName[] set, ComponentName activity);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void clearPackagePreferredActivities(String packageName);
 
     
@@ -333,39 +404,50 @@ public abstract void replacePreferredActivity(IntentFilter filter, int match,
             List<ComponentName> outActivities, String packageName);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setComponentEnabledSetting(ComponentName componentName,
             int newState, int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getComponentEnabledSetting(ComponentName componentName);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setApplicationEnabledSetting(String packageName,
             int newState, int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getApplicationEnabledSetting(String packageName);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isSafeMode();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void movePackage(
             String packageName, IPackageMoveObserver observer, int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract UserInfo createUser(String name, int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract List<UserInfo> getUsers();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean removeUser(int id);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void updateUserName(int id, String name);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void updateUserFlags(int id, int flags);
 
     
@@ -393,6 +475,7 @@ public abstract void replacePreferredActivity(IntentFilter filter, int match,
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract VerifierDeviceIdentity getVerifierDeviceIdentity();
 
     

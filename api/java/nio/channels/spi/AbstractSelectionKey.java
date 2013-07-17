@@ -18,6 +18,7 @@ public abstract class AbstractSelectionKey extends SelectionKey {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.351 -0400", hash_original_method = "1D07A2DB88FBC8505561F98CE95D4D40", hash_generated_method = "92B34CA5904295B85804ECCE9FDD5F18")
     @Override
     public final boolean isValid() {

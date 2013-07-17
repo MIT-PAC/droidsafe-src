@@ -40,6 +40,7 @@ Object var6AD043AF0280111F31D0D60A6CD70863_354633683 =         getDecodedObject(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.412 -0400", hash_original_method = "4C2F70C283FCFB9FEA82A949984FC67E", hash_generated_method = "0827019D7A2255E28CF9AFFA00193EDC")
     public final void encodeContent(BerOutputStream out) {
         addTaint(out.getTaint());
@@ -49,6 +50,7 @@ Object var6AD043AF0280111F31D0D60A6CD70863_354633683 =         getDecodedObject(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.412 -0400", hash_original_method = "0CA5076CBF895038CB7C559B8AB50108", hash_generated_method = "B531A45ED0551EC508FC67E901F2C395")
     public final void setEncodingContent(BerOutputStream out) {
         addTaint(out.getTaint());

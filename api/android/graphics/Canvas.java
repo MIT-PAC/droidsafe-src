@@ -374,6 +374,7 @@ GL var540C13E9E156B687226421B24F2DF178_1550155481 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.904 -0400", hash_original_method = "FBE272FA12218448E57FDD0F51163D2E", hash_generated_method = "CDEABD23C9A2F7AD3AFA53FBF751A464")
     public final void scale(float sx, float sy, float px, float py) {
         addTaint(py);
@@ -396,6 +397,7 @@ GL var540C13E9E156B687226421B24F2DF178_1550155481 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.905 -0400", hash_original_method = "96E9024A0524487F4C2E52375F89DAF2", hash_generated_method = "8ECECC7987074C9CD61575A5DAC2B527")
     public final void rotate(float degrees, float px, float py) {
         addTaint(py);
@@ -449,6 +451,7 @@ GL var540C13E9E156B687226421B24F2DF178_1550155481 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.906 -0400", hash_original_method = "677F0589CC9DCD49ED4AD9753284FD1D", hash_generated_method = "6E7E74878D727C2B59346C9A216E05B9")
     public final Matrix getMatrix() {
         Matrix m = new Matrix();
@@ -688,6 +691,7 @@ DrawFilter var5EDA12300AEAAFC248858F9EEC89F965_74786209 =         mDrawFilter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.915 -0400", hash_original_method = "081EA481AF3998560C2A7BDAF7DC2D73", hash_generated_method = "C0963F81A301CCE096381A0A170321D4")
     public final Rect getClipBounds() {
         Rect r = new Rect();
@@ -2035,6 +2039,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1117048832 =         r;
     public enum EdgeType {
         BW(0),  
         AA(1);  
+        @DSModeled(DSC.SAFE)
         EdgeType(int nativeInt) {
             this.nativeInt = nativeInt;
         }
@@ -2046,6 +2051,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1117048832 =         r;
         TRIANGLES(0),
         TRIANGLE_STRIP(1),
         TRIANGLE_FAN(2);
+        @DSModeled(DSC.SAFE)
         VertexMode(int nativeInt) {
             this.nativeInt = nativeInt;
         }

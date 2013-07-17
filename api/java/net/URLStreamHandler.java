@@ -17,6 +17,7 @@ public abstract class URLStreamHandler {
     }
 
 
+    @DSModeled(DSC.SPEC)
     protected abstract URLConnection openConnection(URL u) throws IOException;
 
     

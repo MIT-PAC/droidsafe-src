@@ -141,25 +141,32 @@ Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1702325885 =         parse(in);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Document parse(InputSource is)
         throws  SAXException, IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isNamespaceAware();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isValidating();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setEntityResolver(EntityResolver er);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setErrorHandler(ErrorHandler eh);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Document newDocument();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract DOMImplementation getDOMImplementation();
 
     

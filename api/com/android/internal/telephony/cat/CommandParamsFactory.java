@@ -894,6 +894,7 @@ switch(cmdDet.commandQualifier){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.199 -0400", hash_original_method = "A94C1A7A0EB7DC9619C535A1C0085435", hash_generated_method = "B1C10186BA0F75A2CCDE93DE3C87BFDF")
     private boolean processProvideLocalInfo(CommandDetails cmdDet, List<ComprehensionTlv> ctlvs) throws ResultException {
         addTaint(ctlvs.getTaint());

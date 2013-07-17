@@ -14,24 +14,31 @@ public abstract class BufferIterator {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract void seek(int offset);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void skip(int byteCount);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void readByteArray(byte[] dst, int dstOffset, int byteCount);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte readByte();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int readInt();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void readIntArray(int[] dst, int dstOffset, int intCount);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract short readShort();
 
     

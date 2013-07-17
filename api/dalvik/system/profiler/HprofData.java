@@ -34,6 +34,7 @@ public final class HprofData {
 
     private Map<HprofData.StackTrace, int[]> stackTraces;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.978 -0400", hash_original_method = "A1B0101007C345DF1FDD21D474244925", hash_generated_method = "4AEC10D58AD8986EFE43DEA110E448DE")
     public  HprofData(Map<StackTrace, int[]> stackTraces) {
         if(stackTraces == null)        
@@ -111,6 +112,7 @@ public final class HprofData {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.980 -0400", hash_original_method = "8C7F14531209B0BE4CB8ACECEBC720CC", hash_generated_method = "6615F9C103299A26BD800E8B6DD4322D")
     public List<ThreadEvent> getThreadHistory() {
 List<ThreadEvent> var6EA9A1CCACBDEC7F01C787F92F96DACA_670432949 =         Collections.unmodifiableList(threadHistory);
@@ -121,6 +123,7 @@ List<ThreadEvent> var6EA9A1CCACBDEC7F01C787F92F96DACA_670432949 =         Collec
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.981 -0400", hash_original_method = "F4E32CE6895396BD588CC20D263E2FB4", hash_generated_method = "7A46E52A35EF2C68AD392151C83B10D2")
     public Set<Sample> getSamples() {
         Set<Sample> samples = new HashSet<Sample>(stackTraces.size());

@@ -143,6 +143,7 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1971614534 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.164 -0400", hash_original_method = "CD99FAD2F71E14195C02F12EEC83DB33", hash_generated_method = "86769745142AEAEAACCB4F5F785D76C8")
     public String getString(int index) {
         addTaint(index);

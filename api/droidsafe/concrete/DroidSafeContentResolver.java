@@ -8,7 +8,7 @@ import android.content.Context;
 import android.content.IContentProvider;
 import android.database.ContentObserver;
 import android.net.Uri;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
 
 
 public class DroidSafeContentResolver extends ContentResolver {
@@ -16,7 +16,7 @@ public class DroidSafeContentResolver extends ContentResolver {
     private Context context;
     
     
-    @DSModeled
+    @DSModeled(DSC.SPEC)
     public DroidSafeContentResolver(Context context) {
     	super(context);
     	this.context = context;

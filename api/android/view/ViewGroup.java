@@ -176,6 +176,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         
 };
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.677 -0400", hash_original_method = "B03ADF87A05C955E785D82B4A9B527B3", hash_generated_method = "A8C7430CB41AA17C462E677DBDF2DD51")
     public  ViewGroup(Context context) {
         super(context);
@@ -186,6 +187,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.677 -0400", hash_original_method = "01EF181B5B9BD1E2AA94519EF8FAEC5E", hash_generated_method = "AC176154A182726EA14C92480544C579")
     public  ViewGroup(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -199,6 +201,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.678 -0400", hash_original_method = "FE20AAD08B3866F38DB1C82409548865", hash_generated_method = "C37137A7BB83B83DAC9BA192FD00848A")
     public  ViewGroup(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -213,6 +216,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.679 -0400", hash_original_method = "8201DDC69D3895B689FCA6813D812A1F", hash_generated_method = "B24202A0F24EC75F466AB09689E18CCE")
     private void initViewGroup() {
         setFlags(WILL_NOT_DRAW, DRAW_MASK);
@@ -5150,6 +5154,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 protected abstract void onLayout(boolean changed,
             int l, int t, int r, int b);
@@ -5550,7 +5555,7 @@ for(int i = 0;i < count;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.SPEC)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.799 -0400", hash_original_method = "DC55A008910617641F1AE978A0E895D4", hash_generated_method = "F05CBD7A7A39B8403F3E122ABC16E33A")
     public View getChildAt(int index) {
         addTaint(index);

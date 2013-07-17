@@ -36,21 +36,27 @@ public abstract class Context {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract AssetManager getAssets();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Resources getResources();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract PackageManager getPackageManager();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ContentResolver getContentResolver();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Looper getMainLooper();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Context getApplicationContext();
 
     
@@ -107,6 +113,7 @@ String var3E6B52F63767621631F101D027EAE3AD_1066543934 =         getResources().g
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setTheme(int resid);
 
     
@@ -121,6 +128,7 @@ String var3E6B52F63767621631F101D027EAE3AD_1066543934 =         getResources().g
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Resources.Theme getTheme();
 
     
@@ -179,239 +187,304 @@ TypedArray var06BFBDC52929A707387ABF18809CD1B9_573596829 =         getTheme().ob
     }
 
     
+    @DSModeled(DSC.BAN)
     public abstract ClassLoader getClassLoader();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getPackageName();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ApplicationInfo getApplicationInfo();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getPackageResourcePath();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getPackageCodePath();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract File getSharedPrefsFile(String name);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SharedPreferences getSharedPreferences(String name,
             int mode);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FileInputStream openFileInput(String name)
         throws FileNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FileOutputStream openFileOutput(String name, int mode)
         throws FileNotFoundException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean deleteFile(String name);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract File getFileStreamPath(String name);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract File getFilesDir();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract File getExternalFilesDir(String type);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract File getObbDir();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract File getCacheDir();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract File getExternalCacheDir();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] fileList();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract File getDir(String name, int mode);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SQLiteDatabase openOrCreateDatabase(String name,
             int mode, CursorFactory factory);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SQLiteDatabase openOrCreateDatabase(String name,
             int mode, CursorFactory factory, DatabaseErrorHandler errorHandler);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean deleteDatabase(String name);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract File getDatabasePath(String name);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] databaseList();
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
 public abstract Drawable getWallpaper();
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
 public abstract Drawable peekWallpaper();
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
 public abstract int getWallpaperDesiredMinimumWidth();
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
 public abstract int getWallpaperDesiredMinimumHeight();
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
 public abstract void setWallpaper(Bitmap bitmap) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
 public abstract void setWallpaper(InputStream data) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
 public abstract void clearWallpaper() throws IOException;
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void startActivity(Intent intent);
 
     
     public abstract void startActivities(Intent[] intents);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void startIntentSender(IntentSender intent,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags)
             throws IntentSender.SendIntentException;
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void sendBroadcast(Intent intent);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void sendBroadcast(Intent intent,
             String receiverPermission);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void sendOrderedBroadcast(Intent intent,
             String receiverPermission);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void sendOrderedBroadcast(Intent intent,
             String receiverPermission, BroadcastReceiver resultReceiver,
             Handler scheduler, int initialCode, String initialData,
             Bundle initialExtras);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void sendStickyBroadcast(Intent intent);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void sendStickyOrderedBroadcast(Intent intent,
             BroadcastReceiver resultReceiver,
             Handler scheduler, int initialCode, String initialData,
             Bundle initialExtras);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void removeStickyBroadcast(Intent intent);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract Intent registerReceiver(BroadcastReceiver receiver,
                                             IntentFilter filter);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract Intent registerReceiver(BroadcastReceiver receiver,
                                             IntentFilter filter,
                                             String broadcastPermission,
                                             Handler scheduler);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void unregisterReceiver(BroadcastReceiver receiver);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract ComponentName startService(Intent service);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract boolean stopService(Intent service);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract boolean bindService(Intent service, ServiceConnection conn,
             int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void unbindService(ServiceConnection conn);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean startInstrumentation(ComponentName className,
             String profileFile, Bundle arguments);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Object getSystemService(String name);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int checkPermission(String permission, int pid, int uid);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int checkCallingPermission(String permission);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int checkCallingOrSelfPermission(String permission);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void enforcePermission(
             String permission, int pid, int uid, String message);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void enforceCallingPermission(
             String permission, String message);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void enforceCallingOrSelfPermission(
             String permission, String message);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void grantUriPermission(String toPackage, Uri uri,
             int modeFlags);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void revokeUriPermission(Uri uri, int modeFlags);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract int checkUriPermission(Uri uri, int pid, int uid, int modeFlags);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract int checkCallingUriPermission(Uri uri, int modeFlags);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract int checkCallingOrSelfUriPermission(Uri uri, int modeFlags);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract int checkUriPermission(Uri uri, String readPermission,
             String writePermission, int pid, int uid, int modeFlags);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void enforceUriPermission(
             Uri uri, int pid, int uid, int modeFlags, String message);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void enforceCallingUriPermission(
             Uri uri, int modeFlags, String message);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void enforceCallingOrSelfUriPermission(
             Uri uri, int modeFlags, String message);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void enforceUriPermission(
             Uri uri, String readPermission, String writePermission,
             int pid, int uid, int modeFlags, String message);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Context createPackageContext(String packageName,
             int flags) throws PackageManager.NameNotFoundException;
 

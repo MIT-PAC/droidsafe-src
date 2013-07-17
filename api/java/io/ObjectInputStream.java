@@ -2314,45 +2314,56 @@ Object var6F3B27511D98F0E852A24482F031265F_539894577 =         object;
         }
 
 
+        @DSModeled(DSC.SAFE)
         public abstract ObjectStreamClass getObjectStreamClass();
 
         
+        @DSModeled(DSC.SAFE)
         public abstract boolean defaulted(String name) throws IOException,
                 IllegalArgumentException;
 
         
+        @DSModeled(DSC.SAFE)
         public abstract boolean get(String name, boolean defaultValue)
                 throws IOException, IllegalArgumentException;
 
         
+        @DSModeled(DSC.SAFE)
         public abstract char get(String name, char defaultValue)
                 throws IOException, IllegalArgumentException;
 
         
+        @DSModeled(DSC.SAFE)
         public abstract byte get(String name, byte defaultValue)
                 throws IOException, IllegalArgumentException;
 
         
+        @DSModeled(DSC.SAFE)
         public abstract short get(String name, short defaultValue)
                 throws IOException, IllegalArgumentException;
 
         
+        @DSModeled(DSC.SAFE)
         public abstract int get(String name, int defaultValue)
                 throws IOException, IllegalArgumentException;
 
         
+        @DSModeled(DSC.SAFE)
         public abstract long get(String name, long defaultValue)
                 throws IOException, IllegalArgumentException;
 
         
+        @DSModeled(DSC.SAFE)
         public abstract float get(String name, float defaultValue)
                 throws IOException, IllegalArgumentException;
 
         
+        @DSModeled(DSC.SAFE)
         public abstract double get(String name, double defaultValue)
                 throws IOException, IllegalArgumentException;
 
         
+        @DSModeled(DSC.SAFE)
         public abstract Object get(String name, Object defaultValue)
                 throws IOException, IllegalArgumentException;
 

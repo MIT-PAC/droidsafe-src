@@ -22,15 +22,18 @@ import java.util.Set;
 
 public abstract class Uri implements Parcelable, Comparable<Uri> {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.557 -0400", hash_original_method = "81E08B95735493D923725112C83DA27A", hash_generated_method = "AE17603DE8C4908F75692349E5C02303")
     private  Uri() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isHierarchical();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.558 -0400", hash_original_method = "A0C9F8427F648091A08345C72525BACA", hash_generated_method = "A31AADEA40ACF801DA8E588B41859BCF")
     public boolean isOpaque() {
         boolean varB0499C09D88ADA4B175FB58912D54137_2109316948 = (!isHierarchical());
@@ -41,9 +44,11 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isRelative();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.558 -0400", hash_original_method = "E92F08B9247EAC707F6805C228339DFA", hash_generated_method = "90B19047FB92B2AAE3D36FEC41F95CE9")
     public boolean isAbsolute() {
         boolean varA7DC41148D608495EEE12AD396A7094A_982983477 = (!isRelative());
@@ -54,57 +59,75 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getScheme();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getSchemeSpecificPart();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getEncodedSchemeSpecificPart();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getAuthority();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getEncodedAuthority();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getUserInfo();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getEncodedUserInfo();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getHost();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getPort();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getPath();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getEncodedPath();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getQuery();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getEncodedQuery();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getFragment();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getEncodedFragment();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract List<String> getPathSegments();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getLastPathSegment();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.560 -0400", hash_original_method = "FA9A408EEB8F8DAB44A912D276C5C2CC", hash_generated_method = "675F52B25BE95BC9B60E349FF2B6433A")
     public boolean equals(Object o) {
         addTaint(o.getTaint());
@@ -127,6 +150,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.560 -0400", hash_original_method = "5AAF793CD4316640D385D37282629FDE", hash_generated_method = "10BD6E4763DAEB33F336269050638B5F")
     public int hashCode() {
         int var3A322A74445239A748BA39CEE0B79D31_1282162070 = (toString().hashCode());
@@ -137,7 +161,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.560 -0400", hash_original_method = "45EC734684FFFB3EE70A4C12F2A2F839", hash_generated_method = "CA4D99013B6590DF43E46B045D177776")
     public int compareTo(Uri other) {
         addTaint(other.getTaint());
@@ -149,6 +173,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String toString();
 
     
@@ -203,10 +228,11 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1137535438 =         builder.toString
     }
 
     
+    @DSModeled(DSC.SPEC)
     public abstract Builder buildUpon();
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static Uri parse(String uriString) {
         return new StringUri(uriString);
     }
@@ -2559,6 +2585,7 @@ String var83CCC8E6DBC69F3499A1E5AC609A34CF_2125315496 =             build().toSt
         }
 
         
+        @DSModeled(DSC.SAFE)
         abstract String getEncoded();
 
         
@@ -3003,6 +3030,7 @@ PathSegments var58DFB823F4B6E95DFEC9F8BC0A1DF96E_837270339 =             pathSeg
         }
     
     // orphaned legacy method
+    @DSModeled(DSC.SPEC)
     @Override
 	public int describeContents() {
 		
@@ -3010,6 +3038,7 @@ PathSegments var58DFB823F4B6E95DFEC9F8BC0A1DF96E_837270339 =             pathSeg
 	}
     
     // orphaned legacy method
+    @DSModeled(DSC.SPEC)
     @Override
 	public void writeToParcel(Parcel dest, int flags) {
 		

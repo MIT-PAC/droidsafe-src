@@ -1198,6 +1198,7 @@ AccountManagerFuture<Bundle> varE3FBC805688C6CF32CF252D3CB460B3C_14640056 =     
     }
 
     
+    @DSModeled(DSC.SPEC)
     static public Intent newChooseAccountIntent(Account selectedAccount,
             ArrayList<Account> allowableAccounts,
             String[] allowableAccountTypes,
@@ -1374,6 +1375,7 @@ AccountManagerFuture<Bundle> var72A74007B2BE62B849F475C7BDA4658B_1156969260 =   
         }
 
         
+        @DSModeled(DSC.SAFE)
         public abstract void doWork() throws RemoteException;
 
         
@@ -1602,6 +1604,7 @@ Bundle var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_114891976 =             internalGetRe
         }
 
         
+        @DSModeled(DSC.SAFE)
         public abstract void doWork() throws RemoteException;
 
         

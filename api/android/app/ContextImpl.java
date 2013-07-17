@@ -216,6 +216,7 @@ public class ContextImpl extends Context {
 
     final ArrayList<Object> mServiceCache = new ArrayList<Object>();
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-11 17:07:32.348 -0400", hash_original_method = "D626E4F654DE4449ACE9581A8359F0B3", hash_generated_method = "EE67F93CB8AD578637611B4EAAB10CB4")
 	public
       ContextImpl() {
@@ -275,7 +276,7 @@ AssetManager var09CC54E28D033A2A797092212493867A_1919776121 =         mResources
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.SPEC)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.377 -0400", hash_original_method = "9FEC9CB1792EB215E49CBF732B0DBF5B", hash_generated_method = "DD36D0E7609F777BFD6D65C916636D64")
     @Override
     public Resources getResources() {
@@ -319,7 +320,7 @@ PackageManager var540C13E9E156B687226421B24F2DF178_662187430 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.SPEC)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.378 -0400", hash_original_method = "E4195DED98361134A039FE4C88A6F4B6", hash_generated_method = "F45EE039F095B3D25A7286EAC9E1F6CD")
     @Override
     public ContentResolver getContentResolver() {
@@ -2619,6 +2620,7 @@ Context var7BF64381736836E6D5B8EFBEBA0DD76E_1275023053 =         mReceiverRestri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.553 -0400", hash_original_method = "909971A42CA4D34B6A2AABA7AFFB96CE", hash_generated_method = "C4C31AC20FA544B3334C8E032915E0EF")
     final void setActivityToken(IBinder token) {
         mActivityToken = token;
@@ -2627,6 +2629,7 @@ Context var7BF64381736836E6D5B8EFBEBA0DD76E_1275023053 =         mReceiverRestri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.554 -0400", hash_original_method = "A74250CBDFD89C9F601A5AA3ED01CDC8", hash_generated_method = "F5D9056DA7F9C25752FDC44D6CB7B93B")
     final void setOuterContext(Context context) {
         mOuterContext = context;
@@ -2635,6 +2638,7 @@ Context var7BF64381736836E6D5B8EFBEBA0DD76E_1275023053 =         mReceiverRestri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.555 -0400", hash_original_method = "03C284D73757410812309249CAB76117", hash_generated_method = "74F4C9FD31F6C2220EAD23A45CD33F99")
     final Context getOuterContext() {
 Context var05221853CA1248996DC6A0DB070356A2_437065226 =         mOuterContext;
@@ -2645,6 +2649,7 @@ Context var05221853CA1248996DC6A0DB070356A2_437065226 =         mOuterContext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.556 -0400", hash_original_method = "D32D1A589CFC02641AF8A3133A37BC7F", hash_generated_method = "39485914D135359682710BC7F3E1530D")
     final IBinder getActivityToken() {
 IBinder var776483BEB0D8BCC1373C51E8861CFB6F_1914197988 =         mActivityToken;
@@ -2866,6 +2871,7 @@ Object var43F21808E64BDDCA0A2A490DACFF475F_965734590 =                 mCachedIn
         }
 
         
+        @DSModeled(DSC.SAFE)
         public abstract Object createStaticService();
 
         

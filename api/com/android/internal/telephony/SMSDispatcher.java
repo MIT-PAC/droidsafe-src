@@ -172,9 +172,11 @@ public abstract class SMSDispatcher extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void dispose();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract String getFormat();
 
     
@@ -423,6 +425,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int dispatchMessage(SmsMessageBase sms);
 
     
@@ -654,14 +657,17 @@ for(int i = 0;i < messageCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void sendData(String destAddr, String scAddr, int destPort,
             byte[] data, PendingIntent sentIntent, PendingIntent deliveryIntent);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void sendText(String destAddr, String scAddr,
             String text, PendingIntent sentIntent, PendingIntent deliveryIntent);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract TextEncodingDetails calculateLength(CharSequence messageBody,
             boolean use7bitOnly);
 
@@ -723,6 +729,7 @@ for(int i = 0;i < msgCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void sendNewSubmitPdu(String destinationAddress, String scAddress,
             String message, SmsHeader smsHeader, int encoding,
             PendingIntent sentIntent, PendingIntent deliveryIntent, boolean lastPart);
@@ -831,6 +838,7 @@ for(int i = 0;i < msgCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void sendSms(SmsTracker tracker);
 
     
@@ -867,6 +875,7 @@ for(int i = 0, count = parts.size();i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void acknowledgeLastIncomingSms(boolean success,
             int result, Message response);
 

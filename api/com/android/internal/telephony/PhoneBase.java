@@ -809,9 +809,11 @@ for(int i = 0;i < N;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Phone.State getState();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract IccFileHandler getIccFileHandler();
 
     
@@ -1138,9 +1140,11 @@ for(String apnType : types)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getPhoneName();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getPhoneType();
 
     

@@ -28,6 +28,7 @@ public class TypedValue {
 
     public int density;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.327 -0400", hash_original_method = "0B58DE40EB8BF8C74A189BC20C7FD705", hash_generated_method = "0B58DE40EB8BF8C74A189BC20C7FD705")
     public TypedValue ()
     {

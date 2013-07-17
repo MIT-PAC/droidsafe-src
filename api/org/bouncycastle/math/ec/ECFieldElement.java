@@ -16,36 +16,47 @@ public abstract class ECFieldElement implements ECConstants {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract BigInteger     toBigInteger();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String         getFieldName();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int            getFieldSize();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECFieldElement add(ECFieldElement b);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECFieldElement subtract(ECFieldElement b);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECFieldElement multiply(ECFieldElement b);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECFieldElement divide(ECFieldElement b);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECFieldElement negate();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECFieldElement square();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECFieldElement invert();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECFieldElement sqrt();
 
     

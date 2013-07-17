@@ -16,15 +16,18 @@ public abstract class SecretKeyFactorySpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SecretKey engineGenerateSecret(KeySpec keySpec)
             throws InvalidKeySpecException;
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
 protected abstract KeySpec engineGetKeySpec(SecretKey key, Class keySpec)
             throws InvalidKeySpecException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SecretKey engineTranslateKey(SecretKey key)
             throws InvalidKeyException;
 

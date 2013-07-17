@@ -43,7 +43,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.460 -0400", hash_original_method = "78AA434171DBBE0A89D0F8DC1618D34C", hash_generated_method = "3DABDDC1F65B0CDB24F633535C22EB4F")
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -106,7 +106,7 @@ Resources.Theme var021DB673F568E8BD9EB3155CBE6DF295_325129787 =         mTheme;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.462 -0400", hash_original_method = "3DDCB0207132CDAFA0BFC718C36A2A86", hash_generated_method = "A4B7F7241FDE1F674797D6E4EBA0A685")
     @Override
     public Object getSystemService(String name) {

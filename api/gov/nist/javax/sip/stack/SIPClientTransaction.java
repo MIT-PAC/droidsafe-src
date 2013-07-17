@@ -978,6 +978,7 @@ Request var53E5C6F852A0BB73314408FE0ABC9A68_895348035 =         ackRequest;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.893 -0400", hash_original_method = "C777E21FF4216BC8A7ADE1EB27ADDE8D", hash_generated_method = "1C2F8DCC2FF03C6D1BEB2EBE085771C9")
     private final Request createErrorAck() throws SipException, ParseException {
         SIPRequest originalRequest = this.getOriginalRequest();

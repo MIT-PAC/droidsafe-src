@@ -28,6 +28,7 @@ public final class GeneralNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.349 -0400", hash_original_method = "FCF1D75BDAE857F225708496A2E96EC2", hash_generated_method = "6E3DE6D078A590F1F6C1BDB13C3E782D")
     public  GeneralNames(List<GeneralName> generalNames) {
         this.generalNames = generalNames;
@@ -36,6 +37,7 @@ public final class GeneralNames {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.350 -0400", hash_original_method = "84AB2B2BC22C66DEEE9A4059D9B177CB", hash_generated_method = "47666260E35014D1A86CB6DA4464F1BC")
     private  GeneralNames(List<GeneralName> generalNames, byte[] encoding) {
         this.generalNames = generalNames;

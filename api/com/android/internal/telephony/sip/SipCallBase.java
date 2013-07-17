@@ -25,9 +25,11 @@ abstract class SipCallBase extends Call {
     }
 
 
+    @DSModeled(DSC.SAFE)
     protected abstract void setState(State newState);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.071 -0400", hash_original_method = "DA46D72C53A8C0722B0E4038E55B8A9F", hash_generated_method = "B61D8F9D5D8B45D07E8A72A6B347CDE0")
     public List<Connection> getConnections() {
 List<Connection> varD8B91E18CFFE05D77A84C03EDA812BE2_1670422350 =         connections;

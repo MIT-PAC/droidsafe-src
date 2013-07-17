@@ -419,6 +419,7 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_430572679 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.535 -0400", hash_original_method = "E1FB1E1D5A4E2DA2FDB3B2E50C938B59", hash_generated_method = "E09A64BFAA9352A2F59D32EED3ADD127")
     @Override
     public final boolean isDirect() {

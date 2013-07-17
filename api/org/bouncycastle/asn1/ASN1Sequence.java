@@ -307,6 +307,7 @@ DEREncodable var142E4525AFF6FB7F5C03BA975A3F000D_80569021 =         encObj;
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void encode(DEROutputStream out)
         throws IOException;
 

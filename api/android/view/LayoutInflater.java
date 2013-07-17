@@ -82,6 +82,7 @@ public abstract class LayoutInflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract LayoutInflater cloneInContext(Context newContext);
 
     
@@ -96,6 +97,7 @@ Context var178E2AD52D6FBBB503F908168856B574_394408068 =         mContext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.494 -0400", hash_original_method = "7FDD2E2114CEC4DBC75B459E7197DB00", hash_generated_method = "950936925FAC32802CEB8A8077E5343C")
     public final Factory getFactory() {
 Factory var086273A71AC89A5E1A3A59778647C1F0_285912391 =         mFactory;
@@ -106,6 +108,7 @@ Factory var086273A71AC89A5E1A3A59778647C1F0_285912391 =         mFactory;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.495 -0400", hash_original_method = "1401AE51BF0559687CED2D99A883164D", hash_generated_method = "D0BA3F6B838AC1B974F4DB1EF4666CE7")
     public final Factory2 getFactory2() {
 Factory2 var719195FDDEF7C93B6BEED74314FE4BE8_1502064086 =         mFactory2;
@@ -253,6 +256,7 @@ View varD2994770AB4B2FBF2D952E8ECED55234_508293780 =         inflate(parser, roo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.500 -0400", hash_original_method = "73105F6C94DACD9E83BB5CE96738BE14", hash_generated_method = "0DCE01C4664103637B72E8782F476708")
     public View inflate(int resource, ViewGroup root, boolean attachToRoot) {
         addTaint(attachToRoot);

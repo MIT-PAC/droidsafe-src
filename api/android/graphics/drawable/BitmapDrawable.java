@@ -191,6 +191,7 @@ public class BitmapDrawable extends Drawable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.413 -0400", hash_original_method = "29B9C66D2E3FF8CE986D27E62D842E86", hash_generated_method = "292DF2D0C378C6F8B557D8059A796642")
     public final Paint getPaint() {
 Paint varE3E65144F7E831421DA6CC787BBC597C_1946825478 =         mBitmapState.mPaint;
@@ -201,6 +202,7 @@ Paint varE3E65144F7E831421DA6CC787BBC597C_1946825478 =         mBitmapState.mPai
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.414 -0400", hash_original_method = "CDEEA354B6732B0C95C918F7ECA77F64", hash_generated_method = "CD4B0F877D6237972AF6E3A0979F6E07")
     public final Bitmap getBitmap() {
 Bitmap var3AE2FA0FD35BCE2BB296A9C2B523C9FC_1774956550 =         mBitmap;
@@ -393,6 +395,7 @@ Shader.TileMode var20C17428E24ACD541E1A3941B269BCFC_317710734 =         mBitmapS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.419 -0400", hash_original_method = "445DE87A20C6F0A91872714D31B4C1C9", hash_generated_method = "00F602B4F9F100DDF3497B32C03E846E")
     public final void setTileModeY(Shader.TileMode mode) {
         addTaint(mode.getTaint());
@@ -665,6 +668,7 @@ switch(tileMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.426 -0400", hash_original_method = "B22D07CBAAEE149FB3D11CBEDB83599B", hash_generated_method = "9B603E8EA7C53A45CB739DFC21EFE0E2")
     @Override
     public final ConstantState getConstantState() {

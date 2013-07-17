@@ -23,6 +23,7 @@ public class RecognizerIntent {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static final Intent getVoiceDetailsIntent(Context context) {
         Intent voiceSearchIntent = new Intent(ACTION_WEB_SEARCH);
         ResolveInfo ri = context.getPackageManager().resolveActivity(

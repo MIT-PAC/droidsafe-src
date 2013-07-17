@@ -148,6 +148,7 @@ Result varDC838461EE2FA0CA4C9BBB70A15456B0_1857403536 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.972 -0400", hash_original_method = "C7B50D6362AC0A992140F3FAC71C75FC", hash_generated_method = "2F68C89404CCBE9D0E101FBA3C1BF378")
     public final Status getStatus() {
 Status var6300E74790326279AA67EB8DFA2C84B0_1336248352 =         mStatus;

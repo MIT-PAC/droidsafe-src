@@ -73,24 +73,31 @@ abstract class HardwareLayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean isValid();
 
     
+    @DSModeled(DSC.SAFE)
     abstract void resize(int width, int height);
 
     
+    @DSModeled(DSC.SAFE)
     abstract HardwareCanvas getCanvas();
 
     
+    @DSModeled(DSC.SAFE)
     abstract void destroy();
 
     
+    @DSModeled(DSC.SAFE)
     abstract HardwareCanvas start(Canvas currentCanvas);
 
     
+    @DSModeled(DSC.SAFE)
     abstract void end(Canvas currentCanvas);
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean copyInto(Bitmap bitmap);
 
     
@@ -107,6 +114,7 @@ abstract class HardwareLayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void setTransform(Matrix matrix);
 
     

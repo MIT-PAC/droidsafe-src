@@ -52,6 +52,7 @@ public final class CdmaCall extends Call {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.081 -0400", hash_original_method = "DA46D72C53A8C0722B0E4038E55B8A9F", hash_generated_method = "7CAB79B635E0F4A9293F62F48742E6F1")
     public List<Connection> getConnections() {
 List<Connection> varD8B91E18CFFE05D77A84C03EDA812BE2_333898000 =         connections;

@@ -513,6 +513,7 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_415685662 =         format(l, fo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.313 -0400", hash_original_method = "A7437F4A37204482B8F05D868AC831D8", hash_generated_method = "3773A7D8F5FAA97017538EA58EC7E194")
     private final void doWrite(char[] buf, int offset, int count) {
         addTaint(count);

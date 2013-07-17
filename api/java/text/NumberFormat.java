@@ -98,6 +98,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1457341309 =         super.clone();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.831 -0400", hash_original_method = "D30D6926B1574E72997696CC4AACA867", hash_generated_method = "0B6ABAFF776A7BF8E3F771A99D23AEF1")
     public final String format(double value) {
         addTaint(value);
@@ -111,9 +112,11 @@ String varF88CDDD2DC5E468EB7C82E265CB6073D_1909789150 =         format(value, ne
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract StringBuffer format(double value, StringBuffer buffer, FieldPosition field);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.831 -0400", hash_original_method = "D84155C6B50E9BFD8F05A957DEB6EF42", hash_generated_method = "70A990843CA4F89DF47463B8959A45E8")
     public final String format(long value) {
         addTaint(value);
@@ -127,6 +130,7 @@ String varF88CDDD2DC5E468EB7C82E265CB6073D_1057159388 =         format(value, ne
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract StringBuffer format(long value, StringBuffer buffer, FieldPosition field);
 
     
@@ -188,6 +192,7 @@ StringBuffer var202EA03A910D5AF7841539AA60745D42_1272520115 =             format
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final NumberFormat getCurrencyInstance() {
         return getCurrencyInstance(Locale.getDefault());
     }
@@ -199,6 +204,7 @@ StringBuffer var202EA03A910D5AF7841539AA60745D42_1272520115 =             format
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final NumberFormat getIntegerInstance() {
         return getIntegerInstance(Locale.getDefault());
     }
@@ -212,6 +218,7 @@ StringBuffer var202EA03A910D5AF7841539AA60745D42_1272520115 =             format
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final NumberFormat getInstance() {
         return getNumberInstance();
     }
@@ -273,6 +280,7 @@ StringBuffer var202EA03A910D5AF7841539AA60745D42_1272520115 =             format
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final NumberFormat getNumberInstance() {
         return getNumberInstance(Locale.getDefault());
     }
@@ -284,6 +292,7 @@ StringBuffer var202EA03A910D5AF7841539AA60745D42_1272520115 =             format
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final NumberFormat getPercentInstance() {
         return getPercentInstance(Locale.getDefault());
     }
@@ -358,9 +367,11 @@ Number var63E80DF571E08DAA47BEFBF0BD0EEBAD_1414401994 =         number;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Number parse(String string, ParsePosition position);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.837 -0400", hash_original_method = "CBC8FD7F8E88C5B63A9D5DAA3A983953", hash_generated_method = "680A5C75BCA1F816D48896A3FB6D8A1C")
     @Override
     public final Object parseObject(String string, ParsePosition position) {

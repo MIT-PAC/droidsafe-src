@@ -14,18 +14,23 @@ public abstract class DisplayList {
     }
 
 
+    @DSModeled(DSC.SAFE)
     abstract HardwareCanvas start();
 
     
+    @DSModeled(DSC.SAFE)
     abstract void end();
 
     
+    @DSModeled(DSC.SAFE)
     abstract void invalidate();
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean isValid();
 
     
+    @DSModeled(DSC.SAFE)
     abstract int getSize();
 
     

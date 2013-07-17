@@ -36,6 +36,7 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.726 -0400", hash_original_method = "5E7B6C878951D7CA458070D073F03065", hash_generated_method = "BC9ADF117A4CF804C2DF42F6B0498A6D")
     public  ArrayDeque(Collection<? extends E> c) {
         addTaint(c.getTaint());
@@ -651,6 +652,7 @@ E var2157E264C867DE2EF0CC4E40F6B9582B_2099015912 =         removeFirst();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.741 -0400", hash_original_method = "ECCE71EADB88CB0EFABEE24B7316B6D0", hash_generated_method = "7E5EBF25AE1E21F971BEABC09FEC7E10")
     public Iterator<E> iterator() {
 Iterator<E> varEE02B56C0952177FF7B9B6EF5EC917CC_1339572856 =         new DeqIterator();
@@ -661,6 +663,7 @@ Iterator<E> varEE02B56C0952177FF7B9B6EF5EC917CC_1339572856 =         new DeqIter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.741 -0400", hash_original_method = "09A6B8B983928A3C88383EF59752C844", hash_generated_method = "1A3A1254C70A00D556D849A0B86928F3")
     public Iterator<E> descendingIterator() {
 Iterator<E> var79122F73E4C010A8E7103B4CCD1BD3AA_1729431235 =         new DescendingIterator();
@@ -794,6 +797,7 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_87702147 =         a;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.745 -0400", hash_original_method = "A2826FA19E4353225E0757D076E8282A", hash_generated_method = "C277AE12AC822A5E88C8604301CDD69D")
     public ArrayDeque<E> clone() {
         try 

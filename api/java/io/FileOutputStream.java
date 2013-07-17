@@ -196,6 +196,7 @@ FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_242697572 =             channel;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.942 -0400", hash_original_method = "7178DA6FA6DD367775EBAB657FD1BDA0", hash_generated_method = "486019EE0AA1048DD80AB0FDDD04754D")
     public final FileDescriptor getFD() throws IOException {
 FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_659266388 =         fd;

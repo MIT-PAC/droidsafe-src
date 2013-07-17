@@ -35,12 +35,15 @@ public abstract class ServerSocketFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ServerSocket createServerSocket(int port) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ServerSocket createServerSocket(int port, int backlog) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ServerSocket createServerSocket(int port, int backlog, InetAddress iAddress)
             throws IOException;
 

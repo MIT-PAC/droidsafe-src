@@ -39,6 +39,7 @@ public class KeyAgreement {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.210 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "2916234D4716AAC353BA86F2185D0DF4")
     public final String getAlgorithm() {
 String var44A46B4003FC81ACB0223385BA1FA818_1630062590 =         algorithm;
@@ -49,6 +50,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_1630062590 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.210 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "153DCC04C3AE423B76B7AC52B466D792")
     public final Provider getProvider() {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_296691054 =         provider;

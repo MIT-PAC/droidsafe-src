@@ -1183,6 +1183,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static final int getPresenceIconResourceId(int status) {
             switch (status) {
                 case AVAILABLE:
@@ -1201,6 +1202,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static final int getPresencePrecedence(int status) {
             return status;
         }
@@ -1373,6 +1375,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
             }
 
             
+            @DSModeled(DSC.SAFE)
             public static final int getTypeLabelResource(int type) {
                 switch (type) {
                     case TYPE_HOME: return com.android.internal.R.string.phoneTypeHome;
@@ -1503,6 +1506,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
             }
 
             
+            @DSModeled(DSC.SAFE)
             public static final int getTypeLabelResource(int type) {
                 switch (type) {
                     case TYPE_HOME: return com.android.internal.R.string.emailTypeHome;
@@ -1573,6 +1577,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
             }
 
             
+            @DSModeled(DSC.SAFE)
             public static final int getTypeLabelResource(int type) {
                 switch (type) {
                     case TYPE_HOME: return com.android.internal.R.string.postalTypeHome;
@@ -1650,6 +1655,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
             }
 
             
+            @DSModeled(DSC.SAFE)
             public static final int getTypeLabelResource(int type) {
                 switch (type) {
                     case TYPE_HOME: return com.android.internal.R.string.imTypeHome;
@@ -1671,6 +1677,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
             }
 
             
+            @DSModeled(DSC.SAFE)
             public static final int getProtocolLabelResource(int type) {
                 switch (type) {
                     case PROTOCOL_AIM: return com.android.internal.R.string.imProtocolAim;
@@ -1758,6 +1765,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
             }
 
             
+            @DSModeled(DSC.SAFE)
             public static final int getTypeLabelResource(int type) {
                 switch (type) {
                     case TYPE_WORK: return com.android.internal.R.string.orgTypeWork;
@@ -1823,6 +1831,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
             }
 
             
+            @DSModeled(DSC.SAFE)
             public static final int getTypeLabelResource(int type) {
                 switch (type) {
                     case TYPE_ASSISTANT: return com.android.internal.R.string.relationTypeAssistant;
@@ -2058,6 +2067,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_1920742961 =         
             }
 
             
+            @DSModeled(DSC.SAFE)
             public static final int getTypeLabelResource(int type) {
                 switch (type) {
                     case TYPE_HOME: return com.android.internal.R.string.sipAddressTypeHome;

@@ -55,6 +55,7 @@ abstract class GenericInflater<T, P extends GenericInflater.Parent> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract GenericInflater cloneInContext(Context newContext);
 
     
@@ -89,6 +90,7 @@ Context var178E2AD52D6FBBB503F908168856B574_2056492028 =         mContext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.263 -0400", hash_original_method = "E145074F4BEE68EC84A4CE1558E8DDDD", hash_generated_method = "74110D08944C98ACD7769A9AA8B957B2")
     public final Factory<T> getFactory() {
 Factory<T> var086273A71AC89A5E1A3A59778647C1F0_2079476501 =         mFactory;

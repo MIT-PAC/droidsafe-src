@@ -47,9 +47,11 @@ public abstract class CellLocation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void fillInNotifierBundle(Bundle bundle);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isEmpty();
 
     

@@ -67,9 +67,11 @@ public abstract class Keyframe implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Object getValue();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setValue(Object value);
 
     
@@ -124,6 +126,7 @@ Class varEB4C76CBDB3A6E5E3E03E299B7E6BC66_724169297 =         mValueType;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 public abstract Keyframe clone();
 

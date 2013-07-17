@@ -368,6 +368,7 @@ ServiceStateTracker var615613A1D046F80E6B9B13A16A2791AB_1913758978 =         mSS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.892 -0400", hash_original_method = "077104DE86BE536BE2C981492E640B74", hash_generated_method = "3773E6B215CCFF45088461B4E58467D5")
     public List<? extends MmiCode> getPendingMmiCodes() {
 List<? extends MmiCode> varE8C0A474A7F3AF50883AA5B51924928B_1408565726 =         mPendingMMIs;

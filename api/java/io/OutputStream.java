@@ -55,6 +55,7 @@ for(int i = offset;i < offset + count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void write(int oneByte) throws IOException;
 
     

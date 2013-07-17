@@ -418,6 +418,7 @@ Resources varDBD804D6BEF51876FC7FE3C1437E5875_2138522750 =         getTopLevelRe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.276 -0400", hash_original_method = "F7A72EDCDC7800374FD6BBEAFCDB636B", hash_generated_method = "4820F70A587661F6F6A12296D5477811")
     final Handler getHandler() {
 Handler var42FA84C88A5BC46E84179AB18958974D_1700386844 =         mH;
@@ -882,6 +883,7 @@ ContextImpl var8C7F00BBFA5D714A8F742FB231BABCE9_1104810158 =         mSystemCont
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.327 -0400", hash_original_method = "FA6ACBD6D6B2F04759E1E44999782C17", hash_generated_method = "FD0B08696687A373EC3D6CE5A7A39996")
     public final ActivityInfo resolveActivityInfo(Intent intent) {
         addTaint(intent.getTaint());
@@ -906,6 +908,7 @@ ActivityInfo var25154327F32EA688CDFCE3B1E63BC564_1741798179 =         aInfo;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.330 -0400", hash_original_method = "52193E396925A8581791167FBC0A1FC9", hash_generated_method = "C6FCAEEF6EF7C7D52614085B0C8AF15B")
     public final Activity startActivityNow(Activity parent, String id,
         Intent intent, ActivityInfo activityInfo, IBinder token, Bundle state,
@@ -958,6 +961,7 @@ Activity var2C38D07B6015CB84F54BA801C96989DD_489204088 =         mActivities.get
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.341 -0400", hash_original_method = "46F0209236B49884D3899FCB9A0A8CD2", hash_generated_method = "A0A9898BEF94F721CA4A6499A59F5BBE")
     public final void sendActivityResult(
             IBinder token, String id, int requestCode,
@@ -5403,6 +5407,7 @@ String var0E2638BBD63C3DF853211506C164BD6C_799607906 =             "ResultData{t
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.699 -0400", hash_original_method = "F17AEB980BE0F6A4E87F430078BD0B58", hash_generated_method = "4529350361FE68C754C014BF5B42FACA")
         public final void scheduleReceiver(Intent intent, ActivityInfo info,
                 CompatibilityInfo compatInfo, int resultCode, String data, Bundle extras,
@@ -5485,6 +5490,7 @@ String var0E2638BBD63C3DF853211506C164BD6C_799607906 =             "ResultData{t
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.714 -0400", hash_original_method = "EC87D949C3428DDE1DD75260E89A91E6", hash_generated_method = "0F46448146084DF0A48253BB6B15EAD3")
         public final void scheduleBindService(IBinder token, Intent intent,
                 boolean rebind) {
@@ -5505,6 +5511,7 @@ String var0E2638BBD63C3DF853211506C164BD6C_799607906 =             "ResultData{t
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.717 -0400", hash_original_method = "267A066D9D2EC1A97646FF118EBD56F3", hash_generated_method = "9843EAA00159F5B9025BCC662D5F34AD")
         public final void scheduleUnbindService(IBinder token, Intent intent) {
             addTaint(intent.getTaint());
@@ -5521,6 +5528,7 @@ String var0E2638BBD63C3DF853211506C164BD6C_799607906 =             "ResultData{t
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.720 -0400", hash_original_method = "4862A31D82FA9B63D38F69A2AB095DD2", hash_generated_method = "6BA1A2E44412FD9EEFA33C46C75E2693")
         public final void scheduleServiceArgs(IBinder token, boolean taskRemoved, int startId,
             int flags ,Intent args) {

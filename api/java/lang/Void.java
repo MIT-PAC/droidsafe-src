@@ -16,6 +16,7 @@ public final class Void {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     private static Class<Void> lookupType() {
         try {

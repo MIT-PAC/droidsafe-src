@@ -775,6 +775,7 @@ for(Iterator i = other.getParameterNames();i.hasNext();)
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract String encodeBody();
 
     

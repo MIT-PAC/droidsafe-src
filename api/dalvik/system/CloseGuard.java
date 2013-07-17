@@ -107,6 +107,7 @@ public final class CloseGuard {
     
     private static final class DefaultReporter implements Reporter {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.702 -0400", hash_original_method = "5AA262E6EA3904FB58CC8171943AAF5F", hash_generated_method = "5AA262E6EA3904FB58CC8171943AAF5F")
         public DefaultReporter ()
         {

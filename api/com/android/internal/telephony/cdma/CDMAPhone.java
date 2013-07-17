@@ -556,6 +556,7 @@ SignalStrength varD5A83A3C6D3D3BC3F870FC808BD3DAF7_616778466 =         mSST.mSig
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.030 -0400", hash_original_method = "A1DC624417B44DF11F4CA5E5B97277AF", hash_generated_method = "454E6ECB6CD88C6A82FC08B14714D181")
     public List<? extends MmiCode> getPendingMmiCodes() {
 List<? extends MmiCode> var3ABA598F70BB314EB4CF2CEF54338041_277187875 =         mPendingMmis;

@@ -16,6 +16,7 @@ public abstract class SelectionKey {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.275 -0400", hash_original_method = "AFA38A9E30799729C39292277D62F43D", hash_generated_method = "4CCA8E3C40C44D7ED5C556DA58591304")
     public final Object attach(Object anObject) {
         Object oldAttachment = attachment;
@@ -30,6 +31,7 @@ Object var12F0D7B0ACC665DAE79CBE5C1E855DC9_736033836 =         oldAttachment;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.275 -0400", hash_original_method = "F29A40DBFBA770DAC2D3ED3DF7881B6F", hash_generated_method = "67EAFC0E79AD7C0E5AADC57207A233E6")
     public final Object attachment() {
 Object var654DB21DFA380501361FCD413C8E6A16_1233369378 =         attachment;
@@ -40,15 +42,19 @@ Object var654DB21DFA380501361FCD413C8E6A16_1233369378 =         attachment;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void cancel();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SelectableChannel channel();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int interestOps();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SelectionKey interestOps(int operations);
 
     
@@ -82,6 +88,7 @@ Object var654DB21DFA380501361FCD413C8E6A16_1233369378 =         attachment;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isValid();
 
     
@@ -95,9 +102,11 @@ Object var654DB21DFA380501361FCD413C8E6A16_1233369378 =         attachment;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int readyOps();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Selector selector();
 
     

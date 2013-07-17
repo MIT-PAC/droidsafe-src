@@ -257,6 +257,7 @@ PostDialState varA5212BBA7CEDC5476DB20427B201984F_1114729642 =         postDialS
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract Phone getPhone();
 
     

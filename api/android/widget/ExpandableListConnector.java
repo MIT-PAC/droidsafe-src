@@ -724,6 +724,7 @@ Filter var540C13E9E156B687226421B24F2DF178_675363409 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.394 -0400", hash_original_method = "740752E96AF2B266538C6125F8E79937", hash_generated_method = "1084A07E976929C1ACE7CCE76D8C7E6F")
      ArrayList<GroupMetadata> getExpandedGroupMetadataList() {
 ArrayList<GroupMetadata> var16CF2BAF0A5F7FECA6491A4F87231A85_1794616620 =         mExpGroupMetadataList;

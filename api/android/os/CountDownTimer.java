@@ -92,9 +92,11 @@ CountDownTimer var72A74007B2BE62B849F475C7BDA4658B_1444867935 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void onTick(long millisUntilFinished);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void onFinish();
 
     

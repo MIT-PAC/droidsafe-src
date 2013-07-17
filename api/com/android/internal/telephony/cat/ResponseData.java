@@ -23,6 +23,7 @@ abstract class ResponseData {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract void format(ByteArrayOutputStream buf);
 
     

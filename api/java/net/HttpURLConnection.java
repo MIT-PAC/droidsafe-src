@@ -38,6 +38,7 @@ public abstract class HttpURLConnection extends URLConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void disconnect();
 
     
@@ -207,6 +208,7 @@ for(String permittedUserMethod : PERMITTED_USER_METHODS)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean usingProxy();
 
     

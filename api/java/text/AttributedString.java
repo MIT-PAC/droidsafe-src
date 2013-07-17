@@ -72,6 +72,7 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.531 -0400", hash_original_method = "3A8973AD4EBE1F3B94E1633368C42F9D", hash_generated_method = "C411FA53F84E9C9DE5B8293C340E514E")
     private  AttributedString(AttributedCharacterIterator iterator, int start,
             int end, Set<Attribute> attributes) {
@@ -173,6 +174,7 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.534 -0400", hash_original_method = "85CF866984BA31F6F3E97322323F86BA", hash_generated_method = "2AD5E6B08D8448D8B46866E95E7C8F86")
     public  AttributedString(String value,
             Map<? extends AttributedCharacterIterator.Attribute, ?> attributes) {
@@ -388,6 +390,7 @@ for(int i = iterator.getBeginIndex();i < iterator.getEndIndex();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.539 -0400", hash_original_method = "9BDF8CEEC650CFF21B203033378C7411", hash_generated_method = "8A7D4B516825A215343DE33607637FAD")
     public void addAttributes(
             Map<? extends AttributedCharacterIterator.Attribute, ?> attributes,

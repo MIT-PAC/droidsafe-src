@@ -15,6 +15,7 @@ import android.text.Spanned;
 
 public abstract class NumberKeyListener extends BaseKeyListener implements InputFilter {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.475 -0400", hash_original_method = "4B29623A8F76435C1A957FA964420338", hash_generated_method = "4B29623A8F76435C1A957FA964420338")
     public NumberKeyListener ()
     {
@@ -22,6 +23,7 @@ public abstract class NumberKeyListener extends BaseKeyListener implements Input
     }
 
 
+    @DSModeled(DSC.SAFE)
     protected abstract char[] getAcceptedChars();
 
     

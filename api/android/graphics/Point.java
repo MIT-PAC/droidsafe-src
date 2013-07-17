@@ -55,6 +55,7 @@ public class Point implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.647 -0400", hash_original_method = "47D8F51D6A8BFCBDB23B0F8D5AF788FE", hash_generated_method = "2BF53EC3544A2E6062446424007D905E")
     public final void negate() {
         x = -x;
@@ -65,6 +66,7 @@ public class Point implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.647 -0400", hash_original_method = "2341B98028DF5979D10DDC3712740A20", hash_generated_method = "9985F655CDA621D55D06DF0B151AF4BE")
     public final void offset(int dx, int dy) {
         x += dx;
@@ -75,6 +77,7 @@ public class Point implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.648 -0400", hash_original_method = "B64FF880BF78A0B3D79FA58471141474", hash_generated_method = "697F9884E1F2C214DE5DACBF8740ABA1")
     public final boolean equals(int x, int y) {
         addTaint(y);

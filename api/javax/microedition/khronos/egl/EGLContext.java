@@ -21,6 +21,7 @@ public abstract class EGLContext {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract GL getGL();
 
     

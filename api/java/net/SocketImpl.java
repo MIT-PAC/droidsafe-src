@@ -30,25 +30,32 @@ public abstract class SocketImpl implements SocketOptions {
     }
 
 
+    @DSModeled(DSC.SAFE)
     protected abstract void accept(SocketImpl newSocket) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract int available() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void bind(InetAddress address, int port) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void close() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void connect(String host, int port) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void connect(InetAddress address, int port)
             throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void create(boolean isStreaming) throws IOException;
 
     
@@ -85,6 +92,7 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_234712589 =         address;
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract InputStream getInputStream() throws IOException;
 
     
@@ -99,6 +107,7 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_234712589 =         address;
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract OutputStream getOutputStream() throws IOException;
 
     
@@ -113,6 +122,7 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_234712589 =         address;
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void listen(int backlog) throws IOException;
 
     
@@ -149,6 +159,7 @@ String varB5AD21B00F743A0FBF2E8A6EC3D084B6_1511974577 =         "Socket[address=
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void connect(SocketAddress remoteAddr, int timeout) throws IOException;
 
     
@@ -163,6 +174,7 @@ String varB5AD21B00F743A0FBF2E8A6EC3D084B6_1511974577 =         "Socket[address=
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void sendUrgentData(int value) throws IOException;
 
     

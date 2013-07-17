@@ -142,6 +142,7 @@ CharSequence varB017984728AC60AD1F0BF8734F33F15C_1552982801 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.370 -0400", hash_original_method = "39BF66743A5A058B0728A86B3B731327", hash_generated_method = "2F21BDAEEBF441D094CB39D9C56B3981")
     public final int getIconResource() {
         int var1D77D0584D3218E1C5EC6AB79C77BE38_562903784 = (icon != 0 ? icon : applicationInfo.icon);

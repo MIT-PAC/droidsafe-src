@@ -561,75 +561,99 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1040868035 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract String getActionIntentReconnectAlarm();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract String getActionIntentDataStallAlarm();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void startNetStatPoll();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void stopNetStatPoll();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void restartRadio();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void log(String s);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void loge(String s);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract boolean isDataAllowed();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract boolean isApnTypeAvailable(String type);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract State getState(String apnType);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void setState(State s);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void gotoIdleAndNotifyDataConnection(String reason);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract boolean onTrySetupData(String reason);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onRoamingOff();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onRoamingOn();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onRadioAvailable();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onRadioOffOrNotAvailable();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onDataSetupComplete(AsyncResult ar);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onDisconnectDone(int connId, AsyncResult ar);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onVoiceCallStarted();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onVoiceCallEnded();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onCleanUpConnection(boolean tearDown, int apnId, String reason);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onCleanUpAllConnections(String cause);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract boolean isDataPossible(String apnType);
 
     
@@ -1440,6 +1464,7 @@ for(int id = 0;id < APN_NUM_TYPES;id++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isDisconnected();
 
     

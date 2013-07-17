@@ -111,6 +111,7 @@ Socket var947470A701CF490B15CD8DA4BCF73C48_987719783 =         sock;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.952 -0400", hash_original_method = "7A2A4752679C8696C148A96F8F50755B", hash_generated_method = "E058D0B4E92D99A5E3AC3D74F292AFE6")
     public final boolean isSecure(Socket sock) throws IllegalArgumentException {
         addTaint(sock.getTaint());

@@ -70,6 +70,7 @@ DERObject var744C7B728C1BF7AC9370DA8D8B9598D6_1588751565 =         aIn.readObjec
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract DERObject getConvertedValue(DERObjectIdentifier oid, String value);
 
     

@@ -14,6 +14,7 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
 
     private final DataSetObservable mDataSetObservable = new DataSetObservable();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.714 -0400", hash_original_method = "EEED7294B951806F43EBCF63B2A0F4D8", hash_generated_method = "EEED7294B951806F43EBCF63B2A0F4D8")
     public BaseAdapter ()
     {

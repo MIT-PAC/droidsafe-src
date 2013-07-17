@@ -48,6 +48,7 @@ public abstract class ASN1Null extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void encode(DEROutputStream out)
         throws IOException;
 

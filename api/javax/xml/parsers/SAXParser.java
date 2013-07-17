@@ -309,22 +309,28 @@ public abstract class SAXParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract org.xml.sax.Parser getParser() throws SAXException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract org.xml.sax.XMLReader getXMLReader() throws SAXException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isNamespaceAware();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isValidating();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setProperty(String name, Object value)
         throws SAXNotRecognizedException, SAXNotSupportedException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Object getProperty(String name)
         throws SAXNotRecognizedException, SAXNotSupportedException;
 
