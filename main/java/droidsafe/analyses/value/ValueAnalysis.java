@@ -401,11 +401,15 @@ public class ValueAnalysis {
                                                 modeledReceiverObject.getClass(), invokeExpr, 
                                                 paramObjectCartesianProduct, paramClasses);
                                     } else {
-                                        // We couldn't model one of the arguments so we can't simulate the call and 
-                                        // have to invalidate the receiver
-                                        modeledReceiverObject.__ds__invalidate();
-                                        am.logError("Couldn't model every parameter for " + iie + am.sourceLocation + 
-                                                "\n" + "> invalidating " + modeledReceiverObject.__ds__toString() + " as a result");
+                                        String methodSignature = sootMethod.getSignature();
+                                        if(!am.signaturesOfMethodsToStepThru.contains(methodSignature)) {
+                                            // We couldn't model one of the arguments so we can't simulate the call and 
+                                            // have to invalidate the receiver
+                                            modeledReceiverObject.__ds__invalidate();
+                                            am.logError("Couldn't model every parameter for " + iie 
+                                                        + am.sourceLocation + "\n" + "> invalidating " 
+                                                        + modeledReceiverObject.__ds__toString() + " as a result");
+                                        }
                                     }
                                 }
                             }
@@ -706,6 +710,10 @@ public class ValueAnalysis {
         private ParamAnalyzer(InvokeExpr invokeExpr) {
             int paramCount = invokeExpr.getArgCount(); 
 
+            SootMethod sootMethod = invokeExpr.getMethod();
+
+            String methodSignature = sootMethod.getSignature();
+
             // Each index is the class of the parameter at that index
             this.paramClasses = new ArrayList<Class>(paramCount);
 
@@ -783,8 +791,10 @@ public class ValueAnalysis {
                                 } catch (ClassNotFoundException cnfe){
                                     ValueAnalysis.this.logError("Couldn't convert constant value " + arg + " to object: "
                                             + cnfe + "\n");
-                                    for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
-                                        modeledObject.__ds__invalidate();
+                                    if(!ValueAnalysis.this.signaturesOfMethodsToStepThru.contains(methodSignature)) {
+                                        for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
+                                            modeledObject.__ds__invalidate();
+                                        }
                                     }
                                     return;
                                 }
@@ -851,9 +861,11 @@ public class ValueAnalysis {
                                                         + "\n"); 
                                                 // We couldn't model the argument node, so invalidate any param models we've 
                                                 // already created
-                                                for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
-                                                    ValueAnalysis.this.logError("> invalidating argument model " + modeledObject.__ds__toString());
-                                                    modeledObject.__ds__invalidate();
+                                                if(!ValueAnalysis.this.signaturesOfMethodsToStepThru.contains(methodSignature)) {
+                                                    for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
+                                                        ValueAnalysis.this.logError("> invalidating argument model " + modeledObject.__ds__toString());
+                                                        modeledObject.__ds__invalidate();
+                                                    }
                                                 }
                                                 return;
                                             }
@@ -866,9 +878,11 @@ public class ValueAnalysis {
                                                     + ValueAnalysis.this.sourceLocation);
                                             // We couldn't model the argument node, so invalidate any param models we've 
                                             // already created
-                                            for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
-                                               ValueAnalysis.this.logError("> invalidating argument model " + modeledObject.__ds__toString());
-                                               modeledObject.__ds__invalidate();
+                                            if(!ValueAnalysis.this.signaturesOfMethodsToStepThru.contains(methodSignature)) {
+                                                for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
+                                                    ValueAnalysis.this.logError("> invalidating argument model " + modeledObject.__ds__toString());
+                                                    modeledObject.__ds__invalidate();
+                                                }
                                             }
                                      return;
                                         }
@@ -878,9 +892,11 @@ public class ValueAnalysis {
                                             + " dind't find any model attributes for arg #" + i 
                                             + " of instanceInvokeExpr " + invokeExpr);
                                     // invalidate any param models we've already created
-                                    for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
-                                        ValueAnalysis.this.logError("> invalidating argument model " + modeledObject.__ds__toString());
-                                        modeledObject.__ds__invalidate();
+                                    if(!ValueAnalysis.this.signaturesOfMethodsToStepThru.contains(methodSignature)) {
+                                        for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
+                                            ValueAnalysis.this.logError("> invalidating argument model " + modeledObject.__ds__toString());
+                                            modeledObject.__ds__invalidate();
+                                        }
                                     }
                                     return;
                                 }
@@ -928,9 +944,11 @@ public class ValueAnalysis {
                         ValueAnalysis.this.logError("Arg #" + i + " of method " + invokeExpr + " isn't a constant or a "
                                    + "RefType. Not sure what to do - invalidating other arguments and not simulating.");
                         // invalidate any param models we've already created
-                        for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
-                            ValueAnalysis.this.logError("> invalidating argument model " + modeledObject.__ds__toString());
-                            modeledObject.__ds__invalidate();
+                        if(!ValueAnalysis.this.signaturesOfMethodsToStepThru.contains(methodSignature)) {
+                            for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
+                                ValueAnalysis.this.logError("> invalidating argument model " + modeledObject.__ds__toString());
+                                modeledObject.__ds__invalidate();
+                            }
                         }
                         return;
                     }
