@@ -147,13 +147,11 @@ public abstract class ValueAnalysisModeledObject {
                         }
                     }
                 } catch (IllegalAccessException e) {
-                    System.out.println("EXCEPTION: " + e);
                     // simply don't print out the field value
                 }
             }
             str = str + StringUtils.join(attrs.toArray(), ", ");
         }
-        System.out.println("\n\n\n");
         return str;
     }
 }
