@@ -33,6 +33,7 @@ import droidsafe.annotations.DSModeled;
 public abstract class FragmentManager {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.606 -0400", hash_original_method = "0D3FEDE97BC3242ED64134E1F014EA11", hash_generated_method = "0D3FEDE97BC3242ED64134E1F014EA11")
+    @DSModeled(DSC.SAFE)
     public FragmentManager ()
     {
         //Synthesized constructor
@@ -561,6 +562,7 @@ BackStackEntry var74F933A734514BD5EE40CF9077B41749_1793411911 =         mBackSta
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.640 -0400", hash_original_method = "D08899B1EE8437F622E0D7F7BA40A91F", hash_generated_method = "EAFEB96A85E1FD0001F83B902FC970E2")
     @Override
+    @DSModeled(DSC.SAFE)
     public Fragment getFragment(Bundle bundle, String key) {
         addTaint(key.getTaint());
         addTaint(bundle.getTaint());
@@ -830,6 +832,7 @@ for(int i=0;i<N;i++)
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.644 -0400", hash_original_method = "8FB9E657DCE437B207C489B8932863BA", hash_generated_method = "18EC499430BBD37DB6D1BA24E3F3F6F7")
+    @DSModeled(DSC.SAFE)
      Animator loadAnimator(Fragment fragment, int transit, boolean enter,
             int transitionStyle) {
         addTaint(transitionStyle);
@@ -896,6 +899,7 @@ Animator varC35B10EB16A065F611B9B0A64CB84395_10492370 =         AnimatorInflater
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.644 -0400", hash_original_method = "BB58D6FD0DD6E4462529DBFA77E71E10", hash_generated_method = "A9DB7A21A692F90CDDB3B78BC4818F23")
+    @DSModeled(DSC.SAFE)
     public void performPendingDeferredStart(Fragment f) {
         addTaint(f.getTaint());
         if(f.mDeferStart)        
@@ -921,6 +925,7 @@ Animator varC35B10EB16A065F611B9B0A64CB84395_10492370 =         AnimatorInflater
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.650 -0400", hash_original_method = "EE92853A739004991ACA465267191DB6", hash_generated_method = "58D333F274C152A4FE282A740040F414")
+    @DSModeled(DSC.SAFE)
      void moveToState(Fragment f, int newState, int transit, int transitionStyle) {
         addTaint(transitionStyle);
         addTaint(transit);
@@ -1253,6 +1258,7 @@ switch(f.mState){
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.651 -0400", hash_original_method = "8CD289FFBEE11A8449DF6C5CC9F9ABBD", hash_generated_method = "D34879424FD6E5535F6944A8155F4D79")
+    @DSModeled(DSC.SAFE)
      void moveToState(Fragment f) {
         addTaint(f.getTaint());
         moveToState(f, mCurState, 0, 0);
@@ -1262,6 +1268,7 @@ switch(f.mState){
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.651 -0400", hash_original_method = "4A2DC4C23578532593EF5B01DCA60326", hash_generated_method = "53B9318E7A6D27AF1F540337F095D441")
+    @DSModeled(DSC.SAFE)
      void moveToState(int newState, boolean always) {
         addTaint(always);
         addTaint(newState);
@@ -1272,6 +1279,7 @@ switch(f.mState){
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.652 -0400", hash_original_method = "EC27B7DF943700174166429595B46255", hash_generated_method = "4016D9DF912D019CAE9697EFD12463A3")
+    @DSModeled(DSC.SAFE)
      void moveToState(int newState, int transit, int transitStyle, boolean always) {
         addTaint(always);
         addTaint(transitStyle);
@@ -1318,6 +1326,7 @@ for(int i=0;i<mActive.size();i++)
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.652 -0400", hash_original_method = "CCAA4C21D5B5313253593374D7FC1754", hash_generated_method = "DA1D2CEA990D2C426A9BF529124CB3B6")
+    @DSModeled(DSC.SAFE)
      void startPendingDeferredFragments() {
         if(mActive == null)        
         return;
@@ -1379,6 +1388,7 @@ for(int i=0;i<mActive.size();i++)
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.653 -0400", hash_original_method = "21A9491D104F42D1B78CA5222CCDF2B0", hash_generated_method = "D66849BA2606698D479212FDE55861D9")
+    @DSModeled(DSC.SAFE)
      void makeInactive(Fragment f) {
         addTaint(f.getTaint());
         if(f.mIndex < 0)        
@@ -2197,6 +2207,7 @@ ArrayList<Fragment> varFEBBCC2DAA2DE5E47E180E56AA61ABE9_1308771092 =         fra
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.671 -0400", hash_original_method = "90803A489E5220D7765DFCAE4FAFF7AC", hash_generated_method = "2A11C837272CE5D0690987C66C1DB64D")
+    @DSModeled(DSC.SAFE)
      void saveFragmentViewState(Fragment f) {
         addTaint(f.getTaint());
         if(f.mView == null)        
@@ -2547,6 +2558,7 @@ for(int i=0;i<fms.mBackStack.length;i++)
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.676 -0400", hash_original_method = "BB3D6B45374259B5EE70270EF5FFE721", hash_generated_method = "1F7202ED50DB7895525D3D5DD1A85A9D")
+    @DSModeled(DSC.SAFE)
     public void dispatchActivityCreated() {
         mStateSaved = false;
         moveToState(Fragment.ACTIVITY_CREATED, false);

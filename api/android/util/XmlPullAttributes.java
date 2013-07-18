@@ -16,6 +16,7 @@ class XmlPullAttributes implements AttributeSet {
     XmlPullParser mParser;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.364 -0400", hash_original_method = "46700DF76961858760F1F54A77DCF120", hash_generated_method = "9596B1361EACD78292EF670433107D82")
+    @DSModeled(DSC.SAFE)
     public  XmlPullAttributes(XmlPullParser parser) {
         mParser = parser;
         // ---------- Original Method ----------

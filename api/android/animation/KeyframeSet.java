@@ -33,6 +33,7 @@ class KeyframeSet {
     TypeEvaluator mEvaluator;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.926 -0400", hash_original_method = "AC41B3CB583B4F8C00E3AFE9CCF7C554", hash_generated_method = "0033E58342FA6F951E2956BE1152FEB3")
+    @DSModeled(DSC.SAFE)
     public  KeyframeSet(Keyframe... keyframes) {
         mNumKeyframes = keyframes.length;
         mKeyframes = new ArrayList<Keyframe>();
@@ -50,6 +51,7 @@ class KeyframeSet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyframeSet ofInt(int... values) {
         int numKeyframes = values.length;
         IntKeyframe keyframes[] = new IntKeyframe[Math.max(numKeyframes,2)];
@@ -66,6 +68,7 @@ class KeyframeSet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyframeSet ofFloat(float... values) {
         int numKeyframes = values.length;
         FloatKeyframe keyframes[] = new FloatKeyframe[Math.max(numKeyframes,2)];

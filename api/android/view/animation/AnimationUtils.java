@@ -20,12 +20,14 @@ import droidsafe.annotations.DSModeled;
 public class AnimationUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.854 -0400", hash_original_method = "356F4D62C52EA54268D4026A2BB604AB", hash_generated_method = "356F4D62C52EA54268D4026A2BB604AB")
+    @DSModeled(DSC.SAFE)
     public AnimationUtils ()
     {
         //Synthesized constructor
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static long currentAnimationTimeMillis() {
         return SystemClock.uptimeMillis();
     }
@@ -180,6 +182,7 @@ public class AnimationUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Interpolator loadInterpolator(Context context, int id) throws NotFoundException {
         XmlResourceParser parser = null;
         try {

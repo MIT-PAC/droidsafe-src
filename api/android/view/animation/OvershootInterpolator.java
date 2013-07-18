@@ -15,6 +15,7 @@ public class OvershootInterpolator implements Interpolator {
     private float mTension;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.043 -0400", hash_original_method = "3B6B46657965F6A20EBA4BBC6ADB2DCC", hash_generated_method = "A80BEDF24C62F5BB949AF4EB0447BF7C")
+    @DSModeled(DSC.SAFE)
     public  OvershootInterpolator() {
         mTension = 2.0f;
         // ---------- Original Method ----------
@@ -23,6 +24,7 @@ public class OvershootInterpolator implements Interpolator {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.043 -0400", hash_original_method = "AC62500F6876F098739AD852AB3DA2C8", hash_generated_method = "3342901F331D73E8DB6BB4CD2D2DD8A1")
+    @DSModeled(DSC.SAFE)
     public  OvershootInterpolator(float tension) {
         mTension = tension;
         // ---------- Original Method ----------
@@ -31,6 +33,7 @@ public class OvershootInterpolator implements Interpolator {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.043 -0400", hash_original_method = "26239DC2C12BB0FDD838BBF27F5324A3", hash_generated_method = "9E20B1D2935C1C8AB84931C63977F2C6")
+    @DSModeled(DSC.SAFE)
     public  OvershootInterpolator(Context context, AttributeSet attrs) {
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());

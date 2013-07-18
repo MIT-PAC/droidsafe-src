@@ -11,6 +11,7 @@ import droidsafe.annotations.DSModeled;
 public abstract class InputStream extends Object implements Closeable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.059 -0400", hash_original_method = "24B6F89B4CF6382DB2E4A4E334B70B5D", hash_generated_method = "232D3ABC66DDB0962216577ED704AA4D")
+    @DSModeled(DSC.SAFE)
     public  InputStream() {
         // ---------- Original Method ----------
     }

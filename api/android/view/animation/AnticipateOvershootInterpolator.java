@@ -18,6 +18,7 @@ public class AnticipateOvershootInterpolator implements Interpolator {
     private float mTension;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.878 -0400", hash_original_method = "ADFB7B1CA7D165BA838134D2684973F5", hash_generated_method = "9F5D05CDCB4B5CB1ADE17DC42E2BEF6C")
+    @DSModeled(DSC.SAFE)
     public  AnticipateOvershootInterpolator() {
         mTension = 2.0f * 1.5f;
         // ---------- Original Method ----------
@@ -26,6 +27,7 @@ public class AnticipateOvershootInterpolator implements Interpolator {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.878 -0400", hash_original_method = "D15CF2E61548D6019F2AF4E90A4CFAB6", hash_generated_method = "D99C2C79B93882790F7B932B057E00D6")
+    @DSModeled(DSC.SAFE)
     public  AnticipateOvershootInterpolator(float tension) {
         mTension = tension * 1.5f;
         // ---------- Original Method ----------
@@ -34,6 +36,7 @@ public class AnticipateOvershootInterpolator implements Interpolator {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.878 -0400", hash_original_method = "3EEBC4A7EE7237033C6CB68A91DD57AF", hash_generated_method = "E9CCD84715D8B7DFD848411354DE56BA")
+    @DSModeled(DSC.SAFE)
     public  AnticipateOvershootInterpolator(float tension, float extraTension) {
         mTension = tension * extraTension;
         // ---------- Original Method ----------
@@ -42,6 +45,7 @@ public class AnticipateOvershootInterpolator implements Interpolator {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.879 -0400", hash_original_method = "390B8CC1565A1D66C861EB72B2EF6A9A", hash_generated_method = "EEC6BA372D8E55CDB09764DCF1982E23")
+    @DSModeled(DSC.SAFE)
     public  AnticipateOvershootInterpolator(Context context, AttributeSet attrs) {
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
@@ -70,6 +74,7 @@ public class AnticipateOvershootInterpolator implements Interpolator {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.880 -0400", hash_original_method = "2255DD32EB6AB62491E070729AD8FA55", hash_generated_method = "167A604665C79ACE1455720EE15F978B")
+    @DSModeled(DSC.SAFE)
     public float getInterpolation(float t) {
         addTaint(t);
         if(t < 0.5f)        

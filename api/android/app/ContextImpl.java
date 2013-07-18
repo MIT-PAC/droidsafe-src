@@ -239,6 +239,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void registerService(String serviceName, ServiceFetcher fetcher) {
         if (!(fetcher instanceof StaticServiceFetcher)) {
             fetcher.mContextCacheIndex = sNextPerContextServiceCacheIndex++;
@@ -1294,6 +1295,7 @@ File var1737453552AEDF3042D01F5D328877B0_481861044 =             new File(base, 
         int mContextCacheIndex = -1;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.127 -0400", hash_original_method = "89135ACC7FF80D7CE959D5207760FBC6", hash_generated_method = "89135ACC7FF80D7CE959D5207760FBC6")
+        @DSModeled(DSC.SAFE)
         public ServiceFetcher ()
         {
             //Synthesized constructor
@@ -1372,6 +1374,7 @@ Object var18881A382C668272945CA08D6E19E173_1102709340 =                 service;
         private Object mCachedInstance;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.128 -0400", hash_original_method = "8F4B3E9510C7190A989D0DB2833CAA4A", hash_generated_method = "8F4B3E9510C7190A989D0DB2833CAA4A")
+        @DSModeled(DSC.SAFE)
         public StaticServiceFetcher ()
         {
             //Synthesized constructor

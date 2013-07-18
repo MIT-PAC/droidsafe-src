@@ -25,6 +25,7 @@ public class ThreadLocal<T> {
     }
 
     
+        @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.571 -0400", hash_original_method = "17AB1D63AD8B7EADE4880D6FD1744965", hash_generated_method = "DB375446CD45C419BAE9E10F9ACFE7B7")
     @SuppressWarnings("unchecked")
     public T get() {
@@ -65,6 +66,7 @@ T var118A24DDA3996835C16B7CD567861DDA_133760240 =         (T) values.getAfterMis
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.572 -0400", hash_original_method = "65001977AEEFEE3DB28BF88E33FB8DD1", hash_generated_method = "16AE615B2449DE60313CA0EA10BB30B3")
+        @DSModeled(DSC.SAFE)
     protected T initialValue() {
 T var540C13E9E156B687226421B24F2DF178_825544989 =         null;
         var540C13E9E156B687226421B24F2DF178_825544989.addTaint(taint);
@@ -75,6 +77,7 @@ T var540C13E9E156B687226421B24F2DF178_825544989 =         null;
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.572 -0400", hash_original_method = "93D51722B7CB3C8EF0C38EE234F866B9", hash_generated_method = "B84BF9B7A80E78478B3BF914CB380E6C")
+        @DSModeled(DSC.SAFE)
     public void set(T value) {
         addTaint(value.getTaint());
         Thread currentThread = Thread.currentThread();
@@ -112,6 +115,7 @@ T var540C13E9E156B687226421B24F2DF178_825544989 =         null;
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.573 -0400", hash_original_method = "F6756F2BA503B7A43E41A22536745AD1", hash_generated_method = "6C3F0940472BAD8A50C865E14B6FFEEE")
+        @DSModeled(DSC.SAFE)
      Values initializeValues(Thread current) {
         addTaint(current.getTaint());
 Values varDD5B551295F7C93CAA721FF5B869F41E_406192561 =         current.localValues = new Values();
@@ -155,6 +159,7 @@ Values var1FEE96EDD34FFCA0D4CE1EAE7413BA9A_1338540838 =         current.localVal
         private int clean;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.575 -0400", hash_original_method = "8603CA8C8DA2F2A8742D0D3D57F85A73", hash_generated_method = "0F4D9E6506A7695CFEA2C062F4777A67")
+        @DSModeled(DSC.SAFE)
           Values() {
             initializeTable(INITIAL_SIZE);
             this.size = 0;
@@ -167,6 +172,7 @@ Values var1FEE96EDD34FFCA0D4CE1EAE7413BA9A_1338540838 =         current.localVal
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.577 -0400", hash_original_method = "1543F2E70FF0D503FC0C174797134204", hash_generated_method = "F7721AC4BA5FF82A1C46E64C289CD04E")
+        @DSModeled(DSC.SAFE)
           Values(Values fromParent) {
             this.table = fromParent.table.clone();
             this.mask = fromParent.mask;
@@ -186,6 +192,7 @@ Values var1FEE96EDD34FFCA0D4CE1EAE7413BA9A_1338540838 =         current.localVal
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.579 -0400", hash_original_method = "9BD4203D3E5EBD7464FA7B2A4E6BD9E0", hash_generated_method = "379E049E21CBC2DE337CB3BE0A2DB8BC")
         @SuppressWarnings({"unchecked"})
         private void inheritValues(Values fromParent) {
@@ -236,6 +243,7 @@ for(int i = table.length - 2;i >= 0;i -= 2)
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.583 -0400", hash_original_method = "9C8BB7874FA14669E3E1A4855CFECE2B", hash_generated_method = "EA2CD0921D8A0BFC314FC53447F193A3")
+        @DSModeled(DSC.SAFE)
         private void cleanUp() {
             if(rehash())            
             {
@@ -270,6 +278,7 @@ for(int counter = table.length;counter > 0;counter >>= 1,index = next(index))
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.585 -0400", hash_original_method = "D5329B07F2A83D8B781C7C8F5FD2D30A", hash_generated_method = "52D56192824852B32E18F20CB4F6E2BD")
+        @DSModeled(DSC.SAFE)
         private boolean rehash() {
             if(tombstones + size < maximumLoad)            
             {
@@ -319,6 +328,7 @@ for(int i = oldTable.length - 2;i >= 0;i -= 2)
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.586 -0400", hash_original_method = "8FD2790587F2719E68EBC052DE90327C", hash_generated_method = "E62CC5EF7AA1C7DD16254B6AE78605A9")
+        @DSModeled(DSC.SAFE)
          void add(ThreadLocal<?> key, Object value) {
 for(int index = key.hash & mask;;index = next(index))
             {
@@ -343,6 +353,7 @@ for(int index = key.hash & mask;;index = next(index))
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.587 -0400", hash_original_method = "F7F8B7C8923C08ADEC94E7E7276E0E2F", hash_generated_method = "3D20AB52033DCF442222D2199DDFB962")
+        @DSModeled(DSC.SAFE)
          void put(ThreadLocal<?> key, Object value) {
             cleanUp();
             int firstTombstone = -1;
@@ -380,6 +391,7 @@ for(int index = key.hash & mask;;index = next(index))
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.588 -0400", hash_original_method = "27C70593962E283B71D24D73AE4C9368", hash_generated_method = "96E3FE28FCBAAB4D226B4FDE3130C05C")
+        @DSModeled(DSC.SAFE)
          Object getAfterMiss(ThreadLocal<?> key) {
             Object[] table = this.table;
             int index = key.hash & mask;

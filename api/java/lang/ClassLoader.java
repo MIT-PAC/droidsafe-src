@@ -562,6 +562,7 @@ URL varF709D8EE1609F973FA2C794DF46727C9_662051504 =             second.nextEleme
 class BootClassLoader extends ClassLoader {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.701 -0400", hash_original_method = "D3F85B3CE9250DAE48A2E24200FC3763", hash_generated_method = "9B3A59F55A35519AA35E648BA04DC88C")
+    @DSModeled(DSC.BAN)
     public  BootClassLoader() {
         super(null, true);
         // ---------- Original Method ----------

@@ -17,6 +17,7 @@ public final class FileDescriptor {
     private int descriptor = -1;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.868 -0400", hash_original_method = "8A46F9D63ACB608022037D6ACF8ADC11", hash_generated_method = "85C5A980A68C0ECABEB30B9F109CBB75")
+    @DSModeled(DSC.SAFE)
     public  FileDescriptor() {
         // ---------- Original Method ----------
     }

@@ -1,11 +1,14 @@
 package android.animation;
 
 // Droidsafe Imports
+import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class FloatEvaluator implements TypeEvaluator<Number> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.524 -0400", hash_original_method = "C987E70D238EF2ACA67A1E1BCA95D64E", hash_generated_method = "C987E70D238EF2ACA67A1E1BCA95D64E")
+    @DSModeled(DSC.SAFE)
     public FloatEvaluator ()
     {
         //Synthesized constructor

@@ -1,5 +1,8 @@
 package android.text;
 
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
+
 // Droidsafe Imports
 
 public interface Editable
@@ -46,11 +49,13 @@ extends CharSequence, GetChars, Spannable, Appendable
         private static Editable.Factory sInstance = new Editable.Factory();
 
         
+        @DSModeled(DSC.SAFE)
         public static Editable.Factory getInstance() {
             return sInstance;
         }
 
         
+        @DSModeled(DSC.SAFE)
         public Editable newEditable(CharSequence source) {
             return new SpannableStringBuilder(source);
         }

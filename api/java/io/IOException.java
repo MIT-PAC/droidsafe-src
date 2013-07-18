@@ -1,18 +1,22 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSGeneratedField;
 import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class IOException extends Exception {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.047 -0400", hash_original_method = "4DDFF90B7CF8CD74272BB60235E66E65", hash_generated_method = "F4838CE634BCA6B1BFF2D1925B3382CA")
+    @DSModeled(DSC.SAFE)
     public  IOException() {
         // ---------- Original Method ----------
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.048 -0400", hash_original_method = "240D0BB3974E5D097E21F85B24F6FB44", hash_generated_method = "49172DF117E5E7E39EDC3EB9389CE8AC")
+    @DSModeled(DSC.SAFE)
     public  IOException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
@@ -21,6 +25,7 @@ public class IOException extends Exception {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.049 -0400", hash_original_method = "D16D4F9A4DF133858001870C6413D65C", hash_generated_method = "504A579E4909012C787FB734C5F2C1F6")
+    @DSModeled(DSC.SAFE)
     public  IOException(String message, Throwable cause) {
         super(message, cause);
         addTaint(cause.getTaint());
@@ -30,6 +35,7 @@ public class IOException extends Exception {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.049 -0400", hash_original_method = "653E955146B329965A610B3602D07E3E", hash_generated_method = "43135D4BCF30C3D2878DAD39CF7DA4C7")
+    @DSModeled(DSC.SAFE)
     public  IOException(Throwable cause) {
         super(cause == null ? null : cause.toString(), cause);
         addTaint(cause.getTaint());

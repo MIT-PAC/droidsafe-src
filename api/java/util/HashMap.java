@@ -645,6 +645,7 @@ for(HashMapEntry<K, V> e = oldTable[i];e != null;)
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.975 -0400", hash_original_method = "EE2E1A4893DAC33AFE32D39C3AA93587", hash_generated_method = "8E75843E8A09E8DD4102598E97093699")
+        @DSModeled(DSC.SAFE)
     private HashMapEntry<K, V>[] makeTable(int newCapacity) {
         @SuppressWarnings("unchecked") HashMapEntry<K, V>[] newTable = (HashMapEntry<K, V>[]) new HashMapEntry[newCapacity];
         table = newTable;
@@ -662,6 +663,7 @@ HashMapEntry<K, V>[] varBBDF9FA229AA843E98D9C8441545D1D6_1131626688 =         ne
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.975 -0400", hash_original_method = "0D1C32EF365F651EE12DB3FC6B4877B2", hash_generated_method = "3427B15CEE33079CA1CD47B1C240DF21")
+        @DSModeled(DSC.SAFE)
     private HashMapEntry<K, V>[] doubleCapacity() {
         HashMapEntry<K, V>[] oldTable = table;
         int oldCapacity = oldTable.length;

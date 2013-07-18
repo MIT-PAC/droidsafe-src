@@ -17,10 +17,12 @@ public final class Message implements Parcelable {
     Runnable callback;
     Message next;
     
+    @DSModeled(DSC.SAFE)
     public Message(){
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public static Message obtain(){
 		// Original method
 		/*

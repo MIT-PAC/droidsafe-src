@@ -1125,12 +1125,14 @@ public class Resources {
     public static class NotFoundException extends RuntimeException {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:39.136 -0400", hash_original_method = "16646BE2B605A836CC81C1207D23548C", hash_generated_method = "57BD6F9AE62C00D5DA005539BF3270C7")
+        @DSModeled(DSC.SAFE)
         public  NotFoundException() {
             // ---------- Original Method ----------
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:39.136 -0400", hash_original_method = "4E6E00F1F6EDF0AE5B66F6F35CDBCBD1", hash_generated_method = "3B0DADC8F2E02A2F21624EB7BCDA9AFB")
+        @DSModeled(DSC.SAFE)
         public  NotFoundException(String name) {
             super(name);
             addTaint(name.getTaint());

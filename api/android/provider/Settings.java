@@ -239,6 +239,7 @@ String var540C13E9E156B687226421B24F2DF178_21017987 =                 null;
     public static final class System extends NameValueTable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.692 -0400", hash_original_method = "FCC05FCD4F95F74464895D80CA2398E6", hash_generated_method = "FCC05FCD4F95F74464895D80CA2398E6")
+        @DSModeled(DSC.SPEC)
         public System ()
         {
             //Synthesized constructor

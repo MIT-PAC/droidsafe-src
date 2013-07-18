@@ -80,11 +80,13 @@ public final class System {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static String getenv(String name) {
         return getenv(name, null);
     }
 
     
+    @DSModeled(DSC.SPEC)
     private static String getenv(String name, String defaultValue) {
         if (name == null) {
             throw new NullPointerException("name == null");
@@ -100,6 +102,7 @@ public final class System {
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public static Map<String, String> getenv() {
         Map<String, String> map = new HashMap<String, String>();
         for (String entry : Libcore.os.environ()) {
@@ -117,6 +120,7 @@ public final class System {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Properties getProperties() {
         if (systemProperties == null) {
             initSystemProperties();
@@ -125,6 +129,7 @@ public final class System {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void initSystemProperties() {
         VMRuntime runtime = VMRuntime.getRuntime();
         Properties p = new Properties();
@@ -179,6 +184,7 @@ public final class System {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static void parsePropertyAssignments(Properties p, String[] assignments) {
         for (String assignment : assignments) {
             int split = assignment.indexOf('=');
@@ -282,6 +288,7 @@ public final class System {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void logW(String message, Throwable th) {
         log('W', message, th);
     }

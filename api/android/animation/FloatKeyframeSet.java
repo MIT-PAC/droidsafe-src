@@ -4,8 +4,10 @@ package android.animation;
 import java.util.ArrayList;
 
 import android.animation.Keyframe.FloatKeyframe;
+import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSGeneratedField;
 import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class FloatKeyframeSet extends KeyframeSet {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.576 -0400", hash_original_field = "235063B1CBCA83735C62ED6B83B05F45", hash_generated_field = "E0DB3C6AA501546F29FB528503DA896D")
@@ -22,6 +24,7 @@ class FloatKeyframeSet extends KeyframeSet {
     private boolean firstTime = true;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.580 -0400", hash_original_method = "55E7A0FB76C458623E86CCD48BC7C81D", hash_generated_method = "5B66BB5D60F8E21616BC6C478FACA9AA")
+    @DSModeled(DSC.SAFE)
     public  FloatKeyframeSet(FloatKeyframe... keyframes) {
         super(keyframes);
         addTaint(keyframes[0].getTaint());

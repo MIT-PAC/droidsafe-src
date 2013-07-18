@@ -54,6 +54,7 @@ public class SystemProperties {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public static String get(String key) {
         if (key.length() > PROP_NAME_MAX) {
             throw new IllegalArgumentException("key.length > " + PROP_NAME_MAX);
@@ -62,6 +63,7 @@ public class SystemProperties {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String get(String key, String def) {
         if (key.length() > PROP_NAME_MAX) {
             throw new IllegalArgumentException("key.length > " + PROP_NAME_MAX);
@@ -70,6 +72,7 @@ public class SystemProperties {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getInt(String key, int def) {
         if (key.length() > PROP_NAME_MAX) {
             throw new IllegalArgumentException("key.length > " + PROP_NAME_MAX);

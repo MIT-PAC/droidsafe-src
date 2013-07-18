@@ -47,6 +47,7 @@ public final class AnimatorSet extends Animator {
     private long mDuration = -1;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.245 -0400", hash_original_method = "A9DDD8ED58932E64D4F5BE029FA05ABF", hash_generated_method = "A9DDD8ED58932E64D4F5BE029FA05ABF")
+    @DSModeled(DSC.SAFE)
     public AnimatorSet ()
     {
         //Synthesized constructor
@@ -54,6 +55,7 @@ public final class AnimatorSet extends Animator {
 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.248 -0400", hash_original_method = "D3DC50F4C11146F18EBEE861B5ED6567", hash_generated_method = "A19870BF86C8630117E54BA9568156FE")
+    @DSModeled(DSC.SAFE)
     public void playTogether(Animator... items) {
         addTaint(items[0].getTaint());
         if(items != null)        
@@ -111,6 +113,7 @@ for(Animator anim : items)
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.259 -0400", hash_original_method = "6DD5048753632FED7CFB0FE5E71CCF54", hash_generated_method = "73C1DC006536A7CDF58455175D464E47")
+    @DSModeled(DSC.SAFE)
     public void playSequentially(Animator... items) {
         addTaint(items[0].getTaint());
         if(items != null)        
@@ -143,6 +146,7 @@ for(int i = 0;i < items.length - 1;++i)
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.264 -0400", hash_original_method = "2D5A2EE93DC881BBD9D776B2A4798185", hash_generated_method = "71BE700E7897EAD1E9A145DCF60C87DF")
+    @DSModeled(DSC.SAFE)
     public void playSequentially(List<Animator> items) {
         addTaint(items.getTaint());
         if(items != null && items.size() > 0)        
@@ -195,6 +199,7 @@ ArrayList<Animator> varDADFE646C33414C4DBF274E94AA88940_1663999982 =         chi
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.272 -0400", hash_original_method = "41A215E076D4B9AE460EA29EBF85AEE2", hash_generated_method = "E0DC6D778D499F283FB885385A810433")
     @Override
+    @DSModeled(DSC.SAFE)
     public void setTarget(Object target) {
         addTaint(target.getTaint());
 for(Node node : mNodes)
@@ -238,6 +243,7 @@ for(Node node : mNodes)
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.280 -0400", hash_original_method = "AC4AA224AE1E479BEEF0C5D37CBA15A0", hash_generated_method = "CF38533A2511DF39B7B00006BEA36266")
+        @DSModeled(DSC.SAFE)
     public Builder play(Animator anim) {
         addTaint(anim.getTaint());
         if(anim != null)        
@@ -473,6 +479,7 @@ for(Node node : mNodes)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.352 -0400", hash_original_method = "BC0D581AF5A0D28CE21AB6B82F02A4C9", hash_generated_method = "9F6799C08C8007AC04C3BA424C228110")
     @SuppressWarnings("unchecked")
     @Override
@@ -669,6 +676,7 @@ AnimatorSet var6E2178F33F884BED37C5DEBCD18F9A96_1391548979 =         anim;
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.383 -0400", hash_original_method = "FF30C4A715862D404FA915E9EED652EB", hash_generated_method = "16561DBFE9E4D1BDE8F2BF5380AFF17E")
+    @DSModeled(DSC.SAFE)
     private void sortNodes() {
         if(mNeedsSort)        
         {
@@ -861,6 +869,7 @@ for(int i = 0;i < numDependencies;++i)
         private AnimatorSet mAnimatorSet;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.419 -0400", hash_original_method = "F7A8B618CE707AD8B38E15DFED3CE3FB", hash_generated_method = "5149E3B3F385A46C24F32667B339D036")
+        @DSModeled(DSC.SAFE)
           AnimatorSetListener(AnimatorSet animatorSet) {
             mAnimatorSet = animatorSet;
             // ---------- Original Method ----------
@@ -869,6 +878,7 @@ for(int i = 0;i < numDependencies;++i)
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.421 -0400", hash_original_method = "BE6E1E1BF0ACB2CE5581D6C3A3287656", hash_generated_method = "DFAD45D548A2BD004BF93B85F83DA755")
+        @DSModeled(DSC.SAFE)
         public void onAnimationCancel(Animator animation) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(animation.getTaint());
@@ -902,6 +912,7 @@ for(int i = 0;i < numListeners;++i)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.426 -0400", hash_original_method = "18180E214611C82656F1013B7F322C73", hash_generated_method = "C06CE48BB5BB01F584E3BBFE004D298A")
         @SuppressWarnings("unchecked")
+        @DSModeled(DSC.SAFE)
         public void onAnimationEnd(Animator animation) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(animation.getTaint());
@@ -972,6 +983,7 @@ for(int i = 0;i < numListeners;++i)
         public int rule;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.438 -0400", hash_original_method = "762AEC0CFA60BDA08F8DF742864617B6", hash_generated_method = "11E9E1642757F63DD999DD0DC47CC81E")
+        @DSModeled(DSC.SAFE)
         public  Dependency(Node node, int rule) {
             this.node = node;
             this.rule = rule;
@@ -1012,6 +1024,7 @@ for(int i = 0;i < numListeners;++i)
         public boolean done = false;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.452 -0400", hash_original_method = "003188EC42D875435178AF0E478B9BB9", hash_generated_method = "C7E970336EB0D2C23CBE821EB59549EA")
+        @DSModeled(DSC.SAFE)
         public  Node(Animator animation) {
             this.animation = animation;
             // ---------- Original Method ----------
@@ -1020,6 +1033,7 @@ for(int i = 0;i < numListeners;++i)
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.458 -0400", hash_original_method = "A5D3F28C11D8E50179A44FB484206D0C", hash_generated_method = "5ADFC5C40A7DFA7E303BA28F7508D5AC")
+        @DSModeled(DSC.SAFE)
         public void addDependency(Dependency dependency) {
             addTaint(dependency.getTaint());
             if(dependencies == null)            
@@ -1093,6 +1107,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_1221652137 =                 node;
         private Node mCurrentNode;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.470 -0400", hash_original_method = "B0114D66E7DF09FC47A74BA216B98164", hash_generated_method = "865F4ADA611B22E99402EC52F457EC73")
+        @DSModeled(DSC.SAFE)
           Builder(Animator anim) {
             mCurrentNode = mNodeMap.get(anim);
             if(mCurrentNode == null)            
@@ -1112,6 +1127,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_1221652137 =                 node;
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.475 -0400", hash_original_method = "B05ED6D6B491946B79783B58A8AC02E5", hash_generated_method = "587141376702E548A515B64F4E23BEA6")
+        @DSModeled(DSC.SAFE)
         public Builder with(Animator anim) {
             addTaint(anim.getTaint());
             Node node = mNodeMap.get(anim);
@@ -1140,6 +1156,7 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_828451276 =             this;
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.479 -0400", hash_original_method = "115926E0469E8C75055FFE822D9B435C", hash_generated_method = "7843264BA3753D7DAD04872A1251EB3C")
+        @DSModeled(DSC.SAFE)
         public Builder before(Animator anim) {
             addTaint(anim.getTaint());
             Node node = mNodeMap.get(anim);

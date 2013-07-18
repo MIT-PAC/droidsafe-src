@@ -29,6 +29,7 @@ public class ObjectStreamField implements Comparable<Object> {
     private boolean isDeserialized;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.029 -0400", hash_original_method = "0D657EDEC08CB18117CF62EC578D6020", hash_generated_method = "B5082F638F28D4801D71017A6576F64D")
+    @DSModeled(DSC.SAFE)
     public  ObjectStreamField(String name, Class<?> cl) {
         if(name == null || cl == null)        
         {
@@ -48,6 +49,7 @@ public class ObjectStreamField implements Comparable<Object> {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.031 -0400", hash_original_method = "B329D182B18083287B5598787B9BCF42", hash_generated_method = "16D648D0910B0887A64330CF1D6956C5")
+    @DSModeled(DSC.SAFE)
     public  ObjectStreamField(String name, Class<?> cl, boolean unshared) {
         if(name == null || cl == null)        
         {
@@ -69,6 +71,7 @@ public class ObjectStreamField implements Comparable<Object> {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.033 -0400", hash_original_method = "7045B1DBF21073AA43E994CE221E4094", hash_generated_method = "B0D15FC28A0BC93EBA154D9D9D7E9977")
+    @DSModeled(DSC.SAFE)
       ObjectStreamField(String signature, String name) {
         if(name == null)        
         {
