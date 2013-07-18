@@ -194,19 +194,6 @@ List<Sensor> varED12C351C2E8CA4F85F097DDC7E77B4D_1918059607 =         list;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.875 -0400", hash_original_method = "051BFE8F8271F52ABA0B8E99C6E74461", hash_generated_method = "48DAB317855E38A3190549A5C231C78B")
-    public Sensor getDefaultSensor(int type) {
-        addTaint(type);
-        List<Sensor> l = getSensorList(type);
-Sensor varA11F106BFE2231DC3EE4C88BA002E782_1993481457 =         l.isEmpty() ? null : l.get(0);
-        varA11F106BFE2231DC3EE4C88BA002E782_1993481457.addTaint(taint);
-        return varA11F106BFE2231DC3EE4C88BA002E782_1993481457;
-        // ---------- Original Method ----------
-        //List<Sensor> l = getSensorList(type);
-        //return l.isEmpty() ? null : l.get(0);
-    }
-
-    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.876 -0400", hash_original_method = "CA10DA2A107C571495F28D1A1A335E4D", hash_generated_method = "F78FDE58BD1A227AB23B75F1E28886A8")
     @Deprecated
     public boolean registerListener(SensorListener listener, int sensors) {

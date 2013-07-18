@@ -3,10 +3,10 @@ package droidsafe.runtime;
 import java.util.Random;
 
 import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.sun.corba.se.impl.corba.ContextImpl;
+import android.app.ContextImpl;
 
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
@@ -43,7 +43,7 @@ public class DroidSafeAndroidRuntime {
 	 * @param activity
 	 */
 	public static void modelActivity(android.app.Activity activity) {
-		ContextImpl context = new ContextImpl();
+		Context context = new ContextImpl();
 		
 		while (true) {
 			Bundle b = new Bundle();

@@ -3767,12 +3767,6 @@ Intent var4DCF8E3D75AE0B94CDA94656DCE16BCE_894788610 =             mIntent;
             return new Intent[size];
         }
     };
-    // orphaned legacy method
-    @Override
-	public void writeToParcel(Parcel dest, int flags) {
-		// TODO Auto-generated method stub
-		
-	}
     
 }
 

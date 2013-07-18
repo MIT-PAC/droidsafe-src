@@ -312,7 +312,9 @@ public final class Bitmap implements Parcelable {
         addTaint(isMutable);
         addTaint(config.getTaint());
         checkRecycled("Can't copy a recycled bitmap");
-        Bitmap b = nativeCopy(mNativeBitmap, config.nativeInt, isMutable);
+        //Bitmap b = nativeCopy(mNativeBitmap, config.nativeInt, isMutable);
+        Bitmap b = new Bitmap();
+        
         if(b != null)        
         {
             b.mDensity = mDensity;
@@ -922,23 +924,12 @@ Bitmap varCB1FEB1592E325F352986A6C8FA8FC91_1016252427 =         extractAlpha(nul
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.808 -0400", hash_original_method = "798FC3DD232FCC4B06F4415625A8D213", hash_generated_method = "12258064B716F95453A92D15826B1598")
     public Bitmap extractAlpha(Paint paint, int[] offsetXY) {
-        addTaint(offsetXY[0]);
-        addTaint(paint.getTaint());
-        checkRecycled("Can't extractAlpha on a recycled bitmap");
-        int nativePaint = paint != null ? paint.mNativePaint : 0;
-        Bitmap bm = nativeExtractAlpha(mNativeBitmap, nativePaint, offsetXY);
-        if(bm == null)        
-        {
-            RuntimeException var67B3BF2BCD6B32B8B5F007307A0B9CE2_1104082823 = new RuntimeException("Failed to extractAlpha on Bitmap");
-            var67B3BF2BCD6B32B8B5F007307A0B9CE2_1104082823.addTaint(taint);
-            throw var67B3BF2BCD6B32B8B5F007307A0B9CE2_1104082823;
-        } //End block
+        Bitmap bm = new Bitmap();
+        bm.taint.addTaint(offsetXY[0]);
+        bm.addTaint(paint.getTaint());
         bm.mDensity = mDensity;
-Bitmap varB8E43D5ABE5A56CEFCFBA2D810F6046C_1911194522 =         bm;
-        varB8E43D5ABE5A56CEFCFBA2D810F6046C_1911194522.addTaint(taint);
-        return varB8E43D5ABE5A56CEFCFBA2D810F6046C_1911194522;
+        return bm;
         // ---------- Original Method ----------
         //checkRecycled("Can't extractAlpha on a recycled bitmap");
         //int nativePaint = paint != null ? paint.mNativePaint : 0;
@@ -973,14 +964,24 @@ Bitmap varB8E43D5ABE5A56CEFCFBA2D810F6046C_1911194522 =         bm;
     private static Bitmap nativeCreate(int[] colors, int offset,
                                               int stride, int width, int height,
                                             int nativeConfig, boolean mutable) {
-                //DSFIXME:  Can't synthesize return for advanced types
+    	Bitmap b = new Bitmap();
+    	b.addTaint(colors[0]);
+    	b.addTaint(offset);
+    	b.addTaint(stride);
+    	b.addTaint(width);
+    	b.addTaint(height);
+    	b.addTaint(nativeConfig);
+    	b.addTaint(mutable);
+    	return b;
     }
 
     
+    /*
     private static Bitmap nativeCopy(int srcBitmap, int nativeConfig,
                                             boolean isMutable) {
                 //DSFIXME:  Can't synthesize return for advanced types
     }
+    */
 
     
     private static void nativeDestructor(int nativeBitmap) {
@@ -1072,7 +1073,9 @@ Bitmap varB8E43D5ABE5A56CEFCFBA2D810F6046C_1911194522 =         bm;
 
     
     private static Bitmap nativeCreateFromParcel(Parcel p) {
-                //DSFIXME:  Can't synthesize return for advanced types
+    	Bitmap b = new Bitmap();
+    	b.addTaint(p.getTaint());
+    	return b;
     }
 
     
@@ -1085,11 +1088,13 @@ Bitmap varB8E43D5ABE5A56CEFCFBA2D810F6046C_1911194522 =         bm;
     }
 
     
+    /*
     private static Bitmap nativeExtractAlpha(int nativeBitmap,
                                                     int nativePaint,
                                                     int[] offsetXY) {
                 //DSFIXME:  Can't synthesize return for advanced types
     }
+    */
 
     
     private static void nativePrepareToDraw(int nativeBitmap) {
@@ -1221,13 +1226,6 @@ Bitmap varB8E43D5ABE5A56CEFCFBA2D810F6046C_1911194522 =         bm;
 	private void setHeight(int height) {
 		//Synthetic method in order to track height taints, which are managed in native code
 		addTaint(height);
-	}
-    
-    // orphaned legacy method
-    @Override
-	public void writeToParcel(Parcel dest, int flags) {
-		// TODO Auto-generated method stub
-		
 	}
     
     // orphaned legacy method

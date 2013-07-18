@@ -413,10 +413,12 @@ for(Map.Entry<String, String> iter : mAttributes.entrySet())
     }
 
     
+    /*
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:44.181 -0400", hash_original_method = "21C44A8FDEA142EAF44ED7CEC6DABF8E", hash_generated_method = "43A16705CA15F45B5C6A3BDE225AF57D")
     private String getAttributesNative(String fileName) {
         //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
     }
+    */
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:44.181 -0400", hash_original_method = "97BA6F84691FEC7044D96C3EF30411A0", hash_generated_method = "00C8985DB1983BF703BB7E7AFEB6EC82")

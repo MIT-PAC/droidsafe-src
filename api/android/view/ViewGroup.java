@@ -68,6 +68,36 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     private ArrayList<View> mVisibilityChangingChildren;
     @ViewDebug.ExportedProperty(category = "drawing")
     private boolean mDrawLayers = true;
+    
+    private class MyTransitionListener implements LayoutTransition.TransitionListener {
+
+        @DSModeled(DSC.SPEC)
+        public MyTransitionListener(ViewGroup viewGroup) {
+
+        }
+
+	    @Override
+	    public void startTransition(LayoutTransition transition, ViewGroup container,
+            View view, int transitionType) {
+		        if (transitionType == LayoutTransition.DISAPPEARING) {
+		            startViewTransition(view);
+		        }
+		    }
+	
+	    @Override
+	    public void endTransition(LayoutTransition transition, ViewGroup container,
+	            View view, int transitionType) {
+	        if (mLayoutSuppressed && !transition.isChangingLayout()) {
+	            requestLayout();
+	            mLayoutSuppressed = false;
+	        }
+	        if (transitionType == LayoutTransition.DISAPPEARING && mTransitioningViews != null) {
+	            endViewTransition(view);
+	        }
+	    }
+	}
+
+
     private LayoutTransition.TransitionListener mLayoutTransitionListener = new MyTransitionListener(this);
     
     @DSModeled(DSC.SAFE)

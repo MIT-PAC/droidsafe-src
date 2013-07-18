@@ -1018,8 +1018,8 @@ public class TextUtils {
 
         
         @DSModeled(DSC.SAFE)
-        //public String next() {
-        public Object next() {
+        public String next() {
+        //public Object next() {
         	/*
             int end = mString.indexOf(mDelimiter, mPosition);
             if (end == -1) {
@@ -1232,7 +1232,7 @@ for(int i = 0;i < n;i++)
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:37.668 -0400", hash_original_field = "929F27A1CDFDFD64EF662ECC8CBB324A", hash_generated_field = "DF0FC51B4556E2572818C89584203638")
 
     public static final int EASY_EDIT_SPAN = 22;
-    static Parcelable.Creator<CharSequence> CHAR_SEQUENCE_CREATOR  = new MyCreator();
+    public static Parcelable.Creator<CharSequence> CHAR_SEQUENCE_CREATOR  = new MyCreator();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:37.668 -0400", hash_original_field = "E7073F236704D4E004CC35F088F3B8FE", hash_generated_field = "C2F2F45019948F5515A5534F9B80EBF4")
 
     private static final char FIRST_RIGHT_TO_LEFT = '\u0590';

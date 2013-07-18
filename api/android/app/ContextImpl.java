@@ -146,7 +146,7 @@ Intent varD535A24B470170C9E7EA08ED846B5DCB_39836133 =         registerReceiver(r
     
 }
 
-class ContextImpl extends Context {
+public class ContextImpl extends Context {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.061 -0400", hash_original_field = "F26EF77FADF5A57881907E560F2D0D42", hash_generated_field = "EDE05288DA1A1347727FFDBB84784438")
 
     LoadedApk mPackageInfo;
@@ -1632,20 +1632,6 @@ Object varDBBAAAC9107CE4BCE906761B33CD6DC6_1526316759 =             new Wallpape
                 public Object getService(ContextImpl ctx) {
                     return WindowManagerImpl.getDefault(ctx.mPackageInfo.mCompatibilityInfo);
                 }});
-    }
-    
-    // orphaned legacy method
-    @Override
-    public SQLiteDatabase openOrCreateDatabase(String file, int mode, 
-            SQLiteDatabase.CursorFactory factory) {
-        throw new UnsupportedOperationException();
-    }
-    
-    // orphaned legacy method
-    @Override
-    public SQLiteDatabase openOrCreateDatabase(String file, int mode,
-            SQLiteDatabase.CursorFactory factory, DatabaseErrorHandler errorHandler) {
-        throw new UnsupportedOperationException();
     }
     
     // orphaned legacy field

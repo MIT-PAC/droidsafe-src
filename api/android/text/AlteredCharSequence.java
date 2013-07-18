@@ -200,19 +200,7 @@ T[] varD00095851380FE9BCE207689FFB0CC5E_1799231042 =             mSpanned.getSpa
 
 
     
-    // orphaned legacy method
-    @Override
-	public void getChars(int start, int end, char[] dest, int destoff) {
-		// TODO Auto-generated method stub
-
-	}
     
-    // orphaned legacy method
-    @Override
-	public char charAt(int index) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
     
 }
 

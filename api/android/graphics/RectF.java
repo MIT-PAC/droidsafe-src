@@ -15,10 +15,10 @@ import droidsafe.annotations.DSGenerator;
 import droidsafe.annotations.DSModeled;
 
 public class RectF implements Parcelable {
-    private float left;
-    float top;
-    private float right;
-    private float bottom;
+    public float left;
+    public float top;
+    public float right;
+    public float bottom;
     
     @DSModeled(DSC.SAFE)
     public RectF() {
@@ -542,13 +542,6 @@ public class RectF implements Parcelable {
     @DSModeled(DSC.SAFE)
 	public final float left() {
 		return getTaintFloat();
-	}
-    
-    // orphaned legacy method
-    @Override
-	public void writeToParcel(Parcel arg0, int arg1) {
-		// TODO Auto-generated method stub
-		
 	}
     
 }

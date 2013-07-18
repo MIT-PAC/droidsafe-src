@@ -66,7 +66,13 @@ public class Resources {
 	    mAssets = null;
 	}
 
-    
+    private static class MyEmptyArray extends LongSparseArray<Object> {
+        @DSModeled(DSC.SAFE)
+        public MyEmptyArray(int size) {
+            //super(size);
+        }
+    }
+
     @SuppressWarnings("unchecked")
     private static <T> LongSparseArray<T> emptySparseArray() {
         return (LongSparseArray<T>) EMPTY_ARRAY;
@@ -1124,13 +1130,6 @@ public class Resources {
             addTaint(name.getTaint());
             // ---------- Original Method ----------
         }
-
-        
-        // orphaned legacy method
-        public NotFoundException(String detailMessage) {
-			super(detailMessage);
-			// TODO Auto-generated constructor stub
-		}
         
     }
 

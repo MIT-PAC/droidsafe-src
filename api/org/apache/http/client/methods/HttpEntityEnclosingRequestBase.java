@@ -2,9 +2,12 @@ package org.apache.http.client.methods;
 
 // Droidsafe Imports
 import java.io.IOException;
+import java.net.URI;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpEntityEnclosingRequest;
+import org.apache.http.ProtocolVersion;
+import org.apache.http.RequestLine;
 import org.apache.http.client.utils.CloneUtils;
 import org.apache.http.conn.ClientConnectionRequest;
 import org.apache.http.conn.ConnectionReleaseTrigger;

@@ -23,7 +23,7 @@ import droidsafe.annotations.DSGenerator;
 import droidsafe.annotations.DSModeled;
 import droidsafe.helpers.DSUtils;
 
-public abstract class Uri implements Parcelable, Comparable<Uri> {
+public class Uri implements Parcelable, Comparable<Uri> {
     
     @DSModeled(DSC.SAFE)
 	private Uri() {}
@@ -175,17 +175,6 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
     @DSModeled(DSC.SAFE)
 	public int hashCode() {
         return toString().hashCode();
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:30.992 -0400", hash_original_method = "45EC734684FFFB3EE70A4C12F2A2F839", hash_generated_method = "8D380A6097CFEC8020091EA395388CD9")
-    public int compareTo(Uri other) {
-        addTaint(other.getTaint());
-        int varB42A77B0F940EC261622D54B298EB83F_302887133 = (toString().compareTo(other.toString()));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1135234225 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1135234225;
-        // ---------- Original Method ----------
-        //return toString().compareTo(other.toString());
     }
 
     

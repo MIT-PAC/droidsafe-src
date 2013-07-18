@@ -104,7 +104,7 @@ for(int i = 0;i < columnNames.length;i++)
     
     @DSModeled(DSC.SAFE)
     //public Result next() {
-    public Object next() {
+    public Result next() {
         /* GITI DSModeled:  For modeling purposes, we probably do not care what the result returned
          * is, so return a valid Result.BOTH.
          */

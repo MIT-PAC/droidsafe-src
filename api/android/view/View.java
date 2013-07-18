@@ -7065,7 +7065,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public static class DragShadowBuilder {
         private final WeakReference<View> mView;
         
-        DragShadowBuilder(View view){
+        public DragShadowBuilder(View view){
 			mView = new WeakReference<View>(view);
 			/*
 			mView = new WeakReference<View>(view);
@@ -8112,6 +8112,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public static final int TEXT_DIRECTION_LTR = 3;
     public static final int TEXT_DIRECTION_RTL = 4;
     protected static int DEFAULT_TEXT_DIRECTION = TEXT_DIRECTION_INHERIT;
+    
+    static class MyFloatPropertyView extends FloatProperty<View> {
+
+        @DSModeled(DSC.SAFE)
+        public MyFloatPropertyView(String str) {
+            super(str);
+        }
+
+        public Float get(View v) {
+            return Float.valueOf(getTaintFloat());
+        }
+    }
+
     public static Property<View, Float> ALPHA = new MyFloatPropertyView("alpha");
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.675 -0400", hash_original_field = "2463A82C1B3B068FBED45F14B07DEA60", hash_generated_field = "2E88A25ECF88D0581B11F01DDC5B788E")
 

@@ -217,6 +217,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.073 -0400", hash_original_method = "B3EA192DB08CDE7F222599E8EB46FFD6", hash_generated_method = "2D5DDCD9D11C68046BF5AE7CEF5B3FD2")
+    @DSModeled(DSC.SAFE)
     public int save(int saveFlags) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1973425025 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1973425025;
@@ -654,6 +655,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.097 -0400", hash_original_method = "BF5E846D1EF3BCCEA205827104DDB3E8", hash_generated_method = "A8B513A56FF5C578DB10A6FDD49B92E0")
+    @DSModeled(DSC.SAFE)
     public void drawColor(int color) {
         addTaint(color);
         native_drawColor(mNativeCanvas, color);
@@ -1905,18 +1907,6 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.133 -0400", hash_original_field = "E4DF070159C4F6422D39F4135C00F6BC", hash_generated_field = "A21A7EFBC48A7EE5E4832E43F9767035")
 
     public static final int ALL_SAVE_FLAG = 0x1F;
-    // orphaned legacy method
-    @DSModeled(DSC.SAFE)
-	public void drawColor(int i) {
-		addTaint(i);
-	}
-    
-    // orphaned legacy method
-    @DSModeled(DSC.SAFE)
-	public int save(int i) {
-		addTaint(i);
-		return getTaintInt();
-	}
     
 }
 

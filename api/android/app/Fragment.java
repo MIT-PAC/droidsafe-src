@@ -322,7 +322,6 @@ public class Fragment implements ComponentCallbacks2, OnCreateContextMenuListene
     
     @DSModeled(DSC.SPEC)
 	public Fragment() {
-		onCreateView(new LayoutInflater(), null, null);
 	}
 
     
@@ -1550,19 +1549,6 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1645929206 =         mView;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.634 -0400", hash_original_field = "FF953E97A61C82A8BD259E088591325D", hash_generated_field = "562F93666D34FFE3A5D8899053C80C4E")
 
     static final int RESUMED = 5;
-    // orphaned legacy method
-    @Override
-	public void onConfigurationChanged(Configuration arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-    
-    // orphaned legacy method
-    @Override
-	public void onTrimMemory(int arg0) {
-		// TODO Auto-generated method stub
-		
-	}
     
 }
 

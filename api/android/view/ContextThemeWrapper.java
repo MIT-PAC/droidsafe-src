@@ -1,12 +1,10 @@
 package android.view;
 
 // Droidsafe Imports
+import android.app.ContextImpl;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.Resources;
-
-import com.sun.corba.se.impl.corba.ContextImpl;
-
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSGeneratedField;
 import droidsafe.annotations.DSGenerator;
@@ -104,13 +102,6 @@ public class ContextThemeWrapper extends ContextWrapper {
             //}
         //}
         //onApplyThemeResource(mTheme, mThemeResource, first);
-    }
-
-    
-    // orphaned legacy method
-    protected void onApplyThemeResource(android.content.res.Resources.Theme theme,
-    		int resid, boolean b) {
-    	
     }
     
 }
