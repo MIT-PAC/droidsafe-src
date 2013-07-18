@@ -2,7 +2,7 @@ package droidsafe.analyses.value.models.droidsafe.primitives;
 
 import droidsafe.analyses.value.ValueAnalysisModeledObject;
 
-public class ValueAnalysisDouble extends ValueAnalysisModeledPrimitive {
+public class ValueAnalysisDouble extends ValueAnalysisPrimitive {
 
     double value;
 
