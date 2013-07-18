@@ -351,14 +351,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.432 -0400", hash_original_method = "6E480C32A7FC910695FE07C33ABF7A7A", hash_generated_method = "AD454F01B4A79F64B85B96CBA3B68A9E")
     public  View(Context context) {
         mContext = context;
-        mResources = context != null ? context.getResources() : null;
-        mViewFlags = SOUND_EFFECTS_ENABLED | HAPTIC_FEEDBACK_ENABLED | LAYOUT_DIRECTION_INHERIT;
-        mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
-        setOverScrollMode(OVER_SCROLL_IF_CONTENT_SCROLLS);
-        mUserPaddingStart = -1;
-        mUserPaddingEnd = -1;
-        mUserPaddingRelative = false;
-        
+        onDraw(new Canvas());
+        mResources = context.getResources();
+        mKeyedTags = new SparseArray<Object>();
+		/*
+		mContext = context;
+		mResources = context != null ? context.getResources() : null;
+		mViewFlags = SOUND_EFFECTS_ENABLED | HAPTIC_FEEDBACK_ENABLED | LAYOUT_DIRECTION_INHERIT;
+		mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
+		setOverScrollMode(OVER_SCROLL_IF_CONTENT_SCROLLS);
+		mUserPaddingStart = -1;
+		mUserPaddingEnd = -1;
+		mUserPaddingRelative = false;
+		*/
         
         
         
@@ -378,445 +383,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.439 -0400", hash_original_method = "F8E7269105FB2D522A5F7FAB2F89EE95", hash_generated_method = "06FDACD94B141F330EF81DB3CEFADA6B")
     public  View(Context context, AttributeSet attrs, int defStyle) {
         this(context);
-        TypedArray a = context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.View,
-                defStyle, 0);
-        Drawable background = null;
-        int leftPadding = -1;
-        int topPadding = -1;
-        int rightPadding = -1;
-        int bottomPadding = -1;
-        int startPadding = -1;
-        int endPadding = -1;
-        int padding = -1;
-        int viewFlagValues = 0;
-        int viewFlagMasks = 0;
-        boolean setScrollContainer = false;
-        int x = 0;
-        int y = 0;
-        float tx = 0;
-        float ty = 0;
-        float rotation = 0;
-        float rotationX = 0;
-        float rotationY = 0;
-        float sx = 1f;
-        float sy = 1f;
-        boolean transformSet = false;
-        int scrollbarStyle = SCROLLBARS_INSIDE_OVERLAY;
-        int overScrollMode = mOverScrollMode;
-        final int N = a.getIndexCount();
-        {
-            int i = 0;
-            {
-                int attr = a.getIndex(i);
-                
-                background = a.getDrawable(attr);
-                
-                
-                padding = a.getDimensionPixelSize(attr, -1);
-                
-                
-                leftPadding = a.getDimensionPixelSize(attr, -1);
-                
-                
-                topPadding = a.getDimensionPixelSize(attr, -1);
-                
-                
-                rightPadding = a.getDimensionPixelSize(attr, -1);
-                
-                
-                bottomPadding = a.getDimensionPixelSize(attr, -1);
-                
-                
-                startPadding = a.getDimensionPixelSize(attr, -1);
-                
-                
-                endPadding = a.getDimensionPixelSize(attr, -1);
-                
-                
-                x = a.getDimensionPixelOffset(attr, 0);
-                
-                
-                y = a.getDimensionPixelOffset(attr, 0);
-                
-                
-                setAlpha(a.getFloat(attr, 1f));
-                
-                
-                setPivotX(a.getDimensionPixelOffset(attr, 0));
-                
-                
-                setPivotY(a.getDimensionPixelOffset(attr, 0));
-                
-                
-                tx = a.getDimensionPixelOffset(attr, 0);
-                
-                
-                transformSet = true;
-                
-                
-                ty = a.getDimensionPixelOffset(attr, 0);
-                
-                
-                transformSet = true;
-                
-                
-                rotation = a.getFloat(attr, 0);
-                
-                
-                transformSet = true;
-                
-                
-                rotationX = a.getFloat(attr, 0);
-                
-                
-                transformSet = true;
-                
-                
-                rotationY = a.getFloat(attr, 0);
-                
-                
-                transformSet = true;
-                
-                
-                sx = a.getFloat(attr, 1f);
-                
-                
-                transformSet = true;
-                
-                
-                sy = a.getFloat(attr, 1f);
-                
-                
-                transformSet = true;
-                
-                
-                mID = a.getResourceId(attr, NO_ID);
-                
-                
-                mTag = a.getText(attr);
-                
-                
-                {
-                    boolean var45591D90FC7AE21A8CB6FE28079E45A9_279772812 = (a.getBoolean(attr, false));
-                    {
-                        viewFlagValues |= FITS_SYSTEM_WINDOWS;
-                        viewFlagMasks |= FITS_SYSTEM_WINDOWS;
-                    } 
-                } 
-                
-                
-                {
-                    boolean var45591D90FC7AE21A8CB6FE28079E45A9_274859969 = (a.getBoolean(attr, false));
-                    {
-                        viewFlagValues |= FOCUSABLE;
-                        viewFlagMasks |= FOCUSABLE_MASK;
-                    } 
-                } 
-                
-                
-                {
-                    boolean var45591D90FC7AE21A8CB6FE28079E45A9_1764695657 = (a.getBoolean(attr, false));
-                    {
-                        viewFlagValues |= FOCUSABLE_IN_TOUCH_MODE | FOCUSABLE;
-                        viewFlagMasks |= FOCUSABLE_IN_TOUCH_MODE | FOCUSABLE_MASK;
-                    } 
-                } 
-                
-                
-                {
-                    boolean var45591D90FC7AE21A8CB6FE28079E45A9_1308169927 = (a.getBoolean(attr, false));
-                    {
-                        viewFlagValues |= CLICKABLE;
-                        viewFlagMasks |= CLICKABLE;
-                    } 
-                } 
-                
-                
-                {
-                    boolean var45591D90FC7AE21A8CB6FE28079E45A9_846595932 = (a.getBoolean(attr, false));
-                    {
-                        viewFlagValues |= LONG_CLICKABLE;
-                        viewFlagMasks |= LONG_CLICKABLE;
-                    } 
-                } 
-                
-                
-                {
-                    boolean varE83A5B5DD6F1EFE4CE2BCD602A46684B_344607049 = (!a.getBoolean(attr, true));
-                    {
-                        viewFlagValues |= SAVE_DISABLED;
-                        viewFlagMasks |= SAVE_DISABLED_MASK;
-                    } 
-                } 
-                
-                
-                {
-                    boolean var45591D90FC7AE21A8CB6FE28079E45A9_1789097241 = (a.getBoolean(attr, false));
-                    {
-                        viewFlagValues |= DUPLICATE_PARENT_STATE;
-                        viewFlagMasks |= DUPLICATE_PARENT_STATE;
-                    } 
-                } 
-                
-                
-                final int visibility = a.getInt(attr, 0);
-                
-                
-                {
-                    viewFlagValues |= VISIBILITY_FLAGS[visibility];
-                    viewFlagMasks |= VISIBILITY_MASK;
-                } 
-                
-                
-                viewFlagValues &= ~LAYOUT_DIRECTION_MASK;
-                
-                
-                final int layoutDirection = a.getInt(attr, -1);
-                
-                
-                {
-                    viewFlagValues |= LAYOUT_DIRECTION_FLAGS[layoutDirection];
-                } 
-                {
-                    viewFlagValues |= LAYOUT_DIRECTION_DEFAULT;
-                } 
-                
-                
-                viewFlagMasks |= LAYOUT_DIRECTION_MASK;
-                
-                
-                final int cacheQuality = a.getInt(attr, 0);
-                
-                
-                {
-                    viewFlagValues |= DRAWING_CACHE_QUALITY_FLAGS[cacheQuality];
-                    viewFlagMasks |= DRAWING_CACHE_QUALITY_MASK;
-                } 
-                
-                
-                mContentDescription = a.getString(attr);
-                
-                
-                {
-                    boolean varE83A5B5DD6F1EFE4CE2BCD602A46684B_237934094 = (!a.getBoolean(attr, true));
-                    {
-                        viewFlagValues &= ~SOUND_EFFECTS_ENABLED;
-                        viewFlagMasks |= SOUND_EFFECTS_ENABLED;
-                    } 
-                } 
-                
-                
-                {
-                    boolean varE83A5B5DD6F1EFE4CE2BCD602A46684B_970155553 = (!a.getBoolean(attr, true));
-                    {
-                        viewFlagValues &= ~HAPTIC_FEEDBACK_ENABLED;
-                        viewFlagMasks |= HAPTIC_FEEDBACK_ENABLED;
-                    } 
-                } 
-                
-                
-                final int scrollbars = a.getInt(attr, SCROLLBARS_NONE);
-                
-                
-                {
-                    viewFlagValues |= scrollbars;
-                    viewFlagMasks |= SCROLLBARS_MASK;
-                    initializeScrollbars(a);
-                } 
-                
-                
-                {
-                    boolean varC070C09F5C0916551B09381C0852B394_58307377 = (context.getApplicationInfo().targetSdkVersion >= ICE_CREAM_SANDWICH);
-                } 
-                
-                
-                final int fadingEdge = a.getInt(attr, FADING_EDGE_NONE);
-                
-                
-                {
-                    viewFlagValues |= fadingEdge;
-                    viewFlagMasks |= FADING_EDGE_MASK;
-                    initializeFadingEdge(a);
-                } 
-                
-                
-                scrollbarStyle = a.getInt(attr, SCROLLBARS_INSIDE_OVERLAY);
-                
-                
-                {
-                    viewFlagValues |= scrollbarStyle & SCROLLBARS_STYLE_MASK;
-                    viewFlagMasks |= SCROLLBARS_STYLE_MASK;
-                } 
-                
-                
-                setScrollContainer = true;
-                
-                
-                {
-                    boolean var45591D90FC7AE21A8CB6FE28079E45A9_961967928 = (a.getBoolean(attr, false));
-                    {
-                        setScrollContainer(true);
-                    } 
-                } 
-                
-                
-                {
-                    boolean var45591D90FC7AE21A8CB6FE28079E45A9_542865133 = (a.getBoolean(attr, false));
-                    {
-                        viewFlagValues |= KEEP_SCREEN_ON;
-                        viewFlagMasks |= KEEP_SCREEN_ON;
-                    } 
-                } 
-                
-                
-                {
-                    boolean var45591D90FC7AE21A8CB6FE28079E45A9_1113795497 = (a.getBoolean(attr, false));
-                    {
-                        viewFlagValues |= FILTER_TOUCHES_WHEN_OBSCURED;
-                        viewFlagMasks |= FILTER_TOUCHES_WHEN_OBSCURED;
-                    } 
-                } 
-                
-                
-                mNextFocusLeftId = a.getResourceId(attr, View.NO_ID);
-                
-                
-                mNextFocusRightId = a.getResourceId(attr, View.NO_ID);
-                
-                
-                mNextFocusUpId = a.getResourceId(attr, View.NO_ID);
-                
-                
-                mNextFocusDownId = a.getResourceId(attr, View.NO_ID);
-                
-                
-                mNextFocusForwardId = a.getResourceId(attr, View.NO_ID);
-                
-                
-                mMinWidth = a.getDimensionPixelSize(attr, 0);
-                
-                
-                mMinHeight = a.getDimensionPixelSize(attr, 0);
-                
-                
-                {
-                    boolean var493A86E51AC82FCCEFBD5D9BA92432B0_2030471368 = (context.isRestricted());
-                    {
-                        if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("The android:onClick attribute cannot "
-                                + "be used within a restricted context");
-                    } 
-                } 
-                
-                
-                final String handlerName = a.getString(attr);
-                
-                
-                {
-                    setOnClickListener(new OnClickListener() {                        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.437 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "DD76E21366B40D00A372B0BC0CE30131")
-                        private Method mHandler;
-                        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.438 -0400", hash_original_method = "E9EFDD10534D1BAF541333BA74E853ED", hash_generated_method = "FBC50A1D0ADCA4625792E0F0AFC6C78E")
-                        public void onClick(View v) {
-                            
-                            {
-                                try 
-                                {
-                                    mHandler = getContext().getClass().getMethod(handlerName,
-                                                View.class);
-                                } 
-                                catch (NoSuchMethodException e)
-                                {
-                                    int id = getId();
-                                    String idText;
-                                    idText = "";
-                                    idText = " with id '"
-                                                + getContext().getResources().getResourceEntryName(
-                                                    id) + "'";
-                                    if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Could not find a method " +
-                                                handlerName + "(View) in the activity "
-                                                + getContext().getClass() + " for onClick handler"
-                                                + " on view " + View.this.getClass() + idText, e);
-                                } 
-                            } 
-                            try 
-                            {
-                                mHandler.invoke(getContext(), View.this);
-                            } 
-                            catch (IllegalAccessException e)
-                            {
-                                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Could not execute non "
-                                            + "public method of the activity", e);
-                            } 
-                            catch (InvocationTargetException e)
-                            {
-                                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Could not execute "
-                                            + "method of the activity", e);
-                            } 
-                            addTaint(v.getTaint());
-                            
-                            
-                        }
-});
-                } 
-                
-                
-                overScrollMode = a.getInt(attr, OVER_SCROLL_IF_CONTENT_SCROLLS);
-                
-                
-                mVerticalScrollbarPosition = a.getInt(attr, SCROLLBAR_POSITION_DEFAULT);
-                
-                
-                setLayerType(a.getInt(attr, LAYER_TYPE_NONE), null);
-                
-                
-                mTextDirection = a.getInt(attr, DEFAULT_TEXT_DIRECTION);
-                
-            } 
-        } 
-        a.recycle();
-        setOverScrollMode(overScrollMode);
-        {
-            setBackgroundDrawable(background);
-        } 
-        mUserPaddingRelative = (startPadding >= 0 || endPadding >= 0);
-        mUserPaddingStart = startPadding;
-        mUserPaddingEnd = endPadding;
-        {
-            leftPadding = padding;
-            topPadding = padding;
-            rightPadding = padding;
-            bottomPadding = padding;
-        } 
-        setPadding(leftPadding >= 0 ? leftPadding : mPaddingLeft,
-                topPadding >= 0 ? topPadding : mPaddingTop,
-                rightPadding >= 0 ? rightPadding : mPaddingRight,
-                bottomPadding >= 0 ? bottomPadding : mPaddingBottom);
-        {
-            setFlags(viewFlagValues, viewFlagMasks);
-        } 
-        {
-            recomputePadding();
-        } 
-        {
-            scrollTo(x, y);
-        } 
-        {
-            setTranslationX(tx);
-            setTranslationY(ty);
-            setRotation(rotation);
-            setRotationX(rotationX);
-            setRotationY(rotationY);
-            setScaleX(sx);
-            setScaleY(sy);
-        } 
-        {
-            setScrollContainer(true);
-        } 
-        computeOpaqueFlags();
-        addTaint(context.getTaint());
-        addTaint(attrs.getTaint());
-        addTaint(defStyle);
-        
-        
+               
     }
 
     
@@ -832,11 +399,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.440 -0400", hash_original_method = "F39CEBF0E5E47A818635618D8F975382", hash_generated_method = "D576B5DC26D7FBDAD21E367A9288C3E9")
     protected void initializeFadingEdge(TypedArray a) {
         initScrollCache();
-        mScrollCache.fadingEdgeLength = a.getDimensionPixelSize(
-                R.styleable.View_fadingEdgeLength,
-                ViewConfiguration.get(mContext).getScaledFadingEdgeLength());
-        
-        
+      
         
                 
                 
@@ -846,12 +409,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.440 -0400", hash_original_method = "48BE981E65F7E857DD7A9FF8EF5006FF", hash_generated_method = "21BF2BCFD1179613956139A58184DF98")
     public int getVerticalFadingEdgeLength() {
-        {
-            boolean var50B16E908CD6883BB4A53F1CCAB8FFC0_612575903 = (isVerticalFadingEdgeEnabled());
-            {
-                ScrollabilityCache cache = mScrollCache;
-            } 
-        } 
+      
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_360691162 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_360691162;
         
@@ -868,10 +426,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:57.440 -0400", hash_original_method = "F316E2F78DFC9160954B8650C58C0898", hash_generated_method = "09B2620993C628341922180F596184D1")
     public void setFadingEdgeLength(int length) {
-        initScrollCache();
-        mScrollCache.fadingEdgeLength = length;
-        
-        
+
         
     }
 
