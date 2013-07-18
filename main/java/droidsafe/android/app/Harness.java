@@ -183,7 +183,8 @@ public class Harness {
 	 * @param body
 	 */
 	private int intentFilterCount = 0;
-	private void injectIntentFilter(Local contextLocal, Local stringLocal, List<IntentFilter> intentFilters, StmtBody body) {
+	private void injectIntentFilter(Local compLocal, Local stringLocal, 
+				List<IntentFilter> intentFilters, StmtBody body, Local appLocal) {
 		
 		if (intentFilters.size() == 0)
 			return;
@@ -206,6 +207,13 @@ public class Harness {
 								"android.content.IntentFilter");
 		SootMethod addAction = Scene.v().getMethod(methodSig);
 		
+		methodSig = String.format("<%s: %s registerReceiver(%s,%s)>", 
+				"android.content.Context",
+				"android.content.Intent",
+				"android.content.BroadcastReceiver",
+				"android.content.IntentFilter");
+
+		SootMethod registerReceiver =  Scene.v().getMethod(methodSig);
 		
 		for (IntentFilter intentFilter: intentFilters) {
 			String intentLocalName = String.format("__dsIntentFilter%s", intentFilterCount++);
@@ -251,9 +259,20 @@ public class Harness {
 			// calling __ds__registerIntentFilter
 			body.getUnits().add(
 						Jimple.v().newInvokeStmt(
-								Jimple.v().newVirtualInvokeExpr(contextLocal, 
+								Jimple.v().newVirtualInvokeExpr(compLocal, 
 											registerIntentFilter.makeRef(), intentFilterLocal)));
 			
+			
+			// For receiver, we will need to register broadcast receiver with an app
+			if (appLocal == null)
+				return;
+			
+			
+			body.getUnits().add(
+					Jimple.v().newInvokeStmt(
+							Jimple.v().newVirtualInvokeExpr(appLocal, 
+									registerReceiver.makeRef(), compLocal, intentFilterLocal)));
+
 		}
 	}
 	
@@ -266,6 +285,19 @@ public class Harness {
 	 */
 	private void injectXMLComponent(String compType, SootClass compClass, 
 									List<IntentFilter> intentFilterList, StmtBody body) {
+		injectXMLComponent(compType, compClass, intentFilterList, body, null);
+	}
+	
+	/**
+	 * inject intent filter and call the receiver registration 
+	 * @param compType
+	 * @param compClass
+	 * @param intentFilterList
+	 * @param body
+	 * @param appLocal - local to hold application
+	 */
+	private void injectXMLComponent(String compType, SootClass compClass, 
+									List<IntentFilter> intentFilterList, StmtBody body, Local appLocal) {
 		SootMethod initMethod; 
 		
 		logger.warn("Type {} ", compType);
@@ -282,8 +314,8 @@ public class Harness {
 			return;
 		}
 
-		String name = String.format("__ds%s%03d", 
-				compType.substring(compType.lastIndexOf(".")), counter++);
+		String name = String.format("__ds__%s%03d", 
+				compType.substring(compType.lastIndexOf(".") + 1), counter++);
 		
 		Local compLocal = Jimple.v().newLocal(name,  RefType.v(compType));
 		body.getLocals().add(compLocal);
@@ -298,7 +330,7 @@ public class Harness {
 				Jimple.v().newVirtualInvokeExpr(compLocal, initMethod.makeRef()));
 		body.getUnits().add(initStmt);
 		
-		injectIntentFilter(compLocal, stringLocal, intentFilterList, body);
+		injectIntentFilter(compLocal, stringLocal, intentFilterList, body, appLocal);
 		
 		// Call runtime init
 		SootMethod droidsafeInit = Scene.v().getMethod(componentInitMethod.get(compType));
@@ -366,29 +398,6 @@ public class Harness {
 		for (Activity context : manifest.activities) {
 			
 			logger.warn("Activity {} ", context);
-			/*
-			try {
-				initMethod = Scene.v().getActiveHierarchy().resolveConcreteDispatch(context.getSootClass(), contextInit); 
-			} 
-			catch (Exception ex) {
-				logger.warn("Cannot resolve App constructor {}", appClass);
-				continue;
-			}
-			
-			String name = String.format("__dsActivity_%03d", counter++);
-			Local contextLocal = Jimple.v().newLocal(name,  RefType.v("android.app.Activity"));
-			body.getLocals().add(contextLocal);
-
-			newAppExpr = Jimple.v().newNewExpr(context.getSootClass().getType());
-			body.getUnits().add(Jimple.v().newAssignStmt(contextLocal,  newAppExpr));
-
-			initStmt = Jimple.v().newInvokeStmt(
-					Jimple.v().newVirtualInvokeExpr(contextLocal, initMethod.makeRef()));
-			body.getUnits().add(initStmt);
-			
-			injectIntentFilter(contextLocal, stringLocal, context.intent_filters, body);
-			*/
-			
 			injectXMLComponent(Components.ACTIVITY_CLASS, context.getSootClass(), context.intent_filters, body); 
 		}
 
@@ -409,7 +418,7 @@ public class Harness {
 			logger.warn("Receiver {} ", r);
 			
 			injectXMLComponent(Components.BROADCASTRECEIVER_CLASS, r.getSootClass(), 
-							r.intent_filters, body); 
+							r.intent_filters, body, appLocal); 
 			if (r.intent_filters.size() > 0) {
 				logger.warn("has intent filter for {}:{}", r.name, r);
 			}
