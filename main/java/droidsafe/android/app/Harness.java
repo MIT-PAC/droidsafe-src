@@ -272,7 +272,6 @@ public class Harness {
 		
         String initSig = String.format("<%s: void <init>()>", compType);
         
-		//SootMethod compInit = Scene.v().getMethod(componentInitMethod.get(compType));
 		SootMethod compInit = Scene.v().getMethod(initSig);
 		
 		try {
@@ -300,6 +299,14 @@ public class Harness {
 		body.getUnits().add(initStmt);
 		
 		injectIntentFilter(compLocal, stringLocal, intentFilterList, body);
+		
+		// Call runtime init
+		SootMethod droidsafeInit = Scene.v().getMethod(componentInitMethod.get(compType));
+		initStmt = Jimple.v().newInvokeStmt(
+				Jimple.v().newStaticInvokeExpr(droidsafeInit.makeRef(), compLocal));
+		
+		body.getUnits().add(initStmt);
+		
 	}
 	
 	
@@ -395,7 +402,7 @@ public class Harness {
 		// content provider should not have any
 		for (Provider p : manifest.providers) {
 			logger.warn("Content provider {} ", p);
-			injectXMLComponent(Components.SERVICE_CLASS, p.getSootClass(), p.intent_filters, body); 
+			injectXMLComponent(Components.CONTENTPROVIDER_CLASS, p.getSootClass(), p.intent_filters, body); 
 		}
 
 		for (Receiver r : manifest.receivers) {
