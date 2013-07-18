@@ -109,6 +109,10 @@ public class JSAStrings {
       return this.hasRun && nonterminals.containsKey(v);
   }
   
+  /**
+   * Get the mapping from signature to hotspots.
+   * @return
+   */
   public Map<String, List<Hotspot>> getSignatureToHotspotMap() {
     return this.signatureToHotspotMap;
   }
@@ -183,8 +187,9 @@ public class JSAStrings {
    * 
    * @param signature The signature of the method.
    * @param arg The argument index of the hotspot.
+ * @return 
    */
-  public void addArgumentHotspots(String signature, int arg) {
+  public List<ValueBox> addArgumentHotspots(String signature, int arg) {
     List<ValueBox> sigSpots = StringAnalysis.getArgumentExpressions(signature, arg);
     logger.debug("For signature " + signature + " got " + sigSpots.size() + " hotspots.");
 
@@ -192,6 +197,7 @@ public class JSAStrings {
       addSignatureToHotspotMap(signature, new Hotspot(signature, arg, sigSpots));
       hotspots.addAll(sigSpots);
     }
+    return sigSpots;
   }
 
   /**
@@ -342,12 +348,23 @@ public class JSAStrings {
      */
     List<ValueBox> hotspots;
 
+    /** 
+     * Constructor
+     * @param signature
+     * @param position
+     * @param values
+     */
     public Hotspot(String signature, int position, List<ValueBox> values) {
       this.methodSignature = signature;
       this.argumentPosition = position;
       this.hotspots = values;
     }
 
+    /**
+     * Constructor
+     * @param signature
+     * @param values
+     */
     public Hotspot(String signature, List<ValueBox> values) {
       this.methodSignature = signature;
       this.hotspots = values;
