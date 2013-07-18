@@ -1,20 +1,16 @@
 package android.media;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.ContentValues;
-import android.provider.MediaStore.Audio;
-import android.provider.MediaStore.Images;
-import android.provider.MediaStore.Video;
-import android.media.DecoderCapabilities;
-import android.media.DecoderCapabilities.VideoDecoder;
-import android.media.DecoderCapabilities.AudioDecoder;
-import android.mtp.MtpConstants;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
+
+import android.media.DecoderCapabilities.AudioDecoder;
+import android.media.DecoderCapabilities.VideoDecoder;
+import android.mtp.MtpConstants;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class MediaFile {
     

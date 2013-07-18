@@ -1,16 +1,16 @@
 package org.apache.http.impl.cookie;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.Locale;
+
 import org.apache.http.cookie.ClientCookie;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.cookie.CookieAttributeHandler;
 import org.apache.http.cookie.CookieOrigin;
 import org.apache.http.cookie.MalformedCookieException;
 import org.apache.http.cookie.SetCookie;
+
+import droidsafe.annotations.DSGenerator;
 
 public class RFC2965DomainAttributeHandler implements CookieAttributeHandler {
     

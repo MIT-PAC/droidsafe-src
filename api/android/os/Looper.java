@@ -1,12 +1,9 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.util.Log;
 import android.util.Printer;
-import android.util.PrefixPrinter;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public class Looper {
     final MessageQueue mQueue;

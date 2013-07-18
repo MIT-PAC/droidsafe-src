@@ -1,23 +1,33 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import gov.nist.javax.sip.message.*;
-import gov.nist.javax.sip.address.*;
-import gov.nist.javax.sip.header.*;
-import gov.nist.javax.sip.*;
-import gov.nist.core.*;
+import gov.nist.core.InternalErrorHandler;
 import gov.nist.core.net.AddressResolver;
-import javax.sip.*;
-import java.util.Iterator;
+import gov.nist.javax.sip.SIPConstants;
+import gov.nist.javax.sip.SipStackImpl;
+import gov.nist.javax.sip.address.AddressImpl;
+import gov.nist.javax.sip.address.SipUri;
+import gov.nist.javax.sip.header.RequestLine;
+import gov.nist.javax.sip.header.Route;
+import gov.nist.javax.sip.header.RouteList;
+import gov.nist.javax.sip.message.SIPRequest;
+
 import java.util.LinkedList;
 import java.util.ListIterator;
-import javax.sip.header.RouteHeader;
+
+import javax.sip.SipException;
+import javax.sip.SipStack;
+import javax.sip.address.Hop;
+import javax.sip.address.Router;
+import javax.sip.address.SipURI;
+import javax.sip.address.URI;
 import javax.sip.header.ViaHeader;
-import javax.sip.message.*;
-import javax.sip.address.*;
+import javax.sip.message.Request;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class DefaultRouter implements Router {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.245 -0400", hash_original_field = "37460D4BF2BA47A13FF9D922C4B14B2E", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")

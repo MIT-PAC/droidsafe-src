@@ -1,12 +1,11 @@
 package java.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
+
 import libcore.net.UriCodec;
+import droidsafe.annotations.DSGenerator;
 
 public class URLDecoder {
     

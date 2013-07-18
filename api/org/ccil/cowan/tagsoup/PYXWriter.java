@@ -1,12 +1,19 @@
 package org.ccil.cowan.tagsoup;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.io.*;
-import org.xml.sax.*;
+import java.io.PrintWriter;
+import java.io.Writer;
+
+import org.xml.sax.Attributes;
+import org.xml.sax.ContentHandler;
+import org.xml.sax.Locator;
+import org.xml.sax.SAXException;
 import org.xml.sax.ext.LexicalHandler;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.009 -0400", hash_original_field = "29DE0C7BE9C5B26DD178E31FE931944B", hash_generated_field = "49F3A48A6073C357DEA9F2D054F0CF5A")

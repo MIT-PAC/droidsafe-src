@@ -1,13 +1,15 @@
 package android.net.wifi;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.net.LinkProperties;
-import android.os.Parcelable;
-import android.os.Parcel;
 import java.util.BitSet;
+
+import android.net.LinkProperties;
+import android.os.Parcel;
+import android.os.Parcelable;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class WifiConfiguration implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.174 -0400", hash_original_field = "19C847337F720E130F334CF33214EB73", hash_generated_field = "63CFF92B16B0D9FC501D58CB0D039ADA")

@@ -1,18 +1,27 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import static java.util.TreeMap.Bound.EXCLUSIVE;
+import static java.util.TreeMap.Bound.INCLUSIVE;
+import static java.util.TreeMap.Bound.NO_BOUND;
+import static java.util.TreeMap.Relation.CEILING;
+import static java.util.TreeMap.Relation.EQUAL;
+import static java.util.TreeMap.Relation.FLOOR;
+import static java.util.TreeMap.Relation.HIGHER;
+import static java.util.TreeMap.Relation.LOWER;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectInputStream.GetField;
 import java.io.ObjectOutputStream;
 import java.io.ObjectStreamException;
 import java.io.Serializable;
-import static java.util.TreeMap.Bound.*;
-import static java.util.TreeMap.Relation.*;
+
 import libcore.util.Objects;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>, NavigableMap<K, V>, Cloneable, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.367 -0400", hash_original_field = "4092F21BD0E2CC3C9CA971DF59AA8608", hash_generated_field = "10E826BC31BCAB9BF3EF3CC29146C2D4")

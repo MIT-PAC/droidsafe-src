@@ -1,22 +1,47 @@
 package java.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import static libcore.io.OsConstants.EEXIST;
+import static libcore.io.OsConstants.F_OK;
+import static libcore.io.OsConstants.O_CREAT;
+import static libcore.io.OsConstants.O_EXCL;
+import static libcore.io.OsConstants.O_RDWR;
+import static libcore.io.OsConstants.R_OK;
+import static libcore.io.OsConstants.S_IRGRP;
+import static libcore.io.OsConstants.S_IROTH;
+import static libcore.io.OsConstants.S_IRUSR;
+import static libcore.io.OsConstants.S_IRWXU;
+import static libcore.io.OsConstants.S_ISDIR;
+import static libcore.io.OsConstants.S_ISREG;
+import static libcore.io.OsConstants.S_IWGRP;
+import static libcore.io.OsConstants.S_IWOTH;
+import static libcore.io.OsConstants.S_IWUSR;
+import static libcore.io.OsConstants.S_IXGRP;
+import static libcore.io.OsConstants.S_IXOTH;
+import static libcore.io.OsConstants.S_IXUSR;
+import static libcore.io.OsConstants.W_OK;
+import static libcore.io.OsConstants.X_OK;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
 import libcore.io.ErrnoException;
 import libcore.io.IoUtils;
 import libcore.io.Libcore;
 import libcore.io.StructStat;
 import libcore.io.StructStatFs;
+
 import org.apache.harmony.luni.util.DeleteOnExit;
-import static libcore.io.OsConstants.*;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public class File implements Serializable, Comparable<File> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.816 -0400", hash_original_field = "D6FE1D0BE6347B8EF2427FA629C04485", hash_generated_field = "E58B218DC2BC9CF2BD65F7BE2F7C20BE")

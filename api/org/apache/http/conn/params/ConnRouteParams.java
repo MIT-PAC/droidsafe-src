@@ -1,13 +1,14 @@
 package org.apache.http.conn.params;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.net.InetAddress;
+
 import org.apache.http.HttpHost;
-import org.apache.http.params.HttpParams;
 import org.apache.http.conn.routing.HttpRoute;
+import org.apache.http.params.HttpParams;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class ConnRouteParams implements ConnRoutePNames {
     

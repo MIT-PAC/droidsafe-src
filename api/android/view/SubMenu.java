@@ -1,9 +1,6 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.graphics.drawable.Drawable;
 
 public interface SubMenu extends Menu {

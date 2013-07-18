@@ -1,12 +1,10 @@
 package android.app;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.app.IUsageStats;
-import com.android.internal.os.PkgUsageStats;
-import com.android.internal.util.MemInfoReader;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -26,13 +24,16 @@ import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import android.util.Log;
-import android.util.Slog;
 import android.view.Display;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import com.android.internal.app.IUsageStats;
+import com.android.internal.os.PkgUsageStats;
+import com.android.internal.util.MemInfoReader;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ActivityManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.843 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")

@@ -1,13 +1,16 @@
 package android.test.suitebuilder.annotation;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import static com.android.internal.util.Predicates.or;
-import com.android.internal.util.Predicate;
-import android.test.suitebuilder.TestMethod;
+
 import java.lang.annotation.Annotation;
+
+import android.test.suitebuilder.TestMethod;
+
+import com.android.internal.util.Predicate;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class HasAnnotation implements Predicate<TestMethod> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.302 -0400", hash_original_field = "0A78A2D393858FF997339511150F661A", hash_generated_field = "9E6F9952BC05FDC53E5547217A51C708")

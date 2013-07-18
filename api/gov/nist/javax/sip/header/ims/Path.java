@@ -1,13 +1,13 @@
 package gov.nist.javax.sip.header.ims;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.text.ParseException;
-import javax.sip.header.ExtensionHeader;
 import gov.nist.javax.sip.address.AddressImpl;
-import gov.nist.javax.sip.header.ims.PathHeader;
+
+import java.text.ParseException;
+
+import javax.sip.header.ExtensionHeader;
+
+import droidsafe.annotations.DSGenerator;
 
 public class Path extends gov.nist.javax.sip.header.AddressParametersHeader implements PathHeader, SIPHeaderNamesIms, ExtensionHeader {
     

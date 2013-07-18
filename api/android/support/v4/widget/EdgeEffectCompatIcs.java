@@ -1,12 +1,10 @@
 package android.support.v4.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.widget.EdgeEffect;
+import droidsafe.annotations.DSGenerator;
 
 class EdgeEffectCompatIcs {
     

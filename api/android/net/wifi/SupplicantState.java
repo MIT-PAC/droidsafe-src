@@ -1,11 +1,10 @@
 package android.net.wifi;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.os.Parcel;
 import android.os.Parcelable;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public enum SupplicantState implements Parcelable {
     DISCONNECTED,

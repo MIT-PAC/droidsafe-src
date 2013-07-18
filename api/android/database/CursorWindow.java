@@ -1,19 +1,20 @@
 package android.database;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import dalvik.system.CloseGuard;
 import android.content.res.Resources;
 import android.database.sqlite.SQLiteClosable;
-import android.database.sqlite.SQLiteException;
 import android.os.Binder;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.Process;
 import android.util.Log;
 import android.util.SparseIntArray;
+import dalvik.system.CloseGuard;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public class CursorWindow extends SQLiteClosable implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.717 -0400", hash_original_field = "0513C934C32593F0CDE478394F5606CD", hash_generated_field = "38FB3A768EF6B5DA39D97BE6BF469283")

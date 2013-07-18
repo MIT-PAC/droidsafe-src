@@ -1,9 +1,35 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import static javax.microedition.khronos.egl.EGL10.EGL_ALPHA_SIZE;
+import static javax.microedition.khronos.egl.EGL10.EGL_BAD_NATIVE_WINDOW;
+import static javax.microedition.khronos.egl.EGL10.EGL_BLUE_SIZE;
+import static javax.microedition.khronos.egl.EGL10.EGL_DEFAULT_DISPLAY;
+import static javax.microedition.khronos.egl.EGL10.EGL_DEPTH_SIZE;
+import static javax.microedition.khronos.egl.EGL10.EGL_DRAW;
+import static javax.microedition.khronos.egl.EGL10.EGL_GREEN_SIZE;
+import static javax.microedition.khronos.egl.EGL10.EGL_HEIGHT;
+import static javax.microedition.khronos.egl.EGL10.EGL_NONE;
+import static javax.microedition.khronos.egl.EGL10.EGL_NO_CONTEXT;
+import static javax.microedition.khronos.egl.EGL10.EGL_NO_DISPLAY;
+import static javax.microedition.khronos.egl.EGL10.EGL_NO_SURFACE;
+import static javax.microedition.khronos.egl.EGL10.EGL_RED_SIZE;
+import static javax.microedition.khronos.egl.EGL10.EGL_RENDERABLE_TYPE;
+import static javax.microedition.khronos.egl.EGL10.EGL_STENCIL_SIZE;
+import static javax.microedition.khronos.egl.EGL10.EGL_SUCCESS;
+import static javax.microedition.khronos.egl.EGL10.EGL_WIDTH;
+import static javax.microedition.khronos.egl.EGL10.EGL_WINDOW_BIT;
+
+import java.io.File;
+
+import javax.microedition.khronos.egl.EGL10;
+import javax.microedition.khronos.egl.EGL11;
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.egl.EGLContext;
+import javax.microedition.khronos.egl.EGLDisplay;
+import javax.microedition.khronos.egl.EGLSurface;
+import javax.microedition.khronos.opengles.GL;
+
 import android.content.ComponentCallbacks2;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -15,16 +41,13 @@ import android.os.Looper;
 import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.util.Log;
+
 import com.google.android.gles_jni.EGLImpl;
-import javax.microedition.khronos.egl.EGL10;
-import javax.microedition.khronos.egl.EGL11;
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.egl.EGLContext;
-import javax.microedition.khronos.egl.EGLDisplay;
-import javax.microedition.khronos.egl.EGLSurface;
-import javax.microedition.khronos.opengles.GL;
-import java.io.File;
-import static javax.microedition.khronos.egl.EGL10.*;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class HardwareRenderer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.525 -0400", hash_original_field = "6F84A7F10C955D3C78F44E5278F6195B", hash_generated_field = "7A48C52BD142368ED44BC086FD9013A2")

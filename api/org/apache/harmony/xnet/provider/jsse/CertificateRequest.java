@@ -1,14 +1,17 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
+
 import javax.security.auth.x500.X500Principal;
+
 import libcore.io.Streams;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class CertificateRequest extends Message {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.995 -0400", hash_original_field = "47617F57A86FC255D167A5F32EFFC3AA", hash_generated_field = "052660BD096960D182ED14500388945C")

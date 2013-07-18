@@ -1,16 +1,20 @@
 package libcore.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import static libcore.io.OsConstants.F_GETFL;
+import static libcore.io.OsConstants.F_SETFL;
+import static libcore.io.OsConstants.O_NONBLOCK;
+
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.net.Socket;
 import java.nio.charset.Charsets;
-import static libcore.io.OsConstants.*;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class IoUtils {
     

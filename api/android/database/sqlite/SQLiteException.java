@@ -1,10 +1,8 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.database.SQLException;
+import droidsafe.annotations.DSGenerator;
 
 public class SQLiteException extends SQLException {
     

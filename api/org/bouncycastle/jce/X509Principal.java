@@ -1,17 +1,17 @@
 package org.bouncycastle.jce;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.security.Principal;
 import java.util.Hashtable;
 import java.util.Vector;
+
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1InputStream;
 import org.bouncycastle.asn1.ASN1Sequence;
 import org.bouncycastle.asn1.x509.X509Name;
+
+import droidsafe.annotations.DSGenerator;
 
 public class X509Principal extends X509Name implements Principal {
     

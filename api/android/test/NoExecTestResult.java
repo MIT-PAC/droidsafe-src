@@ -1,11 +1,9 @@
 package android.test;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import junit.framework.TestCase;
 import junit.framework.TestResult;
+import droidsafe.annotations.DSGenerator;
 
 class NoExecTestResult extends TestResult {
     

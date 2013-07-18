@@ -1,12 +1,16 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import static com.android.internal.telephony.TelephonyProperties.PROPERTY_ICC_OPERATOR_ALPHA;
+import static com.android.internal.telephony.TelephonyProperties.PROPERTY_TEST_CSIM;
+
+import java.util.ArrayList;
+import java.util.Locale;
+
 import android.os.AsyncResult;
 import android.os.SystemProperties;
 import android.util.Log;
+
 import com.android.internal.telephony.AdnRecordLoader;
 import com.android.internal.telephony.GsmAlphabet;
 import com.android.internal.telephony.IccCardApplication.AppType;
@@ -19,10 +23,11 @@ import com.android.internal.telephony.cdma.sms.UserData;
 import com.android.internal.telephony.gsm.SIMRecords;
 import com.android.internal.telephony.ims.IsimRecords;
 import com.android.internal.telephony.ims.IsimUiccRecords;
-import java.util.ArrayList;
-import java.util.Locale;
-import static com.android.internal.telephony.TelephonyProperties.PROPERTY_ICC_OPERATOR_ALPHA;
-import static com.android.internal.telephony.TelephonyProperties.PROPERTY_TEST_CSIM;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class CdmaLteUiccRecords extends SIMRecords {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.857 -0400", hash_original_field = "EAD5894CADB8C58D92F20ECA3BE46145", hash_generated_field = "0EA5A23D0B103EB32088F2AFA5A81D56")

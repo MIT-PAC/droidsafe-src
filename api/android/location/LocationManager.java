@@ -1,21 +1,24 @@
 package android.location;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.app.PendingIntent;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Looper;
-import android.os.RemoteException;
-import android.os.Handler;
-import android.os.Message;
-import android.util.Log;
-import com.android.internal.location.DummyLocationProvider;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import android.app.PendingIntent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.os.RemoteException;
+import android.util.Log;
+
+import com.android.internal.location.DummyLocationProvider;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class LocationManager {
     private ILocationManager mService;

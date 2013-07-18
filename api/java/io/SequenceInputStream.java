@@ -1,12 +1,12 @@
 package java.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Vector;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class SequenceInputStream extends InputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.578 -0400", hash_original_field = "E1671797C52E15F763380B45E841EC32", hash_generated_field = "18AD9586F739C9162783E991FCA98C7A")

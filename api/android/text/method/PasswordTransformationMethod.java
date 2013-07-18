@@ -1,23 +1,24 @@
 package android.text.method;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.lang.ref.WeakReference;
+
+import android.graphics.Rect;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.graphics.Rect;
-import android.view.View;
 import android.text.Editable;
 import android.text.GetChars;
 import android.text.NoCopySpan;
+import android.text.Spannable;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.text.Selection;
-import android.text.Spanned;
-import android.text.Spannable;
 import android.text.style.UpdateLayout;
-import java.lang.ref.WeakReference;
+import android.view.View;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class PasswordTransformationMethod implements TransformationMethod, TextWatcher {
     

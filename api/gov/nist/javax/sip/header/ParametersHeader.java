@@ -1,17 +1,21 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import gov.nist.core.DuplicateNameValueList;
 import gov.nist.core.NameValue;
 import gov.nist.core.NameValueList;
 import gov.nist.javax.sip.address.GenericURI;
+
 import java.io.Serializable;
 import java.text.ParseException;
 import java.util.Iterator;
+
 import javax.sip.header.Parameters;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class ParametersHeader extends SIPHeader implements javax.sip.header.Parameters, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.648 -0400", hash_original_field = "166E64F6C3677D0C513901242A3E702D", hash_generated_field = "B548841E6A98CD05129EEE1E20049B8B")

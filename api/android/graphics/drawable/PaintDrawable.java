@@ -1,14 +1,15 @@
 package android.graphics.drawable;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.graphics.drawable.shapes.RoundRectShape;
+import org.xmlpull.v1.XmlPullParser;
+
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.graphics.drawable.shapes.RoundRectShape;
 import android.util.AttributeSet;
-import org.xmlpull.v1.XmlPullParser;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class PaintDrawable extends ShapeDrawable {
     

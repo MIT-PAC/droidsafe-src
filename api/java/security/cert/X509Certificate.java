@@ -1,16 +1,19 @@
 package java.security.cert;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.ByteArrayInputStream;
 import java.math.BigInteger;
 import java.security.Principal;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+
 import javax.security.auth.x500.X500Principal;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class X509Certificate extends Certificate implements X509Extension {
     

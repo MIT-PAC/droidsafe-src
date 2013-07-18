@@ -1,29 +1,6 @@
 package android.content.pm;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.ComponentName;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.res.AssetManager;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
-import android.content.res.XmlResourceParser;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.PatternMatcher;
-import android.util.AttributeSet;
-import android.util.Base64;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.util.Slog;
-import android.util.TypedValue;
-import com.android.internal.util.XmlUtils;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
@@ -45,6 +22,34 @@ import java.util.jar.Attributes;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.jar.Manifest;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+
+import android.content.ComponentName;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.res.AssetManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.content.res.XmlResourceParser;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.PatternMatcher;
+import android.util.AttributeSet;
+import android.util.Base64;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.util.Slog;
+import android.util.TypedValue;
+
+import com.android.internal.util.XmlUtils;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class PackageParser {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.020 -0400", hash_original_field = "6D55A934CD0311CDA3B2E6B59509DD26", hash_generated_field = "57425F83C121F61E241FD46B0ED62373")

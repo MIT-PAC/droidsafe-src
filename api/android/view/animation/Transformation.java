@@ -1,11 +1,11 @@
 package android.view.animation;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.graphics.Matrix;
 import java.io.PrintWriter;
+
+import android.graphics.Matrix;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public class Transformation {
     protected Matrix mMatrix;

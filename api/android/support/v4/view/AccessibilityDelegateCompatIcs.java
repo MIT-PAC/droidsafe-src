@@ -1,14 +1,12 @@
 package android.support.v4.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.view.View;
 import android.view.View.AccessibilityDelegate;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
+import droidsafe.annotations.DSGenerator;
 
 class AccessibilityDelegateCompatIcs {
     

@@ -1,19 +1,16 @@
 package android.nfc.tech;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.IOException;
+
 import android.nfc.ErrorCodes;
 import android.nfc.FormatException;
 import android.nfc.INfcTag;
 import android.nfc.NdefMessage;
-import android.nfc.NfcAdapter;
 import android.nfc.Tag;
-import android.nfc.TagLostException;
 import android.os.RemoteException;
-import android.util.Log;
-import java.io.IOException;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public final class NdefFormatable extends BasicTagTechnology {
     

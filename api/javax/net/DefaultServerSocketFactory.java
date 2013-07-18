@@ -1,12 +1,11 @@
 package javax.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
+
+import droidsafe.annotations.DSGenerator;
 
 final class DefaultServerSocketFactory extends ServerSocketFactory {
     

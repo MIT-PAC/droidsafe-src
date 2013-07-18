@@ -1,9 +1,7 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSGenerator;
 
 public final class IccVmNotSupportedException extends IccException {
     

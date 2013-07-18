@@ -8,7 +8,8 @@ import android.content.Context;
 import android.content.IContentProvider;
 import android.database.ContentObserver;
 import android.net.Uri;
-import droidsafe.annotations.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 /**
  * Started with android.test.mock.MockContentResolver;

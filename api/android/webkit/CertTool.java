@@ -1,20 +1,23 @@
 package android.webkit;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.util.HashMap;
+
 import org.bouncycastle.asn1.pkcs.PKCSObjectIdentifiers;
 import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
 import org.bouncycastle.jce.netscape.NetscapeCertRequest;
 import org.bouncycastle.util.encoders.Base64;
+
 import android.content.Context;
 import android.security.Credentials;
 import android.security.KeyChain;
 import android.util.Log;
-import java.security.KeyPair;
-import java.security.KeyPairGenerator;
-import java.util.HashMap;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 final class CertTool {
     

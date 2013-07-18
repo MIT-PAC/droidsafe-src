@@ -1,12 +1,15 @@
 package org.apache.http.impl;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.Locale;
+
 import org.apache.http.HttpStatus;
 import org.apache.http.ReasonPhraseCatalog;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class EnglishReasonPhraseCatalog implements ReasonPhraseCatalog {
     

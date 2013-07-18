@@ -1,9 +1,17 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.IOException;
+import java.lang.ref.WeakReference;
+import java.text.BreakIterator;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Locale;
+
+import org.xmlpull.v1.XmlPullParserException;
+
 import android.R;
 import android.content.ClipData;
 import android.content.ClipData.Item;
@@ -12,7 +20,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
-import android.content.res.CompatibilityInfo;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
@@ -62,7 +69,6 @@ import android.text.method.DateTimeKeyListener;
 import android.text.method.DialerKeyListener;
 import android.text.method.DigitsKeyListener;
 import android.text.method.KeyListener;
-import android.text.method.LinkMovementMethod;
 import android.text.method.MetaKeyKeyListener;
 import android.text.method.MovementMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -81,7 +87,6 @@ import android.text.style.SuggestionSpan;
 import android.text.style.TextAppearanceSpan;
 import android.text.style.URLSpan;
 import android.text.style.UpdateAppearance;
-import android.text.util.Linkify;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.FloatMath;
@@ -122,18 +127,14 @@ import android.view.inputmethod.InputMethodManager;
 import android.view.textservice.SpellCheckerSubtype;
 import android.view.textservice.TextServicesManager;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.RemoteViews.RemoteView;
+
 import com.android.internal.util.FastMath;
 import com.android.internal.widget.EditableInputConnection;
-import org.xmlpull.v1.XmlPullParserException;
-import java.io.IOException;
-import java.lang.ref.WeakReference;
-import java.text.BreakIterator;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Locale;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class TextView extends View implements ViewTreeObserver.OnPreDrawListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:41.673 -0400", hash_original_field = "5C9E3264119E57696644BE19B3FE1DAC", hash_generated_field = "695EE05B4D22A341938A08B09254F27D")

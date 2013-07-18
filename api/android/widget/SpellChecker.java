@@ -1,9 +1,9 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.text.BreakIterator;
+import java.util.Locale;
+
 import android.content.Context;
 import android.text.Editable;
 import android.text.Selection;
@@ -17,9 +17,13 @@ import android.view.textservice.SpellCheckerSession.SpellCheckerSessionListener;
 import android.view.textservice.SuggestionsInfo;
 import android.view.textservice.TextInfo;
 import android.view.textservice.TextServicesManager;
+
 import com.android.internal.util.ArrayUtils;
-import java.text.BreakIterator;
-import java.util.Locale;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SpellChecker implements SpellCheckerSessionListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.297 -0400", hash_original_field = "59FFF1360E9B57BB348C2BF9F881659F", hash_generated_field = "B044D5C32398EDC8D922234EFA4F1DF3")

@@ -1,21 +1,26 @@
 package android.content.res;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.util.ArrayUtils;
+import java.io.IOException;
+import java.lang.ref.WeakReference;
+import java.util.Arrays;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.util.StateSet;
 import android.util.Xml;
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.io.IOException;
-import java.lang.ref.WeakReference;
-import java.util.Arrays;
+
+import com.android.internal.util.ArrayUtils;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ColorStateList implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.096 -0400", hash_original_field = "90D2BFFC9D360D1A65ACEAB45ADBE457", hash_generated_field = "7D52F505B14BC667C4ED1C5AB261B59A")

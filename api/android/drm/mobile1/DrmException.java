@@ -1,10 +1,7 @@
 package android.drm.mobile1;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.io.IOException;
+import droidsafe.annotations.DSGenerator;
 
 public class DrmException extends Exception {
     

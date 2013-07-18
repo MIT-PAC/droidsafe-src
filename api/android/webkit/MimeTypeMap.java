@@ -1,13 +1,14 @@
 package android.webkit;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.text.TextUtils;
-import java.util.HashMap;
 import java.util.regex.Pattern;
+
 import libcore.net.MimeUtils;
+import android.text.TextUtils;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class MimeTypeMap {
     

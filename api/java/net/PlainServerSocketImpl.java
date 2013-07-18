@@ -1,13 +1,10 @@
 package java.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
-import java.net.SocketException;
-import java.net.SocketOptions;
+
+import droidsafe.annotations.DSGenerator;
 
 public class PlainServerSocketImpl extends PlainSocketImpl {
     

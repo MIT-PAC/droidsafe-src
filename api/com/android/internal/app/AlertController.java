@@ -1,12 +1,10 @@
 package com.android.internal.app;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
-import com.android.internal.R;
-import android.app.AlertDialog;
+
+import java.lang.ref.WeakReference;
+
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.TypedArray;
@@ -39,7 +37,13 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
-import java.lang.ref.WeakReference;
+
+import com.android.internal.R;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class AlertController {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.886 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")

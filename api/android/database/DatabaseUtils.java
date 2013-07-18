@@ -1,10 +1,14 @@
 package android.database;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+import java.text.Collator;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.commons.codec.binary.Hex;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.OperationApplicationException;
@@ -21,11 +25,10 @@ import android.os.Parcel;
 import android.os.ParcelFileDescriptor;
 import android.text.TextUtils;
 import android.util.Log;
-import java.io.FileNotFoundException;
-import java.io.PrintStream;
-import java.text.Collator;
-import java.util.HashMap;
-import java.util.Map;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class DatabaseUtils {
     

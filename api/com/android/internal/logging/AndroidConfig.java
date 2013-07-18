@@ -1,11 +1,10 @@
 package com.android.internal.logging;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import droidsafe.annotations.DSGenerator;
 
 public class AndroidConfig {
     

@@ -1,21 +1,26 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.res.Resources;
-import android.text.TextUtils;
-import android.util.SparseIntArray;
-import android.util.Log;
-import java.nio.ByteBuffer;
-import java.nio.charset.Charset;
-import com.android.internal.R;
-import java.util.ArrayList;
-import java.util.List;
 import static android.telephony.SmsMessage.ENCODING_7BIT;
 import static android.telephony.SmsMessage.MAX_USER_DATA_SEPTETS;
 import static android.telephony.SmsMessage.MAX_USER_DATA_SEPTETS_WITH_HEADER;
+
+import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
+
+import android.content.res.Resources;
+import android.text.TextUtils;
+import android.util.Log;
+import android.util.SparseIntArray;
+
+import com.android.internal.R;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class GsmAlphabet {
     

@@ -1,10 +1,6 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.view.MenuItem.OnActionExpandListener;
 
 public interface CollapsibleActionView {
     

@@ -1,27 +1,23 @@
 package android.net.wifi.p2p;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.HashMap;
+
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
 import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.IConnectivityManager;
-import android.os.Binder;
-import android.os.IBinder;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.os.RemoteException;
-import android.os.ServiceManager;
-import android.os.WorkSource;
 import android.os.Messenger;
+import android.os.RemoteException;
 import android.util.Log;
+
 import com.android.internal.util.AsyncChannel;
 import com.android.internal.util.Protocol;
-import java.util.HashMap;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class WifiP2pManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.775 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "BD8FB108D640F5B5A5EE463CD27A6D68")

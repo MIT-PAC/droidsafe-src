@@ -1,17 +1,18 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
 import java.util.Arrays;
+
 import javax.crypto.Cipher;
 import javax.crypto.NullCipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import javax.net.ssl.SSLProtocolException;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class ConnectionStateSSLv3 extends ConnectionState {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.351 -0400", hash_original_field = "ABD8CEEC1ABEC18BFFD5F706BD225E2C", hash_generated_field = "FCEAD5705B5DC9FB1937BC2FCBBCA9AF")

@@ -1,15 +1,15 @@
 package gov.nist.javax.sip.header.ims;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.text.ParseException;
 import gov.nist.javax.sip.address.AddressImpl;
 import gov.nist.javax.sip.address.GenericURI;
+
+import java.text.ParseException;
+
 import javax.sip.address.URI;
 import javax.sip.header.ExtensionHeader;
-import gov.nist.javax.sip.header.ims.PAssociatedURIHeader;
+
+import droidsafe.annotations.DSGenerator;
 
 public class PAssociatedURI extends gov.nist.javax.sip.header.AddressParametersHeader implements PAssociatedURIHeader, SIPHeaderNamesIms, ExtensionHeader {
     

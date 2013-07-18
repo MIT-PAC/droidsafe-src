@@ -1,9 +1,8 @@
 package libcore.internal;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public final class StringPool {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.919 -0400", hash_original_field = "AABD10263E22750AD811AC54BA397F4A", hash_generated_field = "2E2D169FE900F8A4284E9ADB2D6BFB44")

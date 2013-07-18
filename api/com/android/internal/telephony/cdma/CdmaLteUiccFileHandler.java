@@ -1,13 +1,13 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.util.Log;
-import com.android.internal.telephony.IccConstants;
-import com.android.internal.telephony.IccFileHandler;
 import android.os.Message;
+import android.util.Log;
+
+import com.android.internal.telephony.IccFileHandler;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public final class CdmaLteUiccFileHandler extends IccFileHandler {
     

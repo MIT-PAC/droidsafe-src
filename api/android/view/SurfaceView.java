@@ -1,13 +1,13 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.view.BaseIWindow;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.concurrent.locks.ReentrantLock;
+
 import android.content.Context;
-import android.content.res.Configuration;
 import android.content.res.CompatibilityInfo.Translator;
+import android.content.res.Configuration;
 import android.graphics.Canvas;
 import android.graphics.PixelFormat;
 import android.graphics.PorterDuff;
@@ -15,14 +15,18 @@ import android.graphics.Rect;
 import android.graphics.Region;
 import android.os.Handler;
 import android.os.Message;
+import android.os.ParcelFileDescriptor;
 import android.os.RemoteException;
 import android.os.SystemClock;
-import android.os.ParcelFileDescriptor;
 import android.util.AttributeSet;
-import android.util.Log;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.concurrent.locks.ReentrantLock;
+
+import com.android.internal.view.BaseIWindow;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public class SurfaceView extends View {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.200 -0400", hash_original_field = "5B2965AE5247A9A1234D4FDCDF03BACD", hash_generated_field = "BA9586511B46C47E39B6901EB112183C")

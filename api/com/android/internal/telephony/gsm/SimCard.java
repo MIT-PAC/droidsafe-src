@@ -1,15 +1,11 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.util.Log;
 import com.android.internal.telephony.IccCard;
 import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.PhoneBase;
-import com.android.internal.telephony.TelephonyProperties;
-import android.os.SystemProperties;
+
+import droidsafe.annotations.DSGenerator;
 
 public final class SimCard extends IccCard {
     

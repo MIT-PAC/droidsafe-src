@@ -1,16 +1,17 @@
 package org.apache.http.message;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.http.HeaderElement;
 import org.apache.http.NameValuePair;
 import org.apache.http.ParseException;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.CharArrayBuffer;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class BasicHeaderValueParser implements HeaderValueParser {
     

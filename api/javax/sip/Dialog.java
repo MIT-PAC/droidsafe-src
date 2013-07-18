@@ -1,12 +1,9 @@
 package javax.sip;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.Serializable;
-import java.text.ParseException;
 import java.util.Iterator;
+
 import javax.sip.address.Address;
 import javax.sip.header.CallIdHeader;
 import javax.sip.message.Request;

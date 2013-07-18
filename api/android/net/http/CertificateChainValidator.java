@@ -1,27 +1,24 @@
 package android.net.http;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.net.DomainNameValidator;
-import org.apache.harmony.security.provider.cert.X509CertImpl;
-import org.apache.harmony.xnet.provider.jsse.SSLParametersImpl;
 import java.io.IOException;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
-import java.security.cert.CertificateExpiredException;
-import java.security.cert.CertificateNotYetValidException;
 import java.security.cert.X509Certificate;
-import java.security.GeneralSecurityException;
-import java.security.KeyStore;
-import java.util.Date;
+
 import javax.net.ssl.SSLHandshakeException;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocket;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.TrustManagerFactory;
-import javax.net.ssl.X509TrustManager;
+
+import org.apache.harmony.security.provider.cert.X509CertImpl;
+import org.apache.harmony.xnet.provider.jsse.SSLParametersImpl;
+
+import com.android.internal.net.DomainNameValidator;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class CertificateChainValidator {
     

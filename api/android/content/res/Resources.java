@@ -1,31 +1,22 @@
 package android.content.res;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.util.XmlUtils;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import android.content.pm.ActivityInfo;
+import java.io.InputStream;
+import java.lang.ref.WeakReference;
+
+import libcore.icu.NativePluralRules;
 import android.graphics.Movie;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable.ConstantState;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
-import android.util.Log;
-import android.util.Slog;
+import android.util.LongSparseArray;
 import android.util.SparseArray;
 import android.util.TypedValue;
-import android.util.LongSparseArray;
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.ref.WeakReference;
-import java.util.Locale;
-import libcore.icu.NativePluralRules;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class Resources {
     final TypedValue mTmpValue = new TypedValue();

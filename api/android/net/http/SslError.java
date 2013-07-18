@@ -1,10 +1,12 @@
 package android.net.http;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.security.cert.X509Certificate;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SslError {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.968 -0400", hash_original_field = "D750EAC634DEAED12CF378E4BA272A33", hash_generated_field = "A1A4B77C81BB0C0C3F4262BD3992D7FD")

@@ -1,15 +1,13 @@
 package org.apache.http.conn.ssl;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.IOException;
+import java.security.cert.X509Certificate;
+
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocket;
-import java.io.IOException;
-import java.security.cert.X509Certificate;
 
 public interface X509HostnameVerifier extends HostnameVerifier {
 

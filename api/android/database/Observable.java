@@ -1,10 +1,10 @@
 package android.database;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.ArrayList;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public abstract class Observable<T> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.061 -0400", hash_original_field = "4568676A708AC893FC758A70E573C153", hash_generated_field = "68FF9C8CE88B8AC7C5CD64388A1A318D")

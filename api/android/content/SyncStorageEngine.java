@@ -1,15 +1,20 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.os.AtomicFile;
-import com.android.internal.util.ArrayUtils;
-import com.android.internal.util.FastXmlSerializer;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.TimeZone;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
+
 import android.accounts.Account;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -23,18 +28,18 @@ import android.os.Parcel;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.util.Log;
+import android.util.Pair;
 import android.util.SparseArray;
 import android.util.Xml;
-import android.util.Pair;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.TimeZone;
-import java.util.List;
+
+import com.android.internal.os.AtomicFile;
+import com.android.internal.util.ArrayUtils;
+import com.android.internal.util.FastXmlSerializer;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SyncStorageEngine extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.075 -0400", hash_original_field = "ADB03CF0C832D5859AE5ED806F964C77", hash_generated_field = "DCD9F929FBF293182CD7E5CC415D1656")

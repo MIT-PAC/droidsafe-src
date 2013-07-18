@@ -1,13 +1,8 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.util.TimeUtils;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public final class Message implements Parcelable {
     public int what;

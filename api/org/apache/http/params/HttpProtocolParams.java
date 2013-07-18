@@ -1,12 +1,11 @@
 package org.apache.http.params;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import org.apache.http.HttpVersion;
 import org.apache.http.ProtocolVersion;
 import org.apache.http.protocol.HTTP;
+
+import droidsafe.annotations.DSGenerator;
 
 public final class HttpProtocolParams implements CoreProtocolPNames {
     

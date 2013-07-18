@@ -1,11 +1,10 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.util.Enumeration;
+
+import droidsafe.annotations.DSGenerator;
 
 public class BERSequence extends DERSequence {
     

@@ -1,9 +1,8 @@
 package libcore.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public final class StructFlock {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.794 -0400", hash_original_field = "B45D6CA64E64AB234F8DD693309C460E", hash_generated_field = "F9D431F6400B333E4DEC5C071DC91AEB")

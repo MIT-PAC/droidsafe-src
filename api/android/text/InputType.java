@@ -1,10 +1,6 @@
 package android.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.text.TextUtils;
 
 public interface InputType {
     

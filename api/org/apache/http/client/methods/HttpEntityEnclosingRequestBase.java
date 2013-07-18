@@ -1,14 +1,17 @@
 package org.apache.http.client.methods;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import org.apache.http.Header;
+import java.io.IOException;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpEntityEnclosingRequest;
 import org.apache.http.client.utils.CloneUtils;
-import org.apache.http.protocol.HTTP;
+import org.apache.http.conn.ClientConnectionRequest;
+import org.apache.http.conn.ConnectionReleaseTrigger;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class HttpEntityEnclosingRequestBase extends HttpRequestBase implements HttpEntityEnclosingRequest {
     private HttpEntity entity;

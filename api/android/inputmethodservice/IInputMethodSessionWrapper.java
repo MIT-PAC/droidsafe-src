@@ -1,23 +1,25 @@
 package android.inputmethodservice;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.os.HandlerCaller;
-import com.android.internal.view.IInputMethodCallback;
-import com.android.internal.view.IInputMethodSession;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Message;
 import android.os.RemoteException;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.inputmethod.CompletionInfo;
 import android.view.inputmethod.ExtractedText;
 import android.view.inputmethod.InputMethodSession;
+
+import com.android.internal.os.HandlerCaller;
+import com.android.internal.view.IInputMethodCallback;
+import com.android.internal.view.IInputMethodSession;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements HandlerCaller.Callback {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.247 -0400", hash_original_field = "02B8E2B08EEFD631BD36F22665C339F2", hash_generated_field = "B57F12AA48E3204FC249B7683181CCD8")

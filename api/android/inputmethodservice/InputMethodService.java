@@ -1,11 +1,12 @@
 package android.inputmethodservice;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
+
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+
 import android.app.Dialog;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -22,7 +23,6 @@ import android.text.InputType;
 import android.text.Layout;
 import android.text.Spannable;
 import android.text.method.MovementMethod;
-import android.util.Log;
 import android.util.PrintWriterPrinter;
 import android.util.Printer;
 import android.view.KeyCharacterMap;
@@ -47,8 +47,10 @@ import android.view.inputmethod.InputMethodSubtype;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class InputMethodService extends AbstractInputMethodService {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.494 -0400", hash_original_field = "47E3DC1D02320FF11860FCA10E93021A", hash_generated_field = "01719032B78A2D912F910E37CD479B69")

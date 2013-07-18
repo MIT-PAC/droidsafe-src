@@ -1,11 +1,14 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import javax.sip.header.*;
-import java.util.*;
+import java.util.ListIterator;
+
+import javax.sip.header.RouteHeader;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class RouteList extends SIPHeaderList<Route> {
     

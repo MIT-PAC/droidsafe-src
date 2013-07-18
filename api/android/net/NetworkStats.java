@@ -1,19 +1,24 @@
 package android.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import static com.android.internal.util.Preconditions.checkNotNull;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.os.SystemClock;
-import android.util.SparseBooleanArray;
-import com.android.internal.util.Objects;
+
 import java.io.CharArrayWriter;
 import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.HashSet;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.os.SystemClock;
+import android.util.SparseBooleanArray;
+
+import com.android.internal.util.Objects;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class NetworkStats implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.700 -0400", hash_original_field = "90F9860F2ACD6C63E4929F387936CB9F", hash_generated_field = "538680F69DE637447E0D8142F5C87404")

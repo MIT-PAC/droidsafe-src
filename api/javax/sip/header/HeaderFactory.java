@@ -1,13 +1,11 @@
 package javax.sip.header;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.text.ParseException;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
+
 import javax.sip.InvalidArgumentException;
 import javax.sip.address.Address;
 import javax.sip.address.URI;

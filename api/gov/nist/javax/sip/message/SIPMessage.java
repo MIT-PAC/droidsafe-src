@@ -1,9 +1,6 @@
 package gov.nist.javax.sip.message;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.javax.sip.SIPConstants;
 import gov.nist.javax.sip.Utils;
@@ -46,8 +43,7 @@ import gov.nist.javax.sip.header.WWWAuthenticate;
 import gov.nist.javax.sip.header.Warning;
 import gov.nist.javax.sip.parser.HeaderParser;
 import gov.nist.javax.sip.parser.ParserFactory;
-import gov.nist.javax.sip.parser.PipelinedMsgParser;
-import gov.nist.javax.sip.parser.StringMsgParser;
+
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
 import java.text.ParseException;
@@ -58,6 +54,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.concurrent.ConcurrentLinkedQueue;
+
 import javax.sip.InvalidArgumentException;
 import javax.sip.SipException;
 import javax.sip.header.AuthorizationHeader;
@@ -78,6 +75,11 @@ import javax.sip.header.RouteHeader;
 import javax.sip.header.ToHeader;
 import javax.sip.header.ViaHeader;
 import javax.sip.message.Request;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SIPMessage extends MessageObject implements javax.sip.message.Message, MessageExt {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.155 -0400", hash_original_field = "1E0E36F4EE56089C28BCB9B0F9B200D4", hash_generated_field = "4BA5E6BB1036D79534D4BE3D73466535")

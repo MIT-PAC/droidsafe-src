@@ -1,9 +1,6 @@
 package android.accounts;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 
 public interface IAccountManagerResponse extends android.os.IInterface
 {

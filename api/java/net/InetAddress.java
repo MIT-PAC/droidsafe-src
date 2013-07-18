@@ -1,10 +1,15 @@
 package java.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import dalvik.system.BlockGuard;
+import static libcore.io.OsConstants.AF_INET;
+import static libcore.io.OsConstants.AF_UNSPEC;
+import static libcore.io.OsConstants.AI_ADDRCONFIG;
+import static libcore.io.OsConstants.AI_NUMERICHOST;
+import static libcore.io.OsConstants.ECONNREFUSED;
+import static libcore.io.OsConstants.NI_NAMEREQD;
+import static libcore.io.OsConstants.NI_NUMERICHOST;
+import static libcore.io.OsConstants.SOCK_STREAM;
+
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -15,18 +20,21 @@ import java.io.Serializable;
 import java.nio.ByteOrder;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.Enumeration;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
+
 import libcore.io.ErrnoException;
 import libcore.io.GaiException;
 import libcore.io.IoBridge;
 import libcore.io.Libcore;
 import libcore.io.Memory;
 import libcore.io.StructAddrinfo;
-import static libcore.io.OsConstants.*;
+import dalvik.system.BlockGuard;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class InetAddress implements Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.661 -0400", hash_original_field = "0D3FDA0BDBB9D619E09CDF3EECBA7999", hash_generated_field = "630495C0099FA460C912B67A0FCAD3C7")

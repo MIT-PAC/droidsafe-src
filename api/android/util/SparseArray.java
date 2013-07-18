@@ -1,10 +1,10 @@
 package android.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import com.android.internal.util.ArrayUtils;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public class SparseArray<E> implements Cloneable {
     private boolean mGarbage = false;

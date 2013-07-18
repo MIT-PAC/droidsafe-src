@@ -1,17 +1,17 @@
 package android.net.http;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.Context;
-import java.net.Socket;
 import java.io.IOException;
-import org.apache.http.HttpClientConnection;
+import java.net.Socket;
+
 import org.apache.http.HttpHost;
-import org.apache.http.impl.DefaultHttpClientConnection;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
+
+import android.content.Context;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class HttpConnection extends Connection {
     

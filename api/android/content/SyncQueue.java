@@ -1,20 +1,23 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.google.android.collect.Maps;
-import android.content.pm.RegisteredServicesCache;
-import android.os.SystemClock;
-import android.text.format.DateUtils;
-import android.util.Pair;
-import android.util.Log;
-import android.accounts.Account;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+
+import android.accounts.Account;
+import android.content.pm.RegisteredServicesCache;
+import android.os.SystemClock;
+import android.text.format.DateUtils;
+import android.util.Pair;
+
+import com.google.android.collect.Maps;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SyncQueue {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.629 -0400", hash_original_field = "45147E3AEB1E4ADCE06A13083E577526", hash_generated_field = "C4D1F4553F2DAB654514F44F7C643ACD")

@@ -1,15 +1,13 @@
 package gov.nist.core.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
+
 import javax.net.ssl.SSLServerSocket;
 import javax.net.ssl.SSLSocket;
 

@@ -1,19 +1,38 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import static com.android.internal.telephony.CommandsInterface.SERVICE_CLASS_DATA;
+import static com.android.internal.telephony.CommandsInterface.SERVICE_CLASS_DATA_ASYNC;
+import static com.android.internal.telephony.CommandsInterface.SERVICE_CLASS_DATA_SYNC;
+import static com.android.internal.telephony.CommandsInterface.SERVICE_CLASS_FAX;
+import static com.android.internal.telephony.CommandsInterface.SERVICE_CLASS_MAX;
+import static com.android.internal.telephony.CommandsInterface.SERVICE_CLASS_NONE;
+import static com.android.internal.telephony.CommandsInterface.SERVICE_CLASS_PACKET;
+import static com.android.internal.telephony.CommandsInterface.SERVICE_CLASS_PAD;
+import static com.android.internal.telephony.CommandsInterface.SERVICE_CLASS_SMS;
+import static com.android.internal.telephony.CommandsInterface.SERVICE_CLASS_VOICE;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import android.content.Context;
-import com.android.internal.telephony.*;
-import android.os.*;
+import android.os.AsyncResult;
+import android.os.Handler;
+import android.os.Message;
 import android.telephony.PhoneNumberUtils;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.Log;
-import static com.android.internal.telephony.CommandsInterface.*;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
+
+import com.android.internal.telephony.CallForwardInfo;
+import com.android.internal.telephony.CommandException;
+import com.android.internal.telephony.CommandsInterface;
+import com.android.internal.telephony.MmiCode;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class GsmMmiCode extends Handler implements MmiCode {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.960 -0400", hash_original_field = "F7A42FE7211F98AC7A60A285AC3A9E87", hash_generated_field = "690DC9441FA6BD04E0472B4DF9E035F8")

@@ -1,13 +1,6 @@
 package android.test;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.util.Log;
-import com.google.android.collect.Maps;
-import com.google.android.collect.Sets;
-import dalvik.system.DexFile;
 import java.io.File;
 import java.io.IOException;
 import java.util.Enumeration;
@@ -17,6 +10,15 @@ import java.util.TreeSet;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
+
+import com.google.android.collect.Maps;
+import com.google.android.collect.Sets;
+
+import dalvik.system.DexFile;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ClassPathPackageInfoSource {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.551 -0400", hash_original_field = "5B48EC82264433BE164C825255AA2E2A", hash_generated_field = "B2EB813D257A6C0FCC00AC001736957A")

@@ -1,15 +1,10 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.MotionEvent;
-import android.view.KeyEvent;
-import android.widget.RemoteViews.RemoteView;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public class Button extends TextView {
     

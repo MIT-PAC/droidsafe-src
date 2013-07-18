@@ -1,12 +1,8 @@
 package android.view.inputmethod;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
-import android.inputmethodservice.InputMethodService;
 import android.os.IBinder;
 import android.os.ResultReceiver;
 

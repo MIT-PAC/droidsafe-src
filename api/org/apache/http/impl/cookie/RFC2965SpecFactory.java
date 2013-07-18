@@ -1,13 +1,12 @@
 package org.apache.http.impl.cookie;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import org.apache.http.cookie.CookieSpec;
 import org.apache.http.cookie.CookieSpecFactory;
 import org.apache.http.cookie.params.CookieSpecPNames;
 import org.apache.http.params.HttpParams;
+
+import droidsafe.annotations.DSGenerator;
 
 public class RFC2965SpecFactory implements CookieSpecFactory {
     

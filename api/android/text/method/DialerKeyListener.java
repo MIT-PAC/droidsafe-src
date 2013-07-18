@@ -1,13 +1,14 @@
 package android.text.method;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.view.KeyEvent;
-import android.view.KeyCharacterMap.KeyData;
 import android.text.InputType;
 import android.text.Spannable;
+import android.view.KeyCharacterMap.KeyData;
+import android.view.KeyEvent;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class DialerKeyListener extends NumberKeyListener {
     

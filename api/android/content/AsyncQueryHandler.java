@@ -1,9 +1,8 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.lang.ref.WeakReference;
+
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Handler;
@@ -11,7 +10,10 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
-import java.lang.ref.WeakReference;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class AsyncQueryHandler extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.420 -0400", hash_original_field = "CF849E3C15214EFD093D4303B542BF44", hash_generated_field = "2623DC09028481BBFC31885FF1F55C62")

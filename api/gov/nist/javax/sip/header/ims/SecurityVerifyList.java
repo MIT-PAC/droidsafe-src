@@ -1,11 +1,9 @@
 package gov.nist.javax.sip.header.ims;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import gov.nist.javax.sip.header.SIPHeaderList;
-import gov.nist.javax.sip.header.ims.SecurityVerify;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class SecurityVerifyList extends SIPHeaderList<SecurityVerify> {
     

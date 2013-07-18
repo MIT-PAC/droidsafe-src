@@ -1,13 +1,12 @@
 package android.text.style;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.os.Parcel;
 import android.text.ParcelableSpan;
 import android.text.TextUtils;
-import android.widget.TextView;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class EasyEditSpan implements ParcelableSpan {
     

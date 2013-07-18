@@ -1,9 +1,6 @@
 package android.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import static android.net.NetworkStats.IFACE_ALL;
 import static android.net.NetworkStats.SET_DEFAULT;
 import static android.net.NetworkStats.TAG_NONE;
@@ -14,9 +11,7 @@ import static android.net.NetworkStatsHistory.DataStreamUtils.writeVarLongArray;
 import static android.net.NetworkStatsHistory.Entry.UNKNOWN;
 import static android.net.NetworkStatsHistory.ParcelUtils.readLongArray;
 import static android.net.NetworkStatsHistory.ParcelUtils.writeLongArray;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.util.MathUtils;
+
 import java.io.CharArrayWriter;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -25,6 +20,14 @@ import java.io.PrintWriter;
 import java.net.ProtocolException;
 import java.util.Arrays;
 import java.util.Random;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.util.MathUtils;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class NetworkStatsHistory implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.906 -0400", hash_original_field = "12D6496AFB9546FF78CE1A9D7D8F4BFC", hash_generated_field = "2DC5FC41152B76B2AF9AC6BB55A20FB5")

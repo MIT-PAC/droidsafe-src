@@ -1,9 +1,6 @@
 package android.app;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 
 public interface IThumbnailRetriever extends android.os.IInterface
 {

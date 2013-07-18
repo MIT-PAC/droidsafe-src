@@ -1,11 +1,23 @@
 package android.test;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.util.Predicate;
-import com.android.internal.util.Predicates;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.PrintStream;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
+
+import junit.framework.AssertionFailedError;
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestListener;
+import junit.framework.TestResult;
+import junit.framework.TestSuite;
+import junit.runner.BaseTestRunner;
+import junit.textui.ResultPrinter;
 import android.app.Activity;
 import android.app.Instrumentation;
 import android.os.Bundle;
@@ -18,24 +30,14 @@ import android.test.suitebuilder.TestMethod;
 import android.test.suitebuilder.TestPredicates;
 import android.test.suitebuilder.TestSuiteBuilder;
 import android.test.suitebuilder.annotation.HasAnnotation;
-import android.test.suitebuilder.annotation.LargeTest;
-import android.util.Log;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.PrintStream;
-import java.lang.annotation.Annotation;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.List;
-import junit.framework.AssertionFailedError;
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestListener;
-import junit.framework.TestResult;
-import junit.framework.TestSuite;
-import junit.runner.BaseTestRunner;
-import junit.textui.ResultPrinter;
+
+import com.android.internal.util.Predicate;
+import com.android.internal.util.Predicates;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class InstrumentationTestRunner extends Instrumentation implements TestSuiteProvider {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.709 -0400", hash_original_field = "DDBF77BBD59535F3FF16689A18C16686", hash_generated_field = "57041D8C5014DE6D87A28603CC7822CE")

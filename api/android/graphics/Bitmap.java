@@ -1,17 +1,20 @@
 package android.graphics;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.util.DisplayMetrics;
 import java.io.OutputStream;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import java.nio.ShortBuffer;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.util.DisplayMetrics;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public final class Bitmap implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.787 -0400", hash_original_field = "F16492AD902BDE58E3AAF1B990115133", hash_generated_field = "44187EAF844F975F9CC351362B5828D9")
@@ -539,14 +542,14 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
 
     
     @DSModeled(DSC.SAFE)
-	private int getWidth() {
+	public int getWidth() {
 		//Synthetic method in order to track width taints, which are managed in native code
 		return getTaintInt();
 	}
 
     
     @DSModeled(DSC.SAFE)
-	private int getHeight() {
+	public int getHeight() {
 		//Synthetic method in order to track height taints, which are managed in native code
 		return getTaintInt();
 	}
@@ -657,7 +660,7 @@ Config varBA92FAE805FBA986A16BE9B5925B7B62_976057839 =         Config.nativeToCo
 
     
     @DSModeled(DSC.SAFE)
-	private boolean hasAlpha() {
+	public boolean hasAlpha() {
 		//Previous called into native code.  Since we are tracking the taint in, we can track it out
 		return getTaintBoolean();
 	}

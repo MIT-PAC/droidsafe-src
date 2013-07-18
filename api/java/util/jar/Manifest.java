@@ -1,9 +1,6 @@
 package java.util.jar;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,7 +14,12 @@ import java.nio.charset.CoderResult;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+
 import libcore.io.Streams;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class Manifest implements Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.039 -0400", hash_original_field = "C1F637C34A7763FD4FC74D504F0298D3", hash_generated_field = "E1BDEFB6141BA3D4A18686A70FD48EA7")

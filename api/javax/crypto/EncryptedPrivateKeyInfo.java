@@ -1,9 +1,6 @@
 package javax.crypto;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.security.AlgorithmParameters;
 import java.security.InvalidAlgorithmParameterException;
@@ -14,6 +11,7 @@ import java.security.NoSuchProviderException;
 import java.security.Provider;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
+
 import org.apache.harmony.security.asn1.ASN1Any;
 import org.apache.harmony.security.asn1.ASN1Implicit;
 import org.apache.harmony.security.asn1.ASN1Integer;
@@ -23,6 +21,11 @@ import org.apache.harmony.security.asn1.ASN1SetOf;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.utils.AlgNameMapper;
 import org.apache.harmony.security.x509.AlgorithmIdentifier;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class EncryptedPrivateKeyInfo {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.103 -0400", hash_original_field = "CDE54E566F514F637B77F1C0B5BA9798", hash_generated_field = "660D008EA392E932E9C27E468BE1012B")

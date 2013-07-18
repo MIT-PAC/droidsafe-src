@@ -1,9 +1,13 @@
 package com.android.internal.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.util.TimeZone;
+import java.util.logging.LogManager;
+
+import org.apache.harmony.luni.internal.util.TimezoneGetter;
+
 import android.app.ActivityManagerNative;
 import android.app.ApplicationErrorReport;
 import android.os.Build;
@@ -13,14 +17,16 @@ import android.os.Process;
 import android.os.SystemProperties;
 import android.util.Log;
 import android.util.Slog;
+
 import com.android.internal.logging.AndroidConfig;
 import com.android.server.NetworkManagementSocketTagger;
+
 import dalvik.system.VMRuntime;
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
-import java.util.TimeZone;
-import java.util.logging.LogManager;
-import org.apache.harmony.luni.internal.util.TimezoneGetter;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public class RuntimeInit {
     

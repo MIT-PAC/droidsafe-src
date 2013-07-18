@@ -1,16 +1,29 @@
 package android.content.res;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.Locale;
+
 import android.content.pm.ActivityInfo;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.util.LocaleUtil;
-import java.util.Locale;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public final class Configuration implements Parcelable, Comparable<Configuration> {
+	/** replacing anonymous inner class */
+    private static class MyCreator implements Parcelable.Creator<Configuration> {
+        @DSModeled(DSC.SPEC)
+        public MyCreator() {
+
+        }
+        public Configuration createFromParcel(Parcel source) {
+            return new Configuration(source);
+        }
+        public Configuration[] newArray(int size) {
+            return new Configuration[size];
+        }
+    }
+
     public float fontScale;
     public int mcc;
     public int mnc;

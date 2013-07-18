@@ -1,10 +1,12 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import javax.sip.InvalidArgumentException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class RSeq extends SIPHeader implements javax.sip.header.RSeqHeader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.803 -0400", hash_original_field = "1C021ADF174562C07D271E889F46BABF", hash_generated_field = "C1658771442CAEB41DDFE88E4F8049F6")

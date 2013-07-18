@@ -1,17 +1,23 @@
 package java.nio;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import dalvik.system.VMRuntime;
+import static libcore.io.OsConstants.MAP_PRIVATE;
+import static libcore.io.OsConstants.MAP_SHARED;
+import static libcore.io.OsConstants.PROT_READ;
+import static libcore.io.OsConstants.PROT_WRITE;
+
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.nio.channels.FileChannel.MapMode;
+
 import libcore.io.ErrnoException;
 import libcore.io.Libcore;
 import libcore.io.Memory;
-import static libcore.io.OsConstants.*;
+import dalvik.system.VMRuntime;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class MemoryBlock {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.396 -0400", hash_original_field = "884D9804999FC47A3C2694E49AD2536A", hash_generated_field = "2E3B00925A9AD8CC3173924CFBB7B9E6")

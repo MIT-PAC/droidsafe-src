@@ -1,16 +1,18 @@
 package android.view.animation;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.os.Build;
-import android.util.AttributeSet;
-import android.graphics.RectF;
 import java.util.ArrayList;
 import java.util.List;
+
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.RectF;
+import android.os.Build;
+import android.util.AttributeSet;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class AnimationSet extends Animation {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.797 -0400", hash_original_field = "B921E44548BA55022C2E5E2542E4E6A6", hash_generated_field = "F8991A4D76FA7127497F697B241FE789")

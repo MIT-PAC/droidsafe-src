@@ -1,18 +1,22 @@
 package android.graphics;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.PrintWriter;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.FloatMath;
+
 import com.android.internal.util.FastMath;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class RectF implements Parcelable {
     private float left;
-    private float top;
+    float top;
     private float right;
     private float bottom;
     

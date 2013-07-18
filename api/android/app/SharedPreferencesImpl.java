@@ -1,18 +1,6 @@
 package android.app;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.SharedPreferences;
-import android.os.FileUtils.FileStatus;
-import android.os.FileUtils;
-import android.os.Looper;
-import android.util.Log;
-import com.google.android.collect.Maps;
-import com.android.internal.util.XmlUtils;
-import dalvik.system.BlockGuard;
-import org.xmlpull.v1.XmlPullParserException;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -27,7 +15,23 @@ import java.util.Map;
 import java.util.Set;
 import java.util.WeakHashMap;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
+
+import org.xmlpull.v1.XmlPullParserException;
+
+import android.content.SharedPreferences;
+import android.os.FileUtils;
+import android.os.FileUtils.FileStatus;
+import android.os.Looper;
+import android.util.Log;
+
+import com.android.internal.util.XmlUtils;
+import com.google.android.collect.Maps;
+
+import dalvik.system.BlockGuard;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 final class SharedPreferencesImpl implements SharedPreferences {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.229 -0400", hash_original_field = "E5808F908EB29E322B1768E76474CE1A", hash_generated_field = "183611C0D8A74A7CE3F1C64EE45173DC")

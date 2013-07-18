@@ -1,10 +1,10 @@
 package java.security.spec;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.security.GeneralSecurityException;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class InvalidParameterSpecException extends GeneralSecurityException {
     

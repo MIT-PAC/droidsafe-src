@@ -1,18 +1,16 @@
 package android.webkit;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.Manifest.permission;
 import android.content.pm.PackageManager;
 import android.graphics.SurfaceTexture;
-import android.media.MediaPlayer;
-import android.webkit.HTML5VideoView;
-import android.webkit.HTML5VideoViewProxy;
-import android.view.Surface;
 import android.opengl.GLES20;
 import android.os.PowerManager;
+import android.view.Surface;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class HTML5VideoInline extends HTML5VideoView {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.915 -0400", hash_original_field = "40E64BF46DE36A44337E332FB1B3CAA0", hash_generated_field = "36A133C93FDB38616761627290A0A20E")

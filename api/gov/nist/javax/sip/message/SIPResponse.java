@@ -1,9 +1,6 @@
 package gov.nist.javax.sip.message;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.javax.sip.Utils;
 import gov.nist.javax.sip.address.SipUri;
@@ -23,13 +20,20 @@ import gov.nist.javax.sip.header.To;
 import gov.nist.javax.sip.header.Via;
 import gov.nist.javax.sip.header.ViaList;
 import gov.nist.javax.sip.header.extensions.SessionExpires;
+
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.util.Iterator;
 import java.util.LinkedList;
+
 import javax.sip.header.ReasonHeader;
 import javax.sip.header.ServerHeader;
 import javax.sip.message.Request;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class SIPResponse extends SIPMessage implements javax.sip.message.Response, ResponseExt {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.500 -0400", hash_original_field = "8462E9D9B0BB0450DAF299F1B5423B07", hash_generated_field = "4214B75EEFCC2F5FE0C8E2F4EEF5B95F")

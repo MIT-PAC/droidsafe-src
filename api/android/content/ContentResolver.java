@@ -1,33 +1,6 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import dalvik.system.CloseGuard;
-import android.accounts.Account;
-import android.app.ActivityManagerNative;
-import android.app.ActivityThread;
-import android.app.AppGlobals;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.res.AssetFileDescriptor;
-import android.content.res.Resources;
-import android.database.ContentObserver;
-import android.database.CrossProcessCursorWrapper;
-import android.database.Cursor;
-import android.database.CursorWrapper;
-import android.database.IContentObserver;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.ParcelFileDescriptor;
-import android.os.RemoteException;
-import android.os.ServiceManager;
-import android.os.StrictMode;
-import android.os.SystemClock;
-import android.text.TextUtils;
-import android.util.EventLog;
-import android.util.Log;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -37,6 +10,32 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import android.accounts.Account;
+import android.app.ActivityManagerNative;
+import android.app.AppGlobals;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.AssetFileDescriptor;
+import android.content.res.Resources;
+import android.database.ContentObserver;
+import android.database.CrossProcessCursorWrapper;
+import android.database.Cursor;
+import android.database.IContentObserver;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.ParcelFileDescriptor;
+import android.os.RemoteException;
+import android.os.ServiceManager;
+import android.os.SystemClock;
+import android.text.TextUtils;
+import android.util.EventLog;
+import android.util.Log;
+import dalvik.system.CloseGuard;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.concrete.DSCursor;
 
 public abstract class ContentResolver {
     private final Random mRandom = new Random();

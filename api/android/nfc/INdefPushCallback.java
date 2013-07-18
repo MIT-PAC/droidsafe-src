@@ -1,9 +1,6 @@
 package android.nfc;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 
 public interface INdefPushCallback extends android.os.IInterface
 {

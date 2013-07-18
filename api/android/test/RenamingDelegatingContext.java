@@ -1,22 +1,25 @@
 package android.test;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.google.android.collect.Sets;
-import android.content.Context;
-import android.content.ContextWrapper;
-import android.content.ContentProvider;
-import android.database.DatabaseErrorHandler;
-import android.database.sqlite.SQLiteDatabase;
-import android.os.FileUtils;
-import android.util.Log;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.Set;
+
+import android.content.ContentProvider;
+import android.content.Context;
+import android.content.ContextWrapper;
+import android.database.DatabaseErrorHandler;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.FileUtils;
+
+import com.google.android.collect.Sets;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class RenamingDelegatingContext extends ContextWrapper {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.841 -0400", hash_original_field = "B621E04F879EF969C870D02B930BA150", hash_generated_field = "25D64DDA3F3009238ABDBADB548AC0B2")

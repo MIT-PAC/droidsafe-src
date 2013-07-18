@@ -1,18 +1,19 @@
 package android.webkit;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.os.Handler;
-import android.os.Message;
-import android.util.Log;
 import java.util.Collection;
-import java.util.Map;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
+
+import android.os.Handler;
+import android.os.Message;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public final class WebStorage {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.805 -0400", hash_original_field = "66B6E6551149C8D18EAA0C8F6BFA4807", hash_generated_field = "37FCB2431FF7E2170127344873AA09C0")

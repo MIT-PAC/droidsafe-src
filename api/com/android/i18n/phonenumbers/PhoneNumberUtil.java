@@ -1,15 +1,6 @@
 package com.android.i18n.phonenumbers;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.i18n.phonenumbers.Phonemetadata.NumberFormat;
-import com.android.i18n.phonenumbers.Phonemetadata.PhoneMetadata;
-import com.android.i18n.phonenumbers.Phonemetadata.PhoneMetadataCollection;
-import com.android.i18n.phonenumbers.Phonemetadata.PhoneNumberDesc;
-import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
-import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber.CountryCodeSource;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
@@ -26,6 +17,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import com.android.i18n.phonenumbers.Phonemetadata.NumberFormat;
+import com.android.i18n.phonenumbers.Phonemetadata.PhoneMetadata;
+import com.android.i18n.phonenumbers.Phonemetadata.PhoneMetadataCollection;
+import com.android.i18n.phonenumbers.Phonemetadata.PhoneNumberDesc;
+import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
+import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber.CountryCodeSource;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class PhoneNumberUtil {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.052 -0400", hash_original_field = "E8745D64C3DDF690DBE72A168636F59F", hash_generated_field = "01E27589414D4F00E028D65F7226ED03")

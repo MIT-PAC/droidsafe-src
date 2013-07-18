@@ -1,12 +1,21 @@
 package org.ccil.cowan.tagsoup;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.io.*;
-import org.xml.sax.SAXException;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PushbackReader;
+import java.io.Reader;
+import java.io.Writer;
+
 import org.xml.sax.Locator;
+import org.xml.sax.SAXException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class HTMLScanner implements Scanner, Locator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.834 -0400", hash_original_field = "BD3C6DEEF8852BB42141E913BBA840E8", hash_generated_field = "5DE7612FB52B4C7CD7CF6BE3E02E09B6")

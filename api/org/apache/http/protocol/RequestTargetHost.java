@@ -1,11 +1,9 @@
 package org.apache.http.protocol;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.net.InetAddress;
+
 import org.apache.http.HttpConnection;
 import org.apache.http.HttpException;
 import org.apache.http.HttpHost;
@@ -13,8 +11,10 @@ import org.apache.http.HttpInetConnection;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpRequestInterceptor;
 import org.apache.http.HttpVersion;
-import org.apache.http.ProtocolVersion;
 import org.apache.http.ProtocolException;
+import org.apache.http.ProtocolVersion;
+
+import droidsafe.annotations.DSGenerator;
 
 public class RequestTargetHost implements HttpRequestInterceptor {
     

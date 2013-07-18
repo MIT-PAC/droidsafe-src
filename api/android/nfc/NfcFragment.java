@@ -1,12 +1,11 @@
 package android.nfc;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public final class NfcFragment extends Fragment {
     

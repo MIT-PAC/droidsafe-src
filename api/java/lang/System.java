@@ -1,11 +1,6 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import dalvik.system.VMRuntime;
-import dalvik.system.VMStack;
 import java.io.Console;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
@@ -21,10 +16,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
+
 import libcore.icu.ICU;
 import libcore.io.Libcore;
 import libcore.io.StructUtsname;
-import libcore.util.ZoneInfoDB;
+import dalvik.system.VMRuntime;
+import dalvik.system.VMStack;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public final class System {
     

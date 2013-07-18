@@ -1,14 +1,15 @@
 package com.android.internal.telephony.sip;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.telephony.PhoneNotifier;
+import java.text.ParseException;
+
 import android.content.Context;
 import android.net.sip.SipProfile;
 import android.util.Log;
-import java.text.ParseException;
+
+import com.android.internal.telephony.PhoneNotifier;
+
+import droidsafe.annotations.DSGenerator;
 
 public class SipPhoneFactory {
     

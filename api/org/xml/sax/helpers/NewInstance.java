@@ -1,11 +1,12 @@
 package org.xml.sax.helpers;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class NewInstance {
     

@@ -1,16 +1,19 @@
 package org.bouncycastle.asn1.x9;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.math.BigInteger;
+import java.util.Enumeration;
+import java.util.Hashtable;
+
 import org.bouncycastle.asn1.DERObjectIdentifier;
 import org.bouncycastle.math.ec.ECCurve;
 import org.bouncycastle.util.Strings;
 import org.bouncycastle.util.encoders.Hex;
-import java.math.BigInteger;
-import java.util.Enumeration;
-import java.util.Hashtable;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class X962NamedCurves {
     

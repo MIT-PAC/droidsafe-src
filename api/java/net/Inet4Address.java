@@ -1,13 +1,16 @@
 package java.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import static libcore.io.OsConstants.AF_INET;
+
 import java.io.ObjectStreamException;
 import java.nio.ByteOrder;
+
 import libcore.io.Memory;
-import static libcore.io.OsConstants.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class Inet4Address extends InetAddress {
     

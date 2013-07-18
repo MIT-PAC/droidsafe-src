@@ -1,12 +1,10 @@
 package javax.sip.message;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.Serializable;
 import java.text.ParseException;
 import java.util.ListIterator;
+
 import javax.sip.SipException;
 import javax.sip.header.ContentDispositionHeader;
 import javax.sip.header.ContentEncodingHeader;

@@ -1,9 +1,9 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.HashMap;
+import java.util.Iterator;
+
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.app.PendingIntent.CanceledException;
@@ -16,8 +16,10 @@ import android.provider.Telephony.Sms.Intents;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.SmsCbMessage;
 import android.telephony.SmsManager;
+import android.telephony.SmsMessage.MessageClass;
 import android.telephony.gsm.GsmCellLocation;
 import android.util.Log;
+
 import com.android.internal.telephony.CommandsInterface;
 import com.android.internal.telephony.IccUtils;
 import com.android.internal.telephony.PhoneBase;
@@ -28,9 +30,11 @@ import com.android.internal.telephony.SmsMessageBase.TextEncodingDetails;
 import com.android.internal.telephony.SmsStorageMonitor;
 import com.android.internal.telephony.SmsUsageMonitor;
 import com.android.internal.telephony.TelephonyProperties;
-import java.util.HashMap;
-import java.util.Iterator;
-import static android.telephony.SmsMessage.MessageClass;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class GsmSMSDispatcher extends SMSDispatcher {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.126 -0400", hash_original_field = "D23A9A1E20D1A7A9C562EB626C5216B0", hash_generated_field = "FB0C4AC891EDC21FFB7A5101DD66CA15")

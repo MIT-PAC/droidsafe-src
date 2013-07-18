@@ -1,9 +1,6 @@
 package org.apache.http.impl.auth;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import org.apache.http.FormattedHeader;
 import org.apache.http.Header;
 import org.apache.http.auth.AUTH;
@@ -11,6 +8,11 @@ import org.apache.http.auth.AuthScheme;
 import org.apache.http.auth.MalformedChallengeException;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.CharArrayBuffer;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class AuthSchemeBase implements AuthScheme {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.373 -0400", hash_original_field = "431387EB7262E1CFC79B125EB8A67C60", hash_generated_field = "90A6DE2E00E635760A3B1A224459E469")

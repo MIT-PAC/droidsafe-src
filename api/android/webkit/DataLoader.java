@@ -1,13 +1,16 @@
 package android.webkit;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.net.http.EventHandler;
-import com.android.internal.R;
 import java.io.ByteArrayInputStream;
+
 import libcore.io.Base64;
+import android.net.http.EventHandler;
+
+import com.android.internal.R;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class DataLoader extends StreamLoader {
     

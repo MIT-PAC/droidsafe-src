@@ -1,9 +1,8 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.ArrayList;
+
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -19,18 +18,23 @@ import android.telephony.cdma.CdmaCellLocation;
 import android.text.TextUtils;
 import android.util.EventLog;
 import android.util.Log;
+
 import com.android.internal.telephony.ApnSetting;
 import com.android.internal.telephony.CommandsInterface;
 import com.android.internal.telephony.DataCallState;
-import com.android.internal.telephony.DataConnection.FailCause;
 import com.android.internal.telephony.DataConnection;
+import com.android.internal.telephony.DataConnection.FailCause;
 import com.android.internal.telephony.DataConnectionAc;
 import com.android.internal.telephony.DataConnectionTracker;
 import com.android.internal.telephony.EventLogTags;
-import com.android.internal.telephony.RetryManager;
 import com.android.internal.telephony.Phone;
+import com.android.internal.telephony.RetryManager;
 import com.android.internal.util.AsyncChannel;
-import java.util.ArrayList;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class CdmaDataConnectionTracker extends DataConnectionTracker {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.582 -0400", hash_original_field = "951C150E6D062E6AED2C45BB9B756185", hash_generated_field = "692A09C40EE40FAEE399CBCFE2A5ACE4")

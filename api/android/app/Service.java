@@ -1,21 +1,22 @@
 package android.app;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.ComponentCallbacks2;
-import android.content.ComponentName;
-import android.content.Intent;
-import android.content.ContextWrapper;
-import android.content.Context;
-import android.content.res.Configuration;
-import android.os.Build;
-import android.os.RemoteException;
-import android.os.IBinder;
-import android.util.Log;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
+
+import android.content.ComponentCallbacks2;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.ContextWrapper;
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.os.Build;
+import android.os.IBinder;
+import android.os.RemoteException;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Service extends ContextWrapper implements ComponentCallbacks2 {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.131 -0400", hash_original_field = "4637F257714ED0010AAAD4B2D42CA0B5", hash_generated_field = "4DECD94BE6B0174DE36067CBF50C84C9")

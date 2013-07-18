@@ -1,12 +1,7 @@
 package android.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.os.RuntimeInit;
-import java.io.PrintWriter;
-import java.io.StringWriter;
+import droidsafe.annotations.DSGenerator;
 
 public final class Slog {
     

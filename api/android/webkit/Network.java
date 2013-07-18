@@ -1,22 +1,25 @@
 package android.webkit;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.Map;
+
+import junit.framework.Assert;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.http.*;
-import android.os.*;
-import android.util.Log;
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.util.Map;
-import junit.framework.Assert;
+import android.net.http.RequestHandle;
+import android.net.http.RequestQueue;
+import android.net.http.SslError;
+import android.os.Bundle;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class Network {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.611 -0400", hash_original_field = "1E809564B7DE2310DE54967FAFFCD227", hash_generated_field = "319865EBA225C5210ACF05AB725BAB66")

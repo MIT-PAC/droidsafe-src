@@ -1,15 +1,17 @@
 package android.view.animation;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.view.View;
-import android.view.ViewGroup;
+import java.util.Random;
+
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import java.util.Random;
+import android.view.View;
+import android.view.ViewGroup;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class GridLayoutAnimationController extends LayoutAnimationController {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.979 -0400", hash_original_field = "29CD4D8FF8E5FB724D956AFF9C7C34F0", hash_generated_field = "629BDB9D286507ADB5AC44CEFC58428A")

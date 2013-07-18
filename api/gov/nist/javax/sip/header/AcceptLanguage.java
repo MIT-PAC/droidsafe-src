@@ -1,13 +1,17 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import gov.nist.core.*;
-import javax.sip.header.AcceptLanguageHeader;
-import javax.sip.InvalidArgumentException;
+import gov.nist.core.NameValue;
+
 import java.util.Locale;
+
+import javax.sip.InvalidArgumentException;
+import javax.sip.header.AcceptLanguageHeader;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class AcceptLanguage extends ParametersHeader implements AcceptLanguageHeader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.644 -0400", hash_original_field = "00A2E47D587E93FF949744BBD08BA7A5", hash_generated_field = "D4BB60E55436DA1436A4D43E1F9D33AD")

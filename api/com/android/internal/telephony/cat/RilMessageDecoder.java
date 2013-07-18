@@ -1,15 +1,16 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import android.os.Handler;
+import android.os.Message;
+
 import com.android.internal.telephony.IccFileHandler;
 import com.android.internal.telephony.IccUtils;
-import android.os.Handler;
 import com.android.internal.util.State;
 import com.android.internal.util.StateMachine;
-import android.os.Message;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 class RilMessageDecoder extends StateMachine {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.565 -0400", hash_original_field = "323B97ECC7245864248EAE86A2F8A7C0", hash_generated_field = "1D31B9527FBE265BC5A565819E7A3298")

@@ -1,17 +1,19 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.ArrayList;
+import java.util.Collections;
+
 import android.database.DataSetObserver;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
 import android.view.View;
 import android.view.ViewGroup;
-import java.util.ArrayList;
-import java.util.Collections;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class ExpandableListConnector extends BaseAdapter implements Filterable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.380 -0400", hash_original_field = "8DBF5674055609276EEC97573F22FB4C", hash_generated_field = "18A81DFA989CC3FAA8A107E272992504")

@@ -1,12 +1,7 @@
 package java.util.zip;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import dalvik.system.CloseGuard;
 import java.io.BufferedInputStream;
-import java.io.EOFException;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.IOException;
@@ -16,9 +11,15 @@ import java.nio.ByteOrder;
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+
 import libcore.io.BufferIterator;
 import libcore.io.HeapBufferIterator;
 import libcore.io.Streams;
+import dalvik.system.CloseGuard;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ZipFile implements ZipConstants {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.798 -0400", hash_original_field = "5B063E275D506F65EBF1B02D926F19A4", hash_generated_field = "0CA74B4233F69873CB47E022D845EA81")

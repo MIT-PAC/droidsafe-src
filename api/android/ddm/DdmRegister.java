@@ -1,11 +1,10 @@
 package android.ddm;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import org.apache.harmony.dalvik.ddmc.DdmServer;
+
 import android.util.Log;
+import droidsafe.annotations.DSGenerator;
 
 public class DdmRegister {
     

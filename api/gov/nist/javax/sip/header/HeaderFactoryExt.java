@@ -1,10 +1,6 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.text.ParseException;
 import gov.nist.javax.sip.header.extensions.JoinHeader;
 import gov.nist.javax.sip.header.extensions.ReferredByHeader;
 import gov.nist.javax.sip.header.extensions.ReplacesHeader;
@@ -29,6 +25,9 @@ import gov.nist.javax.sip.header.ims.SecurityClientHeader;
 import gov.nist.javax.sip.header.ims.SecurityServerHeader;
 import gov.nist.javax.sip.header.ims.SecurityVerifyHeader;
 import gov.nist.javax.sip.header.ims.ServiceRouteHeader;
+
+import java.text.ParseException;
+
 import javax.sip.InvalidArgumentException;
 import javax.sip.address.Address;
 import javax.sip.header.Header;

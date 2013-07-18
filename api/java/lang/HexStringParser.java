@@ -1,11 +1,13 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 final class HexStringParser {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.996 -0400", hash_original_field = "94B91A0CFAEF3637DD641B0B0FB4F9B1", hash_generated_field = "3D1EE3F91B74E8DB430F2C1AC83A33D3")

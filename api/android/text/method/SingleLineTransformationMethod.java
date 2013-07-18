@@ -1,17 +1,10 @@
 package android.text.method;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.graphics.Rect;
-import android.text.Editable;
-import android.text.GetChars;
-import android.text.Spannable;
-import android.text.Spanned;
-import android.text.SpannedString;
-import android.text.TextUtils;
-import android.view.View;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SingleLineTransformationMethod extends ReplacementTransformationMethod {
     

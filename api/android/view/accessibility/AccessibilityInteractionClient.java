@@ -1,19 +1,20 @@
 package android.view.accessibility;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import android.accessibilityservice.IAccessibilityServiceConnection;
 import android.graphics.Rect;
 import android.os.Message;
 import android.os.RemoteException;
 import android.os.SystemClock;
-import android.util.Log;
 import android.util.SparseArray;
-import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class AccessibilityInteractionClient extends IAccessibilityInteractionConnectionCallback.Stub {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.266 -0400", hash_original_field = "876C08859ADD60468823CCE8896C3049", hash_generated_field = "1B453B20F0C1F3432E8CE879D519121D")

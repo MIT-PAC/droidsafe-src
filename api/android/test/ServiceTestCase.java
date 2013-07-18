@@ -1,19 +1,18 @@
 package android.test;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.Random;
+
 import android.app.Application;
 import android.app.Service;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
-import android.os.RemoteException;
 import android.test.mock.MockApplication;
-import java.lang.reflect.Field;
-import java.util.Random;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class ServiceTestCase<T extends Service> extends AndroidTestCase {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.871 -0400", hash_original_field = "ABE707345597563360502B5433C70932", hash_generated_field = "637B9F6ABC3AC96EB3EB7681C795A33D")

@@ -2,11 +2,14 @@ package droidsafe.runtime;
 
 import java.util.Random;
 
-import android.app.ContextImpl;
 import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.os.Bundle;
-import droidsafe.annotations.*;
+
+import com.sun.corba.se.impl.corba.ContextImpl;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 /**
  * This class will simulate the android runtime system by making any calls or creating 

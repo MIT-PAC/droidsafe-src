@@ -1,15 +1,14 @@
 package android.media;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.os.Parcel;
-import android.util.Log;
-import java.util.HashMap;
-import java.util.Set;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
+
+import android.os.Parcel;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class TimedText {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.325 -0400", hash_original_field = "EFA56283585F59792DE14EFDEC543EA6", hash_generated_field = "BB91EE8BB361270D3F9E96BDF275F77B")

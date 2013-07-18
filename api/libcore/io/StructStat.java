@@ -1,9 +1,8 @@
 package libcore.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public final class StructStat {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.803 -0400", hash_original_field = "B559CC607D69C684D16A78B6CD601BC3", hash_generated_field = "219514068DCC6E28620F0B134974345C")

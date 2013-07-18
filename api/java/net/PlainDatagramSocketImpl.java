@@ -1,26 +1,21 @@
 package java.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import dalvik.system.CloseGuard;
+import static libcore.io.OsConstants.MSG_PEEK;
+
 import java.io.FileDescriptor;
 import java.io.IOException;
-import java.net.DatagramPacket;
-import java.net.DatagramSocketImpl;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.NetworkInterface;
-import java.net.SocketAddress;
-import java.net.SocketException;
-import java.net.UnknownHostException;
+
 import libcore.io.ErrnoException;
 import libcore.io.IoBridge;
 import libcore.io.Libcore;
 import libcore.io.StructGroupReq;
 import libcore.util.EmptyArray;
-import static libcore.io.OsConstants.*;
+import dalvik.system.CloseGuard;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.031 -0400", hash_original_field = "77B540FD61B8B8FFBCEAA60964FD06BB", hash_generated_field = "9D4B2046F6FC3648B8B879B96386B204")

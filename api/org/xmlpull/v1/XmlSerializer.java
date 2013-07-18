@@ -1,9 +1,6 @@
 package org.xmlpull.v1;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;

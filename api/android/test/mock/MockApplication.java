@@ -1,11 +1,9 @@
 package android.test.mock;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.app.Application;
 import android.content.res.Configuration;
+import droidsafe.annotations.DSGenerator;
 
 public class MockApplication extends Application {
     

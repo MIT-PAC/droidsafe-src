@@ -1,25 +1,17 @@
 package gov.nist.javax.sip.parser.ims;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.text.ParseException;
-import gov.nist.core.Token;
-import gov.nist.javax.sip.address.GenericURI;
+import gov.nist.javax.sip.header.SIPHeader;
 import gov.nist.javax.sip.header.ims.PAssociatedURI;
 import gov.nist.javax.sip.header.ims.PAssociatedURIList;
 import gov.nist.javax.sip.header.ims.SIPHeaderNamesIms;
-import gov.nist.javax.sip.header.Allow;
-import gov.nist.javax.sip.header.ErrorInfo;
-import gov.nist.javax.sip.header.SIPHeader;
-import gov.nist.javax.sip.header.SIPHeaderNames;
+import gov.nist.javax.sip.parser.AddressParametersParser;
 import gov.nist.javax.sip.parser.Lexer;
 import gov.nist.javax.sip.parser.TokenTypes;
-import gov.nist.javax.sip.parser.AddressParametersParser;
-import gov.nist.javax.sip.parser.URLParser;
-import gov.nist.javax.sip.parser.ParametersParser;
-import gov.nist.javax.sip.parser.HeaderParser;
+
+import java.text.ParseException;
+
+import droidsafe.annotations.DSGenerator;
 
 public class PAssociatedURIParser extends AddressParametersParser {
     

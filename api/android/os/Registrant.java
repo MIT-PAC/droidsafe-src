@@ -1,13 +1,12 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.os.Handler;
-import android.os.Message;
 import java.lang.ref.WeakReference;
-import java.util.HashMap;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class Registrant {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.419 -0400", hash_original_field = "619B2A081B6E7006662C823A3E45AA2E", hash_generated_field = "0D5560AD898CE7ED29D9B0190B0760A0")

@@ -1,9 +1,7 @@
 package android.animation;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSGenerator;
 
 public class IntEvaluator implements TypeEvaluator<Integer> {
     

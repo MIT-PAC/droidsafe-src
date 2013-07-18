@@ -1,14 +1,15 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.res.Resources;
+import java.io.File;
+
 import android.os.storage.IMountService;
 import android.os.storage.StorageVolume;
 import android.util.Log;
-import java.io.File;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class Environment {
     

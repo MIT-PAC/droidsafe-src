@@ -1,10 +1,8 @@
 package android.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.os.SystemProperties;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public class DisplayMetrics {
     public int widthPixels;

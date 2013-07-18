@@ -1,12 +1,10 @@
 package android.nfc.tech;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.nfc.Tag;
 import java.io.Closeable;
 import java.io.IOException;
+
+import android.nfc.Tag;
 
 public interface TagTechnology extends Closeable {
     

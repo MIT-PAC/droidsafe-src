@@ -1,9 +1,6 @@
 package com.android.i18n.phonenumbers.geocoding;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
@@ -14,6 +11,11 @@ import java.util.Map.Entry;
 import java.util.SortedMap;
 import java.util.SortedSet;
 import java.util.TreeSet;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class FlyweightMapStorage extends AreaCodeMapStorageStrategy {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.557 -0400", hash_original_field = "0DE9A1D17B5CC9CA8CBC453E6D75DBEC", hash_generated_field = "F76986CA8B87BC245B249A85A8272854")

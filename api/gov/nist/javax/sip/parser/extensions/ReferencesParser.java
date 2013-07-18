@@ -1,18 +1,17 @@
 package gov.nist.javax.sip.parser.extensions;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import gov.nist.core.Token;
-import gov.nist.javax.sip.header.Reason;
-import gov.nist.javax.sip.header.ReasonList;
 import gov.nist.javax.sip.header.SIPHeader;
 import gov.nist.javax.sip.header.extensions.References;
 import gov.nist.javax.sip.parser.Lexer;
 import gov.nist.javax.sip.parser.ParametersParser;
 import gov.nist.javax.sip.parser.TokenTypes;
+
 import java.text.ParseException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ReferencesParser extends ParametersParser {
     

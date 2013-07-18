@@ -1,12 +1,15 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.math.BigInteger;
+
 import org.apache.harmony.security.asn1.ASN1Integer;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class InhibitAnyPolicy extends ExtensionValue {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.417 -0400", hash_original_field = "0CD883677A360FE36D329FE6AA5778AB", hash_generated_field = "34CEC7EBF0D69FDD5ECCA6C7F25F7FAF")

@@ -1,13 +1,17 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.os.BinderInternal;
-import android.util.Log;
 import java.util.HashMap;
 import java.util.Map;
+
+import android.util.Log;
+
+import com.android.internal.os.BinderInternal;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class ServiceManager {
     

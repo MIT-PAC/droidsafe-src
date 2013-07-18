@@ -1,24 +1,56 @@
 package gov.nist.javax.sip.message;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import gov.nist.javax.sip.address.*;
-import gov.nist.core.*;
+import gov.nist.core.InternalErrorHandler;
+import gov.nist.javax.sip.address.GenericURI;
+import gov.nist.javax.sip.address.SipUri;
+import gov.nist.javax.sip.header.CSeq;
+import gov.nist.javax.sip.header.CallID;
+import gov.nist.javax.sip.header.ContactList;
+import gov.nist.javax.sip.header.ContentLength;
+import gov.nist.javax.sip.header.ContentType;
+import gov.nist.javax.sip.header.Expires;
+import gov.nist.javax.sip.header.From;
+import gov.nist.javax.sip.header.MaxForwards;
+import gov.nist.javax.sip.header.ProxyAuthorization;
+import gov.nist.javax.sip.header.RecordRouteList;
+import gov.nist.javax.sip.header.RequestLine;
+import gov.nist.javax.sip.header.RouteList;
+import gov.nist.javax.sip.header.SIPHeader;
+import gov.nist.javax.sip.header.SIPHeaderList;
+import gov.nist.javax.sip.header.TimeStamp;
+import gov.nist.javax.sip.header.To;
+import gov.nist.javax.sip.header.Via;
+import gov.nist.javax.sip.header.ViaList;
+import gov.nist.javax.sip.stack.SIPTransactionStack;
+
+import java.io.UnsupportedEncodingException;
+import java.text.ParseException;
 import java.util.HashSet;
 import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
-import java.io.UnsupportedEncodingException;
-import java.util.Iterator;
+
+import javax.sip.InvalidArgumentException;
+import javax.sip.SipException;
 import javax.sip.address.URI;
-import javax.sip.message.*;
-import java.text.ParseException;
-import javax.sip.*;
-import javax.sip.header.*;
-import gov.nist.javax.sip.header.*;
-import gov.nist.javax.sip.stack.SIPTransactionStack;
+import javax.sip.header.CSeqHeader;
+import javax.sip.header.CallIdHeader;
+import javax.sip.header.ContactHeader;
+import javax.sip.header.EventHeader;
+import javax.sip.header.FromHeader;
+import javax.sip.header.Header;
+import javax.sip.header.ServerHeader;
+import javax.sip.header.SubscriptionStateHeader;
+import javax.sip.header.ToHeader;
+import javax.sip.header.ViaHeader;
+import javax.sip.message.Request;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class SIPRequest extends SIPMessage implements javax.sip.message.Request, RequestExt {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.358 -0400", hash_original_field = "12492E2615AAEE902567F83B53B51169", hash_generated_field = "35845A8B5E63218306C5DA0C937C70A8")

@@ -1,14 +1,19 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import gov.nist.core.*;
-import gov.nist.javax.sip.message.*;
-import gov.nist.javax.sip.header.*;
+import gov.nist.core.Debug;
+import gov.nist.core.InternalErrorHandler;
+import gov.nist.javax.sip.header.ContentLength;
+import gov.nist.javax.sip.message.SIPMessage;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.ParseException;
-import java.io.*;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class PipelinedMsgParser implements Runnable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.302 -0400", hash_original_field = "0BFCB22B0FA3021CB632B75985A84AE3", hash_generated_field = "E951DA693006702904D44903EC071300")

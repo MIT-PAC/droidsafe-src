@@ -1,14 +1,20 @@
 package android.text.method;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import android.text.Editable;
+import android.text.InputType;
+import android.text.Layout;
+import android.text.NoCopySpan;
+import android.text.Selection;
+import android.text.TextUtils;
+import android.text.method.TextKeyListener.Capitalize;
 import android.view.KeyEvent;
 import android.view.View;
-import android.text.*;
-import android.text.method.TextKeyListener.Capitalize;
 import android.widget.TextView;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyListener {
     

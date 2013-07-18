@@ -1,37 +1,33 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+
 import android.animation.LayoutTransition;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PointF;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Region;
-import android.os.Build;
 import android.os.Parcelable;
-import android.os.SystemClock;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.SparseArray;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.view.animation.Transformation;
-import com.android.internal.R;
+
 import com.android.internal.util.Predicate;
-import java.util.ArrayList;
-import java.util.HashSet;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public abstract class ViewGroup extends View implements ViewParent, ViewManager {
     protected ArrayList<View> mDisappearingChildren;

@@ -1,15 +1,17 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.telephony.GsmAlphabet;
-import com.android.internal.telephony.IccUtils;
-import com.android.internal.telephony.cat.Duration.TimeUnit;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.android.internal.telephony.GsmAlphabet;
+import com.android.internal.telephony.IccUtils;
+import com.android.internal.telephony.cat.Duration.TimeUnit;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 abstract class ValueParser {
     

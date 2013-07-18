@@ -1,44 +1,45 @@
 package android.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.res.Resources;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.text.style.AbsoluteSizeSpan;
-import android.text.style.AlignmentSpan;
-import android.text.style.BackgroundColorSpan;
-import android.text.style.BulletSpan;
-import android.text.style.CharacterStyle;
-import android.text.style.EasyEditSpan;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.LeadingMarginSpan;
-import android.text.style.MetricAffectingSpan;
-import android.text.style.QuoteSpan;
-import android.text.style.RelativeSizeSpan;
-import android.text.style.ReplacementSpan;
-import android.text.style.ScaleXSpan;
-import android.text.style.SpellCheckSpan;
-import android.text.style.StrikethroughSpan;
-import android.text.style.StyleSpan;
-import android.text.style.SubscriptSpan;
-import android.text.style.SuggestionRangeSpan;
-import android.text.style.SuggestionSpan;
-import android.text.style.SuperscriptSpan;
-import android.text.style.TextAppearanceSpan;
-import android.text.style.TypefaceSpan;
-import android.text.style.URLSpan;
-import android.text.style.UnderlineSpan;
-import android.util.Printer;
-import com.android.internal.R;
-import com.android.internal.util.ArrayUtils;
 import java.lang.reflect.Array;
 import java.util.Iterator;
 import java.util.regex.Pattern;
 
+import android.content.res.Resources;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.text.style.CharacterStyle;
+import android.text.style.MetricAffectingSpan;
+import android.text.style.ReplacementSpan;
+import android.util.Printer;
+
+import com.android.internal.R;
+import com.android.internal.util.ArrayUtils;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+
 public class TextUtils {
+	static class MyCreator implements Parcelable.Creator<CharSequence> {
+        
+        @DSModeled(DSC.SPEC)
+        public MyCreator() {}
+        
+        @DSModeled(DSC.SPEC)
+        public CharSequence createFromParcel(Parcel p) {
+            return new String();
+        }
+     
+        @DSModeled(DSC.SPEC)
+        public CharSequence[] newArray(int size)
+        {
+            return new CharSequence[size];
+        }
+
+    }
+
     
     private TextUtils() { /* cannot be instantiated */ }
 

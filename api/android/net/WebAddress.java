@@ -1,12 +1,15 @@
 package android.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import static android.util.Patterns.GOOD_IRI_CHAR;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class WebAddress {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.676 -0400", hash_original_field = "51CA147512905722A26C3D219A583C78", hash_generated_field = "CE8AB436FE82236B0FB9A3B1339DC56F")

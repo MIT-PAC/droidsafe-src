@@ -1,10 +1,8 @@
 package gov.nist.javax.sip;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
+
 import javax.sip.ListeningPoint;
 import javax.sip.header.ContactHeader;
 import javax.sip.header.ViaHeader;

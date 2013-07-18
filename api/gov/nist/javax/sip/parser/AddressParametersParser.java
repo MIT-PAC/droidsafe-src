@@ -1,12 +1,14 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import gov.nist.javax.sip.header.*;
-import gov.nist.javax.sip.address.*;
+import gov.nist.javax.sip.address.AddressImpl;
+import gov.nist.javax.sip.header.AddressParametersHeader;
+
 import java.text.ParseException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class AddressParametersParser extends ParametersParser {
     

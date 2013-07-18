@@ -1,12 +1,10 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.telephony.gsm.SmsBroadcastConfigInfo;
-import android.os.Message;
 import android.os.Handler;
+import android.os.Message;
+
+import com.android.internal.telephony.gsm.SmsBroadcastConfigInfo;
 
 public interface CommandsInterface {
     enum RadioState {

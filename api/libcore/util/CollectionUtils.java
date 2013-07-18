@@ -1,15 +1,13 @@
 package libcore.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.lang.ref.Reference;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+
+import droidsafe.annotations.DSGenerator;
 
 public final class CollectionUtils {
     

@@ -1,28 +1,29 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+
 import android.content.res.AssetFileDescriptor;
 import android.database.BulkCursorNative;
 import android.database.BulkCursorToCursorAdaptor;
 import android.database.Cursor;
 import android.database.CursorToBulkCursorAdaptor;
-import android.database.CursorWindow;
 import android.database.DatabaseUtils;
 import android.database.IBulkCursor;
 import android.database.IContentObserver;
 import android.net.Uri;
 import android.os.Binder;
 import android.os.Bundle;
-import android.os.RemoteException;
 import android.os.IBinder;
 import android.os.Parcel;
 import android.os.ParcelFileDescriptor;
 import android.os.Parcelable;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
+import android.os.RemoteException;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 abstract public class ContentProviderNative extends Binder implements IContentProvider {
     

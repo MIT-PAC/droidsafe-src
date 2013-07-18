@@ -1,13 +1,17 @@
 package gov.nist.javax.sip.header.extensions;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import gov.nist.javax.sip.header.ParametersHeader;
+
 import java.text.ParseException;
+
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.ExtensionHeader;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class SessionExpires extends ParametersHeader implements ExtensionHeader, SessionExpiresHeader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.958 -0400", hash_original_field = "09BCB72D61C0D6D1EFF5336DA6881557", hash_generated_field = "C13B9F005337F50619E5092E1337E1D0")

@@ -1,10 +1,9 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.math.BigInteger;
+
+import droidsafe.annotations.DSGenerator;
 
 public class ASN1Integer extends DERInteger {
     

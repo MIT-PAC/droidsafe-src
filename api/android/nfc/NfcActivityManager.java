@@ -1,13 +1,13 @@
 package android.nfc;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.WeakHashMap;
+
 import android.app.Activity;
 import android.os.RemoteException;
 import android.util.Log;
-import java.util.WeakHashMap;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public final class NfcActivityManager extends INdefPushCallback.Stub {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.151 -0400", hash_original_field = "59E9F255F2F17EC006AE601269EA8540", hash_generated_field = "278F7851F6317C51C418D85323A63D34")

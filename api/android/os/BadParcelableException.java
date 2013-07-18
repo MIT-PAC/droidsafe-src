@@ -1,10 +1,8 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.util.AndroidRuntimeException;
+import droidsafe.annotations.DSGenerator;
 
 public class BadParcelableException extends AndroidRuntimeException {
     

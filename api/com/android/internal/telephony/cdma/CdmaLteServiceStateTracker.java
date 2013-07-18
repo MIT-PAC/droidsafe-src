@@ -1,24 +1,24 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.telephony.TelephonyProperties;
-import com.android.internal.telephony.MccTable;
-import com.android.internal.telephony.EventLogTags;
-import com.android.internal.telephony.RILConstants;
-import android.content.Intent;
-import android.telephony.SignalStrength;
-import android.telephony.ServiceState;
-import android.telephony.cdma.CdmaCellLocation;
 import android.os.AsyncResult;
 import android.os.Message;
-import android.provider.Telephony.Intents;
-import android.text.TextUtils;
-import android.util.Log;
+import android.telephony.ServiceState;
+import android.telephony.SignalStrength;
+import android.telephony.cdma.CdmaCellLocation;
 import android.util.EventLog;
+import android.util.Log;
+
+import com.android.internal.telephony.EventLogTags;
+import com.android.internal.telephony.MccTable;
+import com.android.internal.telephony.RILConstants;
+import com.android.internal.telephony.TelephonyProperties;
 import com.android.internal.telephony.gsm.GsmDataConnectionTracker;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.738 -0400", hash_original_field = "B5F20DF0028332D17F33E3BF40040A23", hash_generated_field = "879F4AF456AD7D7A9BB5520F0BAD6F62")

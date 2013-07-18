@@ -1,9 +1,6 @@
 package org.apache.http.impl.client;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import org.apache.http.ConnectionReuseStrategy;
 import org.apache.http.HttpVersion;
 import org.apache.http.auth.AuthSchemeRegistry;
@@ -55,6 +52,10 @@ import org.apache.http.protocol.RequestExpectContinue;
 import org.apache.http.protocol.RequestTargetHost;
 import org.apache.http.protocol.RequestUserAgent;
 import org.apache.http.util.VersionInfo;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class DefaultHttpClient extends AbstractHttpClient {
     

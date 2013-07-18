@@ -1,17 +1,18 @@
 package android.app;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.Loader;
-import android.os.Bundle;
-import android.util.DebugUtils;
-import android.util.Log;
-import android.util.SparseArray;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.lang.reflect.Modifier;
+
+import android.content.Loader;
+import android.os.Bundle;
+import android.util.DebugUtils;
+import android.util.SparseArray;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class LoaderManager {
     

@@ -1,9 +1,8 @@
 package android.app;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.List;
+
 import android.content.ComponentName;
 import android.content.ContentProviderNative;
 import android.content.IContentProvider;
@@ -28,7 +27,6 @@ import android.os.ParcelFileDescriptor;
 import android.os.Parcelable;
 import android.os.RemoteException;
 import android.os.StrictMode;
-import java.util.List;
 
 public interface IActivityManager extends IInterface {
     

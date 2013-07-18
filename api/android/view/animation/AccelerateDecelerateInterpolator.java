@@ -1,11 +1,9 @@
 package android.view.animation;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.content.Context;
 import android.util.AttributeSet;
+import droidsafe.annotations.DSGenerator;
 
 public class AccelerateDecelerateInterpolator implements Interpolator {
     

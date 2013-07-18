@@ -1,12 +1,12 @@
 package org.apache.http.client.utils;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.net.URI;
 import java.net.URISyntaxException;
+
 import org.apache.http.HttpHost;
+
+import droidsafe.annotations.DSGenerator;
 
 public class URIUtils {
     

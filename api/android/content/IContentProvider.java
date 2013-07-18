@@ -1,9 +1,9 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+
 import android.content.res.AssetFileDescriptor;
 import android.database.Cursor;
 import android.net.Uri;
@@ -12,8 +12,6 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.ParcelFileDescriptor;
 import android.os.RemoteException;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
 
 public interface IContentProvider extends IInterface {
     public Cursor query(Uri url, String[] projection, String selection,

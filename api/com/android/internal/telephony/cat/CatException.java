@@ -1,10 +1,8 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.util.AndroidException;
+import droidsafe.annotations.DSGenerator;
 
 class CatException extends AndroidException {
     

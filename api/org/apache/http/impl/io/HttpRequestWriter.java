@@ -1,16 +1,16 @@
 package org.apache.http.impl.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
+
 import org.apache.http.HttpMessage;
 import org.apache.http.HttpRequest;
 import org.apache.http.io.SessionOutputBuffer;
 import org.apache.http.message.LineFormatter;
 import org.apache.http.params.HttpParams;
 import org.apache.http.util.CharArrayBuffer;
+
+import droidsafe.annotations.DSGenerator;
 
 public class HttpRequestWriter extends AbstractMessageWriter {
     

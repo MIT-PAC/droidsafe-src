@@ -1,14 +1,13 @@
 package android.graphics;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.PrintWriter;
+import java.util.regex.Pattern;
+
 import android.os.Parcel;
 import android.os.Parcelable;
-import java.io.PrintWriter;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public final class Rect implements Parcelable {
     public int left;

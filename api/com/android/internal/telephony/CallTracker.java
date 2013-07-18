@@ -1,14 +1,13 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.os.AsyncResult;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
-import com.android.internal.telephony.CommandException;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class CallTracker extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.519 -0400", hash_original_field = "AFC27A2C0BFE1A5164DE0AD98E91F583", hash_generated_field = "FD6602A5A7D30569DE1750B9B6FB9D72")

@@ -1,25 +1,23 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.app.INotificationManager;
 import android.app.ITransientNotification;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.PixelFormat;
 import android.os.Handler;
-import android.os.RemoteException;
 import android.os.ServiceManager;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.WindowManagerImpl;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class Toast {
     final Context mContext;

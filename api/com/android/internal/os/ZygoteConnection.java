@@ -1,17 +1,6 @@
 package com.android.internal.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.net.Credentials;
-import android.net.LocalSocket;
-import android.os.Build;
-import android.os.Process;
-import android.os.SystemProperties;
-import android.util.Log;
-import dalvik.system.PathClassLoader;
-import dalvik.system.Zygote;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -22,9 +11,21 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.util.ArrayList;
+
 import libcore.io.ErrnoException;
 import libcore.io.IoUtils;
 import libcore.io.Libcore;
+import android.net.Credentials;
+import android.net.LocalSocket;
+import android.os.Process;
+import android.os.SystemProperties;
+import android.util.Log;
+import dalvik.system.PathClassLoader;
+import dalvik.system.Zygote;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class ZygoteConnection {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.777 -0400", hash_original_field = "ADAA094F2E9199B78AA3ADA013DBD64F", hash_generated_field = "9F88E22AD28B44C4F3ABF7860B4C458C")
