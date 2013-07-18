@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashSet;
+import java.util.Set;
 
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -66,11 +68,6 @@ public abstract class Context {
         return getTheme().obtainStyledAttributes(set, attrs, 0, 0);
     }
 	
-	/*** Droidsafe Hook */
-	@DSModeled
-	void __ds__registerIntentFilter() {
-		
-	}
 	
 	/* Abstract Methods */
 	public abstract Object getSystemService(String name);
@@ -188,4 +185,12 @@ public abstract class Context {
     public abstract void setWallpaper(InputStream data) throws IOException;
 	@Deprecated
     public abstract void clearWallpaper() throws IOException;
+	
+	// Hook to match with value analsysis
+	public Set<IntentFilter> __ds__intentFilters = new HashSet<IntentFilter>();
+
+	// We pull out IntentFilters out of xml and register them with the appropriate subclasses of Context here 
+	public void __ds__registerIntentFilter(IntentFilter intentFilter) {
+		this.__ds__intentFilters.add(intentFilter);
+	}
 }
