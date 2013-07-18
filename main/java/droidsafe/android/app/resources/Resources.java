@@ -89,7 +89,7 @@ public class Resources {
 	HashMap<String, RStringArray> stringArrayNameToRStringArray = new HashMap<String, RStringArray>();
 	
 	/** Application base package name **/
-	String package_name;
+	public String package_name;
 
 	/** Map of resources ids to their corresponding names in R **/
 	HashBiMap<Integer,String> resource_info;
@@ -161,9 +161,6 @@ public class Resources {
 
 			// Process the activities of the application
 			for (Activity a : v.manifest.activities) {
-				if (a.name.startsWith(".")) {
-					a.name = am.manifest.package_name + a.name;
-				}
 				v.process_activity (a);
 				a.setSootClass(a.name);
 				am.components.add(a.getSootClass());
@@ -185,9 +182,6 @@ public class Resources {
 			//set all the underlying soot classes for the components 
 			//other than activity
 			for (Service s : v.manifest.services) {
-				if (s.name.startsWith(".")) {
-					s.name = am.manifest.package_name + s.name;
-				}
 				s.setSootClass(s.name);
 				am.components.add(s.getSootClass());
 				if (s.intent_filters.size() > 0) {
@@ -196,9 +190,6 @@ public class Resources {
 			}
 
 			for (Provider p : v.manifest.providers) {
-				if (p.name.startsWith(".")) {
-					p.name = am.manifest.package_name + p.name;
-				}
 				p.setSootClass(p.name);
 				am.components.add(p.getSootClass());
 				if (p.intent_filters.size() > 0) {
@@ -207,9 +198,6 @@ public class Resources {
 			}
 
 			for (Receiver r : v.manifest.receivers) {
-				if (r.name.startsWith(".")) {
-					r.name = am.manifest.package_name + r.name;
-				}
 				r.setSootClass(r.name);
 				am.components.add(r.getSootClass());
 				if (r.intent_filters.size() > 0) {

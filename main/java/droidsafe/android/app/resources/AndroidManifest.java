@@ -144,7 +144,13 @@ public class AndroidManifest {
     }
   }
 
-  class Application extends BaseElement {
+  
+  /**
+   * Application class to hold information about  Application.  
+   * @author Nguyen Nguyen
+   *
+   */
+  public class Application extends BaseElement {
 
     public String name = null;
 
@@ -154,49 +160,82 @@ public class AndroidManifest {
       super(n, parent);
       name = get_attr ("name");
       process_children (this, n);
+      
+      if (name == null || name.length() == 0)
+    	  name = "android.app.Application";
     }
 
     public String toString() {
       return name;
     }
+    
+    private SootClass sootClass;
+
+    public void setSootClass(String name) {
+    	String className;
+
+    	if (name.startsWith("."))
+    		className = Resources.v().package_name + name;
+    	else 
+    		className = name;
+    	try {
+    		if (!Scene.v().containsClass(className))
+    			throw new Exception();
+
+    		sootClass = Scene.v().getSootClass(className);
+
+    		if (sootClass.isPhantom() || !sootClass.isInScene())
+    			throw new Exception();
+    	} catch (Exception e) {
+    		logger.error("Unable to resolve underlying class for component in Manifest (Manifest Error): {}", name);
+    		droidsafe.main.Main.exit(1);
+    	}
+
+    }
+
+    public SootClass getSootClass() {
+    	return sootClass;
+    }
   }
   
+  /**
+   * Comoponent Base class where Service, Provider, Receiver and Provider will derive from
+   * @author nnguyen
+   *
+   */
   public abstract class ComponentBaseElement extends BaseElement {
-	  public SootClass sootClass;
-	  
 	  public ComponentBaseElement (Node n, BaseElement parent) throws 
-	        InvalidPropertiesFormatException {
+	  InvalidPropertiesFormatException {
 		  super(n, parent);
 	  }
-	  
+	  private SootClass sootClass;
+
 	  public void setSootClass(String name) {
 		  String className;
-		  
+
 		  if (name.startsWith("."))
-				className = Resources.v().package_name + name;
-			else 
-				className = name;
-		  
-		  
-		  
+			  className = Resources.v().package_name + name;
+		  else 
+			  className = name;
 		  try {
 			  if (!Scene.v().containsClass(className))
 				  throw new Exception();
-			  
+
 			  sootClass = Scene.v().getSootClass(className);
-			  
+
 			  if (sootClass.isPhantom() || !sootClass.isInScene())
 				  throw new Exception();
 		  } catch (Exception e) {
 			  logger.error("Unable to resolve underlying class for component in Manifest (Manifest Error): {}", name);
 			  droidsafe.main.Main.exit(1);
 		  }
-		  
+
 	  }
-	  
+
 	  public SootClass getSootClass() {
 		  return sootClass;
-	  }
+	  } 
+
   }
 
   public class Activity extends ComponentBaseElement {
@@ -516,14 +555,19 @@ public class AndroidManifest {
   /** 
    * Class for IntentFilter information.  
    */
-  class IntentFilter extends BaseElement {
+  public class IntentFilter extends BaseElement {
 
     // list of actions accepted by filter
-    List<String> actions = new ArrayList<String>();
+    public List<String> actions = new ArrayList<String>();
 
     // List of categories accepted by filter
-    List<String>  categories = new ArrayList<String>();
-
+    public List<String>  categories = new ArrayList<String>();
+    
+    public List<String>  dataHost = new ArrayList<String>();
+    public List<String>  dataMime = new ArrayList<String>();
+    public List<String>  dataPort = new ArrayList<String>();
+    public List<String>  dataScheme = new ArrayList<String>();
+    
     public IntentFilter (BaseElement parent, Node n) 
       throws InvalidPropertiesFormatException {
 
@@ -536,6 +580,8 @@ public class AndroidManifest {
           actions.add (get_attr (child, "name"));
         else if (name.equalsIgnoreCase ("category"))
           categories.add (get_attr (child, "name"));
+        else if (name.equalsIgnoreCase ("data")) {
+        }
         else { // unexpected node
           xml_error ("Unexpected node %s in intent-filter ignored", 
                      name);
