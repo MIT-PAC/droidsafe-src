@@ -114,7 +114,7 @@ public class JSAUtils {
     public static void setupSpecHotspots()
     {
         for (SootMethod m : API.v().getAllSystemMethods()) {
-            if (API.v().isAPIModeledMethod(m)) {
+            if (API.v().isInterestingMethod(m)) {
                 String sig = m.getSignature();
                 int i = 0;
                 for (soot.Type t : m.getParameterTypes()) {
