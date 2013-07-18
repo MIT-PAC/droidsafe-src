@@ -179,7 +179,8 @@ public class Main {
      */ 
     private static void jsaAnalysis() {
         JSAUtils.setUpHotspots();
-        // JSAUtils.setupSpecHotspots();
+        if (Config.v().specHotspots)
+            JSAUtils.setupSpecHotspots();
         JSAStrings.run();
         // Debugging.
         JSAStrings.v().log();
