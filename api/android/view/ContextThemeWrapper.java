@@ -26,7 +26,7 @@ public class ContextThemeWrapper extends ContextWrapper {
         @DSModeled(DSC.SPEC)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.459 -0400", hash_original_method = "2CB22459058FC77C2233290E776C217F", hash_generated_method = "A52E6A8077E95A96382ABDDF2BE523D0")
     public  ContextThemeWrapper() {
-        super(null);
+        super(new ContextImpl());
         // ---------- Original Method ----------
     }
 
@@ -83,22 +83,11 @@ public class ContextThemeWrapper extends ContextWrapper {
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.461 -0400", hash_original_method = "21593966DDD7C797D13E86548D9AA1B9", hash_generated_method = "D5FC933F5AAB1B473DBB06788ED3A3A7")
     @Override
     public Resources.Theme getTheme() {
-        if(mTheme != null)        
-        {
-Resources.Theme var021DB673F568E8BD9EB3155CBE6DF295_222565329 =             mTheme;
-            var021DB673F568E8BD9EB3155CBE6DF295_222565329.addTaint(taint);
-            return var021DB673F568E8BD9EB3155CBE6DF295_222565329;
-        } //End block
-        mThemeResource = Resources.selectDefaultTheme(mThemeResource,
-                getApplicationInfo().targetSdkVersion);
-        initializeTheme();
-Resources.Theme var021DB673F568E8BD9EB3155CBE6DF295_325129787 =         mTheme;
-        var021DB673F568E8BD9EB3155CBE6DF295_325129787.addTaint(taint);
-        return var021DB673F568E8BD9EB3155CBE6DF295_325129787;
-        // ---------- Original Method ----------
-        //if (mTheme != null) {
-            //return mTheme;
-        //}
+   
+        return null;
+    }
+    
+    
         //mThemeResource = Resources.selectDefaultTheme(mThemeResource,
                 //getApplicationInfo().targetSdkVersion);
         //initializeTheme();
@@ -111,27 +100,7 @@ Resources.Theme var021DB673F568E8BD9EB3155CBE6DF295_325129787 =         mTheme;
     @Override
     public Object getSystemService(String name) {
         addTaint(name.getTaint());
-        if(LAYOUT_INFLATER_SERVICE.equals(name))        
-        {
-            if(mInflater == null)            
-            {
-                mInflater = LayoutInflater.from(mBase).cloneInContext(this);
-            } //End block
-Object varBB634655A97E6A29040AA54B59F0E4B4_353583327 =             mInflater;
-            varBB634655A97E6A29040AA54B59F0E4B4_353583327.addTaint(taint);
-            return varBB634655A97E6A29040AA54B59F0E4B4_353583327;
-        } //End block
-Object varCEE83A4312F10FC75EECB5EAD4E09ED3_96784277 =         mBase.getSystemService(name);
-        varCEE83A4312F10FC75EECB5EAD4E09ED3_96784277.addTaint(taint);
-        return varCEE83A4312F10FC75EECB5EAD4E09ED3_96784277;
-        // ---------- Original Method ----------
-        //if (LAYOUT_INFLATER_SERVICE.equals(name)) {
-            //if (mInflater == null) {
-                //mInflater = LayoutInflater.from(mBase).cloneInContext(this);
-            //}
-            //return mInflater;
-        //}
-        //return mBase.getSystemService(name);
+        return super.getSystemService(name);
     }
 
     
