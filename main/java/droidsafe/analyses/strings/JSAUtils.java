@@ -39,7 +39,6 @@ public class JSAUtils {
             Method modeledMethods[] = modeledClass.getDeclaredMethods();
 
             for (Method modeledMethod : modeledMethods) {
-                System.out.println(modeledMethod);
                 ArrayList<Integer> paramOfInterestIndexes = new ArrayList<Integer>();
 
                 String signature = "<";
