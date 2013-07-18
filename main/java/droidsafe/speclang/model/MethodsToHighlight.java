@@ -25,7 +25,7 @@ public class MethodsToHighlight {
 
 
   /** The list of method signature in soot format that we want to highlight in the outline */
-  private static final String[] MethodsToHighlightArray = {
+  private static final String[] METHODS_TO_HIGHLIGHT = {
       "<java.io.File: void <init>(java.lang.String)>",
       "<java.net.InetSocketAddress: void <init>(java.lang.String,int,boolean)>",
       "<android.net.Uri: void <init>(java.lang.String)>",
@@ -40,7 +40,7 @@ public class MethodsToHighlight {
 
   /** set of classes for quick lookups */
   private static Set<String> methodsToHighlight = new HashSet<String>(
-      Arrays.asList(MethodsToHighlightArray));
+      Arrays.asList(METHODS_TO_HIGHLIGHT));
 
 
 
