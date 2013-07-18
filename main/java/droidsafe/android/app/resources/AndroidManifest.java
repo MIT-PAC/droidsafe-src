@@ -562,7 +562,12 @@ public class AndroidManifest {
 
     // List of categories accepted by filter
     public List<String>  categories = new ArrayList<String>();
-
+    
+    public List<String>  dataHost = new ArrayList<String>();
+    public List<String>  dataMime = new ArrayList<String>();
+    public List<String>  dataPort = new ArrayList<String>();
+    public List<String>  dataScheme = new ArrayList<String>();
+    
     public IntentFilter (BaseElement parent, Node n) 
       throws InvalidPropertiesFormatException {
 
@@ -575,6 +580,8 @@ public class AndroidManifest {
           actions.add (get_attr (child, "name"));
         else if (name.equalsIgnoreCase ("category"))
           categories.add (get_attr (child, "name"));
+        else if (name.equalsIgnoreCase ("data")) {
+        }
         else { // unexpected node
           xml_error ("Unexpected node %s in intent-filter ignored", 
                      name);

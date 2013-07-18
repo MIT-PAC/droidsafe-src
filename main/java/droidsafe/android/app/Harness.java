@@ -1,6 +1,7 @@
 package droidsafe.android.app;
 
 import java.io.File;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -278,6 +279,7 @@ public class Harness {
 	
 	
 	int counter = 0;
+	Set<SootClass> xmlInjectSet = new HashSet<SootClass>();
 	
 	/**
 	 * 
@@ -300,7 +302,7 @@ public class Harness {
 									List<IntentFilter> intentFilterList, StmtBody body, Local appLocal) {
 		SootMethod initMethod; 
 		
-		logger.warn("Type {} ", compType);
+		logger.info("Type {} ", compType);
 		
         String initSig = String.format("<%s: void <init>()>", compType);
         
@@ -339,6 +341,7 @@ public class Harness {
 		
 		body.getUnits().add(initStmt);
 		
+		xmlInjectSet.add(compClass);
 	}
 	
 	
@@ -347,10 +350,10 @@ public class Harness {
 	 */
 	private void injectApplicationIntentFilters(){
 		
-		logger.warn("**injectApplicationIntentFilters .... ");
+		logger.info("**injectApplicationIntentFilters .... ");
 		
 		AndroidManifest manifest = Resources.v().getManifest();
-		logger.warn("Application {}, package {} ", manifest.application, Resources.v().package_name);
+		logger.info("Application {}, package {} ", manifest.application, Resources.v().package_name);
 		
 		manifest.application.setSootClass(manifest.application.name);
 		
@@ -397,25 +400,25 @@ public class Harness {
 	
 		for (Activity context : manifest.activities) {
 			
-			logger.warn("Activity {} ", context);
+			logger.info("Activity {} ", context);
 			injectXMLComponent(Components.ACTIVITY_CLASS, context.getSootClass(), context.intent_filters, body); 
 		}
 
 		//Services
 		for (Service context : manifest.services) {
-			logger.warn("Service {} ", context);
+			logger.info("Service {} ", context);
 			
 			injectXMLComponent(Components.SERVICE_CLASS, context.getSootClass(), context.intent_filters, body); 
 		}
 
 		// content provider should not have any
 		for (Provider p : manifest.providers) {
-			logger.warn("Content provider {} ", p);
+			logger.info("Content provider {} ", p);
 			injectXMLComponent(Components.CONTENTPROVIDER_CLASS, p.getSootClass(), p.intent_filters, body); 
 		}
 
 		for (Receiver r : manifest.receivers) {
-			logger.warn("Receiver {} ", r);
+			logger.info("Receiver {} ", r);
 			
 			injectXMLComponent(Components.BROADCASTRECEIVER_CLASS, r.getSootClass(), 
 							r.intent_filters, body, appLocal); 
@@ -515,7 +518,7 @@ public class Harness {
 	private void addEntryPointsForNonAllocated(StmtBody body, Set<SootClass> allocatedClasses) {
 	    for (SootClass clz : Scene.v().getClasses()) {
 	        if (clz.isLibraryClass() || clz.isInterface() ||
-                    clz.equals(harnessClass) || API.v().isSystemClass(clz)) 
+                    clz.equals(harnessClass) || API.v().isSystemClass(clz))
                 continue;
 	        
 	        if (!allocatedClasses.contains(clz) && EntryPoints.v().hasPossibleEntryPoint(clz)) {
@@ -605,6 +608,11 @@ public class Harness {
 			if (clazz.isInterface() || clazz.isAbstract())
 				continue;
 			
+			if (xmlInjectSet.contains(clazz)) {
+				logger.info("Clazz {} already in XML, skipped ", clazz);
+				continue;
+			}
+			
 			addCallToEntryPointAndCreateLocal(body, clazz, entryPoint.method); 
 			
 			visited.add(clazz);
@@ -622,7 +630,7 @@ public class Harness {
 	    //first create the local for the declaring class if we have not created it before
 	    if (!localsMap.containsKey(clazz) && !entryPoint.isStatic()) {
 	        RefType type = RefType.v(clazz);
-
+	        
 	        //add the local
 	        Local receiver = Jimple.v().newLocal("l" + localID++, type);
 	        body.getLocals().add(receiver);
@@ -796,5 +804,7 @@ public class Harness {
 		
 		//add constructor call to body nested in invoke statement
 		body.getUnits().add(Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(local, constructor.makeRef(), args)));
+		
+		// add xml injected stuff in here
 	}
 }
