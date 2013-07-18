@@ -2,11 +2,12 @@ package droidsafe.analyses.value.models.android.content;
 
 import com.google.common.collect.Sets;
 
-import droidsafe.analyses.value.ValueAnalysisModeledObject;
-import droidsafe.analyses.value.ValueAnalysisModelingSet;
 import droidsafe.analyses.value.models.android.content.ComponentName;
 import droidsafe.analyses.value.models.android.net.Uri;
 import droidsafe.analyses.value.models.android.os.Bundle;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisInt;
+import droidsafe.analyses.value.ValueAnalysisModeledObject;
+import droidsafe.analyses.value.ValueAnalysisModelingSet;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -23,7 +24,7 @@ public class Intent extends ValueAnalysisModeledObject {
     public Set<String> mType = new ValueAnalysisModelingSet<String>();
     public Set<String> mPackage = new ValueAnalysisModelingSet<String>();
     public ComponentName mComponent;
-    public Set<Integer> mFlags = new ValueAnalysisModelingSet<Integer>();
+    public Set<ValueAnalysisInt> mFlags = new ValueAnalysisModelingSet<ValueAnalysisInt>();
     public Bundle mExtras;
 
     public Intent(AllocNode allocNode) {
@@ -253,10 +254,11 @@ public class Intent extends ValueAnalysisModeledObject {
      * @see #FLAG_ACTIVITY_TASK_ON_HOME
      * @see #FLAG_RECEIVER_REGISTERED_ONLY
      */
-    public Intent setFlags(Set<Integer> flags) {
+    public Intent setFlags(Set<ValueAnalysisInt> flags) {
         mFlags.addAll(flags);
         return this;
     }
+
 
     /**
      * Retrieve the general action to be performed, such as

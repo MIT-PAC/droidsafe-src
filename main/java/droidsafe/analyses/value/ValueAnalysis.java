@@ -743,7 +743,11 @@ public class ValueAnalysis {
                 if(ValueAnalysis.this.valueToModelAttrMap.containsKey(arg)){
                     Object obj = ValueAnalysis.this.valueToModelAttrMap.get(arg);
                     paramObjectSets.get(i).add(obj);
-                    paramClasses.add(i, obj.getClass());
+                    if(Set.class.isAssignableFrom(obj.getClass())){
+                        paramClasses.add(i, Set.class);
+                    } else {
+                        paramClasses.add(i, obj.getClass());
+                    }
                 } else {
                     // If the argument is a constant, we box it up. We don't model primitives.
                     // If the argument is a RefType, then we use PTA to find all possible AllocNodes and their
@@ -787,7 +791,7 @@ public class ValueAnalysis {
                                     } else {
                                         throw new RuntimeException("Unhandled SootConstant parameter: " + arg);
                                     }
-                                    valueToModelAttrMap.put(arg, obj);
+                                    valueToModelAttrMap.put(arg, Sets.newHashSet(obj));
                                 } catch (ClassNotFoundException cnfe){
                                     ValueAnalysis.this.logError("Couldn't convert constant value " + arg + " to object: "
                                             + cnfe + "\n");

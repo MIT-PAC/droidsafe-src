@@ -1,7 +1,7 @@
 package droidsafe.analyses.value;
 
 import java.lang.reflect.Field;
-
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisInt;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -120,27 +120,31 @@ public abstract class ValueAnalysisModeledObject {
      */
     private String __ds__fieldsString() {
         Class cls = this.getClass();
-        
         String str = "";
         if (this.__ds__invalidated) {
             str += "invalidated";
         } else {
             ArrayList<String> attrs = new ArrayList();
             for(Field field : cls.getFields()){
-                field.setAccessible(true);
+               String newAttr = field.getName() + ": ";
+               field.setAccessible(true);
                 try {
-                    Object value = field.get(this);
-                    if(value != null){
-                        if(value instanceof Set && ((Set)value).size() == 0) {
-                            continue;
-                        }
-                        String newAttr = field.getName() + ": ";
-                        if(value instanceof ValueAnalysisModeledObject) {
-                          newAttr += ((ValueAnalysisModeledObject)value).__ds__toString();
-                        } else {
-                          newAttr += value;
-                        }
+                    if(field.getType().equals(ValueAnalysisInt.class)){
+                        newAttr += field.getInt(this);
                         attrs.add(newAttr);
+                    } else {
+                        Object value = field.get(this);
+                        if(value != null){
+                            if(value instanceof Set && ((Set)value).size() == 0) {
+                                continue;
+                            }
+                            if(value instanceof ValueAnalysisModeledObject) {
+                              newAttr += ((ValueAnalysisModeledObject)value).__ds__toString();
+                            } else {
+                              newAttr += value;
+                            }
+                            attrs.add(newAttr);
+                        }
                     }
                 } catch (IllegalAccessException e) {
                     // simply don't print out the field value

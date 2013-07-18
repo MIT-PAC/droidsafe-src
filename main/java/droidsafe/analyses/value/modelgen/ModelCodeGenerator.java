@@ -6,6 +6,7 @@ import japa.parser.ast.BlockComment;
 import japa.parser.ast.Comment;
 import japa.parser.ast.CompilationUnit;
 import japa.parser.ast.ImportDeclaration;
+import japa.parser.ast.LineComment;
 import japa.parser.ast.PackageDeclaration;
 import japa.parser.ast.body.BodyDeclaration;
 import japa.parser.ast.body.ClassOrInterfaceDeclaration;
@@ -47,11 +48,13 @@ import java.io.PrintWriter;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.SortedSet;
 import java.util.TreeSet;
 
 import org.reflections.Reflections;
@@ -103,16 +106,19 @@ public class ModelCodeGenerator {
     private static final Expression ZERO = new IntegerLiteralExpr("0");
 
     private static final Expression FALSE = new BooleanLiteralExpr(false);
+    private static final Comment ORIGINAL_MODEL_COMMENT = new LineComment(" ***** From existing model *****");
 
-    private static Set<String> classesAlreadyModeled;
+    private Set<String> classesAlreadyModeled;
 
-    private static Set<String> classesCurrentlyModeled = new HashSet<String>();
+    private Set<String> classesCurrentlyModeled = new HashSet<String>();
 
-    private static List<String> classesToBeModeled = new ArrayList<String>();
+    private List<String> classesToBeModeled = new ArrayList<String>();
 
     private String classToModel;
 
     private String[] sourceDirs;
+
+    private String[] modelSourceDirs;
 
     private Set<String> fieldsToModel;
 
@@ -120,7 +126,7 @@ public class ModelCodeGenerator {
 
     private String packageName;
     
-    private Set<String> imports;
+    private SortedSet<String> imports;
 
     private SootClass sootClass;
 
@@ -133,67 +139,59 @@ public class ModelCodeGenerator {
     private int nextLine;
 
     public ModelCodeGenerator(String sourcePath) {
-        this.sourceDirs = sourcePath.split(":");
-        this.apacHome = System.getenv("APAC_HOME");
+        sourceDirs = sourcePath.split(":");
+        apacHome = System.getenv("APAC_HOME");
+        Reflections reflections = new Reflections(MODEL_PACKAGE);
+        Set<Class<? extends ValueAnalysisModeledObject>> modeledClasses = 
+                reflections.getSubTypesOf(ValueAnalysisModeledObject.class);
+        classesAlreadyModeled = new HashSet<String>();
+        for (Class<? extends ValueAnalysisModeledObject> modeledClass: modeledClasses)
+            classesAlreadyModeled.add(modeledClass.getName());
         logger.debug("APAC_HOME = {}", apacHome);
-        if (this.apacHome == null) {
+        if (apacHome == null) {
           logger.error("Environment variable $APAC_HOME not set!");
           droidsafe.main.Main.exit(1);
         }
-        androidImplJar = constructFile(this.apacHome, Config.ANDROID_LIB_DIR_REL, "android-impl.jar");
+        modelSourceDirs = new String[]{constructPath(apacHome, "src", "main", "java")};
+        androidImplJar = constructFile(apacHome, Config.ANDROID_LIB_DIR_REL, "android-impl.jar");
    }
 
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        if (args.length < 2) {
-            logger.error("Usage: ModelCodeGen <source path> <class name> <field1 name> <field2 name> ...");
-            droidsafe.main.Main.exit(1);
-        } else {
-            Reflections reflections = new Reflections(MODEL_PACKAGE);
-            Set<Class<? extends ValueAnalysisModeledObject>> modeledClasses = 
-                    reflections.getSubTypesOf(ValueAnalysisModeledObject.class);
-            classesAlreadyModeled = new HashSet<String>();
-            for (Class<? extends ValueAnalysisModeledObject> modeledClass: modeledClasses)
-                classesAlreadyModeled.add(modeledClass.getName());
-            String sourcePath = args[0];
-            String className = args[1];
-            Set<String> fieldNames = new HashSet<String>();
-            for (int i = 2; i < args.length; i++) {
-                fieldNames.add(args[i]);
-            }
-            ModelCodeGenerator modelGen = new ModelCodeGenerator(sourcePath);
-            modelGen.generate(className, fieldNames);
-            while (!classesToBeModeled.isEmpty()) {
-                className = classesToBeModeled.remove(0);
-                fieldNames.clear();
-                modelGen.generate(className, fieldNames);
-            }
-            logger.info("Done.");
+    private void run(String classToModel, Set<String> fieldsToModel) {
+        generate(classToModel, fieldsToModel);
+        while (!classesToBeModeled.isEmpty()) {
+            classToModel = classesToBeModeled.remove(0);
+            generate(classToModel, new HashSet<String>());
         }
+        logger.info("Done.");
     }
 
     private void generate(String classToModel, Set<String> fieldsToModel) {
         this.classToModel = classToModel;
         this.fieldsToModel = fieldsToModel;
-        this.packageName = getQualifier(classToModel);
-        this.unqualifiedClassName = getUnqualifiedName(classToModel);
-        this.imports = new TreeSet<String>();
-        this.imports.add("soot.jimple.spark.pag.AllocNode");
-        this.imports.add("droidsafe.analyses.value.ValueAnalysisModeledObject");
-        this.imports.add("droidsafe.analyses.value.ValueAnalysisModelingSet");
-        this.importsProcessed = new HashSet<String>();
-        this.importsProcessed.add(classToModel);
-        this.primitiveTypeConversionMap = new HashMap<PrimitiveType.Primitive, Type>();
-        this.classTypeConversionMap = new HashMap<String, Type>();
+        packageName = getQualifier(classToModel);
+        unqualifiedClassName = getUnqualifiedName(classToModel);
+        imports = new TreeSet<String>();
+        imports.add("soot.jimple.spark.pag.AllocNode");
+        imports.add("droidsafe.analyses.value.ValueAnalysisModeledObject");
+        imports.add("droidsafe.analyses.value.ValueAnalysisModelingSet");
+        importsProcessed = new HashSet<String>();
+        importsProcessed.add(classToModel);
+        primitiveTypeConversionMap = new HashMap<PrimitiveType.Primitive, Type>();
+        classTypeConversionMap = new HashMap<String, Type>();
         classesCurrentlyModeled.add(classToModel);
         loadSootClass();
         CompilationUnit cu;
+        CompilationUnit oldModelCu = null;
         try {
-            File javaFile = getJavaSourceFile(sourceDirs, classToModel);
-            cu = parseJavaSource(javaFile);
-            CompilationUnit model = generateModel(cu);
+            File sourceFile = getJavaSourceFile(sourceDirs, classToModel);
+            cu = parseJavaSource(sourceFile);
+            computeMethodCodeMap(cu, sourceFile);
+            String modelClass = MODEL_PACKAGE_PREFIX + classToModel;
+            if (classesAlreadyModeled.contains(modelClass)) {
+                File oldModelFile = getJavaSourceFile(modelSourceDirs, modelClass);
+                oldModelCu = parseJavaSource(oldModelFile);
+            }
+            CompilationUnit model = generateModel(cu, oldModelCu);
             writeModel(model);
         } catch (Exception e) {
             logger.error("Failed to generate model for " + classToModel, e);
@@ -231,18 +229,17 @@ public class ModelCodeGenerator {
         // hierarchy = new Hierarchy();
     }
 
-    private CompilationUnit parseJavaSource(File javaFile) throws Exception {
-        logger.info("Parsing Java source " + javaFile + "...");
+    private CompilationUnit parseJavaSource(File sourceFile) throws Exception {
+        logger.info("Parsing Java source " + sourceFile + "...");
         FileInputStream in = null;
         CompilationUnit cu = null;
-        in = new FileInputStream(javaFile);
+        in = new FileInputStream(sourceFile);
         cu = JavaParser.parse(in);
         nextLine = 1;
-        computeMethodCodeMap(cu, javaFile);
         return cu;
     }
 
-    private File getJavaSourceFile(String[] dirs, String className) throws IOException {
+    private File getJavaSourceFile(String[] sourceDirs, String className) throws IOException {
         for (String sourceDir: sourceDirs) {
             File javaFile = getJavaSourceFile(sourceDir, className);
             if (javaFile != null)
@@ -319,7 +316,7 @@ public class ModelCodeGenerator {
         return line;
     }
 
-    private CompilationUnit generateModel(CompilationUnit cu) throws Exception {
+    private CompilationUnit generateModel(CompilationUnit cu, CompilationUnit oldModelCu) throws Exception {
         logger.info("Generating model for " + classToModel + "...");
         CompilationUnit model = new CompilationUnit();
 
@@ -328,9 +325,20 @@ public class ModelCodeGenerator {
         model.setPackage(modelPkg);
 
         List<TypeDeclaration> types = cu.getTypes();
+        List<TypeDeclaration> oldModelTypes = (oldModelCu == null) ? null : oldModelCu.getTypes();
         for (TypeDeclaration type : types) {
             if (type instanceof ClassOrInterfaceDeclaration) {
-                generateClassOrInterface(model, (ClassOrInterfaceDeclaration)type);
+                ClassOrInterfaceDeclaration oldModelType = null;
+                if (oldModelTypes != null) {
+                    for (TypeDeclaration oldType: oldModelTypes) {
+                        if (oldType instanceof ClassOrInterfaceDeclaration && 
+                                oldType.getName().equals(type.getName())) {
+                            oldModelType = (ClassOrInterfaceDeclaration) oldType;
+                            break;
+                        }
+                    }
+                }
+                generateClassOrInterface(model, (ClassOrInterfaceDeclaration)type, oldModelType);
             }
         }
         List<ImportDeclaration> importDecls = new ArrayList<ImportDeclaration>();
@@ -341,7 +349,7 @@ public class ModelCodeGenerator {
         return model;
     }
 
-    private void generateClassOrInterface(CompilationUnit model, ClassOrInterfaceDeclaration coi) throws Exception {
+    private void generateClassOrInterface(CompilationUnit model, ClassOrInterfaceDeclaration coi, ClassOrInterfaceDeclaration oldModelCui) throws Exception {
         int modifiers = coi.getModifiers();
         boolean isInterface = coi.isInterface();
         String name = coi.getName();
@@ -351,36 +359,61 @@ public class ModelCodeGenerator {
             extendsList = new ArrayList<ClassOrInterfaceType>();
             extendsList.add(new ClassOrInterfaceType("ValueAnalysisModeledObject"));
         }
+        List<BodyDeclaration> allMembers = new ArrayList<BodyDeclaration>();
         modelCoi.setExtends(extendsList);
         ASTHelper.addTypeDeclaration(model, modelCoi);
-        List<BodyDeclaration> members = coi.getMembers();
-        for (BodyDeclaration member : members) {
-            if (member instanceof FieldDeclaration) {
-                FieldDeclaration field = (FieldDeclaration) member;
-                generateFields(modelCoi, field);                
+        for (BodyDeclaration oldModelmember : oldModelCui.getMembers()) {
+            if (oldModelmember instanceof ConstructorDeclaration || oldModelmember instanceof MethodDeclaration) {
+                addComment(oldModelmember, ORIGINAL_MODEL_COMMENT);
+                allMembers.add(oldModelmember);
             }
         }
         if (!isInterface) {
-            generateConstructor(modelCoi);
+            ConstructorDeclaration newConstr = generateConstructor(modelCoi);
+            allMembers.add(newConstr);
         }
-        for (BodyDeclaration member : members) {
-            if (member instanceof ConstructorDeclaration) {
+        for (BodyDeclaration member : coi.getMembers()) {
+            BodyDeclaration newMember = null;
+            if (member instanceof FieldDeclaration) {
+                FieldDeclaration field = (FieldDeclaration) member;
+                newMember = generateField(modelCoi, field);
+            } else if (member instanceof ConstructorDeclaration) {
                 ConstructorDeclaration constr = (ConstructorDeclaration) member;
-                generateInitMethod(modelCoi, constr);
-            }
-        }
-        for (BodyDeclaration member : members) {
-            if (member instanceof MethodDeclaration) {
+                newMember = generateInitMethod(modelCoi, constr);
+            } else if (member instanceof MethodDeclaration) {
                 MethodDeclaration method = (MethodDeclaration) member;
                 SootMethod sootMethod = getSootMethod(method.getName(), method.getParameters());
                 String oldCode = (sootMethod.isConcrete()) ? methodCodeMap.get(method) : null;
                 method.setThrows(null);
-                convertMethod(modelCoi, method, sootMethod, oldCode);
+                newMember = convertMethod(modelCoi, method, sootMethod, oldCode);
             }
+            if (newMember != null)
+                allMembers.add(newMember);
+        }
+        Collections.sort(allMembers, new MemberComparator());
+        for (BodyDeclaration member: allMembers) {
+            ASTHelper.addMember(modelCoi, member);
         }
     }
 
-    private void generateFields(ClassOrInterfaceDeclaration modelCoi, FieldDeclaration field) {
+    private void addComment(BodyDeclaration member, Comment newComment) {
+        Comment comment = member.getComment();
+        if (comment == null) {
+            member.setComment(newComment);
+        } else {
+            addComment(comment, newComment);
+        }
+    }
+
+    private void addComment(Comment comment, Comment newComment) {
+        Comment prevComment = comment.getComment();
+        if (prevComment == null)
+            comment.setComment(newComment);
+        else 
+            addComment(prevComment, newComment);
+    }
+
+    private FieldDeclaration generateField(ClassOrInterfaceDeclaration modelCoi, FieldDeclaration field) {
         List<VariableDeclarator> vars = field.getVariables();
         List<VariableDeclarator> modelVars = new ArrayList<VariableDeclarator>();
         for (VariableDeclarator var: vars) {
@@ -397,8 +430,9 @@ public class ModelCodeGenerator {
                 convertInit(modelVars, (ReferenceType) modelType);
             FieldDeclaration modelField = new FieldDeclaration(modifiers, modelType, modelVars);
             modelField.setJavaDoc(field.getJavaDoc());
-            ASTHelper.addMember(modelCoi, modelField);
+            return modelField;
         }
+        return null;
     }
 
     private void convertInit(List<VariableDeclarator> modelVars, ReferenceType modelType) {
@@ -490,17 +524,17 @@ public class ModelCodeGenerator {
         }
     }
     
-    private void generateConstructor(ClassOrInterfaceDeclaration modelCoi) {
+    private ConstructorDeclaration generateConstructor(ClassOrInterfaceDeclaration modelCoi) {
         ConstructorDeclaration modelConstr = new ConstructorDeclaration(Modifier.PUBLIC, unqualifiedClassName);
         Parameter parameter = ASTHelper.createParameter(makeReferenceType("AllocNode"), "allocNode");
         modelConstr.setParameters(makeParameterList(parameter));
         Statement stmt = new ExplicitConstructorInvocationStmt(false, null, makeExprList(new NameExpr("allocNode")));
         modelConstr.setBlock(makeBlockStmt(stmt));
-        ASTHelper.addMember(modelCoi, modelConstr);
+        return modelConstr;
     }
 
-    private void generateInitMethod(ClassOrInterfaceDeclaration modelCoi,
-                                    ConstructorDeclaration constr) throws Exception {
+    private MethodDeclaration generateInitMethod(ClassOrInterfaceDeclaration modelCoi,
+                                                 ConstructorDeclaration constr) throws Exception {
         List<Parameter> params = constr.getParameters();
         int modifiers = makePublic(constr.getModifiers());
         MethodDeclaration method = new MethodDeclaration(modifiers, ASTHelper.VOID_TYPE, "_init_", params);
@@ -509,7 +543,7 @@ public class ModelCodeGenerator {
         method.setBody(constr.getBlock());
         SootMethod sootMethod = getSootMethod("<init>", params);
         String oldCode = methodCodeMap.get(constr);
-        convertMethod(modelCoi, method, sootMethod, oldCode);                       
+        return convertMethod(modelCoi, method, sootMethod, oldCode);
     }
 
     private SootMethod getSootMethod(String name, List<Parameter> parameters) throws Exception {
@@ -577,7 +611,8 @@ public class ModelCodeGenerator {
             return type.toString().equals(sootType.toString());
     }
 
-    private void convertMethod(ClassOrInterfaceDeclaration modelCoi, MethodDeclaration method, SootMethod sootMethod, String oldCode) {
+    private MethodDeclaration convertMethod(ClassOrInterfaceDeclaration modelCoi, MethodDeclaration method, SootMethod sootMethod, 
+                                            String oldCode) {
         method.setModifiers(makePublic(method.getModifiers()));
         Type returnType = method.getType();
         soot.Type sootReturnType = sootMethod.getReturnType();
@@ -617,12 +652,10 @@ public class ModelCodeGenerator {
                 method.setBody(newBody);
             }
         }
-        ASTHelper.addMember(modelCoi, method);
+        return method;
     }
     
     private boolean isGetterMethodForModeledField(MethodDeclaration method) {
-        if (method.getName().startsWith("get"))
-            System.out.print("");
         BlockStmt body = method.getBody();
         List<Statement> stmts = body.getStmts();
         if (stmts != null && stmts.size() == 1) {
@@ -757,13 +790,18 @@ public class ModelCodeGenerator {
     }
 
     private File constructFile(String ...comps) {
+        String path = constructPath(comps);
+        return new File(path);        
+    }
+
+    private String constructPath(String ...comps) {
         StringBuffer buf = new StringBuffer();
         for (int i = 0; i < comps.length; i++) {
             if (i > 0)
                 buf.append(File.separator);
             buf.append(comps[i]);
         }
-        return new File(buf.toString());        
+        return buf.toString();        
     }
 
     /*
@@ -781,4 +819,24 @@ public class ModelCodeGenerator {
         return hierarchy.isClassSubclassOf(a, b);
     }
     */
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        if (args.length < 2) {
+            logger.error("Usage: ModelCodeGen <source path> <class name> <field1 name> <field2 name> ...");
+            droidsafe.main.Main.exit(1);
+        } else {
+            String sourcePath = args[0];
+            String className = args[1];
+            Set<String> fieldNames = new HashSet<String>();
+            for (int i = 2; i < args.length; i++) {
+                fieldNames.add(args[i]);
+            }
+            ModelCodeGenerator modelGen = new ModelCodeGenerator(sourcePath);
+            modelGen.run(className, fieldNames);
+        }
+    }
+
 }
