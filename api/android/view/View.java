@@ -199,7 +199,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             InputEventConsistencyVerifier.isInstrumentationEnabled() ?
                     new InputEventConsistencyVerifier(this, 0) : null;
     
-    @DSModeled(value = DSC.SAFE)
+    @DSModeled(DSC.SAFE)
 	public View(Context context){
 		mContext = context;
 		onSizeChanged(0,0,0,0);
@@ -219,6 +219,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public View(Context context, AttributeSet attrs){
 		this(context, attrs, 0);
 	}
@@ -240,6 +241,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void initializeFadingEdge(TypedArray a){
 		// Original method
 		/*
@@ -254,6 +256,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getVerticalFadingEdgeLength(){
 		// Original method
 		/*
@@ -271,6 +274,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setFadingEdgeLength(int length){
 		// Original method
 		/*
@@ -283,6 +287,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getHorizontalFadingEdgeLength(){
 		// Original method
 		/*
@@ -300,6 +305,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getVerticalScrollbarWidth(){
 		// Original method
 		/*
@@ -323,6 +329,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected int getHorizontalScrollbarHeight(){
 		// Original method
 		/*
@@ -346,6 +353,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void initializeScrollbars(TypedArray a){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -353,6 +361,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private void initScrollCache(){
 		// Original method
 		/*
@@ -366,6 +375,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setVerticalScrollbarPosition(int position){
 		// Original method
 		/*
@@ -381,6 +391,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getVerticalScrollbarPosition(){
 		return getTaintInt();
 		// Original method
@@ -392,6 +403,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     ListenerInfo getListenerInfo(){
             if (mListenerInfo != null) {
                 return mListenerInfo;
@@ -401,6 +413,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setOnFocusChangeListener(OnFocusChangeListener l){
 		// Original method
 		/*
@@ -412,6 +425,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void addOnLayoutChangeListener(OnLayoutChangeListener listener){
 		// Original method
 		/*
@@ -429,6 +443,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void removeOnLayoutChangeListener(OnLayoutChangeListener listener){
 		// Original method
 		/*
@@ -444,6 +459,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void addOnAttachStateChangeListener(OnAttachStateChangeListener listener){
 		// Original method
 		/*
@@ -460,6 +476,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void removeOnAttachStateChangeListener(OnAttachStateChangeListener listener){
 		// Original method
 		/*
@@ -475,6 +492,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public OnFocusChangeListener getOnFocusChangeListener(){
 		// Original method
 		/*
@@ -503,6 +521,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean hasOnClickListeners(){
 		// Original method
 		/*
@@ -515,6 +534,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setOnLongClickListener(OnLongClickListener l){
 		// Original method
 		/*
@@ -529,6 +549,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setOnCreateContextMenuListener(OnCreateContextMenuListener l){
 		// Original method
 		/*
@@ -543,6 +564,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean performClick(){
 		// Original method
 		/*
@@ -561,6 +583,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean callOnClick(){
 		// Original method
 		/*
@@ -577,6 +600,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean performLongClick(){
 		// Original method
 		/*
@@ -600,6 +624,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean performButtonActionOnTouchDown(MotionEvent event){
 		// Original method
 		/*
@@ -628,6 +653,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean showContextMenu(float x, float y, int metaState){
 		// Original method
 		/*
@@ -639,6 +665,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public ActionMode startActionMode(ActionMode.Callback callback){
 		// Original method
 		/*
@@ -650,6 +677,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setOnKeyListener(OnKeyListener l){
 		// Original method
 		/*
@@ -661,6 +689,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setOnTouchListener(OnTouchListener l){
 		// Original method
 		/*
@@ -672,6 +701,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setOnGenericMotionListener(OnGenericMotionListener l){
 		// Original method
 		/*
@@ -683,6 +713,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setOnHoverListener(OnHoverListener l){
 		// Original method
 		/*
@@ -694,6 +725,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setOnDragListener(OnDragListener l){
 		// Original method
 		/*
@@ -705,6 +737,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void handleFocusGainInternal(int direction, Rect previouslyFocusedRect){
 		// Original method
 		/*
@@ -726,6 +759,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean requestRectangleOnScreen(Rect rectangle){
 		// Original method
 		/*
@@ -737,6 +771,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean requestRectangleOnScreen(Rect rectangle, boolean immediate){
 		// Original method
 		/*
@@ -762,6 +797,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void clearFocus(){
 		// Original method
 		/*
@@ -783,6 +819,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void clearFocusForRemoval(){
 		// Original method
 		/*
@@ -798,6 +835,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void unFocus(){
 		// Original method
 		/*
@@ -816,6 +854,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="focus") public boolean hasFocus(){
 		// Original method
 		/*
@@ -827,6 +866,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean hasFocusable(){
 		// Original method
 		/*
@@ -838,6 +878,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onFocusChanged(boolean gainFocus, int direction, Rect previouslyFocusedRect){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -845,6 +886,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void sendAccessibilityEvent(int eventType){
 		// Original method
 		/*
@@ -860,6 +902,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void sendAccessibilityEventInternal(int eventType){
 		// Original method
 		/*
@@ -873,6 +916,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void sendAccessibilityEventUnchecked(AccessibilityEvent event){
 		// Original method
 		/*
@@ -888,6 +932,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void sendAccessibilityEventUncheckedInternal(AccessibilityEvent event){
 		// Original method
 		/*
@@ -906,6 +951,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event){
 		// Original method
 		/*
@@ -921,6 +967,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     boolean dispatchPopulateAccessibilityEventInternal(AccessibilityEvent event){
 		// Original method
 		/*
@@ -933,6 +980,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void onPopulateAccessibilityEvent(AccessibilityEvent event){
 		// Original method
 		/*
@@ -948,6 +996,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void onPopulateAccessibilityEventInternal(AccessibilityEvent event){
 		// Original method
 		/*
@@ -958,6 +1007,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void onInitializeAccessibilityEvent(AccessibilityEvent event){
 		// Original method
 		/*
@@ -973,6 +1023,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void onInitializeAccessibilityEventInternal(AccessibilityEvent event){
 		// Original method
 		/*
@@ -996,6 +1047,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public AccessibilityNodeInfo createAccessibilityNodeInfo(){
 		// Original method
 		/*
@@ -1009,6 +1061,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info){
 		// Original method
 		/*
@@ -1024,6 +1077,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void onInitializeAccessibilityNodeInfoInternal(AccessibilityNodeInfo info){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1031,6 +1085,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setAccessibilityDelegate(AccessibilityDelegate delegate){
 		mAccessibilityDelegate = delegate;
 		// Original method
@@ -1043,6 +1098,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getAccessibilityViewId(){
 		return getTaintInt();
 		// Original method
@@ -1057,6 +1113,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getAccessibilityWindowId(){
 		// Original method
 		/*
@@ -1068,6 +1125,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public CharSequence getContentDescription(){
 		return (CharSequence)getTaint();
 		// Original method
@@ -1079,6 +1137,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @RemotableViewMethod public void setContentDescription(CharSequence contentDescription){
 		mContentDescription = contentDescription;
 		//addTaint(contentDescription.toString().getTaint());
@@ -1092,6 +1151,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onFocusLost(){
 		// Original method
 		/*
@@ -1103,6 +1163,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private void resetPressedState(){
 		// Original method
 		/*
@@ -1122,6 +1183,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="focus") public boolean isFocused(){
 		// Original method
 		/*
@@ -1133,6 +1195,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public View findFocus(){
 		// Original method
 		/*
@@ -1144,6 +1207,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setScrollContainer(boolean isScrollContainer){
 		// Original method
 		/*
@@ -1166,6 +1230,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getDrawingCacheQuality(){
 		// Original method
 		/*
@@ -1177,6 +1242,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setDrawingCacheQuality(int quality){
 		// Original method
 		/*
@@ -1188,6 +1254,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean getKeepScreenOn(){
 		// Original method
 		/*
@@ -1199,6 +1266,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setKeepScreenOn(boolean keepScreenOn){
 		// Original method
 		/*
@@ -1210,6 +1278,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getNextFocusLeftId(){
 		return getTaintInt();
 		// Original method
@@ -1221,6 +1290,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setNextFocusLeftId(int nextFocusLeftId){
 		addTaint(nextFocusLeftId);
 		// Original method
@@ -1233,6 +1303,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getNextFocusRightId(){
 		return getTaintInt();
 		// Original method
@@ -1244,6 +1315,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setNextFocusRightId(int nextFocusRightId){
 		addTaint(nextFocusRightId);
 		// Original method
@@ -1256,6 +1328,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getNextFocusUpId(){
 		return getTaintInt();
 		// Original method
@@ -1267,6 +1340,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setNextFocusUpId(int nextFocusUpId){
 		addTaint(nextFocusUpId);
 		// Original method
@@ -1279,6 +1353,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getNextFocusDownId(){
 		return getTaintInt();
 		// Original method
@@ -1290,6 +1365,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setNextFocusDownId(int nextFocusDownId){
 		addTaint(nextFocusDownId);
 		// Original method
@@ -1302,6 +1378,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getNextFocusForwardId(){
 		return getTaintInt();
 		// Original method
@@ -1313,6 +1390,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setNextFocusForwardId(int nextFocusForwardId){
 		addTaint(nextFocusForwardId);
 		// Original method
@@ -1325,6 +1403,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isShown(){
 		// Original method
 		/*
@@ -1350,6 +1429,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean fitSystemWindows(Rect insets){
 		// Original method
 		/*
@@ -1369,6 +1449,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setFitsSystemWindows(boolean fitSystemWindows){
 		// Original method
 		/*
@@ -1380,6 +1461,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean fitsSystemWindows(){
 		// Original method
 		/*
@@ -1391,6 +1473,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(mapping={@ViewDebug.IntToString(from=VISIBLE,to="VISIBLE"),@ViewDebug.IntToString(from=INVISIBLE,to="INVISIBLE"),@ViewDebug.IntToString(from=GONE,to="GONE")}) 
 	public int getVisibility(){
 		// Original method
@@ -1418,6 +1501,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty 
 	public boolean isEnabled(){
 		// Original method
@@ -1430,6 +1514,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @RemotableViewMethod 
 	public void setEnabled(boolean enabled){
 		// Original method
@@ -1445,6 +1530,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setFocusable(boolean focusable){
 		// Original method
 		/*
@@ -1459,6 +1545,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setFocusableInTouchMode(boolean focusableInTouchMode){
 		// Original method
 		/*
@@ -1473,6 +1560,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setSoundEffectsEnabled(boolean soundEffectsEnabled){
 		// Original method
 		/*
@@ -1484,6 +1572,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty 
 	public boolean isSoundEffectsEnabled(){
 		// Original method
@@ -1496,6 +1585,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setHapticFeedbackEnabled(boolean hapticFeedbackEnabled){
 		// Original method
 		/*
@@ -1507,6 +1597,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty 
 	public boolean isHapticFeedbackEnabled(){
 		// Original method
@@ -1519,6 +1610,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="layout",mapping={@ViewDebug.IntToString(from=LAYOUT_DIRECTION_LTR,to="LTR"),@ViewDebug.IntToString(from=LAYOUT_DIRECTION_RTL,to="RTL"),@ViewDebug.IntToString(from=LAYOUT_DIRECTION_INHERIT,to="INHERIT"),@ViewDebug.IntToString(from=LAYOUT_DIRECTION_LOCALE,to="LOCALE")}) 
 	public int getLayoutDirection(){
 		// Original method
@@ -1531,6 +1623,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @RemotableViewMethod 
 	public void setLayoutDirection(int layoutDirection){
 		// Original method
@@ -1546,6 +1639,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="layout",mapping={@ViewDebug.IntToString(from=LAYOUT_DIRECTION_LTR,to="RESOLVED_DIRECTION_LTR"),@ViewDebug.IntToString(from=LAYOUT_DIRECTION_RTL,to="RESOLVED_DIRECTION_RTL")}) 
 	public int getResolvedLayoutDirection(){
 		// Original method
@@ -1560,6 +1654,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="layout") 
 	public boolean isLayoutRtl(){
 		// Original method
@@ -1572,6 +1667,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setWillNotDraw(boolean willNotDraw){
 		// Original method
 		/*
@@ -1583,6 +1679,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="drawing") 
 	public boolean willNotDraw(){
 		// Original method
@@ -1595,6 +1692,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setWillNotCacheDrawing(boolean willNotCacheDrawing){
 		// Original method
 		/*
@@ -1606,6 +1704,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="drawing") 
 	public boolean willNotCacheDrawing(){
 		// Original method
@@ -1618,6 +1717,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty 
 	public boolean isClickable(){
 		// Original method
@@ -1630,6 +1730,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setClickable(boolean clickable){
 		// Original method
 		/*
@@ -1641,6 +1742,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isLongClickable(){
 		// Original method
 		/*
@@ -1652,6 +1754,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setLongClickable(boolean longClickable){
 		// Original method
 		/*
@@ -1663,6 +1766,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setPressed(boolean pressed){
 		// Original method
 		/*
@@ -1680,6 +1784,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void dispatchSetPressed(boolean pressed){
 		// Original method
 		/*
@@ -1690,6 +1795,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isPressed(){
 		// Original method
 		/*
@@ -1701,6 +1807,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isSaveEnabled(){
 		// Original method
 		/*
@@ -1712,6 +1819,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setSaveEnabled(boolean enabled){
 		// Original method
 		/*
@@ -1723,6 +1831,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty 
 	public boolean getFilterTouchesWhenObscured(){
 		// Original method
@@ -1735,6 +1844,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setFilterTouchesWhenObscured(boolean enabled){
 		// Original method
 		/*
@@ -1747,6 +1857,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isSaveFromParentEnabled(){
 		// Original method
 		/*
@@ -1758,6 +1869,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setSaveFromParentEnabled(boolean enabled){
 		// Original method
 		/*
@@ -1769,6 +1881,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="focus") 
 	public final boolean isFocusable(){
 		// Original method
@@ -1781,6 +1894,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty 
 	public final boolean isFocusableInTouchMode(){
 		// Original method
@@ -1793,6 +1907,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public View focusSearch(int direction){
 		// Original method
 		/*
@@ -1808,6 +1923,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean dispatchUnhandledMove(View focused, int direction){
 		// Original method
 		/*
@@ -1819,6 +1935,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     View findUserSetNextFocus(View root, int direction){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1847,6 +1964,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public ArrayList<View> getFocusables(int direction){
 		// Original method
 		/*
@@ -1860,6 +1978,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void addFocusables(ArrayList<View> views, int direction){
 		// Original method
 		/*
@@ -1871,6 +1990,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void addFocusables(ArrayList<View> views, int direction, int focusableMode){
 		// Original method
 		/*
@@ -1891,6 +2011,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void findViewsWithText(ArrayList<View> outViews, CharSequence searched, int flags){
 		// Original method
 		/*
@@ -1909,6 +2030,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public ArrayList<View> getTouchables(){
 		// Original method
 		/*
@@ -1922,6 +2044,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void addTouchables(ArrayList<View> views){
 		// Original method
 		/*
@@ -1937,6 +2060,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final boolean requestFocus(){
 		// Original method
 		/*
@@ -1948,6 +2072,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final boolean requestFocus(int direction){
 		// Original method
 		/*
@@ -1959,6 +2084,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean requestFocus(int direction, Rect previouslyFocusedRect){
 		// Original method
 		/*
@@ -1982,6 +2108,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     ViewRootImpl getViewRootImpl(){
 		// Original method
 		/*
@@ -1994,6 +2121,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final boolean requestFocusFromTouch(){
 		// Original method
 		/*
@@ -2011,6 +2139,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private boolean hasAncestorThatBlocksDescendantFocus(){
 		// Original method
 		/*
@@ -2031,6 +2160,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void dispatchStartTemporaryDetach(){
 		// Original method
 		/*
@@ -2042,6 +2172,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void onStartTemporaryDetach(){
 		// Original method
 		/*
@@ -2054,6 +2185,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void dispatchFinishTemporaryDetach(){
 		// Original method
 		/*
@@ -2065,6 +2197,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void onFinishTemporaryDetach(){
 		// Original method
 		/*
@@ -2075,6 +2208,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public KeyEvent.DispatcherState getKeyDispatcherState(){
 		// Original method
 		/*
@@ -2086,6 +2220,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean dispatchKeyEventPreIme(KeyEvent event){
 		// Original method
 		/*
@@ -2097,6 +2232,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean dispatchKeyEvent(KeyEvent event){
 		// Original method
 		/*
@@ -2123,6 +2259,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean dispatchKeyShortcutEvent(KeyEvent event){
 		// Original method
 		/*
@@ -2134,6 +2271,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean dispatchTouchEvent(MotionEvent event){
 		// Original method
 		/*
@@ -2161,6 +2299,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onFilterTouchEventForSecurity(MotionEvent event){
 		// Original method
 		/*
@@ -2176,6 +2315,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean dispatchTrackballEvent(MotionEvent event){
 		// Original method
 		/*
@@ -2190,6 +2330,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean dispatchGenericMotionEvent(MotionEvent event){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -2197,6 +2338,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private boolean dispatchGenericMotionEventInternal(MotionEvent event){
 		// Original method
 		/*
@@ -2220,6 +2362,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean dispatchHoverEvent(MotionEvent event){
 		// Original method
 		/*
@@ -2237,6 +2380,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean hasHoveredChild(){
 		// Original method
 		/*
@@ -2248,6 +2392,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean dispatchGenericPointerEvent(MotionEvent event){
 		// Original method
 		/*
@@ -2259,6 +2404,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean dispatchGenericFocusedEvent(MotionEvent event){
 		// Original method
 		/*
@@ -2270,6 +2416,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final boolean dispatchPointerEvent(MotionEvent event){
 		// Original method
 		/*
@@ -2285,6 +2432,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void dispatchWindowFocusChanged(boolean hasFocus){
 		// Original method
 		/*
@@ -2296,6 +2444,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void onWindowFocusChanged(boolean hasWindowFocus){
 		// Original method
 		/*
@@ -2321,6 +2470,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean hasWindowFocus(){
 		// Original method
 		/*
@@ -2332,6 +2482,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void dispatchVisibilityChanged(View changedView, int visibility){
 		// Original method
 		/*
@@ -2343,6 +2494,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onVisibilityChanged(View changedView, int visibility){
 		// Original method
 		/*
@@ -2360,6 +2512,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void dispatchDisplayHint(int hint){
 		// Original method
 		/*
@@ -2371,6 +2524,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onDisplayHint(int hint){
 		// Original method
 		/*
@@ -2381,6 +2535,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void dispatchWindowVisibilityChanged(int visibility){
 		// Original method
 		/*
@@ -2392,6 +2547,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onWindowVisibilityChanged(int visibility){
 		// Original method
 		/*
@@ -2405,6 +2561,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getWindowVisibility(){
 		// Original method
 		/*
@@ -2416,6 +2573,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void getWindowVisibleDisplayFrame(Rect outRect){
 		// Original method
 		/*
@@ -2441,6 +2599,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void dispatchConfigurationChanged(Configuration newConfig){
 		// Original method
 		/*
@@ -2452,6 +2611,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onConfigurationChanged(Configuration newConfig){
 		// Original method
 		/*
@@ -2462,6 +2622,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void dispatchCollectViewAttributes(int visibility){
 		// Original method
 		/*
@@ -2473,6 +2634,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void performCollectViewAttributes(int visibility){
 		// Original method
 		/*
@@ -2493,6 +2655,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void needGlobalAttributesUpdate(boolean force){
 		// Original method
 		/*
@@ -2510,6 +2673,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty 
 	public boolean isInTouchMode(){
 		// Original method
@@ -2526,12 +2690,14 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.CapturedViewProperty 
 	public final Context getContext(){
 		return mContext;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onKeyPreIme(int keyCode, KeyEvent event){
 		// Original method
 		/*
@@ -2543,6 +2709,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onKeyDown(int keyCode, KeyEvent event){
 		// Original method
 		/*
@@ -2571,6 +2738,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onKeyLongPress(int keyCode, KeyEvent event){
 		// Original method
 		/*
@@ -2582,6 +2750,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onKeyUp(int keyCode, KeyEvent event){
 		// Original method
 		/*
@@ -2610,6 +2779,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event){
 		// Original method
 		/*
@@ -2621,6 +2791,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onKeyShortcut(int keyCode, KeyEvent event){
 		// Original method
 		/*
@@ -2632,6 +2803,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onCheckIsTextEditor(){
 		// Original method
 		/*
@@ -2643,6 +2815,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public InputConnection onCreateInputConnection(EditorInfo outAttrs){
 		// Original method
 		/*
@@ -2654,6 +2827,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean checkInputConnectionProxy(View view){
 		// Original method
 		/*
@@ -2665,6 +2839,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void createContextMenu(ContextMenu menu){
 		// Original method
 		/*
@@ -2686,6 +2861,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected ContextMenuInfo getContextMenuInfo(){
 		// Original method
 		/*
@@ -2697,6 +2873,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onCreateContextMenu(ContextMenu menu){
 		// Original method
 		/*
@@ -2707,6 +2884,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onTrackballEvent(MotionEvent event){
 		// Original method
 		/*
@@ -2718,6 +2896,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onGenericMotionEvent(MotionEvent event){
 		// Original method
 		/*
@@ -2729,6 +2908,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onHoverEvent(MotionEvent event){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -2736,6 +2916,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private boolean isHoverable(){
 		// Original method
 		/*
@@ -2752,6 +2933,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty 
 	public boolean isHovered(){
 		// Original method
@@ -2764,6 +2946,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setHovered(boolean hovered){
 		// Original method
 		/*
@@ -2787,6 +2970,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void onHoverChanged(boolean hovered){
 		// Original method
 		/*
@@ -2797,6 +2981,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onTouchEvent(MotionEvent event){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -2804,6 +2989,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isInScrollingContainer(){
 		// Original method
 		/*
@@ -2822,6 +3008,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private void removeLongPressCallback(){
 		// Original method
 		/*
@@ -2835,6 +3022,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private void removePerformClickCallback(){
 		// Original method
 		/*
@@ -2848,6 +3036,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private void removeUnsetPressCallback(){
 		// Original method
 		/*
@@ -2862,6 +3051,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private void removeTapCallback(){
 		// Original method
 		/*
@@ -2876,6 +3066,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void cancelLongPress(){
 		// Original method
 		/*
@@ -2888,6 +3079,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private void removeSendViewScrolledAccessibilityEventCallback(){
 		// Original method
 		/*
@@ -2901,6 +3093,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setTouchDelegate(TouchDelegate delegate){
 		mTouchDelegate = delegate;
 		// Original method
@@ -2913,11 +3106,13 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public TouchDelegate getTouchDelegate(){
 		return mTouchDelegate;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void setFlags(int flags, int mask){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -2925,6 +3120,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void bringToFront(){
 		// Original method
 		/*
@@ -2938,6 +3134,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onScrollChanged(int l, int t, int oldl, int oldt){
 		// Original method
 		/*
@@ -2967,6 +3164,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void dispatchDraw(Canvas canvas){
 		// Original method
 		/*
@@ -2977,6 +3175,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final ViewParent getParent(){
 		return (ViewParent)getTaint();
 		// Original method
@@ -3063,6 +3262,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void getDrawingRect(Rect outRect){
 		// Original method
 		/*
@@ -3083,6 +3283,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final int getMeasuredWidthAndState(){
 		return getTaintInt();
 		// Original method
@@ -3094,6 +3295,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final int getMeasuredHeight(){
 		// Original method
 		/*
@@ -3105,6 +3307,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final int getMeasuredHeightAndState(){
 		return getTaintInt();
 		// Original method
@@ -3116,6 +3319,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final int getMeasuredState(){
 		// Original method
 		/*
@@ -3144,6 +3348,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nonzero(float value){
 		// Original method
 		/*
@@ -3235,6 +3440,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public float getRotation(){
 		// Original method
 		/*
@@ -3266,6 +3472,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public float getRotationY(){
 		// Original method
 		/*
@@ -3297,6 +3504,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public float getRotationX(){
 		// Original method
 		/*
@@ -3328,6 +3536,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public float getScaleX(){
 		// Original method
 		/*
@@ -3359,6 +3568,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public float getScaleY(){
 		// Original method
 		/*
@@ -3390,6 +3600,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public float getPivotX(){
 		// Original method
 		/*
@@ -3422,6 +3633,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public float getPivotY(){
 		// Original method
 		/*
@@ -3454,6 +3666,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public float getAlpha(){
 		// Original method
 		/*
@@ -3504,6 +3717,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.CapturedViewProperty 
 	public final int getTop(){
 		return getTaintInt();
@@ -3523,6 +3737,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.CapturedViewProperty 
 	public final int getBottom(){
 		return getTaintInt();
@@ -3535,6 +3750,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isDirty(){
 		// Original method
 		/*
@@ -3553,6 +3769,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.CapturedViewProperty 
 	public final int getLeft(){
 		return getTaintInt();
@@ -3572,6 +3789,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.CapturedViewProperty 
 	public final int getRight(){
 		return getTaintInt();
@@ -3591,6 +3809,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public float getX(){
 		// Original method
 		/*
@@ -3613,6 +3832,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public float getY(){
 		// Original method
 		/*
@@ -3635,6 +3855,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public float getTranslationX(){
 		// Original method
 		/*
@@ -3666,6 +3887,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public float getTranslationY(){
 		// Original method
 		/*
@@ -3829,6 +4051,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     final boolean pointInView(float localX, float localY){
 		// Original method
 		/*
@@ -3841,6 +4064,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private boolean pointInView(float localX, float localY, float slop){
 		// Original method
 		/*
@@ -3925,6 +4149,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(deepExport=true,prefix="layout_") 
 	public ViewGroup.LayoutParams getLayoutParams(){
         return mLayoutParams;
@@ -4077,6 +4302,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void invalidateParentCaches(){
 		// Original method
 		/*
@@ -4103,6 +4329,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="drawing") 
 	public boolean isOpaque(){
 		// Original method
@@ -4139,6 +4366,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean hasOpaqueScrollbars(){
 		// Original method
 		/*
@@ -4150,6 +4378,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public Handler getHandler(){
 		// Original method
 		/*
@@ -4303,6 +4532,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void computeScroll(){
 		// Original method
 		/*
@@ -4313,6 +4543,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isHorizontalFadingEdgeEnabled(){
 		// Original method
 		/*
@@ -4340,6 +4571,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isVerticalFadingEdgeEnabled(){
 		// Original method
 		/*
@@ -4413,6 +4645,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isHorizontalScrollBarEnabled(){
 		// Original method
 		/*
@@ -4439,6 +4672,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isVerticalScrollBarEnabled(){
 		// Original method
 		/*
@@ -4494,6 +4728,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isScrollbarFadingEnabled(){
 		// Original method
 		/*
@@ -4520,6 +4755,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(mapping={@ViewDebug.IntToString(from=SCROLLBARS_INSIDE_OVERLAY,to="INSIDE_OVERLAY"),@ViewDebug.IntToString(from=SCROLLBARS_INSIDE_INSET,to="INSIDE_INSET"),@ViewDebug.IntToString(from=SCROLLBARS_OUTSIDE_OVERLAY,to="OUTSIDE_OVERLAY"),@ViewDebug.IntToString(from=SCROLLBARS_OUTSIDE_INSET,to="OUTSIDE_INSET")}) public int getScrollBarStyle(){
 		// Original method
 		/*
@@ -4542,6 +4778,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected int computeHorizontalScrollOffset(){
 		return getTaintInt();
 		// Original method
@@ -4575,6 +4812,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected int computeVerticalScrollOffset(){
 		return getTaintInt();
 		// Original method
@@ -4640,6 +4878,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean isVerticalScrollBarHidden(){
 		// Original method
 		/*
@@ -4761,6 +5000,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void resetResolvedLayoutDirection(){
 		// Original method
 		/*
@@ -4810,6 +5050,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected int getWindowAttachCount(){
 		return getTaintInt();
 		// Original method
@@ -4821,6 +5062,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public IBinder getWindowToken(){
 		// Original method
 		/*
@@ -4832,6 +5074,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public IBinder getApplicationWindowToken(){
 		// Original method
 		/*
@@ -4851,6 +5094,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     IWindowSession getWindowSession(){
 		// Original method
 		/*
@@ -4922,6 +5166,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected Parcelable onSaveInstanceState(){
 		// Original method
 		/*
@@ -4984,6 +5229,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public long getDrawingTime(){
 		// Original method
 		/*
@@ -5006,6 +5252,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isDuplicateParentStateEnabled(){
 		// Original method
 		/*
@@ -5025,6 +5272,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     boolean hasStaticLayer(){
 		// Original method
 		/*
@@ -5036,6 +5284,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getLayerType(){
 		return getTaintInt();
 		// Original method
@@ -5121,6 +5370,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="drawing") 
 	public boolean isDrawingCacheEnabled(){
 		// Original method
@@ -5159,6 +5409,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void dispatchGetDisplayList(){
 		// Original method
 		/*
@@ -5168,6 +5419,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean canHaveDisplayList(){
 		// Original method
 		/*
@@ -5232,6 +5484,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setDrawingCacheBackgroundColor(int color){
 		// Original method
 		/*
@@ -5246,6 +5499,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getDrawingCacheBackgroundColor(){
 		return getTaintInt();
 		// Original method
@@ -5282,6 +5536,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isInEditMode(){
 		// Original method
 		/*
@@ -5293,6 +5548,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean isPaddingOffsetRequired(){
 		// Original method
 		/*
@@ -5304,6 +5560,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected int getLeftPaddingOffset(){
 		// Original method
 		/*
@@ -5315,6 +5572,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected int getRightPaddingOffset(){
 		// Original method
 		/*
@@ -5326,6 +5584,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected int getTopPaddingOffset(){
 		// Original method
 		/*
@@ -5337,6 +5596,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected int getBottomPaddingOffset(){
 		// Original method
 		/*
@@ -5374,6 +5634,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isHardwareAccelerated(){
 		// Original method
 		/*
@@ -5392,6 +5653,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="drawing") 
 	public int getSolidColor(){
 		// Original method
@@ -5444,6 +5706,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isLayoutRequested(){
 		// Original method
 		/*
@@ -5462,6 +5725,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onLayout(boolean changed, int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -5479,6 +5743,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onFinishInflate(){
 		// Original method
 		/*
@@ -5489,6 +5754,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public Resources getResources(){
 		return mResources;
 	}
@@ -5569,6 +5835,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean verifyDrawable(Drawable who){
 		// Original method
 		/*
@@ -5708,6 +5975,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public Drawable getBackground(){
 		return mBGDrawable;
 	}
@@ -5862,6 +6130,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty public boolean isSelected(){
 		// Original method
 		/*
@@ -5920,6 +6189,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public View getRootView(){
 		// Original method
 		/*
@@ -5964,6 +6234,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected View findViewTraversal(int id){
 		return this;
 		// Original method
@@ -6096,6 +6367,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setId(int id){
 		addTaint(id);
 		// Original method
@@ -6108,6 +6380,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setIsRootNamespace(boolean isRoot){
 		// Original method
 		/*
@@ -6123,6 +6396,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isRootNamespace(){
 		// Original method
 		/*
@@ -6285,6 +6559,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="layout") 
 	public int getBaseline(){
 		// Original method
@@ -6320,6 +6595,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void forceLayout(){
 		// Original method
 		/*
@@ -6353,6 +6629,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected final void setMeasuredDimension(int measuredWidth, int measuredHeight){
 		addTaint(measuredWidth);
 		addTaint(measuredHeight);
@@ -6368,6 +6645,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public static int combineMeasuredStates(int curState, int newState){
 		// Original method
 		/*
@@ -6478,6 +6756,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setMinimumHeight(int minHeight){
 		addTaint(minHeight);
 		// Original method
@@ -6490,6 +6769,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setMinimumWidth(int minWidth){
 		addTaint(minWidth);
 		// Original method
@@ -6502,6 +6782,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public Animation getAnimation(){
         return mCurrentAnimation;
 	}
@@ -6552,6 +6833,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onAnimationStart(){
 		// Original method
 		/*
@@ -6563,6 +6845,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onAnimationEnd(){
 		// Original method
 		/*
@@ -6574,6 +6857,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean onSetAlpha(int alpha){
 		// Original method
 		/*
@@ -6668,6 +6952,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getSystemUiVisibility(){
 		return getTaintInt();
 		// Original method
@@ -6730,6 +7015,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onDragEvent(DragEvent event){
 		// Original method
 		/*
@@ -6757,6 +7043,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     boolean canAcceptDrag(){
 		// Original method
 		/*
@@ -6768,6 +7055,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void onCloseSystemDialogs(String reason){
 		// Original method
 		/*
@@ -6828,6 +7116,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onOverScrolled(int scrollX, int scrollY,
             boolean clampedX, boolean clampedY){
 		// Original method
@@ -6839,6 +7128,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getOverScrollMode(){
 		return getTaintInt();
 		// Original method
@@ -6899,6 +7189,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getTextDirection(){
 		return getTaintInt();
 		// Original method
@@ -6958,6 +7249,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void resetResolvedTextDirection(){
 		// Original method
 		/*
@@ -6969,6 +7261,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void hackTurnOffWindowResizeAnim(boolean off){
 		// Original method
 		/*
@@ -7139,6 +7432,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         }
 
 
+        @DSModeled(DSC.SAFE)
         public static int makeMeasureSpec(int size, int mode){
 			// Original method
 			/*
@@ -7150,6 +7444,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public static int getMode(int measureSpec){
 			// Original method
 			/*
@@ -7161,6 +7456,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public static int getSize(int measureSpec){
 			// Original method
 			/*
@@ -7230,6 +7526,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public void rememberWindowAttachCount(){
 			// Original method
 			/*
@@ -7428,6 +7725,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             }
 
 
+            @DSModeled(DSC.SAFE)
             public void setNextPoolable(InvalidateInfo element){
 				mNext = element;
 				// Original method
@@ -7440,6 +7738,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 			}
 
             
+            @DSModeled(DSC.SAFE)
             public InvalidateInfo getNextPoolable(){
 				return mNext;
 				// Original method
@@ -7473,6 +7772,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 			}
 
             
+            @DSModeled(DSC.SAFE)
             public boolean isPooled(){
 				return getTaintBoolean();
 				// Original method
@@ -7484,6 +7784,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 			}
 
             
+            @DSModeled(DSC.SAFE)
             public void setPooled(boolean isPooled){
 				addTaint(isPooled);
 				// Original method

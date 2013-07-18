@@ -95,6 +95,7 @@ class ReceiverRestrictedContext extends ContextWrapper {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.059 -0400", hash_original_method = "E79FC2581462A23AEE3B4180EBBDA608", hash_generated_method = "D608908D746D10916B4095E402568990")
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
@@ -109,6 +110,7 @@ Intent varD535A24B470170C9E7EA08ED846B5DCB_39836133 =         registerReceiver(r
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.060 -0400", hash_original_method = "7DBE869AA37665F34E0D6939DBC75DAB", hash_generated_method = "1F3A8BDB68C4E15A753ABE5D240E603B")
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter,
@@ -128,6 +130,7 @@ Intent varD535A24B470170C9E7EA08ED846B5DCB_39836133 =         registerReceiver(r
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.060 -0400", hash_original_method = "E81E60407BE1AC3446285185653F6DEC", hash_generated_method = "855E1EBB0D5B5D11B7F33F73441536E2")
     @Override
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
@@ -292,12 +295,14 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public void setTheme(int resid) {
         throw new UnsupportedOperationException();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.066 -0400", hash_original_method = "AE4733E1C9FA88CFC00EFC04FF1EA93F", hash_generated_method = "469249C54C189C42FBC62825A9683033")
     @Override
     public int getThemeResId() {
@@ -315,6 +320,7 @@ public class ContextImpl extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @Override
     public ClassLoader getClassLoader() {
         throw new UnsupportedOperationException();
@@ -570,6 +576,7 @@ File var03F2278E22352E1F6C912BE2E985552F_206274327 =             mDatabasesDir;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void startActivity(Intent intent) {
         throw new UnsupportedOperationException();
@@ -582,6 +589,7 @@ File var03F2278E22352E1F6C912BE2E985552F_206274327 =             mDatabasesDir;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void startIntentSender(IntentSender intent,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags)
@@ -590,18 +598,21 @@ File var03F2278E22352E1F6C912BE2E985552F_206274327 =             mDatabasesDir;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void sendBroadcast(Intent intent) {
         throw new UnsupportedOperationException();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void sendBroadcast(Intent intent, String receiverPermission) {
         throw new UnsupportedOperationException();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void sendOrderedBroadcast(Intent intent,
             String receiverPermission) {
@@ -609,6 +620,7 @@ File var03F2278E22352E1F6C912BE2E985552F_206274327 =             mDatabasesDir;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void sendOrderedBroadcast(Intent intent, String receiverPermission,
             BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData,
@@ -617,12 +629,14 @@ File var03F2278E22352E1F6C912BE2E985552F_206274327 =             mDatabasesDir;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void sendStickyBroadcast(Intent intent) {
         throw new UnsupportedOperationException();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void sendStickyOrderedBroadcast(Intent intent,
             BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData,
@@ -631,6 +645,7 @@ File var03F2278E22352E1F6C912BE2E985552F_206274327 =             mDatabasesDir;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void removeStickyBroadcast(Intent intent) {
         throw new UnsupportedOperationException();
@@ -645,6 +660,7 @@ File var03F2278E22352E1F6C912BE2E985552F_206274327 =             mDatabasesDir;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter,
             String broadcastPermission, Handler scheduler) {
@@ -652,6 +668,7 @@ File var03F2278E22352E1F6C912BE2E985552F_206274327 =             mDatabasesDir;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.104 -0400", hash_original_method = "22E75A5CFB9DB3D3B6EDA1829895EA59", hash_generated_method = "43B2BF89975362326EFDEF5C29629973")
     private Intent registerReceiverInternal(BroadcastReceiver receiver,
             IntentFilter filter, String broadcastPermission,
@@ -709,18 +726,21 @@ Intent var540C13E9E156B687226421B24F2DF178_1029140709 =             null;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public ComponentName startService(Intent service) {
         throw new UnsupportedOperationException();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public boolean stopService(Intent service) {
         throw new UnsupportedOperationException();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
         throw new UnsupportedOperationException();
@@ -846,36 +866,42 @@ WallpaperManager var7DCBA8725EE8E928D8710BDCD76F68F8_1962399602 =         (Wallp
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void grantUriPermission(String toPackage, Uri uri, int modeFlags) {
         throw new UnsupportedOperationException();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void revokeUriPermission(Uri uri, int modeFlags) {
         throw new UnsupportedOperationException();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public int checkUriPermission(Uri uri, int pid, int uid, int modeFlags) {
         throw new UnsupportedOperationException();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public int checkCallingUriPermission(Uri uri, int modeFlags) {
         throw new UnsupportedOperationException();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public int checkCallingOrSelfUriPermission(Uri uri, int modeFlags) {
         throw new UnsupportedOperationException();
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public int checkUriPermission(Uri uri, String readPermission,
             String writePermission, int pid, int uid, int modeFlags) {
@@ -919,6 +945,7 @@ String var1D88E2A6AC371783E3524ED205D20662_132970480 =         "write";
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.115 -0400", hash_original_method = "6A9FD3C401F0CEC7314A7CD25AD534A9", hash_generated_method = "31449087A3AA8A60A1B9198669E5798A")
     private void enforceForUri(
             int modeFlags, int resultOfCheck, boolean selfToo,
@@ -958,6 +985,7 @@ String var1D88E2A6AC371783E3524ED205D20662_132970480 =         "write";
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void enforceUriPermission(
             Uri uri, int pid, int uid, int modeFlags, String message) {
@@ -965,6 +993,7 @@ String var1D88E2A6AC371783E3524ED205D20662_132970480 =         "write";
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void enforceCallingUriPermission(
             Uri uri, int modeFlags, String message) {
@@ -972,6 +1001,7 @@ String var1D88E2A6AC371783E3524ED205D20662_132970480 =         "write";
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void enforceCallingOrSelfUriPermission(
             Uri uri, int modeFlags, String message) {
@@ -979,6 +1009,7 @@ String var1D88E2A6AC371783E3524ED205D20662_132970480 =         "write";
     }
 
     
+    @DSModeled(DSC.SPEC)
     public void enforceUriPermission(
             Uri uri, String readPermission, String writePermission,
             int pid, int uid, int modeFlags, String message) {
@@ -993,6 +1024,7 @@ String var1D88E2A6AC371783E3524ED205D20662_132970480 =         "write";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public boolean isRestricted() {
         throw new UnsupportedOperationException();        
@@ -1126,6 +1158,7 @@ Context var7BF64381736836E6D5B8EFBEBA0DD76E_2085466171 =         mReceiverRestri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.122 -0400", hash_original_method = "909971A42CA4D34B6A2AABA7AFFB96CE", hash_generated_method = "C4C31AC20FA544B3334C8E032915E0EF")
     final void setActivityToken(IBinder token) {
         mActivityToken = token;
@@ -1134,6 +1167,7 @@ Context var7BF64381736836E6D5B8EFBEBA0DD76E_2085466171 =         mReceiverRestri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.122 -0400", hash_original_method = "A74250CBDFD89C9F601A5AA3ED01CDC8", hash_generated_method = "F5D9056DA7F9C25752FDC44D6CB7B93B")
     final void setOuterContext(Context context) {
         mOuterContext = context;
@@ -1142,6 +1176,7 @@ Context var7BF64381736836E6D5B8EFBEBA0DD76E_2085466171 =         mReceiverRestri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.122 -0400", hash_original_method = "03C284D73757410812309249CAB76117", hash_generated_method = "8F84B6703026E9C3A2692830399A3448")
     final Context getOuterContext() {
 Context var05221853CA1248996DC6A0DB070356A2_1081893138 =         mOuterContext;
@@ -1152,6 +1187,7 @@ Context var05221853CA1248996DC6A0DB070356A2_1081893138 =         mOuterContext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.123 -0400", hash_original_method = "D32D1A589CFC02641AF8A3133A37BC7F", hash_generated_method = "FBBF27435E3B24A82D25219873351FA6")
     final IBinder getActivityToken() {
 IBinder var776483BEB0D8BCC1373C51E8861CFB6F_944315431 =         mActivityToken;
@@ -1370,6 +1406,7 @@ Object var43F21808E64BDDCA0A2A490DACFF475F_1010162685 =                 mCachedI
         }
 
         
+        @DSModeled(DSC.SAFE)
         public abstract Object createStaticService();
 
         

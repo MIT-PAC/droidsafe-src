@@ -73,6 +73,7 @@ public class Resources {
         }
     }
 
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     private static <T> LongSparseArray<T> emptySparseArray() {
         return (LongSparseArray<T>) EMPTY_ARRAY;
@@ -93,6 +94,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public static int selectSystemTheme(int curTheme, int targetSdkVersion,
             int orig, int holo, int deviceDefault){
 		// Original method
@@ -813,6 +815,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public DisplayMetrics getDisplayMetrics(){
 		return mMetrics;
 		// Original method
@@ -826,11 +829,13 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public Configuration getConfiguration(){
         return mConfiguration;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public CompatibilityInfo getCompatibilityInfo(){
 		// Original method
 		/*
@@ -961,6 +966,7 @@ public class Resources {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final AssetManager getAssets(){
         return mAssets;
 	}

@@ -45,6 +45,7 @@ public final class Bitmap implements Parcelable {
 
     int mDensity = sDefaultDensity = getDefaultDensity();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.788 -0400", hash_original_method = "99AF26591A06E5269F88FBD6B3710F13", hash_generated_method = "21260626989E88F3CDC3EDC0331FA89D")
       Bitmap(int nativeBitmap, byte[] buffer, boolean isMutable, byte[] ninePatchChunk,
             int density) {
@@ -78,11 +79,13 @@ public final class Bitmap implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setDefaultDensity(int density) {
         sDefaultDensity = density;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int getDefaultDensity() {
         if (sDefaultDensity >= 0) {
             return sDefaultDensity;
@@ -92,20 +95,21 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSModeled(value = DSC.SAFE)
+    @DSModeled(DSC.SAFE)
 	public int getDensity() {
 		return getTaintInt();
         //return mDensity;
     }
 
     
-    @DSModeled(value = DSC.SAFE)
+    @DSModeled(DSC.SAFE)
 	public void setDensity(int density) {
 		addTaint(density);
         //mDensity = density;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.790 -0400", hash_original_method = "30CA035C727F2D2385273CE8F87AAA35", hash_generated_method = "84E478FF6E7328C663D71E05433F8696")
     public void setNinePatchChunk(byte[] chunk) {
         mNinePatchChunk = chunk;
@@ -114,6 +118,7 @@ public final class Bitmap implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.790 -0400", hash_original_method = "F143F03043BA4507E1E78FA3303F668C", hash_generated_method = "D495C2A863A61C0A1634FBB0748FA025")
     public void recycle() {
         if(!mRecycled)        
@@ -133,6 +138,7 @@ public final class Bitmap implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.791 -0400", hash_original_method = "B80D9A696720D276C6AF21D39513741E", hash_generated_method = "FA5CB4FAA5817C0A3B53968C8B624682")
     public final boolean isRecycled() {
         boolean var1212A62D731F217836716E35FA12386C_2096736229 = (mRecycled);
@@ -143,6 +149,7 @@ public final class Bitmap implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.791 -0400", hash_original_method = "9DF0E31331C580F9A696941C282E8CDA", hash_generated_method = "914FD405E8CFEF9613824D834CF548FC")
     public int getGenerationId() {
         int varA00831C6DD65E3E88035116FD7438C44_2065890042 = (nativeGenerationId(mNativeBitmap));
@@ -153,6 +160,7 @@ public final class Bitmap implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.791 -0400", hash_original_method = "C3E161F555FEE180C4B024634334055B", hash_generated_method = "074A2EEFAA984114CE0F94EC4EDE71B9")
     private void checkRecycled(String errorMessage) {
         addTaint(errorMessage.getTaint());
@@ -169,6 +177,7 @@ public final class Bitmap implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void checkXYSign(int x, int y) {
         if (x < 0) {
             throw new IllegalArgumentException("x must be >= 0");
@@ -179,6 +188,7 @@ public final class Bitmap implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void checkWidthHeight(int width, int height) {
         if (width <= 0) {
             throw new IllegalArgumentException("width must be > 0");
@@ -189,6 +199,7 @@ public final class Bitmap implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.792 -0400", hash_original_method = "6E96276EBE2927D59F0A224BEB5CF764", hash_generated_method = "8DE038C50E21B6E5DE559F6036CB7832")
     public void copyPixelsToBuffer(Buffer dst) {
         addTaint(dst.getTaint());
@@ -250,6 +261,7 @@ public final class Bitmap implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.793 -0400", hash_original_method = "DF4D046D4E3EE4FA52893B437F7EAF42", hash_generated_method = "DC2C7719721F30BC98BE78D29C3BC905")
     public void copyPixelsFromBuffer(Buffer src) {
         addTaint(src.getTaint());
@@ -307,6 +319,7 @@ public final class Bitmap implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.794 -0400", hash_original_method = "5A36626FB0A5325F859AD016AE482420", hash_generated_method = "2279C6000E444E69DC03419CB555ABDA")
     public Bitmap copy(Config config, boolean isMutable) {
         addTaint(isMutable);
@@ -332,6 +345,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Bitmap createScaledBitmap(Bitmap src, int dstWidth,
             int dstHeight, boolean filter) {
         Matrix m;
@@ -357,16 +371,19 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Bitmap createBitmap(Bitmap src) {
         return createBitmap(src, 0, 0, src.getWidth(), src.getHeight());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Bitmap createBitmap(Bitmap source, int x, int y, int width, int height) {
         return createBitmap(source, x, y, width, height, null, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Bitmap createBitmap(Bitmap source, int x, int y, int width, int height,
             Matrix m, boolean filter) {
         checkXYSign(x, y);
@@ -488,6 +505,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.796 -0400", hash_original_method = "FE9BA3F148B3AC85DF389A396D130B66", hash_generated_method = "685985C407F08833059746E544C850A5")
     public byte[] getNinePatchChunk() {
         byte[] varD3261EC38F92DF331844BA8BBC57CDB0_1709459969 = (mNinePatchChunk);
@@ -498,6 +516,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.797 -0400", hash_original_method = "222D378B2B8943C109AD4B8264ED828B", hash_generated_method = "8781B4B2F5358DFA352642E4FD54EB02")
     public boolean compress(CompressFormat format, int quality, OutputStream stream) {
         addTaint(stream.getTaint());
@@ -533,6 +552,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.797 -0400", hash_original_method = "AC5E4B63287018AAA83AB6875AD71BA5", hash_generated_method = "F81175B90093CCF0E4D0FD9217F484AD")
     public final boolean isMutable() {
         boolean varE62BED608586C761CD92607B7C2EF1FD_268631773 = (mIsMutable);
@@ -557,6 +577,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.798 -0400", hash_original_method = "7233800DBE61288AC88E6F84763631F6", hash_generated_method = "86CF9C5FDA48C73F20B332EE117BBECE")
     public int getScaledWidth(Canvas canvas) {
         addTaint(canvas.getTaint());
@@ -568,6 +589,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.799 -0400", hash_original_method = "25E674A6C63D1170FDA7E606406CA68F", hash_generated_method = "E2D2FFCCDAFF9BE6EB48E1AF74AD5D91")
     public int getScaledHeight(Canvas canvas) {
         addTaint(canvas.getTaint());
@@ -579,6 +601,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.799 -0400", hash_original_method = "1717C0FEBD5DCA9C8E6AC6E449CF9117", hash_generated_method = "BD84406E6275490C8EDB057995AD104C")
     public int getScaledWidth(DisplayMetrics metrics) {
         addTaint(metrics.getTaint());
@@ -590,6 +613,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.799 -0400", hash_original_method = "2419686B3EB221BCF5B58D4D017B048F", hash_generated_method = "E2998A386514C02FE693D3D628899F51")
     public int getScaledHeight(DisplayMetrics metrics) {
         addTaint(metrics.getTaint());
@@ -601,6 +625,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.800 -0400", hash_original_method = "8DEB28B38EE84627DD4FE42858F9882C", hash_generated_method = "47D87F55AC47C2240B1F94052A13F1DA")
     public int getScaledWidth(int targetDensity) {
         addTaint(targetDensity);
@@ -612,6 +637,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.800 -0400", hash_original_method = "936A1164B3B30000BDF78CB4ABE6FDD9", hash_generated_method = "16592CACA6286D0D485B730ADCF5C8FF")
     public int getScaledHeight(int targetDensity) {
         addTaint(targetDensity);
@@ -623,6 +649,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static public int scaleFromDensity(int size, int sdensity, int tdensity) {
         if (sdensity == DENSITY_NONE || sdensity == tdensity) {
             return size;
@@ -631,6 +658,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.801 -0400", hash_original_method = "12640FDEC394A62871A05E7C4EB570D4", hash_generated_method = "50FC7FBF860D2D6E1C1137E5EA0B6805")
     public final int getRowBytes() {
         int varB5360D2236BEDFE453A38C0C68B391D5_241284116 = (nativeRowBytes(mNativeBitmap));
@@ -641,6 +669,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.801 -0400", hash_original_method = "64813EB6D6A92E85FDB72E109CDAF838", hash_generated_method = "EAF00793C53F3C1F7F1D2776314D4E24")
     public final int getByteCount() {
         int var0819CDDA81535248F4D66ADD730B8D4E_1387634825 = (getRowBytes() * getHeight());
@@ -651,6 +680,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.801 -0400", hash_original_method = "2965E803C3174189F0506D62E1B543D4", hash_generated_method = "B17F5C71E4B948677E5350E720EE4610")
     public final Config getConfig() {
 Config varBA92FAE805FBA986A16BE9B5925B7B62_976057839 =         Config.nativeToConfig(nativeConfig(mNativeBitmap));
@@ -675,6 +705,7 @@ Config varBA92FAE805FBA986A16BE9B5925B7B62_976057839 =         Config.nativeToCo
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.802 -0400", hash_original_method = "6CFCC21E4A33E66B4CBA687A2872E721", hash_generated_method = "7F2054A3D8D19D95D89230C45ACDA397")
     public void eraseColor(int c) {
         addTaint(c);
@@ -695,6 +726,7 @@ Config varBA92FAE805FBA986A16BE9B5925B7B62_976057839 =         Config.nativeToCo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.803 -0400", hash_original_method = "C5A0202C662F7E6C05A2B74C54AEFFD9", hash_generated_method = "6D9CD8271F24D0862B27AAEF75DC4167")
     public int getPixel(int x, int y) {
         addTaint(y);
@@ -711,6 +743,7 @@ Config varBA92FAE805FBA986A16BE9B5925B7B62_976057839 =         Config.nativeToCo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.803 -0400", hash_original_method = "2EE219697E28A03CE1E0A040D289D28E", hash_generated_method = "6DEA1D5682B1FCB90E6C05D3F057DDF1")
     public void getPixels(int[] pixels, int offset, int stride,
                           int x, int y, int width, int height) {
@@ -740,6 +773,7 @@ Config varBA92FAE805FBA986A16BE9B5925B7B62_976057839 =         Config.nativeToCo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.804 -0400", hash_original_method = "F09D942FEC4FE9E75A7F8BD6FD9F7E4F", hash_generated_method = "B88B455EFD345BABB707C580458C9DD9")
     private void checkPixelAccess(int x, int y) {
         addTaint(y);
@@ -826,6 +860,7 @@ Config varBA92FAE805FBA986A16BE9B5925B7B62_976057839 =         Config.nativeToCo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.805 -0400", hash_original_method = "85459627EEB2B6C6AD7EB511C3D7B6BB", hash_generated_method = "FDF232B528BA9F92FD4925B01CCDCE5E")
     public void setPixel(int x, int y, int color) {
         addTaint(color);
@@ -850,6 +885,7 @@ Config varBA92FAE805FBA986A16BE9B5925B7B62_976057839 =         Config.nativeToCo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.806 -0400", hash_original_method = "ABE133BC8F623C77CA2A0241C4DBE1C8", hash_generated_method = "CFEC7336411E0F61EFE4C28AA2E5EF51")
     public void setPixels(int[] pixels, int offset, int stride,
                           int x, int y, int width, int height) {
@@ -888,6 +924,7 @@ Config varBA92FAE805FBA986A16BE9B5925B7B62_976057839 =         Config.nativeToCo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public int describeContents() {
 		// TODO Auto-generated method stub
@@ -895,6 +932,7 @@ Config varBA92FAE805FBA986A16BE9B5925B7B62_976057839 =         Config.nativeToCo
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.807 -0400", hash_original_method = "D2FB921E1DDA261A52B060B1EF7694C1", hash_generated_method = "FB5DD9F18B21B3C79C2EB0E33BCA59FA")
     public void writeToParcel(Parcel p, int flags) {
         addTaint(flags);
@@ -914,6 +952,7 @@ Config varBA92FAE805FBA986A16BE9B5925B7B62_976057839 =         Config.nativeToCo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.808 -0400", hash_original_method = "75D570937564149AAA647C007E5ED089", hash_generated_method = "CA2DF5D75FDC9C0188C027064C16EE35")
     public Bitmap extractAlpha() {
 Bitmap varCB1FEB1592E325F352986A6C8FA8FC91_1016252427 =         extractAlpha(null, null);
@@ -924,6 +963,7 @@ Bitmap varCB1FEB1592E325F352986A6C8FA8FC91_1016252427 =         extractAlpha(nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     public Bitmap extractAlpha(Paint paint, int[] offsetXY) {
         Bitmap bm = new Bitmap();
         bm.taint.addTaint(offsetXY[0]);
@@ -942,6 +982,7 @@ Bitmap varCB1FEB1592E325F352986A6C8FA8FC91_1016252427 =         extractAlpha(nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.808 -0400", hash_original_method = "3EA2D759216A517078419525658BBCD0", hash_generated_method = "16E9C78513AB4391EE126622508DAE88")
     public boolean sameAs(Bitmap other) {
         addTaint(other.getTaint());
@@ -953,6 +994,7 @@ Bitmap varCB1FEB1592E325F352986A6C8FA8FC91_1016252427 =         extractAlpha(nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.809 -0400", hash_original_method = "ABCB940311631CB7A5E91625A11E0A13", hash_generated_method = "EDCD1A3F0894A6577A12906075EDF3F2")
     public void prepareToDraw() {
         nativePrepareToDraw(mNativeBitmap);
@@ -961,6 +1003,7 @@ Bitmap varCB1FEB1592E325F352986A6C8FA8FC91_1016252427 =         extractAlpha(nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Bitmap nativeCreate(int[] colors, int offset,
                                               int stride, int width, int height,
                                             int nativeConfig, boolean mutable) {
@@ -984,14 +1027,17 @@ Bitmap varCB1FEB1592E325F352986A6C8FA8FC91_1016252427 =         extractAlpha(nul
     */
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeDestructor(int nativeBitmap) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeRecycle(int nativeBitmap) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeCompress(int nativeBitmap, int format,
                                             int quality, OutputStream stream,
                                             byte[] tempStorage) {
@@ -1000,78 +1046,92 @@ Bitmap varCB1FEB1592E325F352986A6C8FA8FC91_1016252427 =         extractAlpha(nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeErase(int nativeBitmap, int color) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeWidth(int nativeBitmap) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_746939276 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_746939276;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeHeight(int nativeBitmap) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_907482253 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_907482253;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeRowBytes(int nativeBitmap) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_115927299 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_115927299;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeConfig(int nativeBitmap) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_220830768 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_220830768;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeHasAlpha(int nativeBitmap) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_910603484 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_910603484;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeGetPixel(int nativeBitmap, int x, int y) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1133622273 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1133622273;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeGetPixels(int nativeBitmap, int[] pixels,
                                                int offset, int stride, int x,
                                                int y, int width, int height) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeSetPixel(int nativeBitmap, int x, int y,
                                               int color) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeSetPixels(int nativeBitmap, int[] colors,
                                                int offset, int stride, int x,
                                                int y, int width, int height) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeCopyPixelsToBuffer(int nativeBitmap,
                                                         Buffer dst) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeCopyPixelsFromBuffer(int nb, Buffer src) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeGenerationId(int nativeBitmap) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1796645940 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1796645940;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Bitmap nativeCreateFromParcel(Parcel p) {
     	Bitmap b = new Bitmap();
     	b.addTaint(p.getTaint());
@@ -1079,6 +1139,7 @@ Bitmap varCB1FEB1592E325F352986A6C8FA8FC91_1016252427 =         extractAlpha(nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeWriteToParcel(int nativeBitmap,
                                                       boolean isMutable,
                                                       int density,
@@ -1097,20 +1158,24 @@ Bitmap varCB1FEB1592E325F352986A6C8FA8FC91_1016252427 =         extractAlpha(nul
     */
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativePrepareToDraw(int nativeBitmap) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeSetHasAlpha(int nBitmap, boolean hasAlpha) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean nativeSameAs(int nb0, int nb1) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_227929198 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_227929198;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.815 -0400", hash_original_method = "C9F7301125E447423E7DB3CDD9C42E7E", hash_generated_method = "E05087C2B2CCBBD706F4C42B20F15F85")
     final int ni() {
         int varF16492AD902BDE58E3AAF1B990115133_1669954112 = (mNativeBitmap);
@@ -1132,9 +1197,11 @@ Bitmap varCB1FEB1592E325F352986A6C8FA8FC91_1016252427 =         extractAlpha(nul
         private static Config sConfigs[] = {
             null, null, ALPHA_8, null, RGB_565, ARGB_4444, ARGB_8888
         };
+        @DSModeled(DSC.SAFE)
         Config(int ni) {
             this.nativeInt = ni;
         }
+        @DSModeled(DSC.SAFE)
         static Config nativeToConfig(int ni) {
             return sConfigs[ni];
         }
@@ -1145,6 +1212,7 @@ Bitmap varCB1FEB1592E325F352986A6C8FA8FC91_1016252427 =         extractAlpha(nul
         JPEG    (0),
         PNG     (1),
         WEBP    (2);
+        @DSModeled(DSC.SAFE)
         CompressFormat(int nativeInt) {
             this.nativeInt = nativeInt;
         }

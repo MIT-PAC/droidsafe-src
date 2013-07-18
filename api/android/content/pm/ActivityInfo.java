@@ -59,6 +59,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int activityInfoConfigToNative(int input){
 		return input;
 		// Original method
@@ -76,6 +77,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getRealConfigChanged(){
 		// Original method
 		/*
@@ -118,6 +120,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int describeContents(){
 		// Original method
 		/*

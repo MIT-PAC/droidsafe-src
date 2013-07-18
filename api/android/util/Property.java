@@ -21,6 +21,7 @@ public abstract class Property<T, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isReadOnly() {
         return getTaintBoolean();
     }
@@ -33,12 +34,13 @@ public abstract class Property<T, V> {
     public abstract V get(T object);
 
     
-    @DSModeled (DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public String getName() {
         return mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public Class<V> getType() {
         return mType;
     }

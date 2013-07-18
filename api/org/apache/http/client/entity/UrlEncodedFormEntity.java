@@ -2,7 +2,6 @@ package org.apache.http.client.entity;
 
 // Droidsafe Imports
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
 import java.util.List;
 
 import org.apache.http.NameValuePair;
@@ -29,6 +28,7 @@ public class UrlEncodedFormEntity extends StringEntity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.152 -0400", hash_original_method = "EFE31A1BCD3079C9AAB0E8E3BC2999DC", hash_generated_method = "0FBF6EAF74398CAC4AD274B8F07409B7")
     public  UrlEncodedFormEntity(
         final List <? extends NameValuePair> parameters) throws UnsupportedEncodingException {

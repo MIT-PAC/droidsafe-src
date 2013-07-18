@@ -81,6 +81,7 @@ public class Handler {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void handleMessage(Message msg){
 		// Original method
 		/*

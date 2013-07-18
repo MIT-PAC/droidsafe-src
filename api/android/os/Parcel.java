@@ -10,6 +10,8 @@ import java.util.Map;
 
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public final class Parcel {
     @SuppressWarnings({"UnusedDeclaration"})
@@ -75,30 +77,35 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final int dataSize(){
 		//Formerly a native function
 		return getTaintInt();
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final int dataAvail(){
 		//Formerly a native function
 		return getTaintInt();
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final int dataPosition(){
 		//Formerly a native function
 		return getTaintInt();
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final int dataCapacity(){
 		//Formerly a native function
 		return getTaintInt();
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void setDataSize(int size){
 		//Formerly a native function
 		//Return nothing
@@ -106,6 +113,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void setDataPosition(int pos){
 		//Formerly a native function
 		//Return nothing
@@ -113,6 +121,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void setDataCapacity(int size){
 		//Formerly a native function
 		//Return nothing
@@ -120,12 +129,14 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final boolean pushAllowFds(boolean allowFds){
 		//Formerly a native function
 		return getTaintBoolean();
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void restoreAllowFds(boolean lastValue){
 		//Formerly a native function
 		//Return nothing
@@ -133,12 +144,14 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final byte[] marshall(){
 		//Formerly a native function
 		return mData;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void unmarshall(byte[] data, int offest, int length){
 		//Formerly a native function
 		//Return nothing
@@ -146,6 +159,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void appendFrom(Parcel parcel, int offset, int length){
 		//Formerly a native function
 		//Return nothing
@@ -153,12 +167,14 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final boolean hasFileDescriptors(){
 		//Formerly a native function
 		return getTaintBoolean();
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeInterfaceToken(String interfaceName){
 		//Formerly a native function
 		//Return nothing
@@ -166,6 +182,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void enforceInterface(String interfaceName){
 		//Formerly a native function
 		//Return nothing
@@ -202,6 +219,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private void writeNative(byte[] b, int offset, int len){
 		mValueByteArray = b;
 		//Formerly a native function
@@ -209,6 +227,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeInt(int val){
 		//Formerly a native function
 		//Return nothing
@@ -216,6 +235,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeLong(long val){
 		//Formerly a native function
 		//Return nothing
@@ -223,6 +243,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeFloat(float val){
 		//Formerly a native function
 		//Return nothing
@@ -230,6 +251,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeDouble(double val){
 		//Formerly a native function
 		//Return nothing
@@ -237,6 +259,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeString(String val){
 		//Formerly a native function
 		//Return nothing
@@ -256,6 +279,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeStrongBinder(IBinder val){
 		mValueIBinder = val;
 		//Formerly a native function
@@ -275,6 +299,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void writeFileDescriptor(FileDescriptor val){
 		mValueFileDescriptor = val;
 		//Formerly a native function
@@ -1192,30 +1217,35 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final int readInt(){
 		//Formerly a native function
 		return getTaintInt();
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final long readLong(){
 		//Formerly a native function
 		return getTaintInt();
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final float readFloat(){
 		//Formerly a native function
 		return getTaintFloat();
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final double readDouble(){
 		//Formerly a native function
 		return 0;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final String readString(){
 		//Formerly a native function
 		return mValueString;
@@ -1233,6 +1263,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final IBinder readStrongBinder(){
 		//Formerly a native function
 		return mValueIBinder;
@@ -1251,12 +1282,14 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private FileDescriptor internalReadFileDescriptor(){
 		//Formerly a native function
 		return mValueFileDescriptor;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     static FileDescriptor openFileDescriptor(String file,
             int mode){
 		//Formerly a native function
@@ -1264,18 +1297,21 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     static FileDescriptor dupFileDescriptor(FileDescriptor orig){
 		//Formerly a native function
 		return orig;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     static void closeFileDescriptor(FileDescriptor desc){
 		//Formerly a native function
 		//Return nothing
 	}
 
     
+    @DSModeled(DSC.SAFE)
     static void clearFileDescriptor(FileDescriptor desc){
 		//Formerly a native function
 		//Return nothing
@@ -1293,6 +1329,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public final void readMap(Map outVal, ClassLoader loader){
 		//DSFIXME:  This is going to be difficult to track taint on.  If something
 		//calls this function, try and avoid the call and track taint in the higher
@@ -1309,6 +1346,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public final void readList(List outVal, ClassLoader loader){
 		outVal.addAll(mValueList);
 		// Original method
@@ -1322,6 +1360,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public final HashMap readHashMap(ClassLoader loader){
 		return (HashMap)mValueMap;
 		// Original method
@@ -1350,6 +1389,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public final Bundle readBundle(ClassLoader loader){
 		return mValueBundle;
 		// Original method
@@ -1369,6 +1409,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final byte[] createByteArray(){
 		//Formerly a native function
 		return mValueByteArray;
@@ -1434,6 +1475,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public final ArrayList readArrayList(ClassLoader loader){
 		return (ArrayList) mValueList;
 		// Original method
@@ -1451,6 +1493,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public final Object[] readArray(ClassLoader loader){
 		return mValueObjectArray;
 		// Original method
@@ -1468,6 +1511,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public final SparseArray readSparseArray(ClassLoader loader){
 		return mValueSparseArray;
 		// Original method
@@ -1719,6 +1763,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public final Object readValue(ClassLoader loader){
 		return mValueObject;
 		// Original method
@@ -1733,6 +1778,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.BAN)
     public final Parcelable[] readParcelableArray(ClassLoader loader){
 		return mValueParcelableArray;
 		// Original method
@@ -1802,24 +1848,28 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private void freeBuffer(){
 		//Formerly a native function
 		//Return nothing
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private void init(int obj){
 		//Formerly a native function
 		//Return nothing
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private void destroy(){
 		//Formerly a native function
 		//Return nothing
 	}
 
     
+    @DSModeled(DSC.BAN)
     void readMapInternal(Map outVal, int N,
         ClassLoader loader){
 		// Original method
@@ -1837,6 +1887,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void readListInternal(List outVal, int N,
         ClassLoader loader){
 		// Original method
@@ -1853,6 +1904,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void readArrayInternal(Object[] outVal, int N,
         ClassLoader loader){
 		// Original method
@@ -1868,6 +1920,7 @@ public final class Parcel {
 	}
 
     
+    @DSModeled(DSC.BAN)
     private void readSparseArrayInternal(SparseArray outVal, int N,
         ClassLoader loader){
 		// Original method

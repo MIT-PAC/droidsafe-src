@@ -66,7 +66,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSModeled (DSC.SAFE)
+    @DSModeled(DSC.SAFE)
     public String toShortString(StringBuilder sb) {    	
     	sb.append(1);
     	return sb.toString();
@@ -142,6 +142,7 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.321 -0400", hash_original_method = "987CF6DAC95BF2616996F2B7580ECF09", hash_generated_method = "69E19F3AA943EB5750A9E7830A61E539")
     public void offset(float dx, float dy) {
         left    += dx;
@@ -156,6 +157,7 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.322 -0400", hash_original_method = "17E8F6A0DA6BEF949708E45EF28FBDEC", hash_generated_method = "84DEB00742BF1B269391B92566372004")
     public void offsetTo(float newLeft, float newTop) {
         right += newLeft - left;
@@ -170,6 +172,7 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.322 -0400", hash_original_method = "4ED8FEC7EC4817417CFF539CEB8CD3D5", hash_generated_method = "04F62736CE8F4E9564C2C46286D37109")
     public void inset(float dx, float dy) {
         left    += dx;
@@ -184,6 +187,7 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.323 -0400", hash_original_method = "7C65F21BA78E9C886CB99F3A821D7FC2", hash_generated_method = "EE912AFE5FA3DC0BF637383173073A1B")
     public boolean contains(float x, float y) {
         addTaint(y);
@@ -198,6 +202,7 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.323 -0400", hash_original_method = "5736B1A89F8587C3C51B72E5484012E7", hash_generated_method = "5BCBCD28F6E9B249A61D7B407DB8300C")
     public boolean contains(float left, float top, float right, float bottom) {
         addTaint(bottom);
@@ -216,6 +221,7 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.324 -0400", hash_original_method = "89862D8BCB63DE9E9B3F12DF7005EDAF", hash_generated_method = "D685C9BEEB5A1A9834A3AD00FE512680")
     public boolean contains(RectF r) {
         addTaint(r.getTaint());
@@ -231,6 +237,7 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.326 -0400", hash_original_method = "B665C4D2FA87DEF248CEB5906A538992", hash_generated_method = "A4724ED46658EAB25F2D629F70B27318")
     public boolean intersect(float left, float top, float right, float bottom) {
         if(this.left < right && left < this.right
@@ -280,6 +287,7 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.326 -0400", hash_original_method = "F1511D7F30AFB03A76430BC5FB3647DC", hash_generated_method = "D69879488389F1A0B65E03BCA36935E9")
     public boolean intersect(RectF r) {
         addTaint(r.getTaint());
@@ -291,6 +299,7 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.329 -0400", hash_original_method = "798EF6BEBDE27EE5C0F4552CB6C0BADF", hash_generated_method = "6AD1B606FED4A2C4AAEEB991D25D80C5")
     public boolean setIntersect(RectF a, RectF b) {
         if(a.left < b.right && b.left < a.right
@@ -320,6 +329,7 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.330 -0400", hash_original_method = "7636A1ABF3E5D698C7B1F582C19267F0", hash_generated_method = "39077DB506F085499BB7E423D1C904E5")
     public boolean intersects(float left, float top, float right,
                               float bottom) {
@@ -337,12 +347,14 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean intersects(RectF a, RectF b) {
         return a.left < b.right && b.left < a.right
                 && a.top < b.bottom && b.top < a.bottom;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.331 -0400", hash_original_method = "1D9E886326ACAAED42A7320F81B83BDE", hash_generated_method = "3DDC4F376A4EE8E084A0EF39CD957DCB")
     public void round(Rect dst) {
         addTaint(dst.getTaint());
@@ -354,6 +366,7 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.331 -0400", hash_original_method = "5165AD4866DE272C811B07E7C1D571CC", hash_generated_method = "1F275E2CCBC62A047D6A759361926175")
     public void roundOut(Rect dst) {
         addTaint(dst.getTaint());
@@ -365,6 +378,7 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.332 -0400", hash_original_method = "4ED17A6A0BD221C6F562FF187EDE0EC1", hash_generated_method = "0985665CC34BA903BEF0108EFE0E233D")
     public void union(float left, float top, float right, float bottom) {
         if((left < right) && (top < bottom))        
@@ -409,6 +423,7 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.333 -0400", hash_original_method = "7333A4F184A018E8DCD665D788936108", hash_generated_method = "488F1849C916BD78F32B6DED7CCA4767")
     public void union(RectF r) {
         addTaint(r.getTaint());
@@ -418,6 +433,7 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.334 -0400", hash_original_method = "5491E96A191FF9AA58559CF28A27B675", hash_generated_method = "CA5B36864605D093C669765F523DEF4A")
     public void union(float x, float y) {
         if(x < left)        
@@ -452,6 +468,7 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.335 -0400", hash_original_method = "5E187609DBD260B5F8E2F7AA44836C46", hash_generated_method = "6E8A505939D38FD3959D3E0F9920FADC")
     public void sort() {
         if(left > right)        
@@ -480,6 +497,7 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public int describeContents() {
 		// TODO Auto-generated method stub
@@ -487,6 +505,7 @@ public class RectF implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.336 -0400", hash_original_method = "5C789B83F9658DFF3AD82091DAFFDD49", hash_generated_method = "8AF90B799398630A2D8FEE2DEEF7185B")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);
@@ -503,6 +522,7 @@ public class RectF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.336 -0400", hash_original_method = "BACCEAD3B6EC38250A4D00D9AA0D9F78", hash_generated_method = "5840D49EC2222CD5F0BDEB5ED8E3F923")
     public void readFromParcel(Parcel in) {
         left = in.readFloat();

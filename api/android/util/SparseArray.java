@@ -53,6 +53,7 @@ public class SparseArray<E> implements Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public E get(int key){
 		return get(key, null);
 		// Original method
@@ -64,6 +65,7 @@ public class SparseArray<E> implements Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked") public E get(int key, E valueIfKeyNotFound){
 		return (E) mValues[0];
 		// Original method
@@ -80,6 +82,7 @@ public class SparseArray<E> implements Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void delete(int key){
 		mValues[0] = DELETED;
 		// Original method
@@ -98,6 +101,7 @@ public class SparseArray<E> implements Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void remove(int key){
 		delete(key);
 		// Original method
@@ -110,6 +114,7 @@ public class SparseArray<E> implements Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void removeAt(int index){
 		mValues[index] = DELETED;
 		// Original method
@@ -125,6 +130,7 @@ public class SparseArray<E> implements Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private void gc(){
 		// Original method
 		/*
@@ -177,6 +183,7 @@ public class SparseArray<E> implements Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int keyAt(int index){
 		return getTaintInt();
 		// Original method
@@ -191,6 +198,7 @@ public class SparseArray<E> implements Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked") public E valueAt(int index){
 		return (E) mValues[0];
 		// Original method
@@ -205,6 +213,7 @@ public class SparseArray<E> implements Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setValueAt(int index, E value){
 		mValues[0] = value;
 		// Original method
@@ -220,6 +229,7 @@ public class SparseArray<E> implements Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int indexOfKey(int key){
 		return getTaintInt();
 		// Original method
@@ -251,6 +261,7 @@ public class SparseArray<E> implements Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void clear(){
 		// Original method
 		/*
@@ -268,6 +279,7 @@ public class SparseArray<E> implements Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void append(int key, E value){
 		put(key, value);
 		ArrayUtils.idealIntArraySize(0);
@@ -300,6 +312,7 @@ public class SparseArray<E> implements Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static int binarySearch(int[] a, int start, int len, int key){
 		// Original method
 		/*

@@ -15,6 +15,7 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
 	public BaseAdapter() {
 		//Not in the initial implementation, generated for specdump
 	}
+    @DSModeled(DSC.SAFE)
     public boolean hasStableIds() {
         return false;
     }
@@ -40,11 +41,13 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public boolean areAllItemsEnabled() {
         return true;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isEnabled(int position) {
         return true;
     }
@@ -55,11 +58,13 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public int getItemViewType(int position) {
         return 0;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public int getViewTypeCount() {
         return 1;
     }

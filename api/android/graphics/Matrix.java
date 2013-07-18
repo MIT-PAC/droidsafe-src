@@ -17,6 +17,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public Matrix(Matrix src){
 		/*
 		native_instance = native_create(src != null ? src.native_instance : 0);
@@ -24,6 +25,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isIdentity(){
 		// Original method
 		/*
@@ -35,6 +37,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean rectStaysRect(){
 		// Original method
 		/*
@@ -46,6 +49,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void set(Matrix src){
 		// Original method
 		/*
@@ -61,6 +65,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean equals(Object obj){
 		// Original method
 		/*
@@ -74,6 +79,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void reset(){
 		// Original method
 		/*
@@ -85,6 +91,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setTranslate(float dx, float dy){
 		// Original method
 		/*
@@ -96,6 +103,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setScale(float sx, float sy, float px, float py){
 		// Original method
 		/*
@@ -107,6 +115,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setScale(float sx, float sy){
 		// Original method
 		/*
@@ -118,6 +127,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setRotate(float degrees, float px, float py){
 		// Original method
 		/*
@@ -129,6 +139,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setRotate(float degrees){
 		// Original method
 		/*
@@ -140,6 +151,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setSinCos(float sinValue, float cosValue, float px, float py){
 		// Original method
 		/*
@@ -151,6 +163,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setSinCos(float sinValue, float cosValue){
 		// Original method
 		/*
@@ -162,6 +175,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setSkew(float kx, float ky, float px, float py){
 		// Original method
 		/*
@@ -173,6 +187,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setSkew(float kx, float ky){
 		// Original method
 		/*
@@ -184,6 +199,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean setConcat(Matrix a, Matrix b){
 		// Original method
 		/*
@@ -196,6 +212,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean preTranslate(float dx, float dy){
 		// Original method
 		/*
@@ -207,6 +224,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean preScale(float sx, float sy, float px, float py){
 		// Original method
 		/*
@@ -218,6 +236,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean preScale(float sx, float sy){
 		// Original method
 		/*
@@ -229,6 +248,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean preRotate(float degrees, float px, float py){
 		// Original method
 		/*
@@ -240,6 +260,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean preRotate(float degrees){
 		// Original method
 		/*
@@ -251,6 +272,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean preSkew(float kx, float ky, float px, float py){
 		// Original method
 		/*
@@ -262,6 +284,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean preSkew(float kx, float ky){
 		// Original method
 		/*
@@ -273,6 +296,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean preConcat(Matrix other){
 		// Original method
 		/*
@@ -284,6 +308,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean postTranslate(float dx, float dy){
 		// Original method
 		/*
@@ -295,6 +320,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean postScale(float sx, float sy, float px, float py){
 		// Original method
 		/*
@@ -306,6 +332,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean postScale(float sx, float sy){
 		// Original method
 		/*
@@ -317,6 +344,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean postRotate(float degrees, float px, float py){
 		// Original method
 		/*
@@ -328,6 +356,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean postRotate(float degrees){
 		// Original method
 		/*
@@ -339,6 +368,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean postSkew(float kx, float ky, float px, float py){
 		// Original method
 		/*
@@ -350,6 +380,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean postSkew(float kx, float ky){
 		// Original method
 		/*
@@ -361,6 +392,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean postConcat(Matrix other){
 		// Original method
 		/*
@@ -372,6 +404,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean setRectToRect(RectF src, RectF dst, ScaleToFit stf){
 		// Original method
 		/*
@@ -386,6 +419,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static void checkPointArrays(float[] src, int srcIndex,
                                          float[] dst, int dstIndex,
                                          int pointCount){
@@ -404,6 +438,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean setPolyToPoly(float[] src, int srcIndex,
                                  float[] dst, int dstIndex,
                                  int pointCount){
@@ -422,6 +457,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean invert(Matrix inverse){
 		// Original method
 		/*
@@ -433,6 +469,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void mapPoints(float[] dst, int dstIndex, float[] src, int srcIndex,
                           int pointCount){
 		// Original method
@@ -447,6 +484,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void mapVectors(float[] dst, int dstIndex, float[] src, int srcIndex,
                           int vectorCount){
 		// Original method
@@ -461,6 +499,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void mapPoints(float[] dst, float[] src){
 		// Original method
 		/*
@@ -475,6 +514,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void mapVectors(float[] dst, float[] src){
 		// Original method
 		/*
@@ -489,6 +529,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void mapPoints(float[] pts){
 		// Original method
 		/*
@@ -500,6 +541,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void mapVectors(float[] vecs){
 		// Original method
 		/*
@@ -511,6 +553,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean mapRect(RectF dst, RectF src){
 		// Original method
 		/*
@@ -525,6 +568,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean mapRect(RectF rect){
 		// Original method
 		/*
@@ -536,6 +580,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public float mapRadius(float radius){
 		// Original method
 		/*
@@ -547,6 +592,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void getValues(float[] values){
 		// Original method
 		/*
@@ -561,6 +607,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setValues(float[] values){
 		// Original method
 		/*
@@ -575,6 +622,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public String toString(){
 		// Original method
 		/*
@@ -590,6 +638,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public String toShortString(){
 		// Original method
 		/*
@@ -603,6 +652,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void toShortString(StringBuilder sb){
 		// Original method
 		/*
@@ -622,6 +672,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void printShortString(PrintWriter pw){
 		// Original method
 		/*
@@ -653,6 +704,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     final int ni(){
 		return getTaintInt();
 		// Original method
@@ -664,36 +716,42 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static int native_create(int native_src_or_zero){
 		//Formerly a native function
 		return 0;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_isIdentity(int native_object){
 		//Formerly a native function
 		return false;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_rectStaysRect(int native_object){
 		//Formerly a native function
 		return false;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_reset(int native_object){
 		//Formerly a native function
 		//Return nothing
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_set(int native_object, int other){
 		//Formerly a native function
 		//Return nothing
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setTranslate(int native_object,
                                                    float dx, float dy){
 		//Formerly a native function
@@ -701,6 +759,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setScale(int native_object,
                                         float sx, float sy, float px, float py){
 		//Formerly a native function
@@ -708,6 +767,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setScale(int native_object,
                                                float sx, float sy){
 		//Formerly a native function
@@ -715,6 +775,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setRotate(int native_object,
                                             float degrees, float px, float py){
 		//Formerly a native function
@@ -722,6 +783,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setRotate(int native_object,
                                                 float degrees){
 		//Formerly a native function
@@ -729,6 +791,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setSinCos(int native_object,
                             float sinValue, float cosValue, float px, float py){
 		//Formerly a native function
@@ -736,6 +799,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setSinCos(int native_object,
                                                 float sinValue, float cosValue){
 		//Formerly a native function
@@ -743,6 +807,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setSkew(int native_object,
                                         float kx, float ky, float px, float py){
 		//Formerly a native function
@@ -750,6 +815,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setSkew(int native_object,
                                               float kx, float ky){
 		//Formerly a native function
@@ -757,6 +823,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_setConcat(int native_object,
                                                    int a, int b){
 		//Formerly a native function
@@ -764,6 +831,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_preTranslate(int native_object,
                                                       float dx, float dy){
 		//Formerly a native function
@@ -771,6 +839,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_preScale(int native_object,
                                         float sx, float sy, float px, float py){
 		//Formerly a native function
@@ -778,6 +847,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_preScale(int native_object,
                                                   float sx, float sy){
 		//Formerly a native function
@@ -785,6 +855,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_preRotate(int native_object,
                                             float degrees, float px, float py){
 		//Formerly a native function
@@ -792,6 +863,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_preRotate(int native_object,
                                                    float degrees){
 		//Formerly a native function
@@ -799,6 +871,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_preSkew(int native_object,
                                         float kx, float ky, float px, float py){
 		//Formerly a native function
@@ -806,6 +879,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_preSkew(int native_object,
                                                  float kx, float ky){
 		//Formerly a native function
@@ -813,6 +887,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_preConcat(int native_object,
                                                    int other_matrix){
 		//Formerly a native function
@@ -820,6 +895,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_postTranslate(int native_object,
                                                        float dx, float dy){
 		//Formerly a native function
@@ -827,6 +903,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_postScale(int native_object,
                                         float sx, float sy, float px, float py){
 		//Formerly a native function
@@ -834,6 +911,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_postScale(int native_object,
                                                    float sx, float sy){
 		//Formerly a native function
@@ -841,6 +919,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_postRotate(int native_object,
                                             float degrees, float px, float py){
 		//Formerly a native function
@@ -848,6 +927,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_postRotate(int native_object,
                                                     float degrees){
 		//Formerly a native function
@@ -855,6 +935,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_postSkew(int native_object,
                                         float kx, float ky, float px, float py){
 		//Formerly a native function
@@ -862,6 +943,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_postSkew(int native_object,
                                                   float kx, float ky){
 		//Formerly a native function
@@ -869,6 +951,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_postConcat(int native_object,
                                                     int other_matrix){
 		//Formerly a native function
@@ -876,6 +959,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_setRectToRect(int native_object,
                                                 RectF src, RectF dst, int stf){
 		//Formerly a native function
@@ -883,6 +967,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_setPolyToPoly(int native_object,
         float[] src, int srcIndex, float[] dst, int dstIndex, int pointCount){
 		//Formerly a native function
@@ -890,12 +975,14 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_invert(int native_object, int inverse){
 		//Formerly a native function
 		return false;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_mapPoints(int native_object,
                         float[] dst, int dstIndex, float[] src, int srcIndex,
                         int ptCount, boolean isPts){
@@ -904,6 +991,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_mapRect(int native_object,
                                                  RectF dst, RectF src){
 		//Formerly a native function
@@ -911,6 +999,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static float native_mapRadius(int native_object,
                                                  float radius){
 		//Formerly a native function
@@ -918,6 +1007,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_getValues(int native_object,
                                                 float[] values){
 		//Formerly a native function
@@ -925,6 +1015,7 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setValues(int native_object,
                                                 float[] values){
 		//Formerly a native function
@@ -932,12 +1023,14 @@ public class Matrix {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_equals(int native_a, int native_b){
 		//Formerly a native function
 		return false;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static void finalizer(int native_instance){
 		//Formerly a native function
 		//Return nothing
@@ -949,6 +1042,7 @@ public class Matrix {
         START   (1),
         CENTER  (2),
         END     (3);
+        @DSModeled(DSC.SAFE)
         ScaleToFit(int nativeInt) {
             this.nativeInt = nativeInt;
         }

@@ -36,11 +36,13 @@ public class Looper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private synchronized static void setMainLooper(Looper looper) {
         mMainLooper = looper;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public synchronized static Looper getMainLooper() {
         return mMainLooper;
     }
@@ -67,6 +69,7 @@ public class Looper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void setMessageLogging(Printer printer){
         mLogging = printer;  //DSFIXME:  CODE0003: Field assignment should be reviewed
         // Original method
@@ -97,6 +100,7 @@ public class Looper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public Thread getThread(){
         return mThread;  //DSFIXME:  CODE0001: Unresolved return type/value combination
         // Original method
@@ -108,6 +112,7 @@ public class Looper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public MessageQueue getQueue(){
         return mQueue;  //DSFIXME:  CODE0001: Unresolved return type/value combination
     }

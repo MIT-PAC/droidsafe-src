@@ -208,6 +208,7 @@ public final class Message implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void clearForRecycle(){
 		// Original method
 		/*
@@ -228,6 +229,7 @@ public final class Message implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     boolean isInUse(){
 		// Original method
 		/*
@@ -239,6 +241,7 @@ public final class Message implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void markInUse(){
 		// Original method
 		/*
@@ -290,6 +293,7 @@ public final class Message implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int describeContents(){
 		// Original method
 		/*

@@ -15,6 +15,7 @@ import droidsafe.annotations.DSModeled;
 public class StringEntity extends AbstractHttpEntity implements Cloneable {
     protected final String content;
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public boolean isRepeatable() {
 		// TODO Auto-generated method stub
@@ -22,6 +23,7 @@ public class StringEntity extends AbstractHttpEntity implements Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public long getContentLength() {
 		// TODO Auto-generated method stub
@@ -36,6 +38,7 @@ public class StringEntity extends AbstractHttpEntity implements Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public boolean isStreaming() {
 		// TODO Auto-generated method stub

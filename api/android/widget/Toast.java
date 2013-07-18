@@ -62,21 +62,25 @@ public class Toast {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void setView(View view) {
         mNextView = view;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public View getView() {
         return mNextView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void setDuration(int duration) {
         mDuration = duration;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public int getDuration() {
         return mDuration;
     }

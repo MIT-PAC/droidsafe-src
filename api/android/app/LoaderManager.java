@@ -3,14 +3,10 @@ package android.app;
 // Droidsafe Imports
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
-import java.lang.reflect.Modifier;
 
 import android.content.Loader;
 import android.os.Bundle;
-import android.util.DebugUtils;
-import android.util.SparseArray;
 import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
 import droidsafe.annotations.DSGenerator;
 import droidsafe.annotations.DSModeled;
 

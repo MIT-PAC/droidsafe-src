@@ -64,6 +64,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     }
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isLayoutSizeAtLeast(int size) {
         int cur = screenLayout&SCREENLAYOUT_SIZE_MASK;
         if (cur == SCREENLAYOUT_SIZE_UNDEFINED) return false;
@@ -169,11 +170,13 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean needNewResources(int configChanges, int interestingChanges) {
         return (configChanges & (interestingChanges|ActivityInfo.CONFIG_FONT_SCALE)) != 0;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isOtherSeqNewer(Configuration other) {
         if (other == null) {
             return false;
@@ -192,6 +195,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     }
 
     
+    @DSModeled(DSC.SAFE)
     public int describeContents() {
         return 0;
     }

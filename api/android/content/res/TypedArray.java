@@ -29,6 +29,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int length(){
 		return getTaintInt();
 		// Original method
@@ -40,6 +41,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getIndexCount(){
 		// Original method
 		/*
@@ -51,6 +53,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getIndex(int at){
 		// Original method
 		/*
@@ -62,6 +65,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public Resources getResources(){
 		return mResources;
 		// Original method
@@ -475,6 +479,7 @@ public class TypedArray {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean hasValue(int index){
 		return getTaintBoolean();
 		// Original method
