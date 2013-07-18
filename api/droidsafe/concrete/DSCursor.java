@@ -1,4 +1,18 @@
-
+/*
+ * Copyright (C) 2009 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 package droidsafe.concrete;
 
@@ -9,15 +23,24 @@ import android.database.Cursor;
 import android.database.DataSetObserver;
 import android.net.Uri;
 import android.os.Bundle;
-import droidsafe.annotations.*;
+import droidsafe.annotations.DSModeled;
 
-
+/**
+ * <P>
+ * A mock {@link android.database.Cursor} class that isolates the test code from real
+ * Cursor implementation.
+ * </P>
+ * <P>
+ * All methods including ones related to querying the state of the cursor are
+ * are non-functional and throw {@link java.lang.UnsupportedOperationException}.
+ * </P>
+ */
 public class DSCursor implements Cursor {
+	/**/
 	
-	
-	@DSModeled(DSC.SPEC)
+	@DSModeled
 	public DSCursor(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-		addTaint(uri.toString().getTaint());
+		addTaint(uri.getTaint());
 		addTaint(projection.toString().getTaint());
 		addTaint(selection.getTaint());
 		addTaint(selectionArgs.toString().getTaint());
@@ -51,7 +74,7 @@ public class DSCursor implements Cursor {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
-    @DSModeled(DSC.SPEC)
+    @DSModeled
     public int getInt(int columnIndex) {
         return getTaintInt();
     }
@@ -108,7 +131,7 @@ public class DSCursor implements Cursor {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
-    @DSModeled(DSC.SPEC)
+    @DSModeled
     public boolean moveToFirst() {
         return true;
     }
@@ -137,7 +160,7 @@ public class DSCursor implements Cursor {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
-    @DSModeled(DSC.SPEC)
+    @DSModeled
     public void close() {
     }
 

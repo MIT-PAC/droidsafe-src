@@ -34,5605 +34,2650 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public abstract class ViewGroup extends View implements ViewParent, ViewManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.675 -0400", hash_original_field = "696495B05623D58D869C5D15A256902B", hash_generated_field = "99875A35D62FD939298A601A9F7DF5FD")
-
     protected ArrayList<View> mDisappearingChildren;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.675 -0400", hash_original_field = "3F7DB39F9660F69EF1A4D273C271814A", hash_generated_field = "506B0E011CD70741D050BF2EE44FE356")
-
     protected OnHierarchyChangeListener mOnHierarchyChangeListener;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.675 -0400", hash_original_field = "42E518F9E3515DBB9C4BA0AD23CBAC61", hash_generated_field = "A4B16D4F5B8759534D19F2BBB80216EB")
-
     private View mFocused;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.675 -0400", hash_original_field = "16F4F06A930B1D3A94B992BE8E780178", hash_generated_field = "89EF5CAB67B25E4FDD40BCDFBB6E3EB9")
-
     private final Transformation mChildTransformation = new Transformation();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.675 -0400", hash_original_field = "D8A784EF03152F38795B78B59E6687CD", hash_generated_field = "0E43FE3464FE8F2B4A13FAF73F9FFA99")
-
     private RectF mInvalidateRegion;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.675 -0400", hash_original_field = "65CA6A1D57BFCD4414AFF3BF15E316A5", hash_generated_field = "1A258D5E9E5687B9DA556AF87EE040D3")
-
     private Transformation mInvalidationTransformation;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.675 -0400", hash_original_field = "3DDC2DD80BBDAAFF3D7748437C0F92DB", hash_generated_field = "278869ACFDD76183C8D171CD9E8010F4")
-
     private View mCurrentDragView;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.676 -0400", hash_original_field = "70F326C41A2A7C4A33E4EBB382B916EA", hash_generated_field = "4260837AC154FE88E7ECE0B0D933BD38")
-
     private DragEvent mCurrentDrag;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.676 -0400", hash_original_field = "6E6AEB257AE7602303150F5A2E06101C", hash_generated_field = "7C6A42655A4DC2D4BF46B4F9A41E01BC")
-
     private HashSet<View> mDragNotifiedChildren;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.676 -0400", hash_original_field = "CB06E61812573C16C11AC1F5ED8FAC4D", hash_generated_field = "B40634C8F85313CD4FF766F9BA270DF1")
-
     private boolean mChildAcceptsDrag;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.676 -0400", hash_original_field = "713A58D821D69EADC7B8400333D2114D", hash_generated_field = "ABDC85F272489DAB145CE0275A2DB3B6")
-
     private final PointF mLocalPoint = new PointF();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.676 -0400", hash_original_field = "EE254A0D1FB9B91AC6E612916399854B", hash_generated_field = "9303037DA96D3F26E2BF546299C3658E")
-
     private LayoutAnimationController mLayoutAnimationController;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.676 -0400", hash_original_field = "D7ED5F2F2BB342E46F91D9B806A50C8F", hash_generated_field = "FE6F2E4A779D16D38F8BBFCAC393C76B")
-
     private Animation.AnimationListener mAnimationListener;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.676 -0400", hash_original_field = "26BDCBDC864B748F53386DFAE0C033B2", hash_generated_field = "E7D785992A22A7F38809AD101B810276")
-
     private TouchTarget mFirstTouchTarget;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.676 -0400", hash_original_field = "2872768B4C01F416A1F5754F14B30B55", hash_generated_field = "A29A2DA0312D9EE090BC48B3458B8632")
-
-    @SuppressWarnings({"FieldCanBeLocal", "UnusedDeclaration"}) @ViewDebug.ExportedProperty(category = "events") private long mLastTouchDownTime;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.676 -0400", hash_original_field = "E1651BDE01D340FDFEDFC6ECD609DEA2", hash_generated_field = "8B2D270E66117CC663F28DDCFB87BA4F")
-
-    @ViewDebug.ExportedProperty(category = "events") private int mLastTouchDownIndex = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.676 -0400", hash_original_field = "8B01400E27E5A26EAE9410E214CEC4CB", hash_generated_field = "4CA82440F2A0B548108575FF9859A086")
-
-    @SuppressWarnings({"FieldCanBeLocal", "UnusedDeclaration"}) @ViewDebug.ExportedProperty(category = "events") private float mLastTouchDownX;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.676 -0400", hash_original_field = "AEEE8AEDA84C3DC240ABF11CCEAF69BC", hash_generated_field = "F4574986D2BBC08122BD509305467BC4")
-
-    @SuppressWarnings({"FieldCanBeLocal", "UnusedDeclaration"}) @ViewDebug.ExportedProperty(category = "events") private float mLastTouchDownY;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.676 -0400", hash_original_field = "7925BD3459BCDD5EDBDA3820A951C7D1", hash_generated_field = "F6A706AD2BA485262D480B431AA08D80")
-
+    @SuppressWarnings({"FieldCanBeLocal", "UnusedDeclaration"})
+    @ViewDebug.ExportedProperty(category = "events")
+    private long mLastTouchDownTime;
+    @ViewDebug.ExportedProperty(category = "events")
+    private int mLastTouchDownIndex = -1;
+    @SuppressWarnings({"FieldCanBeLocal", "UnusedDeclaration"})
+    @ViewDebug.ExportedProperty(category = "events")
+    private float mLastTouchDownX;
+    @SuppressWarnings({"FieldCanBeLocal", "UnusedDeclaration"})
+    @ViewDebug.ExportedProperty(category = "events")
+    private float mLastTouchDownY;
     private HoverTarget mFirstHoverTarget;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.676 -0400", hash_original_field = "F16BAA76122227EAC1FA8071FFD9D031", hash_generated_field = "6FD02C8ECD5E4353E1EEA59D2D252B74")
-
     private boolean mHoveredSelf;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.676 -0400", hash_original_field = "A5BB3DDB7F77A548994B517D14DA3459", hash_generated_field = "0ABD90AE9099E56BCD9A23A2BFDD9586")
-
     protected int mGroupFlags;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.676 -0400", hash_original_field = "CFD9A5A2BA3F2274ECC022BF6DB661C8", hash_generated_field = "5B77DDDB5E53D20BC8C371537F9D6155")
-
     protected int mPersistentDrawingCache;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.676 -0400", hash_original_field = "6699FE97ED54C04992AEDA784C483D4D", hash_generated_field = "7CF7769EE949355835082685E98C8324")
-
     private View[] mChildren;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.676 -0400", hash_original_field = "FD8A8C0C5238F97B65F22614467D44BD", hash_generated_field = "FA5DB817C33D36E210708492AC611D2B")
-
     private boolean mLayoutSuppressed = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.676 -0400", hash_original_field = "A5034A70A83D3C81CEC027BDCAA166D7", hash_generated_field = "A777A0928665A4F1E7F4EF71A2259E60")
-
     private int mChildrenCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.676 -0400", hash_original_field = "E8B33C20BEE8C2EC1E2F75E228534E68", hash_generated_field = "4229E0DF467153CF57F65AC95B02B5E6")
-
     private Paint mCachePaint;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.677 -0400", hash_original_field = "EE0B0D4CFF6B126A7F47DE6CAD24BDC6", hash_generated_field = "E5047FAB01E832F0446529905C5EC963")
-
     private LayoutTransition mTransition;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.677 -0400", hash_original_field = "BC704CB9A61CBF94F6C841CD3BBBC604", hash_generated_field = "C5D8A5DD8407602ED6BD80CBFE380CF3")
-
     private ArrayList<View> mTransitioningViews;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.677 -0400", hash_original_field = "D514310998F517320B20BEE9C067E163", hash_generated_field = "C1C569B225732CB1507D8AE1B61808FC")
-
     private ArrayList<View> mVisibilityChangingChildren;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.677 -0400", hash_original_field = "09D83BDA15EFA5B57765F9C578A0ADBE", hash_generated_field = "6EF80FC61B331A8C0C9A860633C8D76D")
-
-    @ViewDebug.ExportedProperty(category = "drawing") private boolean mDrawLayers = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.944 -0400", hash_original_field = "693F082C39142816DE048BF6C839F8C1", hash_generated_field = "6E6C4406A80D7DD83F2625603B90CB85")
-
-    private LayoutTransition.TransitionListener mLayoutTransitionListener = new LayoutTransition.TransitionListener() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.944 -0400", hash_original_method = "BD73D83C5E4C50AAE7C2D0E44AB74A47", hash_generated_method = "7DFCB5C82DE7D84A396B2F6FB117206C")
-        @Override
-        public void startTransition(LayoutTransition transition, ViewGroup container,
-                View view, int transitionType) {
-            {
-                startViewTransition(view);
-            } 
-            addTaint(transition.getTaint());
-            addTaint(container.getTaint());
-            addTaint(view.getTaint());
-            addTaint(transitionType);
-            
-            
-                
-            
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:58.944 -0400", hash_original_method = "04DFE6408D192F5CD42CA1A3B87396E7", hash_generated_method = "08E74D2FC07D20C465A6AF26F7E23580")
-        @Override
-        public void endTransition(LayoutTransition transition, ViewGroup container,
-                View view, int transitionType) {
-            {
-                boolean var00EE79CB64B66FAC37BA4FE35CB2471D_1945541521 = (mLayoutSuppressed && !transition.isChangingLayout());
-                {
-                    requestLayout();
-                    mLayoutSuppressed = false;
-                } 
-            } 
-            {
-                endViewTransition(view);
-            } 
-            addTaint(transition.getTaint());
-            addTaint(container.getTaint());
-            addTaint(view.getTaint());
-            addTaint(transitionType);
-            
-            
-                
-                
-            
-            
-                
-            
-        }
-
-        
-};
+    @ViewDebug.ExportedProperty(category = "drawing")
+    private boolean mDrawLayers = true;
+    private LayoutTransition.TransitionListener mLayoutTransitionListener = new MyTransitionListener(this);
     
     @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.677 -0400", hash_original_method = "B03ADF87A05C955E785D82B4A9B527B3", hash_generated_method = "A8C7430CB41AA17C462E677DBDF2DD51")
-    public  ViewGroup(Context context) {
-        super(context);
-        addTaint(context.getTaint());
-        initViewGroup();
-        // ---------- Original Method ----------
-        //initViewGroup();
-    }
+	public ViewGroup(Context context){
+		super(context);
+		initViewGroup();
+	}
 
     
     @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.677 -0400", hash_original_method = "01EF181B5B9BD1E2AA94519EF8FAEC5E", hash_generated_method = "AC176154A182726EA14C92480544C579")
-    public  ViewGroup(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        initViewGroup();
-        initFromAttributes(context, attrs);
-        // ---------- Original Method ----------
-        //initViewGroup();
-        //initFromAttributes(context, attrs);
-    }
+	public ViewGroup(Context context, AttributeSet attrs){
+		super(context, attrs);
+		initViewGroup();
+		/*
+		initFromAttributes(context, attrs);
+		*/
+	}
 
     
     @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.678 -0400", hash_original_method = "FE20AAD08B3866F38DB1C82409548865", hash_generated_method = "C37137A7BB83B83DAC9BA192FD00848A")
-    public  ViewGroup(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-        addTaint(defStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        initViewGroup();
-        initFromAttributes(context, attrs);
-        // ---------- Original Method ----------
-        //initViewGroup();
-        //initFromAttributes(context, attrs);
-    }
+	public ViewGroup(Context context, AttributeSet attrs, int defStyle){
+		super(context, attrs, defStyle);// Taint tracked in super class, View.
+		initViewGroup();
+		/*
+		initFromAttributes(context, attrs);
+		*/
+	}
 
     
     @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.679 -0400", hash_original_method = "8201DDC69D3895B689FCA6813D812A1F", hash_generated_method = "B24202A0F24EC75F466AB09689E18CCE")
-    private void initViewGroup() {
+	private void initViewGroup(){
+		// Original method
+		/*
+		{
         setFlags(WILL_NOT_DRAW, DRAW_MASK);
         mGroupFlags |= FLAG_CLIP_CHILDREN;
         mGroupFlags |= FLAG_CLIP_TO_PADDING;
         mGroupFlags |= FLAG_ANIMATION_DONE;
         mGroupFlags |= FLAG_ANIMATION_CACHE;
         mGroupFlags |= FLAG_ALWAYS_DRAWN_WITH_CACHE;
-        if(mContext.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.HONEYCOMB)        
-        {
+        if (mContext.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.HONEYCOMB) {
             mGroupFlags |= FLAG_SPLIT_MOTION_EVENTS;
-        } //End block
+        }
         setDescendantFocusability(FOCUS_BEFORE_DESCENDANTS);
         mChildren = new View[ARRAY_INITIAL_CAPACITY];
         mChildrenCount = 0;
         mPersistentDrawingCache = PERSISTENT_SCROLLING_CACHE;
-        // ---------- Original Method ----------
-        //setFlags(WILL_NOT_DRAW, DRAW_MASK);
-        //mGroupFlags |= FLAG_CLIP_CHILDREN;
-        //mGroupFlags |= FLAG_CLIP_TO_PADDING;
-        //mGroupFlags |= FLAG_ANIMATION_DONE;
-        //mGroupFlags |= FLAG_ANIMATION_CACHE;
-        //mGroupFlags |= FLAG_ALWAYS_DRAWN_WITH_CACHE;
-        //if (mContext.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.HONEYCOMB) {
-            //mGroupFlags |= FLAG_SPLIT_MOTION_EVENTS;
-        //}
-        //setDescendantFocusability(FOCUS_BEFORE_DESCENDANTS);
-        //mChildren = new View[ARRAY_INITIAL_CAPACITY];
-        //mChildrenCount = 0;
-        //mPersistentDrawingCache = PERSISTENT_SCROLLING_CACHE;
     }
+		*/
+		//Return nothing
+	    mChildren = new View[ARRAY_INITIAL_CAPACITY];
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.679 -0400", hash_original_method = "4BC426CDAC642CD3FACBBAAA9F56EF39", hash_generated_method = "35BB7F816C259A0FD873991A15CEB858")
-    private void initFromAttributes(Context context, AttributeSet attrs) {
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        TypedArray a = context.obtainStyledAttributes(attrs,
-                R.styleable.ViewGroup);
-        final int N = a.getIndexCount();
-for(int i = 0;i < N;i++)
-        {
-            int attr = a.getIndex(i);
-switch(attr){
-            case R.styleable.ViewGroup_clipChildren:
-            setClipChildren(a.getBoolean(attr, true));
-            break;
-            case R.styleable.ViewGroup_clipToPadding:
-            setClipToPadding(a.getBoolean(attr, true));
-            break;
-            case R.styleable.ViewGroup_animationCache:
-            setAnimationCacheEnabled(a.getBoolean(attr, true));
-            break;
-            case R.styleable.ViewGroup_persistentDrawingCache:
-            setPersistentDrawingCache(a.getInt(attr, PERSISTENT_SCROLLING_CACHE));
-            break;
-            case R.styleable.ViewGroup_addStatesFromChildren:
-            setAddStatesFromChildren(a.getBoolean(attr, false));
-            break;
-            case R.styleable.ViewGroup_alwaysDrawnWithCache:
-            setAlwaysDrawnWithCacheEnabled(a.getBoolean(attr, true));
-            break;
-            case R.styleable.ViewGroup_layoutAnimation:
-            int id = a.getResourceId(attr, -1);
-            if(id > 0)            
-            {
-                setLayoutAnimation(AnimationUtils.loadLayoutAnimation(mContext, id));
-            } //End block
-            break;
-            case R.styleable.ViewGroup_descendantFocusability:
-            setDescendantFocusability(DESCENDANT_FOCUSABILITY_FLAGS[a.getInt(attr, 0)]);
-            break;
-            case R.styleable.ViewGroup_splitMotionEvents:
-            setMotionEventSplittingEnabled(a.getBoolean(attr, false));
-            break;
-            case R.styleable.ViewGroup_animateLayoutChanges:
-            boolean animateLayoutChanges = a.getBoolean(attr, false);
-            if(animateLayoutChanges)            
-            {
-                setLayoutTransition(new LayoutTransition());
-            } //End block
-            break;
-}
-        } //End block
-        a.recycle();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    private void initFromAttributes(Context context, AttributeSet attrs){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.680 -0400", hash_original_method = "9DEFF27CA0C7CA0A646DEBC837B35971", hash_generated_method = "C34B27BC25DE2332760E0083A13BC6EC")
-    @ViewDebug.ExportedProperty(category = "focus", mapping = {
-        @ViewDebug.IntToString(from = FOCUS_BEFORE_DESCENDANTS, to = "FOCUS_BEFORE_DESCENDANTS"),
-        @ViewDebug.IntToString(from = FOCUS_AFTER_DESCENDANTS, to = "FOCUS_AFTER_DESCENDANTS"),
-        @ViewDebug.IntToString(from = FOCUS_BLOCK_DESCENDANTS, to = "FOCUS_BLOCK_DESCENDANTS")
-    })
-    public int getDescendantFocusability() {
-        int varDE65DC4F383CC3E2A0CC45BA852286F8_830403016 = (mGroupFlags & FLAG_MASK_FOCUSABILITY);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_176785829 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_176785829;
-        // ---------- Original Method ----------
-        //return mGroupFlags & FLAG_MASK_FOCUSABILITY;
+    @ViewDebug.ExportedProperty(category="focus",mapping={@ViewDebug.IntToString(from=FOCUS_BEFORE_DESCENDANTS,to="FOCUS_BEFORE_DESCENDANTS"),@ViewDebug.IntToString(from=FOCUS_AFTER_DESCENDANTS,to="FOCUS_AFTER_DESCENDANTS"),@ViewDebug.IntToString(from=FOCUS_BLOCK_DESCENDANTS,to="FOCUS_BLOCK_DESCENDANTS")}) public int getDescendantFocusability(){
+		// Original method
+		/*
+		{
+        return mGroupFlags & FLAG_MASK_FOCUSABILITY;
     }
+		*/
+		return 0;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.680 -0400", hash_original_method = "0404A0C2267D357D33DA2838086AAD01", hash_generated_method = "DEF5E065128CF056A9ED1053AFB9FC69")
-    public void setDescendantFocusability(int focusability) {
-switch(focusability){
-        case FOCUS_BEFORE_DESCENDANTS:
-        case FOCUS_AFTER_DESCENDANTS:
-        case FOCUS_BLOCK_DESCENDANTS:
-        break;
-        default:
-        IllegalArgumentException var3C40DAC1F803FF24E2F1E823974A078B_57938362 = new IllegalArgumentException("must be one of FOCUS_BEFORE_DESCENDANTS, "
+    public void setDescendantFocusability(int focusability){
+		// Original method
+		/*
+		{
+        switch (focusability) {
+            case FOCUS_BEFORE_DESCENDANTS:
+            case FOCUS_AFTER_DESCENDANTS:
+            case FOCUS_BLOCK_DESCENDANTS:
+                break;
+            default:
+                throw new IllegalArgumentException("must be one of FOCUS_BEFORE_DESCENDANTS, "
                         + "FOCUS_AFTER_DESCENDANTS, FOCUS_BLOCK_DESCENDANTS");
-        var3C40DAC1F803FF24E2F1E823974A078B_57938362.addTaint(taint);
-        throw var3C40DAC1F803FF24E2F1E823974A078B_57938362;
-}        mGroupFlags &= ~FLAG_MASK_FOCUSABILITY;
+        }
+        mGroupFlags &= ~FLAG_MASK_FOCUSABILITY;
         mGroupFlags |= (focusability & FLAG_MASK_FOCUSABILITY);
-        // ---------- Original Method ----------
-        //switch (focusability) {
-            //case FOCUS_BEFORE_DESCENDANTS:
-            //case FOCUS_AFTER_DESCENDANTS:
-            //case FOCUS_BLOCK_DESCENDANTS:
-                //break;
-            //default:
-                //throw new IllegalArgumentException("must be one of FOCUS_BEFORE_DESCENDANTS, "
-                        //+ "FOCUS_AFTER_DESCENDANTS, FOCUS_BLOCK_DESCENDANTS");
-        //}
-        //mGroupFlags &= ~FLAG_MASK_FOCUSABILITY;
-        //mGroupFlags |= (focusability & FLAG_MASK_FOCUSABILITY);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.680 -0400", hash_original_method = "1894A66AF55103F8230E4E4C184BE483", hash_generated_method = "0DF2718C9DA4C9490637B92CD8F24F5A")
-    @Override
-     void handleFocusGainInternal(int direction, Rect previouslyFocusedRect) {
-        addTaint(previouslyFocusedRect.getTaint());
-        addTaint(direction);
-        if(mFocused != null)        
-        {
+    @Override void handleFocusGainInternal(int direction, Rect previouslyFocusedRect){
+		// Original method
+		/*
+		{
+        if (mFocused != null) {
             mFocused.unFocus();
             mFocused = null;
-        } //End block
+        }
         super.handleFocusGainInternal(direction, previouslyFocusedRect);
-        // ---------- Original Method ----------
-        //if (mFocused != null) {
-            //mFocused.unFocus();
-            //mFocused = null;
-        //}
-        //super.handleFocusGainInternal(direction, previouslyFocusedRect);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.681 -0400", hash_original_method = "18A4940B9B410F6E2A586E7BEB513255", hash_generated_method = "AB793E54F8704CBADDB148B0AD5FCA41")
-    public void requestChildFocus(View child, View focused) {
-        addTaint(focused.getTaint());
-        if(DBG)        
-        {
+    public void requestChildFocus(View child, View focused){
+		// Original method
+		/*
+		{
+        if (DBG) {
             System.out.println(this + " requestChildFocus()");
-        } //End block
-        if(getDescendantFocusability() == FOCUS_BLOCK_DESCENDANTS)        
-        {
+        }
+        if (getDescendantFocusability() == FOCUS_BLOCK_DESCENDANTS) {
             return;
-        } //End block
+        }
         super.unFocus();
-        if(mFocused != child)        
-        {
-            if(mFocused != null)            
-            {
+        if (mFocused != child) {
+            if (mFocused != null) {
                 mFocused.unFocus();
-            } //End block
+            }
             mFocused = child;
-        } //End block
-        if(mParent != null)        
-        {
+        }
+        if (mParent != null) {
             mParent.requestChildFocus(this, focused);
-        } //End block
-        // ---------- Original Method ----------
-        //if (DBG) {
-            //System.out.println(this + " requestChildFocus()");
-        //}
-        //if (getDescendantFocusability() == FOCUS_BLOCK_DESCENDANTS) {
-            //return;
-        //}
-        //super.unFocus();
-        //if (mFocused != child) {
-            //if (mFocused != null) {
-                //mFocused.unFocus();
-            //}
-            //mFocused = child;
-        //}
-        //if (mParent != null) {
-            //mParent.requestChildFocus(this, focused);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.681 -0400", hash_original_method = "B9C632089323DEB68745C50418B61ADF", hash_generated_method = "E39AA42A49D865CB83BA15442C4FA32A")
-    public void focusableViewAvailable(View v) {
-        addTaint(v.getTaint());
-        if(mParent != null
+    public void focusableViewAvailable(View v){
+		// Original method
+		/*
+		{
+        if (mParent != null
                 && (getDescendantFocusability() != FOCUS_BLOCK_DESCENDANTS)
-                && !(isFocused() && getDescendantFocusability() != FOCUS_AFTER_DESCENDANTS))        
-        {
+                && !(isFocused() && getDescendantFocusability() != FOCUS_AFTER_DESCENDANTS)) {
             mParent.focusableViewAvailable(v);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mParent != null
-                //&& (getDescendantFocusability() != FOCUS_BLOCK_DESCENDANTS)
-                //&& !(isFocused() && getDescendantFocusability() != FOCUS_AFTER_DESCENDANTS)) {
-            //mParent.focusableViewAvailable(v);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.682 -0400", hash_original_method = "AAA08A22C93220CA5F37A81C00115203", hash_generated_method = "64F207A4D58E54E302567BD2B8EF87A5")
-    public boolean showContextMenuForChild(View originalView) {
-        addTaint(originalView.getTaint());
-        boolean varD43080C29435A813C96B242E11855E1A_1072117477 = (mParent != null && mParent.showContextMenuForChild(originalView));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_475842121 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_475842121;
-        // ---------- Original Method ----------
-        //return mParent != null && mParent.showContextMenuForChild(originalView);
+    public boolean showContextMenuForChild(View originalView){
+		// Original method
+		/*
+		{
+        return mParent != null && mParent.showContextMenuForChild(originalView);
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.682 -0400", hash_original_method = "8C60B2F96F2B489988C14A93A463DAE3", hash_generated_method = "4878BBAB26283141BEA5D7BA2D9A32FF")
-    public ActionMode startActionModeForChild(View originalView, ActionMode.Callback callback) {
-        addTaint(callback.getTaint());
-        addTaint(originalView.getTaint());
-ActionMode varA4CB90969CA4AE0EAA9D3E65662D33E9_1756295109 =         mParent != null ? mParent.startActionModeForChild(originalView, callback) : null;
-        varA4CB90969CA4AE0EAA9D3E65662D33E9_1756295109.addTaint(taint);
-        return varA4CB90969CA4AE0EAA9D3E65662D33E9_1756295109;
-        // ---------- Original Method ----------
-        //return mParent != null ? mParent.startActionModeForChild(originalView, callback) : null;
+    public ActionMode startActionModeForChild(View originalView, ActionMode.Callback callback){
+		// Original method
+		/*
+		{
+        return mParent != null ? mParent.startActionModeForChild(originalView, callback) : null;
     }
+		*/
+		return null;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.683 -0400", hash_original_method = "32394A633C776A8BC33A6BFC48D3DC37", hash_generated_method = "3D5B8701C9143035F2F0AE37BF34FEFB")
-    public View focusSearch(View focused, int direction) {
-        addTaint(direction);
-        addTaint(focused.getTaint());
-        if(isRootNamespace())        
-        {
-View var4B697582AFCAF9BE54EF2B0BDE95A6DF_1005575597 =             FocusFinder.getInstance().findNextFocus(this, focused, direction);
-            var4B697582AFCAF9BE54EF2B0BDE95A6DF_1005575597.addTaint(taint);
-            return var4B697582AFCAF9BE54EF2B0BDE95A6DF_1005575597;
-        } //End block
-        else
-        if(mParent != null)        
-        {
-View varCFDB149F9AAD9A4DF9AD86DEA2C9AFB0_694454366 =             mParent.focusSearch(focused, direction);
-            varCFDB149F9AAD9A4DF9AD86DEA2C9AFB0_694454366.addTaint(taint);
-            return varCFDB149F9AAD9A4DF9AD86DEA2C9AFB0_694454366;
-        } //End block
-View var540C13E9E156B687226421B24F2DF178_1442977057 =         null;
-        var540C13E9E156B687226421B24F2DF178_1442977057.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1442977057;
-        // ---------- Original Method ----------
-        //if (isRootNamespace()) {
-            //return FocusFinder.getInstance().findNextFocus(this, focused, direction);
-        //} else if (mParent != null) {
-            //return mParent.focusSearch(focused, direction);
-        //}
-        //return null;
+    public View focusSearch(View focused, int direction){
+		// Original method
+		/*
+		{
+        if (isRootNamespace()) {
+            return FocusFinder.getInstance().findNextFocus(this, focused, direction);
+        } else if (mParent != null) {
+            return mParent.focusSearch(focused, direction);
+        }
+        return null;
     }
+		*/
+		return null;
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.683 -0400", hash_original_method = "1A209ACB79681B08302166E2C48344A2", hash_generated_method = "E4A48AA5D8B314B026A1D0EC25DBEA8C")
-    public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean immediate) {
-        addTaint(immediate);
-        addTaint(rectangle.getTaint());
-        addTaint(child.getTaint());
-        boolean var68934A3E9455FA72420237EB05902327_1959756248 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2049922234 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2049922234;
-        // ---------- Original Method ----------
-        //return false;
+    public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean immediate){
+		// Original method
+		/*
+		{
+        return false;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.684 -0400", hash_original_method = "B4AA594F7D6DA64F58B166664BBA4580", hash_generated_method = "ADBD69D29D98E89020CFC46332F38038")
-    public boolean requestSendAccessibilityEvent(View child, AccessibilityEvent event) {
-        addTaint(event.getTaint());
-        addTaint(child.getTaint());
+    public boolean requestSendAccessibilityEvent(View child, AccessibilityEvent event){
+		// Original method
+		/*
+		{
         ViewParent parent = getParent();
-        if(parent == null)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1242138098 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2129980809 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2129980809;
-        } //End block
+        if (parent == null) {
+            return false;
+        }
         final boolean propagate = onRequestSendAccessibilityEvent(child, event);
-        if(!propagate)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1755293869 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1255635408 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1255635408;
-        } //End block
-        boolean var12459EE8A10B8E2F8355E7B18F170464_1558762215 = (parent.requestSendAccessibilityEvent(this, event));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1502585749 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1502585749;
-        // ---------- Original Method ----------
-        //ViewParent parent = getParent();
-        //if (parent == null) {
-            //return false;
-        //}
-        //final boolean propagate = onRequestSendAccessibilityEvent(child, event);
-        //if (!propagate) {
-            //return false;
-        //}
-        //return parent.requestSendAccessibilityEvent(this, event);
+        if (!propagate) {
+            return false;
+        }
+        return parent.requestSendAccessibilityEvent(this, event);
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.684 -0400", hash_original_method = "0D2782B4A269D15DF81200BFDAFE535A", hash_generated_method = "CA095D9C55C9E4D194C6BB088814C4AA")
-    public boolean onRequestSendAccessibilityEvent(View child, AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(event.getTaint());
-        addTaint(child.getTaint());
-        if(mAccessibilityDelegate != null)        
-        {
-            boolean varDEC6159CC044C7CB7315783B7FC62C32_1314521731 = (mAccessibilityDelegate.onRequestSendAccessibilityEvent(this, child, event));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_34424331 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_34424331;
-        } //End block
-        else
-        {
-            boolean varA5AE8846A1EE623EFB55210EBDCBCF74_429320952 = (onRequestSendAccessibilityEventInternal(child, event));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1543575565 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1543575565;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mAccessibilityDelegate != null) {
-            //return mAccessibilityDelegate.onRequestSendAccessibilityEvent(this, child, event);
-        //} else {
-            //return onRequestSendAccessibilityEventInternal(child, event);
-        //}
+    public boolean onRequestSendAccessibilityEvent(View child, AccessibilityEvent event){
+		// Original method
+		/*
+		{
+        if (mAccessibilityDelegate != null) {
+            return mAccessibilityDelegate.onRequestSendAccessibilityEvent(this, child, event);
+        } else {
+            return onRequestSendAccessibilityEventInternal(child, event);
+        }
     }
+		*/
+		return false;
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.685 -0400", hash_original_method = "F0DFCA5DE1F330F511BBFF62182D5BD4", hash_generated_method = "6AA991A61EE5A63412F67CAD8170FEE9")
-     boolean onRequestSendAccessibilityEventInternal(View child, AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(event.getTaint());
-        addTaint(child.getTaint());
-        boolean varB326B5062B2F0E69046810717534CB09_151162921 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_87584133 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_87584133;
-        // ---------- Original Method ----------
-        //return true;
+    boolean onRequestSendAccessibilityEventInternal(View child, AccessibilityEvent event){
+		// Original method
+		/*
+		{
+        return true;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.685 -0400", hash_original_method = "E35CCEA2DF29F8696C548F55094B5B73", hash_generated_method = "0B39CE49369DD0A53DE6F3E488CCE69E")
-    @Override
-    public boolean dispatchUnhandledMove(View focused, int direction) {
-        addTaint(direction);
-        addTaint(focused.getTaint());
-        boolean var4788D98127D1C9314FAE41C403A0378C_2331466 = (mFocused != null &&
-                mFocused.dispatchUnhandledMove(focused, direction));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1389341403 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1389341403;
-        // ---------- Original Method ----------
-        //return mFocused != null &&
-                //mFocused.dispatchUnhandledMove(focused, direction);
+    @Override public boolean dispatchUnhandledMove(View focused, int direction){
+		// Original method
+		/*
+		{
+        return mFocused != null &&
+                mFocused.dispatchUnhandledMove(focused, direction);
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.685 -0400", hash_original_method = "1A8D22FF280DB81B170D27815BE7BEAA", hash_generated_method = "5A562C1CDA7C20F09432B0D6B2E24713")
-    public void clearChildFocus(View child) {
-        addTaint(child.getTaint());
-        if(DBG)        
-        {
+    public void clearChildFocus(View child){
+		// Original method
+		/*
+		{
+        if (DBG) {
             System.out.println(this + " clearChildFocus()");
-        } //End block
+        }
         mFocused = null;
-        if(mParent != null)        
-        {
+        if (mParent != null) {
             mParent.clearChildFocus(this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (DBG) {
-            //System.out.println(this + " clearChildFocus()");
-        //}
-        //mFocused = null;
-        //if (mParent != null) {
-            //mParent.clearChildFocus(this);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.686 -0400", hash_original_method = "2A2B29C64ED25C5483BB6B32C5BD1628", hash_generated_method = "967996658594C0B49C0157EF5C9421B8")
-    @Override
-    public void clearFocus() {
+    @Override public void clearFocus(){
+		// Original method
+		/*
+		{
         super.clearFocus();
-        if(mFocused != null)        
-        {
+        if (mFocused != null) {
             mFocused.clearFocus();
-        } //End block
-        // ---------- Original Method ----------
-        //super.clearFocus();
-        //if (mFocused != null) {
-            //mFocused.clearFocus();
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.686 -0400", hash_original_method = "AD8CA09F957410559E0C3DF16ADDE822", hash_generated_method = "0DEB98F8BE6E15006175695D3CDF17F5")
-    @Override
-     void unFocus() {
-        if(DBG)        
-        {
+    @Override void unFocus(){
+		// Original method
+		/*
+		{
+        if (DBG) {
             System.out.println(this + " unFocus()");
-        } //End block
+        }
         super.unFocus();
-        if(mFocused != null)        
-        {
+        if (mFocused != null) {
             mFocused.unFocus();
-        } //End block
+        }
         mFocused = null;
-        // ---------- Original Method ----------
-        //if (DBG) {
-            //System.out.println(this + " unFocus()");
-        //}
-        //super.unFocus();
-        //if (mFocused != null) {
-            //mFocused.unFocus();
-        //}
-        //mFocused = null;
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.686 -0400", hash_original_method = "F6AEE91365C496A95D4F4B1572422CF5", hash_generated_method = "B49D02EB6D363EA0F1453118F8C4D396")
-    public View getFocusedChild() {
-View var2D88D1CA663928F256EE13E1B5302149_688022735 =         mFocused;
-        var2D88D1CA663928F256EE13E1B5302149_688022735.addTaint(taint);
-        return var2D88D1CA663928F256EE13E1B5302149_688022735;
-        // ---------- Original Method ----------
-        //return mFocused;
-    }
+    public View getFocusedChild(){
+        return mFocused;
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.686 -0400", hash_original_method = "3D9AAFDE8E8826B256A10D32D774D94B", hash_generated_method = "841AF3F4D1AB43675605324DF5B59274")
-    @Override
-    public boolean hasFocus() {
-        boolean var9F9F70BB63D42AA061212110BAF2CBC7_1435221451 = ((mPrivateFlags & FOCUSED) != 0 || mFocused != null);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_815010588 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_815010588;
-        // ---------- Original Method ----------
-        //return (mPrivateFlags & FOCUSED) != 0 || mFocused != null;
+    @Override public boolean hasFocus(){
+		// Original method
+		/*
+		{
+        return (mPrivateFlags & FOCUSED) != 0 || mFocused != null;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.687 -0400", hash_original_method = "8D50679A3D30F96CD0297A05342EFA70", hash_generated_method = "A5F291A960A0FBFA31411539AC6CF869")
-    @Override
-    public View findFocus() {
-        if(DBG)        
-        {
+    @Override public View findFocus(){
+		// Original method
+		/*
+		{
+        if (DBG) {
             System.out.println("Find focus in " + this + ": flags="
                     + isFocused() + ", child=" + mFocused);
-        } //End block
-        if(isFocused())        
-        {
-View var72A74007B2BE62B849F475C7BDA4658B_1938784394 =             this;
-            var72A74007B2BE62B849F475C7BDA4658B_1938784394.addTaint(taint);
-            return var72A74007B2BE62B849F475C7BDA4658B_1938784394;
-        } //End block
-        if(mFocused != null)        
-        {
-View varFE641E0984CCFFF141AB1C7E4A7E0A0C_1564732436 =             mFocused.findFocus();
-            varFE641E0984CCFFF141AB1C7E4A7E0A0C_1564732436.addTaint(taint);
-            return varFE641E0984CCFFF141AB1C7E4A7E0A0C_1564732436;
-        } //End block
-View var540C13E9E156B687226421B24F2DF178_1780616615 =         null;
-        var540C13E9E156B687226421B24F2DF178_1780616615.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1780616615;
-        // ---------- Original Method ----------
-        //if (DBG) {
-            //System.out.println("Find focus in " + this + ": flags="
-                    //+ isFocused() + ", child=" + mFocused);
-        //}
-        //if (isFocused()) {
-            //return this;
-        //}
-        //if (mFocused != null) {
-            //return mFocused.findFocus();
-        //}
-        //return null;
+        }
+        if (isFocused()) {
+            return this;
+        }
+        if (mFocused != null) {
+            return mFocused.findFocus();
+        }
+        return null;
     }
+		*/
+		return null;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.687 -0400", hash_original_method = "415824CC4E37F2B08D458BE00E3F5A3F", hash_generated_method = "A70AC5D1363C8B0F436B4E39A339A57D")
-    @Override
-    public boolean hasFocusable() {
-        if((mViewFlags & VISIBILITY_MASK) != VISIBLE)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1723572418 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2030018002 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2030018002;
-        } //End block
-        if(isFocusable())        
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_952437947 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1757076407 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1757076407;
-        } //End block
+    @Override public boolean hasFocusable(){
+		// Original method
+		/*
+		{
+        if ((mViewFlags & VISIBILITY_MASK) != VISIBLE) {
+            return false;
+        }
+        if (isFocusable()) {
+            return true;
+        }
         final int descendantFocusability = getDescendantFocusability();
-        if(descendantFocusability != FOCUS_BLOCK_DESCENDANTS)        
-        {
+        if (descendantFocusability != FOCUS_BLOCK_DESCENDANTS) {
             final int count = mChildrenCount;
             final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-            {
+            for (int i = 0; i < count; i++) {
                 final View child = children[i];
-                if(child.hasFocusable())                
-                {
-                    boolean varB326B5062B2F0E69046810717534CB09_1793553457 = (true);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_236391380 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_236391380;
-                } //End block
-            } //End block
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_819902683 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_393038370 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_393038370;
-        // ---------- Original Method ----------
-        //if ((mViewFlags & VISIBILITY_MASK) != VISIBLE) {
-            //return false;
-        //}
-        //if (isFocusable()) {
-            //return true;
-        //}
-        //final int descendantFocusability = getDescendantFocusability();
-        //if (descendantFocusability != FOCUS_BLOCK_DESCENDANTS) {
-            //final int count = mChildrenCount;
-            //final View[] children = mChildren;
-            //for (int i = 0; i < count; i++) {
-                //final View child = children[i];
-                //if (child.hasFocusable()) {
-                    //return true;
-                //}
-            //}
-        //}
-        //return false;
+                if (child.hasFocusable()) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.688 -0400", hash_original_method = "2428CCD79B4CEE814D080BAF1161F8B9", hash_generated_method = "2C2945E0908F0098815D4E600E58A181")
-    @Override
-    public void addFocusables(ArrayList<View> views, int direction) {
-        addTaint(direction);
-        addTaint(views.getTaint());
+    @Override public void addFocusables(ArrayList<View> views, int direction){
+		// Original method
+		/*
+		{
         addFocusables(views, direction, FOCUSABLES_TOUCH_MODE);
-        // ---------- Original Method ----------
-        //addFocusables(views, direction, FOCUSABLES_TOUCH_MODE);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.688 -0400", hash_original_method = "A281D125D4DD0434A87F479D62DD0361", hash_generated_method = "E3B33EFD068330A690072A4E981B01DE")
-    @Override
-    public void addFocusables(ArrayList<View> views, int direction, int focusableMode) {
-        addTaint(focusableMode);
-        addTaint(direction);
-        addTaint(views.getTaint());
-        final int focusableCount = views.size();
-        final int descendantFocusability = getDescendantFocusability();
-        if(descendantFocusability != FOCUS_BLOCK_DESCENDANTS)        
-        {
-            final int count = mChildrenCount;
-            final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-            {
-                final View child = children[i];
-                if((child.mViewFlags & VISIBILITY_MASK) == VISIBLE)                
-                {
-                    child.addFocusables(views, direction, focusableMode);
-                } //End block
-            } //End block
-        } //End block
-        if(descendantFocusability != FOCUS_AFTER_DESCENDANTS ||
-                (focusableCount == views.size()))        
-        {
-            super.addFocusables(views, direction, focusableMode);
-        } //End block
-        // ---------- Original Method ----------
-        //final int focusableCount = views.size();
-        //final int descendantFocusability = getDescendantFocusability();
-        //if (descendantFocusability != FOCUS_BLOCK_DESCENDANTS) {
-            //final int count = mChildrenCount;
-            //final View[] children = mChildren;
-            //for (int i = 0; i < count; i++) {
-                //final View child = children[i];
-                //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE) {
-                    //child.addFocusables(views, direction, focusableMode);
-                //}
-            //}
-        //}
-        //if (
-            //descendantFocusability != FOCUS_AFTER_DESCENDANTS ||
-                //(focusableCount == views.size())) {
-            //super.addFocusables(views, direction, focusableMode);
-        //}
-    }
+    @Override public void addFocusables(ArrayList<View> views, int direction, int focusableMode){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.689 -0400", hash_original_method = "01B0DFF5DFF6A04EF473202885B21AEA", hash_generated_method = "2AEAE5A67EFB0CAD49CF9A7489CF3612")
-    @Override
-    public void findViewsWithText(ArrayList<View> outViews, CharSequence text, int flags) {
-        addTaint(flags);
-        addTaint(text.getTaint());
-        addTaint(outViews.getTaint());
+    @Override public void findViewsWithText(ArrayList<View> outViews, CharSequence text, int flags){
+		// Original method
+		/*
+		{
         super.findViewsWithText(outViews, text, flags);
         final int childrenCount = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < childrenCount;i++)
-        {
+        for (int i = 0; i < childrenCount; i++) {
             View child = children[i];
-            if((child.mViewFlags & VISIBILITY_MASK) == VISIBLE
-                    && (child.mPrivateFlags & IS_ROOT_NAMESPACE) == 0)            
-            {
+            if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE
+                    && (child.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
                 child.findViewsWithText(outViews, text, flags);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //super.findViewsWithText(outViews, text, flags);
-        //final int childrenCount = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < childrenCount; i++) {
-            //View child = children[i];
-            //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE
-                    //&& (child.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
-                //child.findViewsWithText(outViews, text, flags);
-            //}
-        //}
+            }
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.689 -0400", hash_original_method = "E63784DE90D03F6D10488691622E702B", hash_generated_method = "5D0C197459B5289E56568E115D255908")
-    @Override
-     View findViewByAccessibilityIdTraversal(int accessibilityId) {
-        addTaint(accessibilityId);
+    @Override View findViewByAccessibilityIdTraversal(int accessibilityId){
+		// Original method
+		/*
+		{
         View foundView = super.findViewByAccessibilityIdTraversal(accessibilityId);
-        if(foundView != null)        
-        {
-View varC924E529DE927E973A786678D4C8F00A_756429314 =             foundView;
-            varC924E529DE927E973A786678D4C8F00A_756429314.addTaint(taint);
-            return varC924E529DE927E973A786678D4C8F00A_756429314;
-        } //End block
+        if (foundView != null) {
+            return foundView;
+        }
         final int childrenCount = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < childrenCount;i++)
-        {
+        for (int i = 0; i < childrenCount; i++) {
             View child = children[i];
             foundView = child.findViewByAccessibilityIdTraversal(accessibilityId);
-            if(foundView != null)            
-            {
-View varC924E529DE927E973A786678D4C8F00A_1950093990 =                 foundView;
-                varC924E529DE927E973A786678D4C8F00A_1950093990.addTaint(taint);
-                return varC924E529DE927E973A786678D4C8F00A_1950093990;
-            } //End block
-        } //End block
-View var540C13E9E156B687226421B24F2DF178_1850906458 =         null;
-        var540C13E9E156B687226421B24F2DF178_1850906458.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1850906458;
-        // ---------- Original Method ----------
-        //View foundView = super.findViewByAccessibilityIdTraversal(accessibilityId);
-        //if (foundView != null) {
-            //return foundView;
-        //}
-        //final int childrenCount = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < childrenCount; i++) {
-            //View child = children[i];
-            //foundView = child.findViewByAccessibilityIdTraversal(accessibilityId);
-            //if (foundView != null) {
-                //return foundView;
-            //}
-        //}
-        //return null;
+            if (foundView != null) {
+                return foundView;
+            }
+        }
+        return null;
     }
+		*/
+		return null;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.690 -0400", hash_original_method = "8947E2F3FD45B1E1CD9A8BF9F902DE4D", hash_generated_method = "E2966F624CBF3734899A5D579E4275A6")
-    @Override
-    public void dispatchWindowFocusChanged(boolean hasFocus) {
-        addTaint(hasFocus);
+    @Override public void dispatchWindowFocusChanged(boolean hasFocus){
+		// Original method
+		/*
+		{
         super.dispatchWindowFocusChanged(hasFocus);
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             children[i].dispatchWindowFocusChanged(hasFocus);
-        } //End block
-        // ---------- Original Method ----------
-        //super.dispatchWindowFocusChanged(hasFocus);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchWindowFocusChanged(hasFocus);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.690 -0400", hash_original_method = "3C050A87A5AA11FCC905DB1242C91519", hash_generated_method = "72D8CB7938F0C780D99FE664211DDA3D")
-    @Override
-    public void addTouchables(ArrayList<View> views) {
-        addTaint(views.getTaint());
+    @Override public void addTouchables(ArrayList<View> views){
+		// Original method
+		/*
+		{
         super.addTouchables(views);
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             final View child = children[i];
-            if((child.mViewFlags & VISIBILITY_MASK) == VISIBLE)            
-            {
+            if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE) {
                 child.addTouchables(views);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //super.addTouchables(views);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //final View child = children[i];
-            //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE) {
-                //child.addTouchables(views);
-            //}
-        //}
+            }
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.691 -0400", hash_original_method = "E3ECA4D0183F28678AE9A73BEBE4A4C4", hash_generated_method = "F40E01684BD5314F57D19ED56D0593E7")
-    @Override
-    public void dispatchDisplayHint(int hint) {
-        addTaint(hint);
+    @Override public void dispatchDisplayHint(int hint){
+		// Original method
+		/*
+		{
         super.dispatchDisplayHint(hint);
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             children[i].dispatchDisplayHint(hint);
-        } //End block
-        // ---------- Original Method ----------
-        //super.dispatchDisplayHint(hint);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchDisplayHint(hint);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.691 -0400", hash_original_method = "39046505104385736A9526E25AC3965D", hash_generated_method = "C2250440708CA62DC29F0FE3B9C18947")
-    protected void onChildVisibilityChanged(View child, int visibility) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(visibility);
-        addTaint(child.getTaint());
-        if(mTransition != null)        
-        {
-            if(visibility == VISIBLE)            
-            {
-                mTransition.showChild(this, child);
-            } //End block
-            else
-            {
-                mTransition.hideChild(this, child);
-            } //End block
-            if(visibility != VISIBLE)            
-            {
-                if(mVisibilityChangingChildren == null)                
-                {
-                    mVisibilityChangingChildren = new ArrayList<View>();
-                } //End block
-                mVisibilityChangingChildren.add(child);
-                if(mTransitioningViews != null && mTransitioningViews.contains(child))                
-                {
-                    addDisappearingView(child);
-                } //End block
-            } //End block
-        } //End block
-        if(mCurrentDrag != null)        
-        {
-            if(visibility == VISIBLE)            
-            {
-                notifyChildOfDrag(child);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    protected void onChildVisibilityChanged(View child, int visibility){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.692 -0400", hash_original_method = "66EC1DB8C5DE29B0D05D23F4BE080169", hash_generated_method = "7584F91F526D0E9FDAE3D2216F4922A6")
-    @Override
-    protected void dispatchVisibilityChanged(View changedView, int visibility) {
-        addTaint(visibility);
-        addTaint(changedView.getTaint());
+    @Override protected void dispatchVisibilityChanged(View changedView, int visibility){
+		// Original method
+		/*
+		{
         super.dispatchVisibilityChanged(changedView, visibility);
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             children[i].dispatchVisibilityChanged(changedView, visibility);
-        } //End block
-        // ---------- Original Method ----------
-        //super.dispatchVisibilityChanged(changedView, visibility);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchVisibilityChanged(changedView, visibility);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.692 -0400", hash_original_method = "110C8ADF44E81EF076420285F756776D", hash_generated_method = "7B2D6461870BDB6F18ED19E92FEBE03F")
-    @Override
-    public void dispatchWindowVisibilityChanged(int visibility) {
-        addTaint(visibility);
+    @Override public void dispatchWindowVisibilityChanged(int visibility){
+		// Original method
+		/*
+		{
         super.dispatchWindowVisibilityChanged(visibility);
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             children[i].dispatchWindowVisibilityChanged(visibility);
-        } //End block
-        // ---------- Original Method ----------
-        //super.dispatchWindowVisibilityChanged(visibility);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchWindowVisibilityChanged(visibility);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.692 -0400", hash_original_method = "4BA014AA7FB311F49457CF496AD5B6EF", hash_generated_method = "1AC5012DC3B50E95BE35B0E03DC01909")
-    @Override
-    public void dispatchConfigurationChanged(Configuration newConfig) {
-        addTaint(newConfig.getTaint());
+    @Override public void dispatchConfigurationChanged(Configuration newConfig){
+		// Original method
+		/*
+		{
         super.dispatchConfigurationChanged(newConfig);
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             children[i].dispatchConfigurationChanged(newConfig);
-        } //End block
-        // ---------- Original Method ----------
-        //super.dispatchConfigurationChanged(newConfig);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchConfigurationChanged(newConfig);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.692 -0400", hash_original_method = "F881B5C75EE06984153060972C295D8F", hash_generated_method = "36D3E055CFEE365CDE6F1C4B38C100A5")
-    public void recomputeViewAttributes(View child) {
-        addTaint(child.getTaint());
-        if(mAttachInfo != null && !mAttachInfo.mRecomputeGlobalAttributes)        
-        {
+    public void recomputeViewAttributes(View child){
+		// Original method
+		/*
+		{
+        if (mAttachInfo != null && !mAttachInfo.mRecomputeGlobalAttributes) {
             ViewParent parent = mParent;
-            if(parent != null)            
-            parent.recomputeViewAttributes(this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mAttachInfo != null && !mAttachInfo.mRecomputeGlobalAttributes) {
-            //ViewParent parent = mParent;
-            //if (parent != null) parent.recomputeViewAttributes(this);
-        //}
+            if (parent != null) parent.recomputeViewAttributes(this);
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.692 -0400", hash_original_method = "99C97332C863B663BFCA518BE284DB35", hash_generated_method = "0FA9C678E1D4EB475CE7DB4F1B76FA86")
-    @Override
-     void dispatchCollectViewAttributes(int visibility) {
-        addTaint(visibility);
+    @Override void dispatchCollectViewAttributes(int visibility){
+		// Original method
+		/*
+		{
         visibility |= mViewFlags&VISIBILITY_MASK;
         super.dispatchCollectViewAttributes(visibility);
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             children[i].dispatchCollectViewAttributes(visibility);
-        } //End block
-        // ---------- Original Method ----------
-        //visibility |= mViewFlags&VISIBILITY_MASK;
-        //super.dispatchCollectViewAttributes(visibility);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchCollectViewAttributes(visibility);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.693 -0400", hash_original_method = "C5DA1A7419AFEADC86BA0783BA235334", hash_generated_method = "6CD0C12DBAE5A84909F46187A1AB1977")
-    public void bringChildToFront(View child) {
-        addTaint(child.getTaint());
+    public void bringChildToFront(View child){
+		// Original method
+		/*
+		{
         int index = indexOfChild(child);
-        if(index >= 0)        
-        {
+        if (index >= 0) {
             removeFromArray(index);
             addInArray(child, mChildrenCount);
             child.mParent = this;
-        } //End block
-        // ---------- Original Method ----------
-        //int index = indexOfChild(child);
-        //if (index >= 0) {
-            //removeFromArray(index);
-            //addInArray(child, mChildrenCount);
-            //child.mParent = this;
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.694 -0400", hash_original_method = "0B94D743FFC1DE288527F02F6E8345CD", hash_generated_method = "F77D35FE18854DC6DA46DA90897E73BE")
-    @Override
-    public boolean dispatchDragEvent(DragEvent event) {
-        boolean retval = false;
-        final float tx = event.mX;
-        final float ty = event.mY;
-        ViewRootImpl root = getViewRootImpl();
-switch(event.mAction){
-        case DragEvent.ACTION_DRAG_STARTED:
-        {
-            mCurrentDragView = null;
-            mCurrentDrag = DragEvent.obtain(event);
-            if(mDragNotifiedChildren == null)            
-            {
-                mDragNotifiedChildren = new HashSet<View>();
-            } //End block
-            else
-            {
-                mDragNotifiedChildren.clear();
-            } //End block
-            mChildAcceptsDrag = false;
-            final int count = mChildrenCount;
-            final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-            {
-                final View child = children[i];
-                child.mPrivateFlags2 &= ~View.DRAG_MASK;
-                if(child.getVisibility() == VISIBLE)                
-                {
-                    final boolean handled = notifyChildOfDrag(children[i]);
-                    if(handled)                    
-                    {
-                        mChildAcceptsDrag = true;
-                    } //End block
-                } //End block
-            } //End block
-            if(mChildAcceptsDrag)            
-            {
-                retval = true;
-            } //End block
-        } //End block
-        break;
-        case DragEvent.ACTION_DRAG_ENDED:
-        {
-            if(mDragNotifiedChildren != null)            
-            {
-for(View child : mDragNotifiedChildren)
-                {
-                    child.dispatchDragEvent(event);
-                    child.mPrivateFlags2 &= ~View.DRAG_MASK;
-                    child.refreshDrawableState();
-                } //End block
-                mDragNotifiedChildren.clear();
-                mCurrentDrag.recycle();
-                mCurrentDrag = null;
-            } //End block
-            if(mChildAcceptsDrag)            
-            {
-                retval = true;
-            } //End block
-        } //End block
-        break;
-        case DragEvent.ACTION_DRAG_LOCATION:
-        {
-            final View target = findFrontmostDroppableChildAt(event.mX, event.mY, mLocalPoint);
-            if(mCurrentDragView != target)            
-            {
-                root.setDragFocus(target);
-                final int action = event.mAction;
-                if(mCurrentDragView != null)                
-                {
-                    final View view = mCurrentDragView;
-                    event.mAction = DragEvent.ACTION_DRAG_EXITED;
-                    view.dispatchDragEvent(event);
-                    view.mPrivateFlags2 &= ~View.DRAG_HOVERED;
-                    view.refreshDrawableState();
-                } //End block
-                mCurrentDragView = target;
-                if(target != null)                
-                {
-                    event.mAction = DragEvent.ACTION_DRAG_ENTERED;
-                    target.dispatchDragEvent(event);
-                    target.mPrivateFlags2 |= View.DRAG_HOVERED;
-                    target.refreshDrawableState();
-                } //End block
-                event.mAction = action;
-            } //End block
-            if(target != null)            
-            {
-                event.mX = mLocalPoint.x;
-                event.mY = mLocalPoint.y;
-                retval = target.dispatchDragEvent(event);
-                event.mX = tx;
-                event.mY = ty;
-            } //End block
-        } //End block
-        break;
-        case DragEvent.ACTION_DRAG_EXITED:
-        {
-            if(mCurrentDragView != null)            
-            {
-                final View view = mCurrentDragView;
-                view.dispatchDragEvent(event);
-                view.mPrivateFlags2 &= ~View.DRAG_HOVERED;
-                view.refreshDrawableState();
-                mCurrentDragView = null;
-            } //End block
-        } //End block
-        break;
-        case DragEvent.ACTION_DROP:
-        {
-            if(ViewDebug.DEBUG_DRAG)            
-            Log.d(View.VIEW_LOG_TAG, "Drop event: " + event);
-            View target = findFrontmostDroppableChildAt(event.mX, event.mY, mLocalPoint);
-            if(target != null)            
-            {
-                if(ViewDebug.DEBUG_DRAG)                
-                Log.d(View.VIEW_LOG_TAG, "   dispatch drop to " + target);
-                event.mX = mLocalPoint.x;
-                event.mY = mLocalPoint.y;
-                retval = target.dispatchDragEvent(event);
-                event.mX = tx;
-                event.mY = ty;
-            } //End block
-            else
-            {
-                if(ViewDebug.DEBUG_DRAG)                
-                {
-                    Log.d(View.VIEW_LOG_TAG, "   not dropped on an accepting view");
-                } //End block
-            } //End block
-        } //End block
-        break;
-}        if(!retval)        
-        {
-            retval = super.dispatchDragEvent(event);
-        } //End block
-        boolean var020B759ADEF679A47CB9AFE965BB2314_401588903 = (retval);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_598371938 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_598371938;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    @Override public boolean dispatchDragEvent(DragEvent event){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.694 -0400", hash_original_method = "A61A140E816A1C908C27B7F105ECC965", hash_generated_method = "016B9F04B3C55B8BDF9E81D56DF9FC17")
-     View findFrontmostDroppableChildAt(float x, float y, PointF outLocalPoint) {
-        addTaint(outLocalPoint.getTaint());
-        addTaint(y);
-        addTaint(x);
+    View findFrontmostDroppableChildAt(float x, float y, PointF outLocalPoint){
+		// Original method
+		/*
+		{
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i = count - 1;i >= 0;i--)
-        {
+        for (int i = count - 1; i >= 0; i--) {
             final View child = children[i];
-            if(!child.canAcceptDrag())            
-            {
+            if (!child.canAcceptDrag()) {
                 continue;
-            } //End block
-            if(isTransformedTouchPointInView(x, y, child, outLocalPoint))            
-            {
-View var73902FD3E151130B4329B76EF04D2A54_1237884470 =                 child;
-                var73902FD3E151130B4329B76EF04D2A54_1237884470.addTaint(taint);
-                return var73902FD3E151130B4329B76EF04D2A54_1237884470;
-            } //End block
-        } //End block
-View var540C13E9E156B687226421B24F2DF178_2124142253 =         null;
-        var540C13E9E156B687226421B24F2DF178_2124142253.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_2124142253;
-        // ---------- Original Method ----------
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = count - 1; i >= 0; i--) {
-            //final View child = children[i];
-            //if (!child.canAcceptDrag()) {
-                //continue;
-            //}
-            //if (isTransformedTouchPointInView(x, y, child, outLocalPoint)) {
-                //return child;
-            //}
-        //}
-        //return null;
+            }
+            if (isTransformedTouchPointInView(x, y, child, outLocalPoint)) {
+                return child;
+            }
+        }
+        return null;
     }
+		*/
+		return null;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.695 -0400", hash_original_method = "01B6DB1535B88ABBDA0897E44597D185", hash_generated_method = "55701181AA4B3653434CE0BA92AEA8F5")
-     boolean notifyChildOfDrag(View child) {
-        addTaint(child.getTaint());
-        if(ViewDebug.DEBUG_DRAG)        
-        {
+    boolean notifyChildOfDrag(View child){
+		// Original method
+		/*
+		{
+        if (ViewDebug.DEBUG_DRAG) {
             Log.d(View.VIEW_LOG_TAG, "Sending drag-started to view: " + child);
-        } //End block
+        }
         boolean canAccept = false;
-        if(! mDragNotifiedChildren.contains(child))        
-        {
+        if (! mDragNotifiedChildren.contains(child)) {
             mDragNotifiedChildren.add(child);
             canAccept = child.dispatchDragEvent(mCurrentDrag);
-            if(canAccept && !child.canAcceptDrag())            
-            {
+            if (canAccept && !child.canAcceptDrag()) {
                 child.mPrivateFlags2 |= View.DRAG_CAN_ACCEPT;
                 child.refreshDrawableState();
-            } //End block
-        } //End block
-        boolean var7C160A680BF8FE3A1442CDA61F51A3C7_238317927 = (canAccept);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_60200231 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_60200231;
-        // ---------- Original Method ----------
-        //if (ViewDebug.DEBUG_DRAG) {
-            //Log.d(View.VIEW_LOG_TAG, "Sending drag-started to view: " + child);
-        //}
-        //boolean canAccept = false;
-        //if (! mDragNotifiedChildren.contains(child)) {
-            //mDragNotifiedChildren.add(child);
-            //canAccept = child.dispatchDragEvent(mCurrentDrag);
-            //if (canAccept && !child.canAcceptDrag()) {
-                //child.mPrivateFlags2 |= View.DRAG_CAN_ACCEPT;
-                //child.refreshDrawableState();
-            //}
-        //}
-        //return canAccept;
+            }
+        }
+        return canAccept;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.695 -0400", hash_original_method = "6EA017C64305C1BE29415F2C64CCEDD4", hash_generated_method = "01C5EBE119D3E8069202A4D7E0CB580E")
-    @Override
-    public void dispatchSystemUiVisibilityChanged(int visible) {
-        addTaint(visible);
+    @Override public void dispatchSystemUiVisibilityChanged(int visible){
+		// Original method
+		/*
+		{
         super.dispatchSystemUiVisibilityChanged(visible);
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i=0;i <count;i++)
-        {
+        for (int i=0; i <count; i++) {
             final View child = children[i];
             child.dispatchSystemUiVisibilityChanged(visible);
-        } //End block
-        // ---------- Original Method ----------
-        //super.dispatchSystemUiVisibilityChanged(visible);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i=0; i <count; i++) {
-            //final View child = children[i];
-            //child.dispatchSystemUiVisibilityChanged(visible);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.695 -0400", hash_original_method = "5F03A98EA003A081CE87491B56EF094D", hash_generated_method = "488407417D53F766539D16511C0B5CA3")
-    @Override
-     void updateLocalSystemUiVisibility(int localValue, int localChanges) {
-        addTaint(localChanges);
-        addTaint(localValue);
+    @Override void updateLocalSystemUiVisibility(int localValue, int localChanges){
+		// Original method
+		/*
+		{
         super.updateLocalSystemUiVisibility(localValue, localChanges);
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i=0;i <count;i++)
-        {
+        for (int i=0; i <count; i++) {
             final View child = children[i];
             child.updateLocalSystemUiVisibility(localValue, localChanges);
-        } //End block
-        // ---------- Original Method ----------
-        //super.updateLocalSystemUiVisibility(localValue, localChanges);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i=0; i <count; i++) {
-            //final View child = children[i];
-            //child.updateLocalSystemUiVisibility(localValue, localChanges);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.695 -0400", hash_original_method = "1796A9ED58069BDF38C7C072FE20CF71", hash_generated_method = "A6C45C9FC7B2FDE246D6275527517079")
-    @Override
-    public boolean dispatchKeyEventPreIme(KeyEvent event) {
-        addTaint(event.getTaint());
-        if((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS))        
-        {
-            boolean varAD26EBB665BD1801922446CC5B67330F_10125025 = (super.dispatchKeyEventPreIme(event));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_611475659 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_611475659;
-        } //End block
-        else
-        if(mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS)        
-        {
-            boolean var67EB3F9E393515134372804C53C9C518_1336604873 = (mFocused.dispatchKeyEventPreIme(event));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2087371439 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2087371439;
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1941029591 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_508441781 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_508441781;
-        // ---------- Original Method ----------
-        //if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
-            //return super.dispatchKeyEventPreIme(event);
-        //} else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
-            //return mFocused.dispatchKeyEventPreIme(event);
-        //}
-        //return false;
+    @Override public boolean dispatchKeyEventPreIme(KeyEvent event){
+		// Original method
+		/*
+		{
+        if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
+            return super.dispatchKeyEventPreIme(event);
+        } else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
+            return mFocused.dispatchKeyEventPreIme(event);
+        }
+        return false;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.695 -0400", hash_original_method = "1E41A7E6E3EFA9117FFB3A56DB417CA0", hash_generated_method = "D7F6978B1CCC03482CD7B2A98A4C7CE5")
-    @Override
-    public boolean dispatchKeyEvent(KeyEvent event) {
-        addTaint(event.getTaint());
-        if(mInputEventConsistencyVerifier != null)        
-        {
+    @Override public boolean dispatchKeyEvent(KeyEvent event){
+		// Original method
+		/*
+		{
+        if (mInputEventConsistencyVerifier != null) {
             mInputEventConsistencyVerifier.onKeyEvent(event, 1);
-        } //End block
-        if((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS))        
-        {
-            if(super.dispatchKeyEvent(event))            
-            {
-                boolean varB326B5062B2F0E69046810717534CB09_1766769344 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_507574462 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_507574462;
-            } //End block
-        } //End block
-        else
-        if(mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS)        
-        {
-            if(mFocused.dispatchKeyEvent(event))            
-            {
-                boolean varB326B5062B2F0E69046810717534CB09_951500092 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_358692542 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_358692542;
-            } //End block
-        } //End block
-        if(mInputEventConsistencyVerifier != null)        
-        {
+        }
+        if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
+            if (super.dispatchKeyEvent(event)) {
+                return true;
+            }
+        } else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
+            if (mFocused.dispatchKeyEvent(event)) {
+                return true;
+            }
+        }
+        if (mInputEventConsistencyVerifier != null) {
             mInputEventConsistencyVerifier.onUnhandledEvent(event, 1);
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_357377345 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1764967977 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1764967977;
-        // ---------- Original Method ----------
-        //if (mInputEventConsistencyVerifier != null) {
-            //mInputEventConsistencyVerifier.onKeyEvent(event, 1);
-        //}
-        //if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
-            //if (super.dispatchKeyEvent(event)) {
-                //return true;
-            //}
-        //} else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
-            //if (mFocused.dispatchKeyEvent(event)) {
-                //return true;
-            //}
-        //}
-        //if (mInputEventConsistencyVerifier != null) {
-            //mInputEventConsistencyVerifier.onUnhandledEvent(event, 1);
-        //}
-        //return false;
+        }
+        return false;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.696 -0400", hash_original_method = "C8DF4A46704EEB88AB3A3DAEBDA2EE59", hash_generated_method = "89453BD6AF7B3768C9F66CA7014EE401")
-    @Override
-    public boolean dispatchKeyShortcutEvent(KeyEvent event) {
-        addTaint(event.getTaint());
-        if((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS))        
-        {
-            boolean var45F6457C378081163B5FC74C9DEC97F3_1301745010 = (super.dispatchKeyShortcutEvent(event));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_148760617 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_148760617;
-        } //End block
-        else
-        if(mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS)        
-        {
-            boolean var5C18B5D2EFEF2D901A4FBE828D26F883_457076066 = (mFocused.dispatchKeyShortcutEvent(event));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_197466221 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_197466221;
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_863423423 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1628121870 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1628121870;
-        // ---------- Original Method ----------
-        //if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
-            //return super.dispatchKeyShortcutEvent(event);
-        //} else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
-            //return mFocused.dispatchKeyShortcutEvent(event);
-        //}
-        //return false;
+    @Override public boolean dispatchKeyShortcutEvent(KeyEvent event){
+		// Original method
+		/*
+		{
+        if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
+            return super.dispatchKeyShortcutEvent(event);
+        } else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
+            return mFocused.dispatchKeyShortcutEvent(event);
+        }
+        return false;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.696 -0400", hash_original_method = "CF1D00451039D1CA46B97508DE17783C", hash_generated_method = "FFBCE0B15C7CBB6DD3E6AAF35DC48D62")
-    @Override
-    public boolean dispatchTrackballEvent(MotionEvent event) {
-        addTaint(event.getTaint());
-        if(mInputEventConsistencyVerifier != null)        
-        {
+    @Override public boolean dispatchTrackballEvent(MotionEvent event){
+		// Original method
+		/*
+		{
+        if (mInputEventConsistencyVerifier != null) {
             mInputEventConsistencyVerifier.onTrackballEvent(event, 1);
-        } //End block
-        if((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS))        
-        {
-            if(super.dispatchTrackballEvent(event))            
-            {
-                boolean varB326B5062B2F0E69046810717534CB09_2134510151 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_588742502 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_588742502;
-            } //End block
-        } //End block
-        else
-        if(mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS)        
-        {
-            if(mFocused.dispatchTrackballEvent(event))            
-            {
-                boolean varB326B5062B2F0E69046810717534CB09_215944288 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_462512808 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_462512808;
-            } //End block
-        } //End block
-        if(mInputEventConsistencyVerifier != null)        
-        {
+        }
+        if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
+            if (super.dispatchTrackballEvent(event)) {
+                return true;
+            }
+        } else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
+            if (mFocused.dispatchTrackballEvent(event)) {
+                return true;
+            }
+        }
+        if (mInputEventConsistencyVerifier != null) {
             mInputEventConsistencyVerifier.onUnhandledEvent(event, 1);
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1058077148 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_7235900 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_7235900;
-        // ---------- Original Method ----------
-        //if (mInputEventConsistencyVerifier != null) {
-            //mInputEventConsistencyVerifier.onTrackballEvent(event, 1);
-        //}
-        //if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
-            //if (super.dispatchTrackballEvent(event)) {
-                //return true;
-            //}
-        //} else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
-            //if (mFocused.dispatchTrackballEvent(event)) {
-                //return true;
-            //}
-        //}
-        //if (mInputEventConsistencyVerifier != null) {
-            //mInputEventConsistencyVerifier.onUnhandledEvent(event, 1);
-        //}
-        //return false;
+        }
+        return false;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.697 -0400", hash_original_method = "E0F6A76AF2BEDB6076446B6A929BAC84", hash_generated_method = "5DBD474B98055C926AE8882239FF0BB1")
-    @SuppressWarnings({"ConstantConditions"})
-    @Override
-    protected boolean dispatchHoverEvent(MotionEvent event) {
-        addTaint(event.getTaint());
-        final int action = event.getAction();
-        final boolean interceptHover = onInterceptHoverEvent(event);
-        event.setAction(action);
-        MotionEvent eventNoHistory = event;
-        boolean handled = false;
-        HoverTarget firstOldHoverTarget = mFirstHoverTarget;
-        mFirstHoverTarget = null;
-        if(!interceptHover && action != MotionEvent.ACTION_HOVER_EXIT)        
-        {
-            final float x = event.getX();
-            final float y = event.getY();
-            final int childrenCount = mChildrenCount;
-            if(childrenCount != 0)            
-            {
-                final View[] children = mChildren;
-                HoverTarget lastHoverTarget = null;
-for(int i = childrenCount - 1;i >= 0;i--)
-                {
-                    final View child = children[i];
-                    if(!canViewReceivePointerEvents(child)
-                            || !isTransformedTouchPointInView(x, y, child, null))                    
-                    {
-                        continue;
-                    } //End block
-                    HoverTarget hoverTarget = firstOldHoverTarget;
-                    boolean wasHovered;
-for(HoverTarget predecessor = null;;)
-                    {
-                        if(hoverTarget == null)                        
-                        {
-                            hoverTarget = HoverTarget.obtain(child);
-                            wasHovered = false;
-                            break;
-                        } //End block
-                        if(hoverTarget.child == child)                        
-                        {
-                            if(predecessor != null)                            
-                            {
-                                predecessor.next = hoverTarget.next;
-                            } //End block
-                            else
-                            {
-                                firstOldHoverTarget = hoverTarget.next;
-                            } //End block
-                            hoverTarget.next = null;
-                            wasHovered = true;
-                            break;
-                        } //End block
-                        predecessor = hoverTarget;
-                        hoverTarget = hoverTarget.next;
-                    } //End block
-                    if(lastHoverTarget != null)                    
-                    {
-                        lastHoverTarget.next = hoverTarget;
-                    } //End block
-                    else
-                    {
-                        lastHoverTarget = hoverTarget;
-                        mFirstHoverTarget = hoverTarget;
-                    } //End block
-                    if(action == MotionEvent.ACTION_HOVER_ENTER)                    
-                    {
-                        if(!wasHovered)                        
-                        {
-                            handled |= dispatchTransformedGenericPointerEvent(
-                                    event, child);
-                        } //End block
-                    } //End block
-                    else
-                    if(action == MotionEvent.ACTION_HOVER_MOVE)                    
-                    {
-                        if(!wasHovered)                        
-                        {
-                            eventNoHistory = obtainMotionEventNoHistoryOrSelf(eventNoHistory);
-                            eventNoHistory.setAction(MotionEvent.ACTION_HOVER_ENTER);
-                            handled |= dispatchTransformedGenericPointerEvent(
-                                    eventNoHistory, child);
-                            eventNoHistory.setAction(action);
-                            handled |= dispatchTransformedGenericPointerEvent(
-                                    eventNoHistory, child);
-                        } //End block
-                        else
-                        {
-                            handled |= dispatchTransformedGenericPointerEvent(event, child);
-                        } //End block
-                    } //End block
-                    if(handled)                    
-                    {
-                        break;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        while
-(firstOldHoverTarget != null)        
-        {
-            final View child = firstOldHoverTarget.child;
-            if(action == MotionEvent.ACTION_HOVER_EXIT)            
-            {
-                handled |= dispatchTransformedGenericPointerEvent(
-                        event, child);
-            } //End block
-            else
-            {
-                if(action == MotionEvent.ACTION_HOVER_MOVE)                
-                {
-                    dispatchTransformedGenericPointerEvent(
-                            event, child);
-                } //End block
-                eventNoHistory = obtainMotionEventNoHistoryOrSelf(eventNoHistory);
-                eventNoHistory.setAction(MotionEvent.ACTION_HOVER_EXIT);
-                dispatchTransformedGenericPointerEvent(
-                        eventNoHistory, child);
-                eventNoHistory.setAction(action);
-            } //End block
-            final HoverTarget nextOldHoverTarget = firstOldHoverTarget.next;
-            firstOldHoverTarget.recycle();
-            firstOldHoverTarget = nextOldHoverTarget;
-        } //End block
-        boolean newHoveredSelf = !handled;
-        if(newHoveredSelf == mHoveredSelf)        
-        {
-            if(newHoveredSelf)            
-            {
-                handled |= super.dispatchHoverEvent(event);
-            } //End block
-        } //End block
-        else
-        {
-            if(mHoveredSelf)            
-            {
-                if(action == MotionEvent.ACTION_HOVER_EXIT)                
-                {
-                    handled |= super.dispatchHoverEvent(event);
-                } //End block
-                else
-                {
-                    if(action == MotionEvent.ACTION_HOVER_MOVE)                    
-                    {
-                        super.dispatchHoverEvent(event);
-                    } //End block
-                    eventNoHistory = obtainMotionEventNoHistoryOrSelf(eventNoHistory);
-                    eventNoHistory.setAction(MotionEvent.ACTION_HOVER_EXIT);
-                    super.dispatchHoverEvent(eventNoHistory);
-                    eventNoHistory.setAction(action);
-                } //End block
-                mHoveredSelf = false;
-            } //End block
-            if(newHoveredSelf)            
-            {
-                if(action == MotionEvent.ACTION_HOVER_ENTER)                
-                {
-                    handled |= super.dispatchHoverEvent(event);
-                    mHoveredSelf = true;
-                } //End block
-                else
-                if(action == MotionEvent.ACTION_HOVER_MOVE)                
-                {
-                    eventNoHistory = obtainMotionEventNoHistoryOrSelf(eventNoHistory);
-                    eventNoHistory.setAction(MotionEvent.ACTION_HOVER_ENTER);
-                    handled |= super.dispatchHoverEvent(eventNoHistory);
-                    eventNoHistory.setAction(action);
-                    handled |= super.dispatchHoverEvent(eventNoHistory);
-                    mHoveredSelf = true;
-                } //End block
-            } //End block
-        } //End block
-        if(eventNoHistory != event)        
-        {
-            eventNoHistory.recycle();
-        } //End block
-        boolean var98F0599AF776A1FE4101C199A40EEB8F_284522758 = (handled);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1060605492 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1060605492;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    @SuppressWarnings({"ConstantConditions"}) @Override protected boolean dispatchHoverEvent(MotionEvent event){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		return false;
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.698 -0400", hash_original_method = "CAF0CE39145036A2F3E98F46F45FF397", hash_generated_method = "E680843A6E460BECF41FE8D069E4F1B7")
-    @Override
-    protected boolean hasHoveredChild() {
-        boolean var691CB797C7D641EC9107D527AE8EF0A0_1008025672 = (mFirstHoverTarget != null);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_279023410 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_279023410;
-        // ---------- Original Method ----------
-        //return mFirstHoverTarget != null;
+    @Override protected boolean hasHoveredChild(){
+		// Original method
+		/*
+		{
+        return mFirstHoverTarget != null;
     }
+		*/
+		return false;
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.698 -0400", hash_original_method = "039A9532EA6933A3F4F8681C30CC9E2B", hash_generated_method = "8D3774956C2C2EBBC2FC2BD3491FD880")
-    public boolean onInterceptHoverEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(event.getTaint());
-        boolean var68934A3E9455FA72420237EB05902327_1553178513 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_283906440 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_283906440;
-        // ---------- Original Method ----------
-        //return false;
+    public boolean onInterceptHoverEvent(MotionEvent event){
+		// Original method
+		/*
+		{
+        return false;
     }
+		*/
+		return false;
+	}
 
     
-    private static MotionEvent obtainMotionEventNoHistoryOrSelf(MotionEvent event) {
+    private static MotionEvent obtainMotionEventNoHistoryOrSelf(MotionEvent event){
+		// Original method
+		/*
+		{
         if (event.getHistorySize() == 0) {
             return event;
         }
         return MotionEvent.obtainNoHistory(event);
     }
+		*/
+		return null;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.698 -0400", hash_original_method = "8425E6039966203E8B52A55F0ACFD97E", hash_generated_method = "46F7A6B8DC60096A8461DB9A8EF7C0A5")
-    @Override
-    protected boolean dispatchGenericPointerEvent(MotionEvent event) {
-        addTaint(event.getTaint());
+    @Override protected boolean dispatchGenericPointerEvent(MotionEvent event){
+		// Original method
+		/*
+		{
         final int childrenCount = mChildrenCount;
-        if(childrenCount != 0)        
-        {
+        if (childrenCount != 0) {
             final View[] children = mChildren;
             final float x = event.getX();
             final float y = event.getY();
-for(int i = childrenCount - 1;i >= 0;i--)
-            {
+            for (int i = childrenCount - 1; i >= 0; i--) {
                 final View child = children[i];
-                if(!canViewReceivePointerEvents(child)
-                        || !isTransformedTouchPointInView(x, y, child, null))                
-                {
+                if (!canViewReceivePointerEvents(child)
+                        || !isTransformedTouchPointInView(x, y, child, null)) {
                     continue;
-                } //End block
-                if(dispatchTransformedGenericPointerEvent(event, child))                
-                {
-                    boolean varB326B5062B2F0E69046810717534CB09_148496288 = (true);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1900071657 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1900071657;
-                } //End block
-            } //End block
-        } //End block
-        boolean var8FA0858FA87CEBD93204BD9A753A90CE_1637458896 = (super.dispatchGenericPointerEvent(event));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1959611695 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1959611695;
-        // ---------- Original Method ----------
-        //final int childrenCount = mChildrenCount;
-        //if (childrenCount != 0) {
-            //final View[] children = mChildren;
-            //final float x = event.getX();
-            //final float y = event.getY();
-            //for (int i = childrenCount - 1; i >= 0; i--) {
-                //final View child = children[i];
-                //if (!canViewReceivePointerEvents(child)
-                        //|| !isTransformedTouchPointInView(x, y, child, null)) {
-                    //continue;
-                //}
-                //if (dispatchTransformedGenericPointerEvent(event, child)) {
-                    //return true;
-                //}
-            //}
-        //}
-        //return super.dispatchGenericPointerEvent(event);
+                }
+                if (dispatchTransformedGenericPointerEvent(event, child)) {
+                    return true;
+                }
+            }
+        }
+        return super.dispatchGenericPointerEvent(event);
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.699 -0400", hash_original_method = "EF2476E6EC182ADC11908B65D0A31365", hash_generated_method = "1D38D6AB65946A38A2505218705B71C0")
-    @Override
-    protected boolean dispatchGenericFocusedEvent(MotionEvent event) {
-        addTaint(event.getTaint());
-        if((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS))        
-        {
-            boolean var06DFB0F35E9F10B2081F8C55181B9CEE_1455326808 = (super.dispatchGenericFocusedEvent(event));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_688180133 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_688180133;
-        } //End block
-        else
-        if(mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS)        
-        {
-            boolean var1353853FA34FA9D345150925B27CC14A_49607301 = (mFocused.dispatchGenericMotionEvent(event));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_8143841 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_8143841;
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_472912844 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1145191295 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1145191295;
-        // ---------- Original Method ----------
-        //if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
-            //return super.dispatchGenericFocusedEvent(event);
-        //} else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
-            //return mFocused.dispatchGenericMotionEvent(event);
-        //}
-        //return false;
+    @Override protected boolean dispatchGenericFocusedEvent(MotionEvent event){
+		// Original method
+		/*
+		{
+        if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
+            return super.dispatchGenericFocusedEvent(event);
+        } else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
+            return mFocused.dispatchGenericMotionEvent(event);
+        }
+        return false;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.699 -0400", hash_original_method = "89F3902132A72D71D534028C51E6FDBB", hash_generated_method = "A555065E08D4700BEDA33CBE950BADCE")
-    private boolean dispatchTransformedGenericPointerEvent(MotionEvent event, View child) {
-        addTaint(child.getTaint());
-        addTaint(event.getTaint());
+    private boolean dispatchTransformedGenericPointerEvent(MotionEvent event, View child){
+		// Original method
+		/*
+		{
         final float offsetX = mScrollX - child.mLeft;
         final float offsetY = mScrollY - child.mTop;
         boolean handled;
-        if(!child.hasIdentityMatrix())        
-        {
+        if (!child.hasIdentityMatrix()) {
             MotionEvent transformedEvent = MotionEvent.obtain(event);
             transformedEvent.offsetLocation(offsetX, offsetY);
             transformedEvent.transform(child.getInverseMatrix());
             handled = child.dispatchGenericMotionEvent(transformedEvent);
             transformedEvent.recycle();
-        } //End block
-        else
-        {
+        } else {
             event.offsetLocation(offsetX, offsetY);
             handled = child.dispatchGenericMotionEvent(event);
             event.offsetLocation(-offsetX, -offsetY);
-        } //End block
-        boolean var98F0599AF776A1FE4101C199A40EEB8F_1354652082 = (handled);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_834391065 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_834391065;
-        // ---------- Original Method ----------
-        //final float offsetX = mScrollX - child.mLeft;
-        //final float offsetY = mScrollY - child.mTop;
-        //boolean handled;
-        //if (!child.hasIdentityMatrix()) {
-            //MotionEvent transformedEvent = MotionEvent.obtain(event);
-            //transformedEvent.offsetLocation(offsetX, offsetY);
-            //transformedEvent.transform(child.getInverseMatrix());
-            //handled = child.dispatchGenericMotionEvent(transformedEvent);
-            //transformedEvent.recycle();
-        //} else {
-            //event.offsetLocation(offsetX, offsetY);
-            //handled = child.dispatchGenericMotionEvent(event);
-            //event.offsetLocation(-offsetX, -offsetY);
-        //}
-        //return handled;
+        }
+        return handled;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.700 -0400", hash_original_method = "9A4777971E22B675E68E924B82246A95", hash_generated_method = "F8EA06B5587F243EE8F5B449CE2B37C1")
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        if(mInputEventConsistencyVerifier != null)        
-        {
-            mInputEventConsistencyVerifier.onTouchEvent(ev, 1);
-        } //End block
-        boolean handled = false;
-        if(onFilterTouchEventForSecurity(ev))        
-        {
-            final int action = ev.getAction();
-            final int actionMasked = action & MotionEvent.ACTION_MASK;
-            if(actionMasked == MotionEvent.ACTION_DOWN)            
-            {
-                cancelAndClearTouchTargets(ev);
-                resetTouchState();
-            } //End block
-            boolean intercepted;
-            if(actionMasked == MotionEvent.ACTION_DOWN
-                    || mFirstTouchTarget != null)            
-            {
-                final boolean disallowIntercept = (mGroupFlags & FLAG_DISALLOW_INTERCEPT) != 0;
-                if(!disallowIntercept)                
-                {
-                    intercepted = onInterceptTouchEvent(ev);
-                    ev.setAction(action);
-                } //End block
-                else
-                {
-                    intercepted = false;
-                } //End block
-            } //End block
-            else
-            {
-                intercepted = true;
-            } //End block
-            final boolean canceled = resetCancelNextUpFlag(this)
-                    || actionMasked == MotionEvent.ACTION_CANCEL;
-            final boolean split = (mGroupFlags & FLAG_SPLIT_MOTION_EVENTS) != 0;
-            TouchTarget newTouchTarget = null;
-            boolean alreadyDispatchedToNewTouchTarget = false;
-            if(!canceled && !intercepted)            
-            {
-                if(actionMasked == MotionEvent.ACTION_DOWN
-                        || (split && actionMasked == MotionEvent.ACTION_POINTER_DOWN)
-                        || actionMasked == MotionEvent.ACTION_HOVER_MOVE)                
-                {
-                    final int actionIndex = ev.getActionIndex();
-                    final int idBitsToAssign = split ? 1 << ev.getPointerId(actionIndex)
-                            : TouchTarget.ALL_POINTER_IDS;
-                    removePointersFromTouchTargets(idBitsToAssign);
-                    final int childrenCount = mChildrenCount;
-                    if(childrenCount != 0)                    
-                    {
-                        final View[] children = mChildren;
-                        final float x = ev.getX(actionIndex);
-                        final float y = ev.getY(actionIndex);
-for(int i = childrenCount - 1;i >= 0;i--)
-                        {
-                            final View child = children[i];
-                            if(!canViewReceivePointerEvents(child)
-                                    || !isTransformedTouchPointInView(x, y, child, null))                            
-                            {
-                                continue;
-                            } //End block
-                            newTouchTarget = getTouchTarget(child);
-                            if(newTouchTarget != null)                            
-                            {
-                                newTouchTarget.pointerIdBits |= idBitsToAssign;
-                                break;
-                            } //End block
-                            resetCancelNextUpFlag(child);
-                            if(dispatchTransformedTouchEvent(ev, false, child, idBitsToAssign))                            
-                            {
-                                mLastTouchDownTime = ev.getDownTime();
-                                mLastTouchDownIndex = i;
-                                mLastTouchDownX = ev.getX();
-                                mLastTouchDownY = ev.getY();
-                                newTouchTarget = addTouchTarget(child, idBitsToAssign);
-                                alreadyDispatchedToNewTouchTarget = true;
-                                break;
-                            } //End block
-                        } //End block
-                    } //End block
-                    if(newTouchTarget == null && mFirstTouchTarget != null)                    
-                    {
-                        newTouchTarget = mFirstTouchTarget;
-                        while
-(newTouchTarget.next != null)                        
-                        {
-                            newTouchTarget = newTouchTarget.next;
-                        } //End block
-                        newTouchTarget.pointerIdBits |= idBitsToAssign;
-                    } //End block
-                } //End block
-            } //End block
-            if(mFirstTouchTarget == null)            
-            {
-                handled = dispatchTransformedTouchEvent(ev, canceled, null,
-                        TouchTarget.ALL_POINTER_IDS);
-            } //End block
-            else
-            {
-                TouchTarget predecessor = null;
-                TouchTarget target = mFirstTouchTarget;
-                while
-(target != null)                
-                {
-                    final TouchTarget next = target.next;
-                    if(alreadyDispatchedToNewTouchTarget && target == newTouchTarget)                    
-                    {
-                        handled = true;
-                    } //End block
-                    else
-                    {
-                        final boolean cancelChild = resetCancelNextUpFlag(target.child)
-                        || intercepted;
-                        if(dispatchTransformedTouchEvent(ev, cancelChild,
-                                target.child, target.pointerIdBits))                        
-                        {
-                            handled = true;
-                        } //End block
-                        if(cancelChild)                        
-                        {
-                            if(predecessor == null)                            
-                            {
-                                mFirstTouchTarget = next;
-                            } //End block
-                            else
-                            {
-                                predecessor.next = next;
-                            } //End block
-                            target.recycle();
-                            target = next;
-                            continue;
-                        } //End block
-                    } //End block
-                    predecessor = target;
-                    target = next;
-                } //End block
-            } //End block
-            if(canceled
-                    || actionMasked == MotionEvent.ACTION_UP
-                    || actionMasked == MotionEvent.ACTION_HOVER_MOVE)            
-            {
-                resetTouchState();
-            } //End block
-            else
-            if(split && actionMasked == MotionEvent.ACTION_POINTER_UP)            
-            {
-                final int actionIndex = ev.getActionIndex();
-                final int idBitsToRemove = 1 << ev.getPointerId(actionIndex);
-                removePointersFromTouchTargets(idBitsToRemove);
-            } //End block
-        } //End block
-        if(!handled && mInputEventConsistencyVerifier != null)        
-        {
-            mInputEventConsistencyVerifier.onUnhandledEvent(ev, 1);
-        } //End block
-        boolean var98F0599AF776A1FE4101C199A40EEB8F_167125045 = (handled);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1435853802 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1435853802;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    @Override public boolean dispatchTouchEvent(MotionEvent ev){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.701 -0400", hash_original_method = "1B0EC47DAA405380670E223779C878A6", hash_generated_method = "FB0BEF6A0D13DDEE91DD6A9C23FE556F")
-    private void resetTouchState() {
+    private void resetTouchState(){
+		// Original method
+		/*
+		{
         clearTouchTargets();
         resetCancelNextUpFlag(this);
         mGroupFlags &= ~FLAG_DISALLOW_INTERCEPT;
-        // ---------- Original Method ----------
-        //clearTouchTargets();
-        //resetCancelNextUpFlag(this);
-        //mGroupFlags &= ~FLAG_DISALLOW_INTERCEPT;
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.701 -0400", hash_original_method = "B31FF6D343B2149E4D841C0A7CD04309", hash_generated_method = "6DB832910F71764CDE275AF7D60976D2")
-    private boolean resetCancelNextUpFlag(View view) {
-        addTaint(view.getTaint());
-        if((view.mPrivateFlags & CANCEL_NEXT_UP_EVENT) != 0)        
-        {
+    private boolean resetCancelNextUpFlag(View view){
+		// Original method
+		/*
+		{
+        if ((view.mPrivateFlags & CANCEL_NEXT_UP_EVENT) != 0) {
             view.mPrivateFlags &= ~CANCEL_NEXT_UP_EVENT;
-            boolean varB326B5062B2F0E69046810717534CB09_1193429100 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1416948277 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1416948277;
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1582939184 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1741338293 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1741338293;
-        // ---------- Original Method ----------
-        //if ((view.mPrivateFlags & CANCEL_NEXT_UP_EVENT) != 0) {
-            //view.mPrivateFlags &= ~CANCEL_NEXT_UP_EVENT;
-            //return true;
-        //}
-        //return false;
+            return true;
+        }
+        return false;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.701 -0400", hash_original_method = "C1060B6E54563910E15717B9621A0CC6", hash_generated_method = "20D70BF0EA31BD3D233BD810063F1C37")
-    private void clearTouchTargets() {
+    private void clearTouchTargets(){
+		// Original method
+		/*
+		{
         TouchTarget target = mFirstTouchTarget;
-        if(target != null)        
-        {
+        if (target != null) {
             do {
-                {
-                    TouchTarget next = target.next;
-                    target.recycle();
-                    target = next;
-                } //End block
-} while (target != null);
+                TouchTarget next = target.next;
+                target.recycle();
+                target = next;
+            } while (target != null);
             mFirstTouchTarget = null;
-        } //End block
-        // ---------- Original Method ----------
-        //TouchTarget target = mFirstTouchTarget;
-        //if (target != null) {
-            //do {
-                //TouchTarget next = target.next;
-                //target.recycle();
-                //target = next;
-            //} while (target != null);
-            //mFirstTouchTarget = null;
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.701 -0400", hash_original_method = "45B19A2C35386F46FF7561697C2C88B0", hash_generated_method = "606D09106E32FB54FB86C0BB1FECAD08")
-    private void cancelAndClearTouchTargets(MotionEvent event) {
-        addTaint(event.getTaint());
-        if(mFirstTouchTarget != null)        
-        {
-            boolean syntheticEvent = false;
-            if(event == null)            
-            {
-                final long now = SystemClock.uptimeMillis();
-                event = MotionEvent.obtain(now, now,
-                        MotionEvent.ACTION_CANCEL, 0.0f, 0.0f, 0);
-                event.setSource(InputDevice.SOURCE_TOUCHSCREEN);
-                syntheticEvent = true;
-            } //End block
-for(TouchTarget target = mFirstTouchTarget;target != null;target = target.next)
-            {
-                resetCancelNextUpFlag(target.child);
-                dispatchTransformedTouchEvent(event, true, target.child, target.pointerIdBits);
-            } //End block
-            clearTouchTargets();
-            if(syntheticEvent)            
-            {
-                event.recycle();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mFirstTouchTarget != null) {
-            //boolean syntheticEvent = false;
-            //if (event == null) {
-                //final long now = SystemClock.uptimeMillis();
-                //event = MotionEvent.obtain(now, now,
-                        //MotionEvent.ACTION_CANCEL, 0.0f, 0.0f, 0);
-                //event.setSource(InputDevice.SOURCE_TOUCHSCREEN);
-                //syntheticEvent = true;
-            //}
-            //for (TouchTarget target = mFirstTouchTarget; target != null; target = target.next) {
-                //resetCancelNextUpFlag(target.child);
-                //dispatchTransformedTouchEvent(event, true, target.child, target.pointerIdBits);
-            //}
-            //clearTouchTargets();
-            //if (syntheticEvent) {
-                //event.recycle();
-            //}
-        //}
-    }
+    private void cancelAndClearTouchTargets(MotionEvent event){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.701 -0400", hash_original_method = "1855BFFFC59D88D1613C9B59C4B43D4C", hash_generated_method = "1DC013DBF6CED5E35A1CD224350B3C7F")
-    private TouchTarget getTouchTarget(View child) {
-        addTaint(child.getTaint());
-for(TouchTarget target = mFirstTouchTarget;target != null;target = target.next)
-        {
-            if(target.child == child)            
-            {
-TouchTarget varA7DD35DE8EDE4A2FCAF77CE202E687B3_5425593 =                 target;
-                varA7DD35DE8EDE4A2FCAF77CE202E687B3_5425593.addTaint(taint);
-                return varA7DD35DE8EDE4A2FCAF77CE202E687B3_5425593;
-            } //End block
-        } //End block
-TouchTarget var540C13E9E156B687226421B24F2DF178_2079741119 =         null;
-        var540C13E9E156B687226421B24F2DF178_2079741119.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_2079741119;
-        // ---------- Original Method ----------
-        //for (TouchTarget target = mFirstTouchTarget; target != null; target = target.next) {
-            //if (target.child == child) {
-                //return target;
-            //}
-        //}
-        //return null;
+    private TouchTarget getTouchTarget(View child){
+		// Original method
+		/*
+		{
+        for (TouchTarget target = mFirstTouchTarget; target != null; target = target.next) {
+            if (target.child == child) {
+                return target;
+            }
+        }
+        return null;
     }
+		*/
+		return null;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.702 -0400", hash_original_method = "70A66C4E824C8984FFB5B6F600FB9D61", hash_generated_method = "8A33946AE12F314CEAC34AEACBAEC165")
-    private TouchTarget addTouchTarget(View child, int pointerIdBits) {
-        addTaint(pointerIdBits);
-        addTaint(child.getTaint());
+    private TouchTarget addTouchTarget(View child, int pointerIdBits){
+		// Original method
+		/*
+		{
         TouchTarget target = TouchTarget.obtain(child, pointerIdBits);
         target.next = mFirstTouchTarget;
         mFirstTouchTarget = target;
-TouchTarget varA7DD35DE8EDE4A2FCAF77CE202E687B3_1727584947 =         target;
-        varA7DD35DE8EDE4A2FCAF77CE202E687B3_1727584947.addTaint(taint);
-        return varA7DD35DE8EDE4A2FCAF77CE202E687B3_1727584947;
-        // ---------- Original Method ----------
-        //TouchTarget target = TouchTarget.obtain(child, pointerIdBits);
-        //target.next = mFirstTouchTarget;
-        //mFirstTouchTarget = target;
-        //return target;
+        return target;
     }
+		*/
+		return null;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.702 -0400", hash_original_method = "89D343983AE77FFA55E239C56C6BE82A", hash_generated_method = "6E24B870B5DCA66140DD99D0A57F91FF")
-    private void removePointersFromTouchTargets(int pointerIdBits) {
-        addTaint(pointerIdBits);
+    private void removePointersFromTouchTargets(int pointerIdBits){
+		// Original method
+		/*
+		{
         TouchTarget predecessor = null;
         TouchTarget target = mFirstTouchTarget;
-        while
-(target != null)        
-        {
+        while (target != null) {
             final TouchTarget next = target.next;
-            if((target.pointerIdBits & pointerIdBits) != 0)            
-            {
+            if ((target.pointerIdBits & pointerIdBits) != 0) {
                 target.pointerIdBits &= ~pointerIdBits;
-                if(target.pointerIdBits == 0)                
-                {
-                    if(predecessor == null)                    
-                    {
+                if (target.pointerIdBits == 0) {
+                    if (predecessor == null) {
                         mFirstTouchTarget = next;
-                    } //End block
-                    else
-                    {
+                    } else {
                         predecessor.next = next;
-                    } //End block
+                    }
                     target.recycle();
                     target = next;
                     continue;
-                } //End block
-            } //End block
+                }
+            }
             predecessor = target;
             target = next;
-        } //End block
-        // ---------- Original Method ----------
-        //TouchTarget predecessor = null;
-        //TouchTarget target = mFirstTouchTarget;
-        //while (target != null) {
-            //final TouchTarget next = target.next;
-            //if ((target.pointerIdBits & pointerIdBits) != 0) {
-                //target.pointerIdBits &= ~pointerIdBits;
-                //if (target.pointerIdBits == 0) {
-                    //if (predecessor == null) {
-                        //mFirstTouchTarget = next;
-                    //} else {
-                        //predecessor.next = next;
-                    //}
-                    //target.recycle();
-                    //target = next;
-                    //continue;
-                //}
-            //}
-            //predecessor = target;
-            //target = next;
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    private static boolean canViewReceivePointerEvents(View child) {
+    private static boolean canViewReceivePointerEvents(View child){
+		// Original method
+		/*
+		{
         return (child.mViewFlags & VISIBILITY_MASK) == VISIBLE
                 || child.getAnimation() != null;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.705 -0400", hash_original_method = "DEC14653C28ED7E684FDD980020C985C", hash_generated_method = "A598B617C327652E8A41664E8223BEBB")
     protected boolean isTransformedTouchPointInView(float x, float y, View child,
-            PointF outLocalPoint) {
-        addTaint(outLocalPoint.getTaint());
-        addTaint(child.getTaint());
-        addTaint(y);
-        addTaint(x);
+            PointF outLocalPoint){
+		// Original method
+		/*
+		{
         float localX = x + mScrollX - child.mLeft;
         float localY = y + mScrollY - child.mTop;
-        if(! child.hasIdentityMatrix() && mAttachInfo != null)        
-        {
+        if (! child.hasIdentityMatrix() && mAttachInfo != null) {
             final float[] localXY = mAttachInfo.mTmpTransformLocation;
             localXY[0] = localX;
             localXY[1] = localY;
             child.getInverseMatrix().mapPoints(localXY);
             localX = localXY[0];
             localY = localXY[1];
-        } //End block
+        }
         final boolean isInView = child.pointInView(localX, localY);
-        if(isInView && outLocalPoint != null)        
-        {
+        if (isInView && outLocalPoint != null) {
             outLocalPoint.set(localX, localY);
-        } //End block
-        boolean varAA526901E4660D693B9B802DFC753973_662712164 = (isInView);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_109897843 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_109897843;
-        // ---------- Original Method ----------
-        //float localX = x + mScrollX - child.mLeft;
-        //float localY = y + mScrollY - child.mTop;
-        //if (! child.hasIdentityMatrix() && mAttachInfo != null) {
-            //final float[] localXY = mAttachInfo.mTmpTransformLocation;
-            //localXY[0] = localX;
-            //localXY[1] = localY;
-            //child.getInverseMatrix().mapPoints(localXY);
-            //localX = localXY[0];
-            //localY = localXY[1];
-        //}
-        //final boolean isInView = child.pointInView(localX, localY);
-        //if (isInView && outLocalPoint != null) {
-            //outLocalPoint.set(localX, localY);
-        //}
-        //return isInView;
+        }
+        return isInView;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.706 -0400", hash_original_method = "EAB22EDFF178A3FABE990E65ADB3332F", hash_generated_method = "109DFD816D6C01D545F484B02FB4AFD5")
     private boolean dispatchTransformedTouchEvent(MotionEvent event, boolean cancel,
-            View child, int desiredPointerIdBits) {
-        addTaint(desiredPointerIdBits);
-        addTaint(child.getTaint());
-        addTaint(cancel);
-        addTaint(event.getTaint());
-        boolean handled;
-        final int oldAction = event.getAction();
-        if(cancel || oldAction == MotionEvent.ACTION_CANCEL)        
-        {
-            event.setAction(MotionEvent.ACTION_CANCEL);
-            if(child == null)            
-            {
-                handled = super.dispatchTouchEvent(event);
-            } //End block
-            else
-            {
-                handled = child.dispatchTouchEvent(event);
-            } //End block
-            event.setAction(oldAction);
-            boolean var98F0599AF776A1FE4101C199A40EEB8F_200822180 = (handled);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1685517884 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1685517884;
-        } //End block
-        final int oldPointerIdBits = event.getPointerIdBits();
-        final int newPointerIdBits = oldPointerIdBits & desiredPointerIdBits;
-        if(newPointerIdBits == 0)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1542953806 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1307849477 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1307849477;
-        } //End block
-        MotionEvent transformedEvent;
-        if(newPointerIdBits == oldPointerIdBits)        
-        {
-            if(child == null || child.hasIdentityMatrix())            
-            {
-                if(child == null)                
-                {
-                    handled = super.dispatchTouchEvent(event);
-                } //End block
-                else
-                {
-                    final float offsetX = mScrollX - child.mLeft;
-                    final float offsetY = mScrollY - child.mTop;
-                    event.offsetLocation(offsetX, offsetY);
-                    handled = child.dispatchTouchEvent(event);
-                    event.offsetLocation(-offsetX, -offsetY);
-                } //End block
-                boolean var98F0599AF776A1FE4101C199A40EEB8F_1126294136 = (handled);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_108382776 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_108382776;
-            } //End block
-            transformedEvent = MotionEvent.obtain(event);
-        } //End block
-        else
-        {
-            transformedEvent = event.split(newPointerIdBits);
-        } //End block
-        if(child == null)        
-        {
-            handled = super.dispatchTouchEvent(transformedEvent);
-        } //End block
-        else
-        {
-            final float offsetX = mScrollX - child.mLeft;
-            final float offsetY = mScrollY - child.mTop;
-            transformedEvent.offsetLocation(offsetX, offsetY);
-            if(! child.hasIdentityMatrix())            
-            {
-                transformedEvent.transform(child.getInverseMatrix());
-            } //End block
-            handled = child.dispatchTouchEvent(transformedEvent);
-        } //End block
-        transformedEvent.recycle();
-        boolean var98F0599AF776A1FE4101C199A40EEB8F_133629643 = (handled);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1245082578 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1245082578;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+            View child, int desiredPointerIdBits){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		return false;
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.708 -0400", hash_original_method = "2F47BE30FCD7EA97F91B7B6F74081615", hash_generated_method = "D911B2DA92C5859318E7FFC0E72C6AAB")
-    public void setMotionEventSplittingEnabled(boolean split) {
-        addTaint(split);
-        if(split)        
-        {
+    public void setMotionEventSplittingEnabled(boolean split){
+		// Original method
+		/*
+		{
+        if (split) {
             mGroupFlags |= FLAG_SPLIT_MOTION_EVENTS;
-        } //End block
-        else
-        {
+        } else {
             mGroupFlags &= ~FLAG_SPLIT_MOTION_EVENTS;
-        } //End block
-        // ---------- Original Method ----------
-        //if (split) {
-            //mGroupFlags |= FLAG_SPLIT_MOTION_EVENTS;
-        //} else {
-            //mGroupFlags &= ~FLAG_SPLIT_MOTION_EVENTS;
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.708 -0400", hash_original_method = "F89425D39488194D486F55EA5F8582C3", hash_generated_method = "1A27316C1EC7579FD7CF93E1025D9D8F")
-    public boolean isMotionEventSplittingEnabled() {
-        boolean var6E66B9803A17F451177E1783526B17F5_1281882261 = ((mGroupFlags & FLAG_SPLIT_MOTION_EVENTS) == FLAG_SPLIT_MOTION_EVENTS);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1648446255 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1648446255;
-        // ---------- Original Method ----------
-        //return (mGroupFlags & FLAG_SPLIT_MOTION_EVENTS) == FLAG_SPLIT_MOTION_EVENTS;
+    public boolean isMotionEventSplittingEnabled(){
+		// Original method
+		/*
+		{
+        return (mGroupFlags & FLAG_SPLIT_MOTION_EVENTS) == FLAG_SPLIT_MOTION_EVENTS;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.708 -0400", hash_original_method = "1DFD5D86FC853DC6CE8B88AE68ABB735", hash_generated_method = "D50F1ABE1C3946983A15BF797DA26B23")
-    public void requestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-        addTaint(disallowIntercept);
-        if(disallowIntercept == ((mGroupFlags & FLAG_DISALLOW_INTERCEPT) != 0))        
-        {
+    public void requestDisallowInterceptTouchEvent(boolean disallowIntercept){
+		// Original method
+		/*
+		{
+        if (disallowIntercept == ((mGroupFlags & FLAG_DISALLOW_INTERCEPT) != 0)) {
             return;
-        } //End block
-        if(disallowIntercept)        
-        {
+        }
+        if (disallowIntercept) {
             mGroupFlags |= FLAG_DISALLOW_INTERCEPT;
-        } //End block
-        else
-        {
+        } else {
             mGroupFlags &= ~FLAG_DISALLOW_INTERCEPT;
-        } //End block
-        if(mParent != null)        
-        {
+        }
+        if (mParent != null) {
             mParent.requestDisallowInterceptTouchEvent(disallowIntercept);
-        } //End block
-        // ---------- Original Method ----------
-        //if (disallowIntercept == ((mGroupFlags & FLAG_DISALLOW_INTERCEPT) != 0)) {
-            //return;
-        //}
-        //if (disallowIntercept) {
-            //mGroupFlags |= FLAG_DISALLOW_INTERCEPT;
-        //} else {
-            //mGroupFlags &= ~FLAG_DISALLOW_INTERCEPT;
-        //}
-        //if (mParent != null) {
-            //mParent.requestDisallowInterceptTouchEvent(disallowIntercept);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.708 -0400", hash_original_method = "2FB27FC0FD3119EC0BB03A9B8DB1F75C", hash_generated_method = "0DA432223D8C741D32EDC46E547CA110")
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(ev.getTaint());
-        boolean var68934A3E9455FA72420237EB05902327_1999725015 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1960053922 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1960053922;
-        // ---------- Original Method ----------
-        //return false;
+    public boolean onInterceptTouchEvent(MotionEvent ev){
+		// Original method
+		/*
+		{
+        return false;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.709 -0400", hash_original_method = "C4273E4BE381C7F0CE1D54BE1CF759CA", hash_generated_method = "965E4DB5A61F6A62EF3E7C3C06036EC7")
-    @Override
-    public boolean requestFocus(int direction, Rect previouslyFocusedRect) {
-        addTaint(previouslyFocusedRect.getTaint());
-        addTaint(direction);
-        if(DBG)        
-        {
-            System.out.println(this + " ViewGroup.requestFocus direction="
-                    + direction);
-        } //End block
-        int descendantFocusability = getDescendantFocusability();
-switch(descendantFocusability){
-        case FOCUS_BLOCK_DESCENDANTS:
-        boolean var7099514E4AF279E1F75517A262FE9D78_880787111 = (super.requestFocus(direction, previouslyFocusedRect));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_6464966 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_6464966;
-        case FOCUS_BEFORE_DESCENDANTS:
-        {
-            final boolean took = super.requestFocus(direction, previouslyFocusedRect);
-            boolean var2B62CC438A4575F03C2C63A1CE1E2659_720812987 = (took ? took : onRequestFocusInDescendants(direction, previouslyFocusedRect));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_178615635 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_178615635;
-        } //End block
-        case FOCUS_AFTER_DESCENDANTS:
-        {
-            final boolean took = onRequestFocusInDescendants(direction, previouslyFocusedRect);
-            boolean varE8F264ECB5528EAEC8351269E67D124D_772565090 = (took ? took : super.requestFocus(direction, previouslyFocusedRect));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1982046537 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1982046537;
-        } //End block
-        default:
-        IllegalStateException varA66618BCDE1225525CF2A1EA5E6D183B_890778673 = new IllegalStateException("descendant focusability must be "
-                        + "one of FOCUS_BEFORE_DESCENDANTS, FOCUS_AFTER_DESCENDANTS, FOCUS_BLOCK_DESCENDANTS "
-                        + "but is " + descendantFocusability);
-        varA66618BCDE1225525CF2A1EA5E6D183B_890778673.addTaint(taint);
-        throw varA66618BCDE1225525CF2A1EA5E6D183B_890778673;
-}
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    @Override public boolean requestFocus(int direction, Rect previouslyFocusedRect){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.709 -0400", hash_original_method = "47C4A34C6E68C9FD22237D5A1759ABE2", hash_generated_method = "86DABF499B162E66113F38309461999D")
-    @SuppressWarnings({"ConstantConditions"})
-    protected boolean onRequestFocusInDescendants(int direction,
-            Rect previouslyFocusedRect) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(previouslyFocusedRect.getTaint());
-        addTaint(direction);
+    @SuppressWarnings({"ConstantConditions"}) protected boolean onRequestFocusInDescendants(int direction,
+            Rect previouslyFocusedRect){
+		// Original method
+		/*
+		{
         int index;
         int increment;
         int end;
         int count = mChildrenCount;
-        if((direction & FOCUS_FORWARD) != 0)        
-        {
+        if ((direction & FOCUS_FORWARD) != 0) {
             index = 0;
             increment = 1;
             end = count;
-        } //End block
-        else
-        {
+        } else {
             index = count - 1;
             increment = -1;
             end = -1;
-        } //End block
+        }
         final View[] children = mChildren;
-for(int i = index;i != end;i += increment)
-        {
+        for (int i = index; i != end; i += increment) {
             View child = children[i];
-            if((child.mViewFlags & VISIBILITY_MASK) == VISIBLE)            
-            {
-                if(child.requestFocus(direction, previouslyFocusedRect))                
-                {
-                    boolean varB326B5062B2F0E69046810717534CB09_990586205 = (true);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1432667581 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1432667581;
-                } //End block
-            } //End block
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_377233212 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_284937228 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_284937228;
-        // ---------- Original Method ----------
-        //int index;
-        //int increment;
-        //int end;
-        //int count = mChildrenCount;
-        //if ((direction & FOCUS_FORWARD) != 0) {
-            //index = 0;
-            //increment = 1;
-            //end = count;
-        //} else {
-            //index = count - 1;
-            //increment = -1;
-            //end = -1;
-        //}
-        //final View[] children = mChildren;
-        //for (int i = index; i != end; i += increment) {
-            //View child = children[i];
-            //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE) {
-                //if (child.requestFocus(direction, previouslyFocusedRect)) {
-                    //return true;
-                //}
-            //}
-        //}
-        //return false;
+            if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE) {
+                if (child.requestFocus(direction, previouslyFocusedRect)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.710 -0400", hash_original_method = "C10088C0D1BE61F270AE8158B60FC677", hash_generated_method = "F18E65C80057528430DA69FD6E3E0502")
-    @Override
-    public void dispatchStartTemporaryDetach() {
+    @Override public void dispatchStartTemporaryDetach(){
+		// Original method
+		/*
+		{
         super.dispatchStartTemporaryDetach();
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             children[i].dispatchStartTemporaryDetach();
-        } //End block
-        // ---------- Original Method ----------
-        //super.dispatchStartTemporaryDetach();
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchStartTemporaryDetach();
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.710 -0400", hash_original_method = "F13891122244193473AAFE5583088FC4", hash_generated_method = "1B44BEDD5FB3475D6D10474A7809A888")
-    @Override
-    public void dispatchFinishTemporaryDetach() {
+    @Override public void dispatchFinishTemporaryDetach(){
+		// Original method
+		/*
+		{
         super.dispatchFinishTemporaryDetach();
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             children[i].dispatchFinishTemporaryDetach();
-        } //End block
-        // ---------- Original Method ----------
-        //super.dispatchFinishTemporaryDetach();
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchFinishTemporaryDetach();
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.711 -0400", hash_original_method = "8739A5508C26F7DDD3FFEBEE4CD95BC5", hash_generated_method = "161975670B1AECF370CCA09B897277EE")
-    @Override
-     void dispatchAttachedToWindow(AttachInfo info, int visibility) {
-        addTaint(visibility);
-        addTaint(info.getTaint());
+    @Override void dispatchAttachedToWindow(AttachInfo info, int visibility){
+		// Original method
+		/*
+		{
         mGroupFlags |= FLAG_PREVENT_DISPATCH_ATTACHED_TO_WINDOW;
         super.dispatchAttachedToWindow(info, visibility);
         mGroupFlags &= ~FLAG_PREVENT_DISPATCH_ATTACHED_TO_WINDOW;
         visibility |= mViewFlags & VISIBILITY_MASK;
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             children[i].dispatchAttachedToWindow(info, visibility);
-        } //End block
-        // ---------- Original Method ----------
-        //mGroupFlags |= FLAG_PREVENT_DISPATCH_ATTACHED_TO_WINDOW;
-        //super.dispatchAttachedToWindow(info, visibility);
-        //mGroupFlags &= ~FLAG_PREVENT_DISPATCH_ATTACHED_TO_WINDOW;
-        //visibility |= mViewFlags & VISIBILITY_MASK;
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchAttachedToWindow(info, visibility);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.712 -0400", hash_original_method = "1EE087DB6D320A1AB0B1F5665AE9972D", hash_generated_method = "C32A3026A6CC8CFF540BB59EC9E85008")
-    @Override
-     boolean dispatchPopulateAccessibilityEventInternal(AccessibilityEvent event) {
-        addTaint(event.getTaint());
+    @Override boolean dispatchPopulateAccessibilityEventInternal(AccessibilityEvent event){
+		// Original method
+		/*
+		{
         boolean handled = super.dispatchPopulateAccessibilityEventInternal(event);
-        if(handled)        
-        {
-            boolean var98F0599AF776A1FE4101C199A40EEB8F_1097531854 = (handled);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_224309124 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_224309124;
-        } //End block
-for(int i = 0, count = getChildCount();i < count;i++)
-        {
+        if (handled) {
+            return handled;
+        }
+        for (int i = 0, count = getChildCount(); i < count; i++) {
             View child = getChildAt(i);
-            if((child.mViewFlags & VISIBILITY_MASK) == VISIBLE)            
-            {
+            if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE) {
                 handled = getChildAt(i).dispatchPopulateAccessibilityEvent(event);
-                if(handled)                
-                {
-                    boolean var98F0599AF776A1FE4101C199A40EEB8F_1885727238 = (handled);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_276925406 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_276925406;
-                } //End block
-            } //End block
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1085531674 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_883176608 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_883176608;
-        // ---------- Original Method ----------
-        //boolean handled = super.dispatchPopulateAccessibilityEventInternal(event);
-        //if (handled) {
-            //return handled;
-        //}
-        //for (int i = 0, count = getChildCount(); i < count; i++) {
-            //View child = getChildAt(i);
-            //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE) {
-                //handled = getChildAt(i).dispatchPopulateAccessibilityEvent(event);
-                //if (handled) {
-                    //return handled;
-                //}
-            //}
-        //}
-        //return false;
+                if (handled) {
+                    return handled;
+                }
+            }
+        }
+        return false;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.712 -0400", hash_original_method = "D1F5A3B1D56655AA52CA4B460A89AF1D", hash_generated_method = "5C5BD83AD2BFA01C3C671F6B2E0681FD")
-    @Override
-     void onInitializeAccessibilityNodeInfoInternal(AccessibilityNodeInfo info) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(info.getTaint());
+    @Override void onInitializeAccessibilityNodeInfoInternal(AccessibilityNodeInfo info){
+		// Original method
+		/*
+		{
         super.onInitializeAccessibilityNodeInfoInternal(info);
-for(int i = 0, count = mChildrenCount;i < count;i++)
-        {
+        for (int i = 0, count = mChildrenCount; i < count; i++) {
             View child = mChildren[i];
-            if((child.mViewFlags & VISIBILITY_MASK) == VISIBLE
-                    && (child.mPrivateFlags & IS_ROOT_NAMESPACE) == 0)            
-            {
+            if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE
+                    && (child.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
                 info.addChild(child);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //super.onInitializeAccessibilityNodeInfoInternal(info);
-        //for (int i = 0, count = mChildrenCount; i < count; i++) {
-            //View child = mChildren[i];
-            //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE
-                    //&& (child.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
-                //info.addChild(child);
-            //}
-        //}
+            }
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.715 -0400", hash_original_method = "C93583B1C6CD82E84CFB16E69C063BD6", hash_generated_method = "E28DB1D988C403824565D1C183596ECA")
-    @Override
-     void dispatchDetachedFromWindow() {
+    @Override void dispatchDetachedFromWindow(){
+		// Original method
+		/*
+		{
         cancelAndClearTouchTargets(null);
         mLayoutSuppressed = false;
         mDragNotifiedChildren = null;
-        if(mCurrentDrag != null)        
-        {
+        if (mCurrentDrag != null) {
             mCurrentDrag.recycle();
             mCurrentDrag = null;
-        } //End block
+        }
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             children[i].dispatchDetachedFromWindow();
-        } //End block
+        }
         super.dispatchDetachedFromWindow();
-        // ---------- Original Method ----------
-        //cancelAndClearTouchTargets(null);
-        //mLayoutSuppressed = false;
-        //mDragNotifiedChildren = null;
-        //if (mCurrentDrag != null) {
-            //mCurrentDrag.recycle();
-            //mCurrentDrag = null;
-        //}
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //children[i].dispatchDetachedFromWindow();
-        //}
-        //super.dispatchDetachedFromWindow();
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.715 -0400", hash_original_method = "3A8CBF91275A500D30CEFAD8D7209E14", hash_generated_method = "7299D023BE318EAC6B37B61A50A7D407")
-    @Override
-    public void setPadding(int left, int top, int right, int bottom) {
-        addTaint(bottom);
-        addTaint(right);
-        addTaint(top);
-        addTaint(left);
+    @Override public void setPadding(int left, int top, int right, int bottom){
+		// Original method
+		/*
+		{
         super.setPadding(left, top, right, bottom);
-        if((mPaddingLeft | mPaddingTop | mPaddingRight | mPaddingBottom) != 0)        
-        {
+        if ((mPaddingLeft | mPaddingTop | mPaddingRight | mPaddingBottom) != 0) {
             mGroupFlags |= FLAG_PADDING_NOT_NULL;
-        } //End block
-        else
-        {
+        } else {
             mGroupFlags &= ~FLAG_PADDING_NOT_NULL;
-        } //End block
-        // ---------- Original Method ----------
-        //super.setPadding(left, top, right, bottom);
-        //if ((mPaddingLeft | mPaddingTop | mPaddingRight | mPaddingBottom) != 0) {
-            //mGroupFlags |= FLAG_PADDING_NOT_NULL;
-        //} else {
-            //mGroupFlags &= ~FLAG_PADDING_NOT_NULL;
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.716 -0400", hash_original_method = "0EF6BC3550040660942BB4435DC1568A", hash_generated_method = "7DC81A94DA0BE020039ABCAF58F529F2")
-    @Override
-    protected void dispatchSaveInstanceState(SparseArray<Parcelable> container) {
-        addTaint(container.getTaint());
+    @Override protected void dispatchSaveInstanceState(SparseArray<Parcelable> container){
+		// Original method
+		/*
+		{
         super.dispatchSaveInstanceState(container);
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             View c = children[i];
-            if((c.mViewFlags & PARENT_SAVE_DISABLED_MASK) != PARENT_SAVE_DISABLED)            
-            {
+            if ((c.mViewFlags & PARENT_SAVE_DISABLED_MASK) != PARENT_SAVE_DISABLED) {
                 c.dispatchSaveInstanceState(container);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //super.dispatchSaveInstanceState(container);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //View c = children[i];
-            //if ((c.mViewFlags & PARENT_SAVE_DISABLED_MASK) != PARENT_SAVE_DISABLED) {
-                //c.dispatchSaveInstanceState(container);
-            //}
-        //}
+            }
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.716 -0400", hash_original_method = "38DCBB8C3886F11C25C07FC151CB762B", hash_generated_method = "AD6C26FCB08F25CD9F00A15FFF2245C0")
-    protected void dispatchFreezeSelfOnly(SparseArray<Parcelable> container) {
-        addTaint(container.getTaint());
+    protected void dispatchFreezeSelfOnly(SparseArray<Parcelable> container){
+		// Original method
+		/*
+		{
         super.dispatchSaveInstanceState(container);
-        // ---------- Original Method ----------
-        //super.dispatchSaveInstanceState(container);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.716 -0400", hash_original_method = "79E9ACE6A349ACE584637F3A31A0E869", hash_generated_method = "2D840581DBC43FD90A136067E8A4311B")
-    @Override
-    protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container) {
-        addTaint(container.getTaint());
+    @Override protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container){
+		// Original method
+		/*
+		{
         super.dispatchRestoreInstanceState(container);
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             View c = children[i];
-            if((c.mViewFlags & PARENT_SAVE_DISABLED_MASK) != PARENT_SAVE_DISABLED)            
-            {
+            if ((c.mViewFlags & PARENT_SAVE_DISABLED_MASK) != PARENT_SAVE_DISABLED) {
                 c.dispatchRestoreInstanceState(container);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //super.dispatchRestoreInstanceState(container);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //View c = children[i];
-            //if ((c.mViewFlags & PARENT_SAVE_DISABLED_MASK) != PARENT_SAVE_DISABLED) {
-                //c.dispatchRestoreInstanceState(container);
-            //}
-        //}
+            }
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.718 -0400", hash_original_method = "85A5428D5025B10E5C75238A5C358628", hash_generated_method = "A2BEB32EB8CEC75DFF54866B13BD1381")
-    protected void dispatchThawSelfOnly(SparseArray<Parcelable> container) {
-        addTaint(container.getTaint());
+    protected void dispatchThawSelfOnly(SparseArray<Parcelable> container){
+		// Original method
+		/*
+		{
         super.dispatchRestoreInstanceState(container);
-        // ---------- Original Method ----------
-        //super.dispatchRestoreInstanceState(container);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.718 -0400", hash_original_method = "673779FD01170D0D857F4CAC6D3A5472", hash_generated_method = "2514501BE0A3CC9FFB51A5846D7A0232")
-    protected void setChildrenDrawingCacheEnabled(boolean enabled) {
-        addTaint(enabled);
-        if(enabled || (mPersistentDrawingCache & PERSISTENT_ALL_CACHES) != PERSISTENT_ALL_CACHES)        
-        {
+    protected void setChildrenDrawingCacheEnabled(boolean enabled){
+		// Original method
+		/*
+		{
+        if (enabled || (mPersistentDrawingCache & PERSISTENT_ALL_CACHES) != PERSISTENT_ALL_CACHES) {
             final View[] children = mChildren;
             final int count = mChildrenCount;
-for(int i = 0;i < count;i++)
-            {
+            for (int i = 0; i < count; i++) {
                 children[i].setDrawingCacheEnabled(enabled);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (enabled || (mPersistentDrawingCache & PERSISTENT_ALL_CACHES) != PERSISTENT_ALL_CACHES) {
-            //final View[] children = mChildren;
-            //final int count = mChildrenCount;
-            //for (int i = 0; i < count; i++) {
-                //children[i].setDrawingCacheEnabled(enabled);
-            //}
-        //}
+            }
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.718 -0400", hash_original_method = "C6BD5BCC8D99F50AFC626E34071E2FAF", hash_generated_method = "A124A8FDEC4DFE54A3A982869CB8A044")
-    @Override
-    protected void onAnimationStart() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+    @Override protected void onAnimationStart(){
+		// Original method
+		/*
+		{
         super.onAnimationStart();
-        if((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE)        
-        {
+        if ((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE) {
             final int count = mChildrenCount;
             final View[] children = mChildren;
             final boolean buildCache = !isHardwareAccelerated();
-for(int i = 0;i < count;i++)
-            {
+            for (int i = 0; i < count; i++) {
                 final View child = children[i];
-                if((child.mViewFlags & VISIBILITY_MASK) == VISIBLE)                
-                {
+                if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE) {
                     child.setDrawingCacheEnabled(true);
-                    if(buildCache)                    
-                    {
+                    if (buildCache) {
                         child.buildDrawingCache(true);
-                    } //End block
-                } //End block
-            } //End block
+                    }
+                }
+            }
             mGroupFlags |= FLAG_CHILDREN_DRAWN_WITH_CACHE;
-        } //End block
-        // ---------- Original Method ----------
-        //super.onAnimationStart();
-        //if ((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE) {
-            //final int count = mChildrenCount;
-            //final View[] children = mChildren;
-            //final boolean buildCache = !isHardwareAccelerated();
-            //for (int i = 0; i < count; i++) {
-                //final View child = children[i];
-                //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE) {
-                    //child.setDrawingCacheEnabled(true);
-                    //if (buildCache) {
-                        //child.buildDrawingCache(true);
-                    //}
-                //}
-            //}
-            //mGroupFlags |= FLAG_CHILDREN_DRAWN_WITH_CACHE;
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.719 -0400", hash_original_method = "D937B1A7AD9A1EFB7CAF69E9B3174965", hash_generated_method = "529B56950A58E4725CADEF109ED5C0E6")
-    @Override
-    protected void onAnimationEnd() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+    @Override protected void onAnimationEnd(){
+		// Original method
+		/*
+		{
         super.onAnimationEnd();
-        if((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE)        
-        {
+        if ((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE) {
             mGroupFlags &= ~FLAG_CHILDREN_DRAWN_WITH_CACHE;
-            if((mPersistentDrawingCache & PERSISTENT_ANIMATION_CACHE) == 0)            
-            {
+            if ((mPersistentDrawingCache & PERSISTENT_ANIMATION_CACHE) == 0) {
                 setChildrenDrawingCacheEnabled(false);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //super.onAnimationEnd();
-        //if ((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE) {
-            //mGroupFlags &= ~FLAG_CHILDREN_DRAWN_WITH_CACHE;
-            //if ((mPersistentDrawingCache & PERSISTENT_ANIMATION_CACHE) == 0) {
-                //setChildrenDrawingCacheEnabled(false);
-            //}
-        //}
+            }
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.721 -0400", hash_original_method = "8B8B5866E6978A8C0D1BC17BB86DCAFE", hash_generated_method = "8874E994F6724B23BAC1A45A2DAF9B0F")
-    @Override
-     Bitmap createSnapshot(Bitmap.Config quality, int backgroundColor, boolean skipChildren) {
-        addTaint(skipChildren);
-        addTaint(backgroundColor);
-        addTaint(quality.getTaint());
+    @Override Bitmap createSnapshot(Bitmap.Config quality, int backgroundColor, boolean skipChildren){
+		// Original method
+		/*
+		{
         int count = mChildrenCount;
         int[] visibilities = null;
-        if(skipChildren)        
-        {
+        if (skipChildren) {
             visibilities = new int[count];
-for(int i = 0;i < count;i++)
-            {
+            for (int i = 0; i < count; i++) {
                 View child = getChildAt(i);
                 visibilities[i] = child.getVisibility();
-                if(visibilities[i] == View.VISIBLE)                
-                {
+                if (visibilities[i] == View.VISIBLE) {
                     child.setVisibility(INVISIBLE);
-                } //End block
-            } //End block
-        } //End block
+                }
+            }
+        }
         Bitmap b = super.createSnapshot(quality, backgroundColor, skipChildren);
-        if(skipChildren)        
-        {
-for(int i = 0;i < count;i++)
-            {
+        if (skipChildren) {
+            for (int i = 0; i < count; i++) {
                 getChildAt(i).setVisibility(visibilities[i]);
-            } //End block
-        } //End block
-Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_35028237 =         b;
-        var73F89FAC8F369DF0913D10C37C1E0EA1_35028237.addTaint(taint);
-        return var73F89FAC8F369DF0913D10C37C1E0EA1_35028237;
-        // ---------- Original Method ----------
-        //int count = mChildrenCount;
-        //int[] visibilities = null;
-        //if (skipChildren) {
-            //visibilities = new int[count];
-            //for (int i = 0; i < count; i++) {
-                //View child = getChildAt(i);
-                //visibilities[i] = child.getVisibility();
-                //if (visibilities[i] == View.VISIBLE) {
-                    //child.setVisibility(INVISIBLE);
-                //}
-            //}
-        //}
-        //Bitmap b = super.createSnapshot(quality, backgroundColor, skipChildren);
-        //if (skipChildren) {
-            //for (int i = 0; i < count; i++) {
-                //getChildAt(i).setVisibility(visibilities[i]);
-            //}
-        //}
-        //return b;
+            }
+        }
+        return b;
     }
+		*/
+		return null;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.723 -0400", hash_original_method = "B43A05A63ADF740A4A15894A451E95C0", hash_generated_method = "2F09AE7032715FB3AA000FEB3B5EB33F")
-    @Override
-    protected void dispatchDraw(Canvas canvas) {
-        addTaint(canvas.getTaint());
-        final int count = mChildrenCount;
-        final View[] children = mChildren;
-        int flags = mGroupFlags;
-        if((flags & FLAG_RUN_ANIMATION) != 0 && canAnimate())        
-        {
-            final boolean cache = (mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE;
-            final boolean buildCache = !isHardwareAccelerated();
-for(int i = 0;i < count;i++)
-            {
-                final View child = children[i];
-                if((child.mViewFlags & VISIBILITY_MASK) == VISIBLE)                
-                {
-                    final LayoutParams params = child.getLayoutParams();
-                    attachLayoutAnimationParameters(child, params, i, count);
-                    bindLayoutAnimation(child);
-                    if(cache)                    
-                    {
-                        child.setDrawingCacheEnabled(true);
-                        if(buildCache)                        
-                        {
-                            child.buildDrawingCache(true);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-            final LayoutAnimationController controller = mLayoutAnimationController;
-            if(controller.willOverlap())            
-            {
-                mGroupFlags |= FLAG_OPTIMIZE_INVALIDATE;
-            } //End block
-            controller.start();
-            mGroupFlags &= ~FLAG_RUN_ANIMATION;
-            mGroupFlags &= ~FLAG_ANIMATION_DONE;
-            if(cache)            
-            {
-                mGroupFlags |= FLAG_CHILDREN_DRAWN_WITH_CACHE;
-            } //End block
-            if(mAnimationListener != null)            
-            {
-                mAnimationListener.onAnimationStart(controller.getAnimation());
-            } //End block
-        } //End block
-        int saveCount = 0;
-        final boolean clipToPadding = (flags & CLIP_TO_PADDING_MASK) == CLIP_TO_PADDING_MASK;
-        if(clipToPadding)        
-        {
-            saveCount = canvas.save();
-            canvas.clipRect(mScrollX + mPaddingLeft, mScrollY + mPaddingTop,
-                    mScrollX + mRight - mLeft - mPaddingRight,
-                    mScrollY + mBottom - mTop - mPaddingBottom);
-        } //End block
-        mPrivateFlags &= ~DRAW_ANIMATION;
-        mGroupFlags &= ~FLAG_INVALIDATE_REQUIRED;
-        boolean more = false;
-        final long drawingTime = getDrawingTime();
-        if((flags & FLAG_USE_CHILD_DRAWING_ORDER) == 0)        
-        {
-for(int i = 0;i < count;i++)
-            {
-                final View child = children[i];
-                if((child.mViewFlags & VISIBILITY_MASK) == VISIBLE || child.getAnimation() != null)                
-                {
-                    more |= drawChild(canvas, child, drawingTime);
-                } //End block
-            } //End block
-        } //End block
-        else
-        {
-for(int i = 0;i < count;i++)
-            {
-                final View child = children[getChildDrawingOrder(count, i)];
-                if((child.mViewFlags & VISIBILITY_MASK) == VISIBLE || child.getAnimation() != null)                
-                {
-                    more |= drawChild(canvas, child, drawingTime);
-                } //End block
-            } //End block
-        } //End block
-        if(mDisappearingChildren != null)        
-        {
-            final ArrayList<View> disappearingChildren = mDisappearingChildren;
-            final int disappearingCount = disappearingChildren.size() - 1;
-for(int i = disappearingCount;i >= 0;i--)
-            {
-                final View child = disappearingChildren.get(i);
-                more |= drawChild(canvas, child, drawingTime);
-            } //End block
-        } //End block
-        if(clipToPadding)        
-        {
-            canvas.restoreToCount(saveCount);
-        } //End block
-        flags = mGroupFlags;
-        if((flags & FLAG_INVALIDATE_REQUIRED) == FLAG_INVALIDATE_REQUIRED)        
-        {
-            invalidate(true);
-        } //End block
-        if((flags & FLAG_ANIMATION_DONE) == 0 && (flags & FLAG_NOTIFY_ANIMATION_LISTENER) == 0 &&
-                mLayoutAnimationController.isDone() && !more)        
-        {
-            mGroupFlags |= FLAG_NOTIFY_ANIMATION_LISTENER;
-            final Runnable end = new Runnable() {
-               public void run() {
-                   notifyAnimationListener();
-               }
-            };
-            post(end);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    @Override protected void dispatchDraw(Canvas canvas){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.725 -0400", hash_original_method = "314AC469B646186EB8E30D4AB123CD56", hash_generated_method = "B2F1359E9651EBA4B1A5A87289A81F65")
-    protected int getChildDrawingOrder(int childCount, int i) {
-        addTaint(i);
-        addTaint(childCount);
-        int var865C0C0B4AB0E063E5CAA3387C1A8741_1817709184 = (i);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_34771546 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_34771546;
-        // ---------- Original Method ----------
-        //return i;
+    protected int getChildDrawingOrder(int childCount, int i){
+		// Original method
+		/*
+		{
+        return i;
     }
+		*/
+		return 0;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.725 -0400", hash_original_method = "396DFE394BEDDAB737694626CE3DE3EF", hash_generated_method = "CF28FD672903EF082609ECF9A1B7A7A8")
-    private void notifyAnimationListener() {
+    private void notifyAnimationListener(){
+		// Original method
+		/*
+		{
         mGroupFlags &= ~FLAG_NOTIFY_ANIMATION_LISTENER;
         mGroupFlags |= FLAG_ANIMATION_DONE;
-        if(mAnimationListener != null)        
-        {
-            final Runnable end = new Runnable() {
+        if (mAnimationListener != null) {
+           final Runnable end = new Runnable() {
                public void run() {
                    mAnimationListener.onAnimationEnd(mLayoutAnimationController.getAnimation());
                }
            };
-            post(end);
-        } //End block
-        if((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE)        
-        {
+           post(end);
+        }
+        if ((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE) {
             mGroupFlags &= ~FLAG_CHILDREN_DRAWN_WITH_CACHE;
-            if((mPersistentDrawingCache & PERSISTENT_ANIMATION_CACHE) == 0)            
-            {
+            if ((mPersistentDrawingCache & PERSISTENT_ANIMATION_CACHE) == 0) {
                 setChildrenDrawingCacheEnabled(false);
-            } //End block
-        } //End block
+            }
+        }
         invalidate(true);
-        // ---------- Original Method ----------
-        //mGroupFlags &= ~FLAG_NOTIFY_ANIMATION_LISTENER;
-        //mGroupFlags |= FLAG_ANIMATION_DONE;
-        //if (mAnimationListener != null) {
-           //final Runnable end = new Runnable() {
-               //public void run() {
-                   //mAnimationListener.onAnimationEnd(mLayoutAnimationController.getAnimation());
-               //}
-           //};
-           //post(end);
-        //}
-        //if ((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE) {
-            //mGroupFlags &= ~FLAG_CHILDREN_DRAWN_WITH_CACHE;
-            //if ((mPersistentDrawingCache & PERSISTENT_ANIMATION_CACHE) == 0) {
-                //setChildrenDrawingCacheEnabled(false);
-            //}
-        //}
-        //invalidate(true);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.727 -0400", hash_original_method = "F4EA27B0452D996E61B8467125C95A50", hash_generated_method = "20EBD4F390102F77221050EE7FD65AFB")
-    @Override
-    protected void dispatchGetDisplayList() {
+    @Override protected void dispatchGetDisplayList(){
+		// Original method
+		/*
+		{
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             final View child = children[i];
-            if(((child.mViewFlags & VISIBILITY_MASK) == VISIBLE || child.getAnimation() != null) &&
-                    child.hasStaticLayer())            
-            {
+            if (((child.mViewFlags & VISIBILITY_MASK) == VISIBLE || child.getAnimation() != null) &&
+                    child.hasStaticLayer()) {
                 child.mRecreateDisplayList = (child.mPrivateFlags & INVALIDATED) == INVALIDATED;
                 child.mPrivateFlags &= ~INVALIDATED;
                 child.getDisplayList();
                 child.mRecreateDisplayList = false;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //final View child = children[i];
-            //if (((child.mViewFlags & VISIBILITY_MASK) == VISIBLE || child.getAnimation() != null) &&
-                    //child.hasStaticLayer()) {
-                //child.mRecreateDisplayList = (child.mPrivateFlags & INVALIDATED) == INVALIDATED;
-                //child.mPrivateFlags &= ~INVALIDATED;
-                //child.getDisplayList();
-                //child.mRecreateDisplayList = false;
-            //}
-        //}
+            }
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.733 -0400", hash_original_method = "A5CF70DDE358EAA9D1CA892FF372BD55", hash_generated_method = "6BBCBBFF35E4247835C30B2A29076278")
-    protected boolean drawChild(Canvas canvas, View child, long drawingTime) {
-        addTaint(drawingTime);
-        addTaint(child.getTaint());
-        addTaint(canvas.getTaint());
-        boolean more = false;
-        final int cl = child.mLeft;
-        final int ct = child.mTop;
-        final int cr = child.mRight;
-        final int cb = child.mBottom;
-        final boolean childHasIdentityMatrix = child.hasIdentityMatrix();
-        final int flags = mGroupFlags;
-        if((flags & FLAG_CLEAR_TRANSFORMATION) == FLAG_CLEAR_TRANSFORMATION)        
-        {
-            mChildTransformation.clear();
-            mGroupFlags &= ~FLAG_CLEAR_TRANSFORMATION;
-        } //End block
-        Transformation transformToApply = null;
-        Transformation invalidationTransform;
-        final Animation a = child.getAnimation();
-        boolean concatMatrix = false;
-        boolean scalingRequired = false;
-        boolean caching;
-        int layerType = mDrawLayers ? child.getLayerType() : LAYER_TYPE_NONE;
-        final boolean hardwareAccelerated = canvas.isHardwareAccelerated();
-        if((flags & FLAG_CHILDREN_DRAWN_WITH_CACHE) == FLAG_CHILDREN_DRAWN_WITH_CACHE ||
-                (flags & FLAG_ALWAYS_DRAWN_WITH_CACHE) == FLAG_ALWAYS_DRAWN_WITH_CACHE)        
-        {
-            caching = true;
-            if(mAttachInfo != null)            
-            scalingRequired = mAttachInfo.mScalingRequired;
-        } //End block
-        else
-        {
-            caching = (layerType != LAYER_TYPE_NONE) || hardwareAccelerated;
-        } //End block
-        if(a != null)        
-        {
-            final boolean initialized = a.isInitialized();
-            if(!initialized)            
-            {
-                a.initialize(cr - cl, cb - ct, getWidth(), getHeight());
-                a.initializeInvalidateRegion(0, 0, cr - cl, cb - ct);
-                child.onAnimationStart();
-            } //End block
-            more = a.getTransformation(drawingTime, mChildTransformation,
-                    scalingRequired ? mAttachInfo.mApplicationScale : 1f);
-            if(scalingRequired && mAttachInfo.mApplicationScale != 1f)            
-            {
-                if(mInvalidationTransformation == null)                
-                {
-                    mInvalidationTransformation = new Transformation();
-                } //End block
-                invalidationTransform = mInvalidationTransformation;
-                a.getTransformation(drawingTime, invalidationTransform, 1f);
-            } //End block
-            else
-            {
-                invalidationTransform = mChildTransformation;
-            } //End block
-            transformToApply = mChildTransformation;
-            concatMatrix = a.willChangeTransformationMatrix();
-            if(more)            
-            {
-                if(!a.willChangeBounds())                
-                {
-                    if((flags & (FLAG_OPTIMIZE_INVALIDATE | FLAG_ANIMATION_DONE)) ==
-                            FLAG_OPTIMIZE_INVALIDATE)                    
-                    {
-                        mGroupFlags |= FLAG_INVALIDATE_REQUIRED;
-                    } //End block
-                    else
-                    if((flags & FLAG_INVALIDATE_REQUIRED) == 0)                    
-                    {
-                        mPrivateFlags |= DRAW_ANIMATION;
-                        invalidate(cl, ct, cr, cb);
-                    } //End block
-                } //End block
-                else
-                {
-                    if(mInvalidateRegion == null)                    
-                    {
-                        mInvalidateRegion = new RectF();
-                    } //End block
-                    final RectF region = mInvalidateRegion;
-                    a.getInvalidateRegion(0, 0, cr - cl, cb - ct, region, invalidationTransform);
-                    mPrivateFlags |= DRAW_ANIMATION;
-                    final int left = cl + (int) region.left;
-                    final int top = ct + (int) region.top;
-                    invalidate(left, top, left + (int) (region.width() + .5f),
-                            top + (int) (region.height() + .5f));
-                } //End block
-            } //End block
-        } //End block
-        else
-        if((flags & FLAG_SUPPORT_STATIC_TRANSFORMATIONS) ==
-                FLAG_SUPPORT_STATIC_TRANSFORMATIONS)        
-        {
-            final boolean hasTransform = getChildStaticTransformation(child, mChildTransformation);
-            if(hasTransform)            
-            {
-                final int transformType = mChildTransformation.getTransformationType();
-                transformToApply = transformType != Transformation.TYPE_IDENTITY ?
-                        mChildTransformation : null;
-                concatMatrix = (transformType & Transformation.TYPE_MATRIX) != 0;
-            } //End block
-        } //End block
-        concatMatrix |= !childHasIdentityMatrix;
-        child.mPrivateFlags |= DRAWN;
-        if(!concatMatrix && canvas.quickReject(cl, ct, cr, cb, Canvas.EdgeType.BW) &&
-                (child.mPrivateFlags & DRAW_ANIMATION) == 0)        
-        {
-            boolean varADDEC426932E71323700AFA1911F8F1C_1486255688 = (more);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_644076864 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_644076864;
-        } //End block
-        if(hardwareAccelerated)        
-        {
-            child.mRecreateDisplayList = (child.mPrivateFlags & INVALIDATED) == INVALIDATED;
-            child.mPrivateFlags &= ~INVALIDATED;
-        } //End block
-        child.computeScroll();
-        final int sx = child.mScrollX;
-        final int sy = child.mScrollY;
-        DisplayList displayList = null;
-        Bitmap cache = null;
-        boolean hasDisplayList = false;
-        if(caching)        
-        {
-            if(!hardwareAccelerated)            
-            {
-                if(layerType != LAYER_TYPE_NONE)                
-                {
-                    layerType = LAYER_TYPE_SOFTWARE;
-                    child.buildDrawingCache(true);
-                } //End block
-                cache = child.getDrawingCache(true);
-            } //End block
-            else
-            {
-switch(layerType){
-                case LAYER_TYPE_SOFTWARE:
-                child.buildDrawingCache(true);
-                cache = child.getDrawingCache(true);
-                break;
-                case LAYER_TYPE_NONE:
-                hasDisplayList = child.canHaveDisplayList();
-                break;
-}
-            } //End block
-        } //End block
-        final boolean hasNoCache = cache == null || hasDisplayList;
-        final boolean offsetForScroll = cache == null && !hasDisplayList &&
-                layerType != LAYER_TYPE_HARDWARE;
-        final int restoreTo = canvas.save();
-        if(offsetForScroll)        
-        {
-            canvas.translate(cl - sx, ct - sy);
-        } //End block
-        else
-        {
-            canvas.translate(cl, ct);
-            if(scalingRequired)            
-            {
-                final float scale = 1.0f / mAttachInfo.mApplicationScale;
-                canvas.scale(scale, scale);
-            } //End block
-        } //End block
-        float alpha = child.getAlpha();
-        if(transformToApply != null || alpha < 1.0f || !child.hasIdentityMatrix())        
-        {
-            if(transformToApply != null || !childHasIdentityMatrix)            
-            {
-                int transX = 0;
-                int transY = 0;
-                if(offsetForScroll)                
-                {
-                    transX = -sx;
-                    transY = -sy;
-                } //End block
-                if(transformToApply != null)                
-                {
-                    if(concatMatrix)                    
-                    {
-                        canvas.translate(-transX, -transY);
-                        canvas.concat(transformToApply.getMatrix());
-                        canvas.translate(transX, transY);
-                        mGroupFlags |= FLAG_CLEAR_TRANSFORMATION;
-                    } //End block
-                    float transformAlpha = transformToApply.getAlpha();
-                    if(transformAlpha < 1.0f)                    
-                    {
-                        alpha *= transformToApply.getAlpha();
-                        mGroupFlags |= FLAG_CLEAR_TRANSFORMATION;
-                    } //End block
-                } //End block
-                if(!childHasIdentityMatrix)                
-                {
-                    canvas.translate(-transX, -transY);
-                    canvas.concat(child.getMatrix());
-                    canvas.translate(transX, transY);
-                } //End block
-            } //End block
-            if(alpha < 1.0f)            
-            {
-                mGroupFlags |= FLAG_CLEAR_TRANSFORMATION;
-                if(hasNoCache)                
-                {
-                    final int multipliedAlpha = (int) (255 * alpha);
-                    if(!child.onSetAlpha(multipliedAlpha))                    
-                    {
-                        int layerFlags = Canvas.HAS_ALPHA_LAYER_SAVE_FLAG;
-                        if((flags & FLAG_CLIP_CHILDREN) == FLAG_CLIP_CHILDREN ||
-                                layerType != LAYER_TYPE_NONE)                        
-                        {
-                            layerFlags |= Canvas.CLIP_TO_LAYER_SAVE_FLAG;
-                        } //End block
-                        if(layerType == LAYER_TYPE_NONE)                        
-                        {
-                            final int scrollX = hasDisplayList ? 0 : sx;
-                            final int scrollY = hasDisplayList ? 0 : sy;
-                            canvas.saveLayerAlpha(scrollX, scrollY, scrollX + cr - cl,
-                                    scrollY + cb - ct, multipliedAlpha, layerFlags);
-                        } //End block
-                    } //End block
-                    else
-                    {
-                        child.mPrivateFlags |= ALPHA_SET;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        else
-        if((child.mPrivateFlags & ALPHA_SET) == ALPHA_SET)        
-        {
-            child.onSetAlpha(255);
-            child.mPrivateFlags &= ~ALPHA_SET;
-        } //End block
-        if((flags & FLAG_CLIP_CHILDREN) == FLAG_CLIP_CHILDREN)        
-        {
-            if(offsetForScroll)            
-            {
-                canvas.clipRect(sx, sy, sx + (cr - cl), sy + (cb - ct));
-            } //End block
-            else
-            {
-                if(!scalingRequired || cache == null)                
-                {
-                    canvas.clipRect(0, 0, cr - cl, cb - ct);
-                } //End block
-                else
-                {
-                    canvas.clipRect(0, 0, cache.getWidth(), cache.getHeight());
-                } //End block
-            } //End block
-        } //End block
-        if(hasDisplayList)        
-        {
-            displayList = child.getDisplayList();
-            if(!displayList.isValid())            
-            {
-                displayList = null;
-                hasDisplayList = false;
-            } //End block
-        } //End block
-        if(hasNoCache)        
-        {
-            boolean layerRendered = false;
-            if(layerType == LAYER_TYPE_HARDWARE)            
-            {
-                final HardwareLayer layer = child.getHardwareLayer();
-                if(layer != null && layer.isValid())                
-                {
-                    child.mLayerPaint.setAlpha((int) (alpha * 255));
-                    ((HardwareCanvas) canvas).drawHardwareLayer(layer, 0, 0, child.mLayerPaint);
-                    layerRendered = true;
-                } //End block
-                else
-                {
-                    final int scrollX = hasDisplayList ? 0 : sx;
-                    final int scrollY = hasDisplayList ? 0 : sy;
-                    canvas.saveLayer(scrollX, scrollY,
-                            scrollX + cr - cl, scrollY + cb - ct, child.mLayerPaint,
-                            Canvas.HAS_ALPHA_LAYER_SAVE_FLAG | Canvas.CLIP_TO_LAYER_SAVE_FLAG);
-                } //End block
-            } //End block
-            if(!layerRendered)            
-            {
-                if(!hasDisplayList)                
-                {
-                    if((child.mPrivateFlags & SKIP_DRAW) == SKIP_DRAW)                    
-                    {
-                        if(ViewDebug.TRACE_HIERARCHY)                        
-                        {
-                            ViewDebug.trace(this, ViewDebug.HierarchyTraceType.DRAW);
-                        } //End block
-                        child.mPrivateFlags &= ~DIRTY_MASK;
-                        child.dispatchDraw(canvas);
-                    } //End block
-                    else
-                    {
-                        child.draw(canvas);
-                    } //End block
-                } //End block
-                else
-                {
-                    child.mPrivateFlags &= ~DIRTY_MASK;
-                    ((HardwareCanvas) canvas).drawDisplayList(displayList, cr - cl, cb - ct, null);
-                } //End block
-            } //End block
-        } //End block
-        else
-        if(cache != null)        
-        {
-            child.mPrivateFlags &= ~DIRTY_MASK;
-            Paint cachePaint;
-            if(layerType == LAYER_TYPE_NONE)            
-            {
-                cachePaint = mCachePaint;
-                if(cachePaint == null)                
-                {
-                    cachePaint = new Paint();
-                    cachePaint.setDither(false);
-                    mCachePaint = cachePaint;
-                } //End block
-                if(alpha < 1.0f)                
-                {
-                    cachePaint.setAlpha((int) (alpha * 255));
-                    mGroupFlags |= FLAG_ALPHA_LOWER_THAN_ONE;
-                } //End block
-                else
-                if((flags & FLAG_ALPHA_LOWER_THAN_ONE) == FLAG_ALPHA_LOWER_THAN_ONE)                
-                {
-                    cachePaint.setAlpha(255);
-                    mGroupFlags &= ~FLAG_ALPHA_LOWER_THAN_ONE;
-                } //End block
-            } //End block
-            else
-            {
-                cachePaint = child.mLayerPaint;
-                cachePaint.setAlpha((int) (alpha * 255));
-            } //End block
-            canvas.drawBitmap(cache, 0.0f, 0.0f, cachePaint);
-        } //End block
-        canvas.restoreToCount(restoreTo);
-        if(a != null && !more)        
-        {
-            if(!hardwareAccelerated && !a.getFillAfter())            
-            {
-                child.onSetAlpha(255);
-            } //End block
-            finishAnimatingView(child, a);
-        } //End block
-        if(more && hardwareAccelerated)        
-        {
-            invalidate(true);
-            if(a.hasAlpha() && (child.mPrivateFlags & ALPHA_SET) == ALPHA_SET)            
-            {
-                child.invalidate(true);
-            } //End block
-        } //End block
-        child.mRecreateDisplayList = false;
-        boolean varADDEC426932E71323700AFA1911F8F1C_1944346259 = (more);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1470056979 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1470056979;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    protected boolean drawChild(Canvas canvas, View child, long drawingTime){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.738 -0400", hash_original_method = "4095F0AE1BAE27A3A14B16FD7C3431AE", hash_generated_method = "3D450997941A142906D63FBF91271C8A")
-    public void setChildrenLayersEnabled(boolean enabled) {
-        if(enabled != mDrawLayers)        
-        {
+    public void setChildrenLayersEnabled(boolean enabled){
+		// Original method
+		/*
+		{
+        if (enabled != mDrawLayers) {
             mDrawLayers = enabled;
             invalidate(true);
-for(int i = 0;i < mChildrenCount;i++)
-            {
+            for (int i = 0; i < mChildrenCount; i++) {
                 View child = mChildren[i];
-                if(child.mLayerType != LAYER_TYPE_NONE)                
-                {
+                if (child.mLayerType != LAYER_TYPE_NONE) {
                     child.invalidate(true);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (enabled != mDrawLayers) {
-            //mDrawLayers = enabled;
-            //invalidate(true);
-            //for (int i = 0; i < mChildrenCount; i++) {
-                //View child = mChildren[i];
-                //if (child.mLayerType != LAYER_TYPE_NONE) {
-                    //child.invalidate(true);
-                //}
-            //}
-        //}
+                }
+            }
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.739 -0400", hash_original_method = "1DB85DBA1331DEE146504B0E70B65BE5", hash_generated_method = "BF80C83659F52B39E6567F755FA45B69")
-    public void setClipChildren(boolean clipChildren) {
-        addTaint(clipChildren);
+    public void setClipChildren(boolean clipChildren){
+		// Original method
+		/*
+		{
         setBooleanFlag(FLAG_CLIP_CHILDREN, clipChildren);
-        // ---------- Original Method ----------
-        //setBooleanFlag(FLAG_CLIP_CHILDREN, clipChildren);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.740 -0400", hash_original_method = "863AF54978AA2727D0D7509C22DC212D", hash_generated_method = "B533A9EF1AF362220AD494012A43E237")
-    public void setClipToPadding(boolean clipToPadding) {
-        addTaint(clipToPadding);
+    public void setClipToPadding(boolean clipToPadding){
+		// Original method
+		/*
+		{
         setBooleanFlag(FLAG_CLIP_TO_PADDING, clipToPadding);
-        // ---------- Original Method ----------
-        //setBooleanFlag(FLAG_CLIP_TO_PADDING, clipToPadding);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.740 -0400", hash_original_method = "8ABEEBF76C5626CBEA0073E7871E08E9", hash_generated_method = "FA1EEB305F2B58C5E3547352F5D96530")
-    @Override
-    public void dispatchSetSelected(boolean selected) {
-        addTaint(selected);
+    @Override public void dispatchSetSelected(boolean selected){
+		// Original method
+		/*
+		{
         final View[] children = mChildren;
         final int count = mChildrenCount;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             children[i].setSelected(selected);
-        } //End block
-        // ---------- Original Method ----------
-        //final View[] children = mChildren;
-        //final int count = mChildrenCount;
-        //for (int i = 0; i < count; i++) {
-            //children[i].setSelected(selected);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.740 -0400", hash_original_method = "2F91B8D19CDC8A9E83F3387815EB4D3F", hash_generated_method = "3104F0B7F5F2E3A1927C7E598C486538")
-    @Override
-    public void dispatchSetActivated(boolean activated) {
-        addTaint(activated);
+    @Override public void dispatchSetActivated(boolean activated){
+		// Original method
+		/*
+		{
         final View[] children = mChildren;
         final int count = mChildrenCount;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             children[i].setActivated(activated);
-        } //End block
-        // ---------- Original Method ----------
-        //final View[] children = mChildren;
-        //final int count = mChildrenCount;
-        //for (int i = 0; i < count; i++) {
-            //children[i].setActivated(activated);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.740 -0400", hash_original_method = "741F0E8D45382BBF6BA56C96532A94D8", hash_generated_method = "6334179A2A744F78110551C2407DD00D")
-    @Override
-    protected void dispatchSetPressed(boolean pressed) {
-        addTaint(pressed);
+    @Override protected void dispatchSetPressed(boolean pressed){
+		// Original method
+		/*
+		{
         final View[] children = mChildren;
         final int count = mChildrenCount;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             children[i].setPressed(pressed);
-        } //End block
-        // ---------- Original Method ----------
-        //final View[] children = mChildren;
-        //final int count = mChildrenCount;
-        //for (int i = 0; i < count; i++) {
-            //children[i].setPressed(pressed);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.740 -0400", hash_original_method = "BD73AAD871B8740D29315EE305D10F4B", hash_generated_method = "B69CF6F68E52D80B87CD5D6F08B2855F")
-    protected void setStaticTransformationsEnabled(boolean enabled) {
-        addTaint(enabled);
+    protected void setStaticTransformationsEnabled(boolean enabled){
+		// Original method
+		/*
+		{
         setBooleanFlag(FLAG_SUPPORT_STATIC_TRANSFORMATIONS, enabled);
-        // ---------- Original Method ----------
-        //setBooleanFlag(FLAG_SUPPORT_STATIC_TRANSFORMATIONS, enabled);
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.741 -0400", hash_original_method = "767004ADA8C3853AF520B9D176A534BE", hash_generated_method = "13A73423FD057F633195F88E930216CF")
-    protected boolean getChildStaticTransformation(View child, Transformation t) {
-        addTaint(t.getTaint());
-        addTaint(child.getTaint());
-        boolean var68934A3E9455FA72420237EB05902327_611299690 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_39422221 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_39422221;
-        // ---------- Original Method ----------
-        //return false;
+    protected boolean getChildStaticTransformation(View child, Transformation t){
+		// Original method
+		/*
+		{
+        return false;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.743 -0400", hash_original_method = "8C56D4BEA5FE426CA6EBD73A64039E70", hash_generated_method = "00C7FAB665410086713590C6A0BDE953")
-    @Override
-    protected View findViewTraversal(int id) {
-        addTaint(id);
-        if(id == mID)        
-        {
-View var72A74007B2BE62B849F475C7BDA4658B_942834981 =             this;
-            var72A74007B2BE62B849F475C7BDA4658B_942834981.addTaint(taint);
-            return var72A74007B2BE62B849F475C7BDA4658B_942834981;
-        } //End block
+    @Override protected View findViewTraversal(int id){
+		// Original method
+		/*
+		{
+        if (id == mID) {
+            return this;
+        }
         final View[] where = mChildren;
         final int len = mChildrenCount;
-for(int i = 0;i < len;i++)
-        {
+        for (int i = 0; i < len; i++) {
             View v = where[i];
-            if((v.mPrivateFlags & IS_ROOT_NAMESPACE) == 0)            
-            {
+            if ((v.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
                 v = v.findViewById(id);
-                if(v != null)                
-                {
-View var6DC76BC51820DD65E8396280E884AA78_1245433270 =                     v;
-                    var6DC76BC51820DD65E8396280E884AA78_1245433270.addTaint(taint);
-                    return var6DC76BC51820DD65E8396280E884AA78_1245433270;
-                } //End block
-            } //End block
-        } //End block
-View var540C13E9E156B687226421B24F2DF178_261022092 =         null;
-        var540C13E9E156B687226421B24F2DF178_261022092.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_261022092;
-        // ---------- Original Method ----------
-        //if (id == mID) {
-            //return this;
-        //}
-        //final View[] where = mChildren;
-        //final int len = mChildrenCount;
-        //for (int i = 0; i < len; i++) {
-            //View v = where[i];
-            //if ((v.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
-                //v = v.findViewById(id);
-                //if (v != null) {
-                    //return v;
-                //}
-            //}
-        //}
-        //return null;
+                if (v != null) {
+                    return v;
+                }
+            }
+        }
+        return null;
     }
+		*/
+		return null;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.744 -0400", hash_original_method = "D087F3465F923453754E64A11DB6BED1", hash_generated_method = "FE16E7CD2C2BC8A7F36BD54A708F4574")
-    @Override
-    protected View findViewWithTagTraversal(Object tag) {
-        addTaint(tag.getTaint());
-        if(tag != null && tag.equals(mTag))        
-        {
-View var72A74007B2BE62B849F475C7BDA4658B_1426503469 =             this;
-            var72A74007B2BE62B849F475C7BDA4658B_1426503469.addTaint(taint);
-            return var72A74007B2BE62B849F475C7BDA4658B_1426503469;
-        } //End block
+    @Override protected View findViewWithTagTraversal(Object tag){
+		// Original method
+		/*
+		{
+        if (tag != null && tag.equals(mTag)) {
+            return this;
+        }
         final View[] where = mChildren;
         final int len = mChildrenCount;
-for(int i = 0;i < len;i++)
-        {
+        for (int i = 0; i < len; i++) {
             View v = where[i];
-            if((v.mPrivateFlags & IS_ROOT_NAMESPACE) == 0)            
-            {
+            if ((v.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
                 v = v.findViewWithTag(tag);
-                if(v != null)                
-                {
-View var6DC76BC51820DD65E8396280E884AA78_540777810 =                     v;
-                    var6DC76BC51820DD65E8396280E884AA78_540777810.addTaint(taint);
-                    return var6DC76BC51820DD65E8396280E884AA78_540777810;
-                } //End block
-            } //End block
-        } //End block
-View var540C13E9E156B687226421B24F2DF178_1236350540 =         null;
-        var540C13E9E156B687226421B24F2DF178_1236350540.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1236350540;
-        // ---------- Original Method ----------
-        //if (tag != null && tag.equals(mTag)) {
-            //return this;
-        //}
-        //final View[] where = mChildren;
-        //final int len = mChildrenCount;
-        //for (int i = 0; i < len; i++) {
-            //View v = where[i];
-            //if ((v.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
-                //v = v.findViewWithTag(tag);
-                //if (v != null) {
-                    //return v;
-                //}
-            //}
-        //}
-        //return null;
+                if (v != null) {
+                    return v;
+                }
+            }
+        }
+        return null;
     }
+		*/
+		return null;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.745 -0400", hash_original_method = "0EC5116F4AD2AA9CFA72F9149C3A9529", hash_generated_method = "5B0BBBC47821E4E9535934EEB7872CE6")
-    @Override
-    protected View findViewByPredicateTraversal(Predicate<View> predicate, View childToSkip) {
-        addTaint(childToSkip.getTaint());
-        addTaint(predicate.getTaint());
-        if(predicate.apply(this))        
-        {
-View var72A74007B2BE62B849F475C7BDA4658B_637695957 =             this;
-            var72A74007B2BE62B849F475C7BDA4658B_637695957.addTaint(taint);
-            return var72A74007B2BE62B849F475C7BDA4658B_637695957;
-        } //End block
+    @Override protected View findViewByPredicateTraversal(Predicate<View> predicate, View childToSkip){
+		// Original method
+		/*
+		{
+        if (predicate.apply(this)) {
+            return this;
+        }
         final View[] where = mChildren;
         final int len = mChildrenCount;
-for(int i = 0;i < len;i++)
-        {
+        for (int i = 0; i < len; i++) {
             View v = where[i];
-            if(v != childToSkip && (v.mPrivateFlags & IS_ROOT_NAMESPACE) == 0)            
-            {
+            if (v != childToSkip && (v.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
                 v = v.findViewByPredicate(predicate);
-                if(v != null)                
-                {
-View var6DC76BC51820DD65E8396280E884AA78_1438849033 =                     v;
-                    var6DC76BC51820DD65E8396280E884AA78_1438849033.addTaint(taint);
-                    return var6DC76BC51820DD65E8396280E884AA78_1438849033;
-                } //End block
-            } //End block
-        } //End block
-View var540C13E9E156B687226421B24F2DF178_573195594 =         null;
-        var540C13E9E156B687226421B24F2DF178_573195594.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_573195594;
-        // ---------- Original Method ----------
-        //if (predicate.apply(this)) {
-            //return this;
-        //}
-        //final View[] where = mChildren;
-        //final int len = mChildrenCount;
-        //for (int i = 0; i < len; i++) {
-            //View v = where[i];
-            //if (v != childToSkip && (v.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
-                //v = v.findViewByPredicate(predicate);
-                //if (v != null) {
-                    //return v;
-                //}
-            //}
-        //}
-        //return null;
+                if (v != null) {
+                    return v;
+                }
+            }
+        }
+        return null;
     }
+		*/
+		return null;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.746 -0400", hash_original_method = "CEC5DF3412108DC355B81A234F778717", hash_generated_method = "9557E906CBAC2A36454E636B95E6F9A1")
-    public void addView(View child) {
-        addTaint(child.getTaint());
+    public void addView(View child){
+		// Original method
+		/*
+		{
         addView(child, -1);
-        // ---------- Original Method ----------
-        //addView(child, -1);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.748 -0400", hash_original_method = "052049806EFDCB28F8B1780970FB4D61", hash_generated_method = "AEA01E38D1FE7BF9C427C79760613FCE")
-    public void addView(View child, int index) {
-        addTaint(index);
-        addTaint(child.getTaint());
+    public void addView(View child, int index){
+		// Original method
+		/*
+		{
         LayoutParams params = child.getLayoutParams();
-        if(params == null)        
-        {
+        if (params == null) {
             params = generateDefaultLayoutParams();
-            if(params == null)            
-            {
-                IllegalArgumentException varC986FBA31949518009336B3DE110AC27_1603994550 = new IllegalArgumentException("generateDefaultLayoutParams() cannot return null");
-                varC986FBA31949518009336B3DE110AC27_1603994550.addTaint(taint);
-                throw varC986FBA31949518009336B3DE110AC27_1603994550;
-            } //End block
-        } //End block
+            if (params == null) {
+                throw new IllegalArgumentException("generateDefaultLayoutParams() cannot return null");
+            }
+        }
         addView(child, index, params);
-        // ---------- Original Method ----------
-        //LayoutParams params = child.getLayoutParams();
-        //if (params == null) {
-            //params = generateDefaultLayoutParams();
-            //if (params == null) {
-                //throw new IllegalArgumentException("generateDefaultLayoutParams() cannot return null");
-            //}
-        //}
-        //addView(child, index, params);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.749 -0400", hash_original_method = "04069655751E8F150919B197DB2D0EF4", hash_generated_method = "2A6DD4DE37CD2F6E25BAD69E541CAACB")
-    public void addView(View child, int width, int height) {
-        addTaint(height);
-        addTaint(width);
-        addTaint(child.getTaint());
+    public void addView(View child, int width, int height){
+		// Original method
+		/*
+		{
         final LayoutParams params = generateDefaultLayoutParams();
         params.width = width;
         params.height = height;
         addView(child, -1, params);
-        // ---------- Original Method ----------
-        //final LayoutParams params = generateDefaultLayoutParams();
-        //params.width = width;
-        //params.height = height;
-        //addView(child, -1, params);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.749 -0400", hash_original_method = "CAABD1DBDF747222034CC373BA6381CC", hash_generated_method = "606592A6D2B03B0011BC5E780FC5D9D2")
-    public void addView(View child, LayoutParams params) {
-        addTaint(params.getTaint());
-        addTaint(child.getTaint());
+    public void addView(View child, LayoutParams params){
+		// Original method
+		/*
+		{
         addView(child, -1, params);
-        // ---------- Original Method ----------
-        //addView(child, -1, params);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.750 -0400", hash_original_method = "BD78A36687CEEF62B7E0786E86501A2F", hash_generated_method = "20660A8C77CACC2F90222AADF54C9342")
-    public void addView(View child, int index, LayoutParams params) {
-        addTaint(params.getTaint());
-        addTaint(index);
-        addTaint(child.getTaint());
-        if(DBG)        
-        {
+    public void addView(View child, int index, LayoutParams params){
+		// Original method
+		/*
+		{
+        if (DBG) {
             System.out.println(this + " addView");
-        } //End block
+        }
         requestLayout();
         invalidate(true);
         addViewInner(child, index, params, false);
-        // ---------- Original Method ----------
-        //if (DBG) {
-            //System.out.println(this + " addView");
-        //}
-        //requestLayout();
-        //invalidate(true);
-        //addViewInner(child, index, params, false);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.750 -0400", hash_original_method = "8137D76BAD6EAD8C2AFF7B0DC7EC38EA", hash_generated_method = "3671D0F06E706A10D8BB0A99C631C01D")
-    public void updateViewLayout(View view, ViewGroup.LayoutParams params) {
-        addTaint(params.getTaint());
-        addTaint(view.getTaint());
-        if(!checkLayoutParams(params))        
-        {
-            IllegalArgumentException varFE35611D48A20AFF08E77DA77512451F_839040185 = new IllegalArgumentException("Invalid LayoutParams supplied to " + this);
-            varFE35611D48A20AFF08E77DA77512451F_839040185.addTaint(taint);
-            throw varFE35611D48A20AFF08E77DA77512451F_839040185;
-        } //End block
-        if(view.mParent != this)        
-        {
-            IllegalArgumentException var862EA8241E17B1317F48A84AF1A073A6_492759193 = new IllegalArgumentException("Given view not a child of " + this);
-            var862EA8241E17B1317F48A84AF1A073A6_492759193.addTaint(taint);
-            throw var862EA8241E17B1317F48A84AF1A073A6_492759193;
-        } //End block
+    public void updateViewLayout(View view, ViewGroup.LayoutParams params){
+		// Original method
+		/*
+		{
+        if (!checkLayoutParams(params)) {
+            throw new IllegalArgumentException("Invalid LayoutParams supplied to " + this);
+        }
+        if (view.mParent != this) {
+            throw new IllegalArgumentException("Given view not a child of " + this);
+        }
         view.setLayoutParams(params);
-        // ---------- Original Method ----------
-        //if (!checkLayoutParams(params)) {
-            //throw new IllegalArgumentException("Invalid LayoutParams supplied to " + this);
-        //}
-        //if (view.mParent != this) {
-            //throw new IllegalArgumentException("Given view not a child of " + this);
-        //}
-        //view.setLayoutParams(params);
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.751 -0400", hash_original_method = "C2EE5015ED0F9B04763A6A0F4C905EDB", hash_generated_method = "8C98238026F58021CFF2F31766039C05")
-    protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
-        addTaint(p.getTaint());
-        boolean var1E5F1565E1078D66EAA4E10A30FB47AF_650305035 = (p != null);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_418342679 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_418342679;
-        // ---------- Original Method ----------
-        //return  p != null;
+    protected boolean checkLayoutParams(ViewGroup.LayoutParams p){
+		// Original method
+		/*
+		{
+        return  p != null;
     }
+		*/
+		return false;
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.751 -0400", hash_original_method = "2EFEB52353D2008493D1621282A03886", hash_generated_method = "7C3C20C1075C2C96B31EA398AE09593A")
-    public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
+    public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener){
+		mOnHierarchyChangeListener = listener;  //Preserved
+		// Original method
+		/*
+		{
         mOnHierarchyChangeListener = listener;
-        // ---------- Original Method ----------
-        //mOnHierarchyChangeListener = listener;
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.751 -0400", hash_original_method = "7C8375F0DCFCC6770307465540C43F29", hash_generated_method = "988F1B5E9B349B10714473F7CB4F6087")
-    protected void onViewAdded(View child) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(child.getTaint());
-        if(mOnHierarchyChangeListener != null)        
-        {
+    protected void onViewAdded(View child){
+		// Original method
+		/*
+		{
+        if (mOnHierarchyChangeListener != null) {
             mOnHierarchyChangeListener.onChildViewAdded(this, child);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mOnHierarchyChangeListener != null) {
-            //mOnHierarchyChangeListener.onChildViewAdded(this, child);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.752 -0400", hash_original_method = "2969A02DF6E73517C4A5610098A20201", hash_generated_method = "19C1E9CD1D46F5A30D9C434B5F3196ED")
-    protected void onViewRemoved(View child) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(child.getTaint());
-        if(mOnHierarchyChangeListener != null)        
-        {
+    protected void onViewRemoved(View child){
+		// Original method
+		/*
+		{
+        if (mOnHierarchyChangeListener != null) {
             mOnHierarchyChangeListener.onChildViewRemoved(this, child);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mOnHierarchyChangeListener != null) {
-            //mOnHierarchyChangeListener.onChildViewRemoved(this, child);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.752 -0400", hash_original_method = "4EC56F492B64387EC5CDEE559C919DD8", hash_generated_method = "C932B5E57E0AC9406366140BD77425FF")
-    protected boolean addViewInLayout(View child, int index, LayoutParams params) {
-        addTaint(params.getTaint());
-        addTaint(index);
-        addTaint(child.getTaint());
-        boolean varD12C22798F7F0037110E10C4AEC4EDDC_1697940426 = (addViewInLayout(child, index, params, false));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_606102778 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_606102778;
-        // ---------- Original Method ----------
-        //return addViewInLayout(child, index, params, false);
+    protected boolean addViewInLayout(View child, int index, LayoutParams params){
+		// Original method
+		/*
+		{
+        return addViewInLayout(child, index, params, false);
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.752 -0400", hash_original_method = "621D5EA894CECBBA3C5FE5D7159CF1D3", hash_generated_method = "02EFF8EC04305FED8E84B905D8F55206")
     protected boolean addViewInLayout(View child, int index, LayoutParams params,
-            boolean preventRequestLayout) {
-        addTaint(preventRequestLayout);
-        addTaint(params.getTaint());
-        addTaint(index);
-        addTaint(child.getTaint());
+            boolean preventRequestLayout){
+		// Original method
+		/*
+		{
         child.mParent = null;
         addViewInner(child, index, params, preventRequestLayout);
         child.mPrivateFlags = (child.mPrivateFlags & ~DIRTY_MASK) | DRAWN;
-        boolean varB326B5062B2F0E69046810717534CB09_1831245577 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1873668622 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1873668622;
-        // ---------- Original Method ----------
-        //child.mParent = null;
-        //addViewInner(child, index, params, preventRequestLayout);
-        //child.mPrivateFlags = (child.mPrivateFlags & ~DIRTY_MASK) | DRAWN;
-        //return true;
+        return true;
     }
+		*/
+		return false;
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.753 -0400", hash_original_method = "156A75B155CF89ADA3C99A75E911D53A", hash_generated_method = "A250998716A3206F2291C31B0B214D0D")
-    protected void cleanupLayoutState(View child) {
-        addTaint(child.getTaint());
+    protected void cleanupLayoutState(View child){
+		// Original method
+		/*
+		{
         child.mPrivateFlags &= ~View.FORCE_LAYOUT;
-        // ---------- Original Method ----------
-        //child.mPrivateFlags &= ~View.FORCE_LAYOUT;
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.754 -0400", hash_original_method = "4623983FE5D2926EED9F934007E41D76", hash_generated_method = "EA1DEABA893DF7AA9D806EA1082570F0")
     private void addViewInner(View child, int index, LayoutParams params,
-            boolean preventRequestLayout) {
-        addTaint(preventRequestLayout);
-        addTaint(params.getTaint());
-        addTaint(index);
-        addTaint(child.getTaint());
-        if(mTransition != null)        
-        {
-            mTransition.cancel(LayoutTransition.DISAPPEARING);
-        } //End block
-        if(child.getParent() != null)        
-        {
-            IllegalStateException var39C9655FD829B33D080F9E2B96D69795_8639452 = new IllegalStateException("The specified child already has a parent. " +
-                    "You must call removeView() on the child's parent first.");
-            var39C9655FD829B33D080F9E2B96D69795_8639452.addTaint(taint);
-            throw var39C9655FD829B33D080F9E2B96D69795_8639452;
-        } //End block
-        if(mTransition != null)        
-        {
-            mTransition.addChild(this, child);
-        } //End block
-        if(!checkLayoutParams(params))        
-        {
-            params = generateLayoutParams(params);
-        } //End block
-        if(preventRequestLayout)        
-        {
-            child.mLayoutParams = params;
-        } //End block
-        else
-        {
-            child.setLayoutParams(params);
-        } //End block
-        if(index < 0)        
-        {
-            index = mChildrenCount;
-        } //End block
-        addInArray(child, index);
-        if(preventRequestLayout)        
-        {
-            child.assignParent(this);
-        } //End block
-        else
-        {
-            child.mParent = this;
-        } //End block
-        if(child.hasFocus())        
-        {
-            requestChildFocus(child, child.findFocus());
-        } //End block
-        AttachInfo ai = mAttachInfo;
-        if(ai != null && (mGroupFlags & FLAG_PREVENT_DISPATCH_ATTACHED_TO_WINDOW) == 0)        
-        {
-            boolean lastKeepOn = ai.mKeepScreenOn;
-            ai.mKeepScreenOn = false;
-            child.dispatchAttachedToWindow(mAttachInfo, (mViewFlags&VISIBILITY_MASK));
-            if(ai.mKeepScreenOn)            
-            {
-                needGlobalAttributesUpdate(true);
-            } //End block
-            ai.mKeepScreenOn = lastKeepOn;
-        } //End block
-        onViewAdded(child);
-        if((child.mViewFlags & DUPLICATE_PARENT_STATE) == DUPLICATE_PARENT_STATE)        
-        {
-            mGroupFlags |= FLAG_NOTIFY_CHILDREN_ON_DRAWABLE_STATE_CHANGE;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+            boolean preventRequestLayout){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.757 -0400", hash_original_method = "3DC226B361362F1A66E4DF7340FD46AC", hash_generated_method = "8E8D79F7F3B8625D7BBA7C766FB6716B")
-    private void addInArray(View child, int index) {
-        addTaint(index);
-        View[] children = mChildren;
-        final int count = mChildrenCount;
-        final int size = children.length;
-        if(index == count)        
-        {
-            if(size == count)            
-            {
-                mChildren = new View[size + ARRAY_CAPACITY_INCREMENT];
-                System.arraycopy(children, 0, mChildren, 0, size);
-                children = mChildren;
-            } //End block
-            children[mChildrenCount++] = child;
-        } //End block
-        else
-        if(index < count)        
-        {
-            if(size == count)            
-            {
-                mChildren = new View[size + ARRAY_CAPACITY_INCREMENT];
-                System.arraycopy(children, 0, mChildren, 0, index);
-                System.arraycopy(children, index, mChildren, index + 1, count - index);
-                children = mChildren;
-            } //End block
-            else
-            {
-                System.arraycopy(children, index, children, index + 1, count - index);
-            } //End block
-            children[index] = child;
-            mChildrenCount++;
-            if(mLastTouchDownIndex >= index)            
-            {
-                mLastTouchDownIndex++;
-            } //End block
-        } //End block
-        else
-        {
-            IndexOutOfBoundsException varA2DB98543D9852DA596036448F470221_30823769 = new IndexOutOfBoundsException("index=" + index + " count=" + count);
-            varA2DB98543D9852DA596036448F470221_30823769.addTaint(taint);
-            throw varA2DB98543D9852DA596036448F470221_30823769;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    private void addInArray(View child, int index){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.758 -0400", hash_original_method = "666B846103F98929B6C3984DF363A458", hash_generated_method = "A0F5E66BAF738043156A46B53D57612B")
-    private void removeFromArray(int index) {
-        addTaint(index);
+    private void removeFromArray(int index){
+		// Original method
+		/*
+		{
         final View[] children = mChildren;
-        if(!(mTransitioningViews != null && mTransitioningViews.contains(children[index])))        
-        {
+        if (!(mTransitioningViews != null && mTransitioningViews.contains(children[index]))) {
             children[index].mParent = null;
-        } //End block
+        }
         final int count = mChildrenCount;
-        if(index == count - 1)        
-        {
+        if (index == count - 1) {
             children[--mChildrenCount] = null;
-        } //End block
-        else
-        if(index >= 0 && index < count)        
-        {
+        } else if (index >= 0 && index < count) {
             System.arraycopy(children, index + 1, children, index, count - index - 1);
             children[--mChildrenCount] = null;
-        } //End block
-        else
-        {
-            IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_70619727 = new IndexOutOfBoundsException();
-            varE4A00D3DB3B35ED0F12562B8AA17377A_70619727.addTaint(taint);
-            throw varE4A00D3DB3B35ED0F12562B8AA17377A_70619727;
-        } //End block
-        if(mLastTouchDownIndex == index)        
-        {
+        } else {
+            throw new IndexOutOfBoundsException();
+        }
+        if (mLastTouchDownIndex == index) {
             mLastTouchDownTime = 0;
             mLastTouchDownIndex = -1;
-        } //End block
-        else
-        if(mLastTouchDownIndex > index)        
-        {
+        } else if (mLastTouchDownIndex > index) {
             mLastTouchDownIndex--;
-        } //End block
-        // ---------- Original Method ----------
-        //final View[] children = mChildren;
-        //if (!(mTransitioningViews != null && mTransitioningViews.contains(children[index]))) {
-            //children[index].mParent = null;
-        //}
-        //final int count = mChildrenCount;
-        //if (index == count - 1) {
-            //children[--mChildrenCount] = null;
-        //} else if (index >= 0 && index < count) {
-            //System.arraycopy(children, index + 1, children, index, count - index - 1);
-            //children[--mChildrenCount] = null;
-        //} else {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //if (mLastTouchDownIndex == index) {
-            //mLastTouchDownTime = 0;
-            //mLastTouchDownIndex = -1;
-        //} else if (mLastTouchDownIndex > index) {
-            //mLastTouchDownIndex--;
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.759 -0400", hash_original_method = "7377DC4CCC7ACF33951FFC91A9C19242", hash_generated_method = "8D9B289038EB9623C68B07BEFB36C7A9")
-    private void removeFromArray(int start, int count) {
-        addTaint(count);
-        final View[] children = mChildren;
-        final int childrenCount = mChildrenCount;
-        start = Math.max(0, start);
-        final int end = Math.min(childrenCount, start + count);
-        if(start == end)        
-        {
-            return;
-        } //End block
-        if(end == childrenCount)        
-        {
-for(int i = start;i < end;i++)
-            {
-                children[i].mParent = null;
-                children[i] = null;
-            } //End block
-        } //End block
-        else
-        {
-for(int i = start;i < end;i++)
-            {
-                children[i].mParent = null;
-            } //End block
-            System.arraycopy(children, end, children, start, childrenCount - end);
-for(int i = childrenCount - (end - start);i < childrenCount;i++)
-            {
-                children[i] = null;
-            } //End block
-        } //End block
-        mChildrenCount -= (end - start);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    private void removeFromArray(int start, int count){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.759 -0400", hash_original_method = "0C13B6720EDD2CD731BF86C88080EC0A", hash_generated_method = "665118E7043C4768E9C53E2B8A5A99C5")
-    private void bindLayoutAnimation(View child) {
-        addTaint(child.getTaint());
+    private void bindLayoutAnimation(View child){
+		// Original method
+		/*
+		{
         Animation a = mLayoutAnimationController.getAnimationForView(child);
         child.setAnimation(a);
-        // ---------- Original Method ----------
-        //Animation a = mLayoutAnimationController.getAnimationForView(child);
-        //child.setAnimation(a);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.761 -0400", hash_original_method = "53A696BC845D59D084861C4C39417C50", hash_generated_method = "CA91F5116142FEBA33A25820204A0B26")
     protected void attachLayoutAnimationParameters(View child,
-            LayoutParams params, int index, int count) {
-        addTaint(count);
-        addTaint(index);
-        addTaint(params.getTaint());
-        addTaint(child.getTaint());
-        LayoutAnimationController.AnimationParameters animationParams = params.layoutAnimationParameters;
-        if(animationParams == null)        
-        {
+            LayoutParams params, int index, int count){
+		// Original method
+		/*
+		{
+        LayoutAnimationController.AnimationParameters animationParams =
+                    params.layoutAnimationParameters;
+        if (animationParams == null) {
             animationParams = new LayoutAnimationController.AnimationParameters();
             params.layoutAnimationParameters = animationParams;
-        } //End block
+        }
         animationParams.count = count;
         animationParams.index = index;
-        // ---------- Original Method ----------
-        //LayoutAnimationController.AnimationParameters animationParams =
-                    //params.layoutAnimationParameters;
-        //if (animationParams == null) {
-            //animationParams = new LayoutAnimationController.AnimationParameters();
-            //params.layoutAnimationParameters = animationParams;
-        //}
-        //animationParams.count = count;
-        //animationParams.index = index;
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.761 -0400", hash_original_method = "D47B7EA927C9C6E9F8463F22FA8E7751", hash_generated_method = "983A525A202F6E617A6AB378BDE0712F")
-    public void removeView(View view) {
-        addTaint(view.getTaint());
+    public void removeView(View view){
+		// Original method
+		/*
+		{
         removeViewInternal(view);
         requestLayout();
         invalidate(true);
-        // ---------- Original Method ----------
-        //removeViewInternal(view);
-        //requestLayout();
-        //invalidate(true);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.761 -0400", hash_original_method = "9C0189C4A93DBFF4CA9135E979534627", hash_generated_method = "51BD2F0E93657733C5EBCC303A3B0B1D")
-    public void removeViewInLayout(View view) {
-        addTaint(view.getTaint());
+    public void removeViewInLayout(View view){
+		// Original method
+		/*
+		{
         removeViewInternal(view);
-        // ---------- Original Method ----------
-        //removeViewInternal(view);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.761 -0400", hash_original_method = "CCED8E1F5C1435811C77FC8E195AA3ED", hash_generated_method = "A0E9A4C949A3BB47296905BCCB748750")
-    public void removeViewsInLayout(int start, int count) {
-        addTaint(count);
-        addTaint(start);
+    public void removeViewsInLayout(int start, int count){
+		// Original method
+		/*
+		{
         removeViewsInternal(start, count);
-        // ---------- Original Method ----------
-        //removeViewsInternal(start, count);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.761 -0400", hash_original_method = "C7B982345E14E4BA654D9B702D09B782", hash_generated_method = "07094032482A6B1C123263F5972C0F67")
-    public void removeViewAt(int index) {
-        addTaint(index);
+    public void removeViewAt(int index){
+		// Original method
+		/*
+		{
         removeViewInternal(index, getChildAt(index));
         requestLayout();
         invalidate(true);
-        // ---------- Original Method ----------
-        //removeViewInternal(index, getChildAt(index));
-        //requestLayout();
-        //invalidate(true);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.762 -0400", hash_original_method = "295E3CFFAAE54DAD76DF23980004A9FB", hash_generated_method = "48B292F84875CA858D0781E2E2794B6E")
-    public void removeViews(int start, int count) {
-        addTaint(count);
-        addTaint(start);
+    public void removeViews(int start, int count){
+		// Original method
+		/*
+		{
         removeViewsInternal(start, count);
         requestLayout();
         invalidate(true);
-        // ---------- Original Method ----------
-        //removeViewsInternal(start, count);
-        //requestLayout();
-        //invalidate(true);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.763 -0400", hash_original_method = "A8C7AA662547BF9F482FBD0CAAADED6D", hash_generated_method = "8B62BDA1A4DD615CCF8EFE5571E73CCB")
-    private void removeViewInternal(View view) {
-        addTaint(view.getTaint());
+    private void removeViewInternal(View view){
+		// Original method
+		/*
+		{
         final int index = indexOfChild(view);
-        if(index >= 0)        
-        {
+        if (index >= 0) {
             removeViewInternal(index, view);
-        } //End block
-        // ---------- Original Method ----------
-        //final int index = indexOfChild(view);
-        //if (index >= 0) {
-            //removeViewInternal(index, view);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.763 -0400", hash_original_method = "5145400D128FAA852B030ECA7E0E5CC6", hash_generated_method = "31EE19B56D7DA5DECCFD3202AC94C1BF")
-    private void removeViewInternal(int index, View view) {
-        addTaint(view.getTaint());
-        addTaint(index);
-        if(mTransition != null)        
-        {
+    private void removeViewInternal(int index, View view){
+		// Original method
+		/*
+		{
+        if (mTransition != null) {
             mTransition.removeChild(this, view);
-        } //End block
+        }
         boolean clearChildFocus = false;
-        if(view == mFocused)        
-        {
+        if (view == mFocused) {
             view.clearFocusForRemoval();
             clearChildFocus = true;
-        } //End block
-        if(view.getAnimation() != null ||
-                (mTransitioningViews != null && mTransitioningViews.contains(view)))        
-        {
+        }
+        if (view.getAnimation() != null ||
+                (mTransitioningViews != null && mTransitioningViews.contains(view))) {
             addDisappearingView(view);
-        } //End block
-        else
-        if(view.mAttachInfo != null)        
-        {
-            view.dispatchDetachedFromWindow();
-        } //End block
+        } else if (view.mAttachInfo != null) {
+           view.dispatchDetachedFromWindow();
+        }
         onViewRemoved(view);
         needGlobalAttributesUpdate(false);
         removeFromArray(index);
-        if(clearChildFocus)        
-        {
+        if (clearChildFocus) {
             clearChildFocus(view);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mTransition != null) {
-            //mTransition.removeChild(this, view);
-        //}
-        //boolean clearChildFocus = false;
-        //if (view == mFocused) {
-            //view.clearFocusForRemoval();
-            //clearChildFocus = true;
-        //}
-        //if (view.getAnimation() != null ||
-                //(mTransitioningViews != null && mTransitioningViews.contains(view))) {
-            //addDisappearingView(view);
-        //} else if (view.mAttachInfo != null) {
-           //view.dispatchDetachedFromWindow();
-        //}
-        //onViewRemoved(view);
-        //needGlobalAttributesUpdate(false);
-        //removeFromArray(index);
-        //if (clearChildFocus) {
-            //clearChildFocus(view);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.763 -0400", hash_original_method = "6CC26F3EB4840902E7233D2C3E46A07B", hash_generated_method = "389784AD796CB19D21493234AEF08106")
-    public void setLayoutTransition(LayoutTransition transition) {
-        if(mTransition != null)        
-        {
+    public void setLayoutTransition(LayoutTransition transition){
+		mTransition = transition;  //Preserved
+		// Original method
+		/*
+		{
+        if (mTransition != null) {
             mTransition.removeTransitionListener(mLayoutTransitionListener);
-        } //End block
+        }
         mTransition = transition;
-        if(mTransition != null)        
-        {
+        if (mTransition != null) {
             mTransition.addTransitionListener(mLayoutTransitionListener);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mTransition != null) {
-            //mTransition.removeTransitionListener(mLayoutTransitionListener);
-        //}
-        //mTransition = transition;
-        //if (mTransition != null) {
-            //mTransition.addTransitionListener(mLayoutTransitionListener);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.764 -0400", hash_original_method = "33E35321C94CA74A9D9819C2C9739D2F", hash_generated_method = "1D1796A35BC8E9416969139EA0170C50")
-    public LayoutTransition getLayoutTransition() {
-LayoutTransition var370C76BDB0B670397042ABD46E153355_1517325713 =         mTransition;
-        var370C76BDB0B670397042ABD46E153355_1517325713.addTaint(taint);
-        return var370C76BDB0B670397042ABD46E153355_1517325713;
-        // ---------- Original Method ----------
-        //return mTransition;
-    }
+    public LayoutTransition getLayoutTransition(){
+        return mTransition;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.764 -0400", hash_original_method = "F40E247B6ABF822EB65FF56F80411035", hash_generated_method = "778B63C59FC48B6CB637DB9388DF7DC9")
-    private void removeViewsInternal(int start, int count) {
-        addTaint(count);
-        addTaint(start);
-        final View focused = mFocused;
-        final boolean detach = mAttachInfo != null;
-        View clearChildFocus = null;
-        final View[] children = mChildren;
-        final int end = start + count;
-for(int i = start;i < end;i++)
-        {
-            final View view = children[i];
-            if(mTransition != null)            
-            {
-                mTransition.removeChild(this, view);
-            } //End block
-            if(view == focused)            
-            {
-                view.clearFocusForRemoval();
-                clearChildFocus = view;
-            } //End block
-            if(view.getAnimation() != null ||
-                (mTransitioningViews != null && mTransitioningViews.contains(view)))            
-            {
-                addDisappearingView(view);
-            } //End block
-            else
-            if(detach)            
-            {
-                view.dispatchDetachedFromWindow();
-            } //End block
-            needGlobalAttributesUpdate(false);
-            onViewRemoved(view);
-        } //End block
-        removeFromArray(start, count);
-        if(clearChildFocus != null)        
-        {
-            clearChildFocus(clearChildFocus);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    private void removeViewsInternal(int start, int count){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.767 -0400", hash_original_method = "C167CC912DB398153B3FBDE6D6503FBD", hash_generated_method = "251074A9D0FEFE564BF870888680CE2E")
-    public void removeAllViews() {
+    public void removeAllViews(){
+		// Original method
+		/*
+		{
         removeAllViewsInLayout();
         requestLayout();
         invalidate(true);
-        // ---------- Original Method ----------
-        //removeAllViewsInLayout();
-        //requestLayout();
-        //invalidate(true);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.768 -0400", hash_original_method = "8DFE71C1BEB57BA28106B31D5772632E", hash_generated_method = "DC331EFA6EB209FA38EDD49DE1DE68E5")
-    public void removeAllViewsInLayout() {
-        final int count = mChildrenCount;
-        if(count <= 0)        
-        {
-            return;
-        } //End block
-        final View[] children = mChildren;
-        mChildrenCount = 0;
-        final View focused = mFocused;
-        final boolean detach = mAttachInfo != null;
-        View clearChildFocus = null;
-        needGlobalAttributesUpdate(false);
-for(int i = count - 1;i >= 0;i--)
-        {
-            final View view = children[i];
-            if(mTransition != null)            
-            {
-                mTransition.removeChild(this, view);
-            } //End block
-            if(view == focused)            
-            {
-                view.clearFocusForRemoval();
-                clearChildFocus = view;
-            } //End block
-            if(view.getAnimation() != null ||
-                    (mTransitioningViews != null && mTransitioningViews.contains(view)))            
-            {
-                addDisappearingView(view);
-            } //End block
-            else
-            if(detach)            
-            {
-                view.dispatchDetachedFromWindow();
-            } //End block
-            onViewRemoved(view);
-            view.mParent = null;
-            children[i] = null;
-        } //End block
-        if(clearChildFocus != null)        
-        {
-            clearChildFocus(clearChildFocus);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    public void removeAllViewsInLayout(){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.769 -0400", hash_original_method = "80D629C332B0E93DD7A33AD3708E672D", hash_generated_method = "808AC351FF24BC6E0C1E5FEDF12B1193")
-    protected void removeDetachedView(View child, boolean animate) {
-        addTaint(animate);
-        addTaint(child.getTaint());
-        if(mTransition != null)        
-        {
+    protected void removeDetachedView(View child, boolean animate){
+		// Original method
+		/*
+		{
+        if (mTransition != null) {
             mTransition.removeChild(this, child);
-        } //End block
-        if(child == mFocused)        
-        {
+        }
+        if (child == mFocused) {
             child.clearFocus();
-        } //End block
-        if((animate && child.getAnimation() != null) ||
-                (mTransitioningViews != null && mTransitioningViews.contains(child)))        
-        {
+        }
+        if ((animate && child.getAnimation() != null) ||
+                (mTransitioningViews != null && mTransitioningViews.contains(child))) {
             addDisappearingView(child);
-        } //End block
-        else
-        if(child.mAttachInfo != null)        
-        {
+        } else if (child.mAttachInfo != null) {
             child.dispatchDetachedFromWindow();
-        } //End block
+        }
         onViewRemoved(child);
-        // ---------- Original Method ----------
-        //if (mTransition != null) {
-            //mTransition.removeChild(this, child);
-        //}
-        //if (child == mFocused) {
-            //child.clearFocus();
-        //}
-        //if ((animate && child.getAnimation() != null) ||
-                //(mTransitioningViews != null && mTransitioningViews.contains(child))) {
-            //addDisappearingView(child);
-        //} else if (child.mAttachInfo != null) {
-            //child.dispatchDetachedFromWindow();
-        //}
-        //onViewRemoved(child);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.771 -0400", hash_original_method = "8472A11DDB1452C7DB4257A960216E78", hash_generated_method = "2AE18C839054C2DD63E44E6E1DE6B146")
-    protected void attachViewToParent(View child, int index, LayoutParams params) {
-        addTaint(params.getTaint());
-        addTaint(index);
-        addTaint(child.getTaint());
+    protected void attachViewToParent(View child, int index, LayoutParams params){
+		// Original method
+		/*
+		{
         child.mLayoutParams = params;
-        if(index < 0)        
-        {
+        if (index < 0) {
             index = mChildrenCount;
-        } //End block
+        }
         addInArray(child, index);
         child.mParent = this;
         child.mPrivateFlags = (child.mPrivateFlags & ~DIRTY_MASK & ~DRAWING_CACHE_VALID) |
                 DRAWN | INVALIDATED;
         this.mPrivateFlags |= INVALIDATED;
-        if(child.hasFocus())        
-        {
+        if (child.hasFocus()) {
             requestChildFocus(child, child.findFocus());
-        } //End block
-        // ---------- Original Method ----------
-        //child.mLayoutParams = params;
-        //if (index < 0) {
-            //index = mChildrenCount;
-        //}
-        //addInArray(child, index);
-        //child.mParent = this;
-        //child.mPrivateFlags = (child.mPrivateFlags & ~DIRTY_MASK & ~DRAWING_CACHE_VALID) |
-                //DRAWN | INVALIDATED;
-        //this.mPrivateFlags |= INVALIDATED;
-        //if (child.hasFocus()) {
-            //requestChildFocus(child, child.findFocus());
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.771 -0400", hash_original_method = "635C6E5D7FA712D6D6BC98C85EEAD0AE", hash_generated_method = "B76E74F798F173789C908BE45CA18614")
-    protected void detachViewFromParent(View child) {
-        addTaint(child.getTaint());
+    protected void detachViewFromParent(View child){
+		// Original method
+		/*
+		{
         removeFromArray(indexOfChild(child));
-        // ---------- Original Method ----------
-        //removeFromArray(indexOfChild(child));
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.771 -0400", hash_original_method = "6B327774A5D40749E682A0800D955866", hash_generated_method = "4F4D1DFF7CA11614EBA44EB315C094D7")
-    protected void detachViewFromParent(int index) {
-        addTaint(index);
+    protected void detachViewFromParent(int index){
+		// Original method
+		/*
+		{
         removeFromArray(index);
-        // ---------- Original Method ----------
-        //removeFromArray(index);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.771 -0400", hash_original_method = "9419943F60DE9471E3CB31EABE2947F0", hash_generated_method = "82703DB6AD9F523FE2FC9467E3ABD022")
-    protected void detachViewsFromParent(int start, int count) {
-        addTaint(count);
-        addTaint(start);
+    protected void detachViewsFromParent(int start, int count){
+		// Original method
+		/*
+		{
         removeFromArray(start, count);
-        // ---------- Original Method ----------
-        //removeFromArray(start, count);
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.776 -0400", hash_original_method = "FD3027623927AF219788395D1D83AA06", hash_generated_method = "7E0224B117E520B64C422B689EB459CB")
-    protected void detachAllViewsFromParent() {
+    protected void detachAllViewsFromParent(){
+		// Original method
+		/*
+		{
         final int count = mChildrenCount;
-        if(count <= 0)        
-        {
+        if (count <= 0) {
             return;
-        } //End block
+        }
         final View[] children = mChildren;
         mChildrenCount = 0;
-for(int i = count - 1;i >= 0;i--)
-        {
+        for (int i = count - 1; i >= 0; i--) {
             children[i].mParent = null;
             children[i] = null;
-        } //End block
-        // ---------- Original Method ----------
-        //final int count = mChildrenCount;
-        //if (count <= 0) {
-            //return;
-        //}
-        //final View[] children = mChildren;
-        //mChildrenCount = 0;
-        //for (int i = count - 1; i >= 0; i--) {
-            //children[i].mParent = null;
-            //children[i] = null;
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.779 -0400", hash_original_method = "063B7BC13F01F04711683C921C10A0CE", hash_generated_method = "3498AEE5E79B1CB7886834755380D422")
-    public final void invalidateChild(View child, final Rect dirty) {
-        addTaint(dirty.getTaint());
-        addTaint(child.getTaint());
-        if(ViewDebug.TRACE_HIERARCHY)        
-        {
-            ViewDebug.trace(this, ViewDebug.HierarchyTraceType.INVALIDATE_CHILD);
-        } //End block
-        ViewParent parent = this;
-        final AttachInfo attachInfo = mAttachInfo;
-        if(attachInfo != null)        
-        {
-            final boolean drawAnimation = (child.mPrivateFlags & DRAW_ANIMATION) == DRAW_ANIMATION;
-            if(dirty == null)            
-            {
-                if(child.mLayerType != LAYER_TYPE_NONE)                
-                {
-                    mPrivateFlags |= INVALIDATED;
-                    mPrivateFlags &= ~DRAWING_CACHE_VALID;
-                    child.mLocalDirtyRect.setEmpty();
-                } //End block
-                do {
-                    {
-                        View view = null;
-                        if(parent instanceof View)                        
-                        {
-                            view = (View) parent;
-                            if(view.mLayerType != LAYER_TYPE_NONE)                            
-                            {
-                                view.mLocalDirtyRect.setEmpty();
-                                if(view.getParent() instanceof View)                                
-                                {
-                                    final View grandParent = (View) view.getParent();
-                                    grandParent.mPrivateFlags |= INVALIDATED;
-                                    grandParent.mPrivateFlags &= ~DRAWING_CACHE_VALID;
-                                } //End block
-                            } //End block
-                            if((view.mPrivateFlags & DIRTY_MASK) != 0)                            
-                            {
-                                break;
-                            } //End block
-                        } //End block
-                        if(drawAnimation)                        
-                        {
-                            if(view != null)                            
-                            {
-                                view.mPrivateFlags |= DRAW_ANIMATION;
-                            } //End block
-                            else
-                            if(parent instanceof ViewRootImpl)                            
-                            {
-                                ((ViewRootImpl) parent).mIsAnimating = true;
-                            } //End block
-                        } //End block
-                        if(parent instanceof ViewRootImpl)                        
-                        {
-                            ((ViewRootImpl) parent).invalidate();
-                            parent = null;
-                        } //End block
-                        else
-                        if(view != null)                        
-                        {
-                            if((view.mPrivateFlags & DRAWN) == DRAWN ||
-                                (view.mPrivateFlags & DRAWING_CACHE_VALID) == DRAWING_CACHE_VALID)                            
-                            {
-                                view.mPrivateFlags &= ~DRAWING_CACHE_VALID;
-                                view.mPrivateFlags |= DIRTY;
-                                parent = view.mParent;
-                            } //End block
-                            else
-                            {
-                                parent = null;
-                            } //End block
-                        } //End block
-                    } //End block
-} while (parent != null);
-            } //End block
-            else
-            {
-                final boolean isOpaque = child.isOpaque() && !drawAnimation &&
-                        child.getAnimation() == null;
-                int opaqueFlag = isOpaque ? DIRTY_OPAQUE : DIRTY;
-                if(child.mLayerType != LAYER_TYPE_NONE)                
-                {
-                    mPrivateFlags |= INVALIDATED;
-                    mPrivateFlags &= ~DRAWING_CACHE_VALID;
-                    child.mLocalDirtyRect.union(dirty);
-                } //End block
-                final int[] location = attachInfo.mInvalidateChildLocation;
-                location[CHILD_LEFT_INDEX] = child.mLeft;
-                location[CHILD_TOP_INDEX] = child.mTop;
-                Matrix childMatrix = child.getMatrix();
-                if(!childMatrix.isIdentity())                
-                {
-                    RectF boundingRect = attachInfo.mTmpTransformRect;
-                    boundingRect.set(dirty);
-                    childMatrix.mapRect(boundingRect);
-                    dirty.set((int) (boundingRect.left - 0.5f),
-                            (int) (boundingRect.top - 0.5f),
-                            (int) (boundingRect.right + 0.5f),
-                            (int) (boundingRect.bottom + 0.5f));
-                } //End block
-                do {
-                    {
-                        View view = null;
-                        if(parent instanceof View)                        
-                        {
-                            view = (View) parent;
-                            if(view.mLayerType != LAYER_TYPE_NONE &&
-                                view.getParent() instanceof View)                            
-                            {
-                                final View grandParent = (View) view.getParent();
-                                grandParent.mPrivateFlags |= INVALIDATED;
-                                grandParent.mPrivateFlags &= ~DRAWING_CACHE_VALID;
-                            } //End block
-                        } //End block
-                        if(drawAnimation)                        
-                        {
-                            if(view != null)                            
-                            {
-                                view.mPrivateFlags |= DRAW_ANIMATION;
-                            } //End block
-                            else
-                            if(parent instanceof ViewRootImpl)                            
-                            {
-                                ((ViewRootImpl) parent).mIsAnimating = true;
-                            } //End block
-                        } //End block
-                        if(view != null)                        
-                        {
-                            if((view.mViewFlags & FADING_EDGE_MASK) != 0 &&
-                                view.getSolidColor() == 0)                            
-                            {
-                                opaqueFlag = DIRTY;
-                            } //End block
-                            if((view.mPrivateFlags & DIRTY_MASK) != DIRTY)                            
-                            {
-                                view.mPrivateFlags = (view.mPrivateFlags & ~DIRTY_MASK) | opaqueFlag;
-                            } //End block
-                        } //End block
-                        parent = parent.invalidateChildInParent(location, dirty);
-                        if(view != null)                        
-                        {
-                            Matrix m = view.getMatrix();
-                            if(!m.isIdentity())                            
-                            {
-                                RectF boundingRect = attachInfo.mTmpTransformRect;
-                                boundingRect.set(dirty);
-                                m.mapRect(boundingRect);
-                                dirty.set((int) boundingRect.left, (int) boundingRect.top,
-                                    (int) (boundingRect.right + 0.5f),
-                                    (int) (boundingRect.bottom + 0.5f));
-                            } //End block
-                        } //End block
-                    } //End block
-} while (parent != null);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    public final void invalidateChild(View child, final Rect dirty){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.781 -0400", hash_original_method = "DC318C38544A42EB44071D5AE866F2AB", hash_generated_method = "F3927F7C8EDF65869C40E822FA8876A8")
-    public ViewParent invalidateChildInParent(final int[] location, final Rect dirty) {
-        addTaint(dirty.getTaint());
-        addTaint(location[0]);
-        if(ViewDebug.TRACE_HIERARCHY)        
-        {
-            ViewDebug.trace(this, ViewDebug.HierarchyTraceType.INVALIDATE_CHILD_IN_PARENT);
-        } //End block
-        if((mPrivateFlags & DRAWN) == DRAWN ||
-                (mPrivateFlags & DRAWING_CACHE_VALID) == DRAWING_CACHE_VALID)        
-        {
-            if((mGroupFlags & (FLAG_OPTIMIZE_INVALIDATE | FLAG_ANIMATION_DONE)) !=
-                        FLAG_OPTIMIZE_INVALIDATE)            
-            {
-                dirty.offset(location[CHILD_LEFT_INDEX] - mScrollX,
-                        location[CHILD_TOP_INDEX] - mScrollY);
-                final int left = mLeft;
-                final int top = mTop;
-                if((mGroupFlags & FLAG_CLIP_CHILDREN) != FLAG_CLIP_CHILDREN ||
-                        dirty.intersect(0, 0, mRight - left, mBottom - top) ||
-                        (mPrivateFlags & DRAW_ANIMATION) == DRAW_ANIMATION)                
-                {
-                    mPrivateFlags &= ~DRAWING_CACHE_VALID;
-                    location[CHILD_LEFT_INDEX] = left;
-                    location[CHILD_TOP_INDEX] = top;
-                    if(mLayerType != LAYER_TYPE_NONE)                    
-                    {
-                        mLocalDirtyRect.union(dirty);
-                    } //End block
-ViewParent var0FD24AAB8334CCBF65F979972AC650BD_1144189448 =                     mParent;
-                    var0FD24AAB8334CCBF65F979972AC650BD_1144189448.addTaint(taint);
-                    return var0FD24AAB8334CCBF65F979972AC650BD_1144189448;
-                } //End block
-            } //End block
-            else
-            {
-                mPrivateFlags &= ~DRAWN & ~DRAWING_CACHE_VALID;
-                location[CHILD_LEFT_INDEX] = mLeft;
-                location[CHILD_TOP_INDEX] = mTop;
-                if((mGroupFlags & FLAG_CLIP_CHILDREN) == FLAG_CLIP_CHILDREN)                
-                {
-                    dirty.set(0, 0, mRight - mLeft, mBottom - mTop);
-                } //End block
-                else
-                {
-                    dirty.union(0, 0, mRight - mLeft, mBottom - mTop);
-                } //End block
-                if(mLayerType != LAYER_TYPE_NONE)                
-                {
-                    mLocalDirtyRect.union(dirty);
-                } //End block
-ViewParent var0FD24AAB8334CCBF65F979972AC650BD_1335042864 =                 mParent;
-                var0FD24AAB8334CCBF65F979972AC650BD_1335042864.addTaint(taint);
-                return var0FD24AAB8334CCBF65F979972AC650BD_1335042864;
-            } //End block
-        } //End block
-ViewParent var540C13E9E156B687226421B24F2DF178_303339663 =         null;
-        var540C13E9E156B687226421B24F2DF178_303339663.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_303339663;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    public ViewParent invalidateChildInParent(final int[] location, final Rect dirty){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		return null;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.782 -0400", hash_original_method = "50571ED06CB8BFD92222BA4CF106E503", hash_generated_method = "184131799C77C7F6EC942B69119DCEE6")
-    public final void offsetDescendantRectToMyCoords(View descendant, Rect rect) {
-        addTaint(rect.getTaint());
-        addTaint(descendant.getTaint());
+    public final void offsetDescendantRectToMyCoords(View descendant, Rect rect){
+		// Original method
+		/*
+		{
         offsetRectBetweenParentAndChild(descendant, rect, true, false);
-        // ---------- Original Method ----------
-        //offsetRectBetweenParentAndChild(descendant, rect, true, false);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.782 -0400", hash_original_method = "237D31B5A43A7733C9219A4289DB54A9", hash_generated_method = "6AE84E407AD5C399748494B298407924")
-    public final void offsetRectIntoDescendantCoords(View descendant, Rect rect) {
-        addTaint(rect.getTaint());
-        addTaint(descendant.getTaint());
+    public final void offsetRectIntoDescendantCoords(View descendant, Rect rect){
+		// Original method
+		/*
+		{
         offsetRectBetweenParentAndChild(descendant, rect, false, false);
-        // ---------- Original Method ----------
-        //offsetRectBetweenParentAndChild(descendant, rect, false, false);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.782 -0400", hash_original_method = "D3722A63E3ED25EA76952CBDD9156CED", hash_generated_method = "AC3081D246F34803744E6C40B46A0220")
-     void offsetRectBetweenParentAndChild(View descendant, Rect rect,
-            boolean offsetFromChildToParent, boolean clipToBounds) {
-        addTaint(clipToBounds);
-        addTaint(offsetFromChildToParent);
-        addTaint(rect.getTaint());
-        addTaint(descendant.getTaint());
-        if(descendant == this)        
-        {
-            return;
-        } //End block
-        ViewParent theParent = descendant.mParent;
-        while
-((theParent != null)
-                && (theParent instanceof View)
-                && (theParent != this))        
-        {
-            if(offsetFromChildToParent)            
-            {
-                rect.offset(descendant.mLeft - descendant.mScrollX,
-                        descendant.mTop - descendant.mScrollY);
-                if(clipToBounds)                
-                {
-                    View p = (View) theParent;
-                    rect.intersect(0, 0, p.mRight - p.mLeft, p.mBottom - p.mTop);
-                } //End block
-            } //End block
-            else
-            {
-                if(clipToBounds)                
-                {
-                    View p = (View) theParent;
-                    rect.intersect(0, 0, p.mRight - p.mLeft, p.mBottom - p.mTop);
-                } //End block
-                rect.offset(descendant.mScrollX - descendant.mLeft,
-                        descendant.mScrollY - descendant.mTop);
-            } //End block
-            descendant = (View) theParent;
-            theParent = descendant.mParent;
-        } //End block
-        if(theParent == this)        
-        {
-            if(offsetFromChildToParent)            
-            {
-                rect.offset(descendant.mLeft - descendant.mScrollX,
-                        descendant.mTop - descendant.mScrollY);
-            } //End block
-            else
-            {
-                rect.offset(descendant.mScrollX - descendant.mLeft,
-                        descendant.mScrollY - descendant.mTop);
-            } //End block
-        } //End block
-        else
-        {
-            IllegalArgumentException varA60C75C651AEBBFE7F7318529C05F253_758017392 = new IllegalArgumentException("parameter must be a descendant of this view");
-            varA60C75C651AEBBFE7F7318529C05F253_758017392.addTaint(taint);
-            throw varA60C75C651AEBBFE7F7318529C05F253_758017392;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    void offsetRectBetweenParentAndChild(View descendant, Rect rect,
+            boolean offsetFromChildToParent, boolean clipToBounds){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.784 -0400", hash_original_method = "7A1B0B3F062F0EF6FC199DD0C643A517", hash_generated_method = "8393E9E90C5096EE6C85D8AD282614A6")
-    public void offsetChildrenTopAndBottom(int offset) {
-        addTaint(offset);
+    public void offsetChildrenTopAndBottom(int offset){
+		// Original method
+		/*
+		{
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             final View v = children[i];
             v.mTop += offset;
             v.mBottom += offset;
-        } //End block
-        // ---------- Original Method ----------
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //final View v = children[i];
-            //v.mTop += offset;
-            //v.mBottom += offset;
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.785 -0400", hash_original_method = "5C31858D2677D0E5DD9194B8EDADFECC", hash_generated_method = "8F0F1A4E61A7D3A5B24B51C11BB6234F")
-    public boolean getChildVisibleRect(View child, Rect r, android.graphics.Point offset) {
-        addTaint(offset.getTaint());
-        addTaint(r.getTaint());
-        addTaint(child.getTaint());
-        final RectF rect = mAttachInfo != null ? mAttachInfo.mTmpTransformRect : new RectF();
-        rect.set(r);
-        if(!child.hasIdentityMatrix())        
-        {
-            child.getMatrix().mapRect(rect);
-        } //End block
-        int dx = child.mLeft - mScrollX;
-        int dy = child.mTop - mScrollY;
-        rect.offset(dx, dy);
-        if(offset != null)        
-        {
-            if(!child.hasIdentityMatrix())            
-            {
-                float[] position = mAttachInfo != null ? mAttachInfo.mTmpTransformLocation
-                        : new float[2];
-                position[0] = offset.x;
-                position[1] = offset.y;
-                child.getMatrix().mapPoints(position);
-                offset.x = (int) (position[0] + 0.5f);
-                offset.y = (int) (position[1] + 0.5f);
-            } //End block
-            offset.x += dx;
-            offset.y += dy;
-        } //End block
-        if(rect.intersect(0, 0, mRight - mLeft, mBottom - mTop))        
-        {
-            if(mParent == null)            
-            {
-            boolean varB326B5062B2F0E69046810717534CB09_1077835020 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1711514042 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1711514042;
-            }
-            r.set((int) (rect.left + 0.5f), (int) (rect.top + 0.5f),
-                    (int) (rect.right + 0.5f), (int) (rect.bottom + 0.5f));
-            boolean var923A98A5D39B2F1E49EF1BD40DCADE16_472888529 = (mParent.getChildVisibleRect(this, r, offset));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_906075428 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_906075428;
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_844210947 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2029989536 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2029989536;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    public boolean getChildVisibleRect(View child, Rect r, android.graphics.Point offset){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.785 -0400", hash_original_method = "89A2794B62BBEA7754F18155FA121F08", hash_generated_method = "43A028DB4F4B98169402C201D62ACFFA")
-    @Override
-    public final void layout(int l, int t, int r, int b) {
-        addTaint(b);
-        addTaint(r);
-        addTaint(t);
-        addTaint(l);
-        if(mTransition == null || !mTransition.isChangingLayout())        
-        {
+    @Override public final void layout(int l, int t, int r, int b){
+		// Original method
+		/*
+		{
+        if (mTransition == null || !mTransition.isChangingLayout()) {
             super.layout(l, t, r, b);
-        } //End block
-        else
-        {
+        } else {
             mLayoutSuppressed = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mTransition == null || !mTransition.isChangingLayout()) {
-            //super.layout(l, t, r, b);
-        //} else {
-            //mLayoutSuppressed = true;
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSModeled(DSC.SAFE)
-    @Override
-protected abstract void onLayout(boolean changed,
+    @Override protected abstract void onLayout(boolean changed,
             int l, int t, int r, int b);
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.789 -0400", hash_original_method = "74094E4283ACC987205CEBE8397B866C", hash_generated_method = "B40EFB1D192A9ECD9EEFF5ADA2A11418")
-    protected boolean canAnimate() {
-        boolean varF64A4557C7728F3EF192131F68E42B36_1885157447 = (mLayoutAnimationController != null);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_876200400 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_876200400;
-        // ---------- Original Method ----------
-        //return mLayoutAnimationController != null;
+    protected boolean canAnimate(){
+		// Original method
+		/*
+		{
+        return mLayoutAnimationController != null;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.789 -0400", hash_original_method = "99174EE5664A8F981F50635AC5D4970E", hash_generated_method = "41E0958C445CBE7818080AE1748EA13C")
-    public void startLayoutAnimation() {
-        if(mLayoutAnimationController != null)        
-        {
+    public void startLayoutAnimation(){
+		// Original method
+		/*
+		{
+        if (mLayoutAnimationController != null) {
             mGroupFlags |= FLAG_RUN_ANIMATION;
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mLayoutAnimationController != null) {
-            //mGroupFlags |= FLAG_RUN_ANIMATION;
-            //requestLayout();
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.789 -0400", hash_original_method = "06C0C7BBCCF19FA4957838E03EE331C8", hash_generated_method = "79A372FB31048C6468EBF3B2058D214E")
-    public void scheduleLayoutAnimation() {
+    public void scheduleLayoutAnimation(){
+		// Original method
+		/*
+		{
         mGroupFlags |= FLAG_RUN_ANIMATION;
-        // ---------- Original Method ----------
-        //mGroupFlags |= FLAG_RUN_ANIMATION;
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.789 -0400", hash_original_method = "76D54B6C61296EF04870B520A219B087", hash_generated_method = "A0A0A1904EFC35287777D58AAB963432")
-    public void setLayoutAnimation(LayoutAnimationController controller) {
+    public void setLayoutAnimation(LayoutAnimationController controller){
+		mLayoutAnimationController = controller;  //Preserved
+		// Original method
+		/*
+		{
         mLayoutAnimationController = controller;
-        if(mLayoutAnimationController != null)        
-        {
+        if (mLayoutAnimationController != null) {
             mGroupFlags |= FLAG_RUN_ANIMATION;
-        } //End block
-        // ---------- Original Method ----------
-        //mLayoutAnimationController = controller;
-        //if (mLayoutAnimationController != null) {
-            //mGroupFlags |= FLAG_RUN_ANIMATION;
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.789 -0400", hash_original_method = "BD382B237F964A42E5B6E00A5B3A23FD", hash_generated_method = "E6A62092DD0A945EA4D29B6BC8E974DB")
-    public LayoutAnimationController getLayoutAnimation() {
-LayoutAnimationController var8A452609EA18DB1E1E5EB31AC66AC9BE_1051166234 =         mLayoutAnimationController;
-        var8A452609EA18DB1E1E5EB31AC66AC9BE_1051166234.addTaint(taint);
-        return var8A452609EA18DB1E1E5EB31AC66AC9BE_1051166234;
-        // ---------- Original Method ----------
-        //return mLayoutAnimationController;
-    }
+    public LayoutAnimationController getLayoutAnimation(){
+		return mLayoutAnimationController;
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.791 -0400", hash_original_method = "91C32769C37DCC6F9F6B4528E4A57D15", hash_generated_method = "3FE82ED833AEC34ED22358D41BFD7142")
-    @ViewDebug.ExportedProperty
-    public boolean isAnimationCacheEnabled() {
-        boolean var9F17249DB8879D2EEA65EE9B6E656C4C_73407875 = ((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2071728064 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2071728064;
-        // ---------- Original Method ----------
-        //return (mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE;
+    @ViewDebug.ExportedProperty public boolean isAnimationCacheEnabled(){
+		// Original method
+		/*
+		{
+        return (mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.791 -0400", hash_original_method = "DD639E9259A75AF16A9190E263F8776F", hash_generated_method = "42B4394AF81518ED838250292D002672")
-    public void setAnimationCacheEnabled(boolean enabled) {
-        addTaint(enabled);
+    public void setAnimationCacheEnabled(boolean enabled){
+		// Original method
+		/*
+		{
         setBooleanFlag(FLAG_ANIMATION_CACHE, enabled);
-        // ---------- Original Method ----------
-        //setBooleanFlag(FLAG_ANIMATION_CACHE, enabled);
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.791 -0400", hash_original_method = "B9ACD8DAE870BEF4EFBF779A704F6EA0", hash_generated_method = "0FF276837744DD3FC18B0DCBB1F493D3")
-    @ViewDebug.ExportedProperty(category = "drawing")
-    public boolean isAlwaysDrawnWithCacheEnabled() {
-        boolean var7BFC97307655810F32F04FBCABE3CDAE_1189656314 = ((mGroupFlags & FLAG_ALWAYS_DRAWN_WITH_CACHE) == FLAG_ALWAYS_DRAWN_WITH_CACHE);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_565663924 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_565663924;
-        // ---------- Original Method ----------
-        //return (mGroupFlags & FLAG_ALWAYS_DRAWN_WITH_CACHE) == FLAG_ALWAYS_DRAWN_WITH_CACHE;
+    @ViewDebug.ExportedProperty(category="drawing") public boolean isAlwaysDrawnWithCacheEnabled(){
+		// Original method
+		/*
+		{
+        return (mGroupFlags & FLAG_ALWAYS_DRAWN_WITH_CACHE) == FLAG_ALWAYS_DRAWN_WITH_CACHE;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.791 -0400", hash_original_method = "ACB4830CB4940DD4B9F47560853379A8", hash_generated_method = "13F9B5DD2D829B2040967A7727B8D070")
-    public void setAlwaysDrawnWithCacheEnabled(boolean always) {
-        addTaint(always);
+    public void setAlwaysDrawnWithCacheEnabled(boolean always){
+		// Original method
+		/*
+		{
         setBooleanFlag(FLAG_ALWAYS_DRAWN_WITH_CACHE, always);
-        // ---------- Original Method ----------
-        //setBooleanFlag(FLAG_ALWAYS_DRAWN_WITH_CACHE, always);
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.791 -0400", hash_original_method = "4364C0D051F178DD0E8ADCB73D61750A", hash_generated_method = "2DF3DD4592BA051AB8270BA278A1C0CB")
-    @ViewDebug.ExportedProperty(category = "drawing")
-    protected boolean isChildrenDrawnWithCacheEnabled() {
-        boolean varC5F6B3BF85F536497CB388460DF1376E_788336475 = ((mGroupFlags & FLAG_CHILDREN_DRAWN_WITH_CACHE) == FLAG_CHILDREN_DRAWN_WITH_CACHE);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1129522164 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1129522164;
-        // ---------- Original Method ----------
-        //return (mGroupFlags & FLAG_CHILDREN_DRAWN_WITH_CACHE) == FLAG_CHILDREN_DRAWN_WITH_CACHE;
+    @ViewDebug.ExportedProperty(category="drawing") protected boolean isChildrenDrawnWithCacheEnabled(){
+		// Original method
+		/*
+		{
+        return (mGroupFlags & FLAG_CHILDREN_DRAWN_WITH_CACHE) == FLAG_CHILDREN_DRAWN_WITH_CACHE;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.791 -0400", hash_original_method = "2230D982A122AD23513779DE65F20855", hash_generated_method = "FBDC8CDE5E7DDB3773CA116C67BDCFC6")
-    protected void setChildrenDrawnWithCacheEnabled(boolean enabled) {
-        addTaint(enabled);
+    protected void setChildrenDrawnWithCacheEnabled(boolean enabled){
+		// Original method
+		/*
+		{
         setBooleanFlag(FLAG_CHILDREN_DRAWN_WITH_CACHE, enabled);
-        // ---------- Original Method ----------
-        //setBooleanFlag(FLAG_CHILDREN_DRAWN_WITH_CACHE, enabled);
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.791 -0400", hash_original_method = "5166D8925764E3FCE51BAB9F8B82BB83", hash_generated_method = "ADA9936648056961E7D762F561C5371F")
-    @ViewDebug.ExportedProperty(category = "drawing")
-    protected boolean isChildrenDrawingOrderEnabled() {
-        boolean varBFDCA02BAADB4FD2B2924117AAC9F43F_1799179773 = ((mGroupFlags & FLAG_USE_CHILD_DRAWING_ORDER) == FLAG_USE_CHILD_DRAWING_ORDER);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1890026745 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1890026745;
-        // ---------- Original Method ----------
-        //return (mGroupFlags & FLAG_USE_CHILD_DRAWING_ORDER) == FLAG_USE_CHILD_DRAWING_ORDER;
+    @ViewDebug.ExportedProperty(category="drawing") protected boolean isChildrenDrawingOrderEnabled(){
+		// Original method
+		/*
+		{
+        return (mGroupFlags & FLAG_USE_CHILD_DRAWING_ORDER) == FLAG_USE_CHILD_DRAWING_ORDER;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.792 -0400", hash_original_method = "206BAF2A94AC84475BA4253F279E8423", hash_generated_method = "DD6612F2CFEDBAD9DF1AD6D0166404CA")
-    protected void setChildrenDrawingOrderEnabled(boolean enabled) {
-        addTaint(enabled);
+    protected void setChildrenDrawingOrderEnabled(boolean enabled){
+		// Original method
+		/*
+		{
         setBooleanFlag(FLAG_USE_CHILD_DRAWING_ORDER, enabled);
-        // ---------- Original Method ----------
-        //setBooleanFlag(FLAG_USE_CHILD_DRAWING_ORDER, enabled);
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.793 -0400", hash_original_method = "DAA9F10BF0EA997E391E78BA1DF6ABEE", hash_generated_method = "76D699AEF8A2E78C0E7D6249ABC668A5")
-    private void setBooleanFlag(int flag, boolean value) {
-        addTaint(value);
-        if(value)        
-        {
+    private void setBooleanFlag(int flag, boolean value){
+		// Original method
+		/*
+		{
+        if (value) {
             mGroupFlags |= flag;
-        } //End block
-        else
-        {
+        } else {
             mGroupFlags &= ~flag;
-        } //End block
-        // ---------- Original Method ----------
-        //if (value) {
-            //mGroupFlags |= flag;
-        //} else {
-            //mGroupFlags &= ~flag;
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.793 -0400", hash_original_method = "944A8E363FECEAC5FA18188B2A82EEA9", hash_generated_method = "9F9E08B49FA2646FA40786739FE7B662")
-    @ViewDebug.ExportedProperty(category = "drawing", mapping = {
-        @ViewDebug.IntToString(from = PERSISTENT_NO_CACHE,        to = "NONE"),
-        @ViewDebug.IntToString(from = PERSISTENT_ANIMATION_CACHE, to = "ANIMATION"),
-        @ViewDebug.IntToString(from = PERSISTENT_SCROLLING_CACHE, to = "SCROLLING"),
-        @ViewDebug.IntToString(from = PERSISTENT_ALL_CACHES,      to = "ALL")
-    })
-    public int getPersistentDrawingCache() {
-        int varCFD9A5A2BA3F2274ECC022BF6DB661C8_1878826359 = (mPersistentDrawingCache);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_297283655 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_297283655;
-        // ---------- Original Method ----------
-        //return mPersistentDrawingCache;
+    @ViewDebug.ExportedProperty(category="drawing",mapping={@ViewDebug.IntToString(from=PERSISTENT_NO_CACHE,to="NONE"),@ViewDebug.IntToString(from=PERSISTENT_ANIMATION_CACHE,to="ANIMATION"),@ViewDebug.IntToString(from=PERSISTENT_SCROLLING_CACHE,to="SCROLLING"),@ViewDebug.IntToString(from=PERSISTENT_ALL_CACHES,to="ALL")}) public int getPersistentDrawingCache(){
+		return getTaintInt();
+		// Original method
+		/*
+		{
+        return mPersistentDrawingCache;
     }
+		*/
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.794 -0400", hash_original_method = "E1A853399F91DFB847E7C25FCC355E2E", hash_generated_method = "8158E6575E5BC3B0CF39A9A0E9990C3F")
-    public void setPersistentDrawingCache(int drawingCacheToKeep) {
+    public void setPersistentDrawingCache(int drawingCacheToKeep){
+		// Original method
+		/*
+		{
         mPersistentDrawingCache = drawingCacheToKeep & PERSISTENT_ALL_CACHES;
-        // ---------- Original Method ----------
-        //mPersistentDrawingCache = drawingCacheToKeep & PERSISTENT_ALL_CACHES;
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.794 -0400", hash_original_method = "AED9080C69042489485342721EE0B0B1", hash_generated_method = "BDB2CC90C1AF6EF2F2C9B912AFC480F8")
-    public LayoutParams generateLayoutParams(AttributeSet attrs) {
-        addTaint(attrs.getTaint());
-LayoutParams var023B3FAAA9940C6DE114BF4C9FED2D73_677491127 =         new LayoutParams(getContext(), attrs);
-        var023B3FAAA9940C6DE114BF4C9FED2D73_677491127.addTaint(taint);
-        return var023B3FAAA9940C6DE114BF4C9FED2D73_677491127;
-        // ---------- Original Method ----------
-        //return new LayoutParams(getContext(), attrs);
+    public LayoutParams generateLayoutParams(AttributeSet attrs){
+		// Original method
+		/*
+		{
+        return new LayoutParams(getContext(), attrs);
     }
+		*/
+		return null;
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.794 -0400", hash_original_method = "732F05B425275E63BD87B7814AB2A9CD", hash_generated_method = "757EAC8C20131B6542FF11E340A0D31A")
-    protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
-        addTaint(p.getTaint());
-LayoutParams var74E4690D9F2A026504928C017944E149_1759861133 =         p;
-        var74E4690D9F2A026504928C017944E149_1759861133.addTaint(taint);
-        return var74E4690D9F2A026504928C017944E149_1759861133;
-        // ---------- Original Method ----------
-        //return p;
+    protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams p){
+		// Original method
+		/*
+		{
+        return p;
     }
+		*/
+		return null;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.794 -0400", hash_original_method = "378AC11079CE6884A850F340A9660EF3", hash_generated_method = "2F90088822544BA954F35FAA0396CFB5")
-    protected LayoutParams generateDefaultLayoutParams() {
-LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_571999856 =         new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        var65BA47367D3E2EC837A3E887EEE5A3B3_571999856.addTaint(taint);
-        return var65BA47367D3E2EC837A3E887EEE5A3B3_571999856;
-        // ---------- Original Method ----------
-        //return new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+    protected LayoutParams generateDefaultLayoutParams(){
+		// Original method
+		/*
+		{
+        return new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
     }
+		*/
+		return null;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.796 -0400", hash_original_method = "4EE7CD38DD5C6A89B0A06AD3B67D59FC", hash_generated_method = "8878BAFA1C3881420A480744CB7B8EA0")
-    @Override
-    protected boolean dispatchConsistencyCheck(int consistency) {
-        addTaint(consistency);
+    @Override protected boolean dispatchConsistencyCheck(int consistency){
+		// Original method
+		/*
+		{
         boolean result = super.dispatchConsistencyCheck(consistency);
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-        {
-            if(!children[i].dispatchConsistencyCheck(consistency))            
-            result = false;
-        } //End block
-        boolean varB4A88417B3D0170D754C647C30B7216A_1486787230 = (result);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1993698607 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1993698607;
-        // ---------- Original Method ----------
-        //boolean result = super.dispatchConsistencyCheck(consistency);
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //if (!children[i].dispatchConsistencyCheck(consistency)) result = false;
-        //}
-        //return result;
+        for (int i = 0; i < count; i++) {
+            if (!children[i].dispatchConsistencyCheck(consistency)) result = false;
+        }
+        return result;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.797 -0400", hash_original_method = "9938C74D91901C257958D174411BCA62", hash_generated_method = "3D40B7FFEFD642F0852A6825AC5D593B")
-    @Override
-    protected boolean onConsistencyCheck(int consistency) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(consistency);
-        boolean result = super.onConsistencyCheck(consistency);
-        final boolean checkLayout = (consistency & ViewDebug.CONSISTENCY_LAYOUT) != 0;
-        final boolean checkDrawing = (consistency & ViewDebug.CONSISTENCY_DRAWING) != 0;
-        if(checkLayout)        
-        {
-            final int count = mChildrenCount;
-            final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-            {
-                if(children[i].getParent() != this)                
-                {
-                    result = false;
-                    android.util.Log.d(ViewDebug.CONSISTENCY_LOG_TAG,
-                            "View " + children[i] + " has no parent/a parent that is not " + this);
-                } //End block
-            } //End block
-        } //End block
-        if(checkDrawing)        
-        {
-            if((mPrivateFlags & DIRTY_MASK) != 0)            
-            {
-                final ViewParent parent = getParent();
-                if(parent != null && !(parent instanceof ViewRootImpl))                
-                {
-                    if((((View) parent).mPrivateFlags & DIRTY_MASK) == 0)                    
-                    {
-                        result = false;
-                        android.util.Log.d(ViewDebug.CONSISTENCY_LOG_TAG,
-                                "ViewGroup " + this + " is dirty but its parent is not: " + this);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        boolean varB4A88417B3D0170D754C647C30B7216A_1593804123 = (result);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1137753631 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1137753631;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    @Override protected boolean onConsistencyCheck(int consistency){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.798 -0400", hash_original_method = "9209AC82FBA5456C7517DF8735B229C2", hash_generated_method = "183080388EFEFBFE9046A67B07FE40AD")
-    @Override
-    protected void debug(int depth) {
-        addTaint(depth);
+    @Override protected void debug(int depth){
+		// Original method
+		/*
+		{
         super.debug(depth);
         String output;
-        if(mFocused != null)        
-        {
+        if (mFocused != null) {
             output = debugIndent(depth);
             output += "mFocused";
             Log.d(VIEW_LOG_TAG, output);
-        } //End block
-        if(mChildrenCount != 0)        
-        {
+        }
+        if (mChildrenCount != 0) {
             output = debugIndent(depth);
             output += "{";
             Log.d(VIEW_LOG_TAG, output);
-        } //End block
+        }
         int count = mChildrenCount;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             View child = mChildren[i];
             child.debug(depth + 1);
-        } //End block
-        if(mChildrenCount != 0)        
-        {
+        }
+        if (mChildrenCount != 0) {
             output = debugIndent(depth);
             output += "}";
             Log.d(VIEW_LOG_TAG, output);
-        } //End block
-        // ---------- Original Method ----------
-        //super.debug(depth);
-        //String output;
-        //if (mFocused != null) {
-            //output = debugIndent(depth);
-            //output += "mFocused";
-            //Log.d(VIEW_LOG_TAG, output);
-        //}
-        //if (mChildrenCount != 0) {
-            //output = debugIndent(depth);
-            //output += "{";
-            //Log.d(VIEW_LOG_TAG, output);
-        //}
-        //int count = mChildrenCount;
-        //for (int i = 0; i < count; i++) {
-            //View child = mChildren[i];
-            //child.debug(depth + 1);
-        //}
-        //if (mChildrenCount != 0) {
-            //output = debugIndent(depth);
-            //output += "}";
-            //Log.d(VIEW_LOG_TAG, output);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.799 -0400", hash_original_method = "A3819F4FC73AAB74FEBE19CD2546FBCA", hash_generated_method = "85BB5DDA01B0B1A2D4A626D09347A41C")
-    public int indexOfChild(View child) {
-        addTaint(child.getTaint());
+    public int indexOfChild(View child){
+		// Original method
+		/*
+		{
         final int count = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-        {
-            if(children[i] == child)            
-            {
-                int var865C0C0B4AB0E063E5CAA3387C1A8741_1523365364 = (i);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_803716476 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_803716476;
-            } //End block
-        } //End block
-        int var6BB61E3B7BCE0931DA574D19D1D82C88_1257226128 = (-1);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1523476355 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1523476355;
-        // ---------- Original Method ----------
-        //final int count = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < count; i++) {
-            //if (children[i] == child) {
-                //return i;
-            //}
-        //}
-        //return -1;
+        for (int i = 0; i < count; i++) {
+            if (children[i] == child) {
+                return i;
+            }
+        }
+        return -1;
     }
+		*/
+		return 0;
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.799 -0400", hash_original_method = "7030903D0CFC3D101159E57E177A8D82", hash_generated_method = "D674ECB6BBFA9D0C15BE17F15E4F2C36")
-    public int getChildCount() {
-        int varA5034A70A83D3C81CEC027BDCAA166D7_235120911 = (mChildrenCount);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_402322057 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_402322057;
-        // ---------- Original Method ----------
-        //return mChildrenCount;
-    }
+    @DSModeled(DSC.SAFE)
+	public int getChildCount(){
+		return getTaintInt();
+	}
 
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.799 -0400", hash_original_method = "DC55A008910617641F1AE978A0E895D4", hash_generated_method = "F05CBD7A7A39B8403F3E122ABC16E33A")
-    public View getChildAt(int index) {
-        addTaint(index);
-        if(index < 0 || index >= mChildrenCount)        
-        {
-View var540C13E9E156B687226421B24F2DF178_1240433050 =             null;
-            var540C13E9E156B687226421B24F2DF178_1240433050.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1240433050;
-        } //End block
-View var59DDA6BC6C72B3E73E3ACF199F9201D0_1581598618 =         mChildren[index];
-        var59DDA6BC6C72B3E73E3ACF199F9201D0_1581598618.addTaint(taint);
-        return var59DDA6BC6C72B3E73E3ACF199F9201D0_1581598618;
-        // ---------- Original Method ----------
-        //if (index < 0 || index >= mChildrenCount) {
-            //return null;
-        //}
-        //return mChildren[index];
-    }
+    @DSModeled(DSC.SPEC)
+	public View getChildAt(int index){
+		return mChildren[0];
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.799 -0400", hash_original_method = "542392FF7FE475C27FCC004AAEE4D21F", hash_generated_method = "DC9E167B6220F6FD6FF6C5DA7D351D88")
-    protected void measureChildren(int widthMeasureSpec, int heightMeasureSpec) {
-        addTaint(heightMeasureSpec);
-        addTaint(widthMeasureSpec);
+    protected void measureChildren(int widthMeasureSpec, int heightMeasureSpec){
+		// Original method
+		/*
+		{
         final int size = mChildrenCount;
         final View[] children = mChildren;
-for(int i = 0;i < size;++i)
-        {
+        for (int i = 0; i < size; ++i) {
             final View child = children[i];
-            if((child.mViewFlags & VISIBILITY_MASK) != GONE)            
-            {
+            if ((child.mViewFlags & VISIBILITY_MASK) != GONE) {
                 measureChild(child, widthMeasureSpec, heightMeasureSpec);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //final int size = mChildrenCount;
-        //final View[] children = mChildren;
-        //for (int i = 0; i < size; ++i) {
-            //final View child = children[i];
-            //if ((child.mViewFlags & VISIBILITY_MASK) != GONE) {
-                //measureChild(child, widthMeasureSpec, heightMeasureSpec);
-            //}
-        //}
+            }
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.800 -0400", hash_original_method = "9EDA680ED83105527C80B1E780D1BEC7", hash_generated_method = "25445F06E0988BF83A39496A1FEDB291")
     protected void measureChild(View child, int parentWidthMeasureSpec,
-            int parentHeightMeasureSpec) {
-        addTaint(parentHeightMeasureSpec);
-        addTaint(parentWidthMeasureSpec);
-        addTaint(child.getTaint());
+            int parentHeightMeasureSpec){
+		// Original method
+		/*
+		{
         final LayoutParams lp = child.getLayoutParams();
         final int childWidthMeasureSpec = getChildMeasureSpec(parentWidthMeasureSpec,
                 mPaddingLeft + mPaddingRight, lp.width);
         final int childHeightMeasureSpec = getChildMeasureSpec(parentHeightMeasureSpec,
                 mPaddingTop + mPaddingBottom, lp.height);
         child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
-        // ---------- Original Method ----------
-        //final LayoutParams lp = child.getLayoutParams();
-        //final int childWidthMeasureSpec = getChildMeasureSpec(parentWidthMeasureSpec,
-                //mPaddingLeft + mPaddingRight, lp.width);
-        //final int childHeightMeasureSpec = getChildMeasureSpec(parentHeightMeasureSpec,
-                //mPaddingTop + mPaddingBottom, lp.height);
-        //child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.800 -0400", hash_original_method = "DF0652AA16CC35609E8DBABD1504358F", hash_generated_method = "20B96BEB9AE3737E5C3779B87FEE2D48")
     protected void measureChildWithMargins(View child,
             int parentWidthMeasureSpec, int widthUsed,
-            int parentHeightMeasureSpec, int heightUsed) {
-        addTaint(heightUsed);
-        addTaint(parentHeightMeasureSpec);
-        addTaint(widthUsed);
-        addTaint(parentWidthMeasureSpec);
-        addTaint(child.getTaint());
+            int parentHeightMeasureSpec, int heightUsed){
+		// Original method
+		/*
+		{
         final MarginLayoutParams lp = (MarginLayoutParams) child.getLayoutParams();
         final int childWidthMeasureSpec = getChildMeasureSpec(parentWidthMeasureSpec,
                 mPaddingLeft + mPaddingRight + lp.leftMargin + lp.rightMargin
@@ -5641,660 +2686,429 @@ for(int i = 0;i < size;++i)
                 mPaddingTop + mPaddingBottom + lp.topMargin + lp.bottomMargin
                         + heightUsed, lp.height);
         child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
-        // ---------- Original Method ----------
-        //final MarginLayoutParams lp = (MarginLayoutParams) child.getLayoutParams();
-        //final int childWidthMeasureSpec = getChildMeasureSpec(parentWidthMeasureSpec,
-                //mPaddingLeft + mPaddingRight + lp.leftMargin + lp.rightMargin
-                        //+ widthUsed, lp.width);
-        //final int childHeightMeasureSpec = getChildMeasureSpec(parentHeightMeasureSpec,
-                //mPaddingTop + mPaddingBottom + lp.topMargin + lp.bottomMargin
-                        //+ heightUsed, lp.height);
-        //child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
     }
+		*/
+		//Return nothing
+	}
 
     
-    public static int getChildMeasureSpec(int spec, int padding, int childDimension) {
-        int specMode = MeasureSpec.getMode(spec);
-        int specSize = MeasureSpec.getSize(spec);
-        int size = Math.max(0, specSize - padding);
-        int resultSize = 0;
-        int resultMode = 0;
-        switch (specMode) {
-        case MeasureSpec.EXACTLY:
-            if (childDimension >= 0) {
-                resultSize = childDimension;
-                resultMode = MeasureSpec.EXACTLY;
-            } else if (childDimension == LayoutParams.MATCH_PARENT) {
-                resultSize = size;
-                resultMode = MeasureSpec.EXACTLY;
-            } else if (childDimension == LayoutParams.WRAP_CONTENT) {
-                resultSize = size;
-                resultMode = MeasureSpec.AT_MOST;
-            }
-            break;
-        case MeasureSpec.AT_MOST:
-            if (childDimension >= 0) {
-                resultSize = childDimension;
-                resultMode = MeasureSpec.EXACTLY;
-            } else if (childDimension == LayoutParams.MATCH_PARENT) {
-                resultSize = size;
-                resultMode = MeasureSpec.AT_MOST;
-            } else if (childDimension == LayoutParams.WRAP_CONTENT) {
-                resultSize = size;
-                resultMode = MeasureSpec.AT_MOST;
-            }
-            break;
-        case MeasureSpec.UNSPECIFIED:
-            if (childDimension >= 0) {
-                resultSize = childDimension;
-                resultMode = MeasureSpec.EXACTLY;
-            } else if (childDimension == LayoutParams.MATCH_PARENT) {
-                resultSize = 0;
-                resultMode = MeasureSpec.UNSPECIFIED;
-            } else if (childDimension == LayoutParams.WRAP_CONTENT) {
-                resultSize = 0;
-                resultMode = MeasureSpec.UNSPECIFIED;
-            }
-            break;
-        }
-        return MeasureSpec.makeMeasureSpec(resultSize, resultMode);
-    }
+    public static int getChildMeasureSpec(int spec, int padding, int childDimension){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		return 0;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.801 -0400", hash_original_method = "92C99C7B01BA8D70EFEE87F46C0710D1", hash_generated_method = "AEC59883A5105FAFAA04D4D346420EEE")
-    public void clearDisappearingChildren() {
-        if(mDisappearingChildren != null)        
-        {
+    public void clearDisappearingChildren(){
+		// Original method
+		/*
+		{
+        if (mDisappearingChildren != null) {
             mDisappearingChildren.clear();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mDisappearingChildren != null) {
-            //mDisappearingChildren.clear();
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.801 -0400", hash_original_method = "EFF49544FBF4F5023D4E3259D68E48A6", hash_generated_method = "4040921BAB7DE2F8B9CE54B26FDB1C3C")
-    private void addDisappearingView(View v) {
-        addTaint(v.getTaint());
+    private void addDisappearingView(View v){
+		// Original method
+		/*
+		{
         ArrayList<View> disappearingChildren = mDisappearingChildren;
-        if(disappearingChildren == null)        
-        {
+        if (disappearingChildren == null) {
             disappearingChildren = mDisappearingChildren = new ArrayList<View>();
-        } //End block
+        }
         disappearingChildren.add(v);
-        // ---------- Original Method ----------
-        //ArrayList<View> disappearingChildren = mDisappearingChildren;
-        //if (disappearingChildren == null) {
-            //disappearingChildren = mDisappearingChildren = new ArrayList<View>();
-        //}
-        //disappearingChildren.add(v);
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.802 -0400", hash_original_method = "F02FCA79EB2173CD96A012235B90F902", hash_generated_method = "9C63D3988E48E9EA9CECC51EB81E4756")
-    private void finishAnimatingView(final View view, Animation animation) {
-        addTaint(animation.getTaint());
-        addTaint(view.getTaint());
-        final ArrayList<View> disappearingChildren = mDisappearingChildren;
-        if(disappearingChildren != null)        
-        {
-            if(disappearingChildren.contains(view))            
-            {
-                disappearingChildren.remove(view);
-                if(view.mAttachInfo != null)                
-                {
-                    view.dispatchDetachedFromWindow();
-                } //End block
-                view.clearAnimation();
-                mGroupFlags |= FLAG_INVALIDATE_REQUIRED;
-            } //End block
-        } //End block
-        if(animation != null && !animation.getFillAfter())        
-        {
-            view.clearAnimation();
-        } //End block
-        if((view.mPrivateFlags & ANIMATION_STARTED) == ANIMATION_STARTED)        
-        {
-            view.onAnimationEnd();
-            view.mPrivateFlags &= ~ANIMATION_STARTED;
-            mGroupFlags |= FLAG_INVALIDATE_REQUIRED;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    private void finishAnimatingView(final View view, Animation animation){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.802 -0400", hash_original_method = "663B00ABF4B2F32B3DAAC91DDA64BE32", hash_generated_method = "EB4A88E652AE5FBD50641E287EEE74D5")
-     boolean isViewTransitioning(View view) {
-        addTaint(view.getTaint());
-        boolean var668E624AF39227481B993213F9102405_326503090 = ((mTransitioningViews != null && mTransitioningViews.contains(view)));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2144583432 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2144583432;
-        // ---------- Original Method ----------
-        //return (mTransitioningViews != null && mTransitioningViews.contains(view));
+    boolean isViewTransitioning(View view){
+		// Original method
+		/*
+		{
+        return (mTransitioningViews != null && mTransitioningViews.contains(view));
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.804 -0400", hash_original_method = "3DD17A0BC43336D376B4C3E60ACB3106", hash_generated_method = "B6F202B9AFA35F53810097C186610C4E")
-    public void startViewTransition(View view) {
-        addTaint(view.getTaint());
-        if(view.mParent == this)        
-        {
-            if(mTransitioningViews == null)            
-            {
+    public void startViewTransition(View view){
+		// Original method
+		/*
+		{
+        if (view.mParent == this) {
+            if (mTransitioningViews == null) {
                 mTransitioningViews = new ArrayList<View>();
-            } //End block
+            }
             mTransitioningViews.add(view);
-        } //End block
-        // ---------- Original Method ----------
-        //if (view.mParent == this) {
-            //if (mTransitioningViews == null) {
-                //mTransitioningViews = new ArrayList<View>();
-            //}
-            //mTransitioningViews.add(view);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.804 -0400", hash_original_method = "A78E74DD3F17BBF76B7245787E00733D", hash_generated_method = "F8C1295B61E7701CBDCD917D425744EA")
-    public void endViewTransition(View view) {
-        addTaint(view.getTaint());
-        if(mTransitioningViews != null)        
-        {
-            mTransitioningViews.remove(view);
-            final ArrayList<View> disappearingChildren = mDisappearingChildren;
-            if(disappearingChildren != null && disappearingChildren.contains(view))            
-            {
-                disappearingChildren.remove(view);
-                if(mVisibilityChangingChildren != null &&
-                        mVisibilityChangingChildren.contains(view))                
-                {
-                    mVisibilityChangingChildren.remove(view);
-                } //End block
-                else
-                {
-                    if(view.mAttachInfo != null)                    
-                    {
-                        view.dispatchDetachedFromWindow();
-                    } //End block
-                    if(view.mParent != null)                    
-                    {
-                        view.mParent = null;
-                    } //End block
-                } //End block
-                mGroupFlags |= FLAG_INVALIDATE_REQUIRED;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    public void endViewTransition(View view){
+		// Original method
+		/* Original Method Too Long, Refer to Original Implementation */
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.804 -0400", hash_original_method = "90F24CF973A15FCB3D8EF936857F7660", hash_generated_method = "02050B9A062C413E6CAF56401E4D3AA9")
-    @Override
-    public boolean gatherTransparentRegion(Region region) {
-        addTaint(region.getTaint());
+    @Override public boolean gatherTransparentRegion(Region region){
+		// Original method
+		/*
+		{
         final boolean meOpaque = (mPrivateFlags & View.REQUEST_TRANSPARENT_REGIONS) == 0;
-        if(meOpaque && region == null)        
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_1375976250 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_752213047 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_752213047;
-        } //End block
+        if (meOpaque && region == null) {
+            return true;
+        }
         super.gatherTransparentRegion(region);
         final View[] children = mChildren;
         final int count = mChildrenCount;
         boolean noneOfTheChildrenAreTransparent = true;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             final View child = children[i];
-            if((child.mViewFlags & VISIBILITY_MASK) == VISIBLE || child.getAnimation() != null)            
-            {
-                if(!child.gatherTransparentRegion(region))                
-                {
+            if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE || child.getAnimation() != null) {
+                if (!child.gatherTransparentRegion(region)) {
                     noneOfTheChildrenAreTransparent = false;
-                } //End block
-            } //End block
-        } //End block
-        boolean varCB2BC7FF4565A20F7924E844EB7028C0_958337449 = (meOpaque || noneOfTheChildrenAreTransparent);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_765114918 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_765114918;
-        // ---------- Original Method ----------
-        //final boolean meOpaque = (mPrivateFlags & View.REQUEST_TRANSPARENT_REGIONS) == 0;
-        //if (meOpaque && region == null) {
-            //return true;
-        //}
-        //super.gatherTransparentRegion(region);
-        //final View[] children = mChildren;
-        //final int count = mChildrenCount;
-        //boolean noneOfTheChildrenAreTransparent = true;
-        //for (int i = 0; i < count; i++) {
-            //final View child = children[i];
-            //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE || child.getAnimation() != null) {
-                //if (!child.gatherTransparentRegion(region)) {
-                    //noneOfTheChildrenAreTransparent = false;
-                //}
-            //}
-        //}
-        //return meOpaque || noneOfTheChildrenAreTransparent;
+                }
+            }
+        }
+        return meOpaque || noneOfTheChildrenAreTransparent;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.804 -0400", hash_original_method = "5C4070054C131245FD376376D5198B5B", hash_generated_method = "8D038914887B9E14BED650384F7AABCD")
-    public void requestTransparentRegion(View child) {
-        addTaint(child.getTaint());
-        if(child != null)        
-        {
+    public void requestTransparentRegion(View child){
+		// Original method
+		/*
+		{
+        if (child != null) {
             child.mPrivateFlags |= View.REQUEST_TRANSPARENT_REGIONS;
-            if(mParent != null)            
-            {
+            if (mParent != null) {
                 mParent.requestTransparentRegion(this);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (child != null) {
-            //child.mPrivateFlags |= View.REQUEST_TRANSPARENT_REGIONS;
-            //if (mParent != null) {
-                //mParent.requestTransparentRegion(this);
-            //}
-        //}
+            }
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.805 -0400", hash_original_method = "055C0C5E94DF77352535F2463E2E2F92", hash_generated_method = "5B9CC131DD204C1C0E0B91C48D108979")
-    @Override
-    protected boolean fitSystemWindows(Rect insets) {
-        addTaint(insets.getTaint());
+    @Override protected boolean fitSystemWindows(Rect insets){
+		// Original method
+		/*
+		{
         boolean done = super.fitSystemWindows(insets);
-        if(!done)        
-        {
+        if (!done) {
             final int count = mChildrenCount;
             final View[] children = mChildren;
-for(int i = 0;i < count;i++)
-            {
+            for (int i = 0; i < count; i++) {
                 done = children[i].fitSystemWindows(insets);
-                if(done)                
-                {
+                if (done) {
                     break;
-                } //End block
-            } //End block
-        } //End block
-        boolean var6B2DED51D81A4403D8A4BD25FA1E57EE_324045269 = (done);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_774992872 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_774992872;
-        // ---------- Original Method ----------
-        //boolean done = super.fitSystemWindows(insets);
-        //if (!done) {
-            //final int count = mChildrenCount;
-            //final View[] children = mChildren;
-            //for (int i = 0; i < count; i++) {
-                //done = children[i].fitSystemWindows(insets);
-                //if (done) {
-                    //break;
-                //}
-            //}
-        //}
-        //return done;
+                }
+            }
+        }
+        return done;
     }
+		*/
+		return false;
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.805 -0400", hash_original_method = "B3B3B12C071F8F31617EDB75C1351CBC", hash_generated_method = "CA4478F8C3EF59239A514C5C0EE7CA28")
-    public Animation.AnimationListener getLayoutAnimationListener() {
-Animation.AnimationListener varAF2C9816117CD49985736EFF62CB9500_279010649 =         mAnimationListener;
-        varAF2C9816117CD49985736EFF62CB9500_279010649.addTaint(taint);
-        return varAF2C9816117CD49985736EFF62CB9500_279010649;
-        // ---------- Original Method ----------
-        //return mAnimationListener;
+    public Animation.AnimationListener getLayoutAnimationListener(){
+		return (Animation.AnimationListener)getTaint();
+		// Original method
+		/*
+		{
+        return mAnimationListener;
     }
+		*/
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.806 -0400", hash_original_method = "309790593767800D49B3C7FD0CAB3F32", hash_generated_method = "B36102DE4ABC219BCAE474A4AE16A35F")
-    @Override
-    protected void drawableStateChanged() {
+    @Override protected void drawableStateChanged(){
+		// Original method
+		/*
+		{
         super.drawableStateChanged();
-        if((mGroupFlags & FLAG_NOTIFY_CHILDREN_ON_DRAWABLE_STATE_CHANGE) != 0)        
-        {
-            if((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) != 0)            
-            {
-                IllegalStateException var706E30DEC7D234066B92798F99EC5280_1670152360 = new IllegalStateException("addStateFromChildren cannot be enabled if a"
+        if ((mGroupFlags & FLAG_NOTIFY_CHILDREN_ON_DRAWABLE_STATE_CHANGE) != 0) {
+            if ((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) != 0) {
+                throw new IllegalStateException("addStateFromChildren cannot be enabled if a"
                         + " child has duplicateParentState set to true");
-                var706E30DEC7D234066B92798F99EC5280_1670152360.addTaint(taint);
-                throw var706E30DEC7D234066B92798F99EC5280_1670152360;
-            } //End block
+            }
             final View[] children = mChildren;
             final int count = mChildrenCount;
-for(int i = 0;i < count;i++)
-            {
+            for (int i = 0; i < count; i++) {
                 final View child = children[i];
-                if((child.mViewFlags & DUPLICATE_PARENT_STATE) != 0)                
-                {
+                if ((child.mViewFlags & DUPLICATE_PARENT_STATE) != 0) {
                     child.refreshDrawableState();
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //super.drawableStateChanged();
-        //if ((mGroupFlags & FLAG_NOTIFY_CHILDREN_ON_DRAWABLE_STATE_CHANGE) != 0) {
-            //if ((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) != 0) {
-                //throw new IllegalStateException("addStateFromChildren cannot be enabled if a"
-                        //+ " child has duplicateParentState set to true");
-            //}
-            //final View[] children = mChildren;
-            //final int count = mChildrenCount;
-            //for (int i = 0; i < count; i++) {
-                //final View child = children[i];
-                //if ((child.mViewFlags & DUPLICATE_PARENT_STATE) != 0) {
-                    //child.refreshDrawableState();
-                //}
-            //}
-        //}
+                }
+            }
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.806 -0400", hash_original_method = "9BFEBEB244ACA3F0CF8B6DCD826B4034", hash_generated_method = "D2CE898517FB92241FDF4DA86D2EC67C")
-    @Override
-    public void jumpDrawablesToCurrentState() {
+    @Override public void jumpDrawablesToCurrentState(){
+		// Original method
+		/*
+		{
         super.jumpDrawablesToCurrentState();
         final View[] children = mChildren;
         final int count = mChildrenCount;
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             children[i].jumpDrawablesToCurrentState();
-        } //End block
-        // ---------- Original Method ----------
-        //super.jumpDrawablesToCurrentState();
-        //final View[] children = mChildren;
-        //final int count = mChildrenCount;
-        //for (int i = 0; i < count; i++) {
-            //children[i].jumpDrawablesToCurrentState();
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.807 -0400", hash_original_method = "0411A3FE715B4530882EE6CBB1252DCB", hash_generated_method = "B15580B44344DA17DF56A275DF99A114")
-    @Override
-    protected int[] onCreateDrawableState(int extraSpace) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(extraSpace);
-        if((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) == 0)        
-        {
-            int[] var66AAC6FF29C922B79B81CD6E0D9D06DC_2042149690 = (super.onCreateDrawableState(extraSpace));
-                        int[] varB4CCCA26F9DB9189C32F33E82D425CFB_240108599 = {getTaintInt()};
-            return varB4CCCA26F9DB9189C32F33E82D425CFB_240108599;
-        } //End block
+    @Override protected int[] onCreateDrawableState(int extraSpace){
+		// Original method
+		/*
+		{
+        if ((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) == 0) {
+            return super.onCreateDrawableState(extraSpace);
+        }
         int need = 0;
         int n = getChildCount();
-for(int i = 0;i < n;i++)
-        {
+        for (int i = 0; i < n; i++) {
             int[] childState = getChildAt(i).getDrawableState();
-            if(childState != null)            
-            {
+            if (childState != null) {
                 need += childState.length;
-            } //End block
-        } //End block
+            }
+        }
         int[] state = super.onCreateDrawableState(extraSpace + need);
-for(int i = 0;i < n;i++)
-        {
+        for (int i = 0; i < n; i++) {
             int[] childState = getChildAt(i).getDrawableState();
-            if(childState != null)            
-            {
+            if (childState != null) {
                 state = mergeDrawableStates(state, childState);
-            } //End block
-        } //End block
-        int[] var9ED39E2EA931586B6A985A6942EF573E_229126071 = (state);
-                int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1472951678 = {getTaintInt()};
-        return varB4CCCA26F9DB9189C32F33E82D425CFB_1472951678;
-        // ---------- Original Method ----------
-        //if ((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) == 0) {
-            //return super.onCreateDrawableState(extraSpace);
-        //}
-        //int need = 0;
-        //int n = getChildCount();
-        //for (int i = 0; i < n; i++) {
-            //int[] childState = getChildAt(i).getDrawableState();
-            //if (childState != null) {
-                //need += childState.length;
-            //}
-        //}
-        //int[] state = super.onCreateDrawableState(extraSpace + need);
-        //for (int i = 0; i < n; i++) {
-            //int[] childState = getChildAt(i).getDrawableState();
-            //if (childState != null) {
-                //state = mergeDrawableStates(state, childState);
-            //}
-        //}
-        //return state;
+            }
+        }
+        return state;
     }
+		*/
+		return null;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.807 -0400", hash_original_method = "1481B38AF6385F8F98E444294398E1C4", hash_generated_method = "5B36C880F5B68B92BB35983A60C435C7")
-    public void setAddStatesFromChildren(boolean addsStates) {
-        addTaint(addsStates);
-        if(addsStates)        
-        {
+    public void setAddStatesFromChildren(boolean addsStates){
+		// Original method
+		/*
+		{
+        if (addsStates) {
             mGroupFlags |= FLAG_ADD_STATES_FROM_CHILDREN;
-        } //End block
-        else
-        {
+        } else {
             mGroupFlags &= ~FLAG_ADD_STATES_FROM_CHILDREN;
-        } //End block
+        }
         refreshDrawableState();
-        // ---------- Original Method ----------
-        //if (addsStates) {
-            //mGroupFlags |= FLAG_ADD_STATES_FROM_CHILDREN;
-        //} else {
-            //mGroupFlags &= ~FLAG_ADD_STATES_FROM_CHILDREN;
-        //}
-        //refreshDrawableState();
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.808 -0400", hash_original_method = "026C4CEB09DFE602F5C11A5652FC3C1F", hash_generated_method = "0136004AD54987F4BFCE810A8B86B89E")
-    public boolean addStatesFromChildren() {
-        boolean var440C4FBFCBC0E99B747DBAF8B257FDF0_873746970 = ((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) != 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_234613152 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_234613152;
-        // ---------- Original Method ----------
-        //return (mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) != 0;
+    public boolean addStatesFromChildren(){
+		// Original method
+		/*
+		{
+        return (mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) != 0;
     }
+		*/
+		return false;
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.808 -0400", hash_original_method = "F32408C60FA79535F6423CE68328A516", hash_generated_method = "719D7ED1E6DADE87FE73EE48D8B4A906")
-    public void childDrawableStateChanged(View child) {
-        addTaint(child.getTaint());
-        if((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) != 0)        
-        {
+    public void childDrawableStateChanged(View child){
+		// Original method
+		/*
+		{
+        if ((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) != 0) {
             refreshDrawableState();
-        } //End block
-        // ---------- Original Method ----------
-        //if ((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) != 0) {
-            //refreshDrawableState();
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.809 -0400", hash_original_method = "CCA9986B4D287F2F006BAE825941ECAA", hash_generated_method = "28A9F6F2C654D2AA771EAFD01C6ECAA2")
-    public void setLayoutAnimationListener(Animation.AnimationListener animationListener) {
+    public void setLayoutAnimationListener(Animation.AnimationListener animationListener){
+		mAnimationListener = animationListener;  //Preserved
+		// Original method
+		/*
+		{
         mAnimationListener = animationListener;
-        // ---------- Original Method ----------
-        //mAnimationListener = animationListener;
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.809 -0400", hash_original_method = "8473FDA62EFB348A51ABA227E5F80648", hash_generated_method = "6DEA955DEE26839D418B608AA61F6C25")
-    public void requestTransitionStart(LayoutTransition transition) {
-        addTaint(transition.getTaint());
+    public void requestTransitionStart(LayoutTransition transition){
+		// Original method
+		/*
+		{
         ViewRootImpl viewAncestor = getViewRootImpl();
-        if(viewAncestor != null)        
-        {
+        if (viewAncestor != null) {
             viewAncestor.requestTransitionStart(transition);
-        } //End block
-        // ---------- Original Method ----------
-        //ViewRootImpl viewAncestor = getViewRootImpl();
-        //if (viewAncestor != null) {
-            //viewAncestor.requestTransitionStart(transition);
-        //}
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.809 -0400", hash_original_method = "438FE65F3DA47A9BB347952B8A6B02CD", hash_generated_method = "C8AB5DABF5812F3A0DBA318A6E258F3F")
-    @Override
-    protected void resetResolvedLayoutDirection() {
+    @Override protected void resetResolvedLayoutDirection(){
+		// Original method
+		/*
+		{
         super.resetResolvedLayoutDirection();
         final int count = getChildCount();
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             final View child = getChildAt(i);
-            if(child.getLayoutDirection() == LAYOUT_DIRECTION_INHERIT)            
-            {
+            if (child.getLayoutDirection() == LAYOUT_DIRECTION_INHERIT) {
                 child.resetResolvedLayoutDirection();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //super.resetResolvedLayoutDirection();
-        //final int count = getChildCount();
-        //for (int i = 0; i < count; i++) {
-            //final View child = getChildAt(i);
-            //if (child.getLayoutDirection() == LAYOUT_DIRECTION_INHERIT) {
-                //child.resetResolvedLayoutDirection();
-            //}
-        //}
+            }
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.809 -0400", hash_original_method = "83014321BD6411A92FC299225A8B4B68", hash_generated_method = "C660791D2F5D24CBEBA71F690BCEF982")
-    @Override
-    protected void resetResolvedTextDirection() {
+    @Override protected void resetResolvedTextDirection(){
+		// Original method
+		/*
+		{
         super.resetResolvedTextDirection();
         final int count = getChildCount();
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             final View child = getChildAt(i);
-            if(child.getTextDirection() == TEXT_DIRECTION_INHERIT)            
-            {
+            if (child.getTextDirection() == TEXT_DIRECTION_INHERIT) {
                 child.resetResolvedTextDirection();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //super.resetResolvedTextDirection();
-        //final int count = getChildCount();
-        //for (int i = 0; i < count; i++) {
-            //final View child = getChildAt(i);
-            //if (child.getTextDirection() == TEXT_DIRECTION_INHERIT) {
-                //child.resetResolvedTextDirection();
-            //}
-        //}
+            }
+        }
     }
+		*/
+		//Return nothing
+	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.810 -0400", hash_original_method = "C2F251AFC67F9C484131CB8CA191D5D9", hash_generated_method = "24435EE99A36C9729AD27D3BE7AC644F")
-    public boolean shouldDelayChildPressedState() {
-        boolean varB326B5062B2F0E69046810717534CB09_1871846939 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1209197589 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1209197589;
-        // ---------- Original Method ----------
-        //return true;
+    public boolean shouldDelayChildPressedState(){
+		// Original method
+		/*
+		{
+        return true;
     }
+		*/
+		return false;
+	}
 
     
     public static class LayoutParams {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.810 -0400", hash_original_field = "EAAE26A6FB20ED3EF54FB23BFA0B1FCC", hash_generated_field = "E98E615247D406FD5B1F2C460414CA00")
-
         @ViewDebug.ExportedProperty(category = "layout", mapping = {
             @ViewDebug.IntToString(from = MATCH_PARENT, to = "MATCH_PARENT"),
             @ViewDebug.IntToString(from = WRAP_CONTENT, to = "WRAP_CONTENT")
-        }) public int width;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.810 -0400", hash_original_field = "B435E227D5DD201E1768B2BCB2E0AA81", hash_generated_field = "154449EB0055FED002CA8F596F81E1FB")
-
+        })
+        public int width;
         @ViewDebug.ExportedProperty(category = "layout", mapping = {
             @ViewDebug.IntToString(from = MATCH_PARENT, to = "MATCH_PARENT"),
             @ViewDebug.IntToString(from = WRAP_CONTENT, to = "WRAP_CONTENT")
-        }) public int height;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.811 -0400", hash_original_field = "32A967A061019BB85A555A08521F45C3", hash_generated_field = "A8465771210F0A9A6D04062D459407C3")
-
+        })
+        public int height;
         public LayoutAnimationController.AnimationParameters layoutAnimationParameters;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.811 -0400", hash_original_method = "15AB37D81442EE27D75B1677A2391AE7", hash_generated_method = "7153F7D48F151279FE2BE617604B5DD1")
-        public  LayoutParams(Context c, AttributeSet attrs) {
-            addTaint(attrs.getTaint());
-            addTaint(c.getTaint());
-            TypedArray a = c.obtainStyledAttributes(attrs, R.styleable.ViewGroup_Layout);
-            setBaseAttributes(a,
+        public LayoutParams(Context c, AttributeSet attrs){
+			/*
+			TypedArray a = c.obtainStyledAttributes(attrs, R.styleable.ViewGroup_Layout);
+			setBaseAttributes(a,
                     R.styleable.ViewGroup_Layout_layout_width,
                     R.styleable.ViewGroup_Layout_layout_height);
-            a.recycle();
-            // ---------- Original Method ----------
-            //TypedArray a = c.obtainStyledAttributes(attrs, R.styleable.ViewGroup_Layout);
-            //setBaseAttributes(a,
-                    //R.styleable.ViewGroup_Layout_layout_width,
-                    //R.styleable.ViewGroup_Layout_layout_height);
-            //a.recycle();
-        }
+			a.recycle();
+			*/
+		}
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.811 -0400", hash_original_method = "25BDC30F3D80C9CBE1EB5EBCEE37F7CB", hash_generated_method = "61CBE5F83CA15EA93BA315DE7814BEC6")
-        public  LayoutParams(int width, int height) {
-            this.width = width;
-            this.height = height;
-            // ---------- Original Method ----------
-            //this.width = width;
-            //this.height = height;
-        }
+        public LayoutParams(int width, int height){
+			/*
+			this.width = width;
+			this.height = height;
+			*/
+		}
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.811 -0400", hash_original_method = "2BA3A180B45B8CE1CC5399F5BB84EEDE", hash_generated_method = "0F6B2AA4452B28B14B0088D4B6A2DB9F")
-        public  LayoutParams(LayoutParams source) {
-            this.width = source.width;
-            this.height = source.height;
-            // ---------- Original Method ----------
-            //this.width = source.width;
-            //this.height = source.height;
-        }
+        public LayoutParams(LayoutParams source){
+			/*
+			this.width = source.width;
+			this.height = source.height;
+			*/
+		}
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.811 -0400", hash_original_method = "6916C65008FD05252A1C29A02882BE94", hash_generated_method = "45AC97A074BFD055B1BD45042F079476")
-          LayoutParams() {
-            // ---------- Original Method ----------
-        }
+        LayoutParams(){
+		}
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.814 -0400", hash_original_method = "22F495DEF56CC03879FA6664450D6ACC", hash_generated_method = "E5FD1A97DBF05843B1262AD7B2A89C11")
-        protected void setBaseAttributes(TypedArray a, int widthAttr, int heightAttr) {
+        protected void setBaseAttributes(TypedArray a, int widthAttr, int heightAttr){
+			// Original method
+			/*
+			{
             width = a.getLayoutDimension(widthAttr, "layout_width");
             height = a.getLayoutDimension(heightAttr, "layout_height");
-            // ---------- Original Method ----------
-            //width = a.getLayoutDimension(widthAttr, "layout_width");
-            //height = a.getLayoutDimension(heightAttr, "layout_height");
         }
+			*/
+			//Return nothing
+		}
 
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.814 -0400", hash_original_method = "CE6F1B4BC3F83182FFE42E3A8827DEEC", hash_generated_method = "6D86F89DE956B69559B0A86CF3A2E3CD")
-        protected void resolveWithDirection(int layoutDirection) {
-            addTaint(layoutDirection);
-            // ---------- Original Method ----------
+        protected void resolveWithDirection(int layoutDirection){
+			// Original method
+			/*
+			{
         }
+			*/
+			//Return nothing
+		}
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.814 -0400", hash_original_method = "E4ABE7598543A22DA450A925C25FFDEA", hash_generated_method = "2C27ECBA3DF3EA4362FB307924847F9E")
-        public String debug(String output) {
-            addTaint(output.getTaint());
-String var415ADF52E55102ED4321EF30FF1080EF_1192061898 =             output + "ViewGroup.LayoutParams={ width="
+        public String debug(String output){
+			// Original method
+			/*
+			{
+            return output + "ViewGroup.LayoutParams={ width="
                     + sizeToString(width) + ", height=" + sizeToString(height) + " }";
-            var415ADF52E55102ED4321EF30FF1080EF_1192061898.addTaint(taint);
-            return var415ADF52E55102ED4321EF30FF1080EF_1192061898;
-            // ---------- Original Method ----------
-            //return output + "ViewGroup.LayoutParams={ width="
-                    //+ sizeToString(width) + ", height=" + sizeToString(height) + " }";
         }
+			*/
+			return "";
+		}
 
         
-        protected static String sizeToString(int size) {
+        protected static String sizeToString(int size){
+			// Original method
+			/*
+			{
             if (size == WRAP_CONTENT) {
                 return "wrap-content";
             }
@@ -6303,240 +3117,180 @@ String var415ADF52E55102ED4321EF30FF1080EF_1192061898 =             output + "Vi
             }
             return String.valueOf(size);
         }
+			*/
+			return "";
+		}
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.815 -0400", hash_original_field = "B333156949B5FAA535F7E8DBDBF0D617", hash_generated_field = "B60A6144A316A76818E3F37ADD9B0E2B")
-
         @SuppressWarnings({"UnusedDeclaration"})
         @Deprecated
         public static final int FILL_PARENT = -1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.815 -0400", hash_original_field = "AB0F2BFD833859D7E6AF5D2D478DFEC1", hash_generated_field = "035E0815824268EA10F24139068915CD")
-
         public static final int MATCH_PARENT = -1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.815 -0400", hash_original_field = "331393B598CE796434D861237AC6E1F4", hash_generated_field = "33E013A8F3F409595C02468C7E3CA7AB")
-
         public static final int WRAP_CONTENT = -2;
     }
 
 
     
     public static class MarginLayoutParams extends ViewGroup.LayoutParams {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.815 -0400", hash_original_field = "1419D880ADE86E149ABAFCB226F6B662", hash_generated_field = "B21196B63DA6FA861C6C44CFE61E0207")
-
-        @ViewDebug.ExportedProperty(category = "layout") public int leftMargin;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.815 -0400", hash_original_field = "F14E99EDBAA6E54CB43B2B4C3D7084CF", hash_generated_field = "C75872B6D23692F5C29153B6138A7705")
-
-        @ViewDebug.ExportedProperty(category = "layout") public int topMargin;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.815 -0400", hash_original_field = "A5E95C57F057CCC5814DC8DB40E9120B", hash_generated_field = "8215B4F64E53D75A1F217C65CCA861B0")
-
-        @ViewDebug.ExportedProperty(category = "layout") public int rightMargin;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.815 -0400", hash_original_field = "6B087389EB08EE42774D6432387E8C9A", hash_generated_field = "C9EC61B6AE185D3F68BEDBB7A02A577D")
-
-        @ViewDebug.ExportedProperty(category = "layout") public int bottomMargin;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.815 -0400", hash_original_field = "77BD249F949CA3D95A4C77016CC05819", hash_generated_field = "6BB5C7CF92CA34A599866F03AD4A8600")
-
-        @ViewDebug.ExportedProperty(category = "layout") protected int startMargin = DEFAULT_RELATIVE;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.815 -0400", hash_original_field = "FF17DEDAB668A62D7F93257CCC172E72", hash_generated_field = "0A4C2937E1B0718BA14E68C5B33ABD23")
-
-        @ViewDebug.ExportedProperty(category = "layout") protected int endMargin = DEFAULT_RELATIVE;
+        @ViewDebug.ExportedProperty(category = "layout")
+        public int leftMargin;
+        @ViewDebug.ExportedProperty(category = "layout")
+        public int topMargin;
+        @ViewDebug.ExportedProperty(category = "layout")
+        public int rightMargin;
+        @ViewDebug.ExportedProperty(category = "layout")
+        public int bottomMargin;
+        @ViewDebug.ExportedProperty(category = "layout")
+        protected int startMargin = DEFAULT_RELATIVE;
+        @ViewDebug.ExportedProperty(category = "layout")
+        protected int endMargin = DEFAULT_RELATIVE;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.817 -0400", hash_original_method = "10E5D625CF55B3D944D3843050E826C6", hash_generated_method = "92AF07C46DA4B05775F36E7574BE862E")
-        public  MarginLayoutParams(Context c, AttributeSet attrs) {
-            super();
-            addTaint(attrs.getTaint());
-            addTaint(c.getTaint());
-            TypedArray a = c.obtainStyledAttributes(attrs, R.styleable.ViewGroup_MarginLayout);
-            setBaseAttributes(a,
-                    R.styleable.ViewGroup_MarginLayout_layout_width,
-                    R.styleable.ViewGroup_MarginLayout_layout_height);
-            int margin = a.getDimensionPixelSize(
-                    com.android.internal.R.styleable.ViewGroup_MarginLayout_layout_margin, -1);
-            if(margin >= 0)            
-            {
-                leftMargin = margin;
-                topMargin = margin;
-                rightMargin= margin;
-                bottomMargin = margin;
-            } //End block
-            else
-            {
-                leftMargin = a.getDimensionPixelSize(
-                        R.styleable.ViewGroup_MarginLayout_layout_marginLeft, 0);
-                topMargin = a.getDimensionPixelSize(
-                        R.styleable.ViewGroup_MarginLayout_layout_marginTop, 0);
-                rightMargin = a.getDimensionPixelSize(
-                        R.styleable.ViewGroup_MarginLayout_layout_marginRight, 0);
-                bottomMargin = a.getDimensionPixelSize(
-                        R.styleable.ViewGroup_MarginLayout_layout_marginBottom, 0);
-                startMargin = a.getDimensionPixelSize(
-                        R.styleable.ViewGroup_MarginLayout_layout_marginStart, DEFAULT_RELATIVE);
-                endMargin = a.getDimensionPixelSize(
-                        R.styleable.ViewGroup_MarginLayout_layout_marginEnd, DEFAULT_RELATIVE);
-            } //End block
-            a.recycle();
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
-        }
+        public MarginLayoutParams(Context c, AttributeSet attrs){
+			super();
+			/* Original Method Too Long, Refer to Original Implementation */
+		}
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.817 -0400", hash_original_method = "4C1C9EAF9AFA2E58AB980E97DFB147EB", hash_generated_method = "606D30F33DA2082424163F252826B744")
-        public  MarginLayoutParams(int width, int height) {
-            super(width, height);
-            addTaint(height);
-            addTaint(width);
-            // ---------- Original Method ----------
-        }
+        public MarginLayoutParams(int width, int height){
+			super(width, height);
+		}
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.820 -0400", hash_original_method = "55868F7F983C11B537A625BA756EE7CC", hash_generated_method = "7035DFAA2CA4AF1F793362EF7D0AFEFE")
-        public  MarginLayoutParams(MarginLayoutParams source) {
-            this.width = source.width;
-            this.height = source.height;
-            this.leftMargin = source.leftMargin;
-            this.topMargin = source.topMargin;
-            this.rightMargin = source.rightMargin;
-            this.bottomMargin = source.bottomMargin;
-            this.startMargin = source.startMargin;
-            this.endMargin = source.endMargin;
-            // ---------- Original Method ----------
-            //this.width = source.width;
-            //this.height = source.height;
-            //this.leftMargin = source.leftMargin;
-            //this.topMargin = source.topMargin;
-            //this.rightMargin = source.rightMargin;
-            //this.bottomMargin = source.bottomMargin;
-            //this.startMargin = source.startMargin;
-            //this.endMargin = source.endMargin;
-        }
+        public MarginLayoutParams(MarginLayoutParams source){
+			/*
+			this.width = source.width;
+			this.height = source.height;
+			this.leftMargin = source.leftMargin;
+			this.topMargin = source.topMargin;
+			this.rightMargin = source.rightMargin;
+			this.bottomMargin = source.bottomMargin;
+			this.startMargin = source.startMargin;
+			this.endMargin = source.endMargin;
+			*/
+		}
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.820 -0400", hash_original_method = "E2A57B11F6C8009C3B5E4EDAD0277412", hash_generated_method = "54FCC1DF48420A5FAD38AF8300540761")
-        public  MarginLayoutParams(LayoutParams source) {
-            super(source);
-            addTaint(source.getTaint());
-            // ---------- Original Method ----------
-        }
+        public MarginLayoutParams(LayoutParams source){
+			super(source);
+		}
 
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.820 -0400", hash_original_method = "A7CFD8E9AA47AE278733C57B8CF5503F", hash_generated_method = "E9FA91064C566B35F37192AF7E41F6DA")
-        public void setMargins(int left, int top, int right, int bottom) {
+        public void setMargins(int left, int top, int right, int bottom){
+			addTaint(left);
+			leftMargin = left;  //Preserved
+			addTaint(top);
+			topMargin = top;  //Preserved
+			addTaint(right);
+			rightMargin = right;  //Preserved
+			addTaint(bottom);
+			bottomMargin = bottom;  //Preserved
+			// Original method
+			/*
+			{
             leftMargin = left;
             topMargin = top;
             rightMargin = right;
             bottomMargin = bottom;
-            // ---------- Original Method ----------
-            //leftMargin = left;
-            //topMargin = top;
-            //rightMargin = right;
-            //bottomMargin = bottom;
         }
+			*/
+			//Return nothing
+		}
 
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.821 -0400", hash_original_method = "F5A63690A2F55CE5C4D6B1F24495E028", hash_generated_method = "142C3C1A10C4FC10B505CFEA80893BBF")
-        public void setMarginsRelative(int start, int top, int end, int bottom) {
+        public void setMarginsRelative(int start, int top, int end, int bottom){
+			addTaint(start);
+			startMargin = start;  //Preserved
+			addTaint(top);
+			topMargin = top;  //Preserved
+			addTaint(end);
+			endMargin = end;  //Preserved
+			addTaint(bottom);
+			bottomMargin = bottom;  //Preserved
+			// Original method
+			/*
+			{
             startMargin = start;
             topMargin = top;
             endMargin = end;
             bottomMargin = bottom;
-            // ---------- Original Method ----------
-            //startMargin = start;
-            //topMargin = top;
-            //endMargin = end;
-            //bottomMargin = bottom;
         }
+			*/
+			//Return nothing
+		}
 
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.822 -0400", hash_original_method = "A60FB56334BFE35432A89BE021472DEF", hash_generated_method = "B789F5321FDD72615F636D6FDDD361C1")
-        public int getMarginStart() {
-            int varC874E28EA0EF3808AC84E8C887C093B2_1612918019 = (startMargin);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1487849476 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1487849476;
-            // ---------- Original Method ----------
-            //return startMargin;
+        public int getMarginStart(){
+			return getTaintInt();
+			// Original method
+			/*
+			{
+            return startMargin;
         }
+			*/
+		}
 
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.822 -0400", hash_original_method = "2B74CF4F3396E75552B1A46DF3D4BFD7", hash_generated_method = "751F72BC9527EE6846CA0CB1EA5D1005")
-        public int getMarginEnd() {
-            int varEA04B189325C9C7BE8FFE77419F7BF62_377879517 = (endMargin);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_292727431 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_292727431;
-            // ---------- Original Method ----------
-            //return endMargin;
+        public int getMarginEnd(){
+			return getTaintInt();
+			// Original method
+			/*
+			{
+            return endMargin;
         }
+			*/
+		}
 
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.822 -0400", hash_original_method = "C9EA583BDFA2583A2B96D706C959CDBC", hash_generated_method = "92070B7608D9595F10579A5C966857C0")
-        public boolean isMarginRelative() {
-            boolean var5EFA4C87369FD13EFEA666438ECAD258_1905240139 = ((startMargin != DEFAULT_RELATIVE) || (endMargin != DEFAULT_RELATIVE));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_209173903 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_209173903;
-            // ---------- Original Method ----------
-            //return (startMargin != DEFAULT_RELATIVE) || (endMargin != DEFAULT_RELATIVE);
+        public boolean isMarginRelative(){
+			// Original method
+			/*
+			{
+            return (startMargin != DEFAULT_RELATIVE) || (endMargin != DEFAULT_RELATIVE);
         }
+			*/
+			return false;
+		}
 
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.823 -0400", hash_original_method = "25B74C4F994FDDCB83271E7B2F9BDDEE", hash_generated_method = "6B46188643EE44AC27C32BC0234CF632")
-        @Override
-        protected void resolveWithDirection(int layoutDirection) {
-            addTaint(layoutDirection);
-switch(layoutDirection){
-            case View.LAYOUT_DIRECTION_RTL:
-            leftMargin = (endMargin > DEFAULT_RELATIVE) ? endMargin : leftMargin;
-            rightMargin = (startMargin > DEFAULT_RELATIVE) ? startMargin : rightMargin;
-            break;
-            case View.LAYOUT_DIRECTION_LTR:
-            default:
-            leftMargin = (startMargin > DEFAULT_RELATIVE) ? startMargin : leftMargin;
-            rightMargin = (endMargin > DEFAULT_RELATIVE) ? endMargin : rightMargin;
-            break;
-}
-            // ---------- Original Method ----------
-            //switch(layoutDirection) {
-                //case View.LAYOUT_DIRECTION_RTL:
-                    //leftMargin = (endMargin > DEFAULT_RELATIVE) ? endMargin : leftMargin;
-                    //rightMargin = (startMargin > DEFAULT_RELATIVE) ? startMargin : rightMargin;
-                    //break;
-                //case View.LAYOUT_DIRECTION_LTR:
-                //default:
-                    //leftMargin = (startMargin > DEFAULT_RELATIVE) ? startMargin : leftMargin;
-                    //rightMargin = (endMargin > DEFAULT_RELATIVE) ? endMargin : rightMargin;
-                    //break;
-            //}
+        @Override protected void resolveWithDirection(int layoutDirection){
+			// Original method
+			/*
+			{
+            switch(layoutDirection) {
+                case View.LAYOUT_DIRECTION_RTL:
+                    leftMargin = (endMargin > DEFAULT_RELATIVE) ? endMargin : leftMargin;
+                    rightMargin = (startMargin > DEFAULT_RELATIVE) ? startMargin : rightMargin;
+                    break;
+                case View.LAYOUT_DIRECTION_LTR:
+                default:
+                    leftMargin = (startMargin > DEFAULT_RELATIVE) ? startMargin : leftMargin;
+                    rightMargin = (endMargin > DEFAULT_RELATIVE) ? endMargin : rightMargin;
+                    break;
+            }
         }
+			*/
+			//Return nothing
+		}
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.823 -0400", hash_original_field = "9719E4AAD4FACA3BF0499294B0F32D31", hash_generated_field = "706B949A33ED230B911B9350FAA5912D")
-
         static private final int DEFAULT_RELATIVE = Integer.MIN_VALUE;
     }
 
 
     
     private static final class TouchTarget {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.823 -0400", hash_original_field = "1B7D5726533AB525A8760351E9B5E415", hash_generated_field = "666EDA6D407B9C5116B55295B45230F4")
-
         public View child;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.823 -0400", hash_original_field = "F1144C2E88061517D095C11872B4C482", hash_generated_field = "530D731D7D2EE140B1D1AF75DBF79B1B")
-
         public int pointerIdBits;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.823 -0400", hash_original_field = "D0CAB90D8D20D57E2F2B9BE52F7DD25D", hash_generated_field = "DC720CE01C505E3F8C1AAF24F8078F0D")
-
         public TouchTarget next;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.825 -0400", hash_original_method = "5259B67E5A6C02FEFA0EB82F43285FB5", hash_generated_method = "B32A208B999EE5B494ADD3A3C0776E12")
-        private  TouchTarget() {
-            // ---------- Original Method ----------
-        }
+        private TouchTarget(){
+		}
 
         
-        public static TouchTarget obtain(View child, int pointerIdBits) {
+        public static TouchTarget obtain(View child, int pointerIdBits){
+			// Original method
+			/*
+			{
             final TouchTarget target;
             synchronized (sRecycleLock) {
                 if (sRecycleBin == null) {
@@ -6552,73 +3306,52 @@ switch(layoutDirection){
             target.pointerIdBits = pointerIdBits;
             return target;
         }
+			*/
+			return null;
+		}
 
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.825 -0400", hash_original_method = "0B1C6D1635B2332F7800E0E7CCBD2BE0", hash_generated_method = "FC2DA8796F1F045A8AB2E7A88DFBDC6D")
-        public void recycle() {
-            synchronized
-(sRecycleLock)            {
-                if(sRecycledCount < MAX_RECYCLED)                
-                {
+        public void recycle(){
+			// Original method
+			/*
+			{
+            synchronized (sRecycleLock) {
+                if (sRecycledCount < MAX_RECYCLED) {
                     next = sRecycleBin;
                     sRecycleBin = this;
                     sRecycledCount += 1;
-                } //End block
-                else
-                {
+                } else {
                     next = null;
-                } //End block
+                }
                 child = null;
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (sRecycleLock) {
-                //if (sRecycledCount < MAX_RECYCLED) {
-                    //next = sRecycleBin;
-                    //sRecycleBin = this;
-                    //sRecycledCount += 1;
-                //} else {
-                    //next = null;
-                //}
-                //child = null;
-            //}
+            }
         }
+			*/
+			//Return nothing
+		}
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.826 -0400", hash_original_field = "A72E5077CE400FBB95D5EB6C205E6CD6", hash_generated_field = "393219263EA5357C424C8D6A0761942D")
-
         private static final int MAX_RECYCLED = 32;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.826 -0400", hash_original_field = "5E099B93496A959515A0264634CA0534", hash_generated_field = "569BC93CDF23077487A166A9877200C9")
-
         private static final Object sRecycleLock = new Object();
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.826 -0400", hash_original_field = "CCE02A7FF8CA5926C887F8CC8CC579A5", hash_generated_field = "E0E2F52EC1657E89F88CB94D6B19500A")
-
         private static TouchTarget sRecycleBin;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.826 -0400", hash_original_field = "E80DA3258C0105DF400606DD49462342", hash_generated_field = "8DBFF1570BBBBB6DA28AAC5B6FF5453C")
-
         private static int sRecycledCount;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.826 -0400", hash_original_field = "1B6BEB46ACAD52F4B6C908932D9CBB35", hash_generated_field = "5D0EA96D1B8E6DB25F736A1FB6B6D10D")
-
         public static final int ALL_POINTER_IDS = -1;
     }
 
 
     
     private static final class HoverTarget {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.826 -0400", hash_original_field = "1B7D5726533AB525A8760351E9B5E415", hash_generated_field = "666EDA6D407B9C5116B55295B45230F4")
-
         public View child;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.826 -0400", hash_original_field = "D0CAB90D8D20D57E2F2B9BE52F7DD25D", hash_generated_field = "3B1636D6CF959CF92CBD4352E6CBCE49")
-
         public HoverTarget next;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.826 -0400", hash_original_method = "5539B57739929C533DCF7E732D22C4F2", hash_generated_method = "726B690AE07312555BAF165F7E5F62F6")
-        private  HoverTarget() {
-            // ---------- Original Method ----------
-        }
+        private HoverTarget(){
+		}
 
         
-        public static HoverTarget obtain(View child) {
+        public static HoverTarget obtain(View child){
+			// Original method
+			/*
+			{
             final HoverTarget target;
             synchronized (sRecycleLock) {
                 if (sRecycleBin == null) {
@@ -6633,50 +3366,34 @@ switch(layoutDirection){
             target.child = child;
             return target;
         }
+			*/
+			return null;
+		}
 
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.829 -0400", hash_original_method = "0B1C6D1635B2332F7800E0E7CCBD2BE0", hash_generated_method = "FC2DA8796F1F045A8AB2E7A88DFBDC6D")
-        public void recycle() {
-            synchronized
-(sRecycleLock)            {
-                if(sRecycledCount < MAX_RECYCLED)                
-                {
+        public void recycle(){
+			// Original method
+			/*
+			{
+            synchronized (sRecycleLock) {
+                if (sRecycledCount < MAX_RECYCLED) {
                     next = sRecycleBin;
                     sRecycleBin = this;
                     sRecycledCount += 1;
-                } //End block
-                else
-                {
+                } else {
                     next = null;
-                } //End block
+                }
                 child = null;
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (sRecycleLock) {
-                //if (sRecycledCount < MAX_RECYCLED) {
-                    //next = sRecycleBin;
-                    //sRecycleBin = this;
-                    //sRecycledCount += 1;
-                //} else {
-                    //next = null;
-                //}
-                //child = null;
-            //}
+            }
         }
+			*/
+			//Return nothing
+		}
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.829 -0400", hash_original_field = "A72E5077CE400FBB95D5EB6C205E6CD6", hash_generated_field = "393219263EA5357C424C8D6A0761942D")
-
         private static final int MAX_RECYCLED = 32;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "5E099B93496A959515A0264634CA0534", hash_generated_field = "569BC93CDF23077487A166A9877200C9")
-
         private static final Object sRecycleLock = new Object();
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "CCE02A7FF8CA5926C887F8CC8CC579A5", hash_generated_field = "9BF05FD9D6504C47D3CD94A8F3200F82")
-
         private static HoverTarget sRecycleBin;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "E80DA3258C0105DF400606DD49462342", hash_generated_field = "8DBFF1570BBBBB6DA28AAC5B6FF5453C")
-
         private static int sRecycledCount;
     }
 
@@ -6690,111 +3407,42 @@ switch(layoutDirection){
         void onChildViewRemoved(View parent, View child);
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "0F6F0EB642B3F46DE2B2DF48DA4427EF", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
-
     private static final boolean DBG = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "093C1742536C628A897749D49426A6D3", hash_generated_field = "47BF092971141A3134E594F7724B4190")
-
     private static final int FLAG_CLIP_CHILDREN = 0x1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "CB5125EA3850C10828D646E68628DA9A", hash_generated_field = "8784C03D29895C69177C2E4EC32050F7")
-
     private static final int FLAG_CLIP_TO_PADDING = 0x2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "370A6DEBEC95348BA1E5248C135A5EC8", hash_generated_field = "6D07E3CA6E481323A58E027BE033C02B")
-
-    private static final int FLAG_INVALIDATE_REQUIRED = 0x4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "5195C625EE4E9D8027AD632CFE4CCD01", hash_generated_field = "B26C30228855373F2358E1738754788D")
-
+    private static final int FLAG_INVALIDATE_REQUIRED  = 0x4;
     private static final int FLAG_RUN_ANIMATION = 0x8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "83472C31AED9766B248D82ED2D074D5C", hash_generated_field = "92F56B56474778E97B28F8B1E057D57B")
-
     private static final int FLAG_ANIMATION_DONE = 0x10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "08A72EA908064A83313796C485ADACDD", hash_generated_field = "6B2DE00828EED965F16F1E1887A50E1A")
-
     private static final int FLAG_PADDING_NOT_NULL = 0x20;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "CAC36ACA9ED784B231117CB39D86A384", hash_generated_field = "A363BE181F28AF138EAE37CE19C6A175")
-
     private static final int FLAG_ANIMATION_CACHE = 0x40;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "001D3068790E7E549A48976047700A5A", hash_generated_field = "2ECEB8CA0BBD1B97E644FE478937E0E9")
-
     private static final int FLAG_OPTIMIZE_INVALIDATE = 0x80;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "296952AC48605AFEFDBD310F71840975", hash_generated_field = "3403A038D2CECBA0DA69E8CF8F169A1F")
-
     private static final int FLAG_CLEAR_TRANSFORMATION = 0x100;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "80E59BFDFA55701D5C3008682DE14EA5", hash_generated_field = "4CD118091ADEC14A10FCFFA5826971C0")
-
     private static final int FLAG_NOTIFY_ANIMATION_LISTENER = 0x200;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "174D3C1D51E7CCF138A4F39DBF69B0C9", hash_generated_field = "32BC669C68D09844C7CB0B0C44FE2F3B")
-
     protected static final int FLAG_USE_CHILD_DRAWING_ORDER = 0x400;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "880E7482176EB8093E6CCCD736E4B0A2", hash_generated_field = "A86E922C6C59CFE079F5D7DA8B15BF89")
-
     protected static final int FLAG_SUPPORT_STATIC_TRANSFORMATIONS = 0x800;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "064633D9895C1F26598F928072EA6CA8", hash_generated_field = "49F0EBDE6CDB520FAAFA1CE2AE891179")
-
     private static final int FLAG_ALPHA_LOWER_THAN_ONE = 0x1000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "85691F00B62FE4647557EF0CCD322E28", hash_generated_field = "4188882F32441AE2DC85E12EAB3E6C82")
-
     private static final int FLAG_ADD_STATES_FROM_CHILDREN = 0x2000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "86601B54A4C45A57269BA0D57322442D", hash_generated_field = "13DA24EF090D074E119DCC3C5BD90BA8")
-
     private static final int FLAG_ALWAYS_DRAWN_WITH_CACHE = 0x4000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "937D116FF0D4A7910D727BBF47DB86B2", hash_generated_field = "AB5153FDF753CE74CA032ECE6BC04442")
-
     private static final int FLAG_CHILDREN_DRAWN_WITH_CACHE = 0x8000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "7F0A72234EA920F255CBA067C2A1B93D", hash_generated_field = "3A30818F90BA1EF84CA7AED25A16A1B7")
-
     private static final int FLAG_NOTIFY_CHILDREN_ON_DRAWABLE_STATE_CHANGE = 0x10000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "548AF4B07DEB40F98E8EEB7BB82E33C6", hash_generated_field = "4836095EA9CD6F4C22D5505B63A65920")
-
     private static final int FLAG_MASK_FOCUSABILITY = 0x60000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "90E92091E4A64B96AC11794AC6BCE1ED", hash_generated_field = "BD96D757F41BA0229D767BD84AB7642D")
-
     public static final int FOCUS_BEFORE_DESCENDANTS = 0x20000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "1AB4D8C2E6C0EB94C5E3D81186225A46", hash_generated_field = "CD9C40718F19AA89DFB0F2B888272D33")
-
     public static final int FOCUS_AFTER_DESCENDANTS = 0x40000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "474F04A27118AAE5C55DBA97D250DCD9", hash_generated_field = "5CE7A6F853A9C0B36CFE406D68F2F862")
-
     public static final int FOCUS_BLOCK_DESCENDANTS = 0x60000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "550A1DD8DB80915C8B1B187E90B5E0B9", hash_generated_field = "DDDC8C4616BE00F788B917447806BD91")
-
-    private static final int[] DESCENDANT_FOCUSABILITY_FLAGS = {FOCUS_BEFORE_DESCENDANTS, FOCUS_AFTER_DESCENDANTS,
+    private static final int[] DESCENDANT_FOCUSABILITY_FLAGS =
+            {FOCUS_BEFORE_DESCENDANTS, FOCUS_AFTER_DESCENDANTS,
                     FOCUS_BLOCK_DESCENDANTS};
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "5666C3D62FF07B134BC6617531F77464", hash_generated_field = "C4207E2A7E9C2242EFAB0A51AF1D91BF")
-
     protected static final int FLAG_DISALLOW_INTERCEPT = 0x80000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "DDACBD94DD1CDF62E81361791F53DA87", hash_generated_field = "F04CB98B3B159E26FDEE9BC7D5B07159")
-
     private static final int FLAG_SPLIT_MOTION_EVENTS = 0x200000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "2D700E90C54045822898F506782662B3", hash_generated_field = "3C5BFED90B89800455E7BCFC3A10AF2B")
-
     private static final int FLAG_PREVENT_DISPATCH_ATTACHED_TO_WINDOW = 0x400000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "C52B883FD05C47AA69FDA6E1F22F0ABB", hash_generated_field = "BC2E177DD2A895934D9FCE5C86AE3C65")
-
     public static final int PERSISTENT_NO_CACHE = 0x0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "67A61EDB48651F5C036B3346FBE5FAFA", hash_generated_field = "1F0A8E4978079659E6E30C2BA18617E8")
-
     public static final int PERSISTENT_ANIMATION_CACHE = 0x1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "1EF42E9887D0EA5F316904FD3B9AB251", hash_generated_field = "F00BF7A2C158735CE5A6638A662B5EBF")
-
     public static final int PERSISTENT_SCROLLING_CACHE = 0x2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.830 -0400", hash_original_field = "7C696FAA76DB6EC3A8EDD78551D1B467", hash_generated_field = "8CC8945E637E7193338DBF39D6D6A84A")
-
     public static final int PERSISTENT_ALL_CACHES = 0x3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.831 -0400", hash_original_field = "BC7469E2246471A573E63558ACC0C8ED", hash_generated_field = "D9383B91357843498670D009FA939F13")
-
     protected static final int CLIP_TO_PADDING_MASK = FLAG_CLIP_TO_PADDING | FLAG_PADDING_NOT_NULL;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.831 -0400", hash_original_field = "7A53C3B2EA29B34F35552312F91C5969", hash_generated_field = "FB112635D30DBDCA6CB17000D85722CA")
-
     private static final int CHILD_LEFT_INDEX = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.831 -0400", hash_original_field = "D45F5D9EC95E07AC6931C434FF8D7294", hash_generated_field = "74187AE3BE9B2F6F3B52043634C8CEF0")
-
     private static final int CHILD_TOP_INDEX = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.831 -0400", hash_original_field = "89DFE4348E5AA246A9F1E32325C98608", hash_generated_field = "406B673032561F95D3A3CE9567EB9D07")
-
     private static final int ARRAY_INITIAL_CAPACITY = 12;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.831 -0400", hash_original_field = "4333C5B7C7DF62BB1C21C6CF44CB4E1E", hash_generated_field = "97400031D7E61FBA03291EAA57490BB7")
-
     private static final int ARRAY_CAPACITY_INCREMENT = 12;
 }
 

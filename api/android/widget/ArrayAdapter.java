@@ -17,38 +17,24 @@ import java.util.Comparator;
 import java.util.List;
 
 public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.584 -0400", hash_original_field = "EBF544E4173D2D8B065068D8E591BD40", hash_generated_field = "C5D6BBA40E88AD4B20810C36AB0B4200")
-
     private List<T> mObjects;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.584 -0400", hash_original_field = "B89DEBA2CB26B1AC973763E3E152017B", hash_generated_field = "E59081251AD157907AA4CE8B3D8E654E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.309 -0400", hash_original_field = "B89DEBA2CB26B1AC973763E3E152017B", hash_generated_field = "E59081251AD157907AA4CE8B3D8E654E")
 
     private final Object mLock = new Object();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.584 -0400", hash_original_field = "513ECCC3F2175FF90ADFE90E4852BF1D", hash_generated_field = "6ED56B37E58621AEB8D63CC1C5EA1E67")
-
     private int mResource;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.585 -0400", hash_original_field = "4E551418A503FBC4B46C7DAAADA3FAEC", hash_generated_field = "605FFB4549B20BAE4E7EBD72916F9C8F")
-
     private int mDropDownResource;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.585 -0400", hash_original_field = "BB0FD1BF4E8B0289908324805EFFCBAF", hash_generated_field = "D4C9AF545A1F6103644303EF50B22F18")
-
     private int mFieldId = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.585 -0400", hash_original_field = "39770135A671276A8EDCF9E10B640D7D", hash_generated_field = "FE0D43348CFC831A210569F9A601B409")
-
     private boolean mNotifyOnChange = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.585 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
     private Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.585 -0400", hash_original_field = "7E1411E28582E7BB5CB8D7EF06A96926", hash_generated_field = "D3DC3ECDE417C076679DF4CF25A2ECC3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.309 -0400", hash_original_field = "7E1411E28582E7BB5CB8D7EF06A96926", hash_generated_field = "D3DC3ECDE417C076679DF4CF25A2ECC3")
 
     private ArrayList<T> mOriginalValues;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.585 -0400", hash_original_field = "C781ED17A87FBE09F8079C6EC63D1F26", hash_generated_field = "A0F0365EB2712D5C3F88231E50941E9D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.309 -0400", hash_original_field = "C781ED17A87FBE09F8079C6EC63D1F26", hash_generated_field = "A0F0365EB2712D5C3F88231E50941E9D")
 
     private ArrayFilter mFilter;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.585 -0400", hash_original_field = "D03597FDEDE23F3823480E0520822BB2", hash_generated_field = "CBB0EE0A851756643DA52E1D33B6B161")
-
     private LayoutInflater mInflater;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.585 -0400", hash_original_method = "789F3BF67B69FD6C237A5778FFC1188F", hash_generated_method = "9F2D5759E56F73FA5A593FA701BA5C3D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.310 -0400", hash_original_method = "789F3BF67B69FD6C237A5778FFC1188F", hash_generated_method = "9F2D5759E56F73FA5A593FA701BA5C3D")
     public  ArrayAdapter(Context context, int textViewResourceId) {
         addTaint(textViewResourceId);
         addTaint(context.getTaint());
@@ -58,7 +44,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.585 -0400", hash_original_method = "8D997C3441EFBFDB8F1974C979BCB748", hash_generated_method = "BB5F52F252315BDE0DD91C6E208DD112")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.311 -0400", hash_original_method = "8D997C3441EFBFDB8F1974C979BCB748", hash_generated_method = "BB5F52F252315BDE0DD91C6E208DD112")
     public  ArrayAdapter(Context context, int resource, int textViewResourceId) {
         addTaint(textViewResourceId);
         addTaint(resource);
@@ -70,18 +56,12 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
 
     
     @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.586 -0400", hash_original_method = "0DF55CD51396FFBE8E2D3620B337DDA2", hash_generated_method = "9F3552473E409CDC70C3F78CA54E2BCF")
-    public  ArrayAdapter(Context context, int textViewResourceId, T[] objects) {
-        addTaint(objects[0].getTaint());
-        addTaint(textViewResourceId);
-        addTaint(context.getTaint());
+	public ArrayAdapter(Context context, int textViewResourceId, T[] objects) {
         init(context, textViewResourceId, 0, Arrays.asList(objects));
-        // ---------- Original Method ----------
-        //init(context, textViewResourceId, 0, Arrays.asList(objects));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.586 -0400", hash_original_method = "69F6C47A6CFAD9DAEB9B15D26A429BD2", hash_generated_method = "0AD77E38C114B56F67EBF8911FE368C0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.311 -0400", hash_original_method = "69F6C47A6CFAD9DAEB9B15D26A429BD2", hash_generated_method = "0AD77E38C114B56F67EBF8911FE368C0")
     public  ArrayAdapter(Context context, int resource, int textViewResourceId, T[] objects) {
         addTaint(objects[0].getTaint());
         addTaint(textViewResourceId);
@@ -94,18 +74,12 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
 
     
     @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.586 -0400", hash_original_method = "223AE4BB7D76AAEAE470FF2DB97AEEF6", hash_generated_method = "DD11C5A81EFE6DF4FD1647D1D1ACBC58")
-    public  ArrayAdapter(Context context, int textViewResourceId, List<T> objects) {
-        addTaint(objects.getTaint());
-        addTaint(textViewResourceId);
-        addTaint(context.getTaint());
+	public ArrayAdapter(Context context, int textViewResourceId, List<T> objects) {
         init(context, textViewResourceId, 0, objects);
-        // ---------- Original Method ----------
-        //init(context, textViewResourceId, 0, objects);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.587 -0400", hash_original_method = "25BF5070AB68B4CC94195FE94A6CDD15", hash_generated_method = "45C05D2F6900A6552B59CA1E74D9A522")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.312 -0400", hash_original_method = "25BF5070AB68B4CC94195FE94A6CDD15", hash_generated_method = "45C05D2F6900A6552B59CA1E74D9A522")
     public  ArrayAdapter(Context context, int resource, int textViewResourceId, List<T> objects) {
         addTaint(objects.getTaint());
         addTaint(textViewResourceId);
@@ -118,35 +92,13 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
 
     
     @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.587 -0400", hash_original_method = "576CB9C40229B2A1A68C443644828160", hash_generated_method = "B1EEEF55436439C5964563B3D4F378AB")
-    public void add(T object) {
-        addTaint(object.getTaint());
-        synchronized
-(mLock)        {
-            if(mOriginalValues != null)            
-            {
-                mOriginalValues.add(object);
-            } //End block
-            else
-            {
-                mObjects.add(object);
-            } //End block
-        } //End block
-        if(mNotifyOnChange)        
+	public void add(T object) {
+        mObjects.add(object);
         notifyDataSetChanged();
-        // ---------- Original Method ----------
-        //synchronized (mLock) {
-            //if (mOriginalValues != null) {
-                //mOriginalValues.add(object);
-            //} else {
-                //mObjects.add(object);
-            //}
-        //}
-        //if (mNotifyOnChange) notifyDataSetChanged();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.588 -0400", hash_original_method = "2106A171487E5CA0624DE157360DB991", hash_generated_method = "79FA754AF55A7046C9471BCF42F16886")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.313 -0400", hash_original_method = "2106A171487E5CA0624DE157360DB991", hash_generated_method = "79FA754AF55A7046C9471BCF42F16886")
     public void addAll(Collection<? extends T> collection) {
         addTaint(collection.getTaint());
         synchronized
@@ -174,7 +126,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.589 -0400", hash_original_method = "0FB4566239B43452682D3C6768E6D3AE", hash_generated_method = "F42D037C8C7AD0C6C7A4391992090E1D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.314 -0400", hash_original_method = "0FB4566239B43452682D3C6768E6D3AE", hash_generated_method = "F42D037C8C7AD0C6C7A4391992090E1D")
     public void addAll(T ... items) {
         addTaint(items[0].getTaint());
         synchronized
@@ -202,7 +154,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.589 -0400", hash_original_method = "E6733B2C388AB0385CFE6D2E53E92DC8", hash_generated_method = "C3B7E909806CA2AF41449C8A9AB2A7EE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.315 -0400", hash_original_method = "E6733B2C388AB0385CFE6D2E53E92DC8", hash_generated_method = "C3B7E909806CA2AF41449C8A9AB2A7EE")
     public void insert(T object, int index) {
         addTaint(index);
         addTaint(object.getTaint());
@@ -231,7 +183,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.590 -0400", hash_original_method = "6A184D6E0EB34E61EA380878C12E3D42", hash_generated_method = "45D17E6A0AF764C0FD5FF96FC91D8B9D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.315 -0400", hash_original_method = "6A184D6E0EB34E61EA380878C12E3D42", hash_generated_method = "45D17E6A0AF764C0FD5FF96FC91D8B9D")
     public void remove(T object) {
         addTaint(object.getTaint());
         synchronized
@@ -259,7 +211,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.590 -0400", hash_original_method = "E80E28672DD45A1486192C70E40EF7F5", hash_generated_method = "C4F1F91442599AE68F832F75FB6037BB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.316 -0400", hash_original_method = "E80E28672DD45A1486192C70E40EF7F5", hash_generated_method = "C4F1F91442599AE68F832F75FB6037BB")
     public void clear() {
         synchronized
 (mLock)        {
@@ -286,7 +238,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.591 -0400", hash_original_method = "56420943E8AF9990310F4859FACB8646", hash_generated_method = "3DA380F8887A0573D7C23BFEE52E0CDB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.316 -0400", hash_original_method = "56420943E8AF9990310F4859FACB8646", hash_generated_method = "3DA380F8887A0573D7C23BFEE52E0CDB")
     public void sort(Comparator<? super T> comparator) {
         addTaint(comparator.getTaint());
         synchronized
@@ -314,20 +266,15 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.591 -0400", hash_original_method = "4B6963AC4824E23107C3535DF32052A8", hash_generated_method = "B498C1B15F4E1C97F48F52763590B81C")
     @Override
+	@DSModeled(DSC.SAFE)
     public void notifyDataSetChanged() {
         super.notifyDataSetChanged();
         mNotifyOnChange = true;
-        // ---------- Original Method ----------
-        //super.notifyDataSetChanged();
-        //mNotifyOnChange = true;
     }
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.591 -0400", hash_original_method = "B014C1A32626DBADC83EC827393C5854", hash_generated_method = "DF16B68FF23EAD56FA4255B3D48770B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.317 -0400", hash_original_method = "B014C1A32626DBADC83EC827393C5854", hash_generated_method = "DF16B68FF23EAD56FA4255B3D48770B3")
     public void setNotifyOnChange(boolean notifyOnChange) {
         mNotifyOnChange = notifyOnChange;
         // ---------- Original Method ----------
@@ -336,144 +283,95 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
 
     
     @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.592 -0400", hash_original_method = "0AB52E86A6B570420A2DD21D48564743", hash_generated_method = "2E9BCD700482CBFCE630F7DA8D860DD7")
-    private void init(Context context, int resource, int textViewResourceId, List<T> objects) {
+	private void init(Context context, int resource, int textViewResourceId, List<T> objects) {
         mContext = context;
         mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mResource = mDropDownResource = resource;
         mObjects = objects;
         mFieldId = textViewResourceId;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        //mResource = mDropDownResource = resource;
-        //mObjects = objects;
-        //mFieldId = textViewResourceId;
     }
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.592 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "2DE137A1264E6D246D018D1FF4904565")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.318 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "E1F8BA78AFDA16DD62827582E21F0D52")
     public Context getContext() {
-Context var178E2AD52D6FBBB503F908168856B574_741258599 =         mContext;
-        var178E2AD52D6FBBB503F908168856B574_741258599.addTaint(taint);
-        return var178E2AD52D6FBBB503F908168856B574_741258599;
+Context var178E2AD52D6FBBB503F908168856B574_967216275 =         mContext;
+        var178E2AD52D6FBBB503F908168856B574_967216275.addTaint(taint);
+        return var178E2AD52D6FBBB503F908168856B574_967216275;
         // ---------- Original Method ----------
         //return mContext;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.593 -0400", hash_original_method = "4A653ADD34C98191FCFB37B57CB3ED83", hash_generated_method = "D3798EA7AF6E294D3C761B1A96973494")
-    public int getCount() {
-        int var44E774A130391DD13FA0C3E1F798FA8F_1235074989 = (mObjects.size());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_481514047 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_481514047;
-        // ---------- Original Method ----------
+    @Override
+	public int getCount() {
+		return 0;
         //return mObjects.size();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.593 -0400", hash_original_method = "88739C4EC6C6A6692FBDE51909D97703", hash_generated_method = "6FF965E35AE77B53DAF47DDCB4201969")
-    public T getItem(int position) {
-        addTaint(position);
-T var764B6AF9DF92D219D9605835E00EC09F_668430981 =         mObjects.get(position);
-        var764B6AF9DF92D219D9605835E00EC09F_668430981.addTaint(taint);
-        return var764B6AF9DF92D219D9605835E00EC09F_668430981;
-        // ---------- Original Method ----------
-        //return mObjects.get(position);
-    }
+    @Override
+	public Object getItem(int position) {
+		return getTaint();
+	    //return mObjects.get(position);
+	}
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.593 -0400", hash_original_method = "4B52B65CCBAD37C22D6FCF1BE4A30381", hash_generated_method = "401558BDF14E51D2686222855CEB1B4C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.320 -0400", hash_original_method = "4B52B65CCBAD37C22D6FCF1BE4A30381", hash_generated_method = "4306745B19EF41037F68A6DA3555ACDB")
     public int getPosition(T item) {
         addTaint(item.getTaint());
-        int varDFBE5BD03266E32EAAAEB8FB3F55CCB4_953408667 = (mObjects.indexOf(item));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1667392463 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1667392463;
+        int varDFBE5BD03266E32EAAAEB8FB3F55CCB4_1480060948 = (mObjects.indexOf(item));
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1050412391 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1050412391;
         // ---------- Original Method ----------
         //return mObjects.indexOf(item);
     }
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.593 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "98CF5F5DBC71D0B9D706E30FD9BD026B")
-    public long getItemId(int position) {
-        addTaint(position);
-        long var4757FE07FD492A8BE0EA6A760D683D6E_1667442436 = (position);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1676568667 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1676568667;
-        // ---------- Original Method ----------
-        //return position;
+    @Override
+	public long getItemId(int position) {
+		return position;
+	}
+
+    
+    @Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+        return createViewFromResource(position, convertView, parent, mResource);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.594 -0400", hash_original_method = "180EEF863853B86A02E5E476168E516D", hash_generated_method = "0AA9256D0C020CB9B2C10EEDDD27DD80")
-    public View getView(int position, View convertView, ViewGroup parent) {
-        addTaint(parent.getTaint());
-        addTaint(convertView.getTaint());
-        addTaint(position);
-View varC7C74D1A1F888482D2EEA96BBD632B6B_1388233979 =         createViewFromResource(position, convertView, parent, mResource);
-        varC7C74D1A1F888482D2EEA96BBD632B6B_1388233979.addTaint(taint);
-        return varC7C74D1A1F888482D2EEA96BBD632B6B_1388233979;
-        // ---------- Original Method ----------
-        //return createViewFromResource(position, convertView, parent, mResource);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.595 -0400", hash_original_method = "86812A0CF4501D7696F9CF0CE2E4D2EB", hash_generated_method = "BD9FC59767A06BF46E0BD811321FBE56")
     private View createViewFromResource(int position, View convertView, ViewGroup parent,
             int resource) {
-        addTaint(resource);
-        addTaint(parent.getTaint());
-        addTaint(convertView.getTaint());
-        addTaint(position);
         View view;
         TextView text;
-        if(convertView == null)        
-        {
+        if (convertView == null) {
             view = mInflater.inflate(resource, parent, false);
-        } //End block
-        else
-        {
+        } else {
             view = convertView;
-        } //End block
-        try 
-        {
-            if(mFieldId == 0)            
-            {
+        }
+        try {
+            if (mFieldId == 0) {
+                //  If no custom field is assigned, assume the whole resource is a TextView
                 text = (TextView) view;
-            } //End block
-            else
-            {
+            } else {
+                //  Otherwise, find the TextView field within the layout
                 text = (TextView) view.findViewById(mFieldId);
-            } //End block
-        } //End block
-        catch (ClassCastException e)
-        {
-            IllegalStateException var462FBD2CDEE1AF0647B8C952849FC1E5_1904557109 = new IllegalStateException(
+            }
+        } catch (ClassCastException e) {
+            Log.e("ArrayAdapter", "You must supply a resource ID for a TextView");
+            throw new IllegalStateException(
                     "ArrayAdapter requires the resource ID to be a TextView", e);
-            var462FBD2CDEE1AF0647B8C952849FC1E5_1904557109.addTaint(taint);
-            throw var462FBD2CDEE1AF0647B8C952849FC1E5_1904557109;
-        } //End block
-        T item = getItem(position);
-        if(item instanceof CharSequence)        
-        {
+        }
+        T item = (T)getItem(position);
+        if (item instanceof CharSequence) {
             text.setText((CharSequence)item);
-        } //End block
-        else
-        {
+        } else {
             text.setText(item.toString());
-        } //End block
-View var057D265746AE9672AFE5F9FF6338071D_364249197 =         view;
-        var057D265746AE9672AFE5F9FF6338071D_364249197.addTaint(taint);
-        return var057D265746AE9672AFE5F9FF6338071D_364249197;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+        return view;
     }
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.595 -0400", hash_original_method = "614355FA33E2A17CA6280A34FDBFFDC0", hash_generated_method = "166D468151E808B5172814612FD9B5A0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.327 -0400", hash_original_method = "614355FA33E2A17CA6280A34FDBFFDC0", hash_generated_method = "166D468151E808B5172814612FD9B5A0")
     public void setDropDownViewResource(int resource) {
         this.mDropDownResource = resource;
         // ---------- Original Method ----------
@@ -481,15 +379,15 @@ View var057D265746AE9672AFE5F9FF6338071D_364249197 =         view;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.595 -0400", hash_original_method = "55A24C3FF57565648C18AD1B34A1D191", hash_generated_method = "C60A7CFC2AACF412C496BFEAB1B9DB36")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.327 -0400", hash_original_method = "55A24C3FF57565648C18AD1B34A1D191", hash_generated_method = "0D0D9F47EFB820C2116417EC15C21887")
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
         addTaint(parent.getTaint());
         addTaint(convertView.getTaint());
         addTaint(position);
-View var73BABEDDC942C821B8059F08E1C361F2_1436535673 =         createViewFromResource(position, convertView, parent, mDropDownResource);
-        var73BABEDDC942C821B8059F08E1C361F2_1436535673.addTaint(taint);
-        return var73BABEDDC942C821B8059F08E1C361F2_1436535673;
+View var73BABEDDC942C821B8059F08E1C361F2_1090442088 =         createViewFromResource(position, convertView, parent, mDropDownResource);
+        var73BABEDDC942C821B8059F08E1C361F2_1090442088.addTaint(taint);
+        return var73BABEDDC942C821B8059F08E1C361F2_1090442088;
         // ---------- Original Method ----------
         //return createViewFromResource(position, convertView, parent, mDropDownResource);
     }
@@ -502,118 +400,88 @@ View var73BABEDDC942C821B8059F08E1C361F2_1436535673 =         createViewFromReso
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.596 -0400", hash_original_method = "93D8CD6E71E9F9D3F84ACCA40E0F811C", hash_generated_method = "1AA4A6E1B74E5B75CECF0E74C0237951")
-    public Filter getFilter() {
-        if(mFilter == null)        
-        {
+    @Override
+	public Filter getFilter() {
+		return new ArrayFilter();
+		/*
+        if (mFilter == null) {
             mFilter = new ArrayFilter();
-        } //End block
-Filter var6104E4BD549FCD2640641D136DD683A6_729510351 =         mFilter;
-        var6104E4BD549FCD2640641D136DD683A6_729510351.addTaint(taint);
-        return var6104E4BD549FCD2640641D136DD683A6_729510351;
-        // ---------- Original Method ----------
-        //if (mFilter == null) {
-            //mFilter = new ArrayFilter();
-        //}
-        //return mFilter;
+        }
+        return mFilter;
+        */
     }
 
     
     private class ArrayFilter extends Filter {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.597 -0400", hash_original_method = "1D9325EC6EFFDE6F3FA421C05C5C6F5E", hash_generated_method = "1D9325EC6EFFDE6F3FA421C05C5C6F5E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.328 -0400", hash_original_method = "1D9325EC6EFFDE6F3FA421C05C5C6F5E", hash_generated_method = "1D9325EC6EFFDE6F3FA421C05C5C6F5E")
         public ArrayFilter ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.598 -0400", hash_original_method = "FCA1EE8188101C684A4D4FE1495B8102", hash_generated_method = "76B44FD3BFD5B228474B696D6EAC3969")
         @Override
-        protected FilterResults performFiltering(CharSequence prefix) {
-            addTaint(prefix.getTaint());
+		protected FilterResults performFiltering(CharSequence prefix) {
             FilterResults results = new FilterResults();
-            if(mOriginalValues == null)            
-            {
-                synchronized
-(mLock)                {
+            return results;
+            /*
+            mOriginalValues = new ArrayList<T>(mObjects);
+            if (mOriginalValues == null) {
+                synchronized (mLock) {
                     mOriginalValues = new ArrayList<T>(mObjects);
-                } //End block
-            } //End block
-            if(prefix == null || prefix.length() == 0)            
-            {
+                }
+            }
+            if (prefix == null || prefix.length() == 0) {
                 ArrayList<T> list;
-                synchronized
-(mLock)                {
+                synchronized (mLock) {
                     list = new ArrayList<T>(mOriginalValues);
-                } //End block
+                }
                 results.values = list;
                 results.count = list.size();
-            } //End block
-            else
-            {
+            } else {
                 String prefixString = prefix.toString().toLowerCase();
                 ArrayList<T> values;
-                synchronized
-(mLock)                {
+                synchronized (mLock) {
                     values = new ArrayList<T>(mOriginalValues);
-                } //End block
+                }
                 final int count = values.size();
                 final ArrayList<T> newValues = new ArrayList<T>();
-for(int i = 0;i < count;i++)
-                {
+                for (int i = 0; i < count; i++) {
                     final T value = values.get(i);
                     final String valueText = value.toString().toLowerCase();
-                    if(valueText.startsWith(prefixString))                    
-                    {
+                    // First match against the whole, non-splitted value
+                    if (valueText.startsWith(prefixString)) {
                         newValues.add(value);
-                    } //End block
-                    else
-                    {
+                    } else {
                         final String[] words = valueText.split(" ");
                         final int wordCount = words.length;
-for(int k = 0;k < wordCount;k++)
-                        {
-                            if(words[k].startsWith(prefixString))                            
-                            {
+                        // Start at index 0, in case valueText starts with space(s)
+                        for (int k = 0; k < wordCount; k++) {
+                            if (words[k].startsWith(prefixString)) {
                                 newValues.add(value);
                                 break;
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
+                            }
+                        }
+                    }
+                }
                 results.values = newValues;
                 results.count = newValues.size();
-            } //End block
-FilterResults var238ECCC9872FFCA0B3C3DB83598FF044_1695409045 =             results;
-            var238ECCC9872FFCA0B3C3DB83598FF044_1695409045.addTaint(taint);
-            return var238ECCC9872FFCA0B3C3DB83598FF044_1695409045;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            }
+            return results;
+            */
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.599 -0400", hash_original_method = "109574F1A4050F52746E85DE95C85548", hash_generated_method = "5B6F78F6A02E7BD8ACA6B8A140F40B21")
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-            addTaint(results.getTaint());
-            addTaint(constraint.getTaint());
+            //noinspection unchecked
             mObjects = (List<T>) results.values;
-            if(results.count > 0)            
-            {
+            if (results.count > 0) {
                 notifyDataSetChanged();
-            } //End block
-            else
-            {
+            } else {
                 notifyDataSetInvalidated();
-            } //End block
-            // ---------- Original Method ----------
-            //mObjects = (List<T>) results.values;
-            //if (results.count > 0) {
-                //notifyDataSetChanged();
-            //} else {
-                //notifyDataSetInvalidated();
-            //}
+            }
         }
 
         

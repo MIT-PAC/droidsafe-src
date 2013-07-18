@@ -10,51 +10,45 @@ import java.util.Locale;
 
 public class Color {
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.987 -0400", hash_original_method = "34DAB7DC9B66BC3931AEC17E77DE7DFA", hash_generated_method = "34DAB7DC9B66BC3931AEC17E77DE7DFA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.684 -0400", hash_original_method = "34DAB7DC9B66BC3931AEC17E77DE7DFA", hash_generated_method = "34DAB7DC9B66BC3931AEC17E77DE7DFA")
     public Color ()
     {
         //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
     public static int alpha(int color) {
         return color >>> 24;
     }
 
     
-    @DSModeled(DSC.SAFE)
     public static int red(int color) {
         return (color >> 16) & 0xFF;
     }
 
     
-    @DSModeled(DSC.SAFE)
     public static int green(int color) {
         return (color >> 8) & 0xFF;
     }
 
     
-    @DSModeled(DSC.SAFE)
     public static int blue(int color) {
         return color & 0xFF;
     }
 
     
-    @DSModeled(DSC.SAFE)
     public static int rgb(int red, int green, int blue) {
         return (0xFF << 24) | (red << 16) | (green << 8) | blue;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    public static int argb(int alpha, int red, int green, int blue) {
-        return (alpha << 24) | (red << 16) | (green << 8) | blue;
+    @DSModeled(value = DSC.SAFE)
+	public static int argb(int alpha, int red, int green, int blue) {
+		return 0;  //Value doesn't really matter
+        //return (alpha << 24) | (red << 16) | (green << 8) | blue;
     }
 
     
-    @DSModeled(DSC.SAFE)
     public static float hue(int color) {
         int r = (color >> 16) & 0xFF;
         int g = (color >> 8) & 0xFF;
@@ -85,7 +79,6 @@ public class Color {
     }
 
     
-    @DSModeled(DSC.SAFE)
     public static float saturation(int color) {
         int r = (color >> 16) & 0xFF;
         int g = (color >> 8) & 0xFF;
@@ -102,7 +95,6 @@ public class Color {
     }
 
     
-    @DSModeled(DSC.SAFE)
     public static float brightness(int color) {
         int r = (color >> 16) & 0xFF;
         int g = (color >> 8) & 0xFF;
@@ -112,7 +104,6 @@ public class Color {
     }
 
     
-    @DSModeled(DSC.SAFE)
     public static int parseColor(String colorString) {
         if (colorString.charAt(0) == '#') {
             long color = Long.parseLong(colorString.substring(1), 16);
@@ -132,13 +123,11 @@ public class Color {
     }
 
     
-    @DSModeled(DSC.SAFE)
     public static int HSBtoColor(float[] hsb) {
         return HSBtoColor(hsb[0], hsb[1], hsb[2]);
     }
 
     
-    @DSModeled(DSC.SAFE)
     public static int HSBtoColor(float h, float s, float b) {
         h = MathUtils.constrain(h, 0.0f, 1.0f);
         s = MathUtils.constrain(s, 0.0f, 1.0f);
@@ -215,54 +204,53 @@ public class Color {
     }
 
     
-    @DSModeled(DSC.SAFE)
     private static void nativeRGBToHSV(int red, int greed, int blue, float hsv[]) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     private static int nativeHSVToColor(int alpha, float hsv[]) {
-        return DSUtils.UNKNOWN_INT;
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2032742947 = DSUtils.UNKNOWN_INT;
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2032742947;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.997 -0400", hash_original_field = "1C74640C2388295DA44E834656E8B3FB", hash_generated_field = "5072579A5D175A2DD4305C5328287571")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.689 -0400", hash_original_field = "1C74640C2388295DA44E834656E8B3FB", hash_generated_field = "5072579A5D175A2DD4305C5328287571")
 
     public static final int BLACK       = 0xFF000000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.997 -0400", hash_original_field = "DEFD65D7258B8101686036FD2B26AE1F", hash_generated_field = "B8C852650D7AE5F902A75378E28D1D47")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.689 -0400", hash_original_field = "DEFD65D7258B8101686036FD2B26AE1F", hash_generated_field = "B8C852650D7AE5F902A75378E28D1D47")
 
     public static final int DKGRAY      = 0xFF444444;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.997 -0400", hash_original_field = "396F4379577CFF11C28B805386700D6F", hash_generated_field = "A3DCDA70E01C1CDB92B62BB9790C4D02")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.690 -0400", hash_original_field = "396F4379577CFF11C28B805386700D6F", hash_generated_field = "A3DCDA70E01C1CDB92B62BB9790C4D02")
 
     public static final int GRAY        = 0xFF888888;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.997 -0400", hash_original_field = "E580179C29E89368EB9C9F39C689F942", hash_generated_field = "FA9BDC1A7B25025D0B489026AAFBCDA2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.690 -0400", hash_original_field = "E580179C29E89368EB9C9F39C689F942", hash_generated_field = "FA9BDC1A7B25025D0B489026AAFBCDA2")
 
     public static final int LTGRAY      = 0xFFCCCCCC;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.998 -0400", hash_original_field = "2F075C53002601903DD21884834B9A06", hash_generated_field = "E5909B2D31AE695BFE6C777A22DC2090")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.690 -0400", hash_original_field = "2F075C53002601903DD21884834B9A06", hash_generated_field = "E5909B2D31AE695BFE6C777A22DC2090")
 
     public static final int WHITE       = 0xFFFFFFFF;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.998 -0400", hash_original_field = "9AE657A5CF63AD7650314E5ABAE62F39", hash_generated_field = "FE5E4AEF33775CE96FF2D28E3B3DA1AE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.690 -0400", hash_original_field = "9AE657A5CF63AD7650314E5ABAE62F39", hash_generated_field = "FE5E4AEF33775CE96FF2D28E3B3DA1AE")
 
     public static final int RED         = 0xFFFF0000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.998 -0400", hash_original_field = "0774F929EE3B620FB823F7DF25C68AC5", hash_generated_field = "D123D6C0498127A29E26D063855EFB90")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.690 -0400", hash_original_field = "0774F929EE3B620FB823F7DF25C68AC5", hash_generated_field = "D123D6C0498127A29E26D063855EFB90")
 
     public static final int GREEN       = 0xFF00FF00;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.998 -0400", hash_original_field = "8A21AA3E3983158DF0A7BD9561243140", hash_generated_field = "8757960F9963054C3589C55F11331733")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.690 -0400", hash_original_field = "8A21AA3E3983158DF0A7BD9561243140", hash_generated_field = "8757960F9963054C3589C55F11331733")
 
     public static final int BLUE        = 0xFF0000FF;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.998 -0400", hash_original_field = "3C8A06DEBAEE6C6C501A2DF460FF8ADC", hash_generated_field = "AE37C0C255DAC03720EA6C9409A65BAE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.690 -0400", hash_original_field = "3C8A06DEBAEE6C6C501A2DF460FF8ADC", hash_generated_field = "AE37C0C255DAC03720EA6C9409A65BAE")
 
     public static final int YELLOW      = 0xFFFFFF00;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.998 -0400", hash_original_field = "FF3634988F89E6B1F8046F9E189FCF3D", hash_generated_field = "86E348F666B1DD9D443BEB347F546AB8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.690 -0400", hash_original_field = "FF3634988F89E6B1F8046F9E189FCF3D", hash_generated_field = "86E348F666B1DD9D443BEB347F546AB8")
 
     public static final int CYAN        = 0xFF00FFFF;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.998 -0400", hash_original_field = "AE9C1B536EBEEA213A4E2EA91BC8AF5D", hash_generated_field = "E8A32CBE213D2FD1C781AA2CDF6EE501")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.690 -0400", hash_original_field = "AE9C1B536EBEEA213A4E2EA91BC8AF5D", hash_generated_field = "E8A32CBE213D2FD1C781AA2CDF6EE501")
 
     public static final int MAGENTA     = 0xFFFF00FF;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.998 -0400", hash_original_field = "1A7AD544E40AE202A08C600913DF9DBE", hash_generated_field = "D1E6A6F7B8292E96032F6DA425E91847")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.690 -0400", hash_original_field = "1A7AD544E40AE202A08C600913DF9DBE", hash_generated_field = "D1E6A6F7B8292E96032F6DA425E91847")
 
     public static final int TRANSPARENT = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.998 -0400", hash_original_field = "749639BAC2C4D0A3E461B28A27AEB889", hash_generated_field = "498D8E53A8FACBB74E1A4ED57C16330E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.690 -0400", hash_original_field = "749639BAC2C4D0A3E461B28A27AEB889", hash_generated_field = "498D8E53A8FACBB74E1A4ED57C16330E")
 
     private static HashMap<String, Integer> sColorNameMap;
     static {
