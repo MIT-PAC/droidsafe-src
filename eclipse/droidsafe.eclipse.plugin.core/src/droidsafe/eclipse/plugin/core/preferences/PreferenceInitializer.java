@@ -11,9 +11,6 @@ import droidsafe.eclipse.plugin.core.Activator;
 public class PreferenceInitializer extends AbstractPreferenceInitializer {
 
 
-  //@Preference(nodePath = "droidsafe.eclipse.plugin.core")
-  //IEclipsePreferences prefs;
-
   /*
    * (non-Javadoc)
    * 
@@ -33,6 +30,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
     store.setDefault(PreferenceConstants.P_DUMP_CALL_GRAPH, false);
     store.setDefault(PreferenceConstants.P_RUN_STRING_ANALYSIS, true);
     store.setDefault(PreferenceConstants.P_UNFILTERED_STRING_ANALYSIS, false);
+    store.setDefault(PreferenceConstants.P_ADD_ALL_METHODS_TO_STRING_ANALYSIS, false);
 
     // prefs = ConfigurationScope.INSTANCE.getNode(Activator.PLUGIN_ID);
     // prefs.put(PreferenceConstants.P_TARGET_PASS, "specdump");

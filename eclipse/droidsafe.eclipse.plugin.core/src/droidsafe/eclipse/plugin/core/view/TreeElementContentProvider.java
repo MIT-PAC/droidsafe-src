@@ -35,6 +35,15 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
       new HashMap<IModelChangeSupport, TreeElement<?, ?>>();
 
 
+  /**
+   * Map from the element label to the actual tree node element used to display the node in the
+   * outline view. We use this map to avoid duplication of nodes that have the same signature.
+   */
+  // private Map<String, TreeElement<?, ?>> nodeLabelToTreeElementMap =
+  // new HashMap<String, TreeElement<?, ?>>();
+
+
+
   private List<TreeElement<?, ?>> treeElementList = new ArrayList<TreeElement<?, ?>>();
 
   public enum TopLevelParentEntity {
@@ -53,6 +62,7 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
       TopLevelParentEntity.ENTRY_POINT_AS_TOP_PARENT;
 
   protected TreeViewer viewer;
+
 
 
   public void setContentProviderTopLevelParent(TopLevelParentEntity topLevelParentEntity) {
@@ -135,6 +145,7 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
     newTreeElement.addPropertyChangeListener(this);
     treeElementList.add(newTreeElement);
     treeElementMap.put(modelObject, newTreeElement);
+    // nodeLabelToTreeElementMap.put(newTreeElement.toString(), newTreeElement);
   }
 
   /**
@@ -152,6 +163,7 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
     }
     this.treeElementList.clear();
     this.treeElementMap.clear();
+    // this.nodeLabelToTreeElementMap.clear();
   }
 
 
@@ -181,13 +193,22 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
   private void createModelWithApiAsTopParent(TreeElement<SecuritySpecModel, Object> root) {
     Map<MethodModel, Map<MethodModel, List<CodeLocationModel>>> outputEventBlocks =
         this.model.getOutputEventBlocks();
+    Map<String, TreeElement<Object, MethodModel>> localNodeLabelToTreeElementMap =
+        new HashMap<String, TreeElement<Object, MethodModel>>();
+
     if (outputEventBlocks != null) {
       for (MethodModel apiMethod : outputEventBlocks.keySet()) {
+        String shortSignature = apiMethod.getShortSignature();
         TreeElement<Object, MethodModel> apiElement =
-            new TreeElement<Object, MethodModel>(apiMethod.getShortSignature(), apiMethod,
-                MethodModel.class);
-        root.addChild(apiElement);
-        updatePropertyChangeListener(apiMethod, apiElement);
+            localNodeLabelToTreeElementMap.get(shortSignature);
+        if (apiElement == null) {
+          apiElement =
+              new TreeElement<Object, MethodModel>(shortSignature, apiMethod, MethodModel.class);
+          root.addChild(apiElement);
+          updatePropertyChangeListener(apiMethod, apiElement);
+          localNodeLabelToTreeElementMap.put(shortSignature, apiElement);
+        }
+
         for (MethodModel inputMethod : outputEventBlocks.get(apiMethod).keySet()) {
           TreeElement<MethodModel, CodeLocationModel> inputElement =
               new TreeElement<MethodModel, CodeLocationModel>(inputMethod.getShortSignature(),
@@ -277,7 +298,11 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
   private void createModelWithEntryPointAsTopParent(TreeElement<SecuritySpecModel, Object> root) {
     Map<MethodModel, List<MethodModel>> inputEventBlocks = this.model.getInputEventBlocks();
     if (inputEventBlocks != null) {
+      Map<String, TreeElement<MethodModel, CodeLocationModel>> localNodeLabelToTreeElementMap =
+          new HashMap<String, TreeElement<MethodModel, CodeLocationModel>>();
+
       for (MethodModel inputMethod : inputEventBlocks.keySet()) {
+        localNodeLabelToTreeElementMap.clear();
         TreeElement<Object, MethodModel> inputElement =
             new TreeElement<Object, MethodModel>(inputMethod.getShortSignature(), inputMethod,
                 MethodModel.class);
@@ -285,11 +310,17 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
         updatePropertyChangeListener(inputMethod, inputElement);
 
         for (MethodModel outputMethod : inputEventBlocks.get(inputMethod)) {
+          String methodSignature = outputMethod.getShortSignature();
           TreeElement<MethodModel, CodeLocationModel> outputElement =
-              new TreeElement<MethodModel, CodeLocationModel>(outputMethod.getShortSignature(),
-                  outputMethod, CodeLocationModel.class);
-          inputElement.addChild(outputElement);
-          updatePropertyChangeListener(outputMethod, outputElement);
+              localNodeLabelToTreeElementMap.get(methodSignature);
+          if (outputElement == null) {
+            outputElement =
+                new TreeElement<MethodModel, CodeLocationModel>(methodSignature, outputMethod,
+                    CodeLocationModel.class);
+            inputElement.addChild(outputElement);
+            updatePropertyChangeListener(outputMethod, outputElement);
+            localNodeLabelToTreeElementMap.put(methodSignature, outputElement);
+          }
 
           List<CodeLocationModel> locations = outputMethod.getLines();
           if (locations != null) {
@@ -316,40 +347,6 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
     // printPropertyChangeListenersForTreeElements();
   }
 
-  @SuppressWarnings("unused")
-  private void createModelWithEntryPointAsTopParent_Original(
-      TreeElement<SecuritySpecModel, Object> root) {
-    Map<MethodModel, List<MethodModel>> inputEventBlocks = this.model.getInputEventBlocks();
-    if (inputEventBlocks != null) {
-      for (MethodModel inputMethod : inputEventBlocks.keySet()) {
-        TreeElement<Object, MethodModel> inputElement =
-            new TreeElement<Object, MethodModel>(inputMethod.getShortSignature(), inputMethod,
-                MethodModel.class);
-        root.addChild(inputElement);
-        updatePropertyChangeListener(inputMethod, inputElement);
-
-        for (MethodModel outputMethod : inputEventBlocks.get(inputMethod)) {
-          TreeElement<MethodModel, CodeLocationModel> outputElement =
-              new TreeElement<MethodModel, CodeLocationModel>(outputMethod.getShortSignature(),
-                  outputMethod, CodeLocationModel.class);
-          inputElement.addChild(outputElement);
-          updatePropertyChangeListener(outputMethod, outputElement);
-
-          List<CodeLocationModel> locations = outputMethod.getLines();
-          if (locations != null) {
-            for (CodeLocationModel location : locations) {
-              TreeElement<CodeLocationModel, Object> locationElement =
-                  new TreeElement<CodeLocationModel, Object>(location.toString(), location,
-                      Object.class);
-              outputElement.addChild(locationElement);
-              updatePropertyChangeListener(location, locationElement);
-            }
-          }
-        }
-      }
-    }
-    // printPropertyChangeListenersForTreeElements();
-  }
 
   /**
    * Initializes the entire hierarchy of the model tree. It creates TreeElements for each element in
