@@ -64,6 +64,30 @@ public class Layout {
 
   }
 
+  /**
+   * normalize an android Id name
+   * @param id
+   * @return
+   */
+  public static String normalizeAndroidId(String id){
+
+	  if (id == null)
+		  return id;
+	  
+	  id = id.replace("@+android:", "");
+	  id = id.replace("@android:", "");
+	  id = id.replace("@+id:", "");
+	  id = id.replace("@id:", "");
+	  
+	  if (id.contains("/")) 
+		  id = id.substring(id.indexOf("/") + 1);
+
+	  if (!id.startsWith("id."))
+		  id = String.format("id.%s", id);
+
+	  return id;
+  }
+  
   /** get full Id that matches with resource parsing of R.java */
   private String getFullName() {
       return "layout." + name;
@@ -115,7 +139,7 @@ public class Layout {
 	      String newId = String.format("%s_%03d", nonameKey, count);
 	      cview.id = newId;
 	      
-	      logger.info("cview {} is no ID, create a new One {} ", cview.name, cview.id);
+	      logger.info("cview {} has no ID, create a new One {} ", cview.name, cview.id);
 	      
 	      ResourcesSoot.v().addNewNumberToStringEntry(newId);
 	  } 
@@ -138,8 +162,13 @@ public class Layout {
 	  Map<String, String> attrs = cview.getAttributes();
 
 	  if (cview.id != null && cview.name != null && attrs != null) {
-		  logger.debug("addView({}, {} ", cview.name, cview.id);
-		  ResourcesSoot.v().addView(cview.name,  cview.id, attrs);
+		  logger.debug("addView({}, {}) ", cview.name, cview.id);
+		  
+		  String className = cview.name;
+		  if (cview.attr_exists("name"))
+			  className = cview.get_attr("name");
+		  
+		  ResourcesSoot.v().addView(className,  cview.id, attrs);
 	  }
   }
 

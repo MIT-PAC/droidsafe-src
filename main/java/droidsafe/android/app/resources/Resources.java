@@ -149,8 +149,9 @@ public class Resources {
 			v = new Resources (new File (rootDir));
 			// Dump manifest information
 			AndroidManifest am = v.manifest;
-			logger.info ("Manifest = {}\n", am.manifest);
+			logger.info ("Manifest   = {}\n", am.manifest);
 			logger.info ("appliction = {}\n", am.application);
+			logger.info ("package    = {}\n", am.manifest.package_name);
 			logger.info ("Activities: \n");
 			for (Activity a : am.activities) {
 				logger.info ("  {}\n", a);
@@ -160,9 +161,16 @@ public class Resources {
 
 			// Process the activities of the application
 			for (Activity a : v.manifest.activities) {
+				if (a.name.startsWith(".")) {
+					a.name = am.manifest.package_name + a.name;
+				}
 				v.process_activity (a);
 				a.setSootClass(a.name);
 				am.components.add(a.getSootClass());
+				
+				if (a.intent_filters.size() > 0) {
+					logger.info("has intent filter for {}:{} ", a.name, a);
+				}
 			}
 
 			// combine and remove unneeded layout
@@ -177,18 +185,36 @@ public class Resources {
 			//set all the underlying soot classes for the components 
 			//other than activity
 			for (Service s : v.manifest.services) {
+				if (s.name.startsWith(".")) {
+					s.name = am.manifest.package_name + s.name;
+				}
 				s.setSootClass(s.name);
 				am.components.add(s.getSootClass());
+				if (s.intent_filters.size() > 0) {
+					logger.info("has intent filter for {}:{}", s.name, s);
+				}
 			}
 
 			for (Provider p : v.manifest.providers) {
+				if (p.name.startsWith(".")) {
+					p.name = am.manifest.package_name + p.name;
+				}
 				p.setSootClass(p.name);
 				am.components.add(p.getSootClass());
+				if (p.intent_filters.size() > 0) {
+					logger.info("has intent filter for {}:{} ", p.name, p);
+				}
 			}
 
 			for (Receiver r : v.manifest.receivers) {
+				if (r.name.startsWith(".")) {
+					r.name = am.manifest.package_name + r.name;
+				}
 				r.setSootClass(r.name);
 				am.components.add(r.getSootClass());
+				if (r.intent_filters.size() > 0) {
+					logger.info("has intent filter for {}:{}", r.name, r);
+				}
 			}
 
 			//check that all source components are in the manifest
@@ -383,6 +409,15 @@ public class Resources {
 
 		// Read in the resource id to name map
 		read_resources();
+		
+		//adding system default resources
+		String resourceName = "android.R.string.untitled";
+		resource_info.put(new Integer(0x0104000f), resourceName);
+		RString rString = new RString("");
+		Set<RString> valueSet = new HashSet<RString>();
+		valueSet.add(rString);
+		stringNameToRStringSet.put(resourceName, valueSet);
+		
 	}
 
 	/**

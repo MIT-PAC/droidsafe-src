@@ -1,39 +1,7 @@
 package droidsafe.main;
 
-import droidsafe.analyses.value.ValueAnalysis;
-import droidsafe.analyses.EntryPointCGEdges;
-import droidsafe.analyses.GeoPTA;
-import droidsafe.analyses.infoflow.InformationFlowAnalysis;
-import droidsafe.analyses.infoflow.InjectedSourceFlows;
-import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
-import droidsafe.analyses.rcfg.RCFG;
-import droidsafe.analyses.RCFGToSSL;
-import droidsafe.analyses.RequiredModeling;
-import droidsafe.analyses.strings.JSAStrings;
-import droidsafe.analyses.strings.JSAUtils;
-
-import droidsafe.android.app.EntryPoints;
-import droidsafe.android.app.Harness;
-import droidsafe.android.app.Project;
-import droidsafe.android.app.resources.Resources;
-import droidsafe.android.app.TagImplementedSystemMethods;
-import droidsafe.android.system.API;
-import droidsafe.android.system.Permissions;
-//import droidsafe.eclipse.plugin.core.specmodel.SecuritySpecModel;
-
-import droidsafe.speclang.SecuritySpecification;
-import droidsafe.transforms.AddAllocsForAPICalls;
-import droidsafe.transforms.InsertDSTaintAllocs;
-import droidsafe.transforms.IntegrateXMLLayouts;
-import droidsafe.transforms.LocalForStringConstantArguments;
-import droidsafe.transforms.ResolveStringConstants;
-import droidsafe.transforms.ScalarAppOptimizations;
-
-import droidsafe.utils.SootUtils;
-
 import java.io.File;
 import java.io.IOException;
-
 import java.util.LinkedList;
 import java.util.List;
 
@@ -41,10 +9,33 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.Scene;
-
 import soot.SootClass;
-
 import soot.SootMethod;
+import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.RCFGToSSL;
+import droidsafe.analyses.RequiredModeling;
+import droidsafe.analyses.infoflow.InformationFlowAnalysis;
+import droidsafe.analyses.infoflow.InjectedSourceFlows;
+import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
+import droidsafe.analyses.rcfg.RCFG;
+import droidsafe.analyses.strings.JSAStrings;
+import droidsafe.analyses.strings.JSAUtils;
+import droidsafe.analyses.value.ValueAnalysis;
+import droidsafe.android.app.EntryPoints;
+import droidsafe.android.app.Harness;
+import droidsafe.android.app.Project;
+import droidsafe.android.app.TagImplementedSystemMethods;
+import droidsafe.android.app.resources.Resources;
+import droidsafe.android.system.API;
+import droidsafe.android.system.Permissions;
+import droidsafe.speclang.SecuritySpecification;
+import droidsafe.speclang.model.SecuritySpecModel;
+import droidsafe.transforms.AddAllocsForAPICalls;
+import droidsafe.transforms.IntegrateXMLLayouts;
+import droidsafe.transforms.LocalForStringConstantArguments;
+import droidsafe.transforms.ResolveStringConstants;
+import droidsafe.transforms.ScalarAppOptimizations;
+import droidsafe.utils.SootUtils;
 
 /**
  * Main entry class for DroidSafe analysis.
@@ -104,9 +95,6 @@ public class Main {
         if (Config.v().runStringAnalysis) {
             jsaAnalysis();
         }
-
-        logger.info("Inserting DSTaintObject allocations at each new expression...");
-        InsertDSTaintAllocs.run();
         
         AddAllocsForAPICalls.run();
 
@@ -169,12 +157,12 @@ public class Main {
             logger.info("Converting RCFG to SSL and dumping...");
             RCFGToSSL.run(false);
             SecuritySpecification spec = RCFGToSSL.v().getSpec();
-/*
+
             if (spec != null) {
               SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
               SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
             }
-            */
+            
 
 
         } else if (Config.v().target.equals("confcheck")) {

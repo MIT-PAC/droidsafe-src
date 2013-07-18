@@ -35,7 +35,5 @@ public class CleanMarkers extends AbstractHandler {
       }
     }
     return null;
-
   }
-
 }

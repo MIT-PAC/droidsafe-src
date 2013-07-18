@@ -14,9 +14,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.eclipse.plugin.core.Activator;
-import droidsafe.eclipse.plugin.core.specmodel.MethodModel;
-import droidsafe.eclipse.plugin.core.specmodel.SecuritySpecModel;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
+import droidsafe.speclang.model.MethodModel;
+import droidsafe.speclang.model.SecuritySpecModel;
 
 public class DynamicHotspotMenu extends ContributionItem {
   

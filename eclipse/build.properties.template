@@ -1,7 +1,5 @@
 runPackager=true
 target.eclipse.platform=/home/becker/eclipse42/eclipse
-target.eclipse.ant.launcher=${target.eclipse.platform}/plugins/org.eclipse.equinox.launcher_1.3.0.v20120522-1813.jar
-target.eclipse.pde.plugin=${target.eclipse.platform}/plugins/org.eclipse.pde.build_3.8.2.v20121114-140810
 
 feature.id=droidsafe.eclipse.plugin.feature
 plugin.id=droidsafe.eclipse.plugin.core
@@ -50,7 +48,7 @@ skipFetch=true
 #CDC-1.1/Foundation-1.1=${java.home}/lib/rt.jar
 #JavaSE-1.6=${java.home}/lib/rt.jar
 logExtension=.log
-javacDebugInfo=false 
+javacDebugInfo=true
 javacFailOnError=true
 javacVerbose=true
 # Default value for the version of the source code. This value is used when compiling plug-ins that do not set the Bundle-RequiredExecutionEnvironment or set javacSource in build.properties

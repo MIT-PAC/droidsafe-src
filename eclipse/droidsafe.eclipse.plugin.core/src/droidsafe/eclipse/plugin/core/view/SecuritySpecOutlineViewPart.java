@@ -1,6 +1,9 @@
 package droidsafe.eclipse.plugin.core.view;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -16,6 +19,7 @@ import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerSorter;
@@ -36,12 +40,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.eclipse.plugin.core.Activator;
-import droidsafe.eclipse.plugin.core.specmodel.CodeLocationModel;
-import droidsafe.eclipse.plugin.core.specmodel.MethodModel;
-import droidsafe.eclipse.plugin.core.specmodel.SecuritySpecModel;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.TreeElementContentProvider.TopLevelParentEntity;
+import droidsafe.speclang.model.CodeLocationModel;
+import droidsafe.speclang.model.IModelChangeSupport;
+import droidsafe.speclang.model.MethodModel;
+import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.utils.SourceLocationTag;
 
 
@@ -108,7 +113,8 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
           + "\nSelect an Android project in the Project Explorer."
           + "\nYou may also need to run the Droidsafe spec generation "
           + "command from the project context menu.");
-      this.textViewer.setDocument(document);
+      // parent.redraw();
+      parent.layout();
     } else {
       String projectRootPath = this.selectedProject.getLocation().toOSString();
       this.securitySpecModel = SecuritySpecModel.deserializeSpecFromFile(projectRootPath);
@@ -122,6 +128,8 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
             + "\nSelect the project on the Project Explorer "
             + "\nand run the Droidsafe spec generation command from the project context menu.");
         this.textViewer.setDocument(document);
+        // parent.redraw();
+        parent.layout();
 
       }
     }
@@ -174,6 +182,9 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       } else {
         getViewer().setInput(securitySpecModel);
       }
+    }
+    if (getViewer() != null) {
+      this.parentComposite.layout();
     }
   }
 
@@ -342,6 +353,8 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     getSite().getPage().removeSelectionListener(selectionListener);
   }
 
+
+
   public void setApiCallsAsViewTopLevelParents() {
     setContentProviderTopLevelParent(TopLevelParentEntity.API_AS_TOP_PARENT);
   }
@@ -355,14 +368,50 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
   }
 
   private void setContentProviderTopLevelParent(TopLevelParentEntity parentEntityType) {
+
     if (this.contentProvider instanceof TreeElementContentProvider
         && ((TreeElementContentProvider) this.contentProvider).getContentProviderTopLevelParent() != parentEntityType) {
+      ISelection savedSelections = this.viewer.getSelection();
+
       ((TreeElementContentProvider) this.contentProvider)
           .setContentProviderTopLevelParent(parentEntityType);
       this.viewer.refresh();
+      selectObjects(savedSelections);
     }
   }
 
+  /**
+   * This method will re-select the nodes that were selected before the
+   * change in the outline structure.
+   * 
+   * This method should be called by any method that changes the structure of the outline tree.
+   * 
+   * @param savedSelections The set of nodes selected before the change in the structure of the
+   *        outline.
+   */
+  private void selectObjects(ISelection savedSelections) {
+    
+    List<Object> selectedElements = new ArrayList<Object>();
+
+    if (savedSelections != null && savedSelections instanceof IStructuredSelection) {
+      IStructuredSelection structuredSelection = ((IStructuredSelection) savedSelections);
+      for (Object selection : structuredSelection.toList()) {
+        if (selection instanceof TreeElement<?, ?>) {
+          TreeElement<?, ?> element = (TreeElement<?, ?>) selection;
+          if (element.getData() instanceof IModelChangeSupport) {
+            IModelChangeSupport modelObject = (IModelChangeSupport) element.getData();
+            TreeElement<?, ?> newTreeElement = findTreeElementForModelObject(modelObject);
+            if (newTreeElement != null) {
+              selectedElements.add(newTreeElement);
+            }
+          }
+        }
+      }
+    }
+    if (!selectedElements.isEmpty()) {
+      this.viewer.setSelection(new StructuredSelection(selectedElements), true);
+    }
+  }
 
   /**
    * Looks for a selected project in the Eclipse Project Explorer that may have a security spec.
@@ -396,6 +445,8 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     return null;
   }
 
+
+
   /**
    * Sets the value of the selectedProject field if it is null and returns the value of the
    * selectedProject field.
@@ -424,14 +475,17 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
         ((TreeElementLabelProvider) this.labelProvider)
             .setUseShortSignatureForMethods(useShortSignature);
     if (oldValue != useShortSignature) {
+      ISelection savedSelections = this.viewer.getSelection();
       this.viewer.refresh();
+      selectObjects(savedSelections);
     }
   }
 
 
   public void sortViewByMethodName() {
+    ISelection savedSelections = this.viewer.getSelection();
+    
     this.viewer.setSorter(new ViewerSorter() {
-
       public int compare(Viewer view, Object o1, Object o2) {
         int result = 0;
         if (o1 instanceof TreeElement<?, ?> && o2 instanceof TreeElement<?, ?>) {
@@ -460,10 +514,13 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
         return result;
       }
     });
+    selectObjects(savedSelections);
   }
 
 
   public void sortViewByClassName() {
+    ISelection savedSelections = this.viewer.getSelection();
+    
     this.viewer.setSorter(new ViewerSorter() {
       public int compare(Viewer view, Object o1, Object o2) {
         int result = 0;
@@ -502,10 +559,13 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
         return result;
       }
     });
+    selectObjects(savedSelections);
   }
 
 
   public void sortViewByStatusAndClassName() {
+    ISelection savedSelections = this.viewer.getSelection();
+    
     this.viewer.setSorter(new ViewerSorter() {
       public int compare(Viewer view, Object o1, Object o2) {
         int result = 0;
@@ -550,6 +610,20 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
         return result;
       }
     });
+    selectObjects(savedSelections);
   }
 
+
+  /**
+   * Returns the tree element corresponding to the element model (method or code location).
+   * 
+   * @param modelObject The method or code location object represented in the outline view.
+   * 
+   * @return The tree node element wrapping the model object.
+   * 
+   */
+  public TreeElement<?, ?> findTreeElementForModelObject(IModelChangeSupport modelObject) {
+    return ((TreeElementContentProvider) this.contentProvider)
+        .findTreeElementForModelObject(modelObject);
+  }
 }

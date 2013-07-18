@@ -12,7 +12,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.editors,
  org.eclipse.jdt.core
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Eclipse-BundleShape: dir
 Bundle-ClassPath: .,
  lib/droidsafe-core.jar,
@@ -150,6 +150,7 @@ Export-Package: .,
  droidsafe.eclipse.plugin.core.view,
  droidsafe.main,
  droidsafe.speclang,
+ droidsafe.speclang.model,
  droidsafe.transforms,
  droidsafe.utils,
  ds.tree,
