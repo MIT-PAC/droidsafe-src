@@ -17,7 +17,7 @@ public class DSCursor implements Cursor {
 	
 	@DSModeled
 	public DSCursor(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-		addTaint(uri.toString().getTaint());
+		addTaint(uri.getTaint());
 		addTaint(projection.toString().getTaint());
 		addTaint(selection.getTaint());
 		addTaint(selectionArgs.toString().getTaint());
