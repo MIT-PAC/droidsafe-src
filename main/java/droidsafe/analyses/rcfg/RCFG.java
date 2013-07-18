@@ -201,10 +201,6 @@ public class RCFG {
         //and do this in a context sensitive way, process each edge
         csEdges(rCFGNode, context, edgeInto, appEdgesOut, allEdges);
 
-        //next add calls that can happen in the runtime for any
-        //api objects that are created, process each edge
-        edgesFromAPIAllocs(rCFGNode, context, edgeInto, appEdgesOut, allEdges);
-        
         apiEdgesFromNullReceivers(rCFGNode, context, method, appEdgesOut, allEdges);
         
         //recurse into all calls of app methods
@@ -361,91 +357,7 @@ public class RCFG {
         } 
     }
 
-    /***
-     * We have to be extra careful for calls with the receiver as a generated alloc expression
-     * from an api call (see droidsafe.transforms.AddAllocsForAPICalls).  
-     * 
-     * Since we often times do not know which specific runtime type is returned from an api method,
-     * we create allocs of the most general types.  But if the later, the object is cast to something 
-     * more specific, and then a method is called on it, that is not a method defined in the more general
-     * class, this method will not appear in the call graph, because soot cannot find it.
-     * 
-     * So we look for these calls, and add them manually for now.  This should be fixed when we model api
-     * call return values.
-     * 
-     * We don't know the exact type
-     * of the expression, so we need to add calls for all overriding methods of the receiver and method
-     * combination.
-     */
-    private void edgesFromAPIAllocs(RCFGNode rCFGNode, Edge context, Edge edgeInto, 
-                                    Set<Edge> appEdgesOut, Set<Edge> allEdges) {
-        SootMethod src = edgeInto.tgt();
-
-        if (src.isNative()) {
-            logger.error("Found a native method during analysis: {}. It could do anything!\n\n", src);
-            droidsafe.main.Main.exit(1);
-        }
-
-        if (!src.isConcrete())
-            return;
-
-        StmtBody stmtBody = (StmtBody)src.getActiveBody();
-
-        // get body's unit as a chain
-        Chain<Unit> units = stmtBody.getUnits();
-
-        // get a snapshot iterator of the unit since we are going to
-        // mutate the chain when iterating over it.
-        Iterator<Unit> stmtIt = units.snapshotIterator();
-
-        while (stmtIt.hasNext()) {
-            Stmt stmt = (Stmt)stmtIt.next();
-            InstanceInvokeExpr expr = SootUtils.getInstanceInvokeExpr(stmt);
-            if (expr == null) 
-                continue;
-
-            /*
-            if (!GeoPTA.v().isPointer(expr.getBase())) {
-                System.out.printf("Not a pointer %s for call %s %s\n", expr.getBase(), expr, 
-                    SootUtils.getSourceLocation(stmt, src.getDeclaringClass()));
-            }
-             */
-
-            for (AllocNode alloc : GeoPTA.v().getPTSet(expr.getBase(), context)) {
-                if (AddAllocsForAPICalls.v().isGeneratedExpr(alloc.getNewExpr())) {
-                    Type t = alloc.getType();
-
-                    if ( t instanceof AnySubType ||
-                            t instanceof ArrayType ) {
-                        logger.error("Weird type in call to object retrieved from API {}", stmt);
-                        droidsafe.main.Main.exit(1);
-                    }
-                    SootClass allocType = ((RefType)t).getSootClass();
-
-                    //try to find the method in the runtime type of the object
-                    //if we cannot, then we were too general with the added allocation, so
-                    //then find all methods in implementing classes that this could be
-                    try {
-                        SootUtils.resolveConcreteDispatch(allocType, expr.getMethod());
-                    } catch (CannotFindMethodException e) {
-
-                        Set<SootMethod> allMethods = 
-                                SootUtils.getOverridingMethodsIncluding(expr.getMethod().getDeclaringClass(), 
-                                    expr.getMethodRef().getSubSignature().getString());
-
-                        for (SootMethod m : allMethods) {
-                            Edge newEdge = new Edge(src, stmt, m);
-                            //System.out.printf("Creating edge for %s: %s\n", alloc, newEdge);
-                            processEdge(rCFGNode, newEdge, context, alloc, appEdgesOut, allEdges, 1);
-                        }
-                    }
-                }
-            }
-        }
-
-        return;
-    }
-
+  
     /**
      * Given an invoke statement, return the class of the receiver's static type definition.
      */

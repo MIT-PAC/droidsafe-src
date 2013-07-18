@@ -152,6 +152,26 @@ public class Harness {
 		
 		SootUtils.writeByteCodeAndJimple(Project.v().getOutputDir() + File.separator + HARNESS_CLASS_NAME, getHarnessClass());
 	}
+	
+	private SootMethod callAllStaticInitializers() {
+	    SootMethod callStaticInits = new SootMethod("__callStaticInits__",
+	                new LinkedList<Type>(), VoidType.v(), Modifier.PRIVATE | Modifier.STATIC);
+	    callStaticInits.setDeclaringClass(harnessClass);
+	    harnessClass.addMethod(callStaticInits);
+	    
+	    StmtBody body = Jimple.v().newBody(callStaticInits);
+	    callStaticInits.setActiveBody(body);
+	    
+	    for (SootClass clz : Scene.v().getClasses()) {
+	        if (clz.declaresMethod("void <clinit>()")) {
+	            SootMethod si = clz.getMethod("void <clinit>()");
+	            
+	            body.getUnits().add(Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(si.makeRef())));
+	        }
+	    }
+	    
+	    return callStaticInits;
+	}
 
 	//add call to the modeling entry point for the modeling of the android runtime
 	private void addCallToModelingRuntime(StmtBody body) {
@@ -322,6 +342,11 @@ public class Harness {
 	    body.getUnits().add(Jimple.v().newIdentityStmt(arg, 
 	            Jimple.v().newParameterRef(ArrayType.v
 	              (RefType.v("java.lang.String"), 1), 0)));
+	    
+	    //call all static initializer method
+	    SootMethod allClinits = callAllStaticInitializers();
+	    
+	    body.getUnits().add(Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(allClinits.makeRef())));
 	    
 	    //create a nop as target of goto below, to create loop over all possible events
 	    NopStmt beginCalls = Jimple.v().newNopStmt();

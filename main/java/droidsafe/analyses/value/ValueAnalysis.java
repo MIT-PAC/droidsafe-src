@@ -129,7 +129,8 @@ public class ValueAnalysis {
                   "<droidsafe.helpers.DSUtils: void translateIntent(android.content.Intent,android.content.Intent)>",
                   "<android.net.URI: android.net.Uri parse(java.lang.String)", 
                   "<java.net.URI: java.lang.URI create(java.lang.String)>",
-                  "<java.lang.Object: void addTaint(boolean)>"));
+                  "<java.lang.Object: void addTaint(droidsafe.helpers.DSTaintObject)>",
+                  "<java.lang.Object: droidsafe.helpers.DSTaintObject getTaint()>"));
 
     //==================================================================================================================
     // Attributes
@@ -535,8 +536,8 @@ public class ValueAnalysis {
     private ValueAnalysisModeledObject createAndGetModel(AllocNode allocNode) {
 
         // don't track values for alloc nodes we create
-        if (AddAllocsForAPICalls.v().isGeneratedExpr(allocNode.getNewExpr()))
-            return null;
+        //if (AddAllocsForAPICalls.v().isGeneratedExpr(allocNode.getNewExpr()))
+         //   return null;
 
         // we can't give model for allocNodes whose type isn't RefType 
         if (!(allocNode.getType() instanceof RefType))
