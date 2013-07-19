@@ -89,11 +89,6 @@ public class Config {
   public boolean runStringAnalysis = true;
 
   /**
-   * If true, add hotspots for all spec methods. false by default
-   */
-  public boolean specHotspots = false;
-
-  /**
    * if true, string analysis is done for all soot application classes. Otherwise, it is only done
    * for the source classes of the project.
    */
@@ -156,9 +151,6 @@ public class Config {
 
     Option jsa = new Option("nojsa", "Do not use JSA");
     options.addOption(jsa);
-
-    Option specHotspots = new Option("spechotspots", "Add hotspots for all of the spec methods.");
-    options.addOption(specHotspots);
 
     Option writeJimple =
         new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
@@ -244,10 +236,6 @@ public class Config {
     if (cmd.hasOption("nojsa")) {
       this.runStringAnalysis = false;
     }
-
-    if (cmd.hasOption("spechotspots")) {
-        this.specHotspots = true;
-      }
 
     if (cmd.hasOption("infoflow")) {
       this.infoFlow = true;
