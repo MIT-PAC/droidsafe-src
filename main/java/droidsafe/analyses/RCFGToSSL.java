@@ -135,7 +135,7 @@ public class RCFGToSSL {
 	}
 	
 	private boolean shouldIgnore(OutputEvent oe) {	
-		if (SafeAndroidClasses.v().isSafeClass(oe.getTarget().getDeclaringClass().getName()))
+		if (SafeAndroidClassesAndMethods.v().isSafeMethod(oe.getTarget()))
 		    return true;
 		
 		return (IGNORE_SYS_METHODS_WITH_SUBSIG.contains(oe.getTarget().getSubSignature())); 

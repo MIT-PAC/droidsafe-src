@@ -136,7 +136,7 @@ public class MethodModel extends ModelChangeSupport
       this.lines.add(new CodeLocationModel(line));
     }
 
-    // logger.debug("\n");
+    logger.debug("\n"+this.sootMethodSignature);
     SootMethod sootMethod = originalMethod.getSootMethod();
     for (Type parType : sootMethod.getParameterTypes()) {
       this.methodArgumentTypes.add(parType.toString());
@@ -252,7 +252,7 @@ public class MethodModel extends ModelChangeSupport
       if (arg.isType()) {
         out.append(Utils.extractClassname(arg.toString()));
       } else { // constant of some sort
-        out.append(arg.toString());
+        out.append(arg.toString().replaceAll("[\\n]+", "\\\\n"));
       }
       delim = ", ";
     }

@@ -10,15 +10,21 @@ import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisLong;
 import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisShort;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.analyses.value.ValueAnalysisModeledObject;
+import droidsafe.android.system.API;
+import droidsafe.utils.SootUtils;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import org.reflections.*;
+
+import soot.SootMethod;
+import soot.ValueBox;
 
 /**
  * Class containing utility methods for JSA
@@ -98,6 +104,32 @@ public class JSAUtils {
                         JSAStrings.v().addArgumentHotspots(signature, index);
                     }
                 }
+            }
+        }
+    }
+    
+    /**
+     * Add hotspots for all of the spec methods.
+     */
+    public static void setupSpecHotspots()
+    {
+        for (SootMethod m : API.v().getAllSystemMethods()) {
+            if (API.v().isInterestingMethod(m)) {
+                String sig = m.getSignature();
+                int i = 0;
+                for (soot.Type t : m.getParameterTypes()) {
+                    if (SootUtils.isStringType(t)) {
+                        List<ValueBox> hs = JSAStrings.v().addArgumentHotspots(sig, i);
+                    }
+                    i++;     
+                }
+                // FIXME: Return hotspots are raising an exception.
+                /*
+                if (SootUtils.isStringType(m.getReturnType())) {
+                    System.out.println(String.format("addReturnHotspots(%s)", sig));
+                    JSAStrings.v().addReturnHotspot(sig);
+                }
+                */
             }
         }
     }

@@ -359,13 +359,15 @@ public class ModelCodeGenerator {
             extendsList = new ArrayList<ClassOrInterfaceType>();
             extendsList.add(new ClassOrInterfaceType("ValueAnalysisModeledObject"));
         }
-        List<BodyDeclaration> allMembers = new ArrayList<BodyDeclaration>();
+        SortedSet<BodyDeclaration> allMembers = new TreeSet<BodyDeclaration>(new MemberComparator());
         modelCoi.setExtends(extendsList);
         ASTHelper.addTypeDeclaration(model, modelCoi);
-        for (BodyDeclaration oldModelmember : oldModelCui.getMembers()) {
-            if (oldModelmember instanceof ConstructorDeclaration || oldModelmember instanceof MethodDeclaration) {
-                addComment(oldModelmember, ORIGINAL_MODEL_COMMENT);
-                allMembers.add(oldModelmember);
+        if (oldModelCui != null) {
+            for (BodyDeclaration oldModelmember : oldModelCui.getMembers()) {
+                if (oldModelmember instanceof ConstructorDeclaration || oldModelmember instanceof MethodDeclaration) {
+                    addComment(oldModelmember, ORIGINAL_MODEL_COMMENT);
+                    allMembers.add(oldModelmember);
+                }
             }
         }
         if (!isInterface) {
@@ -390,7 +392,6 @@ public class ModelCodeGenerator {
             if (newMember != null)
                 allMembers.add(newMember);
         }
-        Collections.sort(allMembers, new MemberComparator());
         for (BodyDeclaration member: allMembers) {
             ASTHelper.addMember(modelCoi, member);
         }

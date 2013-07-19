@@ -113,7 +113,8 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
           + "\nSelect an Android project in the Project Explorer."
           + "\nYou may also need to run the Droidsafe spec generation "
           + "command from the project context menu.");
-      // parent.redraw();
+      this.textViewer.setDocument(document);
+      parent.redraw();
       parent.layout();
     } else {
       String projectRootPath = this.selectedProject.getLocation().toOSString();
@@ -128,7 +129,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
             + "\nSelect the project on the Project Explorer "
             + "\nand run the Droidsafe spec generation command from the project context menu.");
         this.textViewer.setDocument(document);
-        // parent.redraw();
+        parent.redraw();
         parent.layout();
 
       }
@@ -381,8 +382,8 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
   }
 
   /**
-   * This method will re-select the nodes that were selected before the
-   * change in the outline structure.
+   * This method will re-select the nodes that were selected before the change in the outline
+   * structure.
    * 
    * This method should be called by any method that changes the structure of the outline tree.
    * 
@@ -390,7 +391,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
    *        outline.
    */
   private void selectObjects(ISelection savedSelections) {
-    
+
     List<Object> selectedElements = new ArrayList<Object>();
 
     if (savedSelections != null && savedSelections instanceof IStructuredSelection) {
@@ -484,7 +485,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
 
   public void sortViewByMethodName() {
     ISelection savedSelections = this.viewer.getSelection();
-    
+
     this.viewer.setSorter(new ViewerSorter() {
       public int compare(Viewer view, Object o1, Object o2) {
         int result = 0;
@@ -520,7 +521,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
 
   public void sortViewByClassName() {
     ISelection savedSelections = this.viewer.getSelection();
-    
+
     this.viewer.setSorter(new ViewerSorter() {
       public int compare(Viewer view, Object o1, Object o2) {
         int result = 0;
@@ -565,7 +566,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
 
   public void sortViewByStatusAndClassName() {
     ISelection savedSelections = this.viewer.getSelection();
-    
+
     this.viewer.setSorter(new ViewerSorter() {
       public int compare(Viewer view, Object o1, Object o2) {
         int result = 0;

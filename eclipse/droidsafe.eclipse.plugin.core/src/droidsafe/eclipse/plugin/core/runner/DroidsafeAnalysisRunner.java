@@ -54,7 +54,6 @@ import droidsafe.speclang.SecuritySpecification;
 import droidsafe.speclang.model.HotspotModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.transforms.AddAllocsForAPICalls;
-import droidsafe.transforms.InsertDSTaintAllocs;
 import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
@@ -321,8 +320,8 @@ public class DroidsafeAnalysisRunner extends Main {
       if (spec != null) {
         SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
         SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
-        DroidsafePluginUtilities
-            .generateMarkersForSecuritySpecification(securitySpecModel, this.project);
+        DroidsafePluginUtilities.generateMarkersForSecuritySpecification(securitySpecModel,
+            this.project);
       }
       monitor.worked(1);
       if (monitor.isCanceled()) {
@@ -368,27 +367,31 @@ public class DroidsafeAnalysisRunner extends Main {
   private static void jsaAnalysis() {
     JSAUtils.setUpHotspots();
 
-    // Adds hotspots added manually by the user.
-    SecuritySpecModel previousSpec =
-        SecuritySpecModel.deserializeSpecFromFile(Config.v().APP_ROOT_DIR);
-    if (previousSpec != null) {
-      Map<String, List<HotspotModel>> hotspotMap = previousSpec.getHotspotMap();
-      if (hotspotMap != null) {
-        for (String sig : hotspotMap.keySet()) {
-          List<HotspotModel> hotspots = hotspotMap.get(sig);
-          List<Integer> argumentsAlreadySeen = new ArrayList<Integer>();
-          if (hotspots != null) {
-            for (HotspotModel hotspot : hotspots) {
-              int position = hotspot.getArgumentPosition();
-              if (!argumentsAlreadySeen.contains(position)) {
-                if (position == -1) {
-                  // JSAStrings.v().addReturnHotspot(sig);
-                  logger.debug("\n\nJSAStrings.v().addReturnHotspot({});\n", sig);
-                  argumentsAlreadySeen.add(position);
-                } else {
-                  JSAStrings.v().addArgumentHotspots(sig, position);
-                  logger.debug("\n\nJSAStrings.v().addArgumentHotspot({},{});\n", sig, position);
-                  argumentsAlreadySeen.add(position);
+    if (Config.v().specHotspots)
+      JSAUtils.setupSpecHotspots();
+    else {
+      // Adds hotspots added manually by the user.
+      SecuritySpecModel previousSpec =
+          SecuritySpecModel.deserializeSpecFromFile(Config.v().APP_ROOT_DIR);
+      if (previousSpec != null) {
+        Map<String, List<HotspotModel>> hotspotMap = previousSpec.getHotspotMap();
+        if (hotspotMap != null) {
+          for (String sig : hotspotMap.keySet()) {
+            List<HotspotModel> hotspots = hotspotMap.get(sig);
+            List<Integer> argumentsAlreadySeen = new ArrayList<Integer>();
+            if (hotspots != null) {
+              for (HotspotModel hotspot : hotspots) {
+                int position = hotspot.getArgumentPosition();
+                if (!argumentsAlreadySeen.contains(position)) {
+                  if (position == -1) {
+                    // JSAStrings.v().addReturnHotspot(sig);
+                    logger.debug("\n\nJSAStrings.v().addReturnHotspot({});\n", sig);
+                    argumentsAlreadySeen.add(position);
+                  } else {
+                    JSAStrings.v().addArgumentHotspots(sig, position);
+                    logger.debug("\n\nJSAStrings.v().addArgumentHotspot({},{});\n", sig, position);
+                    argumentsAlreadySeen.add(position);
+                  }
                 }
               }
             }
