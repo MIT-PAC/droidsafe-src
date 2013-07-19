@@ -19,11 +19,11 @@ public class JSAValue extends StringValue {
     }
     
     public String toString() {
-        return "JSA-RE: \"" + value + "\"";
+        return "STR-RE: \"" + value + "\"";
     }
     
     @Override
     public String toStringValue() {
-        return "JSA-RE: " + value;
+        return "STR-RE: " + value;
     }
 }
