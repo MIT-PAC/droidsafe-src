@@ -273,22 +273,32 @@ public class RCFG {
 
         allEdges.add(edge);
         logger.info("Looking at method call for: {}->{} ({}).", edge.src(), edge.tgt(), edge.srcStmt());
+        
         if (API.v().isSystemMethod(edge.tgt())) {
-            //add output events for interesting methods only
             if (API.v().isInterestingMethod(edge.tgt()) &&
                     !IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName())) {
-                logger.debug("Found output event: {} {}", edge.tgt(), receiver );
-                //System.out.printf("OE (%s): %s %s (%s)\n", debug, edge.tgt(), receiver, rCFGNode.getEntryPoint());
-                SourceLocationTag line = SootUtils.getSourceLocation(edge.srcStmt(), edge.src().getDeclaringClass());
-                OutputEvent oe = new OutputEvent(edge, context, rCFGNode, receiver, line);
-                rCFGNode.addOutputEvent(oe);
-            }
-        } else {
-            //it is an app edge, so recurse into later
+                addOutputEvent(rCFGNode, edge, context, receiver);
+            } 
+        } else { //app edge
+            if (edge.tgt().isNative())  //for native methods, add them as output events
+                addOutputEvent(rCFGNode, edge, context, receiver);
+            else //it is an app edge, so recurse into later
             appEdgesOut.add(edge);
         }
     }
 
+    /** 
+     * Create a new output event based on edge with context and receiver, and add to rCFGNode.
+     */
+     private void addOutputEvent(RCFGNode rCFGNode, Edge edge, Edge context, 
+                                 AllocNode receiver) {   
+         logger.debug("Found output event: {} {}", edge.tgt(), receiver );
+         //System.out.printf("OE (%s): %s %s (%s)\n", debug, edge.tgt(), receiver, rCFGNode.getEntryPoint());
+         SourceLocationTag line = SootUtils.getSourceLocation(edge.srcStmt(), edge.src().getDeclaringClass());
+         OutputEvent oe = new OutputEvent(edge, context, rCFGNode, receiver, line);
+         rCFGNode.addOutputEvent(oe);
+     }
+    
     /**
      * Find and return a string of all invoke statements that could invoke an API call.
      */
@@ -380,11 +390,6 @@ public class RCFG {
     private void edgesFromAPIAllocs(RCFGNode rCFGNode, Edge context, Edge edgeInto, 
                                     Set<Edge> appEdgesOut, Set<Edge> allEdges) {
         SootMethod src = edgeInto.tgt();
-
-        if (src.isNative()) {
-            logger.error("Found a native method during analysis: {}. It could do anything!\n\n", src);
-            droidsafe.main.Main.exit(1);
-        }
 
         if (!src.isConcrete())
             return;
