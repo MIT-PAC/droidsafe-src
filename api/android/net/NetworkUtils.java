@@ -1,15 +1,18 @@
 package android.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.net.InetAddress;
 import java.net.Inet4Address;
 import java.net.Inet6Address;
+import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Collection;
+
 import android.util.Log;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public class NetworkUtils {
     

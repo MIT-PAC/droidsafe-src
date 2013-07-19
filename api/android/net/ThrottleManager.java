@@ -1,13 +1,9 @@
 package android.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.annotation.SdkConstant;
-import android.annotation.SdkConstant.SdkConstantType;
-import android.os.Binder;
 import android.os.RemoteException;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class ThrottleManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.325 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "6BB94C28B991564A2654192146B5BDD6")

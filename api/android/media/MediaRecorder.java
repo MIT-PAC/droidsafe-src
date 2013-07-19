@@ -1,19 +1,20 @@
 package android.media;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.hardware.Camera;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.util.Log;
-import android.view.Surface;
 import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
+
+import android.hardware.Camera;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.view.Surface;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class MediaRecorder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.749 -0400", hash_original_field = "20E813A614226843849BF2E571A8EBCA", hash_generated_field = "4FF8A42CAE4591AC91206314B4192EA4")
@@ -89,6 +90,7 @@ public class MediaRecorder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getAudioSourceMax() {
         return AudioSource.VOICE_COMMUNICATION;
     }
@@ -495,15 +497,18 @@ public class MediaRecorder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final void native_init() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.765 -0400", hash_original_method = "BCB4106EE2D8724832D2515EFBDE53A4", hash_generated_method = "7BD86FE3D42C7ED0FD9D21C1CF2294C8")
     private final void native_setup(Object mediarecorder_this) throws IllegalStateException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.765 -0400", hash_original_method = "B81676966F6941B90240D7A24C9E2FD3", hash_generated_method = "BE94CB6DE9EDBEEF7D151AA52A7096EC")
     private final void native_finalize() {
     }

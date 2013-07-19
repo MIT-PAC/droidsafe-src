@@ -1,9 +1,10 @@
 package gov.nist.core;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class Token {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.769 -0400", hash_original_field = "6128148BC7C7ABD76B32789D4962F7E4", hash_generated_field = "C77B34F76A2CC5C947F29741403A7131")

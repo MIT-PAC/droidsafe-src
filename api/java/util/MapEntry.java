@@ -1,9 +1,8 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 class MapEntry<K, V> implements Map.Entry<K, V>, Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.237 -0400", hash_original_field = "3C6E0B8A9C15224A8228B9A98CA1531D", hash_generated_field = "F780C5984CF24E477CB9559E91475987")

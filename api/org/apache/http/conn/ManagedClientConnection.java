@@ -1,18 +1,17 @@
 package org.apache.http.conn;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+
 import javax.net.ssl.SSLSession;
+
 import org.apache.http.HttpClientConnection;
-import org.apache.http.HttpInetConnection;
 import org.apache.http.HttpHost;
+import org.apache.http.HttpInetConnection;
+import org.apache.http.conn.routing.HttpRoute;
 import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HttpContext;
-import org.apache.http.conn.routing.HttpRoute;
 
 public interface ManagedClientConnection extends
     HttpClientConnection, HttpInetConnection, ConnectionReleaseTrigger {

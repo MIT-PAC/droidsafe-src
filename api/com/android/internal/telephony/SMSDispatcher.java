@@ -1,20 +1,29 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import static android.telephony.SmsManager.RESULT_ERROR_FDN_CHECK_FAILURE;
+import static android.telephony.SmsManager.RESULT_ERROR_GENERIC_FAILURE;
+import static android.telephony.SmsManager.RESULT_ERROR_LIMIT_EXCEEDED;
+import static android.telephony.SmsManager.RESULT_ERROR_NO_SERVICE;
+import static android.telephony.SmsManager.RESULT_ERROR_NULL_PDU;
+import static android.telephony.SmsManager.RESULT_ERROR_RADIO_OFF;
+
+import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Random;
+
 import android.app.Activity;
-import android.app.PendingIntent;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.app.PendingIntent.CanceledException;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.content.DialogInterface;
-import android.content.IntentFilter;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -26,25 +35,19 @@ import android.os.PowerManager;
 import android.os.SystemProperties;
 import android.provider.Telephony;
 import android.provider.Telephony.Sms.Intents;
-import android.provider.Settings;
-import android.telephony.SmsMessage;
 import android.telephony.ServiceState;
+import android.telephony.SmsMessage;
 import android.util.Log;
 import android.view.WindowManager;
+
+import com.android.internal.R;
 import com.android.internal.telephony.SmsMessageBase.TextEncodingDetails;
 import com.android.internal.util.HexDump;
-import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Random;
-import com.android.internal.R;
-import static android.telephony.SmsManager.RESULT_ERROR_GENERIC_FAILURE;
-import static android.telephony.SmsManager.RESULT_ERROR_NO_SERVICE;
-import static android.telephony.SmsManager.RESULT_ERROR_NULL_PDU;
-import static android.telephony.SmsManager.RESULT_ERROR_RADIO_OFF;
-import static android.telephony.SmsManager.RESULT_ERROR_LIMIT_EXCEEDED;
-import static android.telephony.SmsManager.RESULT_ERROR_FDN_CHECK_FAILURE;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SMSDispatcher extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.933 -0400", hash_original_field = "44BC87C3198CFC247427A5305FDEA9BE", hash_generated_field = "510AC3BCB553F2FCF25972E2B33B836E")
@@ -172,9 +175,11 @@ public abstract class SMSDispatcher extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void dispose();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract String getFormat();
 
     
@@ -423,6 +428,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int dispatchMessage(SmsMessageBase sms);
 
     
@@ -654,14 +660,17 @@ for(int i = 0;i < messageCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void sendData(String destAddr, String scAddr, int destPort,
             byte[] data, PendingIntent sentIntent, PendingIntent deliveryIntent);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void sendText(String destAddr, String scAddr,
             String text, PendingIntent sentIntent, PendingIntent deliveryIntent);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract TextEncodingDetails calculateLength(CharSequence messageBody,
             boolean use7bitOnly);
 
@@ -723,6 +732,7 @@ for(int i = 0;i < msgCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void sendNewSubmitPdu(String destinationAddress, String scAddress,
             String message, SmsHeader smsHeader, int encoding,
             PendingIntent sentIntent, PendingIntent deliveryIntent, boolean lastPart);
@@ -831,6 +841,7 @@ for(int i = 0;i < msgCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void sendSms(SmsTracker tracker);
 
     
@@ -867,6 +878,7 @@ for(int i = 0, count = parts.size();i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void acknowledgeLastIncomingSms(boolean success,
             int result, Message response);
 

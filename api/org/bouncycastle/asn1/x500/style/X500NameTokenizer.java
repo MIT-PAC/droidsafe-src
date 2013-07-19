@@ -1,9 +1,8 @@
 package org.bouncycastle.asn1.x500.style;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 class X500NameTokenizer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.499 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "424F4435B9052E77589D30873B9A7D2B")

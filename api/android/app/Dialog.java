@@ -1,11 +1,8 @@
 package android.app;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.app.ActionBarImpl;
-import com.android.internal.policy.PolicyManager;
+import java.lang.ref.WeakReference;
+
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.ContextWrapper;
@@ -15,7 +12,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.ActionMode;
 import android.view.ContextMenu;
@@ -34,7 +30,14 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
-import java.lang.ref.WeakReference;
+
+import com.android.internal.app.ActionBarImpl;
+import com.android.internal.policy.PolicyManager;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callback, OnCreateContextMenuListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.711 -0400", hash_original_field = "581D71027A593FE178E11F8CF96A261F", hash_generated_field = "8ACEFA51F1C212AC94944686D7E3BDFC")
@@ -189,6 +192,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.720 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "1DDC3AE4E3FBAC06939C1066C31173A2")
     public final Context getContext() {
 Context var178E2AD52D6FBBB503F908168856B574_1112435172 =         mContext;
@@ -220,6 +224,7 @@ ActionBar var02D7B9E52DFDAF29F050C055F2B0A03C_795902496 =         mActionBar;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.722 -0400", hash_original_method = "D833D4731703AD671D7AED3C45CAE756", hash_generated_method = "216EF9FD0362286B6C17B05DAA75B304")
     public final Activity getOwnerActivity() {
 Activity var1F93BAB3C8E73BD5DD59D84CA7D69EBB_626784901 =         mOwnerActivity;
@@ -1313,6 +1318,7 @@ ComponentName var86A97AAEFB0079F028A4C489F4F84789_324732896 =         activity =
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.771 -0400", hash_original_method = "2E53659D6309BF8C5C8E8AD82BD6A577", hash_generated_method = "29B383C4D5EDB762E45EC352A7CB31AA")
     public final void setFeatureDrawableUri(int featureId, Uri uri) {
         addTaint(uri.getTaint());

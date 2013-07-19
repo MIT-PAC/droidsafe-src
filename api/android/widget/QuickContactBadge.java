@@ -1,10 +1,6 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.R;
 import android.content.AsyncQueryHandler;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -23,6 +19,13 @@ import android.provider.ContactsContract.RawContacts;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
+
+import com.android.internal.R;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class QuickContactBadge extends ImageView implements OnClickListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.148 -0400", hash_original_field = "BA420FA571B7EC31BB499073241D6F9F", hash_generated_field = "DE36A63479C290388AC419A19DF1934A")

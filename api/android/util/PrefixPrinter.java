@@ -1,9 +1,10 @@
 package android.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class PrefixPrinter implements Printer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.000 -0400", hash_original_field = "0A6BD3F4038C8E8F2B4B9D349A6605FD", hash_generated_field = "68E1840BE1EE0E08368BEA594CC31769")

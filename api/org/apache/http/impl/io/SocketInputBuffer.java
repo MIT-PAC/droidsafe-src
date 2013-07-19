@@ -1,15 +1,15 @@
 package org.apache.http.impl.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
-import java.net.SocketTimeoutException;
+
 import org.apache.http.params.HttpParams;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class SocketInputBuffer extends AbstractSessionInputBuffer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.641 -0400", hash_original_field = "61F2529360AEC54F5DC9804B842CF3FA", hash_generated_field = "8626E3C3C4BFCB66E8863775B28E01CC")

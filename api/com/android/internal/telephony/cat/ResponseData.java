@@ -1,18 +1,22 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.telephony.EncodeException;
-import com.android.internal.telephony.GsmAlphabet;
-import java.util.Calendar;
-import java.util.TimeZone;
-import android.os.SystemProperties;
-import android.text.TextUtils;
-import com.android.internal.telephony.cat.AppInterface.CommandType;
 import java.io.ByteArrayOutputStream;
 import java.io.UnsupportedEncodingException;
+import java.util.Calendar;
+import java.util.TimeZone;
+
+import android.os.SystemProperties;
+import android.text.TextUtils;
+
+import com.android.internal.telephony.EncodeException;
+import com.android.internal.telephony.GsmAlphabet;
+import com.android.internal.telephony.cat.AppInterface.CommandType;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 abstract class ResponseData {
     
@@ -23,6 +27,7 @@ abstract class ResponseData {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract void format(ByteArrayOutputStream buf);
 
     

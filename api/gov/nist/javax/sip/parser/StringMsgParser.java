@@ -1,9 +1,6 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import gov.nist.core.Host;
 import gov.nist.core.HostNameParser;
 import gov.nist.javax.sip.SIPConstants;
@@ -11,12 +8,22 @@ import gov.nist.javax.sip.address.AddressImpl;
 import gov.nist.javax.sip.address.GenericURI;
 import gov.nist.javax.sip.address.SipUri;
 import gov.nist.javax.sip.address.TelephoneNumber;
-import gov.nist.javax.sip.header.*;
+import gov.nist.javax.sip.header.ExtensionHeaderImpl;
+import gov.nist.javax.sip.header.NameMap;
+import gov.nist.javax.sip.header.RequestLine;
+import gov.nist.javax.sip.header.SIPHeader;
+import gov.nist.javax.sip.header.StatusLine;
 import gov.nist.javax.sip.message.SIPMessage;
 import gov.nist.javax.sip.message.SIPRequest;
 import gov.nist.javax.sip.message.SIPResponse;
+
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class StringMsgParser {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.869 -0400", hash_original_field = "F6A0B614A3E3F2033445BCEBD36D070B", hash_generated_field = "7E0AA0556EE34EDC1E14E7271C2271D7")

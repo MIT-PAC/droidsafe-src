@@ -1,9 +1,10 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class UUSInfo {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.458 -0400", hash_original_field = "6C451461439D1D1511468C6A6A5AB661", hash_generated_field = "4CB8FCE222D78BC8CC8753B1C94AAAB8")

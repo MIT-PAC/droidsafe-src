@@ -1,9 +1,6 @@
 package java.nio.channels.spi;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.nio.SelectorProviderImpl;
 import java.nio.channels.Channel;
@@ -12,6 +9,11 @@ import java.nio.channels.Pipe;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.ServiceLoader;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SelectorProvider {
     
@@ -43,19 +45,24 @@ public abstract class SelectorProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract DatagramChannel openDatagramChannel() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Pipe openPipe() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract AbstractSelector openSelector() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ServerSocketChannel openServerSocketChannel()
             throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SocketChannel openSocketChannel() throws IOException;
 
     

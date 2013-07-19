@@ -1,25 +1,23 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.Arrays;
+import java.util.HashMap;
+
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.app.PendingIntent.CanceledException;
-import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.database.SQLException;
+import android.content.res.Resources;
 import android.os.Message;
 import android.os.SystemProperties;
 import android.preference.PreferenceManager;
-import android.provider.Telephony;
 import android.provider.Telephony.Sms.Intents;
 import android.telephony.SmsManager;
 import android.telephony.SmsMessage.MessageClass;
 import android.util.Log;
+
 import com.android.internal.telephony.CommandsInterface;
 import com.android.internal.telephony.SMSDispatcher;
 import com.android.internal.telephony.SmsHeader;
@@ -31,11 +29,11 @@ import com.android.internal.telephony.TelephonyProperties;
 import com.android.internal.telephony.WspTypeDecoder;
 import com.android.internal.telephony.cdma.sms.SmsEnvelope;
 import com.android.internal.telephony.cdma.sms.UserData;
-import com.android.internal.util.HexDump;
-import java.io.ByteArrayOutputStream;
-import java.util.Arrays;
-import java.util.HashMap;
-import android.content.res.Resources;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 final class CdmaSMSDispatcher extends SMSDispatcher {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.963 -0400", hash_original_field = "99435B34EC210BD6AB4CF145BA066DD0", hash_generated_field = "32AEC3A3AE4EA72117A81D9C026D630A")

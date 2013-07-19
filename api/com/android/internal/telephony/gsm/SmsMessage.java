@@ -1,19 +1,6 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.telephony.PhoneNumberUtils;
-import android.text.format.Time;
-import android.util.Log;
-import com.android.internal.telephony.EncodeException;
-import com.android.internal.telephony.GsmAlphabet;
-import com.android.internal.telephony.IccUtils;
-import com.android.internal.telephony.SmsHeader;
-import com.android.internal.telephony.SmsMessageBase;
-import java.io.ByteArrayOutputStream;
-import java.io.UnsupportedEncodingException;
 import static android.telephony.SmsMessage.ENCODING_16BIT;
 import static android.telephony.SmsMessage.ENCODING_7BIT;
 import static android.telephony.SmsMessage.ENCODING_8BIT;
@@ -22,7 +9,25 @@ import static android.telephony.SmsMessage.ENCODING_UNKNOWN;
 import static android.telephony.SmsMessage.MAX_USER_DATA_BYTES;
 import static android.telephony.SmsMessage.MAX_USER_DATA_BYTES_WITH_HEADER;
 import static android.telephony.SmsMessage.MAX_USER_DATA_SEPTETS;
-import static android.telephony.SmsMessage.MessageClass;
+
+import java.io.ByteArrayOutputStream;
+import java.io.UnsupportedEncodingException;
+
+import android.telephony.PhoneNumberUtils;
+import android.telephony.SmsMessage.MessageClass;
+import android.text.format.Time;
+import android.util.Log;
+
+import com.android.internal.telephony.EncodeException;
+import com.android.internal.telephony.GsmAlphabet;
+import com.android.internal.telephony.IccUtils;
+import com.android.internal.telephony.SmsHeader;
+import com.android.internal.telephony.SmsMessageBase;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SmsMessage extends SmsMessageBase {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.852 -0400", hash_original_field = "D302E5EFB0B648FBA3A15C5F33DF9776", hash_generated_field = "7857416028EC39FBC0A39F3682AC483E")

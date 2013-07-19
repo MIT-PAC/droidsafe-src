@@ -1,17 +1,18 @@
 package gov.nist.core;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.util.concurrent.*;
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class NameValueList implements Serializable, Cloneable, Map<String,NameValue> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.657 -0400", hash_original_field = "1792643415A657BEEC20CC7ECBCCD4B1", hash_generated_field = "EB935C097CDD69EAB431C97FAA415189")
@@ -491,6 +492,7 @@ NameValue varFAB6ABD39F93D785C563AA57903DA56F_495477379 =         this.hmap.put(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.671 -0400", hash_original_method = "E36B216223163EA26215959E10A918CA", hash_generated_method = "F216408185EC6C2950CC8DE5BD2EA275")
     public void putAll(Map<? extends String, ? extends NameValue> map) {
         addTaint(map.getTaint());

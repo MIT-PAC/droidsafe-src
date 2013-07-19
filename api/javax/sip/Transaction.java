@@ -1,10 +1,8 @@
 package javax.sip;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.Serializable;
+
 import javax.sip.message.Request;
 
 public interface Transaction extends Serializable {

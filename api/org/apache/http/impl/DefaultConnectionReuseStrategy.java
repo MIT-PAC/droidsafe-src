@@ -1,22 +1,21 @@
 package org.apache.http.impl;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import org.apache.http.ConnectionReuseStrategy;
-import org.apache.http.HttpConnection;
 import org.apache.http.HeaderIterator;
+import org.apache.http.HttpConnection;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpVersion;
 import org.apache.http.ParseException;
 import org.apache.http.ProtocolVersion;
-import org.apache.http.protocol.HTTP;
-import org.apache.http.protocol.HttpContext;
-import org.apache.http.protocol.ExecutionContext;
 import org.apache.http.TokenIterator;
 import org.apache.http.message.BasicTokenIterator;
+import org.apache.http.protocol.ExecutionContext;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.protocol.HttpContext;
+
+import droidsafe.annotations.DSGenerator;
 
 public class DefaultConnectionReuseStrategy implements ConnectionReuseStrategy {
     

@@ -1,11 +1,13 @@
 package gov.nist.core;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.text.ParseException;
 import java.util.Hashtable;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class LexerCore extends StringTokenizer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.484 -0400", hash_original_field = "B0F13C43E094802743B3161861C2DD0D", hash_generated_field = "73DC8498A7AED0DB7B89805A8124EB6C")
@@ -355,6 +357,7 @@ Token var4F2F48FA7E0E08F3309FEA0E4F1D3813_1116266735 =         this.currentMatch
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final boolean isTokenChar( char c ) {
         if ( isAlphaDigit(c) ) return true;
         else switch (c)

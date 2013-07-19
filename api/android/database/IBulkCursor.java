@@ -1,9 +1,6 @@
 package android.database;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.IInterface;

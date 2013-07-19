@@ -1,21 +1,25 @@
 package android.test;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.app.Instrumentation;
-import android.content.Context;
-import android.os.PerformanceCollector.PerformanceResultsWriter;
-import com.google.android.collect.Lists;
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestListener;
 import junit.framework.TestResult;
 import junit.framework.TestSuite;
 import junit.runner.BaseTestRunner;
-import java.lang.reflect.InvocationTargetException;
-import java.util.List;
+import android.app.Instrumentation;
+import android.content.Context;
+import android.os.PerformanceCollector.PerformanceResultsWriter;
+
+import com.google.android.collect.Lists;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class AndroidTestRunner extends BaseTestRunner {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.342 -0400", hash_original_field = "AFBAC9716FC2073B5BFEA6A40ED35C25", hash_generated_field = "6DA683BBE787F263E5F5E79B3A62B986")
@@ -272,6 +276,7 @@ TestResult varB1D52DB2FC7B844B35F46763F5119AF7_186386494 =         new TestResul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.350 -0400", hash_original_method = "88882B49F41F9B7FE520559A2C518CF5", hash_generated_method = "543AF49E01E3C2C86938D3E7E98AF350")
     public List<TestCase> getTestCases() {
 List<TestCase> var8F97DD99F42FF73EAB8CDB477DFEE3E9_811917267 =         mTestCases;

@@ -1,9 +1,6 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import static android.Manifest.permission.READ_PHONE_STATE;
 import android.app.ActivityManagerNative;
 import android.app.AlertDialog;
@@ -14,17 +11,19 @@ import android.content.res.Resources;
 import android.os.AsyncResult;
 import android.os.Handler;
 import android.os.Message;
-import android.os.Power;
 import android.os.PowerManager;
 import android.os.Registrant;
 import android.os.RegistrantList;
 import android.util.Log;
 import android.view.WindowManager;
-import com.android.internal.telephony.PhoneBase;
-import com.android.internal.telephony.CommandsInterface.RadioState;
-import com.android.internal.telephony.gsm.SIMRecords;
-import android.os.SystemProperties;
+
 import com.android.internal.R;
+import com.android.internal.telephony.CommandsInterface.RadioState;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class IccCard {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.925 -0400", hash_original_field = "503F6607C959C61B036C1484733875DB", hash_generated_field = "621F1F8A1A73F0186C3B2A8FD458DBF8")
@@ -532,6 +531,7 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1021399970 =         State.UNKNOWN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getServiceProviderName();
 
     
@@ -1039,9 +1039,11 @@ for(int i = 0;i < mIccCardStatus.getNumApplications();i++)
         READY,
         NOT_READY,
         PERM_DISABLED;
+        @DSModeled(DSC.SAFE)
         public boolean isPinLocked() {
             return ((this == PIN_REQUIRED) || (this == PUK_REQUIRED));
         }
+        @DSModeled(DSC.SAFE)
         public boolean iccCardExist() {
             return ((this == PIN_REQUIRED) || (this == PUK_REQUIRED)
                     || (this == NETWORK_LOCKED) || (this == READY)

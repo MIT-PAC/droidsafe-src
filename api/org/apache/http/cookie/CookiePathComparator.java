@@ -1,11 +1,11 @@
 package org.apache.http.cookie;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.Serializable;
 import java.util.Comparator;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class CookiePathComparator implements Serializable, Comparator<Cookie> {
     

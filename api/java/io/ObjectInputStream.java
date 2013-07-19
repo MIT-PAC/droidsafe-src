@@ -1,22 +1,23 @@
 package java.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import dalvik.system.VMStack;
 import java.io.EmulatedFields.ObjectSlot;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.security.PrivilegedAction;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+
 import libcore.util.EmptyArray;
+import dalvik.system.VMStack;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ObjectInputStream extends InputStream implements ObjectInput, ObjectStreamConstants {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.281 -0400", hash_original_field = "559F34BD1B83DCCF42BD97118C30004D", hash_generated_field = "9C428AEC470C7B513A34BE33B758C61C")
@@ -2314,45 +2315,56 @@ Object var6F3B27511D98F0E852A24482F031265F_539894577 =         object;
         }
 
 
+        @DSModeled(DSC.SAFE)
         public abstract ObjectStreamClass getObjectStreamClass();
 
         
+        @DSModeled(DSC.SAFE)
         public abstract boolean defaulted(String name) throws IOException,
                 IllegalArgumentException;
 
         
+        @DSModeled(DSC.SAFE)
         public abstract boolean get(String name, boolean defaultValue)
                 throws IOException, IllegalArgumentException;
 
         
+        @DSModeled(DSC.SAFE)
         public abstract char get(String name, char defaultValue)
                 throws IOException, IllegalArgumentException;
 
         
+        @DSModeled(DSC.SAFE)
         public abstract byte get(String name, byte defaultValue)
                 throws IOException, IllegalArgumentException;
 
         
+        @DSModeled(DSC.SAFE)
         public abstract short get(String name, short defaultValue)
                 throws IOException, IllegalArgumentException;
 
         
+        @DSModeled(DSC.SAFE)
         public abstract int get(String name, int defaultValue)
                 throws IOException, IllegalArgumentException;
 
         
+        @DSModeled(DSC.SAFE)
         public abstract long get(String name, long defaultValue)
                 throws IOException, IllegalArgumentException;
 
         
+        @DSModeled(DSC.SAFE)
         public abstract float get(String name, float defaultValue)
                 throws IOException, IllegalArgumentException;
 
         
+        @DSModeled(DSC.SAFE)
         public abstract double get(String name, double defaultValue)
                 throws IOException, IllegalArgumentException;
 
         
+        @DSModeled(DSC.SAFE)
         public abstract Object get(String name, Object defaultValue)
                 throws IOException, IllegalArgumentException;
 

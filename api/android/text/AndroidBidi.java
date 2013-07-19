@@ -1,10 +1,11 @@
 package android.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.text.Layout.Directions;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 class AndroidBidi {
     

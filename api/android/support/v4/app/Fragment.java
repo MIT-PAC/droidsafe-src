@@ -1,9 +1,10 @@
 package android.support.v4.app;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+import java.util.HashMap;
+
 import android.app.Activity;
 import android.content.ComponentCallbacks;
 import android.content.Context;
@@ -15,22 +16,21 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v4.util.DebugUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.SparseArray;
 import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnCreateContextMenuListener;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
-import android.widget.AdapterView;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.util.HashMap;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 final class FragmentState implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.922 -0400", hash_original_field = "E0F3773C57D5A4C143336ECFEFDE9748", hash_generated_field = "6BC238A3BDD37BF1CAC26EA2CE45C508")
@@ -423,6 +423,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.933 -0400", hash_original_method = "B0D28796550366EF842F99A3D9D59C11", hash_generated_method = "9804D2645561EE85CDD985D54486B62F")
     final boolean isInBackStack() {
         boolean var62BC1991A682A21912C45ABC1AD98464_50180168 = (mBackStackNesting > 0);
@@ -500,6 +501,7 @@ String var2460B846747F8B22185AD8BE722266A5_1437115054 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.934 -0400", hash_original_method = "0D814DEC27C2F0AC661487D8C7B38979", hash_generated_method = "B9BEC09707D96C5D0EA64EAB9450F689")
     final public int getId() {
         int var743B83D822DFF54AE7E24307CEF26F0C_1494752473 = (mFragmentId);
@@ -510,6 +512,7 @@ String var2460B846747F8B22185AD8BE722266A5_1437115054 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.934 -0400", hash_original_method = "ED26754F6A82B43F30EAE698B7941323", hash_generated_method = "FB77CC358A646B4C62EB5BE9DD8FF2A5")
     final public String getTag() {
 String varD6A25044F8E609F6CD67330C1523D33D_398587615 =         mTag;
@@ -537,6 +540,7 @@ String varD6A25044F8E609F6CD67330C1523D33D_398587615 =         mTag;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.934 -0400", hash_original_method = "AD916C2ECBF1A5C9327A86449330505D", hash_generated_method = "43EC829EE444A17F6955F069CA4D8D3A")
     final public Bundle getArguments() {
 Bundle varA1A5383052F874A8109F2B0284C0CCF1_484649020 =         mArguments;
@@ -577,6 +581,7 @@ Bundle varA1A5383052F874A8109F2B0284C0CCF1_484649020 =         mArguments;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.934 -0400", hash_original_method = "CBC4FCF13CA2895C8D01438D1D6F6EE8", hash_generated_method = "C5C64004E0107BC3B5ACDC7B879D2A79")
     final public Fragment getTargetFragment() {
 Fragment var1FC339B2A7C7BA226929CA8B7CC3A063_425877671 =         mTarget;
@@ -587,6 +592,7 @@ Fragment var1FC339B2A7C7BA226929CA8B7CC3A063_425877671 =         mTarget;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.935 -0400", hash_original_method = "A4CEFC2C477EE57B614F4504E74127CE", hash_generated_method = "6C03F56ADCA7BB7F0B29B7C52D21B130")
     final public int getTargetRequestCode() {
         int var9D7EC7B2039084EAAB4A7123EC5C6A65_1851310600 = (mTargetRequestCode);
@@ -597,6 +603,7 @@ Fragment var1FC339B2A7C7BA226929CA8B7CC3A063_425877671 =         mTarget;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.935 -0400", hash_original_method = "A48A2A81AB5F981679BE8C3496B55E59", hash_generated_method = "4FD5483870C41CF02FC829A0DA28CFDE")
     final public FragmentActivity getActivity() {
 FragmentActivity var3D4F4FFFAA1A051817B4856E624EDB92_1489595360 =         mActivity;
@@ -660,6 +667,7 @@ String var3E6B52F63767621631F101D027EAE3AD_561553166 =         getResources().ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.935 -0400", hash_original_method = "ED1BD18F392C2062694622C1FF4A3A44", hash_generated_method = "F069BC6BD1818751B781B54880EBCAE4")
     final public FragmentManager getFragmentManager() {
 FragmentManager var6B50C8B57F5F4DEB31C36FD27D426C18_1950320259 =         mFragmentManager;
@@ -725,6 +733,7 @@ Fragment var6FE00532201F4F3521B45CD9E3F73725_43323493 =         mParentFragment;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.936 -0400", hash_original_method = "C0D74F5DDFD9A01C19E54F3379BA7652", hash_generated_method = "F146ADF0E555EB681F0C45908A1ED0F7")
     final public boolean isAdded() {
         boolean var74BA28E0570A59B6D3A6A2107C73D4CF_249151528 = (mActivity != null && mAdded);
@@ -735,6 +744,7 @@ Fragment var6FE00532201F4F3521B45CD9E3F73725_43323493 =         mParentFragment;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.936 -0400", hash_original_method = "2F8509F8C4A8638224A8FC9748BC6275", hash_generated_method = "4093A2E9808FA4AD656B68364C1FDFDC")
     final public boolean isDetached() {
         boolean var23906763A9631E67BD7C67265695AFF7_918612931 = (mDetached);
@@ -745,6 +755,7 @@ Fragment var6FE00532201F4F3521B45CD9E3F73725_43323493 =         mParentFragment;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.936 -0400", hash_original_method = "914BD43FF0612F84BA345FA6F486595C", hash_generated_method = "0620936395A64155F5347DBC7DE9377C")
     final public boolean isRemoving() {
         boolean var0F910DB84DA919CEA0C46A9368EB474F_549489233 = (mRemoving);
@@ -755,6 +766,7 @@ Fragment var6FE00532201F4F3521B45CD9E3F73725_43323493 =         mParentFragment;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.936 -0400", hash_original_method = "3C6E7329283D3C6C46FB3F90EF65A4A7", hash_generated_method = "8B3E45F8A16D767E9C6C242CDC14F525")
     final public boolean isInLayout() {
         boolean var02B7C51C439DA5E343271787FAA8C822_274647623 = (mInLayout);
@@ -765,6 +777,7 @@ Fragment var6FE00532201F4F3521B45CD9E3F73725_43323493 =         mParentFragment;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.936 -0400", hash_original_method = "58811A32FF0FF231CA3DA7AD72F98B09", hash_generated_method = "4326AADD0F58036B5F0F907D27F42B57")
     final public boolean isResumed() {
         boolean var9933B84C738DC45A33F44AE2EFCBD30F_1605331968 = (mResumed);
@@ -787,6 +800,7 @@ Fragment var6FE00532201F4F3521B45CD9E3F73725_43323493 =         mParentFragment;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.936 -0400", hash_original_method = "E04FD968639295CCE5F791161EDE4496", hash_generated_method = "6141A22F58CC7D6C8DE87C511DC66DF5")
     final public boolean isHidden() {
         boolean var6E5D0646172E31357AC5264CFC6DCF7B_877006237 = (mHidden);
@@ -826,6 +840,7 @@ Fragment var6FE00532201F4F3521B45CD9E3F73725_43323493 =         mParentFragment;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.937 -0400", hash_original_method = "82A17104D5864E2285E97283523AA6C5", hash_generated_method = "238A89A9A895FF0E807C863DDFD568BA")
     final public boolean getRetainInstance() {
         boolean varFC2473D51E767C5008A9D428BAFC8661_515083916 = (mRetainInstance);

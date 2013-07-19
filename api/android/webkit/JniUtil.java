@@ -1,16 +1,19 @@
 package android.webkit;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.File;
+import java.io.InputStream;
+
 import android.app.ActivityManager;
 import android.content.Context;
 import android.net.Uri;
 import android.provider.Settings;
 import android.util.Log;
-import java.io.File;
-import java.io.InputStream;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 class JniUtil {
     

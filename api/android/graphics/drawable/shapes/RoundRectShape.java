@@ -1,13 +1,14 @@
 package android.graphics.drawable.shapes;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class RoundRectShape extends RectShape {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.827 -0400", hash_original_field = "68D931F8388C49D8823BCF532F82A9A6", hash_generated_field = "6830495B7E4516D5AD2F6812EB294538")

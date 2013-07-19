@@ -1,13 +1,11 @@
 package android.support.v4.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class IntentCompat {
     

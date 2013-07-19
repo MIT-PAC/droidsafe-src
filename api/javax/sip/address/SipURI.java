@@ -1,13 +1,11 @@
 package javax.sip.address;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.text.ParseException;
 import java.util.Iterator;
-import javax.sip.header.Parameters;
+
 import javax.sip.InvalidArgumentException;
+import javax.sip.header.Parameters;
 
 public interface SipURI extends URI, Parameters {
     boolean isSecure();

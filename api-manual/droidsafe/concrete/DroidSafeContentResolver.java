@@ -24,7 +24,7 @@ public class DroidSafeContentResolver extends ContentResolver {
      * Creates a local map of providers. This map is used instead of the global map when an
      * API call tries to acquire a provider.
      */
-    @DSModeled
+    @DSModeled(DSC.SPEC)
     public DroidSafeContentResolver(Context context) {
     	super(context);
     	this.context = context;

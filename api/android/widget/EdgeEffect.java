@@ -1,10 +1,6 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.R;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;
@@ -12,6 +8,13 @@ import android.graphics.drawable.Drawable;
 import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
+
+import com.android.internal.R;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class EdgeEffect {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.244 -0400", hash_original_field = "F314C72E2C97B21F27CA1E6DFA1CE41B", hash_generated_field = "05964103E2640D266736C21291ED963A")

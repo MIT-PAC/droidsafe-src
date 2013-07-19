@@ -1,10 +1,12 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.ArrayList;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class IccCardStatus {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.013 -0400", hash_original_field = "B5278EC7E3332C34F3E9480E899A5F4E", hash_generated_field = "9AED67EEE170BD9DAD5D65F0CE4452F9")
@@ -287,6 +289,7 @@ String var2460B846747F8B22185AD8BE722266A5_880815449 =         sb.toString();
         CARDSTATE_ABSENT,
         CARDSTATE_PRESENT,
         CARDSTATE_ERROR;
+        @DSModeled(DSC.SAFE)
         boolean isCardPresent() {
             return this == CARDSTATE_PRESENT;
         }
@@ -300,12 +303,15 @@ String var2460B846747F8B22185AD8BE722266A5_880815449 =         sb.toString();
         PINSTATE_DISABLED,
         PINSTATE_ENABLED_BLOCKED,
         PINSTATE_ENABLED_PERM_BLOCKED;
+        @DSModeled(DSC.SAFE)
         boolean isPermBlocked() {
             return this == PINSTATE_ENABLED_PERM_BLOCKED;
         }
+        @DSModeled(DSC.SAFE)
         boolean isPinRequired() {
             return this == PINSTATE_ENABLED_NOT_VERIFIED;
         }
+        @DSModeled(DSC.SAFE)
         boolean isPukRequired() {
             return this == PINSTATE_ENABLED_BLOCKED;
         }

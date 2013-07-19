@@ -1,9 +1,10 @@
 package dalvik.system;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class CloseGuard {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.700 -0400", hash_original_field = "C78FE49CD0EFBD6FEE2F4A621355386F", hash_generated_field = "F1E524DCBDC62F863E8D6EE01D213C25")
@@ -107,6 +108,7 @@ public final class CloseGuard {
     
     private static final class DefaultReporter implements Reporter {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.702 -0400", hash_original_method = "5AA262E6EA3904FB58CC8171943AAF5F", hash_generated_method = "5AA262E6EA3904FB58CC8171943AAF5F")
         public DefaultReporter ()
         {

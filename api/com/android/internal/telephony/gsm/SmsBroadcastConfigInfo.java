@@ -1,9 +1,10 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class SmsBroadcastConfigInfo {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.686 -0400", hash_original_field = "6CB791FB42180E76757B8CE655EA63BC", hash_generated_field = "333B1EBCCD576A11F3929B04C911A0CC")

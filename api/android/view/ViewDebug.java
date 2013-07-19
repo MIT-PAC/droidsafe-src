@@ -1,24 +1,6 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.os.Debug;
-import android.os.Environment;
-import android.os.Looper;
-import android.os.Message;
-import android.os.ParcelFileDescriptor;
-import android.os.RemoteException;
-import android.os.SystemClock;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.util.Printer;
 import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
@@ -48,6 +30,26 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+
+import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.os.Debug;
+import android.os.Environment;
+import android.os.Looper;
+import android.os.Message;
+import android.os.ParcelFileDescriptor;
+import android.os.RemoteException;
+import android.os.SystemClock;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.util.Printer;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ViewDebug {
     

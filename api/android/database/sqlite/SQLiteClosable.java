@@ -1,10 +1,11 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.database.CursorWindow;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SQLiteClosable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.179 -0400", hash_original_field = "0802B8E2DAE298D5C141DE08467D5410", hash_generated_field = "DCE5AF4DC7C8F75088B97A64E4AB1192")
@@ -18,6 +19,7 @@ public abstract class SQLiteClosable {
     }
 
 
+    @DSModeled(DSC.SAFE)
     protected abstract void onAllReferencesReleased();
 
     

@@ -1,11 +1,12 @@
 package android.graphics.drawable.shapes;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Shape implements Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.862 -0400", hash_original_field = "A3DB1626A190732E588FD0D14FC8FB31", hash_generated_field = "08D9327CB0A0089C173FB95F7B57B648")
@@ -15,6 +16,7 @@ public abstract class Shape implements Cloneable {
 
     private float mHeight;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.862 -0400", hash_original_method = "DE7169FFA3F4BAA3781895C367880AD0", hash_generated_method = "DE7169FFA3F4BAA3781895C367880AD0")
     public Shape ()
     {
@@ -22,6 +24,7 @@ public abstract class Shape implements Cloneable {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.863 -0400", hash_original_method = "AE68E159D936DCF4407D65307DCA00BB", hash_generated_method = "08712320330AFFF8EC5E9C9A5E581779")
     public final float getWidth() {
         float varA3DB1626A190732E588FD0D14FC8FB31_113355619 = (mWidth);
@@ -32,6 +35,7 @@ public abstract class Shape implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.863 -0400", hash_original_method = "DE764EE6028A1B0E9211313F1870FFB9", hash_generated_method = "E04AF9E7F151FEBE6F14FB01C79E55F5")
     public final float getHeight() {
         float var483542B05A951AA16D89C7F809C20811_361476375 = (mHeight);
@@ -42,9 +46,11 @@ public abstract class Shape implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void draw(Canvas canvas, Paint paint);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.864 -0400", hash_original_method = "479131B2F6B84573C2C45F62E9B9CD93", hash_generated_method = "0005C399ECDAC583EA7CF26BC52623DF")
     public final void resize(float width, float height) {
         if(width < 0)        

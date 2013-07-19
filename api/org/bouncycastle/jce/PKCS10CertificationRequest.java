@@ -1,9 +1,6 @@
 package org.bouncycastle.jce;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.security.AlgorithmParameters;
 import java.security.GeneralSecurityException;
@@ -21,7 +18,9 @@ import java.security.spec.X509EncodedKeySpec;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Set;
+
 import javax.security.auth.x500.X500Principal;
+
 import org.bouncycastle.asn1.ASN1Encodable;
 import org.bouncycastle.asn1.ASN1InputStream;
 import org.bouncycastle.asn1.ASN1Object;
@@ -44,6 +43,11 @@ import org.bouncycastle.asn1.x509.X509Name;
 import org.bouncycastle.asn1.x9.X9ObjectIdentifiers;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.util.Strings;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class PKCS10CertificationRequest extends CertificationRequest {
     

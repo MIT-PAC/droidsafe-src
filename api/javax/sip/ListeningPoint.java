@@ -1,11 +1,9 @@
 package javax.sip;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.text.ParseException;
+
 import javax.sip.header.ContactHeader;
 
 public interface ListeningPoint extends Cloneable {

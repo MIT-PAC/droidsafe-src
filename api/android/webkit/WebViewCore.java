@@ -1,9 +1,12 @@
 package android.webkit;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Map;
+import java.util.Set;
+
+import junit.framework.Assert;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -25,15 +28,10 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.View;
-import android.webkit.DeviceMotionService;
-import android.webkit.DeviceMotionAndOrientationManager;
-import android.webkit.DeviceOrientationService;
-import android.webkit.JniUtil;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Map;
-import java.util.Set;
-import junit.framework.Assert;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class WebViewCore {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.120 -0400", hash_original_field = "72439B8F99EB438C3DA5D9CD798C6786", hash_generated_field = "99346B50377E115231263981E00655CA")
@@ -2546,7 +2544,7 @@ DeviceOrientationService var22E78984F0FA8124933FF21DAC7F3F17_1854926687 =       
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.725 -0400", hash_original_method = "7FB813C3814F61AA4E8EC557BEB4DCCC", hash_generated_method = "6B922F36DFF8369A6FE3889E21482C11")
     private ArrayList<Rect> nativeGetTouchHighlightRects(int x, int y,
             int slop) {

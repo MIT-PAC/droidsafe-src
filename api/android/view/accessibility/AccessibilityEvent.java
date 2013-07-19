@@ -1,14 +1,16 @@
 package android.view.accessibility;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.List;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class AccessibilityEvent extends AccessibilityRecord implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.213 -0400", hash_original_field = "2271A9775971F952514B94408144FAA0", hash_generated_field = "B87C181D2445875B036BCB5CFE684884")

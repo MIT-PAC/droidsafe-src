@@ -1,9 +1,6 @@
 package java.security.cert;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.ByteArrayInputStream;
 import java.math.BigInteger;
 import java.security.InvalidKeyException;
@@ -15,7 +12,12 @@ import java.security.SignatureException;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Set;
+
 import javax.security.auth.x500.X500Principal;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class X509CRL extends CRL implements X509Extension {
     
@@ -105,24 +107,29 @@ for(int i=0;i<array.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte[] getEncoded() throws CRLException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void verify(PublicKey key)
                      throws CRLException, NoSuchAlgorithmException,
                             InvalidKeyException, NoSuchProviderException,
                             SignatureException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void verify(PublicKey key, String sigProvider)
                      throws CRLException, NoSuchAlgorithmException,
                             InvalidKeyException, NoSuchProviderException,
                             SignatureException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getVersion();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Principal getIssuerDN();
 
     
@@ -157,12 +164,15 @@ X500Principal varC2B70E1034A0A004A96CFD5C2CC4F856_1986954215 =             crl.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Date getThisUpdate();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Date getNextUpdate();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract X509CRLEntry getRevokedCertificate(BigInteger serialNumber);
 
     
@@ -186,21 +196,27 @@ X509CRLEntry var461BFC32BFD4CCACEEDED8126479C2CF_1939308008 =         getRevoked
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Set<? extends X509CRLEntry> getRevokedCertificates();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte[] getTBSCertList() throws CRLException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte[] getSignature();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getSigAlgName();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getSigAlgOID();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte[] getSigAlgParams();
 
     

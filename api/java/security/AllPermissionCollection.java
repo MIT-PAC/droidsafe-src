@@ -1,10 +1,11 @@
 package java.security;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.Enumeration;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 final class AllPermissionCollection extends PermissionCollection {
     
@@ -24,6 +25,7 @@ final class AllPermissionCollection extends PermissionCollection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.788 -0400", hash_original_method = "9354983A4C01BAC9D52E1AE4692A1F83", hash_generated_method = "D91E56B4EC6FC55741F13C6DF6794514")
     @Override
     public Enumeration<Permission> elements() {

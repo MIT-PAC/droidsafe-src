@@ -1,9 +1,10 @@
 package android.support.v4.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.database.DataSetObserver;
@@ -32,9 +33,10 @@ import android.view.ViewParent;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.animation.Interpolator;
 import android.widget.Scroller;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ViewPager extends ViewGroup {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.762 -0400", hash_original_field = "41B6E682666A6CCC9F7FD53F365400D5", hash_generated_field = "4DED95E1F9669C7056C2DE4B99A4DA42")

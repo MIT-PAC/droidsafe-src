@@ -1,12 +1,14 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.InvalidObjectException;
 import java.util.Arrays;
+
 import libcore.util.EmptyArray;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 abstract class AbstractStringBuilder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.916 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "C068225E28B5BE74066BE5338158F76B")
@@ -61,6 +63,7 @@ abstract class AbstractStringBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.918 -0400", hash_original_method = "CA36BDE7C01AB0B5E4CF30DF6E006183", hash_generated_method = "2FF11FEF3FC55072A945D49B57BCC495")
     final char[] getValue() {
         char[] var2063C1608D6E0BAF80249C42E2BE5804_2073322371 = (value);
@@ -71,6 +74,7 @@ abstract class AbstractStringBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.918 -0400", hash_original_method = "BF651BBA1175DAD67C837DDC7CF4E9BB", hash_generated_method = "156655272380414AB6622DC096F7B64B")
     final char[] shareValue() {
         shared = true;
@@ -83,6 +87,7 @@ abstract class AbstractStringBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.919 -0400", hash_original_method = "8C798CD9819DA5BF9BBE1043F1031580", hash_generated_method = "13F70AB7D3ACF633454715EE1838290A")
     final void set(char[] val, int len) throws InvalidObjectException {
         if(val == null)        
@@ -129,6 +134,7 @@ abstract class AbstractStringBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.920 -0400", hash_original_method = "BE4C961EA91A0D5BF81DD6DF988583CA", hash_generated_method = "AB580E3365C74070129FF01539AC0F35")
     final void appendNull() {
         int newCount = count + 4;
@@ -152,6 +158,7 @@ abstract class AbstractStringBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.921 -0400", hash_original_method = "8C85C9AFF9EA1123A22A14B3A5C3C022", hash_generated_method = "DA1CBBC3FAC1E7B075210673B681A890")
     final void append0(char[] chars) {
         addTaint(chars[0]);
@@ -172,6 +179,7 @@ abstract class AbstractStringBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.922 -0400", hash_original_method = "7BE8867E430B01B44EC74C0F78249D07", hash_generated_method = "ADFA7261F543BE7548DD2D3049AF91EF")
     final void append0(char[] chars, int offset, int length) {
         addTaint(length);
@@ -196,6 +204,7 @@ abstract class AbstractStringBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.922 -0400", hash_original_method = "ECBEE238E1E86380FF7C7052710927A2", hash_generated_method = "F700D327012FD67C8F2665AF34B580FD")
     final void append0(char ch) {
         if(count == value.length)        
@@ -211,6 +220,7 @@ abstract class AbstractStringBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.923 -0400", hash_original_method = "B96D71BE07A8651AC5DD35DFB1E0B9E9", hash_generated_method = "4CEFA211743A0D24D98F2C371D06EEAD")
     final void append0(String string) {
         addTaint(string.getTaint());
@@ -242,6 +252,7 @@ abstract class AbstractStringBuilder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.924 -0400", hash_original_method = "C43881C5821BA2B06BD7E52CBFC700AF", hash_generated_method = "15FB29AB88DF25BB2991A7B5147F8777")
     final void append0(CharSequence s, int start, int end) {
         addTaint(end);
@@ -349,6 +360,7 @@ for(int i = start;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.943 -0400", hash_original_method = "19BE941D07BAB030F14923AC484F383F", hash_generated_method = "CCB84FAA8CC7E44E6F559BD7477E8D8A")
     final void delete0(int start, int end) {
         if(start >= 0)        
@@ -391,6 +403,7 @@ for(int i = start;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.955 -0400", hash_original_method = "54D305E0C27E04AE130B9F0D173AF3D5", hash_generated_method = "53DE1CB780609FC2AFE95DE579200041")
     final void deleteCharAt0(int index) {
         addTaint(index);
@@ -476,6 +489,7 @@ for(int i = start;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.987 -0400", hash_original_method = "93FE28F62EFBAB9F8EBF9F9ADC8E87C8", hash_generated_method = "B7319CAFE8699496DAF2BDE1C3058C4D")
     final void insert0(int index, char[] chars) {
         addTaint(index);
@@ -503,6 +517,7 @@ for(int i = start;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.988 -0400", hash_original_method = "D46FA7C87DEEBA750439C9564B3FB7FE", hash_generated_method = "2FB79DC13986EBCB5EFC527BE540D059")
     final void insert0(int index, char[] chars, int start, int length) {
         addTaint(start);
@@ -543,6 +558,7 @@ for(int i = start;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.990 -0400", hash_original_method = "20DD23A1E6916CB9CC20932D676C3164", hash_generated_method = "5EC73AE98B53A267B5A7FAF4F379B32C")
     final void insert0(int index, char ch) {
         if(index < 0 || index > count)        
@@ -564,6 +580,7 @@ for(int i = start;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.001 -0400", hash_original_method = "9E8CB9B48D87CB2577EC00CC04D06833", hash_generated_method = "1913153E9806F0481F1B0ACEA492C526")
     final void insert0(int index, String string) {
         addTaint(string.getTaint());
@@ -605,6 +622,7 @@ for(int i = start;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.003 -0400", hash_original_method = "10AE187E8F37FB4E725DAC6B12ECB82F", hash_generated_method = "784B63B68DCB7D709A06D874E4614D85")
     final void insert0(int index, CharSequence s, int start, int end) {
         addTaint(end);
@@ -687,6 +705,7 @@ for(int i = start;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.035 -0400", hash_original_method = "467233E9D0CCB909364F18BB14890489", hash_generated_method = "2C2D8AD1AD781C43D645EB112DC53AA2")
     final void replace0(int start, int end, String string) {
         addTaint(string.getTaint());
@@ -754,6 +773,7 @@ for(int i = start;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.036 -0400", hash_original_method = "227A175682657414C42D64433DAB4FBA", hash_generated_method = "7494AB8A09F5A8670BC51D94534E8B52")
     final void reverse0() {
         if(count < 2)        

@@ -1,15 +1,16 @@
 package javax.security.cert;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.PublicKey;
 import java.security.SignatureException;
 import java.util.Arrays;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Certificate {
     
@@ -93,25 +94,30 @@ for(int i=0;i<array.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte[] getEncoded()
             throws CertificateEncodingException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void verify(PublicKey key)
             throws CertificateException, NoSuchAlgorithmException,
                    InvalidKeyException, NoSuchProviderException,
                    SignatureException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void verify(PublicKey key, String sigProvider)
             throws CertificateException, NoSuchAlgorithmException,
                    InvalidKeyException, NoSuchProviderException,
                    SignatureException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String toString();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract PublicKey getPublicKey();
 
     

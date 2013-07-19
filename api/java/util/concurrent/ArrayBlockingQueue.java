@@ -1,11 +1,17 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.util.concurrent.locks.*;
-import java.util.*;
+import java.util.AbstractQueue;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ArrayBlockingQueue<E> extends AbstractQueue<E> implements BlockingQueue<E>, java.io.Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.278 -0400", hash_original_field = "691D502CFD0E0626CD3B058E5682AD1C", hash_generated_field = "BAB14770993D8E8C5F571816E68BB451")
@@ -62,6 +68,7 @@ public class ArrayBlockingQueue<E> extends AbstractQueue<E> implements BlockingQ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.280 -0400", hash_original_method = "27F14E8862A13463ECADB9F13ABB8363", hash_generated_method = "1A4AB006F45191EFDB1A5CC6399AE462")
     public  ArrayBlockingQueue(int capacity, boolean fair,
                               Collection<? extends E> c) {
@@ -115,6 +122,7 @@ for(E e : c)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.281 -0400", hash_original_method = "225BF2AA9DF4D481E4497FC0C844BC07", hash_generated_method = "2A0C3A9C4C07A709278032C5E51DBEAC")
     final int inc(int i) {
         addTaint(i);
@@ -126,6 +134,7 @@ for(E e : c)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.281 -0400", hash_original_method = "3E735D41E2F85E8ACC700EB7ACA7DBFD", hash_generated_method = "1F9407E9BED595B12ECBEBD890A4D126")
     final int dec(int i) {
         addTaint(i);
@@ -144,6 +153,7 @@ for(E e : c)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.281 -0400", hash_original_method = "D27765FC19695D3D1037FEAF928DE057", hash_generated_method = "BB239A07227E7E789B4350B4B973A036")
     final E itemAt(int i) {
         addTaint(i);
@@ -995,6 +1005,7 @@ for(int i = takeIndex, k = count;k > 0;i = inc(i),k--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.294 -0400", hash_original_method = "756A0449DBEE27B15290EF9912B6D98E", hash_generated_method = "CFE6B5FC0E76874884191A6FC87C5084")
     public Iterator<E> iterator() {
 Iterator<E> varB10D928EC6DDAEBFD727C2EDCEC6EDF5_1534803965 =         new Itr();

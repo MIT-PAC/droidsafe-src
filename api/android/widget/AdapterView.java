@@ -1,9 +1,6 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.content.Context;
 import android.database.DataSetObserver;
 import android.os.Parcelable;
@@ -11,13 +8,16 @@ import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.view.ContextMenu;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.view.SoundEffectConstants;
 import android.view.View;
 import android.view.ViewDebug;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.372 -0400", hash_original_field = "8E50E9FFA5F23A5C36A761E8937EC922", hash_generated_field = "4CE3CF821E7A7D08A592A5CA9EDE4305")
@@ -135,6 +135,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.376 -0400", hash_original_method = "53FBB33228561FD1F46130BA576FD131", hash_generated_method = "62B8CECDDF825523DE2E49B66D2D5A04")
     public final OnItemClickListener getOnItemClickListener() {
 OnItemClickListener varD254B46FAB7FC8D09F3A710661ABA175_1234650153 =         mOnItemClickListener;
@@ -193,6 +194,7 @@ OnItemClickListener varD254B46FAB7FC8D09F3A710661ABA175_1234650153 =         mOn
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.379 -0400", hash_original_method = "450D7DEA9BB200CD772C171D001DF2F0", hash_generated_method = "F996C452DB223A346E3146885AD81893")
     public final OnItemLongClickListener getOnItemLongClickListener() {
 OnItemLongClickListener var75586EA0D5BA47B01ECAB15621117474_1293788732 =         mOnItemLongClickListener;
@@ -212,6 +214,7 @@ OnItemLongClickListener var75586EA0D5BA47B01ECAB15621117474_1293788732 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.380 -0400", hash_original_method = "C1B2E8F5BC8E80BA634AE326A645C328", hash_generated_method = "D81E6319BB51ACC278825135C6EE3542")
     public final OnItemSelectedListener getOnItemSelectedListener() {
 OnItemSelectedListener varBA18540411FAC3CE0DDA59569C04B324_212138253 =         mOnItemSelectedListener;
@@ -358,6 +361,7 @@ OnItemSelectedListener varBA18540411FAC3CE0DDA59569C04B324_212138253 =         m
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract View getSelectedView();
 
     
@@ -473,6 +477,7 @@ for(int i = 0;i < childCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setSelection(int position);
 
     

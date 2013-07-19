@@ -1,13 +1,15 @@
 package libcore.icu;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Locale;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class LocaleData {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.922 -0400", hash_original_field = "3CD3E760E15423653736E26E4D21E54A", hash_generated_field = "8A13F0EA9FFA1E934CE8561DD3C5989E")

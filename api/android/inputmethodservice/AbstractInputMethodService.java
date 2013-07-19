@@ -1,9 +1,9 @@
 package android.inputmethodservice;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
@@ -11,8 +11,10 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.inputmethod.InputMethod;
 import android.view.inputmethod.InputMethodSession;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class AbstractInputMethodService extends Service implements KeyEvent.Callback {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.078 -0400", hash_original_field = "DBEE96406A00F429F32FF5AA58FA6E69", hash_generated_field = "9355B5F89B0311B79EB4664ED09CF53D")
@@ -40,9 +42,11 @@ KeyEvent.DispatcherState var020BED5B281694EFFFEB80FA04419B7B_903050134 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract AbstractInputMethodImpl onCreateInputMethodInterface();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract AbstractInputMethodSessionImpl onCreateInputMethodSessionInterface();
 
     
@@ -57,6 +61,7 @@ KeyEvent.DispatcherState var020BED5B281694EFFFEB80FA04419B7B_903050134 =        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.081 -0400", hash_original_method = "A37FBA98B4D1A366D99013E441DCBD11", hash_generated_method = "F27B9C1D6C362A44F766836EEAD91AFB")
     @Override
     final public IBinder onBind(Intent intent) {

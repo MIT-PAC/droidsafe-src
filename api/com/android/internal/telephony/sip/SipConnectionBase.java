@@ -1,17 +1,20 @@
 package com.android.internal.telephony.sip;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import android.net.sip.SipAudioCall;
+import android.os.SystemClock;
+import android.telephony.PhoneNumberUtils;
+import android.util.Log;
+
 import com.android.internal.telephony.Call;
 import com.android.internal.telephony.Connection;
 import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.UUSInfo;
-import android.net.sip.SipAudioCall;
-import android.os.SystemClock;
-import android.util.Log;
-import android.telephony.PhoneNumberUtils;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 abstract class SipConnectionBase extends Connection {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.160 -0400", hash_original_field = "DF701BED26C9A6E82B434D3ADA19F19A", hash_generated_field = "D1359B5A0587476130FC171DA764AC68")
@@ -257,6 +260,7 @@ PostDialState varA5212BBA7CEDC5476DB20427B201984F_1114729642 =         postDialS
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract Phone getPhone();
 
     

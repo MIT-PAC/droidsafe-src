@@ -1,16 +1,19 @@
 package java.security.cert;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.ByteArrayInputStream;
 import java.math.BigInteger;
 import java.security.Principal;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+
 import javax.security.auth.x500.X500Principal;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class X509Certificate extends Certificate implements X509Extension {
     
@@ -22,20 +25,25 @@ public abstract class X509Certificate extends Certificate implements X509Extensi
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void checkValidity()
             throws CertificateExpiredException, CertificateNotYetValidException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void checkValidity(Date date)
             throws CertificateExpiredException, CertificateNotYetValidException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getVersion();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract BigInteger getSerialNumber();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Principal getIssuerDN() ;
 
     
@@ -71,6 +79,7 @@ X500Principal var52A5A8995E7C651750494F51BE6F78BC_682500918 =             cert.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Principal getSubjectDN();
 
     
@@ -106,34 +115,44 @@ X500Principal varF762730623832F6B2DE9205975DF8C9C_126065559 =             cert.g
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Date getNotBefore();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Date getNotAfter();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte[] getTBSCertificate()
                                     throws CertificateEncodingException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte[] getSignature();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getSigAlgName();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getSigAlgOID();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte[] getSigAlgParams();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean[] getIssuerUniqueID();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean[] getSubjectUniqueID();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean[] getKeyUsage();
 
     
@@ -148,9 +167,11 @@ List<String> var540C13E9E156B687226421B24F2DF178_737509032 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getBasicConstraints();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.996 -0400", hash_original_method = "2F7FC96FA38F720B2ACF5452CA7F8BC4", hash_generated_method = "389F428053A1DE593BD7AF501144880A")
     public Collection<List<?>> getSubjectAlternativeNames() throws CertificateParsingException {
 Collection<List<?>> var540C13E9E156B687226421B24F2DF178_1653612264 =         null;
@@ -161,6 +182,7 @@ Collection<List<?>> var540C13E9E156B687226421B24F2DF178_1653612264 =         nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.996 -0400", hash_original_method = "274C80A4A7372477807793557A7E6C15", hash_generated_method = "969DC253FB0A51ED68684E816698866C")
     public Collection<List<?>> getIssuerAlternativeNames() throws CertificateParsingException {
 Collection<List<?>> var540C13E9E156B687226421B24F2DF178_1691393976 =         null;

@@ -1,13 +1,15 @@
 package android.webkit;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.Context;
 import java.lang.ref.SoftReference;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
+
+import android.content.Context;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class L10nUtils {
     

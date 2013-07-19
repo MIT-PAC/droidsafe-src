@@ -47,12 +47,12 @@ public class Uri {
             return new Uri(uriString);
         }
 
-	@DSModeled()
+	@DSModeled(DSC.SPEC)
 	public int describeContents() {
 		return getTaintInt();
 	}
 
-	@DSModeled()
+	@DSModeled(DSC.SPEC)
 	public void writeToParcel(Parcel dest, int flags) {
 		dest.addTaint(getTaint());
 	}
@@ -171,14 +171,16 @@ public class Uri {
 
 	@DSModeled(DSC.SAFE)
 	public String toString() {
-		return uriString;
+                String str = new String();
+                str.addTaint(this.getTaint());
+		return str;
 	}
 	
 	public static class Builder { 
 		public Builder() {}
 	}
 
-	@DSModeled()
+	@DSModeled(DSC.SPEC)
 	public Builder buildUpon() {
 		return new Builder();
 	}

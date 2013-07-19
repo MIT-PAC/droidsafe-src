@@ -1,13 +1,14 @@
 package java.security.cert;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.InputStream;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class CertificateFactorySpi {
     
@@ -17,18 +18,22 @@ public abstract class CertificateFactorySpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Certificate engineGenerateCertificate(InputStream inStream)
             throws CertificateException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Collection<? extends Certificate>
         engineGenerateCertificates(InputStream inStream) throws CertificateException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CRL engineGenerateCRL(InputStream inStream)
             throws CRLException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Collection<? extends CRL>
         engineGenerateCRLs(InputStream inStream) throws CRLException;
 

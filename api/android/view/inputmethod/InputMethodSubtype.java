@@ -1,21 +1,22 @@
 package android.view.inputmethod;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.text.TextUtils;
-import android.util.Slog;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
+
+import android.content.Context;
+import android.content.pm.ApplicationInfo;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.text.TextUtils;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class InputMethodSubtype implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.817 -0400", hash_original_field = "6B887E31A4611BC8CDB502D82236E7C6", hash_generated_field = "F8E8FA3061A103026C8298FB0F2648C7")
@@ -239,6 +240,7 @@ CharSequence varF1554E4544B9FE124AB662A8FBD78003_1680960415 =             locale
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.824 -0400", hash_original_method = "2837AE7076837B91930C208632EE903B", hash_generated_method = "F0DA07CA3B712F6D38EE0DC0190F6B6E")
     private HashMap<String, String> getExtraValueHashMap() {
         if(mExtraValueHashMapCache == null)        

@@ -1,14 +1,15 @@
 package android.opengl;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.nio.Buffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.ShortBuffer;
+
 import javax.microedition.khronos.opengles.GL;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 class GLErrorWrapper extends GLWrapperBase {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:24.327 -0400", hash_original_field = "0A62057C5CEDB9A6C64FF2E17CCC4D50", hash_generated_field = "8BAF20A7CA64C101926E06DD40CFBFBF")

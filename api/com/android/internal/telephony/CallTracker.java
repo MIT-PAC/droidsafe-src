@@ -1,14 +1,13 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.os.AsyncResult;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
-import com.android.internal.telephony.CommandException;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class CallTracker extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.519 -0400", hash_original_field = "AFC27A2C0BFE1A5164DE0AD98E91F583", hash_generated_field = "FD6602A5A7D30569DE1750B9B6FB9D72")
@@ -75,6 +74,7 @@ public abstract class CallTracker extends Handler {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void handlePollCalls(AsyncResult ar);
 
     
@@ -117,21 +117,27 @@ Message var7D44CBDF570B5CB81D544F0887CE90C1_450677238 =         obtainMessage(wh
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void handleMessage (Message msg);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void registerForVoiceCallStarted(Handler h, int what, Object obj);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void unregisterForVoiceCallStarted(Handler h);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void registerForVoiceCallEnded(Handler h, int what, Object obj);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void unregisterForVoiceCallEnded(Handler h);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void log(String msg);
 
     

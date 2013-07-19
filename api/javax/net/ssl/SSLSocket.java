@@ -1,13 +1,14 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SSLSocket extends Socket {
     
@@ -79,57 +80,75 @@ public abstract class SSLSocket extends Socket {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] getSupportedCipherSuites();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] getEnabledCipherSuites();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setEnabledCipherSuites(String[] suites);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] getSupportedProtocols();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] getEnabledProtocols();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setEnabledProtocols(String[] protocols);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SSLSession getSession();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void addHandshakeCompletedListener(HandshakeCompletedListener listener);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void removeHandshakeCompletedListener(HandshakeCompletedListener listener);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void startHandshake() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setUseClientMode(boolean mode);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean getUseClientMode();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setNeedClientAuth(boolean need);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setWantClientAuth(boolean want);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean getNeedClientAuth();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean getWantClientAuth();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setEnableSessionCreation(boolean flag);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean getEnableSessionCreation();
 
     

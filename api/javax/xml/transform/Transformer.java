@@ -1,10 +1,11 @@
 package javax.xml.transform;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.Properties;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Transformer {
     
@@ -32,43 +33,55 @@ public abstract class Transformer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void transform(Source xmlSource, Result outputTarget)
         throws TransformerException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setParameter(String name, Object value);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Object getParameter(String name);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void clearParameters();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setURIResolver(URIResolver resolver);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract URIResolver getURIResolver();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setOutputProperties(Properties oformat);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Properties getOutputProperties();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setOutputProperty(String name, String value)
         throws IllegalArgumentException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getOutputProperty(String name)
         throws IllegalArgumentException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setErrorListener(ErrorListener listener)
         throws IllegalArgumentException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ErrorListener getErrorListener();
 
     

@@ -1,15 +1,13 @@
 package gov.nist.javax.sip;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import javax.sip.address.Hop;
 import gov.nist.core.net.AddressResolver;
 import gov.nist.javax.sip.stack.HopImpl;
 import gov.nist.javax.sip.stack.MessageProcessor;
+
+import javax.sip.address.Hop;
+
+import droidsafe.annotations.DSGenerator;
 
 public class DefaultAddressResolver implements AddressResolver {
     

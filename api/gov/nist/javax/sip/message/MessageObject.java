@@ -1,11 +1,15 @@
 package gov.nist.javax.sip.message;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import gov.nist.core.*;
-import java.lang.reflect.*;
+import gov.nist.core.GenericObject;
+import gov.nist.core.GenericObjectList;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class MessageObject extends GenericObject {
     
@@ -17,6 +21,7 @@ public abstract class MessageObject extends GenericObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String encode();
 
     

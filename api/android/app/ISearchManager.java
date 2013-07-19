@@ -1,9 +1,6 @@
 package android.app;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 
 public interface ISearchManager extends android.os.IInterface
 {

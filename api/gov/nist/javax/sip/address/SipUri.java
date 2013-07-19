@@ -1,17 +1,26 @@
 package gov.nist.javax.sip.address;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import gov.nist.core.*;
-import java.util.*;
+import gov.nist.core.Debug;
+import gov.nist.core.GenericObject;
+import gov.nist.core.Host;
+import gov.nist.core.HostPort;
+import gov.nist.core.NameValue;
+import gov.nist.core.NameValueList;
+
 import java.text.ParseException;
+import java.util.Iterator;
+
 import javax.sip.PeerUnavailableException;
 import javax.sip.SipFactory;
 import javax.sip.address.SipURI;
 import javax.sip.header.Header;
 import javax.sip.header.HeaderFactory;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipURIExt {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.242 -0400", hash_original_field = "873E9C0B50183B613336EEA1020F4369", hash_generated_field = "AD4D5BC0220CFD82443737C52505C486")

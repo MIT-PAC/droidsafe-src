@@ -1,21 +1,22 @@
 package android.preference;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.util.HashMap;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+
 import android.content.Context;
 import android.content.res.XmlResourceParser;
 import android.util.AttributeSet;
 import android.util.Xml;
-import android.view.ContextThemeWrapper;
 import android.view.InflateException;
-import android.view.LayoutInflater;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 abstract class GenericInflater<T, P extends GenericInflater.Parent> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.260 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "40AF400BA8F86FA9C9E428F903D03FF5")
@@ -55,6 +56,7 @@ abstract class GenericInflater<T, P extends GenericInflater.Parent> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract GenericInflater cloneInContext(Context newContext);
 
     
@@ -89,6 +91,7 @@ Context var178E2AD52D6FBBB503F908168856B574_2056492028 =         mContext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.263 -0400", hash_original_method = "E145074F4BEE68EC84A4CE1558E8DDDD", hash_generated_method = "74110D08944C98ACD7769A9AA8B957B2")
     public final Factory<T> getFactory() {
 Factory<T> var086273A71AC89A5E1A3A59778647C1F0_2079476501 =         mFactory;

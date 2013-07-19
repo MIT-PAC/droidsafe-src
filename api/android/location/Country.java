@@ -1,12 +1,14 @@
 package android.location;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.Locale;
+
 import android.os.Parcel;
 import android.os.Parcelable;
-import java.util.Locale;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class Country implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.916 -0400", hash_original_field = "C7E1D84BBBBD6E2342AD8875187F4659", hash_generated_field = "A4787DDEE2CB6821D6A9300F5DB86C40")
@@ -51,6 +53,7 @@ public class Country implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.918 -0400", hash_original_method = "5F3223376651F8BE6A8AF3345618A060", hash_generated_method = "2474FA7ECEB069B352EE4A0DED83BA91")
     public final String getCountryIso() {
 String varABD26FAEF97E5A889B52BBA304F6F7F1_1012355916 =         mCountryIso;
@@ -61,6 +64,7 @@ String varABD26FAEF97E5A889B52BBA304F6F7F1_1012355916 =         mCountryIso;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.919 -0400", hash_original_method = "7037355E864C633C32E117AF9FFED93E", hash_generated_method = "2090313D3D23A0DA0D78C6BA5212FDA6")
     public final int getSource() {
         int var6917951DFB797D97827BAAA584F128DE_1004759578 = (mSource);

@@ -1,9 +1,6 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.content.Context;
 import android.hardware.SensorManager;
 import android.os.Build;
@@ -11,6 +8,10 @@ import android.util.FloatMath;
 import android.view.ViewConfiguration;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class Scroller {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.656 -0400", hash_original_field = "C5AB706852158521E9D44BF62A49B1C9", hash_generated_field = "B9E13EBC2196F570555262A42E5818EF")
@@ -140,6 +141,7 @@ public class Scroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.662 -0400", hash_original_method = "FC91CF543B97ECA9AF0E75894ECCBF47", hash_generated_method = "DAE20B14CFD04556A0EF750EBE2D1212")
     public final boolean isFinished() {
         boolean varBB077E6B2FCDFA3F0EF71EB099A18F49_599413514 = (mFinished);
@@ -150,6 +152,7 @@ public class Scroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.663 -0400", hash_original_method = "D2A5F5698F1FC9281D0C68AF0BDE844E", hash_generated_method = "D6C7C127B9A2DD566E1703BC4B7A58DD")
     public final void forceFinished(boolean finished) {
         mFinished = finished;
@@ -158,6 +161,7 @@ public class Scroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.663 -0400", hash_original_method = "C5CB9F23218BD0303C05492AF6E52DA2", hash_generated_method = "D144F7F8FB3C0A5BD1917693F618C797")
     public final int getDuration() {
         int var25395741BFE51A7D136A5C7109AAD2D8_1904924242 = (mDuration);
@@ -168,6 +172,7 @@ public class Scroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.663 -0400", hash_original_method = "BBE38D2570F755B77B8BCEE3883878A8", hash_generated_method = "32B8B65F6CA65F72B3BB2DA3C1F0D187")
     public final int getCurrX() {
         int var6BD2791CD07D2430F146D6C23A460588_1518049538 = (mCurrX);
@@ -178,6 +183,7 @@ public class Scroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.664 -0400", hash_original_method = "F6ADC6344D48E201FCE3042AD823C1E1", hash_generated_method = "8532818ACC2BC526A436B9BB43DD1BBC")
     public final int getCurrY() {
         int var09D2830408454AE5F3DC6A19638B48BC_1757916231 = (mCurrY);
@@ -199,6 +205,7 @@ public class Scroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.664 -0400", hash_original_method = "E9E5B4E6E70EEEC71B101472B8ED332D", hash_generated_method = "532D213DEFC2250AB2FF37859C9F822A")
     public final int getStartX() {
         int var9801264300876A677AA3DC64764E3FC2_1481957459 = (mStartX);
@@ -209,6 +216,7 @@ public class Scroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.664 -0400", hash_original_method = "96DB239ADDDE6565887119C487206B3B", hash_generated_method = "71344863E1320361850928E97A8A0DBA")
     public final int getStartY() {
         int varD2D722716779C955F0ECDDD867837AC9_1055721850 = (mStartY);
@@ -219,6 +227,7 @@ public class Scroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.665 -0400", hash_original_method = "FA811E85285FC4A5EAEC6F3CADDA829D", hash_generated_method = "C6B795A12E41456A6265F41916E3AFEE")
     public final int getFinalX() {
         int var0290041E535A652B7A5D076F92AD8748_129984900 = (mFinalX);
@@ -229,6 +238,7 @@ public class Scroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.665 -0400", hash_original_method = "39F49202EF2D412808D46FE4B1B455BA", hash_generated_method = "E512AD1647C06F6F044FB8DCB4AA5EAE")
     public final int getFinalY() {
         int varE945BD36FB44D6509A1812FCFC09A99C_137132178 = (mFinalY);

@@ -1,14 +1,14 @@
 package gov.nist.core;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class DuplicateNameValueList implements Serializable, Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.115 -0400", hash_original_field = "EDE63C75EB75F5125C1E2C2C268E165A", hash_generated_field = "6BB90EA38890EB2F7E772ABE1764102D")
@@ -413,6 +413,7 @@ NameValue var6D5B9855993E18BC4C470CBB87EC89C7_1522892198 =         (NameValue) t
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.124 -0400", hash_original_method = "F30302CB3EB3055DF74F33593B8201EA", hash_generated_method = "F7326A51892A312E72D0F94095226C8D")
     public Collection<NameValue> values() {
 Collection<NameValue> var0EAA2656FF6694E38E984612E9842F13_414531271 =         this.nameValueMap.values();

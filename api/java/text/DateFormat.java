@@ -1,17 +1,18 @@
 package java.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.io.InvalidObjectException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Hashtable;
 import java.util.Locale;
 import java.util.TimeZone;
+
 import libcore.icu.ICU;
 import libcore.icu.LocaleData;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class DateFormat extends Format {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.829 -0400", hash_original_field = "A0E7B2A565119C0A7EC3126A16016113", hash_generated_field = "69C10C9929AB222710744337F1708515")
@@ -93,6 +94,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_897728338 =         clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.831 -0400", hash_original_method = "B3CAB535AB645340CDBC761CC64061A2", hash_generated_method = "CB188E0085C419BB4FC2E3DF1E1BFD7E")
     @Override
     public final StringBuffer format(Object object, StringBuffer buffer,
@@ -128,6 +130,7 @@ StringBuffer varE683C2A0E09A6B28B6A59B35D2A5FCAB_1089127169 =             format
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.832 -0400", hash_original_method = "2A35FD3F5DCDDD81B439EA4274C41413", hash_generated_method = "0EBE75D53354864B8CE18FACBCE3B769")
     public final String format(Date date) {
         addTaint(date.getTaint());
@@ -141,6 +144,7 @@ String var58FA57FCEEB7AFA761438FFF4258DC5B_752525242 =         format(date, new 
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract StringBuffer format(Date date, StringBuffer buffer,
             FieldPosition field);
 
@@ -162,28 +166,33 @@ Calendar varD3A494C39F9AC7C8E0BC83D14CC2B0CC_1928940178 =         calendar;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final DateFormat getDateInstance() {
         return getDateInstance(DEFAULT);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final DateFormat getDateInstance(int style) {
         checkDateStyle(style);
         return getDateInstance(style, Locale.getDefault());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final DateFormat getDateInstance(int style, Locale locale) {
         checkDateStyle(style);
         return new SimpleDateFormat(LocaleData.get(locale).getDateFormat(style), locale);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final DateFormat getDateTimeInstance() {
         return getDateTimeInstance(DEFAULT, DEFAULT);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final DateFormat getDateTimeInstance(int dateStyle, int timeStyle) {
         checkTimeStyle(timeStyle);
         checkDateStyle(dateStyle);
@@ -191,6 +200,7 @@ Calendar varD3A494C39F9AC7C8E0BC83D14CC2B0CC_1928940178 =         calendar;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final DateFormat getDateTimeInstance(int dateStyle, int timeStyle, Locale locale) {
         checkTimeStyle(timeStyle);
         checkDateStyle(dateStyle);
@@ -200,6 +210,7 @@ Calendar varD3A494C39F9AC7C8E0BC83D14CC2B0CC_1928940178 =         calendar;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final DateFormat getInstance() {
         return getDateTimeInstance(SHORT, SHORT);
     }
@@ -216,17 +227,20 @@ NumberFormat var6F2A87451C4FA6A598B56017E6FBE4DD_2066806328 =         numberForm
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final DateFormat getTimeInstance() {
         return getTimeInstance(DEFAULT);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final DateFormat getTimeInstance(int style) {
         checkTimeStyle(style);
         return getTimeInstance(style, Locale.getDefault());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final DateFormat getTimeInstance(int style, Locale locale) {
         checkTimeStyle(style);
         return new SimpleDateFormat(LocaleData.get(locale).getTimeFormat(style), locale);
@@ -302,6 +316,7 @@ Date var1F31043EE3B8C862CA53EA8B99691F13_1715461368 =         date;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Date parse(String string, ParsePosition position);
 
     

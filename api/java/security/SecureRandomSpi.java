@@ -1,10 +1,12 @@
 package java.security;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.Serializable;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SecureRandomSpi implements Serializable {
     
@@ -15,12 +17,15 @@ public abstract class SecureRandomSpi implements Serializable {
     }
 
 
+    @DSModeled(DSC.SAFE)
     protected abstract void engineSetSeed(byte[] seed);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineNextBytes(byte[] bytes);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract byte[] engineGenerateSeed(int numBytes);
 
     

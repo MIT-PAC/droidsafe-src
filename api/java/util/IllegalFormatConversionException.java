@@ -1,10 +1,12 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.Serializable;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class IllegalFormatConversionException extends IllegalFormatException implements Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.487 -0400", hash_original_field = "4A8A08F09D37B73795649038408B5F33", hash_generated_field = "1C2A715F26687AFA5A80889E5E367C56")
@@ -14,6 +16,7 @@ public class IllegalFormatConversionException extends IllegalFormatException imp
 
     private Class<?> arg;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.488 -0400", hash_original_method = "0438EEFB69B3388326CD0DDEA30A5038", hash_generated_method = "C907BA4E4D5249214762E9EA46BF0118")
     public  IllegalFormatConversionException(char c, Class<?> arg) {
         this.c = c;
@@ -33,6 +36,7 @@ public class IllegalFormatConversionException extends IllegalFormatException imp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.489 -0400", hash_original_method = "F6AB4FB57CDBF80A2EA14BA003E8B6E3", hash_generated_method = "6886AD44ABB81FD84097705261A07CB2")
     public Class<?> getArgumentClass() {
 Class<?> varFFCBE2769CA7417D59916888195AB140_2135312253 =         arg;

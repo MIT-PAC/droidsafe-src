@@ -1,9 +1,8 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public enum ComprehensionTlvTag {
     COMMAND_DETAILS(0x01),
@@ -34,6 +33,7 @@ public enum ComprehensionTlvTag {
     ComprehensionTlvTag(int value) {
         mValue = value;
     }
+    @DSModeled(DSC.SAFE)
     public int value() {
         return mValue;
     }

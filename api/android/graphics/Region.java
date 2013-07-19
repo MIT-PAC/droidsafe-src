@@ -1,11 +1,13 @@
 package android.graphics;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.os.Parcel;
 import android.os.Parcelable;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public class Region implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.082 -0400", hash_original_field = "39A8A1AE8A42CDC584C4F2F420719809", hash_generated_field = "BE18D4475688FDC46F0A31DE4104CC38")
@@ -324,6 +326,7 @@ Path var535F4D9720F3B0C96D8143873CE0638C_229971889 =         path;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.095 -0400", hash_original_method = "50F2C1285B4A35F7EE8C85CE7082EAF5", hash_generated_method = "E28FF6FDB78742B2692835CC7A8606DC")
     public final boolean union(Rect r) {
         addTaint(r.getTaint());
@@ -497,6 +500,7 @@ String varDDC806D031E96ADAFEE4C9E5395D6E1C_593256382 =         nativeToString(mN
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.102 -0400", hash_original_method = "7C7B16974B0225DA07D6CF6E35F70776", hash_generated_method = "46EA745647F8D32722051D7068ED8828")
     final int ni() {
         int var39A8A1AE8A42CDC584C4F2F420719809_1112233175 = (mNativeRegion);

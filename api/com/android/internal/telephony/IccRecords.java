@@ -1,16 +1,19 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.os.AsyncResult;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Registrant;
 import android.os.RegistrantList;
+
 import com.android.internal.telephony.gsm.UsimServiceTable;
 import com.android.internal.telephony.ims.IsimRecords;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class IccRecords extends Handler implements IccConstants {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.245 -0400", hash_original_field = "F7A42FE7211F98AC7A60A285AC3A9E87", hash_generated_field = "4FEA837943E73EF5CB83661843F1AD15")
@@ -73,9 +76,11 @@ public abstract class IccRecords extends Handler implements IccConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void dispose();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onRadioOffOrNotAvailable();
 
     
@@ -196,6 +201,7 @@ String var45568158EF0C540A1756B7B70BA9D156_1447635608 =         spn;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setVoiceMailNumber(String alphaTag, String voiceNumber,
             Message onComplete);
 
@@ -211,6 +217,7 @@ String var1EB462B75D8B935982B4AE1475F7B8DA_552556596 =         voiceMailTag;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setVoiceMessageWaiting(int line, int countWaiting);
 
     
@@ -236,6 +243,7 @@ String var1EB462B75D8B935982B4AE1475F7B8DA_552556596 =         voiceMailTag;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void onRefresh(boolean fileChanged, int[] fileList);
 
     
@@ -301,12 +309,15 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onRecordLoaded();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onAllRecordsLoaded();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getDisplayRule(String plmn);
 
     
@@ -363,9 +374,11 @@ String var540C13E9E156B687226421B24F2DF178_1369680717 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void log(String s);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void loge(String s);
 
     

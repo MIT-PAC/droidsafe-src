@@ -1,9 +1,10 @@
 package android.drm.mobile1;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class DrmRights {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.427 -0400", hash_original_field = "F9B547329FB20099DE7762080521F120", hash_generated_field = "DA0C8A6494BF372551AC2E66A8F01069")

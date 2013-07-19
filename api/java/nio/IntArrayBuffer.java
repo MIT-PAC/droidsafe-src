@@ -1,9 +1,10 @@
 package java.nio;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 abstract class IntArrayBuffer extends IntBuffer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.109 -0400", hash_original_field = "8D50CD27AA8B6BEC65C484FFCC5B2334", hash_generated_field = "04E795690AE1E5BC2E4466B25302D831")
@@ -102,6 +103,7 @@ IntBuffer var72A74007B2BE62B849F475C7BDA4658B_1076850090 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.113 -0400", hash_original_method = "5B6C9F359344527666A57577F107BCAE", hash_generated_method = "061F41B56DEF3C98B610DE8739A259F4")
     @Override
     public final boolean isDirect() {

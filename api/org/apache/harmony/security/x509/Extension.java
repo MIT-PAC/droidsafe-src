@@ -1,11 +1,9 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.util.Arrays;
+
 import org.apache.harmony.security.asn1.ASN1Boolean;
 import org.apache.harmony.security.asn1.ASN1OctetString;
 import org.apache.harmony.security.asn1.ASN1Oid;
@@ -14,6 +12,11 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.ObjectIdentifier;
 import org.apache.harmony.security.utils.Array;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class Extension {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.151 -0400", hash_original_field = "81A958EC06A2C622709F6D43796C0CC6", hash_generated_field = "8FF788D802F19156A5C417E4A45E7E12")

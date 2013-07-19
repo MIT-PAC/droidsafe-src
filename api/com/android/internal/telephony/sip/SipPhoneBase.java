@@ -1,9 +1,9 @@
 package com.android.internal.telephony.sip;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.Context;
 import android.net.LinkProperties;
 import android.os.AsyncResult;
@@ -16,6 +16,7 @@ import android.telephony.CellLocation;
 import android.telephony.ServiceState;
 import android.telephony.SignalStrength;
 import android.util.Log;
+
 import com.android.internal.telephony.Call;
 import com.android.internal.telephony.CallStateException;
 import com.android.internal.telephony.Connection;
@@ -32,8 +33,11 @@ import com.android.internal.telephony.PhoneNotifier;
 import com.android.internal.telephony.PhoneSubInfo;
 import com.android.internal.telephony.TelephonyProperties;
 import com.android.internal.telephony.UUSInfo;
-import java.util.ArrayList;
-import java.util.List;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 abstract class SipPhoneBase extends PhoneBase {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.375 -0400", hash_original_field = "887ACB3EAA8ED60F5AC1B7488F7B5188", hash_generated_field = "06D1F76E7074A960DC898B74320CA0F3")
@@ -52,12 +56,15 @@ abstract class SipPhoneBase extends PhoneBase {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Call getForegroundCall();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Call getBackgroundCall();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Call getRingingCall();
 
     
@@ -745,6 +752,7 @@ IccCard var540C13E9E156B687226421B24F2DF178_1654792406 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.392 -0400", hash_original_method = "A299C26C55A9C3CB073E39A9CEBA941C", hash_generated_method = "C9F847D4B82923EFF7438598A6E111D7")
     public List<DataConnection> getCurrentDataConnectionList() {
 List<DataConnection> var540C13E9E156B687226421B24F2DF178_2023700822 =         null;

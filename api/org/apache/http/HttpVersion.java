@@ -1,10 +1,10 @@
 package org.apache.http;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.Serializable;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public final class HttpVersion extends ProtocolVersion implements Serializable {
     

@@ -1,25 +1,23 @@
 package android.net.http;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import org.apache.http.Header;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.SocketException;
+
 import org.apache.http.HttpConnection;
-import org.apache.http.HttpClientConnection;
 import org.apache.http.HttpConnectionMetrics;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpEntityEnclosingRequest;
 import org.apache.http.HttpException;
 import org.apache.http.HttpInetConnection;
 import org.apache.http.HttpRequest;
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpResponseFactory;
 import org.apache.http.NoHttpResponseException;
+import org.apache.http.ParseException;
 import org.apache.http.StatusLine;
 import org.apache.http.entity.BasicHttpEntity;
 import org.apache.http.entity.ContentLengthStrategy;
-import org.apache.http.impl.DefaultHttpResponseFactory;
 import org.apache.http.impl.HttpConnectionMetricsImpl;
 import org.apache.http.impl.entity.EntitySerializer;
 import org.apache.http.impl.entity.StrictContentLengthStrategy;
@@ -37,12 +35,12 @@ import org.apache.http.message.ParserCursor;
 import org.apache.http.params.CoreConnectionPNames;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
-import org.apache.http.ParseException;
 import org.apache.http.util.CharArrayBuffer;
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.Socket;
-import java.net.SocketException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class AndroidHttpClientConnection implements HttpInetConnection, HttpConnection {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.770 -0400", hash_original_field = "DC681AA2DD2A0BE47CBDD78540D5A8BD", hash_generated_field = "B0D6D00F71FC030A17C26A2601F3BE87")

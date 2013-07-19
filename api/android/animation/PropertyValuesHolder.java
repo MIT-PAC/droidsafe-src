@@ -1,17 +1,20 @@
 package android.animation;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.util.FloatProperty;
-import android.util.IntProperty;
-import android.util.Log;
-import android.util.Property;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+import android.util.FloatProperty;
+import android.util.IntProperty;
+import android.util.Log;
+import android.util.Property;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public class PropertyValuesHolder implements Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.602 -0400", hash_original_field = "AFC1281EACDFDDEC758551A3AAE3876C", hash_generated_field = "3E0E605326E1698CDE7903701811F2C0")

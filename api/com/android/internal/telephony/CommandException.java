@@ -1,11 +1,11 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.telephony.RILConstants;
 import android.util.Log;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class CommandException extends RuntimeException {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.608 -0400", hash_original_field = "E1671797C52E15F763380B45E841EC32", hash_generated_field = "237634D9088F176545E1DA209B5F69AC")

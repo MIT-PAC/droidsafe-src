@@ -1,10 +1,10 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.util.Log;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class IccServiceTable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.263 -0400", hash_original_field = "EDB4040133B03486A6F10C28E39C7F9F", hash_generated_field = "890B9A5DF783AEB82BFD936CDBEA6DB7")
@@ -20,9 +20,11 @@ public abstract class IccServiceTable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract String getTag();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract Object[] getValues();
 
     

@@ -1,12 +1,14 @@
 package java.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class ResponseCache {
     
@@ -29,10 +31,12 @@ public abstract class ResponseCache {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public abstract CacheResponse get(URI uri, String requestMethod,
             Map<String, List<String>> requestHeaders) throws IOException;
 
     
+    @DSModeled(DSC.SPEC)
     public abstract CacheRequest put(URI uri, URLConnection connection) throws IOException;
 
     

@@ -1,11 +1,15 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import javax.sip.header.*;
 import java.text.ParseException;
+
+import javax.sip.header.ExtensionHeader;
+import javax.sip.header.SIPIfMatchHeader;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SIPIfMatch extends SIPHeader implements SIPIfMatchHeader, ExtensionHeader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.370 -0400", hash_original_field = "BF2C63393DC4B17F2F6428EBE8608DDC", hash_generated_field = "885FC2B59F698305A2C8A7BD5CC3FE18")

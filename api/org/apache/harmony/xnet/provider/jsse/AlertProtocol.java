@@ -1,9 +1,10 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class AlertProtocol {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.912 -0400", hash_original_field = "1F9BEE7140A219A96C922C99EEDE7B34", hash_generated_field = "123A71D4C41C48510467491232841B9E")

@@ -1,9 +1,6 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -17,8 +14,13 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 import java.util.RandomAccess;
+
 import libcore.util.EmptyArray;
 import libcore.util.Objects;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.840 -0400", hash_original_field = "6A7F245843454CF4F28AD7C5E2572AA2", hash_generated_field = "9773C6104DBFF8AC92488F3C4AD39164")
@@ -34,6 +36,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.840 -0400", hash_original_method = "84AACC1E4283EC6F676E4F2CD339FC5B", hash_generated_method = "EA0C15CE1422D9A7119B138FB9DFD0F8")
     @SuppressWarnings("unchecked")
     public  CopyOnWriteArrayList(Collection<? extends E> collection) {
@@ -117,6 +120,7 @@ E var2A6ABA17AD43FE10CBD134001BC14638_561795045 =         (E) elements[index];
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.844 -0400", hash_original_method = "F181183DABCA5209C115C87B0BC63071", hash_generated_method = "68CFED9AA2A88D61ADA73D9F231D8B98")
     public boolean containsAll(Collection<?> collection) {
         addTaint(collection.getTaint());
@@ -130,6 +134,7 @@ E var2A6ABA17AD43FE10CBD134001BC14638_561795045 =         (E) elements[index];
     }
 
     
+    @DSModeled(DSC.SAFE)
     static boolean containsAll(Collection<?> collection, Object[] snapshot, int from, int to) {
         for (Object o : collection) {
             if (indexOf(o, snapshot, from, to) == -1) {
@@ -209,6 +214,7 @@ E var2A6ABA17AD43FE10CBD134001BC14638_561795045 =         (E) elements[index];
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.848 -0400", hash_original_method = "8AC2A236339BBBFB218E3FC5088D17DA", hash_generated_method = "08B0D4C701F9B1E03AE40C6CF41B0CC9")
     public Iterator<E> iterator() {
         Object[] snapshot = elements;
@@ -221,6 +227,7 @@ Iterator<E> var81CF040A91E509D0554A7335D657FB7C_1330605337 =         new CowIter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.848 -0400", hash_original_method = "6CF42CA16C3188E71052A9A04B3E4D16", hash_generated_method = "688933DEFCC9CDA26B14A6B35D4FD5A5")
     public ListIterator<E> listIterator(int index) {
         addTaint(index);
@@ -247,6 +254,7 @@ ListIterator<E> varDC838461EE2FA0CA4C9BBB70A15456B0_558500071 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.849 -0400", hash_original_method = "A4A3425D1D4C041DAFB5C093D1247DF1", hash_generated_method = "1B300447AA13FD427CB809C81F9562C7")
     public ListIterator<E> listIterator() {
         Object[] snapshot = elements;
@@ -259,6 +267,7 @@ ListIterator<E> var81CF040A91E509D0554A7335D657FB7C_158415343 =         new CowI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.849 -0400", hash_original_method = "594A2D8CB57DB4B1D13107F70D453706", hash_generated_method = "6B4243079B3CD3051CA4B3B0CA858241")
     public List<E> subList(int from, int to) {
         addTaint(to);
@@ -445,6 +454,7 @@ String var3A98C504B2574DFE89DE6D5E8597BC7E_1354240504 =         Arrays.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.853 -0400", hash_original_method = "76766E6A3193E0133903AC8237158932", hash_generated_method = "EE6340C05F7F031FE57D3C2AAB8D9BCF")
     public synchronized boolean addAll(Collection<? extends E> collection) {
         addTaint(collection.getTaint());
@@ -456,6 +466,7 @@ String var3A98C504B2574DFE89DE6D5E8597BC7E_1354240504 =         Arrays.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.853 -0400", hash_original_method = "16622B391256B6F864845FABB18695E4", hash_generated_method = "01F26047B5E38A11846C6D0A4BCB7293")
     public synchronized boolean addAll(int index, Collection<? extends E> collection) {
         addTaint(collection.getTaint());
@@ -482,6 +493,7 @@ String var3A98C504B2574DFE89DE6D5E8597BC7E_1354240504 =         Arrays.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.854 -0400", hash_original_method = "F6411BBDC5A81E1C464E9CEEEB8CCCF0", hash_generated_method = "3BF6C92EE24EB73552EBF357CD688528")
     public synchronized int addAllAbsent(Collection<? extends E> collection) {
         addTaint(collection.getTaint());
@@ -599,6 +611,7 @@ E varC4DDDE029445DEB25112BA9AAF990086_1830571824 =         removed;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.856 -0400", hash_original_method = "1C7B7BE5468A5E30603ED6851F28BACD", hash_generated_method = "225B7515336A6A11B3EC00621507C67A")
     public synchronized boolean removeAll(Collection<?> collection) {
         addTaint(collection.getTaint());
@@ -610,6 +623,7 @@ E varC4DDDE029445DEB25112BA9AAF990086_1830571824 =         removed;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.856 -0400", hash_original_method = "6F7BCA7B0FD040BA943A37C2A3FEA10F", hash_generated_method = "1B3F77CED87153AD6B24845C706E4F21")
     public synchronized boolean retainAll(Collection<?> collection) {
         addTaint(collection.getTaint());
@@ -621,6 +635,7 @@ E varC4DDDE029445DEB25112BA9AAF990086_1830571824 =         removed;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.857 -0400", hash_original_method = "4C6E97480A096674EA078C65954A8FE2", hash_generated_method = "539DA11D152D2B5A8E70753FF683356F")
     private int removeOrRetain(Collection<?> collection, boolean retain, int from, int to) {
         addTaint(to);
@@ -740,6 +755,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_911881868 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.859 -0400", hash_original_method = "223CD20A6350F975434ED49A9EB8E646", hash_generated_method = "3CB68E4B1960B137D4A7F31989185F5A")
     final Object[] getArray() {
 Object[] varC7DFD266FBF449A638EA2377E8678BA1_651604710 =         elements;

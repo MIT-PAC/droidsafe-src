@@ -1,16 +1,17 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+
 import android.content.pm.PackageManager;
 import android.content.pm.PathPermission;
 import android.content.pm.ProviderInfo;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.Configuration;
 import android.database.Cursor;
-import android.database.SQLException;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Binder;
@@ -18,10 +19,10 @@ import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
 import android.os.Process;
 import android.util.Log;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.ArrayList;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class ContentProvider implements ComponentCallbacks2 {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.783 -0400", hash_original_field = "EC9A3144C1687F6FFFFC7AC4B8A997AD", hash_generated_field = "64C2E29345D1A72D78C884235FF4120B")
@@ -79,6 +80,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.786 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "E3634F2044603A607ED25FFA0DB1AE98")
     public final Context getContext() {
 Context var178E2AD52D6FBBB503F908168856B574_2116415209 =         mContext;
@@ -89,6 +91,7 @@ Context var178E2AD52D6FBBB503F908168856B574_2116415209 =         mContext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.787 -0400", hash_original_method = "C738A12EDF7704A3BEC0DFE17330C819", hash_generated_method = "5E4FF5E477D8E19F78CD67B08931B74B")
     protected final void setReadPermission(String permission) {
         mReadPermission = permission;
@@ -97,6 +100,7 @@ Context var178E2AD52D6FBBB503F908168856B574_2116415209 =         mContext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.788 -0400", hash_original_method = "5C94FD95ADD3C0054247C1BF6F500E4F", hash_generated_method = "C0F127F3EC1BA2638555DB17643C28C6")
     public final String getReadPermission() {
 String varB7C8F391110CA2789E72296FC3D45BB5_643543003 =         mReadPermission;
@@ -107,6 +111,7 @@ String varB7C8F391110CA2789E72296FC3D45BB5_643543003 =         mReadPermission;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.789 -0400", hash_original_method = "6A71B3652F16CF9160129E3EF306B0DC", hash_generated_method = "700C15F3C9EBC3D7B5D3FCF9D079867A")
     protected final void setWritePermission(String permission) {
         mWritePermission = permission;
@@ -115,6 +120,7 @@ String varB7C8F391110CA2789E72296FC3D45BB5_643543003 =         mReadPermission;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.789 -0400", hash_original_method = "7A0A16A9FA1EB10AD9D087C65A3EFFB1", hash_generated_method = "9CCE16788971E368764DF7585A6B99B0")
     public final String getWritePermission() {
 String var59D1027D8312A72F6CBAE99932E8098B_1514742998 =         mWritePermission;
@@ -133,6 +139,7 @@ String var59D1027D8312A72F6CBAE99932E8098B_1514742998 =         mWritePermission
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.790 -0400", hash_original_method = "E38FFC0E115EF293B9FB9C6179B78AA8", hash_generated_method = "562B179551D663C5CB0B6EEBC16AE126")
     public final PathPermission[] getPathPermissions() {
 PathPermission[] var24E2D1568C411176949D95742C7A4275_1373800687 =         mPathPermissions;
@@ -143,6 +150,7 @@ PathPermission[] var24E2D1568C411176949D95742C7A4275_1373800687 =         mPathP
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean onCreate();
 
     
@@ -172,13 +180,16 @@ PathPermission[] var24E2D1568C411176949D95742C7A4275_1373800687 =         mPathP
     }
 
     
+    @DSModeled(DSC.SPEC)
     public abstract Cursor query(Uri uri, String[] projection,
             String selection, String[] selectionArgs, String sortOrder);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract String getType(Uri uri);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract Uri insert(Uri uri, ContentValues values);
 
     
@@ -203,9 +214,11 @@ for(int i = 0;i < numValues;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     public abstract int delete(Uri uri, String selection, String[] selectionArgs);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract int update(Uri uri, ContentValues values, String selection,
             String[] selectionArgs);
 
@@ -240,6 +253,7 @@ AssetFileDescriptor varA57245475EB9DCE6168AA22F54422F97_904246781 =         fd !
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.797 -0400", hash_original_method = "B77C082B2FC41ABB2AC9CAAF0861BB6A", hash_generated_method = "0A2ED894F72D94BA735F74663C36368C")
     protected final ParcelFileDescriptor openFileHelper(Uri uri,
             String mode) throws FileNotFoundException {

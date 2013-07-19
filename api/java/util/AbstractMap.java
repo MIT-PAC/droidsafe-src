@@ -1,10 +1,12 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.Serializable;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class AbstractMap<K, V> implements Map<K, V> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.575 -0400", hash_original_field = "3E8ABCE844B6A8A95397486A3899B536", hash_generated_field = "8E2B51CCF89ADF7243D25312F0ABCDAC")
@@ -299,6 +301,7 @@ V var540C13E9E156B687226421B24F2DF178_1050350966 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.240 -0400", hash_original_method = "F40A232B51CF144805B23E3A97CCF7A5", hash_generated_method = "9A0B801A8CE9D5D944144F6F2D5118B9")
     public Set<K> keySet() {
     if(keySet == null)        
@@ -390,6 +393,7 @@ Set<K> varCB23CF4AFB8B7AE1843E733C4B0CC600_1160017523 =         keySet;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.585 -0400", hash_original_method = "1BF9761154AA89A664F00EA3C1B1A227", hash_generated_method = "0E9082BE17046803AA3D46E2D766E2F8")
     public void putAll(Map<? extends K, ? extends V> map) {
         addTaint(map.getTaint());
@@ -526,6 +530,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_1216113150 =         buffer.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.248 -0400", hash_original_method = "BE68DB72EA44A9864EFB8085A73DD13D", hash_generated_method = "FFF60DD0BB73731BB57AABB5E433364A")
     public Collection<V> values() {
     if(valuesCollection == null)        
@@ -643,6 +648,7 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_1501740900 =         result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.590 -0400", hash_original_method = "B328F2475798EE2AF89F33F6E7AEA482", hash_generated_method = "C6AD03E3758C4CD95B20142655BD5CD9")
         public  SimpleImmutableEntry(Map.Entry<? extends K, ? extends V> copyFrom) {
             key = copyFrom.getKey();
@@ -778,6 +784,7 @@ String varFE698C13EFD83B87FAF2DC2AB0874271_1452541569 =             key + "=" + 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.593 -0400", hash_original_method = "69734A3C3A679CA95ADF7DC846433DE1", hash_generated_method = "54A51761FD45C24B5F05A70D91586172")
         public  SimpleEntry(Map.Entry<? extends K, ? extends V> copyFrom) {
             key = copyFrom.getKey();

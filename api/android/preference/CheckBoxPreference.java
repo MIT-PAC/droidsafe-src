@@ -1,14 +1,12 @@
 package android.preference;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Checkable;
+import droidsafe.annotations.DSGenerator;
 
 public class CheckBoxPreference extends TwoStatePreference {
     

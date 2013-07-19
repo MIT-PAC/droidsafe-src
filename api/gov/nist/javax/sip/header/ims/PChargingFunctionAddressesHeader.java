@@ -1,15 +1,11 @@
 package gov.nist.javax.sip.header.ims;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import gov.nist.core.NameValue;
+import java.text.ParseException;
+import java.util.ListIterator;
+
 import javax.sip.header.Header;
 import javax.sip.header.Parameters;
-import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.ListIterator;
 
 public interface PChargingFunctionAddressesHeader extends Parameters, Header {
 

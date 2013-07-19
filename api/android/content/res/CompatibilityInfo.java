@@ -1,9 +1,6 @@
 package android.content.res;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.content.pm.ApplicationInfo;
 import android.graphics.Canvas;
 import android.graphics.PointF;
@@ -15,6 +12,10 @@ import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class CompatibilityInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:06.170 -0400", hash_original_field = "44CEE0DD1BE1998482D8262782403C60", hash_generated_field = "B4CB39B5E76E4F134AE9FD81F38E628C")

@@ -1,13 +1,15 @@
 package java.nio.charset;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.nio.BufferOverflowException;
 import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class CharsetDecoder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.509 -0400", hash_original_field = "61628476CEFEE98E133C4A262D6104E7", hash_generated_field = "529EF1EB47EC503C08AD8590AE0F62F5")
@@ -70,6 +72,7 @@ public abstract class CharsetDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.512 -0400", hash_original_method = "835453458CD254EFEDF140BA3E3A0055", hash_generated_method = "B0E5DF1EAB03660AC24B441CBB1B6041")
     public final float averageCharsPerByte() {
         float var61628476CEFEE98E133C4A262D6104E7_731792729 = (averageCharsPerByte);
@@ -80,6 +83,7 @@ public abstract class CharsetDecoder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.512 -0400", hash_original_method = "B98730A31745049759B27FC27542555A", hash_generated_method = "A1E4B8A2D8DE12B3E19E7D6D33B0A97F")
     public final Charset charset() {
 Charset varE661418CFE0D2CECDB5DF6FE0739403D_435231190 =         cs;
@@ -273,6 +277,7 @@ CoderResult varDC838461EE2FA0CA4C9BBB70A15456B0_1550925742 =                 res
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract CoderResult decodeLoop(ByteBuffer in, CharBuffer out);
 
     
@@ -390,6 +395,7 @@ CodingErrorAction var84571F1E1ACF9C5432CDAA5F78A66531_1350743125 =         malfo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.527 -0400", hash_original_method = "1F4ECBF7B137C80889EF1BC2E2A0CCD1", hash_generated_method = "AA6587A712BED76CCBE8C3E92C754CFD")
     public final float maxCharsPerByte() {
         float varDD42591D3D06DC7ACEDEDF2FA8238654_1406144353 = (maxCharsPerByte);
@@ -448,6 +454,7 @@ CharsetDecoder var72A74007B2BE62B849F475C7BDA4658B_289886739 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.534 -0400", hash_original_method = "30CB7E3F60490326C9B63C38EC65670E", hash_generated_method = "C501E310C5A83D5B6D24DCD4FA43D71D")
     public final String replacement() {
 String var31BB01A272C4115B7C3C56058BC775C3_867465083 =         replacementChars;

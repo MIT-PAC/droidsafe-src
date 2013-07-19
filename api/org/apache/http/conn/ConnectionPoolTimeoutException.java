@@ -1,9 +1,8 @@
 package org.apache.http.conn;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class ConnectionPoolTimeoutException extends ConnectTimeoutException {
     

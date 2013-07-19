@@ -1,9 +1,10 @@
 package android.speech;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -18,9 +19,10 @@ import android.os.RemoteException;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SpeechRecognizer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.216 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "C468B76F6B6018BB8DB9FFE2A162E10B")

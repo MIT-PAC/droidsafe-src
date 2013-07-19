@@ -1,9 +1,11 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.FileDescriptor;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+import java.util.HashMap;
+
 import android.app.ActivityManager;
 import android.content.ComponentCallbacks2;
 import android.content.res.CompatibilityInfo;
@@ -12,12 +14,11 @@ import android.graphics.PixelFormat;
 import android.opengl.ManagedEGLContext;
 import android.os.IBinder;
 import android.util.AndroidRuntimeException;
-import android.util.Log;
 import android.view.inputmethod.InputMethodManager;
-import java.io.FileDescriptor;
-import java.io.FileOutputStream;
-import java.io.PrintWriter;
-import java.util.HashMap;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 final class WindowLeaked extends AndroidRuntimeException {
     

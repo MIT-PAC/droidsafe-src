@@ -1,17 +1,19 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.ArrayList;
+import java.util.Collections;
+
 import android.database.DataSetObserver;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
 import android.view.View;
 import android.view.ViewGroup;
-import java.util.ArrayList;
-import java.util.Collections;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class ExpandableListConnector extends BaseAdapter implements Filterable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.380 -0400", hash_original_field = "8DBF5674055609276EEC97573F22FB4C", hash_generated_field = "18A81DFA989CC3FAA8A107E272992504")
@@ -724,6 +726,7 @@ Filter var540C13E9E156B687226421B24F2DF178_675363409 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.394 -0400", hash_original_method = "740752E96AF2B266538C6125F8E79937", hash_generated_method = "1084A07E976929C1ACE7CCE76D8C7E6F")
      ArrayList<GroupMetadata> getExpandedGroupMetadataList() {
 ArrayList<GroupMetadata> var16CF2BAF0A5F7FECA6491A4F87231A85_1794616620 =         mExpGroupMetadataList;

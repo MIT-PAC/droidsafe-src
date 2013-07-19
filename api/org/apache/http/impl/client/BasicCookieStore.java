@@ -1,18 +1,19 @@
 package org.apache.http.impl.client;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+
 import org.apache.http.client.CookieStore;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.cookie.CookieIdentityComparator;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class BasicCookieStore implements CookieStore {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.611 -0400", hash_original_field = "55E7DD3016CE4AC57B9A0F56AF12F7C2", hash_generated_field = "889AFA10BF8703D281158D946DEF0E23")

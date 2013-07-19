@@ -1,9 +1,12 @@
 package android.app;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+
 import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -20,6 +23,7 @@ import android.content.pm.IPackageManager;
 import android.content.pm.IPackageMoveObserver;
 import android.content.pm.IPackageStatsObserver;
 import android.content.pm.InstrumentationInfo;
+import android.content.pm.ManifestDigest;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ParceledListSlice;
@@ -29,7 +33,6 @@ import android.content.pm.ProviderInfo;
 import android.content.pm.ResolveInfo;
 import android.content.pm.ServiceInfo;
 import android.content.pm.UserInfo;
-import android.content.pm.ManifestDigest;
 import android.content.pm.VerifierDeviceIdentity;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
@@ -37,12 +40,10 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Process;
 import android.os.RemoteException;
-import android.util.Log;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 final class ApplicationPackageManager extends PackageManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.469 -0400", hash_original_field = "D582EAEF778B662187C3776F3BC85DE5", hash_generated_field = "BB74ADCE9FCE390733990F175981A8B2")
@@ -980,6 +981,7 @@ ResolveInfo var53CD1929C11A1EFD4D6D1E47C7C7A408_491368764 =             mPM.reso
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.510 -0400", hash_original_method = "613ED89A001624360A0EB6B3BD081707", hash_generated_method = "A298F7957AB6CB8A7341CC27BBC3B688")
     @Override
     public List<ResolveInfo> queryIntentActivities(Intent intent,
@@ -1063,6 +1065,7 @@ List<ResolveInfo> var98A7E75C8E2130DCDDB36B3CBCB21C1D_1253778286 =             m
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.514 -0400", hash_original_method = "2B65A8BDA3BE53DC3296D1F5CA76CDFC", hash_generated_method = "D98C226CD8F20B7383C3E9591374F8E6")
     @Override
     public List<ResolveInfo> queryBroadcastReceivers(Intent intent, int flags) {
@@ -1128,6 +1131,7 @@ ResolveInfo var8DF144ADA7D834C2B6445C66A11819F1_2124453721 =             mPM.res
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.516 -0400", hash_original_method = "EEB4EB852740846BAD76CCDE5FC0C613", hash_generated_method = "17F454501B84748CE6E38EF9F120463B")
     @Override
     public List<ResolveInfo> queryIntentServices(Intent intent, int flags) {

@@ -1,9 +1,11 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
@@ -29,15 +31,16 @@ import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 import android.telephony.ServiceState;
 import android.text.TextUtils;
-import android.util.Log;
+
 import com.android.internal.R;
 import com.android.internal.telephony.DataConnection.FailCause;
 import com.android.internal.util.AsyncChannel;
 import com.android.internal.util.Protocol;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicInteger;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class DataConnectionTracker extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.155 -0400", hash_original_field = "0C574BF34249141BA4157A2B3A13DF65", hash_generated_field = "35FA5A91B80F269D1DB9B36DE1EC65CA")
@@ -561,75 +564,99 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1040868035 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract String getActionIntentReconnectAlarm();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract String getActionIntentDataStallAlarm();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void startNetStatPoll();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void stopNetStatPoll();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void restartRadio();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void log(String s);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void loge(String s);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract boolean isDataAllowed();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract boolean isApnTypeAvailable(String type);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract State getState(String apnType);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void setState(State s);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void gotoIdleAndNotifyDataConnection(String reason);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract boolean onTrySetupData(String reason);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onRoamingOff();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onRoamingOn();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onRadioAvailable();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onRadioOffOrNotAvailable();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onDataSetupComplete(AsyncResult ar);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onDisconnectDone(int connId, AsyncResult ar);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onVoiceCallStarted();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onVoiceCallEnded();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onCleanUpConnection(boolean tearDown, int apnId, String reason);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onCleanUpAllConnections(String cause);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract boolean isDataPossible(String apnType);
 
     
@@ -1440,6 +1467,7 @@ for(int id = 0;id < APN_NUM_TYPES;id++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isDisconnected();
 
     

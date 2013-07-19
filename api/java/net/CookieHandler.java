@@ -1,12 +1,14 @@
 package java.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class CookieHandler {
     
@@ -29,10 +31,12 @@ public abstract class CookieHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public abstract Map<String, List<String>> get(URI uri,
             Map<String, List<String>> requestHeaders) throws IOException;
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void put(URI uri, Map<String, List<String>> responseHeaders)
             throws IOException;
 

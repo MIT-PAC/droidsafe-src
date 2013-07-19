@@ -1,11 +1,9 @@
 package android.support.v4.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.content.ComponentName;
 import android.content.Intent;
+import droidsafe.annotations.DSGenerator;
 
 class IntentCompatHoneycomb {
     

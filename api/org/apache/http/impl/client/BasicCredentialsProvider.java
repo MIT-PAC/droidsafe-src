@@ -1,13 +1,16 @@
 package org.apache.http.impl.client;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.HashMap;
+
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.Credentials;
 import org.apache.http.client.CredentialsProvider;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class BasicCredentialsProvider implements CredentialsProvider {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.636 -0400", hash_original_field = "74CEE513FFFAA74DACEC65FAB85A3105", hash_generated_field = "4CB8755C3EC5F46FD31D578864B43B48")

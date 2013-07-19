@@ -1,9 +1,10 @@
 package java.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Writer implements Appendable, Closeable, Flushable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.824 -0400", hash_original_field = "DCE7C4174CE9323904A934A486C41288", hash_generated_field = "AB852390F41C8C6739EA01C427D6BB51")
@@ -35,9 +36,11 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void close() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void flush() throws IOException;
 
     
@@ -50,6 +53,7 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void write(char[] buf, int offset, int count) throws IOException;
 
     

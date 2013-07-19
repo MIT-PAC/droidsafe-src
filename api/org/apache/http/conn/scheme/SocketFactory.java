@@ -1,13 +1,11 @@
 package org.apache.http.conn.scheme;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+
 import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.params.HttpParams;
 

@@ -1,10 +1,10 @@
 package java.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import libcore.icu.NativeBreakIterator;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class RuleBasedBreakIterator extends BreakIterator {
     

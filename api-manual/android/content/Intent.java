@@ -48,23 +48,23 @@ public class Intent implements Parcelable, Cloneable {
 		
 	}
 	
-	@DSModeled() // Marked as SPEC per the original implementation from MIT
+	@DSModeled(DSC.SPEC)
 	public Intent(String action, Uri uri) {
         setAction(action);
         mData = uri;
     }
 	
-	@DSModeled() // Marked as SPEC per the original implementation from MIT
+	@DSModeled(DSC.SPEC)
 	public Intent() {
 		//Do Nothing
 	}
 	
-	@DSModeled() // Marked as SPEC per the original implementation from MIT
+	@DSModeled(DSC.SPEC)
 	public Intent(String action) {
         setAction(action);
     }
 	
-	@DSModeled() // Marked as SPEC per the original implementation from MIT
+	@DSModeled(DSC.SPEC)
 	private Intent(Intent o, boolean all) {
 		/*
 		 * Piggyback on the setters to track the taint.  The desire here
@@ -95,7 +95,7 @@ public class Intent implements Parcelable, Cloneable {
      * Make a clone of only the parts of the Intent that are relevant for
      * filter matching: the action, data, type, component, and categories.
      */
-    @DSModeled // Marked as SPEC per the original implementation from MIT
+    @DSModeled(DSC.SPEC)
     public Intent cloneFilter() {
         return new Intent(this, false);
     }

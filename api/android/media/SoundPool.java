@@ -1,21 +1,22 @@
 package android.media;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.util.AndroidRuntimeException;
-import android.util.Log;
 import java.io.File;
 import java.io.FileDescriptor;
-import android.os.ParcelFileDescriptor;
 import java.lang.ref.WeakReference;
+
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
-import java.io.IOException;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.os.ParcelFileDescriptor;
+import android.util.AndroidRuntimeException;
+import android.util.Log;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SoundPool {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.174 -0400", hash_original_field = "20E813A614226843849BF2E571A8EBCA", hash_generated_field = "0A3F8EE607897645EB2EE30B6939205B")
@@ -186,6 +187,7 @@ public class SoundPool {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.182 -0400", hash_original_method = "85C3F47AB710FF718648D7EFD49684BE", hash_generated_method = "D31CCC5D7AEBF6DF70FC0F36FE5822B7")
     private final int _load(String uri, int priority) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1964384860 = getTaintInt();
@@ -193,6 +195,7 @@ public class SoundPool {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.182 -0400", hash_original_method = "C8E2F6B503F32805E6B119DE960F5701", hash_generated_method = "8A6D03A08939497B9174C9846E938ED1")
     private final int _load(FileDescriptor fd, long offset, long length, int priority) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1718954122 = getTaintInt();
@@ -200,6 +203,7 @@ public class SoundPool {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.183 -0400", hash_original_method = "C196F2E01E1A194C3DA5827EEB00DADF", hash_generated_method = "8350ED742ADE6E0595E47AC4F3848E2B")
     public final boolean unload(int soundID) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_978554852 = getTaintBoolean();
@@ -207,6 +211,7 @@ public class SoundPool {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.183 -0400", hash_original_method = "9589225497E51729346B545BB33DDBAF", hash_generated_method = "949940A744F6306BF7AB6D8FE00D71F7")
     public final int play(int soundID, float leftVolume, float rightVolume,
             int priority, int loop, float rate) {
@@ -215,47 +220,56 @@ public class SoundPool {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.183 -0400", hash_original_method = "54A0F66BCDE4EF4A44EB64BA62B8B616", hash_generated_method = "1B96DE7F0F0F25B7ABC5C644C811E81B")
     public final void pause(int streamID) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.184 -0400", hash_original_method = "91631F30419B4DD14ADA49D91B638AA9", hash_generated_method = "95A923223B1C96E9E6BE3271C41575FD")
     public final void resume(int streamID) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.184 -0400", hash_original_method = "8FEE6E2BE62E09C5DD25C1A91956DDC0", hash_generated_method = "F58D9FFBF6ADD695182737FEE632B54C")
     public final void autoPause() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.184 -0400", hash_original_method = "C44CD98A45EC461F196F123D70897C27", hash_generated_method = "30B75233D51EF7C394626A24C5587C8D")
     public final void autoResume() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.184 -0400", hash_original_method = "256BB7EB28001D07413FAE5DCA57A75D", hash_generated_method = "B13AC34B1C92F227C8EEE79ED8C165AC")
     public final void stop(int streamID) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.185 -0400", hash_original_method = "20F7132E4AACD7E452666ABABCAB0364", hash_generated_method = "E0151B9ADCEBBC1E579D4A0430860A48")
     public final void setVolume(int streamID,
             float leftVolume, float rightVolume) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.185 -0400", hash_original_method = "CCA6C13126A90C5188BC1E15A109E7B2", hash_generated_method = "80E7C4F6D2558F499F9F4A7AEFF28831")
     public final void setPriority(int streamID, int priority) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.185 -0400", hash_original_method = "E029D221BD7CC57706C78C8567A53755", hash_generated_method = "A540862950B2359C56A101A8D82DD3DD")
     public final void setLoop(int streamID, int loop) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.186 -0400", hash_original_method = "825447C8FC2A68B86E6BD75A907AFFEE", hash_generated_method = "C48F9D64A0A0274C729E3E2A65DE87F9")
     public final void setRate(int streamID, float rate) {
     }
@@ -318,11 +332,13 @@ public class SoundPool {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.188 -0400", hash_original_method = "1E8C38EACEA1E94FE658824D01FD2A18", hash_generated_method = "CBA58CE532C941E2BBE111633905F4A0")
     public final void release() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.189 -0400", hash_original_method = "643150117BD11ABB17CD24F5EE247C54", hash_generated_method = "7401839A6EEFCAC19FEA6ED55F9E3E39")
     private final int native_setup(Object weakRef, int maxStreams, int streamType, int srcQuality) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_670256193 = getTaintInt();

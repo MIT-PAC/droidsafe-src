@@ -1,16 +1,19 @@
 package java.security;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.nio.ByteBuffer;
 import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 import java.security.spec.AlgorithmParameterSpec;
 import java.util.Iterator;
 import java.util.Set;
+
 import org.apache.harmony.security.fortress.Engine;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Signature extends SignatureSpi {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.495 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
@@ -87,6 +90,7 @@ public abstract class Signature extends SignatureSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.497 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "CCD2EE2C7649486BF9FE714F63F6CE49")
     public final Provider getProvider() {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_921464364 =         provider;
@@ -97,6 +101,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_921464364 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.498 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "3284202BA13FEB65B57F586A5880B0B5")
     public final String getAlgorithm() {
 String var44A46B4003FC81ACB0223385BA1FA818_2138983321 =         algorithm;

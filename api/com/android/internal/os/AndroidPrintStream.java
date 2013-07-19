@@ -1,10 +1,11 @@
 package com.android.internal.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.util.Log;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class AndroidPrintStream extends LoggingPrintStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.432 -0400", hash_original_field = "B988295C268025B49DFB3DF26171DDC3", hash_generated_field = "8E016BF5ECF2BB6A2B257594975987F0")

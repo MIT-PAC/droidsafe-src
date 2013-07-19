@@ -1,15 +1,14 @@
 package android.test;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.util.Log;
-import junit.framework.Test;
-import junit.framework.TestListener;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import junit.framework.Test;
+import junit.framework.TestListener;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class TestPrinter implements TestRunner.Listener, TestListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.955 -0400", hash_original_field = "07496860B5C53FDD66588727158D5F73", hash_generated_field = "0950070738D23525D6B35F116326FC98")

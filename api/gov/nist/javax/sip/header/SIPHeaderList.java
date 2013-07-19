@@ -1,15 +1,23 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import gov.nist.core.GenericObject;
 import gov.nist.core.Separators;
 import gov.nist.javax.sip.header.ims.PrivacyHeader;
-import javax.sip.header.Header;
+
 import java.lang.reflect.Constructor;
-import java.util.*;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ListIterator;
+
+import javax.sip.header.Header;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader implements java.util.List<HDR>, Header {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.309 -0400", hash_original_field = "54FC99FFF06FAFF26E47359497AA764D", hash_generated_field = "1610EB574C9A048E3BE2EA98FBE15AF1")
@@ -328,6 +336,7 @@ ListIterator<HDR> varB6858C2A0A5D5DA33796D38FD73E73F3_35324220 =         hlist.l
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.318 -0400", hash_original_method = "23B9304014C757503CC0D5B9D6DB550F", hash_generated_method = "B52967299638535006F513B062474563")
     protected void setMyClass(Class<HDR> cl) {
         this.myClass = cl;

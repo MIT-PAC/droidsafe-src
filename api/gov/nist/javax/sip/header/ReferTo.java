@@ -1,10 +1,11 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import gov.nist.javax.sip.address.*;
+import gov.nist.javax.sip.address.AddressImpl;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class ReferTo extends AddressParametersHeader implements javax.sip.header.ReferToHeader {
     

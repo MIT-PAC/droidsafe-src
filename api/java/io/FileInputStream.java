@@ -1,19 +1,23 @@
 package java.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import dalvik.system.CloseGuard;
+import static libcore.io.OsConstants.ESPIPE;
+import static libcore.io.OsConstants.O_RDONLY;
+import static libcore.io.OsConstants.SEEK_CUR;
+
 import java.nio.NioUtils;
 import java.nio.channels.FileChannel;
-import java.util.Arrays;
+
 import libcore.io.ErrnoException;
 import libcore.io.IoBridge;
 import libcore.io.IoUtils;
 import libcore.io.Libcore;
 import libcore.io.Streams;
-import static libcore.io.OsConstants.*;
+import dalvik.system.CloseGuard;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class FileInputStream extends InputStream implements Closeable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.889 -0400", hash_original_field = "36EBA1E1E343279857EA7F69A597324E", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
@@ -184,6 +188,7 @@ FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_1602828262 =             channel
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.895 -0400", hash_original_method = "7178DA6FA6DD367775EBAB657FD1BDA0", hash_generated_method = "B7D7CBBAB64426EFDEE666C395F6C9E1")
     public final FileDescriptor getFD() throws IOException {
 FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1259137338 =         fd;

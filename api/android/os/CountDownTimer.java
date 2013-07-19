@@ -1,10 +1,10 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.util.Log;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class CountDownTimer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.916 -0400", hash_original_field = "941F81AFBDD565B8984476C31B2330CD", hash_generated_field = "55875BD3E9D866BEA2C437122061CD6E")
@@ -92,9 +92,11 @@ CountDownTimer var72A74007B2BE62B849F475C7BDA4658B_1444867935 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void onTick(long millisUntilFinished);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void onFinish();
 
     

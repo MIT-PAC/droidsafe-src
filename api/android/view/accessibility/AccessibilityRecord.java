@@ -1,13 +1,15 @@
 package android.view.accessibility;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.os.Parcelable;
-import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
+
+import android.os.Parcelable;
+import android.view.View;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class AccessibilityRecord {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.478 -0400", hash_original_field = "2271A9775971F952514B94408144FAA0", hash_generated_field = "819E660F8F7271EBD249CE0B621A6CFF")
@@ -482,6 +484,7 @@ CharSequence varDD9C2143734A2F5CB66BF5CFBE75CE5F_129562355 =         mClassName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.493 -0400", hash_original_method = "DC632160826FC3F04AF23253967928B9", hash_generated_method = "EA5239DE2504F48CCD9A8D91D4958767")
     public List<CharSequence> getText() {
 List<CharSequence> var7F7ECB4B14362FFBA020956966B29A66_1243256106 =         mText;

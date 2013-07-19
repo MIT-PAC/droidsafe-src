@@ -1,9 +1,6 @@
 package java.security;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -11,9 +8,14 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.util.Date;
 import java.util.Enumeration;
+
 import javax.crypto.SecretKey;
 import javax.security.auth.callback.CallbackHandler;
 import javax.security.auth.callback.PasswordCallback;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class KeyStoreSpi {
     
@@ -24,53 +26,68 @@ public abstract class KeyStoreSpi {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract Key engineGetKey(String alias, char[] password)
             throws NoSuchAlgorithmException, UnrecoverableKeyException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Certificate[] engineGetCertificateChain(String alias);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Certificate engineGetCertificate(String alias);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Date engineGetCreationDate(String alias);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void engineSetKeyEntry(String alias, Key key,
             char[] password, Certificate[] chain) throws KeyStoreException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void engineSetKeyEntry(String alias, byte[] key,
             Certificate[] chain) throws KeyStoreException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void engineSetCertificateEntry(String alias,
             Certificate cert) throws KeyStoreException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void engineDeleteEntry(String alias)
             throws KeyStoreException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Enumeration<String> engineAliases();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean engineContainsAlias(String alias);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int engineSize();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean engineIsKeyEntry(String alias);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean engineIsCertificateEntry(String alias);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String engineGetCertificateAlias(Certificate cert);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void engineStore(OutputStream stream, char[] password)
             throws IOException, NoSuchAlgorithmException, CertificateException;
 
@@ -86,6 +103,7 @@ public abstract class KeyStoreSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void engineLoad(InputStream stream, char[] password)
             throws IOException, NoSuchAlgorithmException, CertificateException;
 

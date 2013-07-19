@@ -1,15 +1,17 @@
 package org.bouncycastle.asn1.x509;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.IOException;
+
 import org.bouncycastle.asn1.ASN1InputStream;
 import org.bouncycastle.asn1.DERObject;
 import org.bouncycastle.asn1.DERObjectIdentifier;
 import org.bouncycastle.asn1.DERPrintableString;
 import org.bouncycastle.util.Strings;
-import java.io.IOException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class X509NameEntryConverter {
     
@@ -70,6 +72,7 @@ DERObject var744C7B728C1BF7AC9370DA8D8B9598D6_1588751565 =         aIn.readObjec
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract DERObject getConvertedValue(DERObjectIdentifier oid, String value);
 
     

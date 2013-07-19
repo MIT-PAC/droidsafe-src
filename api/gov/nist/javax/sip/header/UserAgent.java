@@ -1,12 +1,17 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.util.*;
 import java.text.ParseException;
-import javax.sip.header.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ListIterator;
+
+import javax.sip.header.UserAgentHeader;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class UserAgent extends SIPHeader implements UserAgentHeader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.655 -0400", hash_original_field = "9688EFB908EECBA4C560247BC17C9D80", hash_generated_field = "23BE30BA77F76A348892FB57EBB6010B")

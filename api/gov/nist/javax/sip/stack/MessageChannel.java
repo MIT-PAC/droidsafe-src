@@ -1,9 +1,6 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import gov.nist.core.Host;
 import gov.nist.core.HostPort;
 import gov.nist.core.InternalErrorHandler;
@@ -16,9 +13,11 @@ import gov.nist.javax.sip.message.MessageFactoryImpl;
 import gov.nist.javax.sip.message.SIPMessage;
 import gov.nist.javax.sip.message.SIPRequest;
 import gov.nist.javax.sip.message.SIPResponse;
+
 import java.io.IOException;
 import java.net.InetAddress;
 import java.text.ParseException;
+
 import javax.sip.address.Hop;
 import javax.sip.header.CSeqHeader;
 import javax.sip.header.CallIdHeader;
@@ -29,6 +28,11 @@ import javax.sip.header.FromHeader;
 import javax.sip.header.ServerHeader;
 import javax.sip.header.ToHeader;
 import javax.sip.header.ViaHeader;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class MessageChannel {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.466 -0400", hash_original_field = "A771D64D63DE5E52A6605CCC6FAC3F7C", hash_generated_field = "8B62D61316200E61EA0A60A5551D82D6")
@@ -52,51 +56,67 @@ public abstract class MessageChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void close();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SIPTransactionStack getSIPStack();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getTransport();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isReliable();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isSecure();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void sendMessage(SIPMessage sipMessage) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getPeerAddress();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract InetAddress getPeerInetAddress();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract String getPeerProtocol();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getPeerPort();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getPeerPacketSourcePort();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract InetAddress getPeerPacketSourceAddress();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getKey();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getViaHost();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getViaPort();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void sendMessage(byte[] message, InetAddress receiverAddress,
             int receiverPort, boolean reconnectFlag) throws IOException;
 
@@ -451,6 +471,7 @@ String var4FC680801218E6372BC708D6FA44AE60_366987094 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final boolean copyHeader(String name, String fromReq, StringBuffer buf) {
         int start = fromReq.indexOf(name);
         if (start != -1) {
@@ -464,6 +485,7 @@ String var4FC680801218E6372BC708D6FA44AE60_366987094 =         buf.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final boolean copyViaHeaders(String fromReq, StringBuffer buf) {
         int start = fromReq.indexOf(ViaHeader.NAME);
         boolean found = false;

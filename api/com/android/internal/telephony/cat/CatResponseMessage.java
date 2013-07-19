@@ -1,9 +1,10 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class CatResponseMessage {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.733 -0400", hash_original_field = "34DCAD2A2E3833D6A30423350AB93772", hash_generated_field = "05112D41676684E3E20082CD80AE4A57")

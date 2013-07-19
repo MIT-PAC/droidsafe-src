@@ -1,14 +1,8 @@
 package android.accounts;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeoutException;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public interface AccountManagerFuture<V> {
     

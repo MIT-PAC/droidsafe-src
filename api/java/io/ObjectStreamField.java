@@ -1,12 +1,12 @@
 package java.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.lang.ref.WeakReference;
-import java.util.Arrays;
-import java.util.Comparator;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ObjectStreamField implements Comparable<Object> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.026 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
@@ -190,6 +190,7 @@ Class<?> var8C6A66A89969D061B1ECE468EDE00B0A_604514584 =         cl;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.039 -0400", hash_original_method = "1261A37E9B201158D41DADA58D3D498E", hash_generated_method = "E387E4BFC1F9BB28A1A022B9229436AB")
     private char typeCodeOf(Class<?> type) {
         addTaint(type.getTaint());

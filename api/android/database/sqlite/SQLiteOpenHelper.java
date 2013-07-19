@@ -1,14 +1,14 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.content.Context;
 import android.database.DatabaseErrorHandler;
 import android.database.DefaultDatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
-import android.util.Log;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SQLiteOpenHelper {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.822 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -279,9 +279,11 @@ SQLiteDatabase var8D37BF836D5C80F645159E6565338BF6_779912361 =             mData
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void onCreate(SQLiteDatabase db);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion);
 
     

@@ -1,11 +1,12 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.os.Parcel;
 import android.os.Parcelable;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 abstract class ValueObject {
     
@@ -16,6 +17,7 @@ abstract class ValueObject {
     }
 
 
+    @DSModeled(DSC.SAFE)
     abstract ComprehensionTlvTag getTag();
 
     

@@ -1,13 +1,16 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
+
 import org.bouncycastle.util.io.Streams;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class DefiniteLengthInputStream extends LimitedInputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.722 -0400", hash_original_field = "2906002244F44764B3BEBF63B4E23DCA", hash_generated_field = "1665FC1E3CFF38838A5E1CB7D836EA25")

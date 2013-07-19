@@ -1,18 +1,21 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import android.content.Context;
-import com.android.internal.telephony.CommandException;
-import com.android.internal.telephony.MmiCode;
 import android.os.AsyncResult;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
+
+import com.android.internal.telephony.CommandException;
+import com.android.internal.telephony.MmiCode;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class CdmaMmiCode extends Handler implements MmiCode {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.911 -0400", hash_original_field = "F7A42FE7211F98AC7A60A285AC3A9E87", hash_generated_field = "F2FC592D71DA2BCBED04F0F797B7B907")

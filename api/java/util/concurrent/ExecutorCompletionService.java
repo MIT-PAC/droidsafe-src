@@ -1,9 +1,10 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ExecutorCompletionService<V> implements CompletionService<V> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.977 -0400", hash_original_field = "B1925939F66C2E4625AADB18CABF1CEA", hash_generated_field = "C344975DD4C90ADC5A05E9EE82CE3C44")
@@ -39,6 +40,7 @@ public class ExecutorCompletionService<V> implements CompletionService<V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.979 -0400", hash_original_method = "4003AFDAD418CC2ECC4A8EB9D6C4E6CA", hash_generated_method = "513B91483CA0031B3A31CBAE015E84C3")
     public  ExecutorCompletionService(Executor executor,
                                      BlockingQueue<Future<V>> completionQueue) {
@@ -62,6 +64,7 @@ public class ExecutorCompletionService<V> implements CompletionService<V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.980 -0400", hash_original_method = "C02DA5DA60AA95D77CB448ECF2F70F43", hash_generated_method = "7E03F19965339F6CB0A952C818333249")
     private RunnableFuture<V> newTaskFor(Callable<V> task) {
         addTaint(task.getTaint());
@@ -109,6 +112,7 @@ RunnableFuture<V> var9D13125A19E67035EAA1615C5C63FD97_1997487818 =         aes.n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.981 -0400", hash_original_method = "1066CE8ABD0AE96E9CBF3A082EB30584", hash_generated_method = "97953AB515C8EB439C1F6C353335CE41")
     public Future<V> submit(Callable<V> task) {
         addTaint(task.getTaint());
@@ -154,6 +158,7 @@ Future<V> varABE3CFB53FE4A79F34CB25BC80BFD6E2_184935715 =         f;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.981 -0400", hash_original_method = "B111DAF975BA373371F56AC1A498CB62", hash_generated_method = "C637F34C33B419DC1947F5964A65008B")
     public Future<V> take() throws InterruptedException {
 Future<V> varDDA8A4DDC380A4CADE2CFC8A8159504F_46986387 =         completionQueue.take();
@@ -164,6 +169,7 @@ Future<V> varDDA8A4DDC380A4CADE2CFC8A8159504F_46986387 =         completionQueue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.982 -0400", hash_original_method = "AB80AB0A080F8B419B7B16E63DEC8AE2", hash_generated_method = "9A6859ABC245063D32742AAE30A59DC7")
     public Future<V> poll() {
 Future<V> varB1E3F920A6FDBCB7B47C9C9E8C6506B8_1375089685 =         completionQueue.poll();
@@ -174,6 +180,7 @@ Future<V> varB1E3F920A6FDBCB7B47C9C9E8C6506B8_1375089685 =         completionQue
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.982 -0400", hash_original_method = "68AEBC19C67278ADE553BA09F2BB4BEF", hash_generated_method = "FDD4C9CC9F30F212CE59D54DBE9FF70D")
     public Future<V> poll(long timeout, TimeUnit unit) throws InterruptedException {
         addTaint(unit.getTaint());

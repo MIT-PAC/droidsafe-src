@@ -1,11 +1,13 @@
 package java.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class InetSocketAddress extends SocketAddress {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.694 -0400", hash_original_field = "3EF9A0D7FAB5D2BCABF0978C0A35244E", hash_generated_field = "0B6CE69CF925D6E46B22FFB8B45B7F59")
@@ -115,6 +117,7 @@ public class InetSocketAddress extends SocketAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.700 -0400", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "C5E80346E961E14B78747C6E09CC79A5")
     public final int getPort() {
         int var901555FB06E346CB065CEB9808DCFC25_1339703200 = (port);
@@ -125,6 +128,7 @@ public class InetSocketAddress extends SocketAddress {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.700 -0400", hash_original_method = "EBC0D8AF364C08270D1E1C0275ACCE70", hash_generated_method = "8D8B5EFB6649A195601B0E4D839BB2D6")
     public final InetAddress getAddress() {
 InetAddress var93F8352EAB50DBA73F526833D82E48F9_659594681 =         addr;
@@ -155,6 +159,7 @@ String varA176FBB649535D87C7C729399E998756_1767560490 =         (hostname != nul
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.701 -0400", hash_original_method = "516016D8DE08604CF0F5A3746D5ACA08", hash_generated_method = "6B025878AC95B0E7FDF1D3A442F9884A")
     public final boolean isUnresolved() {
         boolean varAF772B268FBA8C120460CEDF303B798C_83209549 = (addr == null);

@@ -1,24 +1,6 @@
 package com.android.internal.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.pm.ActivityInfo;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
-import android.net.LocalServerSocket;
-import android.os.Debug;
-import android.os.FileUtils;
-import android.os.Process;
-import android.os.SystemClock;
-import android.os.SystemProperties;
-import android.util.EventLog;
-import android.util.Log;
-import dalvik.system.VMRuntime;
-import dalvik.system.Zygote;
-import libcore.io.IoUtils;
 import java.io.BufferedReader;
 import java.io.FileDescriptor;
 import java.io.IOException;
@@ -28,6 +10,26 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
+
+import libcore.io.IoUtils;
+import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+import android.net.LocalServerSocket;
+import android.os.Debug;
+import android.os.FileUtils;
+import android.os.Process;
+import android.os.SystemClock;
+import android.util.EventLog;
+import android.util.Log;
+import dalvik.system.VMRuntime;
+import dalvik.system.Zygote;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public class ZygoteInit {
     

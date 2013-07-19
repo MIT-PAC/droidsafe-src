@@ -1,9 +1,8 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public enum TextAlignment {
     LEFT(0x0),
@@ -11,6 +10,7 @@ public enum TextAlignment {
     RIGHT(0x2),
     DEFAULT(0x3);
     private int mValue;
+    @DSModeled(DSC.SAFE)
     TextAlignment(int value) {
         mValue = value;
     }

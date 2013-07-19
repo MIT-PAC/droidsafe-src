@@ -1,18 +1,17 @@
 package com.android.internal.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.os.Process;
-import android.util.Slog;
 import java.io.DataOutputStream;
 import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
 import libcore.io.IoUtils;
-import libcore.io.Libcore;
+import android.os.Process;
+import android.util.Slog;
 import dalvik.system.Zygote;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class WrapperInit {
     

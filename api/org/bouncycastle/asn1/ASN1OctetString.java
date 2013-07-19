@@ -1,14 +1,17 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.encoders.Hex;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStringParser {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.726 -0400", hash_original_field = "B45CFFE084DD3D20D928BEE85E7B0F21", hash_generated_field = "4DFAD1EC9079C516825D3C67F76850BC")
@@ -164,6 +167,7 @@ DERObject var637323B1C4EE7CAF17B2CD40E14254B5_1149423658 =         this.getDEROb
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void encode(DEROutputStream out)
         throws IOException;
 

@@ -1,9 +1,10 @@
 package java.lang.ref;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class FinalizerReference<T> extends Reference<T> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.758 -0400", hash_original_field = "0EDA241FC65CCF35D9743309AC395215", hash_generated_field = "F4C159F0B6076ECC1F9CAA1CB201F6E0")

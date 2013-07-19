@@ -1,9 +1,6 @@
 package android.location;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 
 public interface ILocationManager extends android.os.IInterface
 {

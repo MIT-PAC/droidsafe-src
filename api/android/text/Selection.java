@@ -1,10 +1,12 @@
 package android.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.text.BreakIterator;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class Selection {
     
@@ -15,6 +17,7 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getSelectionStart(CharSequence text) {
         if (text instanceof Spanned)
             return ((Spanned) text).getSpanStart(SELECTION_START);
@@ -23,6 +26,7 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getSelectionEnd(CharSequence text) {
         if (text instanceof Spanned)
             return ((Spanned) text).getSpanStart(SELECTION_END);
@@ -44,22 +48,26 @@ public class Selection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void setSelection(Spannable text, int index) {
         setSelection(text, index, index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void selectAll(Spannable text) {
         setSelection(text, 0, text.length());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void extendSelection(Spannable text, int index) {
         if (text.getSpanStart(SELECTION_END) != index)
             text.setSpan(SELECTION_END, index, index, Spanned.SPAN_POINT_POINT);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void removeSelection(Spannable text) {
         text.removeSpan(SELECTION_START);
         text.removeSpan(SELECTION_END);

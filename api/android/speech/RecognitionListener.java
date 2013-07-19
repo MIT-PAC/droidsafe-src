@@ -1,10 +1,6 @@
 package android.speech;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.Intent;
 import android.os.Bundle;
 
 public interface RecognitionListener {

@@ -1,21 +1,11 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.telephony.CommandException;
-import com.android.internal.telephony.CommandsInterface;
-import com.android.internal.telephony.DataConnectionTracker;
-import com.android.internal.telephony.EventLogTags;
-import com.android.internal.telephony.IccCard;
-import com.android.internal.telephony.MccTable;
-import com.android.internal.telephony.Phone;
-import com.android.internal.telephony.RestrictedState;
-import com.android.internal.telephony.RILConstants;
-import com.android.internal.telephony.ServiceStateTracker;
-import com.android.internal.telephony.TelephonyIntents;
-import com.android.internal.telephony.TelephonyProperties;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
+
 import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -31,8 +21,6 @@ import android.os.AsyncResult;
 import android.os.Handler;
 import android.os.Message;
 import android.os.PowerManager;
-import android.os.Registrant;
-import android.os.RegistrantList;
 import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.provider.Settings;
@@ -45,10 +33,24 @@ import android.text.TextUtils;
 import android.util.EventLog;
 import android.util.Log;
 import android.util.TimeUtils;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
+
+import com.android.internal.telephony.CommandException;
+import com.android.internal.telephony.CommandsInterface;
+import com.android.internal.telephony.DataConnectionTracker;
+import com.android.internal.telephony.EventLogTags;
+import com.android.internal.telephony.IccCard;
+import com.android.internal.telephony.MccTable;
+import com.android.internal.telephony.Phone;
+import com.android.internal.telephony.RILConstants;
+import com.android.internal.telephony.RestrictedState;
+import com.android.internal.telephony.ServiceStateTracker;
+import com.android.internal.telephony.TelephonyIntents;
+import com.android.internal.telephony.TelephonyProperties;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 final class GsmServiceStateTracker extends ServiceStateTracker {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.362 -0400", hash_original_field = "F7A42FE7211F98AC7A60A285AC3A9E87", hash_generated_field = "690DC9441FA6BD04E0472B4DF9E035F8")

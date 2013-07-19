@@ -1,9 +1,6 @@
 package org.apache.commons.logging;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -19,6 +16,11 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Properties;
 
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+
 public abstract class LogFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.804 -0400", hash_original_method = "F774CEA84649DC0B4D4BCA84E3BCF878", hash_generated_method = "A8E7489E7B239B2C7DA374E4667D6148")
@@ -27,26 +29,33 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Object getAttribute(String name);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] getAttributeNames();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Log getInstance(Class clazz)
         throws LogConfigurationException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Log getInstance(String name)
         throws LogConfigurationException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void release();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void removeAttribute(String name);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setAttribute(String name, Object value);
 
     
@@ -603,6 +612,7 @@ public abstract class LogFactory {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static final Properties getConfigurationFile(
             ClassLoader classLoader, String fileName) {
         Properties props = null;

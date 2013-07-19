@@ -1,9 +1,6 @@
 package com.android.internal.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.view.InputQueue;
 import android.view.SurfaceHolder;
 

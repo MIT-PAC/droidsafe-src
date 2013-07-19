@@ -1,14 +1,17 @@
 package android.provider;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
 import android.content.ContentResolver;
-import android.content.ContentValues;
 import android.content.ContentUris;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
@@ -22,11 +25,10 @@ import android.net.Uri;
 import android.os.Environment;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class MediaStore {
     
@@ -76,6 +78,7 @@ public final class MediaStore {
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static final Uri getContentUri(String volumeName,
                 long rowId) {
             return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
@@ -90,6 +93,7 @@ public final class MediaStore {
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static final Uri getMtpObjectsUri(String volumeName,
                 long fileId) {
             return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
@@ -97,6 +101,7 @@ public final class MediaStore {
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static final Uri getMtpReferencesUri(String volumeName,
                 long fileId) {
             return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
@@ -326,11 +331,13 @@ public final class MediaStore {
             }
 
 
+            @DSModeled(DSC.SPEC)
             public static final Cursor query(ContentResolver cr, Uri uri, String[] projection) {
                 return cr.query(uri, projection, null, null, DEFAULT_SORT_ORDER);
             }
 
             
+            @DSModeled(DSC.SPEC)
             public static final Cursor query(ContentResolver cr, Uri uri, String[] projection,
                     String where, String orderBy) {
                 return cr.query(uri, projection, where,
@@ -345,6 +352,7 @@ public final class MediaStore {
             }
 
             
+            @DSModeled(DSC.SPEC)
             public static final Bitmap getBitmap(ContentResolver cr, Uri url) throws FileNotFoundException, IOException {
                 InputStream input = cr.openInputStream(url);
                 Bitmap bitmap = BitmapFactory.decodeStream(input);
@@ -480,11 +488,13 @@ public final class MediaStore {
             }
 
 
+            @DSModeled(DSC.SPEC)
             public static final Cursor query(ContentResolver cr, Uri uri, String[] projection) {
                 return cr.query(uri, projection, null, null, DEFAULT_SORT_ORDER);
             }
 
             
+            @DSModeled(DSC.SPEC)
             public static final Cursor queryMiniThumbnails(ContentResolver cr, Uri uri, int kind,
                     String[] projection) {
                 return cr.query(uri, projection, "kind = " + kind, null, DEFAULT_SORT_ORDER);
@@ -747,6 +757,7 @@ public final class MediaStore {
                 }
 
 
+                @DSModeled(DSC.SPEC)
                 public static final Uri getContentUri(String volumeName,
                         long genreId) {
                     return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
@@ -816,6 +827,7 @@ public final class MediaStore {
                 }
 
 
+                @DSModeled(DSC.SPEC)
                 public static final Uri getContentUri(String volumeName,
                         long playlistId) {
                     return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
@@ -905,6 +917,7 @@ public final class MediaStore {
                 }
 
 
+                @DSModeled(DSC.SPEC)
                 public static final Uri getContentUri(String volumeName,
                         long artistId) {
                     return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName
@@ -1113,6 +1126,7 @@ public final class MediaStore {
         }
 
 
+        @DSModeled(DSC.SPEC)
         public static final Cursor query(ContentResolver cr, Uri uri, String[] projection) {
             return cr.query(uri, projection, null, null, DEFAULT_SORT_ORDER);
         }

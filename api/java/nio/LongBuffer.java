@@ -1,10 +1,11 @@
 package java.nio;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.Arrays;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer> {
     
@@ -42,6 +43,7 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.270 -0400", hash_original_method = "4BA44AB0CDCB187F799C2188A053FC10", hash_generated_method = "63CA89092A20ED391734527FAB5C64B9")
     public final long[] array() {
         long[] var68B89E48382A0AA51B25AC59599E2EB0_1385963802 = (protectedArray());
@@ -52,6 +54,7 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.271 -0400", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "B2880506CF9A3247BD99085334A3057F")
     public final int arrayOffset() {
         int var0B794CE56A38A9F3BFDD2D53E83BB109_1156353062 = (protectedArrayOffset());
@@ -62,9 +65,11 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract LongBuffer asReadOnlyBuffer();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract LongBuffer compact();
 
     
@@ -116,6 +121,7 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract LongBuffer duplicate();
 
     
@@ -166,6 +172,7 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long get();
 
     
@@ -213,9 +220,11 @@ LongBuffer var72A74007B2BE62B849F475C7BDA4658B_2009802766 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long get(int index);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.275 -0400", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "9B4CB2D53AE992D4C5F05C90E0DFBB13")
     public final boolean hasArray() {
         boolean var55B7C03E3C1EBABD22606AD17EE923C3_417558658 = (protectedHasArray());
@@ -254,24 +263,31 @@ LongBuffer var72A74007B2BE62B849F475C7BDA4658B_2009802766 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isDirect();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteOrder order();
 
     
+    @DSModeled(DSC.SAFE)
     abstract long[] protectedArray();
 
     
+    @DSModeled(DSC.SAFE)
     abstract int protectedArrayOffset();
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean protectedHasArray();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract LongBuffer put(long l);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.276 -0400", hash_original_method = "5A5A365AB2651722CE67CD635F8A83E0", hash_generated_method = "76BE7C8A0F0D5868363CDDC44BF03E81")
     public final LongBuffer put(long[] src) {
         addTaint(src[0]);
@@ -351,9 +367,11 @@ LongBuffer var72A74007B2BE62B849F475C7BDA4658B_1587264387 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract LongBuffer put(int index, long l);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract LongBuffer slice();
 
     

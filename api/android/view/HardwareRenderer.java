@@ -1,9 +1,35 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import static javax.microedition.khronos.egl.EGL10.EGL_ALPHA_SIZE;
+import static javax.microedition.khronos.egl.EGL10.EGL_BAD_NATIVE_WINDOW;
+import static javax.microedition.khronos.egl.EGL10.EGL_BLUE_SIZE;
+import static javax.microedition.khronos.egl.EGL10.EGL_DEFAULT_DISPLAY;
+import static javax.microedition.khronos.egl.EGL10.EGL_DEPTH_SIZE;
+import static javax.microedition.khronos.egl.EGL10.EGL_DRAW;
+import static javax.microedition.khronos.egl.EGL10.EGL_GREEN_SIZE;
+import static javax.microedition.khronos.egl.EGL10.EGL_HEIGHT;
+import static javax.microedition.khronos.egl.EGL10.EGL_NONE;
+import static javax.microedition.khronos.egl.EGL10.EGL_NO_CONTEXT;
+import static javax.microedition.khronos.egl.EGL10.EGL_NO_DISPLAY;
+import static javax.microedition.khronos.egl.EGL10.EGL_NO_SURFACE;
+import static javax.microedition.khronos.egl.EGL10.EGL_RED_SIZE;
+import static javax.microedition.khronos.egl.EGL10.EGL_RENDERABLE_TYPE;
+import static javax.microedition.khronos.egl.EGL10.EGL_STENCIL_SIZE;
+import static javax.microedition.khronos.egl.EGL10.EGL_SUCCESS;
+import static javax.microedition.khronos.egl.EGL10.EGL_WIDTH;
+import static javax.microedition.khronos.egl.EGL10.EGL_WINDOW_BIT;
+
+import java.io.File;
+
+import javax.microedition.khronos.egl.EGL10;
+import javax.microedition.khronos.egl.EGL11;
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.egl.EGLContext;
+import javax.microedition.khronos.egl.EGLDisplay;
+import javax.microedition.khronos.egl.EGLSurface;
+import javax.microedition.khronos.opengles.GL;
+
 import android.content.ComponentCallbacks2;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -15,16 +41,13 @@ import android.os.Looper;
 import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.util.Log;
+
 import com.google.android.gles_jni.EGLImpl;
-import javax.microedition.khronos.egl.EGL10;
-import javax.microedition.khronos.egl.EGL11;
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.egl.EGLContext;
-import javax.microedition.khronos.egl.EGLDisplay;
-import javax.microedition.khronos.egl.EGLSurface;
-import javax.microedition.khronos.opengles.GL;
-import java.io.File;
-import static javax.microedition.khronos.egl.EGL10.*;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class HardwareRenderer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.525 -0400", hash_original_field = "6F84A7F10C955D3C78F44E5278F6195B", hash_generated_field = "7A48C52BD142368ED44BC086FD9013A2")
@@ -55,36 +78,47 @@ public abstract class HardwareRenderer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void destroy(boolean full);
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean initialize(SurfaceHolder holder) throws Surface.OutOfResourcesException;
 
     
+    @DSModeled(DSC.SAFE)
     abstract void updateSurface(SurfaceHolder holder) throws Surface.OutOfResourcesException;
 
     
+    @DSModeled(DSC.SAFE)
     abstract void destroyLayers(View view);
 
     
+    @DSModeled(DSC.SAFE)
     abstract void destroyHardwareResources(View view);
 
     
+    @DSModeled(DSC.SAFE)
     abstract void invalidate(SurfaceHolder holder);
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean validate();
 
     
+    @DSModeled(DSC.SAFE)
     abstract void setup(int width, int height);
 
     
+    @DSModeled(DSC.SAFE)
     abstract int getWidth();
 
     
+    @DSModeled(DSC.SAFE)
     abstract int getHeight();
 
     
+    @DSModeled(DSC.SAFE)
     abstract HardwareCanvas getCanvas();
 
     
@@ -98,19 +132,24 @@ public abstract class HardwareRenderer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean draw(View view, View.AttachInfo attachInfo, HardwareDrawCallbacks callbacks,
             Rect dirty);
 
     
+    @DSModeled(DSC.SAFE)
     abstract DisplayList createDisplayList();
 
     
+    @DSModeled(DSC.SAFE)
     abstract HardwareLayer createHardwareLayer(boolean isOpaque);
 
     
+    @DSModeled(DSC.SAFE)
     abstract HardwareLayer createHardwareLayer(int width, int height, boolean isOpaque);
 
     
+    @DSModeled(DSC.SAFE)
     abstract SurfaceTexture createSurfaceTexture(HardwareLayer layer);
 
     
@@ -372,9 +411,11 @@ public abstract class HardwareRenderer {
         }
 
         
+        @DSModeled(DSC.SAFE)
         abstract GLES20Canvas createCanvas();
 
         
+        @DSModeled(DSC.SAFE)
         abstract int[] getConfig(boolean dirtyRegions);
 
         
@@ -566,6 +607,7 @@ GL var6B3D9F1DEC3427303F21E6CDA2CD8137_262782479 =             mEglContext.getGL
         }
 
         
+        @DSModeled(DSC.SAFE)
         abstract void initCaches();
 
         

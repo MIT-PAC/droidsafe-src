@@ -1,12 +1,21 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import gov.nist.javax.sip.header.*;
-import gov.nist.core.*;
+import gov.nist.core.HostNameParser;
+import gov.nist.core.HostPort;
+import gov.nist.core.LexerCore;
+import gov.nist.core.NameValue;
+import gov.nist.core.Token;
+import gov.nist.javax.sip.header.Protocol;
+import gov.nist.javax.sip.header.SIPHeader;
+import gov.nist.javax.sip.header.Via;
+import gov.nist.javax.sip.header.ViaList;
+
 import java.text.ParseException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ViaParser extends HeaderParser {
     

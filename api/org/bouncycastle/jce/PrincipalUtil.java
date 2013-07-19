@@ -1,13 +1,17 @@
 package org.bouncycastle.jce;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.io.*;
-import java.security.cert.*;
-import org.bouncycastle.asn1.*;
-import org.bouncycastle.asn1.x509.*;
+import java.io.IOException;
+import java.security.cert.CRLException;
+import java.security.cert.CertificateEncodingException;
+import java.security.cert.X509CRL;
+import java.security.cert.X509Certificate;
+
+import org.bouncycastle.asn1.ASN1Object;
+import org.bouncycastle.asn1.x509.TBSCertList;
+import org.bouncycastle.asn1.x509.TBSCertificateStructure;
+
+import droidsafe.annotations.DSGenerator;
 
 public class PrincipalUtil {
     

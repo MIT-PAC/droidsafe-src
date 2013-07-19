@@ -1,19 +1,20 @@
 package android.webkit;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.text.TextUtils;
-import android.util.Log;
-import android.webkit.WebViewCore.EventHub;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONStringer;
+
+import android.text.TextUtils;
+import android.util.Log;
+import android.webkit.WebViewCore.EventHub;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 final class SearchBoxImpl implements SearchBox {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.889 -0400", hash_original_field = "2F2828353527044AFD6820F84A8A1FAB", hash_generated_field = "4C7B3AD4D5F853385EAEBF459FCD952D")

@@ -79,7 +79,7 @@ public class LinearLayout extends ViewGroup {
     private int mShowDividers;
     private int mDividerPadding;
     
-    @DSModeled
+    @DSModeled(DSC.SPEC)
     public LinearLayout(Context context) {
         super(context);
     }
@@ -115,7 +115,7 @@ public class LinearLayout extends ViewGroup {
         */
     }
     
-    @DSModeled
+    @DSModeled(DSC.SPEC)
     public void setShowDividers(int showDividers) {
         addTaint(showDividers);
         requestLayout();
@@ -126,12 +126,12 @@ public class LinearLayout extends ViewGroup {
         return getTaintBoolean();
     }
     
-    @DSModeled
+    @DSModeled(DSC.SPEC)
     public int getShowDividers() {
         return getTaintInt();
     }
     
-    @DSModeled
+    @DSModeled(DSC.SPEC)
     public void setDividerDrawable(Drawable divider) {
         if (divider != null) {
             mDividerWidth = divider.getIntrinsicWidth();

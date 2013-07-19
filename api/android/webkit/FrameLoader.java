@@ -1,18 +1,18 @@
 package android.webkit;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.HashMap;
+import java.util.Map;
+
 import android.net.http.ErrorStrings;
 import android.net.http.EventHandler;
 import android.net.http.RequestHandle;
 import android.os.Build;
-import android.util.Log;
 import android.webkit.CacheManager.CacheResult;
-import android.webkit.JniUtil;
-import java.util.HashMap;
-import java.util.Map;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class FrameLoader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.708 -0400", hash_original_field = "9B3DD33B99719CE65C53FA6749E2AD69", hash_generated_field = "D7FBD6A4D07A65117411BC8C01652773")

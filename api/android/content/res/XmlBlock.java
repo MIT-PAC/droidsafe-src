@@ -1,15 +1,21 @@
 package android.content.res;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.util.TypedValue;
-import com.android.internal.util.XmlUtils;
-import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
+
+import org.xmlpull.v1.XmlPullParserException;
+
+import android.util.TypedValue;
+
+import com.android.internal.util.XmlUtils;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 final class XmlBlock {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.270 -0400", hash_original_field = "6B77D8F5873C91798F5C46B2D74971FD", hash_generated_field = "49B4A4B4F77DF85AA82FF83B2F894508")
@@ -144,6 +150,7 @@ XmlResourceParser var540C13E9E156B687226421B24F2DF178_1175030277 =             n
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int nativeCreate(byte[] data,
                                                  int offset,
                                                  int size) {
@@ -151,100 +158,120 @@ XmlResourceParser var540C13E9E156B687226421B24F2DF178_1175030277 =             n
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int nativeGetStringBlock(int obj) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int nativeCreateParseState(int obj) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static final int nativeNext(int state) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int nativeGetNamespace(int state) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static final int nativeGetName(int state) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int nativeGetText(int state) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int nativeGetLineNumber(int state) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int nativeGetAttributeCount(int state) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int nativeGetAttributeNamespace(int state, int idx) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int nativeGetAttributeName(int state, int idx) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int nativeGetAttributeResource(int state, int idx) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int nativeGetAttributeDataType(int state, int idx) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int nativeGetAttributeData(int state, int idx) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int nativeGetAttributeStringValue(int state, int idx) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int nativeGetIdAttribute(int state) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int nativeGetClassAttribute(int state) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int nativeGetStyleAttribute(int state) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int nativeGetAttributeIndex(int state, String namespace, String name) {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final void nativeDestroyParseState(int state) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final void nativeDestroy(int obj) {
     }
 
@@ -1373,6 +1400,7 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_2083408881 =             id >= 0 ? mS
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.319 -0400", hash_original_method = "E55719651A1187D6CF490013E1512769", hash_generated_method = "9490D998B3ACF2F1F42AF65D4CB21769")
         final CharSequence getPooledString(int id) {
             addTaint(id);

@@ -1,17 +1,19 @@
 package android.net.wifi;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.os.Parcelable;
-import android.os.Parcel;
-import android.net.NetworkInfo.DetailedState;
-import android.net.NetworkUtils;
-import java.net.InetAddress;
 import java.net.Inet6Address;
+import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.EnumMap;
+
+import android.net.NetworkInfo.DetailedState;
+import android.net.NetworkUtils;
+import android.os.Parcel;
+import android.os.Parcelable;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class WifiInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.284 -0400", hash_original_field = "70A98F8E3B025E9E336D67915E7E13CE", hash_generated_field = "53C0C50586977D30F50A38A02FF5AA68")

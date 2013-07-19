@@ -1,14 +1,6 @@
 package android.webkit;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.net.ParseException;
-import android.net.WebAddress;
-import android.net.http.AndroidHttpClient;
-import android.os.AsyncTask;
-import android.util.Log;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -18,6 +10,16 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.SortedSet;
 import java.util.TreeSet;
+
+import android.net.ParseException;
+import android.net.WebAddress;
+import android.net.http.AndroidHttpClient;
+import android.os.AsyncTask;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public final class CookieManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.135 -0400", hash_original_field = "33B8F6A3D163A5424381884F05DEEE3C", hash_generated_field = "FBED18CAF24013DA0D8FA265CFF0028E")

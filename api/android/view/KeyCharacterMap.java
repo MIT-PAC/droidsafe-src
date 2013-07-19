@@ -1,15 +1,15 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.text.method.MetaKeyKeyListener;
-import android.util.AndroidRuntimeException;
-import android.util.SparseIntArray;
 import android.os.RemoteException;
+import android.util.AndroidRuntimeException;
 import android.util.SparseArray;
-import java.lang.Character;
+import android.util.SparseIntArray;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public class KeyCharacterMap {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.171 -0400", hash_original_field = "DD9A3A8FAD85AE1264DE035645B54BEC", hash_generated_field = "AE8D59B3F804A7C4665D164A31D2B414")

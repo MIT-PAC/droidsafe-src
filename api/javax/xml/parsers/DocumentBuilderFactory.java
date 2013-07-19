@@ -1,11 +1,14 @@
 package javax.xml.parsers;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import javax.xml.validation.Schema;
+
 import org.apache.harmony.xml.parsers.DocumentBuilderFactoryImpl;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class DocumentBuilderFactory {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.774 -0400", hash_original_field = "45184E952A59E6FFF7C397E5631D95CE", hash_generated_field = "5A58AB4C6A46398C035EC9B72D104783")
@@ -62,6 +65,7 @@ public abstract class DocumentBuilderFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract DocumentBuilder newDocumentBuilder()
         throws ParserConfigurationException;
 
@@ -186,18 +190,22 @@ public abstract class DocumentBuilderFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setAttribute(String name, Object value)
                 throws IllegalArgumentException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Object getAttribute(String name)
                 throws IllegalArgumentException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setFeature(String name, boolean value)
         throws ParserConfigurationException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean getFeature(String name)
         throws ParserConfigurationException;
 

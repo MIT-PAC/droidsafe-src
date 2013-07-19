@@ -1,26 +1,28 @@
 package android.media;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.database.SortCursor;
+import java.util.ArrayList;
+import java.util.List;
+
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
 import android.app.Activity;
 import android.content.ContentUris;
 import android.content.Context;
-import android.content.res.AssetFileDescriptor;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.DrmStore;
 import android.provider.MediaStore;
 import android.provider.Settings;
-import android.provider.Settings.System;
 import android.util.Log;
-import java.util.ArrayList;
-import java.util.List;
+
+import com.android.internal.database.SortCursor;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class RingtoneManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.124 -0400", hash_original_field = "C145D87741EB407D6B1FF715AD484119", hash_generated_field = "B0D69375984D6EE7DC93AC12DB4DFC55")

@@ -1,18 +1,6 @@
 package android.text.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.text.method.LinkMovementMethod;
-import android.text.method.MovementMethod;
-import android.text.style.URLSpan;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.util.Patterns;
-import android.webkit.WebView;
-import android.widget.TextView;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -21,8 +9,23 @@ import java.util.Comparator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
+import android.text.method.MovementMethod;
+import android.text.style.URLSpan;
+import android.util.Patterns;
+import android.webkit.WebView;
+import android.widget.TextView;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+
 public class Linkify {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.467 -0400", hash_original_method = "D1670E1FC2F10CF19A8A5BA1D0122F80", hash_generated_method = "D1670E1FC2F10CF19A8A5BA1D0122F80")
     public Linkify ()
     {
@@ -30,6 +33,7 @@ public class Linkify {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static final boolean addLinks(Spannable text, int mask) {
         if (mask == 0) {
             return false;
@@ -68,6 +72,7 @@ public class Linkify {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final boolean addLinks(TextView text, int mask) {
         if (mask == 0) {
             return false;
@@ -91,6 +96,7 @@ public class Linkify {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final void addLinkMovementMethod(TextView t) {
         MovementMethod m = t.getMovementMethod();
         if ((m == null) || !(m instanceof LinkMovementMethod)) {
@@ -101,11 +107,13 @@ public class Linkify {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void addLinks(TextView text, Pattern pattern, String scheme) {
         addLinks(text, pattern, scheme, null, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void addLinks(TextView text, Pattern p, String scheme,
             MatchFilter matchFilter, TransformFilter transformFilter) {
         SpannableString s = SpannableString.valueOf(text.getText());
@@ -116,11 +124,13 @@ public class Linkify {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final boolean addLinks(Spannable text, Pattern pattern, String scheme) {
         return addLinks(text, pattern, scheme, null, null);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final boolean addLinks(Spannable s, Pattern p,
             String scheme, MatchFilter matchFilter,
             TransformFilter transformFilter) {
@@ -145,12 +155,14 @@ public class Linkify {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final void applyLink(String url, int start, int end, Spannable text) {
         URLSpan span = new URLSpan(url);
         text.setSpan(span, start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final String makeUrl(String url, String[] prefixes,
             Matcher m, TransformFilter filter) {
         if (filter != null) {
@@ -175,6 +187,7 @@ public class Linkify {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final void gatherLinks(ArrayList<LinkSpec> links,
             Spannable s, Pattern pattern, String[] schemes,
             MatchFilter matchFilter, TransformFilter transformFilter) {
@@ -194,6 +207,7 @@ public class Linkify {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final void gatherMapLinks(ArrayList<LinkSpec> links, Spannable s) {
         String string = s.toString();
         String address;
@@ -222,6 +236,7 @@ public class Linkify {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final void pruneOverlaps(ArrayList<LinkSpec> links) {
         Comparator<LinkSpec>  c = new Comparator<LinkSpec>() {
             public final int compare(LinkSpec a, LinkSpec b) {

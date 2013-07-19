@@ -1,10 +1,11 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.lang.reflect.Array;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class AbstractCollection<E> implements Collection<E> {
     
@@ -27,6 +28,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.346 -0400", hash_original_method = "906569C65C760B9885981A6BAAEC834D", hash_generated_method = "3A9BC82846A9A65648AEDC64EA165A5D")
     public boolean addAll(Collection<? extends E> collection) {
         addTaint(collection.getTaint());
@@ -127,6 +129,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.348 -0400", hash_original_method = "5E0F818F4852B6FE376F87B40084BB49", hash_generated_method = "D9488CE0E9092353E75E56A47831CB4C")
     public boolean containsAll(Collection<?> collection) {
         addTaint(collection.getTaint());
@@ -166,6 +169,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Iterator<E> iterator();
 
     
@@ -226,6 +230,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.351 -0400", hash_original_method = "5FB46A3D49E2925CCD326CF5A4A19DE1", hash_generated_method = "F4694D15E6EF1ADFE917C25C5B193155")
     public boolean removeAll(Collection<?> collection) {
         addTaint(collection.getTaint());
@@ -256,6 +261,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.352 -0400", hash_original_method = "AD8A452252ABBE37E452278A3F0D2AEC", hash_generated_method = "750649923756B11C00466003C8100284")
     public boolean retainAll(Collection<?> collection) {
         addTaint(collection.getTaint());
@@ -286,6 +292,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int size();
 
     

@@ -1,9 +1,6 @@
 package com.android.internal.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.content.res.Configuration;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -12,6 +9,10 @@ import android.os.RemoteException;
 import android.view.DragEvent;
 import android.view.IWindow;
 import android.view.IWindowSession;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class BaseIWindow extends IWindow.Stub {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.099 -0400", hash_original_field = "585864B1433B33593F88424BEC9E09EF", hash_generated_field = "223A16F1854300B80614F0CB3E74795C")

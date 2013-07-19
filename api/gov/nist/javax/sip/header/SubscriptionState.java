@@ -1,12 +1,15 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.text.ParseException;
+
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.SubscriptionStateHeader;
-import java.text.ParseException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SubscriptionState extends ParametersHeader implements SubscriptionStateHeader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.543 -0400", hash_original_field = "09BCB72D61C0D6D1EFF5336DA6881557", hash_generated_field = "E191433B1529B42724890251971016B1")

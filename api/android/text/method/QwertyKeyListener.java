@@ -1,15 +1,21 @@
 package android.text.method;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.text.*;
+import android.text.AutoText;
+import android.text.Editable;
+import android.text.NoCopySpan;
+import android.text.Selection;
+import android.text.Spannable;
+import android.text.TextUtils;
 import android.text.method.TextKeyListener.Capitalize;
 import android.util.SparseArray;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.View;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class QwertyKeyListener extends BaseKeyListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.632 -0400", hash_original_field = "7B00CDF214A58D964DB1FD6D561A182A", hash_generated_field = "BEDDE5D3B36AFDA96122F6739A399D24")

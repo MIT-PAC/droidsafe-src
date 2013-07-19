@@ -1,15 +1,18 @@
 package dalvik.system;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.FileDescriptor;
 import java.net.Socket;
 import java.net.SocketException;
 
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+
 public abstract class SocketTagger {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.818 -0400", hash_original_method = "3FCBFB017A056A47E7F458C1C015DE98", hash_generated_method = "3FCBFB017A056A47E7F458C1C015DE98")
     public SocketTagger ()
     {
@@ -17,12 +20,15 @@ public abstract class SocketTagger {
     }
 
 
+    @DSModeled(DSC.BAN)
     public abstract void tag(FileDescriptor socketDescriptor) throws SocketException;
 
     
+    @DSModeled(DSC.BAN)
     public abstract void untag(FileDescriptor socketDescriptor) throws SocketException;
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.819 -0400", hash_original_method = "6DADFCEFEAC71C05F27C21DEA87D02DB", hash_generated_method = "DDC00633D2D9EC1D94B2A8F60DC571AB")
     public final void tag(Socket socket) throws SocketException {
         addTaint(socket.getTaint());
@@ -37,6 +43,7 @@ public abstract class SocketTagger {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.819 -0400", hash_original_method = "54DD0CF9051E663B674E2F8CC129A4E5", hash_generated_method = "11DB0139D656E16CF8014AF5BA170B57")
     public final void untag(Socket socket) throws SocketException {
         addTaint(socket.getTaint());

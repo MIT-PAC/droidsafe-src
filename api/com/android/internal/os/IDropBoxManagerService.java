@@ -1,9 +1,6 @@
 package com.android.internal.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 
 public interface IDropBoxManagerService extends android.os.IInterface
 {

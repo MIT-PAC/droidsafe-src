@@ -1,11 +1,13 @@
 package junit.framework;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class TestFailure extends Object {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.272 -0400", hash_original_field = "24764D2C5A9696D0C7717241A3107B28", hash_generated_field = "63E0C2E6C529E77A17593025B7AE1DAA")

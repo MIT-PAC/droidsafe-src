@@ -1,21 +1,24 @@
 package android.net.http;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.net.ParseException;
-import android.net.WebAddress;
-import junit.framework.Assert;
-import android.webkit.CookieManager;
-import org.apache.commons.codec.binary.Base64;
 import java.io.InputStream;
-import java.lang.Math;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+
+import junit.framework.Assert;
+
+import org.apache.commons.codec.binary.Base64;
+
+import android.net.ParseException;
+import android.net.WebAddress;
+import android.webkit.CookieManager;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class RequestHandle {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.484 -0400", hash_original_field = "8299C83E9CFFA2EF5909444648349221", hash_generated_field = "9C2E85EC79E8F8349BF2E81BA4AC7991")

@@ -1,10 +1,12 @@
 package com.android.i18n.phonenumbers;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.Serializable;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class Phonenumber {
     
@@ -468,6 +470,7 @@ PhoneNumber var72A74007B2BE62B849F475C7BDA4658B_1432240611 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.365 -0400", hash_original_method = "9E3F334A53F42C22EC58969EE12FFC06", hash_generated_method = "0F65CFE8EF91A1576BC2B339834DCC8E")
         public final PhoneNumber clear() {
             clearCountryCode();

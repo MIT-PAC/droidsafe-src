@@ -1,9 +1,6 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -14,6 +11,7 @@ import android.os.Message;
 import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.util.Log;
+
 import com.android.internal.telephony.CommandsInterface;
 import com.android.internal.telephony.OperatorInfo;
 import com.android.internal.telephony.Phone;
@@ -23,6 +21,11 @@ import com.android.internal.telephony.SMSDispatcher;
 import com.android.internal.telephony.gsm.GsmSMSDispatcher;
 import com.android.internal.telephony.gsm.SimCard;
 import com.android.internal.telephony.ims.IsimRecords;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class CDMALTEPhone extends CDMAPhone {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:21.095 -0400", hash_original_field = "5FF746CE02B754A19471A70F50E4C815", hash_generated_field = "27F27AE32D7151DB014BA8DF2F1FF61C")

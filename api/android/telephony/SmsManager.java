@@ -1,19 +1,23 @@
 package android.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import android.app.PendingIntent;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.text.TextUtils;
+
 import com.android.internal.telephony.ISms;
 import com.android.internal.telephony.IccConstants;
 import com.android.internal.telephony.SmsRawData;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class SmsManager {
     

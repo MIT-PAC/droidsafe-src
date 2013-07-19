@@ -1,15 +1,15 @@
 package android.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import org.apache.harmony.xnet.provider.jsse.FileClientSessionCache;
-import org.apache.harmony.xnet.provider.jsse.SSLClientSessionCache;
-import android.content.Context;
-import android.util.Log;
 import java.io.File;
 import java.io.IOException;
+
+import org.apache.harmony.xnet.provider.jsse.FileClientSessionCache;
+import org.apache.harmony.xnet.provider.jsse.SSLClientSessionCache;
+
+import android.content.Context;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public final class SSLSessionCache {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.320 -0400", hash_original_field = "8713673389F715AC61146DC2ACD6B364", hash_generated_field = "D03E46EDECBAA58DC5BFAFCFA4D7C707")

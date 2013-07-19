@@ -1,16 +1,19 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.util.Log;
 import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Modifier;
+
+import android.util.Log;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public class Binder implements IBinder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.674 -0400", hash_original_field = "48FF959108CFB83B8A6F31854D7CE0B4", hash_generated_field = "2791292652EE289D4D904A77FF17FBF6")
@@ -47,42 +50,50 @@ public class Binder implements IBinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getCallingPid() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_213128804 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_213128804;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getCallingUid() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_889067269 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_889067269;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final long clearCallingIdentity() {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1969549158 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1969549158;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void restoreCallingIdentity(long token) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void setThreadStrictModePolicy(int policyMask) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getThreadStrictModePolicy() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1372633461 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1372633461;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void flushPendingCommands() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void joinThreadPool() {
     }
 
@@ -348,11 +359,13 @@ IInterface var540C13E9E156B687226421B24F2DF178_1703837821 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.683 -0400", hash_original_method = "0DE93EF32C53D091768788DCA0E281FD", hash_generated_method = "9921D3E675F5E10CBA9EBD66FA021538")
     private final void init() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.683 -0400", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "15731F8D3959A4577DA5453E16C6C563")
     private final void destroy() {
     }
@@ -589,6 +602,7 @@ IInterface var540C13E9E156B687226421B24F2DF178_610493722 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.695 -0400", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "15731F8D3959A4577DA5453E16C6C563")
     private final void destroy() {
     }

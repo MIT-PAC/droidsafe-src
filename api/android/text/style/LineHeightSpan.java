@@ -1,12 +1,7 @@
 package android.text.style;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.graphics.Paint;
-import android.graphics.Canvas;
-import android.text.Layout;
 import android.text.TextPaint;
 
 public interface LineHeightSpan

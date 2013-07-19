@@ -1,14 +1,18 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import gov.nist.core.HostPort;
 import gov.nist.javax.sip.address.AddressImpl;
 import gov.nist.javax.sip.parser.Parser;
-import javax.sip.header.FromHeader;
+
 import java.text.ParseException;
+
+import javax.sip.header.FromHeader;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class From extends AddressParametersHeader implements javax.sip.header.FromHeader {
     

@@ -1,9 +1,10 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class TimerTask implements Runnable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.879 -0400", hash_original_field = "DD465B0839A70592931A97D99A9DB042", hash_generated_field = "444D55F7E87A46DB2BC47514D8909813")
@@ -113,6 +114,7 @@ public abstract class TimerTask implements Runnable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void run();
 
     

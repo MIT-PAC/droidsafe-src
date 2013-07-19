@@ -1,13 +1,15 @@
 package com.android.internal.telephony.cdma.sms;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.util.SparseBooleanArray;
+
 import com.android.internal.telephony.SmsAddress;
-import com.android.internal.telephony.cdma.sms.UserData;
 import com.android.internal.util.HexDump;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class CdmaSmsAddress extends SmsAddress {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.735 -0400", hash_original_field = "49524A0E3EE6F35DABACF2EE847F7934", hash_generated_field = "84D708851062F6247553AB01A32917F4")

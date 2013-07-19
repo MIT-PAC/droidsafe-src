@@ -1,9 +1,9 @@
 package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class ASN1Constructed extends ASN1Type {
     
@@ -26,6 +26,7 @@ public abstract class ASN1Constructed extends ASN1Type {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.244 -0400", hash_original_method = "B936C5375D6639A303C6027641033901", hash_generated_method = "FCF9DDF920AE0F9B266FFE2017671EAE")
     public final boolean checkTag(int identifier) {
         addTaint(identifier);

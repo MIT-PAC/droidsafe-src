@@ -1,24 +1,24 @@
 package libcore.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
-import java.io.RandomAccessFile;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.channels.FileChannel.MapMode;
 import java.nio.charset.Charsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.TimeZone;
+
 import libcore.io.BufferIterator;
 import libcore.io.ErrnoException;
 import libcore.io.IoUtils;
 import libcore.io.MemoryMappedFile;
+
 import org.apache.harmony.luni.internal.util.TimezoneGetter;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class ZoneInfoDB {
     

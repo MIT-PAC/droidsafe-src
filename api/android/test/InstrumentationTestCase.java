@@ -1,20 +1,21 @@
 package android.test;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.app.Activity;
-import android.app.Instrumentation;
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.KeyEvent;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+
 import junit.framework.TestCase;
+import android.app.Activity;
+import android.app.Instrumentation;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.KeyEvent;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class InstrumentationTestCase extends TestCase {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.606 -0400", hash_original_field = "E062CE48CD3AFCDDC19DD9FCF2E119D4", hash_generated_field = "B2267B39A1EB39D35FC793A28FB486AB")

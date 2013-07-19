@@ -1,11 +1,14 @@
 package org.apache.http;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.Serializable;
+
 import org.apache.http.util.CharArrayBuffer;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ProtocolVersion implements Serializable, Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.208 -0400", hash_original_field = "81788BA0D7D02D81C063DBCA621BA11B", hash_generated_field = "8ECC40219F1A47A496A00A4256414BFE")
@@ -63,6 +66,7 @@ public class ProtocolVersion implements Serializable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.211 -0400", hash_original_method = "A74773FBD6292704847794FB8A3C1AB0", hash_generated_method = "29E1DD86E71A41C4F0D85A9F413F44D5")
     public final String getProtocol() {
 String varDD56EE388A0FA5696BF9686AC14D2DB9_569888432 =         protocol;
@@ -73,6 +77,7 @@ String varDD56EE388A0FA5696BF9686AC14D2DB9_569888432 =         protocol;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.212 -0400", hash_original_method = "6CE35F73F8CF79D6A880BDE227F0BCAD", hash_generated_method = "648C1B4B0DE24179D9FBB1D6D1D6C983")
     public final int getMajor() {
         int varF1425DA40A9F2D21AB702A1C7FEAE026_22310044 = (major);
@@ -83,6 +88,7 @@ String varDD56EE388A0FA5696BF9686AC14D2DB9_569888432 =         protocol;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.212 -0400", hash_original_method = "413E8CB9D527E60B72E0CF611B418433", hash_generated_method = "940B1B9C02317CD2F4BAD8A2C5643A2B")
     public final int getMinor() {
         int varAB846C0E3717A3E7D14AF45CAB70B44A_652284564 = (minor);

@@ -1,9 +1,6 @@
 package java.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.lang.ref.SoftReference;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -19,8 +16,14 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.WeakHashMap;
+
 import libcore.io.Memory;
 import libcore.util.EmptyArray;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public class ObjectStreamClass implements Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.977 -0400", hash_original_field = "924AD349EDF719B44ED4F6F5E69E79C8", hash_generated_field = "565644E752815B2ABF82349A3CEA0B6B")
@@ -451,6 +454,7 @@ for(int i = 0;i < _fields.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.982 -0400", hash_original_method = "3FC829F6BB79347D76007A55E3423470", hash_generated_method = "9E23A8A48798F1006EFD70F0527E5E4A")
     public Class<?> forClass() {
 Class<?> var075125BABC426AEE972114AF721E5216_154444002 =         resolvedClass;
@@ -1106,6 +1110,7 @@ Method var96D778C62F00BBE1AC313B4CD63FC46E_306065815 =         methodReadObjectN
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.988 -0400", hash_original_method = "7A3AD0F8FFB276A7B1543CE5BED00A8C", hash_generated_method = "F5A742D0B09B68C4FB60A9954C304EDB")
      void setClass(Class<?> c) {
         resolvedClass = c;

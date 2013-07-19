@@ -1,28 +1,24 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import static com.android.internal.telephony.TelephonyProperties.PROPERTY_ICC_OPERATOR_ISO_COUNTRY;
 import static com.android.internal.telephony.TelephonyProperties.PROPERTY_ICC_OPERATOR_NUMERIC;
 import android.os.AsyncResult;
-import android.os.Handler;
 import android.os.Message;
-import android.os.Registrant;
 import android.os.SystemProperties;
 import android.util.Log;
-import com.android.internal.telephony.AdnRecord;
+
 import com.android.internal.telephony.AdnRecordCache;
-import com.android.internal.telephony.AdnRecordLoader;
 import com.android.internal.telephony.CommandsInterface;
-import com.android.internal.telephony.TelephonyProperties;
-import com.android.internal.telephony.cdma.RuimCard;
-import com.android.internal.telephony.MccTable;
 import com.android.internal.telephony.IccException;
 import com.android.internal.telephony.IccRecords;
 import com.android.internal.telephony.IccUtils;
-import com.android.internal.telephony.PhoneProxy;
+import com.android.internal.telephony.MccTable;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class RuimRecords extends IccRecords {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.340 -0400", hash_original_field = "D57C967AFB88E398799D962D4CC36F18", hash_generated_field = "37183B293BAF9977D813A0D8B999B0F9")

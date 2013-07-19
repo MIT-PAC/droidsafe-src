@@ -1,9 +1,6 @@
 package java.security;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.util.Enumeration;
@@ -15,9 +12,13 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.Set;
+
 import org.apache.harmony.security.fortress.Engine;
 import org.apache.harmony.security.fortress.SecurityAccess;
 import org.apache.harmony.security.fortress.Services;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public final class Security {
     

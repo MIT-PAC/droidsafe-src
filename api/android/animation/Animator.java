@@ -1,10 +1,12 @@
 package android.animation;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.ArrayList;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Animator implements Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.806 -0400", hash_original_field = "76E8AF78EA383C38A6F80E45CCFEA268", hash_generated_field = "3FD42DDC5A574D761F1E8BD3EC073311")
@@ -39,21 +41,27 @@ public abstract class Animator implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long getStartDelay();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setStartDelay(long startDelay);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Animator setDuration(long duration);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long getDuration();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setInterpolator(TimeInterpolator value);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isRunning();
 
     
@@ -106,6 +114,7 @@ public abstract class Animator implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.840 -0400", hash_original_method = "A0C570F4990D85172FF1B2594590DE80", hash_generated_method = "80EB6D23C0E183B892E0E9305C327579")
     public ArrayList<AnimatorListener> getListeners() {
 ArrayList<AnimatorListener> var6F226E74DAC534764C2244A2BF49F27C_7535036 =         mListeners;

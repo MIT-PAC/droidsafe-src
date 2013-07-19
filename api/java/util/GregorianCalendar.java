@@ -1,12 +1,14 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class GregorianCalendar extends Calendar {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.756 -0400", hash_original_field = "400857AF5F099B78A86D8F68DDA6A04C", hash_generated_field = "EA14FB63AF074345B169453863E64EC4")
@@ -278,6 +280,7 @@ Object varAEB7DF9800272FF7E732FE6AE6B21A82_667158537 =         thisClone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.769 -0400", hash_original_method = "005B3A99F85903E106454DD8B0079421", hash_generated_method = "B00FF7F489554B4BBE66F341253BCD66")
     private final void fullFieldsCalc(long timeVal, int millis, int zoneOffset) {
         addTaint(zoneOffset);
@@ -408,6 +411,7 @@ Object varAEB7DF9800272FF7E732FE6AE6B21A82_667158537 =         thisClone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.771 -0400", hash_original_method = "2E866A22E927A34EE822F5C0BBDFB40C", hash_generated_method = "8876970B2E20F826390CCA4B64F38729")
     private final void cachedFieldsCheckAndGet(long timeVal,
             long newTimeMillis, long newTimeMillisAdjusted, int millis,
@@ -1188,6 +1192,7 @@ switch(field){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.784 -0400", hash_original_method = "BD206861177D272D9EC33433339CB64F", hash_generated_method = "82CEDB5F81192A6B42F6927520A792CE")
     public final Date getGregorianChange() {
 Date var30D73D984C20176C0D7FB6C2B553BF0A_58667672 =         new Date(gregorianCutover);

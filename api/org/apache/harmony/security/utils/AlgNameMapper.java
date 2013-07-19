@@ -1,9 +1,6 @@
 package org.apache.harmony.security.utils;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.security.Provider;
 import java.security.Security;
 import java.util.HashMap;
@@ -11,7 +8,13 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+
 import org.apache.harmony.security.asn1.ObjectIdentifier;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class AlgNameMapper {
     

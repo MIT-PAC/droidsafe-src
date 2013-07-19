@@ -1,9 +1,6 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.core.NameValueList;
 import gov.nist.javax.sip.DialogExt;
@@ -35,6 +32,7 @@ import gov.nist.javax.sip.message.MessageFactoryImpl;
 import gov.nist.javax.sip.message.SIPMessage;
 import gov.nist.javax.sip.message.SIPRequest;
 import gov.nist.javax.sip.message.SIPResponse;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Serializable;
@@ -50,6 +48,7 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
+
 import javax.sip.ClientTransaction;
 import javax.sip.DialogDoesNotExistException;
 import javax.sip.DialogState;
@@ -77,6 +76,11 @@ import javax.sip.header.SupportedHeader;
 import javax.sip.header.TimeStampHeader;
 import javax.sip.message.Request;
 import javax.sip.message.Response;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SIPDialog implements javax.sip.Dialog, DialogExt {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.373 -0400", hash_original_field = "46C9B2C3A305D009DCA963EA55E53037", hash_generated_field = "8B7AA916EC7A88984DDF8AA52B9F1641")
@@ -2828,6 +2832,7 @@ SIPResponse varB79F2C108A34EA379E0E4ADD4F794C06_1802813606 =         lastRespons
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final boolean optionPresent(ListIterator l, String option) {
         while (l.hasNext()) {
             OptionTag opt = (OptionTag) l.next();

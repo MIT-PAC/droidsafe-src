@@ -1,13 +1,12 @@
 package java.security;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Enumeration;
-import java.util.List;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class PermissionCollection implements Serializable {
     
@@ -18,12 +17,15 @@ public abstract class PermissionCollection implements Serializable {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract void add(Permission permission);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Enumeration<Permission> elements();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean implies(Permission permission);
 
     

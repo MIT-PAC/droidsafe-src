@@ -1,9 +1,10 @@
 package java.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class CollationKey implements Comparable<CollationKey> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.672 -0400", hash_original_field = "36CD38F49B9AFA08222C0DC9EBFE35EB", hash_generated_field = "2D2DC69F3BF28B00B15BD37DFC141996")
@@ -19,6 +20,7 @@ public abstract class CollationKey implements Comparable<CollationKey> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int compareTo(CollationKey value);
 
     
@@ -33,6 +35,7 @@ String var87D92E4D22D3928BDE6A72969186AF86_1173455990 =         source;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte[] toByteArray();
 
     

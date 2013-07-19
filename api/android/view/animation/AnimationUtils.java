@@ -1,18 +1,21 @@
 package android.view.animation;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.IOException;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+
 import android.content.Context;
-import android.content.res.XmlResourceParser;
 import android.content.res.Resources.NotFoundException;
+import android.content.res.XmlResourceParser;
+import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.util.Xml;
-import android.os.SystemClock;
-import java.io.IOException;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class AnimationUtils {
     

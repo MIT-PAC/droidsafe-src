@@ -1,9 +1,6 @@
 package java.security.cert;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.ByteArrayInputStream;
 import java.io.NotSerializableException;
 import java.io.ObjectStreamException;
@@ -15,6 +12,11 @@ import java.security.NoSuchProviderException;
 import java.security.PublicKey;
 import java.security.SignatureException;
 import java.util.Arrays;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Certificate implements Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.637 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "AB2C9E2EF2C4EBDBF6BF18A679B45B62")
@@ -29,6 +31,7 @@ public abstract class Certificate implements Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.638 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "A567F2208A15FC4117DFC4AB0ED6FBEE")
     public final String getType() {
 String varC5B9F25B4EEAD3E8E2C33F9429204397_553003702 =         type;
@@ -117,9 +120,11 @@ for(int i=0;i<encoded.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte[] getEncoded() throws CertificateEncodingException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void verify(PublicKey key)
         throws CertificateException,
                NoSuchAlgorithmException,
@@ -128,6 +133,7 @@ for(int i=0;i<encoded.length;i++)
                SignatureException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void verify(PublicKey key, String sigProvider)
         throws CertificateException,
                NoSuchAlgorithmException,
@@ -136,9 +142,11 @@ for(int i=0;i<encoded.length;i++)
                SignatureException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String toString();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract PublicKey getPublicKey();
 
     

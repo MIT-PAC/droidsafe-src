@@ -1,12 +1,15 @@
 package android.view.textservice;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.util.ArrayUtils;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import com.android.internal.util.ArrayUtils;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class SuggestionsInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.992 -0400", hash_original_field = "659339316F0FA48E105689F448D3DD36", hash_generated_field = "390932DA60837BE0A47579CAD7C0B1B8")

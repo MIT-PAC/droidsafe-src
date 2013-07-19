@@ -1,9 +1,6 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.net.InetAddress;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateParsingException;
@@ -14,6 +11,11 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class DefaultHostnameVerifier implements HostnameVerifier {
     

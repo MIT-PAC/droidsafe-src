@@ -1,13 +1,8 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.util.List;
 import java.util.Collection;
-import java.security.PrivilegedAction;
-import java.security.PrivilegedExceptionAction;
+import java.util.List;
 
 public interface ExecutorService extends Executor {
 

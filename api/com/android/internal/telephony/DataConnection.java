@@ -1,14 +1,10 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.telephony.DataCallState.SetupResult;
-import com.android.internal.util.AsyncChannel;
-import com.android.internal.util.Protocol;
-import com.android.internal.util.State;
-import com.android.internal.util.StateMachine;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import android.app.PendingIntent;
 import android.net.LinkCapabilities;
 import android.net.LinkProperties;
@@ -17,9 +13,16 @@ import android.os.AsyncResult;
 import android.os.Message;
 import android.os.SystemProperties;
 import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+
+import com.android.internal.util.AsyncChannel;
+import com.android.internal.util.Protocol;
+import com.android.internal.util.State;
+import com.android.internal.util.StateMachine;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class DataConnection extends StateMachine {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.896 -0400", hash_original_field = "DA5953071EE7823FDF8D83F49423D96B", hash_generated_field = "CD0721759B4466C03691E733797DD315")
@@ -135,16 +138,20 @@ public abstract class DataConnection extends StateMachine {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 public abstract String toString();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onConnect(ConnectionParams cp);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract boolean isDnsOk(String[] domainNameServers);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void log(String s);
 
     
@@ -670,9 +677,11 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_113861393 =        
         FailCause(int errorCode) {
             mErrorCode = errorCode;
         }
+        @DSModeled(DSC.SAFE)
         int getErrorCode() {
             return mErrorCode;
         }
+        @DSModeled(DSC.SAFE)
         public boolean isPermanentFail() {
             return (this == OPERATOR_BARRED) || (this == MISSING_UNKNOWN_APN) ||
                    (this == UNKNOWN_PDP_ADDRESS_TYPE) || (this == USER_AUTHENTICATION) ||
@@ -680,6 +689,7 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_113861393 =        
                    (this == SERVICE_OPTION_NOT_SUBSCRIBED) || (this == NSAPI_IN_USE) ||
                    (this == PROTOCOL_ERRORS);
         }
+        @DSModeled(DSC.SAFE)
         public boolean isEventLoggable() {
             return (this == OPERATOR_BARRED) || (this == INSUFFICIENT_RESOURCES) ||
                     (this == UNKNOWN_PDP_ADDRESS_TYPE) || (this == USER_AUTHENTICATION) ||

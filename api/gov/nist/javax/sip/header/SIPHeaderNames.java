@@ -1,11 +1,64 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import javax.sip.header.*;
-import gov.nist.javax.sip.header.extensions.*;
+import gov.nist.javax.sip.header.extensions.JoinHeader;
+import gov.nist.javax.sip.header.extensions.MinSEHeader;
+import gov.nist.javax.sip.header.extensions.ReferredByHeader;
+import gov.nist.javax.sip.header.extensions.ReplacesHeader;
+import gov.nist.javax.sip.header.extensions.SessionExpiresHeader;
+
+import javax.sip.header.AcceptEncodingHeader;
+import javax.sip.header.AcceptHeader;
+import javax.sip.header.AcceptLanguageHeader;
+import javax.sip.header.AlertInfoHeader;
+import javax.sip.header.AllowEventsHeader;
+import javax.sip.header.AllowHeader;
+import javax.sip.header.AuthenticationInfoHeader;
+import javax.sip.header.AuthorizationHeader;
+import javax.sip.header.CSeqHeader;
+import javax.sip.header.CallIdHeader;
+import javax.sip.header.CallInfoHeader;
+import javax.sip.header.ContactHeader;
+import javax.sip.header.ContentDispositionHeader;
+import javax.sip.header.ContentEncodingHeader;
+import javax.sip.header.ContentLanguageHeader;
+import javax.sip.header.ContentLengthHeader;
+import javax.sip.header.ContentTypeHeader;
+import javax.sip.header.DateHeader;
+import javax.sip.header.ErrorInfoHeader;
+import javax.sip.header.EventHeader;
+import javax.sip.header.ExpiresHeader;
+import javax.sip.header.FromHeader;
+import javax.sip.header.InReplyToHeader;
+import javax.sip.header.MaxForwardsHeader;
+import javax.sip.header.MimeVersionHeader;
+import javax.sip.header.MinExpiresHeader;
+import javax.sip.header.OrganizationHeader;
+import javax.sip.header.PriorityHeader;
+import javax.sip.header.ProxyAuthenticateHeader;
+import javax.sip.header.ProxyAuthorizationHeader;
+import javax.sip.header.ProxyRequireHeader;
+import javax.sip.header.RAckHeader;
+import javax.sip.header.RSeqHeader;
+import javax.sip.header.ReasonHeader;
+import javax.sip.header.RecordRouteHeader;
+import javax.sip.header.ReplyToHeader;
+import javax.sip.header.RequireHeader;
+import javax.sip.header.RetryAfterHeader;
+import javax.sip.header.RouteHeader;
+import javax.sip.header.SIPETagHeader;
+import javax.sip.header.SIPIfMatchHeader;
+import javax.sip.header.ServerHeader;
+import javax.sip.header.SubjectHeader;
+import javax.sip.header.SubscriptionStateHeader;
+import javax.sip.header.SupportedHeader;
+import javax.sip.header.TimeStampHeader;
+import javax.sip.header.ToHeader;
+import javax.sip.header.UnsupportedHeader;
+import javax.sip.header.UserAgentHeader;
+import javax.sip.header.ViaHeader;
+import javax.sip.header.WWWAuthenticateHeader;
+import javax.sip.header.WarningHeader;
 
 public interface SIPHeaderNames {
 

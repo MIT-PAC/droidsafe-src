@@ -1,9 +1,10 @@
 package java.nio;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 abstract class LongArrayBuffer extends LongBuffer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.234 -0400", hash_original_field = "8D50CD27AA8B6BEC65C484FFCC5B2334", hash_generated_field = "328A8BF34389CAFD34319C79BCDE07B5")
@@ -102,6 +103,7 @@ LongBuffer var72A74007B2BE62B849F475C7BDA4658B_521928492 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.237 -0400", hash_original_method = "5B6C9F359344527666A57577F107BCAE", hash_generated_method = "FBE3B57131451A979FEC5BE77660D83E")
     @Override
     public final boolean isDirect() {

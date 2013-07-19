@@ -1,9 +1,6 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.app.ActivityManagerNative;
 import android.app.ActivityThread;
 import android.app.IActivityManager;
@@ -11,8 +8,10 @@ import android.app.QueuedWork;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.util.Log;
-import android.util.Slog;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class BroadcastReceiver {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.475 -0400", hash_original_field = "6DD50A78846A573507CD3027E97E1EA6", hash_generated_field = "56CC6D10D54B274449EA4D95649A29AE")
@@ -28,9 +27,11 @@ public abstract class BroadcastReceiver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void onReceive(Context context, Intent intent);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.477 -0400", hash_original_method = "A694EC135053AF2FEB071A12D3EE4319", hash_generated_method = "3D3C32CC997962EEFE82DC13F967E7DC")
     public final PendingResult goAsync() {
         PendingResult res = mPendingResult;
@@ -87,6 +88,7 @@ IBinder varE3C074C8A98249A08331B334269AEB91_1562396205 =         binder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.479 -0400", hash_original_method = "413D4442793CB2CD30088D833172245E", hash_generated_method = "57FA9A32A4986C882A6FE9A858AB03AD")
     public final int getResultCode() {
         int var2B2BA4CA037129453C2092D8613C9F0D_1289854707 = (mPendingResult != null ? mPendingResult.mResultCode : 0);
@@ -107,6 +109,7 @@ IBinder varE3C074C8A98249A08331B334269AEB91_1562396205 =         binder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.480 -0400", hash_original_method = "4500B5844C9E31997AA4128C2B631832", hash_generated_method = "C4C005E76AC52373C1A608284756C1A5")
     public final String getResultData() {
 String var6A28DDDD6F2A36E80C7DF082C1A737CB_841002546 =         mPendingResult != null ? mPendingResult.mResultData : null;
@@ -173,6 +176,7 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1781030247 =         e;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.483 -0400", hash_original_method = "AC60D9C3BD95277DA035DD6FF45A8CCB", hash_generated_method = "B831C58D52756D5876CD69A019EBA8F0")
     public final boolean getAbortBroadcast() {
         boolean var52C3658BA601DC218244C3815749219A_1813491114 = (mPendingResult != null ? mPendingResult.mAbortBroadcast : false);
@@ -193,6 +197,7 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1781030247 =         e;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.485 -0400", hash_original_method = "7C3FDE5990F70723754AFB92AED4E2CB", hash_generated_method = "CC309946A2203D49B8CD5BCA74F2152C")
     public final void clearAbortBroadcast() {
         if(mPendingResult != null)        
@@ -206,6 +211,7 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1781030247 =         e;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.485 -0400", hash_original_method = "E46A4317E3055902B5625099FF6F383B", hash_generated_method = "9828040EE9C47B4E90B2122AF1FBD15A")
     public final boolean isOrderedBroadcast() {
         boolean varE1622B765B214B5C9D5BBE9448B09A07_1790388835 = (mPendingResult != null ? mPendingResult.mOrderedHint : false);
@@ -216,6 +222,7 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1781030247 =         e;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.486 -0400", hash_original_method = "85C5802A7642DD110CD6FEA4F9597134", hash_generated_method = "BAA85BE96906CCEF9BD2A1500D7E613D")
     public final boolean isInitialStickyBroadcast() {
         boolean var45A355815E07CFCC76BFC8EF62D962F5_400030764 = (mPendingResult != null ? mPendingResult.mInitialStickyHint : false);
@@ -226,6 +233,7 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1781030247 =         e;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.486 -0400", hash_original_method = "68B6314C0DA1E37C298D89B55CAE3400", hash_generated_method = "69D814F3B32F84B57634F91799811317")
     public final void setOrderedHint(boolean isOrdered) {
         addTaint(isOrdered);
@@ -233,6 +241,7 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1781030247 =         e;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.487 -0400", hash_original_method = "D4C333B718143025A27C15902000FB77", hash_generated_method = "D9AD103DE2626E233CF20E2D5E772BFB")
     public final void setPendingResult(PendingResult result) {
         mPendingResult = result;
@@ -241,6 +250,7 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1781030247 =         e;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.487 -0400", hash_original_method = "DB63B22B6D1F06710FF3BD6349434467", hash_generated_method = "679D54BC127BA76F1E925A2784F83AC3")
     public final PendingResult getPendingResult() {
 PendingResult varFDA66089EEC27D31589A7C2426B1144F_638966810 =         mPendingResult;
@@ -251,6 +261,7 @@ PendingResult varFDA66089EEC27D31589A7C2426B1144F_638966810 =         mPendingRe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.488 -0400", hash_original_method = "A942596201048EAFD951F2DD414301FD", hash_generated_method = "AE10474DE2420C2D522388046B0DF067")
     public final void setDebugUnregister(boolean debug) {
         mDebugUnregister = debug;
@@ -259,6 +270,7 @@ PendingResult varFDA66089EEC27D31589A7C2426B1144F_638966810 =         mPendingRe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.488 -0400", hash_original_method = "19A67BCF6BEB94B2ECFD54D952C17B9D", hash_generated_method = "A9B3C61A52FF461B78042E73DE732E54")
     public final boolean getDebugUnregister() {
         boolean var531E6956D9AF6ECA54301749A881CFAD_528722185 = (mDebugUnregister);
@@ -358,6 +370,7 @@ PendingResult varFDA66089EEC27D31589A7C2426B1144F_638966810 =         mPendingRe
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.494 -0400", hash_original_method = "DAC102A9F551BEDDEF83F16167EFAEA6", hash_generated_method = "082452ADF6F65CB58677C9159936DDC0")
         public final int getResultCode() {
             int varE5CED19E692744D577EC9F38B767773F_979558469 = (mResultCode);
@@ -378,6 +391,7 @@ PendingResult varFDA66089EEC27D31589A7C2426B1144F_638966810 =         mPendingRe
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.496 -0400", hash_original_method = "AF28EEAF3BA9B8705C009D1FCC834AB4", hash_generated_method = "4D0561BD46EA57F7FB91516D4A0B4D87")
         public final String getResultData() {
 String var7AF81C367EA4623980C8741236739982_1514784894 =             mResultData;
@@ -435,6 +449,7 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_521450656 =             e;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.500 -0400", hash_original_method = "27570BF34E94ABF03E65F54A5F2272E5", hash_generated_method = "44105CE74293B5376D7C3D421E4FD3C8")
         public final boolean getAbortBroadcast() {
             boolean var9D0CE3E2384F7D542D6BE0E686CC1587_2083036703 = (mAbortBroadcast);
@@ -455,6 +470,7 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_521450656 =             e;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.501 -0400", hash_original_method = "D4C82CDA8EB6714DAE416B0884FCBC85", hash_generated_method = "6C1AABD9192E1E0A43D3F6EB36BA7FB9")
         public final void clearAbortBroadcast() {
             mAbortBroadcast = false;

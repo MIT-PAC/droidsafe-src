@@ -1,19 +1,15 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.os.*;
+import android.os.Message;
 import android.util.Log;
-import com.android.internal.telephony.IccConstants;
-import com.android.internal.telephony.IccException;
+
 import com.android.internal.telephony.IccFileHandler;
-import com.android.internal.telephony.IccFileTypeMismatch;
-import com.android.internal.telephony.IccIoResult;
-import com.android.internal.telephony.IccUtils;
-import com.android.internal.telephony.PhoneProxy;
-import java.util.ArrayList;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class RuimFileHandler extends IccFileHandler {
     

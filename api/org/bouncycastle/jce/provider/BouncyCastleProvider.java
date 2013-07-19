@@ -1,14 +1,12 @@
 package org.bouncycastle.jce.provider;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
 import java.security.Provider;
 import java.util.Iterator;
 import java.util.Map;
+
 import org.bouncycastle.asn1.DERObjectIdentifier;
 import org.bouncycastle.asn1.bc.BCObjectIdentifiers;
 import org.bouncycastle.asn1.iana.IANAObjectIdentifiers;
@@ -16,6 +14,9 @@ import org.bouncycastle.asn1.nist.NISTObjectIdentifiers;
 import org.bouncycastle.asn1.oiw.OIWObjectIdentifiers;
 import org.bouncycastle.asn1.pkcs.PKCSObjectIdentifiers;
 import org.bouncycastle.jce.interfaces.ConfigurableProvider;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public final class BouncyCastleProvider extends Provider implements ConfigurableProvider {
     

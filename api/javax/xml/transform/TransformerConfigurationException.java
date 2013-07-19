@@ -1,9 +1,7 @@
 package javax.xml.transform;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSGenerator;
 
 public class TransformerConfigurationException extends TransformerException {
     

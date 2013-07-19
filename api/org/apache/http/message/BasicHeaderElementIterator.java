@@ -1,16 +1,19 @@
 package org.apache.http.message;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.NoSuchElementException;
+
 import org.apache.http.FormattedHeader;
 import org.apache.http.Header;
 import org.apache.http.HeaderElement;
 import org.apache.http.HeaderElementIterator;
 import org.apache.http.HeaderIterator;
 import org.apache.http.util.CharArrayBuffer;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class BasicHeaderElementIterator implements HeaderElementIterator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.754 -0400", hash_original_field = "17843B798641DCC33A90FE8CA70EEC07", hash_generated_field = "681B665373B1CBEA8829DF2690903333")
@@ -150,6 +153,7 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.759 -0400", hash_original_method = "7B092A345DC93A80FE3D1D4087DB2A38", hash_generated_method = "56E80AE158FF57FF4AB26B64104401DB")
     public boolean hasNext() {
         if(this.currentElement == null)        
@@ -197,6 +201,7 @@ HeaderElement var24D05606CDD4BC4C89F2F5A15C16F343_1712162063 =         element;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.760 -0400", hash_original_method = "4D3D2FFF1A269DAEEFECD9D2B54EE606", hash_generated_method = "26AE1095BDD3EA37034B330C325DFBC7")
     public final Object next() throws NoSuchElementException {
 Object var459972DE48CB4C82E82E2DC06B4F9E84_2046267473 =         nextElement();

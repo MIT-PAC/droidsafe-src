@@ -1,12 +1,13 @@
 package android.appwidget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import android.content.ComponentName;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.content.ComponentName;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class AppWidgetProviderInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.812 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "C0C8252EB397029DCC49105E549FECC7")

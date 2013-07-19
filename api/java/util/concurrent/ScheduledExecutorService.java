@@ -1,11 +1,6 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.util.concurrent.atomic.*;
-import java.util.*;
 
 public interface ScheduledExecutorService extends ExecutorService {
 

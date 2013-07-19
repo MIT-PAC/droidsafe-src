@@ -1,10 +1,12 @@
 package android.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.UnsupportedEncodingException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class Base64 {
     
@@ -101,9 +103,11 @@ public class Base64 {
         }
 
 
+        @DSModeled(DSC.SAFE)
         public abstract boolean process(byte[] input, int offset, int len, boolean finish);
 
         
+        @DSModeled(DSC.SAFE)
         public abstract int maxOutputSize(int len);
 
         

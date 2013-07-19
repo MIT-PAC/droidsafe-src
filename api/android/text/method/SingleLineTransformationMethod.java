@@ -1,20 +1,14 @@
 package android.text.method;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.graphics.Rect;
-import android.text.Editable;
-import android.text.GetChars;
-import android.text.Spannable;
-import android.text.Spanned;
-import android.text.SpannedString;
-import android.text.TextUtils;
-import android.view.View;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SingleLineTransformationMethod extends ReplacementTransformationMethod {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.728 -0400", hash_original_method = "D4568A7EAB6F00728EAF3C3E423FA0FE", hash_generated_method = "D4568A7EAB6F00728EAF3C3E423FA0FE")
     public SingleLineTransformationMethod ()
     {

@@ -1,13 +1,10 @@
 package android.text.method;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.widget.TextView;
+import android.text.Spannable;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
-import android.text.*;
+import android.widget.TextView;
 
 public interface MovementMethod {
     public void initialize(TextView widget, Spannable text);

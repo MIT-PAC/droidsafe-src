@@ -1,13 +1,13 @@
 package android.bluetooth;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.os.ParcelUuid;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.UUID;
+
+import android.os.ParcelUuid;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public final class BluetoothUuid {
     

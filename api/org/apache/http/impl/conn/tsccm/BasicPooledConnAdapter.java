@@ -1,12 +1,13 @@
 package org.apache.http.impl.conn.tsccm;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import org.apache.http.conn.ClientConnectionManager;
 import org.apache.http.impl.conn.AbstractPoolEntry;
 import org.apache.http.impl.conn.AbstractPooledConnAdapter;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class BasicPooledConnAdapter extends AbstractPooledConnAdapter {
     

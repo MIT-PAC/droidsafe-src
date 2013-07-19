@@ -1,12 +1,14 @@
 package dalvik.system;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.File;
 import java.net.URL;
 import java.util.Enumeration;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class BaseDexClassLoader extends ClassLoader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.685 -0400", hash_original_field = "E52907B281EBC39F748C5E9AF1646256", hash_generated_field = "3A1905766FA74BE7F45BBB06C9F84A8F")
@@ -32,6 +34,7 @@ public class BaseDexClassLoader extends ClassLoader {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.685 -0400", hash_original_method = "521C939EE5D3EB6850693DC0AA73197C", hash_generated_method = "B7E8D36EE3BAA216C3ABCE7A39A5F953")
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
@@ -68,6 +71,7 @@ URL var711A2659EF8169CA1ACFB499F3D267C6_1240364158 =         pathList.findResour
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.686 -0400", hash_original_method = "7D0FB955FF80F0A3807920CE00840D77", hash_generated_method = "663CE98D4C9A06BC948E995C5B1850A9")
     @Override
     protected Enumeration<URL> findResources(String name) {

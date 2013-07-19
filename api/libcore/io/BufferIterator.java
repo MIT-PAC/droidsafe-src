@@ -1,9 +1,9 @@
 package libcore.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class BufferIterator {
     
@@ -14,24 +14,31 @@ public abstract class BufferIterator {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract void seek(int offset);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void skip(int byteCount);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void readByteArray(byte[] dst, int dstOffset, int byteCount);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte readByte();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int readInt();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void readIntArray(int[] dst, int dstOffset, int intCount);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract short readShort();
 
     

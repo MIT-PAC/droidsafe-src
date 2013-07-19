@@ -1,25 +1,29 @@
 package android.text.method;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.R;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.*;
+import android.text.Editable;
+import android.text.Selection;
 import android.view.LayoutInflater;
-import android.view.View.OnClickListener;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
+
+import com.android.internal.R;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class CharacterPickerDialog extends Dialog implements OnItemClickListener, OnClickListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.159 -0400", hash_original_field = "7D6C73188D7990FE5A4B99F8F090B9EA", hash_generated_field = "E606D96B6FC531BB030B680E135C95D0")
@@ -192,6 +196,7 @@ View var73F89FAC8F369DF0913D10C37C1E0EA1_1981619032 =             b;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.170 -0400", hash_original_method = "DE59A8E1295F8E334D75F62942CFDC7D", hash_generated_method = "C19C921F45A2F951C325B20250D2E739")
         public final int getCount() {
             int varEA81FFBB75952D26DCB258293ABA8690_1709994060 = (mOptions.length());
@@ -202,6 +207,7 @@ View var73F89FAC8F369DF0913D10C37C1E0EA1_1981619032 =             b;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.170 -0400", hash_original_method = "8B0C0E62DBC532F544A3C62A19BF4060", hash_generated_method = "C1B7DF46DCB8BB17ED6EE06FD9AAE2FE")
         public final Object getItem(int position) {
             addTaint(position);
@@ -213,6 +219,7 @@ Object var87AE1E24DC46164AD61DEEB89268C372_494025095 =             String.valueO
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.171 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "0770264674DC77A707E9BE8D97F885B7")
         public final long getItemId(int position) {
             addTaint(position);

@@ -857,7 +857,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		return null;
 	}
 	
-	@DSModeled
+	@DSModeled(DSC.SPEC)
 	public void setOnClickListener(OnClickListener l){
 		l.onClick(this);
 		// Original method
@@ -7586,7 +7586,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 /*	  
 	public static Property<View, Float> ALPHA = new FloatProperty<View>("alpha") {
 	    
-	    @DSModeled
+	    @DSModeled(DSC.SPEC)
 	    {
 	    }
 	    

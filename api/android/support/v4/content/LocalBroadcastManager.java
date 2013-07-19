@@ -1,12 +1,10 @@
 package android.support.v4.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +12,10 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class LocalBroadcastManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.921 -0400", hash_original_field = "5ABA4A253E78386295F297E632FF4E34", hash_generated_field = "722D46A23A9E453AC7AC6D5797C29418")
@@ -382,6 +383,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_771655950 =             builder.toStr
 
         ArrayList<ReceiverRecord> receivers;
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.934 -0400", hash_original_method = "AA1A90161822F4E9C86DDF136B615F55", hash_generated_method = "BBEA8E4A968954170762D1941E5579F8")
           BroadcastRecord(Intent _intent, ArrayList<ReceiverRecord> _receivers) {
             intent = _intent;

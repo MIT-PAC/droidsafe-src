@@ -1,11 +1,13 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.lang.reflect.Method;
+
 import libcore.util.EmptyArray;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class Void {
     
@@ -16,6 +18,7 @@ public final class Void {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     private static Class<Void> lookupType() {
         try {

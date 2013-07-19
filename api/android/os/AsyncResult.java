@@ -1,10 +1,8 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.os.Message;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class AsyncResult {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.558 -0400", hash_original_field = "25C84ECB718C6159E9324F086F630B67", hash_generated_field = "ACC4BEB2E6BD76B8FB51D8C386A55DC8")

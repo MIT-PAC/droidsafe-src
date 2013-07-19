@@ -1,12 +1,13 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.security.KeyManagementException;
 import java.security.SecureRandom;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SSLContextSpi {
     
@@ -16,25 +17,32 @@ public abstract class SSLContextSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(KeyManager[] km, TrustManager[] tm, SecureRandom sr)
             throws KeyManagementException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SSLSocketFactory engineGetSocketFactory();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SSLServerSocketFactory engineGetServerSocketFactory();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SSLEngine engineCreateSSLEngine(String host, int port);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SSLEngine engineCreateSSLEngine();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SSLSessionContext engineGetServerSessionContext();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SSLSessionContext engineGetClientSessionContext();
 
     

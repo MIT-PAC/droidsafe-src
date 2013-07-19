@@ -1,15 +1,17 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.lang.reflect.Array;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class Collections {
     
@@ -110,6 +112,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> Enumeration<T> enumeration(Collection<T> collection) {
         final Collection<T> c = collection;
         return new Enumeration<T>() {
@@ -133,6 +136,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T extends Object & Comparable<? super T>> T max(
             Collection<? extends T> collection) {
         Iterator<? extends T> it = collection.iterator();
@@ -147,6 +151,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> T max(Collection<? extends T> collection,
             Comparator<? super T> comparator) {
         if (comparator == null) {
@@ -166,6 +171,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T extends Object & Comparable<? super T>> T min(
             Collection<? extends T> collection) {
         Iterator<? extends T> it = collection.iterator();
@@ -180,6 +186,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> T min(Collection<? extends T> collection,
             Comparator<? super T> comparator) {
         if (comparator == null) {
@@ -204,6 +211,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static void reverse(List<?> list) {
         int size = list.size();
@@ -219,12 +227,14 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T> Comparator<T> reverseOrder() {
         return (Comparator) ReverseComparator.INSTANCE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> Comparator<T> reverseOrder(Comparator<T> c) {
         if (c == null) {
             return reverseOrder();
@@ -236,11 +246,13 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void shuffle(List<?> list) {
         shuffle(list, new Random());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void shuffle(List<?> list, Random random) {
         @SuppressWarnings("unchecked") 
         final List<Object> objectList = (List<Object>) list;
@@ -267,21 +279,25 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E> Set<E> singleton(E object) {
         return new SingletonSet<E>(object);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E> List<E> singletonList(E object) {
         return new SingletonList<E>(object);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <K, V> Map<K, V> singletonMap(K key, V value) {
         return new SingletonMap<K, V>(key, value);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T extends Comparable<? super T>> void sort(List<T> list) {
         Object[] array = list.toArray();
@@ -295,6 +311,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T> void sort(List<T> list, Comparator<? super T> comparator) {
         T[] array = list.toArray((T[]) new Object[list.size()]);
@@ -308,6 +325,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static void swap(List<?> list, int index1, int index2) {
         if (list == null) {
@@ -336,6 +354,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static void rotate(List<?> lst, int dist) {
         List<Object> list = (List<Object>) lst;
@@ -454,6 +473,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> ArrayList<T> list(Enumeration<T> enumeration) {
         ArrayList<T> list = new ArrayList<T>();
         while (enumeration.hasMoreElements()) {
@@ -463,6 +483,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> Collection<T> synchronizedCollection(
             Collection<T> collection) {
         if (collection == null) {
@@ -472,6 +493,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> List<T> synchronizedList(List<T> list) {
         if (list == null) {
             throw new NullPointerException();
@@ -483,6 +505,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <K, V> Map<K, V> synchronizedMap(Map<K, V> map) {
         if (map == null) {
             throw new NullPointerException();
@@ -491,6 +514,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E> Set<E> synchronizedSet(Set<E> set) {
         if (set == null) {
             throw new NullPointerException();
@@ -499,6 +523,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <K, V> SortedMap<K, V> synchronizedSortedMap(
             SortedMap<K, V> map) {
         if (map == null) {
@@ -508,6 +533,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E> SortedSet<E> synchronizedSortedSet(SortedSet<E> set) {
         if (set == null) {
             throw new NullPointerException();
@@ -516,6 +542,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <E> Collection<E> unmodifiableCollection(
             Collection<? extends E> collection) {
@@ -526,6 +553,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <E> List<E> unmodifiableList(List<? extends E> list) {
         if (list == null) {
@@ -538,6 +566,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <K, V> Map<K, V> unmodifiableMap(
             Map<? extends K, ? extends V> map) {
@@ -548,6 +577,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <E> Set<E> unmodifiableSet(Set<? extends E> set) {
         if (set == null) {
@@ -557,6 +587,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <K, V> SortedMap<K, V> unmodifiableSortedMap(
             SortedMap<K, ? extends V> map) {
@@ -567,6 +598,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E> SortedSet<E> unmodifiableSortedSet(SortedSet<E> set) {
         if (set == null) {
             throw new NullPointerException();
@@ -575,6 +607,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int frequency(Collection<?> c, Object o) {
         if (c == null) {
             throw new NullPointerException();
@@ -594,36 +627,42 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static final <T> List<T> emptyList() {
         return EMPTY_LIST;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static final <T> Set<T> emptySet() {
         return EMPTY_SET;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static final <K, V> Map<K, V> emptyMap() {
         return EMPTY_MAP;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T> Enumeration<T> emptyEnumeration() {
         return (Enumeration<T>) EMPTY_ENUMERATION;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T> Iterator<T> emptyIterator() {
         return (Iterator<T>) EMPTY_ITERATOR;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> ListIterator<T> emptyListIterator() {
         return Collections.<T>emptyList().listIterator();
     }
@@ -701,6 +740,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E> Set<E> newSetFromMap(Map<E, Boolean> map) {
         if (map.isEmpty()) {
             return new SetFromMap<E>(map);
@@ -709,6 +749,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> Queue<T> asLifoQueue(Deque<T> deque) {
         return new AsLIFOQueue<T>(deque);
     }
@@ -1029,6 +1070,7 @@ Object var82C06B799CE89F4FFB58A600643773F8_1481268190 =             Collections.
     
     private static final class ReverseComparator<T> implements Comparator<T>, Serializable {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.641 -0400", hash_original_method = "FFB2FB11DBE006893CA9746ECCE68517", hash_generated_method = "FFB2FB11DBE006893CA9746ECCE68517")
         public ReverseComparator ()
         {
@@ -1079,6 +1121,7 @@ Object var30C80D8445A0CA6A7769041AAD00A443_1340467786 =             INSTANCE;
 
         private Comparator<T> cmp;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.642 -0400", hash_original_method = "1ABA0972F29BDB004C28A1246ABEF788", hash_generated_method = "B92E5576724AB283C109FF5B16A47456")
           ReverseComparator2(Comparator<T> comparator) {
             this.cmp = comparator;
@@ -1519,6 +1562,7 @@ Map.Entry<K, V> var9E12D90BC96A0F9C001C5904062535E7_420079315 =                 
 
         Object mutex;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.703 -0400", hash_original_method = "30FA7B26D2517E75155300E21A44EE02", hash_generated_method = "04BEBFE0095AFAF3C9F796F57AE0BFCE")
           SynchronizedCollection(Collection<E> collection) {
             c = collection;
@@ -1529,6 +1573,7 @@ Map.Entry<K, V> var9E12D90BC96A0F9C001C5904062535E7_420079315 =                 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.703 -0400", hash_original_method = "A2A350BD37040709EC39C6B0536AFBDE", hash_generated_method = "4B2E27EA4C4C16202811504251810751")
           SynchronizedCollection(Collection<E> collection, Object mutex) {
             c = collection;
@@ -1807,6 +1852,7 @@ T[] varA824E05E0FA0C1B35EB9A8324FF1796D_221099759 =                 c.toArray(ar
     
     static class SynchronizedRandomAccessList<E> extends SynchronizedList<E> implements RandomAccess {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.705 -0400", hash_original_method = "B7E7091552AE239FAE56C332916C1F88", hash_generated_method = "E13039390DC63B5DD55D2C3F5A398F04")
           SynchronizedRandomAccessList(List<E> l) {
             super(l);
@@ -1815,6 +1861,7 @@ T[] varA824E05E0FA0C1B35EB9A8324FF1796D_221099759 =                 c.toArray(ar
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.705 -0400", hash_original_method = "333C2DB156927D33EFC68D095A4D91C7", hash_generated_method = "8776429B58A200120921377CD7800721")
           SynchronizedRandomAccessList(List<E> l, Object mutex) {
             super(l, mutex);
@@ -1866,6 +1913,7 @@ Object var91C5F48A6EC2BB7DF4455DCCC8C58A1A_876647516 =             new Synchroni
 
         List<E> list;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.706 -0400", hash_original_method = "557BC04FB4751FAF0774C664BC5CCEDB", hash_generated_method = "C7C5461D5C9C9A7143EFC825B2E89308")
           SynchronizedList(List<E> l) {
             super(l);
@@ -1875,6 +1923,7 @@ Object var91C5F48A6EC2BB7DF4455DCCC8C58A1A_876647516 =             new Synchroni
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.706 -0400", hash_original_method = "6BB690026CB7D337AD2D522FD2C1D564", hash_generated_method = "DA23F60EE2F336AE20DE0F8560712B04")
           SynchronizedList(List<E> l, Object mutex) {
             super(l, mutex);
@@ -2245,6 +2294,7 @@ Object var72A74007B2BE62B849F475C7BDA4658B_1782787474 =             this;
 
         Object mutex;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.714 -0400", hash_original_method = "C14189E3F71A4C148CB91C638F3BAAE3", hash_generated_method = "697756520B6F74069D1E5AA0F6D1C69A")
           SynchronizedMap(Map<K, V> map) {
             m = map;
@@ -2255,6 +2305,7 @@ Object var72A74007B2BE62B849F475C7BDA4658B_1782787474 =             this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.714 -0400", hash_original_method = "6EAD9DD813CFD47244744C3F6D6A4D1C", hash_generated_method = "96BED7921FDC6B114140F51F8F22333E")
           SynchronizedMap(Map<K, V> map, Object mutex) {
             m = map;
@@ -2438,6 +2489,7 @@ V var065C412EB078CAC7BCF0E1D4C066D348_1396350974 =                 m.put(key, va
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.716 -0400", hash_original_method = "400FF0E6707670DAA4FF7ECA275302A3", hash_generated_method = "02E0FA1D3734E664378B37F39C9464E0")
         @Override
         public void putAll(Map<? extends K, ? extends V> map) {
@@ -2546,6 +2598,7 @@ String var8389EA5D3F4E9FD19F68E63143EE799F_223768981 =                 m.toStrin
     
     static class SynchronizedSet<E> extends SynchronizedCollection<E> implements Set<E> {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.719 -0400", hash_original_method = "F3863A567ABAC10F9410ABCF2A4DC8AC", hash_generated_method = "B3C414CCF795BDAB85BAEA8F2098B4FB")
           SynchronizedSet(Set<E> set) {
             super(set);
@@ -2554,6 +2607,7 @@ String var8389EA5D3F4E9FD19F68E63143EE799F_223768981 =                 m.toStrin
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.719 -0400", hash_original_method = "A1BA2E3E145DCA2C522F0AB9439A1572", hash_generated_method = "B6F70866DC85A2FFF9FE5147D21972E9")
           SynchronizedSet(Set<E> set, Object mutex) {
             super(set, mutex);
@@ -2625,6 +2679,7 @@ String var8389EA5D3F4E9FD19F68E63143EE799F_223768981 =                 m.toStrin
 
         private SortedMap<K, V> sm;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.720 -0400", hash_original_method = "2E0F62BCD34367F1E6E251286E17ABEB", hash_generated_method = "65B92739EACB6292AF1017EE07725F62")
           SynchronizedSortedMap(SortedMap<K, V> map) {
             super(map);
@@ -2634,6 +2689,7 @@ String var8389EA5D3F4E9FD19F68E63143EE799F_223768981 =                 m.toStrin
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.721 -0400", hash_original_method = "5BF33998E3FF0155F7A513C6A201FE85", hash_generated_method = "6296C3605A11681BE962CFBE7273FD54")
           SynchronizedSortedMap(SortedMap<K, V> map, Object mutex) {
             super(map, mutex);
@@ -2644,6 +2700,7 @@ String var8389EA5D3F4E9FD19F68E63143EE799F_223768981 =                 m.toStrin
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.721 -0400", hash_original_method = "78218A5A359D1FCDF6B98779037FCB94", hash_generated_method = "BA1AD2D583284BF5304A175C0AD71118")
         @Override
         public Comparator<? super K> comparator() {
@@ -2677,6 +2734,7 @@ K varA58D1FB276F66FC6ABBF4CA9E354FD1B_1382405129 =                 sm.firstKey()
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.721 -0400", hash_original_method = "758EF70CDC2061BD7D7B124D17EF3F64", hash_generated_method = "65EB30DBF5A01F6D20FB1B14EA0ECCC4")
         @Override
         public SortedMap<K, V> headMap(K endKey) {
@@ -2713,6 +2771,7 @@ K varC4E8101F3F71352235F4E401D4498536_1302195384 =                 sm.lastKey();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.724 -0400", hash_original_method = "E82E6227AA62F00EB1D33B47A72F41C4", hash_generated_method = "125CDCBD2E8E3A501BA45ECE7248A61C")
         @Override
         public SortedMap<K, V> subMap(K startKey, K endKey) {
@@ -2733,6 +2792,7 @@ SortedMap<K, V> var3568402581E0193E041EF3FB853BEAC9_710711460 =                 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.724 -0400", hash_original_method = "F7B84D714F16D295C7D43C8AA5E52D6A", hash_generated_method = "350FCE6F52B0165D060B4F12E0ED15C0")
         @Override
         public SortedMap<K, V> tailMap(K startKey) {
@@ -2779,6 +2839,7 @@ SortedMap<K, V> var76FD45A0B6EE1B8CC0C79332C3896766_1887335037 =                
 
         private SortedSet<E> ss;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.725 -0400", hash_original_method = "B2F0E775DF29B0E6B28447766B0AA532", hash_generated_method = "4CBCB006A0B32CDF41866EAC9A8E2DC9")
           SynchronizedSortedSet(SortedSet<E> set) {
             super(set);
@@ -2788,6 +2849,7 @@ SortedMap<K, V> var76FD45A0B6EE1B8CC0C79332C3896766_1887335037 =                
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.725 -0400", hash_original_method = "46957450EFA60C06BEFC5742F9BFAC78", hash_generated_method = "475CBA9D2152E24CC31AED38CAE99C9B")
           SynchronizedSortedSet(SortedSet<E> set, Object mutex) {
             super(set, mutex);
@@ -2798,6 +2860,7 @@ SortedMap<K, V> var76FD45A0B6EE1B8CC0C79332C3896766_1887335037 =                
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.725 -0400", hash_original_method = "D71F7DA0E84FA7A091B4017D559410C5", hash_generated_method = "F08FBAB5E89CD501F1619A4FE4BD57C3")
         @Override
         public Comparator<? super E> comparator() {
@@ -2932,6 +2995,7 @@ SortedSet<E> var6F7D9083A65424D18B09B8597111017E_923391220 =                 new
 
         Collection<E> c;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.727 -0400", hash_original_method = "0B21B3311CB87F81844FA591591A704A", hash_generated_method = "F8A220D652916612975A1BF5C32AE7B2")
           UnmodifiableCollection(Collection<E> collection) {
             c = collection;
@@ -3165,6 +3229,7 @@ String var7F88C51BB16CD8992026056598815CC9_1170159354 =             c.toString()
     
     private static class UnmodifiableRandomAccessList<E> extends UnmodifiableList<E> implements RandomAccess {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.736 -0400", hash_original_method = "0A20B358F7BA1E60AD6DE80ADB85C324", hash_generated_method = "205D9E6E7A9FC9AE79599882AC59F3B2")
           UnmodifiableRandomAccessList(List<E> l) {
             super(l);
@@ -3210,6 +3275,7 @@ Object var49FE19F72A72127942299509E99152D2_1212784955 =             new Unmodifi
 
         List<E> list;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.736 -0400", hash_original_method = "4CB96388E36B825DE711E2E59A893E0D", hash_generated_method = "51986B2400081BEED0D63B6036986FF3")
           UnmodifiableList(List<E> l) {
             super(l);
@@ -3493,6 +3559,7 @@ Object var72A74007B2BE62B849F475C7BDA4658B_953277828 =             this;
 
         private Map<K, V> m;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.752 -0400", hash_original_method = "74C4A0289A3E9196E4EF75F76384A7D2", hash_generated_method = "DA7567E66A4C382E1EF89234BCC9D997")
           UnmodifiableMap(Map<K, V> map) {
             m = map;
@@ -3626,6 +3693,7 @@ Set<K> var4B8E49910ECC42FB2E6ACB972650B96D_238760514 =             new Unmodifia
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.754 -0400", hash_original_method = "1D605566C28BBD06FDC515389557B406", hash_generated_method = "11C37ED810FBC9B142F50F35C264D4B8")
         @Override
         public void putAll(Map<? extends K, ? extends V> map) {
@@ -3689,6 +3757,7 @@ String var8389EA5D3F4E9FD19F68E63143EE799F_163713358 =             m.toString();
         
         private static class UnmodifiableEntrySet<K, V> extends UnmodifiableSet<Map.Entry<K, V>> {
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.754 -0400", hash_original_method = "211DEE98878E4422E2F38E79CDC5F0D4", hash_generated_method = "E5E05A5D1E2777C870B2B3DCCCA2A2BD")
               UnmodifiableEntrySet(Set<Map.Entry<K, V>> set) {
                 super(set);
@@ -3821,6 +3890,7 @@ T[] var5DC9C33EDB9F81CF1216538024B770BE_1421244130 =                 contents;
 
                 Map.Entry<K, V> mapEntry;
                 
+                @DSModeled(DSC.SAFE)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.760 -0400", hash_original_method = "E37A4627FD27E632126EED134E00D831", hash_generated_method = "A97AFE882B9E93ECA34E23B05853DCFA")
                   UnmodifiableMapEntry(Map.Entry<K, V> entry) {
                     mapEntry = entry;
@@ -3923,6 +3993,7 @@ String varDD6ECDB9CC96346AAAE786051DD41EF3_1678315505 =                     mapE
     
     private static class UnmodifiableSet<E> extends UnmodifiableCollection<E> implements Set<E> {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.762 -0400", hash_original_method = "D46A71F25EF02541A08678630568218D", hash_generated_method = "DBD124D7730B2343640D7C872444495D")
           UnmodifiableSet(Set<E> set) {
             super(set);
@@ -3968,6 +4039,7 @@ String varDD6ECDB9CC96346AAAE786051DD41EF3_1678315505 =                     mapE
 
         private SortedMap<K, V> sm;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.762 -0400", hash_original_method = "AC9FE01B421B1E54651959AD61521CA6", hash_generated_method = "FE478A77C43C9AB097C4727B1013B70C")
           UnmodifiableSortedMap(SortedMap<K, V> map) {
             super(map);
@@ -3977,6 +4049,7 @@ String varDD6ECDB9CC96346AAAE786051DD41EF3_1678315505 =                     mapE
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.762 -0400", hash_original_method = "E5FDBCC6560BE7E99B2D2F850BD84149", hash_generated_method = "02DD1E4907902189E239BF84B627E08D")
         @Override
         public Comparator<? super K> comparator() {
@@ -4000,6 +4073,7 @@ K varA58D1FB276F66FC6ABBF4CA9E354FD1B_122706290 =             sm.firstKey();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.766 -0400", hash_original_method = "EC6243B190269A05D31802D1260652E4", hash_generated_method = "B39BFCCDBF3E73E16E4776F433908625")
         @Override
         public SortedMap<K, V> headMap(K before) {
@@ -4024,6 +4098,7 @@ K varC4E8101F3F71352235F4E401D4498536_1101522341 =             sm.lastKey();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.766 -0400", hash_original_method = "B6411009D9179ABF4D7755605B648FDC", hash_generated_method = "771C700A575920071751E05C52FCC306")
         @Override
         public SortedMap<K, V> subMap(K start, K end) {
@@ -4037,6 +4112,7 @@ SortedMap<K, V> varCCBB071ACDDD27B316590ED95D45D92F_76689459 =             new U
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.767 -0400", hash_original_method = "59BADF6C5EE68C4E1DB5A6A22818328A", hash_generated_method = "3DBEEFFD70D4684BDDABEEE45CCB1AD5")
         @Override
         public SortedMap<K, V> tailMap(K after) {
@@ -4061,6 +4137,7 @@ SortedMap<K, V> var4272A31247EF3DF31C465D4CA23EB8D9_1605644604 =             new
 
         private SortedSet<E> ss;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.767 -0400", hash_original_method = "232C45C3B4117EB9042FB58E6C0CE113", hash_generated_method = "C02ACFBA00E84FCE033C7CEC6C326A50")
           UnmodifiableSortedSet(SortedSet<E> set) {
             super(set);
@@ -4070,6 +4147,7 @@ SortedMap<K, V> var4272A31247EF3DF31C465D4CA23EB8D9_1605644604 =             new
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.767 -0400", hash_original_method = "8514D9255D678B041F55D03BA11DCA3B", hash_generated_method = "052144F612C8362D58E75F8EFCD20039")
         @Override
         public Comparator<? super E> comparator() {
@@ -4975,6 +5053,7 @@ E var61117AF8F234799332538CC5E5C9E900_1541992252 =             i.previous();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.791 -0400", hash_original_method = "8A1A291116E92C540879607029C861C6", hash_generated_method = "1B48255B5B50D2DBF9305C6799A700C1")
         @SuppressWarnings("unchecked")
         @Override
@@ -5076,6 +5155,7 @@ E varFBADEC94A2C3564C49874A24F23CA3FC_1518767455 =             l.remove(index);
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.793 -0400", hash_original_method = "9293980ECFF31B033CDADFB0ED26EA69", hash_generated_method = "3263E1E76C1B6C75C6DBD28260F1004E")
         @Override
         public ListIterator<E> listIterator() {
@@ -5087,6 +5167,7 @@ ListIterator<E> var82F7472176A949D32BDB07D4F238EAD8_562978662 =             new 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.794 -0400", hash_original_method = "31D39D7FEEE82D7A15D00B805CB5EAA4", hash_generated_method = "DEEA93F2C2BF0C381EB5852653A65B57")
         @Override
         public ListIterator<E> listIterator(int index) {
@@ -5099,6 +5180,7 @@ ListIterator<E> varA5F7F6B2E3F07D1D7E8CF79708EF7126_448826847 =             new 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.794 -0400", hash_original_method = "A5E1EFD4B2650099AC132BF86B97D88F", hash_generated_method = "B76999A11CF204ED7F08480A7CD7E6E6")
         @Override
         public List<E> subList(int fromIndex, int toIndex) {
@@ -5327,6 +5409,7 @@ V varCFC4EE21887DEF986B37EBC86595687F_1948572469 =             m.remove(key);
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.800 -0400", hash_original_method = "7B09FD67E4091CD76439ADACD213D3A2", hash_generated_method = "C0C9186DFE1DC4E3DD7726A7883CEDD3")
         @SuppressWarnings("unchecked")
         @Override
@@ -5381,6 +5464,7 @@ for(int i = 0;i < size;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.801 -0400", hash_original_method = "BC85ABF91A39D98F3F2ED0838950D9FC", hash_generated_method = "AC24FF7CF474F2FC6F6DD8FC531A9D7A")
         @Override
         public Set<K> keySet() {
@@ -5392,6 +5476,7 @@ Set<K> var578A3E6F6455D1AAB4084B95C8582C2B_2075895818 =             m.keySet();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.801 -0400", hash_original_method = "F6584059741E2818D171714370ED56BF", hash_generated_method = "8CC70FDB9E8CF9739A72CA0FCF72C594")
         @Override
         public Collection<V> values() {
@@ -5639,6 +5724,7 @@ T[] var1270D5B74B756F17D644A15D775499D9_2051754257 =                 array;
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.809 -0400", hash_original_method = "C32F0C36534158E273107417143214BD", hash_generated_method = "BC6AD2257781529CDD4CB1062D36EDC9")
             @Override
             public boolean retainAll(Collection<?> c) {
@@ -5651,6 +5737,7 @@ T[] var1270D5B74B756F17D644A15D775499D9_2051754257 =                 array;
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.809 -0400", hash_original_method = "B2624C46EA911C8D7CBCD3DB1975A601", hash_generated_method = "0810F4125011739D683E63EEA6A382DD")
             @Override
             public boolean removeAll(Collection<?> c) {
@@ -5663,6 +5750,7 @@ T[] var1270D5B74B756F17D644A15D775499D9_2051754257 =                 array;
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.810 -0400", hash_original_method = "D8F4D306F45D40205BDE17116DDFF9FA", hash_generated_method = "124F4D95BA028ABFC100AB6A60EC5DED")
             @Override
             public boolean containsAll(Collection<?> c) {
@@ -5713,6 +5801,7 @@ T[] var1270D5B74B756F17D644A15D775499D9_2051754257 =                 array;
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.812 -0400", hash_original_method = "8704A9C8AC3AA02909B00E4E211C4D3E", hash_generated_method = "7861E9F44A94883D36C0944B9D866134")
             @Override
             public boolean add(Map.Entry<K, V> o) {
@@ -5825,6 +5914,7 @@ T[] var1270D5B74B756F17D644A15D775499D9_2051754257 =                 array;
                 }
 
                 
+                @DSModeled(DSC.SAFE)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.814 -0400", hash_original_method = "4D16E0BB01C90351B8312D1A4B7DB5F2", hash_generated_method = "505A7BA0C93B3926FF38FA2EC353BB01")
                 @Override
                 public Map.Entry<K, V> next() {
@@ -5866,6 +5956,7 @@ Map.Entry<K, V> var748211921A39127C7457517172B3D64F_1738323667 =                
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.815 -0400", hash_original_method = "8514D9255D678B041F55D03BA11DCA3B", hash_generated_method = "11A9C2D7C35D19DF88D2F3AA3419C0F5")
         @Override
         public Comparator<? super E> comparator() {
@@ -5966,6 +6057,7 @@ E var7A1B325A772301476E34C1CFA8ED9C89_145393978 =             ss.last();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.817 -0400", hash_original_method = "E5FDBCC6560BE7E99B2D2F850BD84149", hash_generated_method = "94AABB71112B602D7967AA2CDE3C5E11")
         @Override
         public Comparator<? super K> comparator() {
@@ -5977,6 +6069,7 @@ Comparator<? super K> varEAAD6156DF3FBB0DB169CF3701FE5DAA_91908963 =            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.817 -0400", hash_original_method = "65DE11E398BB209CD2689071C041161A", hash_generated_method = "78F02ABB8E95CA290E595128B56E68BE")
         @Override
         public SortedMap<K, V> subMap(K fromKey, K toKey) {
@@ -5990,6 +6083,7 @@ SortedMap<K, V> varA3CD70A724558DE3D9382CE6CF4CCBAF_1030986867 =             new
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.818 -0400", hash_original_method = "2C5724B582D2FAB5716323DB894A671D", hash_generated_method = "7D87D1978FC314F7EAEF8474B4912F77")
         @Override
         public SortedMap<K, V> headMap(K toKey) {
@@ -6002,6 +6096,7 @@ SortedMap<K, V> var6CAD4B9D7CCF5B6A99FE852125447B2A_1138612523 =             new
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.818 -0400", hash_original_method = "2879524DD09B17D2FCB7AD1626D24618", hash_generated_method = "1E3B8BDD13B87FBC5C335D9464C8ED58")
         @Override
         public SortedMap<K, V> tailMap(K fromKey) {

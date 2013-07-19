@@ -1,9 +1,10 @@
 package java.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class InterruptedIOException extends IOException {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.125 -0400", hash_original_field = "3CB7FB76A0EEB1CC4DE9CC54B28CCAB8", hash_generated_field = "ADADEC4FF5BBED2ACE9FA0E36B78EE7E")

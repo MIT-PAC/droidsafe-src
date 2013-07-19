@@ -1,36 +1,39 @@
 package java.nio;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import static java.nio.channels.SelectionKey.OP_ACCEPT;
+import static java.nio.channels.SelectionKey.OP_CONNECT;
+import static java.nio.channels.SelectionKey.OP_READ;
+import static java.nio.channels.SelectionKey.OP_WRITE;
+import static libcore.io.OsConstants.POLLIN;
+import static libcore.io.OsConstants.POLLOUT;
+
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.nio.channels.ClosedSelectorException;
 import java.nio.channels.IllegalSelectorException;
-import java.nio.channels.SelectableChannel;
 import java.nio.channels.SelectionKey;
-import static java.nio.channels.SelectionKey.*;
 import java.nio.channels.Selector;
-import java.nio.channels.SocketChannel;
 import java.nio.channels.spi.AbstractSelectableChannel;
 import java.nio.channels.spi.AbstractSelectionKey;
 import java.nio.channels.spi.AbstractSelector;
 import java.nio.channels.spi.SelectorProvider;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.UnsafeArrayList;
+
 import libcore.io.ErrnoException;
 import libcore.io.IoBridge;
 import libcore.io.IoUtils;
 import libcore.io.Libcore;
 import libcore.io.StructPollfd;
-import libcore.util.EmptyArray;
-import static libcore.io.OsConstants.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 final class SelectorImpl extends AbstractSelector {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.853 -0400", hash_original_field = "68EA0DC5C7CD33D02AB22A452F03FE60", hash_generated_field = "6DE612B35C9E8808CBEC2658E9286A57")

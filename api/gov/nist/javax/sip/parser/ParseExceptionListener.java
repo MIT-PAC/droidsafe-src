@@ -1,10 +1,8 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import gov.nist.javax.sip.message.*;
+import gov.nist.javax.sip.message.SIPMessage;
+
 import java.text.ParseException;
 
 public interface ParseExceptionListener {

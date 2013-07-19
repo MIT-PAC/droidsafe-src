@@ -1,11 +1,14 @@
 package org.bouncycastle.math.ec;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.math.BigInteger;
+
 import org.bouncycastle.asn1.x9.X9IntegerConverter;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class ECPoint {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.638 -0400", hash_original_field = "4EFA264F5EF3E1A5C95736E07544EBF0", hash_generated_field = "704A3581F062D90BBFC67E94998B89B2")
@@ -170,18 +173,23 @@ ECFieldElement var01417B0442ECD521584E2B7EFB9FC218_946597247 =         y;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte[] getEncoded();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECPoint add(ECPoint b);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECPoint subtract(ECPoint b);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECPoint negate();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECPoint twice();
 
     

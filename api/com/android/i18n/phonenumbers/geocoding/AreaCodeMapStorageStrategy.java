@@ -1,14 +1,16 @@
 package com.android.i18n.phonenumbers.geocoding;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 import java.util.SortedMap;
 import java.util.TreeSet;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 abstract class AreaCodeMapStorageStrategy {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.448 -0400", hash_original_field = "69F496FCE87C6BC7DC2D0257BB43A268", hash_generated_field = "A8A65EF4F8315577299BC66787FEAF93")
@@ -25,6 +27,7 @@ abstract class AreaCodeMapStorageStrategy {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isFlyweight();
 
     
@@ -39,6 +42,7 @@ abstract class AreaCodeMapStorageStrategy {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.450 -0400", hash_original_method = "9B53A77A841456041603E3D119D30EB4", hash_generated_method = "7727A06155BF871AA5728A790B0D6566")
     public TreeSet<Integer> getPossibleLengths() {
 TreeSet<Integer> var439F4A98FBDEDBC4D02BC8BC3F605BAF_598450754 =         possibleLengths;
@@ -49,18 +53,23 @@ TreeSet<Integer> var439F4A98FBDEDBC4D02BC8BC3F605BAF_598450754 =         possibl
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getPrefix(int index);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getDescription(int index);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void readFromSortedMap(SortedMap<Integer, String> sortedAreaCodeMap);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void readExternal(ObjectInput objectInput) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void writeExternal(ObjectOutput objectOutput) throws IOException;
 
     

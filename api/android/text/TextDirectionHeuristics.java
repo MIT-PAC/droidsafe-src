@@ -1,11 +1,11 @@
 package android.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.util.Locale;
 import android.util.LocaleUtil;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class TextDirectionHeuristics {
     
@@ -66,6 +66,7 @@ public class TextDirectionHeuristics {
         }
 
         
+        @DSModeled(DSC.SAFE)
         abstract protected boolean defaultIsRtl();
 
         

@@ -1,13 +1,14 @@
 package libcore.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.ByteArrayOutputStream;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.nio.charset.Charsets;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class UriCodec {
     
@@ -18,6 +19,7 @@ public abstract class UriCodec {
     }
 
 
+    @DSModeled(DSC.SAFE)
     protected abstract boolean isRetained(char c);
 
     

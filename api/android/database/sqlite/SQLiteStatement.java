@@ -1,15 +1,16 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.IOException;
+
 import android.database.DatabaseUtils;
 import android.os.ParcelFileDescriptor;
 import android.os.SystemClock;
-import android.util.Log;
-import java.io.IOException;
 import dalvik.system.BlockGuard;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SQLiteStatement extends SQLiteProgram {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.056 -0400", hash_original_field = "E67780D6797A95AA13F04D47887933FA", hash_generated_field = "2F51843A821BD5FB98E893CC1830882F")
@@ -353,6 +354,7 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_1916400177 =           
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.072 -0400", hash_original_method = "DA760EA6BB282F82E2B89FD24EBEEAD3", hash_generated_method = "210CF0241252D4DBF0D13B58900D7D94")
     private final int native_execute() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_942614187 = getTaintInt();
@@ -360,6 +362,7 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_1916400177 =           
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.073 -0400", hash_original_method = "8482A8304EDF98FD537E7B2A3BC31388", hash_generated_method = "5E9544292D1FA84AD57EFA34C64A44A3")
     private final long native_executeInsert() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_303666488 = getTaintLong();
@@ -367,6 +370,7 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_1916400177 =           
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.073 -0400", hash_original_method = "FE0D02F573B183DE07F8BDF82793A3EA", hash_generated_method = "77FDB863DBDFDAD6CFB3311E05C24E12")
     private final long native_1x1_long() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1607236002 = getTaintLong();
@@ -374,6 +378,7 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_1916400177 =           
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.900 -0400", hash_original_method = "07DFC0F07DCBF43769548BE4FBA916EE", hash_generated_method = "28030A1C7DC39244AA70D827443E96B9")
     private final String native_1x1_string() {
     	String foo = new String();
@@ -381,12 +386,14 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_1916400177 =           
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.900 -0400", hash_original_method = "D5A94C086543C65F36827FC2C8B73314", hash_generated_method = "2FF5ECD0A356350F1F45EEEF9C01561B")
     private final ParcelFileDescriptor native_1x1_blob_ashmem() throws IOException {
     	return new ParcelFileDescriptor();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.076 -0400", hash_original_method = "BD9AF961A0959F9D5CBC2D8FDDD3B169", hash_generated_method = "D10F7D0B2AF60F2190B0E6B997651F64")
     private final void native_executeSql(String sql) {
     }

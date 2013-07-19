@@ -1,14 +1,12 @@
 package android.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
+
 import org.apache.harmony.xml.ExpatReader;
 import org.kxml2.io.KXmlParser;
 import org.xml.sax.ContentHandler;
@@ -19,6 +17,11 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 import org.xmlpull.v1.XmlSerializer;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class Xml {
     
@@ -131,6 +134,7 @@ public class Xml {
         UTF_16("UTF-16"),
         ISO_8859_1("ISO-8859-1");
         final String expatName;
+        @DSModeled(DSC.SAFE)
         Encoding(String expatName) {
             this.expatName = expatName;
         }

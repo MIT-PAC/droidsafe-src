@@ -1,30 +1,30 @@
 package android.media;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.FileDescriptor;
+import java.io.IOException;
+import java.lang.ref.WeakReference;
+import java.util.Map;
+import java.util.Set;
+
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Parcel;
-import android.os.ParcelFileDescriptor;
 import android.os.PowerManager;
 import android.util.Log;
 import android.view.Surface;
 import android.view.SurfaceHolder;
-import android.graphics.Bitmap;
-import android.graphics.SurfaceTexture;
-import android.media.AudioManager;
-import java.io.FileDescriptor;
-import java.io.IOException;
-import java.util.Map;
-import java.util.Set;
-import java.lang.ref.WeakReference;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public class MediaPlayer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.657 -0400", hash_original_field = "20E813A614226843849BF2E571A8EBCA", hash_generated_field = "0A3F8EE607897645EB2EE30B6939205B")
@@ -246,6 +246,7 @@ Parcel varE1D9FB4EF23B2E2DCF7F61DDCE95DE0F_1491803316 =         parcel;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.664 -0400", hash_original_method = "0C532A10BBEED73B371000A59C797624", hash_generated_method = "1C96CF47DD17B4F15FB7687BFB37E986")
     public void setDataSource(Context context, Uri uri, Map<String, String> headers) throws IOException, IllegalArgumentException, SecurityException, IllegalStateException {
         addTaint(headers.getTaint());
@@ -868,6 +869,7 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_1745218231 =         ret;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.688 -0400", hash_original_method = "4B4989130AC0D9F13A471859CBC524C2", hash_generated_method = "4AEEB08D75030D8ABF4B82AD8D771894")
     private final int native_invoke(Parcel request, Parcel reply) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_189380670 = getTaintInt();
@@ -875,6 +877,7 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_1745218231 =         ret;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.688 -0400", hash_original_method = "226F7D6B434A382FD3304895D8BD3523", hash_generated_method = "33315B138AFDD30DBA5C8CAEAF219FF3")
     private final boolean native_getMetadata(boolean update_only,
                                                     boolean apply_filter,
@@ -884,6 +887,7 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_1745218231 =         ret;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.688 -0400", hash_original_method = "DFB5479CBB8EF2503AE55C0DE7F21BA6", hash_generated_method = "C03B86392CD556445B9C72251CA1129E")
     private final int native_setMetadataFilter(Parcel request) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1540295996 = getTaintInt();
@@ -891,15 +895,18 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_1745218231 =         ret;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final void native_init() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.689 -0400", hash_original_method = "B3ECC5C677CF7E418546A8C45CAC4774", hash_generated_method = "4DE4A52F106E1BB4613AFE97E9519CEB")
     private final void native_setup(Object mediaplayer_this) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.691 -0400", hash_original_method = "B81676966F6941B90240D7A24C9E2FD3", hash_generated_method = "BE94CB6DE9EDBEEF7D151AA52A7096EC")
     private final void native_finalize() {
     }

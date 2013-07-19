@@ -1,11 +1,9 @@
 package org.apache.http.impl.conn;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.net.Socket;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.Header;
@@ -14,12 +12,17 @@ import org.apache.http.HttpHost;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpResponseFactory;
-import org.apache.http.params.HttpParams;
+import org.apache.http.conn.OperatedClientConnection;
 import org.apache.http.impl.SocketHttpClientConnection;
 import org.apache.http.io.HttpMessageParser;
 import org.apache.http.io.SessionInputBuffer;
 import org.apache.http.io.SessionOutputBuffer;
-import org.apache.http.conn.OperatedClientConnection;
+import org.apache.http.params.HttpParams;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class DefaultClientConnection extends SocketHttpClientConnection implements OperatedClientConnection {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.061 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
@@ -51,6 +54,7 @@ public class DefaultClientConnection extends SocketHttpClientConnection implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.063 -0400", hash_original_method = "00F8E4422BF57DE6758D681F4A99BDB6", hash_generated_method = "6E4F19A93AEB99BEEC3D5B73F300AEDD")
     public final HttpHost getTargetHost() {
 HttpHost var67C71439C5981484698447EE93E1A003_1018056380 =         this.targetHost;
@@ -61,6 +65,7 @@ HttpHost var67C71439C5981484698447EE93E1A003_1018056380 =         this.targetHos
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.063 -0400", hash_original_method = "4971CDDD7E23679E1EB91619B0566CC2", hash_generated_method = "9CB60586500089CB69C9442686C3DD22")
     public final boolean isSecure() {
         boolean var1589795B26F953D6CF1D3B000BEE1AEA_1176895057 = (this.connSecure);
@@ -71,6 +76,7 @@ HttpHost var67C71439C5981484698447EE93E1A003_1018056380 =         this.targetHos
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.064 -0400", hash_original_method = "B12AAA9EA995C0C9BE2466476E8BAC96", hash_generated_method = "8988A797B61AC33A785CD845C746489F")
     @Override
     public final Socket getSocket() {

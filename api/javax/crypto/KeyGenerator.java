@@ -1,9 +1,6 @@
 package javax.crypto;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
@@ -11,7 +8,13 @@ import java.security.Provider;
 import java.security.SecureRandom;
 import java.security.Security;
 import java.security.spec.AlgorithmParameterSpec;
+
 import org.apache.harmony.security.fortress.Engine;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class KeyGenerator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.227 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
@@ -37,6 +40,7 @@ public class KeyGenerator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.229 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "3FC927181BC34D86B617F04EAEB11BB9")
     public final String getAlgorithm() {
 String var44A46B4003FC81ACB0223385BA1FA818_1936670887 =         algorithm;
@@ -47,6 +51,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_1936670887 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.229 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "62C896E6D7DAE75725EF4948D941FF5D")
     public final Provider getProvider() {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_859127114 =         provider;
@@ -92,6 +97,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_859127114 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.230 -0400", hash_original_method = "0D649746A13B62933617343FF6CF66A5", hash_generated_method = "E762451BF7D4533A9AC0E381FB951C2E")
     public final SecretKey generateKey() {
 SecretKey var04457856BF7B8B913E518C25CAF747D7_1364054525 =         spiImpl.engineGenerateKey();
@@ -130,6 +136,7 @@ SecretKey var04457856BF7B8B913E518C25CAF747D7_1364054525 =         spiImpl.engin
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.231 -0400", hash_original_method = "CF9BC038E48C7FD5928A7551030B0A46", hash_generated_method = "6B3CD5398CFBAACC1F4C7B9A381E92AC")
     public final void init(int keysize, SecureRandom random) {
         addTaint(random.getTaint());

@@ -1,10 +1,12 @@
 package java.util.concurrent.atomic;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import sun.misc.Unsafe;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public class AtomicLong extends Number implements java.io.Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.149 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "272863A964896393C50056118F48F189")
@@ -33,6 +35,7 @@ public class AtomicLong extends Number implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.151 -0400", hash_original_method = "558225EAA1BF82052D6B969C16747B7A", hash_generated_method = "7691B160691EBF176116BB239D042275")
     public final long get() {
         long var2063C1608D6E0BAF80249C42E2BE5804_1992226917 = (value);
@@ -43,6 +46,7 @@ public class AtomicLong extends Number implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.151 -0400", hash_original_method = "CA4706358CD81A962EB6E91A1521FBCA", hash_generated_method = "759FAB5F7283596918C96BEC499CB5B0")
     public final void set(long newValue) {
         value = newValue;
@@ -51,6 +55,7 @@ public class AtomicLong extends Number implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.151 -0400", hash_original_method = "5F840B47C39798AC1AA2E3C6DCFC9B43", hash_generated_method = "8E61D805C48F4AD27B61462F745A01AF")
     public final void lazySet(long newValue) {
         addTaint(newValue);
@@ -60,6 +65,7 @@ public class AtomicLong extends Number implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.152 -0400", hash_original_method = "390AAB13B16AF188378473BA59BB98BA", hash_generated_method = "B12862808A6B65A6635D3435647A8072")
     public final long getAndSet(long newValue) {
         addTaint(newValue);
@@ -83,6 +89,7 @@ public class AtomicLong extends Number implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.152 -0400", hash_original_method = "9AFEEC1B0401F372D8D224EE7A6E78FB", hash_generated_method = "845EF79D05EE2098C7B474843ABF542F")
     public final boolean compareAndSet(long expect, long update) {
         addTaint(update);
@@ -95,6 +102,7 @@ public class AtomicLong extends Number implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.152 -0400", hash_original_method = "CF5E29839097193C76F9677539F6A8BA", hash_generated_method = "8FA0F15B803B164C6EFE75BA2128DD19")
     public final boolean weakCompareAndSet(long expect, long update) {
         addTaint(update);
@@ -107,6 +115,7 @@ public class AtomicLong extends Number implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.153 -0400", hash_original_method = "0FB09453B9C7F7E3674DED4A168E8FE2", hash_generated_method = "F8553460340ADDE503F993160588CEB1")
     public final long getAndIncrement() {
         while
@@ -131,6 +140,7 @@ public class AtomicLong extends Number implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.153 -0400", hash_original_method = "B338EF04AC352C769CAB7069B279216B", hash_generated_method = "AB137C2934D81B6EA074F4B3B39F886F")
     public final long getAndDecrement() {
         while
@@ -155,6 +165,7 @@ public class AtomicLong extends Number implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.154 -0400", hash_original_method = "F13F3FE7BE5ED16E2943CEEE9739382A", hash_generated_method = "58472CE16715B9086823607D21E40D15")
     public final long getAndAdd(long delta) {
         addTaint(delta);
@@ -180,6 +191,7 @@ public class AtomicLong extends Number implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.154 -0400", hash_original_method = "0B4DA3D002D9BEE66893798DFD4DBDF7", hash_generated_method = "99CC6070889ADE68072E3046D6C91A03")
     public final long incrementAndGet() {
 for(;;)
@@ -203,6 +215,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.155 -0400", hash_original_method = "BC527AFE730427BE036B66CE7C20403C", hash_generated_method = "7CAF46F59B61D3776F9A30292DCF2E04")
     public final long decrementAndGet() {
 for(;;)
@@ -226,6 +239,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.156 -0400", hash_original_method = "9F7FB16A58B977A4E2DB5A0F397D878E", hash_generated_method = "6FD694BD8894E8F97A4A784A91853B3E")
     public final long addAndGet(long delta) {
         addTaint(delta);

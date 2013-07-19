@@ -1,9 +1,6 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.net.LinkCapabilities;
 import android.net.LinkProperties;
 import android.os.Bundle;
@@ -12,7 +9,10 @@ import android.os.ServiceManager;
 import android.telephony.ServiceState;
 import android.telephony.TelephonyManager;
 import android.util.Log;
-import com.android.internal.telephony.ITelephonyRegistry;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class DefaultPhoneNotifier implements PhoneNotifier {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.220 -0400", hash_original_field = "DD0FB23439ECB9C0C2624C354888EAF5", hash_generated_field = "4C8DBF7E7839184D9CCCD54726CB48C0")

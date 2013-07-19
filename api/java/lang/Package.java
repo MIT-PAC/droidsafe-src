@@ -1,13 +1,15 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import dalvik.system.VMStack;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.AnnotatedElement;
 import java.net.URL;
+
+import dalvik.system.VMStack;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class Package implements AnnotatedElement {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.412 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
@@ -107,6 +109,7 @@ Annotation[] varDC6E62BDE5B39FEF5193138B49323593_1295394920 =         NO_ANNOTAT
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.416 -0400", hash_original_method = "5232C7D94E7B41515E39CA253236284F", hash_generated_method = "20533B19DBBDF52415FA56B59DA54652")
     public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
         addTaint(annotationType.getTaint());

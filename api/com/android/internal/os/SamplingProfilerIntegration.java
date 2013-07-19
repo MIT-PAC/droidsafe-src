@@ -1,15 +1,6 @@
 package com.android.internal.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.pm.PackageInfo;
-import android.os.Build;
-import android.os.SystemProperties;
-import android.util.Log;
-import dalvik.system.profiler.BinaryHprofWriter;
-import dalvik.system.profiler.SamplingProfiler;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -21,7 +12,18 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicBoolean;
+
 import libcore.io.IoUtils;
+import android.content.pm.PackageInfo;
+import android.os.Build;
+import android.os.SystemProperties;
+import android.util.Log;
+import dalvik.system.profiler.BinaryHprofWriter;
+import dalvik.system.profiler.SamplingProfiler;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SamplingProfilerIntegration {
     

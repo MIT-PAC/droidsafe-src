@@ -1,14 +1,16 @@
 package javax.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.SocketException;
 import java.net.UnknownHostException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SocketFactory {
     
@@ -37,17 +39,21 @@ public abstract class SocketFactory {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public abstract Socket createSocket(String host, int port) throws IOException,
             UnknownHostException;
 
     
+    @DSModeled(DSC.SPEC)
     public abstract Socket createSocket(String host, int port, InetAddress localHost, int localPort)
             throws IOException, UnknownHostException;
 
     
+    @DSModeled(DSC.SPEC)
     public abstract Socket createSocket(InetAddress host, int port) throws IOException;
 
     
+    @DSModeled(DSC.SPEC)
     public abstract Socket createSocket(InetAddress address, int port, InetAddress localAddress,
             int localPort) throws IOException;
 

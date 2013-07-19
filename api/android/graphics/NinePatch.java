@@ -1,9 +1,11 @@
 package android.graphics;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public class NinePatch {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.363 -0400", hash_original_field = "C4C105852193F50EEB9E84F09C746611", hash_generated_field = "4EFA3179E01F3A6C04DAAC2298E5BFE4")
@@ -188,6 +190,7 @@ public class NinePatch {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.365 -0400", hash_original_method = "E05D2C3DAD463E01AE2524510542E014", hash_generated_method = "CD6AB962DD4E1A68A2D3858156285A0B")
     public final boolean hasAlpha() {
         boolean varFF9794086A6F899230C172EE02D57A54_923177185 = (mBitmap.hasAlpha());
@@ -198,6 +201,7 @@ public class NinePatch {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.365 -0400", hash_original_method = "057B771D19C75A7C087A15EB64E8E6F2", hash_generated_method = "2D8317FB9E0BCC501ED885EDD65A57A4")
     public final Region getTransparentRegion(Rect location) {
         addTaint(location.getTaint());

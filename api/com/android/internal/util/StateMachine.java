@@ -1,17 +1,19 @@
 package com.android.internal.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Vector;
+
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Vector;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class StateMachine {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.884 -0400", hash_original_field = "311C2C8498DF6A626CBDB8AA4193499C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
@@ -163,6 +165,7 @@ IState var87CBDBACE722DFE921BE617500791021_73429090 =         mSmHandler.getCurr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.891 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "E61E132E1F3C9C424715BFB64B7287C3")
     public final String getName() {
 String varDBF15A5FB8102A5C28D5046A0E92E443_2039811880 =         mName;
@@ -213,6 +216,7 @@ ProcessedMessageInfo var44CDF072D7CE0466224321FD71491D60_18114412 =         mSmH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.892 -0400", hash_original_method = "467C85CDF2FD06F7E6D6E1A3F89DC6AE", hash_generated_method = "5C0C92F3D6783E293A4AEDCD2274257A")
     public final Handler getHandler() {
 Handler varC9ABC94E33FEDFB77929294DE04E290E_936635747 =         mSmHandler;
@@ -1159,6 +1163,7 @@ for(mTempStateStackCount = 0;curStateInfo != null;mTempStateStackCount++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.929 -0400", hash_original_method = "38EC5F2FF9273B7F113CC175A6D6CA55", hash_generated_method = "4504A57794B31A7E3FA2E5F0408373F5")
         private final Message getCurrentMessage() {
 Message var16D531DD5AE27AEEC0FC02A6E57F1F79_1963993706 =             mMsg;
@@ -1169,6 +1174,7 @@ Message var16D531DD5AE27AEEC0FC02A6E57F1F79_1963993706 =             mMsg;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.929 -0400", hash_original_method = "4DAC448F0AE857FB37AA7C8477011F21", hash_generated_method = "4DC3D54B1798DFA394FAB84E42A33B53")
         private final IState getCurrentState() {
 IState var8C274D350550CFAE87368DDD6F6EB59C_955070651 =             mStateStack[mStateStackTopIndex].state;
@@ -1272,6 +1278,7 @@ StateInfo varED7F07AFDD82F6543D2737963BD5E70F_1751321038 =             stateInfo
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.933 -0400", hash_original_method = "BAB49FBE24A81490A5F317754A03EEE6", hash_generated_method = "5726C2F436BCE5AB6037BE94E4344029")
         private final boolean isQuit(Message msg) {
             addTaint(msg.getTaint());
@@ -1283,6 +1290,7 @@ StateInfo varED7F07AFDD82F6543D2737963BD5E70F_1751321038 =             stateInfo
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.934 -0400", hash_original_method = "0EC17970A8F6815D37F02ED3B599FE78", hash_generated_method = "9D2D735EDDD51D40D490094FEAAD351E")
         private final boolean isDbg() {
             boolean var44ACAC101472BE8FC80671CD461C5D61_931517280 = (mDbg);
@@ -1293,6 +1301,7 @@ StateInfo varED7F07AFDD82F6543D2737963BD5E70F_1751321038 =             stateInfo
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.935 -0400", hash_original_method = "2FBE0CE6F45608217065DCE46294BFD1", hash_generated_method = "BA70DD150B20B15D1FA853B35448103D")
         private final void setDbg(boolean dbg) {
             mDbg = dbg;

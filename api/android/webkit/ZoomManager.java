@@ -1,9 +1,6 @@
 package android.webkit;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Canvas;
@@ -12,9 +9,12 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.FloatMath;
-import android.util.Log;
 import android.view.ScaleGestureDetector;
 import android.view.View;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class ZoomManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.796 -0400", hash_original_field = "72439B8F99EB438C3DA5D9CD798C6786", hash_generated_field = "99346B50377E115231263981E00655CA")
@@ -225,6 +225,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.804 -0400", hash_original_method = "E0A7D63CBE7BA22AE5FD1D2BCFACA30A", hash_generated_method = "CC766343729A1A152EFB821927E4C4BD")
     public final float getScale() {
         float var2BD1064E1316AB3431CD233A2DB36D76_1036991117 = (mActualScale);
@@ -235,6 +236,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.804 -0400", hash_original_method = "27B2B7D16269E37341CA9CE429E50BD4", hash_generated_method = "6BEAF197A189DAE8FB762633BAED5CD4")
     public final float getInvScale() {
         float varE3D71FEA20B9D8C04A31631606259011_1509927475 = (mInvActualScale);
@@ -245,6 +247,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.804 -0400", hash_original_method = "420B51415ADFBA4739EC66A8F732263C", hash_generated_method = "08B05E20B8B3A49C0F66264CE6AAD601")
     public final float getTextWrapScale() {
         float var3190B9F88CD9ECBDD0CF99CE8D1E0B89_276921907 = (mTextWrapScale);
@@ -255,6 +258,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.804 -0400", hash_original_method = "4D84680032231769C697659C881951E3", hash_generated_method = "9099E3F9FCDFCDE957D4D60D5583AA19")
     public final float getMaxZoomScale() {
         float varB473A45F09A23AD2B870CF185D4AA12A_4389371 = (mMaxZoomScale);
@@ -265,6 +269,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.804 -0400", hash_original_method = "EF101FB82D6E625D2F7286BB14442128", hash_generated_method = "57505C47A921C32C3E572DD384021AF2")
     public final float getMinZoomScale() {
         float varDA19E9676D629B1D45B511C2C1DBDFAB_2030032766 = (mMinZoomScale);
@@ -275,6 +280,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.805 -0400", hash_original_method = "C9287BA17A965D05EE45D11D20F2D047", hash_generated_method = "5A0025BDED2C2EF06798BB11CD594729")
     public final float getDefaultScale() {
         float varF3150A42E04B25673AB01D2C041638C1_323518478 = (mDefaultScale);
@@ -285,6 +291,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.805 -0400", hash_original_method = "B68BBC34F3F5ADBA444AF11F55B159F2", hash_generated_method = "F5B9AA75C0441BA400853758C1F10D42")
     public final float getReadingLevelScale() {
         float var1348B6DE8A70A948B2FED42EC3421B20_805781125 = (mDisplayDensity * mDoubleTapZoomFactor);
@@ -295,6 +302,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.805 -0400", hash_original_method = "150923628532607A08D5A6F81E7006FE", hash_generated_method = "C172C838A67AFB1E3F616936D88B7F27")
     public final float getInvDefaultScale() {
         float varF76A5E4401A0723AA5E56C29FBB9CF15_2091577953 = (mInvDefaultScale);
@@ -305,6 +313,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.806 -0400", hash_original_method = "86C1C61E20B5F864D06602058822F40B", hash_generated_method = "30D1A003D4CE5E2B0EF68F3078C45850")
     public final float getDefaultMaxZoomScale() {
         float var62F3D783B3687CBC0BDB448D90E58278_1991410493 = (mDefaultMaxZoomScale);
@@ -315,6 +324,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.806 -0400", hash_original_method = "68697F997D536A00F27515B45D68169D", hash_generated_method = "702E64F2D9303470E40B700321779FFD")
     public final float getDefaultMinZoomScale() {
         float var8B4997D60CFE283F65068FB0529E4498_2025967207 = (mDefaultMinZoomScale);
@@ -325,6 +335,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.806 -0400", hash_original_method = "0D1E90BA2B32E85CA9E1B47821E3129C", hash_generated_method = "A13176132D441A9E33FA75DBAA6D32C4")
     public final int getDocumentAnchorX() {
         int varE7657EDDA986C0D1CC052B8F112FE09D_493612280 = (mAnchorX);
@@ -335,6 +346,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.807 -0400", hash_original_method = "6F8EAB28E274BDE9903F29B52FA3CE08", hash_generated_method = "04D9C5B2E47A0403D71DF957659FC88D")
     public final int getDocumentAnchorY() {
         int var87FAE44598E10061776ABA72BF200D70_2104276258 = (mAnchorY);
@@ -345,6 +357,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.807 -0400", hash_original_method = "37EC19EE8D577B9FFE8E8612EB136E0D", hash_generated_method = "0979E863D08CE670AE5057D10C3B3325")
     public final void clearDocumentAnchor() {
         mAnchorX = mAnchorY = 0;
@@ -353,6 +366,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.807 -0400", hash_original_method = "B42B83C0DB8155DA229557A2BD45C477", hash_generated_method = "376A60C9AA8D31A1B7B25334BE2AA077")
     public final void setZoomCenter(float x, float y) {
         mZoomCenterX = x;
@@ -363,6 +377,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.808 -0400", hash_original_method = "E17C2AED3C2D9DCFE2D098E038948EA1", hash_generated_method = "C3C51A8EAC82BA7545BE75E4A35DC3DA")
     public final void setInitialScaleInPercent(int scaleInPercent) {
         mInitialScale = scaleInPercent * 0.01f;
@@ -371,6 +386,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.808 -0400", hash_original_method = "CACC1DB3C5C8FBE689456F981994723C", hash_generated_method = "CE7DFA9A18A2B4E0D4DA2707B4C6F21D")
     public final float computeScaleWithLimits(float scale) {
         addTaint(scale);
@@ -396,6 +412,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.808 -0400", hash_original_method = "49E88837FC0437D5B36C3DDB131811B0", hash_generated_method = "58CE5BCA6C17B017CA5CD9131854FFFB")
     public final boolean isScaleOverLimits(float scale) {
         addTaint(scale);
@@ -407,6 +424,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.808 -0400", hash_original_method = "EAE2E4FAF7045B63798AAD0EC191C138", hash_generated_method = "8043943DAC8EE5245F8F481D09296D5C")
     public final boolean isZoomScaleFixed() {
         boolean var7AD980BD697FA45BDF49A42A65743B26_247242054 = (mMinZoomScale >= mMaxZoomScale);
@@ -417,6 +435,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final boolean exceedsMinScaleIncrement(float scaleA, float scaleB) {
         return Math.abs(scaleA - scaleB) >= MINIMUM_SCALE_INCREMENT;
     }
@@ -434,6 +453,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.808 -0400", hash_original_method = "577BAEA37EC580D2471F28E52ACC3E90", hash_generated_method = "69AF9869A75130EAB6B82628B15FD066")
     public final boolean canZoomIn() {
         boolean var3040F56E7060A9E79DFD9F8E4BFB4A87_776511615 = (mMaxZoomScale - mActualScale > MINIMUM_SCALE_INCREMENT);
@@ -444,6 +464,7 @@ class ZoomManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:56.808 -0400", hash_original_method = "82D91A91E65D0066AFB31608B5056133", hash_generated_method = "4F341F65DC08A0251C7AA11B5DD2352B")
     public final boolean canZoomOut() {
         boolean var05A476B88AE9D08CE3524EF37DD6C9E0_405214456 = (mActualScale - mMinZoomScale > MINIMUM_SCALE_INCREMENT);

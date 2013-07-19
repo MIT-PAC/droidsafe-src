@@ -1,12 +1,13 @@
 package gov.nist.javax.sip.clientauthutils;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import gov.nist.core.StackLogger;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class MessageDigestAlgorithm {
     

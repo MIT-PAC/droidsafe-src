@@ -1,11 +1,14 @@
 package org.bouncycastle.crypto.params;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.security.SecureRandom;
+
 import org.bouncycastle.crypto.KeyGenerationParameters;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ECKeyGenerationParameters extends KeyGenerationParameters {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.085 -0400", hash_original_field = "E493415599EE10166D7B1C21C42971B0", hash_generated_field = "0E984BA2637E301559F63FEE7970E25A")

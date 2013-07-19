@@ -1,9 +1,11 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Locale;
+
+import libcore.icu.TimeZones;
 import android.app.ActivityManagerNative;
 import android.app.AlarmManager;
 import android.content.Context;
@@ -13,10 +15,10 @@ import android.os.RemoteException;
 import android.os.SystemProperties;
 import android.text.TextUtils;
 import android.util.Log;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Locale;
-import libcore.icu.TimeZones;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class MccTable {
     

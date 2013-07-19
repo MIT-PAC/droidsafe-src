@@ -1,13 +1,12 @@
 package android.provider;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.net.URISyntaxException;
+import java.util.HashMap;
+import java.util.HashSet;
+
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
-import android.app.SearchManager;
-import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
@@ -21,19 +20,16 @@ import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.net.Uri;
-import android.net.wifi.WifiManager;
-import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.SystemProperties;
-import android.speech.tts.TextToSpeech;
 import android.text.TextUtils;
 import android.util.AndroidException;
 import android.util.Log;
-import android.view.WindowOrientationListener;
-import java.net.URISyntaxException;
-import java.util.HashMap;
-import java.util.HashSet;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class Settings {
     

@@ -1,12 +1,20 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.util.concurrent.locks.*;
-import java.util.concurrent.atomic.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ThreadPoolExecutor extends AbstractExecutorService {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.048 -0400", hash_original_field = "A307605A799A74057344483C24FB3CBD", hash_generated_field = "1E5D76E2038757171D1F1EFB86BB7B2D")
@@ -1194,6 +1202,7 @@ RejectedExecutionHandler var3E73215C2EA435E7F052AAB7C8597D27_979701696 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.078 -0400", hash_original_method = "BD8FCC0E1F95E7B090761BC333422796", hash_generated_method = "1105907D8E22818DA9D8E3426F0AFE13")
     public BlockingQueue<Runnable> getQueue() {
 BlockingQueue<Runnable> var29887FCBEA17534A0106FF38266D9590_638554153 =         workQueue;

@@ -1,9 +1,10 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SIPHeader extends SIPObject implements SIPHeaderNames, javax.sip.header.Header, HeaderExt {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.169 -0400", hash_original_field = "5B56D13EFD69E1602F78DED5D4B9CB80", hash_generated_field = "A59FED2AE4AD2264FB1F7BF89553485D")
@@ -139,6 +140,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_22930056 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract String encodeBody();
 
     
@@ -176,6 +178,7 @@ String var650A235F8D00B3E802F034AA253BD873_424535335 =         this.getHeaderVal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.175 -0400", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "D485AB06294436DE49EE45A91DA794A4")
     public final String toString() {
 String varB17575D7C845B2C662583710539AAEBB_1239563342 =         this.encode();

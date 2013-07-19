@@ -1,16 +1,6 @@
 package gov.nist.javax.sip;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.io.IOException;
-import java.net.InetAddress;
-import java.text.ParseException;
-import javax.sip.*;
-import javax.sip.address.SipURI;
-import javax.sip.header.ContactHeader;
-import javax.sip.header.ViaHeader;
 import gov.nist.core.Host;
 import gov.nist.core.HostPort;
 import gov.nist.core.InternalErrorHandler;
@@ -19,7 +9,21 @@ import gov.nist.javax.sip.address.SipUri;
 import gov.nist.javax.sip.header.Contact;
 import gov.nist.javax.sip.header.Via;
 import gov.nist.javax.sip.message.SIPRequest;
-import gov.nist.javax.sip.stack.*;
+import gov.nist.javax.sip.stack.MessageChannel;
+import gov.nist.javax.sip.stack.MessageProcessor;
+
+import java.io.IOException;
+import java.text.ParseException;
+
+import javax.sip.SipStack;
+import javax.sip.address.SipURI;
+import javax.sip.header.ContactHeader;
+import javax.sip.header.ViaHeader;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ListeningPointImpl implements javax.sip.ListeningPoint, gov.nist.javax.sip.ListeningPointExt {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.446 -0400", hash_original_field = "7B334B7260361141659FA9862E803476", hash_generated_field = "B1CF55BB145913C3C7A70130704FABEE")

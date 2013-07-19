@@ -1,19 +1,16 @@
 package android.speech;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.util.ArrayList;
 import android.app.Activity;
-import android.content.ActivityNotFoundException;
-import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.os.Bundle;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class RecognizerIntent {
     
@@ -23,6 +20,7 @@ public class RecognizerIntent {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static final Intent getVoiceDetailsIntent(Context context) {
         Intent voiceSearchIntent = new Intent(ACTION_WEB_SEARCH);
         ResolveInfo ri = context.getPackageManager().resolveActivity(

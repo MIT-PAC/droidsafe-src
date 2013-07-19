@@ -1,10 +1,11 @@
 package java.nio;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.Arrays;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class FloatBuffer extends Buffer implements Comparable<FloatBuffer> {
     
@@ -42,6 +43,7 @@ public abstract class FloatBuffer extends Buffer implements Comparable<FloatBuff
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.022 -0400", hash_original_method = "3D88E12435E8ECFF27E8491C8CFB38C5", hash_generated_method = "8B3175E2360BCE7F3CA6CFD835D96CEF")
     public final float[] array() {
         float[] var68B89E48382A0AA51B25AC59599E2EB0_1688382316 = (protectedArray());
@@ -52,6 +54,7 @@ public abstract class FloatBuffer extends Buffer implements Comparable<FloatBuff
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.022 -0400", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "2D4C3EE9544DD6D7A28D2A68B77507ED")
     public final int arrayOffset() {
         int var0B794CE56A38A9F3BFDD2D53E83BB109_1999778145 = (protectedArrayOffset());
@@ -62,9 +65,11 @@ public abstract class FloatBuffer extends Buffer implements Comparable<FloatBuff
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FloatBuffer asReadOnlyBuffer();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FloatBuffer compact();
 
     
@@ -118,6 +123,7 @@ public abstract class FloatBuffer extends Buffer implements Comparable<FloatBuff
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FloatBuffer duplicate();
 
     
@@ -172,6 +178,7 @@ public abstract class FloatBuffer extends Buffer implements Comparable<FloatBuff
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract float get();
 
     
@@ -219,9 +226,11 @@ FloatBuffer var72A74007B2BE62B849F475C7BDA4658B_67169878 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract float get(int index);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.026 -0400", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "37398856BC447DF6828C8CE0AD4DA746")
     public final boolean hasArray() {
         boolean var55B7C03E3C1EBABD22606AD17EE923C3_1893339618 = (protectedHasArray());
@@ -256,24 +265,31 @@ FloatBuffer var72A74007B2BE62B849F475C7BDA4658B_67169878 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isDirect();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteOrder order();
 
     
+    @DSModeled(DSC.SAFE)
     abstract float[] protectedArray();
 
     
+    @DSModeled(DSC.SAFE)
     abstract int protectedArrayOffset();
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean protectedHasArray();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FloatBuffer put(float f);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.027 -0400", hash_original_method = "5B7E9D4E0A0B3CF72C892C67E2CB78B1", hash_generated_method = "CD79BF50F97AF2FC41B34D566EC52262")
     public final FloatBuffer put(float[] src) {
         addTaint(src[0]);
@@ -353,9 +369,11 @@ FloatBuffer var72A74007B2BE62B849F475C7BDA4658B_1075699204 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FloatBuffer put(int index, float f);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FloatBuffer slice();
 
     

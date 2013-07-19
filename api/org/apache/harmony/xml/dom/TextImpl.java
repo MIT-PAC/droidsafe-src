@@ -1,12 +1,13 @@
 package org.apache.harmony.xml.dom;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Node;
 import org.w3c.dom.Text;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class TextImpl extends CharacterDataImpl implements Text {
     
@@ -44,6 +45,7 @@ String var479BE8C6ABF395546FF8B94D5B3DB44D_1371811128 =         "#text";
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.710 -0400", hash_original_method = "F2223FE614407E591CCAD60B04318A19", hash_generated_method = "F763414D8F1C4B75B81EC0BF8CF40465")
     public final Text splitText(int offset) throws DOMException {
         addTaint(offset);
@@ -76,6 +78,7 @@ Text var72A74007B2BE62B849F475C7BDA4658B_605658270 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.710 -0400", hash_original_method = "E52052CEEE0E5966B25CAA49C3A5CE28", hash_generated_method = "3E081EF5EA560856598576CF1D76FF68")
     public final boolean isElementContentWhitespace() {
         boolean var68934A3E9455FA72420237EB05902327_259650880 = (false);

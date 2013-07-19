@@ -1,15 +1,23 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.util.concurrent.locks.*;
-import java.util.*;
-import java.io.Serializable;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.AbstractCollection;
+import java.util.AbstractMap;
+import java.util.AbstractSet;
+import java.util.Collection;
+import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.NoSuchElementException;
+import java.util.Set;
+import java.util.concurrent.locks.ReentrantLock;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements ConcurrentMap<K, V>, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.482 -0400", hash_original_field = "6E087A676FE9EB60B1F8BDB5CE343DC8", hash_generated_field = "4BE7BE92627D08015B3B3DAF23AD6BAD")
@@ -99,6 +107,7 @@ for(int i = 0;i < this.segments.length;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.485 -0400", hash_original_method = "485F32D8EAC40E4F4B6CB1DCBDB98D35", hash_generated_method = "FC05ACDD7F9F8068DB83CBB872A3BDB0")
     public  ConcurrentHashMap(Map<? extends K, ? extends V> m) {
         this(Math.max((int) (m.size() / DEFAULT_LOAD_FACTOR) + 1,
@@ -122,6 +131,7 @@ for(int i = 0;i < this.segments.length;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.485 -0400", hash_original_method = "9480E4BE528687F57BD0A5E0057A4838", hash_generated_method = "AC665825A94976348AB199D5DE8BFBD3")
     final Segment<K,V> segmentFor(int hash) {
         addTaint(hash);
@@ -406,6 +416,7 @@ V var418D4E99839E5E3DF1FB9C798D977AF2_2052464205 =         segmentFor(hash).put(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.492 -0400", hash_original_method = "B9175F57BE6F5AB8BBC535010119C8D9", hash_generated_method = "B50B09FC64C3FA250D453424D4DEA45D")
     public void putAll(Map<? extends K, ? extends V> m) {
         addTaint(m.getTaint());
@@ -512,6 +523,7 @@ for(int i = 0;i < segments.length;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.493 -0400", hash_original_method = "476F610DDCFF0EB4D26DB47138B4B0A3", hash_generated_method = "507FC0C6693345027AFC6D5BAD5C0227")
     public Set<K> keySet() {
         Set<K> ks = keySet;
@@ -524,6 +536,7 @@ Set<K> varB6853687BE649BA8B10F9701AD179BB7_2003258032 =         (ks != null) ? k
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.493 -0400", hash_original_method = "04B12ED0E2A0A54B9C93D860501FCFFB", hash_generated_method = "40D60E50DBC2AB779E2959383D1C60DF")
     public Collection<V> values() {
         Collection<V> vs = values;
@@ -548,6 +561,7 @@ Set<Map.Entry<K,V>> var25D080FAAE722B04AA5C8EBDE33DD606_1283002275 =         (es
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.493 -0400", hash_original_method = "1378C07218E9226BC9F7AD403D7C2636", hash_generated_method = "1C22E698AC4724F022E676A554728F7D")
     public Enumeration<K> keys() {
 Enumeration<K> var3934136BB713579A43A8E8C1C3034CA0_1909038873 =         new KeyIterator();
@@ -558,6 +572,7 @@ Enumeration<K> var3934136BB713579A43A8E8C1C3034CA0_1909038873 =         new KeyI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.493 -0400", hash_original_method = "5CBB59F043F7E5A98C79AC06A0CCF84B", hash_generated_method = "B1418C200BB7829D2C9A3D35FCDD8FA6")
     public Enumeration<V> elements() {
 Enumeration<V> varA5D0B7DD47403A81B3461DEE499DEE74_1147019218 =         new ValueIterator();
@@ -664,6 +679,7 @@ for(;;)
 
         HashEntry<K,V> next;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.494 -0400", hash_original_method = "89FFAB6F57FFB83251DFC8FAF8476851", hash_generated_method = "8A58D929EE079DEBCD95A67A156E3547")
           HashEntry(K key, int hash, HashEntry<K,V> next, V value) {
             this.key = key;
@@ -723,6 +739,7 @@ for(;;)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.495 -0400", hash_original_method = "76FBB7D49FE13DE65CD87FF1D7913D53", hash_generated_method = "3CA87F2CA9B91DD40FEA6234D1C6C098")
          void setTable(HashEntry<K,V>[] newTable) {
             threshold = (int)(newTable.length * loadFactor);
@@ -733,6 +750,7 @@ for(;;)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.495 -0400", hash_original_method = "526D0582321A198EF4385AC6C7D29654", hash_generated_method = "2A38D64BD4EF5D3A8C2BB962EE0FDC55")
          HashEntry<K,V> getFirst(int hash) {
             addTaint(hash);
@@ -746,6 +764,7 @@ HashEntry<K,V> var0FA78C090C8091B6BCA949F01FFB4F37_1002397411 =             tab[
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.495 -0400", hash_original_method = "6C9E8EADE7BF0CF7C06CF8A72D599D54", hash_generated_method = "66981BAC467F0DF57E6A9CA1634A623B")
          V readValueUnderLock(HashEntry<K,V> e) {
             addTaint(e.getTaint());
@@ -1214,6 +1233,7 @@ for(int i = 0;i < tab.length;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.500 -0400", hash_original_method = "A06EA4B51D378F01CE00F7FB99A616EF", hash_generated_method = "F6D15BCA9A4C3C844E84A459510518AE")
         final void advance() {
             if(nextEntry != null && (nextEntry = nextEntry.next) != null)            
@@ -1438,6 +1458,7 @@ V var6DC76BC51820DD65E8396280E884AA78_1770393322 =             v;
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.502 -0400", hash_original_method = "DA1DC8695C9406305A6247D7AF5617DE", hash_generated_method = "E5A183B97FA56EF56AB15F4948F51ECF")
         public Map.Entry<K,V> next() {
             HashEntry<K,V> e = super.nextEntry();

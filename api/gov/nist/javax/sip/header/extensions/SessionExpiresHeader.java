@@ -1,11 +1,10 @@
 package gov.nist.javax.sip.header.extensions;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import javax.sip.InvalidArgumentException;
-import javax.sip.header.*;
+import javax.sip.header.ExtensionHeader;
+import javax.sip.header.Header;
+import javax.sip.header.Parameters;
 
 public interface SessionExpiresHeader extends Parameters, Header, ExtensionHeader{
 

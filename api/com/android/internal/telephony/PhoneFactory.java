@@ -1,20 +1,20 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.content.Context;
 import android.net.LocalServerSocket;
 import android.os.Looper;
 import android.provider.Settings;
 import android.util.Log;
-import android.os.SystemProperties;
-import com.android.internal.telephony.cdma.CDMAPhone;
+
 import com.android.internal.telephony.cdma.CDMALTEPhone;
+import com.android.internal.telephony.cdma.CDMAPhone;
 import com.android.internal.telephony.gsm.GSMPhone;
 import com.android.internal.telephony.sip.SipPhone;
 import com.android.internal.telephony.sip.SipPhoneFactory;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class PhoneFactory {
     

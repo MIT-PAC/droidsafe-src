@@ -1,15 +1,6 @@
 package android.test.suitebuilder;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.test.ClassPathPackageInfo;
-import android.test.ClassPathPackageInfoSource;
-import android.test.PackageInfoSources;
-import android.util.Log;
-import com.android.internal.util.Predicate;
-import junit.framework.TestCase;
 import java.io.Serializable;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -22,6 +13,18 @@ import java.util.List;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
+
+import junit.framework.TestCase;
+import android.test.ClassPathPackageInfo;
+import android.test.ClassPathPackageInfoSource;
+import android.test.PackageInfoSources;
+
+import com.android.internal.util.Predicate;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class TestGrouping {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.176 -0400", hash_original_field = "70C19B020BEFD5DD40A8FC5A2B69533F", hash_generated_field = "92A1F72A3CA9AFF319E6A33DD1FCF056")
@@ -79,6 +82,7 @@ List<Method> var625C4BA6F2C797C1B5A159EA338B6BDA_1410288328 =         select(met
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.177 -0400", hash_original_method = "33F5ECA31F61AACED3C9710C1D8342FC", hash_generated_method = "5105946E0D4A42112EAF1615AFC787FE")
      SortedSet<Class<? extends TestCase>> getTestCaseClasses() {
 SortedSet<Class<? extends TestCase>> varE3DDA91219760C874204BD71102F4461_1438815053 =         testCaseClasses;

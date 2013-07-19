@@ -1,18 +1,20 @@
 package java.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Locale;
+
 import libcore.icu.ICU;
 import libcore.icu.LocaleData;
 import libcore.icu.TimeZones;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class DateFormatSymbols implements Serializable, Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.009 -0400", hash_original_field = "F93C182ABF27C94E3A5B7A9F01CA9F60", hash_generated_field = "B3AAF3207AD6EC4015B2989CC1E896AA")
@@ -117,11 +119,13 @@ String[][] varEBF7F37D366F40A93466E6A48C2F7696_1504360394 =         zoneStrings;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final DateFormatSymbols getInstance() {
         return getInstance(Locale.getDefault());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final DateFormatSymbols getInstance(Locale locale) {
         if (locale == null) {
             throw new NullPointerException();

@@ -1,9 +1,6 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import gov.nist.core.Host;
 import gov.nist.core.HostPort;
 import gov.nist.core.ServerLogger;
@@ -26,6 +23,7 @@ import gov.nist.javax.sip.header.extensions.ReplacesHeader;
 import gov.nist.javax.sip.message.SIPMessage;
 import gov.nist.javax.sip.message.SIPRequest;
 import gov.nist.javax.sip.message.SIPResponse;
+
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.SocketAddress;
@@ -39,6 +37,7 @@ import java.util.Set;
 import java.util.Timer;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
+
 import javax.sip.ClientTransaction;
 import javax.sip.Dialog;
 import javax.sip.DialogState;
@@ -54,6 +53,11 @@ import javax.sip.header.CallIdHeader;
 import javax.sip.header.EventHeader;
 import javax.sip.message.Request;
 import javax.sip.message.Response;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SIPTransactionStack implements SIPTransactionEventListener, SIPDialogEventListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:42.455 -0400", hash_original_field = "BB024B2AD3D00DEB98AA88DE95E2AC00", hash_generated_field = "4492ED7A506BF07B68742FB955C2E21E")

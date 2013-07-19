@@ -1,12 +1,12 @@
 package org.apache.harmony.luni.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class DeleteOnExit extends Thread {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.039 -0400", hash_original_field = "C79C30DC0DDC0096B04E0C1DA71D54C1", hash_generated_field = "47F1474B6B515F8F9C9704A4267BE62A")

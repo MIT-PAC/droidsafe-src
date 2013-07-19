@@ -1,9 +1,21 @@
 package java.nio;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import static libcore.io.OsConstants.EAGAIN;
+import static libcore.io.OsConstants.EINVAL;
+import static libcore.io.OsConstants.ENOSYS;
+import static libcore.io.OsConstants.F_RDLCK;
+import static libcore.io.OsConstants.F_SETLK64;
+import static libcore.io.OsConstants.F_SETLKW64;
+import static libcore.io.OsConstants.F_UNLCK;
+import static libcore.io.OsConstants.F_WRLCK;
+import static libcore.io.OsConstants.O_ACCMODE;
+import static libcore.io.OsConstants.O_RDONLY;
+import static libcore.io.OsConstants.O_WRONLY;
+import static libcore.io.OsConstants.SEEK_CUR;
+import static libcore.io.OsConstants.SEEK_SET;
+import static libcore.io.OsConstants._SC_PAGE_SIZE;
+
 import java.io.Closeable;
 import java.io.FileDescriptor;
 import java.io.IOException;
@@ -19,12 +31,15 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.SortedSet;
 import java.util.TreeSet;
+
 import libcore.io.ErrnoException;
-import libcore.io.IoUtils;
 import libcore.io.Libcore;
 import libcore.io.StructFlock;
 import libcore.util.MutableLong;
-import static libcore.io.OsConstants.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 final class FileChannelImpl extends FileChannel {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.717 -0400", hash_original_field = "F7B44CFAFD5C52223D5498196C8A2E7B", hash_generated_field = "6DF85966286B5A79BC125BD24D7FC97F")

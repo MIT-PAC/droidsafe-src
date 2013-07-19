@@ -1,19 +1,23 @@
 package javax.xml.parsers;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+
 import javax.xml.validation.Schema;
+
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class DocumentBuilder {
     
@@ -141,25 +145,32 @@ Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1702325885 =         parse(in);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Document parse(InputSource is)
         throws  SAXException, IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isNamespaceAware();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isValidating();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setEntityResolver(EntityResolver er);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setErrorHandler(ErrorHandler eh);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Document newDocument();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract DOMImplementation getDOMImplementation();
 
     

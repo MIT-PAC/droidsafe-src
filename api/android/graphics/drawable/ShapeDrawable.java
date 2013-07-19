@@ -1,17 +1,25 @@
 package android.graphics.drawable;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.graphics.*;
-import android.graphics.drawable.shapes.Shape;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
-import android.util.AttributeSet;
+import java.io.IOException;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import java.io.IOException;
+
+import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PixelFormat;
+import android.graphics.Rect;
+import android.graphics.Shader;
+import android.graphics.drawable.shapes.Shape;
+import android.util.AttributeSet;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ShapeDrawable extends Drawable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.617 -0400", hash_original_field = "F650B6D51E8A0558B8CDC9DB09FD9330", hash_generated_field = "E775880DE66EC067EFB70E829A0DB9BA")
@@ -660,6 +668,7 @@ Drawable var70B51CA0E2F73DDDAEA1517FCDBBB53D_1592718143 =             new ShapeD
     
     public static abstract class ShaderFactory {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.650 -0400", hash_original_method = "3BAAD89D982163CC2C371B74D92AB9C1", hash_generated_method = "3BAAD89D982163CC2C371B74D92AB9C1")
         public ShaderFactory ()
         {
@@ -667,6 +676,7 @@ Drawable var70B51CA0E2F73DDDAEA1517FCDBBB53D_1592718143 =             new ShapeD
         }
 
 
+        @DSModeled(DSC.SAFE)
         public abstract Shader resize(int width, int height);
 
         

@@ -1,13 +1,16 @@
 package gov.nist.javax.sip.header.ims;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.text.ParseException;
-import javax.sip.header.ContactHeader;
-import javax.sip.header.ExtensionHeader;
 import gov.nist.javax.sip.header.ParametersHeader;
+
+import java.text.ParseException;
+
+import javax.sip.header.ExtensionHeader;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetworkInfoHeader, ExtensionHeader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.994 -0400", hash_original_field = "C094CFF5A400E24D3E32C2F411A1B793", hash_generated_field = "4265F4D4355352003752ED1DA82667CD")

@@ -1,11 +1,6 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import dalvik.system.PathClassLoader;
-import dalvik.system.VMStack;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -16,6 +11,12 @@ import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
+
+import dalvik.system.PathClassLoader;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class ClassLoader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.696 -0400", hash_original_field = "D0E45878043844FFC41AAC437E86B602", hash_generated_field = "F21C7A33E41D98EA12963007269D2C47")
@@ -194,6 +195,7 @@ Class<?> varE1EC1A949B64F2720C6EA4CFB815BC24_607354667 =         Class.forName(c
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.698 -0400", hash_original_method = "C41AD9124585D3AEE85EC6C2F13127B8", hash_generated_method = "F0E33F4D97CAA74AFF99E3B11E5A4657")
     public final ClassLoader getParent() {
 ClassLoader var0F49909EA73F8892C338E4DCA6EB9906_2026649457 =         parent;
@@ -320,6 +322,7 @@ Class<?> var3E303968598B6EE307EE3739CE40F332_1363033747 =         clazz;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.699 -0400", hash_original_method = "87395C94E1724A33A91DB9FA52BA76C0", hash_generated_method = "AECD55F08AE837F29C8894737A42DAA1")
     protected final void resolveClass(Class<?> clazz) {
         addTaint(clazz.getTaint());
@@ -442,6 +445,7 @@ Package var92B96FE3853575A1658E3A697814623E_650125723 =             newPackage;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.700 -0400", hash_original_method = "BAF7E3EE5C9000806386C90B3768A9FC", hash_generated_method = "0CBC7270F4BB3468DA4BA45693E13FFD")
     protected final void setSigners(Class<?> c, Object[] signers) {
         addTaint(signers[0].getTaint());

@@ -1,9 +1,15 @@
 package android.net.http;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.InputStream;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.ListIterator;
+import java.util.Map;
+
+import org.apache.http.HttpHost;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -12,18 +18,11 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Proxy;
 import android.net.WebAddress;
-import android.os.Handler;
-import android.os.Message;
-import android.os.SystemProperties;
-import android.text.TextUtils;
 import android.util.Log;
-import java.io.InputStream;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.ListIterator;
-import java.util.Map;
-import org.apache.http.HttpHost;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class RequestQueue implements RequestFeeder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.720 -0400", hash_original_field = "8673F7F02EF7B3B9DEB1A224A23932BB", hash_generated_field = "1758DBA360E4E3B600ADDDCE5E66E218")

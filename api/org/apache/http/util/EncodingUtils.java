@@ -1,11 +1,11 @@
 package org.apache.http.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.UnsupportedEncodingException;
+
 import org.apache.http.protocol.HTTP;
+
+import droidsafe.annotations.DSGenerator;
 
 public final class EncodingUtils {
     

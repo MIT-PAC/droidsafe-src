@@ -1,9 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.net.SocketTimeoutException;
@@ -14,15 +11,21 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateEncodingException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
-import java.security.interfaces.RSAPublicKey;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+
 import javax.net.ssl.SSLException;
 import javax.security.auth.x500.X500Principal;
+
 import libcore.io.Memory;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public final class NativeCrypto {
     
@@ -422,6 +425,7 @@ public final class NativeCrypto {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final String[] getDefaultCompressionMethods() {
         return new String[] { SUPPORTED_COMPRESSION_METHOD_NULL };
     }

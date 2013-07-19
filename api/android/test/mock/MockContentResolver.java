@@ -1,17 +1,21 @@
 package android.test.mock;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.Map;
+
 import android.content.ContentProvider;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.IContentProvider;
 import android.database.ContentObserver;
 import android.net.Uri;
+
 import com.google.android.collect.Maps;
-import java.util.Map;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class MockContentResolver extends ContentResolver {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.061 -0400", hash_original_field = "696CD650CBB852D5ADE3291A34CE1C11", hash_generated_field = "552B7A966F5AC4BF1D378359AEC135FA")

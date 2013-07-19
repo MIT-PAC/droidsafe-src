@@ -1,9 +1,10 @@
 package android.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.IOException;
+import java.io.StringReader;
+import java.util.HashMap;
+
 import org.ccil.cowan.tagsoup.HTMLSchema;
 import org.ccil.cowan.tagsoup.Parser;
 import org.xml.sax.Attributes;
@@ -12,6 +13,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
+
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Typeface;
@@ -32,12 +34,13 @@ import android.text.style.TextAppearanceSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
-import android.util.Log;
+
 import com.android.internal.util.XmlUtils;
-import java.io.IOException;
-import java.io.StringReader;
-import java.nio.CharBuffer;
-import java.util.HashMap;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class Html {
     

@@ -1,9 +1,20 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.File;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Random;
+import java.util.WeakHashMap;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.ReentrantLock;
+import java.util.regex.Pattern;
+
 import android.app.AppGlobals;
 import android.content.ContentValues;
 import android.content.res.Resources;
@@ -23,19 +34,11 @@ import android.util.Log;
 import android.util.LruCache;
 import android.util.Pair;
 import dalvik.system.BlockGuard;
-import java.io.File;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Random;
-import java.util.WeakHashMap;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.ReentrantLock;
-import java.util.regex.Pattern;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public class SQLiteDatabase extends SQLiteClosable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.531 -0400", hash_original_field = "2F577CFF36E03467323CF3302EA45D6C", hash_generated_field = "E7056D75F4E4E6EB0CBA6DCE1F4F880B")
@@ -1774,6 +1777,7 @@ for(i = setValuesSize;i < bindArgsSize;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.622 -0400", hash_original_method = "F177C5B02553C0E0327F321BDDCEAFD5", hash_generated_method = "02101306BB823E5D186FE4FD88AB93BA")
     public final String getPath() {
 String var6AF672BCA4D9DB76D759DE4D6BEB1D5F_1537492390 =         mPath;
@@ -2204,6 +2208,7 @@ for(int i = 0;i < size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.637 -0400", hash_original_method = "22B8BC0E5EAC4A96A93EF5FA02A6A3E4", hash_generated_method = "C456D4D3B48810B224EEE2BEDD0E4D3E")
      ArrayList<Integer> getQueuedUpStmtList() {
 ArrayList<Integer> var0084AC26CAA64BD68D68ADBD7C3F1253_1573057631 =         mClosedStatementIds;
@@ -2616,6 +2621,7 @@ for(int i = 0;i < attachedDbs.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.656 -0400", hash_original_method = "C4F8F8FDF64373EAEBE82B2B8F80D5C0", hash_generated_method = "E6AC894F82F9E2B742C2DEB8A39D8080")
     private final void native_finalize(int statementId) {
     }

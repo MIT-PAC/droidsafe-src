@@ -1,13 +1,15 @@
 package org.apache.http.impl.client;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.http.params.HttpParams;
 import org.apache.http.params.AbstractHttpParams;
+import org.apache.http.params.HttpParams;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ClientParamsStack extends AbstractHttpParams {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.660 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
@@ -69,6 +71,7 @@ public class ClientParamsStack extends AbstractHttpParams {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.661 -0400", hash_original_method = "411C2E82696B2A098C8F744317385115", hash_generated_method = "816A4B5D49BAFF786C2FA06083213C20")
     public final HttpParams getApplicationParams() {
 HttpParams var7945C5CD29912AE84B51B5555B2E3FD1_929271068 =         applicationParams;
@@ -79,6 +82,7 @@ HttpParams var7945C5CD29912AE84B51B5555B2E3FD1_929271068 =         applicationPa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.661 -0400", hash_original_method = "15DA57CD4E641FF95D2F8640F98E0183", hash_generated_method = "BCF880CEF7155110EAC5385E733B4BEC")
     public final HttpParams getClientParams() {
 HttpParams var4ED3C0E8A5C13064D8D55F030D61EBE8_346035161 =         clientParams;
@@ -89,6 +93,7 @@ HttpParams var4ED3C0E8A5C13064D8D55F030D61EBE8_346035161 =         clientParams;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.661 -0400", hash_original_method = "93598125634F09E7FC66E3A21BBB5179", hash_generated_method = "820AB5273EDAC78B66D6EE2CA5C03135")
     public final HttpParams getRequestParams() {
 HttpParams var62C79F52706619CE99D0ED6A53571A56_1101306739 =         requestParams;
@@ -99,6 +104,7 @@ HttpParams var62C79F52706619CE99D0ED6A53571A56_1101306739 =         requestParam
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.661 -0400", hash_original_method = "571781B35D1F87CE8D980CD8A67BB691", hash_generated_method = "56887F93667430EB745EDCEECF333FD5")
     public final HttpParams getOverrideParams() {
 HttpParams var882137B6A0312415D38CC638EFA3E6F8_940761160 =         overrideParams;

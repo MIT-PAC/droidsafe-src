@@ -234,10 +234,10 @@ public class Toast {
      *                 {@link #LENGTH_LONG}
      *
      */
-    @DSModeled()
+    @DSModeled(DSC.SPEC)
     public static Toast makeText(Context context, CharSequence text, int duration) {
         Toast result = new Toast(context);
-        result.addTaint(text.toString().getTaint());
+        result.addTaint(text.getTaint());
         result.addTaint(duration);
 
         /*  DSModel: Not needed for ds modeling
@@ -264,7 +264,7 @@ public class Toast {
      *
      * @throws Resources.NotFoundException if the resource can't be found.
      */
-    @DSModeled()
+    @DSModeled(DSC.SPEC)
     public static Toast makeText(Context context, int resId, int duration)
                                 throws Resources.NotFoundException {
         return makeText(context, context.getResources().getText(resId), duration);

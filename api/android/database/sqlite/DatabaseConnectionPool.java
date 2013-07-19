@@ -1,15 +1,17 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.res.Resources;
-import android.os.SystemClock;
-import android.util.Log;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
+
+import android.content.res.Resources;
+import android.os.SystemClock;
+import android.util.Log;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class DatabaseConnectionPool {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.130 -0400", hash_original_field = "60CF7A6EA37051AFA5579BFF259593F0", hash_generated_field = "6DB5215553C1840CAEC8065EEA2DFF1E")
@@ -233,6 +235,7 @@ for(int i = mPool.size() - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.138 -0400", hash_original_method = "94796DA212EFDAF0BC89ABDE3263411C", hash_generated_method = "9B4464315F1C999CA287CA8A4E1E82C6")
      ArrayList<PoolObj> getPool() {
 ArrayList<PoolObj> varB4506CA02789EEFE1322E696990510A4_1488361759 =         mPool;

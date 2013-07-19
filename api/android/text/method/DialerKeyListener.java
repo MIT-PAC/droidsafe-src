@@ -1,16 +1,18 @@
 package android.text.method;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.view.KeyEvent;
-import android.view.KeyCharacterMap.KeyData;
 import android.text.InputType;
 import android.text.Spannable;
+import android.view.KeyCharacterMap.KeyData;
+import android.view.KeyEvent;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class DialerKeyListener extends NumberKeyListener {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.200 -0400", hash_original_method = "DB0B81FF92CA7DAE82B6AED220522587", hash_generated_method = "DB0B81FF92CA7DAE82B6AED220522587")
     public DialerKeyListener ()
     {

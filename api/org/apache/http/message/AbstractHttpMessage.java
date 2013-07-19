@@ -1,15 +1,18 @@
 package org.apache.http.message;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.Iterator;
+
 import org.apache.http.Header;
 import org.apache.http.HeaderIterator;
 import org.apache.http.HttpMessage;
-import org.apache.http.params.HttpParams;
 import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpParams;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class AbstractHttpMessage implements HttpMessage {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.683 -0400", hash_original_field = "F5C7F01E4A3E94206E282D02BF390DB2", hash_generated_field = "34FF19CD0855E5D63A04F524D7452FF4")
@@ -30,7 +33,7 @@ public abstract class AbstractHttpMessage implements HttpMessage {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.SPEC)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.684 -0400", hash_original_method = "2222B1AD198C1052436204E49A67A13C", hash_generated_method = "20CE23CB860DE8F239A1882E6A61E5B3")
     protected  AbstractHttpMessage() {
         this(null);

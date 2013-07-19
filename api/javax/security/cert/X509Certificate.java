@@ -1,9 +1,6 @@
 package javax.security.cert;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.lang.reflect.Constructor;
@@ -17,6 +14,11 @@ import java.security.Security;
 import java.security.SignatureException;
 import java.security.cert.CertificateFactory;
 import java.util.Date;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class X509Certificate extends Certificate {
     
@@ -151,38 +153,49 @@ public abstract class X509Certificate extends Certificate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void checkValidity()
             throws CertificateExpiredException, CertificateNotYetValidException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void checkValidity(Date date)
             throws CertificateExpiredException, CertificateNotYetValidException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getVersion();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract BigInteger getSerialNumber();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Principal getIssuerDN();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Principal getSubjectDN();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Date getNotBefore();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Date getNotAfter();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getSigAlgName();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getSigAlgOID();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte[] getSigAlgParams();
 
     

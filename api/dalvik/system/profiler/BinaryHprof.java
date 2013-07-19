@@ -1,16 +1,19 @@
 package dalvik.system.profiler;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+
 public final class BinaryHprof {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.871 -0400", hash_original_method = "5337F4C002A0025B40CFBFFF348D94A9", hash_generated_method = "5337F4C002A0025B40CFBFFF348D94A9")
     public BinaryHprof ()
     {
@@ -18,6 +21,7 @@ public final class BinaryHprof {
     }
 
 
+    @DSModeled(DSC.BAN)
     public static final String readMagic(DataInputStream in) {
         try {
             byte[] bytes = new byte[512];
@@ -74,9 +78,11 @@ public final class BinaryHprof {
                 BYTE_TO_TAG.put(v.tag, v);
             }
         }
+        @DSModeled(DSC.BAN)
         public static Tag get(byte tag) {
             return BYTE_TO_TAG.get(tag);
         }
+        @DSModeled(DSC.BAN)
         public String checkSize(int actual) {
             if (actual < minimumSize) {
                 return "expected a minimial record size of " + minimumSize + " for " + this

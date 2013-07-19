@@ -1,9 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.math.BigInteger;
 import java.security.GeneralSecurityException;
 import java.security.KeyFactory;
@@ -15,9 +12,15 @@ import java.security.spec.InvalidKeySpecException;
 import java.security.spec.RSAPublicKeySpec;
 import java.util.Arrays;
 import java.util.Vector;
+
 import javax.net.ssl.SSLEngineResult;
 import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLHandshakeException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class HandshakeProtocol {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.633 -0400", hash_original_field = "D031B2072EB1FD157EF6CDA9254DBAE6", hash_generated_field = "597F0BA1953FC2B5C0F1020CDF336C17")
@@ -144,6 +147,7 @@ public abstract class HandshakeProtocol {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void start();
 
     
@@ -239,15 +243,19 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_298374620 =         session;
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void receiveChangeCipherSpec();
 
     
+    @DSModeled(DSC.SAFE)
     abstract void makeFinished();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void unwrap(byte[] bytes);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void unwrapSSLv2(byte[] bytes);
 
     

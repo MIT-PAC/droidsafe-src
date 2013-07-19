@@ -1,17 +1,17 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.content.Context;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.database.DataSetObserver;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class CursorAdapter extends BaseAdapter implements Filterable, CursorFilter.CursorFilterClient {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.045 -0400", hash_original_field = "3B4F79EB44FC121408BC3C80FFBD1BB3", hash_generated_field = "0CBC614058D2BA6AB3F2707AA19CB55C")
@@ -329,6 +329,7 @@ View var540C13E9E156B687226421B24F2DF178_1178467243 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract View newView(Context context, Cursor cursor, ViewGroup parent);
 
     
@@ -345,6 +346,7 @@ View varA7C7FCEE76C2BB6CDF25D7E759116C4C_1926707906 =         newView(context, c
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void bindView(View view, Context context, Cursor cursor);
 
     

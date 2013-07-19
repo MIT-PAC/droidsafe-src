@@ -1,17 +1,19 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.ObjectStreamField;
 import java.io.Serializable;
 import java.text.DateFormatSymbols;
+
 import libcore.icu.ICU;
 import libcore.icu.LocaleData;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Calendar implements Serializable, Cloneable, Comparable<Calendar> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.225 -0400", hash_original_field = "968371C4AF5AE99403612957ADE12B5F", hash_generated_field = "CE3F9942C85635B6DB1739E7DBF40F0C")
@@ -90,6 +92,7 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void add(int field, int value);
 
     
@@ -135,6 +138,7 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.229 -0400", hash_original_method = "A9FFD41082BBDB8FD2EC401621467C0D", hash_generated_method = "535C73DAC5BC2261F2168AFD64759BA7")
     public final void clear() {
 for(int i = 0;i < FIELD_COUNT;i++)
@@ -152,6 +156,7 @@ for(int i = 0;i < FIELD_COUNT;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.230 -0400", hash_original_method = "045ED04F1C7B7EFD467C2025674AC1C4", hash_generated_method = "5601ADC664CA4C20A4642CF90A9811CA")
     public final void clear(int field) {
         fields[field] = 0;
@@ -222,9 +227,11 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_900954426 =             clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void computeFields();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void computeTime();
 
     
@@ -394,6 +401,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_900954426 =             clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getGreatestMinimum(int field);
 
     
@@ -421,9 +429,11 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_900954426 =             clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getLeastMaximum(int field);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getMaximum(int field);
 
     
@@ -438,9 +448,11 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_900954426 =             clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getMinimum(int field);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.236 -0400", hash_original_method = "0D972793C1A81D3B5C0D23389B920FB5", hash_generated_method = "8F3087DE7D719316AE1A292F1A29B5AA")
     public final Date getTime() {
 Date var4FE5A3569B4AD21C5FEAEB352ABA8F58_942431362 =         new Date(getTimeInMillis());
@@ -496,6 +508,7 @@ TimeZone var61F6902A567A932064AABE0702479FA5_1875880445 =         zone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.236 -0400", hash_original_method = "B2249A52847A00BE88915EAA81CF8D45", hash_generated_method = "3B73D891F97A93C8768CC26EB920940A")
     protected final int internalGet(int field) {
         addTaint(field);
@@ -518,6 +531,7 @@ TimeZone var61F6902A567A932064AABE0702479FA5_1875880445 =         zone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.237 -0400", hash_original_method = "295995F35CFAB02328483B566F7330CE", hash_generated_method = "7A9C46E0A2C8D3F06AEBFA30A6ED318E")
     public final boolean isSet(int field) {
         addTaint(field);
@@ -549,6 +563,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void roll(int field, boolean increment);
 
     
@@ -586,6 +601,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.237 -0400", hash_original_method = "E11C90BCB39036715964798223610892", hash_generated_method = "496E4EFF76EE7629705D952B6ADB3338")
     public final void set(int year, int month, int day) {
         addTaint(day);
@@ -601,6 +617,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.237 -0400", hash_original_method = "B4EBEBE6ED320058BB13C1E33AF949E4", hash_generated_method = "09C9A1F8C2609506A6105D86A365B721")
     public final void set(int year, int month, int day, int hourOfDay,
             int minute) {
@@ -619,6 +636,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.238 -0400", hash_original_method = "071B019FF423902B33C61C7D7703D8F0", hash_generated_method = "BA45F5F86E082EBF9EB5682070510612")
     public final void set(int year, int month, int day, int hourOfDay,
             int minute, int second) {
@@ -663,6 +681,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.238 -0400", hash_original_method = "8326734B6F30C707435A4BD203126230", hash_generated_method = "90C83C96BAAAADE59E5366DE641ABDCC")
     public final void setTime(Date date) {
         addTaint(date.getTaint());
@@ -885,6 +904,7 @@ String[] var02443F3A76AE487EA27B8DD484E529A8_142271410 =         (style == LONG)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.240 -0400", hash_original_method = "9C5842A520266160609E6030F348A85B", hash_generated_method = "6301677C85C93E4F2F6EB1E128606187")
     public Map<String, Integer> getDisplayNames(int field, int style, Locale locale) {
         addTaint(locale.getTaint());

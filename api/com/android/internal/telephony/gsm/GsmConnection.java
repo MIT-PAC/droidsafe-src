@@ -1,9 +1,6 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.content.Context;
 import android.os.AsyncResult;
 import android.os.Handler;
@@ -12,10 +9,20 @@ import android.os.Message;
 import android.os.PowerManager;
 import android.os.Registrant;
 import android.os.SystemClock;
-import android.util.Log;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.ServiceState;
-import com.android.internal.telephony.*;
+import android.util.Log;
+
+import com.android.internal.telephony.CallStateException;
+import com.android.internal.telephony.Connection;
+import com.android.internal.telephony.DriverCall;
+import com.android.internal.telephony.Phone;
+import com.android.internal.telephony.UUSInfo;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class GsmConnection extends Connection {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.258 -0400", hash_original_field = "72122CE96BFEC66E2396D2E25225D70A", hash_generated_field = "B6239D6F2AF1190D06AAF0170D315E18")

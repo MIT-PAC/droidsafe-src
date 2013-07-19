@@ -1,24 +1,28 @@
 package android.test;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.Context;
-import android.util.Log;
-import android.os.Debug;
-import android.os.SystemClock;
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
-import junit.framework.TestSuite;
-import junit.framework.TestListener;
+
 import junit.framework.Test;
+import junit.framework.TestListener;
 import junit.framework.TestResult;
+import junit.framework.TestSuite;
+import android.content.Context;
+import android.os.Debug;
+import android.os.SystemClock;
+import android.util.Log;
+
 import com.google.android.collect.Lists;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class TestRunner implements PerformanceTestCase.Intermediates {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.027 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")

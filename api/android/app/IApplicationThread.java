@@ -1,12 +1,13 @@
 package android.app;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.FileDescriptor;
+import java.util.List;
+import java.util.Map;
+
 import android.content.ComponentName;
-import android.content.Intent;
 import android.content.IIntentReceiver;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.ProviderInfo;
@@ -15,13 +16,10 @@ import android.content.res.CompatibilityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Debug;
-import android.os.ParcelFileDescriptor;
-import android.os.RemoteException;
 import android.os.IBinder;
 import android.os.IInterface;
-import java.io.FileDescriptor;
-import java.util.List;
-import java.util.Map;
+import android.os.ParcelFileDescriptor;
+import android.os.RemoteException;
 
 public interface IApplicationThread extends IInterface {
     void schedulePauseActivity(IBinder token, boolean finished, boolean userLeaving,

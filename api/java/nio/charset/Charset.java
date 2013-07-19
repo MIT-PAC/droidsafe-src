@@ -1,9 +1,6 @@
 package java.nio.charset;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
@@ -17,7 +14,12 @@ import java.util.ServiceLoader;
 import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
+
 import libcore.icu.NativeConverter;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Charset implements Comparable<Charset> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.415 -0400", hash_original_field = "3FD37E7C1754DA8004AB09E17AD51B85", hash_generated_field = "4394C126BF71D5F3C3D84B833D0FB596")
@@ -157,15 +159,19 @@ for(String alias : aliases)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean contains(Charset charset);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CharsetEncoder newEncoder();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CharsetDecoder newDecoder();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.418 -0400", hash_original_method = "C591AF6945C669FCF4033528E86B2077", hash_generated_method = "C74E64431D10ECEB3F795E0CF5CDC2CF")
     public final String name() {
 String var10DFEB18F9F7F9CEB3FED88506D04E0A_1650019795 =         this.canonicalName;

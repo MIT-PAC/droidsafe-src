@@ -1,12 +1,13 @@
 package javax.crypto;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.security.InvalidKeyException;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SecretKeyFactorySpi {
     
@@ -16,15 +17,18 @@ public abstract class SecretKeyFactorySpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SecretKey engineGenerateSecret(KeySpec keySpec)
             throws InvalidKeySpecException;
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
 protected abstract KeySpec engineGetKeySpec(SecretKey key, Class keySpec)
             throws InvalidKeySpecException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SecretKey engineTranslateKey(SecretKey key)
             throws InvalidKeyException;
 

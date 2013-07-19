@@ -1,12 +1,8 @@
 package android.text.method;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.graphics.Rect;
 import android.view.View;
-import android.widget.TextView;
 
 public interface TransformationMethod
 {

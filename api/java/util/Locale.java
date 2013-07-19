@@ -1,15 +1,17 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.ObjectStreamField;
 import java.io.Serializable;
+
 import libcore.icu.ICU;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class Locale implements Cloneable, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.206 -0400", hash_original_field = "AF9AD4037F4BB83AC9CEB5E118E6DE1A", hash_generated_field = "19B779CD8189BCE485C226E9C90F5F3B")
@@ -199,6 +201,7 @@ String var306B1C24BC0EE091C63E09C6178972F6_1869099160 =         countryCode;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.212 -0400", hash_original_method = "6B1507A0394E6A6AE91AAA3FFF27DCC6", hash_generated_method = "3198C0AF50623CAF15E041CC830D2796")
     public final String getDisplayCountry() {
 String var4162A28D46B1DE98D12901CC8E93D248_662797164 =         getDisplayCountry(getDefault());
@@ -239,6 +242,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_149028870 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.212 -0400", hash_original_method = "8536CE63A6B8A68C05EDBD72A683988E", hash_generated_method = "614974DD8C3C6993679493874D27E3E3")
     public final String getDisplayLanguage() {
 String var7EDF4DE2945252F485BCACF7DA7023A8_1869526620 =         getDisplayLanguage(getDefault());
@@ -279,6 +283,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1454648026 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.213 -0400", hash_original_method = "CBF375FE343ED989DA3B5B8CCC8BE7E0", hash_generated_method = "54C6690660CB943DF7C0C3C11D2A7404")
     public final String getDisplayName() {
 String var5FFBDDC73BB3304503DF2B5423E14A46_1235144859 =         getDisplayName(getDefault());
@@ -338,6 +343,7 @@ String varD03843288D33B9E1D3062E25339ECF6D_1998336774 =         buffer.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.214 -0400", hash_original_method = "A8FFA206A883AC51133D493CCCB1ED67", hash_generated_method = "F6CC123F9C40B61C8A8D063C684328F8")
     public final String getDisplayVariant() {
 String varB73190F85C04E5DCE591881F28A0B6BC_724328995 =         getDisplayVariant(getDefault());
@@ -475,6 +481,7 @@ String varFF6608C6BB8A10EA44ED34D897B0E991_887952145 =         variantCode;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.217 -0400", hash_original_method = "8023BB72D2CCCB0AE8421793FA5DB667", hash_generated_method = "D199EBFDF95A6DC8072EA310C5E76102")
     @Override
     public final String toString() {

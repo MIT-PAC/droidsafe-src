@@ -1,11 +1,6 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.util.TypedProperties;
-import android.util.Log;
 import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -14,18 +9,28 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.Reader;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-import java.lang.annotation.Target;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+
 import org.apache.harmony.dalvik.ddmc.Chunk;
 import org.apache.harmony.dalvik.ddmc.ChunkHandler;
 import org.apache.harmony.dalvik.ddmc.DdmServer;
+
+import android.util.Log;
+
+import com.android.internal.util.TypedProperties;
+
 import dalvik.bytecode.OpcodeInfo;
-import dalvik.bytecode.Opcodes;
 import dalvik.system.VMDebug;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public final class Debug {
     
@@ -495,16 +500,19 @@ public final class Debug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getBinderLocalObjectCount() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getBinderProxyObjectCount() {
         return DSUtils.UNKNOWN_INT;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getBinderDeathObjectCount() {
         return DSUtils.UNKNOWN_INT;
     }

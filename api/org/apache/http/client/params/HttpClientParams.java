@@ -1,10 +1,9 @@
 package org.apache.http.client.params;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import org.apache.http.params.HttpParams;
+
+import droidsafe.annotations.DSGenerator;
 
 public class HttpClientParams {
     

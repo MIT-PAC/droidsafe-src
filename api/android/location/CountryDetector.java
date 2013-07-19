@@ -1,14 +1,13 @@
 package android.location;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.HashMap;
+
 import android.os.Handler;
 import android.os.Looper;
 import android.os.RemoteException;
-import android.util.Log;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class CountryDetector {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.930 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "586490950C196F388A8EA4D62FE86E5C")

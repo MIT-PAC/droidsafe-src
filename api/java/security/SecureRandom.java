@@ -1,16 +1,20 @@
 package java.security;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.nio.ByteOrder;
 import java.util.Random;
+
 import libcore.io.Memory;
 import libcore.io.SizeOf;
+
 import org.apache.harmony.security.fortress.Engine;
 import org.apache.harmony.security.fortress.Services;
 import org.apache.harmony.security.provider.crypto.SHA1PRNG_SecureRandomImpl;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SecureRandom extends Random {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.352 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
@@ -137,6 +141,7 @@ public class SecureRandom extends Random {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.355 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "1C9C1CBDC972479F70AFCEFFB509BD9F")
     public final Provider getProvider() {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1939243500 =         provider;

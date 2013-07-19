@@ -1,9 +1,6 @@
 package android.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 
 public interface INetworkPolicyManager extends android.os.IInterface
 {

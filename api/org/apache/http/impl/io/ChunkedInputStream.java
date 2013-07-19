@@ -1,11 +1,9 @@
 package org.apache.http.impl.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.InputStream;
+
 import org.apache.http.Header;
 import org.apache.http.HttpException;
 import org.apache.http.MalformedChunkCodingException;
@@ -13,6 +11,9 @@ import org.apache.http.io.SessionInputBuffer;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.CharArrayBuffer;
 import org.apache.http.util.ExceptionUtils;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class ChunkedInputStream extends InputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.492 -0400", hash_original_field = "13B5BFE96F3E2FE411C9F66F4A582ADF", hash_generated_field = "1D4C1FD37762DA513250BEA823E156F5")

@@ -1,13 +1,14 @@
 package java.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class CacheResponse {
     
@@ -18,9 +19,11 @@ public abstract class CacheResponse {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract InputStream getBody() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Map<String, List<String>> getHeaders() throws IOException;
 
     

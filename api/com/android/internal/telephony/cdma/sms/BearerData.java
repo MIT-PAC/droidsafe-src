@@ -1,23 +1,28 @@
 package com.android.internal.telephony.cdma.sms;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import static android.telephony.SmsMessage.ENCODING_16BIT;
 import static android.telephony.SmsMessage.MAX_USER_DATA_BYTES;
 import static android.telephony.SmsMessage.MAX_USER_DATA_BYTES_WITH_HEADER;
-import android.util.Log;
+
+import java.util.TimeZone;
+
+import android.content.res.Resources;
 import android.telephony.SmsMessage;
 import android.text.format.Time;
-import com.android.internal.telephony.IccUtils;
+import android.util.Log;
+
 import com.android.internal.telephony.GsmAlphabet;
+import com.android.internal.telephony.IccUtils;
 import com.android.internal.telephony.SmsHeader;
 import com.android.internal.telephony.SmsMessageBase.TextEncodingDetails;
 import com.android.internal.util.BitwiseInputStream;
 import com.android.internal.util.BitwiseOutputStream;
-import android.content.res.Resources;
-import java.util.TimeZone;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class BearerData {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.681 -0400", hash_original_field = "9CEBBECC0F683775CABCD1C6DD3D70C7", hash_generated_field = "7D96870A082A2C76305FFABAAF52B964")

@@ -1,10 +1,12 @@
 package java.nio;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.Arrays;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 final class CharSequenceAdapter extends CharBuffer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.365 -0400", hash_original_field = "FA1C731EAD93E333A9180E16F968C01E", hash_generated_field = "FC0228967C2CDD8E28E9C839DAD10434")
@@ -103,6 +105,7 @@ CharBuffer var965D66642EAD7AFBE0072E15599E3F83_833277131 =         copy(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.369 -0400", hash_original_method = "B46220E47C2CF78231CB9172DECC2B72", hash_generated_method = "F55D6C42FEDF06BB1F6AFA77D25A4D5B")
     @Override
     public final CharBuffer get(char[] dst, int dstOffset, int charCount) {
@@ -233,6 +236,7 @@ ByteOrder var1B533639214E0AD13A9C318946B77D59_179984031 =         ByteOrder.nati
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.372 -0400", hash_original_method = "456A915B3249AF3B6DBAB08ACEE5755D", hash_generated_method = "221F42B51CB95DB01B24AFAC9302AD21")
     @Override
     public final CharBuffer put(char[] src, int srcOffset, int charCount) {

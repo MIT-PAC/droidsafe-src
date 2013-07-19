@@ -1,9 +1,8 @@
 package android.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 class SynchronizedPool<T extends Poolable<T>> implements Pool<T> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.231 -0400", hash_original_field = "6A0D6954D813A9663B4032F3610B6FB3", hash_generated_field = "105D132186E8AA24291EFCF7D115902D")

@@ -1,16 +1,19 @@
 package com.android.i18n.phonenumbers;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.i18n.phonenumbers.Phonemetadata.NumberFormat;
-import com.android.i18n.phonenumbers.Phonemetadata.PhoneMetadata;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import com.android.i18n.phonenumbers.Phonemetadata.NumberFormat;
+import com.android.i18n.phonenumbers.Phonemetadata.PhoneMetadata;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class AsYouTypeFormatter {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.514 -0400", hash_original_field = "587DFC21273768F857001AF4DED4A6C2", hash_generated_field = "0C350DE511BE7B52540BBA3416D1A46C")

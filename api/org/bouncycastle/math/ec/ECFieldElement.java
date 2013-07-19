@@ -1,11 +1,13 @@
 package org.bouncycastle.math.ec;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.math.BigInteger;
 import java.util.Random;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class ECFieldElement implements ECConstants {
     
@@ -16,36 +18,47 @@ public abstract class ECFieldElement implements ECConstants {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract BigInteger     toBigInteger();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String         getFieldName();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int            getFieldSize();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECFieldElement add(ECFieldElement b);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECFieldElement subtract(ECFieldElement b);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECFieldElement multiply(ECFieldElement b);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECFieldElement divide(ECFieldElement b);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECFieldElement negate();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECFieldElement square();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECFieldElement invert();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ECFieldElement sqrt();
 
     

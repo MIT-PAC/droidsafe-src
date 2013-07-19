@@ -1,9 +1,10 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class Grego {
     
@@ -14,6 +15,7 @@ class Grego {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static final boolean isLeapYear(int year) {
         return ((year&0x3) == 0) && ((year%100 != 0) || (year%400 == 0));
     }

@@ -1,9 +1,10 @@
 package java.nio;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Buffer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.208 -0400", hash_original_field = "7BD14A231864E618E1840C7E117E59C1", hash_generated_field = "0B1D26332B4020647655E70C20DE6D8D")
@@ -49,12 +50,15 @@ public abstract class Buffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Object array();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int arrayOffset();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.211 -0400", hash_original_method = "BDE11E8E3D76C140A59ECD57AE712B97", hash_generated_method = "643FC94C8784ECE0CFC79152355069BB")
     public final int capacity() {
         int var7BD14A231864E618E1840C7E117E59C1_686211902 = (capacity);
@@ -203,6 +207,7 @@ public abstract class Buffer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.216 -0400", hash_original_method = "7210DA7B6C2A4BE4693F950CE68DF306", hash_generated_method = "A5A91B9B3125D1EEA6D8F59E5B2DCE13")
     public final Buffer clear() {
         position = 0;
@@ -219,6 +224,7 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_1858140566 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.217 -0400", hash_original_method = "A8519E3C9C4A5F3DEEC9F7CACEDF020E", hash_generated_method = "302FD9F3AAF288CB227C7776BEE4A8D1")
     public final Buffer flip() {
         limit = position;
@@ -235,9 +241,11 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_2113616573 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean hasArray();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.218 -0400", hash_original_method = "13F7C083DDE22C46FB0AD1170426F423", hash_generated_method = "27C4F005325A344587C3BEA3C5E685A7")
     public final boolean hasRemaining() {
         boolean varA311A48D68DFAB1F8655269A7132150E_1524649912 = (position < limit);
@@ -248,9 +256,11 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_2113616573 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isDirect();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isReadOnly();
 
     
@@ -269,6 +279,7 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_2113616573 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.219 -0400", hash_original_method = "D5C1223BE3A23A4695C92DD81173DEDC", hash_generated_method = "33D7600FBFD296245299D51429F32444")
     public final int limit() {
         int varAA9F73EEA60A006820D0F8768BC8A3FC_1043395320 = (limit);
@@ -323,6 +334,7 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_859251701 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.221 -0400", hash_original_method = "A81425374E4EA5264849380D40913956", hash_generated_method = "E4229F9F9375D4C6F407D3A060B76DBC")
     public final Buffer mark() {
         mark = position;
@@ -335,6 +347,7 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_850260538 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.221 -0400", hash_original_method = "DAD201A4DC24D53E1106EBA819979825", hash_generated_method = "F6B1D08188E952589E767D5A604EF0E1")
     public final int position() {
         int var4757FE07FD492A8BE0EA6A760D683D6E_122506492 = (position);
@@ -345,6 +358,7 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_850260538 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.222 -0400", hash_original_method = "E134461CBBE71A88508EDF7172D7480E", hash_generated_method = "A017FE68A22AA263274246607FDFEEDE")
     public final Buffer position(int newPosition) {
         addTaint(newPosition);
@@ -383,6 +397,7 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_1809890890 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.223 -0400", hash_original_method = "BFA4599854F3739E9A14ABA863ADA9FF", hash_generated_method = "72AEDF53D8E6F16ADB6199294AFED2D9")
     public final int remaining() {
         int var09EF638EAE66D4F89E996C4321DBBCF9_382647427 = (limit - position);
@@ -393,6 +408,7 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_1809890890 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.223 -0400", hash_original_method = "2BE1864DF6C90B2A62411C9F7C095DEC", hash_generated_method = "8EED8562DDAAE30D9CA79193E872C99C")
     public final Buffer reset() {
         if(mark == UNSET_MARK)        
@@ -414,6 +430,7 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_1703920142 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.223 -0400", hash_original_method = "533909B48B402AC142AA1672CC89D5CC", hash_generated_method = "6FFC6D8ED95D38D0CD9DBEB6983B5B86")
     public final Buffer rewind() {
         position = 0;

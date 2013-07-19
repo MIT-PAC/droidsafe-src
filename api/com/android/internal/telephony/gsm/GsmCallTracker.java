@@ -1,9 +1,9 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import android.os.AsyncResult;
 import android.os.Handler;
 import android.os.Message;
@@ -16,6 +16,7 @@ import android.telephony.TelephonyManager;
 import android.telephony.gsm.GsmCellLocation;
 import android.util.EventLog;
 import android.util.Log;
+
 import com.android.internal.telephony.CallStateException;
 import com.android.internal.telephony.CallTracker;
 import com.android.internal.telephony.CommandsInterface;
@@ -25,12 +26,11 @@ import com.android.internal.telephony.EventLogTags;
 import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.TelephonyProperties;
 import com.android.internal.telephony.UUSInfo;
-import com.android.internal.telephony.gsm.CallFailCause;
-import com.android.internal.telephony.gsm.GSMPhone;
-import com.android.internal.telephony.gsm.GsmCall;
-import com.android.internal.telephony.gsm.GsmConnection;
-import java.util.List;
-import java.util.ArrayList;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class GsmCallTracker extends CallTracker {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:24.133 -0400", hash_original_field = "2565E483715F30971B59A5D44D37906E", hash_generated_field = "716BB86B5900AA12E51F40C44C703D1A")

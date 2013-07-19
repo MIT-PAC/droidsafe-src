@@ -1,16 +1,17 @@
 package android.database;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.ContentResolver;
-import android.net.Uri;
-import android.os.Bundle;
-import android.util.Log;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
+
+import android.content.ContentResolver;
+import android.net.Uri;
+import android.os.Bundle;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class AbstractCursor implements CrossProcessCursor {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.362 -0400", hash_original_field = "DEB4CF927428CCF05DDA4EF4FEB1005E", hash_generated_field = "6D0681B9CC29887CCBA4001347A5783B")
@@ -67,30 +68,39 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract public int getCount();
 
     
+    @DSModeled(DSC.SAFE)
     abstract public String[] getColumnNames();
 
     
+    @DSModeled(DSC.SAFE)
     abstract public String getString(int column);
 
     
+    @DSModeled(DSC.SAFE)
     abstract public short getShort(int column);
 
     
+    @DSModeled(DSC.SAFE)
     abstract public int getInt(int column);
 
     
+    @DSModeled(DSC.SAFE)
     abstract public long getLong(int column);
 
     
+    @DSModeled(DSC.SAFE)
     abstract public float getFloat(int column);
 
     
+    @DSModeled(DSC.SAFE)
     abstract public double getDouble(int column);
 
     
+    @DSModeled(DSC.SAFE)
     abstract public boolean isNull(int column);
 
     
@@ -260,6 +270,7 @@ CursorWindow var540C13E9E156B687226421B24F2DF178_1566267824 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.379 -0400", hash_original_method = "EC88CAE72DCB37222F19A173793DEE6F", hash_generated_method = "6EFFB8BC8B148D7D8FC438BABD54D4CB")
     public final int getPosition() {
         int varA8470CE6E0050B0E832FDE52720C7250_620811109 = (mPos);

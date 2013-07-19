@@ -1,15 +1,14 @@
 package org.apache.harmony.security.x501;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.nio.charset.Charsets;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Locale;
+
 import javax.security.auth.x500.X500Principal;
+
 import org.apache.harmony.security.asn1.ASN1Constants;
 import org.apache.harmony.security.asn1.ASN1Oid;
 import org.apache.harmony.security.asn1.ASN1Sequence;
@@ -18,6 +17,11 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.BerOutputStream;
 import org.apache.harmony.security.utils.ObjectIdentifier;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class AttributeTypeAndValue {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.512 -0400", hash_original_field = "130F43112BB8A7A7790EBFC08EE9D6AF", hash_generated_field = "8882A462AEDA287957EC397E85D609FD")

@@ -1,14 +1,15 @@
 package android.text.style;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.graphics.Paint;
 import android.text.TextPaint;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class MetricAffectingSpan extends CharacterStyle implements UpdateLayout {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.048 -0400", hash_original_method = "9C185298DCF08F9282BECADE276ABE7A", hash_generated_method = "9C185298DCF08F9282BECADE276ABE7A")
     public MetricAffectingSpan ()
     {
@@ -16,6 +17,7 @@ public abstract class MetricAffectingSpan extends CharacterStyle implements Upda
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract void updateMeasureState(TextPaint p);
 
     

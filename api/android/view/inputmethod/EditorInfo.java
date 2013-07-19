@@ -1,15 +1,16 @@
 package android.view.inputmethod;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Printer;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class EditorInfo implements InputType, Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.352 -0400", hash_original_field = "846B06570EEBF02095D14F70E00224BE", hash_generated_field = "7A2525786FE6C2DC62A764834F216E95")
@@ -62,6 +63,7 @@ public class EditorInfo implements InputType, Parcelable {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.353 -0400", hash_original_method = "3C6DC9D32EA44A62EDD92C5C9BF78DEF", hash_generated_method = "2E5A3009BA164BFB29FC5F9C34C9386D")
     public final void makeCompatible(int targetSdkVersion) {
         addTaint(targetSdkVersion);

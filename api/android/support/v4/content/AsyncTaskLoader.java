@@ -1,17 +1,16 @@
 package android.support.v4.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+import java.util.concurrent.CountDownLatch;
+
 import android.content.Context;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v4.util.TimeUtils;
-import android.util.Log;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.util.concurrent.CountDownLatch;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public abstract class AsyncTaskLoader<D> extends Loader<D> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.766 -0400", hash_original_field = "0F416DC8E1EF1E61CE9DC1C4C6AAC524", hash_generated_field = "5C3107BBF367803569D0AB8A39076D22")

@@ -1,11 +1,10 @@
 package com.google.android.collect;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.ArrayList;
 import java.util.Collections;
+
+import droidsafe.annotations.DSGenerator;
 
 public class Lists {
     

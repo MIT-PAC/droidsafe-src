@@ -1,9 +1,6 @@
 package android.support.v4.app;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
@@ -11,6 +8,10 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class NavUtils {
     
@@ -56,6 +57,7 @@ public class NavUtils {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent getParentActivityIntent(Context context, Class<?> sourceActivityClass) throws NameNotFoundException {
         String parentActivity = getParentActivityName(context,
                 new ComponentName(context, sourceActivityClass));

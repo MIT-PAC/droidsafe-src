@@ -1,9 +1,10 @@
 package android.graphics;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public class AvoidXfermode extends Xfermode {
     
@@ -39,6 +40,7 @@ public class AvoidXfermode extends Xfermode {
     public enum Mode {
         AVOID   (0),    
         TARGET  (1);    
+        @DSModeled(DSC.SAFE)
         Mode(int nativeInt) {
             this.nativeInt = nativeInt;
         }

@@ -1,14 +1,16 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.lang.reflect.Array;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements Serializable, Cloneable, Map<K, V> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.590 -0400", hash_original_field = "056E0360B75D77ECE0AE955FE59BF15D", hash_generated_field = "784B4CB2B0AA1435846B96ECF749418D")
@@ -33,6 +35,7 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
 
     private transient EnumMapEntrySet<K, V> entrySet = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.591 -0400", hash_original_method = "357B463561F8F38F36CCB594B2B44169", hash_generated_method = "D728EB7714A45C35A27862A2389C889E")
     public  EnumMap(Class<K> keyType) {
         addTaint(keyType.getTaint());
@@ -42,6 +45,7 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.591 -0400", hash_original_method = "4FB74096ACFD3857AE5FA5EC3BFDBAC1", hash_generated_method = "DE0DEE09D8F2B560E6E7F0765E6E4F06")
     public  EnumMap(EnumMap<K, ? extends V> map) {
         addTaint(map.getTaint());
@@ -51,6 +55,7 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.591 -0400", hash_original_method = "D652AC252782A7206F7D0F46E9A22736", hash_generated_method = "9CC33E4068876BFF8F77F0DCBF257B50")
     @SuppressWarnings("unchecked")
     public  EnumMap(Map<K, ? extends V> map) {
@@ -114,6 +119,7 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.592 -0400", hash_original_method = "27D6CD5C74C8D110D14D6D471707F1DE", hash_generated_method = "12AD123C275828B67F145ADFD21A2D90")
     @SuppressWarnings("unchecked")
     @Override
@@ -305,6 +311,7 @@ V varC4A454773D3C3B58D8F0D07F64F91612_1129109630 =         (V) values[keyOrdinal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.597 -0400", hash_original_method = "ADC2E4F8D882C3AAF1D0303EAF8C1F23", hash_generated_method = "29F648174FBC406C5AD688244011B8C3")
     @Override
     public Set<K> keySet() {
@@ -337,6 +344,7 @@ V var9BB0B2FF0AC3AF2A11FC956ABA5FBB6B_365580803 =         putImpl(key, value);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.598 -0400", hash_original_method = "57B3987EA7E50826E0AAD0198F968E42", hash_generated_method = "AD80324C19FD450664605D07167C9609")
     @Override
     @SuppressWarnings("unchecked")
@@ -397,6 +405,7 @@ V var8CDBD2181CBEF5C2129AFFA68C014D4A_2020337539 =         oldValue;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.599 -0400", hash_original_method = "3209B6B28BA147378CF80090EC868BEA", hash_generated_method = "47DCD94E2E0AC3447ACC37842334B395")
     @Override
     public Collection<V> values() {
@@ -597,6 +606,7 @@ V var8CDBD2181CBEF5C2129AFFA68C014D4A_153286268 =         oldValue;
 
         private int ordinal;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.608 -0400", hash_original_method = "04522B4DB01C65E7C5169DAAB9B0A8B0", hash_generated_method = "9DA00E81301FA773B81C897C5DE73FC8")
           Entry(KT theKey, VT theValue, EnumMap<KT, VT> em) {
             super(theKey, theValue);
@@ -912,6 +922,7 @@ String var5CDD27A171D0E5C79918D5587971E74E_1999057489 =             type.get(
 
         private EnumMap<KT, VT> enumMap;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.621 -0400", hash_original_method = "2A1696B691A1F64388AB3AC9907332E4", hash_generated_method = "F2ECC98C583C95B1C2F72BFAEFD592CC")
           EnumMapKeySet(EnumMap<KT, VT> em) {
             enumMap = em;
@@ -1023,6 +1034,7 @@ KT varB5B6628E54DDBF3AFBF30F96A74440CA_307129287 =                 entry.key;
 
         private EnumMap<KT, VT> enumMap;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.625 -0400", hash_original_method = "1A0661F4095C8F41E606FE019F34B01E", hash_generated_method = "E5ABA9176789D0F83D15C4076A2F1270")
           EnumMapValueCollection(EnumMap<KT, VT> em) {
             enumMap = em;
@@ -1206,6 +1218,7 @@ E var9AC0307A5A079FF49EDDEA7AAD7008A5_471513423 =             type.get(new Entry
 
         private EnumMap<KT, VT> enumMap;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.638 -0400", hash_original_method = "616E4B9747EFF9433BD58C5F15DEC121", hash_generated_method = "D78FC31B5B25F7A257282F3524D220D6")
           EnumMapEntrySet(EnumMap<KT, VT> em) {
             enumMap = em;

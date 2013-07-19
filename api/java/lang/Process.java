@@ -1,11 +1,12 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.InputStream;
 import java.io.OutputStream;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Process {
     
@@ -16,21 +17,27 @@ public abstract class Process {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract void destroy();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int exitValue();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract InputStream getErrorStream();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract InputStream getInputStream();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract OutputStream getOutputStream();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int waitFor() throws InterruptedException;
 
     

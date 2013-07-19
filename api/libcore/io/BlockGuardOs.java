@@ -1,17 +1,24 @@
 package libcore.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import dalvik.system.BlockGuard;
-import dalvik.system.SocketTagger;
+import static libcore.io.OsConstants.EINVAL;
+import static libcore.io.OsConstants.O_ACCMODE;
+import static libcore.io.OsConstants.O_RDONLY;
+import static libcore.io.OsConstants.SOL_SOCKET;
+import static libcore.io.OsConstants.SO_LINGER;
+import static libcore.io.OsConstants.S_ISSOCK;
+
 import java.io.FileDescriptor;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.SocketException;
 import java.nio.ByteBuffer;
-import static libcore.io.OsConstants.*;
+
+import dalvik.system.BlockGuard;
+import dalvik.system.SocketTagger;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class BlockGuardOs extends ForwardingOs {
     

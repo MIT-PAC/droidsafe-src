@@ -1,12 +1,11 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Enumeration;
+
+import droidsafe.annotations.DSGenerator;
 
 public class DERSequence extends ASN1Sequence {
     

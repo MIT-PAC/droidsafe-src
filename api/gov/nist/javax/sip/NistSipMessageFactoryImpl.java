@@ -1,12 +1,21 @@
 package gov.nist.javax.sip;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import gov.nist.javax.sip.stack.*;
-import gov.nist.javax.sip.message.*;
-import javax.sip.*;
+import gov.nist.javax.sip.message.SIPRequest;
+import gov.nist.javax.sip.message.SIPResponse;
+import gov.nist.javax.sip.stack.MessageChannel;
+import gov.nist.javax.sip.stack.SIPTransaction;
+import gov.nist.javax.sip.stack.SIPTransactionStack;
+import gov.nist.javax.sip.stack.ServerRequestInterface;
+import gov.nist.javax.sip.stack.ServerResponseInterface;
+import gov.nist.javax.sip.stack.StackMessageFactory;
+
+import javax.sip.TransactionState;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class NistSipMessageFactoryImpl implements StackMessageFactory {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.482 -0400", hash_original_field = "37460D4BF2BA47A13FF9D922C4B14B2E", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")

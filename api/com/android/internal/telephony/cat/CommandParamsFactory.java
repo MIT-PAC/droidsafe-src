@@ -1,16 +1,20 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.Iterator;
+import java.util.List;
+
 import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.Message;
+
 import com.android.internal.telephony.GsmAlphabet;
 import com.android.internal.telephony.IccFileHandler;
-import java.util.Iterator;
-import java.util.List;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class CommandParamsFactory extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.176 -0400", hash_original_field = "10B237369439DE6AB484E8A6DD54A69C", hash_generated_field = "066A6762D0C2A5B772EAA58E81EAA0D0")
@@ -894,6 +898,7 @@ switch(cmdDet.commandQualifier){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.199 -0400", hash_original_method = "A94C1A7A0EB7DC9619C535A1C0085435", hash_generated_method = "B1C10186BA0F75A2CCDE93DE3C87BFDF")
     private boolean processProvideLocalInfo(CommandDetails cmdDet, List<ComprehensionTlv> ctlvs) throws ResultException {
         addTaint(ctlvs.getTaint());

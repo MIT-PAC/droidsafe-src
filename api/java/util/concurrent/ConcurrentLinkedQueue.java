@@ -1,15 +1,17 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.AbstractQueue;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Queue;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<E>, java.io.Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.709 -0400", hash_original_field = "96E89A298E0A9F469B9AE458D6AFAE9F", hash_generated_field = "B57EDCA0C5D8B188A31356A19160405D")
@@ -28,6 +30,7 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.710 -0400", hash_original_method = "6F01EA166BC3601049062B90A5587D9E", hash_generated_method = "CBA4B15CAEA0C43B4F30FE78B169603F")
     public  ConcurrentLinkedQueue(Collection<? extends E> c) {
         addTaint(c.getTaint());
@@ -92,6 +95,7 @@ for(E e : c)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.712 -0400", hash_original_method = "FA81D040C1BC0670D20AF3D93B255BE4", hash_generated_method = "126AB194F176D7BBDF55294389D27DC5")
     final Node<E> succ(Node<E> p) {
         addTaint(p.getTaint());
@@ -247,6 +251,7 @@ E var393CF4FD24220F0ED4B080A1E7108CD3_1803747530 =                     item;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.715 -0400", hash_original_method = "0B74804F51F2B061D3EF3D31C957BAFB", hash_generated_method = "D61EE49DBAAC3260920411A83FBB04F7")
      Node<E> first() {
         restartFromHead        :
@@ -402,6 +407,7 @@ for(Node<E> p = first();p != null;p = succ(p))
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.719 -0400", hash_original_method = "C76E29CF6BEEA629C4456D9BD8199C10", hash_generated_method = "FE6074082DAD592010CCE5812739D1C3")
     public boolean addAll(Collection<? extends E> c) {
         addTaint(c.getTaint());
@@ -538,6 +544,7 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1343847510 =         al.toArray(a);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.722 -0400", hash_original_method = "756A0449DBEE27B15290EF9912B6D98E", hash_generated_method = "586A7D96C88B281BAA7321E3EBADF3FE")
     public Iterator<E> iterator() {
 Iterator<E> varB10D928EC6DDAEBFD727C2EDCEC6EDF5_1010483202 =         new Itr();
@@ -647,6 +654,7 @@ for(Node<E> p = first();p != null;p = succ(p))
     }
 
     
+    @DSModeled(DSC.SAFE)
     static long objectFieldOffset(sun.misc.Unsafe UNSAFE,
                                   String field, Class<?> klazz) {
         try {
@@ -690,6 +698,7 @@ for(Node<E> p = first();p != null;p = succ(p))
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.727 -0400", hash_original_method = "E78DBD679DC5F596F67B7449AE69FAB3", hash_generated_method = "BBC155EE5E769344F67858DD529FDE45")
          void lazySetNext(Node<E> val) {
             addTaint(val.getTaint());

@@ -1,15 +1,19 @@
 package java.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import static libcore.io.OsConstants.SOL_SOCKET;
+import static libcore.io.OsConstants.SO_BINDTODEVICE;
+
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.nio.channels.DatagramChannel;
+
 import libcore.io.ErrnoException;
 import libcore.io.Libcore;
-import static libcore.io.OsConstants.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class DatagramSocket {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.404 -0400", hash_original_field = "86CCEC3D9FF0E9C0514506E982CDC08B", hash_generated_field = "0E47AFFF5CC1F2155F99BECA6A70C2D2")
@@ -852,6 +856,7 @@ DatagramChannel var540C13E9E156B687226421B24F2DF178_1506503413 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.423 -0400", hash_original_method = "90C19CEBA6BBC20B430C1F399D6443A6", hash_generated_method = "3EF8543353E5D764A4E6932613DE0250")
     public final FileDescriptor getFileDescriptor$() {
 FileDescriptor var90D0CD7641DADE7AC7C643EE2F281FD7_1630363246 =         impl.fd;

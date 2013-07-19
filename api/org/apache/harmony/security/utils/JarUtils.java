@@ -1,9 +1,6 @@
 package org.apache.harmony.security.utils;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigInteger;
@@ -16,10 +13,11 @@ import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+
 import javax.security.auth.x500.X500Principal;
+
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.pkcs7.ContentInfo;
 import org.apache.harmony.security.pkcs7.SignedData;
@@ -27,6 +25,11 @@ import org.apache.harmony.security.pkcs7.SignerInfo;
 import org.apache.harmony.security.provider.cert.X509CertImpl;
 import org.apache.harmony.security.x501.AttributeTypeAndValue;
 import org.apache.harmony.xnet.provider.jsse.OpenSSLSignature;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class JarUtils {
     

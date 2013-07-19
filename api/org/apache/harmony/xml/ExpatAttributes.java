@@ -1,10 +1,13 @@
 package org.apache.harmony.xml;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import org.xml.sax.Attributes;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 abstract class ExpatAttributes implements Attributes {
     
@@ -15,12 +18,15 @@ abstract class ExpatAttributes implements Attributes {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract int getLength();
 
     
+    @DSModeled(DSC.SAFE)
     abstract int getParserPointer();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getPointer();
 
     

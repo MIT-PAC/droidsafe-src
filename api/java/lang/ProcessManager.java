@@ -1,9 +1,15 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import static libcore.io.OsConstants.ECHILD;
+import static libcore.io.OsConstants.SIGKILL;
+import static libcore.io.OsConstants.WEXITSTATUS;
+import static libcore.io.OsConstants.WIFEXITED;
+import static libcore.io.OsConstants.WIFSIGNALED;
+import static libcore.io.OsConstants.WIFSTOPPED;
+import static libcore.io.OsConstants.WSTOPSIG;
+import static libcore.io.OsConstants.WTERMSIG;
+
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
@@ -16,11 +22,16 @@ import java.lang.ref.WeakReference;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+
 import libcore.io.ErrnoException;
 import libcore.io.IoUtils;
 import libcore.io.Libcore;
 import libcore.util.MutableInt;
-import static libcore.io.OsConstants.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 final class ProcessManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.452 -0400", hash_original_field = "A33680F3D3BD7A96D5E7F85E9A0A202E", hash_generated_field = "1168B76BA43EB3A1C9C20A1EE6AADC71")

@@ -1,10 +1,9 @@
 package gov.nist.javax.sip.address;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.UnsupportedEncodingException;
+
+import droidsafe.annotations.DSGenerator;
 
 public class RFC2396UrlDecoder {
     

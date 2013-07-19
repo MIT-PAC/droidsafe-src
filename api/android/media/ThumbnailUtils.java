@@ -1,30 +1,25 @@
 package android.media;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.FileDescriptor;
+import java.io.FileInputStream;
+import java.io.IOException;
+
 import android.content.ContentResolver;
-import android.content.ContentUris;
-import android.content.ContentValues;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Rect;
-import android.media.MediaMetadataRetriever;
 import android.media.MediaFile.MediaFileType;
 import android.net.Uri;
 import android.os.ParcelFileDescriptor;
-import android.provider.BaseColumns;
 import android.provider.MediaStore.Images;
-import android.provider.MediaStore.Images.Thumbnails;
 import android.util.Log;
-import java.io.FileInputStream;
-import java.io.FileDescriptor;
-import java.io.IOException;
-import java.io.OutputStream;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ThumbnailUtils {
     

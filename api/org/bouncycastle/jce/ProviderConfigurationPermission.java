@@ -1,13 +1,16 @@
 package org.bouncycastle.jce;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import org.bouncycastle.util.Strings;
 import java.security.BasicPermission;
 import java.security.Permission;
 import java.util.StringTokenizer;
+
+import org.bouncycastle.util.Strings;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ProviderConfigurationPermission extends BasicPermission {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.569 -0400", hash_original_field = "EBB67A4271ABE715344471B0F16321F6", hash_generated_field = "11F45FCBAC06C059A01DA75B04C41C4C")

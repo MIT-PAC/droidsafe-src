@@ -1,11 +1,9 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.security.Principal;
 import java.security.cert.Certificate;
+
 import javax.security.cert.X509Certificate;
 
 public interface SSLSession {

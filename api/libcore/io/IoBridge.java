@@ -1,9 +1,52 @@
 package libcore.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import static libcore.io.OsConstants.AF_INET6;
+import static libcore.io.OsConstants.EACCES;
+import static libcore.io.OsConstants.EADDRINUSE;
+import static libcore.io.OsConstants.EADDRNOTAVAIL;
+import static libcore.io.OsConstants.EAGAIN;
+import static libcore.io.OsConstants.ECONNREFUSED;
+import static libcore.io.OsConstants.ECONNRESET;
+import static libcore.io.OsConstants.EINPROGRESS;
+import static libcore.io.OsConstants.EINTR;
+import static libcore.io.OsConstants.EISDIR;
+import static libcore.io.OsConstants.ENETUNREACH;
+import static libcore.io.OsConstants.ENOTTY;
+import static libcore.io.OsConstants.ETIMEDOUT;
+import static libcore.io.OsConstants.EWOULDBLOCK;
+import static libcore.io.OsConstants.FIONREAD;
+import static libcore.io.OsConstants.IPPROTO_IP;
+import static libcore.io.OsConstants.IPPROTO_IPV6;
+import static libcore.io.OsConstants.IPPROTO_TCP;
+import static libcore.io.OsConstants.IPV6_MULTICAST_HOPS;
+import static libcore.io.OsConstants.IPV6_MULTICAST_IF;
+import static libcore.io.OsConstants.IPV6_MULTICAST_LOOP;
+import static libcore.io.OsConstants.IPV6_TCLASS;
+import static libcore.io.OsConstants.IP_MULTICAST_IF;
+import static libcore.io.OsConstants.IP_MULTICAST_LOOP;
+import static libcore.io.OsConstants.IP_MULTICAST_TTL;
+import static libcore.io.OsConstants.IP_TOS;
+import static libcore.io.OsConstants.MCAST_JOIN_GROUP;
+import static libcore.io.OsConstants.MCAST_LEAVE_GROUP;
+import static libcore.io.OsConstants.O_ACCMODE;
+import static libcore.io.OsConstants.O_RDONLY;
+import static libcore.io.OsConstants.POLLOUT;
+import static libcore.io.OsConstants.SOCK_DGRAM;
+import static libcore.io.OsConstants.SOCK_STREAM;
+import static libcore.io.OsConstants.SOL_SOCKET;
+import static libcore.io.OsConstants.SO_BROADCAST;
+import static libcore.io.OsConstants.SO_ERROR;
+import static libcore.io.OsConstants.SO_KEEPALIVE;
+import static libcore.io.OsConstants.SO_LINGER;
+import static libcore.io.OsConstants.SO_OOBINLINE;
+import static libcore.io.OsConstants.SO_RCVBUF;
+import static libcore.io.OsConstants.SO_RCVTIMEO;
+import static libcore.io.OsConstants.SO_REUSEADDR;
+import static libcore.io.OsConstants.SO_SNDBUF;
+import static libcore.io.OsConstants.S_ISDIR;
+import static libcore.io.OsConstants.TCP_NODELAY;
+
 import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -23,8 +66,12 @@ import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
-import static libcore.io.OsConstants.*;
+
 import libcore.util.MutableInt;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class IoBridge {
     

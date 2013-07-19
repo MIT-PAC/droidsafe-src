@@ -1,11 +1,13 @@
 package java.security;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.nio.ByteBuffer;
 import java.security.spec.AlgorithmParameterSpec;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SignatureSpi {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.541 -0400", hash_original_field = "7F0E25AE98CB8CAAE133E519F90D8F55", hash_generated_field = "179FDAA6281D622A7488CD99E06D8FD3")
@@ -19,10 +21,12 @@ public abstract class SignatureSpi {
     }
 
 
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInitVerify(PublicKey publicKey)
             throws InvalidKeyException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInitSign(PrivateKey privateKey)
             throws InvalidKeyException;
 
@@ -38,9 +42,11 @@ public abstract class SignatureSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineUpdate(byte b) throws SignatureException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineUpdate(byte[] b, int off, int len)
             throws SignatureException;
 
@@ -114,6 +120,7 @@ public abstract class SignatureSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract byte[] engineSign() throws SignatureException;
 
     
@@ -171,6 +178,7 @@ public abstract class SignatureSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract boolean engineVerify(byte[] sigBytes)
             throws SignatureException;
 
@@ -192,6 +200,7 @@ public abstract class SignatureSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
 protected abstract void engineSetParameter(String param, Object value)
             throws InvalidParameterException;
@@ -218,6 +227,7 @@ protected abstract void engineSetParameter(String param, Object value)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
 protected abstract Object engineGetParameter(String param)
             throws InvalidParameterException;

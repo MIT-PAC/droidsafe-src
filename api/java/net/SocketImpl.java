@@ -1,13 +1,15 @@
 package java.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SocketImpl implements SocketOptions {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.521 -0400", hash_original_field = "884D9804999FC47A3C2694E49AD2536A", hash_generated_field = "3EF85E4B8326DFDFB5F1248DB5848FBE")
@@ -30,25 +32,32 @@ public abstract class SocketImpl implements SocketOptions {
     }
 
 
+    @DSModeled(DSC.SAFE)
     protected abstract void accept(SocketImpl newSocket) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract int available() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void bind(InetAddress address, int port) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void close() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void connect(String host, int port) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void connect(InetAddress address, int port)
             throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void create(boolean isStreaming) throws IOException;
 
     
@@ -85,6 +94,7 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_234712589 =         address;
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract InputStream getInputStream() throws IOException;
 
     
@@ -99,6 +109,7 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_234712589 =         address;
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract OutputStream getOutputStream() throws IOException;
 
     
@@ -113,6 +124,7 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_234712589 =         address;
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void listen(int backlog) throws IOException;
 
     
@@ -149,6 +161,7 @@ String varB5AD21B00F743A0FBF2E8A6EC3D084B6_1511974577 =         "Socket[address=
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void connect(SocketAddress remoteAddr, int timeout) throws IOException;
 
     
@@ -163,6 +176,7 @@ String varB5AD21B00F743A0FBF2E8A6EC3D084B6_1511974577 =         "Socket[address=
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void sendUrgentData(int value) throws IOException;
 
     

@@ -1,11 +1,13 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLHandshakeException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Message {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.675 -0400", hash_original_field = "2FA47F7C65FEC19CC163B195725E3844", hash_generated_field = "01D45192EF478C4B8895FC65CF51D2EB")
@@ -19,6 +21,7 @@ public abstract class Message {
     }
 
 
+    @DSModeled(DSC.SAFE)
     abstract int getType();
 
     
@@ -33,6 +36,7 @@ public abstract class Message {
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void send(HandshakeIODataStream out);
 
     

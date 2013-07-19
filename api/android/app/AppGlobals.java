@@ -1,10 +1,8 @@
 package android.app;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.content.pm.IPackageManager;
+import droidsafe.annotations.DSGenerator;
 
 public class AppGlobals {
     

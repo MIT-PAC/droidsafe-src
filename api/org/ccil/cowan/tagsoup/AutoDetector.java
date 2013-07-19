@@ -1,11 +1,8 @@
 package org.ccil.cowan.tagsoup;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.io.Reader;
 import java.io.InputStream;
+import java.io.Reader;
 
 public interface AutoDetector {
 

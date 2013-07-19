@@ -1,26 +1,28 @@
 package android.text.method;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.lang.ref.WeakReference;
+
+import android.graphics.Rect;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.graphics.Rect;
-import android.view.View;
 import android.text.Editable;
 import android.text.GetChars;
 import android.text.NoCopySpan;
+import android.text.Spannable;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.text.Selection;
-import android.text.Spanned;
-import android.text.Spannable;
 import android.text.style.UpdateLayout;
-import java.lang.ref.WeakReference;
+import android.view.View;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class PasswordTransformationMethod implements TransformationMethod, TextWatcher {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.520 -0400", hash_original_method = "D8EF6B070A80A550C154BD7630CF21E0", hash_generated_method = "D8EF6B070A80A550C154BD7630CF21E0")
     public PasswordTransformationMethod ()
     {

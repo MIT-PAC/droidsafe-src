@@ -1,10 +1,15 @@
 package android.app;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.util.ArrayUtils;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.ref.WeakReference;
+import java.net.URL;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Iterator;
+
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -24,16 +29,14 @@ import android.os.Process;
 import android.os.RemoteException;
 import android.os.StrictMode;
 import android.util.AndroidRuntimeException;
-import android.util.Slog;
 import android.view.CompatibilityInfoHolder;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.ref.WeakReference;
-import java.net.URL;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Iterator;
+
+import com.android.internal.util.ArrayUtils;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 final class IntentReceiverLeaked extends AndroidRuntimeException {
     

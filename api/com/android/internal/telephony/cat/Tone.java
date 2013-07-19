@@ -1,11 +1,10 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.os.Parcel;
 import android.os.Parcelable;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public enum Tone implements Parcelable {
     DIAL(0x01),
@@ -37,6 +36,7 @@ public enum Tone implements Parcelable {
     MELODY_7(0x46),
     MELODY_8(0x47);
     private int mValue;
+    @DSModeled(DSC.SAFE)
     Tone(int value) {
         mValue = value;
     }
@@ -48,12 +48,14 @@ public enum Tone implements Parcelable {
         }
         return null;
     }
+    @DSModeled(DSC.SAFE)
     Tone(Parcel in) {
         mValue = in.readInt();
     }
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(ordinal());
     }
+    @DSModeled(DSC.SAFE)
     public int describeContents() {
         return 0;
     }

@@ -1,10 +1,11 @@
 package java.security;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.Serializable;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Permission implements Guard, Serializable {
     
@@ -15,6 +16,7 @@ public abstract class Permission implements Guard, Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.119 -0400", hash_original_method = "BD1D69B57EF82CC836CADC372B210DA8", hash_generated_method = "90507AD0776D321014F7A088ADFABC98")
     public final String getName() {
 String var540C13E9E156B687226421B24F2DF178_385870722 =         null;
@@ -44,9 +46,11 @@ PermissionCollection varE4C8908E3F49EE48D2B78391A77CE8EC_982862765 =         new
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getActions();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean implies(Permission permission);
 
     

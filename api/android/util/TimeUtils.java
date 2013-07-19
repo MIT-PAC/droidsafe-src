@@ -1,19 +1,25 @@
 package android.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.res.Resources;
-import android.content.res.XmlResourceParser;
-import libcore.util.ZoneInfoDB;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.TimeZone;
 import java.util.Date;
+import java.util.TimeZone;
+
+import libcore.util.ZoneInfoDB;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+
+import android.content.res.Resources;
+import android.content.res.XmlResourceParser;
+
 import com.android.internal.util.XmlUtils;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class TimeUtils {
     

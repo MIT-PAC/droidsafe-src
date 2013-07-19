@@ -1,9 +1,10 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class InstantiationError extends IncompatibleClassChangeError {
     
@@ -23,6 +24,7 @@ public class InstantiationError extends IncompatibleClassChangeError {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.079 -0400", hash_original_method = "715FEA28AECD396E352AFBA27C6E8A8B", hash_generated_method = "BA45D5D1D52442F141113654F97DA41A")
       InstantiationError(Class<?> clazz) {
         super(clazz.getName());

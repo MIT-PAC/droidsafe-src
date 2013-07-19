@@ -1,9 +1,10 @@
 package java.lang.ref;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ReferenceQueue<T> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.798 -0400", hash_original_field = "96E89A298E0A9F469B9AE458D6AFAE9F", hash_generated_field = "0D4E357872E15A12A6822EA05A1FF146")
@@ -17,6 +18,7 @@ public class ReferenceQueue<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.799 -0400", hash_original_method = "0715328D7F7BB9D5550B9E381C496C43", hash_generated_method = "836A57E0C62C76B02FF9E165E10BD1DD")
     @SuppressWarnings("unchecked")
     public synchronized Reference<? extends T> poll() {
@@ -56,6 +58,7 @@ Reference<? extends T> varEDFF4FBBF053B5DC2B444ADFA049EE0F_1544934051 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.800 -0400", hash_original_method = "B9994ACC80E0363C78DC4EB28757C058", hash_generated_method = "D114FA82F80674FC576F6EB316C0C56F")
     public Reference<? extends T> remove() throws InterruptedException {
 Reference<? extends T> varE6CD9C3CBCBF3FEE243975EEDE7D6FE2_1953876261 =         remove(0L);
@@ -66,6 +69,7 @@ Reference<? extends T> varE6CD9C3CBCBF3FEE243975EEDE7D6FE2_1953876261 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.801 -0400", hash_original_method = "55CFE9AF663FFFA3410902143F42A33C", hash_generated_method = "70DA92BB3CE05365068E1C9298B3D5B9")
     public synchronized Reference<? extends T> remove(long timeoutMillis) throws InterruptedException {
         addTaint(timeoutMillis);
@@ -120,6 +124,7 @@ Reference<? extends T> varC10671BA8D668DFB8A785023F8120AFE_186949193 =         p
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.802 -0400", hash_original_method = "A43A8FC0DB505099966EA05BCA8E1BC7", hash_generated_method = "37F7E01C350A4CF2309A14DAEAA77106")
     synchronized void enqueue(Reference<? extends T> reference) {
         if(head == null)        
@@ -143,6 +148,7 @@ Reference<? extends T> varC10671BA8D668DFB8A785023F8120AFE_186949193 =         p
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void add(Reference<?> list) {
         synchronized (ReferenceQueue.class) {
             if (unenqueued == null) {

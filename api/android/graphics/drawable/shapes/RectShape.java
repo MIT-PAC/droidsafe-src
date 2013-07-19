@@ -1,12 +1,13 @@
 package android.graphics.drawable.shapes;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class RectShape extends Shape {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.809 -0400", hash_original_field = "995C0FB7B00A0A1E82DD4C30778697FC", hash_generated_field = "E080B89EC7A364FFC5B71FB812B38393")
@@ -45,6 +46,7 @@ public class RectShape extends Shape {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.811 -0400", hash_original_method = "B472369E445B34AFDD84E5B389A9601D", hash_generated_method = "55A97005DF57FAE45C1D373FCC0BC040")
     protected final RectF rect() {
 RectF var23E085E00370717E44C5AC6A506C1823_902565364 =         mRect;

@@ -1,9 +1,9 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class AbstractSequentialList<E> extends AbstractList<E> {
     
@@ -25,6 +25,7 @@ public abstract class AbstractSequentialList<E> extends AbstractList<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.632 -0400", hash_original_method = "252A37CEEA1A0797639D5FF26661E00A", hash_generated_method = "C3024FF8B2DE78D612245FBB0350EA9B")
     @Override
     public boolean addAll(int location, Collection<? extends E> collection) {
@@ -77,6 +78,7 @@ E var3BD6B1CAB81D050B781A92E41D17A2E1_2038932364 =             listIterator(loca
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.634 -0400", hash_original_method = "1D00ECD22B3575A885077212162F97B2", hash_generated_method = "E785298B8A14C9DC01552686D975F906")
     @Override
     public Iterator<E> iterator() {
@@ -88,6 +90,7 @@ Iterator<E> var68247D54D1DDB9E66659394CC1668C3F_1413572110 =         listIterato
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 public abstract ListIterator<E> listIterator(int location);
 

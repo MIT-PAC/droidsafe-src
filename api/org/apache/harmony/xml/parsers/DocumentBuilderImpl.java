@@ -1,14 +1,14 @@
 package org.apache.harmony.xml.parsers;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
+
 import javax.xml.parsers.DocumentBuilder;
+
 import libcore.io.IoUtils;
+
 import org.apache.harmony.xml.dom.CDATASectionImpl;
 import org.apache.harmony.xml.dom.DOMImplementationImpl;
 import org.apache.harmony.xml.dom.DocumentImpl;
@@ -30,6 +30,11 @@ import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.LocatorImpl;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class DocumentBuilderImpl extends DocumentBuilder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.765 -0400", hash_original_field = "B795440B9ADE4378FEF3486B241378BC", hash_generated_field = "4A9121F2D482493F3BEB1C30E72C76AA")

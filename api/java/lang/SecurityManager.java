@@ -1,12 +1,14 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.FileDescriptor;
 import java.net.InetAddress;
 import java.security.Permission;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SecurityManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.607 -0400", hash_original_field = "F4FDA642396C90310EC38E0D5B8E09CF", hash_generated_field = "9E5AF9E744782F4ACD2178CD4DBD0985")
@@ -110,6 +112,7 @@ public class SecurityManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.611 -0400", hash_original_method = "8873C7B5DD5CF23CB18ABA2720E20660", hash_generated_method = "9159A263BC1C8C1C153D947DCF946C6F")
     public void checkMemberAccess(Class<?> cls, int type) {
         addTaint(type);
@@ -303,6 +306,7 @@ ClassLoader var540C13E9E156B687226421B24F2DF178_404839252 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.617 -0400", hash_original_method = "971A50644C25A1AA23F94C545B2EFE88", hash_generated_method = "E16ED876C10D2264176AD070085E75EA")
     @Deprecated
     protected Class<?> currentLoadedClass() {

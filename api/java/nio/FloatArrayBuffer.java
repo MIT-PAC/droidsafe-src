@@ -1,9 +1,10 @@
 package java.nio;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 abstract class FloatArrayBuffer extends FloatBuffer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.984 -0400", hash_original_field = "8D50CD27AA8B6BEC65C484FFCC5B2334", hash_generated_field = "8679C1DDE03C0998C5B4254D7B007554")
@@ -102,6 +103,7 @@ FloatBuffer var72A74007B2BE62B849F475C7BDA4658B_1972536779 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.992 -0400", hash_original_method = "5B6C9F359344527666A57577F107BCAE", hash_generated_method = "B38CB7A1C3A8278D02BF5E2FECFDB5CB")
     @Override
     public final boolean isDirect() {

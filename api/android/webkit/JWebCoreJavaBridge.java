@@ -1,17 +1,18 @@
 package android.webkit;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.lang.ref.WeakReference;
+import java.util.HashMap;
+import java.util.Set;
+
 import android.net.ProxyProperties;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
-import java.lang.ref.WeakReference;
-import java.util.HashMap;
-import java.util.Set;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 final class JWebCoreJavaBridge extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.197 -0400", hash_original_field = "18E62AA806BC4A382C7823F4E0961736", hash_generated_field = "2974AA9EDEE26975BC6F1AFB9A7C8BD7")
@@ -472,6 +473,7 @@ String var1EE236BB903DF73F2308F7F9F181EF48_1936949001 =         jUri.getLastPath
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.205 -0400", hash_original_method = "E5A69925BDA73DD9E81D8A1F8F42F257", hash_generated_method = "FC09152D312FECD521F2567721C332CC")
     public void addPackageNames(Set<String> packageNames) {
     }

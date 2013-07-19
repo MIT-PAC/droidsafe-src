@@ -1,11 +1,12 @@
 package java.nio.charset.spi;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.nio.charset.Charset;
 import java.util.Iterator;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class CharsetProvider {
     
@@ -15,9 +16,11 @@ public abstract class CharsetProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Iterator<Charset> charsets();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Charset charsetForName(String charsetName);
 
     

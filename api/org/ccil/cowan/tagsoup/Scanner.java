@@ -1,11 +1,9 @@
 package org.ccil.cowan.tagsoup;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.Reader;
+
 import org.xml.sax.SAXException;
 
 public interface Scanner {

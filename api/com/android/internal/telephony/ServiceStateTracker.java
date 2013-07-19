@@ -1,9 +1,6 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.os.AsyncResult;
 import android.os.Handler;
 import android.os.Message;
@@ -11,6 +8,10 @@ import android.os.Registrant;
 import android.os.RegistrantList;
 import android.telephony.ServiceState;
 import android.telephony.SignalStrength;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class ServiceStateTracker extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.068 -0400", hash_original_field = "820EB5B696EA2A657C0DB1E258DC7D81", hash_generated_field = "EDF057DBE0A02042DBF83073757034E9")
@@ -264,27 +265,35 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract Phone getPhone();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void handlePollStateResult(int what, AsyncResult ar);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void updateSpnDisplay();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void setPowerStateToDesired();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void log(String s);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void loge(String s);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getCurrentDataConnectionState();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isConcurrentVoiceAndDataAllowed();
 
     
@@ -511,6 +520,7 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void hangupAndPowerOff();
 
     

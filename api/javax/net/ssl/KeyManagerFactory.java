@@ -1,9 +1,6 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
@@ -12,7 +9,13 @@ import java.security.NoSuchProviderException;
 import java.security.Provider;
 import java.security.Security;
 import java.security.UnrecoverableKeyException;
+
 import org.apache.harmony.security.fortress.Engine;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class KeyManagerFactory {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.635 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
@@ -76,6 +79,7 @@ public class KeyManagerFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.639 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "C71E59FB3989A55CFC75FA7643564BA3")
     public final String getAlgorithm() {
 String var44A46B4003FC81ACB0223385BA1FA818_1159921851 =         algorithm;
@@ -86,6 +90,7 @@ String var44A46B4003FC81ACB0223385BA1FA818_1159921851 =         algorithm;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.639 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "EDF2A1D76775B60CC2921FFF8D4E3480")
     public final Provider getProvider() {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1227211053 =         provider;

@@ -1,16 +1,16 @@
 package android.nfc;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.nio.charset.Charsets;
+import java.util.Arrays;
+
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
-import java.lang.UnsupportedOperationException;
-import java.nio.charset.Charset;
-import java.nio.charset.Charsets;
-import java.util.Arrays;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class NdefRecord implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.116 -0400", hash_original_field = "9C3CD7D37D3E1E66BE9B3B005FC98B3A", hash_generated_field = "D69A1323403FF74B40E10D9DDFD257AB")

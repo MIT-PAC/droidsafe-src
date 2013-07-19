@@ -1,19 +1,13 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.pm.PackageManager;
-import android.os.AsyncResult;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.os.ServiceManager;
-import android.telephony.PhoneNumberUtils;
-import android.util.Log;
-import java.util.ArrayList;
 import java.util.List;
+
+import android.os.ServiceManager;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class IccPhoneBookInterfaceManagerProxy extends IIccPhoneBook.Stub {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.220 -0400", hash_original_field = "9366EC8886B36238C2F63ECE6C641440", hash_generated_field = "35E1FDA72D4E9A11410B474286E4687E")

@@ -1,15 +1,17 @@
 package android.support.v4.view.accessibility;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.graphics.Rect;
-import android.os.Build;
-import android.view.View;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import android.graphics.Rect;
+import android.os.Build;
+import android.view.View;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class AccessibilityNodeInfoCompat {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.899 -0400", hash_original_field = "1715FF63502BEC0E28C8D7CA89F0F72E", hash_generated_field = "EA545B797CAE6A5B712CE13E995894C9")

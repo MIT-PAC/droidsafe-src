@@ -1,9 +1,9 @@
 package android.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class ClipboardManager {
     
@@ -14,12 +14,15 @@ public abstract class ClipboardManager {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract CharSequence getText();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setText(CharSequence text);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean hasText();
 
     

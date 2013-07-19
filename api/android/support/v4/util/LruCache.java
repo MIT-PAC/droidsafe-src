@@ -1,11 +1,13 @@
 package android.support.v4.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class LruCache<K, V> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.072 -0400", hash_original_field = "1D78DC8ED51214E518B5114FE24490AE", hash_generated_field = "008FED306747468EE2384D75A989933A")
@@ -321,6 +323,7 @@ V var540C13E9E156B687226421B24F2DF178_273881131 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.081 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "9F77FDA134A66DAFB2BDC3CA334B6F1C")
     public synchronized final int size() {
         int varF7BD60B75B29D79B660A2859395C1A24_1881189393 = (size);
@@ -331,6 +334,7 @@ V var540C13E9E156B687226421B24F2DF178_273881131 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.081 -0400", hash_original_method = "3468DBA84D0C4B093D85888533351ACC", hash_generated_method = "A959C7F0301E2D571A3833550D2AA33A")
     public synchronized final int maxSize() {
         int varB78E1120B12ABD7215D67324FE9476FF_23163743 = (maxSize);
@@ -341,6 +345,7 @@ V var540C13E9E156B687226421B24F2DF178_273881131 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.081 -0400", hash_original_method = "58C54B9E60920B23E133E0E61BF2A4F4", hash_generated_method = "6311742D4FFD407D29A468AC9D088F12")
     public synchronized final int hitCount() {
         int var5BBBCEBEEA805F9664B2979FBACE5699_1658551522 = (hitCount);
@@ -351,6 +356,7 @@ V var540C13E9E156B687226421B24F2DF178_273881131 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.082 -0400", hash_original_method = "CD33CA8BAAD7A20717BABBDF22DCC17E", hash_generated_method = "CB6099FE8027974F83066519606701B6")
     public synchronized final int missCount() {
         int var698B6BDB01E0C702797DD865E1B3FBBB_734243283 = (missCount);
@@ -361,6 +367,7 @@ V var540C13E9E156B687226421B24F2DF178_273881131 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.082 -0400", hash_original_method = "03691337F25E7C4DFAAA3B9F69FCDA1E", hash_generated_method = "E83607A8FD5A32D43BE7F49ACA497672")
     public synchronized final int createCount() {
         int var1EFE30A68A1999763186AA8A0FF431E2_987747017 = (createCount);
@@ -371,6 +378,7 @@ V var540C13E9E156B687226421B24F2DF178_273881131 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.082 -0400", hash_original_method = "291437E08BF34B71B9E36D69031C2701", hash_generated_method = "EA755D85D03A2279AE7D2BB29E233259")
     public synchronized final int putCount() {
         int varB5E773FF0DAA7AF2D35B09A2ACE97C38_547626248 = (putCount);
@@ -381,6 +389,7 @@ V var540C13E9E156B687226421B24F2DF178_273881131 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.082 -0400", hash_original_method = "21AA3C6AE5648A36F9E47AF2806112A8", hash_generated_method = "CFD56904DFBB3386C387FF0AD1470B37")
     public synchronized final int evictionCount() {
         int var3E1471C5E3C695ABC459C18E113BDF6F_465614850 = (evictionCount);

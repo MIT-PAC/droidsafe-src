@@ -1,19 +1,18 @@
 package gov.nist.javax.sip.parser.ims;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.text.ParseException;
+import gov.nist.core.NameValue;
+import gov.nist.core.Token;
+import gov.nist.javax.sip.header.SIPHeader;
 import gov.nist.javax.sip.header.ims.PAccessNetworkInfo;
 import gov.nist.javax.sip.header.ims.SIPHeaderNamesIms;
-import gov.nist.core.Token;
-import gov.nist.core.NameValue;
-import gov.nist.javax.sip.header.SIPHeader;
 import gov.nist.javax.sip.parser.HeaderParser;
 import gov.nist.javax.sip.parser.Lexer;
-import gov.nist.javax.sip.parser.ParametersParser;
 import gov.nist.javax.sip.parser.TokenTypes;
+
+import java.text.ParseException;
+
+import droidsafe.annotations.DSGenerator;
 
 public class PAccessNetworkInfoParser extends HeaderParser implements TokenTypes {
     

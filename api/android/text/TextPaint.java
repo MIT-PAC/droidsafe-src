@@ -1,10 +1,11 @@
 package android.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.graphics.Paint;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class TextPaint extends Paint {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.931 -0400", hash_original_field = "F4E054AD68D86FAA3DE848C731B7ADD9", hash_generated_field = "EB7BBC6E5D9DF7183393887C906C4F9C")

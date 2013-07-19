@@ -1,20 +1,22 @@
 package android.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.app.DownloadManager;
-import android.app.backup.BackupManager;
+import java.net.Socket;
+import java.net.SocketException;
+
 import android.content.Context;
-import android.media.MediaPlayer;
 import android.net.NetworkStats.NonMonotonicException;
 import android.os.RemoteException;
 import android.os.ServiceManager;
+
 import com.android.server.NetworkManagementSocketTagger;
+
 import dalvik.system.SocketTagger;
-import java.net.Socket;
-import java.net.SocketException;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public class TrafficStats {
     

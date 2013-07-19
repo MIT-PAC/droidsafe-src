@@ -1,9 +1,9 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Dictionary<K, V> {
     
@@ -14,15 +14,18 @@ public abstract class Dictionary<K, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Enumeration<V> elements();
 
     
     public abstract V get(Object key);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isEmpty();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Enumeration<K> keys();
 
     
@@ -32,6 +35,7 @@ public abstract class Dictionary<K, V> {
     public abstract V remove(Object key);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int size();
 
     

@@ -1,10 +1,11 @@
 package java.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.Arrays;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class OutputStream implements Closeable, Flushable {
     
@@ -55,6 +56,7 @@ for(int i = offset;i < offset + count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void write(int oneByte) throws IOException;
 
     

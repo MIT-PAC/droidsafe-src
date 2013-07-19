@@ -1,19 +1,17 @@
 package gov.nist.javax.sip.clientauthutils;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import gov.nist.javax.sip.SipStackImpl;
-import gov.nist.javax.sip.address.SipUri;
 import gov.nist.javax.sip.message.SIPRequest;
 import gov.nist.javax.sip.stack.SIPClientTransaction;
 import gov.nist.javax.sip.stack.SIPTransactionStack;
+
 import java.text.ParseException;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.ListIterator;
 import java.util.Timer;
+
 import javax.sip.ClientTransaction;
 import javax.sip.DialogState;
 import javax.sip.InvalidArgumentException;
@@ -32,6 +30,9 @@ import javax.sip.header.ViaHeader;
 import javax.sip.header.WWWAuthenticateHeader;
 import javax.sip.message.Request;
 import javax.sip.message.Response;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class AuthenticationHelperImpl implements AuthenticationHelper {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.414 -0400", hash_original_field = "D5D9A01DEEBF6762D6D6FE216A30D468", hash_generated_field = "1A1B69CD5FD1781DFE3A277E582E290E")

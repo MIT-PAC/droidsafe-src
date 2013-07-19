@@ -1,13 +1,7 @@
 package android.database;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.database.CrossProcessCursor;
-import android.database.Cursor;
-import android.database.CursorWindow;
-import android.database.CursorWrapper;
+import droidsafe.annotations.DSGenerator;
 
 public class CrossProcessCursorWrapper extends CursorWrapper implements CrossProcessCursor {
     

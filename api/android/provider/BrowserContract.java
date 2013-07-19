@@ -1,21 +1,20 @@
 package android.provider;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.accounts.Account;
 import android.content.ContentProviderClient;
 import android.content.ContentProviderOperation;
-import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.RemoteException;
 import android.util.Pair;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class BrowserContract {
     
@@ -64,6 +63,7 @@ public class BrowserContract {
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static final Uri buildFolderUri(long folderId) {
             return ContentUris.withAppendedId(CONTENT_URI_DEFAULT_FOLDER, folderId);
         }

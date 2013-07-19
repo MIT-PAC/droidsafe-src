@@ -1,11 +1,13 @@
 package android.net.http;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import org.apache.http.HttpHost;
+
 import android.os.SystemClock;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class IdleCache {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.262 -0400", hash_original_field = "379C729523CD5967E1C64411ED82B1A2", hash_generated_field = "5DA8A4D4C2CDF098EB768C6225089E33")

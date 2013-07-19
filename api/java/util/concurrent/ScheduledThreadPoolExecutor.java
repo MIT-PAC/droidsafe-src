@@ -1,12 +1,20 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.util.concurrent.atomic.*;
-import java.util.concurrent.locks.*;
-import java.util.*;
+import java.util.AbstractQueue;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements ScheduledExecutorService {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.757 -0400", hash_original_field = "16F5A356C77125C2C156C9F6B6F49691", hash_generated_field = "AA2F9CF8A8BDA098B7353794A7890F68")
@@ -67,6 +75,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.758 -0400", hash_original_method = "5D4518F727B3B1C5CE98EBC039D9AF6B", hash_generated_method = "37E25581151DE4897320414399A7A33B")
     final long now() {
         long var97501587DA544101C263E23F58D1EE3B_416465373 = (System.nanoTime());
@@ -93,6 +102,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.760 -0400", hash_original_method = "74BC2A8347918586B07692C369988E7C", hash_generated_method = "1233BDA0885E8E1DBF51CE9FE38BD51F")
     private void delayedExecute(RunnableScheduledFuture<?> task) {
         addTaint(task.getTaint());
@@ -123,6 +133,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.761 -0400", hash_original_method = "0C685B50A598B045820F5EF901D2AED6", hash_generated_method = "E936D91D9621740D03ED68FDA1AA5865")
      void reExecutePeriodic(RunnableScheduledFuture<?> task) {
         addTaint(task.getTaint());
@@ -182,6 +193,7 @@ for(Object e : q.toArray())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.763 -0400", hash_original_method = "2D7E8C9964120FA3F638C1BFE2958CB1", hash_generated_method = "5F49DDDEC173AD0B54FE56A5933B2845")
     protected <V> RunnableScheduledFuture<V> decorateTask(
         Runnable runnable, RunnableScheduledFuture<V> task) {
@@ -260,6 +272,7 @@ RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_535228177 =      
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.764 -0400", hash_original_method = "E8C91BC5CFBE81CC8958800A4E70C4DA", hash_generated_method = "A0413B086989287A4318C941774EFDDB")
     public ScheduledFuture<?> schedule(Runnable command,
                                        long delay,
@@ -291,6 +304,7 @@ ScheduledFuture<?> varE0D714D758F1540A8DF364A965AF9150_1315909858 =         t;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.765 -0400", hash_original_method = "3CA816B6292CC3DABD4A8E9E190B6332", hash_generated_method = "378062D887D87CBDB8AFDA6DE196F7A4")
     public <V> ScheduledFuture<V> schedule(Callable<V> callable,
                                            long delay,
@@ -322,6 +336,7 @@ ScheduledFuture<V> varE0D714D758F1540A8DF364A965AF9150_13040699 =         t;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.766 -0400", hash_original_method = "8D8E5BFEEBAD4838EB16FA502AD719D4", hash_generated_method = "48E9F8E716079B351B68CB4EC5F7A621")
     public ScheduledFuture<?> scheduleAtFixedRate(Runnable command,
                                                   long initialDelay,
@@ -370,6 +385,7 @@ ScheduledFuture<?> varE0D714D758F1540A8DF364A965AF9150_1957769836 =         t;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.766 -0400", hash_original_method = "F8BFEFA210F26533C5765CF5137E2FD3", hash_generated_method = "14E1DEAF8E16C5B1B3802F403EC41C49")
     public ScheduledFuture<?> scheduleWithFixedDelay(Runnable command,
                                                      long initialDelay,
@@ -428,6 +444,7 @@ ScheduledFuture<?> varE0D714D758F1540A8DF364A965AF9150_1071058155 =         t;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.767 -0400", hash_original_method = "71AB87E2E6647A80EF75456B59FD870B", hash_generated_method = "968866C7AE989B9555D2DD8F49519DDB")
     public Future<?> submit(Runnable task) {
         addTaint(task.getTaint());
@@ -439,6 +456,7 @@ Future<?> varC033FC2530DBD28BB1831A9C4CE5DB45_1501247865 =         schedule(task
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.767 -0400", hash_original_method = "A2BAF492547813A1B4B6DC556E74F888", hash_generated_method = "CAC525EA0E485EE36D0C77239CB125EE")
     public <T> Future<T> submit(Runnable task, T result) {
         addTaint(result.getTaint());
@@ -453,6 +471,7 @@ Future<T> var5F143B3617D15E425694BCB00707B794_1636405938 =         schedule(Exec
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.768 -0400", hash_original_method = "7532879CEC1557BEB821686E164CE854", hash_generated_method = "1F446E1DBA15F7EB3F5AB789BFCC5574")
     public <T> Future<T> submit(Callable<T> task) {
         addTaint(task.getTaint());
@@ -541,6 +560,7 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.770 -0400", hash_original_method = "58CAE4CD18062B6710EA14E24E67D3BE", hash_generated_method = "277193B57926F7407480C9F98487066D")
     public List<Runnable> shutdownNow() {
 List<Runnable> var7C14AB944B290776B3A5F9444C7B09E0_1790168160 =         super.shutdownNow();
@@ -551,6 +571,7 @@ List<Runnable> var7C14AB944B290776B3A5F9444C7B09E0_1790168160 =         super.sh
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.770 -0400", hash_original_method = "161D6A52B7D27778B4A9C4AAA82FE7A8", hash_generated_method = "F38CC3D081B0C5D598364BEC7BDECF76")
     public BlockingQueue<Runnable> getQueue() {
 BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1530468184 =         super.getQueue();
@@ -610,6 +631,7 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1530468184 =        
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.772 -0400", hash_original_method = "E88D028A2F4D25267A398506CBA854E6", hash_generated_method = "F15648E5E6776C3103D88CF9150E4257")
           ScheduledFutureTask(Callable<V> callable, long ns) {
             super(callable);
@@ -1460,6 +1482,7 @@ RunnableScheduledFuture var783EE317EF3F20F6DB2D0D3EF00DE570_1013073282 =        
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.782 -0400", hash_original_method = "A0CF55F6497A110CDDFF356DE0AE8664", hash_generated_method = "4FAAE51821884BE482609A17F4CEEFB6")
         public int drainTo(Collection<? super Runnable> c) {
             addTaint(c.getTaint());
@@ -1516,6 +1539,7 @@ RunnableScheduledFuture var783EE317EF3F20F6DB2D0D3EF00DE570_1013073282 =        
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.782 -0400", hash_original_method = "0279366BCBF84614051CBA5B08204A0A", hash_generated_method = "052548E6DADC374740E81D842C4DA0EE")
         public int drainTo(Collection<? super Runnable> c, int maxElements) {
             addTaint(maxElements);
@@ -1648,6 +1672,7 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_99574316 =                 a;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.783 -0400", hash_original_method = "46B1FB64DFD489BA9D84B29257E9B6C6", hash_generated_method = "A8C4A914A1B00B3145DF3532620945F1")
         public Iterator<Runnable> iterator() {
 Iterator<Runnable> var204ADEB76305F0F46DB2D7013588DB62_159024865 =             new Itr(Arrays.copyOf(queue, size));

@@ -1,21 +1,25 @@
 package android.text.format;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.Context;
-import android.provider.Settings;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.SpannedString;
-import com.android.internal.R;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
-import java.text.SimpleDateFormat;
+
+import android.content.Context;
+import android.provider.Settings;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.SpannedString;
+
+import com.android.internal.R;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class DateFormat {
     
@@ -61,6 +65,7 @@ public class DateFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final java.text.DateFormat getTimeFormat(Context context) {
         boolean b24 = is24HourFormat(context);
         int res;
@@ -73,6 +78,7 @@ public class DateFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final java.text.DateFormat getDateFormat(Context context) {
         String value = Settings.System.getString(context.getContentResolver(),
                 Settings.System.DATE_FORMAT);
@@ -123,16 +129,19 @@ public class DateFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final java.text.DateFormat getLongDateFormat(Context context) {
         return java.text.DateFormat.getDateInstance(java.text.DateFormat.LONG);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final java.text.DateFormat getMediumDateFormat(Context context) {
         return java.text.DateFormat.getDateInstance(java.text.DateFormat.MEDIUM);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final char[] getDateFormatOrder(Context context) {
         char[] order = new char[] {DATE, MONTH, YEAR};
         String value = getDateFormatString(context);
@@ -169,11 +178,13 @@ public class DateFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final CharSequence format(CharSequence inFormat, long inTimeInMillis) {
         return format(inFormat, new Date(inTimeInMillis));
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final CharSequence format(CharSequence inFormat, Date inDate) {
         Calendar    c = new GregorianCalendar();
         c.setTime(inDate);
@@ -181,6 +192,7 @@ public class DateFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final CharSequence format(CharSequence inFormat, Calendar inDate) {
         SpannableStringBuilder      s = new SpannableStringBuilder(inFormat);
         int             c;
@@ -257,6 +269,7 @@ public class DateFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final String getMonthString(Calendar inDate, int count) {
         int month = inDate.get(Calendar.MONTH);
         if (count >= 4)
@@ -269,6 +282,7 @@ public class DateFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final String getTimeZoneString(Calendar inDate, int count) {
         TimeZone tz = inDate.getTimeZone();
         if (count < 2) { 
@@ -282,6 +296,7 @@ public class DateFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final String formatZoneOffset(int offset, int count) {
         offset /= 1000;
         StringBuilder tb = new StringBuilder();
@@ -299,12 +314,14 @@ public class DateFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final String getYearString(Calendar inDate, int count) {
         int year = inDate.get(Calendar.YEAR);
         return (count <= 2) ? zeroPad(year % 100, 2) : String.valueOf(year);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final int appendQuotedText(SpannableStringBuilder s, int i, int len) {
         if (i + 1 < len && s.charAt(i + 1) == QUOTE) {
             s.delete(i, i + 1);
@@ -334,6 +351,7 @@ public class DateFormat {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static final String zeroPad(int inValue, int inMinDigits) {
         String val = String.valueOf(inValue);
         if (val.length() < inMinDigits) {

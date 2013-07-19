@@ -1,26 +1,28 @@
 package android.net.http;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.Context;
-import android.os.SystemClock;
 import java.io.IOException;
 import java.net.UnknownHostException;
-import java.util.ListIterator;
 import java.util.LinkedList;
+
 import javax.net.ssl.SSLHandshakeException;
-import org.apache.http.ConnectionReuseStrategy;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpException;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpVersion;
 import org.apache.http.ParseException;
 import org.apache.http.ProtocolVersion;
+import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.ExecutionContext;
 import org.apache.http.protocol.HttpContext;
-import org.apache.http.protocol.BasicHttpContext;
+
+import android.content.Context;
+import android.os.SystemClock;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 abstract class Connection {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.939 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
@@ -588,12 +590,15 @@ HttpContext var12C73152C7871DEFD35EAD04C5DEFC45_1686996982 =         mHttpContex
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract String getScheme();
 
     
+    @DSModeled(DSC.SAFE)
     abstract void closeConnection();
 
     
+    @DSModeled(DSC.SAFE)
     abstract AndroidHttpClientConnection openConnection(Request req) throws IOException;
 
     

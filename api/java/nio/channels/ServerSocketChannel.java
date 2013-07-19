@@ -1,13 +1,14 @@
 package java.nio.channels;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.nio.channels.spi.AbstractSelectableChannel;
 import java.nio.channels.spi.SelectorProvider;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class ServerSocketChannel extends AbstractSelectableChannel {
     
@@ -24,6 +25,7 @@ public abstract class ServerSocketChannel extends AbstractSelectableChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.292 -0400", hash_original_method = "63BB8F155E94FEBA5DA1D0A1F3E44C8C", hash_generated_method = "AE212F1166E106871592C27CDFD6315B")
     @Override
     public final int validOps() {
@@ -35,9 +37,11 @@ public abstract class ServerSocketChannel extends AbstractSelectableChannel {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ServerSocket socket();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SocketChannel accept() throws IOException;
 
     

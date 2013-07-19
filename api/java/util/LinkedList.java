@@ -1,14 +1,16 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.lang.reflect.Array;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>, Deque<E>, Queue<E>, Cloneable, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.113 -0400", hash_original_field = "4C519DE3531208469B40CCB51004CD2D", hash_generated_field = "073488151E86FC108C1C096E75333D8B")
@@ -31,6 +33,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.115 -0400", hash_original_method = "0B559D29C113071CE6BE3D63B71465EB", hash_generated_method = "C5AA269F9975EBBFEE953030F41D5191")
     public  LinkedList(Collection<? extends E> collection) {
         this();
@@ -135,6 +138,7 @@ for(int i = size;i > location;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.120 -0400", hash_original_method = "EA599DD8388630A135A57F30093AE237", hash_generated_method = "D4CE4E2F1FE709675A6C51A8B58D83B0")
     @Override
     public boolean addAll(int location, Collection<? extends E> collection) {
@@ -189,6 +193,7 @@ for(E e : elements)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.121 -0400", hash_original_method = "B5A413C7ECEF6975CDBDA09F397FBA87", hash_generated_method = "113CC20BF8FFA66267C06E9B1A0EAB55")
     @Override
     public boolean addAll(Collection<? extends E> collection) {
@@ -621,6 +626,7 @@ E varB1F122C9C1AAC8A4CFF306CF36360451_262941152 =             last.data;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.129 -0400", hash_original_method = "3507AEFB380BBD7C7A81BC76F9B74E53", hash_generated_method = "E0D7343773012BD00436BBFD57259933")
     @Override
     public ListIterator<E> listIterator(int location) {
@@ -786,6 +792,7 @@ E varB1F122C9C1AAC8A4CFF306CF36360451_1402362349 =             last.data;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.133 -0400", hash_original_method = "B739DCE0B4C0EF3D97CD82250338592B", hash_generated_method = "5BFD32313DD750C7CA5760471E7BA36B")
     public Iterator<E> descendingIterator() {
 Iterator<E> var3C0C25881C2D4E8C7AFB7E0B8222F14B_168146712 =         new ReverseLinkIterator<E>(this);
@@ -919,6 +926,7 @@ E varAD3301876DF8721CEF17AFAABE29CC10_850774123 =         removeFirstImpl();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.135 -0400", hash_original_method = "0DC759074C3911B534EFB2ED69CB80D3", hash_generated_method = "9DDC0B1D5E05429D7358050E932B03D0")
     private boolean removeOneOccurrence(Object o, Iterator<E> iter) {
         addTaint(iter.getTaint());

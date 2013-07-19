@@ -1,10 +1,11 @@
 package java.nio;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.Arrays;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuffer> {
     
@@ -42,6 +43,7 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.988 -0400", hash_original_method = "0A1B03C776C1004F61482923BC618EF6", hash_generated_method = "98DD42722F8507699F8E0254CA6D062B")
     public final short[] array() {
         short[] var68B89E48382A0AA51B25AC59599E2EB0_2005391723 = (protectedArray());
@@ -52,6 +54,7 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.989 -0400", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "C6E0DC87AAD0E6046496B3407BAFCAF1")
     public final int arrayOffset() {
         int var0B794CE56A38A9F3BFDD2D53E83BB109_1680568485 = (protectedArrayOffset());
@@ -62,9 +65,11 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ShortBuffer asReadOnlyBuffer();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ShortBuffer compact();
 
     
@@ -116,6 +121,7 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ShortBuffer duplicate();
 
     
@@ -166,6 +172,7 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract short get();
 
     
@@ -213,9 +220,11 @@ ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_1023722495 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract short get(int index);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.993 -0400", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "C14D6DF407414F1C0FD6991B0AA8A4DC")
     public final boolean hasArray() {
         boolean var55B7C03E3C1EBABD22606AD17EE923C3_1355576793 = (protectedHasArray());
@@ -250,24 +259,31 @@ ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_1023722495 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isDirect();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ByteOrder order();
 
     
+    @DSModeled(DSC.SAFE)
     abstract short[] protectedArray();
 
     
+    @DSModeled(DSC.SAFE)
     abstract int protectedArrayOffset();
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean protectedHasArray();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ShortBuffer put(short s);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.995 -0400", hash_original_method = "47A309F7D8F6DC58E14B9D901E5CA4EB", hash_generated_method = "0409FA7E1D5480CAEEBE89E8192671A5")
     public final ShortBuffer put(short[] src) {
         addTaint(src[0]);
@@ -347,9 +363,11 @@ ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_1156442666 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ShortBuffer put(int index, short s);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ShortBuffer slice();
 
     

@@ -1,12 +1,16 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import javax.sip.*;
-import gov.nist.javax.sip.header.*;
+import gov.nist.javax.sip.header.MaxForwards;
+import gov.nist.javax.sip.header.SIPHeader;
+
 import java.text.ParseException;
+
+import javax.sip.InvalidArgumentException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class MaxForwardsParser extends HeaderParser {
     

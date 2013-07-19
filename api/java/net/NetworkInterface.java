@@ -1,25 +1,35 @@
 package java.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import static libcore.io.OsConstants.AF_INET;
+import static libcore.io.OsConstants.EADDRNOTAVAIL;
+import static libcore.io.OsConstants.IFF_LOOPBACK;
+import static libcore.io.OsConstants.IFF_MULTICAST;
+import static libcore.io.OsConstants.IFF_POINTOPOINT;
+import static libcore.io.OsConstants.IFF_UP;
+import static libcore.io.OsConstants.SIOCGIFADDR;
+import static libcore.io.OsConstants.SIOCGIFBRDADDR;
+import static libcore.io.OsConstants.SIOCGIFNETMASK;
+import static libcore.io.OsConstants.SOCK_DGRAM;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
+
 import libcore.io.ErrnoException;
 import libcore.io.IoUtils;
 import libcore.io.Libcore;
-import static libcore.io.OsConstants.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class NetworkInterface extends Object {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.890 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")

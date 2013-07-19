@@ -1,10 +1,12 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import com.android.internal.telephony.IccCardStatus.PinState;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class IccCardApplication {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:16.984 -0400", hash_original_field = "DAFA1D6A0E85051DEC222617BBED6E45", hash_generated_field = "47D78C1AB52244F57090C85D69289E76")
@@ -322,18 +324,23 @@ String var2460B846747F8B22185AD8BE722266A5_32480758 =         sb.toString();
         APPSTATE_PUK,
         APPSTATE_SUBSCRIPTION_PERSO,
         APPSTATE_READY;
+        @DSModeled(DSC.SAFE)
         boolean isPinRequired() {
             return this == APPSTATE_PIN;
         }
+        @DSModeled(DSC.SAFE)
         boolean isPukRequired() {
             return this == APPSTATE_PUK;
         }
+        @DSModeled(DSC.SAFE)
         boolean isSubscriptionPersoEnabled() {
             return this == APPSTATE_SUBSCRIPTION_PERSO;
         }
+        @DSModeled(DSC.SAFE)
         boolean isAppReady() {
             return this == APPSTATE_READY;
         }
+        @DSModeled(DSC.SAFE)
         boolean isAppNotReady() {
             return this == APPSTATE_UNKNOWN  ||
                    this == APPSTATE_DETECTED;
@@ -367,6 +374,7 @@ String var2460B846747F8B22185AD8BE722266A5_32480758 =         sb.toString();
         PERSOSUBSTATE_RUIM_CORPORATE_PUK,
         PERSOSUBSTATE_RUIM_SERVICE_PROVIDER_PUK,
         PERSOSUBSTATE_RUIM_RUIM_PUK;
+        @DSModeled(DSC.SAFE)
         boolean isPersoSubStateUnknown() {
             return this == PERSOSUBSTATE_UNKNOWN;
         }

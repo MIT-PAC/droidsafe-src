@@ -1,12 +1,13 @@
 package java.security;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.security.spec.AlgorithmParameterSpec;
 import java.security.spec.InvalidParameterSpecException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class AlgorithmParametersSpi {
     
@@ -17,13 +18,16 @@ public abstract class AlgorithmParametersSpi {
     }
 
 
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(AlgorithmParameterSpec paramSpec)
             throws InvalidParameterSpecException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(byte[] params) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(byte[] params, String format)
             throws IOException;
 
@@ -32,13 +36,16 @@ public abstract class AlgorithmParametersSpi {
             Class<T> paramSpec) throws InvalidParameterSpecException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract byte[] engineGetEncoded() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract byte[] engineGetEncoded(String format)
             throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract String engineToString();
 
     

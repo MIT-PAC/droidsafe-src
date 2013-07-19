@@ -1,13 +1,15 @@
 package java.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.security.Principal;
 import java.security.cert.Certificate;
 import java.util.List;
+
 import javax.net.ssl.SSLPeerUnverifiedException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SecureCacheResponse extends CacheResponse {
     
@@ -17,20 +19,25 @@ public abstract class SecureCacheResponse extends CacheResponse {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getCipherSuite();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract List<Certificate> getLocalCertificateChain();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract List<Certificate> getServerCertificateChain()
             throws SSLPeerUnverifiedException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Principal getPeerPrincipal()
             throws SSLPeerUnverifiedException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Principal getLocalPrincipal();
 
     

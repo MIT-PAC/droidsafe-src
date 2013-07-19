@@ -1,15 +1,17 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.LayoutInflater;
 import java.util.List;
 import java.util.Map;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SimpleExpandableListAdapter extends BaseExpandableListAdapter {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.047 -0400", hash_original_field = "035E16F29CDA719D867DE29B4F5284B7", hash_generated_field = "611E54FE69D6A51734B23ACE9D45487D")

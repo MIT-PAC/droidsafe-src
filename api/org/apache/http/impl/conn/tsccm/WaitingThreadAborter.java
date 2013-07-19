@@ -1,9 +1,10 @@
 package org.apache.http.impl.conn.tsccm;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class WaitingThreadAborter {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.510 -0400", hash_original_field = "BD94CA2DD62250633E81D56743BB8F43", hash_generated_field = "C79D835D74C6AC2AE8A11E51B7EFA777")

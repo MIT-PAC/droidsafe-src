@@ -1,18 +1,18 @@
 package android.webkit;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.List;
+
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Handler;
-import android.webkit.DeviceMotionAndOrientationManager;
-import java.lang.Runnable;
-import java.util.List;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 final class DeviceOrientationService implements SensorEventListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.314 -0400", hash_original_field = "3ED8275DCE79E42B3B02ABEA2442432B", hash_generated_field = "9C5FFC7AB264A9E2409475E7791D4532")

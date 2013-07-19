@@ -1,14 +1,16 @@
 package java.util.jar;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class Attributes implements Cloneable, Map<Object, Object> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.649 -0400", hash_original_field = "1D78DC8ED51214E518B5114FE24490AE", hash_generated_field = "469DC0A3DDAB50D1A339FF08EE199F5C")
@@ -109,6 +111,7 @@ Object var97156AACD411ADC83FECC30C065B5B0C_1486760136 =         map.get(key);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.655 -0400", hash_original_method = "F488EE4006E1366E830BF13438F76FA9", hash_generated_method = "DA20EEAB16B6AD814FCB2266B98A9E59")
     public Set<Object> keySet() {
 Set<Object> varD036BF304D6CB28B6C4DC52E35289E2B_1985497695 =         map.keySet();
@@ -133,6 +136,7 @@ Object var540AD09702F21E0DC7D07F749BDCE47C_1573375351 =         map.put((Name) k
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.656 -0400", hash_original_method = "2F4F3A55CE715E104E0F5EF4690E41E2", hash_generated_method = "496DE9955B5C2CA408E4B6F2536E2DBB")
     public void putAll(Map<?, ?> attrib) {
         addTaint(attrib.getTaint());
@@ -174,6 +178,7 @@ Object var680816A9C90635BE8F543A56792CAAE8_905735408 =         map.remove(key);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.658 -0400", hash_original_method = "F211D00F0E74ECC7AD7311207A5002DA", hash_generated_method = "2F2043C60F7B8A23AE513A2986EF266A")
     public Collection<Object> values() {
 Collection<Object> varB1189193566E908C8B007DC3A156A222_400258177 =         map.values();

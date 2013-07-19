@@ -1,13 +1,15 @@
 package java.nio.channels;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.spi.AbstractInterruptibleChannel;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class FileChannel extends AbstractInterruptibleChannel implements GatheringByteChannel, ScatteringByteChannel, ByteChannel {
     
@@ -18,6 +20,7 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void force(boolean metadata) throws IOException;
 
     
@@ -31,23 +34,29 @@ FileLock var50D39AE14A9D021DC54487D5C205800C_1252566143 =         lock(0L, Long.
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FileLock lock(long position, long size, boolean shared)
             throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract MappedByteBuffer map(FileChannel.MapMode mode,
             long position, long size) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long position() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FileChannel position(long offset) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int read(ByteBuffer buffer) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int read(ByteBuffer buffer, long position)
             throws IOException;
 
@@ -67,17 +76,21 @@ FileLock var50D39AE14A9D021DC54487D5C205800C_1252566143 =         lock(0L, Long.
             throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long size() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long transferFrom(ReadableByteChannel src, long position,
             long count) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long transferTo(long position, long count,
             WritableByteChannel target) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FileChannel truncate(long size) throws IOException;
 
     
@@ -91,13 +104,16 @@ FileLock varF5D9544336A16D8E74D4CBEA85C52705_1747660477 =         tryLock(0L, Lo
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract FileLock tryLock(long position, long size, boolean shared)
             throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int write(ByteBuffer src) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int write(ByteBuffer buffer, long position)
             throws IOException;
 

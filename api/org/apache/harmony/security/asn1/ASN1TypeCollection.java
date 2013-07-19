@@ -1,9 +1,10 @@
 package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class ASN1TypeCollection extends ASN1Constructed {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.468 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "24AC453E9AFABA0FC5B4FCBCBDACD1C1")
@@ -31,6 +32,7 @@ public abstract class ASN1TypeCollection extends ASN1Constructed {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.469 -0400", hash_original_method = "2E3FD069D2ECECC280341BA5C6DB58FF", hash_generated_method = "92AA06D5807671C4D16BB1AC57792687")
     protected final void setOptional(int index) {
         OPTIONAL[index] = true;
@@ -39,6 +41,7 @@ public abstract class ASN1TypeCollection extends ASN1Constructed {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.470 -0400", hash_original_method = "5DD4202D21937C15AEFBE0B59FE742F3", hash_generated_method = "65229AAE60F364531E55690317D4E80D")
     protected final void setDefault(Object object, int index) {
         OPTIONAL[index] = true;

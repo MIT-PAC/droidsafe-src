@@ -1,31 +1,29 @@
 package java.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import dalvik.system.CloseGuard;
+import static libcore.io.OsConstants.EAGAIN;
+import static libcore.io.OsConstants.EWOULDBLOCK;
+import static libcore.io.OsConstants.MSG_OOB;
+import static libcore.io.OsConstants.SHUT_RD;
+import static libcore.io.OsConstants.SHUT_WR;
+
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.ConnectException;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.Proxy;
-import java.net.SocketAddress;
-import java.net.SocketException;
-import java.net.SocketImpl;
-import java.net.SocketTimeoutException;
-import java.net.UnknownHostException;
 import java.nio.ByteOrder;
 import java.util.Arrays;
+
 import libcore.io.ErrnoException;
 import libcore.io.IoBridge;
 import libcore.io.Libcore;
 import libcore.io.Memory;
 import libcore.io.Streams;
-import static libcore.io.OsConstants.*;
+import dalvik.system.CloseGuard;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class PlainSocketImpl extends SocketImpl {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.167 -0400", hash_original_field = "7DEF0BDA40D0E04BF9A6A07F09AE1E51", hash_generated_field = "6A8CCB2C47D2D8E132EF5F76D32DB937")

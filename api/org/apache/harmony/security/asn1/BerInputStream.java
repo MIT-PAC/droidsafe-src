@@ -1,12 +1,14 @@
 package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class BerInputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.629 -0400", hash_original_field = "13B5BFE96F3E2FE411C9F66F4A582ADF", hash_generated_field = "9DA78E40E39AA56A72373CEA8B1326DF")
@@ -136,6 +138,7 @@ public class BerInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.634 -0400", hash_original_method = "4CCBB4621387969DDD8BDCB7ADDE8473", hash_generated_method = "5C19B2C85550850E24C9B051962F85BD")
     public final void reset(byte[] encoded) throws IOException {
         buffer = encoded;
@@ -900,6 +903,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.787 -0400", hash_original_method = "6B125A4F0D6B27C0C7AD41FB42F4DE53", hash_generated_method = "E1323740FC5EF1BDFFDA575E78B348B9")
     public final byte[] getBuffer() {
         byte[] var7F2DB423A49B305459147332FB01CF87_1280793369 = (buffer);
@@ -910,6 +914,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.788 -0400", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "B05F331C8AB1E1F4D47D4DC28DEBA182")
     public final int getLength() {
         int var2FA47F7C65FEC19CC163B195725E3844_1869004950 = (length);
@@ -920,6 +925,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.788 -0400", hash_original_method = "ACEB13DAA855070296BA592FB1ADADA1", hash_generated_method = "AA0D39EC3AEC21CFC34D24FEFC5E5EE4")
     public final int getOffset() {
         int var7A86C157EE9713C34FBD7A1EE40F0C5A_763640813 = (offset);
@@ -930,6 +936,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.788 -0400", hash_original_method = "1367D9753B97C5C3A102B7D6550881B9", hash_generated_method = "D0FDEE8B1AB04C8E7256606B513D13CB")
     public final int getEndOffset() {
         int var8F6516B482CCBEE9DDA86D5558C78891_872299913 = (offset + length);
@@ -940,6 +947,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.788 -0400", hash_original_method = "1FDDE163F1BBA6CDA778E0FD08E430DE", hash_generated_method = "122D76CF256652007AEF1125AFE31377")
     public final int getTagOffset() {
         int var0FE9238E05A1761544B80900699E2D71_63846487 = (tagOffset);
@@ -950,6 +958,7 @@ for(;i < type.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.789 -0400", hash_original_method = "E5C1E507EA76A704FAE5F4AC771876E5", hash_generated_method = "38A0FA5CCBFAD28A394824D8D2033CBB")
     public final void setVerify() {
         isVerify = true;

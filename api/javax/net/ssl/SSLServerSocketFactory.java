@@ -1,12 +1,15 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.security.NoSuchAlgorithmException;
 import java.security.Security;
+
 import javax.net.ServerSocketFactory;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SSLServerSocketFactory extends ServerSocketFactory {
     
@@ -53,9 +56,11 @@ public abstract class SSLServerSocketFactory extends ServerSocketFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] getDefaultCipherSuites();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] getSupportedCipherSuites();
 
     

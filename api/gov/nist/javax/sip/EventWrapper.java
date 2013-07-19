@@ -1,11 +1,14 @@
 package gov.nist.javax.sip;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import  gov.nist.javax.sip.stack.*;
-import  java.util.*;
+import gov.nist.javax.sip.stack.SIPTransaction;
+
+import java.util.EventObject;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 class EventWrapper {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.426 -0400", hash_original_field = "E00A136CA217047ABA7197AA403F57C7", hash_generated_field = "D0CD1A8921064AE307FBC0EABE6947D1")

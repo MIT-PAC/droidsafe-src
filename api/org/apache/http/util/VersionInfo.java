@@ -1,14 +1,16 @@
 package org.apache.http.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Properties;
-import java.util.ArrayList;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class VersionInfo {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.583 -0400", hash_original_field = "5DC10C942C376F4D917341A8F6F35478", hash_generated_field = "B4EE0AE6CDFC7729E2DF3959619B27C8")
@@ -55,6 +57,7 @@ public class VersionInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.584 -0400", hash_original_method = "252EB5EFBA4DF288F0FE3B9299593BCD", hash_generated_method = "F867F1FF9EABA242E4E5200825023057")
     public final String getPackage() {
 String varAA055AF7498388EB82F572AD27B27479_432131374 =         infoPackage;
@@ -65,6 +68,7 @@ String varAA055AF7498388EB82F572AD27B27479_432131374 =         infoPackage;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.585 -0400", hash_original_method = "817D4ED1C3BFE1B9928E002CE96AD55A", hash_generated_method = "2F24B365F4939E79F8B5F24525BAD37E")
     public final String getModule() {
 String var606B884BA5A756273394B916A155F040_2098416478 =         infoModule;
@@ -75,6 +79,7 @@ String var606B884BA5A756273394B916A155F040_2098416478 =         infoModule;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.585 -0400", hash_original_method = "DAD9A741167B359FF642D16AB5684AA5", hash_generated_method = "30238D31475B19B1E0290C1F9DD4FD65")
     public final String getRelease() {
 String var6C4195C569DF6472690519AC429B94E4_256977449 =         infoRelease;
@@ -85,6 +90,7 @@ String var6C4195C569DF6472690519AC429B94E4_256977449 =         infoRelease;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.585 -0400", hash_original_method = "02D289A8C155EDCB8F2FF743050BA3A2", hash_generated_method = "1555CE11217CCC3C332C3C675227B472")
     public final String getTimestamp() {
 String var7C48C24921EE033BF6772198C34357EE_1604392619 =         infoTimestamp;
@@ -95,6 +101,7 @@ String var7C48C24921EE033BF6772198C34357EE_1604392619 =         infoTimestamp;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.585 -0400", hash_original_method = "8670EE78560EBB156BF6A930F22A1F67", hash_generated_method = "0283FCAA510FF75BBE73C3514C01FDF8")
     public final String getClassloader() {
 String var36BEBB44E6CD616E742E932C9DA9302B_1323826450 =         infoClassloader;
@@ -141,6 +148,7 @@ String var2460B846747F8B22185AD8BE722266A5_1894302844 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     public final static VersionInfo[] loadVersionInfo(String[] pckgs,
                                                       ClassLoader clsldr) {
         if (pckgs == null) {
@@ -187,6 +195,7 @@ String var2460B846747F8B22185AD8BE722266A5_1894302844 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.BAN)
     protected final static VersionInfo fromMap(String pckg, Map info,
                                                ClassLoader clsldr) {
         if (pckg == null) {

@@ -1,9 +1,6 @@
 package java.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.InvalidObjectException;
 import java.io.Serializable;
 import java.lang.reflect.Field;

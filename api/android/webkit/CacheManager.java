@@ -1,14 +1,6 @@
 package android.webkit;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.Context;
-import android.net.http.AndroidHttpClient;
-import android.net.http.Headers;
-import android.os.FileUtils;
-import android.util.Log;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -19,8 +11,20 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.List;
 import java.util.Map;
+
+import android.content.Context;
+import android.net.http.AndroidHttpClient;
+import android.net.http.Headers;
+import android.os.FileUtils;
+import android.util.Log;
+
 import com.android.org.bouncycastle.crypto.Digest;
 import com.android.org.bouncycastle.crypto.digests.SHA1Digest;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class CacheManager {
     

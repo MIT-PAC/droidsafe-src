@@ -1,12 +1,14 @@
 package org.apache.harmony.security.fortress;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.security.NoSuchAlgorithmException;
 import java.security.Provider;
 import java.util.Locale;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class Engine {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.973 -0400", hash_original_field = "0F096338B64A1D1B348B86DF38313C01", hash_generated_field = "ECD50B84C78A208F5EC2C3BF804F2559")

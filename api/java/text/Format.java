@@ -1,10 +1,12 @@
 package java.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.Serializable;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Format implements Serializable, Cloneable {
     
@@ -40,6 +42,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_259151495 =             super.clone()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.526 -0400", hash_original_method = "37693C41F5C0477FFE14A538377AD1D2", hash_generated_method = "BAD74ED666EC189584D6FD6AB33F90BB")
     public final String format(Object object) {
         addTaint(object.getTaint());
@@ -53,6 +56,7 @@ String var8CB4AA7B650AA7040D828797C5473E3E_1079027195 =         format(object, n
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract StringBuffer format(Object object, StringBuffer buffer,
             FieldPosition field);
 
@@ -94,6 +98,7 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_962123644 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Object parseObject(String string, ParsePosition position);
 
     

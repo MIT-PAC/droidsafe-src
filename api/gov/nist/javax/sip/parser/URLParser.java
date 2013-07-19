@@ -1,9 +1,6 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import gov.nist.core.HostNameParser;
 import gov.nist.core.HostPort;
 import gov.nist.core.NameValue;
@@ -13,7 +10,12 @@ import gov.nist.javax.sip.address.GenericURI;
 import gov.nist.javax.sip.address.SipUri;
 import gov.nist.javax.sip.address.TelURLImpl;
 import gov.nist.javax.sip.address.TelephoneNumber;
+
 import java.text.ParseException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class URLParser extends Parser {
     

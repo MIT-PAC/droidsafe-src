@@ -1,15 +1,16 @@
 package java.nio.channels;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.net.DatagramSocket;
 import java.net.SocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.spi.AbstractSelectableChannel;
 import java.nio.channels.spi.SelectorProvider;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class DatagramChannel extends AbstractSelectableChannel implements ByteChannel, ScatteringByteChannel, GatheringByteChannel {
     
@@ -26,6 +27,7 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.159 -0400", hash_original_method = "389104566E9179427B49B1E6618B4C60", hash_generated_method = "8E5DBF1AC71B290D3D2E29607D31931A")
     @Override
     public final int validOps() {
@@ -37,25 +39,32 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract DatagramSocket socket();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isConnected();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract DatagramChannel connect(SocketAddress address)
             throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract DatagramChannel disconnect() throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SocketAddress receive(ByteBuffer target) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int send(ByteBuffer source, SocketAddress address) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int read(ByteBuffer target) throws IOException;
 
     
@@ -74,6 +83,7 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int write(ByteBuffer source) throws IOException;
 
     

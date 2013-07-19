@@ -1,10 +1,8 @@
 package android.view.textservice;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.textservice.ITextServicesManager;
+import java.util.Locale;
+
 import android.content.Context;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -12,7 +10,11 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
 import android.view.textservice.SpellCheckerSession.SpellCheckerSessionListener;
-import java.util.Locale;
+
+import com.android.internal.textservice.ITextServicesManager;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public final class TextServicesManager {
     

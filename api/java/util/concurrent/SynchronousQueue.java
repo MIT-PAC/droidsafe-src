@@ -1,12 +1,18 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.util.concurrent.locks.*;
-import java.util.*;
+import java.util.AbstractQueue;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.concurrent.locks.LockSupport;
+import java.util.concurrent.locks.ReentrantLock;
+
 import libcore.util.EmptyArray;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQueue<E>, java.io.Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.913 -0400", hash_original_field = "14FF183E0CBF22E7DBE09157245ED2D4", hash_generated_field = "93A6B6C7FD7700420692EFD74AC915AE")
@@ -464,6 +470,7 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_368967572 =         a;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static long objectFieldOffset(sun.misc.Unsafe UNSAFE,
                                   String field, Class<?> klazz) {
         try {
@@ -485,6 +492,7 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_368967572 =         a;
         }
 
 
+        @DSModeled(DSC.SAFE)
         abstract Object transfer(Object e, boolean timed, long nanos);
 
         

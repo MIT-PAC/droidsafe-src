@@ -1,12 +1,13 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class TrustManagerFactorySpi {
     
@@ -16,13 +17,16 @@ public abstract class TrustManagerFactorySpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(KeyStore ks) throws KeyStoreException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(ManagerFactoryParameters spec)
             throws InvalidAlgorithmParameterException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract TrustManager[] engineGetTrustManagers();
 
     

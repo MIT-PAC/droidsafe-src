@@ -1,11 +1,13 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.112 -0400", hash_original_field = "4B551E83AB7D0C8C6FE6D2A3C3F57121", hash_generated_field = "DA4F581341DFFC093DAB2ED377CF1682")
@@ -95,6 +97,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.113 -0400", hash_original_method = "4D7BC16BC60EE786903D624E86CA0AFB", hash_generated_method = "95DEFF5A9EADB9D6B603F7B78FB45AE1")
     public  WeakHashMap(Map<? extends K, ? extends V> map) {
         this(map.size() < 6 ? 11 : map.size() * 2);
@@ -272,6 +275,7 @@ Map.Entry<K, V> varF26DBE38545460D6F6AE1D948FF53869_1660048985 =                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.251 -0400", hash_original_method = "058A25F673776D4338089073DA213D4E", hash_generated_method = "FF4B61F6AD260A5C10AA7555B0686E3F")
     @Override
     public Set<K> keySet() {
@@ -398,6 +402,7 @@ Set<K> varCB23CF4AFB8B7AE1843E733C4B0CC600_2072530331 =         keySet;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.253 -0400", hash_original_method = "1BF87F9B8C3D58711D484B01D41C9F2F", hash_generated_method = "22D944BAFA8F193C4DA7F6D90036826A")
     @Override
     public Collection<V> values() {
@@ -529,6 +534,7 @@ V var540C13E9E156B687226421B24F2DF178_1915783830 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.118 -0400", hash_original_method = "545F7F0FB84E7EA33FCF99594092AF0D", hash_generated_method = "B7AC0EA6E1B0E7CA341DCA528B75B8C3")
      Entry<K, V> getEntry(Object key) {
         addTaint(key.getTaint());
@@ -674,6 +680,7 @@ for(int i = elementData.length;--i >= 0;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.119 -0400", hash_original_method = "950CA8B0FD25845E584DCFB2BE4D9F32", hash_generated_method = "049A2798808BB6EE8039B91ECB5E0462")
      void removeEntry(Entry<K, V> toRemove) {
         addTaint(toRemove.getTaint());
@@ -822,6 +829,7 @@ for(int i = 0;i < elementData.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.120 -0400", hash_original_method = "57B3987EA7E50826E0AAD0198F968E42", hash_generated_method = "70AD55C56E4025450542E2A5226752DF")
     @Override
     public void putAll(Map<? extends K, ? extends V> map) {
@@ -899,6 +907,7 @@ V var540C13E9E156B687226421B24F2DF178_1886479484 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.121 -0400", hash_original_method = "F23833AECC848C129604A1D671C10BB2", hash_generated_method = "271754B42238C56180B1CCD533B129AC")
     private void putAllImpl(Map<? extends K, ? extends V> map) {
         addTaint(map.getTaint());

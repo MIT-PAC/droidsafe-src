@@ -1,22 +1,23 @@
 package android.animation;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+
 import android.content.Context;
 import android.content.res.Resources;
+import android.content.res.Resources.NotFoundException;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
-import android.content.res.Resources.NotFoundException;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.util.Xml;
 import android.view.animation.AnimationUtils;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import java.io.IOException;
-import java.util.ArrayList;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class AnimatorInflater {
     

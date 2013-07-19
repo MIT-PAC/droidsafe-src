@@ -1,10 +1,12 @@
 package android.graphics;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.os.SystemClock;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public class Interpolator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.219 -0400", hash_original_field = "9DD1709B968485B920C9BE604E78F1F8", hash_generated_field = "68C3E9DC71F308640D17475B37A6DDEF")
@@ -66,6 +68,7 @@ public class Interpolator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.223 -0400", hash_original_method = "89BB77AE086853608E25F99A94348DC0", hash_generated_method = "08F9B6933EBC8525504645E04D829003")
     public final int getKeyFrameCount() {
         int varEDB3186346B1612B7704D58A9CAAE15F_462752270 = (mFrameCount);
@@ -76,6 +79,7 @@ public class Interpolator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.223 -0400", hash_original_method = "776BE84F4731B9CD4E842330007BED2A", hash_generated_method = "3B9547BF51C46D08AD2B9C70DA3BF2AA")
     public final int getValueCount() {
         int var9DD1709B968485B920C9BE604E78F1F8_725202617 = (mValueCount);

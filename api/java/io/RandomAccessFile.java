@@ -1,22 +1,30 @@
 package java.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import dalvik.system.CloseGuard;
+import static libcore.io.OsConstants.O_CREAT;
+import static libcore.io.OsConstants.O_RDONLY;
+import static libcore.io.OsConstants.O_RDWR;
+import static libcore.io.OsConstants.O_SYNC;
+import static libcore.io.OsConstants.SEEK_CUR;
+import static libcore.io.OsConstants.SEEK_SET;
+
 import java.nio.ByteOrder;
 import java.nio.NioUtils;
 import java.nio.channels.FileChannel;
 import java.nio.charset.ModifiedUtf8;
 import java.util.Arrays;
+
 import libcore.io.ErrnoException;
 import libcore.io.IoBridge;
 import libcore.io.IoUtils;
 import libcore.io.Libcore;
 import libcore.io.Memory;
 import libcore.io.SizeOf;
-import static libcore.io.OsConstants.*;
+import dalvik.system.CloseGuard;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.469 -0400", hash_original_field = "36EBA1E1E343279857EA7F69A597324E", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
@@ -181,6 +189,7 @@ FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_946307640 =         channel;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.474 -0400", hash_original_method = "7178DA6FA6DD367775EBAB657FD1BDA0", hash_generated_method = "CF291064A1C8A11D457B382859D1F94B")
     public final FileDescriptor getFD() throws IOException {
 FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_234051605 =         fd;

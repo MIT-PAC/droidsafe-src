@@ -1,10 +1,11 @@
 package android.graphics;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.util.FloatMath;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ColorMatrix {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.124 -0400", hash_original_field = "715644611DDEB8B9E5B07CF83EAF2601", hash_generated_field = "EB497EE5AD03BD0F08D38D6437611B86")
@@ -40,6 +41,7 @@ public class ColorMatrix {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.125 -0400", hash_original_method = "C51050FB528280ED78B19148B7D68B9E", hash_generated_method = "14388CEC64EDF5FBF4BD4F2F61506FB5")
     public final float[] getArray() {
         float[] var982501881A3C318D6605E92D3AB0ADBA_508493859 = (mArray);

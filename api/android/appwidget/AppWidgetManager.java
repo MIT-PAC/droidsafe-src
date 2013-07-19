@@ -1,9 +1,10 @@
 package android.appwidget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.lang.ref.WeakReference;
+import java.util.List;
+import java.util.WeakHashMap;
+
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -13,10 +14,13 @@ import android.os.ServiceManager;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.widget.RemoteViews;
+
 import com.android.internal.appwidget.IAppWidgetService;
-import java.lang.ref.WeakReference;
-import java.util.List;
-import java.util.WeakHashMap;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class AppWidgetManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.745 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")

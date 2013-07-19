@@ -1,9 +1,6 @@
 package javax.crypto;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.nio.ByteBuffer;
 import java.security.AlgorithmParameters;
 import java.security.InvalidAlgorithmParameterException;
@@ -13,6 +10,10 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.AlgorithmParameterSpec;
 
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+
 public abstract class CipherSpi {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.058 -0400", hash_original_method = "57088A35FB2104AD2CEDD2998A7B7578", hash_generated_method = "B175E18BC1028895593001486C8188AB")
@@ -21,44 +22,55 @@ public abstract class CipherSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineSetMode(String mode)
             throws NoSuchAlgorithmException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineSetPadding(String padding)
             throws NoSuchPaddingException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract int engineGetBlockSize();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract int engineGetOutputSize(int inputLen);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract byte[] engineGetIV();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract AlgorithmParameters engineGetParameters();
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(int opmode, Key key, SecureRandom random)
             throws InvalidKeyException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(int opmode, Key key,
             AlgorithmParameterSpec params, SecureRandom random)
             throws InvalidKeyException, InvalidAlgorithmParameterException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(int opmode, Key key,
             AlgorithmParameters params, SecureRandom random)
             throws InvalidKeyException, InvalidAlgorithmParameterException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract byte[] engineUpdate(byte[] input, int inputOffset,
             int inputLen);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract int engineUpdate(byte[] input, int inputOffset,
             int inputLen, byte[] output, int outputOffset)
             throws ShortBufferException;
@@ -133,10 +145,12 @@ public abstract class CipherSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract byte[] engineDoFinal(byte[] input, int inputOffset,
             int inputLen) throws IllegalBlockSizeException, BadPaddingException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract int engineDoFinal(byte[] input, int inputOffset,
             int inputLen, byte[] output, int outputOffset)
             throws ShortBufferException, IllegalBlockSizeException,

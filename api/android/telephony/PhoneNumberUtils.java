@@ -1,13 +1,14 @@
 package android.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.i18n.phonenumbers.NumberParseException;
-import com.android.i18n.phonenumbers.PhoneNumberUtil;
-import com.android.i18n.phonenumbers.PhoneNumberUtil.PhoneNumberFormat;
-import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
+import static com.android.internal.telephony.TelephonyProperties.PROPERTY_ICC_OPERATOR_ISO_COUNTRY;
+import static com.android.internal.telephony.TelephonyProperties.PROPERTY_IDP_STRING;
+import static com.android.internal.telephony.TelephonyProperties.PROPERTY_OPERATOR_ISO_COUNTRY;
+
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -21,12 +22,16 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseIntArray;
-import static com.android.internal.telephony.TelephonyProperties.PROPERTY_ICC_OPERATOR_ISO_COUNTRY;
-import static com.android.internal.telephony.TelephonyProperties.PROPERTY_IDP_STRING;
-import static com.android.internal.telephony.TelephonyProperties.PROPERTY_OPERATOR_ISO_COUNTRY;
-import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
+import com.android.i18n.phonenumbers.NumberParseException;
+import com.android.i18n.phonenumbers.PhoneNumberUtil;
+import com.android.i18n.phonenumbers.PhoneNumberUtil.PhoneNumberFormat;
+import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class PhoneNumberUtils {
     
@@ -43,27 +48,32 @@ public class PhoneNumberUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static boolean is12Key(char c) {
         return (c >= '0' && c <= '9') || c == '*' || c == '#';
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static boolean isDialable(char c) {
         return (c >= '0' && c <= '9') || c == '*' || c == '#' || c == '+' || c == WILD;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static boolean isReallyDialable(char c) {
         return (c >= '0' && c <= '9') || c == '*' || c == '#' || c == '+';
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static boolean isNonSeparator(char c) {
         return (c >= '0' && c <= '9') || c == '*' || c == '#' || c == '+'
                 || c == WILD || c == WAIT || c == PAUSE;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final static boolean isStartsPostDial(char c) {
         return c == PAUSE || c == WAIT;
     }

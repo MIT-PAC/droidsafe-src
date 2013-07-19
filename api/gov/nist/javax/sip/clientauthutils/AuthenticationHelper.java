@@ -1,16 +1,9 @@
 package gov.nist.javax.sip.clientauthutils;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.text.ParseException;
-import java.util.Collection;
 import javax.sip.ClientTransaction;
-import javax.sip.InvalidArgumentException;
 import javax.sip.SipException;
 import javax.sip.SipProvider;
-import javax.sip.header.AuthorizationHeader;
 import javax.sip.message.Request;
 import javax.sip.message.Response;
 

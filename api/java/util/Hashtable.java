@@ -1,15 +1,17 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.ObjectStreamField;
 import java.io.Serializable;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Cloneable, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.341 -0400", hash_original_field = "AAB9E1DE16F38176F86D7A92BA337A8D", hash_generated_field = "19DEB795009FCB78D63A1C2C298CE954")
@@ -118,6 +120,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.346 -0400", hash_original_method = "6950B91F5E6C68C49CB594AFD1673B84", hash_generated_method = "B59FAFD8CEADB25F80DD1853537DF4FA")
     public  Hashtable(Map<? extends K, ? extends V> map) {
         this(capacityForInitSize(map.size()));
@@ -128,6 +131,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.347 -0400", hash_original_method = "6631235722E4D3190E3529D2039DDD7A", hash_generated_method = "FE36B163F86E1A97E198B18AF38E1841")
     private void constructorPutAll(Map<? extends K, ? extends V> map) {
         addTaint(map.getTaint());
@@ -450,6 +454,7 @@ for(HashtableEntry<K, V> e = first;e != null;e = e.next)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.358 -0400", hash_original_method = "46C920EF16234ECC2EBDE62DDADD6435", hash_generated_method = "54874BF81DEC6C650960B5D6E3D4D392")
     public synchronized void putAll(Map<? extends K, ? extends V> map) {
         addTaint(map.getTaint());
@@ -649,6 +654,7 @@ V var540C13E9E156B687226421B24F2DF178_812101797 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.367 -0400", hash_original_method = "476F610DDCFF0EB4D26DB47138B4B0A3", hash_generated_method = "0BF30D06B517FD8D8DA79FFC3A6A2F5C")
     public synchronized Set<K> keySet() {
         Set<K> ks = keySet;
@@ -661,6 +667,7 @@ Set<K> varB6853687BE649BA8B10F9701AD179BB7_757009538 =         (ks != null) ? ks
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.367 -0400", hash_original_method = "04B12ED0E2A0A54B9C93D860501FCFFB", hash_generated_method = "E59F3976A2B93651AD7EFEBF2CC2964C")
     public synchronized Collection<V> values() {
         Collection<V> vs = values;
@@ -673,6 +680,7 @@ Collection<V> var5CABA883D65798B391E2C02013734397_23688239 =         (vs != null
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.368 -0400", hash_original_method = "54875E203703AD755476CBDF0B4AFC75", hash_generated_method = "CF6379F765767D007D563C4052D00846")
     public synchronized Set<Entry<K, V>> entrySet() {
         Set<Entry<K, V>> es = entrySet;
@@ -685,6 +693,7 @@ Set<Entry<K, V>> var25D080FAAE722B04AA5C8EBDE33DD606_370579160 =         (es != 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.368 -0400", hash_original_method = "BD8590C2A6B44E1AD87F42CA1DDBEEC0", hash_generated_method = "8693180988660B3F37CDC637A13CD5A8")
     public synchronized Enumeration<K> keys() {
 Enumeration<K> var72EDC079A47B19D9B47B38BBA00AF901_1738885427 =         new KeyEnumeration();
@@ -695,6 +704,7 @@ Enumeration<K> var72EDC079A47B19D9B47B38BBA00AF901_1738885427 =         new KeyE
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.368 -0400", hash_original_method = "D92B3AB4F78D152BCFDB4F438052384E", hash_generated_method = "3698A0D9DC498C7A503FBCDCEFC73B91")
     public synchronized Enumeration<V> elements() {
 Enumeration<V> var3998A6162E9CBDC16A5D7E7745A926CC_955772035 =         new ValueEnumeration();
@@ -1153,6 +1163,7 @@ String varFE698C13EFD83B87FAF2DC2AB0874271_632215990 =             key + "=" + v
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.380 -0400", hash_original_method = "5FA6641462F5564CAC982C4AF6FCFB6C", hash_generated_method = "EA1FBE554BB593E298E0DEEBCE1CCB86")
          HashtableEntry<K, V> nextEntry() {
             if(modCount != expectedModCount)            
@@ -1195,6 +1206,7 @@ HashtableEntry<K, V> var4D0F707C8B7B92ABA91FE6E8CAA540A2_1920240741 =           
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.381 -0400", hash_original_method = "1C3D72122BB58702CE822C81122C0D27", hash_generated_method = "8F4C848EA71064A576284FEB71341C76")
          HashtableEntry<K, V> nextEntryNotFailFast() {
             if(nextEntry == null)            
@@ -1319,6 +1331,7 @@ V var57B066C0B962D4E7D7CC8F9272046644_572177911 =             nextEntry().value;
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.382 -0400", hash_original_method = "C7E2B840B075445DC1033B130AB2E6A6", hash_generated_method = "07AFD30287B4D7E2661B5B329027D44D")
         public Entry<K, V> next() {
 Entry<K, V> varDC8D7EA83135934E991F02D91E02BF6E_2040329618 =             nextEntry();

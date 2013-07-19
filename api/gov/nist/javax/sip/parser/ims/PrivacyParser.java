@@ -1,18 +1,18 @@
 package gov.nist.javax.sip.parser.ims;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import gov.nist.core.*;
+import gov.nist.core.Token;
 import gov.nist.javax.sip.header.SIPHeader;
-import gov.nist.javax.sip.parser.Lexer;
-import gov.nist.javax.sip.parser.TokenTypes;
-import gov.nist.javax.sip.parser.HeaderParser;
-import java.text.ParseException;
 import gov.nist.javax.sip.header.ims.Privacy;
 import gov.nist.javax.sip.header.ims.PrivacyList;
 import gov.nist.javax.sip.header.ims.SIPHeaderNamesIms;
+import gov.nist.javax.sip.parser.HeaderParser;
+import gov.nist.javax.sip.parser.Lexer;
+import gov.nist.javax.sip.parser.TokenTypes;
+
+import java.text.ParseException;
+
+import droidsafe.annotations.DSGenerator;
 
 public class PrivacyParser extends HeaderParser implements TokenTypes {
     

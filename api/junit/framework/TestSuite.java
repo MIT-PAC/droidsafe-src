@@ -1,15 +1,19 @@
 package junit.framework;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.util.Vector;
-import java.util.Enumeration;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.lang.reflect.*;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.util.Enumeration;
+import java.util.Vector;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class TestSuite implements Test {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.342 -0400", hash_original_field = "3BCA106602C866BE981E31C77F5BEC5D", hash_generated_field = "B0AB7F7DF848E16FC564E5B040C82D2A")

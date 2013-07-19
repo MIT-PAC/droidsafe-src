@@ -1,11 +1,12 @@
 package java.nio;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.nio.channels.FileChannel.MapMode;
+
 import libcore.io.SizeOf;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 final class MappedByteBufferAdapter extends MappedByteBuffer {
     

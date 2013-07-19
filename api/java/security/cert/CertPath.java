@@ -1,9 +1,6 @@
 package java.security.cert;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.ByteArrayInputStream;
 import java.io.NotSerializableException;
 import java.io.ObjectStreamException;
@@ -11,6 +8,11 @@ import java.io.ObjectStreamField;
 import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class CertPath implements Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.618 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "AB2C9E2EF2C4EBDBF6BF18A679B45B62")
@@ -126,17 +128,21 @@ String var2460B846747F8B22185AD8BE722266A5_891863046 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract List<? extends Certificate> getCertificates();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte[] getEncoded()
         throws CertificateEncodingException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract byte[] getEncoded(String encoding)
         throws CertificateEncodingException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Iterator<String> getEncodings();
 
     

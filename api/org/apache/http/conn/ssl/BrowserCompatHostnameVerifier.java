@@ -1,10 +1,11 @@
 package org.apache.http.conn.ssl;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import javax.net.ssl.SSLException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class BrowserCompatHostnameVerifier extends AbstractVerifier {
     
@@ -29,6 +30,7 @@ public class BrowserCompatHostnameVerifier extends AbstractVerifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.055 -0400", hash_original_method = "94D0B9A8609089C8ED7C7100365BC140", hash_generated_method = "E5AD7C18D4E1F25D66578CB53964DD39")
     @Override
     public final String toString() {

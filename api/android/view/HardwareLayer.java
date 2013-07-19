@@ -1,12 +1,13 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 abstract class HardwareLayer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.422 -0400", hash_original_field = "A3DB1626A190732E588FD0D14FC8FB31", hash_generated_field = "AF6410B200BC05DCA2CF0BE65165448A")
@@ -73,24 +74,31 @@ abstract class HardwareLayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean isValid();
 
     
+    @DSModeled(DSC.SAFE)
     abstract void resize(int width, int height);
 
     
+    @DSModeled(DSC.SAFE)
     abstract HardwareCanvas getCanvas();
 
     
+    @DSModeled(DSC.SAFE)
     abstract void destroy();
 
     
+    @DSModeled(DSC.SAFE)
     abstract HardwareCanvas start(Canvas currentCanvas);
 
     
+    @DSModeled(DSC.SAFE)
     abstract void end(Canvas currentCanvas);
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean copyInto(Bitmap bitmap);
 
     
@@ -107,6 +115,7 @@ abstract class HardwareLayer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void setTransform(Matrix matrix);
 
     

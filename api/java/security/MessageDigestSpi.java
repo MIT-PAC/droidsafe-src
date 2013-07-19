@@ -1,10 +1,11 @@
 package java.security;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.nio.ByteBuffer;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class MessageDigestSpi {
     
@@ -26,9 +27,11 @@ public abstract class MessageDigestSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineUpdate(byte input);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineUpdate(byte[] input, int offset, int len);
 
     
@@ -75,6 +78,7 @@ public abstract class MessageDigestSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract byte[] engineDigest();
 
     
@@ -137,6 +141,7 @@ public abstract class MessageDigestSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineReset();
 
     

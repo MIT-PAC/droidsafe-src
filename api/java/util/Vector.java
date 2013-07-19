@@ -1,13 +1,15 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.lang.reflect.Array;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.767 -0400", hash_original_field = "BC8C6DCF12CE09E50A98BB57ADFCADD9", hash_generated_field = "499A2D73243CED99A42E214D64505A6C")
@@ -59,6 +61,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.770 -0400", hash_original_method = "5554DADF2588E03BDCF1E2168D3E3C3F", hash_generated_method = "AB91ED40A9838270A2ED5EA6CEA47583")
     public  Vector(Collection<? extends E> collection) {
         this(collection.size(), 0);
@@ -125,6 +128,7 @@ E[] var1B2FE2B69B45A4B74BDC1E1658079136_1942140942 =         (E[]) new Object[si
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.779 -0400", hash_original_method = "721C95E0B3ACA6F09AE8F219EA79313F", hash_generated_method = "FEED2E7AF62F09D2E0571F71F47C5EAA")
     @Override
     public synchronized boolean addAll(int location, Collection<? extends E> collection) {
@@ -169,6 +173,7 @@ E[] var1B2FE2B69B45A4B74BDC1E1658079136_1942140942 =         (E[]) new Object[si
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.781 -0400", hash_original_method = "936868945967E6EE9BEE2301A3FC2D7D", hash_generated_method = "9F3835C87913D8025D0DB15A02796858")
     @Override
     public synchronized boolean addAll(Collection<? extends E> collection) {
@@ -263,6 +268,7 @@ Object varAFE05DA6BCC31D768176AC4CA91A2154_1962887840 =             vector;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.783 -0400", hash_original_method = "51334898ABB14C1CD821FC4FE1B2383C", hash_generated_method = "93D61FF6AC6A8D03C267CFAE0DDE3DE9")
     @Override
     public synchronized boolean containsAll(Collection<?> collection) {
@@ -307,6 +313,7 @@ E var68EF0BD40932FF2807234701D0B595C2_393938178 =             (E) elementData[lo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.800 -0400", hash_original_method = "B6E84DE201AAEF8307F5E7CA8A6AEF90", hash_generated_method = "3394A8B949040FA17A0B7582B856E695")
     public Enumeration<E> elements() {
 Enumeration<E> varBE1AF8000F96BB9037958F34C83E40EA_1239515166 =         new Enumeration<E>() {        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.798 -0400", hash_original_field = "30905E6E8D02502121446F7E78ED3C72", hash_generated_field = "BEC7A604E336F37C0CC9A9336799291F")
@@ -874,6 +881,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_416867409 =             result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.824 -0400", hash_original_method = "8C6CFD9299AE63E6D8F991F5FD437E67", hash_generated_method = "0A7F2CB40947192C34EF68B4D34ECD2B")
     @Override
     public synchronized boolean removeAll(Collection<?> collection) {
@@ -1021,6 +1029,7 @@ for(int i = 0;i < elementCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.839 -0400", hash_original_method = "3D3F7D0269EE9A4A0E6B970CD7AB0599", hash_generated_method = "8170F1AD4F47B779A8BA92E76EEF169E")
     @Override
     public synchronized boolean retainAll(Collection<?> collection) {
@@ -1126,6 +1135,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_999939029 =             result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.852 -0400", hash_original_method = "12E21B76E32A1D6BB3AE5A157C1F7673", hash_generated_method = "D2AF8258C812D24BD3B011CE4F372BE7")
     @Override
     public synchronized List<E> subList(int start, int end) {

@@ -1,19 +1,23 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.telephony.DataConnection.UpdateLinkPropertyResult;
-import com.android.internal.util.AsyncChannel;
-import com.android.internal.util.Protocol;
+import java.util.ArrayList;
+import java.util.Collection;
+
 import android.app.PendingIntent;
 import android.net.LinkCapabilities;
 import android.net.LinkProperties;
 import android.net.ProxyProperties;
 import android.os.Message;
-import java.util.ArrayList;
-import java.util.Collection;
+
+import com.android.internal.telephony.DataConnection.UpdateLinkPropertyResult;
+import com.android.internal.util.AsyncChannel;
+import com.android.internal.util.Protocol;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class DataConnectionAc extends AsyncChannel {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.997 -0400", hash_original_field = "503F6607C959C61B036C1484733875DB", hash_generated_field = "59F9615F1046A159253328ABFF9EBAC4")

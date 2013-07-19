@@ -1,20 +1,19 @@
 package android.nfc.tech;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.IOException;
+
 import android.nfc.ErrorCodes;
 import android.nfc.FormatException;
 import android.nfc.INfcTag;
 import android.nfc.NdefMessage;
-import android.nfc.NfcAdapter;
 import android.nfc.Tag;
-import android.nfc.TagLostException;
 import android.os.Bundle;
 import android.os.RemoteException;
-import android.util.Log;
-import java.io.IOException;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class Ndef extends BasicTagTechnology {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.659 -0400", hash_original_field = "86DEF057D6C153F9465C3DFD099AF5F7", hash_generated_field = "147ADCC633068E8F332A302E1540AD62")

@@ -1,12 +1,13 @@
 package java.nio.channels;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.nio.channels.spi.AbstractInterruptibleChannel;
 import java.nio.channels.spi.SelectorProvider;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SelectableChannel extends AbstractInterruptibleChannel implements Channel {
     
@@ -16,22 +17,28 @@ public abstract class SelectableChannel extends AbstractInterruptibleChannel imp
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Object blockingLock();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SelectableChannel configureBlocking(boolean block)
             throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isBlocking();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isRegistered();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SelectionKey keyFor(Selector sel);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SelectorProvider provider();
 
     
@@ -47,10 +54,12 @@ SelectionKey var5876B2AC1310ED80B9A3C6592446A1F8_1234949690 =         register(s
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SelectionKey register(Selector sel, int ops, Object att)
             throws ClosedChannelException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int validOps();
 
     

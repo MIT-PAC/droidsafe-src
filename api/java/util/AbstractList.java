@@ -1,9 +1,10 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class AbstractList<E> extends AbstractCollection<E> implements List<E> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.419 -0400", hash_original_field = "675B3022548A1029F9CE7A2C25B23BBF", hash_generated_field = "D904B48F1A1A3F19ECDEE2D75BF7C70B")
@@ -17,6 +18,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.420 -0400", hash_original_method = "CE54A57EF9628E9FD413F964E9F93054", hash_generated_method = "A01914328316F1F0C4A33E8F194581C9")
     public void add(int location, E object) {
         addTaint(object.getTaint());
@@ -29,6 +31,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.421 -0400", hash_original_method = "A9C598D3B94D3691F1716D511A033C5A", hash_generated_method = "D9D0CC495BB2B1429BF0FAFFEE6FF9AF")
     @Override
     public boolean add(E object) {
@@ -43,6 +46,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.421 -0400", hash_original_method = "35A5EA4215B8229218ACFA970E186418", hash_generated_method = "0127629B0B8F67B14192AFA72258FAC0")
     public boolean addAll(int location, Collection<? extends E> collection) {
         addTaint(collection.getTaint());
@@ -138,6 +142,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract E get(int location);
 
     
@@ -220,6 +225,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.427 -0400", hash_original_method = "20CA001488534933B2DD59F566742F0C", hash_generated_method = "FC74168216C4ED32DCE073889FCFFA54")
     @Override
     public Iterator<E> iterator() {
@@ -284,6 +290,7 @@ Iterator<E> var98A17F5C644EE571B50E8AB722E91624_1992156947 =         new SimpleL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.429 -0400", hash_original_method = "DF7BE0B13ABC5A9B1C74313BD06FB64C", hash_generated_method = "0DFFD4ED180C1039DAC197DE7ED416B7")
     public ListIterator<E> listIterator() {
 ListIterator<E> var68247D54D1DDB9E66659394CC1668C3F_1868311428 =         listIterator(0);
@@ -294,6 +301,7 @@ ListIterator<E> var68247D54D1DDB9E66659394CC1668C3F_1868311428 =         listIte
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.430 -0400", hash_original_method = "E1D07920E5A846C0C2E714EA3D018977", hash_generated_method = "A397E522795A04A37957E6B7762430ED")
     public ListIterator<E> listIterator(int location) {
         addTaint(location);
@@ -349,6 +357,7 @@ for(int i = start;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.432 -0400", hash_original_method = "016990D4D05A63F7A0209311563DE785", hash_generated_method = "62FDF1A14BB0C18C80410F837219FFFC")
     public List<E> subList(int start, int end) {
         addTaint(end);
@@ -697,6 +706,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1816913652 =                     result;
     
     private static final class SubAbstractListRandomAccess<E> extends SubAbstractList<E> implements RandomAccess {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.444 -0400", hash_original_method = "DDA87CACC9A09C50E7E63C031564E416", hash_generated_method = "6B7B76F5C18BE79DC74610147357D3EB")
           SubAbstractListRandomAccess(AbstractList<E> list, int start, int end) {
             super(list, start, end);
@@ -722,6 +732,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1816913652 =                     result;
 
         private int size;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.446 -0400", hash_original_method = "9C3A542F3B8DAB5106AD210DFA1C1074", hash_generated_method = "1AB05E7BE46F8223923A52968D13AFBB")
           SubAbstractList(AbstractList<E> list, int start, int end) {
             fullList = list;
@@ -778,6 +789,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1816913652 =                     result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.447 -0400", hash_original_method = "D608BD753C390180CB19FA078294D673", hash_generated_method = "16020E29E75D11C35320005635BDD2D7")
         @Override
         public boolean addAll(int location, Collection<? extends E> collection) {
@@ -821,6 +833,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1816913652 =                     result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.448 -0400", hash_original_method = "0325AEC55335C504C5D11E6C91DFCB89", hash_generated_method = "BB17679978ADBD1E5EB825EDA66C855F")
         @Override
         public boolean addAll(Collection<? extends E> collection) {
@@ -883,6 +896,7 @@ E var766ACCB0072F190CABC18A57CF6D40BA_1237569008 =                     fullList.
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.449 -0400", hash_original_method = "1D00ECD22B3575A885077212162F97B2", hash_generated_method = "3B4DBE71A5AC4AE1C29159EDA63E2458")
         @Override
         public Iterator<E> iterator() {
@@ -894,6 +908,7 @@ Iterator<E> var68247D54D1DDB9E66659394CC1668C3F_648577415 =             listIter
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.449 -0400", hash_original_method = "37BF1A446E854722F0A00A1DF2492F76", hash_generated_method = "5AD41752A29263265B18FD12D9F53563")
         @Override
         public ListIterator<E> listIterator(int location) {

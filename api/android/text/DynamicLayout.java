@@ -1,13 +1,15 @@
 package android.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.lang.ref.WeakReference;
+
 import android.graphics.Paint;
 import android.text.style.UpdateLayout;
 import android.text.style.WrapTogetherSpan;
-import java.lang.ref.WeakReference;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class DynamicLayout extends Layout {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.528 -0400", hash_original_field = "70C30248F16505818D6F9EB3DE4F855F", hash_generated_field = "15367B8B2C746CFC484DB8A82189D9A1")
@@ -421,6 +423,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.538 -0400", hash_original_method = "632C7F2120605B5CA7A1A3052A452575", hash_generated_method = "9C3D85BC31E00CCE593C5EB9C48B5366")
     @Override
     public final Directions getLineDirections(int line) {

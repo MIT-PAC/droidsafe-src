@@ -1,11 +1,11 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import static com.android.internal.telephony.RILConstants.*;
 import android.os.Parcel;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class CdmaInformationRecords {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.645 -0400", hash_original_field = "DE17F0F24B49F8364187891F8550FFBB", hash_generated_field = "946952F9E0B02B6DCE06B7EC0F5CF726")

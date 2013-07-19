@@ -1,12 +1,8 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.app.Application;
 import android.content.Context;
-import android.content.res.CompatibilityInfo;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.PixelFormat;
@@ -15,8 +11,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.SystemProperties;
-import android.util.Slog;
 import android.view.accessibility.AccessibilityEvent;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Window {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.964 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -91,6 +90,7 @@ public abstract class Window {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.967 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "40943E55B1E6783C2DD60AE28A632A08")
     public final Context getContext() {
 Context var178E2AD52D6FBBB503F908168856B574_780564962 =         mContext;
@@ -145,6 +145,7 @@ TypedArray varE5D89730C76964B19AE0B3B4D5D0266A_1312436474 =             mWindowS
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.969 -0400", hash_original_method = "DCCDF946CE22DD9064205FD95E96DECD", hash_generated_method = "BF8BFC7D42674D7A57613D88BDFC9542")
     public final Window getContainer() {
 Window varCFF48C15085C1760829740A9CBEECBE6_1151438324 =         mContainer;
@@ -155,6 +156,7 @@ Window varCFF48C15085C1760829740A9CBEECBE6_1151438324 =         mContainer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.970 -0400", hash_original_method = "E436A7964E92BE677F4D553F3B295F27", hash_generated_method = "F5D2C9EE6A0A54DEDC1F83FB367CB0BA")
     public final boolean hasChildren() {
         boolean var9B0261922B47B9E850EEBFAE778A57BC_163511306 = (mHasChildren);
@@ -165,6 +167,7 @@ Window varCFF48C15085C1760829740A9CBEECBE6_1151438324 =         mContainer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.970 -0400", hash_original_method = "66C6B9EE658776AAE6ED0A2EE9CF8E48", hash_generated_method = "592FCE4D1921959BBFF73FDA835F18F9")
     public final void destroy() {
         mDestroyed = true;
@@ -173,6 +176,7 @@ Window varCFF48C15085C1760829740A9CBEECBE6_1151438324 =         mContainer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.971 -0400", hash_original_method = "36E279B4F2F5FC702C91E645725B1821", hash_generated_method = "5650DA2C5EA864951780CF59C23F4800")
     public final boolean isDestroyed() {
         boolean varC724374D1A8B3D38592BCBAA64034D32_996465522 = (mDestroyed);
@@ -240,6 +244,7 @@ WindowManager varC209C60BFE9D7B593AFE54EB902C1459_1829875542 =         mWindowMa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.974 -0400", hash_original_method = "F07002384A5D5C29596645EE02BC1965", hash_generated_method = "4B2E6FA543BF0E108EF61EBB67C4C694")
     public final Callback getCallback() {
 Callback var31075088B2A2E9D45AA9874A2DA07598_1494000183 =         mCallback;
@@ -250,12 +255,15 @@ Callback var31075088B2A2E9D45AA9874A2DA07598_1494000183 =         mCallback;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void takeSurface(SurfaceHolder.Callback2 callback);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void takeInputQueue(InputQueue.Callback callback);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isFloating();
 
     
@@ -479,6 +487,7 @@ Callback var31075088B2A2E9D45AA9874A2DA07598_1494000183 =         mCallback;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.983 -0400", hash_original_method = "1740BD4A684D4859A9304C42BFBB0628", hash_generated_method = "A6314945701DAEE9B76C2C3AF61AE666")
     public final WindowManager.LayoutParams getAttributes() {
 WindowManager.LayoutParams varE57270F4ADC424A6223549BA17009D8D_1150603740 =         mWindowAttributes;
@@ -489,6 +498,7 @@ WindowManager.LayoutParams varE57270F4ADC424A6223549BA17009D8D_1150603740 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.983 -0400", hash_original_method = "78D10AE7087B6FEDF7B8FA7D71B4D366", hash_generated_method = "FF0001B7E743106C0A1DF4DA017BFFD5")
     protected final int getForcedWindowFlags() {
         int var4EE36C5865D89E55EC7E436C6E156515_400803135 = (mForcedWindowFlags);
@@ -499,6 +509,7 @@ WindowManager.LayoutParams varE57270F4ADC424A6223549BA17009D8D_1150603740 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.983 -0400", hash_original_method = "3FB6B9359B05585EE87D1E296E0BA56E", hash_generated_method = "5BC8D0CB6C03E30D34B330C8A02C17C8")
     protected final boolean hasSoftInputMode() {
         boolean var21F55EAD7EB0233F4CD6F052E1E40E3A_760848583 = (mHasSoftInputMode);
@@ -536,6 +547,7 @@ WindowManager.LayoutParams varE57270F4ADC424A6223549BA17009D8D_1150603740 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void alwaysReadCloseOnTouchAttr();
 
     
@@ -642,6 +654,7 @@ WindowManager.LayoutParams varE57270F4ADC424A6223549BA17009D8D_1150603740 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.985 -0400", hash_original_method = "825B8CF70F64E49AF2D9884D4F1141F6", hash_generated_method = "988412F7B05637A8916C3C1E4F0A78C5")
     public final boolean isActive() {
         boolean var972BCC941F1372E1A778AE1D6E99926D_685804980 = (mIsActive);
@@ -663,59 +676,76 @@ View var4A691E6E01A019BBE376A012F4AAC75B_204405514 =         getDecorView().find
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setContentView(int layoutResID);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setContentView(View view);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setContentView(View view, ViewGroup.LayoutParams params);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void addContentView(View view, ViewGroup.LayoutParams params);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract View getCurrentFocus();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract LayoutInflater getLayoutInflater();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setTitle(CharSequence title);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setTitleColor(int textColor);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void openPanel(int featureId, KeyEvent event);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void closePanel(int featureId);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void togglePanel(int featureId, KeyEvent event);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void invalidatePanelMenu(int featureId);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean performPanelShortcut(int featureId,
                                                  int keyCode,
                                                  KeyEvent event,
                                                  int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean performPanelIdentifierAction(int featureId,
                                                  int id,
                                                  int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void closeAllPanels();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean performContextMenuIdentifierAction(int id, int flags);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void onConfigurationChanged(Configuration newConfig);
 
     
@@ -728,57 +758,75 @@ View var4A691E6E01A019BBE376A012F4AAC75B_204405514 =         getDecorView().find
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setBackgroundDrawable(Drawable drawable);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setFeatureDrawableResource(int featureId, int resId);
 
     
+    @DSModeled(DSC.SPEC)
     public abstract void setFeatureDrawableUri(int featureId, Uri uri);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setFeatureDrawable(int featureId, Drawable drawable);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setFeatureDrawableAlpha(int featureId, int alpha);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setFeatureInt(int featureId, int value);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void takeKeyEvents(boolean get);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean superDispatchKeyEvent(KeyEvent event);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean superDispatchKeyShortcutEvent(KeyEvent event);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean superDispatchTouchEvent(MotionEvent event);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean superDispatchTrackballEvent(MotionEvent event);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean superDispatchGenericMotionEvent(MotionEvent event);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract View getDecorView();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract View peekDecorView();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Bundle saveHierarchyState();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void restoreHierarchyState(Bundle savedInstanceState);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void onActive();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.988 -0400", hash_original_method = "201C8696C96B5CE4C022F78574069483", hash_generated_method = "51606A3F1518CC9B7B12764FABE3A7D7")
     protected final int getFeatures() {
         int varB6FEAD34C9CE2FFD9FDB8BCB7536B5B4_828669074 = (mFeatures);
@@ -800,6 +848,7 @@ View var4A691E6E01A019BBE376A012F4AAC75B_204405514 =         getDecorView().find
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.989 -0400", hash_original_method = "D46E90B97B876B97E16E92A5FEA18EB3", hash_generated_method = "F1264BD86C463ED457DC7E9A9EBE1323")
     protected final int getLocalFeatures() {
         int var03B104EA3187129C36E0DC9BFDDB4C89_1433321587 = (mLocalFeatures);
@@ -845,18 +894,23 @@ View var4A691E6E01A019BBE376A012F4AAC75B_204405514 =         getDecorView().find
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setChildDrawable(int featureId, Drawable drawable);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setChildInt(int featureId, int value);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isShortcutKey(int keyCode, KeyEvent event);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setVolumeControlStream(int streamType);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getVolumeControlStream();
 
     

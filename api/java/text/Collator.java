@@ -1,13 +1,15 @@
 package java.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.Comparator;
 import java.util.Locale;
+
 import libcore.icu.ICU;
 import libcore.icu.RuleBasedCollatorICU;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Collator implements Comparator<Object>, Cloneable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.700 -0400", hash_original_field = "6B1141D8E17A149C65A8272EB5BA314A", hash_generated_field = "571EB1F8C774D603CEDE0C031FD66C11")
@@ -74,6 +76,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1596496749 =             clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int compare(String string1, String string2);
 
     
@@ -120,6 +123,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1596496749 =             clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract CollationKey getCollationKey(String string);
 
     
@@ -160,6 +164,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1596496749 =             clone;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 public abstract int hashCode();
 

@@ -1,14 +1,18 @@
 package java.lang.reflect;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.lang.annotation.Annotation;
 import java.util.Comparator;
+
 import org.apache.harmony.kernel.vm.StringUtils;
 import org.apache.harmony.luni.lang.reflect.GenericSignatureParser;
 import org.apache.harmony.luni.lang.reflect.Types;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public final class Field extends AccessibleObject implements Member {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.002 -0400", hash_original_field = "02CBE457FB1B22631E594CE79672D2F1", hash_generated_field = "EC96049C106D95C970CBF94E8CE21744")
@@ -328,6 +332,7 @@ Object var7995FC01A88811E5E97CF2E73643495D_1945262284 =         getField(object,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.011 -0400", hash_original_method = "747BEFE9985C4AF4EE3D5630B62185EA", hash_generated_method = "4924608B8A7258EA0FAD0A7A640CA95F")
     public Class<?> getDeclaringClass() {
 Class<?> var55840ACAE88F5536515BB8E6ADD923C6_391083683 =         declaringClass;
@@ -433,6 +438,7 @@ String var669825FFD7E3ACD0942E1A8D9403D236_1352633250 =         getSignature(typ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.014 -0400", hash_original_method = "21C93A7CC51FD6114C8D944747F943F4", hash_generated_method = "8381A3F4730BD5D1DE5470307D1F2092")
     public Class<?> getType() {
 Class<?> varC5B9F25B4EEAD3E8E2C33F9429204397_1396214102 =         type;

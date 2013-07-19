@@ -1,17 +1,20 @@
 package org.apache.http.impl.conn;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
+
 import org.apache.http.HttpHost;
-import org.apache.http.params.HttpParams;
-import org.apache.http.protocol.HttpContext;
-import org.apache.http.conn.routing.HttpRoute;
-import org.apache.http.conn.routing.RouteTracker;
 import org.apache.http.conn.ClientConnectionOperator;
 import org.apache.http.conn.OperatedClientConnection;
+import org.apache.http.conn.routing.HttpRoute;
+import org.apache.http.conn.routing.RouteTracker;
+import org.apache.http.params.HttpParams;
+import org.apache.http.protocol.HttpContext;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class AbstractPoolEntry {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.002 -0400", hash_original_field = "30434E45229CAA1EA40A11E0FD7C2DB8", hash_generated_field = "6D2607DA479BDA11A25B13C47E7F0C5C")

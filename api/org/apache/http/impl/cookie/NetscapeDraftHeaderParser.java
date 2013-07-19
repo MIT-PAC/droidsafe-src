@@ -1,11 +1,9 @@
 package org.apache.http.impl.cookie;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.http.HeaderElement;
 import org.apache.http.NameValuePair;
 import org.apache.http.ParseException;
@@ -13,6 +11,9 @@ import org.apache.http.message.BasicHeaderElement;
 import org.apache.http.message.BasicHeaderValueParser;
 import org.apache.http.message.ParserCursor;
 import org.apache.http.util.CharArrayBuffer;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class NetscapeDraftHeaderParser {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.919 -0400", hash_original_field = "9FC9846A1C8AD8C7349E760872F36E27", hash_generated_field = "0A4D0DC8AD150348B21035D26D544819")

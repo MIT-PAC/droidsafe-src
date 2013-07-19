@@ -1,11 +1,10 @@
 package org.apache.http.auth.params;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HTTP;
+
+import droidsafe.annotations.DSGenerator;
 
 public final class AuthParams {
     

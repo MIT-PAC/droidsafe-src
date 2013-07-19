@@ -1,9 +1,9 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class AbstractQueue<E> extends AbstractCollection<E> implements Queue<E> {
     
@@ -100,6 +100,7 @@ E varEA5659DA512DECF23E6D37EE8060D074_1771001728 =         x;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.613 -0400", hash_original_method = "E3DD503D765939306C71AF759AB54F6B", hash_generated_method = "F5BE6833F9DBDED5ED11D965842FB80D")
     public boolean addAll(Collection<? extends E> c) {
         addTaint(c.getTaint());

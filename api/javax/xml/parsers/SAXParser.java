@@ -1,13 +1,12 @@
 package javax.xml.parsers;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+
 import javax.xml.validation.Schema;
+
 import org.xml.sax.HandlerBase;
 import org.xml.sax.InputSource;
 import org.xml.sax.Parser;
@@ -16,6 +15,11 @@ import org.xml.sax.SAXNotRecognizedException;
 import org.xml.sax.SAXNotSupportedException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SAXParser {
     
@@ -309,22 +313,28 @@ public abstract class SAXParser {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract org.xml.sax.Parser getParser() throws SAXException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract org.xml.sax.XMLReader getXMLReader() throws SAXException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isNamespaceAware();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isValidating();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setProperty(String name, Object value)
         throws SAXNotRecognizedException, SAXNotSupportedException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Object getProperty(String name)
         throws SAXNotRecognizedException, SAXNotSupportedException;
 

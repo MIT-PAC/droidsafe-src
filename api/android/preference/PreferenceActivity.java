@@ -1509,7 +1509,7 @@ Button var0A300EA22629DC89E0DD4FA357122FBD_1421989561 =         mNextButton;
                 view = convertView;
                 holder = (HeaderViewHolder) view.getTag();
             } //End block
-            Header header = getItem(position);
+            Header header = (Header) getItem(position);
             holder.icon.setImageResource(header.iconRes);
             holder.title.setText(header.getTitle(getContext().getResources()));
             CharSequence summary = header.getSummary(getContext().getResources());

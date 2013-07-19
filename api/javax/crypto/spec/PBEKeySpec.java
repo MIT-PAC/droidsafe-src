@@ -1,12 +1,14 @@
 package javax.crypto.spec;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.security.spec.KeySpec;
 import java.util.Arrays;
+
 import libcore.util.EmptyArray;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class PBEKeySpec implements KeySpec {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.371 -0400", hash_original_field = "5F4DCC3B5AA765D61D8327DEB882CF99", hash_generated_field = "E9D3F141738563A4D1D32A99D6434F98")
@@ -206,6 +208,7 @@ public class PBEKeySpec implements KeySpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.383 -0400", hash_original_method = "3E24EA64DC831AAEDCCD9EAD88FFC369", hash_generated_method = "D88A9B254C53D827ADF466892538FD0D")
     public final int getIterationCount() {
         int var40E092B298D076325C38C773B2D9BBAA_2095087989 = (iterationCount);
@@ -216,6 +219,7 @@ public class PBEKeySpec implements KeySpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.383 -0400", hash_original_method = "20994892EFF6499C10F6429275E73A4B", hash_generated_method = "1C317F873927906F8E8016D3A9513643")
     public final int getKeyLength() {
         int var5AF8CF094F8763C1015439D66C86D8D4_2103700886 = (keyLength);

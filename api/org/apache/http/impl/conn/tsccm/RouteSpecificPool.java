@@ -1,18 +1,21 @@
 package org.apache.http.impl.conn.tsccm;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.Queue;
-import java.util.LinkedList;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.conn.OperatedClientConnection;
 import org.apache.http.conn.routing.HttpRoute;
 import org.apache.http.util.LangUtils;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class RouteSpecificPool {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.443 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
@@ -50,6 +53,7 @@ public class RouteSpecificPool {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.448 -0400", hash_original_method = "A51AC1237DD43D471744BBD4E881146C", hash_generated_method = "9B22CDF44C8565E7C36C17F8E8562F11")
     public final HttpRoute getRoute() {
 HttpRoute var6679678B82FF79D06F753D1737D68FA6_1056331611 =         route;
@@ -60,6 +64,7 @@ HttpRoute var6679678B82FF79D06F753D1737D68FA6_1056331611 =         route;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.449 -0400", hash_original_method = "3F262A29EAD0FCC787330E9B7CECC306", hash_generated_method = "BFF128832B75317697F9BDC407A60A6B")
     public final int getMaxEntries() {
         int var022A4C15823CE7278C9858329BFF2442_799982181 = (maxEntries);
@@ -91,6 +96,7 @@ HttpRoute var6679678B82FF79D06F753D1737D68FA6_1056331611 =         route;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.450 -0400", hash_original_method = "3C2F8D494E1F1F56A9CA8A3544522ED0", hash_generated_method = "93E553CAA17AB8965D6C94DCE45DC6E6")
     public final int getEntryCount() {
         int varFEC1FCC4A89DEF29A9B7C6D06198C501_1045429158 = (numEntries);

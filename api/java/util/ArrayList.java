@@ -1,16 +1,18 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.lang.reflect.Array;
+
 import libcore.util.EmptyArray;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializable, RandomAccess {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.819 -0400", hash_original_field = "F7BD60B75B29D79B660A2859395C1A24", hash_generated_field = "673BDAEBF4FBC900963E210E042549D6")
@@ -47,6 +49,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.820 -0400", hash_original_method = "AE7C60C91D4192AC5637CB5677158233", hash_generated_method = "D918CF514940FBDA5D9A59D94625E26F")
     public  ArrayList(Collection<? extends E> collection) {
         addTaint(collection.getTaint());
@@ -163,6 +166,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.824 -0400", hash_original_method = "C337453C40DBE6A93E9B9333DA2BDDBD", hash_generated_method = "20A59E59027690AFC4C3395BFC95F78E")
     @Override
     public boolean addAll(Collection<? extends E> collection) {
@@ -213,6 +217,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.825 -0400", hash_original_method = "878D1F0A34AD7389A9EB37A1AF5C813D", hash_generated_method = "4837DB10CDA4AB28A7EB015962898B0F")
     @Override
     public boolean addAll(int index, Collection<? extends E> collection) {
@@ -981,6 +986,7 @@ for(int i = 0;i < size;i++)
 
         private int expectedModCount = modCount;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.839 -0400", hash_original_method = "A2AE73C6B653383A81528A6CCE4C5FCB", hash_generated_method = "A2AE73C6B653383A81528A6CCE4C5FCB")
         public ArrayListIterator ()
         {

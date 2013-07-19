@@ -1,19 +1,21 @@
 package android.text.method;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.text.Editable;
 import android.text.NoCopySpan;
 import android.text.Spannable;
 import android.text.Spanned;
+import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.KeyCharacterMap;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class MetaKeyKeyListener {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.374 -0400", hash_original_method = "50168EE5CC1513DB2EA8BA89DC077CDF", hash_generated_method = "50168EE5CC1513DB2EA8BA89DC077CDF")
     public MetaKeyKeyListener ()
     {
@@ -30,6 +32,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getMetaState(CharSequence text) {
         return getActive(text, CAP, META_SHIFT_ON, META_CAP_LOCKED) |
                getActive(text, ALT, META_ALT_ON, META_ALT_LOCKED) |
@@ -38,6 +41,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getMetaState(CharSequence text, int meta) {
         switch (meta) {
             case META_SHIFT_ON:
@@ -339,6 +343,7 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getMetaState(long state) {
         int result = 0;
         if ((state & META_CAP_LOCKED) != 0) {
@@ -360,6 +365,7 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int getMetaState(long state, int meta) {
         switch (meta) {
             case META_SHIFT_ON:

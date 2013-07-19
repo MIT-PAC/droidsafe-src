@@ -1,15 +1,19 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import gov.nist.core.NameValue;
 import gov.nist.core.NameValueList;
 import gov.nist.javax.sip.address.AddressImpl;
+
+import java.text.ParseException;
+
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.ContactHeader;
-import java.text.ParseException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class Contact extends AddressParametersHeader implements javax.sip.header.ContactHeader {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.200 -0400", hash_original_field = "2C04975BEEFBAA5B93021155A216F16C", hash_generated_field = "F8D42AD524689A7075829FDA71AD2B65")

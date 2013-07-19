@@ -1,10 +1,11 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.util.Log;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Connection {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.689 -0400", hash_original_field = "56491F2E1C74898E18BB6E47D2425B19", hash_generated_field = "64F9C8FFBF59E1349A604124A0E0710A")
@@ -18,6 +19,7 @@ public abstract class Connection {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract String getAddress();
 
     
@@ -54,27 +56,35 @@ String var540C13E9E156B687226421B24F2DF178_1203208709 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Call getCall();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long getCreateTime();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long getConnectTime();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long getDisconnectTime();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long getDurationMillis();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long getHoldDurationMillis();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract DisconnectCause getDisconnectCause();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isIncoming();
 
     
@@ -145,9 +155,11 @@ Object var9007C9FCC94862CF7404FC37365C2BDF_1547609712 =         userData;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void hangup() throws CallStateException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void separate() throws CallStateException;
 
     
@@ -160,24 +172,31 @@ Object var9007C9FCC94862CF7404FC37365C2BDF_1547609712 =         userData;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract PostDialState getPostDialState();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getRemainingPostDialString();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void proceedAfterWaitChar();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void proceedAfterWildChar(String str);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void cancelPostDial();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getNumberPresentation();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract UUSInfo getUUSInfo();
 
     

@@ -1,14 +1,16 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
-import java.util.ArrayList;
-import java.util.List;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class InputDevice implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.996 -0400", hash_original_field = "6AC7F06B6413A1BE9C136DC7DF0D2B60", hash_generated_field = "9AA2EA3A2433F5D6F841BEFD54A673B4")
@@ -182,6 +184,7 @@ MotionRange var540C13E9E156B687226421B24F2DF178_70993439 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.999 -0400", hash_original_method = "8F0147E430687E8511683E1D47819832", hash_generated_method = "B0EB5F12481288AE94B9F6ECC837880F")
     public List<MotionRange> getMotionRanges() {
 List<MotionRange> varFFE5FF278A34CE0245187BDB61690F1F_361978484 =         mMotionRanges;

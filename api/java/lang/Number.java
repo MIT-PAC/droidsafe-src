@@ -1,9 +1,10 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Number implements java.io.Serializable {
     
@@ -25,15 +26,19 @@ public abstract class Number implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract double doubleValue();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract float floatValue();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int intValue();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract long longValue();
 
     

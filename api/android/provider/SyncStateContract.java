@@ -1,18 +1,19 @@
 package android.provider;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.net.Uri;
+import android.accounts.Account;
 import android.content.ContentProviderClient;
-import android.content.ContentValues;
 import android.content.ContentProviderOperation;
 import android.content.ContentUris;
-import android.accounts.Account;
+import android.content.ContentValues;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.RemoteException;
 import android.util.Pair;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SyncStateContract {
     
@@ -97,6 +98,7 @@ public class SyncStateContract {
         }
 
         
+        @DSModeled(DSC.SPEC)
         public static Pair<Uri, byte[]> getWithUri(ContentProviderClient provider, Uri uri,
                 Account account) throws RemoteException {
             Cursor c = provider.query(uri, DATA_PROJECTION, SELECT_BY_ACCOUNT,

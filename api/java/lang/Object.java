@@ -1,9 +1,10 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSTaintObject;
 
 public class Object {
     
@@ -75,11 +76,13 @@ Object var5D97285CC21650E6D41723F3E22233BE_1153587035 =         internalClone((C
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.382 -0400", hash_original_method = "2491F7F734B89141B57F81CC2F5A48BA", hash_generated_method = "24636598DAEB30DC24F56D9FFC3488A3")
     public final void notify() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.382 -0400", hash_original_method = "4A0AA061C7039561E8E17F1D3678B2F2", hash_generated_method = "173C9CD26391D0CD02E4542ECF728D5B")
     public final void notifyAll() {
     }
@@ -96,6 +99,7 @@ String varAE0EADF9464BE15954001C46E90E161A_304024652 =         getClass().getNam
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.383 -0400", hash_original_method = "6FE2BE558DA9BAF1A2BFC29AD62222DA", hash_generated_method = "D3C95538C6A30BC3CA9D7492E38DB311")
     public final void wait() throws InterruptedException {
         wait(0 ,0);
@@ -104,6 +108,7 @@ String varAE0EADF9464BE15954001C46E90E161A_304024652 =         getClass().getNam
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.383 -0400", hash_original_method = "4BB57D31A4F088800B6AE0C762E042CC", hash_generated_method = "7B447C52369D4F80FDCA77102F19E44A")
     public final void wait(long millis) throws InterruptedException {
         addTaint(millis);
@@ -113,6 +118,7 @@ String varAE0EADF9464BE15954001C46E90E161A_304024652 =         getClass().getNam
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.383 -0400", hash_original_method = "2C3F1320C25E20DEBA9A5B7EE716C215", hash_generated_method = "489C6064F7B80B8C516AED1465CADB5A")
     public final void wait(long millis, int nanos) throws InterruptedException {
     }

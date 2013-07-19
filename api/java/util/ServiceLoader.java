@@ -1,14 +1,16 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+
 import libcore.io.IoUtils;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class ServiceLoader<S> implements Iterable<S> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.994 -0400", hash_original_field = "AAABF0D39951F3E6C3E8A7911DF524C2", hash_generated_field = "9105291DDC6ADFA906195342E88B2E45")
@@ -21,6 +23,7 @@ public final class ServiceLoader<S> implements Iterable<S> {
 
     private Set<URL> services;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.995 -0400", hash_original_method = "94B9216B7758F0B227BA0C421F85C6AF", hash_generated_method = "4E3505383B02394C9EC91A87639DCCCE")
     private  ServiceLoader(Class<S> service, ClassLoader classLoader) {
         if(service == null)        
@@ -62,6 +65,7 @@ Iterator<S> var5595D01585350877366F9800888A00F9_81321559 =         new ServiceIt
     }
 
     
+    @DSModeled(DSC.BAN)
     public static <S> ServiceLoader<S> load(Class<S> service, ClassLoader classLoader) {
         if (classLoader == null) {
             classLoader = ClassLoader.getSystemClassLoader();

@@ -1,21 +1,25 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import android.os.AsyncResult;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+
 import com.android.internal.telephony.AdnRecord;
 import com.android.internal.telephony.AdnRecordCache;
 import com.android.internal.telephony.IccConstants;
 import com.android.internal.telephony.IccUtils;
 import com.android.internal.telephony.PhoneBase;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class UsimPhoneBookManager extends Handler implements IccConstants {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.985 -0400", hash_original_field = "7D373B4F0DFF7E92AC122910BF9B25C5", hash_generated_field = "208E31DBC6A3857B5997E7C1BCB1166B")
@@ -438,6 +442,7 @@ String var2D726FE6F9242582D95F0FF51CCDA35C_1741471184 =         email;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.996 -0400", hash_original_method = "EC7FC3EA469B316149A3EE38C863088E", hash_generated_method = "6438DF12A3F41DFBB05FA12A3D7EEBCA")
     private void createPbrFile(ArrayList<byte[]> records) {
         if(records == null)        
@@ -533,6 +538,7 @@ switch(msg.what){
 
         HashMap<Integer,Map<Integer,Integer>> mFileIds;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.997 -0400", hash_original_method = "D67956DDFF065803AA18EDD362DE0213", hash_generated_method = "722D976515B3987707A664C21D6D3378")
           PbrFile(ArrayList<byte[]> records) {
             addTaint(records.getTaint());
@@ -602,6 +608,7 @@ switch(tag){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.997 -0400", hash_original_method = "27E6C520D8DED1C5B5FE1A348EAE7100", hash_generated_method = "C031F6DD438E67F7A35E4818F7519E09")
          void parseEf(SimTlv tlv, Map<Integer, Integer> val, int parentTag) {
             addTaint(parentTag);

@@ -1,12 +1,15 @@
 package android.app;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.FileDescriptor;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import android.content.ComponentName;
-import android.content.Intent;
 import android.content.IIntentReceiver;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.ProviderInfo;
@@ -16,16 +19,15 @@ import android.content.res.Configuration;
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.Debug;
-import android.os.Parcelable;
-import android.os.RemoteException;
 import android.os.IBinder;
 import android.os.Parcel;
 import android.os.ParcelFileDescriptor;
-import java.io.FileDescriptor;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import android.os.Parcelable;
+import android.os.RemoteException;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class ApplicationThreadNative extends Binder implements IApplicationThread {
     
@@ -644,6 +646,7 @@ class ApplicationThreadProxy implements IApplicationThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.763 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "192977129AC0581890F6722883BFE5C6")
     public final IBinder asBinder() {
 IBinder varF4936CA84F7841A48B466C9D273BE2EB_1188390858 =         mRemote;
@@ -948,6 +951,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_1188390858 =         mRemote;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.786 -0400", hash_original_method = "C42B70805B0C7922B26FF1FB8A47345A", hash_generated_method = "F30DC71D7756D99B9D48C6471893769E")
     public final void scheduleReceiver(Intent intent, ActivityInfo info,
             CompatibilityInfo compatInfo, int resultCode, String resultData,
@@ -1062,6 +1066,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_1188390858 =         mRemote;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.794 -0400", hash_original_method = "B7457DD503BA4FDF2022DE2BEF8A4AE7", hash_generated_method = "576EE22BFA91FEDD5BF306917FB1FF59")
     public final void scheduleBindService(IBinder token, Intent intent, boolean rebind) throws RemoteException {
         addTaint(rebind);
@@ -1087,6 +1092,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_1188390858 =         mRemote;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.795 -0400", hash_original_method = "015A697DF0B7313A5A91440BE749BA70", hash_generated_method = "0E63B78B52A632B97472F345D8485633")
     public final void scheduleUnbindService(IBinder token, Intent intent) throws RemoteException {
         addTaint(intent.getTaint());
@@ -1109,6 +1115,7 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_1188390858 =         mRemote;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.796 -0400", hash_original_method = "9440CDA1B00A67ECA4131E9DDBFF94BE", hash_generated_method = "06DCB7E4117107E85AC6F73AD01E9BFD")
     public final void scheduleServiceArgs(IBinder token, boolean taskRemoved, int startId,
 	    int flags, Intent args) throws RemoteException {

@@ -1,9 +1,10 @@
 package java.nio;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 abstract class ShortArrayBuffer extends ShortBuffer {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.955 -0400", hash_original_field = "8D50CD27AA8B6BEC65C484FFCC5B2334", hash_generated_field = "D6BFE43B0E3E7A05E4F673EAC5DBB347")
@@ -102,6 +103,7 @@ ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_669069119 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.958 -0400", hash_original_method = "5B6C9F359344527666A57577F107BCAE", hash_generated_method = "0DB3F2A6B40373ABA96B90682EDBCF70")
     @Override
     public final boolean isDirect() {

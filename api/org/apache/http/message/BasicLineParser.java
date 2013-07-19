@@ -1,17 +1,17 @@
 package org.apache.http.message;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import org.apache.http.Header;
 import org.apache.http.HttpVersion;
-import org.apache.http.ProtocolVersion;
 import org.apache.http.ParseException;
+import org.apache.http.ProtocolVersion;
 import org.apache.http.RequestLine;
 import org.apache.http.StatusLine;
-import org.apache.http.Header;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.CharArrayBuffer;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class BasicLineParser implements LineParser {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.979 -0400", hash_original_field = "81788BA0D7D02D81C063DBCA621BA11B", hash_generated_field = "A4856836C99EFEC9056A47B6A2A817BC")

@@ -1,9 +1,10 @@
 package org.apache.commons.logging;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class LogConfigurationException extends RuntimeException {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.716 -0400", hash_original_field = "42192DD9A02C9A36EB3E8BCA81DB33FC", hash_generated_field = "79DAA8AEAC199268F25EDA892CFE191F")

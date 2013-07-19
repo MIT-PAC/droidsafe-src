@@ -1,10 +1,12 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+
+import droidsafe.annotations.DSGenerator;
 
 public abstract class AbstractExecutorService implements ExecutorService {
     

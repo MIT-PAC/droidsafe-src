@@ -1,17 +1,19 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import android.content.pm.PackageManager;
 import android.os.AsyncResult;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.ServiceManager;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.208 -0400", hash_original_field = "F7A42FE7211F98AC7A60A285AC3A9E87", hash_generated_field = "4FEA837943E73EF5CB83661843F1AD15")
@@ -126,9 +128,11 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void logd(String msg);
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void loge(String msg);
 
     
@@ -214,6 +218,7 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int[] getAdnRecordsSize(int efid);
 
     

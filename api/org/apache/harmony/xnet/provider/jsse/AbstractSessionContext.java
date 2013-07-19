@@ -1,9 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
@@ -17,9 +14,16 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
+
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSessionContext;
+
 import org.apache.harmony.security.provider.cert.X509CertImpl;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 abstract class AbstractSessionContext implements SSLSessionContext {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.863 -0400", hash_original_field = "F7558008F30251ED687039538F2EE14F", hash_generated_field = "7A30EE95E508037D9FEE1354CEFAC193")
@@ -150,6 +154,7 @@ Enumeration varF6BBB41F8B560415F4CBC1CD8616FD15_54913296 =         new Enumerati
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.867 -0400", hash_original_method = "D0015EDFECCAD43C3752A19176DA2F6D", hash_generated_method = "2CE21228527FC30659ABFE29C0FE9312")
     public final int getSessionCacheSize() {
         int varF7558008F30251ED687039538F2EE14F_1080619653 = (maximumSize);
@@ -160,6 +165,7 @@ Enumeration varF6BBB41F8B560415F4CBC1CD8616FD15_54913296 =         new Enumerati
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.868 -0400", hash_original_method = "4FB73E0AB538272543472A54EAEE75CD", hash_generated_method = "119D9FE432EDD91C0573B29749845996")
     public final int getSessionTimeout() {
         int var90272DDA245AE1FB3CF197E91A8689DC_488385831 = (timeout);
@@ -246,6 +252,7 @@ Enumeration varF6BBB41F8B560415F4CBC1CD8616FD15_54913296 =         new Enumerati
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void sessionRemoved(SSLSession session);
 
     

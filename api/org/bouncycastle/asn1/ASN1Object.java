@@ -1,10 +1,11 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class ASN1Object extends DERObject {
     
@@ -49,12 +50,15 @@ public abstract class ASN1Object extends DERObject {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int hashCode();
 
     
+    @DSModeled(DSC.SAFE)
     abstract void encode(DEROutputStream out) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean asn1Equals(DERObject o);
 
     

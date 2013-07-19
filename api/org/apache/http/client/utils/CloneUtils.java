@@ -1,11 +1,10 @@
 package org.apache.http.client.utils;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+
+import droidsafe.annotations.DSGenerator;
 
 public class CloneUtils {
     

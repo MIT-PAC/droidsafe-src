@@ -1,14 +1,14 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.util.Log;
-import com.android.internal.os.RuntimeInit;
 import java.lang.ref.WeakReference;
-import java.util.ArrayList;
 import java.util.HashMap;
+
+import android.util.Log;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class FileObserver {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.064 -0400", hash_original_field = "A74740AB247BAEAA4F1F231E45678F33", hash_generated_field = "F6AE1494CAFC5CFCCCF98A3C7A6207EF")
@@ -77,6 +77,7 @@ public abstract class FileObserver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void onEvent(int event, String path);
 
     

@@ -1,35 +1,37 @@
 package android.accounts;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.app.Activity;
-import android.content.Intent;
-import android.content.Context;
-import android.content.IntentFilter;
-import android.content.BroadcastReceiver;
-import android.database.SQLException;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.RemoteException;
-import android.os.Parcelable;
-import android.os.Build;
-import android.util.Log;
-import android.text.TextUtils;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
-import java.util.concurrent.TimeoutException;
 import java.util.concurrent.TimeUnit;
-import java.util.HashMap;
-import java.util.Map;
-import com.google.android.collect.Lists;
+import java.util.concurrent.TimeoutException;
+
+import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.database.SQLException;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Parcelable;
+import android.os.RemoteException;
+import android.text.TextUtils;
+
 import com.google.android.collect.Maps;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class AccountManager {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.795 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -1198,6 +1200,7 @@ AccountManagerFuture<Bundle> varE3FBC805688C6CF32CF252D3CB460B3C_14640056 =     
     }
 
     
+    @DSModeled(DSC.SPEC)
     static public Intent newChooseAccountIntent(Account selectedAccount,
             ArrayList<Account> allowableAccounts,
             String[] allowableAccountTypes,
@@ -1374,6 +1377,7 @@ AccountManagerFuture<Bundle> var72A74007B2BE62B849F475C7BDA4658B_1156969260 =   
         }
 
         
+        @DSModeled(DSC.SAFE)
         public abstract void doWork() throws RemoteException;
 
         
@@ -1602,6 +1606,7 @@ Bundle var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_114891976 =             internalGetRe
         }
 
         
+        @DSModeled(DSC.SAFE)
         public abstract void doWork() throws RemoteException;
 
         

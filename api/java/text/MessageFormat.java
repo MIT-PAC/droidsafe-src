@@ -1,9 +1,6 @@
 package java.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -14,8 +11,12 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-import java.util.Vector;
+
 import libcore.util.EmptyArray;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class MessageFormat extends Format {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.727 -0400", hash_original_field = "FB216D9E8791E63C8D12BDC420956839", hash_generated_field = "3C599F5969C756C105E47474D7BCB663")
@@ -256,6 +257,7 @@ AttributedCharacterIterator varE3ABF6B4C0DDC070CF0843A4557F5D73_1289279131 =    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.734 -0400", hash_original_method = "A9B03AC07F14FDC18F9B212B66591284", hash_generated_method = "39E881031A7F24261AA7D3251D02C61D")
     public final StringBuffer format(Object[] objects, StringBuffer buffer,
             FieldPosition field) {
@@ -270,6 +272,7 @@ StringBuffer var1F66D20762CFEE3B98D9E22CDAD14062_1066641912 =         formatImpl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.735 -0400", hash_original_method = "CB09F1AB0972A7396E3B2DB81FB1793E", hash_generated_method = "5E13A600C4506E81D0A548EB3D03B101")
     private StringBuffer formatImpl(Object[] objects, StringBuffer buffer,
             FieldPosition position, List<FieldContainer> fields) {
@@ -342,6 +345,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_975541629 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.736 -0400", hash_original_method = "C43D87ABB966C2154325453E86772F9C", hash_generated_method = "7A4B320F81F8BFFBCFEB8B08AD9B35D6")
     private void handleArgumentField(int begin, int end, int argIndex,
             FieldPosition position, List<FieldContainer> fields) {
@@ -378,6 +382,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_975541629 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.737 -0400", hash_original_method = "DE679CD49EEE558B2CA2B7C9C9DE5810", hash_generated_method = "29B771FD742389F8993909A481D8A249")
     private void handleFormat(Format format, Object arg, int begin, List<FieldContainer> fields) {
         addTaint(fields.getTaint());
@@ -424,6 +429,7 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_975541629 =         buffer;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.737 -0400", hash_original_method = "86D79FEBC73D19AFFF1CE089D06D0A2E", hash_generated_method = "E510EA554F68462BC47B9B4EE4325ACF")
     @Override
     public final StringBuffer format(Object object, StringBuffer buffer,

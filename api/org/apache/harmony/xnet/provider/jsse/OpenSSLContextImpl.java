@@ -1,13 +1,13 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+
 import javax.net.ssl.SSLServerSocketFactory;
 import javax.net.ssl.SSLSocketFactory;
+
+import droidsafe.annotations.DSGenerator;
 
 public class OpenSSLContextImpl extends SSLContextImpl {
     

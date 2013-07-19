@@ -1,9 +1,10 @@
 package java.security.spec;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class EncodedKeySpec implements KeySpec {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.042 -0400", hash_original_field = "4567E7356B633148D4D0693AC01FDEEE", hash_generated_field = "3144F97D80A45FCBB127B551D71851A1")
@@ -37,6 +38,7 @@ public abstract class EncodedKeySpec implements KeySpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getFormat();
 
     

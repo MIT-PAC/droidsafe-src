@@ -1,9 +1,10 @@
 package java.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class ParseException extends Exception {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.868 -0400", hash_original_field = "57D19B3FC2AF605BB9ADD6379EF4F14F", hash_generated_field = "258A596A4575EE51D9F18F048FF1B7C5")

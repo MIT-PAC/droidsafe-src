@@ -1,13 +1,15 @@
 package javax.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.SocketException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class ServerSocketFactory {
     
@@ -35,12 +37,15 @@ public abstract class ServerSocketFactory {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ServerSocket createServerSocket(int port) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ServerSocket createServerSocket(int port, int backlog) throws IOException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract ServerSocket createServerSocket(int port, int backlog, InetAddress iAddress)
             throws IOException;
 

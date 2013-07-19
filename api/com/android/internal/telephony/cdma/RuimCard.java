@@ -1,10 +1,9 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import com.android.internal.telephony.IccCard;
+
+import droidsafe.annotations.DSGenerator;
 
 public final class RuimCard extends IccCard {
     

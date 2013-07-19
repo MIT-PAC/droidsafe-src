@@ -1,9 +1,6 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import javax.sip.address.URI;
 
 public interface SipRequestLine {

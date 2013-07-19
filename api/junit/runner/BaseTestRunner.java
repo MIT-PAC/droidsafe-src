@@ -1,20 +1,36 @@
 package junit.runner;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import junit.framework.*;
-import java.lang.reflect.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintWriter;
+import java.io.StringReader;
+import java.io.StringWriter;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.text.NumberFormat;
-import java.io.*;
-import java.util.*;
+import java.util.Properties;
+
+import junit.framework.AssertionFailedError;
+import junit.framework.Test;
+import junit.framework.TestListener;
+import junit.framework.TestSuite;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class BaseTestRunner implements TestListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.386 -0400", hash_original_field = "D86EF6FE2DDA8BCB0B1FF97852B6C141", hash_generated_field = "7A70A04F8D8A962F9AD485A249A9FE8E")
 
     boolean fLoading = true;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.387 -0400", hash_original_method = "7AE9B4E2779E68829E6E78655AC68035", hash_generated_method = "7AE9B4E2779E68829E6E78655AC68035")
     public BaseTestRunner ()
     {
@@ -102,12 +118,15 @@ public abstract class BaseTestRunner implements TestListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void testStarted(String testName);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void testEnded(String testName);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void testFailed(int status, Test test, Throwable t);
 
     
@@ -300,6 +319,7 @@ String varF57DF2C3C72C0BA8574176BD3A4AA127_1921868751 =         className;
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void runFailed(String message);
 
     

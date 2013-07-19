@@ -1,9 +1,10 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SSLEngineResult {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.702 -0400", hash_original_field = "9ACB44549B41563697BB490144EC6258", hash_generated_field = "3EDB9D951EE040B1BC6830CF666CCCCD")
@@ -70,6 +71,7 @@ public class SSLEngineResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.704 -0400", hash_original_method = "50C43A89B1F71600509DCA8EECE4A168", hash_generated_method = "3E226B7B35726753B6869066381EDF7C")
     public final Status getStatus() {
 Status var62D3D5D442782C1992154E821A40FA75_131929627 =         status;
@@ -80,6 +82,7 @@ Status var62D3D5D442782C1992154E821A40FA75_131929627 =         status;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.704 -0400", hash_original_method = "C7CAF6278BE86BD417FEC0CDFDF808C8", hash_generated_method = "6C687D5B05AB90E0D7E044E763541A95")
     public final HandshakeStatus getHandshakeStatus() {
 HandshakeStatus varA438FF77BFC821A5A761FEC3F6183918_1020062299 =         handshakeStatus;
@@ -90,6 +93,7 @@ HandshakeStatus varA438FF77BFC821A5A761FEC3F6183918_1020062299 =         handsha
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.705 -0400", hash_original_method = "4F217738DCB333D737660126178B49E9", hash_generated_method = "B313BE6F7177B54F80AA941BB38AAEE0")
     public final int bytesConsumed() {
         int var98DE14CF6ED8BA2A08621F8989CBB73D_29013235 = (bytesConsumed);
@@ -100,6 +104,7 @@ HandshakeStatus varA438FF77BFC821A5A761FEC3F6183918_1020062299 =         handsha
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.705 -0400", hash_original_method = "881854C294C034F2A83844483FCF0823", hash_generated_method = "0368C4782D082850A3DAA8940C252E6D")
     public final int bytesProduced() {
         int varE2C06B4E3C7D872CA40631F2B897CED4_152941368 = (bytesProduced);

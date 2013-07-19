@@ -1,15 +1,17 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import dalvik.system.VMRuntime;
 import java.lang.ref.FinalizerReference;
 import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
 import java.util.concurrent.TimeoutException;
+
 import libcore.util.EmptyArray;
+import dalvik.system.VMRuntime;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class Daemons {
     
@@ -67,6 +69,7 @@ public final class Daemons {
         }
 
         
+        @DSModeled(DSC.SAFE)
         public abstract void run();
 
         

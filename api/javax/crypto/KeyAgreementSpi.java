@@ -1,15 +1,16 @@
 package javax.crypto;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.Key;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.AlgorithmParameterSpec;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class KeyAgreementSpi {
     
@@ -19,27 +20,33 @@ public abstract class KeyAgreementSpi {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract Key engineDoPhase(Key key, boolean lastPhase)
             throws InvalidKeyException, IllegalStateException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract byte[] engineGenerateSecret()
             throws IllegalStateException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract int engineGenerateSecret(byte[] sharedSecret, int offset)
             throws IllegalStateException, ShortBufferException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract SecretKey engineGenerateSecret(String algorithm)
             throws IllegalStateException, NoSuchAlgorithmException,
             InvalidKeyException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(Key key, SecureRandom random)
             throws InvalidKeyException;
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void engineInit(Key key, AlgorithmParameterSpec params,
             SecureRandom random) throws InvalidKeyException,
             InvalidAlgorithmParameterException;

@@ -1,9 +1,10 @@
 package android.net.sip;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 import android.content.Context;
 import android.media.AudioManager;
 import android.net.rtp.AudioCodec;
@@ -13,16 +14,12 @@ import android.net.rtp.RtpStream;
 import android.net.sip.SimpleSessionDescription.Media;
 import android.net.wifi.WifiManager;
 import android.os.Message;
-import android.os.RemoteException;
 import android.text.TextUtils;
 import android.util.Log;
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SipAudioCall {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.469 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")

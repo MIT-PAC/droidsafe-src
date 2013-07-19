@@ -1,10 +1,11 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class ASN1Null extends ASN1Object {
     
@@ -48,6 +49,7 @@ public abstract class ASN1Null extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     abstract void encode(DEROutputStream out)
         throws IOException;
 

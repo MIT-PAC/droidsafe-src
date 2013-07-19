@@ -1,9 +1,13 @@
 package android.hardware;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import java.io.IOException;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.StringTokenizer;
+
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
 import android.graphics.ImageFormat;
@@ -13,15 +17,13 @@ import android.graphics.SurfaceTexture;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.util.Log;
 import android.view.Surface;
 import android.view.SurfaceHolder;
-import java.io.IOException;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.StringTokenizer;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public class Camera {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.073 -0400", hash_original_field = "20E813A614226843849BF2E571A8EBCA", hash_generated_field = "0A3F8EE607897645EB2EE30B6939205B")
@@ -148,11 +150,13 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.075 -0400", hash_original_method = "5EC3DC8FB8D66F2C808C7799A0BBD6C8", hash_generated_method = "7A2CAC3C88EAC4EF88983C193D49A66B")
     private final void native_setup(Object camera_this, int cameraId) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.076 -0400", hash_original_method = "29EBD7A2FE8EDC8D2C10EA00B5293031", hash_generated_method = "DECB120BA12617A8FCE4E151C1A70393")
     private final void native_release() {
     }
@@ -168,16 +172,19 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.076 -0400", hash_original_method = "9CD4FD3F3067AEDE0513365636CF8BFB", hash_generated_method = "644BAC8922C2051F6944ED26C842A1E3")
     public final void unlock() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.077 -0400", hash_original_method = "EA3188FC5C2FE364141E1E027A72F754", hash_generated_method = "07004BFA887EFF8E222FA1066C0AEBA7")
     public final void lock() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.077 -0400", hash_original_method = "AE5D3A84E8844CCCAC3E25422B8D0B4B", hash_generated_method = "B0E083E7EEB5CCA1699F6C8C358B792D")
     public final void reconnect() throws IOException {
     }
@@ -203,16 +210,19 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.077 -0400", hash_original_method = "0997F7F636D30A698007C9D53ABFEAA8", hash_generated_method = "0A87F82979CA2AE58A3CCBB68EA0E742")
     private final void setPreviewDisplay(Surface surface) throws IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.078 -0400", hash_original_method = "896582DEF98D5E1EC5488A60A996492A", hash_generated_method = "D52550820994977BCCE52091FCBE50D0")
     public final void setPreviewTexture(SurfaceTexture surfaceTexture) throws IOException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.078 -0400", hash_original_method = "D546ACB03B4B785C233CEA5A53219FBD", hash_generated_method = "9157CC02B426305A20464237BD9F3D49")
     public final void startPreview() {
     }
@@ -238,11 +248,13 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.079 -0400", hash_original_method = "5C6CC4130952C356AFFCDA8182FC7947", hash_generated_method = "3F43F3EC3660148943C1B4911DBD8295")
     private final void _stopPreview() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.080 -0400", hash_original_method = "05AF9970C538CB01E0CE4F8451A5B5A5", hash_generated_method = "15E3AF267BFAD17E5C207EC6B2FC45DA")
     public final boolean previewEnabled() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_449981377 = getTaintBoolean();
@@ -278,6 +290,7 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.081 -0400", hash_original_method = "F92B1FC9B77C310C88F7762A3FF0D1F1", hash_generated_method = "610BB4E79761448F8769061FA12D8078")
     private final void setHasPreviewCallback(boolean installed, boolean manualBuffer) {
     }
@@ -338,6 +351,7 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.089 -0400", hash_original_method = "D4768D01937D37185DEEEF1DE89AE1E9", hash_generated_method = "AA5075F8AA33EF21C16B481195B01F8A")
     private final void _addCallbackBuffer(
                                 byte[] callbackBuffer, int msgType) {
@@ -366,6 +380,7 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.089 -0400", hash_original_method = "CBF6350AD6916ADF364820AEE02A4625", hash_generated_method = "197FE47938204FF0DBD059150FC6ED11")
     private final void native_autoFocus() {
     }
@@ -381,6 +396,7 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.089 -0400", hash_original_method = "627E1E0A1BA298FD1B675A29D70F6408", hash_generated_method = "5F6074482B634128C81E118DEA3B6416")
     private final void native_cancelAutoFocus() {
     }
@@ -398,6 +414,7 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.090 -0400", hash_original_method = "9DA1D6832E2DF57D49D73BC5F1630045", hash_generated_method = "6F42544A74B15B7C28F6B928BB89DB3C")
     private final void native_takePicture(int msgType) {
     }
@@ -450,21 +467,25 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.090 -0400", hash_original_method = "CB85955AE7ECC872C16FD259F78D1283", hash_generated_method = "F7DBACC9F636CDEF7C593352BEE8991E")
     public final void startSmoothZoom(int value) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.090 -0400", hash_original_method = "6E23FCC9E3F0853162C9ABD237B3E263", hash_generated_method = "D4B293AFC15EB30940FB50D65DE46239")
     public final void stopSmoothZoom() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.090 -0400", hash_original_method = "4194592279C5F487807EC326C09E0EDE", hash_generated_method = "24CE678D5B3632462E30C688391798E1")
     public final void setDisplayOrientation(int degrees) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.091 -0400", hash_original_method = "6480531FCD656465921BBC33792E6355", hash_generated_method = "B412D3AC937FF3C3E1CA348431559085")
     public final void setZoomChangeListener(OnZoomChangeListener listener) {
         mZoomListener = listener;
@@ -473,6 +494,7 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.091 -0400", hash_original_method = "72125974AAC05BF0DED9497DD0672E75", hash_generated_method = "7CC0F5FEC0100DF2CE46B4097D204789")
     public final void setFaceDetectionListener(FaceDetectionListener listener) {
         mFaceListener = listener;
@@ -510,16 +532,19 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.091 -0400", hash_original_method = "44CAC56F9FD022B772605806F720BF7E", hash_generated_method = "8F98B1A9B9CA2664A3A0A913739E5418")
     private final void _startFaceDetection(int type) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.091 -0400", hash_original_method = "A44256EE80ABD488101E1B754E2222A4", hash_generated_method = "00606921D3802A9C645F3A0AE0F773FE")
     private final void _stopFaceDetection() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.091 -0400", hash_original_method = "BE99CE61E82474B676C6D48791CDF52E", hash_generated_method = "E63A5FF66AB2916340CBB5CA49FBE157")
     public final void setErrorCallback(ErrorCallback cb) {
         mErrorCallback = cb;
@@ -528,11 +553,13 @@ public class Camera {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.092 -0400", hash_original_method = "62874E13510D0FD5D23BE793A7BF66C4", hash_generated_method = "862AA1BCBF2DF45964633CC4C184143F")
     private final void native_setParameters(String params) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.245 -0400", hash_original_method = "3CEFEC9BC04BFA67886C8721C375B2BF", hash_generated_method = "7CDFCD53AAB21A45E6D03778B4CC52A9")
     private final String native_getParameters() {
     	String s = new String();

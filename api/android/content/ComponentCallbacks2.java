@@ -1,9 +1,6 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 
 public interface ComponentCallbacks2 extends ComponentCallbacks {
 

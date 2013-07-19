@@ -1,9 +1,9 @@
 package android.speech.tts;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class UtteranceProgressListener {
     
@@ -14,12 +14,15 @@ public abstract class UtteranceProgressListener {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract void onStart(String utteranceId);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void onDone(String utteranceId);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void onError(String utteranceId);
 
     

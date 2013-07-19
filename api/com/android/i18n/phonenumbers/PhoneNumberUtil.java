@@ -1,15 +1,6 @@
 package com.android.i18n.phonenumbers;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.i18n.phonenumbers.Phonemetadata.NumberFormat;
-import com.android.i18n.phonenumbers.Phonemetadata.PhoneMetadata;
-import com.android.i18n.phonenumbers.Phonemetadata.PhoneMetadataCollection;
-import com.android.i18n.phonenumbers.Phonemetadata.PhoneNumberDesc;
-import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
-import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber.CountryCodeSource;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
@@ -26,6 +17,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import com.android.i18n.phonenumbers.Phonemetadata.NumberFormat;
+import com.android.i18n.phonenumbers.Phonemetadata.PhoneMetadata;
+import com.android.i18n.phonenumbers.Phonemetadata.PhoneMetadataCollection;
+import com.android.i18n.phonenumbers.Phonemetadata.PhoneNumberDesc;
+import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
+import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber.CountryCodeSource;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class PhoneNumberUtil {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.052 -0400", hash_original_field = "E8745D64C3DDF690DBE72A168636F59F", hash_generated_field = "01E27589414D4F00E028D65F7226ED03")
@@ -353,6 +356,7 @@ for(PhoneMetadata metadata : metadataCollection.getMetadataList())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.059 -0400", hash_original_method = "8806D3371D9E306571E478F8E387F5F6", hash_generated_method = "2EBA4FEEA395D1BBD1567B69D7D7F3F0")
     public Set<String> getSupportedRegions() {
 Set<String> varEF2FC022A937149A8AA0A9F71AA1B744_1892158939 =         supportedRegions;
@@ -2651,13 +2655,15 @@ MatchType varF8B37F0B3552FBDB2D5C6D7C966D0BA0_1129257199 =         MatchType.NOT
     
     public enum Leniency {
     POSSIBLE {
-      @Override
+      @DSModeled(DSC.SAFE)
+        @Override
       boolean verify(PhoneNumber number, String candidate, PhoneNumberUtil util) {
         return util.isPossibleNumber(number);
       }
     },
     VALID {
-      @Override
+      @DSModeled(DSC.SAFE)
+        @Override
       boolean verify(PhoneNumber number, String candidate, PhoneNumberUtil util) {
         if (!util.isValidNumber(number)) {
           return false;
@@ -2666,7 +2672,8 @@ MatchType varF8B37F0B3552FBDB2D5C6D7C966D0BA0_1129257199 =         MatchType.NOT
       }
     },
     STRICT_GROUPING {
-      @Override
+      @DSModeled(DSC.SAFE)
+        @Override
       boolean verify(PhoneNumber number, String candidate, PhoneNumberUtil util) {
         if (!util.isValidNumber(number) ||
             !containsOnlyValidXChars(number, candidate, util) ||
@@ -2695,7 +2702,8 @@ MatchType varF8B37F0B3552FBDB2D5C6D7C966D0BA0_1129257199 =         MatchType.NOT
       }
     },
     EXACT_GROUPING {
-      @Override
+      @DSModeled(DSC.SAFE)
+        @Override
       boolean verify(PhoneNumber number, String candidate, PhoneNumberUtil util) {
         if (!util.isValidNumber(number) ||
             !containsOnlyValidXChars(number, candidate, util) ||
@@ -2758,7 +2766,8 @@ MatchType varF8B37F0B3552FBDB2D5C6D7C966D0BA0_1129257199 =         MatchType.NOT
       }
       return true;
     }
-    abstract boolean verify(PhoneNumber number, String candidate, PhoneNumberUtil util);
+    @DSModeled(DSC.SAFE)
+        abstract boolean verify(PhoneNumber number, String candidate, PhoneNumberUtil util);
   }
 
     

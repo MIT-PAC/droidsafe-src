@@ -1,9 +1,6 @@
 package java.security;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,12 +12,21 @@ import java.security.cert.X509Certificate;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Enumeration;
+
 import javax.crypto.SecretKey;
 import javax.security.auth.DestroyFailedException;
 import javax.security.auth.Destroyable;
 import javax.security.auth.callback.CallbackHandler;
+
 import libcore.io.IoUtils;
+
 import org.apache.harmony.security.fortress.Engine;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.DSOverride;
 
 public class KeyStore {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.001 -0400", hash_original_field = "C782C54895459C90E5EA4E7F2619D282", hash_generated_field = "61D6D6330C8232E1AA65EEA11EE82DF2")
@@ -107,6 +113,7 @@ public class KeyStore {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.004 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "97D74B4D60932CF921E25EFA2B35AA7C")
     public final Provider getProvider() {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_991343720 =         provider;
@@ -117,6 +124,7 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_991343720 =         provider;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.004 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "0CBFB7C45E9520E66AEDEC8F81E11631")
     public final String getType() {
 String varC5B9F25B4EEAD3E8E2C33F9429204397_1270912175 =         type;
@@ -281,6 +289,7 @@ Date var978EBB799D75BBFCEF16CE8A7B5F63A1_575797583 =         implSpi.engineGetCr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.008 -0400", hash_original_method = "E42AEF144F775210B33C3E2476EBCBA6", hash_generated_method = "5786F5F63399E0BEC3CE2BA1C9BF8E7B")
     public final Enumeration<String> aliases() throws KeyStoreException {
         if(!isInit)        
@@ -298,6 +307,7 @@ Enumeration<String> var85B6F664BD58B3CF4577E64A2AB90B50_1877496336 =         imp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.008 -0400", hash_original_method = "C6BE9F5B7D68857DC7838D988CC1BBA2", hash_generated_method = "3F4D102D8891C41644D083AA519CC145")
     public final boolean containsAlias(String alias) throws KeyStoreException {
         addTaint(alias.getTaint());
@@ -316,6 +326,7 @@ Enumeration<String> var85B6F664BD58B3CF4577E64A2AB90B50_1877496336 =         imp
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.008 -0400", hash_original_method = "0C5DF7CD9C11C1EDF698C182DE8DC09F", hash_generated_method = "2A3DB9CFA7C989880E1C49250B3C79C0")
     public final int size() throws KeyStoreException {
         if(!isInit)        
@@ -556,9 +567,11 @@ Entry var701895B2E8389D95272372ED4DA24D57_337376656 =         implSpi.engineGetE
         }
 
         
+        @DSModeled(DSC.SAFE)
         public abstract KeyStore getKeyStore() throws KeyStoreException;
 
         
+        @DSModeled(DSC.SAFE)
         public abstract ProtectionParameter getProtectionParameter(String alias)
                 throws KeyStoreException;
 

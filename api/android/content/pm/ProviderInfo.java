@@ -1,12 +1,13 @@
 package android.content.pm;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.PatternMatcher;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class ProviderInfo extends ComponentInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.427 -0400", hash_original_field = "C55ECB6153A50CAC3F9C58601BD47DDF", hash_generated_field = "3E8DB1403D91FD0BC10BCD6D25011DA7")

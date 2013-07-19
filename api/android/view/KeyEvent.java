@@ -1,18 +1,16 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.method.MetaKeyKeyListener;
-import android.util.Log;
-import android.util.Slog;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
-import android.view.KeyCharacterMap;
 import android.view.KeyCharacterMap.KeyData;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class KeyEvent extends InputEvent implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.320 -0400", hash_original_field = "2271A9775971F952514B94408144FAA0", hash_generated_field = "A21260B04ED5B32DBDB0093B175D9F6A")
@@ -679,6 +677,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.334 -0400", hash_original_method = "F86D8C7B1180DE3A66C7F2BDF135A8B2", hash_generated_method = "1F17D37C4CA11502BEB3BD83FC294C40")
     @Override
     public final boolean isTainted() {
@@ -690,6 +689,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.334 -0400", hash_original_method = "BF13334B6C13BDDF4754612AD733986A", hash_generated_method = "DBE85A001D43202923E7F0705E8D281D")
     @Override
     public final void setTainted(boolean tainted) {
@@ -699,6 +699,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.334 -0400", hash_original_method = "CB44DB443D68CB8A4DB0177D0C026F61", hash_generated_method = "53D3D76EDE89557326DFFD0E7FE73566")
     @Deprecated
     public final boolean isDown() {
@@ -730,6 +731,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final boolean isGamepadButton(int keyCode) {
         switch (keyCode) {
             case KeyEvent.KEYCODE_BUTTON_A:
@@ -770,6 +772,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.336 -0400", hash_original_method = "7BF185CA9C1C463FC99CEDE50E8D63D5", hash_generated_method = "41C5B5E41CE0044FE79AF4D437C71C53")
     @Override
     public final int getDeviceId() {
@@ -781,6 +784,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.336 -0400", hash_original_method = "7037355E864C633C32E117AF9FFED93E", hash_generated_method = "246708D76C2455FA528AAAF1690C6684")
     @Override
     public final int getSource() {
@@ -792,6 +796,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.336 -0400", hash_original_method = "38516F33934E20A73DA8FE7BA747BA99", hash_generated_method = "3E21BC346D9D226CDA48B7DE02082822")
     @Override
     public final void setSource(int source) {
@@ -801,6 +806,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.336 -0400", hash_original_method = "8A0F7162152E6ECED85F47A14B4B5FFC", hash_generated_method = "86B9AFB576C4883139774DEDE3DCC30F")
     public final int getMetaState() {
         int varFAD32D411972E0A85D1D781044420C0A_1377358430 = (mMetaState);
@@ -821,6 +827,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.336 -0400", hash_original_method = "CE8F8E5E4A30C515D6BD9049A49703B9", hash_generated_method = "8C6C4A109989F5987044E6BE079D7CEC")
     public final int getFlags() {
         int var9C3CD7D37D3E1E66BE9B3B005FC98B3A_1078083004 = (mFlags);
@@ -951,6 +958,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.341 -0400", hash_original_method = "97586FBB5F886A3B61BF136A6C082407", hash_generated_method = "FC33C32A92233EF7B813D8E8EE3042B8")
     public final boolean isAltPressed() {
         boolean var41015A81D6F4028A66C2B0367EF02510_972784937 = ((mMetaState & META_ALT_ON) != 0);
@@ -961,6 +969,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.342 -0400", hash_original_method = "CCAFE012B2273AEF4F41D4D6D0D204B5", hash_generated_method = "30CBAD81FBE7A4F768AF241886BD388E")
     public final boolean isShiftPressed() {
         boolean var922135391054EF86F67F1ABC18F3EF00_135139898 = ((mMetaState & META_SHIFT_ON) != 0);
@@ -971,6 +980,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.342 -0400", hash_original_method = "FD9A49039B892920252DA37B3D678A2D", hash_generated_method = "E0C4B2A361B1FFA25402506D2D96A913")
     public final boolean isSymPressed() {
         boolean var5B0726C7180ABA0E4417AED25EC2DC05_1978477119 = ((mMetaState & META_SYM_ON) != 0);
@@ -981,6 +991,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.343 -0400", hash_original_method = "3C82500C516E1BE610D84AED68B433EB", hash_generated_method = "A3DF22EE0592D8B466869DCA55E2279A")
     public final boolean isCtrlPressed() {
         boolean var90A5A0F47B26038BE552F20ED2F5F4D8_1928389023 = ((mMetaState & META_CTRL_ON) != 0);
@@ -991,6 +1002,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.343 -0400", hash_original_method = "465B8FC61E3DBB23D441220EDBBD9D13", hash_generated_method = "22E3C75CAE0A30525A9D69871C227669")
     public final boolean isMetaPressed() {
         boolean var56A82B8F9D235A059F114F8A6E260E7E_237458162 = ((mMetaState & META_META_ON) != 0);
@@ -1001,6 +1013,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.343 -0400", hash_original_method = "86852117C33E9887622BE81AA6AFA717", hash_generated_method = "2D34999BE6CF45B0E04A77BB98E39D25")
     public final boolean isFunctionPressed() {
         boolean var40BB324A13D4BFBCEECC5AC5E46000AE_1894663654 = ((mMetaState & META_FUNCTION_ON) != 0);
@@ -1011,6 +1024,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.343 -0400", hash_original_method = "201DC9EDE3268FF70DC9BB453F3746A4", hash_generated_method = "8F0F22B81F1BFB4C4D92FA4D74F83196")
     public final boolean isCapsLockOn() {
         boolean varF4DAD3D8DF3362E2BD10743947A83455_2081504022 = ((mMetaState & META_CAPS_LOCK_ON) != 0);
@@ -1021,6 +1035,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.343 -0400", hash_original_method = "F23D7F96DFD52760380CADC49A40315B", hash_generated_method = "441F84EB6155ABEE84C425326CD1E954")
     public final boolean isNumLockOn() {
         boolean var338CA42B91B0B88DE9DEA968EDD90DAA_590655136 = ((mMetaState & META_NUM_LOCK_ON) != 0);
@@ -1031,6 +1046,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.343 -0400", hash_original_method = "F7BF6BCE6DBC769F104CFC5352A06C66", hash_generated_method = "0863837D8B8674FD0A02906F031A52BC")
     public final boolean isScrollLockOn() {
         boolean var152FBF778E1CE250DBA0E1681926A3D0_587348738 = ((mMetaState & META_SCROLL_LOCK_ON) != 0);
@@ -1041,6 +1057,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.343 -0400", hash_original_method = "96C17C1FB3A34A2A0AFECF0EC83B48C2", hash_generated_method = "DDABC48C48E24002CB97CE2FEECFAA51")
     public final int getAction() {
         int varA3988EEE869C06063B06A0C38A6A1E11_513992637 = (mAction);
@@ -1051,6 +1068,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.344 -0400", hash_original_method = "67F2F19B4B996A0666B0A05E347C8968", hash_generated_method = "AB53E00516C62A31DB252B91235F21DE")
     public final boolean isCanceled() {
         boolean var634C0D1CCF9B9E2702EC28EE63AF446E_1007720567 = ((mFlags&FLAG_CANCELED) != 0);
@@ -1061,6 +1079,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.344 -0400", hash_original_method = "27796C2FEC9179970B535474C3BFAAB9", hash_generated_method = "2EE0466AB5C2F2727C33F7700B8007CE")
     public final void startTracking() {
         mFlags |= FLAG_START_TRACKING;
@@ -1069,6 +1088,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.345 -0400", hash_original_method = "D30D10CBEE1B4F7DBBD65FEDA5F644C1", hash_generated_method = "89125AAF8DBFF1C66B3FF90902AD2AEA")
     public final boolean isTracking() {
         boolean var7102E14ACCB8F820589F912AD8D8030E_1299032584 = ((mFlags&FLAG_TRACKING) != 0);
@@ -1079,6 +1099,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.345 -0400", hash_original_method = "AC7740C0A8B7B97C4388CB1808E16854", hash_generated_method = "7A954331166751D1E4EF054CF5BFD7ED")
     public final boolean isLongPress() {
         boolean varF70CC3E5F8612C6EEA8334FA03649A09_820009376 = ((mFlags&FLAG_LONG_PRESS) != 0);
@@ -1089,6 +1110,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.345 -0400", hash_original_method = "AA2A4756B9F9E3EBD53F7A185B310C03", hash_generated_method = "538AE19E0696440CA36C7A5F065CADDD")
     public final int getKeyCode() {
         int varEE855499B412893552B9F8058CF94D19_2027491069 = (mKeyCode);
@@ -1099,6 +1121,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_192600567 =         obtain(this);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.345 -0400", hash_original_method = "E7E0F27294714D41CE9B0DB8FACE7352", hash_generated_method = "4A2E27C87D1A179BEF4AFEF960F9D0B9")
     public final String getCharacters() {
 String var10CEF5DBE14EB762163FAD87728F7E4D_889533493 =         mCharacters;
@@ -1109,6 +1132,7 @@ String var10CEF5DBE14EB762163FAD87728F7E4D_889533493 =         mCharacters;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.345 -0400", hash_original_method = "C59C82C828E55FB1935E12A0581D4304", hash_generated_method = "B2800FE0BD90EAC3617F7E842CBE097F")
     public final int getScanCode() {
         int var35B602FDCFF3043E48F719D54038B8B1_1872469687 = (mScanCode);
@@ -1119,6 +1143,7 @@ String var10CEF5DBE14EB762163FAD87728F7E4D_889533493 =         mCharacters;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.345 -0400", hash_original_method = "4FE747AC8B0667617AE307ECFC6ED74A", hash_generated_method = "2E924B32A1EE9122232F102628E31AF0")
     public final int getRepeatCount() {
         int varF545692334BC1E20E53D9FB0B2CFFF33_1470132755 = (mRepeatCount);
@@ -1129,6 +1154,7 @@ String var10CEF5DBE14EB762163FAD87728F7E4D_889533493 =         mCharacters;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.345 -0400", hash_original_method = "78B33B0396971A0CFD2DA3075372AEE4", hash_generated_method = "7F59D32E4579035024B061555A0D597A")
     public final long getDownTime() {
         long var51587355C5A724D8637EF803C946DD2D_459517927 = (mDownTime);
@@ -1139,6 +1165,7 @@ String var10CEF5DBE14EB762163FAD87728F7E4D_889533493 =         mCharacters;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.346 -0400", hash_original_method = "9909149D86C7172035BFD4D31C880F99", hash_generated_method = "CD5CBFB8218F7D14D7344E30BA2793DA")
     public final long getEventTime() {
         long var3EE1D0D0A7FA96B4DEE335E6458397C2_488288770 = (mEventTime);
@@ -1149,6 +1176,7 @@ String var10CEF5DBE14EB762163FAD87728F7E4D_889533493 =         mCharacters;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.346 -0400", hash_original_method = "E19EE848225D9E04BF4931E6C8BABFAF", hash_generated_method = "CCEB2731DE4DB08E4D51048124DCBF5F")
     @Override
     public final long getEventTimeNano() {
@@ -1160,6 +1188,7 @@ String var10CEF5DBE14EB762163FAD87728F7E4D_889533493 =         mCharacters;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.347 -0400", hash_original_method = "DAE3D173E797B2BC058CC137FF578309", hash_generated_method = "1CE73DC982BF4562128696111BF0D3F8")
     @Deprecated
     public final int getKeyboardDevice() {

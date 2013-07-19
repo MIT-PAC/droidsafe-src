@@ -1,12 +1,14 @@
 package android.webkit;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
+
+import android.content.Context;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class PluginList {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.792 -0400", hash_original_field = "3BBFD44F77386E6A06EB986F62953E04", hash_generated_field = "2E9E45DF2A62E67ADA94EFB03194A6CB")

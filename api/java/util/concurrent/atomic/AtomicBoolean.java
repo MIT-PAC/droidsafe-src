@@ -1,10 +1,11 @@
 package java.util.concurrent.atomic;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import sun.misc.Unsafe;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class AtomicBoolean implements java.io.Serializable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.111 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "AACF1191CE0421BEFC63226B2561E15D")
@@ -27,6 +28,7 @@ public class AtomicBoolean implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.111 -0400", hash_original_method = "5ABD420FFDECFAFBA90B6FD43E53DADE", hash_generated_method = "F7AEE158E2FB3D1A8F3070DB49FCDC71")
     public final boolean get() {
         boolean var80940A95783E22E347BA247FD5DDC6D8_46378998 = (value != 0);
@@ -37,6 +39,7 @@ public class AtomicBoolean implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.112 -0400", hash_original_method = "F4EDC6324B18AED31374999FCFCE4700", hash_generated_method = "F4B5459D1989BE5D64C1950310475E92")
     public final boolean compareAndSet(boolean expect, boolean update) {
         addTaint(update);
@@ -70,6 +73,7 @@ public class AtomicBoolean implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.113 -0400", hash_original_method = "FD0CF162327E2AB30C8884FB52F6FB5F", hash_generated_method = "8AC023BF8D2529665F05AB859DBF8644")
     public final void set(boolean newValue) {
         value = newValue ? 1 : 0;
@@ -78,6 +82,7 @@ public class AtomicBoolean implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.113 -0400", hash_original_method = "CA687482363D6F32107DA02B75F4C570", hash_generated_method = "3E2085D30B2D69D5D8186465488AF7D4")
     public final void lazySet(boolean newValue) {
         addTaint(newValue);
@@ -89,6 +94,7 @@ public class AtomicBoolean implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.114 -0400", hash_original_method = "E903BF98EDD2BB9EFF497ED0D64C109B", hash_generated_method = "160F9CCCD494E3F0D96D83D73218DBC9")
     public final boolean getAndSet(boolean newValue) {
         addTaint(newValue);

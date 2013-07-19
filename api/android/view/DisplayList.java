@@ -1,9 +1,9 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class DisplayList {
     
@@ -14,18 +14,23 @@ public abstract class DisplayList {
     }
 
 
+    @DSModeled(DSC.SAFE)
     abstract HardwareCanvas start();
 
     
+    @DSModeled(DSC.SAFE)
     abstract void end();
 
     
+    @DSModeled(DSC.SAFE)
     abstract void invalidate();
 
     
+    @DSModeled(DSC.SAFE)
     abstract boolean isValid();
 
     
+    @DSModeled(DSC.SAFE)
     abstract int getSize();
 
     

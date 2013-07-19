@@ -1,20 +1,23 @@
 package org.apache.http.impl.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.io.IOException;
 import java.util.Iterator;
+
 import org.apache.http.Header;
 import org.apache.http.HttpException;
 import org.apache.http.HttpMessage;
 import org.apache.http.io.HttpMessageWriter;
 import org.apache.http.io.SessionOutputBuffer;
-import org.apache.http.message.LineFormatter;
 import org.apache.http.message.BasicLineFormatter;
+import org.apache.http.message.LineFormatter;
 import org.apache.http.params.HttpParams;
 import org.apache.http.util.CharArrayBuffer;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class AbstractMessageWriter implements HttpMessageWriter {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.384 -0400", hash_original_field = "C5C1A1B9CB00AE65F16C20243BC76E0D", hash_generated_field = "7546C8F84D7739D4A1BA10808E25B0AE")
@@ -54,6 +57,7 @@ public abstract class AbstractMessageWriter implements HttpMessageWriter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract void writeHeadLine(HttpMessage message)
         throws IOException
         ;

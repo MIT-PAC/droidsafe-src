@@ -1,9 +1,10 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class IllegalFormatWidthException extends IllegalFormatException {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.516 -0400", hash_original_field = "F1290186A5D0B1CEAB27F4E77C0C5D68", hash_generated_field = "23C6668234F9AB5AD401877AE4904DE1")

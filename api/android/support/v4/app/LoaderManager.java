@@ -1,18 +1,18 @@
 package android.support.v4.app;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.app.Activity;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+import java.lang.reflect.Modifier;
+
 import android.os.Bundle;
 import android.support.v4.content.Loader;
 import android.support.v4.util.DebugUtils;
 import android.support.v4.util.SparseArrayCompat;
-import android.util.Log;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.lang.reflect.Modifier;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class LoaderManager {
     
@@ -23,17 +23,21 @@ public abstract class LoaderManager {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public abstract <D> Loader<D> initLoader(int id, Bundle args,
             LoaderManager.LoaderCallbacks<D> callback);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract <D> Loader<D> restartLoader(int id, Bundle args,
             LoaderManager.LoaderCallbacks<D> callback);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void destroyLoader(int id);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract <D> Loader<D> getLoader(int id);
 
     

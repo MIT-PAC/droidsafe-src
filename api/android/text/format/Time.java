@@ -1,12 +1,15 @@
 package android.text.format;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.content.res.Resources;
 import java.util.Locale;
 import java.util.TimeZone;
+
+import android.content.res.Resources;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 public class Time {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.809 -0400", hash_original_field = "3768C7D722E20F8162E6651DD2082773", hash_generated_field = "9B333262C59ACAF4662993E0381B186B")

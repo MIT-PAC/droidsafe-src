@@ -1,19 +1,21 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.database.Cursor;
-import android.database.DatabaseUtils;
-import android.provider.BaseColumns;
-import android.text.TextUtils;
-import android.util.Log;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.regex.Pattern;
+
+import android.database.Cursor;
+import android.database.DatabaseUtils;
+import android.provider.BaseColumns;
+import android.text.TextUtils;
+import android.util.Log;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SQLiteQueryBuilder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.992 -0400", hash_original_field = "CAC1605D9B4F31C278921D5EA4DD178B", hash_generated_field = "769F77C34DE42382B188666E269E7701")
@@ -118,6 +120,7 @@ String varDFAC709EF682E7EE77A36551B3D5FA40_753282632 =         mTables;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.000 -0400", hash_original_method = "DDD8D9F6C39192C696789E3C5816355A", hash_generated_method = "52ECEFBD4BAF572978D68E44F502DFAD")
     public void setProjectionMap(Map<String, String> columnMap) {
         mProjectionMap = columnMap;

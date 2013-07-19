@@ -1,11 +1,11 @@
 package android.location;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import android.os.RemoteException;
-import android.util.Log;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class LocationProvider {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.732 -0400", hash_original_field = "311C2C8498DF6A626CBDB8AA4193499C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
@@ -72,30 +72,39 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1832678251 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean requiresNetwork();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean requiresSatellite();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean requiresCell();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean hasMonetaryCost();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean supportsAltitude();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean supportsSpeed();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean supportsBearing();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getPowerRequirement();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract int getAccuracy();
 
     

@@ -1,14 +1,13 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import android.os.Parcelable;
-import android.os.Parcel;
-import android.net.Uri;
-import android.util.Log;
 import java.util.ArrayList;
+
+import android.net.Uri;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public final class Entity {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.523 -0400", hash_original_field = "90BFF6F4E8E62CBC2DC12A9ACE468001", hash_generated_field = "2CDA41B4D101B2B770760EBED9C98242")
@@ -39,6 +38,7 @@ ContentValues varC2D5F196132EC24FFA86AC8D1AA44E77_702251163 =         mValues;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.524 -0400", hash_original_method = "8F0C435720446C70ACF6C91C6A520904", hash_generated_method = "5BAB70B7F0F61B500DE5D1158C3AF6FF")
     public ArrayList<NamedContentValues> getSubValues() {
 ArrayList<NamedContentValues> var5927EF407499F6B0E6446B9609227466_1334697494 =         mSubValues;

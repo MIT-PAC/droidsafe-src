@@ -1,10 +1,12 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.nio.ByteBuffer;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class SSLEngine {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.691 -0400", hash_original_field = "4EC98FB9133927791198E49B2FD46358", hash_generated_field = "871B4093DF845204CC93E22B63A3EB07")
@@ -56,69 +58,91 @@ String varFEF815055C97D4B621404BF729E85DA2_1991946637 =         peerHost;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void beginHandshake() throws SSLException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void closeInbound() throws SSLException;
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void closeOutbound();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract Runnable getDelegatedTask();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] getEnabledCipherSuites();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] getEnabledProtocols();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean getEnableSessionCreation();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SSLEngineResult.HandshakeStatus getHandshakeStatus();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean getNeedClientAuth();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract SSLSession getSession();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] getSupportedCipherSuites();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String[] getSupportedProtocols();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean getUseClientMode();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean getWantClientAuth();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isInboundDone();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean isOutboundDone();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setEnabledCipherSuites(String[] suites);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setEnabledProtocols(String[] protocols);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setEnableSessionCreation(boolean flag);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setNeedClientAuth(boolean need);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setUseClientMode(boolean mode);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract void setWantClientAuth(boolean want);
 
     

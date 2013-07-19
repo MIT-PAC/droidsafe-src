@@ -1,13 +1,15 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.concurrent.atomic.AtomicBoolean;
+
 import android.os.Message;
 import android.util.Log;
+
 import com.android.internal.telephony.IccPhoneBookInterfaceManager;
+
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
 
 public class RuimPhoneBookInterfaceManager extends IccPhoneBookInterfaceManager {
     

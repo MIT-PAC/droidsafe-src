@@ -1,20 +1,23 @@
 package android.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
+import static android.telephony.TelephonyManager.PHONE_TYPE_CDMA;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import android.os.Parcel;
 import android.util.Log;
+
 import com.android.internal.telephony.GsmAlphabet;
-import com.android.internal.telephony.SmsHeader;
 import com.android.internal.telephony.SmsMessageBase;
 import com.android.internal.telephony.SmsMessageBase.SubmitPduBase;
 import com.android.internal.telephony.SmsMessageBase.TextEncodingDetails;
-import java.lang.Math;
-import java.util.ArrayList;
-import java.util.Arrays;
-import static android.telephony.TelephonyManager.PHONE_TYPE_CDMA;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SmsMessage {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.080 -0400", hash_original_field = "6C6FE296324BD37F8F46A4EDA590FE7A", hash_generated_field = "6512A5313A4B16FABCD0C4BB52D92A5B")

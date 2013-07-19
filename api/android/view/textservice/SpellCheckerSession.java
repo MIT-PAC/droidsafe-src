@@ -1,13 +1,9 @@
 package android.view.textservice;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
-import com.android.internal.textservice.ISpellCheckerSession;
-import com.android.internal.textservice.ISpellCheckerSessionListener;
-import com.android.internal.textservice.ITextServicesManager;
-import com.android.internal.textservice.ITextServicesSessionListener;
+import java.util.LinkedList;
+import java.util.Queue;
+
 import android.os.Binder;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -15,11 +11,16 @@ import android.os.Message;
 import android.os.Process;
 import android.os.RemoteException;
 import android.util.Log;
-import android.view.textservice.SpellCheckerInfo;
-import android.view.textservice.SuggestionsInfo;
-import android.view.textservice.TextInfo;
-import java.util.LinkedList;
-import java.util.Queue;
+
+import com.android.internal.textservice.ISpellCheckerSession;
+import com.android.internal.textservice.ISpellCheckerSessionListener;
+import com.android.internal.textservice.ITextServicesManager;
+import com.android.internal.textservice.ITextServicesSessionListener;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public class SpellCheckerSession {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.900 -0400", hash_original_field = "86570ADBC3157007B47DF3D9431125CE", hash_generated_field = "215C075D2F430DB54F33624A6C82B697")
