@@ -605,14 +605,9 @@ public class Harness {
 		for (EntryPoints.EntryPoint entryPoint : EntryPoints.v().getAppEntryPoints()) {
 			SootClass clazz = entryPoint.clz;
 			
-			if (clazz.isInterface() || clazz.isAbstract())
+			if (clazz.isInterface() || clazz.isAbstract() || xmlInjectSet.contains(clazz))
 				continue;
-			
-			if (xmlInjectSet.contains(clazz)) {
-				logger.info("Clazz {} already in XML, skipped ", clazz);
-				continue;
-			}
-			
+		
 			addCallToEntryPointAndCreateLocal(body, clazz, entryPoint.method); 
 			
 			visited.add(clazz);
@@ -627,6 +622,11 @@ public class Harness {
 	 */
 	private void addCallToEntryPointAndCreateLocal(StmtBody body, SootClass clazz, SootMethod entryPoint) {
 	    
+		if (xmlInjectSet.contains(clazz)) {
+			logger.info("Clazz {} already in XML, skipped ", clazz);
+			return;
+		}
+			
 	    //first create the local for the declaring class if we have not created it before
 	    if (!localsMap.containsKey(clazz) && !entryPoint.isStatic()) {
 	        RefType type = RefType.v(clazz);
