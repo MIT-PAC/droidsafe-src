@@ -32,15 +32,16 @@ public class SetTopLevelNodeForView extends AbstractHandler {
         SecuritySpecOutlineViewPart droidsafeView = (SecuritySpecOutlineViewPart) part;
 
         String currentState = event.getParameter(RadioState.PARAMETER_ID);
-        if (currentState.equals("input_method")) {
-
-          droidsafeView.setEntryPointsAsViewTopLevelParents();
-        } else if (currentState.equals("output_method")) {
-
-          droidsafeView.setApiCallsAsViewTopLevelParents();
-        } else if (currentState.equals("code_location")) {
-          droidsafeView.setCodeLocationAsViewTopLevelParents();
-        }
+        droidsafeView.setTopLevelNodeForView(currentState);
+//        if (currentState.equals("input_method")) {
+//
+//          droidsafeView.setEntryPointsAsViewTopLevelParents();
+//        } else if (currentState.equals("output_method")) {
+//
+//          droidsafeView.setApiCallsAsViewTopLevelParents();
+//        } else if (currentState.equals("code_location")) {
+//          droidsafeView.setCodeLocationAsViewTopLevelParents();
+//        }
         // and finally update the current state
         HandlerUtil.updateRadioState(event.getCommand(), currentState);
       }

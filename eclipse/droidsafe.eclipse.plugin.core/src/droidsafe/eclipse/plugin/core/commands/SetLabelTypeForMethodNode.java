@@ -31,13 +31,8 @@ public class SetLabelTypeForMethodNode extends AbstractHandler {
       IWorkbenchPart part = HandlerUtil.getActivePart(event);
       if (part instanceof SecuritySpecOutlineViewPart) {
         SecuritySpecOutlineViewPart droidsafeView = (SecuritySpecOutlineViewPart) part;
-
         String currentState = event.getParameter(RadioState.PARAMETER_ID);
-        if (currentState.equals("short_label")) {
-          droidsafeView.setUseShortSignatureForMethods(true);
-        } else if (currentState.equals("long_label")) {
-          droidsafeView.setUseShortSignatureForMethods(false);
-        }
+        droidsafeView.setLabelTypeForMethodName(currentState);
         // and finally update the current state
         HandlerUtil.updateRadioState(event.getCommand(), currentState);
       }
