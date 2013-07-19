@@ -124,6 +124,7 @@ public class Harness {
 	}
 	
 	private Harness() {
+	    localsMap = new LinkedHashMap<SootClass, Local>();
 		entryPointInvokes = new LinkedList<Unit>();
 		generatedFields = new LinkedHashSet<SootField>();
 		
@@ -279,8 +280,7 @@ public class Harness {
 	
 	
 	int counter = 0;
-	Set<SootClass> xmlInjectSet = new HashSet<SootClass>();
-	
+		
 	/**
 	 * 
 	 * @param component: one of the provider, service, application and receiver
@@ -341,7 +341,7 @@ public class Harness {
 		
 		body.getUnits().add(initStmt);
 		
-		xmlInjectSet.add(compClass);
+		localsMap.put(compClass, compLocal);
 	}
 	
 	
@@ -598,8 +598,6 @@ public class Harness {
 	}
 	
 	private Set<SootClass> addCallsToComponentEntryPoints(StmtBody body) {
-	    
-	    localsMap = new LinkedHashMap<SootClass, Local>();
 	    Set<SootClass> visited = new LinkedHashSet<SootClass>();
 		
 		for (EntryPoints.EntryPoint entryPoint : EntryPoints.v().getAppEntryPoints()) {
@@ -607,7 +605,7 @@ public class Harness {
 			
 			if (clazz.isInterface() || clazz.isAbstract() || xmlInjectSet.contains(clazz))
 				continue;
-		
+
 			addCallToEntryPointAndCreateLocal(body, clazz, entryPoint.method); 
 			
 			visited.add(clazz);
