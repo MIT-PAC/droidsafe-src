@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import soot.SootMethod;
+
 /**
  * This class keeps a set of Android classes that are innocuous for their direct actions.
  * 
@@ -13,7 +15,14 @@ import java.util.Set;
  * @author mgordon
  *
  */
-public class SafeAndroidClasses {
+public class SafeAndroidClassesAndMethods {
+    private static final String[] safeMethodsArray = 
+        {
+         "<java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>",
+         "<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setTitle(int)>",
+         "<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setTitle(java.lang.CharSequence)>"
+        };
+    
     /** The list of safe classes */
     private static final String[] safeClassesArray = 
         {"android.graphics.LinearGradient",
@@ -608,29 +617,38 @@ public class SafeAndroidClasses {
     
     /** set of classes for quick lookups */
     private Set<String> safeClasses;
+    /** set of methods for quick lookups */
+    private Set<String> safeMethods;
+    
     /** Singleton object */
-    private static SafeAndroidClasses v;
+    private static SafeAndroidClassesAndMethods v;
     
     /** private constructor that builds set */
-    private SafeAndroidClasses() {
+    private SafeAndroidClassesAndMethods() {
         safeClasses = new HashSet<String>();
+        safeMethods = new HashSet<String>();
         
         safeClasses.addAll(Arrays.asList(safeClassesArray));
+        safeMethods.addAll(Arrays.asList(safeMethodsArray));
     }
     
     /** get the singleton object */
-    public static SafeAndroidClasses v() {
+    public static SafeAndroidClassesAndMethods v() {
         if (v == null)
-            v = new SafeAndroidClasses();
+            v = new SafeAndroidClassesAndMethods();
         
         return v;
     }
 
    /** 
-    * Return true if the fully qualified class name is safe.
+    * Return true the methods declaring class is safe, or if the method 
+    * has been specified as safe.
     */
-   public boolean isSafeClass(String fullName) {
-       return safeClasses.contains(fullName);
+   public boolean isSafeMethod(SootMethod method) {      
+       if (safeClasses.contains(method.getDeclaringClass().getName()))
+           return true;
+       
+       return safeMethods.contains(method.getSignature());
    }  
      
 }
