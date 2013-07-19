@@ -304,7 +304,7 @@ public class Harness {
 		
 		logger.info("Type {} ", compType);
 		
-        String initSig = String.format("<%s: void <init>()>", compType);
+        String initSig = String.format("<%s: void <init>()>", compClass.getName());
         
 		SootMethod compInit = Scene.v().getMethod(initSig);
 		
@@ -319,11 +319,15 @@ public class Harness {
 		String name = String.format("__ds__%s%03d", 
 				compType.substring(compType.lastIndexOf(".") + 1), counter++);
 		
-		Local compLocal = Jimple.v().newLocal(name,  RefType.v(compType));
+		//Local compLocal = Jimple.v().newLocal(name,  RefType.v(compType));
+		Local compLocal = Jimple.v().newLocal(name,  compClass.getType());
 		body.getLocals().add(compLocal);
 		
 		Local stringLocal = Jimple.v().newLocal(String.format("__dsString%03d", counter++),  
-		        RefType.v(compType)); 
+		        compClass.getType());
+		
+		//Local stringLocal = Jimple.v().newLocal(String.format("__dsString%03d", counter++),  
+		//        RefType.v(compType)); 
 
 		Expr newAppExpr = Jimple.v().newNewExpr(compClass.getType());
 		body.getUnits().add(Jimple.v().newAssignStmt(compLocal,  newAppExpr));
@@ -379,10 +383,8 @@ public class Harness {
 		 // inject Application __dsApp__
 		RefType appType = appClass.getType();
 		
-		Local appLocal = Jimple.v().newLocal("__dsApp__",  RefType.v("android.app.Application"));
+		Local appLocal = Jimple.v().newLocal("__dsApp__",  appClass.getType());
         body.getLocals().add(appLocal);
-        
-        Local stringLocal = Jimple.v().newLocal("__dsString__",  RefType.v("java.lang.String"));
         
         // __dsApp__ = new Application
         Expr newAppExpr = Jimple.v().newNewExpr(appType);
