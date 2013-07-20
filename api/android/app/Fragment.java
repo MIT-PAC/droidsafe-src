@@ -60,6 +60,19 @@ public class Fragment implements ComponentCallbacks2, OnCreateContextMenuListene
 		// TODO Auto-generated method stub
 		
 	}
-
+	
+	@DSModeled(DSC.SAFE)
+	public final String getString(int resId) {
+		String str = new String();
+        str.addTaint(resId);
+        return str;
+	}
+	
+	@DSModeled(DSC.SAFE)
+	public final CharSequence getText(int resId) {
+        String str = new String();
+        str.addTaint(resId);
+        return str;
+	}
 
 }

@@ -154,22 +154,21 @@ public class Resources {
 	    return mSystem;
 	}
 	
-	public CharSequence getText(int id){
-		
-		// Original method
-		/*
-		{
-        CharSequence res = mAssets.getResourceText(id);
-        if (res != null) {
-            return res;
-        }
-        throw new NotFoundException("String resource ID #0x"
-                                    + Integer.toHexString(id));
-    }
-		*/
-		return null;
+	
+	@DSModeled(DSC.SAFE)
+	public final String getString(int resId) {
+		String str = new String();
+        str.addTaint(resId);
+        return str;
 	}
 	
+	@DSModeled(DSC.SAFE)
+	public final CharSequence getText(int resId) {
+        String str = new String();
+        str.addTaint(resId);
+        return str;
+	}
+    
 	public CharSequence getQuantityText(int id, int quantity){
 		
 		// Original method
@@ -247,22 +246,6 @@ public class Resources {
 		return "";
 	}
 	
-	@DSModeled
-	public String getString(int id){
-		
-		// Original method
-		/*
-		{
-        CharSequence res = getText(id);
-        if (res != null) {
-            return res.toString();
-        }
-        throw new NotFoundException("String resource ID #0x"
-                                    + Integer.toHexString(id));
-    }
-		*/
-		return "";
-	}
 	
 	@DSModeled
 	public String getString(int id, Object... formatArgs){
