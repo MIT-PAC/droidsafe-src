@@ -36,16 +36,20 @@
       </command>      
       <command
             defaultHandler="droidsafe.eclipse.plugin.core.commands.SortOutlineView"
-            id="droidsafe.eclipse.plugin.core.commands.SortView"
+            id="droidsafe.eclipse.plugin.core.commands.SortOutlineView"
             name="SortView">
          <commandParameter
                id="org.eclipse.ui.commands.radioStateParameter"
                name="SortSelection"
                optional="false">
          </commandParameter>
-         <state
-               class="org.eclipse.ui.handlers.RadioState:method"
-               id="org.eclipse.ui.commands.radioState">               
+          <state id="org.eclipse.ui.commands.radioState">
+               <class class="org.eclipse.ui.handlers.RadioState">
+                <parameter name="default"   value="method">
+                </parameter>
+                <parameter name="persisted" value="true"> 
+                </parameter> 
+               </class>
          </state>
       </command>
       <command
@@ -67,12 +71,11 @@
                name="SetTopLevelNodeSelection"
                optional="false">
          </commandParameter>
-         <state               
-               id="org.eclipse.ui.commands.radioState">
+         <state id="org.eclipse.ui.commands.radioState">
                <class class="org.eclipse.ui.handlers.RadioState">
                 <parameter name="default"   value="input_method">
                 </parameter>
-                <parameter name="persisted" value="false"> 
+                <parameter name="persisted" value="true"> 
                 </parameter> 
                </class>
          </state>
@@ -108,15 +111,10 @@
          </commandParameter>
          <state
                id="org.eclipse.ui.commands.radioState">
-            <class
-                  class="org.eclipse.ui.handlers.RadioState">
-               <parameter
-                     name="default"
-                     value="short_label">
+            <class class="org.eclipse.ui.handlers.RadioState">
+               <parameter name="default" value="short_label">
                </parameter>
-               <parameter
-                     name="persisted"
-                     value="false">
+               <parameter name="persisted" value="true">
                </parameter>
             </class>
          </state>
@@ -278,7 +276,7 @@
                id="droidsafe.eclipse.plugin.core.view.Sort"
                label="Sort">
             <command
-                  commandId="droidsafe.eclipse.plugin.core.commands.SortView"
+                  commandId="droidsafe.eclipse.plugin.core.commands.SortOutlineView"
                   label="Sort by Method Name"
                   style="radio">
                <parameter
@@ -287,7 +285,7 @@
                </parameter>
             </command>
             <command
-                  commandId="droidsafe.eclipse.plugin.core.commands.SortView"
+                  commandId="droidsafe.eclipse.plugin.core.commands.SortOutlineView"
                   label="Sort by Class Name"
                   style="radio">
                <parameter
@@ -296,12 +294,21 @@
                </parameter>
             </command>
             <command
-                  commandId="droidsafe.eclipse.plugin.core.commands.SortView"
+                  commandId="droidsafe.eclipse.plugin.core.commands.SortOutlineView"
                   label="Sort by Status"
                   style="radio">
                <parameter
                      name="org.eclipse.ui.commands.radioStateParameter"
                      value="status">
+               </parameter>
+            </command>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.SortOutlineView"
+                  label="Sort by Priority"
+                  style="radio">
+               <parameter
+                     name="org.eclipse.ui.commands.radioStateParameter"
+                     value="priority">
                </parameter>
             </command>
          </menu>

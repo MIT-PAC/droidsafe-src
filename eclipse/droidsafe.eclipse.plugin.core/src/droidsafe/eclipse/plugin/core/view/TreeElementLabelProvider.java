@@ -132,7 +132,13 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
       Object data = element.getData();
       if (data instanceof MethodModel) {
         MethodModel method = (MethodModel) data;
-        StringBuffer sb = new StringBuffer(method.getSignature());
+        StringBuffer sb = new StringBuffer();
+        if (!useShortSignatureForMethods) {
+          sb.append(method.getShortSignature());
+        } else {
+          sb.append(method.getSignature());
+        }
+
         Set<String> permissions = method.getPermissions();
         if (permissions != null) {
           for (String permission : permissions) {
@@ -140,6 +146,9 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
             sb.append("Permission: ");
             sb.append(permission);
           }
+        }
+        if (method.isNative()) {
+          sb.append("\nNATIVE METHOD");
         }
         return sb.toString();
       }
@@ -207,7 +216,7 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
       textStyle.font = boldFont;
     }
   };
-  
+
   /**
    * A styler to allow the label of the node to be blue.
    */
@@ -246,12 +255,19 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
       Object data = element.getData();
       if (data instanceof MethodModel) {
         MethodModel method = (MethodModel) data;
+        
         if (method.isSafe()) {
           styledString.setStyle(0, styledString.length(), STRIKEOUT);
+          
         } else if (method.getPermissions() != null && !method.getPermissions().isEmpty()) {
           styledString.setStyle(0, styledString.length(), RED_FOREGROUND);
-        } else if (MethodsToHighlight.shouldHighlightMethd(method)){
+          
+        } else if (method.isNative()) {
+          styledString.setStyle(0, styledString.length(), RED_FOREGROUND);
+          
+        } else if (MethodsToHighlight.shouldHighlightMethd(method)) {
           styledString.setStyle(0, styledString.length(), BLUE_FOREGROUND);
+          
         } else if (method.getReceiver() != null && !method.getReceiver().equals("")) {
           styledString.setStyle(0, styledString.length(), BOLD);
         }

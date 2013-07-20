@@ -5,6 +5,7 @@ import japa.parser.ast.body.ConstructorDeclaration;
 import japa.parser.ast.body.FieldDeclaration;
 import japa.parser.ast.body.MethodDeclaration;
 import japa.parser.ast.body.Parameter;
+import japa.parser.ast.body.TypeDeclaration;
 
 import java.util.Comparator;
 import java.util.List;
@@ -14,6 +15,7 @@ public class MemberComparator implements Comparator<BodyDeclaration> {
     public static final int FIELD = 0;
     public static final int CONSTRUCTOR = 1;
     public static final int METHOD = 2;
+    public static final int TYPE = 3;
     public static final int UNKNOWN = -1;
 
     @Override
@@ -40,6 +42,11 @@ public class MemberComparator implements Comparator<BodyDeclaration> {
             List<Parameter> params1 = ((MethodDeclaration)member1).getParameters();
             List<Parameter> params2 = ((MethodDeclaration)member2).getParameters();
             return compareParams(params1, params2);
+        }
+        if (kind1 == TYPE) {
+            String name1 = ((TypeDeclaration)member1).getName();
+            String name2 = ((TypeDeclaration)member2).getName();
+            return name1.compareTo(name2);
         }
         return -1;
     }
@@ -70,6 +77,8 @@ public class MemberComparator implements Comparator<BodyDeclaration> {
             return CONSTRUCTOR;
         if (member instanceof MethodDeclaration)
             return METHOD;
+        if (member instanceof TypeDeclaration)
+            return TYPE;
         return UNKNOWN;
     }
 

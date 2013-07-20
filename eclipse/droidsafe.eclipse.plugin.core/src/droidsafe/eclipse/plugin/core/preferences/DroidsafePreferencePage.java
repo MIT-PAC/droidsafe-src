@@ -65,9 +65,10 @@ public class DroidsafePreferencePage extends FieldEditorPreferencePage
 
     addField(new BooleanFieldEditor(PreferenceConstants.P_UNFILTERED_STRING_ANALYSIS,
         "Run String Analysis for All Soot Application Classes", getFieldEditorParent()));
-    
-    addField(new BooleanFieldEditor(PreferenceConstants.P_ADD_ALL_METHODS_TO_STRING_ANALYSIS,
-      "Add all methods in spec that uses strings as hotspots for string analysis", getFieldEditorParent()));
+
+    // addField(new BooleanFieldEditor(PreferenceConstants.P_ADD_ALL_METHODS_TO_STRING_ANALYSIS,
+    // "Add all methods in spec that uses strings as hotspots for string analysis",
+    // getFieldEditorParent()));
   }
 
   /*
