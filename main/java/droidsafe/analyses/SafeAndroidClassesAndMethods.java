@@ -68,18 +68,18 @@ public class SafeAndroidClassesAndMethods {
     	
     	// Methods from java.lang.Class that are considered safe.
     	safe.addSafeClass("java.lang.Class")
-            .addSafeMethod("asSubclass").addSafeSignature("Class").done()
-            .addSafeMethod("cast").addSafeSignature("Object").done()
+            .addSafeMethod("asSubclass").addSafeSignature("java.lang.Class").done()
+            .addSafeMethod("cast").addSafeSignature("java.lang.Object").done()
     	    .addSafeMethod("getName").addSafeSignature().done()
             .addSafeMethod("getCanonicalName").addSafeSignature().done()
             .addSafeMethod("getSimpleName").addSafeSignature().done()
             .addSafeMethod("isAnnotation").addSafeSignature().done()
-            .addSafeMethod("isAnnotationPresent").addSafeSignature("Class").done()
+            .addSafeMethod("isAnnotationPresent").addSafeSignature("java.lang.Class").done()
             .addSafeMethod("isAnonymousClass").addSafeSignature().done()
             .addSafeMethod("isArray").addSafeSignature().done()
-            .addSafeMethod("isAssignableFrom").addSafeSignature("Class").done()
+            .addSafeMethod("isAssignableFrom").addSafeSignature("java.lang.Class").done()
             .addSafeMethod("isEnum").addSafeSignature().done()
-            .addSafeMethod("isInstance").addSafeSignature("Object").done()
+            .addSafeMethod("isInstance").addSafeSignature("java.lang.Object").done()
             .addSafeMethod("isInterface").addSafeSignature().done()
             .addSafeMethod("isLocalClass").addSafeSignature().done()
             .addSafeMethod("isMemberClass").addSafeSignature().done()
@@ -90,11 +90,11 @@ public class SafeAndroidClassesAndMethods {
     	
     	// Methods from java.lang.System that are considered safe.
     	safe.addSafeClass("java.lang.System")
-    	    .addSafeMethod("arraycopy").addSafeSignature("Object","int","Object","int","int").done()
+    	    .addSafeMethod("arraycopy").addSafeSignature("java.lang.Object","int","java.lang.Object","int","int").done()
             .addSafeMethod("currentTimeMillis").addSafeSignature().done()
             .addSafeMethod("exit").addSafeSignature("int").done()
             .addSafeMethod("gc").addSafeSignature().done()
-            .addSafeMethod("identityHashCode").addSafeSignature("Object").done()
+            .addSafeMethod("identityHashCode").addSafeSignature("java.lang.Object").done()
             .addSafeMethod("nanoTime").addSafeSignature().done()
             .addSafeMethod("runFinalization").addSafeSignature().done()
             .addSafeMethod("runFinalizersOnExit").addSafeSignature("boolean").done()
@@ -103,7 +103,7 @@ public class SafeAndroidClassesAndMethods {
         // Methods from android.app.AlertDialog$Builder that are considered safe.
         safe.addSafeClass("android.app.AlertDialog$Builder")
             .addSafeMethod("setTitle")
-                .addSafeSignature("CharSequence")
+                .addSafeSignature("java.lang.CharSequence")
                 .addSafeSignature("int")
                 .done()
             .done();
