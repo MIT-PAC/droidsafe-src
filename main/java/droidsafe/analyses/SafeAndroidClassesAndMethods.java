@@ -98,8 +98,6 @@ public class SafeAndroidClassesAndMethods {
             .addSafeMethod("nanoTime").addSafeSignature().done()
             .addSafeMethod("runFinalization").addSafeSignature().done()
             .addSafeMethod("runFinalizersOnExit").addSafeSignature("boolean").done()
-            .addSafeMethod("example").addSafeSignature("boolean[][][]").done()
-            .addSafeMethod("example2").addSafeSignature("Object[]").done()
     	    .done();
     	
         // Methods from android.app.AlertDialog$Builder that are considered safe.
