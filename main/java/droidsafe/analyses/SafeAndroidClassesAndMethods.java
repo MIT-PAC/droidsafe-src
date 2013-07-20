@@ -8,8 +8,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import soot.ArrayType;
+import soot.BooleanType;
+import soot.ByteType;
+import soot.CharType;
+import soot.DoubleType;
+import soot.FloatType;
+import soot.IntType;
+import soot.LongType;
+import soot.RefType;
+import soot.ShortType;
 import soot.SootMethod;
 import soot.Type;
+import soot.VoidType;
 
 /**
  * This class keeps a set of Android classes that are innocuous for their direct actions.
@@ -57,34 +68,46 @@ public class SafeAndroidClassesAndMethods {
     	
     	// Methods from java.lang.Class that are considered safe.
     	safe.addSafeClass("java.lang.Class")
-    	    .addSafeMethod("getName").allSignaturesSafe()
-            .addSafeMethod("isAnnotation").allSignaturesSafe()
-            .addSafeMethod("isAnnotationPresent").allSignaturesSafe()
-            .addSafeMethod("isAnonymousClass").allSignaturesSafe()
-            .addSafeMethod("isArray").allSignaturesSafe()
-            .addSafeMethod("isAssignableFrom").allSignaturesSafe()
-            .addSafeMethod("isEnum").allSignaturesSafe()
-            .addSafeMethod("isInstance").allSignaturesSafe()
-            .addSafeMethod("isInterface").allSignaturesSafe()
-            .addSafeMethod("isLocalClass").allSignaturesSafe()
-            .addSafeMethod("isMemberClass").allSignaturesSafe()
-            .addSafeMethod("isPrimitive").allSignaturesSafe()
-            .addSafeMethod("isSynthetic").allSignaturesSafe()
+            .addSafeMethod("asSubclass").addSafeSignature("Class").done()
+            .addSafeMethod("cast").addSafeSignature("Object").done()
+    	    .addSafeMethod("getName").addSafeSignature().done()
+            .addSafeMethod("getCanonicalName").addSafeSignature().done()
+            .addSafeMethod("getSimpleName").addSafeSignature().done()
+            .addSafeMethod("isAnnotation").addSafeSignature().done()
+            .addSafeMethod("isAnnotationPresent").addSafeSignature("Class").done()
+            .addSafeMethod("isAnonymousClass").addSafeSignature().done()
+            .addSafeMethod("isArray").addSafeSignature().done()
+            .addSafeMethod("isAssignableFrom").addSafeSignature("Class").done()
+            .addSafeMethod("isEnum").addSafeSignature().done()
+            .addSafeMethod("isInstance").addSafeSignature("Object").done()
+            .addSafeMethod("isInterface").addSafeSignature().done()
+            .addSafeMethod("isLocalClass").addSafeSignature().done()
+            .addSafeMethod("isMemberClass").addSafeSignature().done()
+            .addSafeMethod("isPrimitive").addSafeSignature().done()
+            .addSafeMethod("isSynthetic").addSafeSignature().done()
+            .addSafeMethod("toString").addSafeSignature().done()
             .done();
     	
     	// Methods from java.lang.System that are considered safe.
     	safe.addSafeClass("java.lang.System")
-    	    .addSafeMethod("arraycopy").allSignaturesSafe()
+    	    .addSafeMethod("arraycopy").addSafeSignature("Object","int","Object","int","int").done()
+            .addSafeMethod("currentTimeMillis").addSafeSignature().done()
+            .addSafeMethod("exit").addSafeSignature("int").done()
+            .addSafeMethod("gc").addSafeSignature().done()
+            .addSafeMethod("identityHashCode").addSafeSignature("Object").done()
+            .addSafeMethod("nanoTime").addSafeSignature().done()
+            .addSafeMethod("runFinalization").addSafeSignature().done()
+            .addSafeMethod("runFinalizersOnExit").addSafeSignature("boolean").done()
+            .addSafeMethod("example").addSafeSignature("boolean[][][]").done()
+            .addSafeMethod("example2").addSafeSignature("Object[]").done()
     	    .done();
     	
-    	// Methods from android.content.Intent that are considered safe.
-    	safe.addSafeClass("android.content.Intent")
-    	    .addSafeMethod("<init>").allSignaturesSafe()
-    	    .done();
-
         // Methods from android.app.AlertDialog$Builder that are considered safe.
         safe.addSafeClass("android.app.AlertDialog$Builder")
-            .addSafeMethod("setTitle").allSignaturesSafe()
+            .addSafeMethod("setTitle")
+                .addSafeSignature("CharSequence")
+                .addSafeSignature("int")
+                .done()
             .done();
     	
         safeClassesAndMethods = safe.create();
@@ -97,7 +120,7 @@ public class SafeAndroidClassesAndMethods {
         
         return v;
     }
-
+    
    /** 
     * Return true the methods declaring class is safe, or if the method 
     * has been specified as safe.
@@ -118,16 +141,11 @@ public class SafeAndroidClassesAndMethods {
        Map<String,Set<List<Type>>> methods = safeClassesAndMethods.get(cname);
        if (methods == null || methods.isEmpty())
     	   return true;
-
-       // Case #3-#5: class is contained in the outer map and
-       //             maps to a non-null, non-empty inner map;
-       //             only methods contained in the inner map
-       //             are considered safe.
-       String mname = method.getName();
        
        // Case #3: The method name is not present in the inner
        //          map so all signatures of that method are
        //          considered potentially unsafe.
+       String mname = method.getName();
        if (!methods.containsKey(mname))
     	   return false;
        
@@ -226,9 +244,21 @@ public class SafeAndroidClassesAndMethods {
            signatures.add(sig);
        }
        
-       @SuppressWarnings("unused")
        public SafeSignatureBuilder newSafeSignature() {
            return new SafeSignatureBuilder(this);
+       }
+       
+       public SafeMethodBuilder addSafeSignature() {
+           return newSafeSignature().done();
+       }
+       
+       @SuppressWarnings("unused")
+       public SafeMethodBuilder addSafeSignature(Type...args) {
+           return newSafeSignature().args(args);
+       }
+       
+       public SafeMethodBuilder addSafeSignature(String...args) {
+           return newSafeSignature().args(args);
        }
        
        public SafeClassBuilder allSignaturesSafe() {
@@ -239,7 +269,6 @@ public class SafeAndroidClassesAndMethods {
            return parent;
        }
        
-       @SuppressWarnings("unused")
        public SafeClassBuilder done() {
            if (done) throw new IllegalStateException("attempting to add same method to safe list twice");
            done = true;
@@ -269,17 +298,20 @@ public class SafeAndroidClassesAndMethods {
            return parent;
        }
        
+       public SafeMethodBuilder args(String... types) {
+           for (String type : types) next(type);
+           return done();
+       }
+       
+       public SafeMethodBuilder args(Type... types) {
+           for (Type type : types) next(type);
+           return done();
+       }
+       
        public SafeSignatureBuilder next(String type) {
-           // TODO: we really want to be able to create a 
-           //       Soot type based on a string. Perhaps the
-           //       best thing is to just use string everywhere
-           //       instead of type, but that complicates the
-           //       checking code which is executed much more
-           //       frequently. At the present, I don't know
-           //       enough about soot to reify the string
-           //       here into a Type.
-           throw new UnsupportedOperationException("cannot convert string to soot type");
-       }       
+           signature.add(reify(type));
+           return this;
+       }
        
        public SafeSignatureBuilder next(Type n) {
            signature.add(n);
@@ -287,6 +319,41 @@ public class SafeAndroidClassesAndMethods {
        }
    }
      
+   static private Type reify(String type) {
+       if (type == null || type.isEmpty()) throw new IllegalArgumentException("type must be non-null and non-empty");
+
+       for (Type t : ALL_PRIMITIVE_SOOT_TYPES) {
+           if (t.toString().equals(type)) 
+               return t;
+       }
+
+       int brackets = (type.length() - type.replaceAll("\\[]", "").length()) / 2;
+       if (brackets > 0) {
+           for (Type t : ALL_PRIMITIVE_SOOT_TYPES) {
+               if (VoidType.v().equals(t)) continue;
+               if (ArrayType.v(t, brackets).toString().equals(type))
+                   return ArrayType.v(t,brackets);
+           }
+           
+           String base = type.substring(0, type.indexOf('['));
+           return ArrayType.v(RefType.v(base), brackets);
+       }
+       
+       return RefType.v(type);
+   }
+   
+   static final Type[] ALL_PRIMITIVE_SOOT_TYPES = { 
+       VoidType.v(),
+       BooleanType.v(),
+       CharType.v(),
+       ByteType.v(),
+       ShortType.v(),
+       IntType.v(),
+       LongType.v(),
+       FloatType.v(),
+       DoubleType.v(),
+   };
+   
    /** The list of safe classes */
    private static final String[] safeClassesArray = {
         "android.graphics.LinearGradient",
