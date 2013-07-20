@@ -73,6 +73,6 @@ public class PreferenceConstants {
    * if true, string analysis will add all methods that have string parameters as hotspots for the
    * analysis.
    */
-  public static final String P_ADD_ALL_METHODS_TO_STRING_ANALYSIS = "allSpecMethodsAsHotspots";
+  // public static final String P_ADD_ALL_METHODS_TO_STRING_ANALYSIS = "allSpecMethodsAsHotspots";
 
 }

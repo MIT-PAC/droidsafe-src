@@ -302,6 +302,15 @@
                      value="status">
                </parameter>
             </command>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.SortOutlineView"
+                  label="Sort by Priority"
+                  style="radio">
+               <parameter
+                     name="org.eclipse.ui.commands.radioStateParameter"
+                     value="priority">
+               </parameter>
+            </command>
          </menu>
          <menu
                id="droidsafe.eclipse.plugin.core.view.SetLabelTypeForMethodNode"

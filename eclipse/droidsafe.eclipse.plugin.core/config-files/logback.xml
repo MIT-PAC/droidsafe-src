@@ -15,6 +15,10 @@
 	<logger name="droidsafe.analyses.strings">
         <level value="DEBUG" />
     </logger>
+    
+	<logger name="droidsafe.speclang.model">
+        <level value="DEBUG" />
+    </logger>
 	
 	<root level="WARN">
 		<appender-ref ref="STDOUT" />
