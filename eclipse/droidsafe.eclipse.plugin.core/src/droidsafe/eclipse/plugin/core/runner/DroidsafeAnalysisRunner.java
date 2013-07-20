@@ -197,6 +197,8 @@ public class DroidsafeAnalysisRunner extends Main {
       return Status.CANCEL_STATUS;
     }
 
+    logger.info("Running String Analysis.");
+    monitor.subTask("Running String Analysis.");
     JSAStrings.init(Config.v());
     if (Config.v().runStringAnalysis) {
       jsaAnalysis();
@@ -368,6 +370,7 @@ public class DroidsafeAnalysisRunner extends Main {
     JSAUtils.setUpHotspots();
     JSAUtils.setupSpecHotspots();
     // Adds hotspots added manually by the user.
+    /*
     SecuritySpecModel previousSpec =
         SecuritySpecModel.deserializeSpecFromFile(Config.v().APP_ROOT_DIR);
     if (previousSpec != null) {
@@ -394,7 +397,7 @@ public class DroidsafeAnalysisRunner extends Main {
           }
         }
       }
-    }
+      }*/
     JSAStrings.run();
     JSAStrings.v().log();
   }
