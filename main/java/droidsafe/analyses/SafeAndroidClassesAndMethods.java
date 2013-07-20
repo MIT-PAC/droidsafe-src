@@ -107,6 +107,465 @@ public class SafeAndroidClassesAndMethods {
                 .addSafeSignature("int")
                 .done()
             .done();
+        
+        safe.addSafeClass("android.app.Activity")
+        .addSafeMethod("getString").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.app.AlertDialog")
+        .addSafeMethod("show").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.app.AlertDialog$Builder")
+        .addSafeMethod("<init>").allSignaturesSafe()
+        .addSafeMethod("create").allSignaturesSafe()
+        .addSafeMethod("setMessage").allSignaturesSafe()
+        .addSafeMethod("setNegativeButton").allSignaturesSafe()
+        .addSafeMethod("setPositiveButton").allSignaturesSafe()
+        .addSafeMethod("setTitle").allSignaturesSafe()
+        .addSafeMethod("setView").allSignaturesSafe()
+        .addSafeMethod("show").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.app.FragmentManager")
+        .addSafeMethod("findFragmentById").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.app.NotificationManager")
+        .addSafeMethod("notify").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.app.ProgressDialog")
+        .addSafeMethod("<init>").allSignaturesSafe()
+        .addSafeMethod("dismiss").allSignaturesSafe()
+        .addSafeMethod("getContext").allSignaturesSafe()
+        .addSafeMethod("isShowing").allSignaturesSafe()
+        .addSafeMethod("setMessage").allSignaturesSafe()
+        .addSafeMethod("setProgress").allSignaturesSafe()
+        .addSafeMethod("show").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.content.ContentProviderOperation$Builder")
+        .addSafeMethod("build").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.content.ContentResolver")
+        .addSafeMethod("insert").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.content.ContentValues")
+        .addSafeMethod("<init>").allSignaturesSafe()
+        .addSafeMethod("containsKey").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.content.DialogInterface")
+        .addSafeMethod("cancel").allSignaturesSafe()
+        .addSafeMethod("dismiss").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.content.SharedPreferences")
+        .addSafeMethod("edit").allSignaturesSafe()
+        .addSafeMethod("getBoolean").allSignaturesSafe()
+        .addSafeMethod("getString").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.content.SharedPreferences$Editor")
+        .addSafeMethod("putBoolean").allSignaturesSafe()
+        .addSafeMethod("putString").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.content.res.Resources")
+        .addSafeMethod("getDrawable").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.content.res.TypedArray")
+        .addSafeMethod("recycle").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.database.Cursor")
+        .addSafeMethod("close").allSignaturesSafe()
+        .addSafeMethod("getColumnIndex").allSignaturesSafe()
+        .addSafeMethod("getColumnIndexOrThrow").allSignaturesSafe()
+        .addSafeMethod("getCount").allSignaturesSafe()
+        .addSafeMethod("getInt").allSignaturesSafe()
+        .addSafeMethod("getLong").allSignaturesSafe()
+        .addSafeMethod("getString").allSignaturesSafe()
+        .addSafeMethod("isAfterLast").allSignaturesSafe()
+        .addSafeMethod("isClosed").allSignaturesSafe()
+        .addSafeMethod("moveToFirst").allSignaturesSafe()
+        .addSafeMethod("moveToNext").allSignaturesSafe()
+        .done();
+        
+        safe.addSafeClass("droidsafe.concrete.DSCursor")
+        .addSafeMethod("close").allSignaturesSafe()
+        .addSafeMethod("getColumnIndex").allSignaturesSafe()
+        .addSafeMethod("getColumnIndexOrThrow").allSignaturesSafe()
+        .addSafeMethod("getCount").allSignaturesSafe()
+        .addSafeMethod("getInt").allSignaturesSafe()
+        .addSafeMethod("getLong").allSignaturesSafe()
+        .addSafeMethod("getString").allSignaturesSafe()
+        .addSafeMethod("isAfterLast").allSignaturesSafe()
+        .addSafeMethod("isClosed").allSignaturesSafe()
+        .addSafeMethod("moveToFirst").allSignaturesSafe()
+        .addSafeMethod("moveToNext").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.database.sqlite.SQLiteDatabase")
+        .addSafeMethod("endTransaction").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.os.Bundle")
+        .addSafeMethod("<init>").allSignaturesSafe()
+        .addSafeMethod("get").allSignaturesSafe()
+        .addSafeMethod("getInt").allSignaturesSafe()
+        .addSafeMethod("getLong").allSignaturesSafe()
+        .addSafeMethod("getParcelable").allSignaturesSafe()
+        .addSafeMethod("getString").allSignaturesSafe()
+        .addSafeMethod("putBoolean").allSignaturesSafe()
+        .addSafeMethod("putInt").allSignaturesSafe()
+        .addSafeMethod("putParcelable").allSignaturesSafe()
+        .addSafeMethod("writeToParcel").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.os.Parcel")
+        .addSafeMethod("dataPosition").allSignaturesSafe()
+        .addSafeMethod("enforceInterface").allSignaturesSafe()
+        .addSafeMethod("obtain").allSignaturesSafe()
+        .addSafeMethod("readException").allSignaturesSafe()
+        .addSafeMethod("readFloat").allSignaturesSafe()
+        .addSafeMethod("readInt").allSignaturesSafe()
+        .addSafeMethod("readString").allSignaturesSafe()
+        .addSafeMethod("readStrongBinder").allSignaturesSafe()
+        .addSafeMethod("recycle").allSignaturesSafe()
+        .addSafeMethod("writeFloat").allSignaturesSafe()
+        .addSafeMethod("writeInt").allSignaturesSafe()
+        .addSafeMethod("writeInterfaceToken").allSignaturesSafe()
+        .addSafeMethod("writeNoException").allSignaturesSafe()
+        .addSafeMethod("writeStrongBinder").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.os.Parcelable$Creator")
+        .addSafeMethod("createFromParcel").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.preference.PreferenceManager")
+        .addSafeMethod("getDefaultSharedPreferences").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.app.BackStackRecord")
+        .addSafeMethod("addOp").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.app.BackStackRecord$Op")
+        .addSafeMethod("<init>").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.app.Fragment")
+        .addSafeMethod("setMenuVisibility").allSignaturesSafe()
+        .addSafeMethod("setUserVisibleHint").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.app.FragmentActivity")
+        .addSafeMethod("getLoaderManager").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.app.FragmentManager")
+        .addSafeMethod("beginTransaction").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.app.FragmentManagerImpl")
+        .addSafeMethod("execPendingActions").allSignaturesSafe()
+        .addSafeMethod("moveToState").allSignaturesSafe()
+        .addSafeMethod("noteStateNotSaved").allSignaturesSafe()
+        .addSafeMethod("popBackStackState").allSignaturesSafe()
+        .addSafeMethod("reverseTransit").allSignaturesSafe()
+        .addSafeMethod("throwException").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.app.FragmentTabHost$TabInfo")
+        .addSafeMethod("access$100").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.app.FragmentTransaction")
+        .addSafeMethod("add").allSignaturesSafe()
+        .addSafeMethod("commit").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.app.ListFragment")
+        .addSafeMethod("ensureList").allSignaturesSafe()
+        .addSafeMethod("getActivity").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.app.LoaderManagerImpl$LoaderInfo")
+        .addSafeMethod("destroy").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.app.NotificationCompat$Style")
+        .addSafeMethod("<init>").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.app.ShareCompat$IntentBuilder")
+        .addSafeMethod("combineArrayExtra").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.app.SuperNotCalledException")
+        .addSafeMethod("<init>").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.util.DebugUtils")
+        .addSafeMethod("buildShortClassTag").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.util.LongSparseArray")
+        .addSafeMethod("gc").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.util.SparseArrayCompat")
+        .addSafeMethod("gc").allSignaturesSafe()
+        .addSafeMethod("get").allSignaturesSafe()
+        .addSafeMethod("put").allSignaturesSafe()
+        .addSafeMethod("size").allSignaturesSafe()
+        .addSafeMethod("valueAt").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.view.MotionEventCompat")
+        .addSafeMethod("getPointerId").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.view.PagerAdapter")
+        .addSafeMethod("destroyItem").allSignaturesSafe()
+        .addSafeMethod("getCount").allSignaturesSafe()
+        .addSafeMethod("getPageWidth").allSignaturesSafe()
+        .addSafeMethod("startUpdate").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.view.PagerTitleStrip")
+        .addSafeMethod("updateText").allSignaturesSafe()
+        .addSafeMethod("updateTextPositions").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.view.ViewPager")
+        .addSafeMethod("access$200").allSignaturesSafe()
+        .addSafeMethod("access$300").allSignaturesSafe()
+        .addSafeMethod("arrowScroll").allSignaturesSafe()
+        .addSafeMethod("getChildAt").allSignaturesSafe()
+        .addSafeMethod("getChildCount").allSignaturesSafe()
+        .addSafeMethod("getCurrentItem").allSignaturesSafe()
+        .addSafeMethod("getScrollX").allSignaturesSafe()
+        .addSafeMethod("getWidth").allSignaturesSafe()
+        .addSafeMethod("infoForChild").allSignaturesSafe()
+        .addSafeMethod("infoForPosition").allSignaturesSafe()
+        .addSafeMethod("populate").allSignaturesSafe()
+        .addSafeMethod("scrollTo").allSignaturesSafe()
+        .addSafeMethod("setCurrentItem").allSignaturesSafe()
+        .addSafeMethod("setCurrentItemInternal").allSignaturesSafe()
+        .addSafeMethod("setMeasuredDimension").allSignaturesSafe()
+        .addSafeMethod("setScrollState").allSignaturesSafe()
+        .addSafeMethod("setScrollingCacheEnabled").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.support.v4.view.accessibility.AccessibilityNodeInfoCompat")
+        .addSafeMethod("wrapNonNullInstance").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.util.Log")
+        .addSafeMethod("d").allSignaturesSafe()
+        .addSafeMethod("e").allSignaturesSafe()
+        .addSafeMethod("getStackTraceString").allSignaturesSafe()
+        .addSafeMethod("i").allSignaturesSafe()
+        .addSafeMethod("v").allSignaturesSafe()
+        .addSafeMethod("w").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.view.ContextMenu")
+        .addSafeMethod("add").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.view.LayoutInflater")
+        .addSafeMethod("inflate").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.view.Menu")
+        .addSafeMethod("add").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.view.MenuInflater")
+        .addSafeMethod("inflate").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.view.MenuItem")
+        .addSafeMethod("getItemId").allSignaturesSafe()
+        .addSafeMethod("setIcon").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.view.View")
+        .addSafeMethod("findViewById").allSignaturesSafe()
+        .addSafeMethod("getContext").allSignaturesSafe()
+        .addSafeMethod("getId").allSignaturesSafe()
+        .addSafeMethod("getLayoutParams").allSignaturesSafe()
+        .addSafeMethod("getLeft").allSignaturesSafe()
+        .addSafeMethod("getMeasuredWidth").allSignaturesSafe()
+        .addSafeMethod("getTag").allSignaturesSafe()
+        .addSafeMethod("getVisibility").allSignaturesSafe()
+        .addSafeMethod("measure").allSignaturesSafe()
+        .addSafeMethod("setOnClickListener").allSignaturesSafe()
+        .addSafeMethod("setVisibility").allSignaturesSafe()
+        .addSafeMethod("startAnimation").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.view.View$BaseSavedState")
+        .addSafeMethod("<init>").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.view.View$MeasureSpec")
+        .addSafeMethod("getSize").allSignaturesSafe()
+        .addSafeMethod("makeMeasureSpec").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.view.animation.AnimationUtils")
+        .addSafeMethod("loadAnimation").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.widget.ArrayAdapter")
+        .addSafeMethod("<init>").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.widget.BaseAdapter")
+        .addSafeMethod("<init>").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.widget.Button")
+        .addSafeMethod("setEnabled").allSignaturesSafe()
+        .addSafeMethod("setOnClickListener").allSignaturesSafe()
+        .addSafeMethod("setVisibility").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.widget.EditText")
+        .addSafeMethod("getText").allSignaturesSafe()
+        .addSafeMethod("setText").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.widget.FrameLayout")
+        .addSafeMethod("<init>").allSignaturesSafe()
+        .addSafeMethod("addView").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.widget.FrameLayout$LayoutParams")
+        .addSafeMethod("<init>").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.widget.ImageButton")
+        .addSafeMethod("setImageResource").allSignaturesSafe()
+        .addSafeMethod("setOnClickListener").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.widget.ImageView")
+        .addSafeMethod("setImageBitmap").allSignaturesSafe()
+        .addSafeMethod("setImageResource").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.widget.LinearLayout")
+        .addSafeMethod("<init>").allSignaturesSafe()
+        .addSafeMethod("addView").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.widget.LinearLayout$LayoutParams")
+        .addSafeMethod("<init>").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.widget.ListView")
+        .addSafeMethod("setAdapter").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.widget.ProgressBar")
+        .addSafeMethod("setVisibility").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.widget.TabHost")
+        .addSafeMethod("setCurrentTab").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.widget.TableRow")
+        .addSafeMethod("addView").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.widget.TextView")
+        .addSafeMethod("<init>").allSignaturesSafe()
+        .addSafeMethod("getCompoundDrawables").allSignaturesSafe()
+        .addSafeMethod("measure").allSignaturesSafe()
+        .addSafeMethod("setGravity").allSignaturesSafe()
+        .addSafeMethod("setText").allSignaturesSafe()
+        .addSafeMethod("setTextColor").allSignaturesSafe()
+        .addSafeMethod("setVisibility").allSignaturesSafe()
+        .addSafeMethod("setWidth").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("android.widget.Toast")
+        .addSafeMethod("makeText").allSignaturesSafe()
+        .addSafeMethod("show").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("java.io.BufferedReader")
+        .addSafeMethod("readLine").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("java.io.File")
+        .addSafeMethod("isDirectory").allSignaturesSafe()
+        .addSafeMethod("toString").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("java.io.IOException")
+        .addSafeMethod("<init>").allSignaturesSafe()
+        .addSafeMethod("getMessage").allSignaturesSafe()
+        .addSafeMethod("printStackTrace").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("java.io.InputStream")
+        .addSafeMethod("skip").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("java.io.ObjectInputStream")
+        .addSafeMethod("defaultReadObject").allSignaturesSafe()
+        .addSafeMethod("readInt").allSignaturesSafe()
+        .addSafeMethod("writeObject").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("java.lang.Class")
+        .addSafeMethod("isArray").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("java.nio.charset.Charset")
+        .addSafeMethod("forName").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("java.util.concurrent.ExecutionException")
+        .addSafeMethod("<init>").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("org.apache.commons.io.EndianUtils")
+        .addSafeMethod("read").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("org.apache.commons.io.IOUtils")
+        .addSafeMethod("copy").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("org.apache.commons.io.comparator.AbstractFileComparator")
+        .addSafeMethod("<init>").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("org.apache.commons.io.comparator.ReverseComparator")
+        .addSafeMethod("<init>").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("org.apache.http.client.ClientProtocolException")
+        .addSafeMethod("printStackTrace").allSignaturesSafe()
+        .done();
+
+        safe.addSafeClass("org.xmlpull.v1.XmlPullParser")
+        .addSafeMethod("nextText").allSignaturesSafe()
+        .done();
+
     	
         safeClassesAndMethods = safe.create();
     }

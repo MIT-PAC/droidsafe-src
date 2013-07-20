@@ -173,6 +173,7 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 				SootClass lvalClass = ((RefType)origAssign.getLeftOp().getType()).getSootClass();
 				
 				List<SootClass> clzs = SootUtils.smallestConcreteSetofImplementors(returnClass);
+				clzs = pruneSmallestConcreteImplementors(clzs);
 				Set<SootClass> visited = new LinkedHashSet<SootClass>();
 				
 				for (SootClass clz : clzs) {
@@ -198,6 +199,29 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 		}
 	}
 	
+	/**
+	 * Prune the set of classes that we are going to conservatively create objects of if there is a
+	 * droidsafe concrete class in there and just return the ds concrete class.  Otherwise, return orignal set.
+	 */
+	private List<SootClass> pruneSmallestConcreteImplementors(List<SootClass> clzs) {
+	    boolean foundDS = false;
+	    SootClass dsConcreteClass = null;
+	    for (SootClass clz : clzs) {
+	        if (clz.getName().startsWith("droidsafe.concrete")) {
+	            foundDS = true;
+	            dsConcreteClass = clz;
+	            break;
+	        }
+	    }
+	    
+	    if (foundDS) {
+	        LinkedList<SootClass> dsConcrete = new LinkedList<SootClass>();
+	        dsConcrete.add(dsConcreteClass);
+	        return dsConcrete;
+	    } else {
+	        return clzs;
+	    }
+	}
 	
 	private List<Stmt> getNewArrayAndAlloc(SootMethod target, Body stmtBody, Value assignTo) {
 		List<Stmt> stmts = new LinkedList<Stmt>();
