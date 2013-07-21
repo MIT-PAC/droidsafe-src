@@ -210,6 +210,13 @@ public class ResourcesSoot {
                             "<android.view.View: void <init>(android.content.Context)>");
     }
 
+    /** 
+     * Re-initializes the singleton to avoid conflicts.
+     */
+    public static void reset(){
+      instance = new ResourcesSoot();
+    }
+    
     /**
      * get the conditional field
      * @return

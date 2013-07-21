@@ -2,10 +2,8 @@ package droidsafe.eclipse.plugin.core.runner;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.FileLocator;
@@ -42,6 +40,7 @@ import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.android.app.TagImplementedSystemMethods;
 import droidsafe.android.app.resources.Resources;
+import droidsafe.android.app.resources.ResourcesSoot;
 import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
 import droidsafe.eclipse.plugin.core.Activator;
@@ -51,7 +50,6 @@ import droidsafe.main.Config;
 import droidsafe.main.Main;
 import droidsafe.main.SootConfig;
 import droidsafe.speclang.SecuritySpecification;
-import droidsafe.speclang.model.HotspotModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.transforms.IntegrateXMLLayouts;
@@ -138,9 +136,12 @@ public class DroidsafeAnalysisRunner extends Main {
     API.v().init();
     Project.v().loadClasses();
     Permissions.init();
+    ResourcesSoot.reset();
   }
 
   public IStatus run(IProgressMonitor monitor) {
+    long startTime = System.currentTimeMillis();
+    
     logger.info("Creating locals for all string constant arguments.");
     LocalForStringConstantArguments.run();
     monitor.worked(1);
@@ -199,6 +200,8 @@ public class DroidsafeAnalysisRunner extends Main {
 
     logger.info("Running String Analysis.");
     monitor.subTask("Running String Analysis.");
+    long jsaStartTime = System.currentTimeMillis();
+    
     JSAStrings.init(Config.v());
     if (Config.v().runStringAnalysis) {
       jsaAnalysis();
@@ -207,7 +210,9 @@ public class DroidsafeAnalysisRunner extends Main {
     if (monitor.isCanceled()) {
       return Status.CANCEL_STATUS;
     }
-
+    long jsaEndTime = System.currentTimeMillis();
+    long jsaRunTime = jsaEndTime-jsaStartTime;
+    
     // logger.info("Inserting DSTaintObject allocations at each new expression...");
     // monitor.subTask("Inserting DSTaintObject allocations at each new expression");
     // InsertDSTaintAllocs.run();
@@ -333,32 +338,10 @@ public class DroidsafeAnalysisRunner extends Main {
       logger.error("Not implemented yet!");
     }
 
-
-    // List<ValueBox> hs = JSAStrings.v().getHotspots();
-    // for (ValueBox vb : hs) {
-    // logger
-    // .debug(
-    // "String analysis \nClass {} \nSource File {} \nMethodName {} \nSource Line {} \nRegex {}\n",
-    // new Object[] {JSAStrings.v().getClassName(vb), JSAStrings.v().getSourceFile(vb),
-    // JSAStrings.v().getMetodName(vb), JSAStrings.v().getSourceLine(vb),
-    // JSAStrings.v().getRegex(vb.getValue())});
-    // }
-
-    // Map<String, List<Hotspot>> signatureToHotspotMap = JSAStrings.v().getSignatureToHotspotMap();
-    // for (String sig : signatureToHotspotMap.keySet()) {
-    // for (Hotspot hot : signatureToHotspotMap.get(sig)) {
-    // for (ValueBox vb : hot.getHotspots()) {
-    // logger
-    // .debug(
-    // "String analysis \nSignature {}\nArgument Position {}\nClass {} \nSource File {} \nMethodName {} \nSource Line {} \nRegex {}\n",
-    // new Object[] {sig, hot.getArgumentPosition(), JSAStrings.v().getClassName(vb),
-    // JSAStrings.v().getSourceFile(vb), JSAStrings.v().getMetodName(vb),
-    // JSAStrings.v().getSourceLine(vb), JSAStrings.v().getRegex(vb.getValue())});
-    // }
-    // }
-    // }
-
     monitor.worked(1);
+    long endTime = System.currentTimeMillis();
+    long runTime = endTime - startTime;
+    logger.debug("Time for droidsafe analysis = "+runTime+" String Analysis "+jsaRunTime);
     return Status.OK_STATUS;
   }
 
