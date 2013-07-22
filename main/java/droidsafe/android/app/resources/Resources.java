@@ -631,15 +631,15 @@ public class Resources {
 			className = package_name + activity.name;
 		else 
 			className = activity.name;
+		
+		if (!Scene.v().containsClass(className)) {
+            logger.error ("No class file found for manifest activity '{}' "
+                    + "(package {})", activity.name, package_name);
+            droidsafe.main.Main.exit(1);
+        }
 
 		final SootClass cn = Scene.v().getSootClass(className);
 
-		if (!Scene.v().containsClass(className) || cn == null) {
-			logger.error ("No class file found for manifest activity '{}' "
-					+ "(package {})", activity.name, package_name);
-			droidsafe.main.Main.exit(1);
-		}
-		
 		//NOTE: do we want to read in all methods????????
 
 		// Process methods of cn only if cn is an "Activity" or inherits Activity
