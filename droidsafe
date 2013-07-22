@@ -25,6 +25,8 @@ def run_droidsafe(args):
 
     command.append("-Xms1g");
     command.append("-Xmx16g");
+#    command.append("-Xrunhprof:heap=sites,depth=6");
+    command.append("-Dfile.encoding=UTF-8");
     
     command.append(MAIN_CLASS)
 
