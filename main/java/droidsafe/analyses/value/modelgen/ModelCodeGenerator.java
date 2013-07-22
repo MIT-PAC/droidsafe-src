@@ -107,7 +107,6 @@ public class ModelCodeGenerator {
     private static final Expression ZERO = new IntegerLiteralExpr("0");
 
     private static final Expression FALSE = new BooleanLiteralExpr(false);
-    private static final Comment ORIGINAL_MODEL_COMMENT = new LineComment(" ***** From existing model *****");
 
     private Set<String> classesAlreadyModeled;
 
@@ -588,7 +587,6 @@ public class ModelCodeGenerator {
             Set<String> oldMemberCoiNames = new HashSet<String>();
             if (oldModelCoi != null) {
                 for (BodyDeclaration oldModelMember : oldModelCoi.getMembers()) {
-                    addComment(oldModelMember, ORIGINAL_MODEL_COMMENT);
                     allMembers.add(oldModelMember);
                     if (oldModelMember instanceof ClassOrInterfaceDeclaration)
                         oldMemberCoiNames.add(((ClassOrInterfaceDeclaration) oldModelMember).getName());
