@@ -1,15 +1,12 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-import droidsafe.runtime.*;
 import java.util.ArrayDeque;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadFactory;
@@ -19,84 +16,24 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGeneratedField;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+
 public abstract class AsyncTask<Params, Progress, Result> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.586 -0400", hash_original_field = "BB30BA3EDC46FDDC92BDFE7FACA691F0", hash_generated_field = "DAAB2689B37CB24EEF0B8E3B973EEFF3")
-
-    private WorkerRunnable<Params, Result> mWorker;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.586 -0400", hash_original_field = "76BB93AB423B813C0C115E37BB7B0147", hash_generated_field = "6DAED75BC4A1450C0B66E4CCB009EB53")
-
-    private FutureTask<Result> mFuture;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.586 -0400", hash_original_field = "8FA972E3894E5889324591B9B189ABDC", hash_generated_field = "0C1891F28AC7C3B6ED5CCBBABEAFE2C8")
 
     private volatile Status mStatus = Status.PENDING;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.586 -0400", hash_original_field = "B024F65C6054CDE21F0BE3765446DCC0", hash_generated_field = "D8B55EE6C63AA30A6FA811119BF88197")
 
     private final AtomicBoolean mTaskInvoked = new AtomicBoolean();
+	private boolean cancelled;
+	
+	private Result result;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.588 -0400", hash_original_method = "8B3C3F162E88495B3198046B04CCAD12", hash_generated_method = "717DB90AF8B9D7E6F5C69DCC8BADBDB4")
     public  AsyncTask() {
-        mWorker = new WorkerRunnable<Params, Result>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.587 -0400", hash_original_method = "A54B00CDBBB35FABA36BF774EC6EA22F", hash_generated_method = "3CCEA5AC4F24570EA91E0C60422905C0")
-        public Result call() throws Exception {
-            mTaskInvoked.set(true);
-            Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
-Result var3E54577D8BA0B3895F3C3277069ED558_505016537 =             postResult(doInBackground(mParams));
-            var3E54577D8BA0B3895F3C3277069ED558_505016537.addTaint(taint);
-            return var3E54577D8BA0B3895F3C3277069ED558_505016537;
-            // ---------- Original Method ----------
-            //mTaskInvoked.set(true);
-            //Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
-            //return postResult(doInBackground(mParams));
-        }
-};
-        mFuture = new FutureTask<Result>(mWorker) {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.588 -0400", hash_original_method = "EC5824A2B7431B45243C7897F66BDC0A", hash_generated_method = "F6500642CA36C26BE5BC2D56CF42867A")
-        @Override
-        protected void done() {
-            try 
-            {
-                final Result result = get();
-                postResultIfNotInvoked(result);
-            } //End block
-            catch (InterruptedException e)
-            {
-                android.util.Log.w(LOG_TAG, e);
-            } //End block
-            catch (ExecutionException e)
-            {
-                RuntimeException varF8D4F5B31C1D2B7927B6CFBBA0286D57_784708801 = new RuntimeException("An error occured while executing doInBackground()",
-                            e.getCause());
-                varF8D4F5B31C1D2B7927B6CFBBA0286D57_784708801.addTaint(taint);
-                throw varF8D4F5B31C1D2B7927B6CFBBA0286D57_784708801;
-            } //End block
-            catch (CancellationException e)
-            {
-                postResultIfNotInvoked(null);
-            } //End block
-            catch (Throwable t)
-            {
-                RuntimeException var16B9994CE83BD3E7B18E1E37D2B3693B_1646282647 = new RuntimeException("An error occured while executing "
-                            + "doInBackground()", t);
-                var16B9994CE83BD3E7B18E1E37D2B3693B_1646282647.addTaint(taint);
-                throw var16B9994CE83BD3E7B18E1E37D2B3693B_1646282647;
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                    //final Result result = get();
-                    //postResultIfNotInvoked(result);
-                //} catch (InterruptedException e) {
-                    //android.util.Log.w(LOG_TAG, e);
-                //} catch (ExecutionException e) {
-                    //throw new RuntimeException("An error occured while executing doInBackground()",
-                            //e.getCause());
-                //} catch (CancellationException e) {
-                    //postResultIfNotInvoked(null);
-                //} catch (Throwable t) {
-                    //throw new RuntimeException("An error occured while executing "
-                            //+ "doInBackground()", t);
-                //}
-        }
-};
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -106,7 +43,7 @@ Result var3E54577D8BA0B3895F3C3277069ED558_505016537 =             postResult(do
         sHandler.getLooper();
     }
 
-    
+     
     @DSModeled(DSC.SAFE)
     public static void setDefaultExecutor(Executor exec) {
         sDefaultExecutor = exec;
@@ -146,6 +83,7 @@ Result varDC838461EE2FA0CA4C9BBB70A15456B0_1511173595 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.590 -0400", hash_original_method = "C7B50D6362AC0A992140F3FAC71C75FC", hash_generated_method = "24721B6A881CC6D3BFA92F0E1842D858")
     public final Status getStatus() {
 Status var6300E74790326279AA67EB8DFA2C84B0_2080544147 =         mStatus;
@@ -206,9 +144,7 @@ Status var6300E74790326279AA67EB8DFA2C84B0_2080544147 =         mStatus;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.602 -0400", hash_original_method = "DB46851A4B24FCF8A49F880359D5B78C", hash_generated_method = "7429E399886A985919F57383107CAFFB")
     public final boolean isCancelled() {
-        boolean var7E7FA29716C4CBE4B16D639A4F3CDD24_1157408950 = (mFuture.isCancelled());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_959292940 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_959292940;
+    	return cancelled;
         // ---------- Original Method ----------
         //return mFuture.isCancelled();
     }
@@ -216,10 +152,12 @@ Status var6300E74790326279AA67EB8DFA2C84B0_2080544147 =         mStatus;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.603 -0400", hash_original_method = "79A634F40CF588E281325883FCE2C51B", hash_generated_method = "F2B9735A675310C684553A57E2E3C5AE")
     public final boolean cancel(boolean mayInterruptIfRunning) {
-        addTaint(mayInterruptIfRunning);
-        boolean varC56519D800A095069C9D4DD00872ADF8_147695649 = (mFuture.cancel(mayInterruptIfRunning));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1602051413 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1602051413;
+    	if ((mStatus == Status.RUNNING && mayInterruptIfRunning) || mStatus == Status.PENDING) {
+    		cancelled = true;
+    		return true;
+    	} else {
+    		return false;
+    	}
         // ---------- Original Method ----------
         //return mFuture.cancel(mayInterruptIfRunning);
     }
@@ -227,9 +165,7 @@ Status var6300E74790326279AA67EB8DFA2C84B0_2080544147 =         mStatus;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.603 -0400", hash_original_method = "6419D225056356234AD0A7B8CC3CE063", hash_generated_method = "7274381A5287B7C12182BBC6BC0E6E85")
     public final Result get() throws InterruptedException, ExecutionException {
-Result var3209BEC855B70D6C26F0EC9DBDDA58B7_629400915 =         mFuture.get();
-        var3209BEC855B70D6C26F0EC9DBDDA58B7_629400915.addTaint(taint);
-        return var3209BEC855B70D6C26F0EC9DBDDA58B7_629400915;
+    	return result;
         // ---------- Original Method ----------
         //return mFuture.get();
     }
@@ -238,11 +174,7 @@ Result var3209BEC855B70D6C26F0EC9DBDDA58B7_629400915 =         mFuture.get();
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.604 -0400", hash_original_method = "7D7E6E809B7EB95E206E2FFE71D3D78F", hash_generated_method = "EF206F948FB16BA65C70E85B1721FB56")
     public final Result get(long timeout, TimeUnit unit) throws InterruptedException,
             ExecutionException, TimeoutException {
-        addTaint(unit.getTaint());
-        addTaint(timeout);
-Result var5F8E5ACBC39B5812EA5F66BAABC411DD_1702397523 =         mFuture.get(timeout, unit);
-        var5F8E5ACBC39B5812EA5F66BAABC411DD_1702397523.addTaint(taint);
-        return var5F8E5ACBC39B5812EA5F66BAABC411DD_1702397523;
+    	return result;
         // ---------- Original Method ----------
         //return mFuture.get(timeout, unit);
     }
@@ -262,7 +194,6 @@ AsyncTask<Params, Progress, Result> var0A631FF6F1525828AF54B1432444F062_24734183
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.608 -0400", hash_original_method = "579EA4E2ACCB0940FE86E74F49727E28", hash_generated_method = "4DFC50B34A0C3A4BCA817175FC7DF9B3")
     public final AsyncTask<Params, Progress, Result> executeOnExecutor(Executor exec,
             Params... params) {
-        addTaint(exec.getTaint());
         if(mStatus != Status.PENDING)        
         {
 switch(mStatus){
@@ -281,11 +212,9 @@ switch(mStatus){
         } //End block
         mStatus = Status.RUNNING;
         onPreExecute();
-        mWorker.mParams = params;
-        exec.execute(mFuture);
-AsyncTask<Params, Progress, Result> var72A74007B2BE62B849F475C7BDA4658B_613047441 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_613047441.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_613047441;
+        result = doInBackground(params);
+        onPostExecute(result);
+        return this;
         // ---------- Original Method ----------
         //if (mStatus != Status.PENDING) {
             //switch (mStatus) {
@@ -307,7 +236,7 @@ AsyncTask<Params, Progress, Result> var72A74007B2BE62B849F475C7BDA4658B_61304744
 
     
     public static void execute(Runnable runnable) {
-        sDefaultExecutor.execute(runnable);
+    	runnable.run();
     }
 
     

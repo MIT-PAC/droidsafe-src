@@ -35,6 +35,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public Rect(Rect r){
 		addTaint(r.getTaint());
 		/*
@@ -46,6 +47,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public boolean equals(Object obj){
 		// Original method
 		/*
@@ -62,6 +64,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public String toString(){
 		// Original method
 		/*
@@ -77,6 +80,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public String toShortString(){
 		// Original method
 		/*
@@ -88,6 +92,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public String toShortString(StringBuilder sb){
 		// Original method
 		/*
@@ -103,6 +108,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public String flattenToString(){
 		// Original method
 		/*
@@ -122,6 +128,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public static Rect unflattenFromString(String str){
 		// Original method
 		/*
@@ -140,6 +147,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void printShortString(PrintWriter pw){
 		// Original method
 		/*
@@ -153,6 +161,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final boolean isEmpty(){
 		// Original method
 		/*
@@ -164,6 +173,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final int width(){
 		// Original method
 		/*
@@ -175,6 +185,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final int height(){
 		// Original method
 		/*
@@ -186,6 +197,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final int centerX(){
 		// Original method
 		/*
@@ -197,6 +209,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final int centerY(){
 		// Original method
 		/*
@@ -208,6 +221,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final float exactCenterX(){
 		// Original method
 		/*
@@ -219,6 +233,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final float exactCenterY(){
 		// Original method
 		/*
@@ -230,6 +245,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setEmpty(){
 		// Original method
 		/*
@@ -241,6 +257,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void set(int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -255,6 +272,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void set(Rect src){
 		// Original method
 		/*
@@ -269,6 +287,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void offset(int dx, int dy){
 		// Original method
 		/*
@@ -283,6 +302,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void offsetTo(int newLeft, int newTop){
 		addTaint(newLeft);
 		left = newLeft;  //Preserved
@@ -301,6 +321,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void inset(int dx, int dy){
 		// Original method
 		/*
@@ -315,6 +336,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean contains(int x, int y){
 		// Original method
 		/*
@@ -327,6 +349,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean contains(int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -340,6 +363,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean contains(Rect r){
 		// Original method
 		/*
@@ -353,6 +377,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean intersect(int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -380,6 +405,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean intersect(Rect r){
 		// Original method
 		/*
@@ -391,6 +417,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean setIntersect(Rect a, Rect b){
 		// Original method
 		/*
@@ -410,6 +437,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean intersects(int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -422,6 +450,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean intersects(Rect a, Rect b){
 		// Original method
 		/*
@@ -434,6 +463,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void union(int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -461,6 +491,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void union(Rect r){
 		// Original method
 		/*
@@ -472,6 +503,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void union(int x, int y){
 		// Original method
 		/*
@@ -492,6 +524,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void sort(){
 		// Original method
 		/*
@@ -512,6 +545,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int describeContents(){
 		// Original method
 		/*
@@ -523,6 +557,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void writeToParcel(Parcel out, int flags){
 		// Original method
 		/*
@@ -537,6 +572,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void readFromParcel(Parcel in){
 		// Original method
 		/*
@@ -551,6 +587,7 @@ public final class Rect implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void scale(float scale){
 		// Original method
 		/*

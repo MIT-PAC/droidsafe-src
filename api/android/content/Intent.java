@@ -52,6 +52,7 @@ public class Intent implements Parcelable, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.415 -0400", hash_original_method = "3FAB664599EE7924CC36F277EFA522C8", hash_generated_method = "AB0CC1E246524C1E63F16EBEA02DAD1F")
     public  Intent(Intent o) {
         this.mAction = o.mAction;
@@ -147,6 +148,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.417 -0400", hash_original_method = "780AF3DA4D357977F460A8077F315476", hash_generated_method = "6432A8C7753059113592629EBEB24128")
     public  Intent(String action, Uri uri,
             Context packageContext, Class<?> cls) {
@@ -170,6 +172,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent createChooser(Intent target, CharSequence title) {
         Intent intent = new Intent(ACTION_CHOOSER);
         intent.putExtra(EXTRA_INTENT, target);
@@ -197,6 +200,7 @@ Object var4E36CBC0BD061E9EF480883B7FB24134_284325800 =         new Intent(this);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent makeMainActivity(ComponentName mainActivity) {
         Intent intent = new Intent(ACTION_MAIN);
         intent.setComponent(mainActivity);
@@ -205,6 +209,7 @@ Object var4E36CBC0BD061E9EF480883B7FB24134_284325800 =         new Intent(this);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent makeMainSelectorActivity(String selectorAction,
             String selectorCategory) {
         Intent intent = new Intent(ACTION_MAIN);
@@ -217,6 +222,7 @@ Object var4E36CBC0BD061E9EF480883B7FB24134_284325800 =         new Intent(this);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent makeRestartActivityTask(ComponentName mainActivity) {
         Intent intent = makeMainActivity(mainActivity);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
@@ -225,12 +231,14 @@ Object var4E36CBC0BD061E9EF480883B7FB24134_284325800 =         new Intent(this);
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Deprecated
     public static Intent getIntent(String uri) throws URISyntaxException {
         return parseUri(uri, 0);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent parseUri(String uri, int flags) throws URISyntaxException {
         int i = 0;
         try {
@@ -328,6 +336,7 @@ Object var4E36CBC0BD061E9EF480883B7FB24134_284325800 =         new Intent(this);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent getIntentOld(String uri) throws URISyntaxException {
         Intent intent;
         int i = uri.lastIndexOf('#');
@@ -467,7 +476,7 @@ Object var4E36CBC0BD061E9EF480883B7FB24134_284325800 =         new Intent(this);
     }
 
     
-    @DSModeled(value = DSC.SAFE)
+    @DSModeled(DSC.SAFE)
 	public Uri getData() {
         return mData;
     }
@@ -547,12 +556,13 @@ String var90C2C1F361CED89C7BFAD7D8E72DF5B5_1542570561 =         resolveType(cont
     }
 
     
-    @DSModeled(value = DSC.SAFE)
+    @DSModeled(DSC.SAFE)
 	public Set<String> getCategories() {
 		return mCategories;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.423 -0400", hash_original_method = "0EFF867FD71A8B842E16179807F3AE79", hash_generated_method = "27232CF1746F2DC816655A1E01CD16D7")
     public Intent getSelector() {
 Intent var44BB8E3AFA16E93BC70CCD822DE8222C_926770618 =         mSelector;
@@ -563,6 +573,7 @@ Intent var44BB8E3AFA16E93BC70CCD822DE8222C_926770618 =         mSelector;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.424 -0400", hash_original_method = "C5389CB5192CD8E55615D6E62222251D", hash_generated_method = "9CF2EFE64D764A4F343BED5B7359B35F")
     public void setExtrasClassLoader(ClassLoader loader) {
         addTaint(loader.getTaint());
@@ -1009,6 +1020,7 @@ Bundle var4F9FE858E08C30B848B61BEAFAD82050_1992340088 =         (mExtras != null
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.436 -0400", hash_original_method = "CE8F8E5E4A30C515D6BD9049A49703B9", hash_generated_method = "54F20B3CF6AD040BDBFDC17C02003D8E")
     public int getFlags() {
         int var9C3CD7D37D3E1E66BE9B3B005FC98B3A_830491007 = (mFlags);
@@ -1019,6 +1031,7 @@ Bundle var4F9FE858E08C30B848B61BEAFAD82050_1992340088 =         (mExtras != null
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.436 -0400", hash_original_method = "35A271981CF0FB3B138FC227A1ADE9BA", hash_generated_method = "9EB5DD92EFB13DA3F606E9CE10DA530C")
     public boolean isExcludingStopped() {
         boolean varF654CFA3BF239782293FCF5698FE37D9_1128761184 = ((mFlags&(FLAG_EXCLUDE_STOPPED_PACKAGES|FLAG_INCLUDE_STOPPED_PACKAGES))
@@ -1031,18 +1044,19 @@ Bundle var4F9FE858E08C30B848B61BEAFAD82050_1992340088 =         (mExtras != null
     }
 
     
-    @DSModeled(value = DSC.SAFE)
+    @DSModeled(DSC.SAFE)
 	public String getPackage() {
 		return mPackage;
     }
 
     
-    @DSModeled(value = DSC.SAFE)
+    @DSModeled(DSC.SAFE)
 	public ComponentName getComponent() {
 		return mComponent;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.437 -0400", hash_original_method = "418D2917B5B7B0B035ED428CB7C119CA", hash_generated_method = "ED153E9969265145D2631C311071F1C7")
     public Rect getSourceBounds() {
 Rect var47B7C311877A78ED56DAD53E1AC99143_1234670392 =         mSourceBounds;
@@ -1135,7 +1149,7 @@ ActivityInfo varF0D6783F85B950884EE206D023A357C0_1162764716 =         ai;
     }
 
     
-    @DSModeled(value = DSC.SAFE)
+    @DSModeled(DSC.SAFE)
 	public Intent setAction(String action) {
 		mAction = action;
         //mAction = action != null ? action.intern() : null;
@@ -1143,7 +1157,7 @@ ActivityInfo varF0D6783F85B950884EE206D023A357C0_1162764716 =         ai;
     }
 
     
-    @DSModeled(value = DSC.SAFE)
+    @DSModeled(DSC.SAFE)
 	public Intent setData(Uri data) {
         mData = data;
 		/*
@@ -1153,7 +1167,7 @@ ActivityInfo varF0D6783F85B950884EE206D023A357C0_1162764716 =         ai;
     }
 
     
-    @DSModeled(value = DSC.SAFE)
+    @DSModeled(DSC.SAFE)
 	public Intent setType(String type) {
             mData=null;
             mType = type;
@@ -1161,6 +1175,7 @@ ActivityInfo varF0D6783F85B950884EE206D023A357C0_1162764716 =         ai;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.441 -0400", hash_original_method = "43AA0CE5E260B0FA5B26C9FC36ABF327", hash_generated_method = "00584B9FB3605C6799D9DC350D63DE8B")
     public Intent setDataAndType(Uri data, String type) {
         mData = data;
@@ -1175,6 +1190,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1185276063 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     public Intent addCategory(String category) {
 		mCategories.addTaint(category.getTaint());
 		/*
@@ -1208,6 +1224,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1185276063 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.442 -0400", hash_original_method = "4143B41199E8262105CB671C15097E99", hash_generated_method = "287277779A434FB86F61699B992DAB08")
     public void setSelector(Intent selector) {
         if(selector == this)        
@@ -1238,6 +1255,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1185276063 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.443 -0400", hash_original_method = "E358DED697FF080F831811D5D578FEBC", hash_generated_method = "6FC14C6FCD606B26F0B5BB4AA37F7585")
     public Intent putExtra(String name, boolean value) {
         addTaint(value);
@@ -1259,6 +1277,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1227486241 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.443 -0400", hash_original_method = "983951350B18B30CD357EFC4A5F8C533", hash_generated_method = "4A3437E124D37EF8591C07D5BBDCBFB4")
     public Intent putExtra(String name, byte value) {
         addTaint(value);
@@ -1280,6 +1299,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1256530051 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.444 -0400", hash_original_method = "44F743D0FCF3A3B09735F92996DFB8B8", hash_generated_method = "69589741CEBD20649F117A5BF2872734")
     public Intent putExtra(String name, char value) {
         addTaint(value);
@@ -1301,6 +1321,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_413710066 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.444 -0400", hash_original_method = "D504428E6A64263CB337167E8E11D24B", hash_generated_method = "D941B61B7A1295FCEB4862AF92D1B4EF")
     public Intent putExtra(String name, short value) {
         addTaint(value);
@@ -1322,6 +1343,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_152699543 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.444 -0400", hash_original_method = "0F8D3938F71F1CBC0AF93312AEF5DBAF", hash_generated_method = "4C022A6CF4C6C618F52A7FDC62182395")
     public Intent putExtra(String name, int value) {
         addTaint(value);
@@ -1343,6 +1365,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1077840171 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.445 -0400", hash_original_method = "210CE6920B09DE82954A1910A2E05BDA", hash_generated_method = "4285F022E8E9F8D9DA136DF915049C83")
     public Intent putExtra(String name, long value) {
         addTaint(value);
@@ -1364,6 +1387,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1048094860 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.445 -0400", hash_original_method = "5563D3D5FF8C4FA36F1584B48F1347B6", hash_generated_method = "D04BCA6DD36164E2BA0B4774997517DD")
     public Intent putExtra(String name, float value) {
         addTaint(value);
@@ -1385,6 +1409,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1119814417 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.446 -0400", hash_original_method = "FDAB0726590DA4887C7F048C162A9588", hash_generated_method = "9E49136917A924F81088344FD6BD618C")
     public Intent putExtra(String name, double value) {
         addTaint(value);
@@ -1406,6 +1431,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1384200937 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.446 -0400", hash_original_method = "FFA94FE476B4FC82FDFAB8191F06F76A", hash_generated_method = "A649C71C47E1D111D77B2DC066E74861")
     public Intent putExtra(String name, String value) {
         addTaint(value.getTaint());
@@ -1427,6 +1453,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_126867015 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.446 -0400", hash_original_method = "C3AAC0183A1B956AD55E80A8556AFB71", hash_generated_method = "00F0170695A00B5D7C5F7E8C3AE2FF15")
     public Intent putExtra(String name, CharSequence value) {
         addTaint(value.getTaint());
@@ -1448,6 +1475,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1986935926 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.447 -0400", hash_original_method = "49EBB52F87B2F24E715C34795BBE3213", hash_generated_method = "1F6E9936318D9CD9BE0A99956FA962E6")
     public Intent putExtra(String name, Parcelable value) {
         addTaint(value.getTaint());
@@ -1469,6 +1497,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_807998465 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.447 -0400", hash_original_method = "478D5F3649CF3C1019BEE6D895BDE15B", hash_generated_method = "E752A0D5F358F65F5512D9C2D45525DA")
     public Intent putExtra(String name, Parcelable[] value) {
         addTaint(value[0].getTaint());
@@ -1490,6 +1519,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1460830537 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.448 -0400", hash_original_method = "7056A89E2AB58239EE1F715B825304C9", hash_generated_method = "5AF8E4AD7F68D35C58F2F135BE430B73")
     public Intent putParcelableArrayListExtra(String name, ArrayList<? extends Parcelable> value) {
         addTaint(value.getTaint());
@@ -1511,6 +1541,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_475675296 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.448 -0400", hash_original_method = "25611C5EA858F4B01007B3F78DCCE949", hash_generated_method = "3C01FEDB1113A57C8ADD7A46FEF50677")
     public Intent putIntegerArrayListExtra(String name, ArrayList<Integer> value) {
         addTaint(value.getTaint());
@@ -1532,6 +1563,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1083956749 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.449 -0400", hash_original_method = "FCCCC0193355017A3AB410227E2B8C63", hash_generated_method = "B380C150D689F214126199658D75EC95")
     public Intent putStringArrayListExtra(String name, ArrayList<String> value) {
         addTaint(value.getTaint());
@@ -1553,6 +1585,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_455769210 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.449 -0400", hash_original_method = "56169BFB83B473D5686B58CC3B07DAC6", hash_generated_method = "73DFC315AF8450D1B4BC5084FE635C66")
     public Intent putCharSequenceArrayListExtra(String name, ArrayList<CharSequence> value) {
         addTaint(value.getTaint());
@@ -1574,7 +1607,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1110251516 =         this;
     }
 
     
-    @DSModeled(value = DSC.SAFE)
+    @DSModeled(DSC.SAFE)
 	public Intent putExtra(String name, Serializable value) {
         mExtras = new Bundle();
         mExtras.putSerializable(name, value);
@@ -1582,6 +1615,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1110251516 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.450 -0400", hash_original_method = "6C30326EEBD8635124BFC9218A6B6422", hash_generated_method = "34021BDB90C6ABEA81980D3EBCDAA27D")
     public Intent putExtra(String name, boolean[] value) {
         addTaint(value[0]);
@@ -1603,6 +1637,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_2035607540 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.450 -0400", hash_original_method = "4D4788E50F7779B1D72BD45B4E76C775", hash_generated_method = "CF3C2265123AB4C4D7A27E2F63957EBD")
     public Intent putExtra(String name, byte[] value) {
         addTaint(value[0]);
@@ -1624,6 +1659,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_168825478 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.451 -0400", hash_original_method = "521E65BC95668B6A66CE17103975D2B1", hash_generated_method = "4D8650C4823415F6820D650EA2E27271")
     public Intent putExtra(String name, short[] value) {
         addTaint(value[0]);
@@ -1645,6 +1681,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_128942859 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.451 -0400", hash_original_method = "CEC6E945D8554F36BF71D2D38B61B7EF", hash_generated_method = "69A13F007306E7ECE5EBEF1329783FFE")
     public Intent putExtra(String name, char[] value) {
         addTaint(value[0]);
@@ -1666,6 +1703,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1719850547 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.452 -0400", hash_original_method = "AD8C8F2DD7A3862E32E54CE0FBFF67CE", hash_generated_method = "8DDE611CCD37F544A604270DBDC1A5D5")
     public Intent putExtra(String name, int[] value) {
         addTaint(value[0]);
@@ -1687,6 +1725,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1472774377 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.452 -0400", hash_original_method = "EEA209751D515DE89BAC56042276C483", hash_generated_method = "B1A592EF39456AEFAF186CE737D2A5F3")
     public Intent putExtra(String name, long[] value) {
         addTaint(value[0]);
@@ -1708,6 +1747,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_298183493 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.452 -0400", hash_original_method = "F6CA728A57FEA4C77AF7294872C7D495", hash_generated_method = "840ABC0F4973AF6B794DC5896D94E8A9")
     public Intent putExtra(String name, float[] value) {
         addTaint(value[0]);
@@ -1729,6 +1769,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1577540344 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.453 -0400", hash_original_method = "3F155E9B232579FD3DCD2D3FAECEA79F", hash_generated_method = "E5C5720087B60FBF306A597010B3DE03")
     public Intent putExtra(String name, double[] value) {
         addTaint(value[0]);
@@ -1750,6 +1791,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_15332485 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.453 -0400", hash_original_method = "4105C6229BFDC8C2B450D57FAD8A78CA", hash_generated_method = "317983737F6F8663246313C7B9759AD6")
     public Intent putExtra(String name, String[] value) {
         addTaint(value[0].getTaint());
@@ -1771,6 +1813,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1987266773 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.454 -0400", hash_original_method = "5B5979B9E2BB6EA8D0974FC96788F02A", hash_generated_method = "6AB4E6E2B83C7B565E2AF46572D156DB")
     public Intent putExtra(String name, CharSequence[] value) {
         addTaint(value[0].getTaint());
@@ -1792,6 +1835,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_163261742 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.454 -0400", hash_original_method = "79076492A33BAA4B69A022CE305E32E8", hash_generated_method = "84BD74731F8AEB2E502522473E695B13")
     public Intent putExtra(String name, Bundle value) {
         addTaint(value.getTaint());
@@ -1813,6 +1857,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1040586575 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.454 -0400", hash_original_method = "1AE089536D0C6059F1731DCA673BC867", hash_generated_method = "A4F8B860B228D099BAF055237F9E7EA6")
     @Deprecated
     public Intent putExtra(String name, IBinder value) {
@@ -1835,6 +1880,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1577964867 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.455 -0400", hash_original_method = "49B5D5019DC4C58D3432134ADBF206CE", hash_generated_method = "681A3B1100A64E053B41FED99B0BF7F0")
     public Intent putExtras(Intent src) {
         if(src.mExtras != null)        
@@ -1863,6 +1909,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1830521493 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.455 -0400", hash_original_method = "300503D60C48D249178D35D7CDB92339", hash_generated_method = "DCC1E9168F1252D683D1F3858C61F395")
     public Intent putExtras(Bundle extras) {
         addTaint(extras.getTaint());
@@ -1883,6 +1930,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_100255988 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.456 -0400", hash_original_method = "9273ED8AEDE591E5D2100B41909C8A11", hash_generated_method = "9F66296C57C2DB71D2BD91C69732475F")
     public Intent replaceExtras(Intent src) {
         mExtras = src.mExtras != null ? new Bundle(src.mExtras) : null;
@@ -1895,6 +1943,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_42681688 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.456 -0400", hash_original_method = "CBF42E478CC456FFD10D6777F319F0BD", hash_generated_method = "0DABD8B324DDA852F73469340DA42640")
     public Intent replaceExtras(Bundle extras) {
         mExtras = extras != null ? new Bundle(extras) : null;
@@ -1928,6 +1977,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1839274427 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.457 -0400", hash_original_method = "240F6D2BBC198957F28DF199FF71FA51", hash_generated_method = "323448496A1EB64B6B509F0F11F239D5")
     public Intent setFlags(int flags) {
         mFlags = flags;
@@ -1940,14 +1990,14 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
     }
 
     
-    @DSModeled(value = DSC.SAFE)
+    @DSModeled(DSC.SAFE)
 	public Intent addFlags(int flags) {
         addTaint(flags);
         return this;
     }
 
     
-    @DSModeled(value = DSC.SAFE)
+    @DSModeled(DSC.SAFE)
 	public Intent setPackage(String packageName) {
         if (packageName != null && mSelector != null) {
             throw new IllegalArgumentException(
@@ -1958,13 +2008,14 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
     }
 
     
-    @DSModeled(value = DSC.SAFE)
+    @DSModeled(DSC.SAFE)
 	public Intent setComponent(ComponentName component) {
         mComponent = component;
         return this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.458 -0400", hash_original_method = "A7E573A4994CE22857A73F3E6FF16052", hash_generated_method = "C98CA911AF4638EF31A76CD5F5B6B418")
     public Intent setClassName(Context packageContext, String className) {
         mComponent = new ComponentName(packageContext, className);
@@ -1977,6 +2028,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_607451133 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.458 -0400", hash_original_method = "0DAD204BCD083F4BEBCC949C19CA4443", hash_generated_method = "5CEF145A6CCA0AADAE7E7BECBD589C6D")
     public Intent setClassName(String packageName, String className) {
         mComponent = new ComponentName(packageName, className);
@@ -1989,6 +2041,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1442856412 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.459 -0400", hash_original_method = "07D0BC1863460C70C46D0D4DB8E842CD", hash_generated_method = "7F6ACB39663195BC97A4BC6A90961AAC")
     public Intent setClass(Context packageContext, Class<?> cls) {
         mComponent = new ComponentName(packageContext, cls);
@@ -2020,6 +2073,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.461 -0400", hash_original_method = "E5580C6082A47C0EDDA03A45ABBBF7D7", hash_generated_method = "4B8FA51A496FF6E4B5BA8D2EE3D46DB1")
     public int fillIn(Intent other, int flags) {
         addTaint(flags);
@@ -2105,6 +2159,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.462 -0400", hash_original_method = "B6E4053A3570119C1E3D361525D403A8", hash_generated_method = "C8D6E623D6274E5B094908B5C049F5B2")
     public boolean filterEquals(Intent other) {
         addTaint(other.getTaint());
@@ -2718,6 +2773,7 @@ for(i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.SPEC)
     public static Intent parseIntent(Resources resources, XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
         Intent intent = new Intent();
         TypedArray sa = resources.obtainAttributes(attrs,
@@ -2786,6 +2842,7 @@ for(i=0;i<N;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.474 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "80AA2C1E66BC0DB39A56391CA1D3F005")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_737864464 = (0);
@@ -2808,6 +2865,7 @@ for(i=0;i<N;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.475 -0400", hash_original_method = "8D66F7367028E1EB1EA87D8477E02D6C", hash_generated_method = "B7D61C272792EFE530E82F119AAAF9E3")
         @Override
         public String toString() {
@@ -2847,6 +2905,7 @@ String varDE4363A900B18904B4024DC514CB5E14_1967402729 =             resourceName
 
         private int mHashCode;
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.475 -0400", hash_original_method = "2099CA9774C8964FCB84A0C5BA5EC3C6", hash_generated_method = "01A84E541FBE057533665879491A9DB5")
         public  FilterComparison(Intent intent) {
             mIntent = intent;
@@ -2857,6 +2916,7 @@ String varDE4363A900B18904B4024DC514CB5E14_1967402729 =             resourceName
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.476 -0400", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "595899E683EC727D70D16E1EF7BC42B1")
         public Intent getIntent() {
 Intent var4DCF8E3D75AE0B94CDA94656DCE16BCE_894788610 =             mIntent;
@@ -2890,6 +2950,7 @@ Intent var4DCF8E3D75AE0B94CDA94656DCE16BCE_894788610 =             mIntent;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.476 -0400", hash_original_method = "D7D5E8B622FC6A9CB6E203DCD79B8799", hash_generated_method = "15166C1E1F14E2BD06D00639AB4ED00D")
         @Override
         public int hashCode() {

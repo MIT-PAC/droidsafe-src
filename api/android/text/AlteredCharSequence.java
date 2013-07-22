@@ -20,6 +20,7 @@ public class AlteredCharSequence implements CharSequence, GetChars {
 
     private CharSequence mSource;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.098 -0400", hash_original_method = "C1A67ADB666FBDE0BE16EFE2B57C9F5A", hash_generated_method = "772558D4FCF2A5CC3D1DCF0D754887B9")
     private  AlteredCharSequence(CharSequence source, char[] sub,
                                 int substart, int subend) {
@@ -35,6 +36,7 @@ public class AlteredCharSequence implements CharSequence, GetChars {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AlteredCharSequence make(CharSequence source, char[] sub,
                                            int substart, int subend) {
         if (source instanceof Spanned)
@@ -44,6 +46,7 @@ public class AlteredCharSequence implements CharSequence, GetChars {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.101 -0400", hash_original_method = "1FC7902EB789E6071EA22FDF8DF92DE5", hash_generated_method = "8F564F5AB76E6F44792A84BB97983956")
      void update(char[] sub, int substart, int subend) {
         mChars = sub;
@@ -56,6 +59,7 @@ public class AlteredCharSequence implements CharSequence, GetChars {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.101 -0400", hash_original_method = "37BE7FFEC25E3F757ADB66C6F1A52CBB", hash_generated_method = "468CB51C478E3511B0DFB31BB7C61A88")
     public char charAt(int off) {
         addTaint(off);
@@ -79,6 +83,7 @@ public class AlteredCharSequence implements CharSequence, GetChars {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public int length() {
 		// TODO Auto-generated method stub
@@ -86,6 +91,7 @@ public class AlteredCharSequence implements CharSequence, GetChars {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public CharSequence subSequence(int start, int end) {
 		// TODO Auto-generated method stub
@@ -93,6 +99,7 @@ public class AlteredCharSequence implements CharSequence, GetChars {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.103 -0400", hash_original_method = "8E527DE4EB6C1554A95561AAE7972C80", hash_generated_method = "76D503BAEDD375632A3AC202BA38F25C")
     public void getChars(int start, int end, char[] dest, int off) {
         addTaint(off);

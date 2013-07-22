@@ -10,6 +10,7 @@ import droidsafe.annotations.DSModeled;
 public abstract class OutputStream implements Closeable, Flushable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.069 -0400", hash_original_method = "5995752F91892DAFA432449AA7A2BB76", hash_generated_method = "2C31F8243BA27BC77BDF1F7D706C34CB")
+    @DSModeled(DSC.SAFE)
     public  OutputStream() {
         // ---------- Original Method ----------
     }

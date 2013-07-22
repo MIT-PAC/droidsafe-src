@@ -159,6 +159,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="focus",mapping={@ViewDebug.IntToString(from=FOCUS_BEFORE_DESCENDANTS,to="FOCUS_BEFORE_DESCENDANTS"),@ViewDebug.IntToString(from=FOCUS_AFTER_DESCENDANTS,to="FOCUS_AFTER_DESCENDANTS"),@ViewDebug.IntToString(from=FOCUS_BLOCK_DESCENDANTS,to="FOCUS_BLOCK_DESCENDANTS")}) public int getDescendantFocusability(){
 		// Original method
 		/*
@@ -285,6 +286,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean immediate){
 		// Original method
 		/*
@@ -330,6 +332,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     boolean onRequestSendAccessibilityEventInternal(View child, AccessibilityEvent event){
 		// Original method
 		/*
@@ -402,11 +405,13 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public View getFocusedChild(){
         return mFocused;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public boolean hasFocus(){
 		// Original method
 		/*
@@ -859,6 +864,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected boolean hasHoveredChild(){
 		// Original method
 		/*
@@ -870,6 +876,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onInterceptHoverEvent(MotionEvent event){
 		// Original method
 		/*
@@ -983,6 +990,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private boolean resetCancelNextUpFlag(View view){
 		// Original method
 		/*
@@ -1024,6 +1032,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private TouchTarget getTouchTarget(View child){
 		// Original method
 		/*
@@ -1130,6 +1139,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setMotionEventSplittingEnabled(boolean split){
 		// Original method
 		/*
@@ -1145,6 +1155,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isMotionEventSplittingEnabled(){
 		// Original method
 		/*
@@ -1177,6 +1188,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onInterceptTouchEvent(MotionEvent ev){
 		// Original method
 		/*
@@ -1517,6 +1529,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected int getChildDrawingOrder(int childCount, int i){
 		// Original method
 		/*
@@ -1682,6 +1695,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean getChildStaticTransformation(View child, Transformation t){
 		// Original method
 		/*
@@ -1855,6 +1869,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p){
 		// Original method
 		/*
@@ -1866,6 +1881,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener){
 		mOnHierarchyChangeListener = listener;  //Preserved
 		// Original method
@@ -1930,6 +1946,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void cleanupLayoutState(View child){
 		// Original method
 		/*
@@ -2146,6 +2163,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public LayoutTransition getLayoutTransition(){
         return mTransition;
 	}
@@ -2256,6 +2274,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void detachAllViewsFromParent(){
 		// Original method
 		/*
@@ -2320,6 +2339,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void offsetChildrenTopAndBottom(int offset){
 		// Original method
 		/*
@@ -2359,10 +2379,12 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected abstract void onLayout(boolean changed,
             int l, int t, int r, int b);
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean canAnimate(){
 		// Original method
 		/*
@@ -2388,6 +2410,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void scheduleLayoutAnimation(){
 		// Original method
 		/*
@@ -2399,6 +2422,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setLayoutAnimation(LayoutAnimationController controller){
 		mLayoutAnimationController = controller;  //Preserved
 		// Original method
@@ -2414,11 +2438,13 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public LayoutAnimationController getLayoutAnimation(){
 		return mLayoutAnimationController;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty public boolean isAnimationCacheEnabled(){
 		// Original method
 		/*
@@ -2441,6 +2467,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="drawing") public boolean isAlwaysDrawnWithCacheEnabled(){
 		// Original method
 		/*
@@ -2463,6 +2490,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="drawing") protected boolean isChildrenDrawnWithCacheEnabled(){
 		// Original method
 		/*
@@ -2485,6 +2513,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="drawing") protected boolean isChildrenDrawingOrderEnabled(){
 		// Original method
 		/*
@@ -2507,6 +2536,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private void setBooleanFlag(int flag, boolean value){
 		// Original method
 		/*
@@ -2522,6 +2552,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="drawing",mapping={@ViewDebug.IntToString(from=PERSISTENT_NO_CACHE,to="NONE"),@ViewDebug.IntToString(from=PERSISTENT_ANIMATION_CACHE,to="ANIMATION"),@ViewDebug.IntToString(from=PERSISTENT_SCROLLING_CACHE,to="SCROLLING"),@ViewDebug.IntToString(from=PERSISTENT_ALL_CACHES,to="ALL")}) public int getPersistentDrawingCache(){
 		return getTaintInt();
 		// Original method
@@ -2533,6 +2564,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setPersistentDrawingCache(int drawingCacheToKeep){
 		// Original method
 		/*
@@ -2555,6 +2587,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams p){
 		// Original method
 		/*
@@ -2633,6 +2666,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int indexOfChild(View child){
 		// Original method
 		/*
@@ -2859,6 +2893,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public Animation.AnimationListener getLayoutAnimationListener(){
 		return (Animation.AnimationListener)getTaint();
 		// Original method
@@ -2956,6 +2991,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean addStatesFromChildren(){
 		// Original method
 		/*
@@ -2980,6 +3016,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setLayoutAnimationListener(Animation.AnimationListener animationListener){
 		mAnimationListener = animationListener;  //Preserved
 		// Original method
@@ -3042,6 +3079,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean shouldDelayChildPressedState(){
 		// Original method
 		/*
@@ -3109,6 +3147,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		}
 
         
+        @DSModeled(DSC.SAFE)
         protected void resolveWithDirection(int layoutDirection){
 			// Original method
 			/*
@@ -3201,6 +3240,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public void setMargins(int left, int top, int right, int bottom){
 			addTaint(left);
 			leftMargin = left;  //Preserved
@@ -3223,6 +3263,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public void setMarginsRelative(int start, int top, int end, int bottom){
 			addTaint(start);
 			startMargin = start;  //Preserved
@@ -3245,6 +3286,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public int getMarginStart(){
 			return getTaintInt();
 			// Original method
@@ -3256,6 +3298,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public int getMarginEnd(){
 			return getTaintInt();
 			// Original method
@@ -3267,6 +3310,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public boolean isMarginRelative(){
 			// Original method
 			/*
@@ -3278,6 +3322,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		}
 
         
+        @DSModeled(DSC.SAFE)
         @Override protected void resolveWithDirection(int layoutDirection){
 			// Original method
 			/*
@@ -3337,6 +3382,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public void recycle(){
 			// Original method
 			/*
@@ -3397,6 +3443,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public void recycle(){
 			// Original method
 			/*

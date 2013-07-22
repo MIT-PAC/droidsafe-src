@@ -34,6 +34,7 @@ public class FileInputStream extends InputStream implements Closeable {
     private final CloseGuard guard = CloseGuard.get();
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.891 -0400", hash_original_method = "1BD49D518996D312C80F5CC2297619D7", hash_generated_method = "1688066ADDF39930EC631186217A93F4")
+    @DSModeled(DSC.SAFE)
     public  FileInputStream(File file) throws FileNotFoundException {
         if(file == null)        
         {
@@ -55,6 +56,7 @@ public class FileInputStream extends InputStream implements Closeable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.892 -0400", hash_original_method = "9A99F3F0C17344BC7A4198604236E89C", hash_generated_method = "9146399E1525CADD857D4B6A9DC0DDA6")
+    @DSModeled(DSC.SAFE)
     public  FileInputStream(FileDescriptor fd) {
         if(fd == null)        
         {
@@ -74,6 +76,7 @@ public class FileInputStream extends InputStream implements Closeable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.892 -0400", hash_original_method = "3B135756B4C06BFF0359EE9E41EEDC20", hash_generated_method = "09BF0DBCFC9F6A5C54384ECD46733983")
+    @DSModeled(DSC.SAFE)
     public  FileInputStream(String path) throws FileNotFoundException {
         this(new File(path));
         addTaint(path.getTaint());
@@ -92,6 +95,7 @@ public class FileInputStream extends InputStream implements Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.893 -0400", hash_original_method = "F8E8B4DFEA301034B0C9D2DA47B66D8A", hash_generated_method = "EE9AE9D010385501F5824C8DC6CF7D6A")
     @Override
     public void close() throws IOException {
@@ -127,6 +131,7 @@ public class FileInputStream extends InputStream implements Closeable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.894 -0400", hash_original_method = "5577B21C22C8702738A871739D038C15", hash_generated_method = "B74A01965EB118AEAC5EAF26718DFEFF")
+    @DSModeled(DSC.SAFE)
     @Override
     protected void finalize() throws IOException {
         try 

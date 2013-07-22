@@ -371,8 +371,8 @@ public class Browser {
     private static final String LOGTAG = "browser";
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:29.008 -0400", hash_original_field = "69E5A314E8112FAD896B0FE51FEF9176", hash_generated_field = "7F308C41A2D9FDE61AE2A455122FF052")
 
-    public static final Uri BOOKMARKS_URI = Uri.parse("content://browser/bookmarks");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:29.008 -0400", hash_original_field = "7D0FEA1A3002707CC175ABAFDD0C2D95", hash_generated_field = "6F099D17A5039FDDF3EBAFF874D9032A")
+    public static final Uri BOOKMARKS_URI = android.net.Uri.parse("content://browser/bookmarks");
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.917 -0400", hash_original_field = "7D0FEA1A3002707CC175ABAFDD0C2D95", hash_generated_field = "6F099D17A5039FDDF3EBAFF874D9032A")
 
     public static final String INITIAL_ZOOM_LEVEL = "browser.initialZoomLevel";
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:29.008 -0400", hash_original_field = "BDE21026B619D8AE19193177B4F859F5", hash_generated_field = "C4B0A7BA0AE0409E3CFE12E31E65B57C")

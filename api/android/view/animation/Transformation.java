@@ -27,16 +27,19 @@ public class Transformation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public int getTransformationType() {
         return mTransformationType;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void setTransformationType(int transformationType) {
         mTransformationType = transformationType;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void set(Transformation t) {
         mAlpha = t.getAlpha();
         mMatrix.set(t.getMatrix());
@@ -50,21 +53,25 @@ public class Transformation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public Matrix getMatrix() {
         return mMatrix;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void setAlpha(float alpha) {
         mAlpha = alpha;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public float getAlpha() {
         return mAlpha;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder(64);
@@ -74,6 +81,7 @@ public class Transformation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public String toShortString() {
         StringBuilder sb = new StringBuilder(64);
         toShortString(sb);
@@ -81,6 +89,7 @@ public class Transformation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void toShortString(StringBuilder sb) {
         sb.append("{alpha="); sb.append(mAlpha);
         sb.append(" matrix="); mMatrix.toShortString(sb);
@@ -88,6 +97,7 @@ public class Transformation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void printShortString(PrintWriter pw) {
         pw.print("{alpha="); pw.print(mAlpha);
         pw.print(" matrix=");

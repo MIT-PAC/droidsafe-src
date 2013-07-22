@@ -47,6 +47,7 @@ public abstract class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected abstract IContentProvider acquireProvider(Context c, String name);
 
     
@@ -55,9 +56,11 @@ public abstract class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public abstract boolean releaseProvider(IContentProvider icp);
 
     
+    @DSModeled(DSC.SPEC)
     public final String getType(Uri url) {
         IContentProvider provider = acquireExistingProvider(url);
         if (provider != null) {
@@ -89,6 +92,7 @@ public abstract class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public String[] getStreamTypes(Uri url, String mimeTypeFilter) {
         IContentProvider provider = acquireProvider(url);
         if (provider == null) {
@@ -119,6 +123,7 @@ public abstract class ContentResolver {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.606 -0400", hash_original_method = "741F25E5E9079F60798D64718B03495A", hash_generated_method = "4E1643BE99A45D32994BDBD28F8173F7")
     public final InputStream openInputStream(Uri uri) throws FileNotFoundException {
         addTaint(uri.getTaint());
@@ -168,6 +173,7 @@ InputStream varBE141D4F2C9E7C9CF6C0202CDAF666BA_684667738 =                 fd !
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.606 -0400", hash_original_method = "11A517824302FF0E2A744E48D03F81F2", hash_generated_method = "3CC586200A58B200AD37848C3B57B334")
     public final OutputStream openOutputStream(Uri uri) throws FileNotFoundException {
         addTaint(uri.getTaint());
@@ -179,6 +185,7 @@ OutputStream varDAF18F351C752F1D03791D667017D5CB_804702627 =         openOutputS
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.606 -0400", hash_original_method = "99597D87D82436F243497E22352BC980", hash_generated_method = "F5D70937D1AD3B81563DE9CDEA2A70DE")
     public final OutputStream openOutputStream(Uri uri, String mode) throws FileNotFoundException {
         addTaint(mode.getTaint());
@@ -206,6 +213,7 @@ OutputStream var9660A12712EE20E561E7EB86CAE36FCA_984048807 =             fd != n
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.607 -0400", hash_original_method = "8C4F5C0648F37279A7BD3F73F68574C8", hash_generated_method = "84E688B9266ACF57664A79D74092777E")
     public final ParcelFileDescriptor openFileDescriptor(Uri uri,
             String mode) throws FileNotFoundException {
@@ -250,6 +258,7 @@ ParcelFileDescriptor varA9AB8B7D15238800765F4158408BCDB4_1337050724 =           
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.608 -0400", hash_original_method = "6D0B2664AB85671E5A18996AE47F9088", hash_generated_method = "BC989B6590FE9D3A805B8C58EFA47905")
     public final AssetFileDescriptor openAssetFileDescriptor(Uri uri,
             String mode) throws FileNotFoundException {
@@ -346,6 +355,7 @@ AssetFileDescriptor varC3C12411A882751F292369C906132F8B_827792567 =             
     }
 
     
+    @DSModeled(DSC.SPEC)
     public final AssetFileDescriptor openTypedAssetFileDescriptor(Uri uri,
             String mimeType, Bundle opts) throws FileNotFoundException {
         IContentProvider provider = acquireProvider(uri);
@@ -377,6 +387,7 @@ AssetFileDescriptor varC3C12411A882751F292369C906132F8B_827792567 =             
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.609 -0400", hash_original_method = "39DD117C1A4502740FE90592CCDD92D2", hash_generated_method = "32B3078D6B11F25190CACF63AB1BE54D")
     public OpenResourceIdResult getResourceId(Uri uri) throws FileNotFoundException {
         addTaint(uri.getTaint());
@@ -451,6 +462,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SPEC)
     static public int modeToMode(Uri uri, String mode) throws FileNotFoundException {
         int modeBits;
         if ("r".equals(mode)) {
@@ -478,6 +490,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SPEC)
     public final Uri insert(Uri url, ContentValues values)
     {
         IContentProvider provider = acquireProvider(url);
@@ -537,6 +550,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SPEC)
     public final int delete(Uri url, String where, String[] selectionArgs)
     {
         IContentProvider provider = acquireProvider(url);
@@ -559,6 +573,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SPEC)
     public final int update(Uri uri, ContentValues values, String where,
             String[] selectionArgs) {
         IContentProvider provider = acquireProvider(uri);
@@ -581,6 +596,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SPEC)
     public final Bundle call(Uri uri, String method, String arg, Bundle extras) {
         if (uri == null) {
             throw new NullPointerException("uri == null");
@@ -604,6 +620,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SPEC)
     public final IContentProvider acquireProvider(Uri uri) {
         if (!SCHEME_CONTENT.equals(uri.getScheme())) {
             return null;
@@ -616,6 +633,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SPEC)
     public final IContentProvider acquireExistingProvider(Uri uri) {
         if (!SCHEME_CONTENT.equals(uri.getScheme())) {
             return null;
@@ -636,6 +654,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SPEC)
     public final ContentProviderClient acquireContentProviderClient(Uri uri) {
         IContentProvider provider = acquireProvider(uri);
         if (provider != null) {
@@ -654,6 +673,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SPEC)
     public final void registerContentObserver(Uri uri, boolean notifyForDescendents,
             ContentObserver observer)
     {
@@ -677,11 +697,13 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SPEC)
     public void notifyChange(Uri uri, ContentObserver observer) {
         notifyChange(uri, observer, true /* sync to network */);
     }
 
     
+    @DSModeled(DSC.SPEC)
     public void notifyChange(Uri uri, ContentObserver observer, boolean syncToNetwork) {
         try {
             getContentService().notifyChange(
@@ -692,6 +714,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.622 -0400", hash_original_method = "2D6405030D787F1D91AFA94E2D425989", hash_generated_method = "8FD49EB480C67F13739811857A7B4F54")
     @Deprecated
     public void startSync(Uri uri, Bundle extras) {
@@ -753,6 +776,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Deprecated
     public void cancelSync(Uri uri) {
         cancelSync(null /* all accounts */, uri != null ? uri.getAuthority() : null);
@@ -972,6 +996,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SAFE)
     private int samplePercentForDuration(long durationMillis) {
         if (durationMillis >= SLOW_THRESHOLD_MILLIS) {
             return 100;
@@ -980,6 +1005,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SPEC)
     private void maybeLogQueryToEventLog(long durationMillis,
                                          Uri uri, String[] projection,
                                          String selection, String sortOrder) {
@@ -1018,6 +1044,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SPEC)
     private void maybeLogUpdateToEventLog(
         long durationMillis, Uri uri, String operation, String selection) {
         int samplePercent = samplePercentForDuration(durationMillis);

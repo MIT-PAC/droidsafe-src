@@ -14,6 +14,7 @@ public abstract class Animator implements Cloneable {
     ArrayList<AnimatorListener> mListeners = null;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.808 -0400", hash_original_method = "12606DD4E4D75078EE1609D9ED5651A9", hash_generated_method = "12606DD4E4D75078EE1609D9ED5651A9")
+    @DSModeled(DSC.SAFE)
     public Animator ()
     {
         //Synthesized constructor
@@ -76,6 +77,7 @@ public abstract class Animator implements Cloneable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.833 -0400", hash_original_method = "9023764EFF4F5DD5C344B401D2F44A3C", hash_generated_method = "AF6F7DF4131BFA1F773F940D8B5D8057")
+    @DSModeled(DSC.SAFE)
     public void addListener(AnimatorListener listener) {
         addTaint(listener.getTaint());
         if(mListeners == null)        
@@ -92,6 +94,7 @@ public abstract class Animator implements Cloneable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.836 -0400", hash_original_method = "AF89FA0687B9630A1A89E59A21836778", hash_generated_method = "3C0FFCE85AC2501FD610186ED4E6FC48")
+    @DSModeled(DSC.SAFE)
     public void removeListener(AnimatorListener listener) {
         addTaint(listener.getTaint());
         if(mListeners == null)        

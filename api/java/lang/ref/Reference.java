@@ -28,6 +28,7 @@ public abstract class Reference<T> {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.779 -0400", hash_original_method = "12DB2A62AB24EF0D8394447093A7278F", hash_generated_method = "1F8171BFBFE8E9A824D0014AFDF25AFB")
+        @DSModeled(DSC.SAFE)
       Reference(T r, ReferenceQueue q) {
         referent = r;
         queue = q;
@@ -82,6 +83,7 @@ public abstract class Reference<T> {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.782 -0400", hash_original_method = "3B05713F718010AF3C5E0D5C54D10077", hash_generated_method = "95C3BF0193C4A411074E298608C23A71")
+        @DSModeled(DSC.SAFE)
     public T get() {
 T var759DD485E78D2D3BF7BBC0941CAE41CB_325456527 =         referent;
         var759DD485E78D2D3BF7BBC0941CAE41CB_325456527.addTaint(taint);

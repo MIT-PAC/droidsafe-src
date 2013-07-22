@@ -35,6 +35,7 @@ public class FileOutputStream extends OutputStream implements Closeable {
     private final CloseGuard guard = CloseGuard.get();
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.936 -0400", hash_original_method = "FCD724AE92A53995D4248A6FA35A6403", hash_generated_method = "5BC13460BCE7F696D8C05C5257E17B0F")
+    @DSModeled(DSC.SAFE)
     public  FileOutputStream(File file) throws FileNotFoundException {
         this(file, false);
         addTaint(file.getTaint());
@@ -43,6 +44,7 @@ public class FileOutputStream extends OutputStream implements Closeable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.937 -0400", hash_original_method = "E1E823059D628A64A7C3F0D9FD132483", hash_generated_method = "CC862847CCED2113201E5B34B1515DAA")
+    @DSModeled(DSC.SAFE)
     public  FileOutputStream(File file, boolean append) throws FileNotFoundException {
         if(file == null)        
         {
@@ -66,6 +68,7 @@ public class FileOutputStream extends OutputStream implements Closeable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.938 -0400", hash_original_method = "CA1AE4948CB074C25B5079F997384B75", hash_generated_method = "B081409E7B6F330938DE0DA36651F832")
+    @DSModeled(DSC.SAFE)
     public  FileOutputStream(FileDescriptor fd) {
         if(fd == null)        
         {
@@ -89,6 +92,7 @@ public class FileOutputStream extends OutputStream implements Closeable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.938 -0400", hash_original_method = "ACD65E09F20B5B610F80054FC06EAD01", hash_generated_method = "A42E8E67FC696567AEE1206B2018034C")
+    @DSModeled(DSC.SAFE)
     public  FileOutputStream(String path) throws FileNotFoundException {
         this(path, false);
         addTaint(path.getTaint());
@@ -97,6 +101,7 @@ public class FileOutputStream extends OutputStream implements Closeable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.939 -0400", hash_original_method = "2C15450100DC44A70908DD69335AD0CF", hash_generated_method = "31A84825CA145146F705BC29D99B658C")
+    @DSModeled(DSC.SAFE)
     public  FileOutputStream(String path, boolean append) throws FileNotFoundException {
         this(new File(path), append);
         addTaint(append);
@@ -105,6 +110,7 @@ public class FileOutputStream extends OutputStream implements Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.940 -0400", hash_original_method = "F8E8B4DFEA301034B0C9D2DA47B66D8A", hash_generated_method = "EE9AE9D010385501F5824C8DC6CF7D6A")
     @Override
     public void close() throws IOException {
@@ -139,6 +145,7 @@ public class FileOutputStream extends OutputStream implements Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.940 -0400", hash_original_method = "5577B21C22C8702738A871739D038C15", hash_generated_method = "AF5D6864536F164147F198AB1577B99D")
     @Override
     protected void finalize() throws IOException {
@@ -179,6 +186,7 @@ public class FileOutputStream extends OutputStream implements Closeable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.941 -0400", hash_original_method = "ED8CC62185555A958270FAF77C7A0E38", hash_generated_method = "6CCFC568537EF1BECA0491D6685C4D5E")
     public FileChannel getChannel() {
         synchronized
@@ -212,6 +220,7 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_659266388 =         fd;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.943 -0400", hash_original_method = "F915AF116DBABF662C85674FE9C75DD1", hash_generated_method = "B0100B8D6811E035B621357EE70ED51B")
     @Override
     public void write(byte[] buffer, int byteOffset, int byteCount) throws IOException {
@@ -224,6 +233,7 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_659266388 =         fd;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.943 -0400", hash_original_method = "36E798E1E7EB95F42CDB9DAEDA0C8547", hash_generated_method = "138B1D0EC92A8994ADF13D7A3C31A154")
     @Override
     public void write(int oneByte) throws IOException {

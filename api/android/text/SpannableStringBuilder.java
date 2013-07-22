@@ -42,6 +42,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
 
     private int mSpanCount;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.005 -0400", hash_original_method = "FC61BFC3FC94A92F6E91F05B84386B00", hash_generated_method = "803E26A984ACC0C077D94CC677976F62")
     public  SpannableStringBuilder() {
         this("");
@@ -49,6 +50,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.005 -0400", hash_original_method = "9676D8694A6D1EC55F8FB5E1D9DC6D95", hash_generated_method = "AD8306198DF2DA98740386F2F808A31C")
     public  SpannableStringBuilder(CharSequence text) {
         this(text, 0, text.length());
@@ -57,6 +59,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.006 -0400", hash_original_method = "D35C3B0425645BAC16D8668E04F8F0BF", hash_generated_method = "07CF4C849CCF3ABB621F32E5FF76EFC7")
     public  SpannableStringBuilder(CharSequence text, int start, int end) {
         addTaint(end);
@@ -103,6 +106,7 @@ for(int i = 0;i < spans.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static SpannableStringBuilder valueOf(CharSequence source) {
         if (source instanceof SpannableStringBuilder) {
             return (SpannableStringBuilder) source;
@@ -112,6 +116,7 @@ for(int i = 0;i < spans.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.007 -0400", hash_original_method = "8A39C40193810117501439EDABBFE6E5", hash_generated_method = "E68FDEC677883A9494F89215BCDB1475")
     public char charAt(int where) {
         addTaint(where);
@@ -155,6 +160,7 @@ for(int i = 0;i < spans.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public int length() {
 		// TODO Auto-generated method stub
@@ -162,6 +168,7 @@ for(int i = 0;i < spans.length;i++)
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.008 -0400", hash_original_method = "976FC6C6553888C069C4B298C5B14B80", hash_generated_method = "ABC71638C5B05D420D85558094808313")
     private void resizeFor(int size) {
         addTaint(size);
@@ -204,6 +211,7 @@ for(int i = 0;i < mSpanCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.017 -0400", hash_original_method = "D9447594759C2324F4C84ED525D8EBA8", hash_generated_method = "D40F08672CD90640C52E04713E74B5BB")
     private void moveGapTo(int where) {
         if(where == mGapStart)        
@@ -256,6 +264,7 @@ for(int i = 0;i < mSpanCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.020 -0400", hash_original_method = "05B349B857A56AE010B814959800B44E", hash_generated_method = "1791FB8C81555E0E240C1A50D609BA6C")
     public SpannableStringBuilder insert(int where, CharSequence tb, int start, int end) {
         addTaint(end);
@@ -270,6 +279,7 @@ SpannableStringBuilder var41D242ADE2AD7E7A80DC48DFDCDC3FCC_1233390686 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.030 -0400", hash_original_method = "8FF3D73D08A9AFA2B9C652CF8F4F615D", hash_generated_method = "11A005413B45562247FDEC2B8B016864")
     public SpannableStringBuilder insert(int where, CharSequence tb) {
         addTaint(tb.getTaint());
@@ -282,6 +292,7 @@ SpannableStringBuilder var4ED22CF6D7AE5966E4BDA5EEE43B1558_1882898207 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.035 -0400", hash_original_method = "CCAFF8AC74D86E62008C289B374BD199", hash_generated_method = "B3401836EBE6FB7980D2D9F26D916B28")
     public SpannableStringBuilder delete(int start, int end) {
         addTaint(end);
@@ -300,18 +311,21 @@ SpannableStringBuilder varEDFF4FBBF053B5DC2B444ADFA049EE0F_1127717916 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public void clear() {
 		// TODO Auto-generated method stub
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public void clearSpans() {
 		// TODO Auto-generated method stub
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public Editable append(CharSequence text) {
 		// TODO Auto-generated method stub
@@ -319,6 +333,7 @@ SpannableStringBuilder varEDFF4FBBF053B5DC2B444ADFA049EE0F_1127717916 =         
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public Editable append(CharSequence text, int start, int end) {
 		// TODO Auto-generated method stub
@@ -326,6 +341,7 @@ SpannableStringBuilder varEDFF4FBBF053B5DC2B444ADFA049EE0F_1127717916 =         
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public Editable append(char text) {
 		// TODO Auto-generated method stub
@@ -333,6 +349,7 @@ SpannableStringBuilder varEDFF4FBBF053B5DC2B444ADFA049EE0F_1127717916 =         
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.041 -0400", hash_original_method = "3C715BB6E3D7DD6490206A10C6A892D0", hash_generated_method = "C5009371D108C91CECBE90017DA69B70")
     private int change(int start, int end, CharSequence tb, int tbstart, int tbend) {
         addTaint(tbend);
@@ -348,6 +365,7 @@ SpannableStringBuilder varEDFF4FBBF053B5DC2B444ADFA049EE0F_1127717916 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.043 -0400", hash_original_method = "84DCE273834998C04B3160C57E76984B", hash_generated_method = "3601D5C46E69C6BA5E3BF8D2122D75DF")
     private int change(boolean notify, int start, int end,
                        CharSequence tb, int tbstart, int tbend) {
@@ -474,6 +492,7 @@ for(int i = mSpanCount - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.044 -0400", hash_original_method = "5F40E5580DD9B6C8070DDBE86036D0A0", hash_generated_method = "3904E8CC074BA2395C6B23B8BA449D70")
     private void removeSpan(int i) {
         addTaint(i);
@@ -509,6 +528,7 @@ for(int i = mSpanCount - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.045 -0400", hash_original_method = "F007284EC0E266D0B466C6FB60440DED", hash_generated_method = "E77A2668D7BBB5B1C591AE8B6422F886")
     public SpannableStringBuilder replace(int start, int end, CharSequence tb) {
         addTaint(tb.getTaint());
@@ -606,12 +626,14 @@ SpannableStringBuilder var72A74007B2BE62B849F475C7BDA4658B_595545462 =         t
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public void setSpan(Object what, int start, int end, int flags) {
 		// TODO Auto-generated method stub
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.049 -0400", hash_original_method = "2D459893E2DC729F5693ABCD511FCC18", hash_generated_method = "0ADC81260E4E3AD704D045ADB56C374F")
     private void setSpan(boolean send, Object what, int start, int end, int flags) {
         addTaint(send);
@@ -714,12 +736,14 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public void removeSpan(Object what) {
 		// TODO Auto-generated method stub
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.050 -0400", hash_original_method = "DD4C166AC7D5C475EE46AC767DBD33EB", hash_generated_method = "4EB282B573FFA72A39499911541FE6BF")
     public int getSpanStart(Object what) {
         addTaint(what.getTaint());
@@ -755,6 +779,7 @@ for(int i = count - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.051 -0400", hash_original_method = "1CAC5A6045B202B1FC928510B17AEEDD", hash_generated_method = "BA682578536D27BEBA2DC1B273EAFDB6")
     public int getSpanEnd(Object what) {
         addTaint(what.getTaint());
@@ -790,6 +815,7 @@ for(int i = count - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.052 -0400", hash_original_method = "DA0589F2510DDCCEED97B90C9189C1B9", hash_generated_method = "20265F8C43AD2F02B588259EB2A7D3B5")
     public int getSpanFlags(Object what) {
         addTaint(what.getTaint());
@@ -934,6 +960,7 @@ T[] var785F7C6C4DBBD240B854AFDE8D881E30_290589019 =         nret;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.055 -0400", hash_original_method = "AC3B57A902A92307655B10B6A320F4FA", hash_generated_method = "40FF4AD119580F2818E3B2E977E6330A")
     public int nextSpanTransition(int start, int limit, Class kind) {
         addTaint(kind.getTaint());
@@ -991,6 +1018,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public CharSequence subSequence(int start, int end) {
 		// TODO Auto-generated method stub
@@ -998,6 +1026,7 @@ for(int i = 0;i < count;i++)
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public void getChars(int start, int end, char[] dest, int destoff) {
 		// TODO Auto-generated method stub
@@ -1011,6 +1040,7 @@ for(int i = 0;i < count;i++)
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.058 -0400", hash_original_method = "5E2755BFE298194FA4E39DBC872CF6D4", hash_generated_method = "36732AE1987B90C2B2080FD167BB3B97")
     public String substring(int start, int end) {
         addTaint(end);
@@ -1027,6 +1057,7 @@ String var5B166C4D1D866639CF85033C2F7318C9_1783438894 =         new String(buf);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.058 -0400", hash_original_method = "9EEE5F03C950DBDA8CD631C0E0A3B78A", hash_generated_method = "23D4469D2F04FAD486D58A76155BB802")
     private TextWatcher[] sendTextWillChange(int start, int before, int after) {
         addTaint(after);
@@ -1051,6 +1082,7 @@ TextWatcher[] var256861F39217A53394A27A14BAF0B82C_383094911 =         recip;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.059 -0400", hash_original_method = "B0F46C63F0D82B2972BAF2786F5024B6", hash_generated_method = "DA74610A2DF1A86B41528059BD128251")
     private void sendTextChange(TextWatcher[] recip, int start, int before, int after) {
         addTaint(after);
@@ -1070,6 +1102,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.059 -0400", hash_original_method = "B7AEF4E180417D3A92FE965B8D29719A", hash_generated_method = "22A67500277FF537588AFC9A67F38B2A")
     private void sendTextHasChanged(TextWatcher[] recip) {
         addTaint(recip[0].getTaint());
@@ -1086,6 +1119,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.060 -0400", hash_original_method = "39DD82D37A3679E95040612AC2A4CD5D", hash_generated_method = "1E35D62C71B86948A786160E0982AF79")
     private void sendSpanAdded(Object what, int start, int end) {
         addTaint(end);
@@ -1106,6 +1140,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.060 -0400", hash_original_method = "8451F34A8F8537B6F36684962116E358", hash_generated_method = "A8970388E7A3F5075B44A78B96560743")
     private void sendSpanRemoved(Object what, int start, int end) {
         addTaint(end);
@@ -1126,6 +1161,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.061 -0400", hash_original_method = "89C4871AB16E570ACF45A07B8EFEFB25", hash_generated_method = "EF48F9E333CA8CA535DD0D25CC7B92E9")
     private void sendSpanChanged(Object what, int s, int e, int st, int en) {
         addTaint(en);
@@ -1148,6 +1184,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String region(int start, int end) {
         return "(" + start + " ... " + end + ")";
     }
@@ -1203,12 +1240,14 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public void drawText(Canvas c, int start, int end, float x, float y, Paint p) {
 		// TODO Auto-generated method stub
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public void drawTextRun(Canvas c, int start, int end, int contextStart,
 			int contextEnd, float x, float y, int flags, Paint p) {
@@ -1216,6 +1255,7 @@ for(int i = 0;i < n;i++)
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public float measureText(int start, int end, Paint p) {
 		// TODO Auto-generated method stub
@@ -1223,6 +1263,7 @@ for(int i = 0;i < n;i++)
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public int getTextWidths(int start, int end, float[] widths, Paint p) {
 		// TODO Auto-generated method stub
@@ -1230,6 +1271,7 @@ for(int i = 0;i < n;i++)
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.072 -0400", hash_original_method = "FE2235DDEA2C6A2285ED2D1196CDD9B2", hash_generated_method = "3AAC571D07B0B0A24FFACA005E60140F")
     public float getTextRunAdvances(int start, int end, int contextStart, int contextEnd, int flags,
             float[] advances, int advancesPos, Paint p) {
@@ -1287,6 +1329,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.072 -0400", hash_original_method = "C231D32FAB37A7BF2DFD000F849A602C", hash_generated_method = "316F2567E52C614B7BF3BEB2BAF65066")
     public float getTextRunAdvances(int start, int end, int contextStart, int contextEnd, int flags,
             float[] advances, int advancesPos, Paint p, int reserved) {
@@ -1329,6 +1372,7 @@ for(int i = 0;i < n;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public int getTextRunCursor(int contextStart, int contextEnd, int flags,
 			int offset, int cursorOpt, Paint p) {
@@ -1337,12 +1381,14 @@ for(int i = 0;i < n;i++)
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public void setFilters(InputFilter[] filters) {
 		// TODO Auto-generated method stub
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public InputFilter[] getFilters() {
 		// TODO Auto-generated method stub

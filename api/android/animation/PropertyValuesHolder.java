@@ -49,6 +49,7 @@ public class PropertyValuesHolder implements Cloneable {
     private Object mAnimatedValue;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.608 -0400", hash_original_method = "73C53AD6C55F8F35D3899F0ADDC03638", hash_generated_method = "173B3BF84BCAAD759EC1E53526977EB5")
+    @DSModeled(DSC.SAFE)
     private  PropertyValuesHolder(String propertyName) {
         mPropertyName = propertyName;
         // ---------- Original Method ----------
@@ -57,6 +58,7 @@ public class PropertyValuesHolder implements Cloneable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.610 -0400", hash_original_method = "BDE609B5B8790707A2E7C7F2E71E73EE", hash_generated_method = "0E856EB53E72B16051B207D87A59ECAC")
+    @DSModeled(DSC.SAFE)
     private  PropertyValuesHolder(Property property) {
         mProperty = property;
         if(property != null)        
@@ -71,21 +73,25 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static PropertyValuesHolder ofInt(String propertyName, int... values) {
         return new IntPropertyValuesHolder(propertyName, values);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static PropertyValuesHolder ofInt(Property<?, Integer> property, int... values) {
         return new IntPropertyValuesHolder(property, values);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static PropertyValuesHolder ofFloat(String propertyName, float... values) {
         return new FloatPropertyValuesHolder(propertyName, values);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static PropertyValuesHolder ofFloat(Property<?, Float> property, float... values) {
         return new FloatPropertyValuesHolder(property, values);
     }
@@ -142,6 +148,7 @@ public class PropertyValuesHolder implements Cloneable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.620 -0400", hash_original_method = "5ACB1BF4CE1DE924456A446D3AE6F5AC", hash_generated_method = "F988F397E0C59F23B11B46996200454C")
+    @DSModeled(DSC.SAFE)
     public void setIntValues(int... values) {
         mValueType = int.class;
         mKeyframeSet = KeyframeSet.ofInt(values);
@@ -152,6 +159,7 @@ public class PropertyValuesHolder implements Cloneable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.623 -0400", hash_original_method = "E55475A51A76C9AF68CEE5048B067603", hash_generated_method = "9308781A147C7C8F6EE137B61C15BCBE")
+    @DSModeled(DSC.SAFE)
     public void setFloatValues(float... values) {
         mValueType = float.class;
         mKeyframeSet = KeyframeSet.ofFloat(values);
@@ -521,6 +529,7 @@ PropertyValuesHolder var540C13E9E156B687226421B24F2DF178_996661013 =            
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.684 -0400", hash_original_method = "8817589F1B40B238224DB9B551F0527E", hash_generated_method = "6E854FEA53C36628363D039E79093E2A")
+    @DSModeled(DSC.SAFE)
     public void setEvaluator(TypeEvaluator evaluator) {
         mEvaluator = evaluator;
         mKeyframeSet.setEvaluator(evaluator);

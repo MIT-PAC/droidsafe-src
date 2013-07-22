@@ -81,23 +81,27 @@ public class Sensor {
     }
 
     
+    @DSModeled(DSC.SAFE)
     int getHandle() {
     	return getTaintInt();
         //return mHandle;
     }
 
     
+    @DSModeled(DSC.SAFE)
     void setRange(float max, float res) {
     	addTaint(max);
     	addTaint(res);
     }
 
     
+    @DSModeled(DSC.SAFE)
     void setLegacyType(int legacyType) {
     	addTaint(legacyType);
     }
 
     
+    @DSModeled(DSC.SAFE)
     int getLegacyType() {
     	return getTaintInt();
         //return mLegacyType;

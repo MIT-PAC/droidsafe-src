@@ -32,7 +32,9 @@ import android.view.ViewTreeObserver;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
+import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
 
 public abstract class AbsListView extends AdapterView<ListAdapter> implements TextWatcher, ViewTreeObserver.OnGlobalLayoutListener, Filter.FilterListener, ViewTreeObserver.OnTouchModeChangeListener, RemoteViewsAdapter.RemoteAdapterConnectionCallback {
     int mChoiceMode = CHOICE_MODE_NONE;
@@ -216,6 +218,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getCheckedItemCount(){
 		return getTaintInt();
 		// Original method
@@ -255,6 +258,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public SparseBooleanArray getCheckedItemPositions(){
 		// Original method
 		/*
@@ -320,6 +324,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getChoiceMode(){
 		return getTaintInt();
 		// Original method
@@ -455,6 +460,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty public boolean isFastScrollEnabled(){
 		return getTaintBoolean();
 		// Original method
@@ -491,6 +497,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setSmoothScrollbarEnabled(boolean enabled){
 		addTaint(enabled);
 		mSmoothScrollbarEnabled = enabled;  //Preserved
@@ -504,6 +511,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty public boolean isSmoothScrollbarEnabled(){
 		return getTaintBoolean();
 		// Original method
@@ -569,6 +577,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty public boolean isScrollingCacheEnabled(){
 		return getTaintBoolean();
 		// Original method
@@ -596,6 +605,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setTextFilterEnabled(boolean textFilterEnabled){
 		addTaint(textFilterEnabled);
 		mTextFilterEnabled = textFilterEnabled;  //Preserved
@@ -609,6 +619,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty public boolean isTextFilterEnabled(){
 		return getTaintBoolean();
 		// Original method
@@ -649,6 +660,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty public boolean isStackFromBottom(){
 		return getTaintBoolean();
 		// Original method
@@ -961,6 +973,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void layoutChildren(){
 		// Original method
 		/*
@@ -993,6 +1006,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getListPaddingTop(){
 		// Original method
 		/*
@@ -1004,6 +1018,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getListPaddingBottom(){
 		// Original method
 		/*
@@ -1015,6 +1030,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getListPaddingLeft(){
 		// Original method
 		/*
@@ -1026,6 +1042,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getListPaddingRight(){
 		// Original method
 		/*
@@ -1070,6 +1087,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected boolean isPaddingOffsetRequired(){
 		// Original method
 		/*
@@ -1081,6 +1099,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected int getLeftPaddingOffset(){
 		// Original method
 		/*
@@ -1092,6 +1111,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected int getTopPaddingOffset(){
 		// Original method
 		/*
@@ -1103,6 +1123,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected int getRightPaddingOffset(){
 		// Original method
 		/*
@@ -1114,6 +1135,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected int getBottomPaddingOffset(){
 		// Original method
 		/*
@@ -1142,6 +1164,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     boolean touchModeDrawsInPressedState(){
 		// Original method
 		/*
@@ -1185,6 +1208,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setDrawSelectorOnTop(boolean onTop){
 		addTaint(onTop);
 		mDrawSelectorOnTop = onTop;  //Preserved
@@ -1233,6 +1257,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public Drawable getSelector(){
         return mSelector;
 	}
@@ -1245,6 +1270,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setScrollIndicators(View up, View down){
 		mScrollUp = up;  //Preserved
 		mScrollDown = down;  //Preserved
@@ -1395,6 +1421,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected ContextMenuInfo getContextMenuInfo(){
 		return (ContextMenuInfo)getTaint();
 		// Original method
@@ -1433,6 +1460,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public boolean onKeyDown(int keyCode, KeyEvent event){
 		// Original method
 		/*
@@ -1474,6 +1502,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected void dispatchSetPressed(boolean pressed){
 		// Original method
 		/*
@@ -1602,6 +1631,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setOverScrollEffectPadding(int leftPadding, int rightPadding){
 		addTaint(leftPadding);
 		mGlowPaddingLeft = leftPadding;  //Preserved
@@ -1754,6 +1784,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setVelocityScale(float scale){
 		addTaint(scale);
 		mVelocityScale = scale;  //Preserved
@@ -1886,6 +1917,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     int getHeaderViewsCount(){
 		// Original method
 		/*
@@ -1897,6 +1929,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     int getFooterViewsCount(){
 		// Original method
 		/*
@@ -1908,6 +1941,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     abstract void fillGap(boolean down);
 
     
@@ -1949,6 +1983,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     abstract int findMotionRow(int y);
 
     
@@ -1997,6 +2032,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     abstract void setSelectionInt(int position);
 
     
@@ -2100,6 +2136,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected boolean isInFilterMode(){
 		return getTaintBoolean();
 		// Original method
@@ -2125,6 +2162,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public boolean checkInputConnectionProxy(View view){
 		// Original method
 		/*
@@ -2160,6 +2198,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean hasTextFilter(){
 		return getTaintBoolean();
 		// Original method
@@ -2190,6 +2229,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void beforeTextChanged(CharSequence s, int start, int count, int after){
 		// Original method
 		/*
@@ -2207,6 +2247,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void afterTextChanged(Editable s){
 		// Original method
 		/*
@@ -2253,6 +2294,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected boolean checkLayoutParams(ViewGroup.LayoutParams p){
 		// Original method
 		/*
@@ -2264,6 +2306,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setTranscriptMode(int mode){
 		addTaint(mode);
 		mTranscriptMode = mode;  //Preserved
@@ -2277,6 +2320,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getTranscriptMode(){
 		return getTaintInt();
 		// Original method
@@ -2288,6 +2332,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public int getSolidColor(){
 		return getTaintInt();
 		// Original method
@@ -2317,6 +2362,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="drawing") public int getCacheColorHint(){
 		return getTaintInt();
 		// Original method
@@ -2400,6 +2446,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void setRemoteViewsAdapter(Intent intent){
 		// Original method
 		/*
@@ -2420,6 +2467,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void deferNotifyDataSetChanged(){
 		// Original method
 		/*
@@ -2453,6 +2501,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void onRemoteAdapterDisconnected(){
 		// Original method
 		/*
@@ -3066,6 +3115,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
 
+        @DSModeled(DSC.SAFE)
         public void setWrapped(MultiChoiceModeListener wrapped){
 			mWrapped = wrapped;  //Preserved
 			// Original method
@@ -3253,6 +3303,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 		}
 
         
+        @DSModeled(DSC.SAFE)
         public boolean shouldRecycleViewType(int viewType){
 			// Original method
 			/*
@@ -3314,6 +3365,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 		}
 
         
+        @DSModeled(DSC.SAFE)
         View getActiveView(int position){
 			// Original method
 			/*

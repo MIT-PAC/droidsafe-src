@@ -47,11 +47,13 @@ public final class IntegralToString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void appendInt(AbstractStringBuilder sb, int i) {
         convertInt(sb, i);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String convertInt(AbstractStringBuilder sb, int i) {
         boolean negative = false;
         String quickResult = null;
@@ -150,11 +152,13 @@ public final class IntegralToString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void appendLong(AbstractStringBuilder sb, long l) {
         convertLong(sb, l);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String convertLong(AbstractStringBuilder sb, long n) {
         int i = (int) n;
         if (i == n) {
@@ -280,6 +284,7 @@ public final class IntegralToString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String intToHexString(int i, boolean upperCase, int minWidth) {
         int bufLen = 8;
         char[] buf = new char[bufLen];
@@ -333,6 +338,7 @@ public final class IntegralToString {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String stringOf(char... args) {
         return new String(0, args.length, args);
     }

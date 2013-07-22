@@ -34,12 +34,13 @@ public class Canvas {
 
     @SuppressWarnings({"UnusedDeclaration"}) private CanvasFinalizer mFinalizer;
     
-    @DSModeled(value = DSC.SAFE)
+    @DSModeled(DSC.SAFE)
 	public Canvas() {
 		//Do Nothing
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.068 -0400", hash_original_method = "57E1F1C357DC29B7A94C226F5C3B5C9B", hash_generated_method = "DB4E82951E063CEEECA13CEF410C1C45")
     public  Canvas(Bitmap bitmap) {
         if(!bitmap.isMutable())        
@@ -67,6 +68,7 @@ public class Canvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.068 -0400", hash_original_method = "347D84319548CC8FC9B392FE55B81BD9", hash_generated_method = "8AD3B420F89C77904C96EB19695F13AC")
       Canvas(int nativeCanvas) {
         if(nativeCanvas == 0)        
@@ -88,6 +90,7 @@ public class Canvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.069 -0400", hash_original_method = "B940DF21824B9124E6B753106E553281", hash_generated_method = "34311A5FF1FA45B349D973EEDF587B46")
     @Deprecated
     protected GL getGL() {
@@ -99,6 +102,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.069 -0400", hash_original_method = "8E464E19F5A7F279FF3FC1B84D15C4F0", hash_generated_method = "C670E0BF3904BF5E2AF308681ADAC914")
     public boolean isHardwareAccelerated() {
         boolean var68934A3E9455FA72420237EB05902327_1007197896 = (false);
@@ -109,7 +113,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
-    @DSModeled(value = DSC.SAFE)
+    @DSModeled(DSC.SAFE)
 	public void setBitmap(Bitmap bitmap) {
 		addTaint(bitmap.getTaint());
 		addTaint(bitmap.getDensity()); //getDensity will return a tainted value
@@ -132,6 +136,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.070 -0400", hash_original_method = "85F5D8C713E0C3D78EE01CE144D393CD", hash_generated_method = "5E7607C7F35EFC6197184F074C0525A9")
     public void setViewport(int width, int height) {
         addTaint(height);
@@ -140,6 +145,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.070 -0400", hash_original_method = "9A759A0D04375324D8F6D99375FF174F", hash_generated_method = "11250A7179EFE8050904D6ABF0E956FB")
     public boolean isOpaque() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1823395985 = getTaintBoolean();
@@ -147,6 +153,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.070 -0400", hash_original_method = "D4E7715F32876041521BE16EC8E1C0AC", hash_generated_method = "E71B1DE573A6109483C63EBEB40F9290")
     public int getWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1960359390 = getTaintInt();
@@ -154,6 +161,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.071 -0400", hash_original_method = "E09BF3A531DEFF54888EDA3B98EB9CFF", hash_generated_method = "F262DACE74B24E8D30C50E6BEB69964D")
     public int getHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1761326365 = getTaintInt();
@@ -161,14 +169,14 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
-    @DSModeled(value = DSC.SAFE)
+    @DSModeled(DSC.SAFE)
 	public int getDensity() {
 		return getTaintInt();
 		//return mDensity;
     }
 
     
-    @DSModeled(value = DSC.SAFE)
+    @DSModeled(DSC.SAFE)
 	public void setDensity(int density) {
 		addTaint(density);  //Density is saved both here and in the bitmap
 		mBitmap.setDensity(density);  //setDensity will track the taint in the Bitmap object
@@ -181,6 +189,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.072 -0400", hash_original_method = "097B83D968163B69D9FD944A715444E1", hash_generated_method = "A6B4CCAC527ADCBCA2970ADC88659071")
     public void setScreenDensity(int density) {
         mScreenDensity = density;
@@ -189,6 +198,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.072 -0400", hash_original_method = "E7FD28619D99C67895E6B54C83B12011", hash_generated_method = "A7B41D77C3AB46D10E184EFC1FCA8BC3")
     public int getMaximumBitmapWidth() {
         int varEFF742E655CE706FE07F716F7242F89C_1613106076 = (MAXMIMUM_BITMAP_SIZE);
@@ -199,6 +209,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.072 -0400", hash_original_method = "F4D5E7FCD71CC06030F3DF600D5A4E91", hash_generated_method = "734FE2835AB3BBC5AD761998783FE50E")
     public int getMaximumBitmapHeight() {
         int varEFF742E655CE706FE07F716F7242F89C_468150863 = (MAXMIMUM_BITMAP_SIZE);
@@ -209,6 +220,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.073 -0400", hash_original_method = "F3B8683979D1D489E213BCC22FA3BBF8", hash_generated_method = "503214C4F575748D5A46C01D41E9CBFD")
     public int save() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1442891613 = getTaintInt();
@@ -224,6 +236,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.073 -0400", hash_original_method = "D3E38B54874BE956E1980D322B5BE510", hash_generated_method = "6ABFE859E9A3FE0274D64AB7F73A60F3")
     public int saveLayer(RectF bounds, Paint paint, int saveFlags) {
         addTaint(saveFlags);
@@ -241,6 +254,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.074 -0400", hash_original_method = "E5CA8AFF181BF9AD7711CB91FDA3487A", hash_generated_method = "7BECA52F7C5541ADF84D88BD428BB766")
     public int saveLayer(float left, float top, float right, float bottom,
                          Paint paint, int saveFlags) {
@@ -262,6 +276,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.074 -0400", hash_original_method = "11712C48B70E4A29EC050275E8757D6B", hash_generated_method = "36461D0B505973538E3779D2072980DE")
     public int saveLayerAlpha(RectF bounds, int alpha, int saveFlags) {
         addTaint(saveFlags);
@@ -277,6 +292,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.075 -0400", hash_original_method = "1E17DC2ECF868A450BC9B6F62927FD6A", hash_generated_method = "16F246718EE8471A135D0DC595BA7C7D")
     public int saveLayerAlpha(float left, float top, float right, float bottom,
                               int alpha, int saveFlags) {
@@ -301,6 +317,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.075 -0400", hash_original_method = "C157B89F0FBAFE11C45EBC10DA0B6D3E", hash_generated_method = "D27494997966DF7456C87742D89CCC6C")
     public int getSaveCount() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1699527867 = getTaintInt();
@@ -308,6 +325,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.076 -0400", hash_original_method = "5559D0B771CBEE6A1A38BCD3A9AC5162", hash_generated_method = "974A4A0419CFC80E5DCE3A10E5A44569")
     public void restoreToCount(int saveCount) {
     }
@@ -327,6 +345,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.077 -0400", hash_original_method = "FBE272FA12218448E57FDD0F51163D2E", hash_generated_method = "CDEABD23C9A2F7AD3AFA53FBF751A464")
     public final void scale(float sx, float sy, float px, float py) {
         addTaint(py);
@@ -349,6 +368,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.077 -0400", hash_original_method = "96E9024A0524487F4C2E52375F89DAF2", hash_generated_method = "8ECECC7987074C9CD61575A5DAC2B527")
     public final void rotate(float degrees, float px, float py) {
         addTaint(py);
@@ -364,6 +384,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.078 -0400", hash_original_method = "89B271C0116BA22E329740125333F5A7", hash_generated_method = "8C9F38F6D7E6C080ECF146BE9233FC5D")
     public void skew(float sx, float sy) {
     }
@@ -375,6 +396,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.078 -0400", hash_original_method = "ABA89A91C9E394A5196A87FF36F2A069", hash_generated_method = "96B2676400786CD1F61DCB6834818734")
     public void setMatrix(Matrix matrix) {
         addTaint(matrix.getTaint());
@@ -386,6 +408,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.079 -0400", hash_original_method = "43D0B837CD75E40B4AB1C87B7D03A6CC", hash_generated_method = "3A3372FD72956C9E9D7FD09558117C60")
     public void getMatrix(Matrix ctm) {
         addTaint(ctm.getTaint());
@@ -395,6 +418,7 @@ GL var540C13E9E156B687226421B24F2DF178_1684756069 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.083 -0400", hash_original_method = "677F0589CC9DCD49ED4AD9753284FD1D", hash_generated_method = "459A71B8333BB0FFE4A7E07AFF944DBF")
     public final Matrix getMatrix() {
         Matrix m = new Matrix();
@@ -409,6 +433,7 @@ Matrix varBD22C5ECD1F8BC3EE2416AF7A8014FD2_303706451 =         m;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.084 -0400", hash_original_method = "ADF2B4EDD750040189755D8AA2B089F0", hash_generated_method = "D73DF58C892AD94E6052B61CD9B9D030")
     public boolean clipRect(RectF rect, Region.Op op) {
         addTaint(op.getTaint());
@@ -425,6 +450,7 @@ Matrix varBD22C5ECD1F8BC3EE2416AF7A8014FD2_303706451 =         m;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.084 -0400", hash_original_method = "C0255CEC0BCD1AD46E1B4E180BE74E1B", hash_generated_method = "2E4CD136E9EEAD527F5AC2681B192C15")
     public boolean clipRect(Rect rect, Region.Op op) {
         addTaint(op.getTaint());
@@ -441,6 +467,7 @@ Matrix varBD22C5ECD1F8BC3EE2416AF7A8014FD2_303706451 =         m;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.085 -0400", hash_original_method = "830DBE6B0CD66B7FB13D1DDCBCB1919D", hash_generated_method = "1D34339D6FF862417CBDFED266D4BED2")
     public boolean clipRect(RectF rect) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_75111500 = getTaintBoolean();
@@ -448,6 +475,7 @@ Matrix varBD22C5ECD1F8BC3EE2416AF7A8014FD2_303706451 =         m;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.086 -0400", hash_original_method = "85C29845972840A2A78B8F138670556A", hash_generated_method = "E0BBC7C48914FF1E53F4DEE4CEA5AC1A")
     public boolean clipRect(Rect rect) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1109373803 = getTaintBoolean();
@@ -455,6 +483,7 @@ Matrix varBD22C5ECD1F8BC3EE2416AF7A8014FD2_303706451 =         m;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.086 -0400", hash_original_method = "1DF6FF81DFB932BE2B5849557766481E", hash_generated_method = "AB3CCB735438798941D098A122C7BB10")
     public boolean clipRect(float left, float top, float right, float bottom,
                             Region.Op op) {
@@ -473,6 +502,7 @@ Matrix varBD22C5ECD1F8BC3EE2416AF7A8014FD2_303706451 =         m;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.087 -0400", hash_original_method = "1121260B2872F4C8288BF6DC851005F3", hash_generated_method = "3103DB16D116EDACBE978EAD6193945A")
     public boolean clipRect(float left, float top,
                                    float right, float bottom) {
@@ -481,6 +511,7 @@ Matrix varBD22C5ECD1F8BC3EE2416AF7A8014FD2_303706451 =         m;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.087 -0400", hash_original_method = "C42EF88CC3B7717E7A29DDD6EED6CD2B", hash_generated_method = "87ACCB84420D79A59F58C707E152E251")
     public boolean clipRect(int left, int top,
                                    int right, int bottom) {
@@ -489,6 +520,7 @@ Matrix varBD22C5ECD1F8BC3EE2416AF7A8014FD2_303706451 =         m;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.088 -0400", hash_original_method = "7A7DE76338CD4FF5C3A48558D2B4614E", hash_generated_method = "1DC55DC07C2EA026D27802E38AF2C40B")
     public boolean clipPath(Path path, Region.Op op) {
         addTaint(op.getTaint());
@@ -501,6 +533,7 @@ Matrix varBD22C5ECD1F8BC3EE2416AF7A8014FD2_303706451 =         m;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.088 -0400", hash_original_method = "1145BB7612B8DCB4209865A3916D22D3", hash_generated_method = "9B0B3E643B65318591A37450246A1CC3")
     public boolean clipPath(Path path) {
         addTaint(path.getTaint());
@@ -512,6 +545,7 @@ Matrix varBD22C5ECD1F8BC3EE2416AF7A8014FD2_303706451 =         m;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.088 -0400", hash_original_method = "28C7C5FF233FA752A95A4980EB733491", hash_generated_method = "C8194241794BBCAC4524CA535D5C21B7")
     public boolean clipRegion(Region region, Region.Op op) {
         addTaint(op.getTaint());
@@ -524,6 +558,7 @@ Matrix varBD22C5ECD1F8BC3EE2416AF7A8014FD2_303706451 =         m;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.089 -0400", hash_original_method = "DB214CB3316FBBF79B84FF393892AF1F", hash_generated_method = "9BBA94B4F6178A3DA6715767637CEF00")
     public boolean clipRegion(Region region) {
         addTaint(region.getTaint());
@@ -535,6 +570,7 @@ Matrix varBD22C5ECD1F8BC3EE2416AF7A8014FD2_303706451 =         m;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.090 -0400", hash_original_method = "7CFD876AAFB864AD7FF69DF25AA89EAD", hash_generated_method = "BC7B7705DDB4FDE5B4A67D956200EA50")
     public DrawFilter getDrawFilter() {
 DrawFilter var5EDA12300AEAAFC248858F9EEC89F965_368287631 =         mDrawFilter;
@@ -545,6 +581,7 @@ DrawFilter var5EDA12300AEAAFC248858F9EEC89F965_368287631 =         mDrawFilter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.091 -0400", hash_original_method = "68F6BB80C574F9A67A1BF360B92238CB", hash_generated_method = "15C5B84B5ADFCF92FA52DCD023CFDCD7")
     public void setDrawFilter(DrawFilter filter) {
         int nativeFilter = 0;
@@ -564,6 +601,7 @@ DrawFilter var5EDA12300AEAAFC248858F9EEC89F965_368287631 =         mDrawFilter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.091 -0400", hash_original_method = "6593DA2291538241F61FD613E7FE6D5B", hash_generated_method = "9A35733127EEE06035D7B46D3176A320")
     public boolean quickReject(RectF rect, EdgeType type) {
         addTaint(type.getTaint());
@@ -576,6 +614,7 @@ DrawFilter var5EDA12300AEAAFC248858F9EEC89F965_368287631 =         mDrawFilter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.091 -0400", hash_original_method = "1B5471D21BEA46C8ED1B36EA429F046B", hash_generated_method = "7357A79A8EF9BC52C76458721757F85E")
     public boolean quickReject(Path path, EdgeType type) {
         addTaint(type.getTaint());
@@ -588,6 +627,7 @@ DrawFilter var5EDA12300AEAAFC248858F9EEC89F965_368287631 =         mDrawFilter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.092 -0400", hash_original_method = "A8D2AD12ACC5E410C736D30130C20B13", hash_generated_method = "288C21394D210690C3CD6A4C944572C0")
     public boolean quickReject(float left, float top, float right, float bottom,
                                EdgeType type) {
@@ -606,6 +646,7 @@ DrawFilter var5EDA12300AEAAFC248858F9EEC89F965_368287631 =         mDrawFilter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.092 -0400", hash_original_method = "C4C8EDF474744387A03BAF2FCA9EC7E1", hash_generated_method = "C732AB37010F3CD71747C04A97B956F3")
     public boolean getClipBounds(Rect bounds) {
         addTaint(bounds.getTaint());
@@ -617,6 +658,7 @@ DrawFilter var5EDA12300AEAAFC248858F9EEC89F965_368287631 =         mDrawFilter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.093 -0400", hash_original_method = "081EA481AF3998560C2A7BDAF7DC2D73", hash_generated_method = "4869A7729157453CDF69EFD225866172")
     public final Rect getClipBounds() {
         Rect r = new Rect();
@@ -631,6 +673,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.096 -0400", hash_original_method = "512FC5029F1C2BD4A7A7DEBEE6E3C841", hash_generated_method = "B3F7EACD5A719DF9BE71A4BD25E978FE")
     public void drawRGB(int r, int g, int b) {
         addTaint(b);
@@ -642,6 +685,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.096 -0400", hash_original_method = "9BFD91E842A11577904B0CB6F2A3F2B4", hash_generated_method = "E9E61FA3F9EE61836A7F346E1C787C8E")
     public void drawARGB(int a, int r, int g, int b) {
         addTaint(b);
@@ -664,6 +708,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.097 -0400", hash_original_method = "4AB8965ACD48B286E6BCF28D614F6B00", hash_generated_method = "CE02F13E6307D6ABEA745CE735B00A7C")
     public void drawColor(int color, PorterDuff.Mode mode) {
         addTaint(mode.getTaint());
@@ -674,6 +719,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.097 -0400", hash_original_method = "774CA3D90C36917005A085F0E322036A", hash_generated_method = "BF6573436AB274374078C50D9F5434CD")
     public void drawPaint(Paint paint) {
         addTaint(paint.getTaint());
@@ -683,12 +729,14 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.098 -0400", hash_original_method = "A7026FD3DE10525F382BCFDA63577851", hash_generated_method = "6FF2BCA7A4B0B8AB911130468726B5DA")
     public void drawPoints(float[] pts, int offset, int count,
                                   Paint paint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.099 -0400", hash_original_method = "929DA853C72DCA36C1C2D5AEB0F0EEC1", hash_generated_method = "B69588386471F89E34165E1BF55AC31E")
     public void drawPoints(float[] pts, Paint paint) {
         addTaint(paint.getTaint());
@@ -699,6 +747,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.099 -0400", hash_original_method = "09F3146190FEA35181D8E9A65B708145", hash_generated_method = "CC1E903F166689821C3A24C5F449BF0F")
     public void drawPoint(float x, float y, Paint paint) {
     }
@@ -725,12 +774,14 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.100 -0400", hash_original_method = "5A8D10A468DAF40C9664F83218CAE45B", hash_generated_method = "BC11F5ED395D07C9E16C7DC1EBD0C9F8")
     public void drawLines(float[] pts, int offset, int count,
                                  Paint paint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.100 -0400", hash_original_method = "C2DF9F5B70F03E16002905BD3365AB2E", hash_generated_method = "240D0D497D3344413E6F301FD6886910")
     public void drawLines(float[] pts, Paint paint) {
         addTaint(paint.getTaint());
@@ -741,6 +792,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.100 -0400", hash_original_method = "890D392C9C1E85BE5BBE5EB943FF6481", hash_generated_method = "5C7970080710503FEA9475DCFFE9EE2E")
     public void drawRect(RectF rect, Paint paint) {
         addTaint(paint.getTaint());
@@ -751,6 +803,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.101 -0400", hash_original_method = "9CB801DBEAF645326E64FD8725588653", hash_generated_method = "70EEEE2E580CA4DAB0C2EFA671CD1698")
     public void drawRect(Rect r, Paint paint) {
         addTaint(paint.getTaint());
@@ -761,6 +814,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.101 -0400", hash_original_method = "CDE86729C0DE5B687E9F3D6C62C89CBA", hash_generated_method = "70D750C631A2CACFBEC9B5AF328C9167")
     public void drawRect(float left, float top, float right, float bottom,
                          Paint paint) {
@@ -790,6 +844,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.102 -0400", hash_original_method = "6EC335AEB28EA1E608617532103E031D", hash_generated_method = "60AC95F7F5E6ED28C5FD44D65BCB54B6")
     public void drawCircle(float cx, float cy, float radius, Paint paint) {
         addTaint(paint.getTaint());
@@ -804,6 +859,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.102 -0400", hash_original_method = "5411F007DFA413B9921CB5C131E7CB3B", hash_generated_method = "9635E880B3C2B2E3543F727C75A46D1D")
     public void drawArc(RectF oval, float startAngle, float sweepAngle,
                         boolean useCenter, Paint paint) {
@@ -829,6 +885,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.103 -0400", hash_original_method = "41C1A121517CD12760C521BBD9AF1967", hash_generated_method = "3282C4E0443B8647A955A63F299AAE48")
     public void drawRoundRect(RectF rect, float rx, float ry, Paint paint) {
         addTaint(paint.getTaint());
@@ -862,6 +919,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void throwIfRecycled(Bitmap bitmap) {
         if (bitmap.isRecycled()) {
             throw new RuntimeException(
@@ -870,6 +928,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.106 -0400", hash_original_method = "ED4DAC4BAED1A32A3D194D286EE0C9BC", hash_generated_method = "4CEE03DE2E27870C2160F08F6922FE0E")
     public void drawPatch(Bitmap bitmap, byte[] chunks, RectF dst, Paint paint) {
         addTaint(paint.getTaint());
@@ -904,6 +963,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.108 -0400", hash_original_method = "841672D97CF75C5F24DD91219B8271EA", hash_generated_method = "910B7FF1B58701BE6C405730613CE833")
     public void drawBitmap(Bitmap bitmap, Rect src, Rect dst, Paint paint) {
         addTaint(paint.getTaint());
@@ -931,6 +991,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.109 -0400", hash_original_method = "16007B10D324732000F0755E804F2C6B", hash_generated_method = "3E63877D8808DF9719A8F4C0A23AD54C")
     public void drawBitmap(int[] colors, int offset, int stride, float x,
                            float y, int width, int height, boolean hasAlpha,
@@ -982,6 +1043,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.110 -0400", hash_original_method = "1DECC82647C03783DFB70A54A4715DCA", hash_generated_method = "78F74E18FD210530369BA07793BF08B0")
     public void drawBitmap(int[] colors, int offset, int stride, int x, int y,
                            int width, int height, boolean hasAlpha,
@@ -1003,6 +1065,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.110 -0400", hash_original_method = "EB6FF8B38000E2AA8E5468782EF53260", hash_generated_method = "1CB0ABB74C82F6E12D6E115A65203896")
     public void drawBitmap(Bitmap bitmap, Matrix matrix, Paint paint) {
         addTaint(paint.getTaint());
@@ -1016,6 +1079,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected static void checkRange(int length, int offset, int count) {
         if ((offset | count) < 0 || offset + count > length) {
             throw new ArrayIndexOutOfBoundsException();
@@ -1023,6 +1087,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.111 -0400", hash_original_method = "014BBC0AF3F984A031B4F01243EED110", hash_generated_method = "2FD82B91C315E8EB77CCE3735CAE1CFD")
     public void drawBitmapMesh(Bitmap bitmap, int meshWidth, int meshHeight,
                                float[] verts, int vertOffset,
@@ -1072,6 +1137,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.112 -0400", hash_original_method = "DF78170F74F7916B8CA044C6FA0E7706", hash_generated_method = "48A5675C21AFED885875C1BF25FC83F0")
     public void drawVertices(VertexMode mode, int vertexCount,
                              float[] verts, int vertOffset,
@@ -1124,6 +1190,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.112 -0400", hash_original_method = "B53D951EA30645908EAA0D773F3CD0B1", hash_generated_method = "D5BB32EAB4D03308821E93F9C7BAA7CA")
     public void drawText(char[] text, int index, int count, float x, float y,
                          Paint paint) {
@@ -1152,6 +1219,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.113 -0400", hash_original_method = "5AF5477506B1C1EE3856DD0F624B5874", hash_generated_method = "8BDCDD88CDBF21753FB511A72105DB2E")
     public void drawText(String text, float x, float y, Paint paint) {
         addTaint(paint.getTaint());
@@ -1166,6 +1234,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.113 -0400", hash_original_method = "6829DC946932105C9401F9B35E7B6F88", hash_generated_method = "7DCAA30368332959F543B2BA06A65AE3")
     public void drawText(String text, int start, int end, float x, float y,
                          Paint paint) {
@@ -1192,6 +1261,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.114 -0400", hash_original_method = "6FEFF94D9E21F991F21729F6F5F461A6", hash_generated_method = "E67EB30951DB319324F54BDEC6A5391E")
     public void drawText(CharSequence text, int start, int end, float x,
                          float y, Paint paint) {
@@ -1239,6 +1309,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.114 -0400", hash_original_method = "6EBE295547BE775A36E1A6AF2206E2F5", hash_generated_method = "E8D342E8F62A78D2BEEFEF30CE3285B5")
     public void drawTextRun(char[] text, int index, int count,
             int contextIndex, int contextCount, float x, float y, int dir,
@@ -1296,6 +1367,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.115 -0400", hash_original_method = "92F46C968D6DA82FFBC09248C72F0C8C", hash_generated_method = "8A69C7F09264EE2778F86C09A8230722")
     public void drawTextRun(CharSequence text, int start, int end,
             int contextStart, int contextEnd, float x, float y, int dir,
@@ -1355,6 +1427,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.116 -0400", hash_original_method = "85C4F370BE8714F2CD7DF24F138664E0", hash_generated_method = "721A9A2266EF164827437C4BF78A2D68")
     public void drawPosText(char[] text, int index, int count, float[] pos,
                             Paint paint) {
@@ -1380,6 +1453,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.116 -0400", hash_original_method = "887F094692FA72239FA373420B7D2404", hash_generated_method = "99075A5CD9C1646CF2688222D793BFD9")
     public void drawPosText(String text, float[] pos, Paint paint) {
         addTaint(paint.getTaint());
@@ -1400,6 +1474,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.117 -0400", hash_original_method = "34245E42F942570AFBDEF6E2A30FB787", hash_generated_method = "59EE3E1D5AA2B9376155A0DDE3C7F519")
     public void drawTextOnPath(char[] text, int index, int count, Path path,
                                float hOffset, float vOffset, Paint paint) {
@@ -1429,6 +1504,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.117 -0400", hash_original_method = "BBB121FCAE128F1EC35D041163A72498", hash_generated_method = "47372CB79179E82107419AB1D8FAEA1D")
     public void drawTextOnPath(String text, Path path, float hOffset,
                                float vOffset, Paint paint) {
@@ -1452,6 +1528,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.118 -0400", hash_original_method = "DAACDF6D023CC31453619FC0BE061518", hash_generated_method = "47757917294BA25293EFD3726F6C75B1")
     public void drawPicture(Picture picture) {
         addTaint(picture.getTaint());
@@ -1463,6 +1540,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.118 -0400", hash_original_method = "9A4AF54B94158E3C4DCFADF51FCAADD5", hash_generated_method = "9FC4E31C28FE8403BAFF127D81E861CF")
     public void drawPicture(Picture picture, RectF dst) {
         addTaint(dst.getTaint());
@@ -1488,6 +1566,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.118 -0400", hash_original_method = "A0088B5FD0255BCF9789E7655D1F3782", hash_generated_method = "A2A785D511E81C7C2AA656A7A16638E2")
     public void drawPicture(Picture picture, Rect dst) {
         addTaint(dst.getTaint());
@@ -1513,20 +1592,24 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void freeCaches() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int initRaster(int nativeBitmapOrZero) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_378610903 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_378610903;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setBitmap(int nativeCanvas, int bitmap) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int native_saveLayer(int nativeCanvas, RectF bounds,
                                                int paint, int layerFlags) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_467194653 = DSUtils.UNKNOWN_INT;
@@ -1534,6 +1617,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int native_saveLayer(int nativeCanvas, float l,
                                                float t, float r, float b,
                                                int paint, int layerFlags) {
@@ -1542,6 +1626,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int native_saveLayerAlpha(int nativeCanvas,
                                                     RectF bounds, int alpha,
                                                     int layerFlags) {
@@ -1550,6 +1635,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int native_saveLayerAlpha(int nativeCanvas, float l,
                                                     float t, float r, float b,
                                                     int alpha, int layerFlags) {
@@ -1558,14 +1644,17 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_concat(int nCanvas, int nMatrix) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_setMatrix(int nCanvas, int nMatrix) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_clipRect(int nCanvas,
                                                   float left, float top,
                                                   float right, float bottom,
@@ -1575,6 +1664,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_clipPath(int nativeCanvas,
                                                   int nativePath,
                                                   int regionOp) {
@@ -1583,6 +1673,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_clipRegion(int nativeCanvas,
                                                     int nativeRegion,
                                                     int regionOp) {
@@ -1591,11 +1682,13 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeSetDrawFilter(int nativeCanvas,
                                                    int nativeFilter) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_getClipBounds(int nativeCanvas,
                                                        Rect bounds) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1373360843 = DSUtils.UNKNOWN_BOOLEAN;
@@ -1603,10 +1696,12 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_getCTM(int canvas, int matrix) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_quickReject(int nativeCanvas,
                                                      RectF rect,
                                                      int native_edgeType) {
@@ -1615,6 +1710,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_quickReject(int nativeCanvas,
                                                      int path,
                                                      int native_edgeType) {
@@ -1623,6 +1719,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean native_quickReject(int nativeCanvas,
                                                      float left, float top,
                                                      float right, float bottom,
@@ -1632,74 +1729,88 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawRGB(int nativeCanvas, int r, int g,
                                               int b) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawARGB(int nativeCanvas, int a, int r,
                                                int g, int b) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawColor(int nativeCanvas, int color) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawColor(int nativeCanvas, int color,
                                                 int mode) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawPaint(int nativeCanvas, int paint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawLine(int nativeCanvas, float startX,
                                                float startY, float stopX,
                                                float stopY, int paint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawRect(int nativeCanvas, RectF rect,
                                                int paint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawRect(int nativeCanvas, float left,
                                                float top, float right,
                                                float bottom, int paint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawOval(int nativeCanvas, RectF oval,
                                                int paint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawCircle(int nativeCanvas, float cx,
                                                  float cy, float radius,
                                                  int paint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawArc(int nativeCanvas, RectF oval,
                                               float startAngle, float sweep,
                                               boolean useCenter, int paint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawRoundRect(int nativeCanvas,
                                                     RectF rect, float rx,
                                                     float ry, int paint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawPath(int nativeCanvas, int path,
                                                int paint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.127 -0400", hash_original_method = "43BC096C5F63253CAAFF0D49F467C93B", hash_generated_method = "1978C6A28FFF2DB3A4C5A5D1D9333DBD")
     private void native_drawBitmap(int nativeCanvas, int bitmap,
                                                  float left, float top,
@@ -1710,6 +1821,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.127 -0400", hash_original_method = "9002F07A0506565EF0C19FE427C30B26", hash_generated_method = "763AB84984E018ED98A2E3B0F74BDC61")
     private void native_drawBitmap(int nativeCanvas, int bitmap,
                                                  Rect src, RectF dst,
@@ -1719,6 +1831,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawBitmap(int nativeCanvas, int bitmap,
                                                  Rect src, Rect dst,
                                                  int nativePaintOrZero,
@@ -1727,6 +1840,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawBitmap(int nativeCanvas, int[] colors,
                                                 int offset, int stride, float x,
                                                  float y, int width, int height,
@@ -1735,11 +1849,13 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeDrawBitmapMatrix(int nCanvas, int nBitmap,
                                                       int nMatrix, int nPaint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeDrawBitmapMesh(int nCanvas, int nBitmap,
                                                     int meshWidth, int meshHeight,
                                                     float[] verts, int vertOffset,
@@ -1747,6 +1863,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeDrawVertices(int nCanvas, int mode, int n,
                    float[] verts, int vertOffset, float[] texs, int texOffset,
                    int[] colors, int colorOffset, short[] indices,
@@ -1754,30 +1871,35 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawText(int nativeCanvas, char[] text,
                                                int index, int count, float x,
                                                float y, int flags, int paint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawText(int nativeCanvas, String text,
                                                int start, int end, float x,
                                                float y, int flags, int paint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawTextRun(int nativeCanvas, String text,
             int start, int end, int contextStart, int contextEnd,
             float x, float y, int flags, int paint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawTextRun(int nativeCanvas, char[] text,
             int start, int count, int contextStart, int contextCount,
             float x, float y, int flags, int paint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawPosText(int nativeCanvas,
                                                   char[] text, int index,
                                                   int count, float[] pos,
@@ -1785,12 +1907,14 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawPosText(int nativeCanvas,
                                                   String text, float[] pos,
                                                   int paint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawTextOnPath(int nativeCanvas,
                                                      char[] text, int index,
                                                      int count, int path,
@@ -1800,6 +1924,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawTextOnPath(int nativeCanvas,
                                                      String text, int path,
                                                      float hOffset, 
@@ -1808,11 +1933,13 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_drawPicture(int nativeCanvas,
                                                   int nativePicture) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void finalizer(int nativeCanvas) {
     }
 
@@ -1822,6 +1949,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
 
         private int mNativeCanvas;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.132 -0400", hash_original_method = "C87133F6F9E7B261DCFE48B3CCDE3AF4", hash_generated_method = "B264373C320A36AAFBD12A28825D248D")
         public  CanvasFinalizer(int nativeCanvas) {
             mNativeCanvas = nativeCanvas;
@@ -1830,6 +1958,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.132 -0400", hash_original_method = "DC60B53B0AE455E1CAF5A4B9B6F554F2", hash_generated_method = "E0DD32B7B7DB5442C1A4ACFF42D259E6")
         @Override
         protected void finalize() throws Throwable {
@@ -1862,6 +1991,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
     public enum EdgeType {
         BW(0),  
         AA(1);  
+        @DSModeled(DSC.SAFE)
         EdgeType(int nativeInt) {
             this.nativeInt = nativeInt;
         }
@@ -1873,6 +2003,7 @@ Rect var4C1F3C86A0E56B6E375080F5F710547E_1682459688 =         r;
         TRIANGLES(0),
         TRIANGLE_STRIP(1),
         TRIANGLE_FAN(2);
+        @DSModeled(DSC.SAFE)
         VertexMode(int nativeInt) {
             this.nativeInt = nativeInt;
         }

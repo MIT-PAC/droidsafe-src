@@ -18,6 +18,9 @@ import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.PhoneFactory;
 import com.android.internal.telephony.TelephonyProperties;
 
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
+
 public class TelephonyManager {
     
     public TelephonyManager(Context context) {
@@ -38,6 +41,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static TelephonyManager getDefault() {
         return sInstance;
     }
@@ -196,6 +200,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getNetworkClass(int networkType) {
         switch (networkType) {
             case NETWORK_TYPE_GPRS:
@@ -227,6 +232,7 @@ public class TelephonyManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String getNetworkTypeName(int type) {
         switch (type) {
             case NETWORK_TYPE_GPRS:

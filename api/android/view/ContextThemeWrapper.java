@@ -28,6 +28,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
+    @DSModeled(DSC.SPEC)
     public ContextThemeWrapper(Context base, int themeres) {
         super(base);
         addTaint(themeres);
@@ -45,16 +46,19 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override public void setTheme(int resid) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public int getThemeResId() {
         return -1;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override public Resources.Theme getTheme() {
         return null;
     }
@@ -79,6 +83,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.611 -0400", hash_original_method = "274E46830CAE6261C7392F8B8EF11DA4", hash_generated_method = "6F51DC32008736AA454500B75DDF7DAC")
     private void initializeTheme() {
         final boolean first = mTheme == null;

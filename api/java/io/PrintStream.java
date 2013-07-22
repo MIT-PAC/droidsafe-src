@@ -24,6 +24,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     private String encoding;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.212 -0400", hash_original_method = "DA75705BB6C20C2B5C6B266426BAE0E0", hash_generated_method = "E6260FD1CDE8B74C029BF15F2D5EBD0B")
+    @DSModeled(DSC.SAFE)
     public  PrintStream(OutputStream out) {
         super(out);
         addTaint(out.getTaint());
@@ -41,6 +42,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.213 -0400", hash_original_method = "4DF55F7DB2EC2DB5AB84BECA03073608", hash_generated_method = "E7B0F8A43395B9631FB83485A7213174")
+    @DSModeled(DSC.SAFE)
     public  PrintStream(OutputStream out, boolean autoFlush) {
         super(out);
         addTaint(out.getTaint());
@@ -60,6 +62,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.215 -0400", hash_original_method = "88526CF0A98EC9AB97C7088D88161C3A", hash_generated_method = "59C566E9F8F190EAFB0958CCCF0A9F9D")
+    @DSModeled(DSC.SAFE)
     public  PrintStream(OutputStream out, boolean autoFlush, String enc) throws UnsupportedEncodingException {
         super(out);
         addTaint(out.getTaint());
@@ -103,6 +106,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.216 -0400", hash_original_method = "029BA830A503765157243541D9849231", hash_generated_method = "D927CED89129EFEE36BBC3AACBED05D4")
+    @DSModeled(DSC.SAFE)
     public  PrintStream(File file) throws FileNotFoundException {
         super(new FileOutputStream(file));
         addTaint(file.getTaint());
@@ -111,6 +115,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.217 -0400", hash_original_method = "7BD29578480474358E31B9B912D3F437", hash_generated_method = "63115019E809D93644BB0E94B22D16F3")
+    @DSModeled(DSC.SAFE)
     public  PrintStream(File file, String csn) throws FileNotFoundException,
             UnsupportedEncodingException {
         super(new FileOutputStream(file));
@@ -140,6 +145,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.218 -0400", hash_original_method = "75348CDEFC68D9839C10010605892932", hash_generated_method = "98625306DB9C5CF87A1D339A921DAB22")
+    @DSModeled(DSC.SAFE)
     public  PrintStream(String fileName) throws FileNotFoundException {
         this(new File(fileName));
         addTaint(fileName.getTaint());
@@ -148,6 +154,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.218 -0400", hash_original_method = "8131D7469DBCAB446E9D65623F4F3558", hash_generated_method = "2B953438F0B45202BBB23F1DF031E134")
+    @DSModeled(DSC.SAFE)
     public  PrintStream(String fileName, String csn) throws FileNotFoundException, UnsupportedEncodingException {
         this(new File(fileName), csn);
         addTaint(csn.getTaint());

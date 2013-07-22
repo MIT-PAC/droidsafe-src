@@ -76,6 +76,7 @@ public class ValueAnimator extends Animator {
     HashMap<String, PropertyValuesHolder> mValuesMap;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.967 -0400", hash_original_method = "17A6701FB198CD0BD584AB7A0EFE3839", hash_generated_method = "1E0F7AE0C295B96E8122202378305CF8")
+    @DSModeled(DSC.SAFE)
     public  ValueAnimator() {
         // ---------- Original Method ----------
     }
@@ -88,6 +89,7 @@ public class ValueAnimator extends Animator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ValueAnimator ofFloat(float... values) {
         ValueAnimator anim = new ValueAnimator();
         anim.setFloatValues(values);
@@ -111,6 +113,7 @@ public class ValueAnimator extends Animator {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.974 -0400", hash_original_method = "67525E8968A6999074D725B8947CD2FE", hash_generated_method = "840C50568D669C49D42DBBC4BD0B87A6")
+    @DSModeled(DSC.SAFE)
     public void setIntValues(int... values) {
         addTaint(values[0]);
         if(values == null || values.length == 0)        
@@ -142,6 +145,7 @@ public class ValueAnimator extends Animator {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.977 -0400", hash_original_method = "D733778AA31410A94B9571EEAAECBB30", hash_generated_method = "EC1BE9E5174C66E7E3C126FE709D39BD")
+    @DSModeled(DSC.SAFE)
     public void setFloatValues(float... values) {
         addTaint(values[0]);
         if(values == null || values.length == 0)        
@@ -240,6 +244,7 @@ PropertyValuesHolder[] varC2D5F196132EC24FFA86AC8D1AA44E77_1832261650 =         
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.989 -0400", hash_original_method = "1534ECD6905850E5B269582384A75673", hash_generated_method = "3E463660AB5DD139F7F83CC8C8CC70BA")
+    @DSModeled(DSC.SAFE)
      void initAnimation() {
         if(!mInitialized)        
         {
@@ -262,6 +267,7 @@ for(int i = 0;i < numValues;++i)
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.991 -0400", hash_original_method = "622DE942E3334D786E7FE8DBF49B30DE", hash_generated_method = "C710527D5FB021451FD8DA8A52D83517")
+    @DSModeled(DSC.SAFE)
     public ValueAnimator setDuration(long duration) {
         if(duration < 0)        
         {
@@ -296,6 +302,7 @@ ValueAnimator var72A74007B2BE62B849F475C7BDA4658B_970997194 =         this;
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.995 -0400", hash_original_method = "9366966ECC70650E5B5651EBD3539ED0", hash_generated_method = "4AF7C071D2C46B74489D753479B8B317")
+    @DSModeled(DSC.SAFE)
     public void setCurrentPlayTime(long playTime) {
         initAnimation();
         long currentTime = AnimationUtils.currentAnimationTimeMillis();
@@ -319,6 +326,7 @@ ValueAnimator var72A74007B2BE62B849F475C7BDA4658B_970997194 =         this;
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.000 -0400", hash_original_method = "68655250B160F78BB8C6212DC5765131", hash_generated_method = "F48E131B196AD79E24F7F0CA0A9E83D5")
+    @DSModeled(DSC.SAFE)
     public long getCurrentPlayTime() {
         if(!mInitialized || mPlayingState == STOPPED)        
         {
@@ -512,6 +520,7 @@ Object var540C13E9E156B687226421B24F2DF178_231079821 =             null;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.039 -0400", hash_original_method = "AF77FCDF6C80D02141639AFD7587863F", hash_generated_method = "86B19D29986EF8F2B261A5E66138DDBA")
     @Override
+    @DSModeled(DSC.SAFE)
     public void setInterpolator(TimeInterpolator value) {
         if(value != null)        
         {
@@ -542,6 +551,7 @@ TimeInterpolator var9FA301F6AF154FEBBB2C7439D021F894_780078706 =         mInterp
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.043 -0400", hash_original_method = "BC30F1B6BC4F20E2E98ADFB4EC800F88", hash_generated_method = "94AF827F9943E9B9457C1AE5564931ED")
+    @DSModeled(DSC.SAFE)
     public void setEvaluator(TypeEvaluator value) {
         addTaint(value.getTaint());
         if(value != null && mValues != null && mValues.length > 0)        
@@ -556,6 +566,7 @@ TimeInterpolator var9FA301F6AF154FEBBB2C7439D021F894_780078706 =         mInterp
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.049 -0400", hash_original_method = "4B39A931455D340382CCAC7898FAB8D3", hash_generated_method = "4F5881271E026A969D96D0163697FF89")
+    @DSModeled(DSC.SAFE)
     private void start(boolean playBackwards) {
         if(Looper.myLooper() == null)        
         {
@@ -598,6 +609,7 @@ for(int i = 0;i < numListeners;++i)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.051 -0400", hash_original_method = "0E699EAEE0E759B00B92DBAE6A0AB7E1", hash_generated_method = "CF8459FD9743EB11F57C1D75490D5091")
     @Override
+    @DSModeled(DSC.SAFE)
     public void start() {
         start(false);
         // ---------- Original Method ----------
@@ -827,6 +839,7 @@ for(int i = 0;i < numListeners;++i)
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.083 -0400", hash_original_method = "101420F61878798EE86197F974BCAB89", hash_generated_method = "31745E3900A04A895404B6F51EDF4478")
+    @DSModeled(DSC.SAFE)
      boolean animationFrame(long currentTime) {
         boolean done = false;
         if(mPlayingState == STOPPED)        
@@ -898,6 +911,7 @@ for(int i = 0;i < numListeners;++i)
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.094 -0400", hash_original_method = "64FBD5BD2598ED0D273DFF76320B41E6", hash_generated_method = "FB36DCFD773AFE8A9379BFE836403D00")
+    @DSModeled(DSC.SAFE)
      void animateValue(float fraction) {
         fraction = mInterpolator.getInterpolation(fraction);
         mCurrentFraction = fraction;

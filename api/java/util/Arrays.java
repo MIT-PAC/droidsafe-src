@@ -18,6 +18,7 @@ public class Arrays {
     }
 
     
+        @DSModeled(DSC.SAFE)
     public static <T> List<T> asList(T... array) {
         return new ArrayList<T>(array);
     }

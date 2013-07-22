@@ -61,6 +61,7 @@ public class PointF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final boolean equals(float x, float y){
         return getTaintBoolean();
         // Original method
@@ -72,6 +73,7 @@ public class PointF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final float length(){
         return getTaintFloat();
         // Original method
@@ -83,22 +85,26 @@ public class PointF implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float length(float x, float y) {
         return FloatMath.sqrt(x * x + y * y);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override public int describeContents(){
         return getTaintInt();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override public void writeToParcel(Parcel out, int flags){
         out.writeFloat(x);
         out.writeFloat(y);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void readFromParcel(Parcel in){
         // Original method
         /*

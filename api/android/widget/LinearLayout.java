@@ -75,6 +75,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public LinearLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
@@ -116,6 +117,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public boolean shouldDelayChildPressedState() {
         return getTaintBoolean();
@@ -193,22 +195,26 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isBaselineAligned() {
         return mBaselineAligned;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @android.view.RemotableViewMethod
     public void setBaselineAligned(boolean baselineAligned) {
         mBaselineAligned = baselineAligned;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isMeasureWithLargestChildEnabled() {
         return mUseLargestChild;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @android.view.RemotableViewMethod
     public void setMeasureWithLargestChildEnabled(boolean enabled) {
         mUseLargestChild = enabled;
@@ -253,6 +259,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public int getBaselineAlignedChildIndex() {
         return mBaselineAlignedChildIndex;
     }
@@ -278,6 +285,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public float getWeightSum() {
         return mWeightSum;
     }
@@ -289,6 +297,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         if (mOrientation == VERTICAL) {
@@ -811,11 +820,13 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     int getChildrenSkipCount(View child, int index) {
         return 0;
     }
 
     
+    @DSModeled(DSC.SAFE)
     int measureNullChild(int childIndex) {
         return 0;
     }
@@ -829,16 +840,19 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     int getLocationOffset(View child) {
         return 0;
     }
 
     
+    @DSModeled(DSC.SAFE)
     int getNextLocationOffset(View child) {
         return 0;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         if (mOrientation == VERTICAL) {
@@ -999,6 +1013,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private void setChildFrame(View child, int left, int top, int width, int height) {        
         child.layout(left, top, left + width, top + height);
     }
@@ -1012,6 +1027,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public int getOrientation() {
         return mOrientation;
     }
@@ -1032,6 +1048,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @android.view.RemotableViewMethod
     public void setHorizontalGravity(int horizontalGravity) {
         final int gravity = horizontalGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK;
@@ -1042,6 +1059,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @android.view.RemotableViewMethod
     public void setVerticalGravity(int verticalGravity) {
         final int gravity = verticalGravity & Gravity.VERTICAL_GRAVITY_MASK;
@@ -1069,12 +1087,14 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
         return new LayoutParams(p);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
         return p instanceof LinearLayout.LayoutParams;

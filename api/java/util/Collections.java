@@ -840,6 +840,7 @@ E var24D05606CDD4BC4C89F2F5A15C16F343_533353621 =                 element;
     private static final class EmptyList extends AbstractList implements RandomAccess, Serializable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.635 -0400", hash_original_method = "BF3F11B0BCAE2AE80C7C74CBEB88EB5B", hash_generated_method = "BF3F11B0BCAE2AE80C7C74CBEB88EB5B")
+        @DSModeled(DSC.SAFE)
         public EmptyList ()
         {
             //Synthesized constructor
@@ -905,6 +906,7 @@ Object var41537F84856EC2B8175806D98827383E_1804832711 =             Collections.
     private static final class EmptySet extends AbstractSet implements Serializable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.636 -0400", hash_original_method = "3A37381B9598D46CF46D5D53F85DF5B1", hash_generated_method = "3A37381B9598D46CF46D5D53F85DF5B1")
+        @DSModeled(DSC.SAFE)
         public EmptySet ()
         {
             //Synthesized constructor
@@ -969,6 +971,7 @@ Object varF4CA34D7BD1863138D7F8BDB7243DF79_1138094290 =             Collections.
     private static final class EmptyMap extends AbstractMap implements Serializable {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.638 -0400", hash_original_method = "0E8F36F90F9C751DA5A12903A16705DF", hash_generated_method = "0E8F36F90F9C751DA5A12903A16705DF")
+        @DSModeled(DSC.SAFE)
         public EmptyMap ()
         {
             //Synthesized constructor

@@ -111,6 +111,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	public Activity() {
 		super();
 	}
+    @DSModeled(DSC.SPEC)
     public Intent getIntent(){
 		return mIntent;
 		// Original method
@@ -122,6 +123,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void setIntent(Intent newIntent){
 		mIntent = newIntent;  //Preserved
 		// Original method
@@ -146,6 +148,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final boolean isChild(){
 		return getTaintBoolean();
 		// Original method
@@ -157,6 +160,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final Activity getParent(){
 		return mParent;
 		// Original method
@@ -168,6 +172,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public WindowManager getWindowManager(){
 		return mWindowManager;
 		// Original method
@@ -191,6 +196,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public LoaderManager getLoaderManager(){
 		mLoaderManager = getLoaderManager(-1, mLoadersStarted, true);
 		return mLoaderManager;
@@ -208,6 +214,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     LoaderManagerImpl getLoaderManager(int index, boolean started, boolean create){
 		mAllLoaderManagers = new SparseArray<LoaderManagerImpl>();
 		LoaderManagerImpl lm = mAllLoaderManagers.get(index);
@@ -234,6 +241,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public View getCurrentFocus(){
 		return mWindow.getCurrentFocus();
 		// Original method
@@ -272,6 +280,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     final void performRestoreInstanceState(Bundle savedInstanceState){
 		onRestoreInstanceState(savedInstanceState);
         restoreManagedDialogs(savedInstanceState);
@@ -286,6 +295,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     protected void onRestoreInstanceState(Bundle savedInstanceState){
 		Bundle windowState = savedInstanceState.getBundle(WINDOW_HIERARCHY_TAG); //DSFIXME:  Model method in bundle
 		mWindow.restoreHierarchyState(windowState);
@@ -304,6 +314,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     private void restoreManagedDialogs(Bundle savedInstanceState){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -311,6 +322,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     private Dialog createDialog(Integer dialogId, Bundle state, Bundle args){
 		final Dialog dialog = onCreateDialog(dialogId, args);
 		dialog.dispatchOnCreate(state);
@@ -329,6 +341,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     private static String savedDialogKeyFor(int key){
 		// Original method
 		/*
@@ -340,6 +353,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     private static String savedDialogArgsKeyFor(int key){
 		// Original method
 		/*
@@ -391,6 +405,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onRestart(){
 		// Original method
 		/*
@@ -416,6 +431,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     protected void onPostResume(){
 		final Window win = getWindow();
 		win.makeActive();
@@ -433,6 +449,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     protected void onNewIntent(Intent intent){
 		// Original method
 		/*
@@ -443,6 +460,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     final void performSaveInstanceState(Bundle outState){
 		onSaveInstanceState(outState);
         saveManagedDialogs(outState);
@@ -477,6 +495,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     private void saveManagedDialogs(Bundle outState){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -497,6 +516,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onUserLeaveHint(){
 		// Original method
 		/*
@@ -507,6 +527,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onCreateThumbnail(Bitmap outBitmap, Canvas canvas){
 		// Original method
 		/*
@@ -518,6 +539,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public CharSequence onCreateDescription(){
 		// Original method
 		/*
@@ -574,6 +596,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int getChangingConfigurations(){
 		return getTaintInt();
 		// Original method
@@ -585,6 +608,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated public Object getLastNonConfigurationInstance(){
 		return mLastNonConfigurationInstances.activity;
 		// Original method
@@ -597,6 +621,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public Object onRetainNonConfigurationInstance(){
 		// Original method
 		/*
@@ -608,6 +633,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     HashMap<String, Object> getLastNonConfigurationChildInstances(){
 		return mLastNonConfigurationInstances.children;
 		// Original method
@@ -620,6 +646,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     HashMap<String,Object> onRetainNonConfigurationChildInstances(){
 		// Original method
 		/*
@@ -631,6 +658,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     NonConfigurationInstances retainNonConfigurationInstances(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -638,6 +666,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void onLowMemory(){
 		mFragments.dispatchLowMemory();
 		// Original method
@@ -679,6 +708,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     void invalidateFragmentIndex(int index){
 		LoaderManagerImpl lm = mAllLoaderManagers.get(0);
 		lm.doDestroy();
@@ -699,6 +729,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void onAttachFragment(Fragment fragment){
 		// Original method
 		/*
@@ -709,6 +740,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     @Deprecated public final Cursor managedQuery(Uri uri, String[] projection, String selection,
             String sortOrder){
 		Cursor c = getContentResolver().query(uri, projection, selection, null, sortOrder);
@@ -727,6 +759,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     @Deprecated public final Cursor managedQuery(Uri uri, String[] projection, String selection,
             String[] selectionArgs, String sortOrder){
 		Cursor c = getContentResolver().query(uri, projection, selection, selectionArgs, sortOrder);
@@ -745,6 +778,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     @Deprecated public void startManagingCursor(Cursor c){
 		// Original method
 		/*
@@ -758,6 +792,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     @Deprecated public void stopManagingCursor(Cursor c){
 		ManagedCursor mc = mManagedCursors.get(0);
 		mManagedCursors.remove(0);
@@ -780,6 +815,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated public void setPersistent(boolean isPersistent){
 		// Original method
 		/*
@@ -802,6 +838,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public ActionBar getActionBar(){
 		initActionBar();
         return mActionBar;
@@ -866,6 +903,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void setContentView(View view, ViewGroup.LayoutParams params){
 		getWindow().setContentView(view, params);
         initActionBar();
@@ -880,6 +918,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void addContentView(View view, ViewGroup.LayoutParams params){
 		getWindow().addContentView(view, params);
         initActionBar();
@@ -894,6 +933,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void setFinishOnTouchOutside(boolean finish){
 		mWindow.setCloseOnTouchOutside(finish);
 		// Original method
@@ -941,6 +981,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onKeyLongPress(int keyCode, KeyEvent event){
 		// Original method
 		/*
@@ -952,6 +993,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public boolean onKeyUp(int keyCode, KeyEvent event){
 		getApplicationInfo();
 		onBackPressed();
@@ -973,6 +1015,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event){
 		// Original method
 		/*
@@ -984,6 +1027,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void onBackPressed(){
 		mFragments.popBackStackImmediate();
 		finish();
@@ -999,6 +1043,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onKeyShortcut(int keyCode, KeyEvent event){
 		// Original method
 		/*
@@ -1010,6 +1055,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public boolean onTouchEvent(MotionEvent event){
 		finish();
 		return mWindow.shouldCloseOnTouch(this, event); //Taint should bubble up
@@ -1026,6 +1072,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onTrackballEvent(MotionEvent event){
 		// Original method
 		/*
@@ -1037,6 +1084,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onGenericMotionEvent(MotionEvent event){
 		// Original method
 		/*
@@ -1048,6 +1096,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void onUserInteraction(){
 		// Original method
 		/*
@@ -1058,6 +1107,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void onWindowAttributesChanged(WindowManager.LayoutParams params){
 		mDecor.getParent();
 		getWindowManager().updateViewLayout(mDecor, params);
@@ -1076,6 +1126,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void onContentChanged(){
 		// Original method
 		/*
@@ -1086,6 +1137,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void onWindowFocusChanged(boolean hasFocus){
 		// Original method
 		/*
@@ -1096,6 +1148,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void onAttachedToWindow(){
 		// Original method
 		/*
@@ -1106,6 +1159,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void onDetachedFromWindow(){
 		// Original method
 		/*
@@ -1116,6 +1170,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public boolean hasWindowFocus(){
 		Window w = getWindow();
 		View d = w.getDecorView();
@@ -1136,6 +1191,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public boolean dispatchKeyEvent(KeyEvent event){
 		onUserInteraction();
 		Window win = getWindow();
@@ -1159,6 +1215,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public boolean dispatchKeyShortcutEvent(KeyEvent event){
 		onUserInteraction();
 		return (getWindow().superDispatchKeyShortcutEvent(event) || onKeyShortcut(event.getKeyCode(), event));
@@ -1175,6 +1232,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public boolean dispatchTouchEvent(MotionEvent ev){
 		onUserInteraction();
 		return (getWindow().superDispatchTouchEvent(ev) || onTouchEvent(ev));
@@ -1193,6 +1251,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public boolean dispatchTrackballEvent(MotionEvent ev){
 		onUserInteraction();
 		return (getWindow().superDispatchTrackballEvent(ev) || onTrackballEvent(ev));
@@ -1225,6 +1284,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event){
 		event.setClassName(getClass().getName());
         event.setPackageName(getPackageName());
@@ -1252,6 +1312,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public View onCreatePanelView(int featureId){
 		// Original method
 		/*
@@ -1263,6 +1324,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public boolean onCreatePanelMenu(int featureId, Menu menu){
 		return (onCreateOptionsMenu(menu) || mFragments.dispatchCreateOptionsMenu(menu, getMenuInflater()));
 		// Original method
@@ -1279,6 +1341,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public boolean onPreparePanel(int featureId, View view, Menu menu){
 		return (onPrepareOptionsMenu(menu) || mFragments.dispatchPrepareOptionsMenu(menu) && menu.hasVisibleItems());
 		// Original method
@@ -1295,6 +1358,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public boolean onMenuOpened(int featureId, Menu menu){
 		initActionBar();
 		mActionBar.dispatchMenuVisibilityChanged(true);
@@ -1344,6 +1408,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void onPanelClosed(int featureId, Menu menu){
 		mFragments.dispatchOptionsMenuClosed(menu);
 		onOptionsMenuClosed(menu);
@@ -1371,6 +1436,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void invalidateOptionsMenu(){
 		mWindow.invalidatePanelMenu(Window.FEATURE_OPTIONS_PANEL);
 		// Original method
@@ -1439,6 +1505,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void openOptionsMenu(){
 		mWindow.openPanel(Window.FEATURE_OPTIONS_PANEL, null);
 		// Original method
@@ -1451,6 +1518,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void closeOptionsMenu(){
 		// Original method
 		/*
@@ -1462,6 +1530,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo){
 		// Original method
 		/*
@@ -1484,6 +1553,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void unregisterForContextMenu(View view){
 		view.setOnCreateContextMenuListener(null);
 		// Original method
@@ -1496,6 +1566,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void openContextMenu(View view){
 		view.showContextMenu();
 		// Original method
@@ -1508,6 +1579,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void closeContextMenu(){
 		mWindow.closePanel(Window.FEATURE_CONTEXT_MENU);
 		// Original method
@@ -1534,6 +1606,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void onContextMenuClosed(Menu menu){
 		mParent.onContextMenuClosed(menu);
 		// Original method
@@ -1548,6 +1621,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated protected Dialog onCreateDialog(int id){
 		// Original method
 		/*
@@ -1570,6 +1644,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     @Deprecated protected void onPrepareDialog(int id, Dialog dialog){
 		dialog.setOwnerActivity(this);
 		// Original method
@@ -1594,6 +1669,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     @Deprecated public final void showDialog(int id){
 		showDialog(id, null);
 		// Original method
@@ -1639,6 +1715,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     @Deprecated public final void dismissDialog(int id){
 		final ManagedDialog md = mManagedDialogs.get(id);
 		md.mDialog.dismiss();
@@ -1660,6 +1737,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     private IllegalArgumentException missingDialog(int id){
 		return new IllegalArgumentException("");
 		// Original method
@@ -1722,6 +1800,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void triggerSearch(String query, Bundle appSearchData){
 		ensureSearchManager();
 	    mSearchManager.triggerSearch(query, getComponentName(), appSearchData);
@@ -1736,6 +1815,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void takeKeyEvents(boolean get){
 		getWindow().takeKeyEvents(get);
 		// Original method
@@ -1748,6 +1828,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public final boolean requestWindowFeature(int featureId){
 		return getWindow().requestFeature(featureId);
 		// Original method
@@ -1759,6 +1840,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public final void setFeatureDrawableResource(int featureId, int resId){
 		 getWindow().setFeatureDrawableResource(featureId, resId);
 		// Original method
@@ -1771,6 +1853,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public final void setFeatureDrawableUri(int featureId, Uri uri){
 		getWindow().setFeatureDrawableUri(featureId, uri);
 		// Original method
@@ -1783,6 +1866,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public final void setFeatureDrawable(int featureId, Drawable drawable){
 		getWindow().setFeatureDrawable(featureId, drawable);
 		// Original method
@@ -1795,6 +1879,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public final void setFeatureDrawableAlpha(int featureId, int alpha){
 		getWindow().setFeatureDrawableAlpha(featureId, alpha);
 		// Original method
@@ -1807,6 +1892,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public LayoutInflater getLayoutInflater(){
 		return getWindow().getLayoutInflater();
 		// Original method
@@ -1818,6 +1904,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public MenuInflater getMenuInflater(){
 		initActionBar();
 		mMenuInflater = new MenuInflater(mActionBar.getThemedContext()); //DSFIXME:  Look at underlying method to determine if this can be colapsed.
@@ -1840,6 +1927,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     @Override protected void onApplyThemeResource(Resources.Theme theme, int resid,
             boolean first){
 		super.onApplyThemeResource(theme, resid, first);
@@ -1901,6 +1989,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void startIntentSenderForResult(IntentSender intent, int requestCode,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags){
 		startIntentSenderForResultInner(intent, requestCode, fillInIntent,
@@ -1923,6 +2012,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     private void startIntentSenderForResultInner(IntentSender intent, int requestCode,
             Intent fillInIntent, int flagsMask, int flagsValues, Activity activity){
 		// Original method
@@ -1931,6 +2021,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     @Override public void startActivity(Intent intent){
 		startActivityForResult(intent, -1);
 		// Original method
@@ -1943,6 +2034,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     @Override public void startActivities(Intent[] intents){
 		mInstrumentation.execStartActivities(this, mMainThread.getApplicationThread(),
                 mToken, this, intents);
@@ -1957,6 +2049,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void startIntentSender(IntentSender intent,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags){
 		startIntentSenderForResult(intent, -1, fillInIntent, flagsMask,
@@ -1972,6 +2065,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public boolean startActivityIfNeeded(Intent intent, int requestCode){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1979,6 +2073,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public boolean startNextMatchingActivity(Intent intent){
 		try {
             intent.setAllowFds(false);
@@ -2006,6 +2101,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void startActivityFromChild(Activity child, Intent intent, 
             int requestCode){
 		Instrumentation.ActivityResult ar =
@@ -2033,6 +2129,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void startActivityFromFragment(Fragment fragment, Intent intent, 
             int requestCode){
 	    /*
@@ -2062,6 +2159,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void startIntentSenderFromChild(Activity child, IntentSender intent,
             int requestCode, Intent fillInIntent, int flagsMask, int flagsValues,
             int extraFlags){
@@ -2078,6 +2176,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void overridePendingTransition(int enterAnim, int exitAnim){
 		try {
             ActivityManagerNative.getDefault().overridePendingTransition(
@@ -2098,6 +2197,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final void setResult(int resultCode){
 		addTaint(resultCode);
 		// Original method
@@ -2113,6 +2213,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public final void setResult(int resultCode, Intent data){
 		addTaint(resultCode);
 		mResultData = data;
@@ -2129,6 +2230,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public String getCallingPackage(){
 		try {
             return ActivityManagerNative.getDefault().getCallingPackage(mToken);
@@ -2148,6 +2250,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public ComponentName getCallingActivity(){
 		try {
             return ActivityManagerNative.getDefault().getCallingActivity(mToken);
@@ -2167,6 +2270,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void setVisible(boolean visible){
 		addTaint(visible);
 		makeVisible();
@@ -2187,6 +2291,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     void makeVisible(){
 		ViewManager wm = getWindowManager();
         wm.addView(mDecor, getWindow().getAttributes());
@@ -2206,6 +2311,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isFinishing(){
 		return getTaintBoolean();
 		// Original method
@@ -2217,6 +2323,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isChangingConfigurations(){
 		return getTaintBoolean();
 		// Original method
@@ -2228,6 +2335,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void recreate(){
 		mMainThread.requestRelaunchActivity(mToken, null, null, 0, false, null, false);
 		// Original method
@@ -2246,6 +2354,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void finish(){
 		Log.v(TAG, "Finishing self: token=" + mToken);
 		mResultData.setAllowFds(false);
@@ -2285,6 +2394,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void finishFromChild(Activity child){
 		finish();
 		// Original method
@@ -2297,6 +2407,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void finishActivity(int requestCode){
 		try {
             ActivityManagerNative.getDefault()
@@ -2322,6 +2433,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void finishActivityFromChild(Activity child, int requestCode){
 		try {
             ActivityManagerNative.getDefault()
@@ -2353,6 +2465,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public PendingIntent createPendingResult(int requestCode, Intent data,
             int flags){
 		String packageName = getPackageName();
@@ -2387,6 +2500,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void setRequestedOrientation(int requestedOrientation){
 		try {
             ActivityManagerNative.getDefault().setRequestedOrientation(
@@ -2412,6 +2526,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public int getRequestedOrientation(){
 		int retval = 0;
 		try {
@@ -2437,6 +2552,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public int getTaskId(){
 		try {
             return ActivityManagerNative.getDefault()
@@ -2458,6 +2574,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public boolean isTaskRoot(){
 		try {
             return ActivityManagerNative.getDefault()
@@ -2479,6 +2596,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public boolean moveTaskToBack(boolean nonRoot){
 		try {
             return ActivityManagerNative.getDefault().moveActivityTaskToBack(
@@ -2500,6 +2618,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public String getLocalClassName(){
 		return mComponent.getClassName();
 		// Original method
@@ -2518,6 +2637,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public ComponentName getComponentName(){
 		return mComponent;
 		// Original method
@@ -2529,6 +2649,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public SharedPreferences getPreferences(int mode){
 		return getSharedPreferences(getLocalClassName(), mode);
 		// Original method
@@ -2581,6 +2702,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void setTitle(CharSequence title){
 		mTitle = title;  //Preserved
 		onTitleChanged(title, mTitleColor);
@@ -2599,6 +2721,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void setTitle(int titleId){
 		setTitle(getText(titleId));
 		// Original method
@@ -2611,6 +2734,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void setTitleColor(int textColor){
 		addTaint(textColor);
 		onTitleChanged(mTitle, textColor);
@@ -2625,6 +2749,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final CharSequence getTitle(){
 		return mTitle;
 		// Original method
@@ -2636,6 +2761,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final int getTitleColor(){
 		return getTaintInt();
 		// Original method
@@ -2647,6 +2773,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     protected void onTitleChanged(CharSequence title, int color){
 		final Window win = getWindow();
 		win.setTitle(title);
@@ -2669,6 +2796,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onChildTitleChanged(Activity childActivity, CharSequence title){
 		// Original method
 		/*
@@ -2679,6 +2807,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public final void setProgressBarVisibility(boolean visible){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
 		// Original method
@@ -2692,6 +2821,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public final void setProgressBarIndeterminateVisibility(boolean visible){
 		getWindow().setFeatureInt(Window.FEATURE_INDETERMINATE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
 		// Original method
@@ -2705,6 +2835,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public final void setProgressBarIndeterminate(boolean indeterminate){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_INDETERMINATE_ON);
 		// Original method
@@ -2718,6 +2849,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public final void setProgress(int progress){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_START);
 		// Original method
@@ -2755,6 +2887,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public final int getVolumeControlStream(){
 		return getWindow().getVolumeControlStream();
 		// Original method
@@ -2784,6 +2917,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public View onCreateView(String name, Context context, AttributeSet attrs){
 		// Original method
 		/*
@@ -2802,6 +2936,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -2809,6 +2944,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public boolean isImmersive(){
 		try {
             return ActivityManagerNative.getDefault().isImmersive(mToken); //Call down into 
@@ -2828,6 +2964,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public void setImmersive(boolean i){
 		try {
             ActivityManagerNative.getDefault().setImmersive(mToken, i);
@@ -2846,6 +2983,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public ActionMode startActionMode(ActionMode.Callback callback){
 		return mWindow.getDecorView().startActionMode(callback);
 		// Original method
@@ -2857,6 +2995,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     public ActionMode onWindowStartingActionMode(ActionMode.Callback callback){
 		initActionBar();
 		return mActionBar.startActionMode(callback);
@@ -2873,6 +3012,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void onActionModeStarted(ActionMode mode){
 		// Original method
 		/*
@@ -2883,6 +3023,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void onActionModeFinished(ActionMode mode){
 		// Original method
 		/*
@@ -2893,6 +3034,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     final void setParent(Activity parent){
 		mParent = parent;  //Preserved
 		// Original method
@@ -2958,6 +3100,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     final IBinder getActivityToken(){
 		return mParent.getActivityToken();
 		// Original method
@@ -2969,6 +3112,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.919 -0400", hash_original_method = "DAB379B095765C858B51976FA2FCF6E4", hash_generated_method = "B85FC9CA5FD75BC2569BC7FE820DA2C6")
     final void performCreate(Bundle icicle) {
         addTaint(icicle.getTaint());
@@ -2984,6 +3128,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 
     
+    @DSModeled(DSC.SPEC)
     final void performStart(){
 		mFragments.noteStateNotSaved();
 		mFragments.execPendingActions();
@@ -3018,6 +3163,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     final void performRestart(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -3025,6 +3171,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     final void performResume(){
 		performRestart();
 		mFragments.execPendingActions();
@@ -3060,6 +3207,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     final void performPause(){
 		mFragments.dispatchPause();
 		onPause();
@@ -3084,6 +3232,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     final void performUserLeaving(){
 		onUserInteraction();
         onUserLeaveHint();
@@ -3098,6 +3247,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     final void performStop(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -3105,6 +3255,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     final void performDestroy(){
 		mWindow.destroy();
         mFragments.dispatchDestroy();
@@ -3125,6 +3276,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public final boolean isResumed(){
 		return getTaintBoolean();
 		// Original method
@@ -3136,6 +3288,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     void dispatchActivityResult(String who, int requestCode, 
         int resultCode, Intent data){
 		 Log.v(
@@ -3203,6 +3356,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
         private boolean mReleased;
         private boolean mUpdated;
         
+        @DSModeled(DSC.SPEC)
         ManagedCursor(Cursor cursor){
 			mCursor = cursor;
 			/*

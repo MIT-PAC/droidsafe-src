@@ -21,27 +21,31 @@ public abstract class Keyframe implements Cloneable {
     boolean mHasValue = false;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.760 -0400", hash_original_method = "59B475F2675EC1DB9A85E43A7051AABA", hash_generated_method = "59B475F2675EC1DB9A85E43A7051AABA")
+    @DSModeled(DSC.SAFE)
     public Keyframe ()
     {
         //Synthesized constructor
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static Keyframe ofInt(float fraction, int value) {
         return new IntKeyframe(fraction, value);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Keyframe ofInt(float fraction) {
         return new IntKeyframe(fraction);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Keyframe ofFloat(float fraction, float value) {
         return new FloatKeyframe(fraction, value);
     }
 
-    
+    @DSModeled(DSC.SAFE)
     public static Keyframe ofFloat(float fraction) {
         return new FloatKeyframe(fraction);
     }
@@ -199,6 +203,7 @@ ObjectKeyframe varA9EDFBA5634D9136F6D4A7121F574350_47187565 =             kfClon
         int mValue;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.806 -0400", hash_original_method = "EEAB8C81F88FA2F655356211D4887153", hash_generated_method = "FAC6295CEF7D71B247A193CEC6A7ED67")
+    @DSModeled(DSC.SAFE)
           IntKeyframe(float fraction, int value) {
             addTaint(fraction);
             mFraction = fraction;
@@ -214,6 +219,7 @@ ObjectKeyframe varA9EDFBA5634D9136F6D4A7121F574350_47187565 =             kfClon
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.812 -0400", hash_original_method = "361D7315F9884E2CC45B77F9DFFA5D0B", hash_generated_method = "3C19D511DDD09AC510004D7A49BDDD9D")
+    @DSModeled(DSC.SAFE)
           IntKeyframe(float fraction) {
             addTaint(fraction);
             mFraction = fraction;
@@ -286,6 +292,7 @@ IntKeyframe varA9EDFBA5634D9136F6D4A7121F574350_1942622977 =             kfClone
         float mValue;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.837 -0400", hash_original_method = "12EFD0F6FC013537F5F7DD4B7E13C7C3", hash_generated_method = "608D5AC62F83C0500F69F52B00DCF78F")
+    @DSModeled(DSC.SAFE)
           FloatKeyframe(float fraction, float value) {
             addTaint(fraction);
             mFraction = fraction;
@@ -301,6 +308,7 @@ IntKeyframe varA9EDFBA5634D9136F6D4A7121F574350_1942622977 =             kfClone
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.839 -0400", hash_original_method = "68E29C538F7AE79A8714A7F41CC12063", hash_generated_method = "F6B9DF35CC5E88889F76E0E2AD32E921")
+    @DSModeled(DSC.SAFE)
           FloatKeyframe(float fraction) {
             addTaint(fraction);
             mFraction = fraction;

@@ -38,11 +38,13 @@ public class MessageQueue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private void nativePollOnce(int ptr, int timeoutMillis){
         //Formerly a native function
     }
 
     
+    @DSModeled(DSC.SAFE)
     private void nativeWake(int ptr){
         //Formerly a native function
     }

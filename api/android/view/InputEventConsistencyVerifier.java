@@ -74,6 +74,7 @@ public final class InputEventConsistencyVerifier {
     private StringBuilder mViolationMessage;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.097 -0400", hash_original_method = "D65E8A245B5C473707AFD205D57D3AF8", hash_generated_method = "33D025E9014950329B11E0EABEA29DB9")
+    @DSModeled(DSC.SAFE)
     public  InputEventConsistencyVerifier(Object caller, int flags) {
         this(caller, flags, InputEventConsistencyVerifier.class.getSimpleName());
         addTaint(flags);
@@ -83,6 +84,7 @@ public final class InputEventConsistencyVerifier {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.098 -0400", hash_original_method = "31CA6A116339576A3C7E1C4293F4F7B1", hash_generated_method = "25151441769D8C7D937887594A926350")
+    @DSModeled(DSC.SAFE)
     public  InputEventConsistencyVerifier(Object caller, int flags, String logTag) {
         this.mCaller = caller;
         this.mFlags = flags;

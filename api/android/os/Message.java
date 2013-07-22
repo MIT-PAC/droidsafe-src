@@ -17,10 +17,12 @@ public final class Message implements Parcelable {
     Runnable callback;
     Message next;
     
+    @DSModeled(DSC.SAFE)
     public Message(){
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public static Message obtain(){
 		// Original method
 		/*
@@ -208,6 +210,7 @@ public final class Message implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void clearForRecycle(){
 		// Original method
 		/*
@@ -228,6 +231,7 @@ public final class Message implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     boolean isInUse(){
 		// Original method
 		/*
@@ -239,6 +243,7 @@ public final class Message implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     void markInUse(){
 		// Original method
 		/*
@@ -290,6 +295,7 @@ public final class Message implements Parcelable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public int describeContents(){
 		// Original method
 		/*

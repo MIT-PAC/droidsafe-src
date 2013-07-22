@@ -25,36 +25,43 @@ public class ArrayUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int idealBooleanArraySize(int need) {
         return idealByteArraySize(need);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int idealShortArraySize(int need) {
         return idealByteArraySize(need * 2) / 2;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int idealCharArraySize(int need) {
         return idealByteArraySize(need * 2) / 2;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int idealIntArraySize(int need) {
         return idealByteArraySize(need * 4) / 4;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int idealFloatArraySize(int need) {
         return idealByteArraySize(need * 4) / 4;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int idealObjectArraySize(int need) {
         return idealByteArraySize(need * 4) / 4;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int idealLongArraySize(int need) {
         return idealByteArraySize(need * 8) / 8;
     }
@@ -77,6 +84,7 @@ public class ArrayUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> T[] emptyArray(Class<T> kind) {
         if (kind == Object.class) {
             return (T[]) EMPTY;
@@ -91,6 +99,7 @@ public class ArrayUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> boolean contains(T[] array, T value) {
         for (T element : array) {
             if (element == null) {

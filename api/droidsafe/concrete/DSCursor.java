@@ -23,6 +23,7 @@ import android.database.Cursor;
 import android.database.DataSetObserver;
 import android.net.Uri;
 import android.os.Bundle;
+import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
 
 /**
@@ -38,7 +39,7 @@ import droidsafe.annotations.DSModeled;
 public class DSCursor implements Cursor {
 	/**/
 	
-	@DSModeled
+	@DSModeled(DSC.SPEC)
 	public DSCursor(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
 		addTaint(uri.getTaint());
 		addTaint(projection.toString().getTaint());
@@ -74,7 +75,7 @@ public class DSCursor implements Cursor {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
-    @DSModeled
+    @DSModeled(DSC.SPEC)
     public int getInt(int columnIndex) {
         return getTaintInt();
     }
@@ -131,7 +132,7 @@ public class DSCursor implements Cursor {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
-    @DSModeled
+    @DSModeled(DSC.SPEC)
     public boolean moveToFirst() {
         return true;
     }
@@ -160,7 +161,7 @@ public class DSCursor implements Cursor {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
-    @DSModeled
+    @DSModeled(DSC.SPEC)
     public void close() {
     }
 

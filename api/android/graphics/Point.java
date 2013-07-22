@@ -10,6 +10,7 @@ public class Point implements Parcelable {
     public int x;
     public int y;
     
+    @DSModeled(DSC.SAFE)
     public Point(){
     }
 
@@ -52,6 +53,7 @@ public class Point implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final void offset(int dx, int dy){
         x += dx;
         y += dy;
@@ -65,6 +67,7 @@ public class Point implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public final boolean equals(int x, int y){
         return getTaintBoolean();
         // Original method
@@ -76,6 +79,7 @@ public class Point implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override public boolean equals(Object o){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //Point p = (Point) o;
@@ -93,6 +97,7 @@ public class Point implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override public int hashCode(){
         return getTaintInt();
         // Original method
@@ -104,6 +109,7 @@ public class Point implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override public String toString(){
         String str = new String();
         str.addTaint(getTaint());
@@ -117,6 +123,7 @@ public class Point implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override public int describeContents(){
         return getTaintInt();
         // Original method
@@ -128,6 +135,7 @@ public class Point implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override public void writeToParcel(Parcel out, int flags){
         out.writeInt(x);
         out.writeInt(y);
@@ -141,6 +149,7 @@ public class Point implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void readFromParcel(Parcel in){
         // Original method
         /*

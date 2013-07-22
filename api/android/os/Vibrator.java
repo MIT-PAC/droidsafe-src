@@ -53,31 +53,10 @@ public class Vibrator {
         //}
     }
 
-    
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.819 -0400", hash_original_method = "7A7D54B587DD258FAC49023E7C932C75", hash_generated_method = "4FEC1D25C674D0C4EBF3B684610D737E")
     public void vibrate(long[] pattern, int repeat) {
-        addTaint(repeat);
-        addTaint(pattern[0]);
-        if(mService == null)        
-        {
-            return;
-        } //End block
-        if(repeat < pattern.length)        
-        {
-            try 
-            {
-                mService.vibratePattern(pattern, repeat, mToken);
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        else
-        {
-            ArrayIndexOutOfBoundsException var37DB57B1FEB1C9FBA644A093BFA8B678_2067812072 = new ArrayIndexOutOfBoundsException();
-            var37DB57B1FEB1C9FBA644A093BFA8B678_2067812072.addTaint(taint);
-            throw var37DB57B1FEB1C9FBA644A093BFA8B678_2067812072;
-        } //End block
+    	//End block
         // ---------- Original Method ----------
         //if (mService == null) {
             //Log.w(TAG, "Failed to vibrate; no vibrator service.");

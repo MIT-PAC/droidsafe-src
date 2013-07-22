@@ -348,6 +348,7 @@ for(HashtableEntry e = tab[i];e != null;e = e.next)
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.356 -0400", hash_original_method = "70A37B9812099DB6AA6597919714B995", hash_generated_method = "758D3CDC605A984AF4341EA96D3A0293")
+    @DSModeled(DSC.SAFE)
     public synchronized V put(K key, V value) {
         addTaint(value.getTaint());
         addTaint(key.getTaint());
@@ -518,6 +519,7 @@ for(HashtableEntry<K, V> e = oldTable[i];e != null;)
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.361 -0400", hash_original_method = "8FDFD015009EFB98FD90E5E66F0193AF", hash_generated_method = "F72AF6FB3A161451E105F898B8983180")
+    @DSModeled(DSC.SAFE)
     private HashtableEntry<K, V>[] makeTable(int newCapacity) {
         @SuppressWarnings("unchecked") HashtableEntry<K, V>[] newTable = (HashtableEntry<K, V>[]) new HashtableEntry[newCapacity];
         table = newTable;
@@ -535,6 +537,7 @@ HashtableEntry<K, V>[] varBBDF9FA229AA843E98D9C8441545D1D6_197798341 =         n
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.364 -0400", hash_original_method = "291B56F25D1E56D0A03492C2073BE506", hash_generated_method = "98F5D500EA6AF953722E545D23C9DC83")
+    @DSModeled(DSC.SAFE)
     private HashtableEntry<K, V>[] doubleCapacity() {
         HashtableEntry<K, V>[] oldTable = table;
         int oldCapacity = oldTable.length;

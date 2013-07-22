@@ -2,12 +2,11 @@ package droidsafe.runtime;
 
 import java.util.Random;
 
+import android.app.ContextImpl;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.ContextImpl;
-
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
 

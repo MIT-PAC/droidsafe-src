@@ -21,6 +21,7 @@ public class TypedValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float complexToFloat(int complex)
     {
         return (complex&(TypedValue.COMPLEX_MANTISSA_MASK
@@ -80,6 +81,7 @@ public class TypedValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static float applyDimension(int unit, float value,
                                        DisplayMetrics metrics)
     {
@@ -166,6 +168,7 @@ public class TypedValue {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void setTo(TypedValue other)
     {
         type = other.type;

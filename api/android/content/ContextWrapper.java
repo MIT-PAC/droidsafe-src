@@ -103,6 +103,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @Override
     public ClassLoader getClassLoader() {
         return mBase.getClassLoader();
@@ -286,6 +287,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void startActivity(Intent intent) {
         mBase.startActivity(intent);
@@ -298,6 +300,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void startIntentSender(IntentSender intent,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags)
@@ -307,18 +310,21 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void sendBroadcast(Intent intent) {
         mBase.sendBroadcast(intent);
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void sendBroadcast(Intent intent, String receiverPermission) {
         mBase.sendBroadcast(intent, receiverPermission);
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void sendOrderedBroadcast(Intent intent,
             String receiverPermission) {
@@ -326,6 +332,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void sendOrderedBroadcast(
         Intent intent, String receiverPermission, BroadcastReceiver resultReceiver,
@@ -337,12 +344,14 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void sendStickyBroadcast(Intent intent) {
         mBase.sendStickyBroadcast(intent);
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void sendStickyOrderedBroadcast(
         Intent intent, BroadcastReceiver resultReceiver,
@@ -354,6 +363,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void removeStickyBroadcast(Intent intent) {
         mBase.removeStickyBroadcast(intent);
@@ -368,6 +378,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public Intent registerReceiver(
         BroadcastReceiver receiver, IntentFilter filter,
@@ -383,18 +394,21 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public ComponentName startService(Intent service) {
         return mBase.startService(service);
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public boolean stopService(Intent name) {
         return mBase.stopService(name);
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public boolean bindService(Intent service, ServiceConnection conn,
             int flags) {
@@ -460,36 +474,42 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void grantUriPermission(String toPackage, Uri uri, int modeFlags) {
         mBase.grantUriPermission(toPackage, uri, modeFlags);
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void revokeUriPermission(Uri uri, int modeFlags) {
         mBase.revokeUriPermission(uri, modeFlags);
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public int checkUriPermission(Uri uri, int pid, int uid, int modeFlags) {
         return mBase.checkUriPermission(uri, pid, uid, modeFlags);
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public int checkCallingUriPermission(Uri uri, int modeFlags) {
         return mBase.checkCallingUriPermission(uri, modeFlags);
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public int checkCallingOrSelfUriPermission(Uri uri, int modeFlags) {
         return mBase.checkCallingOrSelfUriPermission(uri, modeFlags);
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public int checkUriPermission(Uri uri, String readPermission,
             String writePermission, int pid, int uid, int modeFlags) {
@@ -498,6 +518,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void enforceUriPermission(
             Uri uri, int pid, int uid, int modeFlags, String message) {
@@ -505,6 +526,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void enforceCallingUriPermission(
             Uri uri, int modeFlags, String message) {
@@ -512,6 +534,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void enforceCallingOrSelfUriPermission(
             Uri uri, int modeFlags, String message) {
@@ -519,6 +542,7 @@ public class ContextWrapper extends Context {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @Override
     public void enforceUriPermission(
             Uri uri, String readPermission, String writePermission,

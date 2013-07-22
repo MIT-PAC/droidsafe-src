@@ -50,7 +50,8 @@ public class SensorManager {
                     try {
                         sRotation = sWindowManager.watchRotation(
                                 new IRotationWatcher.Stub() {
-                                    public void onRotationChanged(int rotation) {
+                                    @DSModeled(DSC.SAFE)
+    public void onRotationChanged(int rotation) {
                                         SensorManager.this.onRotationChanged(rotation);
                                     }
                                 }
@@ -80,6 +81,7 @@ public class SensorManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private int getLegacySensorType(int type) {
 		/*
         switch (type) {
@@ -699,6 +701,7 @@ for(int i=0;i<size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean remapCoordinateSystemImpl(float[] inR, int X, int Y,
             float[] outR) {
         final int length = outR.length;
@@ -758,6 +761,7 @@ for(int i=0;i<size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void onRotationChanged(int rotation) {
         synchronized(sListeners) {
         	addTaint(rotation);
@@ -766,6 +770,7 @@ for(int i=0;i<size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int getRotation() {
         synchronized(sListeners) {
             return sRotation;
@@ -893,27 +898,32 @@ for(int i=0;i<size;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void nativeClassInit() {  //Formerly a native method
 		//Noop
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static int sensors_module_init() {  //Formerly a native method
 		return 0;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static int sensors_module_get_next_sensor(Sensor sensor, int next) { //Formerly a native method
 		return 0;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     static int sensors_create_queue() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_712978663 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_712978663;
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void sensors_destroy_queue(int queue) {
     }
 
@@ -925,6 +935,7 @@ for(int i=0;i<size;i++)
 	}
 
     
+    @DSModeled(DSC.SAFE)
     static int sensors_data_poll(int queue, float[] values, int[] status, long[] timestamp) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723860276 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723860276;
@@ -991,6 +1002,7 @@ SensorEvent varE0D714D758F1540A8DF364A965AF9150_207451627 =             t;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.889 -0400", hash_original_method = "C46016A1870C47E495A9527702944C16", hash_generated_method = "53B1EAA66C1F07A1BB242EC8E13B94A3")
          void returnToPool(SensorEvent t) {
             synchronized
@@ -1029,6 +1041,7 @@ SensorEvent varE0D714D758F1540A8DF364A965AF9150_207451627 =             t;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.890 -0400", hash_original_method = "3012BD4162FEB4D4063E0B4E3944BED9", hash_generated_method = "0065A500F2AC1D21DA0CBFBF0E28A56E")
         @Override
         protected void finalize() {
@@ -1221,6 +1234,7 @@ switch(t.sensor.getType()){
         }
 
         
+        @DSModeled(DSC.SAFE)
         Object getListener() {
             return mSensorEventListener;
         }
@@ -1257,6 +1271,7 @@ switch(t.sensor.getType()){
         }
 
         
+        @DSModeled(DSC.SAFE)
         List<Sensor> getSensors() {
             return mSensorList;
         }
@@ -1331,6 +1346,7 @@ switch(t.sensor.getType()){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.897 -0400", hash_original_method = "4097E1683A40A6DEAB5492A2296E3879", hash_generated_method = "8131930ADF7BA919DC4A2597B2FC2264")
          void registerSensor(int legacyType) {
             //DSFIXME: CODE0010: Possible callback registration function detected
@@ -1340,6 +1356,7 @@ switch(t.sensor.getType()){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.898 -0400", hash_original_method = "737F8C4556D577A83A29D9000B85627C", hash_generated_method = "0B92831132C386092318B786FE96B22F")
          boolean unregisterSensor(int legacyType) {
             mSensors &= ~legacyType;
@@ -1432,6 +1449,7 @@ switch(t.sensor.getType()){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.901 -0400", hash_original_method = "7A14D827894C3DC6FC1EC81B36F33A0A", hash_generated_method = "4C265B1CB28A54021A32BEA4EF697D14")
         private void mapSensorDataToWindow(int sensor,
                 float[] values, int orientation) {

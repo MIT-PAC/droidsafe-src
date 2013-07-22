@@ -8,6 +8,7 @@ import droidsafe.annotations.DSModeled;
 public class ArgbEvaluator implements TypeEvaluator {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.508 -0400", hash_original_method = "2B314B5188522F79C40FC502122E5F12", hash_generated_method = "2B314B5188522F79C40FC502122E5F12")
+    @DSModeled(DSC.SAFE)
     public ArgbEvaluator ()
     {
         //Synthesized constructor

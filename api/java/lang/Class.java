@@ -1280,6 +1280,7 @@ for(Class<?> sup = getSuperclass();sup != null;sup = sup.getSuperclass())
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.647 -0400", hash_original_method = "AA0408A05BAE9726C68A16303FDDA1C2", hash_generated_method = "BBC3A8C80539B533D7EBCF7E23EFFAED")
+    @DSModeled(DSC.SAFE)
     public boolean isArray() {
         boolean varD9EC80EBE7F6EA0E95A1BEB28155A254_408431719 = (getComponentType() != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1344134589 = getTaintBoolean();
@@ -1324,6 +1325,7 @@ for(Class<?> sup = getSuperclass();sup != null;sup = sup.getSuperclass())
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.651 -0400", hash_original_method = "3F7BF71CE24DC5396B729F24C64FF6F5", hash_generated_method = "5D9CE087E055D2F765FE5DFB95006A0C")
+    @DSModeled(DSC.SAFE)
     public boolean isLocalClass() {
         boolean enclosed = (getEnclosingMethod() != null ||
                          getEnclosingConstructor() != null);
@@ -1338,6 +1340,7 @@ for(Class<?> sup = getSuperclass();sup != null;sup = sup.getSuperclass())
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.651 -0400", hash_original_method = "C60F72E8D565680EAC577743F2D63678", hash_generated_method = "A5AE12CFD2FAA602F5C0E4837056A273")
+    @DSModeled(DSC.SAFE)
     public boolean isMemberClass() {
         boolean varC9096DA666816CCFBD0380B7F2B1C51A_1395550525 = (getDeclaringClass() != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1499404624 = getTaintBoolean();

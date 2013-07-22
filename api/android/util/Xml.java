@@ -94,6 +94,7 @@ public class Xml {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AttributeSet asAttributeSet(XmlPullParser parser) {
         return (parser instanceof AttributeSet)
                 ? (AttributeSet) parser
