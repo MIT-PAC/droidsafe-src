@@ -4,7 +4,8 @@ import com.google.common.collect.Sets;
 
 import droidsafe.analyses.value.models.android.database.Cursor;
 import droidsafe.analyses.value.models.android.net.Uri;
-import droidsafe.analyses.value.models.droidsafe.primitive.Boolean;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisBoolean;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisInt;
 
 import java.util.Set;
 
