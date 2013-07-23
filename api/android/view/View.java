@@ -872,6 +872,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		//Return nothing
 	}
 	
+	@DSModeled
 	public boolean hasOnClickListeners(){
 		
 		// Original method
@@ -884,6 +885,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		return false;
 	}
 	
+	@DSModeled
 	public void setOnLongClickListener(OnLongClickListener l){
 		
 		// Original method

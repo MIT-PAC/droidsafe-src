@@ -151,11 +151,12 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	private Thread mUiThread;
 	final Handler mHandler = new Handler();
 	
-	@DSModeled(DSC.SAFE)
+	@DSModeled
 	public Activity() {
 		super();
 	}
 	
+	@DSModeled
 	public Intent getIntent(){
 		return mIntent;
 		
@@ -167,6 +168,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 	
+	@DSModeled
 	public void setIntent(Intent newIntent){
 		mIntent = newIntent;  //Preserved
 		
@@ -179,7 +181,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
-	@DSModeled(DSC.SAFE)
+	@DSModeled
 	public final Application getApplication(){
 		return mApplication;
 		
@@ -191,6 +193,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 	
+	@DSModeled
 	public final boolean isChild(){
 		return getTaintBoolean();
 		// Original method
@@ -201,6 +204,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 	
+	@DSModeled
 	public final Activity getParent(){
 		return mParent;
 		
@@ -212,6 +216,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 	
+	@DSModeled
 	public WindowManager getWindowManager(){
 		return mWindowManager;
 		
@@ -223,7 +228,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 	
-	@DSModeled(DSC.SAFE)
+	@DSModeled
 	public Window getWindow(){
 		return mWindow;
 		
@@ -235,6 +240,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 	
+	@DSModeled(DSC.SPEC)
 	public LoaderManager getLoaderManager(){
 		mLoaderManager = getLoaderManager(-1, mLoadersStarted, true);
 		return mLoaderManager;
@@ -252,6 +258,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 	
+	@DSModeled(DSC.SPEC)
 	LoaderManagerImpl getLoaderManager(int index, boolean started, boolean create){
 		mAllLoaderManagers = new SparseArray<LoaderManagerImpl>();
 		LoaderManagerImpl lm = mAllLoaderManagers.get(index);
@@ -277,6 +284,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 	
+	@DSModeled
 	public View getCurrentFocus(){
 		return mWindow.getCurrentFocus();
 		// Original method
@@ -287,7 +295,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 	
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.SPEC)
 	protected void onCreate(Bundle savedInstanceState){
 		mAllLoaderManagers = mLastNonConfigurationInstances.loaders;
 		Parcelable p = savedInstanceState.getParcelable(FRAGMENTS_TAG);
@@ -313,6 +321,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled(DSC.SPEC)
 	final void performRestoreInstanceState(Bundle savedInstanceState){
 		onRestoreInstanceState(savedInstanceState);
         restoreManagedDialogs(savedInstanceState);
@@ -326,6 +335,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled(DSC.SPEC)
 	protected void onRestoreInstanceState(Bundle savedInstanceState){
 		Bundle windowState = savedInstanceState.getBundle(WINDOW_HIERARCHY_TAG); //DSFIXME:  Model method in bundle
 		mWindow.restoreHierarchyState(windowState);
@@ -343,6 +353,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled(DSC.SPEC)
 	private void restoreManagedDialogs(Bundle savedInstanceState){
 		
 		// Original method
@@ -350,6 +361,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled(DSC.SPEC)
 	private Dialog createDialog(Integer dialogId, Bundle state, Bundle args){
 		final Dialog dialog = onCreateDialog(dialogId, args);
 		dialog.dispatchOnCreate(state);
@@ -367,6 +379,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 	
+	@DSModeled
 	private static String savedDialogKeyFor(int key){
 		
 		// Original method
@@ -378,6 +391,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		return "";
 	}
 	
+	@DSModeled
 	private static String savedDialogArgsKeyFor(int key){
 		
 		// Original method
@@ -389,6 +403,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		return "";
 	}
 	
+	@DSModeled
 	protected void onPostCreate(Bundle savedInstanceState){
 		onTitleChanged(getTitle(), getTitleColor());
 		// Original method
@@ -404,6 +419,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled
 	protected void onStart(){
 		mLoaderManager = getLoaderManager(-1, mLoadersStarted, false);
 		mLoaderManager.doStart();
@@ -429,6 +445,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled
 	protected void onRestart(){
 		
 		// Original method
@@ -453,6 +470,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled
 	protected void onPostResume(){
 		final Window win = getWindow();
 		win.makeActive();
@@ -469,6 +487,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled
 	protected void onNewIntent(Intent intent){
 		
 		// Original method
@@ -479,6 +498,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled
 	final void performSaveInstanceState(Bundle outState){
 		onSaveInstanceState(outState);
         saveManagedDialogs(outState);
@@ -492,6 +512,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled
 	protected void onSaveInstanceState(Bundle outState){
 		outState.putBundle(WINDOW_HIERARCHY_TAG, mWindow.saveHierarchyState());
         Parcelable p = mFragments.saveAllState();
@@ -511,6 +532,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled
 	private void saveManagedDialogs(Bundle outState){
 		
 		// Original method
@@ -518,6 +540,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled
 	protected void onPause(){
 		getApplication().dispatchActivityPaused(this);
 		// Original method
@@ -530,6 +553,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled
 	protected void onUserLeaveHint(){
 		
 		// Original method
@@ -540,6 +564,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled
 	public boolean onCreateThumbnail(Bitmap outBitmap, Canvas canvas){
 		
 		// Original method
@@ -551,6 +576,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		return false;
 	}
 	
+	@DSModeled
 	public CharSequence onCreateDescription(){
 		
 		// Original method
@@ -577,7 +603,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
-	@DSModeled(DSC.SAFE)
+	@DSModeled
 	protected void onDestroy(){
 		
 		// Original method
@@ -585,6 +611,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled
 	public void onConfigurationChanged(Configuration newConfig){
 		mFragments.dispatchConfigurationChanged(newConfig);
 		mWindow.onConfigurationChanged(newConfig);
@@ -611,6 +638,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled
 	public int getChangingConfigurations(){
 		return getTaintInt();
 		
@@ -633,6 +661,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 	
+	@DSModeled
 	public Object onRetainNonConfigurationInstance(){
 		
 		// Original method
@@ -655,6 +684,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 	
+	@DSModeled
 	HashMap<String,Object> onRetainNonConfigurationChildInstances(){
 		
 		// Original method
@@ -673,6 +703,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		return null;
 	}
 	
+	@DSModeled
 	public void onLowMemory(){
 		mFragments.dispatchLowMemory();
 		// Original method
@@ -712,6 +743,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 	
+	@DSModeled
 	void invalidateFragmentIndex(int index){
 		LoaderManagerImpl lm = mAllLoaderManagers.get(0);
 		lm.doDestroy();
@@ -732,6 +764,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		//Return nothing
 	}
 	
+	@DSModeled
 	public void onAttachFragment(Fragment fragment){
 		
 		// Original method
@@ -2949,6 +2982,11 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
+	}
+	
+	@DSModeled(DSC.BAN)
+	public void setApplication(Application app) {
+		this.mApplication = app;
 	}
 	
 	final IBinder getActivityToken(){
