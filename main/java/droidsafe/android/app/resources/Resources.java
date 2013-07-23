@@ -161,8 +161,8 @@ public class Resources {
 
 			// Process the activities of the application
 			for (Activity a : v.manifest.activities) {
-				v.process_activity (a);
 				a.setSootClass(a.name);
+				v.process_activity (a);
 				am.components.add(a.getSootClass());
 				
 				if (a.intent_filters.size() > 0) {
@@ -626,19 +626,8 @@ public class Resources {
 		// with dot (.), but sometimes they don't.  So if we don't find it with
 		// the fully qualified name, we search for those using the pcackage base
 		// as well.
-		String className;
-		if (activity.name.startsWith("."))
-			className = package_name + activity.name;
-		else 
-			className = activity.name;
 		
-		if (!Scene.v().containsClass(className)) {
-            logger.error ("No class file found for manifest activity '{}' "
-                    + "(package {})", activity.name, package_name);
-            droidsafe.main.Main.exit(1);
-        }
-
-		final SootClass cn = Scene.v().getSootClass(className);
+		final SootClass cn = activity.getSootClass();
 
 		//NOTE: do we want to read in all methods????????
 

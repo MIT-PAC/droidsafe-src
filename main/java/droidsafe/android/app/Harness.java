@@ -72,7 +72,8 @@ public class Harness {
 			Components.ACTIVITY_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelActivity(android.app.Activity)>",
 			Components.SERVICE_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelService(android.app.Service)>",
 			Components.CONTENTPROVIDER_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelContentProvider(android.content.ContentProvider)>",
-			Components.BROADCASTRECEIVER_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelBroadCastReceiver(android.content.BroadcastReceiver)>"
+			Components.BROADCASTRECEIVER_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelBroadCastReceiver(android.content.BroadcastReceiver)>",
+			Components.APPLICATION_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelApplication(android.app.Application)>"
 			);
 	
 	private SootClass harnessClass;
@@ -304,7 +305,7 @@ public class Harness {
 		
 		logger.info("Type {} ", compType);
 		
-        String initSig = String.format("<%s: void <init>()>", compType);
+        String initSig = String.format("<%s: void <init>()>", compClass.getName());
         
 		SootMethod compInit = Scene.v().getMethod(initSig);
 		
@@ -319,11 +320,15 @@ public class Harness {
 		String name = String.format("__ds__%s%03d", 
 				compType.substring(compType.lastIndexOf(".") + 1), counter++);
 		
-		Local compLocal = Jimple.v().newLocal(name,  RefType.v(compType));
+		//Local compLocal = Jimple.v().newLocal(name,  RefType.v(compType));
+		Local compLocal = Jimple.v().newLocal(name,  compClass.getType());
 		body.getLocals().add(compLocal);
 		
 		Local stringLocal = Jimple.v().newLocal(String.format("__dsString%03d", counter++),  
-		        RefType.v(compType)); 
+		        compClass.getType());
+		
+		//Local stringLocal = Jimple.v().newLocal(String.format("__dsString%03d", counter++),  
+		//        RefType.v(compType)); 
 
 		Expr newAppExpr = Jimple.v().newNewExpr(compClass.getType());
 		body.getUnits().add(Jimple.v().newAssignStmt(compLocal,  newAppExpr));
@@ -379,10 +384,8 @@ public class Harness {
 		 // inject Application __dsApp__
 		RefType appType = appClass.getType();
 		
-		Local appLocal = Jimple.v().newLocal("__dsApp__",  RefType.v("android.app.Application"));
+		Local appLocal = Jimple.v().newLocal("__dsApp__",  appClass.getType());
         body.getLocals().add(appLocal);
-        
-        Local stringLocal = Jimple.v().newLocal("__dsString__",  RefType.v("java.lang.String"));
         
         // __dsApp__ = new Application
         Expr newAppExpr = Jimple.v().newNewExpr(appType);
@@ -392,6 +395,16 @@ public class Harness {
 		InvokeStmt initStmt = Jimple.v().newInvokeStmt(
 									Jimple.v().newVirtualInvokeExpr(appLocal, initMethod.makeRef()));
 		body.getUnits().add(initStmt);
+		
+		SootMethod droidsafeInit = Scene.v().getMethod(componentInitMethod.get(Components.APPLICATION_CLASS));
+		
+		//instantiate droidsafe runtime
+		List<Value> list = new LinkedList<Value>();
+		list.add(appLocal);
+		
+		body.getUnits().add(
+				Jimple.v().newInvokeStmt(
+						makeInvokeExpression(droidsafeInit, null, list))); 
 		
 		// Deal with activities addressed in XML file
 		int counter = 0;

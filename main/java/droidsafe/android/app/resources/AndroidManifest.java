@@ -213,10 +213,19 @@ public class AndroidManifest {
 	  public void setSootClass(String name) {
 		  String className;
 
-		  if (name.startsWith("."))
+		  if (name.startsWith(".")) {
+			  //.Component
 			  className = Resources.v().package_name + name;
-		  else 
+		  }
+		  else if (!name.contains(".")) {
+			  //Component
+			  className = Resources.v().package_name + "." + name;
+		  }
+		  else {
+			  //com.google.ABC
 			  className = name;
+		  }
+		  
 		  try {
 			  if (!Scene.v().containsClass(className))
 				  throw new Exception();
