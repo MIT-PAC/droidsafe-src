@@ -74,4 +74,7 @@ public class Activity extends ContextThemeWrapper {
                                String[] selectionArgs, Set<String> sortOrder){
         return null;
     }
+   
+    public void startManagingCursor(Cursor c){
+    }
 }

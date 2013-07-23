@@ -25,15 +25,21 @@ public class DSCursor extends Cursor {
         return null;
     }
 
+    public Set<ValueAnalysisBoolean> isAfterLast() {
+        return null;
+    }
+
     public Set<ValueAnalysisBoolean> moveToNext() {
         return Sets.newHashSet(new ValueAnalysisBoolean(true));
     }
    
-    public Set<String> getString(ValueAnalysisInt columnIndex) {
+    public Set<String> getString(Set<ValueAnalysisInt> columnIndex) {
         return null;
     }
 
-
+    public Set<ValueAnalysisInt> getCount() {
+        return null;
+    }
 }
 
 
