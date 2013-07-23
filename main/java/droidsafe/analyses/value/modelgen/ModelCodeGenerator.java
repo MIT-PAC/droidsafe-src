@@ -12,7 +12,6 @@ import japa.parser.ast.TypeParameter;
 import japa.parser.ast.body.BodyDeclaration;
 import japa.parser.ast.body.ClassOrInterfaceDeclaration;
 import japa.parser.ast.body.ConstructorDeclaration;
-import japa.parser.ast.body.EnumDeclaration;
 import japa.parser.ast.body.FieldDeclaration;
 import japa.parser.ast.body.MethodDeclaration;
 import japa.parser.ast.body.ModifierSet;
@@ -58,21 +57,21 @@ import java.util.Map;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
-import java.util.jar.JarFile;
 
 import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.ArrayType;
+import soot.G;
 import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootField;
 import soot.SootMethod;
+import soot.options.Options;
 import droidsafe.analyses.value.ValueAnalysisModeledObject;
 import droidsafe.main.Config;
-import droidsafe.utils.SootUtils;
 
 public class ModelCodeGenerator {
 
@@ -130,24 +129,13 @@ public class ModelCodeGenerator {
     private SortedSet<String> imports;
 
     private String apacHome;
-    
-    private List<String> excludedClasses = Arrays.asList(new String[]{"android.view.WindowLeaked"});
 
+    private File androidImplJar;
+    
     private Set<String> importsProcessed;
     private Map<BodyDeclaration, Comment> methodCodeCommentMap;
     private int nextLine;
     private List<File> generatedModels = new ArrayList<File>();
-<<<<<<< HEAD
-    private String sootClassPath;
-    private Set<String> apiClasses;
-    private Set<String> apiMethods;
-    private String androidLibDir;
-//    private Hierarchy hierarchy;
-    private Set<String> sourceImports;
-    private List<String> keywordsEndingWithS = Arrays.asList(new String[]{"extends", "implements"});
-    private HashSet<String> localClassNames;
-=======
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
 
     public ModelCodeGenerator(String sourcePath) {
         sourceDirs = sourcePath.split(":");
@@ -165,76 +153,14 @@ public class ModelCodeGenerator {
         }
         modelSourceDir = constructPath(apacHome, "src", "main", "java");
         modelSourceDirs = new String[]{modelSourceDir};
-<<<<<<< HEAD
-        androidLibDir = constructPath(apacHome, Config.ANDROID_LIB_DIR_REL);
-        loadAPIClasses();
-   }
-
-    private void loadAPIClasses() {
-        try {
-            apiClasses = new HashSet<String>();
-            apiMethods = new HashSet<String>();
-             
-            String apiModelJarPath = constructPath(androidLibDir, "droidsafe-api-model.jar");
-            String androidJarPath = constructPath(androidLibDir, "android-impl.jar");
-            
-            if (!new File(androidJarPath).exists()) {
-                logger.error("android.jar does not exist");
-                droidsafe.main.Main.exit(1);
-            }
-            
-            if (!new File(apiModelJarPath).exists()) {
-                logger.error("droidsafe-api-model.jar does not exist");
-                droidsafe.main.Main.exit(1);
-            }
-            
-            sootClassPath = apiModelJarPath + ":" + androidJarPath;
-            
-            System.setProperty("soot.class.path", sootClassPath);
-            //load any modeled classes from the api model, overwrite the stub classes
-            JarFile apiModeling = new JarFile(new File(constructPath(apacHome, Config.ANDROID_LIB_DIR_REL, "droidsafe-api-model.jar")));
-            Set<SootClass> modeledClasses = SootUtils.loadClassesFromJar(apiModeling, true, new HashSet<String>()); 
-
-            for (SootClass modeled : modeledClasses) {
-                String clsName = modeled.getName();
-                boolean anonymousInnerClass = false;
-                int pos = clsName.lastIndexOf('$');
-                if (pos > 0) {
-                    String suffix = clsName.substring(pos);
-                    try {
-                        Integer.valueOf(suffix);
-                        anonymousInnerClass = true;
-                    } catch (NumberFormatException e) {
-                    }
-                }
-                if (!anonymousInnerClass) {
-                    apiClasses.add(clsName);
-                    for (SootMethod meth: modeled.getMethods()) {
-                        apiMethods.add(meth.getSignature());
-                    }
-                }
-            }
-//            hierarchy = new Hierarchy();
-        } catch (Exception e) {
-            logger.error("Error loading droidsafe-api-model.jar", e);
-            droidsafe.main.Main.exit(1);
-        }
-    }
-
-=======
         androidImplJar = constructFile(apacHome, Config.ANDROID_LIB_DIR_REL, "android-impl.jar");
    }
 
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
     private void run(String classToModel, Set<String> fieldsToModel) {
         generate(classToModel, fieldsToModel);
         while (!classesToBeModeled.isEmpty()) {
             classToModel = classesToBeModeled.remove(0);
-<<<<<<< HEAD
-            generate(classToModel, null);
-=======
             generate(classToModel, new HashSet<String>());
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
         }
         installGeneratedModels();
         logger.info("Done.");
@@ -253,14 +179,7 @@ public class ModelCodeGenerator {
         primitiveTypeConversionMap = new HashMap<PrimitiveType.Primitive, Type>();
         classTypeConversionMap = new HashMap<String, Type>();
         classesCurrentlyModeled.add(classToModel);
-<<<<<<< HEAD
-        SootClass sootClass = Scene.v().getSootClass(classToModel);
-        if (fieldsToModel == null) {
-            fieldsToModel = getFieldsToModel(sootClass);
-        }
-=======
         SootClass sootClass = loadSootClass(fieldsToModel);
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
         CompilationUnit cu;
         CompilationUnit oldModelCu = null;
         try {
@@ -279,10 +198,6 @@ public class ModelCodeGenerator {
         }
     }
 
-<<<<<<< HEAD
-    private Set<String> getFieldsToModel(SootClass sootClass) {
-        Set<String> fieldsToModel = new HashSet<String>();
-=======
     private SootClass loadSootClass(Set<String> fieldsToModel) {
         G.reset();
         logger.info("Loadinging Soot class " + classToModel + "...");
@@ -303,21 +218,16 @@ public class ModelCodeGenerator {
         Scene.v().loadNecessaryClasses();
         SootClass sootClass = Scene.v().getSootClass(classToModel);
         // If no field is specified in the command arguments, model all the non-constant fields.
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
         if (fieldsToModel.isEmpty()) {
             for (SootField field: sootClass.getFields()) {
-                if (!field.isFinal())
-                    fieldsToModel.add(field.getName());
+                if (!field.isStatic() || !field.isFinal())
+                fieldsToModel.add(field.getName());
             }
         }
-<<<<<<< HEAD
-        return fieldsToModel;
-=======
         // TODO: set up soot so we can deduce subtypes of java.util.Collection
         // Scene.v().loadClass("java.util.Collection", SootClass.SIGNATURES);
         // hierarchy = new Hierarchy();
         return sootClass;
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
     }
 
     private CompilationUnit parseJavaSource(File sourceFile) throws Exception {
@@ -363,20 +273,12 @@ public class ModelCodeGenerator {
     private void computeMethodCodeMap(ClassOrInterfaceDeclaration coi, BufferedReader reader) throws IOException {
         for (BodyDeclaration member: coi.getMembers()) {
             if (member instanceof ConstructorDeclaration) {
-<<<<<<< HEAD
-                Comment codeComment = getMethodCodeComment(reader, member, ((ConstructorDeclaration) member).getBlock());
-=======
                 Comment codeComment = getMethodCodeComment(reader, ((ConstructorDeclaration) member).getBlock());
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
                 methodCodeCommentMap.put(member, codeComment);
             } else if (member instanceof MethodDeclaration) {
                 BlockStmt body = ((MethodDeclaration) member).getBody();
                 if (body != null) {
-<<<<<<< HEAD
-                    Comment codeComment = getMethodCodeComment(reader, member, body);
-=======
                     Comment codeComment = getMethodCodeComment(reader, body);
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
                     methodCodeCommentMap.put(member, codeComment);
                 }
             } else if (member instanceof ClassOrInterfaceDeclaration) {
@@ -385,11 +287,7 @@ public class ModelCodeGenerator {
         }
     }
 
-<<<<<<< HEAD
-    private Comment getMethodCodeComment(BufferedReader reader, BodyDeclaration member, BlockStmt block) throws IOException {
-=======
     private Comment getMethodCodeComment(BufferedReader reader, BlockStmt block) throws IOException {
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
         List<Statement> stmts = block.getStmts();
         if (stmts == null || stmts.isEmpty())
             return null;
@@ -398,11 +296,7 @@ public class ModelCodeGenerator {
         Comment leadingComment = firstStmt.getComment();
         int beginLine = (leadingComment != null) ? leadingComment.getBeginLine() : firstStmt.getBeginLine();
         int beginColumn = firstStmt.getBeginColumn();
-<<<<<<< HEAD
-        int endLine = Math.max(member.getEndLine() - 1, lastStmt.getEndLine());
-=======
         int endLine = lastStmt.getEndLine();
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
         return getMethodCodeComment(reader, beginLine, beginColumn, endLine);
     }
 
@@ -421,7 +315,6 @@ public class ModelCodeGenerator {
                 buf.append(line);
                 buf.append("\n");
             }
-<<<<<<< HEAD
         }
         if (blockComment) {
             for (int i = 0; i < beginColumn - 1; i++) {
@@ -451,37 +344,6 @@ public class ModelCodeGenerator {
             if (line.charAt(i) != ' ')
                 return i;
         }
-=======
-        }
-        if (blockComment) {
-            for (int i = 0; i < beginColumn - 1; i++) {
-                buf.append(' ');
-            }
-            return new BlockComment(buf.toString());
-        } else {
-            int size = lines.size();
-            LineComment comment = new LineComment(lines.get(size - 1));
-            LineComment curComment = comment;
-            if (size > 1) {
-                for (int i = size - 2; i >= 0; i--) {
-                    String line = lines.get(i);
-                    LineComment prevComment = new LineComment(" " + line.substring(stripIndex(line, beginColumn)));
-                    curComment.setComment(prevComment);
-                    curComment = prevComment;
-                }
-            }
-            curComment.setComment(new LineComment(""));
-            return comment;
-        }
-    }
-    
-    private int stripIndex(String line, int max) {
-        max = Math.min(max, line.length());
-        for (int i = 0; i < max; i++) {
-            if (line.charAt(i) != ' ')
-                return i;
-        }
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
         return max;
     }
 
@@ -494,9 +356,6 @@ public class ModelCodeGenerator {
     private CompilationUnit generateModel(CompilationUnit cu, SootClass sootClass, Set<String> fieldsToModel, 
                                           CompilationUnit oldModelCu) throws Exception {
         logger.info("Generating model for " + classToModel + "...");
-        sourceImports = new HashSet<String>();
-        addImports(cu, sourceImports);
-        localClassNames = new HashSet<String>();
         CompilationUnit model = new CompilationUnit();
 
         String modelPackageName = MODEL_PACKAGE_PREFIX + packageName;
@@ -504,9 +363,6 @@ public class ModelCodeGenerator {
         model.setPackage(modelPkg);
 
         if (oldModelCu != null) {
-<<<<<<< HEAD
-            addImports(oldModelCu, imports);
-=======
             List<ImportDeclaration> oldImports = oldModelCu.getImports();
             if (oldImports != null) {
                 for (ImportDeclaration oldImport: oldImports) {
@@ -515,30 +371,11 @@ public class ModelCodeGenerator {
                         imports.add(imp);
                 }
             }
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
         }
         List<TypeDeclaration> types = cu.getTypes();
         List<TypeDeclaration> oldModelTypes = (oldModelCu == null) ? null : oldModelCu.getTypes();
         for (TypeDeclaration type : types) {
             if (type instanceof ClassOrInterfaceDeclaration) {
-<<<<<<< HEAD
-                ClassOrInterfaceDeclaration coi = (ClassOrInterfaceDeclaration) type;
-                if (coi.getName().equals(unqualifiedClassName)) {
-                    ClassOrInterfaceDeclaration oldModelCoi = null;
-                    if (oldModelTypes != null) {
-                        for (TypeDeclaration oldType: oldModelTypes) {
-                            if (oldType instanceof ClassOrInterfaceDeclaration && 
-                                    oldType.getName().equals(type.getName())) {
-                                oldModelCoi = (ClassOrInterfaceDeclaration) oldType;
-                                break;
-                            }
-                        }
-                    }
-                    ClassOrInterfaceDeclaration modelCoi = generateClassOrInterface(coi, sootClass, fieldsToModel, oldModelCoi);
-                    if (modelCoi != null)
-                        ASTHelper.addTypeDeclaration(model, modelCoi);
-                }
-=======
                 ClassOrInterfaceDeclaration oldModelType = null;
                 if (oldModelTypes != null) {
                     for (TypeDeclaration oldType: oldModelTypes) {
@@ -551,244 +388,16 @@ public class ModelCodeGenerator {
                 }
                 ClassOrInterfaceDeclaration modelCoi = generateClassOrInterface((ClassOrInterfaceDeclaration)type, sootClass, fieldsToModel, oldModelType);
                 ASTHelper.addTypeDeclaration(model, modelCoi);
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
             }
         }
         List<ImportDeclaration> importDecls = new ArrayList<ImportDeclaration>();
-        removeConflictingImports();
         for (String imp: imports) {
-            if (!imp.startsWith(MODEL_PACKAGE_PREFIX + classToModel + "."))
-                importDecls.add(new ImportDeclaration(new NameExpr(imp), false, false));
+            importDecls.add(new ImportDeclaration(new NameExpr(imp), false, false));
         }
         model.setImports(importDecls);
-        removeQualifiers(model);
         return model;
     }
 
-<<<<<<< HEAD
-    private void removeQualifiers(CompilationUnit cu) {
-        for (TypeDeclaration type : cu.getTypes()) {
-            if (type instanceof ClassOrInterfaceDeclaration) {
-                ClassOrInterfaceDeclaration coi = (ClassOrInterfaceDeclaration) type;
-                removeQualifiers(coi);
-            }
-        }
-        
-    }
-
-    private void removeQualifiers(ClassOrInterfaceDeclaration coi) {
-        List<ClassOrInterfaceType> extendsList = coi.getExtends();
-        if (extendsList != null)
-            for (ClassOrInterfaceType extend: extendsList) {
-                removeQualifiers(extend);
-            }
-        List<BodyDeclaration> members = coi.getMembers();
-        if (members != null) {
-            for (BodyDeclaration member : members) {
-                if (member instanceof FieldDeclaration) {
-                    FieldDeclaration field = (FieldDeclaration) member;
-                    removeQualifiers(field.getType());
-                } else if (member instanceof ConstructorDeclaration) {
-                    ConstructorDeclaration constr = (ConstructorDeclaration) member;
-                    removeQualifiers(constr.getParameters());
-                } else if (member instanceof MethodDeclaration) {
-                    MethodDeclaration method = (MethodDeclaration) member;
-                    removeQualifiers(method.getParameters());
-                    removeQualifiers(method.getType());
-                } else if (member instanceof ClassOrInterfaceDeclaration) {
-                    ClassOrInterfaceDeclaration memberCoi = (ClassOrInterfaceDeclaration) member;
-                    removeQualifiers(memberCoi);
-                }
-            }
-        }
-    }
-
-    private void removeQualifiers(List<Parameter> params) {
-        if (params != null) {
-            for (Parameter param: params) {
-                removeQualifiers(param.getType());
-            }
-        }
-    }
-
-    private void removeQualifiers(Type type) {
-        if (type instanceof ReferenceType)
-            removeQualifiers(((ReferenceType)type).getType());
-        else if (type instanceof ClassOrInterfaceType) {
-            ClassOrInterfaceType coiType = (ClassOrInterfaceType)type;
-            if (!localClassNames.contains(coiType.getName())) {
-                ClassOrInterfaceType scope = coiType.getScope();
-                if (scope != null) {
-                    String qName = coiType.toString();
-                    for (String imp: imports) {
-                        if (imp.equals(qName) || imp.endsWith("." + qName))
-                            coiType.setScope(null);
-                    }
-                }
-            }
-            List<Type> typeArgs = coiType.getTypeArgs();
-            if (typeArgs != null) {
-                for (Type typeArg: typeArgs)
-                    removeQualifiers(typeArg);
-            }
-        }
-    }
-
-    private void removeConflictingImports() {
-        Map<String, Set<String>> unQualifiedNameToImports = new HashMap<String, Set<String>>();
-        for (String imp: imports) {
-            String unqualifiedName = getUnqualifiedName(imp);
-            Set<String> imps = unQualifiedNameToImports.get(unqualifiedName);
-            if (imps == null) {
-                imps = new HashSet<String>();
-                unQualifiedNameToImports.put(unqualifiedName, imps);
-            }
-            imps.add(imp);
-        }
-        for (String unqualifiedName: unQualifiedNameToImports.keySet()) {
-            Set<String> imps = unQualifiedNameToImports.get(unqualifiedName);
-            if (imps.size() > 1) {
-                for (String imp: imps) {
-                    if (!sourceImports.contains(imp)) {
-                        imports.remove(imp);
-                        imports.add(imp.substring(0, imp.length() - unqualifiedName.length() - 1));
-                    }
-                }
-            }
-        }
-    }
-
-    private void addImports(CompilationUnit cu, Set<String> imps) {
-        List<ImportDeclaration> impDecls = cu.getImports();
-        if (impDecls != null) {
-            for (ImportDeclaration impDecl: impDecls) {
-                String imp = impDecl.getName().toString();
-                if (!imp.contains("*"))
-                    imps.add(imp);
-            }
-        }
-    }
-
-    private ClassOrInterfaceDeclaration generateClassOrInterface(ClassOrInterfaceDeclaration coi, 
-                                                                 SootClass sootClass,
-                                                                 Set<String> fieldsToModel,
-                                                                 ClassOrInterfaceDeclaration oldModelCoi) throws Exception {
-        if (apiClasses.contains(sootClass.getName())) {
-            if (fieldsToModel == null)
-                fieldsToModel = getFieldsToModel(sootClass);
-            String name = coi.getName();
-            int modifiers = coi.getModifiers();
-            boolean isInterface = coi.isInterface();
-            List<TypeParameter> coiTypeParams = coi.getTypeParameters();
-            Set<String> coiTypeParamNames = typeParameterNames(coiTypeParams);
-            ClassOrInterfaceDeclaration modelCoi = new ClassOrInterfaceDeclaration(modifiers, isInterface, name);
-            modelCoi.setTypeParameters(coiTypeParams);
-            List<ClassOrInterfaceType> extendsList = coi.getExtends();
-            if (!isInterface && extendsList == null) {
-                extendsList = new ArrayList<ClassOrInterfaceType>();
-                extendsList.add(new ClassOrInterfaceType("ValueAnalysisModeledObject"));
-            } else {
-                if (extendsList != null) {
-                    if (isInterface) {
-                        for (SootClass intf: sootClass.getInterfaces()) {
-                            if (!excludedClasses.contains(intf.getName()))
-                                collectImports(intf);
-                        }
-                    } else {
-                        SootClass superClass = sootClass.getSuperclass();
-                        collectImports(superClass);
-                        String superName = superClass.getName();
-                        if (!superName.startsWith("android")) {
-                            extendsList = new ArrayList<ClassOrInterfaceType>();
-                            extendsList.add(new ClassOrInterfaceType("ValueAnalysisModeledObject"));                            
-                        }
-                    }
-
-                }
-            }
-            SortedSet<BodyDeclaration> allMembers = new TreeSet<BodyDeclaration>(new MemberComparator());
-            modelCoi.setExtends(extendsList);
-            Set<String> oldMemberCoiNames = new HashSet<String>();
-            if (oldModelCoi != null) {
-                for (BodyDeclaration oldModelMember : oldModelCoi.getMembers()) {
-                    allMembers.add(oldModelMember);
-                    if (oldModelMember instanceof ClassOrInterfaceDeclaration)
-                        oldMemberCoiNames.add(((ClassOrInterfaceDeclaration) oldModelMember).getName());
-                }
-            }
-            if (!isInterface) { // generateConstructor
-                ConstructorDeclaration newConstr = generateConstructor(modelCoi);
-                allMembers.add(newConstr);
-            }
-            List<BodyDeclaration> members = coi.getMembers();
-            if (members != null)
-                for (BodyDeclaration member : members) {
-                    BodyDeclaration newMember = null;
-                    if (member instanceof FieldDeclaration) {
-                        FieldDeclaration field = (FieldDeclaration) member;
-                        newMember = generateField(modelCoi, sootClass, field, fieldsToModel, coiTypeParamNames);
-                    } else if (member instanceof ConstructorDeclaration) {
-                        ConstructorDeclaration constr = (ConstructorDeclaration) member;
-                        Set<String> typeParamNames = typeParameterNames(constr.getTypeParameters(), coiTypeParamNames);
-                        newMember = generateInitMethod(modelCoi, sootClass, constr, typeParamNames, fieldsToModel);
-                        if (newMember != null && constr.getParameters() == null) {
-                            MethodDeclaration initMethod = (MethodDeclaration) newMember;
-                            constr.setAnnotations(null);
-                            constr.setModifiers(initMethod.getModifiers());
-                            constr.setBlock(initMethod.getBody());
-                            allMembers.add(constr);
-                        }
-                    } else if (member instanceof MethodDeclaration) {
-                        MethodDeclaration method = (MethodDeclaration) member;
-                        Set<String> typeParamNames = typeParameterNames(method.getTypeParameters(), coiTypeParamNames);
-                        SootMethod sootMethod = getSootMethod(sootClass, method.getName(), method.getParameters(), typeParamNames);
-                        if (sootMethod != null && apiMethods.contains(sootMethod.getSignature())) {
-                            Comment oldCode = (sootMethod.isConcrete()) ? methodCodeCommentMap.get(method) : null;
-                            method.setThrows(null);
-                            newMember = convertMethod(modelCoi, method, sootMethod, typeParamNames, oldCode, fieldsToModel);
-                        }
-                    } else if (member instanceof ClassOrInterfaceDeclaration) {
-                        ClassOrInterfaceDeclaration memberCoi = (ClassOrInterfaceDeclaration) member;
-                        String memberCoiName = memberCoi.getName();
-                        if (!oldMemberCoiNames.contains(memberCoiName)) {
-                            String memberCoiQName = sootClass.getName() + "$" + memberCoiName;
-                            if (apiClasses.contains(memberCoiQName)) {
-                                SootClass memberSootClass = Scene.v().getSootClass(memberCoiQName);
-                                ClassOrInterfaceDeclaration oldMemberCoi = null;
-                                newMember = generateClassOrInterface(memberCoi, memberSootClass, null, oldMemberCoi);
-                            }
-                        }
-                    } else if (member instanceof EnumDeclaration) {
-                        EnumDeclaration enumDecl = (EnumDeclaration) member;
-                        for (BodyDeclaration enumMember: enumDecl.getMembers()) {
-                            enumMember.setAnnotations(null);
-                        }
-                        newMember = enumDecl;
-                    }
-                    if (newMember != null)
-                        newMember.setAnnotations(null);
-                    allMembers.add(newMember);
-                }
-            for (BodyDeclaration member: allMembers) {
-                if (member != null)
-                    ASTHelper.addMember(modelCoi, member);
-            }
-            return modelCoi;
-        }
-        return null;
-    }
-    
-    private Set<String> typeParameterNames(List<TypeParameter> typeParams) {
-        return typeParameterNames(typeParams, null);
-    }
-
-    private Set<String> typeParameterNames(List<TypeParameter> typeParams, Set<String> initTypeParamNames) {
-        Set<String> typeParamNames = (initTypeParamNames == null) ? 
-                new HashSet<String>() :
-                new HashSet<String>(initTypeParamNames);
-        if (typeParams != null) {
-            for (TypeParameter typeParam: typeParams) {
-=======
     private ClassOrInterfaceDeclaration generateClassOrInterface(ClassOrInterfaceDeclaration coi, 
                                                                  SootClass sootClass,
                                                                  Set<String> fieldsToModel,
@@ -860,7 +469,6 @@ public class ModelCodeGenerator {
         Set<String> typeParamNames = new HashSet<String>();
         if (typeParameters != null) {
             for (TypeParameter typeParam: typeParameters) {
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
                 typeParamNames.add(typeParam.getName());
             }
         }
@@ -885,12 +493,7 @@ public class ModelCodeGenerator {
     }
 
     private FieldDeclaration generateField(ClassOrInterfaceDeclaration modelCoi, SootClass sootClass, 
-<<<<<<< HEAD
-                                           FieldDeclaration field, Set<String> fieldsToModel, Set<String> coiTypeParamNames) {
-        localClassNames.add(modelCoi.getName());
-=======
                                            FieldDeclaration field, Set<String> fieldsToModel) {
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
         List<VariableDeclarator> vars = field.getVariables();
         List<VariableDeclarator> modelVars = new ArrayList<VariableDeclarator>();
         for (VariableDeclarator var: vars) {
@@ -902,27 +505,18 @@ public class ModelCodeGenerator {
             int modifiers = makePublic(field.getModifiers());
             Type type = field.getType();
             soot.Type sootType = sootField.getType();
-            Type modelType = convertType(type, sootType, coiTypeParamNames);
-            if (modelType == null)
-                return null;
-            convertInit(modelVars, type, (ReferenceType) modelType);
+            Type modelType = convertType(type, sootType);
+            if (modelType != type)
+                convertInit(modelVars, (ReferenceType) modelType);
             FieldDeclaration modelField = new FieldDeclaration(modifiers, modelType, modelVars);
             modelField.setJavaDoc(field.getJavaDoc());
-<<<<<<< HEAD
-            modelField.setComment(field.getComment());
-            if (ModifierSet.isFinal(modifiers)) {
-                modifiers = ModifierSet.removeModifier(modifiers, Modifier.FINAL);
-                addComment(modelField, new LineComment(" was final"));
-            }
-=======
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
             return modelField;
         }
         return null;
     }
 
-    private void convertInit(List<VariableDeclarator> modelVars, Type type, ReferenceType modelType) {
-        Expression init = (modelType != type) ? initForSetOfValues(modelType) : null;
+    private void convertInit(List<VariableDeclarator> modelVars, ReferenceType modelType) {
+        Expression init = initForSetOfValues(modelType);
         for (VariableDeclarator modelVar: modelVars)
             modelVar.setInit(init);
     }
@@ -933,31 +527,25 @@ public class ModelCodeGenerator {
         return makeModelingSetCreationExpr(argType);
     }
 
-    private Type convertType(Type type, soot.Type sootType, Set<String> typeParamNames) {
+    private Type convertType(Type type, soot.Type sootType) {
         if (type instanceof ReferenceType) {
-<<<<<<< HEAD
-            Set<String> clsRefs = getClassReferences(type, sootType, typeParamNames);
-            if (intersect(clsRefs, excludedClasses))
-                return null;
-            collectImports(clsRefs);
-=======
             collectImports(sootType);
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
             ReferenceType refType = (ReferenceType) type;
             if (refType.getArrayCount() == 0 && refType.getType() instanceof ClassOrInterfaceType) {
                 ClassOrInterfaceType coi = (ClassOrInterfaceType)refType.getType();
                 String coiName = coi.getName();
                 if (coiName.equals("String") || PRIMITIVE_WRAPPER_CLASS_NAMES.contains(coiName)) {
-                    type = convertStringOrPrimitiveWrapperType(coiName);
+                    return convertStringOrPrimitiveWrapperType(coiName);
                 } else if (COLLECTION_CLASS_NAMES.contains(coiName)){
+                    // SootClass sootClass = ((RefType)sootType).getSootClass();
+                    // if (isSubtypeOf(sootClass, Scene.v().getSootClass("java.util.Collection"))) {
                     List<Type> typeArgs = coi.getTypeArgs();
                     if (typeArgs != null && typeArgs.size() == 1) {
                         Type argType = typeArgs.get(0);
-                        if (PRIMITIVE_WRAPPER_CLASS_NAMES.contains(argType.toString())) {
+                        if (PRIMITIVE_WRAPPER_CLASS_NAMES.contains(argType.toString()))
                             imports.add(((RefType)sootType).getClassName());
-                        }
+                        return makeSetOfType(type);
                     }
-                    type = makeSetOfType(type);
                 }
             }
         } else if (type instanceof PrimitiveType) {
@@ -967,13 +555,7 @@ public class ModelCodeGenerator {
         return type;
     }
     
-    private boolean intersect(Set<String> set1, List<String> set2) {
-        for (String elt1: set1)
-            if (set2.contains(elt1))
-                return true;
-        return false;
-    }
-
+    
     private Type convertStringOrPrimitiveWrapperType(String clsName) {
         Type type = classTypeConversionMap.get(clsName);
         if (type == null) {
@@ -993,43 +575,13 @@ public class ModelCodeGenerator {
         return type;
     }
 
-    private List<Type> getTypeArgs(Type type) {
-        if (type instanceof ReferenceType)
-            return getTypeArgs(((ReferenceType)type).getType());
-        if (type instanceof ClassOrInterfaceType)
-            return ((ClassOrInterfaceType)type).getTypeArgs();
-        return null;
-    }
-
-    private String matchClassName(String name, Set<String> clsNames, boolean error) {
-        Set<String> matchedNames = matchedClassNames(name, clsNames);
-        if (matchedNames.size() == 1) {
-            return matchedNames.iterator().next();
-        } 
-        if (error) {
-            logger.error("Found " + matchedNames.size() + " api classes for " + name);
-            droidsafe.main.Main.exit(1);
+    private void collectImports(soot.Type sootType) {
+        if (sootType instanceof ArrayType) {
+            collectImports(((ArrayType)sootType).baseType);
+        } else if (sootType instanceof RefType) {
+            String clsName = ((RefType)sootType).getClassName();
+            collectImports(clsName);
         }
-        return null;
-    }
-
-    private Set<String> matchedClassNames(String name, Set<String> clsNames) {
-        Set<String> matchedNames = new HashSet<String>();
-        for (String clsName: clsNames) {
-            if (clsName.equals(name) || clsName.endsWith("."+name) || clsName.endsWith("$"+name)) {
-                matchedNames.add(clsName);
-            }
-        }
-        return matchedNames;
-    }
-
-    private void collectImports(Set<String> clsRefs) {
-        for (String clsRef: clsRefs)
-            collectImports(clsRef);
-    }
-
-    private void collectImports(SootClass sootClass) {
-        collectImports(sootClass.getName());
     }
 
     private void collectImports(String clsName) {
@@ -1037,99 +589,21 @@ public class ModelCodeGenerator {
             String modelClsName = MODEL_PACKAGE_PREFIX + clsName;
             if (!getQualifier(clsName).equals("java.lang")) {
                 if (clsName.startsWith("android")) {
-                    int pos = clsName.indexOf('$');
-                    String rootClsName = (pos < 0) ? clsName : clsName.substring(0, pos);
-                    boolean isAPIClass = apiClasses.contains(clsName);
-                    if (isAPIClass &&
+                    if (!clsName.contains("$") && 
                             !classesAlreadyModeled.contains(modelClsName) &&
-                            !classesCurrentlyModeled.contains(rootClsName) &&
-                            !classesToBeModeled.contains(rootClsName)) {
-                        classesToBeModeled.add(rootClsName);
+                            !classesCurrentlyModeled.contains(clsName) &&
+                            !classesToBeModeled.contains(clsName)) {
+                        classesToBeModeled.add(clsName);
                     }
-                    if (isAPIClass)
-                        imports.add(modelClsName.replace('$', '.'));
-                    else
-                        imports.add(clsName.replace('$', '.'));
+                    imports.add(modelClsName);
                 } else {
-                    if (classesAlreadyModeled.contains(modelClsName))
-                        imports.add(modelClsName.replace('$', '.'));
-                    else
-                        imports.add(clsName.replace('$', '.'));
+                    imports.add(clsName);
                 }
             }
             importsProcessed.add(clsName);
         }
     }
     
-<<<<<<< HEAD
-    private Set<String> getClassReferences(Type type, soot.Type sootType, Set<String> typeParamNames) {
-        Set<String> result = new HashSet<String>();
-        getClassReferences(type, sootType, typeParamNames, result);
-        return result;
-    }
-
-    private void getClassReferences(Type type, soot.Type sootType, Set<String> typeParamNames, Set<String> result) {
-        if (sootType instanceof ArrayType) {
-            getClassReferences(((ReferenceType)type).getType(), ((ArrayType)sootType).baseType, typeParamNames, result);
-        } else if (sootType instanceof RefType) {
-            String className = ((RefType)sootType).getClassName();
-            result.add(className);
-            List<Type> typeArgs = getTypeArgs(type);
-            if (typeArgs != null) {
-                for (Type typeArg: typeArgs) {
-                    getClassReferences(typeArg, typeParamNames, result);
-                }
-            }
-        }
-    }
-
-    private void getClassReferences(Type type, Set<String> typeParamNames, Set<String> result) {
-        if (type instanceof ReferenceType)
-            getClassReferences(((ReferenceType)type).getType(), typeParamNames, result);
-        else if (type instanceof ClassOrInterfaceType) {
-            ClassOrInterfaceType coiType = (ClassOrInterfaceType) type;
-            ClassOrInterfaceType scope = coiType.getScope();
-            String name = coiType.getName();
-            if (scope != null) {
-                String scopeName = scope.toString();
-                char separator = '.';
-                if (scopeName.indexOf('$') >= 0)
-                    separator = '$';
-                else {
-                    int pos = scopeName.lastIndexOf('.');
-                    String lastComp = (pos >= 0) ? scopeName.substring(pos + 1) : scopeName;
-                    if (Character.isUpperCase(lastComp.charAt(0)))
-                        separator = '$';
-                }
-                name = scopeName + separator + name;
-            }
-            if (!typeParamNames.contains(name)) {
-                String candidate = classToModel + '$' + name;
-                if (apiClasses.contains(candidate))
-                    result.add(candidate);
-                else {
-                    candidate = packageName + '.' + name;
-                    if (apiClasses.contains(candidate))
-                        result.add(candidate);
-                    else {
-                        String matchedClsName = matchClassName(name, sourceImports, false);
-                        if (matchedClsName == null)
-                            matchedClsName = matchClassName(name, apiClasses, true);
-                        result.add(matchedClsName);
-                    }
-                }
-            }
-            List<Type> typeArgs = coiType.getTypeArgs();
-            if (typeArgs != null) {
-                for (Type typeArg: typeArgs) {
-                    getClassReferences(typeArg, typeParamNames, result);
-                }
-            }
-        }
-    }
-
-=======
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
     private ConstructorDeclaration generateConstructor(ClassOrInterfaceDeclaration modelCoi) {
         ConstructorDeclaration modelConstr = new ConstructorDeclaration(Modifier.PUBLIC, modelCoi.getName());
         Parameter parameter = ASTHelper.createParameter(makeReferenceType("AllocNode"), "allocNode");
@@ -1141,48 +615,14 @@ public class ModelCodeGenerator {
 
     private MethodDeclaration generateInitMethod(ClassOrInterfaceDeclaration modelCoi,
                                                  SootClass sootClass,
-<<<<<<< HEAD
-                                                 ConstructorDeclaration constr, Set<String> typeParamNames,
-=======
                                                  ConstructorDeclaration constr, Set<String> coiTypeParamNames,
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
                                                  Set<String> fieldsToModel) throws Exception {
         List<Parameter> params = constr.getParameters();
         int modifiers = makePublic(constr.getModifiers());
         MethodDeclaration method = new MethodDeclaration(modifiers, ASTHelper.VOID_TYPE, "_init_", params);
-        method.setTypeParameters(constr.getTypeParameters());
         method.setJavaDoc(constr.getJavaDoc());
         method.setComment(constr.getComment());
         method.setBody(constr.getBlock());
-<<<<<<< HEAD
-        SootMethod sootMethod = getSootMethod(sootClass, "<init>", params, typeParamNames);
-        if (sootMethod != null &&  apiMethods.contains(sootMethod.getSignature())) {
-            Comment codeComment = methodCodeCommentMap.get(constr);
-            return convertMethod(modelCoi, method, sootMethod, typeParamNames, codeComment, fieldsToModel);
-        }
-        return null;
-    }
-
-    private SootMethod getSootMethod(SootClass sootClass, String name, List<Parameter> parameters, Set<String> typeParamNames) {
-        SootMethod sootMethod = null;
-        int paramCount = (parameters == null) ? 0 : parameters.size();
-        for (SootMethod m: sootClass.getMethods()) {
-            if (m.getName().equals(name)) {
-                boolean match = true;
-                if (m.getParameterCount() == paramCount) {
-                    for (int i = 0; i < paramCount; i++) {
-                        Parameter param = parameters.get(i);
-                        Type type = param.getType();
-                        VariableDeclaratorId id = param.getId();
-                        if (param.isVarArgs())
-                            type = new ReferenceType(type, 1);
-                        if (id.getArrayCount() > 0)
-                            type = new ReferenceType(type, id.getArrayCount());
-                        soot.Type sootType = m.getParameterType(i);
-                        if (!typeMatch(type, sootType, typeParamNames)) {
-                            match = false;
-                            break;
-=======
         SootMethod sootMethod = getSootMethod(sootClass, "<init>", params, constr.getTypeParameters(), coiTypeParamNames);
         Comment codeComment = methodCodeCommentMap.get(constr);
         return convertMethod(modelCoi, method, sootMethod, codeComment, fieldsToModel);
@@ -1209,33 +649,27 @@ public class ModelCodeGenerator {
                                 match = false;
                                 break;
                             }
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
                         }
+                        if (match)
+                            sootMethod = m;
                     }
-                    if (match)
-                        sootMethod = m;
                 }
             }
-        }
-        if (sootMethod == null) {
-            StringBuffer buf = new StringBuffer(name);
-            buf.append('(');
-            for (int i = 0; i < paramCount; i++) {
-                if (i > 0)
-                    buf.append(",");
-                buf.append(parameters.get(i));
+            if (sootMethod == null) {
+                StringBuffer buf = new StringBuffer(name);
+                buf.append('(');
+                for (int i = 0; i < paramCount; i++) {
+                    if (i > 0)
+                        buf.append(",");
+                    buf.append(parameters.get(i));
+                }
+                buf.append(')');
+                throw new Exception("Failed to find soot method " + buf);
             }
-            buf.append(')');
-            //throw new Exception("Failed to find soot method " + buf);
-            logger.warn("Failed to find soot method " + buf);
         }
         return sootMethod;
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
     private boolean typeMatch(Type type, soot.Type sootType, Set<String> typeParamNames) {
         if (type instanceof ReferenceType) {
             ReferenceType refType = (ReferenceType) type;
@@ -1266,51 +700,32 @@ public class ModelCodeGenerator {
     }
 
     private MethodDeclaration convertMethod(ClassOrInterfaceDeclaration modelCoi, MethodDeclaration method, SootMethod sootMethod, 
-<<<<<<< HEAD
-                                            Set<String> typeParamNames, Comment codeComment, Set<String> fieldsToModel) {
-=======
                                             Comment codeComment, Set<String> fieldsToModel) {
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
         method.setModifiers(makePublic(method.getModifiers()));
         Type returnType = method.getType();
         soot.Type sootReturnType = sootMethod.getReturnType();
-        Set<String> clsRefs = getClassReferences(returnType, sootReturnType, typeParamNames);
-        if (intersect(clsRefs, excludedClasses))
-            return null;
-        collectImports(clsRefs);
+        collectImports(sootReturnType);
         List<Parameter> params = method.getParameters();
         if (params != null) {
             for (int i = 0; i < params.size(); i++) {
                 Parameter param = params.get(i);
                 Type type = param.getType();
                 soot.Type sootType = sootMethod.getParameterType(i);
-                Type newType = convertType(type, sootType, typeParamNames);
-                if (newType == null)
-                    return null;
+                Type newType = convertType(type, sootType);
                 param.setType(newType);
                 if (isSetOfType(newType) && !isSetOfType(type)) {
                     String name = param.getId().getName();
-                    if (!name.endsWith("s")) {
-                        String newName = name + 's';
-                        if (!keywordsEndingWithS.contains(newName))
-                            param.setId(new VariableDeclaratorId(newName));
-                    }
+                    if (!name.endsWith("s"))
+                        param.setId(new VariableDeclaratorId(name+"s"));
                 }
             }
         }
         if (codeComment != null) {
             if (isGetterMethodForModeledField(method, fieldsToModel)) {
-<<<<<<< HEAD
-                Type newReturnType = convertType(returnType, sootReturnType, typeParamNames);
-                if (newReturnType == null)
-                    return null;
-                method.setType(newReturnType);
-=======
                 method.setType(convertType(returnType, sootReturnType));
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
             } else {
                 List<Statement> newStmts = new ArrayList<Statement>();
-                if (!ModifierSet.isStatic(modelCoi.getModifiers()) && !sootMethod.isStatic()) {
+                if (!sootMethod.isStatic()) {
                     Statement invalidateStmt = new ExpressionStmt(new MethodCallExpr(null, "__ds__invalidate"));
                     newStmts.add(invalidateStmt);
                 }
@@ -1421,11 +836,7 @@ public class ModelCodeGenerator {
                 }
                 if (!generatedModel.renameTo(model))
                     throw new IOException("Failed to rename the generated model to " + model);
-<<<<<<< HEAD
-                undoPw.println("mv " + modelPath + " " + generatedModel.getParent());
-=======
                 undoPw.println("/bin/rm " + modelPath);
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
                 if (restore)
                     undoPw.println("mv " + backupModelPath + " " + modelPath);
             }
@@ -1530,26 +941,20 @@ public class ModelCodeGenerator {
         return buf.toString();        
     }
 
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        if (args.length < 2) {
-            logger.error("Usage: ModelCodeGen <source path> <class name> <field1 name> <field2 name> ...");
-            droidsafe.main.Main.exit(1);
-        } else {
-            String sourcePath = args[0];
-            String className = args[1];
-            Set<String> fieldNames = new HashSet<String>();
-            for (int i = 2; i < args.length; i++) {
-                fieldNames.add(args[i]);
-            }
-            ModelCodeGenerator modelGen = new ModelCodeGenerator(sourcePath);
-            modelGen.run(className, fieldNames);
+    /*
+    public boolean isSubtypeOf(SootClass a, SootClass b) {
+        if (a.equals(b))
+            return true;
+        if (b.getType().equals(RefType.v("java.lang.Object")))
+            return true;
+        if (a.isInterface()) {
+            return b.isInterface() && hierarchy.isInterfaceSubinterfaceOf(a, b);
         }
+        if (b.isInterface()) {
+            return hierarchy.getImplementersOf(b).contains(a);
+        }
+        return hierarchy.isClassSubclassOf(a, b);
     }
-<<<<<<< HEAD
-=======
     */
 
     /**
@@ -1570,6 +975,5 @@ public class ModelCodeGenerator {
             modelGen.run(className, fieldNames);
         }
     }
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
 
 }

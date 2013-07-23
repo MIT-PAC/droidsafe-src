@@ -201,6 +201,10 @@ public class RCFG {
         //and do this in a context sensitive way, process each edge
         csEdges(rCFGNode, context, edgeInto, appEdgesOut, allEdges);
 
+        //next add calls that can happen in the runtime for any
+        //api objects that are created, process each edge
+        edgesFromAPIAllocs(rCFGNode, context, edgeInto, appEdgesOut, allEdges);
+        
         apiEdgesFromNullReceivers(rCFGNode, context, method, appEdgesOut, allEdges);
         
         //recurse into all calls of app methods
@@ -367,9 +371,6 @@ public class RCFG {
         } 
     }
 
-<<<<<<< HEAD
-  
-=======
     /***
      * We have to be extra careful for calls with the receiver as a generated alloc expression
      * from an api call (see droidsafe.transforms.AddAllocsForAPICalls).  
@@ -450,7 +451,6 @@ public class RCFG {
         return;
     }
 
->>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
     /**
      * Given an invoke statement, return the class of the receiver's static type definition.
      */
