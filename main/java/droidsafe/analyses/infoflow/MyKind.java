@@ -2,5 +2,7 @@ package droidsafe.analyses.infoflow;
 
 public enum MyKind implements MyValue {
     CONTACTS,
-    LOCATION
+    LOCATION,
+    BROWSER_HISTORY,
+    BROWSER_BOOKMARKS
 }

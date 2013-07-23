@@ -74,6 +74,8 @@ public class InjectedSourceFlows {
         put("android.net.Uri.uriString", 
             new LinkedHashMap<Object,MyKind>() {{
                 put("person", MyKind.CONTACTS);
+                put("content://browser/bookmarks", MyKind.BROWSER_BOOKMARKS);
+                put("content://browser/bookmarks", MyKind.BROWSER_HISTORY);
             }});
 
     }};
