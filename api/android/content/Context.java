@@ -489,6 +489,7 @@ TypedArray var06BFBDC52929A707387ABF18809CD1B9_1783689107 =         getTheme().o
 	public Set<IntentFilter> __ds__intentFilters = new HashSet<IntentFilter>();
 	
 	// We pull out IntentFilters out of xml and register them with the appropriate subclasses of Context here
+	@DSModeled
 	public void __ds__registerIntentFilter(IntentFilter intentFilter) {
 	this.__ds__intentFilters.add(intentFilter);
 	}
@@ -648,5 +649,7 @@ TypedArray var06BFBDC52929A707387ABF18809CD1B9_1783689107 =         getTheme().o
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:39.196 -0400", hash_original_field = "7DC790C99BBEE323442B39F8FB05BAC0", hash_generated_field = "F3D4B86861C416E9BCDD00F4D43AA6B2")
 
     public static final int CONTEXT_RESTRICTED = 0x00000004;
+    
+    
 }
 

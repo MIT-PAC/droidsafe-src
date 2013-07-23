@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.app.Application;
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
 
@@ -22,7 +23,8 @@ import droidsafe.annotations.DSModeled;
 public class DroidSafeAndroidRuntime {
 	public static boolean control = new Random().nextBoolean();
 	public static int switchControl = new Random().nextInt();
-
+	private static Application mApplication;
+	
 	@DSModeled
 	/**
 	 * This method will be called automatically by the droidsafe harness class before all
@@ -34,7 +36,6 @@ public class DroidSafeAndroidRuntime {
 		
 	}
 	
-	@DSModeled
 	/**
 	 * create any associated state and call init methods on an activity
 	 * 
@@ -42,8 +43,12 @@ public class DroidSafeAndroidRuntime {
 	 * 
 	 * @param activity
 	 */
+	@DSModeled(DSC.SPEC)
 	public static void modelActivity(android.app.Activity activity) {
 		ContextImpl context = new ContextImpl();
+		
+		if (mApplication != null)
+			activity.setApplication(mApplication);
 		
 		while (true) {
 			Bundle b = new Bundle();
@@ -60,6 +65,9 @@ public class DroidSafeAndroidRuntime {
 	}
 	
 	public static void modelService(android.app.Service service) {
+		if (mApplication != null)
+			service.setApplication(mApplication);
+
 		service.onCreate();
 		Intent bindIntent = new Intent();
 		service.onBind(bindIntent);
@@ -75,6 +83,7 @@ public class DroidSafeAndroidRuntime {
 		service.onDestroy();
 	}
 	
+	@DSModeled(DSC.SPEC)
 	public static void modelContentProvider(android.content.ContentProvider contentProvider) {
 		contentProvider.onCreate();
 		contentProvider.onConfigurationChanged(new Configuration());
@@ -82,13 +91,14 @@ public class DroidSafeAndroidRuntime {
 		contentProvider.onTrimMemory(0);
 	}
 	
-	@DSModeled
+	@DSModeled(DSC.SPEC)
 	public static void modelBroadCastReceiver(BroadcastReceiver receiver) {
 		receiver.onReceive(new ContextImpl(), new Intent());
 	}
 	
 	@DSModeled(DSC.SPEC)
 	public static void modelApplication(android.app.Application app) {
+		mApplication = app;
 		while (true) {
 			app.droidsafeOnCreate();
 			app.droidsafeOnTerminate();

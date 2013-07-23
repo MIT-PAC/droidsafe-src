@@ -39,12 +39,15 @@ public class Resources {
     private NativePluralRules mPluralRule;
     private CompatibilityInfo mCompatibilityInfo;
     
+    @DSModeled
     public Resources(AssetManager assets, DisplayMetrics metrics,
             Configuration config){
 		this(assets, metrics, config, (CompatibilityInfo) null);
 	}
 
     
+    
+    @DSModeled
     public Resources(AssetManager assets, DisplayMetrics metrics,
             Configuration config, CompatibilityInfo compInfo){
 		//addTaint(assets.getTaint());
@@ -79,7 +82,7 @@ public class Resources {
         return (LongSparseArray<T>) EMPTY_ARRAY;
     }
 
-    
+    @DSModeled
     public static int selectDefaultTheme(int curTheme, int targetSdkVersion){
 		// Original method
 		/*
@@ -123,46 +126,34 @@ public class Resources {
 	    return mSystem;
 	}
 
+
+
+	
+	@DSModeled(DSC.SAFE)
+	public final String getString(int resId) {
+		String str = new String();
+        str.addTaint(resId);
+        return str;
+	}
+	
+	@DSModeled(DSC.SAFE)
+	public final CharSequence getText(int resId) {
+        String str = new String();
+        str.addTaint(resId);
+        return str;
+	}
     
-    public CharSequence getText(int id){
-		// Original method
-		/*
-		{
-        CharSequence res = mAssets.getResourceText(id);
-        if (res != null) {
-            return res;
-        }
-        throw new NotFoundException("String resource ID #0x"
-                                    + Integer.toHexString(id));
-    }
-		*/
-		return null;
+	 @DSModeled
+	public CharSequence getQuantityText(int id, int quantity){
+		
+		String str = new String();
+		str.addTaint(id);
+		str.addTaint(quantity);
+		str.addTaint(taint);
+		return str;
 	}
 
-    
-    public CharSequence getQuantityText(int id, int quantity){
-		// Original method
-		/*
-		{
-        NativePluralRules rule = getPluralRule();
-        CharSequence res = mAssets.getResourceBagText(id,
-                attrForQuantityCode(rule.quantityForInt(quantity)));
-        if (res != null) {
-            return res;
-        }
-        res = mAssets.getResourceBagText(id, ID_OTHER);
-        if (res != null) {
-            return res;
-        }
-        throw new NotFoundException("Plural resource ID #0x" + Integer.toHexString(id)
-                + " quantity=" + quantity
-                + " item=" + stringForQuantityCode(rule.quantityForInt(quantity)));
-    }
-		*/
-		return null;
-	}
-
-    
+	  @DSModeled
     private NativePluralRules getPluralRule(){
 		// Original method
 		/*
@@ -200,88 +191,49 @@ public class Resources {
     
     @DSModeled(DSC.SPEC)
 	private static String stringForQuantityCode(int quantityCode){
-		// Original method
-		/*
-		{
-        switch (quantityCode) {
-            case NativePluralRules.ZERO: return "zero";
-            case NativePluralRules.ONE:  return "one";
-            case NativePluralRules.TWO:  return "two";
-            case NativePluralRules.FEW:  return "few";
-            case NativePluralRules.MANY: return "many";
-            default:                     return "other";
-        }
-    }
-		*/
-		return "";
-	}
+    	String str = new String();
+		str.addTaint(quantityCode);
+		return str;
 
-    
-    @DSModeled(DSC.SPEC)
-	public String getString(int id){
-		// Original method
-		/*
-		{
-        CharSequence res = getText(id);
-        if (res != null) {
-            return res.toString();
-        }
-        throw new NotFoundException("String resource ID #0x"
-                                    + Integer.toHexString(id));
-    }
-		*/
-		return "";
 	}
-
-    
-    @DSModeled(DSC.SPEC)
+	
+	
+	@DSModeled
 	public String getString(int id, Object... formatArgs){
-		// Original method
-		/*
-		{
-        String raw = getString(id);
-        return String.format(mConfiguration.locale, raw, formatArgs);
-    }
-		*/
-		return "";
+		String str = new String();
+		str.addTaint(id);
+		//str.addTaint(formatArgs[0]);
+		return str;
 	}
 
     
     @DSModeled(DSC.SPEC)
 	public String getQuantityString(int id, int quantity, Object... formatArgs){
-		// Original method
-		/*
-		{
-        String raw = getQuantityText(id, quantity).toString();
-        return String.format(mConfiguration.locale, raw, formatArgs);
-    }
-		*/
-		return "";
+    	String str = new String();
+		str.addTaint(id);
+		str.addTaint(quantity);
+		str.addTaint(taint);
+		return str;
 	}
 
     
     @DSModeled(DSC.SPEC)
 	public String getQuantityString(int id, int quantity){
-		// Original method
-		/*
-		{
-        return getQuantityText(id, quantity).toString();
-    }
-		*/
-		return "";
+    	String str = new String();
+		str.addTaint(id);
+		str.addTaint(quantity);
+		str.addTaint(taint);
+		return str;
 	}
 
     
     @DSModeled(DSC.SPEC)
 	public CharSequence getText(int id, CharSequence def){
-		// Original method
-		/*
-		{
-        CharSequence res = id != 0 ? mAssets.getResourceText(id) : null;
-        return res != null ? res : def;
-    }
-		*/
-		return null;
+    	String str = new String();
+		str.addTaint(id);
+		str.addTaint(def.taint);
+		str.addTaint(taint);
+		return str;
 	}
 
     
@@ -904,7 +856,7 @@ public class Resources {
 		return "";
 	}
 
-    
+    @DSModeled
     public String getResourceTypeName(int resid){
 		// Original method
 		/*
@@ -918,7 +870,7 @@ public class Resources {
 		return "";
 	}
 
-    
+    @DSModeled
     public String getResourceEntryName(int resid){
 		// Original method
 		/*
@@ -932,7 +884,7 @@ public class Resources {
 		return "";
 	}
 
-    
+    @DSModeled
     public void parseBundleExtras(XmlResourceParser parser, Bundle outBundle){
 		// Original method
 		/*
@@ -957,7 +909,7 @@ public class Resources {
 		//Return nothing
 	}
 
-    
+    @DSModeled
     public void parseBundleExtra(String tagName, AttributeSet attrs,
             Bundle outBundle){
 		// Original method

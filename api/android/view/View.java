@@ -519,10 +519,17 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		*/
 		//Return nothing
 	}
+<<<<<<< HEAD
 
     
     @DSModeled(DSC.SAFE)
     public boolean hasOnClickListeners(){
+=======
+	
+	@DSModeled
+	public boolean hasOnClickListeners(){
+		
+>>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
 		// Original method
 		/*
 		{
@@ -532,10 +539,17 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		*/
 		return false;
 	}
+<<<<<<< HEAD
 
     
     @DSModeled(DSC.SAFE)
     public void setOnLongClickListener(OnLongClickListener l){
+=======
+	
+	@DSModeled
+	public void setOnLongClickListener(OnLongClickListener l){
+		
+>>>>>>> 8fdd67c83362d24a856c797451a83e8b845ae472
 		// Original method
 		/*
 		{

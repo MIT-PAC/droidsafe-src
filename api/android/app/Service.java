@@ -360,5 +360,11 @@ String varDD9C2143734A2F5CB66BF5CFBE75CE5F_736001360 =         mClassName;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.156 -0400", hash_original_field = "4209853D508AB854AF214FB3791A38FB", hash_generated_field = "A3148E49A6C6B3EB316E1423172174D4")
 
     public static final int START_FLAG_RETRY = 0x0002;
+    @DSModeled(DSC.BAN)
+        public void setApplication(Application app) { 
+                this.mApplication = app;
+        }
+
+
 }
 

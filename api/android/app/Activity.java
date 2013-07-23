@@ -3427,5 +3427,12 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     	onStop();
     }
     
+    public static final int START_FLAG_RETRY = 0x0002;
+    @DSModeled(DSC.BAN)
+    public void setApplication(Application app) { 
+            this.mApplication = app;
+    }
+
+    
 }
 
