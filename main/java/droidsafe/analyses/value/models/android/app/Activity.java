@@ -1,10 +1,13 @@
 package droidsafe.analyses.value.models.android.app;
 
 import droidsafe.analyses.value.models.android.content.Intent;
+import droidsafe.analyses.value.models.android.database.Cursor;
+import droidsafe.analyses.value.models.android.net.Uri;
 import droidsafe.analyses.value.models.android.view.ContextThemeWrapper;
 import droidsafe.analyses.value.models.android.view.Window;
 
 import java.util.List;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -65,5 +68,10 @@ public class Activity extends ContextThemeWrapper {
      */
     public void onStop() {
         mCalled = true;
+    }
+
+    public Cursor managedQuery(Uri uri, String[] projection, Set<String> selection, 
+                               String[] selectionArgs, Set<String> sortOrder){
+        return null;
     }
 }

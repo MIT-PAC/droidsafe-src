@@ -149,9 +149,6 @@ public class ValueAnalysis {
     /** Map to store Values to attributes of Models */
     private Map<Value, Object> valueToModelAttrMap;
 
-    /** Set of methods we simulated and thus don't want to step through */
-    private Set<SootMethod> simulatedMethods;
-
     /** FileWriter used to log what we still don't model but perhaps should */
     private FileWriter attrModelingTodoLog;
 
@@ -191,7 +188,6 @@ public class ValueAnalysis {
     private ValueAnalysis() {
         this.objectToModelMap = new LinkedHashMap<AllocNode, ValueAnalysisModeledObject>();
         this.valueToModelAttrMap = new HashMap<Value, Object>();
-        this.simulatedMethods = new HashSet<SootMethod>();
 
         try {
             this.attrModelingTodoLog = new FileWriter(Project.v().getOutputDir() + File.separator 
@@ -334,7 +330,7 @@ public class ValueAnalysis {
             SourceFileTag sourceFileTag = (SourceFileTag)clazz.getTag("SourceFileTag");
 
             for (SootMethod meth : clazz.getMethods()) {
-                if (meth.isConcrete() && reachableMethods.contains(meth) && !am.simulatedMethods.contains(meth)) {
+                if (meth.isConcrete() && reachableMethods.contains(meth)) {
                     
                     logger.info("Value Analysis: stepping through " + meth);
                     
@@ -505,7 +501,6 @@ public class ValueAnalysis {
                     objectsToReturn.add(objectToReturn);
                 }
             }
-            this.simulatedMethods.add(invokeExpr.getMethod());
         } catch (Exception e) {
             // If we don't have the method market as one we will step through, that means we haven't modeled it at all
             // and thus the receiver and argument models 
