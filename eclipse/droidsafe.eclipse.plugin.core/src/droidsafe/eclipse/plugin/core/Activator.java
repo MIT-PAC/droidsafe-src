@@ -45,8 +45,8 @@ public class Activator extends AbstractUIPlugin {
     super.start(context);
     plugin = this;
     
-    LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
-    StatusPrinter.print(lc);
+    //LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
+    //StatusPrinter.print(lc);
     //configureDebugLog();
     //lc = (LoggerContext) LoggerFactory.getILoggerFactory();
     //StatusPrinter.print(lc);

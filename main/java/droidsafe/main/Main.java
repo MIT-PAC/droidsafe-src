@@ -180,6 +180,7 @@ public class Main {
      */ 
     private static void jsaAnalysis() {
         JSAUtils.setUpHotspots();
+        JSAUtils.setupSpecHotspots();
         JSAStrings.run();
         // Debugging.
         JSAStrings.v().log();

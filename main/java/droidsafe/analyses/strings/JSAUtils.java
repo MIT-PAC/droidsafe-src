@@ -1,16 +1,30 @@
 package droidsafe.analyses.strings;
 
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisBoolean;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisByte;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisChar;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisDouble;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisFloat;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisInt;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisLong;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisShort;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.analyses.value.ValueAnalysisModeledObject;
+import droidsafe.android.system.API;
+import droidsafe.utils.SootUtils;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import org.reflections.*;
+
+import soot.SootMethod;
+import soot.ValueBox;
 
 /**
  * Class containing utility methods for JSA
@@ -59,6 +73,22 @@ public class JSAUtils {
                                    || paramTypeString.equals("java.lang.StringBuffer")
                                    || paramTypeString.equals("java.lang.StringBuilder")) {
                                     paramOfInterestIndexes.add(i);
+                                } else if(typeParamForBaseInterfaceClass.equals(ValueAnalysisBoolean.class)){
+                                    paramTypeString = "boolean";
+                                } else if(typeParamForBaseInterfaceClass.equals(ValueAnalysisByte.class)){
+                                    paramTypeString = "byte";
+                                } else if(typeParamForBaseInterfaceClass.equals(ValueAnalysisChar.class)){
+                                    paramTypeString = "char";
+                                } else if(typeParamForBaseInterfaceClass.equals(ValueAnalysisDouble.class)){
+                                    paramTypeString = "double";
+                                } else if(typeParamForBaseInterfaceClass.equals(ValueAnalysisFloat.class)){
+                                    paramTypeString = "float";
+                                } else if(typeParamForBaseInterfaceClass.equals(ValueAnalysisInt.class)){
+                                    paramTypeString = "int";
+                                } else if(typeParamForBaseInterfaceClass.equals(ValueAnalysisLong.class)){
+                                    paramTypeString = "long";
+                                } else if(typeParamForBaseInterfaceClass.equals(ValueAnalysisShort.class)){
+                                    paramTypeString = "short";
                                 }
                             }
                         }
@@ -74,6 +104,32 @@ public class JSAUtils {
                         JSAStrings.v().addArgumentHotspots(signature, index);
                     }
                 }
+            }
+        }
+    }
+    
+    /**
+     * Add hotspots for all of the spec methods.
+     */
+    public static void setupSpecHotspots()
+    {
+        for (SootMethod m : API.v().getAllSystemMethods()) {
+            if (API.v().isInterestingMethod(m)) {
+                String sig = m.getSignature();
+                int i = 0;
+                for (soot.Type t : m.getParameterTypes()) {
+                    if (SootUtils.isStringType(t)) {
+                        List<ValueBox> hs = JSAStrings.v().addArgumentHotspots(sig, i);
+                    }
+                    i++;     
+                }
+                // FIXME: Return hotspots are raising an exception.
+                /*
+                if (SootUtils.isStringType(m.getReturnType())) {
+                    System.out.println(String.format("addReturnHotspots(%s)", sig));
+                    JSAStrings.v().addReturnHotspot(sig);
+                }
+                */
             }
         }
     }

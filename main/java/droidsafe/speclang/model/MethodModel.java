@@ -112,6 +112,13 @@ public class MethodModel extends ModelChangeSupport
    */
   private String receiver = "";
 
+
+  /**
+   * If the method is native or not
+   */
+  private boolean isNative = false;
+
+
   /**
    * Main constructor.
    * 
@@ -125,6 +132,7 @@ public class MethodModel extends ModelChangeSupport
     this.returnType = originalMethod.getRtype();
     this.declarationLocation = originalMethod.getDeclSourceLocation();
     this.methodShortSignature = computeShortSignature(originalMethod);
+    this.isNative = originalMethod.getSootMethod().isNative();
     this.permissions = Permissions.v().getPermissions(originalMethod.getSootMethod());
     if (originalMethod.hasReceiver()) {
       Object receiver = originalMethod.getReceiver();
@@ -136,7 +144,7 @@ public class MethodModel extends ModelChangeSupport
       this.lines.add(new CodeLocationModel(line));
     }
 
-    // logger.debug("\n");
+    logger.debug("\n" + this.sootMethodSignature);
     SootMethod sootMethod = originalMethod.getSootMethod();
     for (Type parType : sootMethod.getParameterTypes()) {
       this.methodArgumentTypes.add(parType.toString());
@@ -252,7 +260,7 @@ public class MethodModel extends ModelChangeSupport
       if (arg.isType()) {
         out.append(Utils.extractClassname(arg.toString()));
       } else { // constant of some sort
-        out.append(arg.toString());
+        out.append(arg.toString().replaceAll("[\\n]+", "\\\\n"));
       }
       delim = ", ";
     }
@@ -336,6 +344,13 @@ public class MethodModel extends ModelChangeSupport
    */
   public boolean isUnresolved() {
     return (this.status == DroidsafeIssueResolutionStatus.UNRESOLVED);
+  }
+
+  /**
+   * Returns true if the method is native.
+   */
+  public boolean isNative() {
+    return this.isNative;
   }
 
   /*

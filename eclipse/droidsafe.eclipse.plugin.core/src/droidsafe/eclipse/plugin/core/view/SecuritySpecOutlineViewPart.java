@@ -1,9 +1,10 @@
 package droidsafe.eclipse.plugin.core.view;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.core.commands.Command;
+import org.eclipse.core.commands.State;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -33,6 +34,7 @@ import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.commands.ICommandService;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ViewPart;
 import org.eclipse.ui.texteditor.ITextEditor;
@@ -46,9 +48,9 @@ import droidsafe.eclipse.plugin.core.view.TreeElementContentProvider.TopLevelPar
 import droidsafe.speclang.model.CodeLocationModel;
 import droidsafe.speclang.model.IModelChangeSupport;
 import droidsafe.speclang.model.MethodModel;
+import droidsafe.speclang.model.MethodsToHighlight;
 import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.utils.SourceLocationTag;
-
 
 /**
  * View for displaying the droidsafe security spec outline. The view looks for a selected project,
@@ -74,16 +76,22 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
   /** The main tree viewer used to display the outline of the security spec */
   private TreeViewer viewer;
 
-  /** A Text viewer we use to display a message to the user if no project is selected. */
+  /**
+   * A Text viewer we use to display a message to the user if no project is selected.
+   */
   private TextViewer textViewer;
 
   /** Standard Eclipse content provider to populate the tree viewer. */
   private ITreeContentProvider contentProvider;
 
-  /** Standard Eclipse label provider to provide images and labels to the different tree nodes. */
+  /**
+   * Standard Eclipse label provider to provide images and labels to the different tree nodes.
+   */
   private IBaseLabelProvider labelProvider;
 
-  /** A listener to keep track if the current selected project in the Explorer View */
+  /**
+   * A listener to keep track if the current selected project in the Explorer View
+   */
   private ISelectionListener selectionListener;
 
   /** The container for the text or tree view used in the class. */
@@ -113,7 +121,8 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
           + "\nSelect an Android project in the Project Explorer."
           + "\nYou may also need to run the Droidsafe spec generation "
           + "command from the project context menu.");
-      // parent.redraw();
+      this.textViewer.setDocument(document);
+      parent.redraw();
       parent.layout();
     } else {
       String projectRootPath = this.selectedProject.getLocation().toOSString();
@@ -128,13 +137,12 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
             + "\nSelect the project on the Project Explorer "
             + "\nand run the Droidsafe spec generation command from the project context menu.");
         this.textViewer.setDocument(document);
-        // parent.redraw();
+        parent.redraw();
         parent.layout();
 
       }
     }
   }
-
 
   /**
    * Auxiliary function to setup a selection listener that would replace the contents of the outline
@@ -154,15 +162,16 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
           IResource res = (IResource) ((IAdaptable) selectedObject).getAdapter(IResource.class);
           IProject project = (res != null) ? res.getProject() : null;
           if (project != null && project != SecuritySpecOutlineViewPart.this.selectedProject) {
-            SecuritySpecOutlineViewPart.this.securitySpecModel = null;
-            initializeSecuritySpec(SecuritySpecOutlineViewPart.this.parentComposite);
-            if (SecuritySpecOutlineViewPart.this.securitySpecModel != null) {
-              if (getViewer() == null) {
-                initializeTreeViewer();
-              } else {
-                getViewer().setInput(securitySpecModel);
-              }
-            }
+            refreshSpecAndOutlineView();
+            // SecuritySpecOutlineViewPart.this.securitySpecModel = null;
+            // initializeSecuritySpec(SecuritySpecOutlineViewPart.this.parentComposite);
+            // if (SecuritySpecOutlineViewPart.this.securitySpecModel != null) {
+            // if (getViewer() == null) {
+            // initializeTreeViewer();
+            // } else {
+            // getViewer().setInput(securitySpecModel);
+            // }
+            // }
           }
         }
       }
@@ -181,6 +190,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
         initializeTreeViewer();
       } else {
         getViewer().setInput(securitySpecModel);
+        updateCurrentViewerSettings();
       }
     }
     if (getViewer() != null) {
@@ -205,6 +215,30 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     }
   }
 
+  private void updateCurrentViewerSettings() {
+    ICommandService service =
+        (ICommandService) PlatformUI.getWorkbench().getService(ICommandService.class);
+    Command command =
+        service.getCommand("droidsafe.eclipse.plugin.core.commands.SetTopLevelNodeForView");
+    State state = command.getState("org.eclipse.ui.commands.radioState");
+    if (state != null) {
+      setTopLevelNodeForView(state.getValue().toString());
+      // state.setValue(!(Boolean) state.getValue());
+    }
+
+    command = service.getCommand("droidsafe.eclipse.plugin.core.commands.SortOutlineView");
+    state = command.getState("org.eclipse.ui.commands.radioState");
+    if (state != null) {
+      sortOutlineView(state.getValue().toString());
+    }
+    command =
+        service.getCommand("droidsafe.eclipse.plugin.core.commands.SetLabelTypeForMethodNode");
+    state = command.getState("org.eclipse.ui.commands.radioState");
+    if (state != null) {
+      setLabelTypeForMethodName(state.getValue().toString());
+    }
+  }
+
   /**
    * Initialize the tree viewer with content provider, label provider, and inuput model.
    */
@@ -220,7 +254,8 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       ColumnViewerToolTipSupport.enableFor(viewer);
       sortViewByMethodName();
 
-      // Make sure there is no text viewer in the container otherwise we get a split screen.
+      // Make sure there is no text viewer in the container otherwise we
+      // get a split screen.
 
       viewer.setInput(securitySpecModel);
 
@@ -233,10 +268,9 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       // Make the selection available to other views
       getSite().setSelectionProvider(viewer);
       addDoubleClickListener();
+      updateCurrentViewerSettings();
     }
   }
-
-
 
   /**
    * Add a double click listener to the TreeViewr. Double clicking on a tree node will expand the
@@ -254,7 +288,8 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
           // TreeViewer viewer = (TreeViewer) event.getViewer();
           IStructuredSelection thisSelection = (IStructuredSelection) event.getSelection();
           Object selectedNode = thisSelection.getFirstElement();
-          // viewer.setExpandedState(selectedNode, !viewer.getExpandedState(selectedNode));
+          // viewer.setExpandedState(selectedNode,
+          // !viewer.getExpandedState(selectedNode));
           SourceLocationTag line = null;
           if (selectedNode instanceof TreeElement<?, ?>) {
             TreeElement<?, ?> treeElement = (TreeElement<?, ?>) selectedNode;
@@ -305,7 +340,6 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     }
   }
 
-
   /**
    * Removes any text viewer from the outline panel
    * 
@@ -353,7 +387,21 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     getSite().getPage().removeSelectionListener(selectionListener);
   }
 
-
+  /**
+   * Method that executes the menu command SetTopLevelNodeForView from the outline view drop down
+   * menu.
+   * 
+   * @param currentState The command parameter that tell us which node should be at the top level.
+   */
+  public void setTopLevelNodeForView(String currentState) {
+    if (currentState.equals("input_method")) {
+      setEntryPointsAsViewTopLevelParents();
+    } else if (currentState.equals("output_method")) {
+      setApiCallsAsViewTopLevelParents();
+    } else if (currentState.equals("code_location")) {
+      setCodeLocationAsViewTopLevelParents();
+    }
+  }
 
   public void setApiCallsAsViewTopLevelParents() {
     setContentProviderTopLevelParent(TopLevelParentEntity.API_AS_TOP_PARENT);
@@ -368,21 +416,22 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
   }
 
   private void setContentProviderTopLevelParent(TopLevelParentEntity parentEntityType) {
-
-    if (this.contentProvider instanceof TreeElementContentProvider
-        && ((TreeElementContentProvider) this.contentProvider).getContentProviderTopLevelParent() != parentEntityType) {
-      ISelection savedSelections = this.viewer.getSelection();
-
-      ((TreeElementContentProvider) this.contentProvider)
-          .setContentProviderTopLevelParent(parentEntityType);
-      this.viewer.refresh();
-      selectObjects(savedSelections);
+    if (this.contentProvider instanceof TreeElementContentProvider) {
+      TreeElementContentProvider contProvider = (TreeElementContentProvider) this.contentProvider;
+      if (contProvider.getContentProviderTopLevelParent() != parentEntityType) {
+        contProvider.setContentProviderTopLevelParent(parentEntityType);
+        if (this.viewer != null) {
+          ISelection savedSelections = getViewerSelection();
+          this.viewer.refresh();
+          selectObjects(savedSelections);
+        }
+      }
     }
   }
 
   /**
-   * This method will re-select the nodes that were selected before the
-   * change in the outline structure.
+   * This method will re-select the nodes that were selected before the change in the outline
+   * structure.
    * 
    * This method should be called by any method that changes the structure of the outline tree.
    * 
@@ -390,9 +439,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
    *        outline.
    */
   private void selectObjects(ISelection savedSelections) {
-    
     List<Object> selectedElements = new ArrayList<Object>();
-
     if (savedSelections != null && savedSelections instanceof IStructuredSelection) {
       IStructuredSelection structuredSelection = ((IStructuredSelection) savedSelections);
       for (Object selection : structuredSelection.toList()) {
@@ -445,8 +492,6 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     return null;
   }
 
-
-
   /**
    * Sets the value of the selectedProject field if it is null and returns the value of the
    * selectedProject field.
@@ -460,6 +505,13 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     return this.selectedProject;
   }
 
+  public void setLabelTypeForMethodName(String currentState) {
+    if (currentState.equals("short_label")) {
+      setUseShortSignatureForMethods(true);
+    } else if (currentState.equals("long_label")) {
+      setUseShortSignatureForMethods(false);
+    }
+  }
 
   /**
    * Method to set the type of labels should be used for method nodes in the outline. It calls the
@@ -474,143 +526,253 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     boolean oldValue =
         ((TreeElementLabelProvider) this.labelProvider)
             .setUseShortSignatureForMethods(useShortSignature);
-    if (oldValue != useShortSignature) {
-      ISelection savedSelections = this.viewer.getSelection();
+    if (this.viewer != null && oldValue != useShortSignature) {
+      ISelection savedSelections = getViewerSelection();
       this.viewer.refresh();
       selectObjects(savedSelections);
     }
   }
 
 
-  public void sortViewByMethodName() {
-    ISelection savedSelections = this.viewer.getSelection();
-    
-    this.viewer.setSorter(new ViewerSorter() {
-      public int compare(Viewer view, Object o1, Object o2) {
-        int result = 0;
-        if (o1 instanceof TreeElement<?, ?> && o2 instanceof TreeElement<?, ?>) {
-          Object oo1 = ((TreeElement<?, ?>) o1).getData();
-          Object oo2 = ((TreeElement<?, ?>) o2).getData();
-          return compare(view, oo1, oo2);
-
-        } else if (o1 instanceof MethodModel && o2 instanceof MethodModel) {
-          MethodModel m1 = (MethodModel) o1;
-          MethodModel m2 = (MethodModel) o2;
-          result = m1.getMethodName().compareTo(m2.getMethodName());
-          if (result == 0) {
-            result = m1.getClassName().compareTo(m2.getClassName());
-          }
-          if (result == 0) {
-            result = m1.getReturnType().compareTo(m2.getReturnType());
-          }
-        } else if (o1 instanceof SourceLocationTag && o2 instanceof SourceLocationTag) {
-          SourceLocationTag l1 = (SourceLocationTag) o1;
-          SourceLocationTag l2 = (SourceLocationTag) o2;
-          result = l1.getClz().compareTo(l2.getClz());
-          if (result == 0) {
-            result = Integer.valueOf(l1.getLine()).compareTo(Integer.valueOf(l2.getLine()));
-          }
-        }
-        return result;
-      }
-    });
-    selectObjects(savedSelections);
+  /**
+   * Method that implements the command that sorts the nodes in the outline view.
+   * 
+   * @param currentState The command parameter that tell us what type of sorting should we use.
+   *        Possible values for this parameter are "method", "class", or "status"
+   */
+  public void sortOutlineView(String currentState) {
+    // perform task for current state
+    if (currentState.equals("method")) {
+      // sort entries by method name.
+      sortViewByMethodName();
+    } else if (currentState.equals("class")) {
+      // sort entries by class name
+      sortViewByClassName();
+    } else if (currentState.equals("status")) {
+      sortViewByStatusAndClassName();
+    }else if (currentState.equals("priority")) {
+      sortViewByPriorityAndClassName();
+    }
   }
 
+  private ISelection getViewerSelection() {
+    if (this.viewer != null) {
+      return this.viewer.getSelection();
+    }
+    return null;
+  }
+
+  public void sortViewByMethodName() {
+    if (this.viewer != null) {
+      ISelection savedSelections = getViewerSelection();
+
+      this.viewer.setSorter(new ViewerSorter() {
+        public int compare(Viewer view, Object o1, Object o2) {
+          int result = 0;
+          if (o1 instanceof TreeElement<?, ?> && o2 instanceof TreeElement<?, ?>) {
+            Object oo1 = ((TreeElement<?, ?>) o1).getData();
+            Object oo2 = ((TreeElement<?, ?>) o2).getData();
+            return compare(view, oo1, oo2);
+
+          } else if (o1 instanceof MethodModel && o2 instanceof MethodModel) {
+            MethodModel m1 = (MethodModel) o1;
+            MethodModel m2 = (MethodModel) o2;
+            result = m1.getMethodName().compareTo(m2.getMethodName());
+            if (result == 0) {
+              result = m1.getClassName().compareTo(m2.getClassName());
+            }
+            if (result == 0) {
+              result = m1.getReturnType().compareTo(m2.getReturnType());
+            }
+          } else if (o1 instanceof SourceLocationTag && o2 instanceof SourceLocationTag) {
+            SourceLocationTag l1 = (SourceLocationTag) o1;
+            SourceLocationTag l2 = (SourceLocationTag) o2;
+            result = l1.getClz().compareTo(l2.getClz());
+            if (result == 0) {
+              result = Integer.valueOf(l1.getLine()).compareTo(Integer.valueOf(l2.getLine()));
+            }
+          }
+          return result;
+        }
+      });
+      selectObjects(savedSelections);
+    }
+  }
 
   public void sortViewByClassName() {
-    ISelection savedSelections = this.viewer.getSelection();
-    
-    this.viewer.setSorter(new ViewerSorter() {
-      public int compare(Viewer view, Object o1, Object o2) {
-        int result = 0;
-        if (o1 instanceof TreeElement<?, ?> && o2 instanceof TreeElement<?, ?>) {
-          Object oo1 = ((TreeElement<?, ?>) o1).getData();
-          Object oo2 = ((TreeElement<?, ?>) o2).getData();
-          // logger.debug("Elements tested o1 {} o2 {} result {}", new Object[] {
-          // ((TreeElement<?, ?>) o1).getName(), ((TreeElement<?, ?>) o2).getName()});
-          return compare(view, oo1, oo2);
+    if (this.viewer != null) {
+      ISelection savedSelections = getViewerSelection();
 
-        } else if (o1 instanceof MethodModel && o2 instanceof MethodModel) {
-          MethodModel m1 = (MethodModel) o1;
-          MethodModel m2 = (MethodModel) o2;
-          result = m1.getClassName().compareTo(m2.getClassName());
-          // logger.debug("Class Names m1 {} m2 {} result {}",
-          // new Object[] {m1.getClassName(), m2.getClassName(), Integer.toString(result)});
-          if (result == 0) {
-            result = m1.getMethodName().compareTo(m2.getMethodName());
+      this.viewer.setSorter(new ViewerSorter() {
+        public int compare(Viewer view, Object o1, Object o2) {
+          int result = 0;
+          if (o1 instanceof TreeElement<?, ?> && o2 instanceof TreeElement<?, ?>) {
+            Object oo1 = ((TreeElement<?, ?>) o1).getData();
+            Object oo2 = ((TreeElement<?, ?>) o2).getData();
+            // logger.debug("Elements tested o1 {} o2 {} result {}", new
+            // Object[] {
+            // ((TreeElement<?, ?>) o1).getName(), ((TreeElement<?, ?>)
+            // o2).getName()});
+            return compare(view, oo1, oo2);
+
+          } else if (o1 instanceof MethodModel && o2 instanceof MethodModel) {
+            MethodModel m1 = (MethodModel) o1;
+            MethodModel m2 = (MethodModel) o2;
+            result = m1.getClassName().compareTo(m2.getClassName());
+            // logger.debug("Class Names m1 {} m2 {} result {}",
+            // new Object[] {m1.getClassName(), m2.getClassName(),
+            // Integer.toString(result)});
+            if (result == 0) {
+              result = m1.getMethodName().compareTo(m2.getMethodName());
+            }
+            if (result == 0) {
+              result = m1.getReturnType().compareTo(m2.getReturnType());
+            }
+            if (result == 0) {
+              result = m1.getSignature().compareTo(m2.getSignature());
+            }
+            // logger.debug("Class Names m1 {} m2 {} result {}",
+            // new Object[] {m1.getClassName(), m2.getClassName(),
+            // Integer.toString(result)});
+          } else if (o1 instanceof SourceLocationTag && o2 instanceof SourceLocationTag) {
+            SourceLocationTag l1 = (SourceLocationTag) o1;
+            SourceLocationTag l2 = (SourceLocationTag) o2;
+            result = l1.getClz().compareTo(l2.getClz());
+            if (result == 0) {
+              result = Integer.valueOf(l1.getLine()).compareTo(Integer.valueOf(l2.getLine()));
+            }
           }
-          if (result == 0) {
-            result = m1.getReturnType().compareTo(m2.getReturnType());
-          }
-          if (result == 0) {
-            result = m1.getSignature().compareTo(m2.getSignature());
-          }
-          // logger.debug("Class Names m1 {} m2 {} result {}",
-          // new Object[] {m1.getClassName(), m2.getClassName(), Integer.toString(result)});
-        } else if (o1 instanceof SourceLocationTag && o2 instanceof SourceLocationTag) {
-          SourceLocationTag l1 = (SourceLocationTag) o1;
-          SourceLocationTag l2 = (SourceLocationTag) o2;
-          result = l1.getClz().compareTo(l2.getClz());
-          if (result == 0) {
-            result = Integer.valueOf(l1.getLine()).compareTo(Integer.valueOf(l2.getLine()));
-          }
+          return result;
         }
-        return result;
-      }
-    });
-    selectObjects(savedSelections);
+      });
+      selectObjects(savedSelections);
+    }
   }
 
-
   public void sortViewByStatusAndClassName() {
-    ISelection savedSelections = this.viewer.getSelection();
-    
-    this.viewer.setSorter(new ViewerSorter() {
-      public int compare(Viewer view, Object o1, Object o2) {
-        int result = 0;
-        if (o1 instanceof TreeElement<?, ?> && o2 instanceof TreeElement<?, ?>) {
-          Object oo1 = ((TreeElement<?, ?>) o1).getData();
-          Object oo2 = ((TreeElement<?, ?>) o2).getData();
-          // logger.debug("Elements tested o1 {} o2 {} result {}", new Object[] {
-          // ((TreeElement<?, ?>) o1).getName(), ((TreeElement<?, ?>) o2).getName()});
-          return compare(view, oo1, oo2);
+    if (this.viewer != null) {
+      ISelection savedSelections = getViewerSelection();
 
-        } else if (o1 instanceof MethodModel && o2 instanceof MethodModel) {
-          MethodModel m1 = (MethodModel) o1;
-          MethodModel m2 = (MethodModel) o2;
-          result = m1.getStatus().compareTo(m2.getStatus());
-          if (result == 0) {
-            result = m1.getClassName().compareTo(m2.getClassName());
+      this.viewer.setSorter(new ViewerSorter() {
+        public int compare(Viewer view, Object o1, Object o2) {
+          int result = 0;
+          if (o1 instanceof TreeElement<?, ?> && o2 instanceof TreeElement<?, ?>) {
+            Object oo1 = ((TreeElement<?, ?>) o1).getData();
+            Object oo2 = ((TreeElement<?, ?>) o2).getData();
+            // logger.debug("Elements tested o1 {} o2 {} result {}", new
+            // Object[] {
+            // ((TreeElement<?, ?>) o1).getName(), ((TreeElement<?, ?>)
+            // o2).getName()});
+            return compare(view, oo1, oo2);
+
+          } else if (o1 instanceof MethodModel && o2 instanceof MethodModel) {
+            MethodModel m1 = (MethodModel) o1;
+            MethodModel m2 = (MethodModel) o2;
+            result = m1.getStatus().compareTo(m2.getStatus());
+            if (result == 0) {
+              result = m1.getClassName().compareTo(m2.getClassName());
+            }
+            // logger.debug("Class Names m1 {} m2 {} result {}",
+            // new Object[] {m1.getClassName(), m2.getClassName(),
+            // Integer.toString(result)});
+            if (result == 0) {
+              result = m1.getMethodName().compareTo(m2.getMethodName());
+            }
+            if (result == 0) {
+              result = m1.getReturnType().compareTo(m2.getReturnType());
+            }
+            if (result == 0) {
+              result = m1.getSignature().compareTo(m2.getSignature());
+            }
+            // logger.debug("Class Names m1 {} m2 {} result {}",
+            // new Object[] {m1.getClassName(), m2.getClassName(),
+            // Integer.toString(result)});
+          } else if (o1 instanceof CodeLocationModel && o2 instanceof CodeLocationModel) {
+            CodeLocationModel l1 = (CodeLocationModel) o1;
+            CodeLocationModel l2 = (CodeLocationModel) o2;
+            result = l1.getStatus().compareTo(l2.getStatus());
+            if (result == 0) {
+              result = l1.getClz().compareTo(l2.getClz());
+            }
+            if (result == 0) {
+              result = Integer.valueOf(l1.getLine()).compareTo(Integer.valueOf(l2.getLine()));
+            }
           }
-          // logger.debug("Class Names m1 {} m2 {} result {}",
-          // new Object[] {m1.getClassName(), m2.getClassName(), Integer.toString(result)});
-          if (result == 0) {
-            result = m1.getMethodName().compareTo(m2.getMethodName());
-          }
-          if (result == 0) {
-            result = m1.getReturnType().compareTo(m2.getReturnType());
-          }
-          if (result == 0) {
-            result = m1.getSignature().compareTo(m2.getSignature());
-          }
-          // logger.debug("Class Names m1 {} m2 {} result {}",
-          // new Object[] {m1.getClassName(), m2.getClassName(), Integer.toString(result)});
-        } else if (o1 instanceof CodeLocationModel && o2 instanceof CodeLocationModel) {
-          CodeLocationModel l1 = (CodeLocationModel) o1;
-          CodeLocationModel l2 = (CodeLocationModel) o2;
-          result = l1.getStatus().compareTo(l2.getStatus());
-          if (result == 0) {
-            result = l1.getClz().compareTo(l2.getClz());
-          }
-          if (result == 0) {
-            result = Integer.valueOf(l1.getLine()).compareTo(Integer.valueOf(l2.getLine()));
-          }
+          return result;
         }
-        return result;
-      }
-    });
-    selectObjects(savedSelections);
+      });
+      selectObjects(savedSelections);
+    }
+  }
+
+  public void sortViewByPriorityAndClassName() {
+    if (this.viewer != null) {
+      ISelection savedSelections = getViewerSelection();
+
+      this.viewer.setSorter(new ViewerSorter() {
+        public int compare(Viewer view, Object o1, Object o2) {
+          int result = 0;
+          if (o1 instanceof TreeElement<?, ?> && o2 instanceof TreeElement<?, ?>) {
+            Object oo1 = ((TreeElement<?, ?>) o1).getData();
+            Object oo2 = ((TreeElement<?, ?>) o2).getData();
+            // logger.debug("Elements tested o1 {} o2 {} result {}", new
+            // Object[] {
+            // ((TreeElement<?, ?>) o1).getName(), ((TreeElement<?, ?>)
+            // o2).getName()});
+            return compare(view, oo1, oo2);
+
+          } else if (o1 instanceof MethodModel && o2 instanceof MethodModel) {
+            MethodModel m1 = (MethodModel) o1;
+            MethodModel m2 = (MethodModel) o2;
+            result = m1.getStatus().compareTo(m2.getStatus());
+
+            if (result == 0) {
+              result = Integer.compare(m2.getPermissions().size(), m1.getPermissions().size());
+            }
+            if (result == 0) {
+              result = Boolean.compare(m2.isNative(), m1.isNative());
+            }
+            if (result == 0) {
+              result =
+                  Boolean.compare(MethodsToHighlight.shouldHighlightMethd(m2),
+                      MethodsToHighlight.shouldHighlightMethd(m1));
+            }
+
+
+            if (result == 0) {
+              result = m1.getClassName().compareTo(m2.getClassName());
+            }
+            // logger.debug("Class Names m1 {} m2 {} result {}",
+            // new Object[] {m1.getClassName(), m2.getClassName(),
+            // Integer.toString(result)});
+            if (result == 0) {
+              result = m1.getMethodName().compareTo(m2.getMethodName());
+            }
+            if (result == 0) {
+              result = m1.getReturnType().compareTo(m2.getReturnType());
+            }
+            if (result == 0) {
+              result = m1.getSignature().compareTo(m2.getSignature());
+            }
+            // logger.debug("Class Names m1 {} m2 {} result {}",
+            // new Object[] {m1.getClassName(), m2.getClassName(),
+            // Integer.toString(result)});
+          } else if (o1 instanceof CodeLocationModel && o2 instanceof CodeLocationModel) {
+            CodeLocationModel l1 = (CodeLocationModel) o1;
+            CodeLocationModel l2 = (CodeLocationModel) o2;
+            result = l1.getStatus().compareTo(l2.getStatus());
+            if (result == 0) {
+              result = l1.getClz().compareTo(l2.getClz());
+            }
+            if (result == 0) {
+              result = Integer.valueOf(l1.getLine()).compareTo(Integer.valueOf(l2.getLine()));
+            }
+          }
+          return result;
+        }
+      });
+      selectObjects(savedSelections);
+    }
   }
 
 

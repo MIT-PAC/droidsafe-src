@@ -2,7 +2,7 @@ package droidsafe.analyses.value.models.droidsafe.primitives;
 
 import droidsafe.analyses.value.ValueAnalysisModeledObject;
 
-public class ValueAnalysisFloat extends ValueAnalysisModeledObject {
+public class ValueAnalysisFloat extends ValueAnalysisPrimitive {
 
     float value;
 

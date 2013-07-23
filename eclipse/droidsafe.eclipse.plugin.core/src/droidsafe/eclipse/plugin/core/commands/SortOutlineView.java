@@ -20,35 +20,25 @@ import droidsafe.eclipse.plugin.core.view.SecuritySpecOutlineViewPart;
  * 
  */
 public class SortOutlineView extends AbstractHandler {
-  @SuppressWarnings("unused")
-  private static final Logger logger = LoggerFactory.getLogger(SortOutlineView.class);
+    @SuppressWarnings("unused")
+    private static final Logger logger = LoggerFactory.getLogger(SortOutlineView.class);
 
-  /**
-   * Command to sort the outline view according to the selected criterion.
-   */
-  @Override
-  public Object execute(ExecutionEvent event) throws ExecutionException {
-    if (!HandlerUtil.matchesRadioState(event)) {
-      IWorkbenchPart part = HandlerUtil.getActivePart(event);
-      if (part instanceof SecuritySpecOutlineViewPart) {
-        SecuritySpecOutlineViewPart droidsafeView = (SecuritySpecOutlineViewPart) part;
-
-        String currentState = event.getParameter(RadioState.PARAMETER_ID);
-        // perform task for current state
-        if (currentState.equals("method")) {
-          // sort entries by method name.
-          droidsafeView.sortViewByMethodName();
-        } else if (currentState.equals("class")) {
-          // sort entries by class name
-          droidsafeView.sortViewByClassName();
-        } else if (currentState.equals("status")){
-          droidsafeView.sortViewByStatusAndClassName();
+    /**
+     * Command to sort the outline view according to the selected criterion.
+     */
+    @Override
+    public Object execute(ExecutionEvent event) throws ExecutionException {
+        if (!HandlerUtil.matchesRadioState(event)) {
+            IWorkbenchPart part = HandlerUtil.getActivePart(event);
+            if (part instanceof SecuritySpecOutlineViewPart) {
+                SecuritySpecOutlineViewPart droidsafeView = (SecuritySpecOutlineViewPart) part;
+                String currentState = event.getParameter(RadioState.PARAMETER_ID);
+                droidsafeView.sortOutlineView(currentState);
+                // and finally update the current state
+                HandlerUtil.updateRadioState(event.getCommand(), currentState);
+            }
         }
-        // and finally update the current state
-        HandlerUtil.updateRadioState(event.getCommand(), currentState);
-      }
+        return null;
     }
-    return null;
-  }
 
 }

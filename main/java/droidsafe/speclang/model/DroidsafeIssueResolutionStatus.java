@@ -6,5 +6,5 @@ package droidsafe.speclang.model;
  * @author: Marcel Becker (becker@kestrel.edu)
  */
 public enum DroidsafeIssueResolutionStatus {
-  SAFE, UNSAFE, UNRESOLVED, PENDING
+  UNSAFE, UNRESOLVED, PENDING, SAFE
 }

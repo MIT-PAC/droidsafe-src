@@ -2,9 +2,9 @@ package droidsafe.analyses.value.models.droidsafe.primitives;
 
 import droidsafe.analyses.value.ValueAnalysisModeledObject;
 
-public class ValueAnalysisInt extends ValueAnalysisModeledObject {
+public class ValueAnalysisInt extends ValueAnalysisPrimitive {
 
-    int value;
+    public int value;
 
     public ValueAnalysisInt() {
         this.__ds__invalidated = false;

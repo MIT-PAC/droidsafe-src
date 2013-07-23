@@ -45,15 +45,15 @@ import droidsafe.utils.Utils;
 public class API {
     private final static Logger logger = LoggerFactory.getLogger(API.class);
     /** all safe methods */
-    private final SootMethodList safe_methods = new SootMethodList(); 
+    private  SootMethodList safe_methods = new SootMethodList(); 
     /** all spec methods */
-    private final SootMethodList spec_methods = new SootMethodList();
+    private  SootMethodList spec_methods = new SootMethodList();
     /** All the system methods defined in the API */
-    private final SootMethodList all_sys_methods = new SootMethodList();
+    private SootMethodList all_sys_methods = new SootMethodList();
     /** All banned methods as described in config-files */
-    private final SootMethodList banned_methods = new SootMethodList();
+    private  SootMethodList banned_methods = new SootMethodList();
     /** All methods that are modeled in the api modeling */
-    private final SootMethodList api_modeled_methods = new SootMethodList();
+    private  SootMethodList api_modeled_methods = new SootMethodList();
     /** Set of all Android Classes */
     private Set<SootClass> allSystemClasses;
     /** the current runtime instance */
@@ -84,7 +84,19 @@ public class API {
 
         try {
             allSystemClasses = new LinkedHashSet<SootClass>();
-
+            
+            safe_methods = new SootMethodList(); 
+          
+            spec_methods = new SootMethodList();
+         
+            all_sys_methods = new SootMethodList();
+           
+            banned_methods = new SootMethodList();
+           
+            api_modeled_methods = new SootMethodList();
+            
+            
+            
             //load any modeled classes from the api model, overwrite the stub classes
             JarFile apiModeling = new JarFile(new File(Config.v().ANDROID_LIB_DIR, "droidsafe-api-model.jar"));
             Set<SootClass> modeledClasses = SootUtils.loadClassesFromJar(apiModeling, true, new LinkedHashSet<String>()); 
@@ -95,8 +107,9 @@ public class API {
             for (SootClass modeled : modeledClasses) 
                 modeledClassNames.add(modeled.getName());
 
+            Config.v();
             //load the configured android jar file
-            JarFile androidJar = new JarFile(new File(Config.v().ANDROID_LIB_DIR, Config.v().ANDROID_JAR));
+            JarFile androidJar = new JarFile(new File(Config.v().ANDROID_LIB_DIR, Config.ANDROID_JAR));
             allSystemClasses.addAll(SootUtils.loadClassesFromJar(androidJar, false, modeledClassNames));
             all_sys_methods.addAllMethods(androidJar);
 
