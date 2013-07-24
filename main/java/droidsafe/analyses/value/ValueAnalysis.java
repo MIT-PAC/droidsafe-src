@@ -124,13 +124,13 @@ public class ValueAnalysis {
 
     /** Set of methods to not invalidate */
     private Set<String> signaturesOfMethodsToStepThru = new HashSet<String>(
-    Arrays.asList("<android.app.Activity: void startActivityForResult(android.content.Intent,int)>", 
-                  "<android.app.Activity: void onActivityResult(int,int,android.content.Intent)>",
-                  "<droidsafe.helpers.DSUtils: void translateIntent(android.content.Intent,android.content.Intent)>",
-                  "<android.net.URI: android.net.Uri parse(java.lang.String)", 
-                  "<java.net.URI: java.lang.URI create(java.lang.String)>",
-                  "<java.lang.Object: void addTaint(droidsafe.helpers.DSTaintObject)>",
-                  "<java.lang.Object: droidsafe.helpers.DSTaintObject getTaint()>"));
+            Arrays.asList("<android.app.Activity: void startActivityForResult(android.content.Intent,int)>", 
+                "<android.app.Activity: void onActivityResult(int,int,android.content.Intent)>",
+                "<droidsafe.helpers.DSUtils: void translateIntent(android.content.Intent,android.content.Intent)>",
+                "<android.net.URI: android.net.Uri parse(java.lang.String)", 
+                "<java.net.URI: java.lang.URI create(java.lang.String)>",
+                "<java.lang.Object: void addTaint(droidsafe.helpers.DSTaintObject)>",
+                "<java.lang.Object: droidsafe.helpers.DSTaintObject getTaint()>"));
 
     //==================================================================================================================
     // Attributes
@@ -149,8 +149,11 @@ public class ValueAnalysis {
     /** Map to store Values to attributes of Models */
     private Map<Value, Object> valueToModelAttrMap;
 
-    /** FileWriter used to log what we still don't model but perhaps should */
-    private FileWriter attrModelingTodoLog;
+    /** va errors file used to help figure out what to model */
+    private FileWriter vaErrorsLog;
+
+    /** va stats file */
+    private FileWriter vaResultsLog;
 
     /** Source location of current statement */
     private String sourceLocation;
@@ -188,14 +191,6 @@ public class ValueAnalysis {
     private ValueAnalysis() {
         this.objectToModelMap = new LinkedHashMap<AllocNode, ValueAnalysisModeledObject>();
         this.valueToModelAttrMap = new HashMap<Value, Object>();
-
-        try {
-            this.attrModelingTodoLog = new FileWriter(Project.v().getOutputDir() + File.separator 
-                    + "attr-modeling-errors.log");
-        } catch (Exception e) {
-            logger.warn("Unable to write to the attribute modeling log:", e);
-        }
-
         jsa = JSAStrings.v();
     }
 
@@ -279,10 +274,22 @@ public class ValueAnalysis {
             runOnce();
         } 
         System.out.print("\n");
-        // log the results and statistics    
-        am.log();
+
+        am.logResults();
+
+        try {
+            am.vaErrorsLog.close();
+        } catch (IOException ioe){
+            logger.warn("Unable to close the va-errors.log file.", ioe);
+        }
+
+        try {
+            am.vaResultsLog.close();
+        } catch (IOException ioe){
+            logger.warn("Unable to close the va-results.log file.", ioe);
+        }
     }
- 
+
     /** Sets the global runAgain to true, meaning that the analysis will run again. Called when fixed points has been
      *  determined to not have been reached yet.
      */
@@ -294,10 +301,30 @@ public class ValueAnalysis {
     /** run the full analysis once */ 
     public static void runOnce() {
         if (GeoPTA.v() == null) {
-            logger.error("The GeoPTA pass has not been run. Attribute modeling / requires it.");
+            logger.error("The GeoPTA pass has not been run. Value analysis requires it.");
             droidsafe.main.Main.exit(1);
-        }      if (am == null)
-        am = new ValueAnalysis();
+        }      
+
+        if (am == null)
+            am = new ValueAnalysis();
+
+        // va errors file used to help figure out what to model
+        try {
+            am.vaErrorsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
+                    + "va-errors.log");
+        } catch (Exception e) {
+            logger.warn("Unable to write to va-errors.log:", e);
+        }
+
+        // va stats file
+        try {
+            am.vaResultsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
+                    + "va-results.log");
+        } catch (Exception e) {
+            logger.warn("Unable to write to va-results.log: ", e);
+        }
+
+
         Set<SootMethod> reachableMethods = GeoPTA.v().getAllReachableMethods();
 
         // loop over all code, creating models and simulating whichever invokeExprs we can as we go
@@ -317,15 +344,15 @@ public class ValueAnalysis {
             }
 
             logger.info("Value Analysis: stepping through " + clazz);
-            
+
             // Get source filename that contains the class 
             SourceFileTag sourceFileTag = (SourceFileTag)clazz.getTag("SourceFileTag");
 
             for (SootMethod meth : clazz.getMethods()) {
                 if (meth.isConcrete() && reachableMethods.contains(meth)) {
-                    
+
                     logger.info("Value Analysis: stepping through " + meth);
-                    
+
                     StmtBody stmtBody = (StmtBody)meth.retrieveActiveBody();
 
                     // get body's unit as a chain
@@ -352,9 +379,9 @@ public class ValueAnalysis {
                         if (!stmt.containsInvokeExpr()) {
                             continue;
                         }
-                        
+
                         InvokeExpr invokeExpr = (InvokeExpr)stmt.getInvokeExpr();
-                        
+
                         SootMethod sootMethod = invokeExpr.getMethod();
                         SootClass sootClass = sootMethod.getDeclaringClass();
 
@@ -396,8 +423,8 @@ public class ValueAnalysis {
                                             // have to invalidate the receiver
                                             modeledReceiverObject.__ds__invalidate();
                                             am.logError("Couldn't model every parameter for " + iie 
-                                                        + am.sourceLocation + "\n" + "> invalidating " 
-                                                        + modeledReceiverObject.__ds__toString() + " as a result");
+                                                    + am.sourceLocation + "\n" + "> invalidating " 
+                                                    + modeledReceiverObject.__ds__toString() + " as a result");
                                         }
                                     }
                                 }
@@ -430,12 +457,6 @@ public class ValueAnalysis {
                     }
                 }
             }
-        }
-
-        try {
-            am.attrModelingTodoLog.close();
-        } catch (IOException ioe){
-            logger.warn("Unable to close the attribute modeling error log file.", ioe);
         }
     }
 
@@ -500,8 +521,8 @@ public class ValueAnalysis {
         } catch (Exception e) {
             // If we don't have the method market as one we will step through, that means we haven't modeled it at all
             // and thus the receiver and argument models 
-           String methodSignature = sootMethod.getSignature();
-           if(!this.signaturesOfMethodsToStepThru.contains(methodSignature)) {
+            String methodSignature = sootMethod.getSignature();
+            if(!this.signaturesOfMethodsToStepThru.contains(methodSignature)) {
                 String error = "The InvokeExpr " + invokeExpr + this.sourceLocation + " hasn't been modeled: " 
                     + e.toString() + "\n";
                 error += Throwables.getStackTraceAsString(e);
@@ -528,7 +549,7 @@ public class ValueAnalysis {
 
         // don't track values for alloc nodes we create
         //if (AddAllocsForAPICalls.v().isGeneratedExpr(allocNode.getNewExpr()))
-         //   return null;
+        //   return null;
 
         // we can't give model for allocNodes whose type isn't RefType 
         if (!(allocNode.getType() instanceof RefType))
@@ -597,69 +618,68 @@ public class ValueAnalysis {
     }
 
     /**
-     * Helper method to write to the file where we log all errors we encounter during
-     * attribute modeling.
+     * Helper method to write to the file where we log all errors we encounter during value analysis
      */
     private void logError(String logEntry) {
         try {
-            this.attrModelingTodoLog.write(logEntry + "\n");
-        } catch (IOException ioe) {}
+            this.vaErrorsLog.write(logEntry + "\n");
+        } catch (IOException ioe) {
+            logger.warn("Unable to write to the va-errors.log file.", ioe);
+        }
+    }
+
+    /**
+     * Helper method to write to the file where we log all the value analysis statistics
+     */
+    private void logResult(String logEntry) {
+        try {
+            this.vaResultsLog.write(logEntry + "\n");
+        } catch (IOException ioe) {
+            logger.warn("Unable to write to the va-results.log file.", ioe);
+        }
     }
 
     /**
      * Log the results of the modeling
      */
-    private void log() {
-
-        int validModeledIntentsNum = 0;
-        int totalModeledIntentsNum = 0;
-        int validModeledUriNum = 0;
-        int totalModeledUriNum = 0;
+    private void logResults() {
+        logResult("resolved objects\n");
+        // Mapping from modeled object class to the number of the objects that got fully resolved (not invalidated)
+        Map<Class, Integer> validCounts = new HashMap<Class, Integer>();
+        // Mapping from modeled object class to the number of each object that we tried to model
+        Map<Class, Integer> totalCounts = new HashMap<Class, Integer>();
 
         for (Map.Entry<AllocNode, ValueAnalysisModeledObject> entry : objectToModelMap.entrySet()) {
-            ValueAnalysisModeledObject modeledObject = entry.getValue();
+            ValueAnalysisModeledObject vaModeledObject = entry.getValue();
+            Class vaModeledObjectClass = vaModeledObject.getClass();
 
-            if (modeledObject instanceof droidsafe.analyses.value.models.android.content.Intent){
-                totalModeledIntentsNum++;
-                if (!((droidsafe.analyses.value.models.android.content.Intent)modeledObject).__ds__invalidated()){
-                    validModeledIntentsNum++;
-                }
+            // Update total counts
+            if(totalCounts.containsKey(vaModeledObjectClass)) {
+                totalCounts.put(vaModeledObjectClass, totalCounts.get(vaModeledObjectClass)+1);
+            } else {
+                totalCounts.put(vaModeledObjectClass, 1);
             }
-            if (modeledObject instanceof droidsafe.analyses.value.models.android.net.Uri){
-                totalModeledUriNum++;
-                if (!((droidsafe.analyses.value.models.android.net.Uri)modeledObject).__ds__invalidated()){
-                    validModeledUriNum++;
+
+            // Update valid counts
+            if(!vaModeledObject.__ds__invalidated()){
+                if(validCounts.containsKey(vaModeledObjectClass)) {
+                    validCounts.put(vaModeledObjectClass, validCounts.get(vaModeledObjectClass)+1);
+                } else {
+                    validCounts.put(vaModeledObjectClass, 1);
                 }
+            } else if(!validCounts.containsKey(vaModeledObjectClass)){
+                validCounts.put(vaModeledObjectClass, 0);
             }
-            logger.info("Finished Model: {}", modeledObject.__ds__toString());
-            logger.info("Corresponding AllocNode: {}", entry.getKey());
+
+            logResult("Modeled Object: " +  vaModeledObject.__ds__toString());
+            logResult("Corresponding AllocNode: " + entry.getKey());
         }
-        /*
-           File attrModelingStatsFile = new File(Config.v().getApacHome() + "/doc/attr-modeling-stats.txt");
+        logResult("\nstats");
+        for(Map.Entry<Class, Integer> entry : totalCounts.entrySet()) {
+            Class cls = entry.getKey();
+            logResult(cls + " " + validCounts.get(cls) + "/" + totalCounts.get(cls));
 
-           try {
-           attrModelingStatsFile.createNewFile();
-           } catch(IOException ioe){
-           logger.error("Couldn't write to attr-modeling-stats file:", ioe);
-           }
-           */
-        String stats = "";
-        stats += "Intents: " + validModeledIntentsNum + "/" + totalModeledIntentsNum;
-        stats += " Uri: " + validModeledUriNum + "/" + totalModeledUriNum;
-
-        logger.info("Attribute Modeling Statistics");
-        logger.info(stats);
-
-        /*
-           try {
-           stats = Project.v().getAppSrcDir() + "\n" + stats;
-           PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(attrModelingStatsFile, true)));
-           out.println(stats);
-           out.close();
-           } catch (IOException ioe) {
-           logger.error("Couldn't write to attr-modeling-stats file:", ioe);
-           }
-           */
+        }
     }
 
     //=================================================================================================================
@@ -677,7 +697,7 @@ public class ValueAnalysis {
 
         /** 
          * Set that contains all the possible permutations of parameter values that the method can be called with. 
-         * We have to consider every permutation because attribute analysis is flow insensitive.
+         * We have to consider every permutation because value analysis is flow insensitive.
          */
         private Set<ArrayList<Object>> paramCartesianProduct;
 
@@ -876,7 +896,7 @@ public class ValueAnalysis {
                                                     modeledObject.__ds__invalidate();
                                                 }
                                             }
-                                     return;
+                                            return;
                                         }
                                     } 
                                 } else {
@@ -934,7 +954,7 @@ public class ValueAnalysis {
                         paramClasses.add(i, Set.class);
                     } else {
                         ValueAnalysis.this.logError("Arg #" + i + " of method " + invokeExpr + " isn't a constant or a "
-                                   + "RefType. Not sure what to do - invalidating other arguments and not simulating.");
+                                + "RefType. Not sure what to do - invalidating other arguments and not simulating.");
                         // invalidate any param models we've already created
                         if(!ValueAnalysis.this.signaturesOfMethodsToStepThru.contains(methodSignature)) {
                             for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
