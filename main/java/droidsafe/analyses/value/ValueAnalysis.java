@@ -124,14 +124,16 @@ public class ValueAnalysis {
 
     /** Set of methods to not invalidate */
     private Set<String> signaturesOfMethodsToStepThru = new HashSet<String>(
-            Arrays.asList("<android.app.Activity: void startActivityForResult(android.content.Intent,int)>", 
-                "<android.app.Activity: void onActivityResult(int,int,android.content.Intent)>",
-                "<droidsafe.helpers.DSUtils: void translateIntent(android.content.Intent,android.content.Intent)>",
-                "<android.net.URI: android.net.Uri parse(java.lang.String)", 
-                "<java.net.URI: java.lang.URI create(java.lang.String)>",
-                "<java.lang.Object: void addTaint(droidsafe.helpers.DSTaintObject)>",
-                "<java.lang.Object: droidsafe.helpers.DSTaintObject getTaint()>"));
-
+    Arrays.asList("<android.app.Activity: void startActivityForResult(android.content.Intent,int)>", 
+                  "<android.app.Activity: void onActivityResult(int,int,android.content.Intent)>",
+                  "<droidsafe.helpers.DSUtils: void translateIntent(android.content.Intent,android.content.Intent)>",
+                  "<android.net.URI: android.net.Uri parse(java.lang.String)", 
+                  "<java.net.URI: java.lang.URI create(java.lang.String)>",
+                  "<java.lang.Object: void addTaint(droidsafe.helpers.DSTaintObject)>",
+                  "<java.lang.Object: droidsafe.helpers.DSTaintObject getTaint()>",
+                  "<droidsafe.concrete.DSCursor: void <init>(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>",
+                  "<android.app.Activity: android.database.Cursor managedQuery(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>",
+                  "<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>"));
     //==================================================================================================================
     // Attributes
     //==================================================================================================================
@@ -313,7 +315,7 @@ public class ValueAnalysis {
             am.vaErrorsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
                     + "va-errors.log");
         } catch (Exception e) {
-            logger.warn("Unable to write to va-errors.log:", e);
+            logger.warn("Unable to open va-errors.log:", e);
         }
 
         // va stats file
@@ -321,7 +323,7 @@ public class ValueAnalysis {
             am.vaResultsLog = new FileWriter(Project.v().getOutputDir() + File.separator 
                     + "va-results.log");
         } catch (Exception e) {
-            logger.warn("Unable to write to va-results.log: ", e);
+            logger.warn("Unable to open va-results.log: ", e);
         }
 
 
@@ -953,8 +955,12 @@ public class ValueAnalysis {
                         paramObjectSets.get(i).add(Sets.newHashSet(obj));
                         paramClasses.add(i, Set.class);
                     } else {
-                        ValueAnalysis.this.logError("Arg #" + i + " of method " + invokeExpr + " isn't a constant or a "
-                                + "RefType. Not sure what to do - invalidating other arguments and not simulating.");
+                        String error = "Arg #" + i + " of method " + invokeExpr + " isn't a constant or a RefType. Not sure what to do - invalidating other arguments and not simulating.\n";
+                        error += "Arg Class: " + arg.getClass() + "\n";
+                        error += "Type: " + type + "\n";
+                        error += "AllocNode Set: " + GeoPTA.v().getPTSetContextIns(arg);
+
+                        ValueAnalysis.this.logError(error);
                         // invalidate any param models we've already created
                         if(!ValueAnalysis.this.signaturesOfMethodsToStepThru.contains(methodSignature)) {
                             for(ValueAnalysisModeledObject modeledObject : paramObjectModels){

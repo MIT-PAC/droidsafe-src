@@ -16,8 +16,12 @@ public class DSCursor extends Cursor {
     public DSCursor(AllocNode allocNode) { 
         super(allocNode);
     }
+    
+    public void _init_() {
 
-    public void __init__(Uri uri, String[] projection, Set<String> selection, String[] selectionArgs, Set<String> sortOrder) {
+    }
+
+    public void _init_(Uri uri, String[] projection, Set<String> selection, String[] selectionArgs, Set<String> sortOrder) {
     
     }
 
