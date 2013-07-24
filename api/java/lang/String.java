@@ -1,7 +1,7 @@
 package java.lang;
 
 import java.util.Arrays;
-
+import java.util.Comparator;
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
 
@@ -98,5 +98,7 @@ public class String implements java.io.Serializable, Comparable<String>, CharSeq
 	public String(char value[]) {
         this.value = Arrays.copyOf(value, value.length);
     }
+
+        public static final Comparator<String> CASE_INSENSITIVE_ORDER = null;
 
 }
