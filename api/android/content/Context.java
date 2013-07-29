@@ -7,6 +7,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashSet;
+import java.util.Set;
 
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -482,7 +484,15 @@ TypedArray var06BFBDC52929A707387ABF18809CD1B9_1783689107 =         getTheme().o
     public boolean isRestricted() {
         return false;
     }
-
+    
+	// Hook to match with value analsysis
+	public Set<IntentFilter> __ds__intentFilters = new HashSet<IntentFilter>();
+	
+	// We pull out IntentFilters out of xml and register them with the appropriate subclasses of Context here
+	@DSModeled
+	public void __ds__registerIntentFilter(IntentFilter intentFilter) {
+	this.__ds__intentFilters.add(intentFilter);
+	}
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:39.186 -0400", hash_original_field = "EE3A09F6819CC598B5421959E5F2BB90", hash_generated_field = "E0534FAE410858BE0239A90CB81A3C3C")
 
@@ -639,5 +649,7 @@ TypedArray var06BFBDC52929A707387ABF18809CD1B9_1783689107 =         getTheme().o
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:39.196 -0400", hash_original_field = "7DC790C99BBEE323442B39F8FB05BAC0", hash_generated_field = "F3D4B86861C416E9BCDD00F4D43AA6B2")
 
     public static final int CONTEXT_RESTRICTED = 0x00000004;
+    
+    
 }
 

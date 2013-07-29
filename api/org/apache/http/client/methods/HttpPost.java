@@ -1,12 +1,10 @@
 package org.apache.http.client.methods;
 
 // Droidsafe Imports
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 import java.net.URI;
-
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
 
 public class HttpPost extends HttpEntityEnclosingRequestBase {
     
@@ -34,7 +32,6 @@ public class HttpPost extends HttpEntityEnclosingRequestBase {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.232 -0400", hash_original_method = "E4A43B2F65721A683997A037549396C3", hash_generated_method = "020122F04CB94F2FDB3CF24BDD629B5F")
     @Override
     public String getMethod() {

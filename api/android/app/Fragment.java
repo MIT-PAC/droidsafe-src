@@ -1570,7 +1570,6 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1645929206 =         mView;
         
     }
 
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.634 -0400", hash_original_field = "24A48BEA88D09CCBC63A8677385B95A8", hash_generated_field = "EB0A976F34844AD55F975EEF50A2B1A3")
 

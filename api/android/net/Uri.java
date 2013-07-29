@@ -28,7 +28,6 @@ public class Uri implements Parcelable, Comparable<Uri> {
     @DSModeled(DSC.SAFE)
 	private Uri() {}
 
-    
     @DSModeled(DSC.SAFE)
 	public boolean isHierarchical() {
 		return getTaintBoolean();
@@ -3031,7 +3030,7 @@ PathSegments var58DFB823F4B6E95DFEC9F8BC0A1DF96E_1815096738 =             pathSe
     private static final byte[] REPLACEMENT = { (byte) 0xFF, (byte) 0xFD };
     // orphaned legacy method
     @DSModeled(DSC.SAFE)
-	private Uri(String uri) {
+	public Uri(String uri) {
 		this();
 		uriString = uri;
 	}

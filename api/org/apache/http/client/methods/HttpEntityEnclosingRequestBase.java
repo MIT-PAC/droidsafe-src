@@ -4,17 +4,15 @@ package org.apache.http.client.methods;
 import java.io.IOException;
 import java.net.URI;
 
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
+import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpEntityEnclosingRequest;
-import org.apache.http.ProtocolVersion;
-import org.apache.http.RequestLine;
 import org.apache.http.client.utils.CloneUtils;
-import org.apache.http.conn.ClientConnectionRequest;
 import org.apache.http.conn.ConnectionReleaseTrigger;
-
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
+import org.apache.http.protocol.HTTP;
 
 public abstract class HttpEntityEnclosingRequestBase extends HttpRequestBase implements HttpEntityEnclosingRequest {
     private HttpEntity entity;
@@ -67,27 +65,7 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_777496266 =         clone;
     }
 
     
-    // orphaned legacy method
-    @Override
-	public RequestLine getRequestLine() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-    
-    // orphaned legacy method
-    @Override
-	public ProtocolVersion getProtocolVersion() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-    
-    // orphaned legacy method
-    @Override
-	public void setConnectionRequest(ClientConnectionRequest arg0)
-			throws IOException {
-		// TODO Auto-generated method stub
-		
-	}
+
     
     // orphaned legacy method
     @Override

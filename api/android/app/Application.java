@@ -399,5 +399,19 @@ Object[] var7E06ACD9C2C819F377F4C0B98904AB11_888661499 =         callbacks;
         void onActivityDestroyed(Activity activity);
     }
     
+	// ------------- Droidsafe Hooks -------------
+	public void droidsafeOnCreate() {
+		onCreate();
+	}
+	
+	public void droidsafeOnTerminate() {
+		onTerminate();
+	}
+	
+	public void droidsafeOnEverythingElse() {
+		onTrimMemory(getTaintInt());
+		onLowMemory();
+		onConfigurationChanged(new Configuration());
+	}
 }
 

@@ -512,7 +512,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
         }
     }
 
-    
+    @DSModeled(DSC.SPEC)
     public ContentProviderResult[] applyBatch(String authority,
             ArrayList<ContentProviderOperation> operations)
             throws RemoteException, OperationApplicationException {
@@ -528,6 +528,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_774328826 =         res
     }
 
     
+    @DSModeled(DSC.SPEC)
     public final int bulkInsert(Uri url, ContentValues[] values)
     {
         IContentProvider provider = acquireProvider(url);
