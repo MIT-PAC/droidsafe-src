@@ -142,6 +142,7 @@ class KeyframeSet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.935 -0400", hash_original_method = "852EEF0AADF480969C7D66EC6180E295", hash_generated_method = "3F2728E30E9D31E854781C394DE67DC7")
     @Override
     public KeyframeSet clone() {
@@ -168,6 +169,7 @@ KeyframeSet var887F3F78AE0C9FB0CC98EDF99F492138_827657913 =         newSet;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.942 -0400", hash_original_method = "80AFA2A1CA8ECB40318B145A78C4EE8C", hash_generated_method = "9C91D60E895C7DF7B7B5B316D8FC815D")
     public Object getValue(float fraction) {
         addTaint(fraction);
@@ -244,6 +246,7 @@ Object var91FB1B83987C58943E8A4DED27A29F6D_296487397 =         mLastKeyframe.get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.948 -0400", hash_original_method = "5AFB3B0DBEF799B422062A71D978DCE0", hash_generated_method = "7D2B6892896CF5AC86FD91C79A702E79")
     @Override
     public String toString() {

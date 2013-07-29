@@ -542,6 +542,7 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_368967572 =         a;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.926 -0400", hash_original_method = "EF565BC8E8F2E2CD3218F549EBA67BF0", hash_generated_method = "07A71981ACB874AC858855FE97D029EE")
          Object transfer(Object e, boolean timed, long nanos) {
             addTaint(nanos);

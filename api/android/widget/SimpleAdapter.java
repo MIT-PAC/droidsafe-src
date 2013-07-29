@@ -61,6 +61,7 @@ public class SimpleAdapter extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.972 -0400", hash_original_method = "42219B54C0DE57D9E8EFCE349042BDFC", hash_generated_method = "C9348D0CAC3A06DF4B8E87360804FD1D")
     public int getCount() {
         int var9987FB1A7FBC9F7F6B09B5AA2A98E534_241944282 = (mData.size());
@@ -71,6 +72,7 @@ public class SimpleAdapter extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.973 -0400", hash_original_method = "DCE185E9FC70557F4514C683017F4175", hash_generated_method = "D39611AA097F489A961FEA7AC21E508B")
     public Object getItem(int position) {
         addTaint(position);
@@ -94,6 +96,7 @@ Object var97565132EBA5A592B8E95DB1E8B35615_317453039 =         mData.get(positio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.974 -0400", hash_original_method = "180EEF863853B86A02E5E476168E516D", hash_generated_method = "F3446048E79DC2C27E17A172D13711D8")
     public View getView(int position, View convertView, ViewGroup parent) {
         addTaint(parent.getTaint());
@@ -107,6 +110,7 @@ View varC7C74D1A1F888482D2EEA96BBD632B6B_656653800 =         createViewFromResou
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.975 -0400", hash_original_method = "9F7D1FC25501C8F0267FBA100FA00D09", hash_generated_method = "4DC7E393E81D0377B77BB87DD66B7F86")
     private View createViewFromResource(int position, View convertView,
             ViewGroup parent, int resource) {
@@ -148,6 +152,7 @@ View var6DC76BC51820DD65E8396280E884AA78_747988581 =         v;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.976 -0400", hash_original_method = "55A24C3FF57565648C18AD1B34A1D191", hash_generated_method = "751BDE3AE49CE1C5F757C478B78C3F87")
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
@@ -162,6 +167,7 @@ View var73BABEDDC942C821B8059F08E1C361F2_237151036 =         createViewFromResou
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.977 -0400", hash_original_method = "BE6FDCE3CF7BF2397C7FC2DCDCAE8C07", hash_generated_method = "CBD8BF588B60C8D94EB99BBC2BEC45BB")
     private void bindView(int position, View view) {
         addTaint(view.getTaint());
@@ -265,6 +271,7 @@ ViewBinder var3599647BDC732C2D53724CC7D8743271_265919206 =         mViewBinder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.979 -0400", hash_original_method = "8236568D142C0CAA775378341E7BB8F7", hash_generated_method = "AC18A29AB8189C6E7999BC08B7E7AB02")
     public void setViewImage(ImageView v, int value) {
         addTaint(value);
@@ -275,6 +282,7 @@ ViewBinder var3599647BDC732C2D53724CC7D8743271_265919206 =         mViewBinder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.980 -0400", hash_original_method = "31A5526470C992FDAE212BFFA88B0730", hash_generated_method = "E06B0A7D875362159E7B590763BC1C85")
     public void setViewImage(ImageView v, String value) {
         addTaint(value.getTaint());
@@ -296,6 +304,7 @@ ViewBinder var3599647BDC732C2D53724CC7D8743271_265919206 =         mViewBinder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.980 -0400", hash_original_method = "5AA8DD17AC94ADB8D267F5D4267EA13E", hash_generated_method = "6059A05BA24D864572F36CFBDDA47D36")
     public void setViewText(TextView v, String text) {
         addTaint(text.getTaint());
@@ -306,6 +315,7 @@ ViewBinder var3599647BDC732C2D53724CC7D8743271_265919206 =         mViewBinder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:04.981 -0400", hash_original_method = "D6072B8C53AE1E6461A6E29F4F69F458", hash_generated_method = "AD2326A480BC93B3C6647355D9860E02")
     public Filter getFilter() {
         if(mFilter == null)        

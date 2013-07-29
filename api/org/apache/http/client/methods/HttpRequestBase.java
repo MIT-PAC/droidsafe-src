@@ -42,6 +42,7 @@ public abstract class HttpRequestBase extends AbstractHttpMessage implements Htt
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public abstract String getMethod();
 
     
@@ -55,6 +56,7 @@ ProtocolVersion varEDB6822BC4AFEFEDB387B740DB02A284_1354538771 =         HttpPro
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.205 -0400", hash_original_method = "548D933490D1B58733888D02043A11B0", hash_generated_method = "33D5B511ABD46434CA9565C3EE794880")
     public URI getURI() {
 URI varF8A43570A6D9CE873AAA24BBE28B6265_1820848507 =         this.uri;
@@ -228,6 +230,7 @@ RequestLine var61D16D1DBAF633F6BF5B3B3F6C9131D9_1565140925 =         new BasicRe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.218 -0400", hash_original_method = "2E6315A95F3ECC29CFD4A6E95CF920AD", hash_generated_method = "7610B9CCAE5C4D39E2CFC149B8318031")
     public boolean isAborted() {
         boolean var37D13E93374D4F6A174832DCC5E644B0_1760726006 = (this.aborted);

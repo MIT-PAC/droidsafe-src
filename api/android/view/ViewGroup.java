@@ -152,6 +152,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private void initFromAttributes(Context context, AttributeSet attrs){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -171,6 +172,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setDescendantFocusability(int focusability){
 		// Original method
 		/*
@@ -192,6 +194,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override void handleFocusGainInternal(int direction, Rect previouslyFocusedRect){
 		// Original method
 		/*
@@ -207,6 +210,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void requestChildFocus(View child, View focused){
 		// Original method
 		/*
@@ -233,6 +237,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void focusableViewAvailable(View v){
 		// Original method
 		/*
@@ -248,6 +253,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean showContextMenuForChild(View originalView){
 		// Original method
 		/*
@@ -259,6 +265,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public ActionMode startActionModeForChild(View originalView, ActionMode.Callback callback){
 		// Original method
 		/*
@@ -270,6 +277,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public View focusSearch(View focused, int direction){
 		// Original method
 		/*
@@ -298,6 +306,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean requestSendAccessibilityEvent(View child, AccessibilityEvent event){
 		// Original method
 		/*
@@ -317,6 +326,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public boolean onRequestSendAccessibilityEvent(View child, AccessibilityEvent event){
 		// Original method
 		/*
@@ -344,6 +354,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public boolean dispatchUnhandledMove(View focused, int direction){
 		// Original method
 		/*
@@ -356,6 +367,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void clearChildFocus(View child){
 		// Original method
 		/*
@@ -373,6 +385,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public void clearFocus(){
 		// Original method
 		/*
@@ -387,6 +400,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override void unFocus(){
 		// Original method
 		/*
@@ -423,6 +437,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public View findFocus(){
 		// Original method
 		/*
@@ -444,6 +459,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public boolean hasFocusable(){
 		// Original method
 		/*
@@ -472,6 +488,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public void addFocusables(ArrayList<View> views, int direction){
 		// Original method
 		/*
@@ -483,6 +500,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public void addFocusables(ArrayList<View> views, int direction, int focusableMode){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -490,6 +508,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public void findViewsWithText(ArrayList<View> outViews, CharSequence text, int flags){
 		// Original method
 		/*
@@ -510,6 +529,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override View findViewByAccessibilityIdTraversal(int accessibilityId){
 		// Original method
 		/*
@@ -534,6 +554,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public void dispatchWindowFocusChanged(boolean hasFocus){
 		// Original method
 		/*
@@ -550,6 +571,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public void addTouchables(ArrayList<View> views){
 		// Original method
 		/*
@@ -569,6 +591,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public void dispatchDisplayHint(int hint){
 		// Original method
 		/*
@@ -585,6 +608,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void onChildVisibilityChanged(View child, int visibility){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -592,6 +616,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected void dispatchVisibilityChanged(View changedView, int visibility){
 		// Original method
 		/*
@@ -608,6 +633,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public void dispatchWindowVisibilityChanged(int visibility){
 		// Original method
 		/*
@@ -624,6 +650,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public void dispatchConfigurationChanged(Configuration newConfig){
 		// Original method
 		/*
@@ -640,6 +667,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void recomputeViewAttributes(View child){
 		// Original method
 		/*
@@ -654,6 +682,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override void dispatchCollectViewAttributes(int visibility){
 		// Original method
 		/*
@@ -671,6 +700,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void bringChildToFront(View child){
 		// Original method
 		/*
@@ -687,6 +717,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public boolean dispatchDragEvent(DragEvent event){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -694,6 +725,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     View findFrontmostDroppableChildAt(float x, float y, PointF outLocalPoint){
 		// Original method
 		/*
@@ -716,6 +748,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     boolean notifyChildOfDrag(View child){
 		// Original method
 		/*
@@ -739,6 +772,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public void dispatchSystemUiVisibilityChanged(int visible){
 		// Original method
 		/*
@@ -756,6 +790,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override void updateLocalSystemUiVisibility(int localValue, int localChanges){
 		// Original method
 		/*
@@ -773,6 +808,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public boolean dispatchKeyEventPreIme(KeyEvent event){
 		// Original method
 		/*
@@ -789,6 +825,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public boolean dispatchKeyEvent(KeyEvent event){
 		// Original method
 		/*
@@ -815,6 +852,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public boolean dispatchKeyShortcutEvent(KeyEvent event){
 		// Original method
 		/*
@@ -831,6 +869,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public boolean dispatchTrackballEvent(MotionEvent event){
 		// Original method
 		/*
@@ -857,6 +896,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings({"ConstantConditions"}) @Override protected boolean dispatchHoverEvent(MotionEvent event){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -888,6 +928,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static MotionEvent obtainMotionEventNoHistoryOrSelf(MotionEvent event){
 		// Original method
 		/*
@@ -902,6 +943,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected boolean dispatchGenericPointerEvent(MotionEvent event){
 		// Original method
 		/*
@@ -929,6 +971,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected boolean dispatchGenericFocusedEvent(MotionEvent event){
 		// Original method
 		/*
@@ -945,6 +988,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private boolean dispatchTransformedGenericPointerEvent(MotionEvent event, View child){
 		// Original method
 		/*
@@ -970,6 +1014,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public boolean dispatchTouchEvent(MotionEvent ev){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -977,6 +1022,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private void resetTouchState(){
 		// Original method
 		/*
@@ -1006,6 +1052,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private void clearTouchTargets(){
 		// Original method
 		/*
@@ -1025,6 +1072,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private void cancelAndClearTouchTargets(MotionEvent event){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1049,6 +1097,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private TouchTarget addTouchTarget(View child, int pointerIdBits){
 		// Original method
 		/*
@@ -1063,6 +1112,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private void removePointersFromTouchTargets(int pointerIdBits){
 		// Original method
 		/*
@@ -1093,6 +1143,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean canViewReceivePointerEvents(View child){
 		// Original method
 		/*
@@ -1105,6 +1156,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean isTransformedTouchPointInView(float x, float y, View child,
             PointF outLocalPoint){
 		// Original method
@@ -1131,6 +1183,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private boolean dispatchTransformedTouchEvent(MotionEvent event, boolean cancel,
             View child, int desiredPointerIdBits){
 		// Original method
@@ -1167,6 +1220,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void requestDisallowInterceptTouchEvent(boolean disallowIntercept){
 		// Original method
 		/*
@@ -1200,6 +1254,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public boolean requestFocus(int direction, Rect previouslyFocusedRect){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1207,6 +1262,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings({"ConstantConditions"}) protected boolean onRequestFocusInDescendants(int direction,
             Rect previouslyFocusedRect){
 		// Original method
@@ -1241,6 +1297,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public void dispatchStartTemporaryDetach(){
 		// Original method
 		/*
@@ -1257,6 +1314,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public void dispatchFinishTemporaryDetach(){
 		// Original method
 		/*
@@ -1273,6 +1331,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override void dispatchAttachedToWindow(AttachInfo info, int visibility){
 		// Original method
 		/*
@@ -1292,6 +1351,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override boolean dispatchPopulateAccessibilityEventInternal(AccessibilityEvent event){
 		// Original method
 		/*
@@ -1316,6 +1376,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override void onInitializeAccessibilityNodeInfoInternal(AccessibilityNodeInfo info){
 		// Original method
 		/*
@@ -1334,6 +1395,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override void dispatchDetachedFromWindow(){
 		// Original method
 		/*
@@ -1357,6 +1419,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public void setPadding(int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -1373,6 +1436,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected void dispatchSaveInstanceState(SparseArray<Parcelable> container){
 		// Original method
 		/*
@@ -1392,6 +1456,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void dispatchFreezeSelfOnly(SparseArray<Parcelable> container){
 		// Original method
 		/*
@@ -1403,6 +1468,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container){
 		// Original method
 		/*
@@ -1422,6 +1488,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void dispatchThawSelfOnly(SparseArray<Parcelable> container){
 		// Original method
 		/*
@@ -1433,6 +1500,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void setChildrenDrawingCacheEnabled(boolean enabled){
 		// Original method
 		/*
@@ -1450,6 +1518,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected void onAnimationStart(){
 		// Original method
 		/*
@@ -1476,6 +1545,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected void onAnimationEnd(){
 		// Original method
 		/*
@@ -1493,6 +1563,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override Bitmap createSnapshot(Bitmap.Config quality, int backgroundColor, boolean skipChildren){
 		// Original method
 		/*
@@ -1522,6 +1593,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected void dispatchDraw(Canvas canvas){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1541,6 +1613,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     private void notifyAnimationListener(){
 		// Original method
 		/*
@@ -1568,6 +1641,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected void dispatchGetDisplayList(){
 		// Original method
 		/*
@@ -1590,6 +1664,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean drawChild(Canvas canvas, View child, long drawingTime){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1597,6 +1672,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setChildrenLayersEnabled(boolean enabled){
 		// Original method
 		/*
@@ -1617,6 +1693,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setClipChildren(boolean clipChildren){
 		// Original method
 		/*
@@ -1628,6 +1705,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void setClipToPadding(boolean clipToPadding){
 		// Original method
 		/*
@@ -1639,6 +1717,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public void dispatchSetSelected(boolean selected){
 		// Original method
 		/*
@@ -1654,6 +1733,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override public void dispatchSetActivated(boolean activated){
 		// Original method
 		/*
@@ -1669,6 +1749,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected void dispatchSetPressed(boolean pressed){
 		// Original method
 		/*
@@ -1684,6 +1765,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     protected void setStaticTransformationsEnabled(boolean enabled){
 		// Original method
 		/*
@@ -1707,6 +1789,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected View findViewTraversal(int id){
 		// Original method
 		/*
@@ -1732,6 +1815,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected View findViewWithTagTraversal(Object tag){
 		// Original method
 		/*
@@ -1757,6 +1841,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override protected View findViewByPredicateTraversal(Predicate<View> predicate, View childToSkip){
 		// Original method
 		/*
@@ -1782,6 +1867,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void addView(View child){
 		// Original method
 		/*
@@ -1793,6 +1879,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void addView(View child, int index){
 		// Original method
 		/*
@@ -1811,6 +1898,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void addView(View child, int width, int height){
 		// Original method
 		/*
@@ -1825,6 +1913,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void addView(View child, LayoutParams params){
 		// Original method
 		/*
@@ -1836,6 +1925,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void addView(View child, int index, LayoutParams params){
 		// Original method
 		/*
@@ -1852,6 +1942,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void updateViewLayout(View view, ViewGroup.LayoutParams params){
 		// Original method
 		/*

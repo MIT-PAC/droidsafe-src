@@ -15,6 +15,7 @@ public class CheckedInputStream extends java.io.FilterInputStream {
 
     private Checksum check;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.495 -0400", hash_original_method = "7E1EA825FE47CC59E068EE04C6081636", hash_generated_method = "B239B269541FE8A75DE38E84F5231D3D")
     public  CheckedInputStream(InputStream is, Checksum csum) {
         super(is);
@@ -25,6 +26,7 @@ public class CheckedInputStream extends java.io.FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.496 -0400", hash_original_method = "4C16D1761C9EE9C5267A2DEA3E7C4510", hash_generated_method = "9E46CBB927AF8C60D483509DA0D61526")
     @Override
     public int read() throws IOException {
@@ -45,6 +47,7 @@ public class CheckedInputStream extends java.io.FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.496 -0400", hash_original_method = "7EEC56472DB745F24C7F951D18194473", hash_generated_method = "5A9E5EA668DE6288FC5DEF66B37D58EF")
     @Override
     public int read(byte[] buf, int off, int nbytes) throws IOException {
@@ -79,6 +82,7 @@ Checksum var9CC2FC46D445C20863EA381528DFA086_992966526 =         check;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.497 -0400", hash_original_method = "B0B2C5ABB0F3ADBF684B825EB14D5721", hash_generated_method = "CE4431795F0A514F7ED9009BA58B1C00")
     @Override
     public long skip(long byteCount) throws IOException {

@@ -386,6 +386,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_291397562 =         this;
 
         private boolean mOneShot;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.355 -0400", hash_original_method = "917C43EFB3C2CE5953BF86C61EBDB328", hash_generated_method = "64BFA381AF68AC7905732FCC0C659350")
           AnimationState(AnimationState orig, AnimationDrawable owner,
                 Resources res) {
@@ -413,6 +414,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_291397562 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.355 -0400", hash_original_method = "8444C7122CB16D5313EA6D9A8D591DCE", hash_generated_method = "FBEB91E6295CE13D50298450BD2863E5")
         @Override
         public Drawable newDrawable() {
@@ -424,6 +426,7 @@ Drawable var9949D0644C02A40FDCE8ADC29BE8A5E1_1238568333 =             new Animat
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.355 -0400", hash_original_method = "C298E1FF6FE04F3BBF8263AF38ED7861", hash_generated_method = "F1900D0145645041A271628078B25C51")
         @Override
         public Drawable newDrawable(Resources res) {
@@ -436,6 +439,7 @@ Drawable varB1995698A6B44C5CB10B91184B1A4C71_1222953605 =             new Animat
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.356 -0400", hash_original_method = "7FFF22B3EB022905B5691180A1C9266D", hash_generated_method = "8388298F1655C6A62F1D0AEC0222B42E")
         public void addFrame(Drawable dr, int dur) {
             addTaint(dr.getTaint());
@@ -447,6 +451,7 @@ Drawable varB1995698A6B44C5CB10B91184B1A4C71_1222953605 =             new Animat
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.356 -0400", hash_original_method = "280320AC02B6789F88426235E202F89A", hash_generated_method = "A02687F4F28E6916CCD3F7F4E15F1157")
         @Override
         public void growArray(int oldSize, int newSize) {

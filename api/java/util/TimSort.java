@@ -29,6 +29,7 @@ class TimSort<T> {
 
     private int[] runLen;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.748 -0400", hash_original_method = "8363F88EAB5D9C5F21C7C4CB08C10AC9", hash_generated_method = "D91E2365B07B976776AABCB7ABF00067")
     private  TimSort(T[] a, Comparator<? super T> c) {
         this.a = a;
@@ -58,11 +59,13 @@ class TimSort<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static <T> void sort(T[] a, Comparator<? super T> c) {
         sort(a, 0, a.length, c);
     }
 
     
+    @DSModeled(DSC.SAFE)
     static <T> void sort(T[] a, int lo, int hi, Comparator<? super T> c) {
         if (c == null) {
             Arrays.sort(a, lo, hi);
@@ -97,6 +100,7 @@ class TimSort<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @SuppressWarnings("fallthrough")
     private static <T> void binarySort(T[] a, int lo, int hi, int start,
                                        Comparator<? super T> c) {
@@ -128,6 +132,7 @@ class TimSort<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static <T> int countRunAndMakeAscending(T[] a, int lo, int hi,
                                                     Comparator<? super T> c) {
         if (DEBUG) assert lo < hi;
@@ -182,6 +187,7 @@ class TimSort<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.750 -0400", hash_original_method = "3156E5829AEB14A787F26082DFE50344", hash_generated_method = "580643CA6C172D607F1F2CA5E85F1871")
     private void mergeCollapse() {
         while
@@ -220,6 +226,7 @@ class TimSort<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.751 -0400", hash_original_method = "97921B5E4166F5AC1B7B582C04340D66", hash_generated_method = "20BE957EE6198C35C2069073816FC05C")
     private void mergeForceCollapse() {
         while
@@ -240,6 +247,7 @@ class TimSort<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.751 -0400", hash_original_method = "8940A54787C662CE81882AD52921A328", hash_generated_method = "9D146F5276FE7C4BEA12FE5758748B20")
     private void mergeAt(int i) {
         if(DEBUG){ }        if(DEBUG){ }        if(DEBUG){ }        int base1 = runBase[i];
@@ -270,6 +278,7 @@ class TimSort<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static <T> int gallopLeft(T key, T[] a, int base, int len, int hint,
                                       Comparator<? super T> c) {
         if (DEBUG) assert len > 0 && hint >= 0 && hint < len;
@@ -315,6 +324,7 @@ class TimSort<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static <T> int gallopRight(T key, T[] a, int base, int len,
                                        int hint, Comparator<? super T> c) {
         if (DEBUG) assert len > 0 && hint >= 0 && hint < len;
@@ -360,6 +370,7 @@ class TimSort<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.755 -0400", hash_original_method = "28B33299F4BA824C1BCFC057E41834D8", hash_generated_method = "3468CC925D24A32D3B7B3A3037921D37")
     private void mergeLo(int base1, int len1, int base2, int len2) {
         addTaint(base2);
@@ -469,6 +480,7 @@ class TimSort<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.758 -0400", hash_original_method = "D6C962299FDFC629DCB3EC52DDA4C6D9", hash_generated_method = "F2C7CC00BB12DED379A2AFC03CE6EA02")
     private void mergeHi(int base1, int len1, int base2, int len2) {
         addTaint(len2);
@@ -583,6 +595,7 @@ class TimSort<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.759 -0400", hash_original_method = "DEB75D9E243CF808689902CC0AE95AB4", hash_generated_method = "98893F5CE5B12AAF4AC591D4435DC3D0")
     private T[] ensureCapacity(int minCapacity) {
         addTaint(minCapacity);

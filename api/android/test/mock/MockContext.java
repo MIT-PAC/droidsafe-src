@@ -42,6 +42,7 @@ public class MockContext extends Context {
     }
 
 
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.099 -0400", hash_original_method = "CF22466B77047295B0A90CFB1E700947", hash_generated_method = "D32FA8F1EB56DE94A6AD08B2D74B0BE7")
     @Override
     public AssetManager getAssets() {
@@ -53,6 +54,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.099 -0400", hash_original_method = "C54B5267A2D44CE04E49213C47F52259", hash_generated_method = "C720C8C2971BA91B3BEDB99490B4B446")
     @Override
     public Resources getResources() {
@@ -64,6 +66,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.100 -0400", hash_original_method = "E88041AF08BE295672677A7AE875FEFF", hash_generated_method = "14A6A70A9C988329A0CBFF5CBA5B9D54")
     @Override
     public PackageManager getPackageManager() {
@@ -75,6 +78,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.100 -0400", hash_original_method = "61790CFAFC8BCC32869A9B01BEB1BF44", hash_generated_method = "A2FC1BF03D2E8B6D34D05E73572E75A2")
     @Override
     public ContentResolver getContentResolver() {
@@ -86,6 +90,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.100 -0400", hash_original_method = "962B8DEC28714F6FEBBFE04F24E90B9C", hash_generated_method = "26B283B5D9CB5A53AD0702AA4A84D420")
     @Override
     public Looper getMainLooper() {
@@ -97,6 +102,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.101 -0400", hash_original_method = "7D1710194777282B9AA7CA1905E51B18", hash_generated_method = "71869DC0317B2044239C0C1E9C918FB8")
     @Override
     public Context getApplicationContext() {
@@ -108,6 +114,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.101 -0400", hash_original_method = "060683B1D8FC90BB795699914548359D", hash_generated_method = "25F8DBED59CE08344DE5203D113AC910")
     @Override
     public void setTheme(int resid) {
@@ -120,6 +127,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.101 -0400", hash_original_method = "D8312749B850F43C5A70B4ED63CC08E3", hash_generated_method = "2DE905CB752A6BA630279C6CE9AEC1C5")
     @Override
     public Resources.Theme getTheme() {
@@ -143,6 +151,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.102 -0400", hash_original_method = "6D0C58F8CBE63957D6DF922F2249B8C5", hash_generated_method = "6AF9DAD808CD9C5BFF86EB01240420CC")
     @Override
     public String getPackageName() {
@@ -154,6 +163,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.103 -0400", hash_original_method = "6E8F7F76B2482C387134CAE0922B8764", hash_generated_method = "3AA0A3AF23945E877285541C75548A1B")
     @Override
     public ApplicationInfo getApplicationInfo() {
@@ -165,6 +175,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.103 -0400", hash_original_method = "C89556570A09E26932F56B416A239F82", hash_generated_method = "B5B926B1D3216F09D233ADAD139B18ED")
     @Override
     public String getPackageResourcePath() {
@@ -176,6 +187,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.104 -0400", hash_original_method = "FA444114F9C54186D6D89E2CA249FBCF", hash_generated_method = "99BCE432198AD9E7EE3714D91DFAAE88")
     @Override
     public File getSharedPrefsFile(String name) {
@@ -188,6 +200,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.104 -0400", hash_original_method = "92AFBFFE30EEE36D5D46293F4B78E905", hash_generated_method = "1DDED7CF8E1E4D8EEA3601DDADF2A19A")
     @Override
     public String getPackageCodePath() {
@@ -199,6 +212,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.105 -0400", hash_original_method = "7A0D76AB436CE8A39BBA6ED25153EABF", hash_generated_method = "3597B7B2BE988169A03F6734521F399B")
     @Override
     public SharedPreferences getSharedPreferences(String name, int mode) {
@@ -212,6 +226,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.105 -0400", hash_original_method = "6F9D455A12BE93D87BC450FB84CABAF4", hash_generated_method = "3DFBA8C9AE70CFFA66A1205E74C0C4A6")
     @Override
     public FileInputStream openFileInput(String name) throws FileNotFoundException {
@@ -224,6 +239,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.106 -0400", hash_original_method = "06BE4C94ED3C4C2DFF4AC6484EAC8136", hash_generated_method = "82E5D4B587C3173B7F93E682B3EDF489")
     @Override
     public FileOutputStream openFileOutput(String name, int mode) throws FileNotFoundException {
@@ -237,6 +253,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.106 -0400", hash_original_method = "52E0F39A74289A48663341DDCEF037DC", hash_generated_method = "A2A3920B0EAB9DFD625DAEBE8926456B")
     @Override
     public boolean deleteFile(String name) {
@@ -249,6 +266,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.107 -0400", hash_original_method = "466D6BF0E43B95D4B6EB41E58C265707", hash_generated_method = "728F6CB9EB3CDC84BBBC44792A7FFFAF")
     @Override
     public File getFileStreamPath(String name) {
@@ -261,6 +279,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.107 -0400", hash_original_method = "59F9DE1DC3F61B801C5281F9E3C6E2A4", hash_generated_method = "D276D5FDB43B896F57948EF7A4E65ED2")
     @Override
     public String[] fileList() {
@@ -272,6 +291,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.108 -0400", hash_original_method = "DBAC6A56B922EB1BA78CA1746FBB8CC3", hash_generated_method = "8127ED4460858FB5E3C02348C82586C3")
     @Override
     public File getFilesDir() {
@@ -283,6 +303,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.108 -0400", hash_original_method = "90C15C4E056A492114901C79423D8DCF", hash_generated_method = "4CB4E74CFA4E267525D99AD51DC9B104")
     @Override
     public File getExternalFilesDir(String type) {
@@ -295,6 +316,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.109 -0400", hash_original_method = "702F9A452622032EC8233CE54867C377", hash_generated_method = "08CC6F4CDBBE2C194C10EE05A5DF2230")
     @Override
     public File getObbDir() {
@@ -306,6 +328,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.109 -0400", hash_original_method = "FDF4A6103F9B59802F7D5E28BF5EFD3A", hash_generated_method = "560B32C0340D82CD917F9E40D994CAE4")
     @Override
     public File getCacheDir() {
@@ -317,6 +340,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.109 -0400", hash_original_method = "2A92DC096DA51370A1334577ECF09ECC", hash_generated_method = "88F73753CD8FF48504DBC839AC66501B")
     @Override
     public File getExternalCacheDir() {
@@ -328,6 +352,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.110 -0400", hash_original_method = "34B447CE41C4ED84D6396B7E9780C31D", hash_generated_method = "9E558F441939210DA834A6DFD78868B6")
     @Override
     public File getDir(String name, int mode) {
@@ -341,6 +366,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.111 -0400", hash_original_method = "CD5FDC840DBA80E0D8DDF078BF714DEA", hash_generated_method = "642D2CA3CAF9FD4BF811BFF04E9DF35E")
     @Override
     public SQLiteDatabase openOrCreateDatabase(String file, int mode, 
@@ -356,6 +382,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.111 -0400", hash_original_method = "7939EB7F51D4EA520B25C26292DA454F", hash_generated_method = "1DF64C37813C4EF6DF7FE0359F63A3B6")
     @Override
     public SQLiteDatabase openOrCreateDatabase(String file, int mode,
@@ -372,6 +399,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.111 -0400", hash_original_method = "E48DC3F924F870943E4E36BC470CEAAB", hash_generated_method = "7EFB96637546C1E1595CA85B65E2EA09")
     @Override
     public File getDatabasePath(String name) {
@@ -384,6 +412,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.112 -0400", hash_original_method = "B170F7706E5C42A003C64B941E6F02C3", hash_generated_method = "ADF35B1895577A1BC7EC7D5F28BC5638")
     @Override
     public String[] databaseList() {
@@ -395,6 +424,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.112 -0400", hash_original_method = "F910F6C68A7FB093015261F7E1433E12", hash_generated_method = "4812A78CECE48E48B78BBE6A0A417863")
     @Override
     public boolean deleteDatabase(String name) {
@@ -407,6 +437,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.112 -0400", hash_original_method = "B684586EF353D1CCAA3450E5FF9DC08F", hash_generated_method = "27E0C1024FBF3720CA4AC3CAC12C0E5F")
     @Override
     public Drawable getWallpaper() {
@@ -418,6 +449,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.112 -0400", hash_original_method = "30AAB697F190292EC6A7D3C51657B6D7", hash_generated_method = "C3D6866C90B36EE58B3F0BE71126E828")
     @Override
     public Drawable peekWallpaper() {
@@ -429,6 +461,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.112 -0400", hash_original_method = "4F392818CCC81F3909BB8C9EA84C5ED2", hash_generated_method = "18F62F2930094B2B53A80AF7CC787933")
     @Override
     public int getWallpaperDesiredMinimumWidth() {
@@ -440,6 +473,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.113 -0400", hash_original_method = "109D2D0B104293A4F52BC55EADD30F43", hash_generated_method = "48E8FEF23C29DFC4AB087EE7CAD8279B")
     @Override
     public int getWallpaperDesiredMinimumHeight() {
@@ -451,6 +485,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.113 -0400", hash_original_method = "13366CFA01CCB9E3D0D5A885A1E3BD82", hash_generated_method = "B8CCE665AA09FE0694A0366EF0188A35")
     @Override
     public void setWallpaper(Bitmap bitmap) throws IOException {
@@ -463,6 +498,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.113 -0400", hash_original_method = "72AC712F363F7774A80940CA93269479", hash_generated_method = "D4609BE593405B06206F0132D5BCFA27")
     @Override
     public void setWallpaper(InputStream data) throws IOException {
@@ -475,6 +511,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.113 -0400", hash_original_method = "6AFDDD74A00ECA2CECE35CA27A2C95A0", hash_generated_method = "EB83FA04527172C1B606799825623837")
     @Override
     public void clearWallpaper() {
@@ -499,6 +536,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.114 -0400", hash_original_method = "8A0FF876EE34DCD944B6E38C35E12478", hash_generated_method = "4E51363C61A8669AADC0C5D995239A71")
     @Override
     public void startActivities(Intent[] intents) {
@@ -671,6 +709,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.116 -0400", hash_original_method = "181E8EC9461ECBFDA8BFB6A0E30406B9", hash_generated_method = "ED7FEE6BC15344C84169B43BB8F4B433")
     @Override
     public void unregisterReceiver(BroadcastReceiver receiver) {
@@ -724,6 +763,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.117 -0400", hash_original_method = "87503CB05E3F8FB5C16291E093E4FB05", hash_generated_method = "DA1364E57271314E98199496CA568B3A")
     @Override
     public void unbindService(ServiceConnection conn) {
@@ -736,6 +776,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.117 -0400", hash_original_method = "30A10D280B19E6882E6D642EC1CD4917", hash_generated_method = "9BFC4F1476BE34238DF4A35DE187B65C")
     @Override
     public boolean startInstrumentation(ComponentName className,
@@ -751,6 +792,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.117 -0400", hash_original_method = "68E01286CFC0F57628C767DFD8F3DBC4", hash_generated_method = "BF99240AE6A669C4DC5C5442F09F4D01")
     @Override
     public Object getSystemService(String name) {
@@ -763,6 +805,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.117 -0400", hash_original_method = "FA0054E6225B3DA4E3AB5C60EE5617B0", hash_generated_method = "5AA0C2ACD0A9CE48AB26672105B5F0E0")
     @Override
     public int checkPermission(String permission, int pid, int uid) {
@@ -777,6 +820,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.118 -0400", hash_original_method = "39E4CC67C115397A8C51691BDA0DEFFF", hash_generated_method = "45D929ACCD08187D1D864B4EAD622D90")
     @Override
     public int checkCallingPermission(String permission) {
@@ -789,6 +833,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.118 -0400", hash_original_method = "5DC2D3BE454D628902BC654B11EC880D", hash_generated_method = "F8D8BDE53926494EC52B13493EAA63F4")
     @Override
     public int checkCallingOrSelfPermission(String permission) {
@@ -801,6 +846,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.118 -0400", hash_original_method = "56C405B921CD26186CE93AE4FCE77002", hash_generated_method = "0CB8CCEBC8EF1A299BFDB3944B5BFC57")
     @Override
     public void enforcePermission(
@@ -817,6 +863,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.118 -0400", hash_original_method = "404869BFDC0DC9DF47C55A15B6DC4397", hash_generated_method = "14CB8234736635560C0B1BF10F5C27FE")
     @Override
     public void enforceCallingPermission(String permission, String message) {
@@ -830,6 +877,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.118 -0400", hash_original_method = "DF4E179747318B1B15E40F55606A37E9", hash_generated_method = "AEDA1738FA7042E8AE9A79147BDFD5B7")
     @Override
     public void enforceCallingOrSelfPermission(String permission, String message) {
@@ -1005,6 +1053,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.121 -0400", hash_original_method = "0406DB1DB1C22587C63AD75F49E0CA3F", hash_generated_method = "74E98FE06D78EB31A4D42F2141F02E6A")
     @Override
     public Context createPackageContext(String packageName, int flags) throws PackageManager.NameNotFoundException {
@@ -1018,6 +1067,7 @@ public class MockContext extends Context {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.121 -0400", hash_original_method = "B79081A4CFC106615A2ECE230BC1B163", hash_generated_method = "9F125BCD38A2739C1F112AD34338F0D3")
     @Override
     public boolean isRestricted() {

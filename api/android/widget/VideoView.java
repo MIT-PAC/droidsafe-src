@@ -369,6 +369,7 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
         
 };
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.155 -0400", hash_original_method = "84429BD4462769BE0107008470199557", hash_generated_method = "AD9C68C2945985C0871C1EE019319C9E")
     public  VideoView(Context context) {
         super(context);
@@ -379,6 +380,7 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.155 -0400", hash_original_method = "9DA181463C1E3F8A8538BD444B82D669", hash_generated_method = "161454C144DF2289EAD7D4CCA9C21B6C")
     public  VideoView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -390,6 +392,7 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.155 -0400", hash_original_method = "424FE4A877CF5C3A8D4BF3ED46B161CB", hash_generated_method = "A028DEC9CB2FB9A1AD2E5FEEFB4C54E9")
     public  VideoView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -402,6 +405,7 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.156 -0400", hash_original_method = "399D33D7F524FC7B17B9973DF2D06AB6", hash_generated_method = "6E4AAD1C389460645763C98FA261FB00")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -441,6 +445,7 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.157 -0400", hash_original_method = "AA7DEE010D080A3F173498ECD8DB46CF", hash_generated_method = "1D0B5DB9A0B939E1B72936771EAAB006")
     public int resolveAdjustedSize(int desiredSize, int measureSpec) {
         addTaint(measureSpec);
@@ -480,6 +485,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.158 -0400", hash_original_method = "BE85099A7AB9FDC5F9372F356FE70764", hash_generated_method = "D4EE1143999D59A12455EFD43719BE38")
     private void initVideoView() {
         mVideoWidth = 0;
@@ -504,6 +510,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.159 -0400", hash_original_method = "FF7D3C0BAB1201EED63B4915116CA68A", hash_generated_method = "95164628E4AA5A48FA56C4666AF0D853")
     public void setVideoPath(String path) {
         addTaint(path.getTaint());
@@ -542,6 +549,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.160 -0400", hash_original_method = "2BCECBBC48AF079CEFBE62EF5059D1F2", hash_generated_method = "3B66AC856C5F0C0203627C516CD32CEB")
     public void stopPlayback() {
         if(mMediaPlayer != null)        
@@ -563,6 +571,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.160 -0400", hash_original_method = "4401AC32A9DAF43DD0875A239764A2D5", hash_generated_method = "750156031A414222D79F960D9F7906CC")
     private void openVideo() {
         if(mUri == null || mSurfaceHolder == null)        
@@ -610,6 +619,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.161 -0400", hash_original_method = "A95D4CD6952F3C4C3839054BE152713C", hash_generated_method = "6D11B93EC781274E33DFC905F915B539")
     public void setMediaController(MediaController controller) {
         if(mMediaController != null)        
@@ -627,6 +637,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.161 -0400", hash_original_method = "4E9048D91253AD27AA53E4E66A36C9AD", hash_generated_method = "ACA4BFB4AF95A8F19B01F050AE7E0D1F")
     private void attachMediaController() {
         if(mMediaPlayer != null && mMediaController != null)        
@@ -675,6 +686,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.163 -0400", hash_original_method = "99FF896B381D47748A631FF0CD5A79C0", hash_generated_method = "A79F037E170175C4699A27FB73531204")
     private void release(boolean cleartargetstate) {
         addTaint(cleartargetstate);
@@ -702,6 +714,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.163 -0400", hash_original_method = "4F4B3F8532DEC480E2D437E642010990", hash_generated_method = "880ACAB458BF1042B53915992C449143")
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
@@ -722,6 +735,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.164 -0400", hash_original_method = "8AF49D524D52FF5D4247E0FF5D02E5F0", hash_generated_method = "8C3017E95901C341AE8C8E5C2147D415")
     @Override
     public boolean onTrackballEvent(MotionEvent ev) {
@@ -742,6 +756,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.164 -0400", hash_original_method = "91A873FF1F5486FD2484C66FB73721D3", hash_generated_method = "E1FDA627572E0344F7F58D33F58A45C8")
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -812,6 +827,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.165 -0400", hash_original_method = "E102D2D0B33B8C0648E23B09161A5D91", hash_generated_method = "3FD9697155F837AC56FFFC09091C9312")
     private void toggleMediaControlsVisiblity() {
         if(mMediaController.isShowing())        
@@ -831,6 +847,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.165 -0400", hash_original_method = "DCAF238577388FDC9C26BFC1EEC7C15B", hash_generated_method = "9B73F7BCC30ECAC0BE2F192EEA0E3970")
     public void start() {
         if(isInPlaybackState())        
@@ -848,6 +865,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.166 -0400", hash_original_method = "4E2568FAF00FE360235DA18D47EB8EFF", hash_generated_method = "F3EB6CC2CAA6BE2BADB4E3488172B5E4")
     public void pause() {
         if(isInPlaybackState())        
@@ -870,6 +888,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.166 -0400", hash_original_method = "DB957E41439183A7A4B3F0D26130031C", hash_generated_method = "4898C2CBA953708EFFAC9A29E3A7A14C")
     public void suspend() {
         release(false);
@@ -878,6 +897,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.166 -0400", hash_original_method = "E6E0A392D25FFAD71752A274562CC374", hash_generated_method = "D12BA13D773BAF0D6B22978BCBFC4335")
     public void resume() {
         openVideo();
@@ -886,6 +906,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.166 -0400", hash_original_method = "C1F40EE967CAE2C17948E71A2C41731D", hash_generated_method = "20386CCA735054C249718BF9C53CF231")
     public int getDuration() {
         if(isInPlaybackState())        
@@ -918,6 +939,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.167 -0400", hash_original_method = "0795537A6D4F5DB67695C2A0F229C436", hash_generated_method = "2DA1852B92E30DF4D6C573DAB7E89003")
     public int getCurrentPosition() {
         if(isInPlaybackState())        
@@ -937,6 +959,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.167 -0400", hash_original_method = "3522617D91D50F05724CD0F38556C102", hash_generated_method = "B888166677814165658FC8F7EB5B5488")
     public void seekTo(int msec) {
         if(isInPlaybackState())        
@@ -958,6 +981,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.167 -0400", hash_original_method = "E0052DEB6F83AF3161983588D34DAB58", hash_generated_method = "3281FBAAF004DBBAA339138C2B3479B8")
     public boolean isPlaying() {
         boolean var8AEA42665765075ED010C2544315DC0F_2000481591 = (isInPlaybackState() && mMediaPlayer.isPlaying());

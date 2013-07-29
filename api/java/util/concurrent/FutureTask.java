@@ -13,6 +13,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
 
     private Sync sync;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.455 -0400", hash_original_method = "EBD25CFA864782219EF130D05DE406FC", hash_generated_method = "D7BE11182C95A08A74F354E292576973")
     public  FutureTask(Callable<V> callable) {
         if(callable == null)        
@@ -29,6 +30,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.455 -0400", hash_original_method = "343C63FBFE3927352CC6BAC59E679D87", hash_generated_method = "445A2B29F4B296EBE069C195B0BDE12E")
     public  FutureTask(Runnable runnable, V result) {
         sync = new Sync(Executors.callable(runnable, result));
@@ -37,6 +39,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.455 -0400", hash_original_method = "87256A2F3BC620B5A65A2DEACA482F4A", hash_generated_method = "8D30CE4B56282F029C010EBB33E163F5")
     public boolean isCancelled() {
         boolean var8BF5A93E962ACD00396C5A3C10E32D6D_348494343 = (sync.innerIsCancelled());
@@ -47,6 +50,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.456 -0400", hash_original_method = "2C3AC011A196BCCAC0E9F76136242F15", hash_generated_method = "B6BC7738B067CE8F86B9EADCF2AB5E81")
     public boolean isDone() {
         boolean var0CA19EE88E1C42206EB8810802615E80_1537373635 = (sync.innerIsDone());
@@ -57,6 +61,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.456 -0400", hash_original_method = "88A87863EC7E1056D8FE46146EF894BC", hash_generated_method = "3C9230DE8449CA771AE03DC769525DEE")
     public boolean cancel(boolean mayInterruptIfRunning) {
         addTaint(mayInterruptIfRunning);
@@ -68,6 +73,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.456 -0400", hash_original_method = "162C3BFD86443C5C054F309FCD025483", hash_generated_method = "7AD612FEFFDF609806F38A1F8ED1EB37")
     public V get() throws InterruptedException, ExecutionException {
 V var85F1CBC08013F2D5AD7E74CF674146E5_1794546674 =         sync.innerGet();
@@ -78,6 +84,7 @@ V var85F1CBC08013F2D5AD7E74CF674146E5_1794546674 =         sync.innerGet();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.456 -0400", hash_original_method = "90F54A92EEE05A0240D215CA50ECEC0E", hash_generated_method = "B26A13B8C053FC4838B0DE08DD4B7FD7")
     public V get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
         addTaint(unit.getTaint());
@@ -97,6 +104,7 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_1774988166 =         sync.innerGet(unit.to
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.457 -0400", hash_original_method = "A074A8CE9CED8FEBE8C93AF5A1F30EB2", hash_generated_method = "A1594A2580EEC5A83119579394EA3302")
     protected void set(V v) {
         addTaint(v.getTaint());
@@ -106,6 +114,7 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_1774988166 =         sync.innerGet(unit.to
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.457 -0400", hash_original_method = "FDCD59BD475B14EFA0816CB7C0405257", hash_generated_method = "2DD535C3636DF6E17BCE00AFCC8AAAE5")
     protected void setException(Throwable t) {
         addTaint(t.getTaint());
@@ -115,6 +124,7 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_1774988166 =         sync.innerGet(unit.to
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.457 -0400", hash_original_method = "C774B2E8DA9F32069C4712123B43B6CD", hash_generated_method = "41358DA92AFAAC7C338B8FDD86F6983F")
     public void run() {
         sync.innerRun();
@@ -123,6 +133,7 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_1774988166 =         sync.innerGet(unit.to
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.457 -0400", hash_original_method = "016A9258BFECCECB9307E0C389EB3A3D", hash_generated_method = "7D1C4DD5F8C248378DB8CD9C7170327D")
     protected boolean runAndReset() {
         boolean var3C3199211714AF73C9FF4117A88D6471_1918113385 = (sync.innerRunAndReset());
@@ -147,6 +158,7 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_1774988166 =         sync.innerGet(unit.to
 
         private volatile Thread runner;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.458 -0400", hash_original_method = "D4E27E5AB3ABB7CBBB62FE148674AC0F", hash_generated_method = "571EDA94F9E2C606AE2FD2F082453C98")
           Sync(Callable<V> callable) {
             this.callable = callable;
@@ -167,6 +179,7 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_1774988166 =         sync.innerGet(unit.to
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.459 -0400", hash_original_method = "CB8395C0A8B6CFC4974D10648908BD61", hash_generated_method = "4678C160F0810824AB492DC102D49279")
         protected int tryAcquireShared(int ignore) {
             addTaint(ignore);
@@ -192,6 +205,7 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_1774988166 =         sync.innerGet(unit.to
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.459 -0400", hash_original_method = "D8E0DD690F3527605076B5F197BA585A", hash_generated_method = "6A4EEFB90120039019200AF395A8A87F")
          boolean innerIsCancelled() {
             boolean varC8F0BB487210E6EF22F33D571975E8E6_1537776690 = (getState() == CANCELLED);
@@ -202,6 +216,7 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_1774988166 =         sync.innerGet(unit.to
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.459 -0400", hash_original_method = "3CE62A51F6A5DB16A8E43D03725714DF", hash_generated_method = "8E2EA832AEF3EC2F89D6AEDEF8D87595")
          boolean innerIsDone() {
             boolean var4316EAD4E51BC5A1F44BFD16D0388A9F_1154627627 = (ranOrCancelled(getState()) && runner == null);
@@ -212,6 +227,7 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_1774988166 =         sync.innerGet(unit.to
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.460 -0400", hash_original_method = "E3CC861BC123329FE0CD5116647662CC", hash_generated_method = "2ADF439E33E28D167346D8A91FAFAD6F")
          V innerGet() throws InterruptedException, ExecutionException {
             acquireSharedInterruptibly(0);
@@ -240,6 +256,7 @@ V varDC838461EE2FA0CA4C9BBB70A15456B0_906807836 =             result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.460 -0400", hash_original_method = "C6C2CADBDD008A3436D4C69E1505E94B", hash_generated_method = "BD6B235060C65888B3F91998A489D691")
          V innerGet(long nanosTimeout) throws InterruptedException, ExecutionException, TimeoutException {
             addTaint(nanosTimeout);
@@ -275,6 +292,7 @@ V varDC838461EE2FA0CA4C9BBB70A15456B0_844108631 =             result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.460 -0400", hash_original_method = "02A830CC89A3607D091CAAFD46553563", hash_generated_method = "7C3F8D4570A36B0D1ADA9ED5088FE45B")
          void innerSet(V v) {
 for(;;)
@@ -314,6 +332,7 @@ for(;;)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.461 -0400", hash_original_method = "05A852D9D717B3F2A7ED4890D7DD8417", hash_generated_method = "C87C533C9626844DD0FC295C321C0FC9")
          void innerSetException(Throwable t) {
 for(;;)
@@ -353,6 +372,7 @@ for(;;)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.462 -0400", hash_original_method = "8B39040A94FB4A11910F39A32682A441", hash_generated_method = "BF14B844B326EE6FC5F0EC0FCB7F58FA")
          boolean innerCancel(boolean mayInterruptIfRunning) {
             addTaint(mayInterruptIfRunning);
@@ -398,6 +418,7 @@ for(;;)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.462 -0400", hash_original_method = "98D56FA1D01F6A8481F25F546B1688C1", hash_generated_method = "0100183BD008894C82E23B7A43D715DC")
          void innerRun() {
             if(!compareAndSetState(READY, RUNNING))            
@@ -440,6 +461,7 @@ for(;;)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.463 -0400", hash_original_method = "8E960784829E06CF5804B32B20F49AB2", hash_generated_method = "BB60D7B78009EA86BA90884EAB88DB9B")
          boolean innerRunAndReset() {
             if(!compareAndSetState(READY, RUNNING))            

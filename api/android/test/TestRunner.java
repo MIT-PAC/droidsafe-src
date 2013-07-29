@@ -886,6 +886,7 @@ for(int i = 0;i < iterations;i++)
 
         boolean mError = false;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.042 -0400", hash_original_method = "CFFE110BDEA2EF1B39A9BF20964D075D", hash_generated_method = "170612CB63D4C2F9D6EFA48333C292DA")
         public  JunitTestSuite() {
             super();
@@ -893,6 +894,7 @@ for(int i = 0;i < iterations;i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.042 -0400", hash_original_method = "8428289E0AE15BC8D3D04B7078FF5A2E", hash_generated_method = "88E5412EC565AA5F553061CB483356A7")
         @Override
         public void run(TestResult result) {
@@ -907,6 +909,7 @@ for(int i = 0;i < iterations;i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.042 -0400", hash_original_method = "9C3D54F0595A1B65649E868CBC4ED418", hash_generated_method = "A36113ABAB5BED207577618DF8691D6B")
         public void startTest(Test test) {
             addTaint(test.getTaint());
@@ -916,6 +919,7 @@ for(int i = 0;i < iterations;i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.043 -0400", hash_original_method = "5C6758A8D60C0FE4B774FC491E0F7958", hash_generated_method = "D95CC77B8CDE0BF513BE3B303070BB5F")
         public void endTest(Test test) {
             addTaint(test.getTaint());
@@ -932,6 +936,7 @@ for(int i = 0;i < iterations;i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.043 -0400", hash_original_method = "0D2F0B914A04C9F7A825DB8C76DB002A", hash_generated_method = "F5F69608461726D41531AC58D402C8ED")
         public void addError(Test test, Throwable t) {
             addTaint(t.getTaint());
@@ -944,6 +949,7 @@ for(int i = 0;i < iterations;i++)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.043 -0400", hash_original_method = "E48FFE8D16E4AA897CF5C85DD7DE476B", hash_generated_method = "7ACE18E9DC9EABB597625653B94C5E74")
         public void addFailure(Test test, junit.framework.AssertionFailedError t) {
             addTaint(t.getTaint());
@@ -968,6 +974,7 @@ for(int i = 0;i < iterations;i++)
 
         public long timeInNS;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.043 -0400", hash_original_method = "F156F71FB9ADDC03EC513D4C1742F860", hash_generated_method = "984641D3F3EF949BC1A1377F23262FE0")
         public  IntermediateTime(String name, long timeInNS) {
             this.name = name;

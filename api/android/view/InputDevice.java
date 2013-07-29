@@ -32,12 +32,14 @@ public final class InputDevice implements Parcelable {
 
     private final ArrayList<MotionRange> mMotionRanges = new ArrayList<MotionRange>();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.997 -0400", hash_original_method = "2C37C35B619B46784669EFC9CA5E5179", hash_generated_method = "93E63FA312CE70DEEBBCD18536A99918")
     private  InputDevice() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static InputDevice getDevice(int id) {
         IWindowManager wm = Display.getWindowManager();
         try {
@@ -49,6 +51,7 @@ public final class InputDevice implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int[] getDeviceIds() {
         IWindowManager wm = Display.getWindowManager();
         try {
@@ -104,6 +107,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_419714970 =         mName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.998 -0400", hash_original_method = "88E280A067EB975F01B9806455B5FBF9", hash_generated_method = "AAE25240BB930ABE53263BB555450FB3")
     public KeyCharacterMap getKeyCharacterMap() {
 KeyCharacterMap var0C467EEC84F0F598C0D81E03A823790D_1710469526 =         KeyCharacterMap.load(mId);
@@ -125,6 +129,7 @@ String varC41B4C4A25BA902F7F690BA9A2B25586_1120901632 =         mKeyCharacterMap
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.998 -0400", hash_original_method = "496E5C96705FE1519429C9151F8650BC", hash_generated_method = "A55D5C0EDD5CF32EE859A5AAE104829F")
     public MotionRange getMotionRange(int axis) {
         addTaint(axis);
@@ -154,6 +159,7 @@ MotionRange var540C13E9E156B687226421B24F2DF178_96920310 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.998 -0400", hash_original_method = "2F158E6F6F2CA810A33FC3C995F22831", hash_generated_method = "C5480CC32273D017324855583D04AFBB")
     public MotionRange getMotionRange(int axis, int source) {
         addTaint(source);
@@ -195,6 +201,7 @@ List<MotionRange> varFFE5FF278A34CE0245187BDB61690F1F_361978484 =         mMotio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.999 -0400", hash_original_method = "F938DEDD59851FE8B4D63705E085118B", hash_generated_method = "4AE7F16C0174DD6AD10D81EDBC912323")
     private void addMotionRange(int axis, int source,
             float min, float max, float flat, float fuzz) {
@@ -210,6 +217,7 @@ List<MotionRange> varFFE5FF278A34CE0245187BDB61690F1F_361978484 =         mMotio
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.000 -0400", hash_original_method = "66E89B3285A9850971D96BAD9F2BB44F", hash_generated_method = "7FA6141262F5D3ECEE0E316A6E848BC9")
     private void readFromParcel(Parcel in) {
         mId = in.readInt();
@@ -244,6 +252,7 @@ for(;;)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.000 -0400", hash_original_method = "91853B6BABA9CBC4F027C3C314DDF153", hash_generated_method = "44787D17FB255D243655B790F649BE4D")
     @Override
     public void writeToParcel(Parcel out, int flags) {
@@ -298,6 +307,7 @@ for(int i = 0;i < numRanges;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.002 -0400", hash_original_method = "9F735BD3745C12E449D13E0D45FB54C8", hash_generated_method = "80DC29ADB9CA8BE2A171C94D3CCB12DF")
     @Override
     public String toString() {
@@ -347,6 +357,7 @@ String var748F562E35834E3B11BDA296A09FD9A8_1307843716 =         description.toSt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.002 -0400", hash_original_method = "C8D7AE07A3174BF8CEBA0E0E2EC288B0", hash_generated_method = "8D760B6A315FB9259DF622AD08B13A80")
     private void appendSourceDescriptionIfApplicable(StringBuilder description, int source,
             String sourceName) {
@@ -386,6 +397,7 @@ String var748F562E35834E3B11BDA296A09FD9A8_1307843716 =         description.toSt
 
         private float mFuzz;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.003 -0400", hash_original_method = "003C115B43ED25425A82F4C0BC4BFB2D", hash_generated_method = "F4F973ACE14B026CE8F881C426E10F2D")
         private  MotionRange(int axis, int source, float min, float max, float flat, float fuzz) {
             mAxis = axis;

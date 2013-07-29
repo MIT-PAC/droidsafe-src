@@ -37,6 +37,7 @@ public class AnimationSet extends Animation {
 
     private long[] mStoredOffsets;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.799 -0400", hash_original_method = "E48F61BFB7E750EB9CE1872A6E59F583", hash_generated_method = "1C318C413046552418BEA54FE240EF21")
     public  AnimationSet(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -76,6 +77,7 @@ public class AnimationSet extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.799 -0400", hash_original_method = "40E1DAC9F5FF86741AE2A2FFD7F09052", hash_generated_method = "6EA6C262E48E14759DB7CA1F0D549C3D")
     public  AnimationSet(boolean shareInterpolator) {
         addTaint(shareInterpolator);
@@ -87,6 +89,7 @@ public class AnimationSet extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.800 -0400", hash_original_method = "17885947D34B4C6D63222266DEE6E0A5", hash_generated_method = "DC94F9977D4244EC8B9CBAC1421C06C8")
     @Override
     protected AnimationSet clone() throws CloneNotSupportedException {
@@ -145,6 +148,7 @@ AnimationSet var1D3E9F798E82851E6201AD690FEA4543_217363778 =         animation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.801 -0400", hash_original_method = "346D63116043912E4EE20FDCAED3D0BD", hash_generated_method = "E3249F9D5294564079C81CD0680DE3D0")
     @Override
     public void setFillAfter(boolean fillAfter) {
@@ -157,6 +161,7 @@ AnimationSet var1D3E9F798E82851E6201AD690FEA4543_217363778 =         animation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.802 -0400", hash_original_method = "08C3166F3D09017C7ECB4F829DA334D1", hash_generated_method = "65BA3677028996CF76FEE7C246F92D9B")
     @Override
     public void setFillBefore(boolean fillBefore) {
@@ -169,6 +174,7 @@ AnimationSet var1D3E9F798E82851E6201AD690FEA4543_217363778 =         animation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.802 -0400", hash_original_method = "777D14C93CE8BFF50BC39E2E3CDE2663", hash_generated_method = "423E165E8CC3E73633128E7BBBF5B47A")
     @Override
     public void setRepeatMode(int repeatMode) {
@@ -181,6 +187,7 @@ AnimationSet var1D3E9F798E82851E6201AD690FEA4543_217363778 =         animation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.803 -0400", hash_original_method = "3C61E6DAB3DDF346757DEBEA1DAB7005", hash_generated_method = "C52F6B3817A7899A7E95101E60AE9ADB")
     @Override
     public void setStartOffset(long startOffset) {
@@ -193,6 +200,7 @@ AnimationSet var1D3E9F798E82851E6201AD690FEA4543_217363778 =         animation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.804 -0400", hash_original_method = "32142259597E010D1F73DE9F53078982", hash_generated_method = "4E65A7B8F2F15E326635944EB64D008E")
     @Override
     public boolean hasAlpha() {
@@ -229,6 +237,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.804 -0400", hash_original_method = "638E0400F0B782F58F566825CD0FEEA0", hash_generated_method = "50F99B7CDC5B0EA81467471B39A6A0B1")
     @Override
     public void setDuration(long durationMillis) {
@@ -243,6 +252,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.806 -0400", hash_original_method = "F96436C1C98CEDEFC582978CFED41496", hash_generated_method = "C240BCEF4FB704B6ADFC49AA1DE9247D")
     public void addAnimation(Animation a) {
         mAnimations.add(a);
@@ -279,6 +289,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.807 -0400", hash_original_method = "ED7478CCB671993C959207E062C9FA4F", hash_generated_method = "E88B8AD0A0489F2B7810D7F8885CE2C4")
     @Override
     public void setStartTime(long startTimeMillis) {
@@ -302,6 +313,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.808 -0400", hash_original_method = "1DB17F128BC07A7BFF2B0ED14844511C", hash_generated_method = "ED668822ADE1B58A8CFFFC1747861D9C")
     @Override
     public long getStartTime() {
@@ -328,6 +340,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.808 -0400", hash_original_method = "8BDDB0E57A894DBD22BE4F412303E6AB", hash_generated_method = "EDFD7C063FD9971AF0D88A58D2BB6462")
     @Override
     public void restrictDuration(long durationMillis) {
@@ -349,6 +362,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.808 -0400", hash_original_method = "0C51A5B794999BCAB9F83D60602DBD5A", hash_generated_method = "288AFF0C818AAF4DD7F63337B6FCEECF")
     @Override
     public long getDuration() {
@@ -386,6 +400,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.809 -0400", hash_original_method = "979F8D0FD623C4002C8BD37290EA10AA", hash_generated_method = "F7159E3AEB6350B0DE6F4A74E2AF1009")
     public long computeDurationHint() {
         long duration = 0;
@@ -412,6 +427,7 @@ for(int i = count - 1;i >= 0;--i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.809 -0400", hash_original_method = "357CAB1AB4D965ADF6EAF9B7256F84EE", hash_generated_method = "BFCF3894293EA6F8898D6D3DBFA953DC")
     public void initializeInvalidateRegion(int left, int top, int right, int bottom) {
         addTaint(bottom);
@@ -442,6 +458,7 @@ for(int i = count - 1;i >= 0;--i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.810 -0400", hash_original_method = "3F803CA56592D1A8F5A2DABD815E935C", hash_generated_method = "BE744AF97E25466511F24936D7D9B408")
     @Override
     public boolean getTransformation(long currentTime, Transformation t) {
@@ -487,6 +504,7 @@ for(int i = count - 1;i >= 0;--i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.810 -0400", hash_original_method = "2134BF7993F0D641B52B56C7C0A9A6E5", hash_generated_method = "3FDFE82CE26AC0F89E6A8D6C86882C93")
     @Override
     public void scaleCurrentDuration(float scale) {
@@ -506,6 +524,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.810 -0400", hash_original_method = "CAD543A8149EEDE67DD6611F7E4BF120", hash_generated_method = "C32CCC656AB7F12C44DDD1241E73EBC1")
     @Override
     public void initialize(int width, int height, int parentWidth, int parentHeight) {
@@ -583,6 +602,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.811 -0400", hash_original_method = "2E3A361BE20A8D002834672DDB7CD636", hash_generated_method = "F50B3D17E3EAD3AC5C651A4E6CE1B416")
     @Override
     public void reset() {
@@ -594,6 +614,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.811 -0400", hash_original_method = "1FA58C163A7DB9A5169EF699805FA3C9", hash_generated_method = "2279BAA9493EAB586EEB7ABA6BF9E5D7")
      void restoreChildrenStartOffset() {
         final long[] offsets = mStoredOffsets;

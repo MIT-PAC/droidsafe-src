@@ -34,6 +34,7 @@ public class ExecutionException extends Exception {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.908 -0400", hash_original_method = "BC8973A519EF21FB8A5BD589A5BEDC19", hash_generated_method = "4AD6F8F94B8853EA93AAB7271F02E896")
     public  ExecutionException(Throwable cause) {
         super(cause);

@@ -813,6 +813,7 @@ for(int i = 0;i < snapshot.length;i++)
 
         private volatile Slice slice;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.861 -0400", hash_original_method = "19F9B6A2C098797122B64953C4557260", hash_generated_method = "5B199B3E4B2B392A5F281C0027899513")
         public  CowSubList(Object[] expectedElements, int from, int to) {
             this.slice = new Slice(expectedElements, from, to);
@@ -821,6 +822,7 @@ for(int i = 0;i < snapshot.length;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.861 -0400", hash_original_method = "50828BB5D9839792ECEF31A7338C6C2F", hash_generated_method = "F405847D23F3F7DE9D29B24ECA25C8A6")
         @Override
         public int size() {
@@ -834,6 +836,7 @@ for(int i = 0;i < snapshot.length;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.861 -0400", hash_original_method = "9FA55EF0B71DE676ACDFCDE8D001E08C", hash_generated_method = "13081F33DE2D9A816090E1709E7B8978")
         @Override
         public boolean isEmpty() {
@@ -847,6 +850,7 @@ for(int i = 0;i < snapshot.length;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.861 -0400", hash_original_method = "E9398BCB1605EBC5A566CA332DEC078B", hash_generated_method = "838C2FA024319D09EFA5C757B675C0C7")
         @SuppressWarnings("unchecked")
         @Override
@@ -868,6 +872,7 @@ E var40A28188D2E19E47CC35F4DCF74FECB2_508568494 =             (E) snapshot[index
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.862 -0400", hash_original_method = "1D00ECD22B3575A885077212162F97B2", hash_generated_method = "51F1004BE994A11D18AFD915852FD70D")
         @Override
         public Iterator<E> iterator() {
@@ -879,6 +884,7 @@ Iterator<E> var68247D54D1DDB9E66659394CC1668C3F_1461360039 =             listIte
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.862 -0400", hash_original_method = "DF7BE0B13ABC5A9B1C74313BD06FB64C", hash_generated_method = "553FAEE7CB3885FB9E75D0FA72CD6E8E")
         @Override
         public ListIterator<E> listIterator() {
@@ -890,6 +896,7 @@ ListIterator<E> var68247D54D1DDB9E66659394CC1668C3F_530568518 =             list
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.862 -0400", hash_original_method = "2453E5226E92CA007A5F28D50241AFEC", hash_generated_method = "588C8E1C5F8A214CE4FEBFC35F0ACA50")
         @Override
         public ListIterator<E> listIterator(int index) {
@@ -914,6 +921,7 @@ ListIterator<E> varDC838461EE2FA0CA4C9BBB70A15456B0_1457544872 =             res
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.862 -0400", hash_original_method = "3CF9433C05AE07A5EB66F121888070F6", hash_generated_method = "B6232822163F5E691EB83FC6BFA4EEF4")
         @Override
         public int indexOf(Object object) {
@@ -934,6 +942,7 @@ ListIterator<E> varDC838461EE2FA0CA4C9BBB70A15456B0_1457544872 =             res
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.863 -0400", hash_original_method = "1CFCD041D8AD8CF1B36536A28BABB7D9", hash_generated_method = "2B37922E253383F0CCF5290EE9E86A8A")
         @Override
         public int lastIndexOf(Object object) {
@@ -954,6 +963,7 @@ ListIterator<E> varDC838461EE2FA0CA4C9BBB70A15456B0_1457544872 =             res
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.863 -0400", hash_original_method = "3D9C8519C0BA49AAEEEEE7D259DD1898", hash_generated_method = "DB78A5DBA96DDD9629D84850BAC1D4E0")
         @Override
         public boolean contains(Object object) {
@@ -966,6 +976,7 @@ ListIterator<E> varDC838461EE2FA0CA4C9BBB70A15456B0_1457544872 =             res
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.863 -0400", hash_original_method = "1CE1F4665E7580AB233B83935273A194", hash_generated_method = "EEB96484935BEA1148CBC6AFA1405E44")
         @Override
         public boolean containsAll(Collection<?> collection) {
@@ -984,6 +995,7 @@ ListIterator<E> varDC838461EE2FA0CA4C9BBB70A15456B0_1457544872 =             res
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.863 -0400", hash_original_method = "023D8E294D6742BA836A68C5ADAAB497", hash_generated_method = "96F55D7FEF56B2236AA72D1CCBC539C9")
         @Override
         public List<E> subList(int from, int to) {
@@ -1010,6 +1022,7 @@ List<E> var286563A107CA67FF157789C051305F4F_2039538372 =             new CowSubL
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.863 -0400", hash_original_method = "F47D7AB044AE200CBA9EE898533B8FEC", hash_generated_method = "5455BA35D9E9410438FC248560D31E11")
         @Override
         public E remove(int index) {
@@ -1035,6 +1048,7 @@ E varC4DDDE029445DEB25112BA9AAF990086_812946215 =                 removed;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.863 -0400", hash_original_method = "E7748E0E6765940072A4C93526FE4787", hash_generated_method = "B241ACA32EBABC70915A1FC31D50CB77")
         @Override
         public void clear() {
@@ -1053,6 +1067,7 @@ E varC4DDDE029445DEB25112BA9AAF990086_812946215 =                 removed;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.864 -0400", hash_original_method = "7558F5D9173C65FEAD4E275F1C1E5A80", hash_generated_method = "F48A8F8309B6627CDB2C965E49BB9668")
         @Override
         public void add(int index, E object) {
@@ -1075,6 +1090,7 @@ E varC4DDDE029445DEB25112BA9AAF990086_812946215 =                 removed;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.864 -0400", hash_original_method = "E905080D7BBE0BD2F3F279BF8EF6D6A8", hash_generated_method = "7FC15227DBF96792799A470287E52135")
         @Override
         public boolean add(E object) {
@@ -1094,6 +1110,7 @@ E varC4DDDE029445DEB25112BA9AAF990086_812946215 =                 removed;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.864 -0400", hash_original_method = "1293804DB9B63143F37D5D821EA6A87E", hash_generated_method = "313ECF67A8E6C3B5A2D3CA5290C2ABA7")
         @Override
         public boolean addAll(int index, Collection<? extends E> collection) {
@@ -1122,6 +1139,7 @@ E varC4DDDE029445DEB25112BA9AAF990086_812946215 =                 removed;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.864 -0400", hash_original_method = "2FF5E8554EDDACF9F2F627214E3BC10D", hash_generated_method = "C545AB9E109B4D2E0756BD11284CBD11")
         @Override
         public boolean addAll(Collection<? extends E> collection) {
@@ -1139,6 +1157,7 @@ E varC4DDDE029445DEB25112BA9AAF990086_812946215 =                 removed;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.865 -0400", hash_original_method = "E52798445FC11575DB685349896EB8F6", hash_generated_method = "DFDB6C75ED214C112EEAEA6A12794D9E")
         @Override
         public E set(int index, E object) {
@@ -1165,6 +1184,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1731097344 =                 result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.865 -0400", hash_original_method = "924C9E5471F08F30B8E12AD962D48DF2", hash_generated_method = "B8B97A468722AE8AAC88F6E404553F65")
         @Override
         public boolean remove(Object object) {
@@ -1195,6 +1215,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1731097344 =                 result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.865 -0400", hash_original_method = "6ECA6BCBA1861C546E018F40208C7C7C", hash_generated_method = "72BD16416C6AF3A79795EBAACC8113FC")
         @Override
         public boolean removeAll(Collection<?> collection) {
@@ -1218,6 +1239,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1731097344 =                 result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.866 -0400", hash_original_method = "055B3FCFE954B48BD2D5F95BFF90FFFE", hash_generated_method = "7E5F25C1BED16AF00598330460BBFE20")
         @Override
         public boolean retainAll(Collection<?> collection) {

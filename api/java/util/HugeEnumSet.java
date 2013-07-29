@@ -17,6 +17,7 @@ final class HugeEnumSet<E extends Enum<E>> extends EnumSet<E> {
 
     private int size;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.455 -0400", hash_original_method = "EEA55C49C96425F7EA6FAB4AE055FF38", hash_generated_method = "03986B409E8343D111EAE6CD8CE436E7")
       HugeEnumSet(Class<E> elementType, E[] enums) {
         super(elementType);
@@ -29,6 +30,7 @@ final class HugeEnumSet<E extends Enum<E>> extends EnumSet<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.456 -0400", hash_original_method = "AA8C9EBB2E9808034C94DE14598C355D", hash_generated_method = "279FDD9AFA1C7F68F5522D1D0D12381B")
     @Override
     public boolean add(E element) {
@@ -66,6 +68,7 @@ final class HugeEnumSet<E extends Enum<E>> extends EnumSet<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.457 -0400", hash_original_method = "E12827AAC6F89269FBC667C494374EA1", hash_generated_method = "7972D02824F023F8A3C144D8B20F1ED1")
     @Override
     public boolean addAll(Collection<? extends E> collection) {
@@ -457,6 +460,7 @@ for(int i = 0;i < bits.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.468 -0400", hash_original_method = "8A87EADAF5D536F1830CF4EB88261592", hash_generated_method = "B47E8A32CAF2F12EAF6D168ED98BF2D1")
     @Override
      void setRange(E start, E end) {

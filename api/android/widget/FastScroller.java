@@ -329,6 +329,7 @@ switch(state){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.673 -0400", hash_original_method = "C32E62B08B27A384339E1BC75CFE4552", hash_generated_method = "D04987BFE1D4AE2E46B9CD42F9227A5A")
     private void resetThumbPos() {
         final int viewWidth = mList.getWidth();
@@ -388,6 +389,7 @@ switch(mPosition){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.677 -0400", hash_original_method = "0A57524C8928F6FDE971C9B9E9D3463C", hash_generated_method = "E00468CD2FA23E91A0693E918DA3AE56")
     private void init(Context context) {
         TypedArray ta = context.getTheme().obtainStyledAttributes(ATTRS);
@@ -446,6 +448,7 @@ switch(mPosition){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.679 -0400", hash_original_method = "C51EC11284E4C57CA49569FFECEAA05A", hash_generated_method = "DEA66F961795F200809488A38BBC931A")
     public void draw(Canvas canvas) {
         addTaint(canvas.getTaint());
@@ -609,6 +612,7 @@ switch(mPosition){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.685 -0400", hash_original_method = "E5B6E6440A22D0800FAD70BDC783A6AE", hash_generated_method = "77AD552676F0C247788EB74A8B12115C")
      void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, 
             int totalItemCount) {
@@ -742,6 +746,7 @@ Object[] var74695998C3A4540DE9BA60486A777555_330476030 =         mSections;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.691 -0400", hash_original_method = "5A8E212F57F70A160B41013FFA05181F", hash_generated_method = "5DF2861A53BEB59DE0520B1905DEC7C1")
      void scrollTo(float position) {
         addTaint(position);
@@ -864,6 +869,7 @@ Object[] var74695998C3A4540DE9BA60486A777555_330476030 =         mSections;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.693 -0400", hash_original_method = "5B13E30A0127E5E811D3308FC0C54801", hash_generated_method = "FB96DA07DC72742CFC2CA3582237E658")
     private int getThumbPositionForListPosition(int firstVisibleItem, int visibleItemCount,
             int totalItemCount) {
@@ -1024,6 +1030,7 @@ switch(ev.getActionMasked()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.696 -0400", hash_original_method = "891E4A8523ECAE5B8AA3233AF8AC2D21", hash_generated_method = "9340161BAB64D9ACE4C80D3E410A6A62")
      boolean onTouchEvent(MotionEvent me) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1154,6 +1161,7 @@ switch(ev.getActionMasked()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.696 -0400", hash_original_method = "4AFF55C64BD9939BD0E5A83378980FDE", hash_generated_method = "ED50B7925D15FFB804FFB7635EAD1BC3")
      boolean isPointInside(float x, float y) {
         addTaint(y);

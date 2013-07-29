@@ -28,7 +28,7 @@ public class AndroidTestCase extends TestCase {
     }
 
 
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.284 -0400", hash_original_method = "C075C1EA684B5A9C947727B1963E4CB2", hash_generated_method = "33B8667659E021345D7AE66A5095EA4B")
     @Override
     protected void setUp() throws Exception {
@@ -38,7 +38,7 @@ public class AndroidTestCase extends TestCase {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.284 -0400", hash_original_method = "2BD388E2F32CC4B26827F8032514E9AF", hash_generated_method = "F0A72738E6C6EEAEB8D116968B7166EC")
     @Override
     protected void tearDown() throws Exception {
@@ -48,7 +48,7 @@ public class AndroidTestCase extends TestCase {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.284 -0400", hash_original_method = "A28E17AE7E99D1F277F3747A57A4A95C", hash_generated_method = "7835C711021F03AC3B0467DA037450F8")
     public void testAndroidTestCaseSetupProperly() {
         assertNotNull("Context is null. setContext should be called before tests are run",
@@ -99,6 +99,7 @@ Context var76636B45E4D1C87FF9777E5D70C7AB46_1891283509 =         mTestContext;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.286 -0400", hash_original_method = "3DE5935B2434BD0D17B624272A135469", hash_generated_method = "2FD0FA3BAC1D659EEAFA092412F4D466")
     public void assertActivityRequiresPermission(
             String packageName, String className, String permission) {

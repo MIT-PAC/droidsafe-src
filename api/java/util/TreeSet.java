@@ -76,6 +76,7 @@ public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Clone
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.546 -0400", hash_original_method = "9B08B54403475306A5EA9675D1E7EABA", hash_generated_method = "AC2D71B7CD43141208112FB4D74207EA")
     @Override
     public boolean add(E object) {
@@ -439,6 +440,7 @@ NavigableSet<E> varC3FFFEAE2889574A248CD2F5AEC2B9B2_1432877098 =         new Tre
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.555 -0400", hash_original_method = "C92358BB1651ED2C24F4D6C79CD951E7", hash_generated_method = "941198C1AC9B2102D8AB2D5193E4A392")
     @SuppressWarnings("unchecked")
     public SortedSet<E> subSet(E start, E end) {
@@ -452,6 +454,7 @@ SortedSet<E> varA297EA4DB647E5B963067A175A15005C_186712647 =         subSet(star
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.555 -0400", hash_original_method = "B22F87137AF3AAA5F7ECED16F7688B46", hash_generated_method = "40EFB949E91F34523542B9651E0D2032")
     @SuppressWarnings("unchecked")
     public SortedSet<E> headSet(E end) {
@@ -464,6 +467,7 @@ SortedSet<E> var7C238F126E56EB43F3B9FF21E31CFC21_2079646081 =         headSet(en
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.556 -0400", hash_original_method = "D9366E253CBE1FE1D040B6F98C30B4A1", hash_generated_method = "26E22240DE8B3585E8DE49CEB71A0B28")
     @SuppressWarnings("unchecked")
     public SortedSet<E> tailSet(E start) {

@@ -320,6 +320,7 @@ public class BitmapFactory {
 
         public boolean mCancel;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.753 -0400", hash_original_method = "1E2502131AFAFEE705D62EA28BD1E532", hash_generated_method = "0635C869FB7A2CFDEE0A972AAD74F8C9")
         public  Options() {
             inDither = false;
@@ -336,7 +337,7 @@ public class BitmapFactory {
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.754 -0400", hash_original_method = "1FC603D50B1CC5C62A2F5DE57FF4610A", hash_generated_method = "4C9F07CF8433D9C32575769E3132C089")
         public void requestCancelDecode() {
             mCancel = true;

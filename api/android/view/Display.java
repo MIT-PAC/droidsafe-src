@@ -46,6 +46,7 @@ public class Display {
 
     private float mLastGetTime;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.500 -0400", hash_original_method = "C9519A69B693719AC1491BF9F92C5C8E", hash_generated_method = "119D58D4AE9C571078046828391ECB8B")
       Display(int display, CompatibilityInfoHolder compatInfo) {
         synchronized
@@ -90,6 +91,7 @@ public class Display {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.519 -0400", hash_original_method = "17F24EABE37BDCE44DDE55CD705BD7B9", hash_generated_method = "D29C3D5CFCD464C96B15D3988C7C1F06")
     public void getSize(Point outSize) {
         addTaint(outSize.getTaint());
@@ -99,7 +101,7 @@ public class Display {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.520 -0400", hash_original_method = "79B8C4439194701109AF7AA6129A555C", hash_generated_method = "CCC57910A60FFFE46777166360FEAAD3")
     private void getSizeInternal(Point outSize, boolean doCompat) {
         addTaint(doCompat);
@@ -143,6 +145,7 @@ public class Display {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.520 -0400", hash_original_method = "92D5B5EBFB706321BDD6B906C6DF5945", hash_generated_method = "024FABBC46529FFFBC463503BF6BEC82")
     public void getRectSize(Rect outSize) {
         addTaint(outSize.getTaint());
@@ -159,6 +162,7 @@ public class Display {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.520 -0400", hash_original_method = "404C4EF6FA3AD3B9975B754C597D6C0E", hash_generated_method = "9F72D0A1C69A802F93E9E2B86E2A3209")
     public int getMaximumSizeDimension() {
         try 
@@ -185,6 +189,7 @@ public class Display {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.520 -0400", hash_original_method = "2F7FD849240377F4AD58DDE704C1CFAA", hash_generated_method = "AD7CBFCA5B7D2C92E0C20B32CF8AB9C2")
     @Deprecated
     public int getWidth() {
@@ -212,6 +217,7 @@ public class Display {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.521 -0400", hash_original_method = "60FBCC92DE8F9EC729264DB15D46C4E8", hash_generated_method = "97E31AAA060F07AD76F1AB16ED1910AF")
     @Deprecated
     public int getHeight() {
@@ -239,6 +245,7 @@ public class Display {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.521 -0400", hash_original_method = "B1AC967D724C688D478E66D81CB079DE", hash_generated_method = "62C7E3CE07717E516B996020BB6FD984")
     public void getRealSize(Point outSize) {
         addTaint(outSize.getTaint());
@@ -322,6 +329,7 @@ public class Display {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.522 -0400", hash_original_method = "0627945D4A6FEA5F8EF1880CC4DB952B", hash_generated_method = "F5C622C075253C71BD449D9B0DC521F9")
     public int getRotation() {
         int var39ABA20B52E0B25AEA7A16A0988A2804_1973622146 = (getOrientation());
@@ -363,6 +371,7 @@ public class Display {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.523 -0400", hash_original_method = "81980A722EF93A85BC60465488AFFEA3", hash_generated_method = "EAE44A184D3656423D69A4CFF18B486D")
     public void getMetrics(DisplayMetrics outMetrics) {
         addTaint(outMetrics.getTaint());

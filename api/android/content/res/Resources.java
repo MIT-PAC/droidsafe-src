@@ -129,7 +129,7 @@ public class Resources {
 
 
 	
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.SPEC)
 	public final String getString(int resId) {
 		String str = new String();
         str.addTaint(resId);
@@ -198,7 +198,7 @@ public class Resources {
 	}
 	
 	
-	@DSModeled
+	@DSModeled(DSC.SPEC)
 	public String getString(int id, Object... formatArgs){
 		String str = new String();
 		str.addTaint(id);

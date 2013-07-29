@@ -381,6 +381,7 @@ Chunk var90FA681B410416D5DB711643976E02D4_1793044054 =         chunks.get(name);
 
         int end;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.047 -0400", hash_original_method = "A8971FBD893650A54F56F7BF8B0891D6", hash_generated_method = "9B34306804CCDE7336BAF0539474B713")
           Chunk(int start, int end) {
             this.start = start;

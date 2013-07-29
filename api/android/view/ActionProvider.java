@@ -12,6 +12,7 @@ public abstract class ActionProvider {
 
     private SubUiVisibilityListener mSubUiVisibilityListener;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.418 -0400", hash_original_method = "AD51B37569819E728EA786F52DA39151", hash_generated_method = "ADC7AE31EFA88C8C25C78BAD2499B1B4")
     public  ActionProvider(Context context) {
         addTaint(context.getTaint());
@@ -55,6 +56,7 @@ public abstract class ActionProvider {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.419 -0400", hash_original_method = "486EC9DD7EB4D66CD412B7154F65545B", hash_generated_method = "4965DF89D75A45720F4555BC74EC6B5D")
     public void subUiVisibilityChanged(boolean isVisible) {
         addTaint(isVisible);

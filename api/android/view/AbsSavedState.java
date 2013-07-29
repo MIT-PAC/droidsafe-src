@@ -13,6 +13,7 @@ public abstract class AbsSavedState implements Parcelable {
 
     private Parcelable mSuperState;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.391 -0400", hash_original_method = "98DB61DECD5C8032FFDEFFDBC7A07300", hash_generated_method = "DDE4E11A79D0DBE3ACE7A957674D3B72")
     private  AbsSavedState() {
         mSuperState = null;
@@ -21,6 +22,7 @@ public abstract class AbsSavedState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.392 -0400", hash_original_method = "D4C1FB84674D7B9566A2C16E0F6CE527", hash_generated_method = "B78349F4D2D30F55BAAE83411B92A1D5")
     protected  AbsSavedState(Parcelable superState) {
         if(superState == null)        
@@ -38,6 +40,7 @@ public abstract class AbsSavedState implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.393 -0400", hash_original_method = "36C68CF6BE081F45C28577588985103D", hash_generated_method = "1F1448DE724042946A6069EDBEA36A6E")
     protected  AbsSavedState(Parcel source) {
         addTaint(source.getTaint());
@@ -71,7 +74,7 @@ Parcelable var24424C2D2EF752A9D21649F03626A4B3_1982536297 =         mSuperState;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.394 -0400", hash_original_method = "49F04AE9062C121AE76FFD8C13AF6818", hash_generated_method = "B89CCEE673445C1158793CC7051F939D")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

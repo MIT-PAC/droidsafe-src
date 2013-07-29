@@ -142,6 +142,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
 
     private int mDefaultActionButtonContentDescription;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.260 -0400", hash_original_method = "B1417C53B7334442AE372C957DCB8F0C", hash_generated_method = "86B03DA005E6640F9AA460F2B84E2F8E")
     public  ActivityChooserView(Context context) {
         this(context, null);
@@ -150,6 +151,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.261 -0400", hash_original_method = "5446B591236758FE1022AC56CCF4E7CA", hash_generated_method = "2CE96040CA3CBC93CA7E577D7E0AFD79")
     public  ActivityChooserView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -159,6 +161,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.264 -0400", hash_original_method = "82640F6029B5DED0016360DF13353C92", hash_generated_method = "1FED51F07075D04099F7B645CAFA7D40")
     public  ActivityChooserView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -208,6 +211,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.265 -0400", hash_original_method = "200277448D26D5459B7D9186C5FC6866", hash_generated_method = "3CD47E882EFB7A044D6C5A7906E118E7")
     public void setActivityChooserModel(ActivityChooserModel dataModel) {
         addTaint(dataModel.getTaint());
@@ -226,6 +230,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.265 -0400", hash_original_method = "40C8CFBBBEC7CE8C6DC800BBA1A8260F", hash_generated_method = "8071C44C0024823653A728AF47CD8DE3")
     public void setExpandActivityOverflowButtonDrawable(Drawable drawable) {
         addTaint(drawable.getTaint());
@@ -235,6 +240,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.265 -0400", hash_original_method = "0A5827A88A56386A8A69EC0550F49C43", hash_generated_method = "F24FCD1C3BA793DFAEC1AD43E0E690BA")
     public void setExpandActivityOverflowButtonContentDescription(int resourceId) {
         addTaint(resourceId);
@@ -255,6 +261,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.266 -0400", hash_original_method = "D9F80F56BE7AEC83902DD1E82500AB90", hash_generated_method = "3857D0FB1CDAA6982B9D02BCE1AAFFD1")
     public boolean showPopup() {
         if(isShowingPopup() || !mIsAttachedToWindow)        
@@ -278,6 +285,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.267 -0400", hash_original_method = "3AECC6260DA21BAD7E8B15E74C7BA72C", hash_generated_method = "7692FB206CC58C7E83F9FCBF73E2A3D9")
     private void showPopupUnchecked(int maxActivityCount) {
         addTaint(maxActivityCount);
@@ -328,6 +336,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.268 -0400", hash_original_method = "D685C2FA386E3559D94DAB46E30EF0B9", hash_generated_method = "9D4790BA9BA63E637BBBE7D6E906FEFA")
     public boolean dismissPopup() {
         if(isShowingPopup())        
@@ -354,6 +363,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.268 -0400", hash_original_method = "E45D6D96430861522854D560F5CA6F0B", hash_generated_method = "3329741FDE59A3FAA5E890D7A07B7716")
     public boolean isShowingPopup() {
         boolean varEC16F2AB0C513EEC2D6CFE9178BA04FC_467236147 = (getListPopupWindow().isShowing());
@@ -364,6 +374,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.269 -0400", hash_original_method = "F599B3D6D046BF4212D64A5D6A7F3811", hash_generated_method = "80F844DCA2269B21B004557A74BA538B")
     @Override
     protected void onAttachedToWindow() {
@@ -385,6 +396,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.269 -0400", hash_original_method = "589218240FC22193C94953AC6574E4EA", hash_generated_method = "3375D32324F5A5C3AEFB3746012D7F22")
     @Override
     protected void onDetachedFromWindow() {
@@ -415,6 +427,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.270 -0400", hash_original_method = "77C33EEC897BED8B2A12DF2072C37646", hash_generated_method = "ACB91396960FFA3FA31CF15FE3E56C41")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -440,6 +453,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.270 -0400", hash_original_method = "C5A31C6F2FD14D87574B0913D4F6A2F2", hash_generated_method = "AECFA23BC7705187D8C8991F47325290")
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
@@ -468,6 +482,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.271 -0400", hash_original_method = "5EF19A4E1889AB1FC4A984C090B7713C", hash_generated_method = "9BE04B1CD2F7C6B9AB1E1C2777E23C31")
     public ActivityChooserModel getDataModel() {
 ActivityChooserModel var508A9B88A601E27CB548DFF712F7BB82_1302968400 =         mAdapter.getDataModel();
@@ -505,6 +520,7 @@ ActivityChooserModel var508A9B88A601E27CB548DFF712F7BB82_1302968400 =         mA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.272 -0400", hash_original_method = "A13663EF62899FD593D247A6177CE71D", hash_generated_method = "A65B40720E6B2B303748F19CEA562451")
     private ListPopupWindow getListPopupWindow() {
         if(mListPopupWindow == null)        
@@ -532,6 +548,7 @@ ListPopupWindow varFECCF21D966B892F2BEC3B8FB195AB5E_31170157 =         mListPopu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.273 -0400", hash_original_method = "D65ED5C5B81BB78866247BEAE65AB728", hash_generated_method = "4371E5B44E35DCCD7BE0A666CA47154F")
     private void updateAppearance() {
         if(mAdapter.getCount() > 0)        
@@ -584,6 +601,7 @@ ListPopupWindow varFECCF21D966B892F2BEC3B8FB195AB5E_31170157 =         mListPopu
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.275 -0400", hash_original_method = "674D57987B8C667CB3D7FFB12FCDD905", hash_generated_method = "C80B2FE7E4EAAB59DEB2E10097EB1F0E")
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -630,6 +648,7 @@ switch(itemViewType){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.276 -0400", hash_original_method = "B05554F780928527AD52A76E48C9B5FF", hash_generated_method = "FD086B86FE2C80EF6C85031D471BFAF1")
         public void onClick(View view) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -675,6 +694,7 @@ switch(itemViewType){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.277 -0400", hash_original_method = "FB2F3C2103372446E9D5711FBCAD6598", hash_generated_method = "28A9E707D49E322E1124FDB3CFB13D7A")
         @Override
         public boolean onLongClick(View view) {
@@ -710,6 +730,7 @@ switch(itemViewType){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.277 -0400", hash_original_method = "D25064A646F02B95A775BA0461A79BFD", hash_generated_method = "46ED0B7F5EA113F94D2D7ED613CB2AF8")
         public void onDismiss() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -726,6 +747,7 @@ switch(itemViewType){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.278 -0400", hash_original_method = "5021FB127D2DB881B8B1C45B5E11E195", hash_generated_method = "01A110E249B10AF14130012612769273")
         private void notifyOnDismissListener() {
             if(mOnDismissListener != null)            
@@ -767,6 +789,7 @@ switch(itemViewType){
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.279 -0400", hash_original_method = "ACCCD73AF35EBCB0E150696E3946651D", hash_generated_method = "1AA20D012B7194AE19EA1AD414821712")
         public void setDataModel(ActivityChooserModel dataModel) {
             ActivityChooserModel oldDataModel = mAdapter.getDataModel();
@@ -793,6 +816,7 @@ switch(itemViewType){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.280 -0400", hash_original_method = "39EE4EFF86EDF87DA80E694DA09810EF", hash_generated_method = "E1CCE7913016BF596B57C2546C4107E1")
         @Override
         public int getItemViewType(int position) {
@@ -830,6 +854,7 @@ switch(itemViewType){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.280 -0400", hash_original_method = "1BE11BD9F55247D049566CF39D6E3C60", hash_generated_method = "A6C55F5968DE7DF066B7B99BBB764AD3")
         public int getCount() {
             int count = 0;
@@ -860,6 +885,7 @@ switch(itemViewType){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.281 -0400", hash_original_method = "F3D4BDC985376DF5677372C13824236A", hash_generated_method = "39C6B848C3D8B42B1ADC79943C24212F")
         public Object getItem(int position) {
             addTaint(position);
@@ -910,6 +936,7 @@ Object varFD4721BD12B3F49C4BC4EEF9814EA0E3_525259218 =             mDataModel.ge
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.282 -0400", hash_original_method = "6D38E6A963432D636038206F8FE6305D", hash_generated_method = "4B808D5F2ED096FE7359EA2CC208FC11")
         public View getView(int position, View convertView, ViewGroup parent) {
             addTaint(parent.getTaint());
@@ -963,6 +990,7 @@ View var78FE9B874BBEC69B62B43EE963245978_2142873603 =             convertView;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.283 -0400", hash_original_method = "E7848C130F305A2BB53DDDF9782AAF0B", hash_generated_method = "CC5BE766EE7831A7656EF84E0CBD8FBE")
         public int measureContentWidth() {
             final int oldMaxActivityCount = mMaxActivityCount;
@@ -1000,6 +1028,7 @@ for(int i = 0;i < count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.283 -0400", hash_original_method = "EE079429AB45DD891FDFB8F4CAB39411", hash_generated_method = "5661324B3737CCB07AA3D77A4B4A5038")
         public void setMaxActivityCount(int maxActivityCount) {
             if(mMaxActivityCount != maxActivityCount)            
@@ -1015,6 +1044,7 @@ for(int i = 0;i < count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.283 -0400", hash_original_method = "D919FDFCC3B420966F5D4C74A721F1BF", hash_generated_method = "009BBE41AB295177A042AEBBFB94D874")
         public ResolveInfo getDefaultActivity() {
 ResolveInfo var3028A8C3A425EFE9B76ADB6DF57395EF_2127421480 =             mDataModel.getDefaultActivity();
@@ -1025,6 +1055,7 @@ ResolveInfo var3028A8C3A425EFE9B76ADB6DF57395EF_2127421480 =             mDataMo
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.284 -0400", hash_original_method = "4D9F28247FB57368F2D0E306E2284064", hash_generated_method = "99656D0166AE37E2ADA1D4D1ECFF18F0")
         public void setShowFooterView(boolean showFooterView) {
             if(mShowFooterView != showFooterView)            
@@ -1040,6 +1071,7 @@ ResolveInfo var3028A8C3A425EFE9B76ADB6DF57395EF_2127421480 =             mDataMo
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.284 -0400", hash_original_method = "31736EA607A445202315EB7B50B5EA80", hash_generated_method = "0E674C866FBD09D1A23D5554243FB2BC")
         public int getActivityCount() {
             int var1FFE10EE2EA5D34DA20C4869D38B02A8_1550643845 = (mDataModel.getActivityCount());
@@ -1050,6 +1082,7 @@ ResolveInfo var3028A8C3A425EFE9B76ADB6DF57395EF_2127421480 =             mDataMo
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.285 -0400", hash_original_method = "1D0D91D46AAECCD7C2767CF25FDA64BD", hash_generated_method = "3E0065BAD3B9A8B09C426657E50D8680")
         public int getHistorySize() {
             int varFEC0E3CEAD274146B345CC3FB0E3750C_1442139051 = (mDataModel.getHistorySize());
@@ -1082,6 +1115,7 @@ ActivityChooserModel var782E6E6245C8EB180C46FAFCB220D82B_1383706900 =           
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.286 -0400", hash_original_method = "A23AAFB309F0D7012150D94437C8B43A", hash_generated_method = "C95920DAE375E3D3B7042E87269B1DD2")
         public void setShowDefaultActivity(boolean showDefaultActivity,
                 boolean highlightDefaultActivity) {

@@ -26,6 +26,7 @@ public class Stack<E> extends Vector<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.606 -0400", hash_original_method = "FF35E7A3F40F4BCE3A9B7A35AFC11586", hash_generated_method = "EAE9722EE9383D5958156EB7C1DF1FAB")
     @SuppressWarnings("unchecked")
     public synchronized E peek() {
@@ -50,6 +51,7 @@ E var844EE4F2CEF6A403C269534F85F70712_361225599 =             (E) elementData[el
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.606 -0400", hash_original_method = "47AB8756F2D7E98B3A47AFF9902921A8", hash_generated_method = "86A6868C7D8AEBB6A709DB23A19CCF42")
     @SuppressWarnings("unchecked")
     public synchronized E pop() {
@@ -78,6 +80,7 @@ E var2FDE1120F80AA4E8798ECDBDB1C0E85C_860995249 =         obj;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.607 -0400", hash_original_method = "FB7AFAD158F104C5EE0D062F7452B9D0", hash_generated_method = "5B156394BA2F14B3BF8F5A0147788BFD")
     public E push(E object) {
         addTaint(object.getTaint());

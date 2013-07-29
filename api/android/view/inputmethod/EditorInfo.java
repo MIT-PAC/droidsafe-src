@@ -90,6 +90,7 @@ switch(inputType&(TYPE_MASK_CLASS|TYPE_MASK_VARIATION)){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.354 -0400", hash_original_method = "52E48D457BDB05F3C0DFF77F15A840F2", hash_generated_method = "E80738BFFA87E4730747BCB67479186F")
     public void dump(Printer pw, String prefix) {
         addTaint(prefix.getTaint());
@@ -128,6 +129,7 @@ switch(inputType&(TYPE_MASK_CLASS|TYPE_MASK_VARIATION)){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.355 -0400", hash_original_method = "0DCEB67BA2166B08F017930A62049273", hash_generated_method = "076D6EC104E83FBADF0F6938689FEE39")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

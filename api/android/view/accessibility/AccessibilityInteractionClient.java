@@ -49,6 +49,7 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static AccessibilityInteractionClient getInstance() {
         synchronized (sStaticLock) {
             if (sInstance == null) {
@@ -59,6 +60,7 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.267 -0400", hash_original_method = "552BFB14766A8DC73E6AAA7040599DCF", hash_generated_method = "02A7256EC703E89A60E003FE7E1C1DED")
     public void setSameThreadMessage(Message message) {
         synchronized
@@ -74,6 +76,7 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.267 -0400", hash_original_method = "5C41BEE5A47D8A94E160F887E5B51CE0", hash_generated_method = "C6DE846411FFFD9360A76D9F163B13C6")
     public AccessibilityNodeInfo findAccessibilityNodeInfoByAccessibilityId(int connectionId,
             int accessibilityWindowId, int accessibilityViewId) {
@@ -120,6 +123,7 @@ AccessibilityNodeInfo var540C13E9E156B687226421B24F2DF178_1927887464 =         n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.269 -0400", hash_original_method = "60BBE77BB0E3F47D3C9CB3C547527867", hash_generated_method = "8A1DDB19908C31B54B2316A12D5A929A")
     public AccessibilityNodeInfo findAccessibilityNodeInfoByViewIdInActiveWindow(int connectionId,
             int viewId) {
@@ -164,6 +168,7 @@ AccessibilityNodeInfo var540C13E9E156B687226421B24F2DF178_1666731996 =         n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.269 -0400", hash_original_method = "672E254807B5370E478DCC44723B0294", hash_generated_method = "A30EBEA12A15FAF6FC536E7EBA097301")
     public List<AccessibilityNodeInfo> findAccessibilityNodeInfosByViewTextInActiveWindow(
             int connectionId, String text) {
@@ -208,6 +213,7 @@ List<AccessibilityNodeInfo> var540C13E9E156B687226421B24F2DF178_185211519 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.270 -0400", hash_original_method = "AC3652D7BF4240B02C1C5545B023526D", hash_generated_method = "752410F6E70F5120D5EC32D06D7FF42B")
     public List<AccessibilityNodeInfo> findAccessibilityNodeInfosByViewText(int connectionId,
             String text, int accessibilityWindowId, int accessibilityViewId) {
@@ -255,6 +261,7 @@ List<AccessibilityNodeInfo> varB803AB532741AA7D5C2F301CCDDD25F2_94802375 =      
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.271 -0400", hash_original_method = "DACD676F99BB7BF8CCFB6D2A7B9FDEF9", hash_generated_method = "15156A981DAE3CCD95069D951E2D9E07")
     public boolean performAccessibilityAction(int connectionId, int accessibilityWindowId,
             int accessibilityViewId, int action) {
@@ -299,6 +306,7 @@ List<AccessibilityNodeInfo> varB803AB532741AA7D5C2F301CCDDD25F2_94802375 =      
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.271 -0400", hash_original_method = "6C285733A381BDAF8984CA8B204B1B7E", hash_generated_method = "14EF76B68D4CDE0D3217CFD62EAA36A3")
     private AccessibilityNodeInfo getFindAccessibilityNodeInfoResultAndClear(int interactionId) {
         addTaint(interactionId);
@@ -321,6 +329,7 @@ AccessibilityNodeInfo varDC838461EE2FA0CA4C9BBB70A15456B0_1313869874 =          
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.272 -0400", hash_original_method = "5773A7995D438CAC0AFDE10E46EB704D", hash_generated_method = "8D43AE590E4AD767E8FD75B07CB7BF64")
     public void setFindAccessibilityNodeInfoResult(AccessibilityNodeInfo info,
                 int interactionId) {
@@ -344,6 +353,7 @@ AccessibilityNodeInfo varDC838461EE2FA0CA4C9BBB70A15456B0_1313869874 =          
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.273 -0400", hash_original_method = "12169805BC03BC63B5C90B56149C0703", hash_generated_method = "80385EEB194A172E5DAC127F3BA0CE8B")
     private List<AccessibilityNodeInfo> getFindAccessibilityNodeInfosResultAndClear(
                 int interactionId) {
@@ -367,6 +377,7 @@ List<AccessibilityNodeInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_974198555 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.273 -0400", hash_original_method = "6CF51605A938A0D2B20285F05873A357", hash_generated_method = "59A9FEB3DF5D77B26AABD4CB7DB5A567")
     public void setFindAccessibilityNodeInfosResult(List<AccessibilityNodeInfo> infos,
                 int interactionId) {
@@ -390,6 +401,7 @@ List<AccessibilityNodeInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_974198555 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.274 -0400", hash_original_method = "785F868CD3C42AFCCB7588732B0BC5FA", hash_generated_method = "288A7A21C34B36312780A0BFBF147CA7")
     private boolean getPerformAccessibilityActionResult(int interactionId) {
         addTaint(interactionId);
@@ -412,6 +424,7 @@ List<AccessibilityNodeInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_974198555 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.274 -0400", hash_original_method = "F5BCF8753FEED883A431A33F4CB0BF32", hash_generated_method = "390ADE276DEA0B1E04B8065ECB891A68")
     public void setPerformAccessibilityActionResult(boolean succeeded, int interactionId) {
         synchronized
@@ -449,6 +462,7 @@ List<AccessibilityNodeInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_974198555 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.276 -0400", hash_original_method = "28474D5684D129A1738A9E8F91D9820E", hash_generated_method = "D2D65D75E0732ED291AB35758E755416")
     private boolean waitForResultTimedLocked(int interactionId) {
         addTaint(interactionId);
@@ -495,6 +509,7 @@ List<AccessibilityNodeInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_974198555 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.278 -0400", hash_original_method = "061B568C08B51F012B887F4F0E2A3802", hash_generated_method = "37E669957131C80B267E7DC9350CF837")
     private void applyCompatibilityScaleIfNeeded(AccessibilityNodeInfo info, float scale) {
         addTaint(scale);
@@ -524,6 +539,7 @@ List<AccessibilityNodeInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_974198555 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.279 -0400", hash_original_method = "50C3A05545C97DCA046561890361C747", hash_generated_method = "D5669C8FA74B024E5A4C0CFC4C4B9352")
     private void finalizeAccessibilityNodeInfo(AccessibilityNodeInfo info, int connectionId,
             float windowScale) {
@@ -545,6 +561,7 @@ List<AccessibilityNodeInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_974198555 =     
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.280 -0400", hash_original_method = "C4CCA9503A1FCF65E2280A82ABED87CD", hash_generated_method = "112FE17DBDF340BC970BDACAE3B4CBEB")
     private void finalizeAccessibilityNodeInfos(List<AccessibilityNodeInfo> infos,
             int connectionId, float windowScale) {
@@ -591,6 +608,7 @@ Message varDC838461EE2FA0CA4C9BBB70A15456B0_805479078 =             result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.281 -0400", hash_original_method = "C30C93509C0684283448214BFA9D8225", hash_generated_method = "B0B30D31098F96D83F41010033972C3A")
     public IAccessibilityServiceConnection getConnection(int connectionId) {
         addTaint(connectionId);
@@ -607,6 +625,7 @@ IAccessibilityServiceConnection var98465E8A99225005A9A34F617F286736_231781629 = 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.281 -0400", hash_original_method = "7A0506F80A0A925F6D871EC270864AAB", hash_generated_method = "9BB2666AF6E21A666E121911D7C2BCE9")
     public void addConnection(int connectionId, IAccessibilityServiceConnection connection) {
         addTaint(connection.getTaint());
@@ -622,6 +641,7 @@ IAccessibilityServiceConnection var98465E8A99225005A9A34F617F286736_231781629 = 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.281 -0400", hash_original_method = "A8D0295941AD6316CEC94ABF823C5DD4", hash_generated_method = "3A3683A65B52115BA1A14871F718EF7C")
     public void removeConnection(int connectionId) {
         addTaint(connectionId);

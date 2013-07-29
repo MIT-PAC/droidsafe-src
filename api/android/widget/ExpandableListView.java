@@ -68,6 +68,7 @@ public class ExpandableListView extends ListView {
 
     private OnChildClickListener mOnChildClickListener;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.491 -0400", hash_original_method = "883D95D0AB13C2DE7BE0B98484A4295B", hash_generated_method = "2EA684AF9274DBB09C0F16AA97A8F6A3")
     public  ExpandableListView(Context context) {
         this(context, null);
@@ -76,6 +77,7 @@ public class ExpandableListView extends ListView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.491 -0400", hash_original_method = "4019A5446CFBA13B5DEBC7A85D6066EA", hash_generated_method = "487DBE2E3E701FFF6FE203167B0C6C61")
     public  ExpandableListView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.expandableListViewStyle);
@@ -85,6 +87,7 @@ public class ExpandableListView extends ListView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.493 -0400", hash_original_method = "9ABBDB13FF145C988C5879C289ADA198", hash_generated_method = "CAAB07915670D00EA4B1196F7DD6D4A6")
     public  ExpandableListView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -116,6 +119,7 @@ public class ExpandableListView extends ListView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.496 -0400", hash_original_method = "7A23721B5E073FBA7FD49FF2A748467D", hash_generated_method = "9973091E9A034A5D8A77EE1DBE1BA53F")
     @Override
     protected void dispatchDraw(Canvas canvas) {
@@ -212,6 +216,7 @@ for(int i = 0, childFlPos = mFirstPosition - headerViewsCount;i < childCount;i++
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.498 -0400", hash_original_method = "D5F058A591B90F6E54D4D617313791EB", hash_generated_method = "610C1668F743DEAA4C486876FA99DCC4")
     private Drawable getIndicator(PositionMetadata pos) {
         addTaint(pos.getTaint());
@@ -256,6 +261,7 @@ Drawable var971308062B2F7B7C459D4E8FB7EC2C6A_2119577965 =         indicator;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.498 -0400", hash_original_method = "1C2A86D3B4CD7E5098111C8F9235F268", hash_generated_method = "F599D954146BAE986B6EC234924B5536")
     @Override
      void drawDivider(Canvas canvas, Rect bounds, int childIndex) {
@@ -298,6 +304,7 @@ Drawable var971308062B2F7B7C459D4E8FB7EC2C6A_2119577965 =         indicator;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.499 -0400", hash_original_method = "A4E4696C244BB97A42B35DBC06E7550F", hash_generated_method = "509E8C83E398716ED8D8ECB27DA58A6B")
     @Override
     public void setAdapter(ListAdapter adapter) {
@@ -314,6 +321,7 @@ Drawable var971308062B2F7B7C459D4E8FB7EC2C6A_2119577965 =         indicator;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.499 -0400", hash_original_method = "1C0E40F01B81CC446BCB9E503587C60C", hash_generated_method = "165CC6537DB8745770DFCCE93DF6F7FD")
     @Override
     public ListAdapter getAdapter() {
@@ -325,6 +333,7 @@ ListAdapter varAA65D8278002ADFD88451394EA4A61D4_1024701013 =         super.getAd
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.499 -0400", hash_original_method = "B7F875362109C546409DA14CD03B0627", hash_generated_method = "57950970811BB7CBD21BBF83A3425EC2")
     @Override
     public void setOnItemClickListener(OnItemClickListener l) {
@@ -335,6 +344,7 @@ ListAdapter varAA65D8278002ADFD88451394EA4A61D4_1024701013 =         super.getAd
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.500 -0400", hash_original_method = "86A402EAE8E162910BEF1CBB540CA500", hash_generated_method = "2CD710785175611872F5A7F72F6981EE")
     public void setAdapter(ExpandableListAdapter adapter) {
         mAdapter = adapter;
@@ -369,6 +379,7 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_459577770 =         mA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.501 -0400", hash_original_method = "A9D0233B5C169CC66750AD88D31A38E9", hash_generated_method = "F96CE6C85C444F7E1EFF067C454C8380")
     private boolean isHeaderOrFooterPosition(int position) {
         addTaint(position);
@@ -382,6 +393,7 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_459577770 =         mA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.501 -0400", hash_original_method = "8FB53CC37B504290AC6948A7A815A683", hash_generated_method = "990A2CC506EF5A76BF28C4AE27229175")
     private int getFlatPositionForConnector(int flatListPosition) {
         addTaint(flatListPosition);
@@ -393,6 +405,7 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_459577770 =         mA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.501 -0400", hash_original_method = "D8821ADD18913687E76F2B3166416BE8", hash_generated_method = "2F97073096076724328AF199A0B418BE")
     private int getAbsoluteFlatPosition(int flatListPosition) {
         addTaint(flatListPosition);
@@ -404,6 +417,7 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_459577770 =         mA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.501 -0400", hash_original_method = "351E469927E1B73D6D643A520D2ADA68", hash_generated_method = "88B93FAE4F0BD0189092DA8670DC662C")
     @Override
     public boolean performItemClick(View v, int position, long id) {
@@ -429,6 +443,7 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_459577770 =         mA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.502 -0400", hash_original_method = "6AFB7BBE8B57133AA9AA93690C5E22BA", hash_generated_method = "934BF6880DFB824ED2BE6AA507604E32")
      boolean handleItemClick(View v, int position, long id) {
         addTaint(id);
@@ -496,6 +511,7 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_459577770 =         mA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.508 -0400", hash_original_method = "98581B0D5B3DDD77A367749C65B03049", hash_generated_method = "DB490351397E96D1D7EFFE9121214C2A")
     public boolean expandGroup(int groupPos) {
         addTaint(groupPos);
@@ -507,6 +523,7 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_459577770 =         mA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.508 -0400", hash_original_method = "0C4613B5CED32082A0135BD7DC8647D8", hash_generated_method = "077900B39CA6ADB72F5DEC1E634822E3")
     public boolean expandGroup(int groupPos, boolean animate) {
         addTaint(animate);
@@ -547,6 +564,7 @@ ExpandableListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_459577770 =         mA
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.511 -0400", hash_original_method = "32E02BBD4C2448429B8A9BB97BA3197B", hash_generated_method = "470F41C99059A4D18BFEEF82F9FA41DB")
     public boolean collapseGroup(int groupPos) {
         addTaint(groupPos);

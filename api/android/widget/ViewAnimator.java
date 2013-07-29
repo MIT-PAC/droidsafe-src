@@ -30,6 +30,7 @@ public class ViewAnimator extends FrameLayout {
 
     Animation mOutAnimation;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.204 -0400", hash_original_method = "66F6B937748E2D301A30C8F3ECD323BD", hash_generated_method = "03C6B7C68A925262E4CD3D5DC2B4A625")
     public  ViewAnimator(Context context) {
         super(context);
@@ -40,6 +41,7 @@ public class ViewAnimator extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.205 -0400", hash_original_method = "F8EF7A2A27A81BBBD9162F58F1DAF59B", hash_generated_method = "5292DC58EC78DF5F1572327AD67AFBA2")
     public  ViewAnimator(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -77,6 +79,7 @@ public class ViewAnimator extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.205 -0400", hash_original_method = "6B106D21A6B322E95178F19E05B7CE37", hash_generated_method = "213B99B199BEBC90733945C14C617525")
     private void initViewAnimator(Context context, AttributeSet attrs) {
         addTaint(attrs.getTaint());
@@ -106,6 +109,7 @@ public class ViewAnimator extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.206 -0400", hash_original_method = "886E9E30E7E0F1B550AD6251245A0536", hash_generated_method = "B0B1E86F2BB8BE1005DD6B1D7F77B1D9")
     @android.view.RemotableViewMethod
     public void setDisplayedChild(int whichChild) {
@@ -151,6 +155,7 @@ public class ViewAnimator extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.207 -0400", hash_original_method = "EFCC34AA69F6F34103211EDFAD5FB56A", hash_generated_method = "3385562BAE55ABDC097B8B20904F2D01")
     @android.view.RemotableViewMethod
     public void showNext() {
@@ -160,6 +165,7 @@ public class ViewAnimator extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.207 -0400", hash_original_method = "F846DD3340718784FB63764FD5BBF0F3", hash_generated_method = "67432F7150CA193FAF87FB8FB63A56B3")
     @android.view.RemotableViewMethod
     public void showPrevious() {
@@ -169,6 +175,7 @@ public class ViewAnimator extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.208 -0400", hash_original_method = "821F94AAA9585776C884C184A81B321A", hash_generated_method = "A02DD7BC39815085257A8E1C4DF61279")
      void showOnly(int childIndex, boolean animate) {
         addTaint(animate);
@@ -219,6 +226,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.208 -0400", hash_original_method = "F76460515723C04BD015D3AE7F75A8EE", hash_generated_method = "767C9C9F31BCC47F5AA881D850F3D21A")
      void showOnly(int childIndex) {
         addTaint(childIndex);
@@ -230,6 +238,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.209 -0400", hash_original_method = "B6265928EFB656804D99665538BC6B35", hash_generated_method = "5D8367EE6F1497F146AAEB734F9CD82F")
     @Override
     public void addView(View child, int index, ViewGroup.LayoutParams params) {
@@ -255,6 +264,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.210 -0400", hash_original_method = "2876DED6BDEBD13B29080CE11E9063E4", hash_generated_method = "BCAA78D61167CAAC0C5353EF23AEBF73")
     @Override
     public void removeAllViews() {
@@ -268,6 +278,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.210 -0400", hash_original_method = "96F6E7BCEF91AFFF9BCD877C8E22A578", hash_generated_method = "A7B4988A2710D09B3F767BF86D8D0CB0")
     @Override
     public void removeView(View view) {
@@ -285,6 +296,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.211 -0400", hash_original_method = "39615E53633A229D459BCD129C9447D8", hash_generated_method = "3CF38E7B673C1B62368A850130F6539B")
     @Override
     public void removeViewAt(int index) {
@@ -320,6 +332,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.212 -0400", hash_original_method = "E39155B01A3404328E46119B32BA0220", hash_generated_method = "5F148F7815F600867821DC7CB521B775")
     public void removeViewInLayout(View view) {
         addTaint(view.getTaint());
@@ -329,6 +342,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.212 -0400", hash_original_method = "E3FA5900F02B916C2065C9EFA9728FDF", hash_generated_method = "8B08F6DFC7318AAE929F06884EF6D751")
     public void removeViews(int start, int count) {
         addTaint(count);
@@ -355,6 +369,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.213 -0400", hash_original_method = "76C75A4C2363189C0B16150C5B7ECE1A", hash_generated_method = "E57F4172B992AF809E66F308997DA084")
     public void removeViewsInLayout(int start, int count) {
         addTaint(count);
@@ -365,6 +380,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.213 -0400", hash_original_method = "844041B2553847C9CC4B36B79F20B7EC", hash_generated_method = "5511E056CD17DA0976485F9DCF7A5B3B")
     public View getCurrentView() {
 View var2EFE567B1041312ACA3B581D96281BE7_365652205 =         getChildAt(mWhichChild);
@@ -415,6 +431,7 @@ Animation var12545A6CD44F5F92DFAF41C046B9E960_911871511 =         mOutAnimation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.214 -0400", hash_original_method = "4B14A90FDB2491821F3B7183A1AB7EB4", hash_generated_method = "A028A2D55E1E0E360872480B0EB9C0EF")
     public void setInAnimation(Context context, int resourceID) {
         addTaint(resourceID);
@@ -425,6 +442,7 @@ Animation var12545A6CD44F5F92DFAF41C046B9E960_911871511 =         mOutAnimation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.214 -0400", hash_original_method = "C68FA8DD73709498CDF74B32AA0794E0", hash_generated_method = "2D772FA38A74DF4CE5F92F31E9029652")
     public void setOutAnimation(Context context, int resourceID) {
         addTaint(resourceID);
@@ -444,6 +462,7 @@ Animation var12545A6CD44F5F92DFAF41C046B9E960_911871511 =         mOutAnimation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.214 -0400", hash_original_method = "0B91CAAE76789C8A4B2B18C9D0AAF852", hash_generated_method = "33726DF4D4524AD511BD4A7F3D751F82")
     @Override
     public int getBaseline() {

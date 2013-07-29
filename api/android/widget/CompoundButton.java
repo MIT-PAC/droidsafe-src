@@ -40,6 +40,7 @@ public abstract class CompoundButton extends Button implements Checkable {
 
     private OnCheckedChangeListener mOnCheckedChangeWidgetListener;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.999 -0400", hash_original_method = "09BDBE7CE6F05C0EF8277BC374FA0AC6", hash_generated_method = "368C048C7070EA937F4D6E8B7BC1059F")
     public  CompoundButton(Context context) {
         this(context, null);
@@ -48,6 +49,7 @@ public abstract class CompoundButton extends Button implements Checkable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.000 -0400", hash_original_method = "971C0A1E5EDCDBE9454DEBB4776AC79B", hash_generated_method = "7353B66FF27C4970D2E44CE0EAEB9515")
     public  CompoundButton(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -57,6 +59,7 @@ public abstract class CompoundButton extends Button implements Checkable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.001 -0400", hash_original_method = "486B323903576A8E24B1C8D9A5D1C983", hash_generated_method = "359F4B0FAC9D447060113734E42DDE5B")
     public  CompoundButton(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -89,6 +92,7 @@ public abstract class CompoundButton extends Button implements Checkable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.001 -0400", hash_original_method = "E1B1AD330E2148117F43C315FF6D1DED", hash_generated_method = "3679ED1F891BEC88079198707411C40A")
     public void toggle() {
         setChecked(!mChecked);
@@ -97,6 +101,7 @@ public abstract class CompoundButton extends Button implements Checkable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.001 -0400", hash_original_method = "CF8A2026FDAB35E1C88301DD3EB518FB", hash_generated_method = "47EBCE36427ECEEA5BA67D9CFB45236E")
     @Override
     public boolean performClick() {
@@ -122,6 +127,7 @@ public abstract class CompoundButton extends Button implements Checkable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.003 -0400", hash_original_method = "CA54800DCB28AE61300AD40B91914282", hash_generated_method = "2E9859E3BD82B02F24A5D1C213A27F35")
     public void setChecked(boolean checked) {
         if(mChecked != checked)        

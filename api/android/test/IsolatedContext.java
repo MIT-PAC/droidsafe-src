@@ -42,6 +42,7 @@ public class IsolatedContext extends ContextWrapper {
 
     private List<Intent> mBroadcastIntents = Lists.newArrayList();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.762 -0400", hash_original_method = "A71A97961214CA45DD285FABD52B40F7", hash_generated_method = "CBFCAC4D66DBF5E4BA7393602C6AFD01")
     public  IsolatedContext(
             ContentResolver resolver, Context targetContext) {
@@ -55,6 +56,7 @@ public class IsolatedContext extends ContextWrapper {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.762 -0400", hash_original_method = "8549CC856014937B713ABF96571E7E0A", hash_generated_method = "E206ECE92A6741ACEFACC405897DE8A9")
     public List<Intent> getAndClearBroadcastIntents() {
         List<Intent> intents = mBroadcastIntents;
@@ -179,6 +181,7 @@ Intent var540C13E9E156B687226421B24F2DF178_1870985540 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.768 -0400", hash_original_method = "97D70C3E7E76864AF838B3F545C2E8EF", hash_generated_method = "FB3C8B5F20B11FB3E1A2534BCC0BBCD8")
     @Override
     public Object getSystemService(String name) {
@@ -200,6 +203,7 @@ Object var540C13E9E156B687226421B24F2DF178_1536496219 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.768 -0400", hash_original_method = "FE53204BB45F48ED45638BEC1B5AA1BA", hash_generated_method = "6CAE3062E357648C0400D2BE0F8D870C")
     @Override
     public File getFilesDir() {
@@ -213,6 +217,7 @@ File varCDB4F0E70BC9453804DFE6CD3611F6BF_1923668064 =         new File("/dev/nul
     
     private class MockAccountManager extends AccountManager {
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.769 -0400", hash_original_method = "F50A3FB8A5B88C0A2467EC0285F6EC49", hash_generated_method = "B682F1D4D506B92B6755DA9F25B8C9C2")
         public  MockAccountManager() {
             super(IsolatedContext.this, null , null );
@@ -278,6 +283,7 @@ String var540C13E9E156B687226421B24F2DF178_1484219517 =             null;
 
             T mResult;
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.773 -0400", hash_original_method = "AEBC033D1847CD0EB76C1CD9E1AF95BB", hash_generated_method = "6116808AFB1EBF7DF132977043A5389D")
             public  MockAccountManagerFuture(T result) {
                 mResult = result;
@@ -320,6 +326,7 @@ String var540C13E9E156B687226421B24F2DF178_1484219517 =             null;
             }
 
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.775 -0400", hash_original_method = "8CB724F1A3943B1995566F000F10E5F3", hash_generated_method = "86205B90805FE7939EB0FC8A7065D467")
             public T getResult() throws OperationCanceledException, IOException, AuthenticatorException {
 T var8EC17D26103D23643357521909BC2C9A_190176727 =                 mResult;
@@ -330,6 +337,7 @@ T var8EC17D26103D23643357521909BC2C9A_190176727 =                 mResult;
             }
 
             
+            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.775 -0400", hash_original_method = "810ADDF52164EBC63263CE769016F2A6", hash_generated_method = "91E9592F9336AC3128FFB9087D09F4C4")
             public T getResult(long timeout, TimeUnit unit) throws OperationCanceledException, IOException, AuthenticatorException {
                 addTaint(unit.getTaint());

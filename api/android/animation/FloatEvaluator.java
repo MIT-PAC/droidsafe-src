@@ -15,6 +15,7 @@ public class FloatEvaluator implements TypeEvaluator<Number> {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.528 -0400", hash_original_method = "F409EF3C8ADBC3E8580AA402C114DFFB", hash_generated_method = "F2B610F81131966C7180FF7ABF92DA01")
     public Float evaluate(float fraction, Number startValue, Number endValue) {
         addTaint(endValue.getTaint());

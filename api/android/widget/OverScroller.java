@@ -29,6 +29,7 @@ public class OverScroller {
 
     private boolean mFlywheel;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.739 -0400", hash_original_method = "B9802AB7FB2D6944C0543E71DB189BC5", hash_generated_method = "398A849B67626D49F95C7274A5C25CD9")
     public  OverScroller(Context context) {
         this(context, null);
@@ -37,6 +38,7 @@ public class OverScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.740 -0400", hash_original_method = "F6227ED49D62C3697D2AC005A8942714", hash_generated_method = "DAF54356F4F3FB8CD0C05D29B935FAA6")
     public  OverScroller(Context context, Interpolator interpolator) {
         this(context, interpolator, true);
@@ -46,6 +48,7 @@ public class OverScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.740 -0400", hash_original_method = "8F06EBB42FF76B1717D428E4F6418D97", hash_generated_method = "6CC70F0454D9E7BF867254450C7A84AC")
     public  OverScroller(Context context, Interpolator interpolator, boolean flywheel) {
         addTaint(context.getTaint());
@@ -63,6 +66,7 @@ public class OverScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.741 -0400", hash_original_method = "0CF9495AD70A3403C1A28AE06C2DFE6A", hash_generated_method = "842488CA505C8C5F857E3EFD8901C95D")
     public  OverScroller(Context context, Interpolator interpolator,
             float bounceCoefficientX, float bounceCoefficientY) {
@@ -75,6 +79,7 @@ public class OverScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.741 -0400", hash_original_method = "229999978F856549CB121738FDE882C4", hash_generated_method = "B0D2205542EC6B00530226F5B6D0A240")
     public  OverScroller(Context context, Interpolator interpolator,
             float bounceCoefficientX, float bounceCoefficientY, boolean flywheel) {
@@ -88,6 +93,7 @@ public class OverScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.741 -0400", hash_original_method = "E258F8966760114615A66C59C43DDBF7", hash_generated_method = "634FC718808689B396CB1A2B49C6A7C4")
     public final void setFriction(float friction) {
         addTaint(friction);
@@ -99,6 +105,7 @@ public class OverScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.741 -0400", hash_original_method = "C0D588953F48F0F49E401C0010BD067A", hash_generated_method = "E48BE430DAEB467063A52D2902BDCAD8")
     public final boolean isFinished() {
         boolean var0DB3E8C2664749C2162B19E4B34C7E33_239746372 = (mScrollerX.mFinished && mScrollerY.mFinished);
@@ -109,6 +116,7 @@ public class OverScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.742 -0400", hash_original_method = "530BF62F40D21F1D1C05E22ECA085B25", hash_generated_method = "9E50CA69CA03FFBAA94AC2B7585A2958")
     public final void forceFinished(boolean finished) {
         mScrollerX.mFinished = mScrollerY.mFinished = finished;
@@ -117,6 +125,7 @@ public class OverScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.742 -0400", hash_original_method = "935C47FB8A3CB470F597BC28E107035C", hash_generated_method = "5C0938C4E4A8CB2B1917AAE67AD2CA85")
     public final int getCurrX() {
         int varE75ACE107022639662FD371651D0ECD4_743403862 = (mScrollerX.mCurrentPosition);
@@ -127,6 +136,7 @@ public class OverScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.742 -0400", hash_original_method = "4ECEC07425ABC9DEFD7B203A5114566B", hash_generated_method = "A13775FA525FE149CD8897389AD5A5BC")
     public final int getCurrY() {
         int varEEB998B463EDBD97DFFC5C9DD5E23B8C_1161181697 = (mScrollerY.mCurrentPosition);
@@ -137,6 +147,7 @@ public class OverScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.743 -0400", hash_original_method = "64BF41B2D89FD1AD797ACAED97E05500", hash_generated_method = "93BDFC3C56BF3017B9953BE6D8F20CCB")
     public float getCurrVelocity() {
         float squaredNorm = mScrollerX.mCurrVelocity * mScrollerX.mCurrVelocity;
@@ -151,6 +162,7 @@ public class OverScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.743 -0400", hash_original_method = "99101D94CAA5BDB5F4107BC8C52E5814", hash_generated_method = "0557CB9E1D7BCD01A513943979E21CB9")
     public final int getStartX() {
         int varC1EC4CC35CCC1E65284382B0A8D20B69_1449475316 = (mScrollerX.mStart);
@@ -161,6 +173,7 @@ public class OverScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.743 -0400", hash_original_method = "C3B7BC19CF57D40812EE2941701D8011", hash_generated_method = "9902DDEE27560B4592FFCBFFDE43B223")
     public final int getStartY() {
         int var12006AA0EEBE106A7C70A4B89A5E77F1_925109981 = (mScrollerY.mStart);
@@ -171,6 +184,7 @@ public class OverScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.744 -0400", hash_original_method = "B59ED352B9AEDA78AFFC00B7CFC03926", hash_generated_method = "DEF0CEB83F90E2798D5207B7BAE6B991")
     public final int getFinalX() {
         int varED7C18F876C06D7AE5954809EE1DB0C2_493870838 = (mScrollerX.mFinal);
@@ -181,6 +195,7 @@ public class OverScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.744 -0400", hash_original_method = "35D86359302D602175EC68518CA83146", hash_generated_method = "186F63C9F70437A7DF0AED9CABB71723")
     public final int getFinalY() {
         int var7F5919007196DB74ACF1C481429A74C3_918389849 = (mScrollerY.mFinal);
@@ -191,6 +206,7 @@ public class OverScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.744 -0400", hash_original_method = "9AE57030D7C8A0E7D6E4B9C3569B7863", hash_generated_method = "E580DCE509848247D532EBD1D32BDA7E")
     @Deprecated
     public final int getDuration() {
@@ -202,6 +218,7 @@ public class OverScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.744 -0400", hash_original_method = "C8E559EF6FD22D868574182D9D2BCAF9", hash_generated_method = "035670F369EFE5298CE10FF9C80A594D")
     @Deprecated
     public void extendDuration(int extend) {
@@ -214,6 +231,7 @@ public class OverScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.744 -0400", hash_original_method = "21D9AD21BF731806972ABE02338AD0C0", hash_generated_method = "B77FB4DA3B1FDFF3BEFF281ED53615DB")
     @Deprecated
     public void setFinalX(int newX) {
@@ -224,6 +242,7 @@ public class OverScroller {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.745 -0400", hash_original_method = "300115417BC2D028444CA0676224C129", hash_generated_method = "4BD9E36BCFB7A0D51CDE9E0CCF8A3D9C")
     @Deprecated
     public void setFinalY(int newY) {
@@ -234,7 +253,7 @@ public class OverScroller {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.745 -0400", hash_original_method = "4391FF82C7FA76BDB2CDCD1D85612F8D", hash_generated_method = "B3998C8DD5EC438CC517F124F68FE61F")
     public boolean computeScrollOffset() {
         if(isFinished())        
@@ -297,6 +316,7 @@ switch(mMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.746 -0400", hash_original_method = "2558578E34A043045AE1AF32A3800D82", hash_generated_method = "1BD8BF39BAE975497B125E48604D318A")
     public void startScroll(int startX, int startY, int dx, int dy) {
         addTaint(dy);
@@ -309,6 +329,7 @@ switch(mMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.747 -0400", hash_original_method = "C7C9FE1639F9BA6211C746BC2E590EF8", hash_generated_method = "4E11F69F49362EDEA684F20DFD5C8145")
     public void startScroll(int startX, int startY, int dx, int dy, int duration) {
         addTaint(duration);
@@ -326,6 +347,7 @@ switch(mMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.747 -0400", hash_original_method = "E8D7F5B96D38EF5E598258BCD9688B52", hash_generated_method = "F029BC0641C5C03920CEC83D9DCCA158")
     public boolean springBack(int startX, int startY, int minX, int maxX, int minY, int maxY) {
         addTaint(maxY);
@@ -348,6 +370,7 @@ switch(mMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.748 -0400", hash_original_method = "DCC04315E1B3C3B4106F742F922D4431", hash_generated_method = "32BB7C371040E1A992615FF47A09FB11")
     public void fling(int startX, int startY, int velocityX, int velocityY,
             int minX, int maxX, int minY, int maxY) {
@@ -365,6 +388,7 @@ switch(mMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.748 -0400", hash_original_method = "38A7A19069D4290FC9AB0139CD44ADE1", hash_generated_method = "F6BB98922F160AF882135EE5C3E34381")
     public void fling(int startX, int startY, int velocityX, int velocityY,
             int minX, int maxX, int minY, int maxY, int overX, int overY) {
@@ -408,6 +432,7 @@ switch(mMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.749 -0400", hash_original_method = "B9132D3CC6E7407A65F178898D94F282", hash_generated_method = "DA1AEA04A0D08C9734D9C5E5CFCE5ADD")
     public void notifyHorizontalEdgeReached(int startX, int finalX, int overX) {
         addTaint(overX);
@@ -419,6 +444,7 @@ switch(mMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.749 -0400", hash_original_method = "EAACB5866396964CA4004FBBF9350F29", hash_generated_method = "93A8B191CAA35ACECD5DDA1B8237B6B5")
     public void notifyVerticalEdgeReached(int startY, int finalY, int overY) {
         addTaint(overY);
@@ -430,6 +456,7 @@ switch(mMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.749 -0400", hash_original_method = "AE5D891ECDFB8C77EC70A4859A3A8CFD", hash_generated_method = "8A761978B099978D96B267913DEC8A45")
     public boolean isOverScrolled() {
         boolean varFF1CE4C5A06BCC73BF7837A045CE34BE_1105737747 = (((!mScrollerX.mFinished &&
@@ -446,6 +473,7 @@ switch(mMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.749 -0400", hash_original_method = "E56D99D09F46A8AEF8DD628D53F963A5", hash_generated_method = "694AEC3319AADB935EA112A7C19DD2CD")
     public void abortAnimation() {
         mScrollerX.finish();
@@ -456,6 +484,7 @@ switch(mMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.750 -0400", hash_original_method = "6776820FB8E88CBACCBB30EFABCCA565", hash_generated_method = "979B1D0101BE5DCC3F88D7F6AF56F4EA")
     public int timePassed() {
         final long time = AnimationUtils.currentAnimationTimeMillis();
@@ -470,6 +499,7 @@ switch(mMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.750 -0400", hash_original_method = "EC43B1555D38CD3A665472CFA4E77643", hash_generated_method = "3CEB3F7741ED98EB50AF4E98CAEAA2C8")
     public boolean isScrollingInDirection(float xvel, float yvel) {
         addTaint(yvel);
@@ -532,6 +562,7 @@ switch(mMode){
 
         private int mState = SPLINE;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.750 -0400", hash_original_method = "D0177E162854BD0B51587B46D28F0B6A", hash_generated_method = "8DA67F7E3849D2B57321066409F02625")
           SplineOverScroller() {
             mFinished = true;
@@ -540,6 +571,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         static void initFromContext(Context context) {
             final float ppi = context.getResources().getDisplayMetrics().density * 160.0f;
             PHYSICAL_COEF = SensorManager.GRAVITY_EARTH 
@@ -558,6 +590,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.751 -0400", hash_original_method = "64F0298C66739A6C01CABFBC1A2B2075", hash_generated_method = "8D0066CC0B7F2B3783E5F9BC60951860")
          void updateScroll(float q) {
             mCurrentPosition = mStart + Math.round(q * (mFinal - mStart));
@@ -572,6 +605,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.751 -0400", hash_original_method = "97FBA6B7752D67B719405DAE507B2D91", hash_generated_method = "6594E547C56E3A36410B7595C40B7C75")
         private void adjustDuration(int start, int oldFinal, int newFinal) {
             addTaint(newFinal);
@@ -606,6 +640,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.751 -0400", hash_original_method = "171266C35C248ABBEE6A2AAA833A0F85", hash_generated_method = "9E2FAA2015CD1CEF96EC33E5FACB2540")
          void startScroll(int start, int distance, int duration) {
             mFinished = false;
@@ -648,6 +683,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.752 -0400", hash_original_method = "7F220CB7E5E59F74D99C7454C47E42C7", hash_generated_method = "F3F2BE72F53D1A8F05BB2994680DD4A5")
          void extendDuration(int extend) {
             final long time = AnimationUtils.currentAnimationTimeMillis();
@@ -662,6 +698,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.752 -0400", hash_original_method = "D12AE2ECF55023F539A88C111AC438E6", hash_generated_method = "CF98910E6B9D546D53B63C6187B09F59")
          boolean springback(int start, int min, int max) {
             addTaint(max);
@@ -698,6 +735,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.753 -0400", hash_original_method = "FE4DCB4600DDD23F75B042FA5167B4E7", hash_generated_method = "FB332897CE3805816FC5084D5602688B")
         private void startSpringback(int start, int end, int velocity) {
             addTaint(velocity);
@@ -723,6 +761,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.754 -0400", hash_original_method = "8B3E33053E001BDAB851E620AED14FC0", hash_generated_method = "94DC951FB15E33E6D79F8DD133008A13")
          void fling(int start, int velocity, int min, int max, int over) {
             mOver = over;
@@ -760,6 +799,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.754 -0400", hash_original_method = "55451D958AF332430844B13377F10B18", hash_generated_method = "7FD7127F224D25752FE860F9B9C99EFC")
         private double getSplineDeceleration(int velocity) {
             addTaint(velocity);
@@ -771,6 +811,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.754 -0400", hash_original_method = "7888FBEE8D14061C2ED981410CC88AC0", hash_generated_method = "AA4D1D4323C2A75FA6CA0D9FA59FA704")
         private double getSplineFlingDistance(int velocity) {
             addTaint(velocity);
@@ -786,6 +827,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.755 -0400", hash_original_method = "1F09855DFC7D15DA5ECD081A4B3F581B", hash_generated_method = "200F81F3C1846149BD8995442F798A13")
         private int getSplineFlingDuration(int velocity) {
             addTaint(velocity);
@@ -801,6 +843,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.755 -0400", hash_original_method = "C51353CD784B93D7179DA830597304C4", hash_generated_method = "9EA133680B2BE4FC0D342AFF09BCCFC5")
         private void fitOnBounceCurve(int start, int end, int velocity) {
             addTaint(velocity);
@@ -825,6 +868,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.755 -0400", hash_original_method = "5D48F28010F8FCB9211B58C3C36EC8CC", hash_generated_method = "280DD2F3E3E96A08E6F9099B68AC4415")
         private void startBounceAfterEdge(int start, int end, int velocity) {
             mDeceleration = getDeceleration(velocity == 0 ? start - end : velocity);
@@ -837,6 +881,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.756 -0400", hash_original_method = "E644EF955DC6FD722F53E2DD199A395E", hash_generated_method = "3BD0B0E62F177AD5B32E70444624654D")
         private void startAfterEdge(int start, int min, int max, int velocity) {
             addTaint(velocity);
@@ -873,6 +918,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.756 -0400", hash_original_method = "D032297ACDC9C65A50161DCB548F10DC", hash_generated_method = "487A51958ECA4EC8835BC9A8EB259BF7")
          void notifyEdgeReached(int start, int end, int over) {
             addTaint(end);
@@ -892,6 +938,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.756 -0400", hash_original_method = "4D9D443F2B4C6EC9AAAB1FF452014EB4", hash_generated_method = "8E44A0A909749DBAFFA723A78E5AB9A4")
         private void onEdgeReached() {
             float distance = mVelocity * mVelocity / (2.0f * Math.abs(mDeceleration));
@@ -919,6 +966,7 @@ switch(mMode){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.756 -0400", hash_original_method = "6FDA077121143820AC37360810DDE80A", hash_generated_method = "E69516AC5595C460F096C24A1E0F426D")
          boolean continueWhenFinished() {
 switch(mState){
@@ -955,6 +1003,7 @@ switch(mState){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.757 -0400", hash_original_method = "36FADD2423F4A31EF1611CA012E37B33", hash_generated_method = "64731DB316B108F87567D0F72A911BD9")
          boolean update() {
             final long time = AnimationUtils.currentAnimationTimeMillis();

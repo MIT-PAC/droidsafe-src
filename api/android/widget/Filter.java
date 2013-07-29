@@ -24,6 +24,7 @@ public abstract class Filter {
 
     private final Object mLock = new Object();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.716 -0400", hash_original_method = "3A43B55E5FFADA496A080A897709E281", hash_generated_method = "224B7DC54A49D487A6B70021B3EAC24D")
     public  Filter() {
         mResultHandler = new ResultsHandler();
@@ -46,6 +47,7 @@ public abstract class Filter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.717 -0400", hash_original_method = "547418F5BDE1A6BA9449D3E97456DC38", hash_generated_method = "783F66A71E8CB69A046727A9A350EFE9")
     public final void filter(CharSequence constraint) {
         addTaint(constraint.getTaint());
@@ -55,6 +57,7 @@ public abstract class Filter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.718 -0400", hash_original_method = "72132B08B36B7C63B817B4EDB2584A0E", hash_generated_method = "E70A67776F5BB7A450E6BFE52BEF03E3")
     public final void filter(CharSequence constraint, FilterListener listener) {
         addTaint(listener.getTaint());
@@ -92,6 +95,7 @@ public abstract class Filter {
             FilterResults results);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.719 -0400", hash_original_method = "5D0951FE3DB94952122FC0A58DABB40C", hash_generated_method = "920542354153AA27082014AC97062F4F")
     public CharSequence convertResultToString(Object resultValue) {
         addTaint(resultValue.getTaint());
@@ -111,6 +115,7 @@ CharSequence varF975844E7CDE0666B4DB73A987145C3E_1684558628 =         resultValu
 
         public int count;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.719 -0400", hash_original_method = "4DBCD611B55919CEC0E695E7409A22D3", hash_generated_method = "2A33A130733322CE05C88516643CF5BD")
         public  FilterResults() {
             // ---------- Original Method ----------

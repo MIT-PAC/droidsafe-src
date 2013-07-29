@@ -88,6 +88,7 @@ RunnableFuture<V> var43B3148BB5E6650D57F808400964E06A_1655015414 =         aes.n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.980 -0400", hash_original_method = "BBB6A806AE85DE3A7C516C9FC9F3C042", hash_generated_method = "6947E2724971FBBB526FD5587A387EC9")
     private RunnableFuture<V> newTaskFor(Runnable task, V result) {
         addTaint(result.getTaint());
@@ -135,6 +136,7 @@ Future<V> varABE3CFB53FE4A79F34CB25BC80BFD6E2_586764662 =         f;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.981 -0400", hash_original_method = "90F0DB50BDB2C4419B39525C086024BB", hash_generated_method = "C0FF29DBA042E28808BC81A2539C15D4")
     public Future<V> submit(Runnable task, V result) {
         addTaint(result.getTaint());
@@ -198,6 +200,7 @@ Future<V> var6499A2FAA4A72B0B362D284410DD9B81_1695179142 =         completionQue
 
         private Future<V> task;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.983 -0400", hash_original_method = "A487293341B42B74719D90AA9DC9C87B", hash_generated_method = "2CFA1E9A5CC48B1C904906338C0A2DE7")
           QueueingFuture(RunnableFuture<V> task) {
             super(task, null);
@@ -207,6 +210,7 @@ Future<V> var6499A2FAA4A72B0B362D284410DD9B81_1695179142 =         completionQue
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.983 -0400", hash_original_method = "A6F9634D935F51A2E62823D21027F809", hash_generated_method = "4F7C67B055D3EAF2C5931F9AE96CF3D2")
         protected void done() {
             completionQueue.add(task);

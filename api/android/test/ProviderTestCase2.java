@@ -32,6 +32,7 @@ public abstract class ProviderTestCase2<T extends ContentProvider> extends Andro
 
     private T mProvider;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.807 -0400", hash_original_method = "D7BEB1D3C6B8C63774732A352A035F5F", hash_generated_method = "6E4CE79349090DAC92B14CF722E694B4")
     public  ProviderTestCase2(Class<T> providerClass, String providerAuthority) {
         mProviderClass = providerClass;
@@ -42,6 +43,7 @@ public abstract class ProviderTestCase2<T extends ContentProvider> extends Andro
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.807 -0400", hash_original_method = "60F9945BF24BB2313DED37AEBA7B6E3A", hash_generated_method = "C55D7C29A16D9284E234A421DA50CD23")
     public T getProvider() {
 T var0FBB50B5F14310A28A298A4AC9FE2015_660653487 =         mProvider;
@@ -52,6 +54,7 @@ T var0FBB50B5F14310A28A298A4AC9FE2015_660653487 =         mProvider;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.809 -0400", hash_original_method = "DC4B036E4567F890DA30ECA6CEC7275F", hash_generated_method = "8859F8C62D4B3CE9D3F13874134265D1")
     @Override
     protected void setUp() throws Exception {
@@ -85,6 +88,7 @@ T var0FBB50B5F14310A28A298A4AC9FE2015_660653487 =         mProvider;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.809 -0400", hash_original_method = "A8BAAE3621FF798057A5053A590AB67A", hash_generated_method = "0FEBED9A22A223CA9823A86F232B0722")
     @Override
     protected void tearDown() throws Exception {
@@ -118,6 +122,7 @@ IsolatedContext var8DD4DD47675B38CCCB1F8751874E6C34_1105348526 =         mProvid
     }
 
     
+    @DSModeled(DSC.BAN)
     public static <T extends ContentProvider> ContentResolver newResolverWithContentProviderFromSql(
             Context targetContext, String filenamePrefix, Class<T> providerClass, String authority,
             String databaseName, int databaseVersion, String sql) throws IllegalAccessException, InstantiationException {
@@ -144,6 +149,7 @@ IsolatedContext var8DD4DD47675B38CCCB1F8751874E6C34_1105348526 =         mProvid
         }
 
 
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.811 -0400", hash_original_method = "88D1CAA806B08D33E7F32EE9A221E7DA", hash_generated_method = "A89EABA6CD5A8A1BF8A53493056E289F")
         @Override
         public Resources getResources() {
@@ -155,6 +161,7 @@ Resources var300F559A990327567ADA6B2B7540B3AC_1161279275 =             getContex
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.811 -0400", hash_original_method = "120657A43EB9D6D937D9C501B663B027", hash_generated_method = "B849726B792F6F5B8F3B527FBF491722")
         @Override
         public File getDir(String name, int mode) {

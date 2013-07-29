@@ -6,8 +6,7 @@ import java.util.Set;
 
 import com.google.android.collect.Sets;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
 
 public class ClassPathPackageInfo {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.367 -0400", hash_original_field = "36CD38F49B9AFA08222C0DC9EBFE35EB", hash_generated_field = "FD7D781D3D61CDBFBA455DBEB931B016")
@@ -38,6 +37,7 @@ public class ClassPathPackageInfo {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.372 -0400", hash_original_method = "0CAB032DBD6DBC54FDA0E214BD99EB68", hash_generated_method = "B565D38B4A79FC52A2871F83B7F3BC2B")
     public Set<ClassPathPackageInfo> getSubpackages() {
         Set<ClassPathPackageInfo> info = Sets.newHashSet();
@@ -87,6 +87,7 @@ for(ClassPathPackageInfo info : getSubpackages())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.375 -0400", hash_original_method = "CCAFDBCE1F7EFB06EFE401B73EBC24DB", hash_generated_method = "3CA14BE9E07F9DB753B63C77CB73838C")
     @Override
     public boolean equals(Object obj) {
@@ -110,6 +111,7 @@ for(ClassPathPackageInfo info : getSubpackages())
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.375 -0400", hash_original_method = "97236FFE62438E7BA5668D1EFAC10502", hash_generated_method = "D5D68B1FF1BDC0B75A89880431F220D6")
     @Override
     public int hashCode() {

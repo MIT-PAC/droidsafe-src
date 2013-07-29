@@ -281,6 +281,7 @@ String var6D1AD31619F0A44155D98F0B7B4EEE63_1194180939 =         value.substring(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.329 -0400", hash_original_method = "82ADC719B633E23931D943624F51E118", hash_generated_method = "7A1889AF4D781C456CB0D8D8B999EA2C")
     protected boolean isTokenSeparator(char ch) {
         addTaint(ch);

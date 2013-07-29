@@ -15,6 +15,7 @@ public class IntEvaluator implements TypeEvaluator<Integer> {
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.622 -0400", hash_original_method = "6401BD46F7D1EA9F5782F720B53B51D0", hash_generated_method = "7F3D3F6F019F204E0CBAB1A734CFA500")
     public Integer evaluate(float fraction, Integer startValue, Integer endValue) {
         addTaint(endValue.getTaint());

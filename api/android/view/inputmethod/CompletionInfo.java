@@ -23,6 +23,7 @@ public final class CompletionInfo implements Parcelable {
 
     private CharSequence mLabel;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.270 -0400", hash_original_method = "38A4F60AF5C7022C0469BD89E2BC1895", hash_generated_method = "D6B60C1928D87BD96AB25374114499A6")
     public  CompletionInfo(long id, int index, CharSequence text) {
         mId = id;
@@ -37,6 +38,7 @@ public final class CompletionInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.271 -0400", hash_original_method = "D296F749900FBC5242D181AA06D4E27C", hash_generated_method = "667A7C128440F1F71DE8EF37E7CD55D5")
     public  CompletionInfo(long id, int index, CharSequence text, CharSequence label) {
         mId = id;
@@ -51,6 +53,7 @@ public final class CompletionInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.272 -0400", hash_original_method = "2F837EEA33DB685519494240B032A81B", hash_generated_method = "C11433F17D9EF2D0AE8DAB57B3FD60E2")
     private  CompletionInfo(Parcel source) {
         mId = source.readLong();

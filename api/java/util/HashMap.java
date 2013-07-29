@@ -502,6 +502,7 @@ V var8CDBD2181CBEF5C2129AFFA68C014D4A_256910460 =             oldValue;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.973 -0400", hash_original_method = "627029122DE3FFF8BEA7942964D9C227", hash_generated_method = "FFCD2A7B00EA12A81DBAC227091AE54B")
     private void constructorPut(K key, V value) {
         addTaint(key.getTaint());

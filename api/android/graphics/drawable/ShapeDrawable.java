@@ -596,6 +596,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_606832908 =         this;
 
         ShaderFactory mShaderFactory;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.649 -0400", hash_original_method = "EFBED6F0CFE384FE09150C9B37976B1A", hash_generated_method = "1BB92F41BFDC684970D22C18D2519AD9")
           ShapeState(ShapeState orig) {
             if(orig != null)            
@@ -627,6 +628,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_606832908 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.649 -0400", hash_original_method = "712D1F78574D9DF109190A3CBF508567", hash_generated_method = "E0106487BBA593011B2D426C1C02FCC0")
         @Override
         public Drawable newDrawable() {
@@ -638,6 +640,7 @@ Drawable var70B51CA0E2F73DDDAEA1517FCDBBB53D_470995972 =             new ShapeDr
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.650 -0400", hash_original_method = "7ABD019570C442758FC9C41DDD5AE24E", hash_generated_method = "845AB95E27F0069A4F8428B8F22A6338")
         @Override
         public Drawable newDrawable(Resources res) {

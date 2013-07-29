@@ -25,7 +25,7 @@ public class DroidSafeAndroidRuntime {
 	public static int switchControl = new Random().nextInt();
 	private static Application mApplication;
 	
-	@DSModeled
+	@DSModeled(DSC.BAN)
 	/**
 	 * This method will be called automatically by the droidsafe harness class before all
 	 * application code.

@@ -23,6 +23,7 @@ public class TestMethod {
 
     private Class<? extends TestCase> enclosingClass;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.220 -0400", hash_original_method = "2AA4194F9790074918F9B75DD6221149", hash_generated_method = "BBB7E432ACC0FBC9929A1E8CCE93C396")
     public  TestMethod(Method method, Class<? extends TestCase> enclosingClass) {
         this(method.getName(), enclosingClass);
@@ -32,6 +33,7 @@ public class TestMethod {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.221 -0400", hash_original_method = "5FFA0DBC667D98DF223FC5CBA0BC38DE", hash_generated_method = "FEDF627DC18F9E087D101D71B673696A")
     public  TestMethod(String methodName, Class<? extends TestCase> enclosingClass) {
         this.enclosingClass = enclosingClass;
@@ -44,6 +46,7 @@ public class TestMethod {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.222 -0400", hash_original_method = "3C76676D8E2DB85D3A8C798366AD92CE", hash_generated_method = "CEE0CEEF07C50B9DA2E965D5CDB3D31C")
     public  TestMethod(TestCase testCase) {
         this(testCase.getName(), testCase.getClass());
@@ -74,6 +77,7 @@ String var70BA58E354093CAAF65F7577E0A19767_2078192430 =         enclosingClassna
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.223 -0400", hash_original_method = "0CE278D185BC58FF80C97732E6956457", hash_generated_method = "037E28148623D937FDE0A23772D5557F")
     public <T extends Annotation> T getAnnotation(Class<T> annotationClass) {
         addTaint(annotationClass.getTaint());
@@ -110,6 +114,7 @@ Class<? extends TestCase> var67157264981E698D7E7E8B718102A399_887878991 =       
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.223 -0400", hash_original_method = "4B6F3152800DFE9006457E64BA8A155E", hash_generated_method = "D863E0FB93497AC4404A48820B0EFD82")
     public TestCase createTest() throws InvocationTargetException, IllegalAccessException, InstantiationException {
 TestCase var4E67A1ABAA82E50DD551FC54F00F6BA9_159726554 =         instantiateTest(enclosingClass, testMethodName);
@@ -120,7 +125,7 @@ TestCase var4E67A1ABAA82E50DD551FC54F00F6BA9_159726554 =         instantiateTest
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.224 -0400", hash_original_method = "61AE5164C815A2E387BB0A5F097B4DE9", hash_generated_method = "F95B06C8C35958C6EB1EE7C6F836A4A0")
     @SuppressWarnings("unchecked")
     private TestCase instantiateTest(Class testCaseClass, String testName) throws InvocationTargetException, IllegalAccessException, InstantiationException {
@@ -165,6 +170,7 @@ TestCase var7292EF57907F5BE446BFFC9C3193CDDB_44737021 =                     ((Co
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.225 -0400", hash_original_method = "FBC2F46CB59FCB97277C0D78D7FF3B06", hash_generated_method = "4AB7E1BE30A04FC3F38C06B4790DEDCE")
     private boolean singleStringConstructor(Class[] params) {
         addTaint(params[0].getTaint());
@@ -176,6 +182,7 @@ TestCase var7292EF57907F5BE446BFFC9C3193CDDB_44737021 =                     ((Co
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.226 -0400", hash_original_method = "F253E63E2D085BA681D7F5582B501A13", hash_generated_method = "6133363BD2BB17C6A3BCF44E5BAE3154")
     private boolean noargsConstructor(Class[] params) {
         addTaint(params[0].getTaint());
@@ -187,6 +194,7 @@ TestCase var7292EF57907F5BE446BFFC9C3193CDDB_44737021 =                     ((Co
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.228 -0400", hash_original_method = "41856ADD5C3ABB33F713F0C76937EAB6", hash_generated_method = "035740DC48AEAC3E1063217C4154DB0F")
     @Override
     public boolean equals(Object o) {
@@ -245,6 +253,7 @@ TestCase var7292EF57907F5BE446BFFC9C3193CDDB_44737021 =                     ((Co
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.229 -0400", hash_original_method = "C5B5AC51B53BC81DCA89EA241A184E78", hash_generated_method = "D2B863E4DA0DB632F7F6341EB8968A85")
     @Override
     public int hashCode() {
@@ -262,6 +271,7 @@ TestCase var7292EF57907F5BE446BFFC9C3193CDDB_44737021 =                     ((Co
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.229 -0400", hash_original_method = "B494E05710D5BDAFDFF94E1B47B79EFE", hash_generated_method = "303D625C30550A417775286B719D395E")
     @Override
     public String toString() {

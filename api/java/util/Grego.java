@@ -21,16 +21,19 @@ class Grego {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int monthLength(int year, int month) {
         return MONTH_LENGTH[month + (isLeapYear(year) ? 12 : 0)];
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final int previousMonthLength(int year, int month) {
         return (month > 0) ? monthLength(year, month-1) : 31;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static long fieldsToDay(int year, int month, int dom) {
         int y = year - 1;
         long julian =
@@ -41,6 +44,7 @@ class Grego {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int dayOfWeek(long day) {
         long[] remainder = new long[1];
         floorDivide(day + Calendar.THURSDAY, 7, remainder);
@@ -50,6 +54,7 @@ class Grego {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int[] dayToFields(long day, int[] fields) {
         if (fields == null || fields.length < 5) {
             fields = new int[5];
@@ -90,6 +95,7 @@ class Grego {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int[] timeToFields(long time, int[] fields) {
         if (fields == null || fields.length < 6) {
             fields = new int[6];
@@ -122,6 +128,7 @@ class Grego {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getDayOfWeekInMonth(int year, int month, int dayOfMonth) {
         int weekInMonth = (dayOfMonth + 6)/7;
         if (weekInMonth == 4) {

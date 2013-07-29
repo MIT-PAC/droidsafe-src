@@ -22,6 +22,7 @@ class ExpandableListPosition {
 
     public int type;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.413 -0400", hash_original_method = "AC719FEF152399BDA1BD5A5CA7FBB765", hash_generated_method = "CA9DC1117656D5954D084C62466145DC")
     private  ExpandableListPosition() {
         // ---------- Original Method ----------
@@ -43,6 +44,7 @@ class ExpandableListPosition {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.414 -0400", hash_original_method = "C8676DC8E5CB906E204449634591A777", hash_generated_method = "19157D8F75C76378422DF92393A1EC29")
      long getPackedPosition() {
         if(type == CHILD)        
@@ -63,16 +65,19 @@ class ExpandableListPosition {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static ExpandableListPosition obtainGroupPosition(int groupPosition) {
         return obtain(GROUP, groupPosition, 0, 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     static ExpandableListPosition obtainChildPosition(int groupPosition, int childPosition) {
         return obtain(CHILD, groupPosition, childPosition, 0);
     }
 
     
+    @DSModeled(DSC.SAFE)
     static ExpandableListPosition obtainPosition(long packedPosition) {
         if (packedPosition == ExpandableListView.PACKED_POSITION_VALUE_NULL) {
             return null;
@@ -90,6 +95,7 @@ class ExpandableListPosition {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static ExpandableListPosition obtain(int type, int groupPos, int childPos, int flatListPos) {
         ExpandableListPosition elp = getRecycledOrCreate();
         elp.type = type;
@@ -100,6 +106,7 @@ class ExpandableListPosition {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static ExpandableListPosition getRecycledOrCreate() {
         ExpandableListPosition elp;
         synchronized (sPool) {
@@ -114,6 +121,7 @@ class ExpandableListPosition {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.415 -0400", hash_original_method = "8A154BA1D9B394A3D67E04E6A86589B2", hash_generated_method = "630615FD0F25C98518FE11FF0693404C")
     public void recycle() {
         synchronized

@@ -44,6 +44,7 @@ public abstract class AbsSeekBar extends ProgressBar {
 
     private boolean mIsDragging;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.770 -0400", hash_original_method = "559FDCE349858758D50BC2905EE88B67", hash_generated_method = "FDA7C2EB8B5296D46FCCA250BF0143BC")
     public  AbsSeekBar(Context context) {
         super(context);
@@ -52,6 +53,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.771 -0400", hash_original_method = "9B53DFB86DC24D620F7DF1D33C461438", hash_generated_method = "0E2064C65DFD6A1F4F14468BF35A30CF")
     public  AbsSeekBar(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -61,6 +63,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.773 -0400", hash_original_method = "1A34D5E8CF032B0AA6AD65EE16F7EFF6", hash_generated_method = "D5A625CF0D79AD9940C01434BE68DF7F")
     public  AbsSeekBar(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -96,6 +99,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.774 -0400", hash_original_method = "998F0AEDC4C83C00C5B5C0950AA82FAF", hash_generated_method = "EEB40915095E404D71B3A50C9D033C27")
     public void setThumb(Drawable thumb) {
         boolean needUpdate;
@@ -177,6 +181,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.777 -0400", hash_original_method = "B86F9FD250EB4E355A6234A6154554E5", hash_generated_method = "2DD959F4E12E1D1F80F3D4224FD42B7A")
     @Override
     public synchronized void setMax(int max) {
@@ -194,6 +199,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.777 -0400", hash_original_method = "9C2A9BDC8A382BBBC0B52ACD6BB3E808", hash_generated_method = "9EADE4DC390397E4A11AB220ACEFFC60")
     @Override
     protected boolean verifyDrawable(Drawable who) {
@@ -206,6 +212,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.777 -0400", hash_original_method = "A2BEB9099595ED17C9F72C657E221F4D", hash_generated_method = "1649235F7AE89E25D54050B6CE9EC8AF")
     @Override
     public void jumpDrawablesToCurrentState() {
@@ -245,7 +252,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.778 -0400", hash_original_method = "BD33A56797AEA3D6F712418E2C1B11B9", hash_generated_method = "861AD8C3EC20310D05FAC1B6B274FD8B")
     @Override
      void onProgressRefresh(float scale, boolean fromUser) {
@@ -269,6 +276,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.779 -0400", hash_original_method = "A1D4A37B8CF40CBB929E8D311A74C166", hash_generated_method = "09A146E0599528F7EF1BF28C7B631032")
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -283,6 +291,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.779 -0400", hash_original_method = "EBB195A6F6AE70942CBBB72014D4E630", hash_generated_method = "EEBA0758A06700BC917CD7B6307F35F7")
     private void updateThumbPos(int w, int h) {
         addTaint(h);
@@ -325,7 +334,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.780 -0400", hash_original_method = "CA4C19C8B40982548F0C235E2E1E696B", hash_generated_method = "F30533D5251F0D11C8B4CFD2FF36B697")
     private void setThumbPos(int w, Drawable thumb, float scale, int gap) {
         addTaint(gap);
@@ -372,6 +381,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.781 -0400", hash_original_method = "317EB63F41EF20BCBD26EC2C5FF1A8E2", hash_generated_method = "D6E8D0DB70D229BCB2C29DCB85266734")
     @Override
     protected synchronized void onDraw(Canvas canvas) {
@@ -433,7 +443,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.782 -0400", hash_original_method = "E10F6AB7670DC24DEEA2309682812EC7", hash_generated_method = "A568C8EB58211948FE8BB9891CB7851C")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -514,7 +524,7 @@ switch(event.getAction()){
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.783 -0400", hash_original_method = "B852C5F326259FF2E0714D28C9BE0803", hash_generated_method = "F2D8B3C76143D4B3CDE1BEDEB49AFE66")
     private void trackTouchEvent(MotionEvent event) {
         addTaint(event.getTaint());
@@ -560,6 +570,7 @@ switch(event.getAction()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.784 -0400", hash_original_method = "EE6806E5D0C523D5F375E4021A29EB50", hash_generated_method = "8A968C4896AB12821206CFEA1423C0BB")
     private void attemptClaimDrag() {
         if(mParent != null)        
@@ -601,6 +612,7 @@ switch(event.getAction()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.785 -0400", hash_original_method = "E4D4B44B4B0BF8B3ACFCDB808BF98F5B", hash_generated_method = "FC2F6F23E8CB18ED15D9DD28CECA24A3")
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

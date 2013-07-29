@@ -16,11 +16,13 @@ public class Gravity {
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static void apply(int gravity, int w, int h, Rect container, Rect outRect) {
         apply(gravity, w, h, container, 0, 0, outRect);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void apply(int gravity, int w, int h, Rect container,
             Rect outRect, int layoutDirection) {
         int absGravity = getAbsoluteGravity(gravity, layoutDirection);
@@ -114,6 +116,7 @@ public class Gravity {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void applyDisplay(int gravity, Rect display, Rect inoutObj) {
         if ((gravity&DISPLAY_CLIP_VERTICAL) != 0) {
             if (inoutObj.top < display.top) inoutObj.top = display.top;

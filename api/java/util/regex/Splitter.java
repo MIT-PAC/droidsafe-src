@@ -18,6 +18,7 @@ public class Splitter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] fastSplit(String re, String input, int limit) {
         int len = re.length();
         if (len == 0) {
@@ -48,6 +49,7 @@ public class Splitter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String[] split(Pattern pattern, String re, String input, int limit) {
         String[] fastResult = fastSplit(re, input, limit);
         if (fastResult != null) {
@@ -68,6 +70,7 @@ public class Splitter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String[] finishSplit(List<String> list, String input, int begin, int maxSize, int limit) {
         if (begin < input.length()) {
             list.add(input.substring(begin));

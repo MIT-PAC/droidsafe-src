@@ -33,6 +33,7 @@ public class AnimationUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Animation loadAnimation(Context context, int id) throws NotFoundException {
         XmlResourceParser parser = null;
         try {
@@ -147,6 +148,7 @@ public class AnimationUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Animation makeInAnimation(Context c, boolean fromLeft) {
         Animation a;
         if (fromLeft) {
@@ -160,6 +162,7 @@ public class AnimationUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Animation makeOutAnimation(Context c, boolean toRight) {
         Animation a;
         if (toRight) {
@@ -173,6 +176,7 @@ public class AnimationUtils {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Animation makeInChildBottomAnimation(Context c) {
         Animation a;
         a = AnimationUtils.loadAnimation(c, com.android.internal.R.anim.slide_in_child_bottom);

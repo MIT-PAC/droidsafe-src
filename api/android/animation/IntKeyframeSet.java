@@ -32,6 +32,7 @@ class IntKeyframeSet extends KeyframeSet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.681 -0400", hash_original_method = "9A8CA9046BD131DAA0650B91E65A3FB9", hash_generated_method = "6B4223F7C5A95047B148F53F85050A1A")
     @Override
     public Object getValue(float fraction) {
@@ -44,6 +45,7 @@ Object var3985029DEDBD38B26428925A8A7331F2_231053745 =         getIntValue(fract
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.684 -0400", hash_original_method = "9997EE114626B9F926D48E4DA6AD12AC", hash_generated_method = "0EF71EA9FCA587D44EA3BBAD20C4F5D3")
     @Override
     public IntKeyframeSet clone() {
@@ -70,6 +72,7 @@ IntKeyframeSet var887F3F78AE0C9FB0CC98EDF99F492138_1405039933 =         newSet;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.699 -0400", hash_original_method = "7B6E2369DEAB44F75E4F137274BA59BB", hash_generated_method = "7DDB685A3985E203837B55F8AFF6E651")
     public int getIntValue(float fraction) {
         addTaint(fraction);

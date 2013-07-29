@@ -51,6 +51,7 @@ public class TestSuiteBuilder {
 
     private String suiteName;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.283 -0400", hash_original_method = "8DFAA261B116CB95D8F3EE320976E821", hash_generated_method = "4305A767220FFB75ACB9397B534A91E6")
     public  TestSuiteBuilder(Class clazz) {
         this(clazz.getName(), clazz.getClassLoader());
@@ -75,6 +76,7 @@ public class TestSuiteBuilder {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.285 -0400", hash_original_method = "48780D5C4E993D5976786FDA7072C865", hash_generated_method = "8E04F60329701C4249A67F36919693CF")
     public TestSuiteBuilder addTestClassByName(String testClassName, String testMethodName,
             Context context) {
@@ -97,6 +99,7 @@ TestSuiteBuilder var72A74007B2BE62B849F475C7BDA4658B_402860525 =         this;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.285 -0400", hash_original_method = "EA702A9DA91338D58DCDCE903BD5BA53", hash_generated_method = "A27280C4F638192973353CC96325ED10")
     public TestSuiteBuilder addTestSuite(TestSuite testSuite) {
         addTaint(testSuite.getTaint());
@@ -154,6 +157,7 @@ TestSuiteBuilder var72A74007B2BE62B849F475C7BDA4658B_1899552971 =         this;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.287 -0400", hash_original_method = "58145D33150957DD46A1ADD9032FDB9F", hash_generated_method = "8DAA00F7FF3FDC820B71B3A05F2DAA36")
     public final TestSuiteBuilder includeAllPackagesUnderHere() {
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
@@ -203,6 +207,7 @@ TestSuiteBuilder var72A74007B2BE62B849F475C7BDA4658B_546268489 =         this;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.288 -0400", hash_original_method = "C585F9D3DE53AA6116980D3F6C4B8FC9", hash_generated_method = "819A75D519B7DFD5CE7634516E35112E")
     public final TestSuite build() {
         rootSuite = new TestSuite(getSuiteName());
@@ -280,7 +285,7 @@ TestGrouping var668D3050613E8B26B179F6C37A7EABCF_1209170870 =         testGroupi
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.290 -0400", hash_original_method = "3B7E4DAFF4F4255560B2EF8BCF0CA264", hash_generated_method = "C1CE93CA6A984D24ACA867E83DA2121C")
     private boolean satisfiesAllPredicates(TestMethod test) {
         addTaint(test.getTaint());
@@ -306,7 +311,7 @@ for(Predicate<TestMethod> predicate : predicates)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.290 -0400", hash_original_method = "9609FD64CC859CF40862383CC61076E6", hash_generated_method = "5C3EB6598C6FD9DF34FFEEBC3127D30B")
     private void addTest(TestMethod testMethod) throws Exception {
         addTaint(testMethod.getTaint());
@@ -318,7 +323,7 @@ for(Predicate<TestMethod> predicate : predicates)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.290 -0400", hash_original_method = "7027D4F6836EC90288680E369B5B8F5A", hash_generated_method = "E51E6875FA1D02406B31AFFEFAE290F0")
     private void addTest(Test test) {
         addTaint(test.getTaint());
@@ -330,7 +335,7 @@ for(Predicate<TestMethod> predicate : predicates)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.291 -0400", hash_original_method = "92951B52D867188410A62009711C9261", hash_generated_method = "DE879BE7D1B7AC9DDB7CC38D0D915EBD")
     private void addSuiteIfNecessary(String parentClassname) {
         if(!parentClassname.equals(currentClassname))        
@@ -348,7 +353,7 @@ for(Predicate<TestMethod> predicate : predicates)
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     private static String parsePackageNameFromClassName(String className) {
         return className.substring(0, className.lastIndexOf('.'));
     }
@@ -359,6 +364,7 @@ for(Predicate<TestMethod> predicate : predicates)
 
         private Exception exception;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.292 -0400", hash_original_method = "1C0BA3005E48DD2AA9883550E9E56685", hash_generated_method = "56EC8CADC1DAE4B3EE1B39574DE80884")
         public  FailedToCreateTests(Exception exception) {
             super("testSuiteConstructionFailed");
@@ -368,6 +374,7 @@ for(Predicate<TestMethod> predicate : predicates)
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.292 -0400", hash_original_method = "1942A289EA540D79C743EE0933FD0258", hash_generated_method = "5D7E1730FE085C4A903CF7CD8A279A06")
         public void testSuiteConstructionFailed() {
             RuntimeException varEA3606177B94E6C5368D72CDFEE8ED30_1269461454 = new RuntimeException("Exception during suite construction", exception);

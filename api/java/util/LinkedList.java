@@ -44,6 +44,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.116 -0400", hash_original_method = "9920EB632989F8B562686C0A781A0AB0", hash_generated_method = "B786963055FE6BB03F4506D7C1BC039C")
     @Override
     public void add(int location, E object) {
@@ -103,6 +104,7 @@ for(int i = size;i > location;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.116 -0400", hash_original_method = "2BE8A2B5B965FC484F0C7216D8E6E369", hash_generated_method = "35086E6FF5626BDD8EFD96D6F8815382")
     @Override
     public boolean add(E object) {
@@ -115,6 +117,7 @@ for(int i = size;i > location;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.117 -0400", hash_original_method = "0CAFD9F2E83DD82BF6364CDBDC4D7D1A", hash_generated_method = "E975E3493848BD70FB48EA720F1B3370")
     private boolean addLastImpl(E object) {
         addTaint(object.getTaint());
@@ -242,6 +245,7 @@ for(E e : elements)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.121 -0400", hash_original_method = "CA8A1B06476946B0324CCA25F612E720", hash_generated_method = "5A556DD598DD4B7AE272E66D69A80C0F")
     public void addFirst(E object) {
         addTaint(object.getTaint());
@@ -251,6 +255,7 @@ for(E e : elements)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.122 -0400", hash_original_method = "954FD4442748B652A7955CF114F2239E", hash_generated_method = "E806FF4180242C81D0508B65C7824DB1")
     private boolean addFirstImpl(E object) {
         addTaint(object.getTaint());
@@ -274,6 +279,7 @@ for(E e : elements)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.122 -0400", hash_original_method = "13A36680ECD01352EC1F894705FA522D", hash_generated_method = "5E57D6CF03EA15D68138243087D069FE")
     public void addLast(E object) {
         addTaint(object.getTaint());
@@ -400,6 +406,7 @@ Object var792FD495AAD83D144D2F19BF9BB22987_1928323188 =             l;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.125 -0400", hash_original_method = "699CDCD94CA0F8A673D2432C1A4A1CA6", hash_generated_method = "56982C02CBBFACACA0073A75DE618943")
     @Override
     public E get(int location) {
@@ -446,6 +453,7 @@ E var3CF301EF1455302B1A7564AEE107BC17_1535512027 =             link.data;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.126 -0400", hash_original_method = "0073A2AD94DC363435B793B69AD53800", hash_generated_method = "82AD0E2AD0C962DA96A1294602E8A14B")
     public E getFirst() {
 E var47B6E8AF818F6390E3E49621F01F780F_453290605 =         getFirstImpl();
@@ -456,6 +464,7 @@ E var47B6E8AF818F6390E3E49621F01F780F_453290605 =         getFirstImpl();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.126 -0400", hash_original_method = "F326A7609FEC22B872586B521BF21968", hash_generated_method = "2C9CCC75F9378A6298872353447EFF34")
     private E getFirstImpl() {
         Link<E> first = voidLink.next;
@@ -477,6 +486,7 @@ E var32190092A31795B8431D755C5C48DC21_793608491 =             first.data;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.126 -0400", hash_original_method = "D36A1824B4AA11A93F9167DC96C3E776", hash_generated_method = "879D570AE8E3EA434CCC92636D7DC4AE")
     public E getLast() {
         Link<E> last = voidLink.previous;
@@ -639,6 +649,7 @@ ListIterator<E> varF5869D7C478B5AD13C9F94EE40954182_78747046 =         new LinkI
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.130 -0400", hash_original_method = "9DEB2DAC83546A51EF3DAC82C2B24429", hash_generated_method = "354B996B85BE92C0410D42290FCFEAFB")
     @Override
     public E remove(int location) {
@@ -710,6 +721,7 @@ E var3CF301EF1455302B1A7564AEE107BC17_412404245 =             link.data;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.131 -0400", hash_original_method = "DEF022B3B9EBAD20A11E8D94E53A2C41", hash_generated_method = "1E330664B0192718A87C4DDD29426DDB")
     public E removeFirst() {
 E varAD3301876DF8721CEF17AFAABE29CC10_1516239400 =         removeFirstImpl();
@@ -720,6 +732,7 @@ E varAD3301876DF8721CEF17AFAABE29CC10_1516239400 =         removeFirstImpl();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.132 -0400", hash_original_method = "427E50F3C77738614041495F63E4380E", hash_generated_method = "A3AD6573FA66D4943D34DE0167E79C17")
     private E removeFirstImpl() {
         Link<E> first = voidLink.next;
@@ -751,6 +764,7 @@ E var32190092A31795B8431D755C5C48DC21_110291833 =             first.data;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.132 -0400", hash_original_method = "78A299256A25A92F54699488F92E9106", hash_generated_method = "F8BCF0B3E87B2775ED83E22680730DFF")
     public E removeLast() {
 E var9B185E513539753A1568AE8CD0F09784_1241050536 =         removeLastImpl();
@@ -761,6 +775,7 @@ E var9B185E513539753A1568AE8CD0F09784_1241050536 =         removeLastImpl();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.133 -0400", hash_original_method = "4FEFCE90045B22FA30A5F2F8A3DA8ABA", hash_generated_method = "2E80457A777DCE17FF5AA858247AD9B8")
     private E removeLastImpl() {
         Link<E> last = voidLink.previous;
@@ -803,6 +818,7 @@ Iterator<E> var3C0C25881C2D4E8C7AFB7E0B8222F14B_168146712 =         new ReverseL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.133 -0400", hash_original_method = "EDFB7FC0634DB7C00BD3AB035EBD094A", hash_generated_method = "78D7639AE5EBC21A98948F5640215680")
     public boolean offerFirst(E e) {
         addTaint(e.getTaint());
@@ -814,6 +830,7 @@ Iterator<E> var3C0C25881C2D4E8C7AFB7E0B8222F14B_168146712 =         new ReverseL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.133 -0400", hash_original_method = "89DCF7809C68E43568923DE3D2E1D02D", hash_generated_method = "1E07379150837DD74ABC9481EE0631B5")
     public boolean offerLast(E e) {
         addTaint(e.getTaint());
@@ -825,6 +842,7 @@ Iterator<E> var3C0C25881C2D4E8C7AFB7E0B8222F14B_168146712 =         new ReverseL
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "969AA46310549C7B2FEE1AAA28767998", hash_generated_method = "22691D0470A83276A2325A7168F7857B")
     public E peekFirst() {
 E varC5D6CF62AE624C33AEE3FCED2C6BFAA2_1126685807 =         peekFirstImpl();
@@ -835,6 +853,7 @@ E varC5D6CF62AE624C33AEE3FCED2C6BFAA2_1126685807 =         peekFirstImpl();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "E1ADBCAD0BAE3B6D44E0B3EBBD31EB6D", hash_generated_method = "024A9E03091FFAC89C64A05EB8A81FCD")
     public E peekLast() {
         Link<E> last = voidLink.previous;
@@ -847,6 +866,7 @@ E var97150CAA35F90974D4775F30988DD726_1008714890 =         (last == voidLink) ? 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "E15F23512F244F97C3914B4E0B9502A4", hash_generated_method = "1A057191B4C5100708D2FBE5065E8D57")
     public E pollFirst() {
 E var76EAE988EE17492C661288638E6F6F40_1501534422 =         (size == 0) ? null : removeFirstImpl();
@@ -857,6 +877,7 @@ E var76EAE988EE17492C661288638E6F6F40_1501534422 =         (size == 0) ? null : 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "70D8873C9DDF66392CA17B903A435D10", hash_generated_method = "D8A7FF381D9EC211AEFBBB90A4CAA3B0")
     public E pollLast() {
 E var53B0A53ED6225EB3767DD5FE637D8E88_1608417291 =         (size == 0) ? null : removeLastImpl();
@@ -867,6 +888,7 @@ E var53B0A53ED6225EB3767DD5FE637D8E88_1608417291 =         (size == 0) ? null : 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "A1E9A1EB062A81F6CBAFDDDD06F9F273", hash_generated_method = "B11AB0C013FCB9A8E3C22E5318684A99")
     public E pop() {
 E varAD3301876DF8721CEF17AFAABE29CC10_850774123 =         removeFirstImpl();
@@ -877,6 +899,7 @@ E varAD3301876DF8721CEF17AFAABE29CC10_850774123 =         removeFirstImpl();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "9D0F4BD741629A4E20781C5DA21CB652", hash_generated_method = "8E3E5AB8C2EFDDF648D93DCEA06B9D05")
     public void push(E e) {
         addTaint(e.getTaint());
@@ -958,6 +981,7 @@ E varAD3301876DF8721CEF17AFAABE29CC10_850774123 =         removeFirstImpl();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.135 -0400", hash_original_method = "B473D145452E376F792E71796F81B4CE", hash_generated_method = "4B7F1FC2E5A15E374F7D6D3106C583FC")
     @Override
     public E set(int location, E object) {
@@ -1021,6 +1045,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1661647823 =             result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.135 -0400", hash_original_method = "E7666F96333DE978F541663657705932", hash_generated_method = "DCC9F2A6A9C30329E761FE33538AF32F")
     public boolean offer(E o) {
         addTaint(o.getTaint());
@@ -1032,6 +1057,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1661647823 =             result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.135 -0400", hash_original_method = "55052725C8F8219BC4435ABBF88EDF4F", hash_generated_method = "4F808C3914D5953ED32384E74C14C1ED")
     public E poll() {
 E varBD3DE60B97A4CAE572BB184D74D72321_67659051 =         size == 0 ? null : removeFirst();
@@ -1042,6 +1068,7 @@ E varBD3DE60B97A4CAE572BB184D74D72321_67659051 =         size == 0 ? null : remo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.136 -0400", hash_original_method = "E6C80B22C4B6B543BB93E41D88CAD5EF", hash_generated_method = "4D9B6E58041F68E73A123755B0BF1FA7")
     public E remove() {
 E varAD3301876DF8721CEF17AFAABE29CC10_50921633 =         removeFirstImpl();
@@ -1052,6 +1079,7 @@ E varAD3301876DF8721CEF17AFAABE29CC10_50921633 =         removeFirstImpl();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.136 -0400", hash_original_method = "4AAADA00C0F9172450031345A8B9DEF3", hash_generated_method = "8BE067080E0634A1915D1ADE92056E6F")
     public E peek() {
 E varC5D6CF62AE624C33AEE3FCED2C6BFAA2_307761504 =         peekFirstImpl();
@@ -1062,6 +1090,7 @@ E varC5D6CF62AE624C33AEE3FCED2C6BFAA2_307761504 =         peekFirstImpl();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.136 -0400", hash_original_method = "C3985024BAE3B14A3C96F9F04D080FD8", hash_generated_method = "2109240B66C06D8D490456571A332FE1")
     private E peekFirstImpl() {
         Link<E> first = voidLink.next;
@@ -1074,6 +1103,7 @@ E varCFFADB90EC8B0C6958D9CAB391DA534D_1673473532 =         first == voidLink ? n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.136 -0400", hash_original_method = "AFC93F64F463BC2AB0989756248E17C1", hash_generated_method = "C5FBCDBEC4241ACA2F00E674FB83707A")
     public E element() {
 E var47B6E8AF818F6390E3E49621F01F780F_19877978 =         getFirstImpl();
@@ -1112,6 +1142,7 @@ Object[] var5DC9C33EDB9F81CF1216538024B770BE_644427220 =         contents;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.136 -0400", hash_original_method = "C06C36ADE827F4BEDBCDBBA1F17737D9", hash_generated_method = "E4D251C7F68E09A48A0967C866CFCA6D")
     @Override
     @SuppressWarnings("unchecked")
@@ -1253,6 +1284,7 @@ for(int i = size;--i >= 0;)
 
         Link<ET> lastLink;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.138 -0400", hash_original_method = "53053DBD9EBACCD4110D93002A695266", hash_generated_method = "039F545C1AA00B63231EF17115673688")
           LinkIterator(LinkedList<ET> object, int location) {
             addTaint(location);
@@ -1302,6 +1334,7 @@ for(pos = list.size;pos >= location;pos--)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.138 -0400", hash_original_method = "A220301E4EE3196C2657CD6F6C345E76", hash_generated_method = "1EBFC05B08D2E356FC21FB0667D6B7FD")
         public void add(ET object) {
             addTaint(object.getTaint());
@@ -1364,6 +1397,7 @@ for(pos = list.size;pos >= location;pos--)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.139 -0400", hash_original_method = "DAF205186410308F2C7B687C3EB1A5B6", hash_generated_method = "646388F0B322C1303B90362565991D16")
         public ET next() {
             if(expectedModCount == list.modCount)            
@@ -1409,6 +1443,7 @@ ET var3CF301EF1455302B1A7564AEE107BC17_1529720788 =                     link.dat
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.139 -0400", hash_original_method = "C56DBD8071305313D7DDB1E67B6D94B0", hash_generated_method = "3B513FF17DC59BD94AF25711E36488E1")
         public ET previous() {
             if(expectedModCount == list.modCount)            
@@ -1454,6 +1489,7 @@ ET var31C1257716FF314002B1C1E06C0E652A_971858761 =                     lastLink.
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.140 -0400", hash_original_method = "454EC742FAC97A85450236EC802A7816", hash_generated_method = "A9D02D12878BF377CE4B3061F9926208")
         public void remove() {
             if(expectedModCount == list.modCount)            
@@ -1511,6 +1547,7 @@ ET var31C1257716FF314002B1C1E06C0E652A_971858761 =                     lastLink.
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.140 -0400", hash_original_method = "8A5D5DD2AB039971BB00FDD7ADDD55B1", hash_generated_method = "DEDA5763CBB4CF8DC41CAEFA226D1F53")
         public void set(ET object) {
             if(expectedModCount == list.modCount)            
@@ -1563,6 +1600,7 @@ ET var31C1257716FF314002B1C1E06C0E652A_971858761 =                     lastLink.
 
         private boolean canRemove;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.141 -0400", hash_original_method = "2C54C06EA8F2B61501161B2BC13D7FF2", hash_generated_method = "98C036A6F3260A1B3893C647A1DF0F6C")
           ReverseLinkIterator(LinkedList<ET> linkedList) {
             list = linkedList;
@@ -1588,6 +1626,7 @@ ET var31C1257716FF314002B1C1E06C0E652A_971858761 =                     lastLink.
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.142 -0400", hash_original_method = "B57C4B4DEBE6A9EB91858512EE525B72", hash_generated_method = "08385DB3F8840F442D16D61C6924E354")
         public ET next() {
             if(expectedModCount == list.modCount)            
@@ -1620,6 +1659,7 @@ ET var3CF301EF1455302B1A7564AEE107BC17_943474047 =                     link.data
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.142 -0400", hash_original_method = "07412F520F702F11B7EB1920D3A5A17D", hash_generated_method = "D9441B8B996130B7C38862C8270574C8")
         public void remove() {
             if(expectedModCount == list.modCount)            

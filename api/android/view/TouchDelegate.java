@@ -2,8 +2,7 @@ package android.view;
 
 // Droidsafe Imports
 import android.graphics.Rect;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
 
 public class TouchDelegate {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.240 -0400", hash_original_field = "A4825BD7697117286DB2E2D9A1861183", hash_generated_field = "667AB02B0815B77F40A4B676D819C645")
@@ -22,6 +21,7 @@ public class TouchDelegate {
 
     private int mSlop;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.241 -0400", hash_original_method = "2AE60462A7E1E4F15EA63DC7A4583FF5", hash_generated_method = "494829CA007B6B574B73E1C77BF886CA")
     public  TouchDelegate(Rect bounds, View delegateView) {
         mBounds = bounds;
@@ -38,6 +38,7 @@ public class TouchDelegate {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.243 -0400", hash_original_method = "2299D41C6782643B71D7B9FD20834200", hash_generated_method = "292C592C2A9A16727F55836C241A275F")
     public boolean onTouchEvent(MotionEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected

@@ -56,6 +56,7 @@ public class BaseInputConnection implements InputConnection {
 
     KeyCharacterMap mKeyCharacterMap;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.234 -0400", hash_original_method = "1A943D99EC75638EA04879F1FF8F4BB3", hash_generated_method = "D904201E77FBD444E7EC22E5A2FA95EE")
       BaseInputConnection(InputMethodManager mgr, boolean fullEditor) {
         mIMM = mgr;
@@ -68,6 +69,7 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.235 -0400", hash_original_method = "8D9F46A02734088C3A101A4C25C68420", hash_generated_method = "7E503C534998A7CE2443D4066DFB4BA4")
     public  BaseInputConnection(View targetView, boolean fullEditor) {
         mIMM = (InputMethodManager)targetView.getContext().getSystemService(
@@ -82,6 +84,7 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static final void removeComposingSpans(Spannable text) {
         text.removeSpan(COMPOSING);
         Object[] sps = text.getSpans(0, text.length(), Object.class);
@@ -96,11 +99,13 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setComposingSpans(Spannable text) {
         setComposingSpans(text, 0, text.length());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setComposingSpans(Spannable text, int start, int end) {
         final Object[] sps = text.getSpans(start, end, Object.class);
         if (sps != null) {
@@ -125,16 +130,19 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getComposingSpanStart(Spannable text) {
         return text.getSpanStart(COMPOSING);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getComposingSpanEnd(Spannable text) {
         return text.getSpanEnd(COMPOSING);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.238 -0400", hash_original_method = "A97F5DFC2840DF7B5D61C809FDCD4D64", hash_generated_method = "CC9547E16F7986CFA689FB07297DA4F1")
     public Editable getEditable() {
         if(mEditable == null)        
@@ -176,6 +184,7 @@ Editable varCC26BBC33AB90DD8701B3B15E792A870_878396068 =         mEditable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.239 -0400", hash_original_method = "BC6513316EC80C5373FB6263D33C3F52", hash_generated_method = "FC58B5469A0187086D8084B37131B30F")
     public boolean clearMetaKeyStates(int states) {
         addTaint(states);
@@ -222,6 +231,7 @@ Editable varCC26BBC33AB90DD8701B3B15E792A870_878396068 =         mEditable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.241 -0400", hash_original_method = "25125C99E3204B3B6C4C8BDE15E97EE8", hash_generated_method = "657732E0E6BE7997C5626886B3ED8064")
     public boolean commitText(CharSequence text, int newCursorPosition) {
         addTaint(newCursorPosition);
@@ -239,6 +249,7 @@ Editable varCC26BBC33AB90DD8701B3B15E792A870_878396068 =         mEditable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.242 -0400", hash_original_method = "74B12EE6F294A949F3B11979331384E6", hash_generated_method = "5DF0606A7E98CAA7A8073F476BF8CB40")
     public boolean deleteSurroundingText(int leftLength, int rightLength) {
         addTaint(rightLength);
@@ -300,6 +311,7 @@ Editable varCC26BBC33AB90DD8701B3B15E792A870_878396068 =         mEditable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.243 -0400", hash_original_method = "1CCB9955A4205D39AC8709BDCAB9AF4C", hash_generated_method = "83615B64B2DAABC7C13432A0BDC194A3")
     public boolean finishComposingText() {
         if(DEBUG){ }        final Editable content = getEditable();
@@ -326,6 +338,7 @@ Editable varCC26BBC33AB90DD8701B3B15E792A870_878396068 =         mEditable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.244 -0400", hash_original_method = "A12ABCD2EB4522E8FE53DB6299A361B5", hash_generated_method = "2BA70D0F94EADBC485E8EFB280294906")
     public int getCursorCapsMode(int reqModes) {
         addTaint(reqModes);
@@ -381,6 +394,7 @@ ExtractedText var540C13E9E156B687226421B24F2DF178_278354610 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.245 -0400", hash_original_method = "75E370B84589846A89A63AE625719BF1", hash_generated_method = "592AB6A9274FFFEBF24721BA962D9AB4")
     public CharSequence getTextBeforeCursor(int length, int flags) {
         addTaint(flags);
@@ -442,6 +456,7 @@ CharSequence varE0983249B3322D55B8820CF6237DB0C2_852306958 =         TextUtils.s
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.246 -0400", hash_original_method = "ED9D872BFDE8C5E26AC99155DBA149BF", hash_generated_method = "76F917BB877E49962835B91ECF834192")
     public CharSequence getSelectedText(int flags) {
         addTaint(flags);
@@ -493,6 +508,7 @@ CharSequence var7A2F1FD98731D6CF16BD95DD1582A13C_2114277094 =         TextUtils.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.247 -0400", hash_original_method = "08096EEE0873EB795CD58B469F10D5B2", hash_generated_method = "DF1AC866BE074402059D53B816CEAD8B")
     public CharSequence getTextAfterCursor(int length, int flags) {
         addTaint(flags);
@@ -552,6 +568,7 @@ CharSequence var6D90238DD76AA0130EFA44B03DDEEA38_2005331946 =         TextUtils.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.248 -0400", hash_original_method = "F533043312AA12AABEB855D393677CB5", hash_generated_method = "40681F3D96D5F276708E9F4F2E4D3D9F")
     public boolean performEditorAction(int actionCode) {
         addTaint(actionCode);
@@ -610,6 +627,7 @@ CharSequence var6D90238DD76AA0130EFA44B03DDEEA38_2005331946 =         TextUtils.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.249 -0400", hash_original_method = "9F64937BB19F72531BAD6E029A24112C", hash_generated_method = "F5403707CB3A2AD2293A6825D05CF2AC")
     public boolean setComposingText(CharSequence text, int newCursorPosition) {
         addTaint(newCursorPosition);
@@ -625,6 +643,7 @@ CharSequence var6D90238DD76AA0130EFA44B03DDEEA38_2005331946 =         TextUtils.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.251 -0400", hash_original_method = "683D72CF1BBC9E7A391F140A2B9406BC", hash_generated_method = "20933AE91726936FE28F132C12EAD2B3")
     public boolean setComposingRegion(int start, int end) {
         addTaint(end);
@@ -673,6 +692,7 @@ for(int i = 0;i < mDefaultComposingSpans.length;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.251 -0400", hash_original_method = "06BE1F921CCFEC5EE49CD2FF18114BBC", hash_generated_method = "AD664EEAA79236CF2C8F14093852D0FD")
     public boolean setSelection(int start, int end) {
         addTaint(end);
@@ -721,6 +741,7 @@ for(int i = 0;i < mDefaultComposingSpans.length;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.251 -0400", hash_original_method = "F539697840E1FFDBA9E983D0C0D8D0DD", hash_generated_method = "2FD36D6DE9359675B802D34EB0F5F7D7")
     public boolean sendKeyEvent(KeyEvent event) {
         addTaint(event.getTaint());
@@ -760,6 +781,7 @@ for(int i = 0;i < mDefaultComposingSpans.length;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.252 -0400", hash_original_method = "FA18FCA0F08D3E4AC2B0D49617508B22", hash_generated_method = "0AE456B6622128A5F9C06E536379A0F9")
     public boolean reportFullscreenMode(boolean enabled) {
         addTaint(enabled);
@@ -773,6 +795,7 @@ for(int i = 0;i < mDefaultComposingSpans.length;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.252 -0400", hash_original_method = "BDE0428D54DBC47996CEC1E4604D5DEE", hash_generated_method = "2CC7DECE65CEF9B9F8DD90BD0E709500")
     private void sendCurrentText() {
         if(!mDummyMode)        
@@ -816,6 +839,7 @@ for(int i=0;i<events.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.252 -0400", hash_original_method = "30261E28269E8D45DD173790F761946A", hash_generated_method = "248D883F22823C68A57D8063BAB7D88B")
     private void ensureDefaultComposingSpans() {
         if(mDefaultComposingSpans == null)        
@@ -854,6 +878,7 @@ for(int i=0;i<events.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.253 -0400", hash_original_method = "A9689D9BE329300E95AF0BB78D1B0A9D", hash_generated_method = "93444BA3A648A139330CFE8497B05AB9")
     private void replaceText(CharSequence text, int newCursorPosition,
             boolean composing) {

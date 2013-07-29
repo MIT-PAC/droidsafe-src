@@ -42,6 +42,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
 
     protected FilterQueryProvider mFilterQueryProvider;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.046 -0400", hash_original_method = "8D1D2C00F3993B5859A91333170D7E0C", hash_generated_method = "10152A9E737B58355C0F5F765053C18D")
     @Deprecated
     public  CursorAdapter(Context context, Cursor c) {
@@ -53,6 +54,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.046 -0400", hash_original_method = "E3D9EE9ED812FDA16E5801F0DB803037", hash_generated_method = "4657D902F8F2C09C722A8FA02938CAD7")
     public  CursorAdapter(Context context, Cursor c, boolean autoRequery) {
         addTaint(autoRequery);
@@ -64,6 +66,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.047 -0400", hash_original_method = "ED5E23B4BC6F3954BD932E88BE4B619F", hash_generated_method = "1E0ADAAB3C409F0B1814D9DB573871BF")
     public  CursorAdapter(Context context, Cursor c, int flags) {
         addTaint(flags);
@@ -75,6 +78,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.047 -0400", hash_original_method = "8A3F140CB585945159B363BD7170B858", hash_generated_method = "91D137A3DFAABDE5194CC3E221E0B2E7")
     @Deprecated
     protected void init(Context context, Cursor c, boolean autoRequery) {
@@ -87,6 +91,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.049 -0400", hash_original_method = "E90B8606F5AC4DC9C7FA36F3DBF50072", hash_generated_method = "5278501FC994752A8DD7E208784E7702")
      void init(Context context, Cursor c, int flags) {
         addTaint(flags);
@@ -137,6 +142,7 @@ Cursor var2D697C95C6440211C70889796F0139B0_75871661 =         mCursor;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.050 -0400", hash_original_method = "F232C8AA0135C20BD5AF7ACB0020E9DD", hash_generated_method = "3DBE0AD24EDDD3DFB237F31F26115C25")
     public int getCount() {
         if(mDataValid && mCursor != null)        
@@ -160,6 +166,7 @@ Cursor var2D697C95C6440211C70889796F0139B0_75871661 =         mCursor;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.050 -0400", hash_original_method = "0491DE82927D7739F3937D1F88D16ECE", hash_generated_method = "52119DA95F2BD7F69644364F3D74D99E")
     public Object getItem(int position) {
         addTaint(position);
@@ -186,6 +193,7 @@ Object var540C13E9E156B687226421B24F2DF178_275826152 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.051 -0400", hash_original_method = "34FC88027666F3EEA6FC8DBB36C510AF", hash_generated_method = "1387198F16B7551CB52D9AB782071E24")
     public long getItemId(int position) {
         addTaint(position);
@@ -235,6 +243,7 @@ Object var540C13E9E156B687226421B24F2DF178_275826152 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.053 -0400", hash_original_method = "04641394EE9B89BDCE0805D3C5BEBDA5", hash_generated_method = "2C7F5642C6B9E4C85D314A339948E319")
     public View getView(int position, View convertView, ViewGroup parent) {
         addTaint(parent.getTaint());
@@ -283,6 +292,7 @@ View var6DC76BC51820DD65E8396280E884AA78_1537613751 =         v;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.054 -0400", hash_original_method = "8987F0888A94923BAC3C282546957FFA", hash_generated_method = "262B3366FE523E110DFFC7CB26A4E925")
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
@@ -333,6 +343,7 @@ View var540C13E9E156B687226421B24F2DF178_1178467243 =             null;
     public abstract View newView(Context context, Cursor cursor, ViewGroup parent);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.055 -0400", hash_original_method = "4EAF37DD2AC2B68CF9F2E847E9D5C2B4", hash_generated_method = "838ACC56A5E6594573EB8C517C356416")
     public View newDropDownView(Context context, Cursor cursor, ViewGroup parent) {
         addTaint(parent.getTaint());
@@ -350,6 +361,7 @@ View varA7C7FCEE76C2BB6CDF25D7E759116C4C_1926707906 =         newView(context, c
     public abstract void bindView(View view, Context context, Cursor cursor);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.055 -0400", hash_original_method = "A3DB89FF308CDDA8076F4DD4182DC99B", hash_generated_method = "759D769AE9FA5626EBA0A841E27E97CE")
     public void changeCursor(Cursor cursor) {
         addTaint(cursor.getTaint());
@@ -366,6 +378,7 @@ View varA7C7FCEE76C2BB6CDF25D7E759116C4C_1926707906 =         newView(context, c
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.057 -0400", hash_original_method = "3AE932C7E61F472FB82D7B0D8E632CE6", hash_generated_method = "19363276E760618D8C36C650041E1E72")
     public Cursor swapCursor(Cursor newCursor) {
         if(newCursor == mCursor)        
@@ -407,6 +420,7 @@ Cursor var8865EC6BBD1C189917D7B270FF26E997_1148090161 =         oldCursor;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.058 -0400", hash_original_method = "AC3E4A96BAEBA3C91CE9B7B72B03BE17", hash_generated_method = "3F8827FDB649D21E9EA732B774F97F65")
     public CharSequence convertToString(Cursor cursor) {
         addTaint(cursor.getTaint());
@@ -418,6 +432,7 @@ CharSequence varD3163D348BE74EFDDB10CF3B2A61ABC0_1117163476 =         cursor == 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.058 -0400", hash_original_method = "0F9BE7C57911E33C85760ED7E36C9D33", hash_generated_method = "39217166C759A8871B958BA67C28181E")
     public Cursor runQueryOnBackgroundThread(CharSequence constraint) {
         addTaint(constraint.getTaint());
@@ -438,6 +453,7 @@ Cursor var2D697C95C6440211C70889796F0139B0_1564584101 =         mCursor;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.059 -0400", hash_original_method = "847708A1CBB9CABD379CEB5384747381", hash_generated_method = "F60ED131D97CA4F6A69C80D70D912CA6")
     public Filter getFilter() {
         if(mCursorFilter == null)        
@@ -475,6 +491,7 @@ FilterQueryProvider var9C11BBF4520EA8ACA798B47CEA8E6C0C_360492798 =         mFil
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.060 -0400", hash_original_method = "A04D68B5B58FA27E71C6ECAA728402A5", hash_generated_method = "82B5596CDCFF35BF5807C84DC58B76C2")
     protected void onContentChanged() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -492,6 +509,7 @@ FilterQueryProvider var9C11BBF4520EA8ACA798B47CEA8E6C0C_360492798 =         mFil
     
     private class ChangeObserver extends ContentObserver {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.061 -0400", hash_original_method = "E9F5B54480B866367BA64F4A5A962E11", hash_generated_method = "26A139A9C94CF802391CF18776297177")
         public  ChangeObserver() {
             super(new Handler());
@@ -511,6 +529,7 @@ FilterQueryProvider var9C11BBF4520EA8ACA798B47CEA8E6C0C_360492798 =         mFil
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.061 -0400", hash_original_method = "E96460F373279AF9AB8806E159ABA424", hash_generated_method = "ED8F5A11A8054BF0A3976D4C48B0275E")
         @Override
         public void onChange(boolean selfChange) {
@@ -535,6 +554,7 @@ FilterQueryProvider var9C11BBF4520EA8ACA798B47CEA8E6C0C_360492798 =         mFil
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.061 -0400", hash_original_method = "06FCBC692E549C3C9873F9D5CBAEB7B0", hash_generated_method = "03FD84DC8C544DE0887FEB106D75CC8E")
         @Override
         public void onChanged() {
@@ -547,6 +567,7 @@ FilterQueryProvider var9C11BBF4520EA8ACA798B47CEA8E6C0C_360492798 =         mFil
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.061 -0400", hash_original_method = "EAE7DF88825384424351353A02D60615", hash_generated_method = "A259386E221C67E9FE12B36668278306")
         @Override
         public void onInvalidated() {

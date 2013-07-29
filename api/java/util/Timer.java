@@ -14,6 +14,7 @@ public class Timer {
 
     @SuppressWarnings("unused") private FinalizerHelper finalizer;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.857 -0400", hash_original_method = "CCBAE4C218CB3D4968980BC5ABE4FF3C", hash_generated_method = "5FCF716CB264E8B062549A8F421982A2")
     public  Timer(String name, boolean isDaemon) {
         if(name == null)        
@@ -33,6 +34,7 @@ public class Timer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.858 -0400", hash_original_method = "02AE08AD1BF27E917ED31D51A1B3D791", hash_generated_method = "BD760B12BCB3C9EFDD381D4F861D4E99")
     public  Timer(String name) {
         this(name, false);
@@ -41,6 +43,7 @@ public class Timer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.858 -0400", hash_original_method = "70CAEF4BF7F4A75D51C26667927F81EF", hash_generated_method = "7F5F59856E80CB782DD93EA124AC235F")
     public  Timer(boolean isDaemon) {
         this("Timer-" + Timer.nextId(), isDaemon);
@@ -49,6 +52,7 @@ public class Timer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.858 -0400", hash_original_method = "0270210C5FDC4EA43E305D84D4C8B476", hash_generated_method = "F6B72E5049AAA19123589FFA16EED6C0")
     public  Timer() {
         this(false);
@@ -62,6 +66,7 @@ public class Timer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.859 -0400", hash_original_method = "4F9571F346BBFC93F458CCCC1BA285E2", hash_generated_method = "8B1BBB6959E6C72980148F70ACDA4DC6")
     public void cancel() {
         impl.cancel();
@@ -70,6 +75,7 @@ public class Timer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.859 -0400", hash_original_method = "0B011E4041136408340083F55A5156B3", hash_generated_method = "FC1C56575EFAA55C7EC4E668A56AC027")
     public int purge() {
         synchronized
@@ -85,6 +91,7 @@ public class Timer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.859 -0400", hash_original_method = "11725ACE17CC712A9ECE78E61369355E", hash_generated_method = "97A169E83469168AF86D3766667C05A6")
     public void schedule(TimerTask task, Date when) {
         addTaint(when.getTaint());
@@ -106,6 +113,7 @@ public class Timer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.860 -0400", hash_original_method = "C70A5270C6C8A079FCAADE9A65184BCF", hash_generated_method = "368C806944CFA3723AC9FDACD1F11B8C")
     public void schedule(TimerTask task, long delay) {
         addTaint(delay);
@@ -125,6 +133,7 @@ public class Timer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.860 -0400", hash_original_method = "2638FF3E02C15EB097A85AD3BAF82535", hash_generated_method = "2A36FC8B224E19C7FF930C587CB331D0")
     public void schedule(TimerTask task, long delay, long period) {
         addTaint(period);
@@ -145,6 +154,7 @@ public class Timer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.861 -0400", hash_original_method = "D1ECD2ED5B40CEEFE097F1521E46D9CD", hash_generated_method = "7A0D30B769C821EFB8AC10FD268542F0")
     public void schedule(TimerTask task, Date when, long period) {
         addTaint(period);
@@ -167,6 +177,7 @@ public class Timer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.861 -0400", hash_original_method = "5346126CCA7833D0BFEF2BABD1293D7B", hash_generated_method = "5D8D2E117E1025B042D9A7904CC7DEA8")
     public void scheduleAtFixedRate(TimerTask task, long delay, long period) {
         addTaint(period);
@@ -187,6 +198,7 @@ public class Timer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.862 -0400", hash_original_method = "6589A168C51AEA92DBDCD8B282926324", hash_generated_method = "924DB508BBE09359F72F5A3EBBF2CACB")
     public void scheduleAtFixedRate(TimerTask task, Date when, long period) {
         addTaint(period);
@@ -209,6 +221,7 @@ public class Timer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.863 -0400", hash_original_method = "163F6B0C6203677A1F058E56FE2F9B83", hash_generated_method = "A1323558EDE40B3D1F476C46C515AD93")
     private void scheduleImpl(TimerTask task, long delay, long period, boolean fixed) {
         addTaint(fixed);
@@ -266,6 +279,7 @@ public class Timer {
 
         private TimerHeap tasks = new TimerHeap();
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.864 -0400", hash_original_method = "F4DF6B4551FDBC23EEE87B7E4E870504", hash_generated_method = "0158A66F82FBCEBBFA786948FF978793")
           TimerImpl(String name, boolean isDaemon) {
             addTaint(isDaemon);
@@ -280,6 +294,7 @@ public class Timer {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.866 -0400", hash_original_method = "F5D6E902D7971393BC779DF27078ED52", hash_generated_method = "1F9595157BA947B0FF17697CB5928844")
         @Override
         public void run() {
@@ -386,6 +401,7 @@ public class Timer {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.867 -0400", hash_original_method = "1179C8665DD7C88A3DCD4C96D03B447E", hash_generated_method = "9E89276722C17DD5D648647E5CE84B00")
         private void insertTask(TimerTask newTask) {
             addTaint(newTask.getTaint());
@@ -397,6 +413,7 @@ public class Timer {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.867 -0400", hash_original_method = "98F63C51B8CE3B66A34B3D1691EEC660", hash_generated_method = "D46269E7176EB5C7BED6DA170FC81CDE")
         public synchronized void cancel() {
             cancelled = true;
@@ -409,6 +426,7 @@ public class Timer {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.867 -0400", hash_original_method = "14258CF4E602CCBF988A676BE8DF635B", hash_generated_method = "80B2E702A93773D519BD899A36EE4268")
         public int purge() {
             if(tasks.isEmpty())            
@@ -475,6 +493,7 @@ TimerTask var1C81D383AA0711D49D8E84469D54E1EE_1070461396 =                 timer
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.868 -0400", hash_original_method = "FCBB49BFF2D0F5589541AAD0BAE25774", hash_generated_method = "DFF2D8576F8FB86E563D8555DABEEBB8")
             public void insert(TimerTask task) {
                 if(timers.length == size)                
@@ -496,6 +515,7 @@ TimerTask var1C81D383AA0711D49D8E84469D54E1EE_1070461396 =                 timer
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.869 -0400", hash_original_method = "0B132463A6995D392821B524FFDE805E", hash_generated_method = "1A3A61B29FD73D9DDAFF1DFE160D1067")
             public void delete(int pos) {
                 if(pos >= 0 && pos < size)                
@@ -595,6 +615,7 @@ TimerTask var1C81D383AA0711D49D8E84469D54E1EE_1070461396 =                 timer
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.871 -0400", hash_original_method = "D8C208FA954780F7AF0BEF19488333D3", hash_generated_method = "655D2B1724BE5C017764F419A1F28993")
             public void adjustMinimum() {
                 downHeap(0);
@@ -603,6 +624,7 @@ TimerTask var1C81D383AA0711D49D8E84469D54E1EE_1070461396 =                 timer
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.871 -0400", hash_original_method = "AE1ACEED0F069268C38EE209755704B2", hash_generated_method = "2D77D154B7B641CB726981921D5B72C7")
             public void deleteIfCancelled() {
 for(int i = 0;i < size;i++)
@@ -664,6 +686,7 @@ for(int i = 0;i < timers.length;i++)
 
         private TimerImpl impl;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.873 -0400", hash_original_method = "433E2FD3ED4C8DEDF63A6DA216B65604", hash_generated_method = "4CBFABE13119C5255BCBDD03AEBE9965")
           FinalizerHelper(TimerImpl impl) {
             this.impl = impl;
@@ -672,6 +695,7 @@ for(int i = 0;i < timers.length;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.873 -0400", hash_original_method = "DFA080161CE25EF58ACF3FC158495E65", hash_generated_method = "1DC87F90FCB2BC9375168FE79903EE7D")
         @Override
         protected void finalize() throws Throwable {

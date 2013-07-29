@@ -42,6 +42,7 @@ public final class SpellCheckerInfo implements Parcelable {
 
     private final ArrayList<SpellCheckerSubtype> mSubtypes = new ArrayList<SpellCheckerSubtype>();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.862 -0400", hash_original_method = "6A25F08819F54F2E6B313A58A8CE6D90", hash_generated_method = "8E27387DBC614D1907428DE4DC9EBE54")
     public  SpellCheckerInfo(Context context, ResolveInfo service) throws XmlPullParserException, IOException {
         addTaint(context.getTaint());
@@ -131,6 +132,7 @@ public final class SpellCheckerInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.864 -0400", hash_original_method = "D0DF2452D02A3DC9C8E7C8BB825D11D4", hash_generated_method = "C0D8D8F6984FB63466EE4BBD97721CF4")
     public  SpellCheckerInfo(Parcel source) {
         mLabel = source.readInt();
@@ -182,6 +184,7 @@ String var255A04E9345861413C0ACB855498FFE1_1144175713 =         mService.service
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.865 -0400", hash_original_method = "2F472510FA9E87ADC65F29887FB84501", hash_generated_method = "0701484475CDFF9D670AB496AC43BB5A")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -201,6 +204,7 @@ String var255A04E9345861413C0ACB855498FFE1_1144175713 =         mService.service
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.866 -0400", hash_original_method = "440496C0C039EAF57937C0E12546E16A", hash_generated_method = "3C96270B62E08BDB627ACD3998081E0B")
     public CharSequence loadLabel(PackageManager pm) {
         addTaint(pm.getTaint());
@@ -219,6 +223,7 @@ CharSequence varBFC2C4FE03EF33E1A481371165020B3B_565716119 =         pm.getText(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.866 -0400", hash_original_method = "0598EE9DB236F7268C8A7877021962D5", hash_generated_method = "B1FEB912E9B5BE7D5B7EB7520F503DCC")
     public Drawable loadIcon(PackageManager pm) {
         addTaint(pm.getTaint());
@@ -252,6 +257,7 @@ String varF52598D579FB7EF6DE23C12DD22DC004_2081344297 =         mSettingsActivit
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.867 -0400", hash_original_method = "CC228A570F36729F1778728092FDBD7B", hash_generated_method = "DA0B4A5DD5475137D8972D4870069CDA")
     public int getSubtypeCount() {
         int var4D00EFCF59D020D8587406D0543FA800_1233394896 = (mSubtypes.size());

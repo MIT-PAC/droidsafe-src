@@ -20,6 +20,7 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.720 -0400", hash_original_method = "5BE178AB760CC925EF7E1111F1B4915D", hash_generated_method = "F16E110729CB74D6A482E558D8B8E47B")
     public void registerDataSetObserver(DataSetObserver observer) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -30,6 +31,7 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.720 -0400", hash_original_method = "8548074F279CEB9C75C60995B3E76B4B", hash_generated_method = "55A6C9663FBA723DF8786E07BEFE465A")
     public void unregisterDataSetObserver(DataSetObserver observer) {
         addTaint(observer.getTaint());
@@ -39,6 +41,7 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.720 -0400", hash_original_method = "733D96117EC068A88A560CFA24913D79", hash_generated_method = "A7F0E4AF3D0109D819E8AFDA57AB77CC")
     public void notifyDataSetInvalidated() {
         mDataSetObservable.notifyInvalidated();
@@ -47,6 +50,7 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.720 -0400", hash_original_method = "6B5DF5B4CDDD51D923DE488520E93535", hash_generated_method = "3158F3A56E63A128E4489E6003CA7FEA")
     public void notifyDataSetChanged() {
         mDataSetObservable.notifyChanged();
@@ -109,6 +113,7 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.721 -0400", hash_original_method = "5FAC6FB77FD1E9F9E1ADE9FFEE4D8A44", hash_generated_method = "0D541B9AA0A3FE1CE592307AC82D5150")
     public boolean isEmpty() {
         boolean var4B7840671273F91292DC14DC84C69C76_1923879540 = (getGroupCount() == 0);

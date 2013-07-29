@@ -47,6 +47,7 @@ public final class InputMethodSubtype implements Parcelable {
 
     private HashMap<String, String> mExtraValueHashMapCache;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.818 -0400", hash_original_method = "934D77263F2647B2A011D3A69C057C66", hash_generated_method = "4858F2C37D559F615970C0A29D470F18")
     public  InputMethodSubtype(int nameId, int iconId, String locale, String mode, String extraValue,
             boolean isAuxiliary) {
@@ -61,6 +62,7 @@ public final class InputMethodSubtype implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.820 -0400", hash_original_method = "26B76F41AAAA7EE2514381E3013D5A81", hash_generated_method = "E31B6D25CAAA843FDBFE6094AACFCEC0")
     public  InputMethodSubtype(int nameId, int iconId, String locale, String mode, String extraValue,
             boolean isAuxiliary, boolean overridesImplicitlyEnabledSubtype) {
@@ -196,6 +198,7 @@ String varD5103786A790F3D4881070784C5A1DFD_384361192 =         mSubtypeExtraValu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.824 -0400", hash_original_method = "968D29448AF0C4C278C68BBABC30BCB9", hash_generated_method = "C162DDEB8B6D627FF5235D40A8AA6D12")
     public CharSequence getDisplayName(
             Context context, String packageName, ApplicationInfo appInfo) {
@@ -289,6 +292,7 @@ HashMap<String, String> var75B07F360A6A39A8B728D2DFD0DB271F_1026588436 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.825 -0400", hash_original_method = "92E492941FA288BA531CB37717D8F415", hash_generated_method = "707AC5C57FD882E9452B6377403C1F6B")
     public boolean containsExtraValueKey(String key) {
         addTaint(key.getTaint());
@@ -300,6 +304,7 @@ HashMap<String, String> var75B07F360A6A39A8B728D2DFD0DB271F_1026588436 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.825 -0400", hash_original_method = "E26D6519ACBB2E66A4CA57F07B1B4B16", hash_generated_method = "BDE6820B59AAB199F12B9B9C60ADD34A")
     public String getExtraValueOf(String key) {
         addTaint(key.getTaint());
@@ -395,6 +400,7 @@ String var668958CC928CE427869ECE8B61534E65_564572761 =         getExtraValueHash
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Locale constructLocaleFromString(String localeStr) {
         if (TextUtils.isEmpty(localeStr))
             return null;
@@ -418,6 +424,7 @@ String var668958CC928CE427869ECE8B61534E65_564572761 =         getExtraValueHash
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static List<InputMethodSubtype> sort(Context context, int flags, InputMethodInfo imi,
             List<InputMethodSubtype> subtypeList) {
         if (imi == null) return subtypeList;

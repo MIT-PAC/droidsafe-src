@@ -8,8 +8,7 @@ import java.nio.charset.Charsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
 
 public class ZipOutputStream extends DeflaterOutputStream implements ZipConstants {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.854 -0400", hash_original_field = "06D4CD63BDE972FC66A0AED41D2F5C51", hash_generated_field = "3ED42D4B537F5FDB36FDF1EA0D6B44D6")
@@ -46,6 +45,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
 
     private byte[] nameBytes;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.855 -0400", hash_original_method = "8A42A56E156B97294BE7CC83201EADCF", hash_generated_method = "9DA8DBBF060B4EA1BE2288B1965532A2")
     public  ZipOutputStream(OutputStream p1) {
         super(p1, new Deflater(Deflater.DEFAULT_COMPRESSION, true));
@@ -54,6 +54,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.855 -0400", hash_original_method = "96C568DC9FCDB3D53590F6DD994D0456", hash_generated_method = "33C706BBF950AD9EA0D70E9C4604CBBB")
     @Override
     public void close() throws IOException {
@@ -74,6 +75,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.859 -0400", hash_original_method = "7ED55E9CAB55F4762479C264D19A0A1A", hash_generated_method = "0E2A294E84F37303FE675BC6C7CAA097")
     public void closeEntry() throws IOException {
         checkClosed();
@@ -171,6 +173,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.863 -0400", hash_original_method = "999AC26E5377CA180C9B394D52C82ED1", hash_generated_method = "BF24A98E5589A82A11047784223EBA7A")
     @Override
     public void finish() throws IOException {
@@ -245,6 +248,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.865 -0400", hash_original_method = "B67EF5B3649AC60448D5855D166716A9", hash_generated_method = "A2EFD3E4D7E09D5B4C4CB7F2B69180BA")
     public void putNextEntry(ZipEntry ze) throws IOException {
         if(currentEntry != null)        
@@ -346,6 +350,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.867 -0400", hash_original_method = "26F6FBE233DD91F24B7F1E6618FAB1E0", hash_generated_method = "1C2DF00E99D3D9ABCAF2FD14EAAF3270")
     public void setComment(String comment) {
         if(comment.length() > 0xFFFF)        
@@ -363,6 +368,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.867 -0400", hash_original_method = "E1ADAA90D59796919F5AECC9DBBFDE9F", hash_generated_method = "D65E43D26757AF4DB8A52543436BAD5F")
     public void setLevel(int level) {
         if(level < Deflater.DEFAULT_COMPRESSION || level > Deflater.BEST_COMPRESSION)        
@@ -380,6 +386,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.867 -0400", hash_original_method = "6F0DCE9ECB2E8D251D145F7781DE410D", hash_generated_method = "C29CF4F5E15CCFD9E01C8B9055D559C6")
     public void setMethod(int method) {
         if(method != STORED && method != DEFLATED)        
@@ -397,6 +404,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.868 -0400", hash_original_method = "DBE9EE31F55A33C252870BC7FED94C64", hash_generated_method = "BE2D4082734726D6F395801B8C61ECA9")
     private long writeLong(OutputStream os, long i) throws IOException {
         addTaint(i);
@@ -417,6 +425,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.868 -0400", hash_original_method = "1DFA02CC93F18F84127269F34641BCA1", hash_generated_method = "668184DFDC7C729590469F6A357811BD")
     private int writeShort(OutputStream os, int i) throws IOException {
         addTaint(i);
@@ -433,6 +442,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.869 -0400", hash_original_method = "F9EBE9ED855C5E2014EA6CAF53F89130", hash_generated_method = "702975D30E03D1A386EF0C196D75146A")
     @Override
     public void write(byte[] buffer, int offset, int byteCount) throws IOException {
@@ -469,6 +479,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.870 -0400", hash_original_method = "D282356A3A75F4936D2E72EF1631ED03", hash_generated_method = "F227F98F6D44388CF627C652E594CC40")
     private void checkClosed() throws IOException {
         if(cDir == null)        

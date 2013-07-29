@@ -12,8 +12,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import libcore.io.Streams;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
 
 public class JarFile extends ZipFile {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.890 -0400", hash_original_field = "7F5CB74AF5D7F4B82200738FDBDC5A45", hash_generated_field = "261709621967406C2758961F4730EA20")
@@ -29,6 +28,7 @@ public class JarFile extends ZipFile {
 
     private boolean closed = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.890 -0400", hash_original_method = "B9B0355AAF6860849CDAA93CC073B40D", hash_generated_method = "578AF9C3F617699204D04C3678122D01")
     public  JarFile(File file) throws IOException {
         this(file, true);
@@ -37,6 +37,7 @@ public class JarFile extends ZipFile {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.891 -0400", hash_original_method = "5EB6670431246E3B0105DDAC48B26AC0", hash_generated_method = "F27BD785C475148DBA18D67EEBD1DD82")
     public  JarFile(File file, boolean verify) throws IOException {
         super(file);
@@ -54,6 +55,7 @@ public class JarFile extends ZipFile {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.891 -0400", hash_original_method = "793A8CDEEB3B1480C6CD4A5DE140B86D", hash_generated_method = "B7120D9445F831CED71B55D0A99530C4")
     public  JarFile(File file, boolean verify, int mode) throws IOException {
         super(file, mode);
@@ -72,6 +74,7 @@ public class JarFile extends ZipFile {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.892 -0400", hash_original_method = "7A554CED3F155E72368E52962D72B4D7", hash_generated_method = "E206C57A5C98E6791FFDF685273E8DFA")
     public  JarFile(String filename) throws IOException {
         this(filename, true);
@@ -80,6 +83,7 @@ public class JarFile extends ZipFile {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.892 -0400", hash_original_method = "54E668354AB021AFE09898CE1915F8B2", hash_generated_method = "ACEA1C52250F23B1AD376EDAADE9643C")
     public  JarFile(String filename, boolean verify) throws IOException {
         super(filename);
@@ -97,6 +101,7 @@ public class JarFile extends ZipFile {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.894 -0400", hash_original_method = "DDF115034FADFE53A1FD9BC36D36CE25", hash_generated_method = "28390275337A046A4F073DB9C9A54D85")
     @Override
     public Enumeration<JarEntry> entries() {
@@ -158,6 +163,7 @@ Enumeration<JarEntry> varFD6D5513D1E96AE9B20DD26D8EAB087D_1778760700 =         n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.895 -0400", hash_original_method = "C114B7C700B8AEF8B2BF9DB9E2302906", hash_generated_method = "D2D29D96814AF30B63C90DE3224790E2")
     public JarEntry getJarEntry(String name) {
         addTaint(name.getTaint());
@@ -169,6 +175,7 @@ JarEntry var591DE7427C125FF4E677E1BD603E2794_2100022556 =         (JarEntry) get
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.896 -0400", hash_original_method = "E67D102DBF269AEACB3865BB39A89C99", hash_generated_method = "7855417D7802E2AF5029F5D5DC200316")
     public Manifest getManifest() throws IOException {
         if(closed)        
@@ -234,6 +241,7 @@ Manifest var1E3066E1404CD0BB62AB3E2DCB96B149_756282419 =         manifest;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.897 -0400", hash_original_method = "388F847516FC198A1371FF54043E7729", hash_generated_method = "1C91A8755396C4C973ECE2989A2E289D")
     private void readMetaEntries() throws IOException {
         ZipEntry[] metaEntries = getMetaEntriesImpl();
@@ -276,11 +284,13 @@ for(ZipEntry entry : metaEntries)
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static boolean endsWithIgnoreCase(String s, String suffix) {
         return s.regionMatches(true, s.length() - suffix.length(), suffix, 0, suffix.length());
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.898 -0400", hash_original_method = "53CBE19CD54AC9FA27355C4D3916E5DE", hash_generated_method = "CD4ADC7FC44C30C6A0E4C5EA5F5AAFD4")
     @Override
     public InputStream getInputStream(ZipEntry ze) throws IOException {
@@ -337,6 +347,7 @@ InputStream var4CAB468FFDADC030160DE961725CED91_1173689780 =         new JarFile
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.899 -0400", hash_original_method = "B825DECF198E8D2309850EFFE99C9789", hash_generated_method = "311EB72DE688904D8E5E13E53637E1CE")
     @Override
     public ZipEntry getEntry(String name) {
@@ -364,6 +375,7 @@ ZipEntry var8426B46703D579116B5F4E1AE17ACF98_1367943438 =         je;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.900 -0400", hash_original_method = "4B8F98994A94A2FEBED0E4C85A619A5C", hash_generated_method = "9F320233CB91246127EF2841371880FD")
     private ZipEntry[] getMetaEntriesImpl() {
         List<ZipEntry> list = new ArrayList<ZipEntry>(8);
@@ -408,6 +420,7 @@ ZipEntry[] varDC838461EE2FA0CA4C9BBB70A15456B0_840320944 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.900 -0400", hash_original_method = "C7FCBD344022D72FF18766A4DFEA8EE1", hash_generated_method = "DCC0D06E7F79ED3EAE0E8D99DD76C5B5")
     @Override
     public void close() throws IOException {
@@ -433,6 +446,7 @@ ZipEntry[] varDC838461EE2FA0CA4C9BBB70A15456B0_840320944 =         result;
 
         private boolean done = false;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.902 -0400", hash_original_method = "C5D82B21AC1025C83393044900E9B5C1", hash_generated_method = "DE86F2A3471707EF9C411B0441E54CCC")
           JarFileInputStream(InputStream is, ZipEntry ze,
                 JarVerifier.VerifierEntry e) {
@@ -448,6 +462,7 @@ ZipEntry[] varDC838461EE2FA0CA4C9BBB70A15456B0_840320944 =         result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.903 -0400", hash_original_method = "89CF4CB391CD9E8B348E579506073CE6", hash_generated_method = "9D9D8586BDE564EA1F20795ADABF64F8")
         @Override
         public int read() throws IOException {
@@ -511,6 +526,7 @@ ZipEntry[] varDC838461EE2FA0CA4C9BBB70A15456B0_840320944 =         result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.905 -0400", hash_original_method = "A2A36F60816A3448608DD8EC3FE6DD7B", hash_generated_method = "FA7AC5894CC24637917B04793936362B")
         @Override
         public int read(byte[] buf, int off, int nbytes) throws IOException {
@@ -586,6 +602,7 @@ ZipEntry[] varDC838461EE2FA0CA4C9BBB70A15456B0_840320944 =         result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.906 -0400", hash_original_method = "F5DF26793DC8C27B5E93038A2CA57A87", hash_generated_method = "DFDF6D5423E27E102478563E797B51EE")
         @Override
         public int available() throws IOException {
@@ -606,6 +623,7 @@ ZipEntry[] varDC838461EE2FA0CA4C9BBB70A15456B0_840320944 =         result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.907 -0400", hash_original_method = "B0B2C5ABB0F3ADBF684B825EB14D5721", hash_generated_method = "128C946BF2DAD2BE4728E6D001D4AC0D")
         @Override
         public long skip(long byteCount) throws IOException {

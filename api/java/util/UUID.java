@@ -41,6 +41,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
 
     private transient int hash;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.654 -0400", hash_original_method = "ED635EB76A78F00DCB10AED73CFEDC4B", hash_generated_method = "02EBCE8ECE4A121E0D4A5FC929F94543")
     public  UUID(long mostSigBits, long leastSigBits) {
         this.mostSigBits = mostSigBits;
@@ -88,6 +89,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static UUID randomUUID() {
         byte[] data = new byte[16];
         synchronized (UUID.class) {
@@ -100,6 +102,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static UUID nameUUIDFromBytes(byte[] name) {
         if (name == null) {
             throw new NullPointerException();
@@ -113,6 +116,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static UUID makeUuid(byte[] hash, int version) {
         long msb = Memory.peekLong(hash, 0, ByteOrder.BIG_ENDIAN);
         long lsb = Memory.peekLong(hash, 8, ByteOrder.BIG_ENDIAN);
@@ -124,6 +128,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static UUID fromString(String uuid) {
         if (uuid == null) {
             throw new NullPointerException();
@@ -195,6 +200,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.658 -0400", hash_original_method = "BC9161978762C6E74741C357EC2A66B7", hash_generated_method = "7AC90A90786A50DBBD3A4F20DCFD4A61")
     public long timestamp() {
         if(version != 1)        
@@ -214,6 +220,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.659 -0400", hash_original_method = "22D2FA35D30B9562E8F9B8FBAC9604FC", hash_generated_method = "2F26C6E7104945F0F68256E48621D7AF")
     public int clockSequence() {
         if(version != 1)        
@@ -233,6 +240,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.659 -0400", hash_original_method = "F570F6113919571E2190BC663D44A8A0", hash_generated_method = "7D7D3314D503A0714D19EB7D669C88E0")
     public long node() {
         if(version != 1)        
@@ -252,6 +260,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.659 -0400", hash_original_method = "BF37BBD9CA2A2DE01ED617F2C2EA69AA", hash_generated_method = "E2217DEFA80E0D6483E193B21815082A")
     public int compareTo(UUID uuid) {
         addTaint(uuid.getTaint());
@@ -348,6 +357,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.660 -0400", hash_original_method = "2C7CA3FB1758723F3B30AD693E280579", hash_generated_method = "AC6162C8C4441D55E1BCE3BD7C298C4C")
     @Override
     public String toString() {
@@ -405,6 +415,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1985289829 =         builder.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.661 -0400", hash_original_method = "2009CB8B2416921986707AD76596B398", hash_generated_method = "9B727D193306F40CE5A6C46DD735C1D4")
     private void readObject(ObjectInputStream in) throws IOException,
             ClassNotFoundException {

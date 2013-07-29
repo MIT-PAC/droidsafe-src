@@ -14,6 +14,7 @@ public class Semaphore implements java.io.Serializable {
 
     private Sync sync;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.805 -0400", hash_original_method = "1D09FBBC41D290488B50FAB01D9EE120", hash_generated_method = "13962118142FDEFB392405E8F00D1980")
     public  Semaphore(int permits) {
         sync = new NonfairSync(permits);
@@ -22,6 +23,7 @@ public class Semaphore implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.806 -0400", hash_original_method = "EDA1419EB058A316E989F6F201EF4313", hash_generated_method = "13367ADAF65E44BD9192860D4A3B7131")
     public  Semaphore(int permits, boolean fair) {
         sync = fair ? new FairSync(permits) : new NonfairSync(permits);
@@ -30,6 +32,7 @@ public class Semaphore implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.806 -0400", hash_original_method = "36195816327B5FFC3BDF4AB88B23D805", hash_generated_method = "3DBDFDABAA7FC274F5D5F4A20CA8CA86")
     public void acquire() throws InterruptedException {
         sync.acquireSharedInterruptibly(1);
@@ -38,6 +41,7 @@ public class Semaphore implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.806 -0400", hash_original_method = "EECA708F1A8CDD46B9FED024EA3B107E", hash_generated_method = "65DDEE07CA9D1A9C8DF2A7F368E92FF2")
     public void acquireUninterruptibly() {
         sync.acquireShared(1);
@@ -46,6 +50,7 @@ public class Semaphore implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.806 -0400", hash_original_method = "81DB55A43E3FEF36A7D7A44C596F2527", hash_generated_method = "6DB7EA79960556A2A56215AC12751692")
     public boolean tryAcquire() {
         boolean varDB3B551E4ED40518B68430636E27BC5F_1070605302 = (sync.nonfairTryAcquireShared(1) >= 0);
@@ -56,6 +61,7 @@ public class Semaphore implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.807 -0400", hash_original_method = "ABEC3704F68F4BA58C5E653A10F8C77A", hash_generated_method = "7BB3C8087680C30990981800017C7143")
     public boolean tryAcquire(long timeout, TimeUnit unit) throws InterruptedException {
         addTaint(unit.getTaint());
@@ -68,6 +74,7 @@ public class Semaphore implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.807 -0400", hash_original_method = "A31CF20052BB7332FF63483E272EE6FB", hash_generated_method = "3FED394AF8AC081B7B78D6F30457AAA9")
     public void release() {
         sync.releaseShared(1);
@@ -76,6 +83,7 @@ public class Semaphore implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.807 -0400", hash_original_method = "7B985EDB9B3C3368A9FFE0EA00FDC854", hash_generated_method = "417B94B9B5250294954DEE8186DE15D6")
     public void acquire(int permits) throws InterruptedException {
         addTaint(permits);
@@ -92,6 +100,7 @@ public class Semaphore implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.807 -0400", hash_original_method = "AED087DD2B1BE9707E61AD056A232C9F", hash_generated_method = "D03F4CFD44C7B04F91609C40B1697E22")
     public void acquireUninterruptibly(int permits) {
         addTaint(permits);
@@ -108,6 +117,7 @@ public class Semaphore implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.808 -0400", hash_original_method = "9FDABFB6FA908071648B312E27A5D44A", hash_generated_method = "6CB358D912B50190430FCECFD10A982A")
     public boolean tryAcquire(int permits) {
         addTaint(permits);
@@ -126,6 +136,7 @@ public class Semaphore implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.808 -0400", hash_original_method = "80ECB8EBF7BA66409D7CA6C7FAEA0198", hash_generated_method = "1B1FE8C1EFD67EB9448490EEFB52689E")
     public boolean tryAcquire(int permits, long timeout, TimeUnit unit) throws InterruptedException {
         addTaint(unit.getTaint());
@@ -146,6 +157,7 @@ public class Semaphore implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.808 -0400", hash_original_method = "86FDC777B5FFBB0166AB6B40E9CBCA0F", hash_generated_method = "10F4E07D3218B684FC485B2D5FA34515")
     public void release(int permits) {
         addTaint(permits);
@@ -162,6 +174,7 @@ public class Semaphore implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.809 -0400", hash_original_method = "A0D0E9E456108DB04A370C1A3BAF302D", hash_generated_method = "53ADB0901BAEEBBA6F43DEA4A22F52A2")
     public int availablePermits() {
         int var8A1DEA8ABE61D61F28E149265FFC27EB_1824931018 = (sync.getPermits());
@@ -172,6 +185,7 @@ public class Semaphore implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.809 -0400", hash_original_method = "262F2C65B1D17DEC110169282F777115", hash_generated_method = "153EBF7D3E05CE0D9432CDFC7ABD8CF6")
     public int drainPermits() {
         int varDBB90EE9A7C72CB0D11B224FC373A197_1388209456 = (sync.drainPermits());
@@ -182,6 +196,7 @@ public class Semaphore implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.809 -0400", hash_original_method = "98D8F44FFB6E2B81C61D6FB2F4F416AF", hash_generated_method = "4A0B6033EE20E8DD2FC03829FEBA2A7C")
     protected void reducePermits(int reduction) {
         addTaint(reduction);
@@ -209,6 +224,7 @@ public class Semaphore implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.810 -0400", hash_original_method = "33B7DCC82A105082FC4D268ED56F9DE5", hash_generated_method = "CBB4A2819BBBAB36170FFA299CCEA007")
     public final boolean hasQueuedThreads() {
         boolean var2967874652C8008E25540A916154E044_1607020548 = (sync.hasQueuedThreads());
@@ -219,6 +235,7 @@ public class Semaphore implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.810 -0400", hash_original_method = "DFFF2C05339152644F00EC2FFC57EFB9", hash_generated_method = "5A23921049C50DD6F618E4E1D6EB8827")
     public final int getQueueLength() {
         int var5D329306F1180332B8FF4C47065D325F_1374649794 = (sync.getQueueLength());
@@ -229,6 +246,7 @@ public class Semaphore implements java.io.Serializable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.810 -0400", hash_original_method = "4BC73C35668DA24636BE58FB68209032", hash_generated_method = "1D4F9FA80CC946C462567CFD3EEAEF97")
     protected Collection<Thread> getQueuedThreads() {
 Collection<Thread> var0FD62A6A977BE381AD6B1EE70126B5BB_384519907 =         sync.getQueuedThreads();
@@ -239,6 +257,7 @@ Collection<Thread> var0FD62A6A977BE381AD6B1EE70126B5BB_384519907 =         sync.
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.810 -0400", hash_original_method = "28E11779691509B84604A2532741810B", hash_generated_method = "896FAF3B21DCB994081BD0A7D5E0F005")
     public String toString() {
 String varEE78BE575C00AEA578F480ECEE9C4FB4_504317829 =         super.toString() + "[Permits = " + sync.getPermits() + "]";
@@ -251,6 +270,7 @@ String varEE78BE575C00AEA578F480ECEE9C4FB4_504317829 =         super.toString() 
     
     abstract static class Sync extends AbstractQueuedSynchronizer {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.811 -0400", hash_original_method = "40565DEBA5724270F81AA15CDC452278", hash_generated_method = "FA6FD9331C57C6F1FEF7362CC8365AAB")
           Sync(int permits) {
             addTaint(permits);
@@ -260,6 +280,7 @@ String varEE78BE575C00AEA578F480ECEE9C4FB4_504317829 =         super.toString() 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.811 -0400", hash_original_method = "932F869D56214E546755CFC45FDC49E6", hash_generated_method = "EA437385EDC2A6E9A67E7CE8B4D55E18")
         final int getPermits() {
             int var118C4F58F1303398C344B8AAB7CE6EE1_237125787 = (getState());
@@ -270,6 +291,7 @@ String varEE78BE575C00AEA578F480ECEE9C4FB4_504317829 =         super.toString() 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.811 -0400", hash_original_method = "38128BDDEF18CD48BAE30B545E1D6E2D", hash_generated_method = "44372231F0E2D5AC0E5F09EE9F33F52D")
         final int nonfairTryAcquireShared(int acquires) {
             addTaint(acquires);
@@ -296,6 +318,7 @@ for(;;)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.812 -0400", hash_original_method = "E4485505685AAE5BA8902CEC7119047D", hash_generated_method = "04833F69EAE49F938CCB333B94914FF0")
         protected final boolean tryReleaseShared(int releases) {
             addTaint(releases);
@@ -328,6 +351,7 @@ for(;;)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.813 -0400", hash_original_method = "EF09815047CF337EE6F8F6B76E860F15", hash_generated_method = "85F7B203183DF6CDBDC780B58E801140")
         final void reducePermits(int reductions) {
             addTaint(reductions);
@@ -356,6 +380,7 @@ for(;;)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.813 -0400", hash_original_method = "B47D637533AD6479C19BA02673B291F3", hash_generated_method = "BC386FD2B8AB1A67947B6F619F6C5CE4")
         final int drainPermits() {
 for(;;)
@@ -386,6 +411,7 @@ for(;;)
     
     static final class NonfairSync extends Sync {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.814 -0400", hash_original_method = "AB02276AF05DB48D17C9E59129A0533C", hash_generated_method = "778E4A8D581AA87BDE4BC7B442FB1199")
           NonfairSync(int permits) {
             super(permits);
@@ -394,6 +420,7 @@ for(;;)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.814 -0400", hash_original_method = "2824818F1E688287ED8D5382B9F9370B", hash_generated_method = "D203DA8F5AE7E8E3F32EA7D954FB2221")
         protected int tryAcquireShared(int acquires) {
             addTaint(acquires);
@@ -414,6 +441,7 @@ for(;;)
     
     static final class FairSync extends Sync {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.814 -0400", hash_original_method = "1546A983167A4F32841E77BDDAC1FABE", hash_generated_method = "CEAD53968F247A2DA87FEB0CB5B04DA9")
           FairSync(int permits) {
             super(permits);
@@ -422,6 +450,7 @@ for(;;)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.815 -0400", hash_original_method = "33A8BA33CEB07226CB7C962FD4989C27", hash_generated_method = "65483F80A05953B9CD4974E8A20D26A6")
         protected int tryAcquireShared(int acquires) {
             addTaint(acquires);

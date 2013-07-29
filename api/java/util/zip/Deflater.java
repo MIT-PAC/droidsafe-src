@@ -39,6 +39,7 @@ public class Deflater {
 
     private final CloseGuard guard = CloseGuard.get();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.527 -0400", hash_original_method = "6DBC61BE4FC097F2420F36A015A6138C", hash_generated_method = "9C40E2104F522B79F67B639B9E119058")
     public  Deflater() {
         this(DEFAULT_COMPRESSION, false);
@@ -46,6 +47,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.528 -0400", hash_original_method = "EE2B377CE8D615D75129B5A0881EF06D", hash_generated_method = "2E0BA1C539FDDA7B77880E2D876F384D")
     public  Deflater(int level) {
         this(level, false);
@@ -54,6 +56,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.528 -0400", hash_original_method = "2C334DD40EC2ED2E518DCA464DFDC51E", hash_generated_method = "30A5FC836DD04E926F1B59850B19C1F3")
     public  Deflater(int level, boolean noHeader) {
         if(level < DEFAULT_COMPRESSION || level > BEST_COMPRESSION)        
@@ -75,6 +78,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.529 -0400", hash_original_method = "611AF07E266F550F53CDF01F1CC352A1", hash_generated_method = "E6360D18F848ED42AF782345B3521A15")
     public int deflate(byte[] buf) {
         addTaint(buf[0]);
@@ -86,6 +90,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.530 -0400", hash_original_method = "0A84F3CD8D711F8E28F74CE9A11C545E", hash_generated_method = "F48E75C2627294951C0BD303A053B7A4")
     public synchronized int deflate(byte[] buf, int offset, int byteCount) {
         addTaint(byteCount);
@@ -99,6 +104,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.531 -0400", hash_original_method = "0DC5FF46D79769AAEF0B4E5EA32BA58D", hash_generated_method = "038B08E91880A6788944C9A612067B3F")
     public synchronized int deflate(byte[] buf, int offset, int byteCount, int flush) {
         addTaint(flush);
@@ -122,6 +128,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.531 -0400", hash_original_method = "CF6CE2BCD1B535E0E9CC69A73F69BC28", hash_generated_method = "8FC3DDB743C68B6A52E8EF3C9DB27BBA")
     private synchronized int deflateImpl(byte[] buf, int offset, int byteCount, int flush) {
         addTaint(flush);
@@ -155,6 +162,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.532 -0400", hash_original_method = "59D998A9FACC96CAD9DEE3EEFD22688A", hash_generated_method = "B152F8064A4030CE4BA6346CB469F4A5")
     public synchronized void end() {
         guard.close();
@@ -165,6 +173,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.533 -0400", hash_original_method = "4DA7D037A1FCD4109F30526C6DE57D1C", hash_generated_method = "8911A22A5517BD371D1F518C6E8C1FBA")
     private void endImpl() {
         if(streamHandle != -1)        
@@ -188,6 +197,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.533 -0400", hash_original_method = "FC32DF56978CE95FA2CC2CA96409152E", hash_generated_method = "520175E894BE45D532F2DE43BC2548B1")
     @Override
     protected void finalize() {
@@ -255,6 +265,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.535 -0400", hash_original_method = "DDE5644D46702B730F5378ABED0CC02C", hash_generated_method = "8A0D575B82F66756AC5319E05C40AD98")
     public synchronized int getAdler() {
         checkOpen();
@@ -275,6 +286,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.536 -0400", hash_original_method = "26E16A0AF7B91ACC2C2C1D26CF0A41A1", hash_generated_method = "612A0E1D79A4500A1C1779633F2617AF")
     public synchronized int getTotalIn() {
         checkOpen();
@@ -295,6 +307,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.537 -0400", hash_original_method = "20FDDC2AB6FE185B9CAB89D86709EB03", hash_generated_method = "466F8E7447F44EA758AEDD4AE663A552")
     public synchronized int getTotalOut() {
         checkOpen();
@@ -335,6 +348,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.539 -0400", hash_original_method = "F900704F0994CBD6978E5E4205C2BFAA", hash_generated_method = "8F653F79FAF5A2A59E779C8C5328349D")
     public synchronized void reset() {
         checkOpen();
@@ -357,6 +371,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.540 -0400", hash_original_method = "49DAD22714BA16C1AC9D80CF714D4798", hash_generated_method = "4D724A8ECD7AE3937EE4599C59FE11A4")
     public void setDictionary(byte[] dictionary) {
         addTaint(dictionary[0]);
@@ -366,6 +381,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.540 -0400", hash_original_method = "7FB505FB7F1826F86B368368EBDBCA40", hash_generated_method = "00E16111DA834DB862B75A1889B4C75D")
     public synchronized void setDictionary(byte[] buf, int offset, int byteCount) {
         addTaint(byteCount);
@@ -387,6 +403,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.541 -0400", hash_original_method = "76E6701B8618856CEE42A14EB071C689", hash_generated_method = "9429CE27A248D7FFA1B8BD97D04D159D")
     public void setInput(byte[] buf) {
         addTaint(buf[0]);
@@ -396,6 +413,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.541 -0400", hash_original_method = "5EAC232252C5BA68B98F924DC24DA75C", hash_generated_method = "01AC352D63E24C97AA9CB6B98A46A8CC")
     public synchronized void setInput(byte[] buf, int offset, int byteCount) {
         addTaint(offset);
@@ -434,6 +452,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.543 -0400", hash_original_method = "56416D14F8B23CE0A4E07C0AD61CD8D1", hash_generated_method = "845812E14A35EC83840F1D9249FC3DB3")
     public synchronized void setLevel(int level) {
         if(level < DEFAULT_COMPRESSION || level > BEST_COMPRESSION)        
@@ -460,6 +479,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.544 -0400", hash_original_method = "9A84D355252A826695237C59231B1742", hash_generated_method = "1EAFE4767286629B1B2CF9EEBA6D4916")
     public synchronized void setStrategy(int strategy) {
         if(strategy < DEFAULT_STRATEGY || strategy > HUFFMAN_ONLY)        
@@ -486,6 +506,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.544 -0400", hash_original_method = "B419E0AF253F709FCCBF4031C175C3E0", hash_generated_method = "833DD4ED68E34407B31D5E42F2407C7E")
     public synchronized long getBytesRead() {
         checkOpen();
@@ -498,6 +519,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.545 -0400", hash_original_method = "B14826F1D1678AA7FAF007D6D8541F5C", hash_generated_method = "59F7804ADC3A509BA39D5D806E2F3851")
     public synchronized long getBytesWritten() {
         checkOpen();
@@ -518,6 +540,7 @@ public class Deflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.545 -0400", hash_original_method = "367A42A5784C609E2D8E37BE922AB4A4", hash_generated_method = "A80896747C9B0F2B6DE5780AB15EB009")
     private void checkOpen() {
         if(streamHandle == -1)        

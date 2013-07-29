@@ -15,7 +15,7 @@ public class ArgbEvaluator implements TypeEvaluator {
     }
 
 
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.512 -0400", hash_original_method = "415FA7137AA653EF40F66C5BED279EE7", hash_generated_method = "CCFCAD8E134722C31C5148BA1F01B6D8")
     public Object evaluate(float fraction, Object startValue, Object endValue) {
         addTaint(endValue.getTaint());

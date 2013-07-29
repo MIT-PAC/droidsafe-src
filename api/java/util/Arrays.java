@@ -1323,6 +1323,7 @@ public class Arrays {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T, U> T[] copyOf(U[] original, int newLength, Class<? extends T[]> newType) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();

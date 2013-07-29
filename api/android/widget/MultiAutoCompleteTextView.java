@@ -18,6 +18,7 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
 
     private Tokenizer mTokenizer;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.363 -0400", hash_original_method = "94554F2B341FB5EE45055739E2680C3D", hash_generated_method = "0A88EE5AB96F3B62E46AEB165D2D7CCB")
     public  MultiAutoCompleteTextView(Context context) {
         this(context, null);
@@ -26,6 +27,7 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.363 -0400", hash_original_method = "42976CB810392B93881A9DEB6E0BA159", hash_generated_method = "32E4736B2995391A52228B1CF7ED9347")
     public  MultiAutoCompleteTextView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.autoCompleteTextViewStyle);
@@ -35,6 +37,7 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.363 -0400", hash_original_method = "C6A2FA85257B49A1F6B493810F60209F", hash_generated_method = "372B75242DB968717AD3CD35B8F39199")
     public  MultiAutoCompleteTextView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -61,6 +64,7 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.365 -0400", hash_original_method = "D73EB2C94DEE4722FCE1B5247E851200", hash_generated_method = "4FD1C0F389BF670675477F792AD56309")
     @Override
     protected void performFiltering(CharSequence text, int keyCode) {
@@ -96,6 +100,7 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.365 -0400", hash_original_method = "4B7E111CDE46EB7665419BBE701F6868", hash_generated_method = "D5CEB5521BDBEFF42BD9153E05550746")
     @Override
     public boolean enoughToFilter() {
@@ -135,6 +140,7 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.366 -0400", hash_original_method = "5C2EFC56A6F7A7D1FB121838E719CAA2", hash_generated_method = "2DAEADCFF1231BA145B288355F2F9DFF")
     @Override
     public void performValidation() {
@@ -185,6 +191,7 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.367 -0400", hash_original_method = "448D969C1E669B05B875BF81D75455EA", hash_generated_method = "58DD7517C0DBC5F8EE335C8FA607ACD6")
     protected void performFiltering(CharSequence text, int start, int end,
                                     int keyCode) {
@@ -198,6 +205,7 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.368 -0400", hash_original_method = "0BC14D3B618E827E554DDB675E2805A0", hash_generated_method = "615135CFC8F7142BF4FDE3744700327C")
     @Override
     protected void replaceText(CharSequence text) {

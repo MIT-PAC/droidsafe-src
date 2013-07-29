@@ -93,6 +93,7 @@ Entry<K, V> varE0B314C45F4873EC0C98E000D41141FA_2066879390 =         eldest != h
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.730 -0400", hash_original_method = "17248B030D95A40DE3DEF1923640BDC2", hash_generated_method = "F13E911720E4D6BF28D1BA65D5E3CAD0")
     @Override
      void addNewEntry(K key, V value, int hash, int index) {

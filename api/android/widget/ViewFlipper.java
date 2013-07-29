@@ -100,6 +100,7 @@ public class ViewFlipper extends ViewAnimator {
         
 };
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.244 -0400", hash_original_method = "A199B0DFDE8F43BC0101C713FC646DAD", hash_generated_method = "BDA2F2DCBBDA64CD6219797FF6339D94")
     public  ViewFlipper(Context context) {
         super(context);
@@ -108,6 +109,7 @@ public class ViewFlipper extends ViewAnimator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.245 -0400", hash_original_method = "723832B306031BCDBE4BDCBA5DD42292", hash_generated_method = "8490F8A313C8F8C2154537D3C3B5AABE")
     public  ViewFlipper(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -131,6 +133,7 @@ public class ViewFlipper extends ViewAnimator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.246 -0400", hash_original_method = "3C103BE4B999027DCB77DEB70D76599C", hash_generated_method = "56ACD26DC3FECE8BECD1A84A8FD6652E")
     @Override
     protected void onAttachedToWindow() {
@@ -156,6 +159,7 @@ public class ViewFlipper extends ViewAnimator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.246 -0400", hash_original_method = "5655570C437E83231F73A4B16A590D9C", hash_generated_method = "1626FB59EA0EC65657B41C811C1E9B62")
     @Override
     protected void onDetachedFromWindow() {
@@ -172,6 +176,7 @@ public class ViewFlipper extends ViewAnimator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.247 -0400", hash_original_method = "B937BC0D8F057FC72AF74494BA3F6E3F", hash_generated_method = "B204E105A37E32714A21261055CC4D32")
     @Override
     protected void onWindowVisibilityChanged(int visibility) {
@@ -196,6 +201,7 @@ public class ViewFlipper extends ViewAnimator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.249 -0400", hash_original_method = "5822F81CA7F02DBEFB349FF1928E2AAF", hash_generated_method = "DB03EDEB5215E2582BB6D4307C3D23A6")
     public void startFlipping() {
         mStarted = true;
@@ -206,6 +212,7 @@ public class ViewFlipper extends ViewAnimator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.249 -0400", hash_original_method = "B53A11C7EF817F793ACB0CF78B800084", hash_generated_method = "01BA27082DF02AD7E00FD433569A0C08")
     public void stopFlipping() {
         mStarted = false;
@@ -216,6 +223,7 @@ public class ViewFlipper extends ViewAnimator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.249 -0400", hash_original_method = "01EB120A60E7A5C93ADD152BE225A9A1", hash_generated_method = "95DAE41B7EF1D4EE1E159B09B77728E8")
     private void updateRunning() {
         updateRunning(true);
@@ -224,6 +232,7 @@ public class ViewFlipper extends ViewAnimator {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.250 -0400", hash_original_method = "FEBFE82757020B844DFA7E8A1658E9A7", hash_generated_method = "AFC07426A2A5ED4EB088A9BC40257CB4")
     private void updateRunning(boolean flipNow) {
         addTaint(flipNow);

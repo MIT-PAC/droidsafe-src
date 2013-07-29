@@ -46,6 +46,7 @@ public class Surface implements Parcelable {
 
     private Exception mCreationStack;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.060 -0400", hash_original_method = "3C6D5ED7C9D2AD52254061DCBE40C6B7", hash_generated_method = "A4D25DD305BD739C15CB87873ABD07A0")
     public  Surface(SurfaceTexture surfaceTexture) {
         addTaint(surfaceTexture.getTaint());
@@ -64,6 +65,7 @@ public class Surface implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.061 -0400", hash_original_method = "63DD348776A9AD7A69FD5A5406A9D749", hash_generated_method = "C584B60D4070D219729F8C3282DD6DF4")
     public  Surface(SurfaceSession s,
             int pid, int display, int w, int h, int format, int flags) throws OutOfResourcesException {
@@ -89,6 +91,7 @@ public class Surface implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.063 -0400", hash_original_method = "77F92398B62C28FF78E552B775B6A70A", hash_generated_method = "FDB64651208DEE56DB6D1C2510724720")
     public  Surface(SurfaceSession s,
             int pid, String name, int display, int w, int h, int format, int flags) throws OutOfResourcesException {
@@ -116,6 +119,7 @@ public class Surface implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.063 -0400", hash_original_method = "CA741F0DB07B20B1C302E68F5EF5136C", hash_generated_method = "CFF9079F6F8989E212EED52D804FE5C8")
     public  Surface() {
         if(DEBUG_RELEASE)        
@@ -287,6 +291,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_974727218 =         "Surface(name=" +
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void setOrientation(int display, int orientation) {
         setOrientation(display, orientation, 0);
     }
@@ -320,6 +325,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_974727218 =         "Surface(name=" +
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.068 -0400", hash_original_method = "7F99A19F828A289B6FD343EC8CB65512", hash_generated_method = "72AA9B77CC2AA972E9C4071D2F5243EE")
     public void setPosition(int x, int y) {
         addTaint(y);
@@ -396,6 +402,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_974727218 =         "Surface(name=" +
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.069 -0400", hash_original_method = "1BAE2B05EDDA8E2427743FE96FA46E82", hash_generated_method = "9F9E0DF88841C7EFDB07AD759F8BFF1C")
     @Override
     protected void finalize() throws Throwable {
@@ -463,12 +470,14 @@ String var25EF7C530E07F3C308EB714ECC7303B9_974727218 =         "Surface(name=" +
     
     public static class OutOfResourcesException extends Exception {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.070 -0400", hash_original_method = "61F4EF1E830289140B20E24C64AAB8C1", hash_generated_method = "A594474F57F2910DF90E8F2B34F97C87")
         public  OutOfResourcesException() {
             // ---------- Original Method ----------
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.070 -0400", hash_original_method = "939C993D5367F7A0F0B43DA6997565C5", hash_generated_method = "5C61F340B8BA1A59560151D83B1A6E5F")
         public  OutOfResourcesException(String name) {
             super(name);
@@ -493,6 +502,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_974727218 =         "Surface(name=" +
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.070 -0400", hash_original_method = "4436A903F00C274285C5C4A8B9E9A836", hash_generated_method = "F281FA4AA499E01B179939091793804B")
         @Override
         public int getWidth() {
@@ -513,6 +523,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_974727218 =         "Surface(name=" +
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.070 -0400", hash_original_method = "F355CB2C14EBD84D4AE7E0F5ECAE6C3D", hash_generated_method = "1811F8EB7DE99ED0B15FFAF12DCE1E9D")
         @Override
         public int getHeight() {
@@ -533,6 +544,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_974727218 =         "Surface(name=" +
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.070 -0400", hash_original_method = "50EBC9F34A364763AC7C9602053D9FF8", hash_generated_method = "F85CDAB392FDB06BD24D2FBE6E2A9240")
         @Override
         public void setMatrix(Matrix matrix) {
@@ -558,6 +570,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_974727218 =         "Surface(name=" +
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.071 -0400", hash_original_method = "8FC81697AA41EC8DD4975B897D7BBDC3", hash_generated_method = "C6C1B216CDB48E845ACD67CF77B7C67C")
         @Override
         public void getMatrix(Matrix m) {

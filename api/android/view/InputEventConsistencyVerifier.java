@@ -102,6 +102,7 @@ public final class InputEventConsistencyVerifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.101 -0400", hash_original_method = "13418E29B3FCE72BDE84CBF193C1BADD", hash_generated_method = "718F6BAEBC9F32735511F8F6D427FB0C")
     public void reset() {
         mLastEvent = null;
@@ -136,6 +137,7 @@ public final class InputEventConsistencyVerifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.102 -0400", hash_original_method = "9981F0DD702462FD09DA371539E225DF", hash_generated_method = "D450634EBB39229DDCE0ADFED1D31DF9")
     public void onInputEvent(InputEvent event, int nestingLevel) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -180,6 +182,7 @@ public final class InputEventConsistencyVerifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.104 -0400", hash_original_method = "37A5317EE58F7483AB8019E5DEA39C1C", hash_generated_method = "13650007C3E19A1C39863AEF155C5A15")
     public void onKeyEvent(KeyEvent event, int nestingLevel) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -250,6 +253,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.105 -0400", hash_original_method = "742053359AC2416542EBDE8E8736FB44", hash_generated_method = "1EAB31B8DD546EF73FF5796314609253")
     public void onTrackballEvent(MotionEvent event, int nestingLevel) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -324,6 +328,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.108 -0400", hash_original_method = "F64D7AF6BB2368971DDEEF01EB83BDA6", hash_generated_method = "30B07D87EE31F4C624D5B65631787589")
     public void onTouchEvent(MotionEvent event, int nestingLevel) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -490,6 +495,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.108 -0400", hash_original_method = "23EA37DFEC977078F682E35F151F1942", hash_generated_method = "8788FFC06EA0B5B25FB55B44CFCB2631")
     public void onGenericMotionEvent(MotionEvent event, int nestingLevel) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -553,6 +559,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.109 -0400", hash_original_method = "95A33BD7B12ABE8439BBD32736BE35D7", hash_generated_method = "F4063FC04131F87BA8EE9AAE1F233D78")
     public void onUnhandledEvent(InputEvent event, int nestingLevel) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -599,6 +606,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.109 -0400", hash_original_method = "0D02225F7CFB86AB0627FF86E895BCB3", hash_generated_method = "B318D7FDE241437C730C0CBAC33EB8FB")
     private void ensureMetaStateIsNormalized(int metaState) {
         addTaint(metaState);
@@ -617,6 +625,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.109 -0400", hash_original_method = "960C41882671A36CAB1E6050FF4DEA3B", hash_generated_method = "F1E2266104622299B69C51DB7C8AA106")
     private void ensurePointerCountIsOneForThisAction(MotionEvent event) {
         addTaint(event.getTaint());
@@ -635,6 +644,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.109 -0400", hash_original_method = "418A844BE60240583EF50FE17898B3BB", hash_generated_method = "8AD94D3E7F70876E28DF6AC01DA0CE55")
     private void ensureHistorySizeIsZeroForThisAction(MotionEvent event) {
         addTaint(event.getTaint());
@@ -700,6 +710,7 @@ switch(action){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.110 -0400", hash_original_method = "ED6D322EBF7819A0A849ACCBA13E8A32", hash_generated_method = "0E728C2AA5DA84F1D56BFD35CC1EC338")
     private void finishEvent() {
         if(mViolationMessage != null && mViolationMessage.length() != 0)        
@@ -765,6 +776,7 @@ for(int i = 0;i < RECENT_EVENTS_TO_LOG;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.111 -0400", hash_original_method = "C6124E8B7D001D6ECE47F875379D529E", hash_generated_method = "E12CAD1F34500F8FC54B030A85C101BC")
     private void problem(String message) {
         addTaint(message.getTaint());
@@ -854,6 +866,7 @@ KeyState var540C13E9E156B687226421B24F2DF178_1695263063 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.111 -0400", hash_original_method = "49CD2D0DE125B77D543B3E0017318A6E", hash_generated_method = "FB1ECE31E15DC3332206BFD06182A06B")
     private void addKeyState(int deviceId, int source, int keyCode) {
         addTaint(keyCode);
@@ -886,12 +899,14 @@ KeyState var540C13E9E156B687226421B24F2DF178_1695263063 =         null;
 
         public boolean unhandled;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.112 -0400", hash_original_method = "9B72C46296302693275D5291E4057DE0", hash_generated_method = "46EE7D525ED839CFC8CA395DBE68DDF7")
         private  KeyState() {
             // ---------- Original Method ----------
         }
 
         
+        @DSModeled(DSC.SAFE)
         public static KeyState obtain(int deviceId, int source, int keyCode) {
             KeyState state;
             synchronized (mRecycledListLock) {

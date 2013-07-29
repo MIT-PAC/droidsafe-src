@@ -32,6 +32,7 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
 
     private final DataSetObserver mDataSetObserver = new MyDataSetObserver();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.380 -0400", hash_original_method = "BC5B318F45FBBBBC44050BD05FD123C0", hash_generated_method = "66507A1E8E1BD06CACECCA86BFD115FC")
     public  ExpandableListConnector(ExpandableListAdapter expandableListAdapter) {
         addTaint(expandableListAdapter.getTaint());
@@ -43,6 +44,7 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.380 -0400", hash_original_method = "20624F8A2041913E46624C5620B8C178", hash_generated_method = "99C4AE7AC2940E195D82F3575EC0A0E9")
     public void setExpandableListAdapter(ExpandableListAdapter expandableListAdapter) {
         if(mExpandableListAdapter != null)        
@@ -236,6 +238,7 @@ PositionMetadata var540C13E9E156B687226421B24F2DF178_1317216326 =             nu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.385 -0400", hash_original_method = "DAE4954D9EDE366A718556293A5AA5D3", hash_generated_method = "419963C3C47AE6D7FC2082C721CDADD3")
     @Override
     public boolean areAllItemsEnabled() {
@@ -247,6 +250,7 @@ PositionMetadata var540C13E9E156B687226421B24F2DF178_1317216326 =             nu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.385 -0400", hash_original_method = "0084AC4844BFD434CBA804E2DF22BA27", hash_generated_method = "2EBF0C2A9E8446151369FDDABBBD3500")
     @Override
     public boolean isEnabled(int flatListPos) {
@@ -278,6 +282,7 @@ PositionMetadata var540C13E9E156B687226421B24F2DF178_1317216326 =             nu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.386 -0400", hash_original_method = "E43CB6EF7F0706DB8CAE1E4EB2A6AE3E", hash_generated_method = "CAEE5CFF7CF8357025DE082195DF905E")
     public int getCount() {
         int var7877BF70B64A37ED869F37D69C3A78CA_318433018 = (mExpandableListAdapter.getGroupCount() + mTotalExpChildrenCount);
@@ -288,6 +293,7 @@ PositionMetadata var540C13E9E156B687226421B24F2DF178_1317216326 =             nu
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.387 -0400", hash_original_method = "06B72D417088BC3B17164CA741049075", hash_generated_method = "8736369F6855DD635A9C01511279276D")
     public Object getItem(int flatListPos) {
         addTaint(flatListPos);
@@ -331,6 +337,7 @@ Object var8A3AE42CF4D96FEAF203C6E7E2606E2D_1613226699 =         retValue;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.387 -0400", hash_original_method = "4AC16A8A6C46491D50BE7E30F75A3576", hash_generated_method = "2AED9F768DDC03C239AAA04791839CDD")
     public long getItemId(int flatListPos) {
         addTaint(flatListPos);
@@ -363,6 +370,7 @@ Object var8A3AE42CF4D96FEAF203C6E7E2606E2D_1613226699 =         retValue;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.388 -0400", hash_original_method = "E8F063B04C087445609A9E5E66DA0C8E", hash_generated_method = "4882BF3A14E08D2C1F8E6977819C24CC")
     public View getView(int flatListPos, View convertView, ViewGroup parent) {
         addTaint(parent.getTaint());
@@ -397,6 +405,7 @@ View var8A3AE42CF4D96FEAF203C6E7E2606E2D_177848195 =         retValue;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.389 -0400", hash_original_method = "99547DA2855DBC2792C3AF02654A4FE0", hash_generated_method = "2372E4D0C64A659E1C9B2C2F7BA584D8")
     @Override
     public int getItemViewType(int flatListPos) {
@@ -436,6 +445,7 @@ View var8A3AE42CF4D96FEAF203C6E7E2606E2D_177848195 =         retValue;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.390 -0400", hash_original_method = "CE0634CAEF6413BEB2C07851873B554E", hash_generated_method = "90F8CF844E80D3D7387011B4B4CD7B7B")
     @Override
     public int getViewTypeCount() {
@@ -463,6 +473,7 @@ View var8A3AE42CF4D96FEAF203C6E7E2606E2D_177848195 =         retValue;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.390 -0400", hash_original_method = "4910256FB1EE08A13057FF7D9F357251", hash_generated_method = "ED15B0C015E3AA3A4F72A334258A1C31")
     @Override
     public boolean hasStableIds() {
@@ -474,6 +485,7 @@ View var8A3AE42CF4D96FEAF203C6E7E2606E2D_177848195 =         retValue;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.391 -0400", hash_original_method = "E23B4E2A713C93A88E352378F7DC6B9B", hash_generated_method = "A7CAF66E68CF82BE5509A3C225FE49D6")
     @SuppressWarnings("unchecked")
     private void refreshExpGroupMetadataList(boolean forceChildrenCountRefresh,
@@ -533,6 +545,7 @@ for(int i = 0;i < egmlSize;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.392 -0400", hash_original_method = "356AA5E78F17E2ABD0F401EB8EAF983A", hash_generated_method = "5750B978AC14CA75FC8B7464B8E5C496")
      boolean collapseGroup(int groupPos) {
         addTaint(groupPos);
@@ -559,6 +572,7 @@ for(int i = 0;i < egmlSize;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.392 -0400", hash_original_method = "B7CC4B14B03031BB8898031F497A0B04", hash_generated_method = "4440FCC60DD81842306553AF36BCC2F5")
      boolean collapseGroup(PositionMetadata posMetadata) {
         addTaint(posMetadata.getTaint());
@@ -585,6 +599,7 @@ for(int i = 0;i < egmlSize;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.392 -0400", hash_original_method = "5E373C5564B1740CC801138FBC6EE83B", hash_generated_method = "0597CE533E1F189ABA570CE126180C2A")
      boolean expandGroup(int groupPos) {
         addTaint(groupPos);
@@ -604,6 +619,7 @@ for(int i = 0;i < egmlSize;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.392 -0400", hash_original_method = "7C096EBC61E7C7FF959B994559196523", hash_generated_method = "46EB9DE45235E46F6533ECF52A14B57C")
      boolean expandGroup(PositionMetadata posMetadata) {
         addTaint(posMetadata.getTaint());
@@ -652,6 +668,7 @@ for(int i = 0;i < egmlSize;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.393 -0400", hash_original_method = "14DD7EE25463BE2F409F1A554DB1FBD9", hash_generated_method = "E50914333299514FC8A0B86C635D491C")
     public boolean isGroupExpanded(int groupPosition) {
         addTaint(groupPosition);
@@ -701,6 +718,7 @@ ExpandableListAdapter var6138734355307F47AFFDB0E0F3A9A71E_375120147 =         mE
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.394 -0400", hash_original_method = "D7C89EA0D9DD591B12578E8793100CE2", hash_generated_method = "891A39CA8F69DF27F8A3478D82C77483")
     public Filter getFilter() {
         ExpandableListAdapter adapter = getAdapter();
@@ -737,6 +755,7 @@ ArrayList<GroupMetadata> var16CF2BAF0A5F7FECA6491A4F87231A85_1794616620 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.395 -0400", hash_original_method = "43D377DDC694A5D1EB7EAB73153EC2C8", hash_generated_method = "610457F9C5DCD14D4D71CB67DA3B834A")
      void setExpandedGroupMetadataList(ArrayList<GroupMetadata> expandedGroupMetadataList) {
         if((expandedGroupMetadataList == null) || (mExpandableListAdapter == null))        
@@ -768,6 +787,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.395 -0400", hash_original_method = "DF256FE26F67ED917C946C2E9410F027", hash_generated_method = "4F83A3343B354823E40BC3F534DED66D")
     @Override
     public boolean isEmpty() {
@@ -781,6 +801,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.396 -0400", hash_original_method = "174FBE5747A707DB845F85C327785D51", hash_generated_method = "D918A5B307DDC44AF5B0FFDF00479472")
      int findGroupPosition(long groupIdToMatch, int seedGroupPosition) {
         addTaint(seedGroupPosition);
@@ -861,6 +882,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.396 -0400", hash_original_method = "6638C55358D7A5972C632ED02BA3E5C3", hash_generated_method = "423E58DDE1ED590711D4AB94EA334FA7")
         @Override
         public void onChanged() {
@@ -873,6 +895,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.396 -0400", hash_original_method = "097361F82E1EAFBA4D6D3BF1780C0DD3", hash_generated_method = "A5B595EB134C6A10414CBA53942E11E4")
         @Override
         public void onInvalidated() {
@@ -903,12 +926,14 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
 
         long gId;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.396 -0400", hash_original_method = "D22B32F032ACC40BC7080CC4DC6C0D5E", hash_generated_method = "DE6C626044B8E9CC58838E683EF276B1")
         private  GroupMetadata() {
             // ---------- Original Method ----------
         }
 
         
+        @DSModeled(DSC.SAFE)
         static GroupMetadata obtain(int flPos, int lastChildFlPos, int gPos, long gId) {
             GroupMetadata gm = new GroupMetadata();
             gm.flPos = flPos;
@@ -919,6 +944,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.396 -0400", hash_original_method = "ECBFFC8C0ED7A961DBF56C4EE305170D", hash_generated_method = "D629266ECE10DF8365442925AF4F574C")
         public int compareTo(GroupMetadata another) {
             addTaint(another.getTaint());
@@ -950,6 +976,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.397 -0400", hash_original_method = "65A29D222E83CA17BC122C9C28EAFA8F", hash_generated_method = "9D926208C71A531B45583C75A700FA90")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -1017,6 +1044,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
 
         public int groupInsertIndex;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.397 -0400", hash_original_method = "D695D4EB809D075329F88CC11AC9F37B", hash_generated_method = "72FA864FA9C855DE015B0EDB93BB6462")
         private  PositionMetadata() {
             // ---------- Original Method ----------
@@ -1036,6 +1064,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
         }
 
         
+        @DSModeled(DSC.SAFE)
         static PositionMetadata obtain(int flatListPos, int type, int groupPos,
                 int childPos, GroupMetadata groupMetadata, int groupInsertIndex) {
             PositionMetadata pm = getRecycledOrCreate();
@@ -1046,6 +1075,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
         }
 
         
+        @DSModeled(DSC.SAFE)
         private static PositionMetadata getRecycledOrCreate() {
             PositionMetadata pm;
             synchronized (sPool) {
@@ -1060,6 +1090,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.398 -0400", hash_original_method = "8A154BA1D9B394A3D67E04E6A86589B2", hash_generated_method = "630615FD0F25C98518FE11FF0693404C")
         public void recycle() {
             synchronized

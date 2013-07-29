@@ -46,6 +46,7 @@ public abstract class ServiceTestCase<T extends Service> extends AndroidTestCase
 
     private int mServiceId;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.872 -0400", hash_original_method = "1F3B37EA8E1B8B1054B69DFECCE45A51", hash_generated_method = "85D06AB636C51DA0CBB69DAD45C7DC56")
     public  ServiceTestCase(Class<T> serviceClass) {
         mServiceClass = serviceClass;
@@ -54,6 +55,7 @@ public abstract class ServiceTestCase<T extends Service> extends AndroidTestCase
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.873 -0400", hash_original_method = "E1B67BA0E23B118C6146D406450E84BD", hash_generated_method = "176CC76FEF76413721C2C6514E668491")
     public T getService() {
 T var72B03849F9527CD4AC8A54AA9B97A48C_905540191 =         mService;
@@ -64,6 +66,7 @@ T var72B03849F9527CD4AC8A54AA9B97A48C_905540191 =         mService;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.873 -0400", hash_original_method = "268090C8258F440561CAD8495BE839CE", hash_generated_method = "0B1DFFD09D79A0B8CCFEFA7B01A3D28A")
     @Override
     protected void setUp() throws Exception {
@@ -75,6 +78,7 @@ T var72B03849F9527CD4AC8A54AA9B97A48C_905540191 =         mService;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.875 -0400", hash_original_method = "896172C51C066B5F037A8F2C24487B23", hash_generated_method = "3A3FFDB8C7966FAF0BC7DD0D8F96D9C3")
     protected void setupService() {
         mService = null;
@@ -190,6 +194,7 @@ IBinder varDC838461EE2FA0CA4C9BBB70A15456B0_1209587087 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.878 -0400", hash_original_method = "7A2B90C413225D42DADFD4030FEDB024", hash_generated_method = "FE7C79667A2B4983986594DE8F221D5F")
     protected void shutdownService() {
         if(mServiceStarted)        
@@ -221,6 +226,7 @@ IBinder varDC838461EE2FA0CA4C9BBB70A15456B0_1209587087 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.879 -0400", hash_original_method = "87D1D2444773B04D6FA2D1565794C0F5", hash_generated_method = "40ECAA34A3B22375EB9D9CA4239B98D3")
     @Override
     protected void tearDown() throws Exception {
@@ -267,6 +273,7 @@ Context var8C7F00BBFA5D714A8F742FB231BABCE9_328050644 =         mSystemContext;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.881 -0400", hash_original_method = "109B8E506FBC3D7FBEA1E1B742558961", hash_generated_method = "9C1732A8190F999B54BCFE6180E9C491")
     public void testServiceTestCaseSetUpProperly() throws Exception {
         setupService();

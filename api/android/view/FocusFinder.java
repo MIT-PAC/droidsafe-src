@@ -32,11 +32,13 @@ public class FocusFinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static FocusFinder getInstance() {
         return tlFocusFinder.get();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.974 -0400", hash_original_method = "948D7F222DFBCB81359D4FABF0EA65D3", hash_generated_method = "76AF03E2C40FB6F2EAE80867F6EE109C")
     public final View findNextFocus(ViewGroup root, View focused, int direction) {
         addTaint(direction);
@@ -85,6 +87,7 @@ View var06DBF2B8AE78C3361DC3744F6164AB4A_17502669 =         findNextFocus(root, 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.974 -0400", hash_original_method = "56193535E50A3F40F9A982269CAB09AB", hash_generated_method = "20F4D691B092659274E1794CD4BBAB84")
     public View findNextFocusFromRect(ViewGroup root, Rect focusedRect, int direction) {
         addTaint(direction);
@@ -98,6 +101,7 @@ View varA971D394BC5F19CBC9FFD1F74ED9A7F7_278415857 =         findNextFocus(root,
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.975 -0400", hash_original_method = "FE75104CAE6E392867319A5D2E1ED869", hash_generated_method = "C3876691437B9DA2B45016F11E9F10D9")
     private View findNextFocus(ViewGroup root, View focused, Rect focusedRect, int direction) {
         addTaint(direction);
@@ -196,6 +200,7 @@ View var65F842BF8DD12196C017063DB033EAE1_1205555893 =         closest;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.976 -0400", hash_original_method = "1A554E4FCE47CCCA17DD555DAEE432BA", hash_generated_method = "B8EE04814276E17B2D6899B35CFBAA0F")
      boolean isBetterCandidate(int direction, Rect source, Rect rect1, Rect rect2) {
         addTaint(rect2.getTaint());
@@ -256,6 +261,7 @@ View var65F842BF8DD12196C017063DB033EAE1_1205555893 =         closest;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.978 -0400", hash_original_method = "F8F20EF16F95C5B1E0CE2264EC877518", hash_generated_method = "57A27A083FF907C5440FF84BD039776C")
      boolean beamBeats(int direction, Rect source, Rect rect1, Rect rect2) {
         addTaint(rect2.getTaint());
@@ -318,6 +324,7 @@ View var65F842BF8DD12196C017063DB033EAE1_1205555893 =         closest;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.979 -0400", hash_original_method = "10315B5B788523AD56571BFBE30F6A43", hash_generated_method = "B2A71905C9C48A94A29466224CB68B84")
      boolean isCandidate(Rect srcRect, Rect destRect, int direction) {
         addTaint(direction);
@@ -454,6 +461,7 @@ switch(direction){
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int majorAxisDistanceToFarEdge(int direction, Rect source, Rect dest) {
         return Math.max(1, majorAxisDistanceToFarEdgeRaw(direction, source, dest));
     }
@@ -476,6 +484,7 @@ switch(direction){
     }
 
     
+    @DSModeled(DSC.SAFE)
     static int minorAxisDistance(int direction, Rect source, Rect dest) {
         switch (direction) {
             case View.FOCUS_LEFT:
@@ -494,6 +503,7 @@ switch(direction){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.984 -0400", hash_original_method = "720FA5A94E3C004CE3F70B83E46D48C3", hash_generated_method = "BE5B748EFEB088CE0D7D840850227D3F")
     public View findNearestTouchable(ViewGroup root, int x, int y, int direction, int[] deltas) {
         addTaint(deltas[0]);
@@ -645,6 +655,7 @@ switch(direction){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.986 -0400", hash_original_method = "088E9436455361AF149A244BD433F4AF", hash_generated_method = "A343397A0FBAE6A712FBDEFDFAAB9822")
         public int compare(View first, View second) {
             addTaint(second.getTaint());
@@ -723,6 +734,7 @@ switch(direction){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.989 -0400", hash_original_method = "CE5638677B07104C355FE3EB975CEDE8", hash_generated_method = "4D156730D84C1DA4646602251AB36489")
         private void getRect(View view, Rect rect) {
             addTaint(rect.getTaint());

@@ -100,6 +100,7 @@ public class ImageView extends View {
 
     private boolean mBaselineAlignBottom = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.149 -0400", hash_original_method = "3103DD3B06C95633A5076C8A302A640B", hash_generated_method = "AC1387B4F100BD85C6E8F957A98E5781")
     public  ImageView(Context context) {
         super(context);
@@ -110,6 +111,7 @@ public class ImageView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.149 -0400", hash_original_method = "67FF47760B585BF8195A474475D955DB", hash_generated_method = "203772EEB447B9EA97C8317B7B1D6B5D")
     public  ImageView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -119,6 +121,7 @@ public class ImageView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.150 -0400", hash_original_method = "8CC4CE610519C30A909B4E591A3E5936", hash_generated_method = "CC08726F8033D9755B38805547D52A2B")
     public  ImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -167,6 +170,7 @@ public class ImageView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.152 -0400", hash_original_method = "1C158315B1207DD6F7DBD78E9AF6090A", hash_generated_method = "6C86BA293E0B26AF0AEC484FE877D701")
     private void initImageView() {
         mMatrix     = new Matrix();
@@ -177,6 +181,7 @@ public class ImageView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.152 -0400", hash_original_method = "D798939B4195D6D5668E5F7C7E8DA2D2", hash_generated_method = "265B055E4650B3087448F3112DFBDF9B")
     @Override
     protected boolean verifyDrawable(Drawable dr) {
@@ -189,6 +194,7 @@ public class ImageView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.152 -0400", hash_original_method = "EFC358D3732AB4D7E168E7965D2C4CA0", hash_generated_method = "A3F30BE3FEAD5877CDDA792F87D82109")
     @Override
     public void jumpDrawablesToCurrentState() {
@@ -201,6 +207,7 @@ public class ImageView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.153 -0400", hash_original_method = "EB3EC256D00C5FC794745B960350792B", hash_generated_method = "8502601DC6105EE777EF198134FA371C")
     @Override
     public void invalidateDrawable(Drawable dr) {
@@ -222,6 +229,7 @@ public class ImageView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.153 -0400", hash_original_method = "792DD4F5E748125528D3BF6C27B77C70", hash_generated_method = "E6C70F3730850842C9A246A8C4C0114E")
     @Override
     public int getResolvedLayoutDirection(Drawable dr) {
@@ -236,6 +244,7 @@ public class ImageView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.154 -0400", hash_original_method = "000365A595FBC289F16F7AD48241010C", hash_generated_method = "665A8F7C3779B78615D738ED80B13721")
     @Override
     protected boolean onSetAlpha(int alpha) {
@@ -271,6 +280,7 @@ public class ImageView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.154 -0400", hash_original_method = "9770981DD4DB73204B697C6119742B6F", hash_generated_method = "FB2A7D1EBC37D2CBE528515AE1825B46")
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
@@ -291,6 +301,7 @@ public class ImageView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.155 -0400", hash_original_method = "3F8BE319328C68420F5075492EAAB722", hash_generated_method = "F2482F916C21E7CB2E5E7BCC00CC3778")
     @android.view.RemotableViewMethod
     public void setAdjustViewBounds(boolean adjustViewBounds) {
@@ -338,6 +349,7 @@ Drawable var421F6744A8B50797FB9C4A96CE6DA02C_1365381954 =         mDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.156 -0400", hash_original_method = "FEA329647011282E5AA15854AC819C8B", hash_generated_method = "A6DA883F1EF8B9E4D0D0C88E47A35C98")
     @android.view.RemotableViewMethod
     public void setImageResource(int resId) {
@@ -391,6 +403,7 @@ Drawable var421F6744A8B50797FB9C4A96CE6DA02C_1365381954 =         mDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.157 -0400", hash_original_method = "5426F5FAF3C8635D29ADE0169269A6F9", hash_generated_method = "D56FA8FF3B95EDAB5B26B07322F8EAB9")
     public void setImageDrawable(Drawable drawable) {
         addTaint(drawable.getTaint());
@@ -422,6 +435,7 @@ Drawable var421F6744A8B50797FB9C4A96CE6DA02C_1365381954 =         mDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.157 -0400", hash_original_method = "5EFFAF8EE29E35792B081E6E83A7DFE3", hash_generated_method = "87C45DD246FDD6FAF4D4BCB206CBF9CA")
     @android.view.RemotableViewMethod
     public void setImageBitmap(Bitmap bm) {
@@ -432,6 +446,7 @@ Drawable var421F6744A8B50797FB9C4A96CE6DA02C_1365381954 =         mDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.158 -0400", hash_original_method = "B00DD17D168377A844733E90ECCFE75B", hash_generated_method = "A9552C946A2AEE4760FB94E3FE312325")
     public void setImageState(int[] state, boolean merge) {
         mState = state;
@@ -451,6 +466,7 @@ Drawable var421F6744A8B50797FB9C4A96CE6DA02C_1365381954 =         mDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.158 -0400", hash_original_method = "44CE6C01D324B2DC91AFD69B5F1BB742", hash_generated_method = "589215400C37259F2C2F02C55C7CF9BD")
     @Override
     public void setSelected(boolean selected) {
@@ -463,6 +479,7 @@ Drawable var421F6744A8B50797FB9C4A96CE6DA02C_1365381954 =         mDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.158 -0400", hash_original_method = "0A74FF8303919E2F74751A8C668C95F0", hash_generated_method = "4201DBD2F1BDE65FB35E49AA42D20729")
     @android.view.RemotableViewMethod
     public void setImageLevel(int level) {
@@ -481,6 +498,7 @@ Drawable var421F6744A8B50797FB9C4A96CE6DA02C_1365381954 =         mDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.159 -0400", hash_original_method = "63CC1440F0B24F3C6377C34C34E172F5", hash_generated_method = "ED87CA0F41CD4D4AD350BB9D7293BF12")
     public void setScaleType(ScaleType scaleType) {
         if(scaleType == null)        
@@ -531,6 +549,7 @@ Matrix var49A816397330451E1FD30BEA000F3851_1677861964 =         mMatrix;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.159 -0400", hash_original_method = "A32A82AEE544A388BA62C8178AC7E88C", hash_generated_method = "0B8A709416146EBAE5BEB38AE875AFCF")
     public void setImageMatrix(Matrix matrix) {
         addTaint(matrix.getTaint());
@@ -558,6 +577,7 @@ Matrix var49A816397330451E1FD30BEA000F3851_1677861964 =         mMatrix;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.159 -0400", hash_original_method = "16B1589372902AF87B2F0F65CBDC5B57", hash_generated_method = "4BEBE40AB9D5CFBF508FBB2EEF3CE1EF")
     private void resolveUri() {
         if(mDrawable != null)        
@@ -631,6 +651,7 @@ Matrix var49A816397330451E1FD30BEA000F3851_1677861964 =         mMatrix;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.160 -0400", hash_original_method = "F00D7A8DB32B373F9AAF90A3CC19DF16", hash_generated_method = "F64B4A6C18FF108593A26842B5271788")
     @Override
     public int[] onCreateDrawableState(int extraSpace) {
@@ -668,6 +689,7 @@ Matrix var49A816397330451E1FD30BEA000F3851_1677861964 =         mMatrix;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.160 -0400", hash_original_method = "ADE7139D7C0A9B2AE00EA96739AFBDE5", hash_generated_method = "E0867A363840E00ECC8838F7AEAEBB26")
     private void updateDrawable(Drawable d) {
         if(mDrawable != null)        
@@ -715,6 +737,7 @@ Matrix var49A816397330451E1FD30BEA000F3851_1677861964 =         mMatrix;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.160 -0400", hash_original_method = "E1DD34F979587974CF0EAF8DF3CFC3FF", hash_generated_method = "9B32301E4DC1BA530C710FFDA7DAD8F1")
     private void resizeFromDrawable() {
         Drawable d = mDrawable;
@@ -755,6 +778,7 @@ Matrix var49A816397330451E1FD30BEA000F3851_1677861964 =         mMatrix;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.162 -0400", hash_original_method = "5D5C8E0C5B3B131983F43D2E85F23CCE", hash_generated_method = "9FB99FA837B85B92844664E7480A3DC4")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -844,6 +868,7 @@ Matrix var49A816397330451E1FD30BEA000F3851_1677861964 =         mMatrix;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.163 -0400", hash_original_method = "6790E6B3204D72187344DF3593244181", hash_generated_method = "957A59FCFE799B1DA8D5A3E1B44E2B06")
     private int resolveAdjustedSize(int desiredSize, int maxSize,
                                    int measureSpec) {
@@ -885,6 +910,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.163 -0400", hash_original_method = "7ED99727E4B1435AFDB83292B92819BD", hash_generated_method = "76EF6633D5E6B5D9549B46C5AFE2EDC8")
     @Override
     protected boolean setFrame(int l, int t, int r, int b) {
@@ -906,6 +932,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.164 -0400", hash_original_method = "3A8E22D575255E0F3266968983CC3C02", hash_generated_method = "A9094CECDD9FA1324C6E0F82BCD42C44")
     private void configureBounds() {
         if(mDrawable == null || !mHaveFrame)        
@@ -1003,6 +1030,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.165 -0400", hash_original_method = "D78E25577A68DABE40154D5E4D97E50D", hash_generated_method = "DD0CFBE1CC2D0AE195C8B8242E8A702F")
     @Override
     protected void drawableStateChanged() {
@@ -1021,6 +1049,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.165 -0400", hash_original_method = "355C7834E61DDE917A6F527556974749", hash_generated_method = "815D34035F4F758600330521508698C7")
     @Override
     protected void onDraw(Canvas canvas) {
@@ -1064,6 +1093,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.166 -0400", hash_original_method = "697E0DCA3A40ADA0E60547E8AD02CB08", hash_generated_method = "42C10CED047C0FDDF8F1FC7853C7FAB8")
     @Override
     @ViewDebug.ExportedProperty(category = "layout")
@@ -1089,6 +1119,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.166 -0400", hash_original_method = "8108AC4FDDF644F63A2CB47972E74B33", hash_generated_method = "80C984DB9AC99244DA309C5418CA4008")
     public void setBaseline(int baseline) {
         if(mBaseline != baseline)        
@@ -1104,6 +1135,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.166 -0400", hash_original_method = "ACC3D162C0B2FC40FF806607AF970BEE", hash_generated_method = "5A35C57A66344639548242D450EF4A06")
     public void setBaselineAlignBottom(boolean aligned) {
         if(mBaselineAlignBottom != aligned)        
@@ -1130,6 +1162,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.166 -0400", hash_original_method = "F0522F608E5F96C5D99BDA1CF055B16B", hash_generated_method = "6444716592ECA7BF90D9581F9DD179F3")
     public final void setColorFilter(int color, PorterDuff.Mode mode) {
         addTaint(mode.getTaint());
@@ -1140,6 +1173,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.166 -0400", hash_original_method = "50A13570451A3C69931555EF0FE8C15D", hash_generated_method = "14D6800C6A6954D90B5CBC7212777D42")
     @RemotableViewMethod
     public final void setColorFilter(int color) {
@@ -1150,6 +1184,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.166 -0400", hash_original_method = "B358CFD4AAFD748C624F742F21F12081", hash_generated_method = "5C5D223E65BC6100D1D7D1061123E386")
     public final void clearColorFilter() {
         setColorFilter(null);
@@ -1158,6 +1193,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.166 -0400", hash_original_method = "0E997722FEDD3E607A6B49B3558418D6", hash_generated_method = "9A2E6D22B86ED80684E83AC67FC8BFDF")
     public void setColorFilter(ColorFilter cf) {
         if(mColorFilter != cf)        
@@ -1177,6 +1213,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.167 -0400", hash_original_method = "F29539FC5DE82D33A1732D8CBDF1B3F0", hash_generated_method = "7BC657C114B1356AFE6F5243CA74195D")
     @RemotableViewMethod
     public void setAlpha(int alpha) {
@@ -1199,6 +1236,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.167 -0400", hash_original_method = "91840135D820437FBAEF19E5465CA144", hash_generated_method = "A57ACE779DD17A6273C6730F7C31547B")
     private void applyColorMod() {
         if(mDrawable != null && mColorMod)        
@@ -1216,6 +1254,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.167 -0400", hash_original_method = "C6B07741C64FD260DDE5C02AC0455E05", hash_generated_method = "EAB1B39D1CE84EB00581F793D469D57E")
     @RemotableViewMethod
     @Override
@@ -1234,6 +1273,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.167 -0400", hash_original_method = "3717E0990FC85EED7B1343A97507698D", hash_generated_method = "B1E5E56D571E2B53A9A6D95C52312116")
     @Override
     protected void onAttachedToWindow() {
@@ -1251,6 +1291,7 @@ switch(specMode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.167 -0400", hash_original_method = "66E6E711A91B2172E1C35BB591AC6445", hash_generated_method = "C4081A958D547BC7E7545B67BFED03FE")
     @Override
     protected void onDetachedFromWindow() {
@@ -1277,6 +1318,7 @@ switch(specMode){
         CENTER      (5),
         CENTER_CROP (6),
         CENTER_INSIDE (7);
+        @DSModeled(DSC.SAFE)
         ScaleType(int ni) {
             nativeInt = ni;
         }

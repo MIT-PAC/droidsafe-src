@@ -64,6 +64,7 @@ public class ViewConfiguration {
 
     private boolean sHasPermanentMenuKeySet;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.786 -0400", hash_original_method = "24918D20351FE8A86EAEEE2EEBA5EB08", hash_generated_method = "7CA80E922DDAD3CE631F67B3475B9CFA")
     @Deprecated
     public  ViewConfiguration() {
@@ -99,6 +100,7 @@ public class ViewConfiguration {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:45.790 -0400", hash_original_method = "815441BD896E00C6B865EAF3CE23B912", hash_generated_method = "741E1AEA6E1447EBEF97500CA42EEC3A")
     private  ViewConfiguration(Context context) {
         addTaint(context.getTaint());
@@ -149,6 +151,7 @@ public class ViewConfiguration {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ViewConfiguration get(Context context) {
         final DisplayMetrics metrics = context.getResources().getDisplayMetrics();
         final int density = (int) (100.0f * metrics.density);
@@ -215,12 +218,14 @@ public class ViewConfiguration {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getLongPressTimeout() {
         return AppGlobals.getIntCoreSetting(Settings.Secure.LONG_PRESS_TIMEOUT,
                 DEFAULT_LONG_PRESS_TIMEOUT);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getKeyRepeatTimeout() {
         return getLongPressTimeout();
     }

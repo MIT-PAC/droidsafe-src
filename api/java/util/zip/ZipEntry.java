@@ -52,6 +52,7 @@ public class ZipEntry implements ZipConstants, Cloneable {
 
     long mLocalHeaderRelOffset = -1;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.744 -0400", hash_original_method = "60F10CCF439EC77C0A98401AA44AF184", hash_generated_method = "698922F491816612D48156F7E5C915E3")
     public  ZipEntry(String name) {
         if(name == null)        
@@ -78,6 +79,7 @@ public class ZipEntry implements ZipConstants, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.746 -0400", hash_original_method = "61E22A8AE090FB92E1157A3CABA3C550", hash_generated_method = "EE7980F5AAA554D14BBE4B0FC31F3A68")
     public  ZipEntry(ZipEntry ze) {
         name = ze.name;
@@ -106,6 +108,7 @@ public class ZipEntry implements ZipConstants, Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.749 -0400", hash_original_method = "30F30B41DA6F50936D6BF4103A049FEE", hash_generated_method = "A9878FB9865DC4F25CAA33407E8B20FF")
       ZipEntry(byte[] hdrBuf, InputStream in) throws IOException {
         addTaint(in.getTaint());
@@ -227,6 +230,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_34165614 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.751 -0400", hash_original_method = "56915B75BB1F78598E38415E47FB9273", hash_generated_method = "CD1167599984E44D2E2327C9266EA8C5")
     public long getTime() {
         if(time != -1)        
@@ -256,6 +260,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_34165614 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.751 -0400", hash_original_method = "4596D564DD1CB7B8029ED574B004E951", hash_generated_method = "D232A0205BA44C42DAC9E4A17B06944A")
     public boolean isDirectory() {
         boolean var9305E4B280032E8A26470B4467C14FB0_23805977 = (name.charAt(name.length() - 1) == '/');
@@ -266,6 +271,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_34165614 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.752 -0400", hash_original_method = "CEDBC8A76FB638A9ACF67956D150D744", hash_generated_method = "9F8771ACA3550FC9C9D1CF7D5EEAFFCB")
     public void setComment(String comment) {
         if(comment == null || comment.length() <= 0xFFFF)        
@@ -296,6 +302,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_34165614 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.753 -0400", hash_original_method = "838546BA41BB934E0DEE95030FA7BCCE", hash_generated_method = "B9191D638AAA68DCFB493D84306E1F4D")
     public void setCrc(long value) {
         if(value >= 0 && value <= 0xFFFFFFFFL)        
@@ -317,6 +324,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_34165614 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.754 -0400", hash_original_method = "F86C78C263DDE84D2589BD04BFB70D1E", hash_generated_method = "CF8D52244CB2091FF7959032C289FF0A")
     public void setExtra(byte[] data) {
         if(data == null || data.length <= 0xFFFF)        
@@ -338,6 +346,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_34165614 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.755 -0400", hash_original_method = "2D1E6DE59F6C5F9CB50232902EB42CEC", hash_generated_method = "14E521FAD0E3C254E9A88422F08D2ECA")
     public void setMethod(int value) {
         if(value != STORED && value != DEFLATED)        
@@ -355,6 +364,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_34165614 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.755 -0400", hash_original_method = "3723D5CA75C443A890F342FC88C4BC79", hash_generated_method = "920ED62E9C9AA23C72E8C4D4F17A2B63")
     public void setSize(long value) {
         if(value >= 0 && value <= 0xFFFFFFFFL)        
@@ -376,6 +386,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_34165614 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.757 -0400", hash_original_method = "ADBF978AE56F7313634C406FFD3BF538", hash_generated_method = "957F97614EE107C751ABC721C144BD24")
     public void setTime(long value) {
         addTaint(value);
@@ -426,6 +437,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_1458564326 =         name;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.759 -0400", hash_original_method = "CC5347E979B0813386EC9E9DE77BBA76", hash_generated_method = "E2EC6A82115D2F7B7F0FEF4774633CC3")
     @Override
     public Object clone() {
@@ -454,6 +466,7 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_1458579202 =             result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.760 -0400", hash_original_method = "EF5D8B81A9E09E0C38DFC15BA422ECA1", hash_generated_method = "C522FFD219E3C53BB8A8E7296D619020")
     @Override
     public int hashCode() {

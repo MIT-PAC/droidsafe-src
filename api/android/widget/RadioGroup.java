@@ -31,6 +31,7 @@ public class RadioGroup extends LinearLayout {
 
     private PassThroughHierarchyChangeListener mPassThroughListener;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.204 -0400", hash_original_method = "3F150AF0F79E2D2E674BD2F6CDCB9019", hash_generated_method = "7380C2A907EA3CE49CD22E9F8BD4493B")
     public  RadioGroup(Context context) {
         super(context);
@@ -43,6 +44,7 @@ public class RadioGroup extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.204 -0400", hash_original_method = "90AD2839FB0C3C5CF6A003259AE74157", hash_generated_method = "8390D6BAC505632718805CE6B6BE6C76")
     public  RadioGroup(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -73,6 +75,7 @@ public class RadioGroup extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.205 -0400", hash_original_method = "BF04917C1358A32EDE5746B4072D7D20", hash_generated_method = "2A140ABC2C96227F957D97D7A9C8FD90")
     private void init() {
         mChildOnCheckedChangeListener = new CheckedStateTracker();
@@ -85,6 +88,7 @@ public class RadioGroup extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.206 -0400", hash_original_method = "E023B2331F5B7D82E6BF896494CABA17", hash_generated_method = "7FA4E96971EEFFA6A54848F49887181B")
     @Override
     public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
@@ -94,6 +98,7 @@ public class RadioGroup extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.206 -0400", hash_original_method = "DD6500FC505DB421A3CAF1F1EB2A0C5C", hash_generated_method = "DBF8F24808C572F56A4F32B014BEF670")
     @Override
     protected void onFinishInflate() {
@@ -117,6 +122,7 @@ public class RadioGroup extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.207 -0400", hash_original_method = "CB461CEACD94E412C8E6191745000CDB", hash_generated_method = "685740A2F6D21CE832492C784D50DE22")
     @Override
     public void addView(View child, int index, ViewGroup.LayoutParams params) {
@@ -154,6 +160,7 @@ public class RadioGroup extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.207 -0400", hash_original_method = "09268A2A1BCE88884506BAA643569A97", hash_generated_method = "A662C16298D4282D2CC1024FF3D026AE")
     public void check(int id) {
         addTaint(id);
@@ -184,6 +191,7 @@ public class RadioGroup extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.208 -0400", hash_original_method = "5FA05BD652ABFE7F3AF547784FD6946B", hash_generated_method = "B97F800B9977A6A9C7F55A446C7F3D8E")
     private void setCheckedId(int id) {
         mCheckedId = id;
@@ -199,6 +207,7 @@ public class RadioGroup extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.208 -0400", hash_original_method = "C9C9D7D4FE388186AB4F88F5226CFA81", hash_generated_method = "4B27C4883D03C940AFBC001E8032FDA5")
     private void setCheckedStateForView(int viewId, boolean checked) {
         addTaint(checked);
@@ -227,6 +236,7 @@ public class RadioGroup extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.209 -0400", hash_original_method = "E28523184AF4023EBEA953058E4D04A2", hash_generated_method = "D8007F290A68FFDEA50A5A5C241BC5A3")
     public void clearCheck() {
         check(-1);
@@ -244,6 +254,7 @@ public class RadioGroup extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.210 -0400", hash_original_method = "D352CF2A356795872216EFA2E7D695F4", hash_generated_method = "1D1E988F8EA19CA596B15F4B69F149F7")
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
@@ -269,6 +280,7 @@ LayoutParams var2B042AB9A3A848AB14156E90F264A184_1091754375 =         new RadioG
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.210 -0400", hash_original_method = "4DB39C46ED4EFC166BB2C749224E802D", hash_generated_method = "7F2A98C16EF4B2315D84649BF8148AD2")
     @Override
     protected LinearLayout.LayoutParams generateDefaultLayoutParams() {
@@ -282,6 +294,7 @@ LinearLayout.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_141038251 =       
     
     public static class LayoutParams extends LinearLayout.LayoutParams {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.211 -0400", hash_original_method = "35869249D2D5BC08819A8507F87D33FD", hash_generated_method = "7441F800C0B184928DB48A9DD8178D32")
         public  LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
@@ -291,6 +304,7 @@ LinearLayout.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_141038251 =       
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.211 -0400", hash_original_method = "979C42732F8B715475115A738CE7596D", hash_generated_method = "503F8BCA6BB39449EFF41178BE64A21C")
         public  LayoutParams(int w, int h) {
             super(w, h);
@@ -300,6 +314,7 @@ LinearLayout.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_141038251 =       
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.211 -0400", hash_original_method = "A72C7A56D1748794301804B2844F1EFE", hash_generated_method = "AD66C54810C851C0FD6D6C80005AA288")
         public  LayoutParams(int w, int h, float initWeight) {
             super(w, h, initWeight);
@@ -310,6 +325,7 @@ LinearLayout.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_141038251 =       
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.211 -0400", hash_original_method = "DE4ED36682A1028E303BDCC28A48E06F", hash_generated_method = "66B55E9EFECAB48B3D28D153941B8308")
         public  LayoutParams(ViewGroup.LayoutParams p) {
             super(p);
@@ -318,6 +334,7 @@ LinearLayout.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_141038251 =       
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.212 -0400", hash_original_method = "CC87BD4B8C067788FA2BA37DBA116F62", hash_generated_method = "BDFD9CE52FB4D6304CCFF1CA731BA0A9")
         public  LayoutParams(MarginLayoutParams source) {
             super(source);
@@ -326,6 +343,7 @@ LinearLayout.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_141038251 =       
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.213 -0400", hash_original_method = "B48B8CC58D894F8848FAA9A802B21490", hash_generated_method = "BE9441930F647CDBC21F70E945BB2254")
         @Override
         protected void setBaseAttributes(TypedArray a,

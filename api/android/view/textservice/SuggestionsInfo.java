@@ -28,6 +28,7 @@ public final class SuggestionsInfo implements Parcelable {
 
     private int mSequence;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.995 -0400", hash_original_method = "F72366BA0EDF1634C1AA3C488E109E33", hash_generated_method = "E36BDC53EEF4A77EE77D132C2E06D7B0")
     public  SuggestionsInfo(int suggestionsAttributes, String[] suggestions) {
         mSuggestionsAttributes = suggestionsAttributes;
@@ -57,6 +58,7 @@ public final class SuggestionsInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.997 -0400", hash_original_method = "F344476C9AC73EBE1631CA25EF553262", hash_generated_method = "71F0BA8CCD9118EAD9F1C288663DEF89")
     public  SuggestionsInfo(
             int suggestionsAttributes, String[] suggestions, int cookie, int sequence) {
@@ -87,6 +89,7 @@ public final class SuggestionsInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.998 -0400", hash_original_method = "A8076752A4CBE1F29691F498A5186710", hash_generated_method = "AFF965CE09DEBAB8C81C1A1B3381EE0B")
     public  SuggestionsInfo(Parcel source) {
         mSuggestionsAttributes = source.readInt();
@@ -103,7 +106,7 @@ public final class SuggestionsInfo implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.998 -0400", hash_original_method = "D6F7E488E85F5F73C07F51AB39369D4C", hash_generated_method = "C50B0F63077B2CBB179C94674822DE16")
     @Override
     public void writeToParcel(Parcel dest, int flags) {

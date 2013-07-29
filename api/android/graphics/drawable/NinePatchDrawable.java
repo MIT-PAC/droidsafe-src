@@ -575,6 +575,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_755233535 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.391 -0400", hash_original_method = "05814CB491C8C0B2C0FEF50DD9B15E6B", hash_generated_method = "6FB97DE528A65798A82E3899D34DE7BE")
           NinePatchState(NinePatchState state) {
             mNinePatch = new NinePatch(state.mNinePatch);

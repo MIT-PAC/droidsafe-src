@@ -26,6 +26,7 @@ public abstract class TimerTask implements Runnable {
 
     private long scheduledTime;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.880 -0400", hash_original_method = "41AFEAE31E9AFC51442EB32F1B803F09", hash_generated_method = "77D10C16E519E63639DFE51A512851F6")
     protected  TimerTask() {
         // ---------- Original Method ----------

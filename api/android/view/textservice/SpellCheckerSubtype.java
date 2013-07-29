@@ -142,6 +142,7 @@ String varD5103786A790F3D4881070784C5A1DFD_2136825052 =         mSubtypeExtraVal
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static Locale constructLocaleFromString(String localeStr) {
         if (TextUtils.isEmpty(localeStr))
             return null;
@@ -157,6 +158,7 @@ String varD5103786A790F3D4881070784C5A1DFD_2136825052 =         mSubtypeExtraVal
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.974 -0400", hash_original_method = "968D29448AF0C4C278C68BBABC30BCB9", hash_generated_method = "5D26566A761275671ACB096D2007E123")
     public CharSequence getDisplayName(
             Context context, String packageName, ApplicationInfo appInfo) {
@@ -235,6 +237,7 @@ CharSequence varF1554E4544B9FE124AB662A8FBD78003_1831196585 =             locale
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static List<SpellCheckerSubtype> sort(Context context, int flags, SpellCheckerInfo sci,
             List<SpellCheckerSubtype> subtypeList) {
         if (sci == null) return subtypeList;

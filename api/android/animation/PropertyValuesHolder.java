@@ -200,6 +200,7 @@ for(int i = 0;i < numKeyframes;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.637 -0400", hash_original_method = "13DE02BBE5B8605736F61BF53DFAC872", hash_generated_method = "90FB1DA9730A6568BFDAB3750C165C48")
     private Method getPropertyFunction(Class targetClass, String prefix, Class valueType) {
         addTaint(valueType.getTaint());
@@ -305,6 +306,7 @@ Method var72DEA74FB2F1F2EAE5BFBBD9D6D5878A_1972707809 =         setterOrGetter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.644 -0400", hash_original_method = "1E4C95A3F0C35809E96A1D77677A320B", hash_generated_method = "57274BDEAD6F4EE1BDEDD294D61925B1")
      void setupSetter(Class targetClass) {
         mSetter = setupSetterOrGetter(targetClass, sSetterPropertyMap, "set", mValueType);
@@ -313,6 +315,7 @@ Method var72DEA74FB2F1F2EAE5BFBBD9D6D5878A_1972707809 =         setterOrGetter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.646 -0400", hash_original_method = "8511F8F7AD8858B7DCF32F8ED21ED093", hash_generated_method = "AD073233B0C810F579053BFA42B447EA")
     private void setupGetter(Class targetClass) {
         mGetter = setupSetterOrGetter(targetClass, sGetterPropertyMap, "get", null);
@@ -321,6 +324,7 @@ Method var72DEA74FB2F1F2EAE5BFBBD9D6D5878A_1972707809 =         setterOrGetter;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.651 -0400", hash_original_method = "0087C9C0C21400747AF8DC614F234C65", hash_generated_method = "70CFB988AD4BBC3F7AC471C608877740")
      void setupSetterAndGetter(Object target) {
         addTaint(target.getTaint());
@@ -373,6 +377,7 @@ for(Keyframe kf : mKeyframeSet.mKeyframes)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.659 -0400", hash_original_method = "FD1A4547C57F636637D228B97E0E8D50", hash_generated_method = "BF228A1FFB36B0FC80C97497F9CCEB87")
     private void setupValue(Object target, Keyframe kf) {
         addTaint(kf.getTaint());
@@ -414,6 +419,7 @@ for(Keyframe kf : mKeyframeSet.mKeyframes)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.664 -0400", hash_original_method = "981ED4D0B23A22C5ED7F7AF0C37F067E", hash_generated_method = "F1C4DF5D9A5AB6EB3669A9D104565E27")
      void setupStartValue(Object target) {
         addTaint(target.getTaint());
@@ -423,6 +429,7 @@ for(Keyframe kf : mKeyframeSet.mKeyframes)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.666 -0400", hash_original_method = "387F5EDF2150EE198B0BBE4A1C97CF48", hash_generated_method = "33035B9CE60D7FE8A3439592C4CC671D")
      void setupEndValue(Object target) {
         addTaint(target.getTaint());
@@ -432,6 +439,7 @@ for(Keyframe kf : mKeyframeSet.mKeyframes)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.673 -0400", hash_original_method = "8E6DC562093F236AE410C563F47F28F2", hash_generated_method = "85DBE2EE2685932CB9EAAA68E60BCAE4")
     @Override
     public PropertyValuesHolder clone() {
@@ -466,6 +474,7 @@ PropertyValuesHolder var540C13E9E156B687226421B24F2DF178_996661013 =            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.676 -0400", hash_original_method = "BBF3202CC4B8C1713A46E96DE0EE5426", hash_generated_method = "5FD19CD3FB785848537C746D0A1CCE49")
      void setAnimatedValue(Object target) {
         addTaint(target.getTaint());
@@ -504,6 +513,7 @@ PropertyValuesHolder var540C13E9E156B687226421B24F2DF178_996661013 =            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.680 -0400", hash_original_method = "9511AC0B81E584A22A2DBDCB260E6C63", hash_generated_method = "285DE10A1D589EEEB4DAACD93EC58884")
      void init() {
         if(mEvaluator == null)        
@@ -539,6 +549,7 @@ PropertyValuesHolder var540C13E9E156B687226421B24F2DF178_996661013 =            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.686 -0400", hash_original_method = "3D77B6F49E03B0770D03717F27BECD0E", hash_generated_method = "988B14A5F356427273DDE8DEE23C1F6E")
      void calculateValue(float fraction) {
         mAnimatedValue = mKeyframeSet.getValue(fraction);
@@ -587,6 +598,7 @@ Object var75C3F7261811C89DF5C27F09ADF01F70_970260444 =         mAnimatedValue;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.692 -0400", hash_original_method = "BD911D365C7FC80DCCAF5DAD046A5B1C", hash_generated_method = "EEECE54DF25E73A3E61EC2B4D1F91E6A")
     @Override
     public String toString() {
@@ -598,6 +610,7 @@ String varBC0B2EC6369EA6D22FDCE3D1CEE1384D_1258766276 =         mPropertyName + 
     }
 
     
+    @DSModeled(DSC.SAFE)
     static String getMethodName(String prefix, String propertyName) {
         if (propertyName == null || propertyName.length() == 0) {
             return prefix;
@@ -644,6 +657,7 @@ String varBC0B2EC6369EA6D22FDCE3D1CEE1384D_1258766276 =         mPropertyName + 
 
         int mIntAnimatedValue;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.701 -0400", hash_original_method = "A1404C395B1A556C6EC35453AB25DA4D", hash_generated_method = "5FE0BA07A052FEBCEE45A62B9CED2CD8")
         public  IntPropertyValuesHolder(String propertyName, IntKeyframeSet keyframeSet) {
             super(propertyName);
@@ -659,6 +673,7 @@ String varBC0B2EC6369EA6D22FDCE3D1CEE1384D_1258766276 =         mPropertyName + 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.704 -0400", hash_original_method = "81A38376DA5063E7A71924F7865D18EE", hash_generated_method = "603403109260D3D7DD707FECA22F3846")
         public  IntPropertyValuesHolder(Property property, IntKeyframeSet keyframeSet) {
             super(property);
@@ -722,6 +737,7 @@ String varBC0B2EC6369EA6D22FDCE3D1CEE1384D_1258766276 =         mPropertyName + 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.710 -0400", hash_original_method = "30F7306C8A34979730DB91915B461598", hash_generated_method = "46A582808A5314364CD0A0447001C6BD")
         @Override
          void calculateValue(float fraction) {
@@ -731,6 +747,7 @@ String varBC0B2EC6369EA6D22FDCE3D1CEE1384D_1258766276 =         mPropertyName + 
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.712 -0400", hash_original_method = "CE13DB8914BA3896479030C59B8EB5EA", hash_generated_method = "7A16ECC33F00C355AFA11A06AA883F7E")
         @Override
          Object getAnimatedValue() {
@@ -742,6 +759,7 @@ Object var4277311C62C8711609EF6BC38BDC5F88_2107425382 =             mIntAnimated
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.714 -0400", hash_original_method = "D2AD407C7BF3FF5B871B87BBB92EBDD2", hash_generated_method = "B392F273F51F5DB36CC530D8B38E9483")
         @Override
         public IntPropertyValuesHolder clone() {
@@ -757,6 +775,7 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_2110526280 =        
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.717 -0400", hash_original_method = "774DCA711497C815C6106461263A2AF3", hash_generated_method = "F5BFF10E5B60D98E42F7D3EED0C6573A")
         @Override
          void setAnimatedValue(Object target) {
@@ -795,6 +814,7 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_2110526280 =        
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.723 -0400", hash_original_method = "E5FCCB47E07ECB03BE2F278E504281F8", hash_generated_method = "10B6BAB8B6610DDB6C6A993AE5C0D96A")
         @Override
          void setupSetter(Class targetClass) {
@@ -868,6 +888,7 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_2110526280 =        
 
         float mFloatAnimatedValue;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.749 -0400", hash_original_method = "5C9EF6457927B43859688413E4C7829F", hash_generated_method = "1C6A68ABB501736E53F2078FBE484AD0")
         public  FloatPropertyValuesHolder(String propertyName, FloatKeyframeSet keyframeSet) {
             super(propertyName);
@@ -883,6 +904,7 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_2110526280 =        
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.753 -0400", hash_original_method = "3ECDE802415F2017B0BC69F95B30B753", hash_generated_method = "CE1B2E236B6B2D071E8BC6578615B221")
         public  FloatPropertyValuesHolder(Property property, FloatKeyframeSet keyframeSet) {
             super(property);
@@ -946,6 +968,7 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_2110526280 =        
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.765 -0400", hash_original_method = "EBADBBF750EE6D7005FAC08DD166E4F4", hash_generated_method = "E685B94C8F911CB6E2E055829FA0FF32")
         @Override
          void calculateValue(float fraction) {
@@ -955,6 +978,7 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_2110526280 =        
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.766 -0400", hash_original_method = "56F77D961BC82461152CD24C144983C0", hash_generated_method = "14B61B04C99ECBD7AE6AD33CFE93EE78")
         @Override
          Object getAnimatedValue() {
@@ -966,6 +990,7 @@ Object varB8B4E2E7B85FC6B8760DC96DCB9D7522_274140194 =             mFloatAnimate
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.768 -0400", hash_original_method = "3798C3AECEA696DCFE0B333FF00EF37C", hash_generated_method = "5A8C3E40F707A0BF95EF29089896EC98")
         @Override
         public FloatPropertyValuesHolder clone() {
@@ -981,6 +1006,7 @@ FloatPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_1993982214 =      
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.772 -0400", hash_original_method = "727C6F3DB059985E066E102AF679E2D9", hash_generated_method = "380BF794E029B539040479D082A315C2")
         @Override
          void setAnimatedValue(Object target) {
@@ -1019,6 +1045,7 @@ FloatPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_1993982214 =      
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:15.778 -0400", hash_original_method = "2E99CF7209AB7743339028E8A9433227", hash_generated_method = "6FEE76FAEB8E2505A984B7996A280AD7")
         @Override
          void setupSetter(Class targetClass) {

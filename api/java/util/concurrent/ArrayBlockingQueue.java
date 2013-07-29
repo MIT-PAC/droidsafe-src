@@ -1072,6 +1072,7 @@ Iterator<E> varB10D928EC6DDAEBFD727C2EDCEC6EDF5_1534803965 =         new Itr();
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.295 -0400", hash_original_method = "707282FAA8902CEC9C63EE3C89931C62", hash_generated_method = "A225EBD2E3B0BD0836698925CC660CB9")
         public E next() {
             final ReentrantLock lock = ArrayBlockingQueue.this.lock;

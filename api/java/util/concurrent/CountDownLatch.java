@@ -3,14 +3,14 @@ package java.util.concurrent;
 // Droidsafe Imports
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
 
 public class CountDownLatch {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.897 -0400", hash_original_field = "63AD9D34F3503826E5F649AE6B7AC92C", hash_generated_field = "A4B34EF3CE38520839B34A2F06599243")
 
     private Sync sync;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.898 -0400", hash_original_method = "4C9DACB295593778FC44AB86E8E7D747", hash_generated_method = "878EEFAED4F1781557AF5F6F93883A06")
     public  CountDownLatch(int count) {
         if(count < 0)        
@@ -26,6 +26,7 @@ public class CountDownLatch {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.898 -0400", hash_original_method = "A9727D614A84DE128F63540E6073A44B", hash_generated_method = "D070BA44558B523604A261CE2882A091")
     public void await() throws InterruptedException {
         sync.acquireSharedInterruptibly(1);
@@ -34,6 +35,7 @@ public class CountDownLatch {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.898 -0400", hash_original_method = "0AAF9EA81FFD8AD9617435605CC7D253", hash_generated_method = "0E37C8C4F11E9D5F535DD9C80AE9F369")
     public boolean await(long timeout, TimeUnit unit) throws InterruptedException {
         addTaint(unit.getTaint());
@@ -46,6 +48,7 @@ public class CountDownLatch {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.899 -0400", hash_original_method = "ACB2575EE39865032078A7B67E3D5076", hash_generated_method = "5F72B9A21B37F73F93872F70DF24474A")
     public void countDown() {
         sync.releaseShared(1);
@@ -54,6 +57,7 @@ public class CountDownLatch {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.899 -0400", hash_original_method = "ABE42AE497B23B643FDF7DC2348A1AF5", hash_generated_method = "30FAD490185C65E7B12A80092F1080CD")
     public long getCount() {
         long varEADBA8DEF1BC9738D4EDEC8923318B63_1820788281 = (sync.getCount());
@@ -64,6 +68,7 @@ public class CountDownLatch {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.899 -0400", hash_original_method = "45A2072B871660339FAF307330C7F60C", hash_generated_method = "50F7417895D9E7B702988A410A8D0DD6")
     public String toString() {
 String var4D62EFEC3E50E2AF5780683B34D1CC77_1047917073 =         super.toString() + "[Count = " + sync.getCount() + "]";
@@ -76,6 +81,7 @@ String var4D62EFEC3E50E2AF5780683B34D1CC77_1047917073 =         super.toString()
     
     private static final class Sync extends AbstractQueuedSynchronizer {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.899 -0400", hash_original_method = "9968F5AA54B3A1250121D3E0CFE14724", hash_generated_method = "8A0C888A5DA83A3653D6DAE983FA987D")
           Sync(int count) {
             addTaint(count);
@@ -85,6 +91,7 @@ String var4D62EFEC3E50E2AF5780683B34D1CC77_1047917073 =         super.toString()
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.899 -0400", hash_original_method = "192D38E698A214D58DA93C3298AD6AD3", hash_generated_method = "D76C126A40078DAB75BE277EFD8A3565")
          int getCount() {
             int var118C4F58F1303398C344B8AAB7CE6EE1_61522169 = (getState());
@@ -95,6 +102,7 @@ String var4D62EFEC3E50E2AF5780683B34D1CC77_1047917073 =         super.toString()
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.900 -0400", hash_original_method = "5121E365AD686AC5D590ECBA2BCA053C", hash_generated_method = "B94527C2B27C967EA2772D1810BD27BF")
         protected int tryAcquireShared(int acquires) {
             addTaint(acquires);
@@ -106,6 +114,7 @@ String var4D62EFEC3E50E2AF5780683B34D1CC77_1047917073 =         super.toString()
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.900 -0400", hash_original_method = "136302DDF9CF08EA1ED73402F05AC756", hash_generated_method = "D56D384F8B12CB6AC2A8D982FFA88460")
         protected boolean tryReleaseShared(int releases) {
             addTaint(releases);
