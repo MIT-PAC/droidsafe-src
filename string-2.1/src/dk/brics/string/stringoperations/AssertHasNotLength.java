@@ -13,7 +13,15 @@ public class AssertHasNotLength extends UnaryOperation {
     
     private int min, max;
     
-    public AssertHasNotLength(int min, int max) {
+    public int getMin() {
+		return min;
+	}
+
+	public int getMax() {
+		return max;
+	}
+
+	public AssertHasNotLength(int min, int max) {
         this.min = min;
         this.max = max;
     }
@@ -48,5 +56,7 @@ public class AssertHasNotLength extends UnaryOperation {
     public boolean isAssertion() {
         return true;
     }
+    
+    
     
 }
