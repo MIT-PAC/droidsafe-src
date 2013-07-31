@@ -49,7 +49,8 @@ public class Intermediate2Dot {
         for (Statement t : m.getStatements()) {
             t.visitBy(tsv);
             s.append("    " + m.toString() + 'S' + t.getIndex());
-            s.append(" [label=\"" + Misc.escape(aa.getInfoBefore(t).toString()) + "\\n" + Misc.escape(tsv.result) + "\"");
+            // LWG: suppress printing of empty data; see AliasInfo.toString()
+            s.append(" [label=\"" + Misc.escape(aa.getInfoBefore(t).toString()) + Misc.escape(tsv.result) + "\"");
             if (hotspots.contains(t)) {
                 s.append(",style=bold");
             }

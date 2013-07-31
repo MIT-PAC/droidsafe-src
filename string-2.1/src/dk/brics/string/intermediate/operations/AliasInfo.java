@@ -419,20 +419,24 @@ public class AliasInfo {
     	return false;
     }
 
+    // LWG: Suppress printing of empty data.
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Def. Aliases:");
+        StringBuilder tmpsb = new StringBuilder();
         for (Variable var1 : live) {
         	for (Variable var2 : live) {
         		if (var1.getKey() >= var2.getKey())
         			continue;
         		if (aliasing.getAliasStatus(var1, var2) != AliasStatus.DEFINITELY)
         			continue;
-        		sb.append(" (" + var1 + "," + var2 + ")");
+        		tmpsb.append(" (" + var1 + "," + var2 + ")");
         	}
         }
-        sb.append("\nNot Aliases:");
+        if (tmpsb.length() > 0) {
+            sb.append("Def. Aliases:"+tmpsb+"\n");
+            tmpsb.setLength(0);
+        }
         for (Variable var1 : live) {
         	for (Variable var2 : live) {
         		if (var1.getKey() >= var2.getKey())
@@ -441,10 +445,13 @@ public class AliasInfo {
         			continue;
         		if (var1.getType().cannotBeAliasOf(var2.getType()))
         			continue; // ignore the trivial non-aliases
-        		sb.append(" (" + var1 + "," + var2 + ")");
+        		tmpsb.append(" (" + var1 + "," + var2 + ")");
         	}
         }
-        sb.append("\nMaybe Aliases:");
+        if (tmpsb.length() > 0) {
+            sb.append("Not Aliases:"+tmpsb+"\n");
+            tmpsb.setLength(0);
+        }
         for (Variable var1 : live) {
             for (Variable var2 : live) {
                 if (var1.getKey() >= var2.getKey())
@@ -453,11 +460,14 @@ public class AliasInfo {
                     continue;
                 if (var1.getType().cannotBeAliasOf(var2.getType()))
                     continue; // ignore the trivial non-aliases
-                sb.append(" (" + var1 + "," + var2 + ")");
+                tmpsb.append(" (" + var1 + "," + var2 + ")");
             }
         }
-        sb.append("\nLive: " + live + "\n");
-        sb.append("Corrupted: " + corrupted + "\n");
+        if (tmpsb.length() > 0) {
+            sb.append("Maybe Aliases:"+tmpsb+"\n");
+        }
+        if (!live.isEmpty()) sb.append("Live: " + live + "\n");
+        if (!corrupted.isEmpty()) sb.append("Corrupted: " + corrupted + "\n");
         return sb.toString();
     }
 }
