@@ -4,10 +4,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -82,7 +84,7 @@ public class JSAStrings {
     hotspots = new LinkedList<ValueBox>();
     nonterminals = new HashMap<Value, Nonterminal>();
     gv = null;
-    signatureToHotspotMap = new HashMap<String, List<Hotspot>>();
+    signatureToHotspotMap = new TreeMap<String, List<Hotspot>>();
   }
 
   /**
@@ -156,7 +158,14 @@ public class JSAStrings {
    * Run the analysis.
    */
   private void analyze() {
+    // LWG
+    logger.info("Action hotspots: " + hotspots.size());
+    Date start = new Date();
+
     sa = new StringAnalysis(hotspots); // Run the analysis.
+
+    // LWG
+    reportTime("[Strig Analysis] Multi-level automaton", start);
 
     for (ValueBox h : hotspots) {
       // automata.put(h.getValue(),sa.getAutomaton(h));
@@ -191,7 +200,7 @@ public class JSAStrings {
    */
   public List<ValueBox> addArgumentHotspots(String signature, int arg) {
     List<ValueBox> sigSpots = StringAnalysis.getArgumentExpressions(signature, arg);
-    logger.debug("For signature " + signature + " got " + sigSpots.size() + " hotspots.");
+    logger.debug("For signature " + signature + " and arg " + arg  + " got " + sigSpots.size() + " hotspots.");
 
     if (!sigSpots.isEmpty()) {
       addSignatureToHotspotMap(signature, new Hotspot(signature, arg, sigSpots));
@@ -294,15 +303,32 @@ public class JSAStrings {
     logger.debug("Done with String analysis");
     JSAStrings singleton = JSAStrings.v();
 
-    for (ValueBox v : singleton.getHotspots()) {
-      // exploreRegex(automata.get(v.getValue()));
-      logger.debug("Hotspot: " + sa.getSourceFile(v) + ":::" + sa.getLineNumber(v) + ":::"
-          + singleton.getRegex(v.getValue()));
+    // LWG
+    // for (ValueBox v : singleton.getHotspots()) {
+    //   // exploreRegex(automata.get(v.getValue()));
+    //   logger.debug("Hotspot: " + sa.getSourceFile(v) + ":::" + sa.getLineNumber(v) + ":::"
+    //       + singleton.getRegex(v.getValue()));
+    // }
+
+    int i = 1;
+    for (String sig: signatureToHotspotMap.keySet()) {
+      for (Hotspot hotspot: signatureToHotspotMap.get(sig)) {
+        int arg = hotspot.getArgumentPosition();
+        logger.info("");
+        logger.info(sig + ","+arg);
+        for (ValueBox v: hotspot.getHotspots()) {
+          // exploreRegex(automata.get(v.getValue()));
+          logger.info("  "+ i++ +": " + sa.getClassName(v) + ": line " + sa.getLineNumber(v) + " : " + v.getValue());
+          logger.info("     regular expression: \"" + singleton.getRegex(v.getValue()) + "\"");
+        }
+      }
     }
   }
 
+
+  // LWG: Allow application classes to be filtered from soot.Scene
   /**
-   * LWG: Allow application classes to be filtered from soot.Scene
+   * Set the application classes that JSA will analyze.
    * 
    * @param config
    */
@@ -391,4 +417,33 @@ public class JSAStrings {
       return hotspots;
     }
   }
+  
+  // ***********************************************************************************************
+  // LWG
+  
+  /**
+   * Log the elapsed time from 'start' to current time.
+   * @param desc The description of the operation being timed.
+   * @param start Start time of the operation.
+   */
+  private static void reportTime(String desc, Date start) {
+      Date end = new Date();
+      long time = (end.getTime() - start.getTime()) / 1000;
+      long seconds = time % 60;
+      long minutes = (time / 60) % 60;
+      long hours = time / 3600;
+       StringBuffer buf = new StringBuffer(((desc == null) ? " " : desc)+" in ");
+       if (hours > 0) {
+         buf.append(hours);
+         buf.append(" hours ");
+       }
+       if (minutes > 0) {
+         buf.append(minutes);
+         buf.append(" minutes ");
+       }
+       buf.append(seconds);
+       buf.append(" seconds");
+      logger.info(buf.toString());
+  }
+
 }
