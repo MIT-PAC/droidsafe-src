@@ -17,7 +17,7 @@ import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
 
 /**
- * A node in the forrest of the rCFG.  This represents and input event (an entry point into
+ * A node in the forest of the rCFG.  This represents and input event (an entry point into
  * user code from the API), and the set of output events that could be called.  Output events 
  * are api calls that are interesting.
  * 

@@ -30,7 +30,9 @@ import soot.SootField;
 import soot.SootMethod;
 import soot.Type;
 import soot.Value;
+import soot.jimple.Expr;
 import soot.jimple.InstanceInvokeExpr;
+import soot.jimple.Stmt;
 import soot.jimple.paddle.PaddleTransformer;
 import soot.jimple.spark.SparkTransformer;
 import soot.jimple.spark.geom.dataRep.CallsiteContextVar;
@@ -53,7 +55,9 @@ import com.google.common.collect.HashBiMap;
 import droidsafe.android.app.Project;
 import droidsafe.main.Config;
 import droidsafe.utils.CannotFindMethodException;
+import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
+import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
 
 /**
@@ -836,5 +840,23 @@ public class GeoPTA {
             }
         }
         return allCSEdges;
+    }
+    
+    /**
+     * Return the source location tag for an allocation node.
+     */
+    public SourceLocationTag getSourceTag(AllocNode node) {
+        Object newObject = getNewExpr(node);
+        
+        if (! (newObject instanceof Expr)) {
+            return null;
+        }
+        
+        Expr newExpr = (Expr)newObject;
+        
+        Stmt stmt = JimpleRelationships.v().getEnclosingStmt(newExpr);
+        
+        return SootUtils.getSourceLocation(stmt, 
+            JimpleRelationships.v().getEnclosingMethod(stmt).getDeclaringClass()); 
     }
 }
