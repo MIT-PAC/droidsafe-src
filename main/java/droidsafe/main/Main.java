@@ -116,7 +116,7 @@ public class Main {
         // write jimple txt files for all classes so we can analzye them
         // all transforms should be done by here.
         
-        logger.info("Caching Jimple Hierarchy Relationships...")
+        logger.info("Caching Jimple Hierarchy Relationships...");
         JimpleRelationships.v();
         
         if (Config.v().writeJimpleAppClasses) {
