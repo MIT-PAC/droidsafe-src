@@ -38,6 +38,7 @@ public class InstrumentationTestCase extends TestCase {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.606 -0400", hash_original_method = "80E7DE8B78F72228CE1CBFCE791EFB84", hash_generated_method = "5A6AD4CB7D8865EE3D58DD9D6C618685")
     @Deprecated
     public void injectInsrumentation(Instrumentation instrumentation) {
@@ -59,6 +60,7 @@ Instrumentation var0FB7EFFFC0B8CD54E817BBC71710DE88_1917378878 =         mInstru
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.607 -0400", hash_original_method = "764789E220BD6FE52FAEF894EB0B5A08", hash_generated_method = "710852519DD88120CD28D5D10E1FD0EE")
     public final <T extends Activity> T launchActivity(
             String pkg,
@@ -84,6 +86,7 @@ T varE7F6C12080F9D8EF62DC3FF8BA750C63_1561275626 =         launchActivityWithInt
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.608 -0400", hash_original_method = "D43C82D18E60F413349E4558A24D84A0", hash_generated_method = "5C16BDB114961A64AC91C4910467BFFD")
     @SuppressWarnings("unchecked")
     public final <T extends Activity> T launchActivityWithIntent(
@@ -155,7 +158,7 @@ T var8CEBAC25E19008E785695F06EF11C2CD_232979124 =         activity;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.612 -0400", hash_original_method = "58232FB81B29EAE27E4B0E868189E51E", hash_generated_method = "AAB97AC8682E651CC6F41728149FB45A")
     @Override
     protected void runTest() throws Throwable {
@@ -227,6 +230,7 @@ T var8CEBAC25E19008E785695F06EF11C2CD_232979124 =         activity;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.615 -0400", hash_original_method = "73C1718FE30AA12508CCB537F6FDE014", hash_generated_method = "6FD84F0A28FA93C338CFF549740A23D6")
     private void runMethod(Method runMethod, int tolerance) throws Throwable {
         addTaint(tolerance);
@@ -237,6 +241,7 @@ T var8CEBAC25E19008E785695F06EF11C2CD_232979124 =         activity;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.617 -0400", hash_original_method = "FE4B0FEDC134C5D618CB046880639140", hash_generated_method = "A132FD85C25B60D304FD653C5EC05DD7")
     private void runMethod(Method runMethod, int tolerance, boolean isRepetitive) throws Throwable {
         addTaint(isRepetitive);
@@ -283,6 +288,7 @@ T var8CEBAC25E19008E785695F06EF11C2CD_232979124 =         activity;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.619 -0400", hash_original_method = "F1A2611A7518798734124BE0FA3DC184", hash_generated_method = "877E1BF34F4001EB0BD7B6997E3850F8")
     public void sendKeys(String keysSequence) {
         addTaint(keysSequence.getTaint());
@@ -414,6 +420,7 @@ for(int j = 0;j < keyCount;j++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.625 -0400", hash_original_method = "FDD2FC9FD3536A57EA5709C92DDFDA00", hash_generated_method = "372A69750FC2736F23FDA80CC31739F7")
     @Override
     protected void tearDown() throws Exception {

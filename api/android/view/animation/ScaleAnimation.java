@@ -6,8 +6,7 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.TypedValue;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
 
 public class ScaleAnimation extends Animation {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.112 -0400", hash_original_field = "0D8AC9B29D5FDF7FAC18EB1269D7F6D0", hash_generated_field = "8872E9F5EB468B447DB47434F2C2FEC9")
@@ -68,6 +67,7 @@ public class ScaleAnimation extends Animation {
 
     private float mPivotY;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.116 -0400", hash_original_method = "E7EC7911EB152736ED90DFA69DF1393A", hash_generated_method = "0B4BF7A655ECBD672E7DCE61265BBF39")
     public  ScaleAnimation(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -149,6 +149,7 @@ public class ScaleAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.118 -0400", hash_original_method = "512F0A59662E426B1B9BCA8ED3066806", hash_generated_method = "F4B1B691291C2CB057305BB1755A27CE")
     public  ScaleAnimation(float fromX, float toX, float fromY, float toY) {
         mResources = null;
@@ -169,6 +170,7 @@ public class ScaleAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.119 -0400", hash_original_method = "E87B1195FC877E2731C7B2475118F4DC", hash_generated_method = "7CADD6E5F23E503EA9E92E265142D072")
     public  ScaleAnimation(float fromX, float toX, float fromY, float toY,
             float pivotX, float pivotY) {
@@ -194,6 +196,7 @@ public class ScaleAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.121 -0400", hash_original_method = "D69E90D5037F2660E180F2C8AD5003B6", hash_generated_method = "402FCFE0BA9E51B59997343ECF9C9D17")
     public  ScaleAnimation(float fromX, float toX, float fromY, float toY,
             int pivotXType, float pivotXValue, int pivotYType, float pivotYValue) {
@@ -219,6 +222,7 @@ public class ScaleAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.122 -0400", hash_original_method = "ACAB92B82483DFC255430C098BD55E9F", hash_generated_method = "DE47C38BD240223238CAB8B04037AC1B")
     @Override
     protected void applyTransformation(float interpolatedTime, Transformation t) {
@@ -261,6 +265,7 @@ public class ScaleAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.123 -0400", hash_original_method = "676CA3558C31BAAF0E94504390B45F7E", hash_generated_method = "09AA5752EFE3B77B90F1F546B6463878")
      float resolveScale(float scale, int type, int data, int size, int psize) {
         addTaint(psize);
@@ -309,6 +314,7 @@ public class ScaleAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.123 -0400", hash_original_method = "E8174A29F113646F3F03DE9F1A1AE2A8", hash_generated_method = "C41E37D0FCE9CC7DF1C6CA527D948C88")
     @Override
     public void initialize(int width, int height, int parentWidth, int parentHeight) {

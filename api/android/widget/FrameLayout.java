@@ -57,6 +57,7 @@ public class FrameLayout extends ViewGroup {
 
     private final ArrayList<View> mMatchParentChildren = new ArrayList<View>(1);
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.830 -0400", hash_original_method = "C65968E2416D9A27DB8533C5F0C75B69", hash_generated_method = "DC88EE0252523A908E923E25C3B661EA")
     public  FrameLayout(Context context) {
         super(context);
@@ -65,6 +66,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.831 -0400", hash_original_method = "874EEAD1D73BF9A0D133CBC5B921EDD8", hash_generated_method = "1B8CF2F14996F3785CD71026B8BEF3CD")
     public  FrameLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -74,6 +76,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.832 -0400", hash_original_method = "CEC811F1E2979D1B9B78B672C02AD5D3", hash_generated_method = "2073ECAE65B5AABABA68C7A77F00F14C")
     public  FrameLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -114,6 +117,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.833 -0400", hash_original_method = "8BC875BA00D5710711DB00A919CACCE0", hash_generated_method = "8570DEBC6BBC9B7E7388BA51A7FC4903")
     @android.view.RemotableViewMethod
     public void setForegroundGravity(int foregroundGravity) {
@@ -153,6 +157,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.834 -0400", hash_original_method = "10BAAC6631BEDC803E3228221401304B", hash_generated_method = "2C251FA22528551C92936626D009E1DA")
     @Override
     protected boolean verifyDrawable(Drawable who) {
@@ -165,6 +170,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.834 -0400", hash_original_method = "583607554001D9F198CD54104E44B797", hash_generated_method = "8EDA60F19DAB82C3CE1D2E398B6D10D1")
     @Override
     public void jumpDrawablesToCurrentState() {
@@ -177,6 +183,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.835 -0400", hash_original_method = "D0BDA221075CF616F9E9A9FBE3F4B88A", hash_generated_method = "F17BE360A84203CFE2C1DE58AB49BFF6")
     @Override
     protected void drawableStateChanged() {
@@ -193,6 +200,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.835 -0400", hash_original_method = "988BCAE6A6E42EFDC25DEBC315DD1190", hash_generated_method = "97E3F4CA83CD5B84507232BA1EA5094A")
     @Override
     protected LayoutParams generateDefaultLayoutParams() {
@@ -204,6 +212,7 @@ LayoutParams var8649ACA5E03771F827BFE666D5C03EC1_1492557628 =         new Layout
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.837 -0400", hash_original_method = "9754375AE3C405E0761F3FE1F1DE65D9", hash_generated_method = "6E5CA446AE5BE7AA3EA58B74AEC05145")
     public void setForeground(Drawable drawable) {
         if(mForeground != drawable)        
@@ -261,6 +270,7 @@ Drawable varE68730EA53E360629A53778795B047BD_1484468386 =         mForeground;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.837 -0400", hash_original_method = "FF3A696BD56D74C1EF72BB71EC65ECEC", hash_generated_method = "3B848B6BB6DD5E62561117B22FD4A0F8")
     private int getPaddingLeftWithForeground() {
         int varDC0A3D7C1505A27B9E48C17AE34A1E81_606293913 = (mForegroundInPadding ? Math.max(mPaddingLeft, mForegroundPaddingLeft) :
@@ -273,6 +283,7 @@ Drawable varE68730EA53E360629A53778795B047BD_1484468386 =         mForeground;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.838 -0400", hash_original_method = "6F38D617A9DA11062600EF5C115E1518", hash_generated_method = "808275ECBCB643C1B21ED366DBBC1D18")
     private int getPaddingRightWithForeground() {
         int varB342987A4C294CA75C6949247823E4A8_764282444 = (mForegroundInPadding ? Math.max(mPaddingRight, mForegroundPaddingRight) :
@@ -285,6 +296,7 @@ Drawable varE68730EA53E360629A53778795B047BD_1484468386 =         mForeground;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.838 -0400", hash_original_method = "9A91E9D92D71EE5460C3A06ABC1FBD77", hash_generated_method = "0FD11F86F7A399038B15DDC02232FD95")
     private int getPaddingTopWithForeground() {
         int var746CA6AFF045068DF48405B11493A0EC_203595868 = (mForegroundInPadding ? Math.max(mPaddingTop, mForegroundPaddingTop) :
@@ -297,6 +309,7 @@ Drawable varE68730EA53E360629A53778795B047BD_1484468386 =         mForeground;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.838 -0400", hash_original_method = "6BA199CF08BDB4F9A10CECB43AC6A7C1", hash_generated_method = "5CE587B6DBFB59BB0A07C5328A588D04")
     private int getPaddingBottomWithForeground() {
         int varCAAEF7FF42994C83C26DE06A27165354_1404405162 = (mForegroundInPadding ? Math.max(mPaddingBottom, mForegroundPaddingBottom) :
@@ -309,6 +322,7 @@ Drawable varE68730EA53E360629A53778795B047BD_1484468386 =         mForeground;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.840 -0400", hash_original_method = "5535255FB97D5EBC35FC058E1C30F774", hash_generated_method = "A86B6B14E1E8108AF8E5DAC749487390")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -402,6 +416,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.843 -0400", hash_original_method = "E7FA69BF1895927226A22DFF32FA5B4F", hash_generated_method = "241241E8EDCC6472190CE814AECC67A7")
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
@@ -469,6 +484,7 @@ switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.844 -0400", hash_original_method = "4AC6B20E904606B8A51AEBBB15006C72", hash_generated_method = "7767E99AE4CB590B0320CE4B1FF51910")
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -485,6 +501,7 @@ switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.844 -0400", hash_original_method = "6D753914B55367AEDC866ACE8B2692D8", hash_generated_method = "089BB0A9028C503B0FF837CEEE2C9D1E")
     @Override
     public void draw(Canvas canvas) {
@@ -521,6 +538,7 @@ switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.844 -0400", hash_original_method = "89E57DF442BD7C3C4F7FCB93934115A6", hash_generated_method = "6289E6400ECA81B5B3E7DCE62E84FBFC")
     @Override
     public boolean gatherTransparentRegion(Region region) {
@@ -552,6 +570,7 @@ switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.844 -0400", hash_original_method = "E2FDB5CCBB08727222AD77E37CF74AF8", hash_generated_method = "608B0ECF0407DB19612FB648EC97AFBE")
     @Deprecated
     public boolean getConsiderGoneChildrenWhenMeasuring() {
@@ -574,6 +593,7 @@ switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.845 -0400", hash_original_method = "A40DD32EC45E4EF4D9BB874732A909D0", hash_generated_method = "B98451733A5F4875B5D2476BF6FB8A8E")
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
@@ -611,6 +631,7 @@ LayoutParams varDE90F821DBD0395E0EC46F138F4E3BF6_474568709 =         new FrameLa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.845 -0400", hash_original_method = "B595E0482905B38051CD63239BB5F8BA", hash_generated_method = "F7F3CC123A7800AE7DFC7CE1D1A93E54")
     @Override
     protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
@@ -628,6 +649,7 @@ ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1082167668 =         
 
         public int gravity = -1;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.845 -0400", hash_original_method = "8477494D7C126F8EB5E8F09916E06813", hash_generated_method = "00DAAA2A1ED19683FA259B2A96ADDD5F")
         public  LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
@@ -643,6 +665,7 @@ ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1082167668 =         
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.845 -0400", hash_original_method = "B179862558DB9232A546423CE2E9C45B", hash_generated_method = "EBA00E8564DFBD29E7FBA11533DD8069")
         public  LayoutParams(int width, int height) {
             super(width, height);
@@ -652,6 +675,7 @@ ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1082167668 =         
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.845 -0400", hash_original_method = "DAE5F643078D3DA273ACC6BEF5E44EF2", hash_generated_method = "27498D82F6D69AD0E938F26B275A02B5")
         public  LayoutParams(int width, int height, int gravity) {
             super(width, height);
@@ -663,6 +687,7 @@ ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1082167668 =         
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.845 -0400", hash_original_method = "E78B3F1574E2791FC4B55C9E6B90274C", hash_generated_method = "37A5DBEF9177864A03971A9D81D7D3EE")
         public  LayoutParams(ViewGroup.LayoutParams source) {
             super(source);
@@ -671,6 +696,7 @@ ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1082167668 =         
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.846 -0400", hash_original_method = "600A366FF17B7D40DFA738E77A628E8F", hash_generated_method = "B2D13AC5BD03A134B95617DAFA8D7AF6")
         public  LayoutParams(ViewGroup.MarginLayoutParams source) {
             super(source);

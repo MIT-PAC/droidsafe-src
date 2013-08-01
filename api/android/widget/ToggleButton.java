@@ -29,6 +29,7 @@ public class ToggleButton extends CompoundButton {
 
     private float mDisabledAlpha;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.006 -0400", hash_original_method = "BBF2F051F26D6598677E602500518F20", hash_generated_method = "7AEF99D7002AE96D237EDAE067C92B8D")
     public  ToggleButton(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -54,6 +55,7 @@ public class ToggleButton extends CompoundButton {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.007 -0400", hash_original_method = "70ADFAB7EB5D059C66B3BA4B8EE96D3C", hash_generated_method = "4FF12A2121557BCD2306209D8CB77DEE")
     public  ToggleButton(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.buttonStyleToggle);
@@ -63,6 +65,7 @@ public class ToggleButton extends CompoundButton {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.007 -0400", hash_original_method = "5CB14A1EE33B76662B7844E5CB0658A9", hash_generated_method = "0A589800548C48467163172BD39E3859")
     public  ToggleButton(Context context) {
         this(context, null);
@@ -71,6 +74,7 @@ public class ToggleButton extends CompoundButton {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.008 -0400", hash_original_method = "114EA4FC41B05DCC13D832240123F1AB", hash_generated_method = "EC8222BA843657A2C395297A27BB45FF")
     @Override
     public void setChecked(boolean checked) {
@@ -83,6 +87,7 @@ public class ToggleButton extends CompoundButton {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.008 -0400", hash_original_method = "A3A4B8254A3076C3DF78E3AF06A5BAA7", hash_generated_method = "B654F2B6AF94D87A1B149BC736107006")
     private void syncTextState() {
         boolean checked = isChecked();
@@ -145,6 +150,7 @@ CharSequence varAB991E92B38590F8C1DAE21519779556_1943124057 =         mTextOff;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.011 -0400", hash_original_method = "CD87BB009216C6E394DAEB7F0CACBDC7", hash_generated_method = "81D9C38B61009D24E1CDF52F90536A51")
     @Override
     protected void onFinishInflate() {
@@ -157,6 +163,7 @@ CharSequence varAB991E92B38590F8C1DAE21519779556_1943124057 =         mTextOff;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.011 -0400", hash_original_method = "4BCD6E00FF1D8992B4CBE123EFCE4218", hash_generated_method = "427BE4BA2CB70E76A809EA640B4D7951")
     @Override
     public void setBackgroundDrawable(Drawable d) {
@@ -169,6 +176,7 @@ CharSequence varAB991E92B38590F8C1DAE21519779556_1943124057 =         mTextOff;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.012 -0400", hash_original_method = "ECF0FA7CF2036753A46FE0C4EF856618", hash_generated_method = "4368DF37D4D4F3BE295B7CF8CA0E4405")
     private void updateReferenceToIndicatorDrawable(Drawable backgroundDrawable) {
         addTaint(backgroundDrawable.getTaint());
@@ -193,6 +201,7 @@ CharSequence varAB991E92B38590F8C1DAE21519779556_1943124057 =         mTextOff;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.013 -0400", hash_original_method = "ABBA16041C04ACF45B62A6F7D1B99CE2", hash_generated_method = "9AE24279A20F711E193BF2BB1648370F")
     @Override
     protected void drawableStateChanged() {
@@ -209,6 +218,7 @@ CharSequence varAB991E92B38590F8C1DAE21519779556_1943124057 =         mTextOff;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.014 -0400", hash_original_method = "829A7520B55299EB98890ECCFB9822BF", hash_generated_method = "A6559AD65A1F1E2AA131A5114B922936")
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {

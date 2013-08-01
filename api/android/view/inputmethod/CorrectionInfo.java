@@ -20,6 +20,7 @@ public final class CorrectionInfo implements Parcelable {
 
     private CharSequence mNewText;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.290 -0400", hash_original_method = "4BC4C4C6E34B6ABB755CFB5627F6324D", hash_generated_method = "EA69ED117B11915946ED99C129695DDB")
     public  CorrectionInfo(int offset, CharSequence oldText, CharSequence newText) {
         mOffset = offset;
@@ -32,6 +33,7 @@ public final class CorrectionInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.291 -0400", hash_original_method = "ACB844101F7B730F0891325C0B2B59C5", hash_generated_method = "B20EB25A9119C4194DCBE441924D46CF")
     private  CorrectionInfo(Parcel source) {
         mOffset = source.readInt();

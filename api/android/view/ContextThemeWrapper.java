@@ -71,6 +71,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.611 -0400", hash_original_method = "8FCBAFBE19793DC1F6F481E8EF635F38", hash_generated_method = "E2663BE27D6C4E8C87CFAFE15029DEFE")
     protected void onApplyThemeResource(Resources.Theme theme, int resid, boolean first) {
         //DSFIXME:  CODE0009: Possible callback target function detected

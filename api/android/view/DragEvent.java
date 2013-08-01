@@ -42,6 +42,7 @@ public class DragEvent implements Parcelable {
 
     private boolean mRecycled;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.609 -0400", hash_original_method = "5492E1A6EF7C89CB56D8B22EE2854B8B", hash_generated_method = "C325B7A5D23661790703116059A6FDC6")
     private  DragEvent() {
         // ---------- Original Method ----------
@@ -70,11 +71,13 @@ public class DragEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static DragEvent obtain() {
         return DragEvent.obtain(0, 0f, 0f, null, null, null, false);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DragEvent obtain(int action, float x, float y, Object localState,
             ClipDescription description, ClipData data, boolean result) {
         final DragEvent ev;
@@ -96,6 +99,7 @@ public class DragEvent implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static DragEvent obtain(DragEvent source) {
         return obtain(source.mAction, source.mX, source.mY, source.mLocalState,
                 source.mClipDescription, source.mClipData, source.mDragResult);
@@ -179,6 +183,7 @@ Object var7FD3E34206D71BA5A444CCA1F25A17E3_960813999 =         mLocalState;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.610 -0400", hash_original_method = "BFE96ED2CE5B148D8BC4E31880D4A75D", hash_generated_method = "EF856474A04634086C4B2C34FDF3EF9B")
     public final void recycle() {
         if(TRACK_RECYCLED_LOCATION)        
@@ -238,6 +243,7 @@ Object var7FD3E34206D71BA5A444CCA1F25A17E3_960813999 =         mLocalState;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.611 -0400", hash_original_method = "B115D176D9854B47E8C200D036ACDD5B", hash_generated_method = "92948203B45672654213BE459EE5FF6F")
     @Override
     public String toString() {
@@ -266,6 +272,7 @@ String var6ED7BFAC44A120FA659019E4D9D1818B_547976154 =         "DragEvent{" + In
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.611 -0400", hash_original_method = "76A8906A7EAF6555F7630460CE48F340", hash_generated_method = "5EB1F87FE15580AF4109C38917D3B50D")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);

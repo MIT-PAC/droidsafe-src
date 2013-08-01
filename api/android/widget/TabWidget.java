@@ -48,6 +48,7 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
 
     private int[] mImposedTabWidths;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.779 -0400", hash_original_method = "BAD8053A139C3B2472C278F997D22869", hash_generated_method = "ED3CDDEC2D735285C869678FBFEB686D")
     public  TabWidget(Context context) {
         this(context, null);
@@ -56,6 +57,7 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.780 -0400", hash_original_method = "09ECDBF0B3A18A9B29EEE79A768970FF", hash_generated_method = "867E705626E781EA01B2250C08DDE2D1")
     public  TabWidget(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.tabWidgetStyle);
@@ -65,6 +67,7 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.780 -0400", hash_original_method = "5CD4B242048A54DEBDC5CA30A897F614", hash_generated_method = "2C074367B612805D13D4111362C052BC")
     public  TabWidget(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -89,6 +92,7 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.780 -0400", hash_original_method = "D47B983401A0131B570217343158B99A", hash_generated_method = "8F2226E3253CFE95C847F8BCE75ECD4E")
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -154,6 +158,7 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.782 -0400", hash_original_method = "5A72EB2BE089A5D99DEFC278831DF5C3", hash_generated_method = "215AAB95A8CEF3BDD9C66FBEE2ACF491")
     private void initTabWidget() {
         setChildrenDrawingOrderEnabled(true);
@@ -192,6 +197,7 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.783 -0400", hash_original_method = "C935CB6AD095E3F37FD6E422C2C15A30", hash_generated_method = "0FF7047D18F78663FEE3749A4C7DEF02")
     @Override
      void measureChildBeforeLayout(View child, int childIndex,
@@ -224,6 +230,7 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.784 -0400", hash_original_method = "ED82522C2B0B64CD8D60C0C12518DCBA", hash_generated_method = "2D4F3289FF067F8A582597B0E2657C0D")
     @Override
      void measureHorizontal(int widthMeasureSpec, int heightMeasureSpec) {
@@ -276,6 +283,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.785 -0400", hash_original_method = "1AFF25E962A9B2EDADD57BD725ECCAB1", hash_generated_method = "892498F0F50DC5903C4A765680BD86C6")
     public View getChildTabViewAt(int index) {
         addTaint(index);
@@ -287,6 +295,7 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_851773809 =         getChildAt(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.785 -0400", hash_original_method = "FE2CEC591CEC0077A02A9DEA200F51F9", hash_generated_method = "82E42D3550512E55DFC8E3A8A4788362")
     public int getTabCount() {
         int var9B10B38940134F290E8A5D1B402D3360_763332937 = (getChildCount());
@@ -297,6 +306,7 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_851773809 =         getChildAt(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.785 -0400", hash_original_method = "BE73B200AC63DD0552B4403EEF7DD937", hash_generated_method = "AB55E333D7CE34C9A0AE495EF381DDC0")
     @Override
     public void setDividerDrawable(Drawable drawable) {
@@ -307,6 +317,7 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_851773809 =         getChildAt(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.786 -0400", hash_original_method = "3D37FAA6007791B5D3F4A4A58BCFDCCD", hash_generated_method = "F0DD6357C991D56322A7EC3D99E92F10")
     public void setDividerDrawable(int resId) {
         addTaint(resId);
@@ -316,6 +327,7 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_851773809 =         getChildAt(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.786 -0400", hash_original_method = "EEC4B8C710672EE52FF5686EC61F15E6", hash_generated_method = "E6F6197D40EF2320A5C1658CF8CEADD2")
     public void setLeftStripDrawable(Drawable drawable) {
         mLeftStrip = drawable;
@@ -328,6 +340,7 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_851773809 =         getChildAt(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.786 -0400", hash_original_method = "172131F6C0343EAF2930103340C29368", hash_generated_method = "C8FDE2DCC1226E7B55598B6C2BEF65C3")
     public void setLeftStripDrawable(int resId) {
         addTaint(resId);
@@ -337,6 +350,7 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_851773809 =         getChildAt(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.787 -0400", hash_original_method = "F30794AD8B45F99F5EA4402BF1535928", hash_generated_method = "2C8EF36288888D586A6DD40D84E1EF3B")
     public void setRightStripDrawable(Drawable drawable) {
         mRightStrip = drawable;
@@ -349,6 +363,7 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_851773809 =         getChildAt(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.787 -0400", hash_original_method = "74C61065E01D6A0285B64085050AA388", hash_generated_method = "2E829DF4318A3F1A80621F87201E5803")
     public void setRightStripDrawable(int resId) {
         addTaint(resId);
@@ -358,6 +373,7 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_851773809 =         getChildAt(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.788 -0400", hash_original_method = "7E210175CAACE05D561ED66C44B48699", hash_generated_method = "671695E1D5C7CCAAD77AD2F54ED2A777")
     public void setStripEnabled(boolean stripEnabled) {
         mDrawBottomStrips = stripEnabled;
@@ -379,6 +395,7 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_851773809 =         getChildAt(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.788 -0400", hash_original_method = "0D5FB7B547C3DEFE9E09A5210890B615", hash_generated_method = "B4B333E85E20330D5C9C12C9B676622F")
     @Override
     public void childDrawableStateChanged(View child) {
@@ -396,6 +413,7 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_851773809 =         getChildAt(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.789 -0400", hash_original_method = "9B055E7A37DD3E5EB33B478B68D4F173", hash_generated_method = "F6871FAF06F6902D5C47B79B74176933")
     @Override
     public void dispatchDraw(Canvas canvas) {
@@ -431,6 +449,7 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_851773809 =         getChildAt(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.790 -0400", hash_original_method = "FD8145AB0632DE8E66BE264294877C34", hash_generated_method = "D4D3DE8F40239BD1315E9486DF79EAA2")
     public void setCurrentTab(int index) {
         if(index < 0 || index >= getTabCount() || index == mSelectedTab)        
@@ -464,6 +483,7 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_851773809 =         getChildAt(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.791 -0400", hash_original_method = "B9A90DC4D5316593C7C6FB4F4261561D", hash_generated_method = "8325A05F99474E843565CF2DAFACB217")
     @Override
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
@@ -494,6 +514,7 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_851773809 =         getChildAt(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.791 -0400", hash_original_method = "5B381D25FD53DF8B1C9131304346B258", hash_generated_method = "F7F86676E3B27D07BF33F02FB9B9E769")
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
@@ -509,6 +530,7 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_851773809 =         getChildAt(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.792 -0400", hash_original_method = "599192C49E7FBE73C0448383135B98FF", hash_generated_method = "2869A38054E44A9DC32A9DBD759882B9")
     public void focusCurrentTab(int index) {
         addTaint(index);
@@ -527,6 +549,7 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_851773809 =         getChildAt(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.792 -0400", hash_original_method = "B57ADC02C2264C78238655AF009610DC", hash_generated_method = "FF9A843B87A86CD150F1C7854E6BC638")
     @Override
     public void setEnabled(boolean enabled) {
@@ -548,6 +571,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.793 -0400", hash_original_method = "D99503F0B5A4EFC29BAA1C76A3B67627", hash_generated_method = "C4B5637420F90D3C5F7684B2719A085C")
     @Override
     public void addView(View child) {
@@ -581,6 +605,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.793 -0400", hash_original_method = "EB030694D0FDE69DF41070C45192BD7E", hash_generated_method = "297A4D82F2CE205DB55424A2277990E7")
     @Override
     public void removeAllViews() {
@@ -592,6 +617,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.793 -0400", hash_original_method = "8812800BD81149FA7672691DBEB9912B", hash_generated_method = "76FFAE725709ADABBBE2B5614A8605BC")
     @Override
     public void sendAccessibilityEventUnchecked(AccessibilityEvent event) {
@@ -620,6 +646,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.794 -0400", hash_original_method = "4E088FBB30D7470D105CC06A4CB02903", hash_generated_method = "750D1062EF6BF8F1209EF16538201C0E")
     public void onFocusChange(View v, boolean hasFocus) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -678,6 +705,7 @@ for(int i = 0;i < count;i++)
 
         private int mTabIndex;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.795 -0400", hash_original_method = "D6AF06C429F8FB8C9AE0E71F34F47DE0", hash_generated_method = "1617D57AD98005A88EF56C0EA197663B")
         private  TabClickListener(int tabIndex) {
             mTabIndex = tabIndex;
@@ -686,6 +714,7 @@ for(int i = 0;i < count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.795 -0400", hash_original_method = "28066710625DA4D2083757F8679E5933", hash_generated_method = "30D97969D5BC4554E52315D2BB7FC89B")
         public void onClick(View v) {
             //DSFIXME:  CODE0009: Possible callback target function detected

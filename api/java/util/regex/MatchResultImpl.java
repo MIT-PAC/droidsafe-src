@@ -14,6 +14,7 @@ class MatchResultImpl implements MatchResult {
 
     private int[] offsets;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.360 -0400", hash_original_method = "2A7F503D795C5A57339C0129F572051A", hash_generated_method = "7096012F146361CD6F51844899818046")
       MatchResultImpl(String text, int[] offsets) {
         this.text = text;
@@ -24,6 +25,7 @@ class MatchResultImpl implements MatchResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.360 -0400", hash_original_method = "57032B96B3878CEC3CD253F707148B38", hash_generated_method = "D18681B6951133957AA62D6AAD1B397B")
     public int end() {
         int varCA35A8AADB641992D83E31AADD95BCC2_594865520 = (end(0));
@@ -46,6 +48,7 @@ class MatchResultImpl implements MatchResult {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.360 -0400", hash_original_method = "6ED812525C326D14A5EB91FA01A3208C", hash_generated_method = "1B4FBF38C443D4B40CD349BDD07D71C7")
     public String group() {
 String varC3BFC35EE8D0C434FE4840E3B4FC6A28_1291258090 =         text.substring(start(), end());
@@ -56,6 +59,7 @@ String varC3BFC35EE8D0C434FE4840E3B4FC6A28_1291258090 =         text.substring(s
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.360 -0400", hash_original_method = "018F540DDE0C3C1C686E1EDB2CD0CDCF", hash_generated_method = "6E4D0F279421B188BA14E08FFF4F74E2")
     public String group(int group) {
         addTaint(group);
@@ -95,6 +99,7 @@ String var2515E3E0F4436F57CDAB8003F8B9065A_1192238224 =             text.substri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.360 -0400", hash_original_method = "B8A7B4640F8CA15D86AD2B2DA38E6CD3", hash_generated_method = "2FD56FFA86C2DF8FC8E777F0C53856DC")
     public int start() {
         int var65754EB29CD48640473484E377E145B8_1030875204 = (start(0));

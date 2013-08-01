@@ -36,6 +36,7 @@ public class JarEntry extends ZipEntry {
 
     private boolean isFactoryChecked = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.841 -0400", hash_original_method = "AEA0BF7FF3634BE004E609E393DDAC13", hash_generated_method = "004F45C4360C33A8418FAF75D7A064C4")
     public  JarEntry(String name) {
         super(name);
@@ -44,6 +45,7 @@ public class JarEntry extends ZipEntry {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.841 -0400", hash_original_method = "506E89BB6203E00495B453235D9825F2", hash_generated_method = "18A7936E08334675DBAB107536A600CD")
     public  JarEntry(ZipEntry entry) {
         super(entry);
@@ -52,6 +54,7 @@ public class JarEntry extends ZipEntry {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.841 -0400", hash_original_method = "AA77415E9035EF2C32FB40C3C659C5A8", hash_generated_method = "EDB553C4BAF0AAA25B857AC0FD2A6E2F")
     public  JarEntry(JarEntry je) {
         super(je);
@@ -65,6 +68,7 @@ public class JarEntry extends ZipEntry {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.842 -0400", hash_original_method = "8B6D7741BEFEF015D0439F90F97A5465", hash_generated_method = "A9614B4938ACABC5BD96B46329535A09")
     public Attributes getAttributes() throws IOException {
         if(attributes != null || parentJar == null)        
@@ -95,6 +99,7 @@ Attributes varEC5B5AF019317A7C65484BE85B3AD11D_2077710027 =         attributes =
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.842 -0400", hash_original_method = "3CE58A412B40810ECA641FDC022C6998", hash_generated_method = "D4FCE1B172D3C1938A890D56B51354BC")
     public Certificate[] getCertificates() {
         if(parentJar == null)        
@@ -134,6 +139,7 @@ Certificate[] varD7F6AB131BE738B5E6706A18E82B3D10_299678811 =         jarVerifie
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.842 -0400", hash_original_method = "AC53E883AD9D8ECF5D160A6258BB3798", hash_generated_method = "CF44A6BC51CFE6168D9BAA78CE06B524")
     public CodeSigner[] getCodeSigners() {
         if(signers == null)        
@@ -164,6 +170,7 @@ CodeSigner[] var3F12A0424932F6B5155AA6C49B63FE6E_2118316795 =         tmp;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.842 -0400", hash_original_method = "3B125BDC3FCBCE7977A58F597174AB72", hash_generated_method = "3E62305D96AC3A2B5DF5BD0BE5B75F99")
     private CodeSigner[] getCodeSigners(Certificate[] certs) {
         addTaint(certs[0].getTaint());

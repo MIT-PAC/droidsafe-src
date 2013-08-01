@@ -3,17 +3,18 @@ package java.util.zip;
 // Droidsafe Imports
 import java.io.IOException;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
 
 public class ZipException extends IOException {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.766 -0400", hash_original_method = "2167A1F4D125B524620850E643449987", hash_generated_method = "26CDA45503C3CB1EA8909514B5B7B27F")
     public  ZipException() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.766 -0400", hash_original_method = "594D1061F67CD3EF6F4592503B4204F0", hash_generated_method = "578ACCD10E461F8BB245A2FF358B352E")
     public  ZipException(String detailMessage) {
         super(detailMessage);

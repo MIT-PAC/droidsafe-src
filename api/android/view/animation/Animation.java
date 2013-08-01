@@ -93,6 +93,7 @@ public abstract class Animation implements Cloneable {
 
     private final CloseGuard guard = CloseGuard.get();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.732 -0400", hash_original_method = "F5207BDCC3F51BB57C76C57DBA5A0AD4", hash_generated_method = "F05BFA516EF987BB837572F17670E4BF")
     public  Animation() {
         ensureInterpolator();
@@ -101,6 +102,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.733 -0400", hash_original_method = "325850FA9042895E97F9004576A85DF0", hash_generated_method = "BC526CA0AEAC0C5F917F7EADA7EA0398")
     public  Animation(Context context, AttributeSet attrs) {
         addTaint(attrs.getTaint());
@@ -128,6 +130,7 @@ public abstract class Animation implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.734 -0400", hash_original_method = "7BC58C079EA752AD7803A7DE0B66531B", hash_generated_method = "C11344045FD8F884990DD69E068B34D2")
     @Override
     protected Animation clone() throws CloneNotSupportedException {
@@ -149,6 +152,7 @@ Animation var1D3E9F798E82851E6201AD690FEA4543_406279162 =         animation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.734 -0400", hash_original_method = "3AB995FAF173BC91AA72FEE328D0BE86", hash_generated_method = "8D4043FB51D478DAAF7B549EEBB6A8F3")
     public void reset() {
         mPreviousRegion.setEmpty();
@@ -169,6 +173,7 @@ Animation var1D3E9F798E82851E6201AD690FEA4543_406279162 =         animation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.735 -0400", hash_original_method = "E313CF9FDC4A243810ECD11633502833", hash_generated_method = "7DCA98592D10FEF02347863ABB62475E")
     public void cancel() {
         if(mStarted && !mEnded)        
@@ -191,6 +196,7 @@ Animation var1D3E9F798E82851E6201AD690FEA4543_406279162 =         animation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.735 -0400", hash_original_method = "BA118FB94C8A2A7F04D6CE25751A9CE0", hash_generated_method = "EABFF5C032B25525517DC724151C7582")
     public void detach() {
         if(mStarted && !mEnded)        
@@ -220,6 +226,7 @@ Animation var1D3E9F798E82851E6201AD690FEA4543_406279162 =         animation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.736 -0400", hash_original_method = "9B9AA705D4796FA141302715AF35F1C7", hash_generated_method = "1466AD62711EB1308AA4122A1AE85EA2")
     public void initialize(int width, int height, int parentWidth, int parentHeight) {
         addTaint(parentHeight);
@@ -234,6 +241,7 @@ Animation var1D3E9F798E82851E6201AD690FEA4543_406279162 =         animation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.737 -0400", hash_original_method = "2C6481DDCCEAC913795356C9BF1AF628", hash_generated_method = "FBCFFDB8934B412FCF947D3B533DE793")
     public void setInterpolator(Context context, int resID) {
         addTaint(resID);
@@ -262,6 +270,7 @@ Animation var1D3E9F798E82851E6201AD690FEA4543_406279162 =         animation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.738 -0400", hash_original_method = "C4FADDE7E113E13802025E54418B7E99", hash_generated_method = "B2CA60ED2DDD4AF4061254957D948A1D")
     public void setDuration(long durationMillis) {
         if(durationMillis < 0)        
@@ -365,6 +374,7 @@ Animation var1D3E9F798E82851E6201AD690FEA4543_406279162 =         animation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.739 -0400", hash_original_method = "95CC5B32D25F554AB1041684F2D9EFB3", hash_generated_method = "C2C0CAF344BAFEE463FD4717BEBB205F")
     public void start() {
         setStartTime(-1);
@@ -373,6 +383,7 @@ Animation var1D3E9F798E82851E6201AD690FEA4543_406279162 =         animation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.739 -0400", hash_original_method = "66165BC7696DE4F74728FD45F7498148", hash_generated_method = "A6131EE72377D167A51760B30339E8DF")
     public void startNow() {
         setStartTime(AnimationUtils.currentAnimationTimeMillis());
@@ -634,6 +645,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_901665076 =         mInterpolat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.742 -0400", hash_original_method = "B0865E74040125EA32BE48261064C937", hash_generated_method = "793ED1247E55BB87475DDB7CEC9F20FF")
     protected void ensureInterpolator() {
         if(mInterpolator == null)        
@@ -647,6 +659,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_901665076 =         mInterpolat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.742 -0400", hash_original_method = "B3F1AB6DDEFF92B122293B4363A1C456", hash_generated_method = "AE1FFFFD4E33F07FD038C2E62D920165")
     public long computeDurationHint() {
         long var0B2285DA4F2EC970D16574DF97CEF337_47990813 = ((getStartOffset() + getDuration()) * (getRepeatCount() + 1));
@@ -657,6 +670,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_901665076 =         mInterpolat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.743 -0400", hash_original_method = "1D66EEFFAD10DF7675973FFD0CA72C11", hash_generated_method = "5981C80A70A70D356F814FC6823DCC3E")
     public boolean getTransformation(long currentTime, Transformation outTransformation) {
         addTaint(outTransformation.getTaint());
@@ -750,6 +764,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_901665076 =         mInterpolat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.743 -0400", hash_original_method = "2D55A6E78A3D329DDFA1835011833D50", hash_generated_method = "15F95B27B0988A35D61AB1BA756C60DB")
     public boolean getTransformation(long currentTime, Transformation outTransformation,
             float scale) {
@@ -835,6 +850,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.744 -0400", hash_original_method = "CF5E77120A30A36E6B295FA946811571", hash_generated_method = "7298B4134AF9D7C22EC5B952093B299A")
     public void getInvalidateRegion(int left, int top, int right, int bottom,
             RectF invalidate, Transformation transformation) {
@@ -874,6 +890,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.744 -0400", hash_original_method = "CE5BD1162FB4278724A9276A03F0A96A", hash_generated_method = "ED2C6D2087CE238AB85C759D8587D6EB")
     public void initializeInvalidateRegion(int left, int top, int right, int bottom) {
         addTaint(bottom);
@@ -899,6 +916,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.744 -0400", hash_original_method = "F91EB5DE0AE774B21AEF523039CEDA53", hash_generated_method = "4FC404922D16035511CDB345D355CC3C")
     protected void finalize() throws Throwable {
         try 
@@ -949,6 +967,7 @@ switch(type){
         }
 
 
+        @DSModeled(DSC.SAFE)
         static Description parseValue(TypedValue value) {
             Description d = new Description();
             if (value == null) {

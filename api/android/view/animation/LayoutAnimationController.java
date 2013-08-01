@@ -36,6 +36,7 @@ public class LayoutAnimationController {
 
     private long mMaxDelay;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.021 -0400", hash_original_method = "E3D4984E609CD7A8F1E539254F42C7CB", hash_generated_method = "6599FBA1793D0D999F80A5DF15D5270C")
     public  LayoutAnimationController(Context context, AttributeSet attrs) {
         addTaint(attrs.getTaint());
@@ -74,6 +75,7 @@ public class LayoutAnimationController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.022 -0400", hash_original_method = "F5882907CA59BB2AE2BDFE73A922FA4E", hash_generated_method = "2EAF47A6EA8A6AEDDCA1D592BA1B3308")
     public  LayoutAnimationController(Animation animation) {
         this(animation, 0.5f);
@@ -82,6 +84,7 @@ public class LayoutAnimationController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.022 -0400", hash_original_method = "2D34A90DB159467DA6803B576AE47B5C", hash_generated_method = "57A02ECF74DFF799389B5B731A434AE3")
     public  LayoutAnimationController(Animation animation, float delay) {
         addTaint(animation.getTaint());
@@ -113,6 +116,7 @@ public class LayoutAnimationController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.023 -0400", hash_original_method = "DA137DCBF1E5E58EF4425067063E3D6F", hash_generated_method = "2B206605AF532EE5314F1209E68A2FA4")
     public void setAnimation(Context context, int resourceID) {
         addTaint(resourceID);
@@ -123,6 +127,7 @@ public class LayoutAnimationController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.024 -0400", hash_original_method = "B4A74FA6048B5852F1E265E64E11FC0D", hash_generated_method = "650036FF6A01BD934E9A839927003C94")
     public void setAnimation(Animation animation) {
         mAnimation = animation;
@@ -144,6 +149,7 @@ Animation var267087685D2F38DE7EECB639921105B0_718209640 =         mAnimation;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.024 -0400", hash_original_method = "66DF0F8C4443D43AC8C0B59FD3C0EE80", hash_generated_method = "8A3E40D82369492DCD0C118058CAE68A")
     public void setInterpolator(Context context, int resourceID) {
         addTaint(resourceID);
@@ -205,6 +211,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_1922033093 =         mInterpola
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.026 -0400", hash_original_method = "78D31C459A561793AE549A78D34651C2", hash_generated_method = "28ED2DD3D8DE8D02B2A83588A15C5A4B")
     public void start() {
         mDuration = mAnimation.getDuration();
@@ -217,6 +224,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_1922033093 =         mInterpola
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.027 -0400", hash_original_method = "96F3EFCD32C49E23FCBCF1FC0105A7B0", hash_generated_method = "B68418523798779CE830A7E38EC97637")
     public final Animation getAnimationForView(View view) {
         addTaint(view.getTaint());
@@ -249,6 +257,7 @@ Animation var540C13E9E156B687226421B24F2DF178_1233627369 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.027 -0400", hash_original_method = "F6685E165800CF46F16D582CC6341EDA", hash_generated_method = "6E58660318A8F9DDD37247549C074D89")
     public boolean isDone() {
         boolean var8CADBAA2AEA174A3CC501FAC0D1F9F89_1999490876 = (AnimationUtils.currentAnimationTimeMillis() >
@@ -261,6 +270,7 @@ Animation var540C13E9E156B687226421B24F2DF178_1233627369 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.028 -0400", hash_original_method = "C5014C66E1BA1577E6F39C7457247B02", hash_generated_method = "BC665EE440534CE70FDE21B0B332A649")
     protected long getDelayForView(View view) {
         addTaint(view.getTaint());
@@ -302,6 +312,7 @@ Animation var540C13E9E156B687226421B24F2DF178_1233627369 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.029 -0400", hash_original_method = "305795D5C2AE9556CA8D226C9088184E", hash_generated_method = "006CD072F922E861C2C8CA3BD936CA94")
     protected int getTransformedIndex(AnimationParameters params) {
         addTaint(params.getTaint());

@@ -269,6 +269,7 @@ V varDC838461EE2FA0CA4C9BBB70A15456B0_1043780877 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.375 -0400", hash_original_method = "A47B461F1595004F5F78D5AE91E8DCD0", hash_generated_method = "2EAD98AAFBE9EE42B51B0C4F155BDEA0")
      Node<K, V> find(K key, Relation relation) {
         addTaint(relation.getTaint());

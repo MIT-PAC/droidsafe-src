@@ -4,8 +4,7 @@ package android.view.animation;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
 
 public class RotateAnimation extends Animation {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.067 -0400", hash_original_field = "A15722F5083687A94AEBECFD3C44711E", hash_generated_field = "F09C4FDC9F6C8A1D9CB749F5F6E5EB01")
@@ -33,6 +32,7 @@ public class RotateAnimation extends Animation {
 
     private float mPivotY;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.069 -0400", hash_original_method = "B7950BF16E5DA5C93A26B94851E70CDD", hash_generated_method = "6710F3E1A38977FDA17C23E2AC15D2DC")
     public  RotateAnimation(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -70,6 +70,7 @@ public class RotateAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.070 -0400", hash_original_method = "F93E828358C80C590EEB448A5EA60EF3", hash_generated_method = "C676D9303416F964F963833EFA0F7DEE")
     public  RotateAnimation(float fromDegrees, float toDegrees) {
         mFromDegrees = fromDegrees;
@@ -84,6 +85,7 @@ public class RotateAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.071 -0400", hash_original_method = "19A86326052CAD17DE162EF74120BA6A", hash_generated_method = "EFE11A3109A54F1122A453C75C28FC74")
     public  RotateAnimation(float fromDegrees, float toDegrees, float pivotX, float pivotY) {
         mFromDegrees = fromDegrees;
@@ -102,6 +104,7 @@ public class RotateAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.072 -0400", hash_original_method = "72ECE06422A744A3901DF4DB74918F78", hash_generated_method = "895C542E1008EB5525AB8D4C914CF5A2")
     public  RotateAnimation(float fromDegrees, float toDegrees, int pivotXType, float pivotXValue,
             int pivotYType, float pivotYValue) {
@@ -121,6 +124,7 @@ public class RotateAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.073 -0400", hash_original_method = "194AFADB87C10F3B1916BACFE93A5B2C", hash_generated_method = "DC9217BB35C7E656A933D57EF603F811")
     @Override
     protected void applyTransformation(float interpolatedTime, Transformation t) {
@@ -147,6 +151,7 @@ public class RotateAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.074 -0400", hash_original_method = "45493CF0F005891678EBD20A791168F1", hash_generated_method = "53783E9B1C23799F49072FEC34253244")
     @Override
     public void initialize(int width, int height, int parentWidth, int parentHeight) {

@@ -4,8 +4,7 @@ package android.view.animation;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
 
 public class TranslateAnimation extends Animation {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.168 -0400", hash_original_field = "30596AFED90526D901C7B838CDCC0CDB", hash_generated_field = "53B23801C0E3E8220D6B059716F97974")
@@ -45,6 +44,7 @@ public class TranslateAnimation extends Animation {
 
     private float mToYDelta;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.170 -0400", hash_original_method = "A16A4EA57E6F92D9F93733BFB1359F59", hash_generated_method = "6D60054BA9D40678D83C6B37E381FF9A")
     public  TranslateAnimation(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -74,6 +74,7 @@ public class TranslateAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.172 -0400", hash_original_method = "3F07A84DAAC1EE50E22F719B3019603F", hash_generated_method = "F6D5C9D025C5DE0DBBF80D89A5392DFC")
     public  TranslateAnimation(float fromXDelta, float toXDelta, float fromYDelta, float toYDelta) {
         mFromXValue = fromXDelta;
@@ -96,6 +97,7 @@ public class TranslateAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.173 -0400", hash_original_method = "D0D15BEA3C16DDFD23FD148FD42664E4", hash_generated_method = "825858649B41C5A9D8D90FE313426A6D")
     public  TranslateAnimation(int fromXType, float fromXValue, int toXType, float toXValue,
             int fromYType, float fromYValue, int toYType, float toYValue) {
@@ -119,6 +121,7 @@ public class TranslateAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.174 -0400", hash_original_method = "A766E69C82E8D177EAD959BF3BB9235A", hash_generated_method = "577CE3A6EA9D2996267E94F0704F6D88")
     @Override
     protected void applyTransformation(float interpolatedTime, Transformation t) {
@@ -148,6 +151,7 @@ public class TranslateAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.176 -0400", hash_original_method = "8DB34CFBDCDCD857D21DC05DC5D03D8B", hash_generated_method = "DF56667F248A77764539EC597F374BEC")
     @Override
     public void initialize(int width, int height, int parentWidth, int parentHeight) {

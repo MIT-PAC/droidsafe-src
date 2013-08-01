@@ -33,6 +33,7 @@ public class InflaterInputStream extends FilterInputStream {
 
     int nativeEndBufSize = 0;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.691 -0400", hash_original_method = "E5B01AC162409617460AC7C3F79F7BB2", hash_generated_method = "11FC9829F371C62B2D8E7DBEDEBCF710")
     public  InflaterInputStream(InputStream is) {
         this(is, new Inflater(), BUF_SIZE);
@@ -41,6 +42,7 @@ public class InflaterInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.692 -0400", hash_original_method = "FFCF6E0CDA6D7391850CE9D2857BF932", hash_generated_method = "24DBBED2A1216EA5EB3BF61FED6FD656")
     public  InflaterInputStream(InputStream is, Inflater inflater) {
         this(is, inflater, BUF_SIZE);
@@ -50,6 +52,7 @@ public class InflaterInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.693 -0400", hash_original_method = "C80CB7FC71CBD6181B9FF475CD694AFF", hash_generated_method = "0F11B0C54E5C4D7991CA297D47D34D96")
     public  InflaterInputStream(InputStream is, Inflater inflater, int bsize) {
         super(is);
@@ -91,6 +94,7 @@ public class InflaterInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.694 -0400", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "40F7281CD7A95BA9C94DBF0DBF420405")
     @Override
     public int read() throws IOException {
@@ -102,6 +106,7 @@ public class InflaterInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.695 -0400", hash_original_method = "DE515D2D289FDA03BF01DDF0E0AD6AE1", hash_generated_method = "DC8862025EDFEF88CE804BC1CACBEB90")
     @Override
     public int read(byte[] buffer, int offset, int byteCount) throws IOException {
@@ -182,6 +187,7 @@ public class InflaterInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.696 -0400", hash_original_method = "92AAFAE1121490A2E461EB88A6DC741C", hash_generated_method = "4AE7034CA4125BA66E742BCA4C3BFBBB")
     protected void fill() throws IOException {
         checkClosed();
@@ -222,6 +228,7 @@ public class InflaterInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.697 -0400", hash_original_method = "A9123C6756DDC4D0ED42EE705B1E650B", hash_generated_method = "49BDDB87A27098592E2DB3D46462A203")
     @Override
     public long skip(long byteCount) throws IOException {
@@ -243,6 +250,7 @@ public class InflaterInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.697 -0400", hash_original_method = "CA27A6E1F269DA8120632D3AC729E489", hash_generated_method = "420738295A46A3571105E522631DAEFA")
     @Override
     public int available() throws IOException {
@@ -265,6 +273,7 @@ public class InflaterInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.698 -0400", hash_original_method = "EA60532C802B6FAE0DE9014BA74F497F", hash_generated_method = "FE151E217601372EBB465CF0AAC5B660")
     @Override
     public void close() throws IOException {
@@ -294,6 +303,7 @@ public class InflaterInputStream extends FilterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.698 -0400", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "51EC38CEC6F7856305461F6FAE398AD6")
     @Override
     public void reset() throws IOException {

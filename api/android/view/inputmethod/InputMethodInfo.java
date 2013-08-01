@@ -50,6 +50,7 @@ public final class InputMethodInfo implements Parcelable {
 
     private boolean mIsAuxIme;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.602 -0400", hash_original_method = "89874ED803E39B5F353BEED5B6B29424", hash_generated_method = "F33B66CC8F8D6666A7BB774EB1215D95")
     public  InputMethodInfo(Context context, ResolveInfo service) throws XmlPullParserException, IOException {
         this(context, service, null);
@@ -181,6 +182,7 @@ for(int i = 0;i < N;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.609 -0400", hash_original_method = "408133FF0ACC2482487194D0CAB563F8", hash_generated_method = "BB70880FF8A7B7B804EA683372E90436")
       InputMethodInfo(Parcel source) {
         mId = source.readString();
@@ -199,6 +201,7 @@ for(int i = 0;i < N;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.613 -0400", hash_original_method = "530FB6E934B0A6A853BD43F0002757A2", hash_generated_method = "3D340D9430D7166AD960AE610713F156")
     public  InputMethodInfo(String packageName, String className,
             CharSequence label, String settingsActivity) {
@@ -345,6 +348,7 @@ String varF52598D579FB7EF6DE23C12DD22DC004_1413239720 =         mSettingsActivit
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.615 -0400", hash_original_method = "8DB3E81066DAFF6D6FC518E613D3324D", hash_generated_method = "28AD2E2488EF01AE8AB100A08EFD1EFB")
     public InputMethodSubtype getSubtypeAt(int index) {
         addTaint(index);

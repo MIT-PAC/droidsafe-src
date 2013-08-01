@@ -30,6 +30,7 @@ public class Inflater {
 
     private final CloseGuard guard = CloseGuard.get();
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.654 -0400", hash_original_method = "52564046B1BB792C24EFCB3BD00F948F", hash_generated_method = "AC707E8623E67425139398D18FBF6D77")
     public  Inflater() {
         this(false);
@@ -56,6 +57,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.656 -0400", hash_original_method = "2BA55F9CC22F910CD3563C29BAA19EFA", hash_generated_method = "E2BE49D33080C68EF930B0F0DDD61B0D")
     public synchronized void end() {
         guard.close();
@@ -235,6 +237,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.661 -0400", hash_original_method = "7C5FBD7958B67E2748697C6AE75EF54A", hash_generated_method = "E2ED8618FE13124E5EA1F405364E9DCC")
     public int inflate(byte[] buf) throws DataFormatException {
         addTaint(buf[0]);
@@ -246,6 +249,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.662 -0400", hash_original_method = "A9BECE182D792DD8518CBB91F9F00FF9", hash_generated_method = "1F7853392C64D40589AFEF95EF9EF78F")
     public synchronized int inflate(byte[] buf, int offset, int byteCount) throws DataFormatException {
         addTaint(byteCount);
@@ -317,6 +321,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.664 -0400", hash_original_method = "0513FF2BBDC9BF2AA8F8AFEEBE87C2FB", hash_generated_method = "9138E4362FA0CE03C0B84709CEB65B62")
     public synchronized void reset() {
         checkOpen();
@@ -339,6 +344,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.665 -0400", hash_original_method = "49DAD22714BA16C1AC9D80CF714D4798", hash_generated_method = "29F4987B3EDC9F789F4884806618B350")
     public synchronized void setDictionary(byte[] dictionary) {
         addTaint(dictionary[0]);
@@ -348,6 +354,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.666 -0400", hash_original_method = "568AFB946554DE560CCB8443B419A0F6", hash_generated_method = "1F8CA16C85F6C4079C1E5679BE9CA957")
     public synchronized void setDictionary(byte[] dictionary, int offset, int byteCount) {
         addTaint(byteCount);
@@ -379,6 +386,7 @@ public class Inflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.667 -0400", hash_original_method = "D18140A9F42CF395349CBB05A8109835", hash_generated_method = "89768F05B7E01AB0E40B62686905C084")
     public synchronized void setInput(byte[] buf, int offset, int byteCount) {
         addTaint(offset);

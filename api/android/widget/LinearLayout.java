@@ -81,6 +81,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public LinearLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         /*
@@ -110,7 +111,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public void setShowDividers(int showDividers) {
         addTaint(showDividers);
         requestLayout();
@@ -130,7 +131,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public void setDividerDrawable(Drawable divider) {
         if (divider != null) {
             mDividerWidth = divider.getIntrinsicWidth();
@@ -221,6 +222,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public int getBaseline() {
         if (mBaselineAlignedChildIndex < 0) {
@@ -265,6 +267,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @android.view.RemotableViewMethod
     public void setBaselineAlignedChildIndex(int i) {
         if ((i < 0) || (i >= getChildCount())) {
@@ -275,11 +278,13 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     View getVirtualChildAt(int index) {
         return getChildAt(index);
     }
 
     
+    @DSModeled(DSC.SAFE)
     int getVirtualChildCount() {
         return getChildCount();
     }
@@ -291,6 +296,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @android.view.RemotableViewMethod
     public void setWeightSum(float weightSum) {
         mWeightSum = Math.max(0.0f, weightSum);
@@ -308,6 +314,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     protected boolean hasDividerBeforeChildAt(int childIndex) {
         if (childIndex == 0) {
             return (mShowDividers & SHOW_DIVIDER_BEGINNING) != 0;
@@ -327,6 +334,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     void measureVertical(int widthMeasureSpec, int heightMeasureSpec) {
         mTotalLength = 0;
         int maxWidth = 0;
@@ -517,6 +525,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private void forceUniformWidth(int count, int heightMeasureSpec) {
         int uniformMeasureSpec = MeasureSpec.makeMeasureSpec(getMeasuredWidth(),
                 MeasureSpec.EXACTLY);
@@ -535,6 +544,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     void measureHorizontal(int widthMeasureSpec, int heightMeasureSpec) {
         mTotalLength = 0;
         int maxHeight = 0;
@@ -802,6 +812,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private void forceUniformHeight(int count, int widthMeasureSpec) {
         int uniformMeasureSpec = MeasureSpec.makeMeasureSpec(getMeasuredHeight(),
                 MeasureSpec.EXACTLY);
@@ -832,6 +843,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     void measureChildBeforeLayout(View child, int childIndex,
             int widthMeasureSpec, int totalWidth, int heightMeasureSpec,
             int totalHeight) {
@@ -863,6 +875,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     void layoutVertical() {
         final int paddingLeft = mPaddingLeft;
         int childTop;
@@ -926,6 +939,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     void layoutHorizontal() {
         final boolean isLayoutRtl = isLayoutRtl();
         final int paddingTop = mPaddingTop;
@@ -1019,6 +1033,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void setOrientation(int orientation) {
         if (mOrientation != orientation) {
             mOrientation = orientation;
@@ -1033,6 +1048,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @android.view.RemotableViewMethod
     public void setGravity(int gravity) {
         if (mGravity != gravity) {
@@ -1070,12 +1086,14 @@ public class LinearLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
         return new LinearLayout.LayoutParams(getContext(), attrs);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
     protected LayoutParams generateDefaultLayoutParams() {
         if (mOrientation == HORIZONTAL) {
@@ -1122,6 +1140,7 @@ public class LinearLayout extends ViewGroup {
         })
         public int gravity = -1;
         
+        @DSModeled(DSC.SAFE)
         public LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
             TypedArray a =
@@ -1132,28 +1151,33 @@ public class LinearLayout extends ViewGroup {
         }
 
         
+        @DSModeled(DSC.SAFE)
         public LayoutParams(int width, int height) {
             super(width, height);
             weight = 0;
         }
 
         
+        @DSModeled(DSC.SAFE)
         public LayoutParams(int width, int height, float weight) {
             super(width, height);
             this.weight = weight;
         }
 
         
+        @DSModeled(DSC.SAFE)
         public LayoutParams(ViewGroup.LayoutParams p) {
             super(p);
         }
 
         
+        @DSModeled(DSC.SAFE)
         public LayoutParams(MarginLayoutParams source) {
             super(source);
         }
 
         
+        @DSModeled(DSC.SAFE)
         @Override
         public String debug(String output) {
             return output + "LinearLayout.LayoutParams={width=" + sizeToString(width) +

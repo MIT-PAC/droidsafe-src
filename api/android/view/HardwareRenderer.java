@@ -73,6 +73,7 @@ public abstract class HardwareRenderer {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isAvailable() {
         return GLES20Canvas.isAvailable();
     }
@@ -122,6 +123,7 @@ public abstract class HardwareRenderer {
     abstract HardwareCanvas getCanvas();
 
     
+    @DSModeled(DSC.SAFE)
     public static void setupDiskCache(File cacheDir) {
         nSetupShadersDiskCache(new File(cacheDir, CACHE_PATH_SHADERS).getAbsolutePath());
     }

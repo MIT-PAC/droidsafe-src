@@ -309,6 +309,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_821147901 =         this;
 
         int[][] mStateSets;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.718 -0400", hash_original_method = "51F130A45558C85B3D3E7CFC8D91F8BC", hash_generated_method = "F2BDA02434E71B3CCA25723DE4414543")
           StateListState(StateListState orig, StateListDrawable owner, Resources res) {
             super(orig, owner, res);
@@ -331,6 +332,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_821147901 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.719 -0400", hash_original_method = "E4505B2AE7EA07FF537AEC799B3546D0", hash_generated_method = "48D99F528E2900043B053DD239FD95DC")
          int addStateSet(int[] stateSet, Drawable drawable) {
             addTaint(drawable.getTaint());
@@ -346,6 +348,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_821147901 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.720 -0400", hash_original_method = "A182AEBDD3B8E6EFB499434DA2A68669", hash_generated_method = "9C7BA2243DE254CEFA414D626EEAC422")
         private int indexOfStateSet(int[] stateSet) {
             addTaint(stateSet[0]);
@@ -375,6 +378,7 @@ for(int i = 0;i < N;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.720 -0400", hash_original_method = "56C51D0FF73BF2A3F52E87DDE967AFF6", hash_generated_method = "D61E8E465E974C2679E95614BDDD67B3")
         @Override
         public Drawable newDrawable() {
@@ -386,6 +390,7 @@ Drawable varEED792F364498887068F4C843B499730_1010485200 =             new StateL
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.721 -0400", hash_original_method = "DF4CF834DF74C8FC36C20E482CEB7672", hash_generated_method = "CE117BF3470D94F92061B81FEFA566A5")
         @Override
         public Drawable newDrawable(Resources res) {
@@ -398,6 +403,7 @@ Drawable var4086C67B7F04528705B04C50F83B6E68_287091177 =             new StateLi
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.721 -0400", hash_original_method = "CF45914111E05D752375948053626E9D", hash_generated_method = "35731A7145287B4685FFB18DAE69FE9E")
         @Override
         public void growArray(int oldSize, int newSize) {

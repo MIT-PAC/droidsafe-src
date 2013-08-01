@@ -330,6 +330,7 @@ Set<K> varCB23CF4AFB8B7AE1843E733C4B0CC600_2143342539 =         keySet;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.598 -0400", hash_original_method = "0FAB728DBD67C753D3CD4965FE16DA6D", hash_generated_method = "035358D943ABD0C4952276CAE8F281A0")
     @Override
     @SuppressWarnings("unchecked")
@@ -356,6 +357,7 @@ V var9BB0B2FF0AC3AF2A11FC956ABA5FBB6B_365580803 =         putImpl(key, value);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.598 -0400", hash_original_method = "2531311459BDF6AE48398CDBD33066ED", hash_generated_method = "1E87C04AFB47B49E5DA4D6054D79D762")
     @Override
     @SuppressWarnings("unchecked")
@@ -560,6 +562,7 @@ for(int i = elementCount;i > 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.606 -0400", hash_original_method = "1C83BB92B4CC56A2EE4CEBB2A5F2E79E", hash_generated_method = "B309462D2B25E23BA52DF5AC1FFE28BB")
     @SuppressWarnings("unchecked")
     private V putImpl(K key, V value) {

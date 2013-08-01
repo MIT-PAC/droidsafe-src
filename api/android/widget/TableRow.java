@@ -31,6 +31,7 @@ public class TableRow extends LinearLayout {
 
     private ChildrenTracker mChildrenTracker;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.907 -0400", hash_original_method = "F9A2694D9D8F1C73F4893642416A48B8", hash_generated_method = "56E83A0AC3E18FB0002889A30674203E")
     public  TableRow(Context context) {
         super(context);
@@ -41,6 +42,7 @@ public class TableRow extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.907 -0400", hash_original_method = "BE346953D196911D47A80804A6B74A8F", hash_generated_method = "300220A05422A3E34C81A971B838F7C2")
     public  TableRow(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -52,6 +54,7 @@ public class TableRow extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.908 -0400", hash_original_method = "B661864F11557636EAA2570C7969C441", hash_generated_method = "E395E78C0A9DF3EE12C41B6902B70F99")
     private void initTableRow() {
         OnHierarchyChangeListener oldListener = mOnHierarchyChangeListener;
@@ -71,6 +74,7 @@ public class TableRow extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.908 -0400", hash_original_method = "F95EB07610207091F5D59E2132ED055F", hash_generated_method = "A6C34719D5BC5EAEF3D35F33F4D66EAC")
     @Override
     public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
@@ -81,6 +85,7 @@ public class TableRow extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.909 -0400", hash_original_method = "2321E3900029B8CC8621E7719358502D", hash_generated_method = "B21CC0B2CFDC5618A00642534AB09F2F")
      void setColumnCollapsed(int columnIndex, boolean collapsed) {
         addTaint(collapsed);
@@ -98,6 +103,7 @@ public class TableRow extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.909 -0400", hash_original_method = "F6BA9F18146785AE4528780F68777354", hash_generated_method = "E873D5CDA21214690D9D00F575343D1B")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -110,6 +116,7 @@ public class TableRow extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.909 -0400", hash_original_method = "614377E7AFFD7D8A3CEA03D0F029C6C2", hash_generated_method = "3D356C9BB5909431B068992549D273BE")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
@@ -125,6 +132,7 @@ public class TableRow extends LinearLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.910 -0400", hash_original_method = "76BF09C7D97AC336E0857E346F87F26E", hash_generated_method = "F4836A724F6690D5B6F3326536220835")
     @Override
     public View getVirtualChildAt(int i) {
@@ -155,6 +163,7 @@ View var540C13E9E156B687226421B24F2DF178_795791513 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.910 -0400", hash_original_method = "C68DDC21BA155D9A2863642050B804BE", hash_generated_method = "C2C4D9865305BD6FE4C48E918EE525F6")
     @Override
     public int getVirtualChildCount() {
@@ -173,6 +182,7 @@ View var540C13E9E156B687226421B24F2DF178_795791513 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.912 -0400", hash_original_method = "4E55577CF2059CB35F704B8E869B19CD", hash_generated_method = "DFBA4D5337AB401D5827AF7467BF4E0D")
     private void mapIndexAndColumns() {
         if(mColumnToChildIndex == null)        
@@ -230,6 +240,7 @@ for(int j = 0;j < layoutParams.span;j++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.915 -0400", hash_original_method = "21A01BD04BAB3B03D9551E5E2A120920", hash_generated_method = "110EA9D6EC4639B514D43A7A10FDFC0E")
     @Override
      void measureChildBeforeLayout(View child, int childIndex,
@@ -297,6 +308,7 @@ switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.916 -0400", hash_original_method = "B06729C46F9CA4132172A65B967C7D51", hash_generated_method = "12F7BE96FB0396B69489497CC4D2E12E")
     @Override
      int getChildrenSkipCount(View child, int index) {
@@ -312,6 +324,7 @@ switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.916 -0400", hash_original_method = "B1A714BE7A14CFDA42294606652D195E", hash_generated_method = "3FEAFB0836170C525B5ED77DA7FD1D21")
     @Override
      int getLocationOffset(View child) {
@@ -324,6 +337,7 @@ switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.917 -0400", hash_original_method = "6629CED69C690D63986C2D59A68F69D3", hash_generated_method = "4A9ECC0EC8D633D2D4DA57A85300777F")
     @Override
      int getNextLocationOffset(View child) {
@@ -336,6 +350,7 @@ switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.918 -0400", hash_original_method = "F97D9B3BAD7BE3BFEC03988909D08EE2", hash_generated_method = "289734CBD943B093CFD3A0D92535F3B8")
      int[] getColumnsWidths(int widthMeasureSpec) {
         addTaint(widthMeasureSpec);
@@ -386,6 +401,7 @@ switch(layoutParams.width){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.919 -0400", hash_original_method = "00077407B55623ED0FDC934F0F688424", hash_generated_method = "B465DB1BE82009FAFB6CD098F66B2E3D")
      void setColumnsWidthConstraints(int[] columnWidths) {
         if(columnWidths == null || columnWidths.length < getVirtualChildCount())        
@@ -405,6 +421,7 @@ switch(layoutParams.width){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.919 -0400", hash_original_method = "52AE7360396A37641601CBCD86366395", hash_generated_method = "26E23711EDEF66F37CFEF97B45DF60F0")
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
@@ -417,6 +434,7 @@ LayoutParams varC7625554D74072815E6357FFCA5F5213_889426775 =         new TableRo
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.919 -0400", hash_original_method = "CBDF0BDAD2221E25AE8470C9AB157031", hash_generated_method = "E4B6BDBE9781982761940419F0F47C72")
     @Override
     protected LinearLayout.LayoutParams generateDefaultLayoutParams() {
@@ -441,6 +459,7 @@ LinearLayout.LayoutParams varD2F9AF19F351B83E6231407281521B68_1426873565 =      
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.919 -0400", hash_original_method = "BBEB2ACD1EFF73877451077ABC9022BA", hash_generated_method = "A3AEAEC138E7B8A5C6EC0A01664DD43F")
     @Override
     protected LinearLayout.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
@@ -464,6 +483,7 @@ LinearLayout.LayoutParams varB945D213E5036F8DDF9B40811234DF64_292827316 =       
 
         private int[] mOffset = new int[2];
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.920 -0400", hash_original_method = "E5D3961F929E7A203A8A944132C09ABE", hash_generated_method = "CF6C057A83F5634145A489ADB453A357")
         public  LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
@@ -491,6 +511,7 @@ LinearLayout.LayoutParams varB945D213E5036F8DDF9B40811234DF64_292827316 =       
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.920 -0400", hash_original_method = "DCEE7ED44A87D406D3E35C60D8DCDFD7", hash_generated_method = "20E69B8E97D2E3A992939C41052C5AD2")
         public  LayoutParams(int w, int h) {
             super(w, h);
@@ -504,6 +525,7 @@ LinearLayout.LayoutParams varB945D213E5036F8DDF9B40811234DF64_292827316 =       
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.921 -0400", hash_original_method = "AC2D690BD2E1EA15E67B11BD37629B19", hash_generated_method = "DE0E4C500DE374E598A108BDABC2FE3D")
         public  LayoutParams(int w, int h, float initWeight) {
             super(w, h, initWeight);
@@ -518,6 +540,7 @@ LinearLayout.LayoutParams varB945D213E5036F8DDF9B40811234DF64_292827316 =       
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.921 -0400", hash_original_method = "5AA50E380D57ACDFC498CDB1B1E9AFBA", hash_generated_method = "D51E0843B736F81679DA6F5102944259")
         public  LayoutParams() {
             super(MATCH_PARENT, WRAP_CONTENT);
@@ -529,6 +552,7 @@ LinearLayout.LayoutParams varB945D213E5036F8DDF9B40811234DF64_292827316 =       
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.921 -0400", hash_original_method = "151219291568C02E222942C0989F524E", hash_generated_method = "652CDC09119E13725C36A1627D245320")
         public  LayoutParams(int column) {
             this();
@@ -538,6 +562,7 @@ LinearLayout.LayoutParams varB945D213E5036F8DDF9B40811234DF64_292827316 =       
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.922 -0400", hash_original_method = "DE4ED36682A1028E303BDCC28A48E06F", hash_generated_method = "66B55E9EFECAB48B3D28D153941B8308")
         public  LayoutParams(ViewGroup.LayoutParams p) {
             super(p);
@@ -546,6 +571,7 @@ LinearLayout.LayoutParams varB945D213E5036F8DDF9B40811234DF64_292827316 =       
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.922 -0400", hash_original_method = "CC87BD4B8C067788FA2BA37DBA116F62", hash_generated_method = "BDFD9CE52FB4D6304CCFF1CA731BA0A9")
         public  LayoutParams(MarginLayoutParams source) {
             super(source);
@@ -554,6 +580,7 @@ LinearLayout.LayoutParams varB945D213E5036F8DDF9B40811234DF64_292827316 =       
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.923 -0400", hash_original_method = "FC68734AF1365F8395009E059E8FEC81", hash_generated_method = "9BC9AB191252B2B65D8117351FFF8CA5")
         @Override
         protected void setBaseAttributes(TypedArray a, int widthAttr, int heightAttr) {
@@ -621,6 +648,7 @@ LinearLayout.LayoutParams varB945D213E5036F8DDF9B40811234DF64_292827316 =       
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.923 -0400", hash_original_method = "0A8BC7BCBC1B19A4EC6087AEE2DC9AC1", hash_generated_method = "950EA03973C380A3D9816B05572FEAAA")
         public void onChildViewAdded(View parent, View child) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -639,6 +667,7 @@ LinearLayout.LayoutParams varB945D213E5036F8DDF9B40811234DF64_292827316 =       
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.924 -0400", hash_original_method = "BAF37826E19FE7806EA8737E4B16ECFB", hash_generated_method = "0F397F441033F28E44686D064703D9F9")
         public void onChildViewRemoved(View parent, View child) {
             //DSFIXME:  CODE0009: Possible callback target function detected

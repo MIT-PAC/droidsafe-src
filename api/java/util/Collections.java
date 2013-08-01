@@ -127,6 +127,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> void fill(List<? super T> list, T object) {
         ListIterator<? super T> it = list.listIterator();
         while (it.hasNext()) {
@@ -343,6 +344,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <T> boolean replaceAll(List<T> list, T obj, T obj2) {
         int index;
         boolean found = false;
@@ -731,6 +733,7 @@ public class Collections {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static <E> E checkType(E obj, Class<? extends E> type) {
         if (obj != null && !type.isInstance(obj)) {
             throw new ClassCastException("Attempt to insert element of type " + obj.getClass() +

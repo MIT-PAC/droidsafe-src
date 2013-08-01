@@ -109,6 +109,7 @@ public class KeyCharacterMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static KeyCharacterMap load(int deviceId) {
         synchronized (sInstances) {
             KeyCharacterMap map = sInstances.get(deviceId);
@@ -132,6 +133,7 @@ public class KeyCharacterMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.176 -0400", hash_original_method = "9130955DF84228D9EE103102BFA3B17A", hash_generated_method = "F7C5ABEE07FA313CFEDCD21A238F28F4")
     public int get(int keyCode, int metaState) {
         addTaint(metaState);
@@ -163,6 +165,7 @@ public class KeyCharacterMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.177 -0400", hash_original_method = "5701A82EAD1DE3F7E3AD5DC604F1A78C", hash_generated_method = "839714433C1AB1652906FEC18CC2A616")
     public boolean getFallbackAction(int keyCode, int metaState,
             FallbackAction outFallbackAction) {
@@ -188,6 +191,7 @@ public class KeyCharacterMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.178 -0400", hash_original_method = "6DABCB0117446A751E56C996ECEF0096", hash_generated_method = "31C48F61BDB4754FC73672C583574AE9")
     public char getNumber(int keyCode) {
         addTaint(keyCode);
@@ -199,6 +203,7 @@ public class KeyCharacterMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.178 -0400", hash_original_method = "BB5B7EBB644AED6B3730BD9151F78F69", hash_generated_method = "0A93BE57FB3924B372F7622608267934")
     public char getMatch(int keyCode, char[] chars) {
         addTaint(chars[0]);
@@ -211,6 +216,7 @@ public class KeyCharacterMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.179 -0400", hash_original_method = "41D073D91107291EA05310027D49190C", hash_generated_method = "76B998630B36D8BC8009B6C82370557B")
     public char getMatch(int keyCode, char[] chars, int metaState) {
         addTaint(metaState);
@@ -235,6 +241,7 @@ public class KeyCharacterMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.179 -0400", hash_original_method = "6DD5621B8D7662BB0D5EEF29B875BDA1", hash_generated_method = "6F994A09C2CFC9721EB69DA931348A80")
     public char getDisplayLabel(int keyCode) {
         addTaint(keyCode);
@@ -246,11 +253,13 @@ public class KeyCharacterMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getDeadChar(int accent, int c) {
         return DEAD.get((accent << 16) | c);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.181 -0400", hash_original_method = "76D58BCFCDB16C229BEE46626C0804EB", hash_generated_method = "ADC8E4BE6AAD371F4934168610DA2CED")
     @Deprecated
     public boolean getKeyData(int keyCode, KeyData results) {
@@ -300,6 +309,7 @@ public class KeyCharacterMap {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.181 -0400", hash_original_method = "75C550EBD18DF5C6523832F5B0CC290D", hash_generated_method = "68A654DC2091B9605FA37B91111B30C8")
     public KeyEvent[] getEvents(char[] chars) {
         addTaint(chars[0]);
@@ -320,6 +330,7 @@ KeyEvent[] var0EB192E6A07BB74E888C92ABABF624BA_1448704189 =         nativeGetEve
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.181 -0400", hash_original_method = "3285F5CD7518CBF681F7E4DAED1719BF", hash_generated_method = "621F6409B65047CEBE7168F887AE9E81")
     public boolean isPrintingKey(int keyCode) {
         addTaint(keyCode);
@@ -354,6 +365,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.181 -0400", hash_original_method = "BA716E54E3F5777C121637287957F9E5", hash_generated_method = "30BC39EC6002D6218FD04E0BD4915B66")
     public int getKeyboardType() {
         int var6D0B683DA2C7CB23EE9E1D7849BBCF30_1628620868 = (nativeGetKeyboardType(mPtr));
@@ -364,6 +376,7 @@ switch(type){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.181 -0400", hash_original_method = "1B54B22E072CCA54689C03A0F5698E81", hash_generated_method = "F3DFCB9C330F314DBB4613D9AE58F1C0")
     public int getModifierBehavior() {
 switch(getKeyboardType()){
@@ -388,6 +401,7 @@ switch(getKeyboardType()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean deviceHasKey(int keyCode) {
         int[] codeArray = new int[1];
         codeArray[0] = keyCode;
@@ -396,6 +410,7 @@ switch(getKeyboardType()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean[] deviceHasKeys(int[] keyCodes) {
         boolean[] ret = new boolean[keyCodes.length];
         IWindowManager wm = Display.getWindowManager();
@@ -434,6 +449,7 @@ switch(getKeyboardType()){
     
     public static class UnavailableException extends AndroidRuntimeException {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.182 -0400", hash_original_method = "463842D1BF3FEF123617A569E3B89D0B", hash_generated_method = "1BCAB3A4C9C611B069ED152144702993")
         public  UnavailableException(String msg) {
             super(msg);

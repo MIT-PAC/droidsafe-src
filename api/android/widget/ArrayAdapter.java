@@ -36,6 +36,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     private ArrayFilter mFilter;
     private LayoutInflater mInflater;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.310 -0400", hash_original_method = "789F3BF67B69FD6C237A5778FFC1188F", hash_generated_method = "9F2D5759E56F73FA5A593FA701BA5C3D")
     public  ArrayAdapter(Context context, int textViewResourceId) {
         addTaint(textViewResourceId);
@@ -46,6 +47,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.311 -0400", hash_original_method = "8D997C3441EFBFDB8F1974C979BCB748", hash_generated_method = "BB5F52F252315BDE0DD91C6E208DD112")
     public  ArrayAdapter(Context context, int resource, int textViewResourceId) {
         addTaint(textViewResourceId);
@@ -63,6 +65,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.311 -0400", hash_original_method = "69F6C47A6CFAD9DAEB9B15D26A429BD2", hash_generated_method = "0AD77E38C114B56F67EBF8911FE368C0")
     public  ArrayAdapter(Context context, int resource, int textViewResourceId, T[] objects) {
         addTaint(objects[0].getTaint());
@@ -81,6 +84,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.312 -0400", hash_original_method = "25BF5070AB68B4CC94195FE94A6CDD15", hash_generated_method = "45C05D2F6900A6552B59CA1E74D9A522")
     public  ArrayAdapter(Context context, int resource, int textViewResourceId, List<T> objects) {
         addTaint(objects.getTaint());
@@ -100,6 +104,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.313 -0400", hash_original_method = "2106A171487E5CA0624DE157360DB991", hash_generated_method = "79FA754AF55A7046C9471BCF42F16886")
     public void addAll(Collection<? extends T> collection) {
         addTaint(collection.getTaint());
@@ -156,6 +161,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.315 -0400", hash_original_method = "E6733B2C388AB0385CFE6D2E53E92DC8", hash_generated_method = "C3B7E909806CA2AF41449C8A9AB2A7EE")
     public void insert(T object, int index) {
         addTaint(index);
@@ -185,6 +191,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.315 -0400", hash_original_method = "6A184D6E0EB34E61EA380878C12E3D42", hash_generated_method = "45D17E6A0AF764C0FD5FF96FC91D8B9D")
     public void remove(T object) {
         addTaint(object.getTaint());
@@ -213,6 +220,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.316 -0400", hash_original_method = "E80E28672DD45A1486192C70E40EF7F5", hash_generated_method = "C4F1F91442599AE68F832F75FB6037BB")
     public void clear() {
         synchronized
@@ -240,6 +248,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.316 -0400", hash_original_method = "56420943E8AF9990310F4859FACB8646", hash_generated_method = "3DA380F8887A0573D7C23BFEE52E0CDB")
     public void sort(Comparator<? super T> comparator) {
         addTaint(comparator.getTaint());
@@ -306,6 +315,7 @@ Context var178E2AD52D6FBBB503F908168856B574_967216275 =         mContext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public int getCount() {
 		return 0;
@@ -320,6 +330,7 @@ Context var178E2AD52D6FBBB503F908168856B574_967216275 =         mContext;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.320 -0400", hash_original_method = "4B52B65CCBAD37C22D6FCF1BE4A30381", hash_generated_method = "4306745B19EF41037F68A6DA3555ACDB")
     public int getPosition(T item) {
         addTaint(item.getTaint());
@@ -338,12 +349,14 @@ Context var178E2AD52D6FBBB503F908168856B574_967216275 =         mContext;
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public View getView(int position, View convertView, ViewGroup parent) {
         return createViewFromResource(position, convertView, parent, mResource);
     }
 
     
+    @DSModeled(DSC.SAFE)
     private View createViewFromResource(int position, View convertView, ViewGroup parent,
             int resource) {
         View view;
@@ -385,6 +398,7 @@ Context var178E2AD52D6FBBB503F908168856B574_967216275 =         mContext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.327 -0400", hash_original_method = "55A24C3FF57565648C18AD1B34A1D191", hash_generated_method = "0D0D9F47EFB820C2116417EC15C21887")
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
@@ -399,6 +413,7 @@ View var73BABEDDC942C821B8059F08E1C361F2_1090442088 =         createViewFromReso
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static ArrayAdapter<CharSequence> createFromResource(Context context,
             int textArrayResId, int textViewResId) {
         CharSequence[] strings = context.getResources().getTextArray(textArrayResId);
@@ -406,6 +421,7 @@ View var73BABEDDC942C821B8059F08E1C361F2_1090442088 =         createViewFromReso
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public Filter getFilter() {
 		return new ArrayFilter();
@@ -427,6 +443,7 @@ View var73BABEDDC942C821B8059F08E1C361F2_1090442088 =         createViewFromReso
         }
 
 
+        @DSModeled(DSC.SAFE)
         @Override
 		protected FilterResults performFiltering(CharSequence prefix) {
             FilterResults results = new FilterResults();
@@ -479,6 +496,7 @@ View var73BABEDDC942C821B8059F08E1C361F2_1090442088 =         createViewFromReso
         }
 
         
+        @DSModeled(DSC.SAFE)
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
             //noinspection unchecked

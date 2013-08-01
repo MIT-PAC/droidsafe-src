@@ -53,6 +53,7 @@ public class RemoteViews implements Parcelable, Filter {
 
     private boolean mIsWidgetCollectionChild = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.761 -0400", hash_original_method = "7ADC44A8B9BDF8C00FB4776840C5552D", hash_generated_method = "154333C84C3CBD1C406C406999A1627C")
     public  RemoteViews(String packageName, int layoutId) {
         mPackage = packageName;
@@ -67,6 +68,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.762 -0400", hash_original_method = "B81662C8B479B3D3C957D533866FE808", hash_generated_method = "2071ED20ABA763F05D5EBE3B498C9396")
     public  RemoteViews(Parcel parcel) {
         mPackage = parcel.readString();
@@ -121,6 +123,7 @@ switch(tag){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.763 -0400", hash_original_method = "67D19BE5CA3BC69F21B2B2516A1FA2D6", hash_generated_method = "774216BDEAF9AAA255FB46FF8B50B3FE")
     @Override
     public RemoteViews clone() {
@@ -174,6 +177,7 @@ String varD0D543EB218BC9E16C17B23C08BC19C7_1241124719 =         mPackage;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.764 -0400", hash_original_method = "F73414915FBB974B28CE5BE7CD6B07B1", hash_generated_method = "94027C00C143FC7879CEA2922EE72FA6")
     private void recalculateMemoryUsage() {
         mMemoryUsageCounter.clear();
@@ -196,6 +200,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.764 -0400", hash_original_method = "4E1C2F916A403E6D1D4B708360B7D61A", hash_generated_method = "10DE88A78D710652EF0C43E088B3E826")
      int estimateBitmapMemoryUsage() {
         int var5636738054CB1447726DCC68F6EB720D_405836184 = (mMemoryUsageCounter.getBitmapHeapMemoryUsage());
@@ -206,6 +211,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.765 -0400", hash_original_method = "17103049C6B2546A05BB76759DAB3B89", hash_generated_method = "41AB35E6CD13F07C492006A4E07CF7C3")
     private void addAction(Action a) {
         addTaint(a.getTaint());
@@ -224,6 +230,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.765 -0400", hash_original_method = "4A1BA0269DB90E506DB0959643DF475B", hash_generated_method = "F7A43FA56B4FD021CADC01BA3EAA2102")
     public void addView(int viewId, RemoteViews nestedView) {
         addTaint(nestedView.getTaint());
@@ -234,6 +241,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.765 -0400", hash_original_method = "E70CF2F379D754A9B2BAC52704294677", hash_generated_method = "B897667E4F45C435418AB4213365FE91")
     public void removeAllViews(int viewId) {
         addTaint(viewId);
@@ -243,6 +251,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.766 -0400", hash_original_method = "715372503FFB1BBD9EE3BEF4F54CECDE", hash_generated_method = "4FBD4F8680049A52A9E5818E4FE3F5A8")
     public void showNext(int viewId) {
         addTaint(viewId);
@@ -252,6 +261,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.766 -0400", hash_original_method = "92870339C0CC6AF77A420F74F896E688", hash_generated_method = "91E57EB500EDC89270447F09526DFBC2")
     public void showPrevious(int viewId) {
         addTaint(viewId);
@@ -261,6 +271,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.766 -0400", hash_original_method = "D726270A4D4DC2D53B195715D168181D", hash_generated_method = "6971D42E37BDA8AC09932ED350CD8CE2")
     public void setDisplayedChild(int viewId, int childIndex) {
         addTaint(childIndex);
@@ -271,6 +282,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.767 -0400", hash_original_method = "DEE52A50DF8AF905161D8440F9C7FD6B", hash_generated_method = "1318BD859544A9FCC79C172EBB7DE41F")
     public void setViewVisibility(int viewId, int visibility) {
         addTaint(visibility);
@@ -281,6 +293,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.767 -0400", hash_original_method = "5F8A789C1791A65B082D971694A97107", hash_generated_method = "A9E0DAEF74E814F2442CBF4375B5BDDD")
     public void setTextViewText(int viewId, CharSequence text) {
         addTaint(text.getTaint());
@@ -291,6 +304,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.767 -0400", hash_original_method = "BA7406E13895A91025A0507F41BF6313", hash_generated_method = "90A83621EA6761D2247890C234BF57ED")
     public void setImageViewResource(int viewId, int srcId) {
         addTaint(srcId);
@@ -312,6 +326,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.768 -0400", hash_original_method = "957E8B822330AC731DF30A1543908B02", hash_generated_method = "EE418AE44F15DD1ADBE2D590F910876E")
     public void setImageViewBitmap(int viewId, Bitmap bitmap) {
         addTaint(bitmap.getTaint());
@@ -322,6 +337,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.768 -0400", hash_original_method = "4F3E7FFD56A31D2F2A8813C161A91D32", hash_generated_method = "A91083CEAA9EA8D5E229884041C6C1D4")
     public void setEmptyView(int viewId, int emptyViewId) {
         addTaint(emptyViewId);
@@ -332,6 +348,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.768 -0400", hash_original_method = "47E59AC623A4BD9BB48A3F2CB501DFB4", hash_generated_method = "8072C49A910830FEDDA172DCA07EE8C8")
     public void setChronometer(int viewId, long base, String format, boolean started) {
         addTaint(started);
@@ -348,6 +365,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.768 -0400", hash_original_method = "A929EFC8DD62C6A3F9A2F8FB0663D928", hash_generated_method = "9A06ABE0C67EC98A498C4E1B99192EE5")
     public void setProgressBar(int viewId, int max, int progress, 
             boolean indeterminate) {
@@ -370,6 +388,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.768 -0400", hash_original_method = "84C6A4280B6852D03015FA2AE8D65E64", hash_generated_method = "1BDD58796026F83223770BCC795BFF17")
     public void setOnClickPendingIntent(int viewId, PendingIntent pendingIntent) {
         addTaint(pendingIntent.getTaint());
@@ -380,6 +399,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.768 -0400", hash_original_method = "A434A09AC636025A142B2CC781D07FF1", hash_generated_method = "740FEA23068D37561A480DCF39C1E3EF")
     public void setPendingIntentTemplate(int viewId, PendingIntent pendingIntentTemplate) {
         addTaint(pendingIntentTemplate.getTaint());
@@ -401,6 +421,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.769 -0400", hash_original_method = "09A5B1AD4F222B569CE2E6BD5BF01B12", hash_generated_method = "46E1E4FFB2B94304E2534FDDE0544498")
     public void setDrawableParameters(int viewId, boolean targetBackground, int alpha,
             int colorFilter, PorterDuff.Mode mode, int level) {
@@ -418,6 +439,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.769 -0400", hash_original_method = "F51B3B3FB58685A967056786739D5D5A", hash_generated_method = "A651DE72B3603D07F38918CA7357B7C9")
     public void setTextColor(int viewId, int color) {
         addTaint(color);
@@ -452,6 +474,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.769 -0400", hash_original_method = "15753F5F29C6091CCB595496C38B1963", hash_generated_method = "9804635A7776A605A4194FC36DA603A1")
     public void setScrollPosition(int viewId, int position) {
         addTaint(position);
@@ -462,6 +485,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.769 -0400", hash_original_method = "62C951046FF905CA4D61721F847C4DC5", hash_generated_method = "189CB013D9D4C67506872A34477E2B40")
     public void setRelativeScrollPosition(int viewId, int offset) {
         addTaint(offset);
@@ -472,6 +496,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.769 -0400", hash_original_method = "ACF50C9E2E7A3E77B399A3E9AD77138B", hash_generated_method = "0729759768EE2E8619D811BF3DD65869")
     public void setBoolean(int viewId, String methodName, boolean value) {
         addTaint(value);
@@ -483,6 +508,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.770 -0400", hash_original_method = "6577642D84CE42EC3FAE93CD4A676A48", hash_generated_method = "1279E6B29577C3483AAB29C8AF16D232")
     public void setByte(int viewId, String methodName, byte value) {
         addTaint(value);
@@ -494,6 +520,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.770 -0400", hash_original_method = "1EF837BE87322E5A782B07EBE8F017ED", hash_generated_method = "D056147F096F9327C17B735728911645")
     public void setShort(int viewId, String methodName, short value) {
         addTaint(value);
@@ -505,6 +532,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.770 -0400", hash_original_method = "2BA2097F7597ED476DFE96444FF2B47B", hash_generated_method = "7425AD8F55555CB33DCF7007BED20049")
     public void setInt(int viewId, String methodName, int value) {
         addTaint(value);
@@ -516,6 +544,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.770 -0400", hash_original_method = "7BBB498795ABAEC2FC5C9E80D1FF1F8F", hash_generated_method = "B0DD8A6DBF5BAE025384B554F8A6A3A0")
     public void setLong(int viewId, String methodName, long value) {
         addTaint(value);
@@ -527,6 +556,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.770 -0400", hash_original_method = "877DFBEE5EFFB4333EA4E3E01D628209", hash_generated_method = "FA040A8921F05DAB93CF3EBA931523DA")
     public void setFloat(int viewId, String methodName, float value) {
         addTaint(value);
@@ -538,6 +568,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.770 -0400", hash_original_method = "36511416C0ED3D737A57750DB7E0C821", hash_generated_method = "38D66894CB60146F8D5F318CFC8EE661")
     public void setDouble(int viewId, String methodName, double value) {
         addTaint(value);
@@ -549,6 +580,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.770 -0400", hash_original_method = "E7DFE8EB27DC5DF6C76291F003DE876E", hash_generated_method = "EBBB1EDE5F5BA12A72FA6F69686C6198")
     public void setChar(int viewId, String methodName, char value) {
         addTaint(value);
@@ -560,6 +592,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.770 -0400", hash_original_method = "12B33E0B58F238F52279DFEB1871046D", hash_generated_method = "39E50059B4D9E5EFDA54E18DAB1A08B2")
     public void setString(int viewId, String methodName, String value) {
         addTaint(value.getTaint());
@@ -571,6 +604,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.771 -0400", hash_original_method = "93A93353A27881B93F029E1CB8E38561", hash_generated_method = "DF70442EE54FBEC687A8B7E350E84DF9")
     public void setCharSequence(int viewId, String methodName, CharSequence value) {
         addTaint(value.getTaint());
@@ -594,6 +628,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.771 -0400", hash_original_method = "BE18885A2548A0B5EB1C1E6420A7D63A", hash_generated_method = "559BB7945E4504A3E5CDA29CC02DE905")
     public void setBitmap(int viewId, String methodName, Bitmap value) {
         addTaint(value.getTaint());
@@ -605,6 +640,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.771 -0400", hash_original_method = "0BCEFBE1ECC6F937E30E64CCDC160671", hash_generated_method = "A5FF6C066C1F6DC00BAAFF501E61FC56")
     public void setBundle(int viewId, String methodName, Bundle value) {
         addTaint(value.getTaint());
@@ -628,6 +664,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.771 -0400", hash_original_method = "DAF30AB9823DD59C17B2FD226E498806", hash_generated_method = "1FE2AC7A0E70234A140197AF9EECC2D7")
     public void setContentDescription(int viewId, CharSequence contentDescription) {
         addTaint(contentDescription.getTaint());
@@ -638,6 +675,7 @@ for(int i= 0;i < count;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.771 -0400", hash_original_method = "389CE470D5FBF8918932B7CDEB2F38A1", hash_generated_method = "D609DA9CB3BF7A7DE11004E68F182400")
     public View apply(Context context, ViewGroup parent) {
         addTaint(parent.getTaint());
@@ -666,6 +704,7 @@ View varDC838461EE2FA0CA4C9BBB70A15456B0_1588690019 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.772 -0400", hash_original_method = "721D0331C9411BF86340BE2E97293121", hash_generated_method = "69223AB8BA112CE672EE71C9094EAB66")
     public void reapply(Context context, View v) {
         addTaint(v.getTaint());
@@ -678,6 +717,7 @@ View varDC838461EE2FA0CA4C9BBB70A15456B0_1588690019 =         result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.772 -0400", hash_original_method = "8E5E3E88ABCC69E3321D1346316340C9", hash_generated_method = "98B120172AB8CDD4F398848FD6B7F5E5")
     private void performApply(View v, ViewGroup parent) {
         addTaint(parent.getTaint());
@@ -702,6 +742,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.779 -0400", hash_original_method = "22DA97EA1494F0F193EF18C8ED8C5634", hash_generated_method = "08C29A90C911E4D6BE4977DA08781EE3")
     private Context prepareContext(Context context) {
         addTaint(context.getTaint());
@@ -742,6 +783,7 @@ Context var807FB10045EE51C06BDB74744A6714DF_936597227 =         c;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.779 -0400", hash_original_method = "02A046D25F4E9D374E474E21F6366163", hash_generated_method = "FE46244A17CA3356D3D66568446C5B5D")
     public boolean onLoadClass(Class clazz) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -765,6 +807,7 @@ Context var807FB10045EE51C06BDB74744A6714DF_936597227 =         c;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.780 -0400", hash_original_method = "E42048CF3CAA5A680CE684B09E27CD46", hash_generated_method = "486236D4B56BE0495CC3002C9FADA0D6")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -807,6 +850,7 @@ for(int i=0;i<count;i++)
     
     public static class ActionException extends RuntimeException {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.780 -0400", hash_original_method = "4338C0B6ED05990B68F77B56C502C8BC", hash_generated_method = "6A9B199E4B70296D28CD039E0E15FE3D")
         public  ActionException(Exception ex) {
             super(ex);
@@ -815,6 +859,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.780 -0400", hash_original_method = "E5DD8B85C6FF17BD695A219FDD405D42", hash_generated_method = "947B27CB5701852C6B41A566481318D7")
         public  ActionException(String message) {
             super(message);
@@ -923,6 +968,7 @@ for(int i=0;i<count;i++)
 
         int emptyViewId;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.781 -0400", hash_original_method = "16159C50F4CD599B644ED014E4EA0822", hash_generated_method = "C1C4A274A58AFAF2063BE98C3846BAE4")
           SetEmptyView(int viewId, int emptyViewId) {
             this.viewId = viewId;
@@ -933,6 +979,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.782 -0400", hash_original_method = "F10F16648F57CF9FE4F3D806E803B1DC", hash_generated_method = "0CB8CADFFD90BE29657F9D6DCA52C11C")
           SetEmptyView(Parcel in) {
             this.viewId = in.readInt();
@@ -943,6 +990,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.782 -0400", hash_original_method = "1EA9A4CD3E90F19D62658919976BDCDF", hash_generated_method = "BDCDEB835159FF3D8B6EC5654A2FCE19")
         public void writeToParcel(Parcel out, int flags) {
             addTaint(flags);
@@ -957,6 +1005,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.782 -0400", hash_original_method = "BC00C709904F6A7A06083DBEA360E136", hash_generated_method = "57D305BFC46269920AF6142E85B3F68F")
         @Override
         public void apply(View root, ViewGroup rootParent) {
@@ -995,6 +1044,7 @@ for(int i=0;i<count;i++)
 
         Intent fillInIntent;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.782 -0400", hash_original_method = "FE3667D87A305D86E9A8A6AD36F5EEAF", hash_generated_method = "18AF1F9FD9414C6BCF3DBFD2F1D4F53B")
         public  SetOnClickFillInIntent(int id, Intent fillInIntent) {
             this.viewId = id;
@@ -1005,6 +1055,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.783 -0400", hash_original_method = "8F893000547B59EAD09450FBC024CAC1", hash_generated_method = "D68C613EB9756E36CE15A86322799F88")
         public  SetOnClickFillInIntent(Parcel parcel) {
             viewId = parcel.readInt();
@@ -1015,6 +1066,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.783 -0400", hash_original_method = "4A68D926F0B47E5C592025763C57CD49", hash_generated_method = "7DF2206EA6761B29E294427DDFA70EE9")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -1029,6 +1081,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.783 -0400", hash_original_method = "3474C680008284CA3FCD2C734DB61ED8", hash_generated_method = "AFFFC75621C5B797EAA769D2E4B76D93")
         @Override
         public void apply(View root, ViewGroup rootParent) {
@@ -1130,6 +1183,7 @@ for(int i=0;i<count;i++)
 
         PendingIntent pendingIntentTemplate;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.784 -0400", hash_original_method = "319DBBF9EE021BC2BD14552E08C5F806", hash_generated_method = "D7A3DCE3AD9BD409E6F2A6466125223B")
         public  SetPendingIntentTemplate(int id, PendingIntent pendingIntentTemplate) {
             this.viewId = id;
@@ -1140,6 +1194,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.784 -0400", hash_original_method = "F35BA9665B1C6E88223062D1328FA579", hash_generated_method = "DD0B2CD3748A8B20A1DE310050B42710")
         public  SetPendingIntentTemplate(Parcel parcel) {
             viewId = parcel.readInt();
@@ -1150,6 +1205,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.784 -0400", hash_original_method = "2DE56D1052D41AEA85684029786EA581", hash_generated_method = "04D29CFB7CE01C81A1025050CF72DF16")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -1164,6 +1220,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.784 -0400", hash_original_method = "BC6383FD3782B4E4299FBBF52DF5CBB4", hash_generated_method = "372E487691811E9C244E2E4385245940")
         @Override
         public void apply(View root, ViewGroup rootParent) {
@@ -1270,6 +1327,7 @@ for(int i=0;i<count;i++)
 
         Intent intent;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.785 -0400", hash_original_method = "2562242EF5AD42CD0339F4CFA0A5651B", hash_generated_method = "4D41B794CEB49FBFDACF661D08DF1C0D")
         public  SetRemoteViewsAdapterIntent(int id, Intent intent) {
             this.viewId = id;
@@ -1280,6 +1338,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.785 -0400", hash_original_method = "3062D841F9A527FF82C19CE8ED4DF47C", hash_generated_method = "79C217E5E76E9F79C11955E3F453D87B")
         public  SetRemoteViewsAdapterIntent(Parcel parcel) {
             viewId = parcel.readInt();
@@ -1290,6 +1349,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.785 -0400", hash_original_method = "F580FE61025C5DC81DFB7BB9EA905954", hash_generated_method = "016F1F527D26D95A60C8146E075DE2F2")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -1304,6 +1364,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.785 -0400", hash_original_method = "EDE9247E350EBAB87917A7616D3465DB", hash_generated_method = "8B5EE078B6EA174FC25483D5993A8317")
         @Override
         public void apply(View root, ViewGroup rootParent) {
@@ -1353,6 +1414,7 @@ for(int i=0;i<count;i++)
 
         PendingIntent pendingIntent;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.785 -0400", hash_original_method = "66EA2688C4B0F29524FFED0B8D1C4557", hash_generated_method = "DE4E1C8802A6B5161427D208A788FF49")
         public  SetOnClickPendingIntent(int id, PendingIntent pendingIntent) {
             this.viewId = id;
@@ -1363,6 +1425,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.786 -0400", hash_original_method = "2D335FA6E397EB90FCE69134FAC6C0E6", hash_generated_method = "7AF4DFE20455952984B5C6A7CBCA2E14")
         public  SetOnClickPendingIntent(Parcel parcel) {
             viewId = parcel.readInt();
@@ -1373,6 +1436,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.786 -0400", hash_original_method = "7CEF806B95F0881A888E5DFCE712AF4A", hash_generated_method = "669E8E8A97200FDEA6D39BD77054A4D2")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -1387,6 +1451,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.786 -0400", hash_original_method = "7AB558D2EB1905941BBC96768E4F0260", hash_generated_method = "49B19E7FC5F758B6D26E03320AFB8136")
         @Override
         public void apply(View root, ViewGroup rootParent) {
@@ -1466,6 +1531,7 @@ for(int i=0;i<count;i++)
 
         int level;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.787 -0400", hash_original_method = "18564016E13252E4F53F65794EE2D4BB", hash_generated_method = "5A814AA3D1EB7D235731941FAE0DA595")
         public  SetDrawableParameters(int id, boolean targetBackground, int alpha,
                 int colorFilter, PorterDuff.Mode mode, int level) {
@@ -1485,6 +1551,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.787 -0400", hash_original_method = "72E671F08A71584E9232C176B97BC1C8", hash_generated_method = "87A8F3CEF028F9E6345FF186CA6BC012")
         public  SetDrawableParameters(Parcel parcel) {
             viewId = parcel.readInt();
@@ -1516,6 +1583,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.787 -0400", hash_original_method = "DC629CA06C171381152FF8641B977C9F", hash_generated_method = "97F80C563C92885818073A9A30F0E83D")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -1551,6 +1619,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.787 -0400", hash_original_method = "2B7DD23B0EB7FE8C6A2446FEC1367E7F", hash_generated_method = "A9181765027AEE33CBB43C7EE83F6582")
         @Override
         public void apply(View root, ViewGroup rootParent) {
@@ -1605,6 +1674,7 @@ for(int i=0;i<count;i++)
 
         String methodName;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.788 -0400", hash_original_method = "9825933434EF5EC003AA8FF50203783A", hash_generated_method = "306E4CE94A121FCAD55ED69BD6877BBC")
           ReflectionActionWithoutParams(int viewId, String methodName) {
             this.viewId = viewId;
@@ -1615,6 +1685,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.788 -0400", hash_original_method = "07A57AEC1ECBD4F4EF962F6964A9C9CB", hash_generated_method = "F389E821077AA3BB95015DCE93F78B32")
           ReflectionActionWithoutParams(Parcel in) {
             this.viewId = in.readInt();
@@ -1625,6 +1696,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.788 -0400", hash_original_method = "E92934B0244E59AB6D933016F95632D8", hash_generated_method = "EF82BF2749830ED0C3E73118B0688DE4")
         public void writeToParcel(Parcel out, int flags) {
             addTaint(flags);
@@ -1639,6 +1711,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.788 -0400", hash_original_method = "B2755AE6CC74346ED57BF443914C2243", hash_generated_method = "6EF4836C104F785A2D5C8837A4199BD6")
         @Override
         public void apply(View root, ViewGroup rootParent) {
@@ -1709,6 +1782,7 @@ for(int i=0;i<count;i++)
 
         Object value;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.789 -0400", hash_original_method = "C4E3EC196FB78FDD2AFD41CF23C84256", hash_generated_method = "66FBD19134023AF224E81CB8AE41B251")
           ReflectionAction(int viewId, String methodName, int type, Object value) {
             this.viewId = viewId;
@@ -1723,6 +1797,7 @@ for(int i=0;i<count;i++)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.790 -0400", hash_original_method = "A86C68C4FD8B9D479580CAEA2D14C9BF", hash_generated_method = "A907A784751DE7FA9B61F164632B1167")
           ReflectionAction(Parcel in) {
             this.viewId = in.readInt();
@@ -1784,6 +1859,7 @@ switch(this.type){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.790 -0400", hash_original_method = "F759DD8CB1A89B34D073177D219BFFB9", hash_generated_method = "DD017EAFAB6A8D0A0EA9F33E4523F1BF")
         public void writeToParcel(Parcel out, int flags) {
             addTaint(flags);
@@ -1918,6 +1994,7 @@ Class var540C13E9E156B687226421B24F2DF178_2098647395 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.791 -0400", hash_original_method = "008B98D7581EEC47326A699C8B3D8035", hash_generated_method = "B9A4F3EE1C3CAB8957429CAD4CD84C14")
         @Override
         public void apply(View root, ViewGroup rootParent) {
@@ -1975,6 +2052,7 @@ Class var540C13E9E156B687226421B24F2DF178_2098647395 =             null;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.791 -0400", hash_original_method = "1F301B790026760CE401FF57484A4A78", hash_generated_method = "29838BD01F4A6405258A7FEA96B61663")
         @Override
         public void updateMemoryUsageEstimate(MemoryUsageCounter counter) {
@@ -2069,6 +2147,7 @@ switch(c){
 
         RemoteViews nestedViews;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.792 -0400", hash_original_method = "ED007F9070164016B2129A58A247A132", hash_generated_method = "D73E8FB5CE189E15CC0ED4BFC4DE2A01")
         public  ViewGroupAction(int viewId, RemoteViews nestedViews) {
             this.viewId = viewId;
@@ -2079,6 +2158,7 @@ switch(c){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.792 -0400", hash_original_method = "3800854E305111A2B59A893F31CDD286", hash_generated_method = "B30611565EF1A179397305FFFC39C3E2")
         public  ViewGroupAction(Parcel parcel) {
             viewId = parcel.readInt();
@@ -2089,6 +2169,7 @@ switch(c){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.793 -0400", hash_original_method = "BEE1FD608BE154882376BC772CDB35A0", hash_generated_method = "1D5187CEDC5619960DE4415C3EDC234A")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -2103,6 +2184,7 @@ switch(c){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.793 -0400", hash_original_method = "3F6E8B427E9FBCBDEBB4E654B5696B90", hash_generated_method = "3B00F4C10DDBDA05F68CB98A17B0F288")
         @Override
         public void apply(View root, ViewGroup rootParent) {
@@ -2132,6 +2214,7 @@ switch(c){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.793 -0400", hash_original_method = "9A98BF9B0C4ADB9C4C041E3C0533F17D", hash_generated_method = "EFCA05839D9A491B83CCF1CB584A82B6")
         @Override
         public void updateMemoryUsageEstimate(MemoryUsageCounter counter) {

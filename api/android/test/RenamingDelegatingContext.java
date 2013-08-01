@@ -41,6 +41,7 @@ public class RenamingDelegatingContext extends ContextWrapper {
 
     private Set<String> mFileNames = Sets.newHashSet();
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.843 -0400", hash_original_method = "B3953DF6513209A1975FCE5EE76F55AB", hash_generated_method = "5EABB90B602757D42ED9DE1181DD6708")
     public  RenamingDelegatingContext(Context context, String filePrefix) {
         super(context);
@@ -52,6 +53,7 @@ public class RenamingDelegatingContext extends ContextWrapper {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.844 -0400", hash_original_method = "9AEB362670EE8793CD7E6E8A367BD018", hash_generated_method = "8D4196C8EBC520F1B1BB3DCC072B4B21")
     public  RenamingDelegatingContext(Context context, Context fileContext, String filePrefix) {
         super(context);
@@ -64,12 +66,14 @@ public class RenamingDelegatingContext extends ContextWrapper {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static <T extends ContentProvider> T providerWithRenamedContext(
             Class<T> contentProvider, Context c, String filePrefix) throws IllegalAccessException, InstantiationException {
         return providerWithRenamedContext(contentProvider, c, filePrefix, false);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static <T extends ContentProvider> T providerWithRenamedContext(
             Class<T> contentProvider, Context c, String filePrefix,
             boolean allowAccessToExistingFilesAndDbs) throws IllegalAccessException, InstantiationException {
@@ -84,6 +88,7 @@ public class RenamingDelegatingContext extends ContextWrapper {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.846 -0400", hash_original_method = "2EB6B2D69F57A98D3ED2F6FA78A12FF7", hash_generated_method = "88092B1C323B0D0EB8D585094ABFB93C")
     public void makeExistingFilesAndDbsAccessible() {
         String[] databaseList = mFileContext.databaseList();
@@ -118,6 +123,7 @@ for(String diskName : fileList)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.848 -0400", hash_original_method = "AE14EC823AA36078EBCBA6012466D013", hash_generated_method = "5BE638443DAA6A08A53F683B694D8180")
      boolean shouldDiskNameBeVisible(String diskName) {
         addTaint(diskName.getTaint());
@@ -129,6 +135,7 @@ for(String diskName : fileList)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.848 -0400", hash_original_method = "D497FA9053D718AE60BC2EFC5B528C4E", hash_generated_method = "482F7F32F089FC08DD1ABD99A30B590F")
      String publicNameFromDiskName(String diskName) {
         addTaint(diskName.getTaint());
@@ -160,7 +167,7 @@ String var362F964D970E0E1B94D1C2D044CD64A2_1776456719 =         mFilePrefix;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.849 -0400", hash_original_method = "288CD7FC3C9C01601C3178A31BF94464", hash_generated_method = "E4C5240E9E8AE428F986E7E967894E0F")
     private String renamedFileName(String name) {
         addTaint(name.getTaint());
@@ -172,6 +179,7 @@ String varF2801096E84D7B061A670E1505987270_128525467 =         mFilePrefix + nam
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.849 -0400", hash_original_method = "8FAA8E1E53764FC0A8E9121526A72753", hash_generated_method = "CF2B2E05988BAF65145FC251C24BD4D5")
     @Override
     public SQLiteDatabase openOrCreateDatabase(String name,
@@ -198,6 +206,7 @@ SQLiteDatabase varEF9AA0913B9F67D8BA83A28CF0D2C274_599734229 =         mFileCont
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.850 -0400", hash_original_method = "83010A5AB0E017E780AA0ED965C40832", hash_generated_method = "E2A191DC6C951F8F661130C2D0558E54")
     @Override
     public SQLiteDatabase openOrCreateDatabase(String name,
@@ -225,7 +234,7 @@ SQLiteDatabase varD521834BA89A83E0413BF0F37D6D9DCE_1295890241 =         mFileCon
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.851 -0400", hash_original_method = "769583112D24FD602F7B9C331E63368D", hash_generated_method = "2C2EA475DF3DFDB0B6338F86ACC60A60")
     @Override
     public boolean deleteDatabase(String name) {
@@ -253,7 +262,7 @@ SQLiteDatabase varD521834BA89A83E0413BF0F37D6D9DCE_1295890241 =         mFileCon
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.851 -0400", hash_original_method = "D9A3864414B54AB528512CE33B05FB4D", hash_generated_method = "7580BE9F13F9055CFAD5B8C485712DD8")
     @Override
     public File getDatabasePath(String name) {
@@ -266,7 +275,7 @@ File var76CE04263C550BECC0F1A57BECD8BE94_1553710488 =         mFileContext.getDa
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.852 -0400", hash_original_method = "C72F928FF6D1DE8462B16697F47B8129", hash_generated_method = "DFE39300C0589520553F86DD3A778162")
     @Override
     public String[] databaseList() {
@@ -278,7 +287,7 @@ String[] var9D5D41B4C26BCA35487A5325A77218ED_1594928931 =         mDatabaseNames
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.852 -0400", hash_original_method = "22834974648353EE4B305B5F791B6612", hash_generated_method = "A0429C3915B9B2251DA0FD311E4A2048")
     @Override
     public FileInputStream openFileInput(String name) throws FileNotFoundException {
@@ -306,7 +315,7 @@ FileInputStream var2BD693B4BCAD6759F4E88A5E81233801_353665759 =             mFil
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.853 -0400", hash_original_method = "BAFF09712F6A622B6FB90CC40B6EB538", hash_generated_method = "3C5E2791BEDFBEA9C82599493A7E6136")
     @Override
     public FileOutputStream openFileOutput(String name, int mode) throws FileNotFoundException {
@@ -322,7 +331,7 @@ FileOutputStream var10B6626D436D657417F8FCB752E9658B_2058060826 =         mFileC
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.853 -0400", hash_original_method = "46FF4FEA40FAAA40585EE8088997DFB9", hash_generated_method = "4EEFEA93D804A814585F8C5A3FFBEE88")
     @Override
     public File getFileStreamPath(String name) {
@@ -335,7 +344,7 @@ File var64D4A2E452E8A20AF76657C67B11AAE9_249271364 =         mFileContext.getFil
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.853 -0400", hash_original_method = "B618668AF514509A928F75BC70031AF8", hash_generated_method = "3E381783DD9D113881AB785D50361C78")
     @Override
     public boolean deleteFile(String name) {
@@ -363,7 +372,7 @@ File var64D4A2E452E8A20AF76657C67B11AAE9_249271364 =         mFileContext.getFil
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.854 -0400", hash_original_method = "945BB3C3C9DB1E1310115126C2994271", hash_generated_method = "9B2BB1DE65569A8C63446C249AEB4B1C")
     @Override
     public String[] fileList() {
@@ -375,6 +384,7 @@ String[] varE0E91E51CD6F4F1B465DF87E6E14623F_1404161158 =         mFileNames.toA
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.854 -0400", hash_original_method = "46556D7A64741ECB467E5CBBE771B4E0", hash_generated_method = "59406644C1BD41EB3D6E089A26C428FF")
     @Override
     public File getCacheDir() {

@@ -15,6 +15,7 @@ public class SoundEffectConstants {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getContantForFocusDirection(int direction) {
         switch (direction) {
             case View.FOCUS_RIGHT:

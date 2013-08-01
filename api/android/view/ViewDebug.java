@@ -72,6 +72,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void startLooperProfiling(String path, FileDescriptor fileDescriptor) {
         if (sLooperProfilerStorage.get() == null) {
             LooperProfiler profiler = new LooperProfiler(path, fileDescriptor);
@@ -81,6 +82,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void stopLooperProfiling() {
         LooperProfiler profiler = sLooperProfilerStorage.get();
         if (profiler != null) {
@@ -176,6 +178,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void trace(View view, HierarchyTraceType type) {
         if (sHierarchyTraces == null) {
             return;
@@ -255,6 +258,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static void dispatchCommand(View view, String command, String parameters,
             OutputStream clientStream) throws IOException {
         view = view.getRootView();
@@ -279,6 +283,7 @@ public class ViewDebug {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static View findView(View root, String parameter) {
         if (parameter.indexOf('@') != -1) {
             final String[] ids = parameter.split("@");
@@ -1272,6 +1277,7 @@ public class ViewDebug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.280 -0400", hash_original_method = "BBA2F80D690B10E11CCE7370554710C3", hash_generated_method = "79F7CE6E162D344F5E56F58B53C03860")
          void save() {
             new Thread(new Runnable() {            
@@ -1330,6 +1336,7 @@ public class ViewDebug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         private static void writeTraces(FileOutputStream out, long offset, long wallStart,
                 long threadStart, ArrayList<Entry> entries) throws IOException {
             FileChannel channel = out.getChannel();

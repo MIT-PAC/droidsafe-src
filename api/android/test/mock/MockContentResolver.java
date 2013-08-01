@@ -25,6 +25,8 @@ import android.net.Uri;
 
 import com.google.android.collect.Maps;
 
+import droidsafe.annotations.*;
+
 import java.util.Map;
 
 /**
@@ -58,6 +60,7 @@ public class MockContentResolver extends ContentResolver {
      * Creates a local map of providers. This map is used instead of the global map when an
      * API call tries to acquire a provider.
      */
+    @DSModeled(DSC.BAN)
     public MockContentResolver() {
         super(null);
         mProviders = Maps.newHashMap();
@@ -70,6 +73,7 @@ public class MockContentResolver extends ContentResolver {
      * @param provider An instance of {@link android.content.ContentProvider} or one of its
      * subclasses, or null.
      */
+    @DSModeled(DSC.BAN)
     public void addProvider(String name, ContentProvider provider) {
 
         /*
@@ -79,12 +83,14 @@ public class MockContentResolver extends ContentResolver {
     }
 
     /** @hide */
+    @DSModeled(DSC.BAN)
     @Override
     protected IContentProvider acquireProvider(Context context, String name) {
         return acquireExistingProvider(context, name);
     }
 
     /** @hide */
+    @DSModeled(DSC.BAN)
     @Override
     protected IContentProvider acquireExistingProvider(Context context, String name) {
 
@@ -101,6 +107,7 @@ public class MockContentResolver extends ContentResolver {
     }
 
     /** @hide */
+    @DSModeled(DSC.SAFE)
     @Override
     public boolean releaseProvider(IContentProvider provider) {
         return true;
@@ -115,6 +122,7 @@ public class MockContentResolver extends ContentResolver {
      * @param observer (Ignored) The observer that originated the change.
      * @param syncToNetwork (Ignored) If true, attempt to sync the change to the network.
      */
+    @DSModeled(DSC.SPEC)
     @Override
     public void notifyChange(Uri uri,
             ContentObserver observer,

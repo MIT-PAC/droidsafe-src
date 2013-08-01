@@ -125,6 +125,7 @@ public class SimpleExpandableListAdapter extends BaseExpandableListAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.053 -0400", hash_original_method = "3B29A9946FDE7DB2BC2B7FECDB06C302", hash_generated_method = "128CF617C790F52CB4755EEB123924AE")
     public Object getChild(int groupPosition, int childPosition) {
         addTaint(childPosition);
@@ -150,6 +151,7 @@ Object varF4E472F530EEA6342931FA947EA4E3DB_223049974 =         mChildData.get(gr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.054 -0400", hash_original_method = "B5BC721CBE3E6381873586BBD7303E85", hash_generated_method = "A676D0D93D0FE431DA52FD92B3767DF0")
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
             View convertView, ViewGroup parent) {
@@ -183,6 +185,7 @@ View var6DC76BC51820DD65E8396280E884AA78_2053192594 =         v;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.055 -0400", hash_original_method = "2B94AAD68C0284CF5F35BA4F8A812DF1", hash_generated_method = "4E59E3CF4E22AC25A8AE2F71609FD5E6")
     public View newChildView(boolean isLastChild, ViewGroup parent) {
         addTaint(parent.getTaint());
@@ -195,6 +198,7 @@ View varE89DA9D9E61A89C376400D709F3C6A62_1740522209 =         mInflater.inflate(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.055 -0400", hash_original_method = "8C1FB274099C6E014BD8D472B7606CCC", hash_generated_method = "35157A1CF793A1EDF5DDB9E3DB4D07CA")
     private void bindView(View view, Map<String, ?> data, String[] from, int[] to) {
         addTaint(to[0]);
@@ -221,6 +225,7 @@ for(int i = 0;i < len;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.056 -0400", hash_original_method = "DB60A6F52FD4A812349DCBFAC6A2EF69", hash_generated_method = "E4A75937720EE481F7EEA91ED31CF6D3")
     public int getChildrenCount(int groupPosition) {
         addTaint(groupPosition);
@@ -232,6 +237,7 @@ for(int i = 0;i < len;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.056 -0400", hash_original_method = "5B52A8158602AE20A4F579EAAE50F913", hash_generated_method = "B140571B56EA3808ACD001829C21C40A")
     public Object getGroup(int groupPosition) {
         addTaint(groupPosition);
@@ -243,6 +249,7 @@ Object varFB97261B2587C339E611EC0290582245_1879576933 =         mGroupData.get(g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.056 -0400", hash_original_method = "03F06DE167267E877853E48CD36FB25E", hash_generated_method = "EFDF877E308CCABD8A835DDD27DAB2B6")
     public int getGroupCount() {
         int varC6B62FA0B1852F78AF644C60F1A00840_370029180 = (mGroupData.size());
@@ -265,6 +272,7 @@ Object varFB97261B2587C339E611EC0290582245_1879576933 =         mGroupData.get(g
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.057 -0400", hash_original_method = "5DB7DDAF22073EDDFB746FC51BE4BAAE", hash_generated_method = "6B6346C0649A4B9ECCBF92D405DC5F39")
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView,
             ViewGroup parent) {
@@ -297,6 +305,7 @@ View var6DC76BC51820DD65E8396280E884AA78_1071972254 =         v;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.057 -0400", hash_original_method = "F1834FC5D553230B29FB844FEC56B83F", hash_generated_method = "FE802ED651496E504AAB53C98849853F")
     public View newGroupView(boolean isExpanded, ViewGroup parent) {
         addTaint(parent.getTaint());

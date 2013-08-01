@@ -377,6 +377,7 @@ ValueAnimator var72A74007B2BE62B849F475C7BDA4658B_970997194 =         this;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.013 -0400", hash_original_method = "3CBE561BBB42AB3DB3CAF9B67D05776D", hash_generated_method = "DE9D4EA429A9CA794FAF91972F613CCE")
     public Object getAnimatedValue() {
         if(mValues != null && mValues.length > 0)        
@@ -396,6 +397,7 @@ Object var540C13E9E156B687226421B24F2DF178_1042387730 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.016 -0400", hash_original_method = "2B530B2B81FC1FAD77C53EC8863AE50E", hash_generated_method = "6F65B5F32C4A6B289D158CBDA4C3E84A")
     public Object getAnimatedValue(String propertyName) {
         addTaint(propertyName.getTaint());
@@ -462,6 +464,7 @@ Object var540C13E9E156B687226421B24F2DF178_231079821 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.030 -0400", hash_original_method = "D2A8BFD752ECF80FCD3BD03F5B9AF68A", hash_generated_method = "F5DF283E858755CDAEB721BA0CC692BD")
     public void addUpdateListener(AnimatorUpdateListener listener) {
         addTaint(listener.getTaint());
@@ -478,6 +481,7 @@ Object var540C13E9E156B687226421B24F2DF178_231079821 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.033 -0400", hash_original_method = "ABC42C9D08D6EB9E3E04E4FD12636CA0", hash_generated_method = "727A59C99A773D4DBFCFB8B89B4F5FDD")
     public void removeAllUpdateListeners() {
         if(mUpdateListeners == null)        
@@ -495,6 +499,7 @@ Object var540C13E9E156B687226421B24F2DF178_231079821 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.036 -0400", hash_original_method = "E6D135867EE130F9CB4EA2C9507FABF5", hash_generated_method = "460F58AC30DF7CC9753B21D1A676C90F")
     public void removeUpdateListener(AnimatorUpdateListener listener) {
         addTaint(listener.getTaint());
@@ -617,6 +622,7 @@ for(int i = 0;i < numListeners;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.053 -0400", hash_original_method = "5EC046ABFAD295E5D2C88DB1426702CD", hash_generated_method = "14832CD21DEAFA14199F64C586BF729E")
     @Override
     public void cancel() {
@@ -648,6 +654,7 @@ for(AnimatorListener listener : tmpListeners)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.056 -0400", hash_original_method = "55C31F194BE33B60E19FAC66D36F0F3B", hash_generated_method = "3CEA854E15F475C7E2DA87F0F63E851A")
     @Override
     public void end() {
@@ -710,6 +717,7 @@ for(AnimatorListener listener : tmpListeners)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.063 -0400", hash_original_method = "45B2842BAB0EB46941DD63C0EA48CBA2", hash_generated_method = "B3BFE4AA1FB6781B8FB37B94ACB7BFCD")
     public void reverse() {
         mPlayingBackwards = !mPlayingBackwards;
@@ -737,6 +745,7 @@ for(AnimatorListener listener : tmpListeners)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.066 -0400", hash_original_method = "634DE70818167FA9FFDD8CDDE693BD3B", hash_generated_method = "4D46B15480B7C7634D8BC9E980BB3039")
     private void endAnimation() {
         sAnimations.get().remove(this);
@@ -772,6 +781,7 @@ for(int i = 0;i < numListeners;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.067 -0400", hash_original_method = "45B9B57EC5A2CFD523C0E84592BD9EAC", hash_generated_method = "4F59FA0AFF03E77C61AD689FEB69C3B8")
     private void startAnimation() {
         initAnimation();
@@ -944,6 +954,7 @@ for(int i = 0;i < numListeners;++i)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.101 -0400", hash_original_method = "E24942BE7DE3A089D4AA1F8054FFC13E", hash_generated_method = "59FAECEB0070C3281A7C5A889CF30717")
     @Override
     public ValueAnimator clone() {
@@ -1031,6 +1042,7 @@ String var74D8482D05AF02514EABC315066E6806_2116745028 =         returnVal;
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.116 -0400", hash_original_method = "52F201F0F7E1BD7680ACD711BB668600", hash_generated_method = "3B1FDE5ACEB670FE3D2CAAF47833AF64")
         @Override
         public void handleMessage(Message msg) {

@@ -18,6 +18,7 @@ public class Transformation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void clear() {
         mAlpha = 1.0f;
         mTransformationType = TYPE_BOTH;
@@ -47,6 +48,7 @@ public class Transformation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void compose(Transformation t) {
         mAlpha *= t.getAlpha();
         mMatrix.preConcat(t.getMatrix());

@@ -345,6 +345,7 @@ for(int i = start;i < end;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.431 -0400", hash_original_method = "8830E2F07CC294339D5D496574BCFA5E", hash_generated_method = "EB4F57E538448BBB2DB9DEE7C42586D7")
     public E set(int location, E object) {
         addTaint(object.getTaint());

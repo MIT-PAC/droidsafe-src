@@ -1225,6 +1225,7 @@ Bitmap varCB1FEB1592E325F352986A6C8FA8FC91_1016252427 =         extractAlpha(nul
 
         private int mNativeBitmap;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.816 -0400", hash_original_method = "0DDF139B38AD50F56D0AF26AB944EC3E", hash_generated_method = "2ABFC00A38D50D88F77B67505EB4A344")
           BitmapFinalizer(int nativeBitmap) {
             mNativeBitmap = nativeBitmap;

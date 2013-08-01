@@ -102,6 +102,7 @@ public class ListPopupWindow {
 
     private boolean mModal;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.700 -0400", hash_original_method = "EE0C6E46788D5D6F0175B90B5CCF0B4A", hash_generated_method = "A7BDC1A593955EB85983C7550497CC46")
     public  ListPopupWindow(Context context) {
         this(context, null, com.android.internal.R.attr.listPopupWindowStyle, 0);
@@ -110,6 +111,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.700 -0400", hash_original_method = "C9E1E41EEB8F4220F08A0D28BC21C4EB", hash_generated_method = "E9354EF42BD00D22F68A2E1595357874")
     public  ListPopupWindow(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.listPopupWindowStyle, 0);
@@ -119,6 +121,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.701 -0400", hash_original_method = "449FC27C9387B8AAB93C584A7B8B7579", hash_generated_method = "7FCB64E8D3DEF5879FC67D60B221DB6A")
     public  ListPopupWindow(Context context, AttributeSet attrs, int defStyleAttr) {
         this(context, attrs, defStyleAttr, 0);
@@ -129,6 +132,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.702 -0400", hash_original_method = "F8B1DB93A85ECDB9C2D2CE8639D222AE", hash_generated_method = "FE5B87D971B39F25483B906D7F81739C")
     public  ListPopupWindow(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         mContext = context;
@@ -141,6 +145,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.702 -0400", hash_original_method = "B55D1F7EE07C2CDF60B7B314069C1E48", hash_generated_method = "3F5C80D4629C1AC86C25B2A68F594407")
     public void setAdapter(ListAdapter adapter) {
         if(mObserver == null)        
@@ -197,6 +202,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.704 -0400", hash_original_method = "320A57FA9129485B3F1A01EDA8808ED5", hash_generated_method = "CCC0E91E124615C44FD084559DF2166E")
     public void setModal(boolean modal) {
         addTaint(modal);
@@ -248,6 +254,7 @@ public class ListPopupWindow {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.705 -0400", hash_original_method = "E80B835CA17A4D3E815EC079FA1EE953", hash_generated_method = "2FD8F7EF1EFF864F6CD4306E3D75BDA2")
     public void setSoftInputMode(int mode) {
         addTaint(mode);
@@ -472,6 +479,7 @@ View var0AB2834B220EB17FD3E645A276A93F12_1358605475 =         mDropDownAnchorVie
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.710 -0400", hash_original_method = "F870D6C36930B52993EA962C5CEE4741", hash_generated_method = "D624D413BB2A631ED403F1ED0B6B8FE2")
     public void setPromptView(View prompt) {
         boolean showing = isShowing();
@@ -505,6 +513,7 @@ View var0AB2834B220EB17FD3E645A276A93F12_1358605475 =         mDropDownAnchorVie
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.711 -0400", hash_original_method = "B0532D10D967B708828191A62293AA30", hash_generated_method = "9561E37C144618A91CB5D590D08F845B")
     public void show() {
         int height = buildDropDown();
@@ -660,6 +669,7 @@ View var0AB2834B220EB17FD3E645A276A93F12_1358605475 =         mDropDownAnchorVie
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.712 -0400", hash_original_method = "288B7DB6446AD4FA82AB3ACE9506A35B", hash_generated_method = "6B4243715DFEC3599FE3FE90A636D6D2")
     public void setInputMethodMode(int mode) {
         addTaint(mode);
@@ -748,6 +758,7 @@ View var0AB2834B220EB17FD3E645A276A93F12_1358605475 =         mDropDownAnchorVie
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.714 -0400", hash_original_method = "5D56F9149CAA09C31AB36A31C90B128D", hash_generated_method = "E5065BC2FB023F1AD223DC7C4BEB74EA")
     public boolean performItemClick(int position) {
         addTaint(position);
@@ -881,6 +892,7 @@ ListView var92F502D0F67611E603B0EE7DA4A0DC3B_1607774267 =         mDropDownList;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.718 -0400", hash_original_method = "D4938DA23F7CC8247819641EDCB20246", hash_generated_method = "1BB8324D531C3295BD5E212B19635E32")
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -968,6 +980,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.719 -0400", hash_original_method = "CD01E8977B386E95EB43DA8A15EDF875", hash_generated_method = "9C7FF96130789CF50C91EA31D4C45E4D")
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1009,6 +1022,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.719 -0400", hash_original_method = "5D81C652E72C1CAFD12E9CC95CD171E7", hash_generated_method = "C511031D0AC157607F4B4151C4DC07BF")
     public boolean onKeyPreIme(int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1053,6 +1067,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.724 -0400", hash_original_method = "F5C740553BB47CFEBEC052FD2A1DEFBA", hash_generated_method = "F19212F524157543401757E3253BD08A")
     private int buildDropDown() {
         ViewGroup dropDownView;
@@ -1202,6 +1217,7 @@ switch(mPromptPosition){
 
         private boolean mHijackFocus;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.725 -0400", hash_original_method = "BBC42F17FDBB7B5F7851EFDC7F6F1B4C", hash_generated_method = "9C5D886DB88C15A579FD9405B4368B51")
         public  DropDownListView(Context context, boolean hijackFocus) {
             super(context, null, com.android.internal.R.attr.dropDownListViewStyle);
@@ -1214,6 +1230,7 @@ switch(mPromptPosition){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.725 -0400", hash_original_method = "3F1E6A7533EB0FC6DBDDA209BB95D590", hash_generated_method = "FEE1E4BD0B538F7E15712C63E0F17B3C")
         @Override
          View obtainView(int position, boolean[] isScrap) {
@@ -1236,6 +1253,7 @@ View var057D265746AE9672AFE5F9FF6338071D_932286188 =             view;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.725 -0400", hash_original_method = "4691130934AB8C0281F78748C377FD01", hash_generated_method = "8ADF2CE44D91B120E7965C8033DCFF6B")
         @Override
         public boolean isInTouchMode() {
@@ -1247,6 +1265,7 @@ View var057D265746AE9672AFE5F9FF6338071D_932286188 =             view;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.725 -0400", hash_original_method = "561EA8BFAB26A78C0A50D34CA2B435FA", hash_generated_method = "F202D85375F4A323C14735DE5A661256")
         @Override
         public boolean hasWindowFocus() {
@@ -1258,6 +1277,7 @@ View var057D265746AE9672AFE5F9FF6338071D_932286188 =             view;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.726 -0400", hash_original_method = "C2BF4E069A702887BC745C139DC71739", hash_generated_method = "3FD29DEB06F556EBEA608837B531ECEB")
         @Override
         public boolean isFocused() {
@@ -1269,6 +1289,7 @@ View var057D265746AE9672AFE5F9FF6338071D_932286188 =             view;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.726 -0400", hash_original_method = "1102992DDCFDFABDAA31FDFA580154D8", hash_generated_method = "B04989D2A4FA7018977034ACC7A2C247")
         @Override
         public boolean hasFocus() {

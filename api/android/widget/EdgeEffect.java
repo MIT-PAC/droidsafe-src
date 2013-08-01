@@ -87,6 +87,7 @@ public class EdgeEffect {
 
     private float mPullDistance;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.246 -0400", hash_original_method = "AC508E1EC1805645807F80E8793DDCA5", hash_generated_method = "0CF3E94DD2E8E1E0F1CF9D87DF8712BB")
     public  EdgeEffect(Context context) {
         addTaint(context.getTaint());
@@ -135,6 +136,7 @@ public class EdgeEffect {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.249 -0400", hash_original_method = "0B34B4327835671A51286147399AA2A4", hash_generated_method = "90121324B78DEE1D033ADA3736043444")
     public void onPull(float deltaDistance) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -178,6 +180,7 @@ public class EdgeEffect {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.251 -0400", hash_original_method = "130A4176B67F340D0300F29A870A39F7", hash_generated_method = "BC446EBD548533819C8C7DD4A224442A")
     public void onRelease() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -216,6 +219,7 @@ public class EdgeEffect {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.252 -0400", hash_original_method = "1D958DC13C828E6D4B8059ABA730E95F", hash_generated_method = "BA825A4857DBCA7D9EF40A9CF75A8279")
     public void onAbsorb(int velocity) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -251,6 +255,7 @@ public class EdgeEffect {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.253 -0400", hash_original_method = "610B6E206A511890E944EC9E15AA39A0", hash_generated_method = "1EC8E7EF70FD06E2F5DFF65B68E24C3E")
     public boolean draw(Canvas canvas) {
         addTaint(canvas.getTaint());
@@ -293,6 +298,7 @@ public class EdgeEffect {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.254 -0400", hash_original_method = "217F98194ACCE474266C15D1EE978E29", hash_generated_method = "E9B9E83683AE651BF936417EAAC0E4BA")
     private void update() {
         final long time = AnimationUtils.currentAnimationTimeMillis();

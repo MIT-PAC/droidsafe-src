@@ -20,6 +20,7 @@ public abstract class InputEvent implements Parcelable {
     public abstract int getDeviceId();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.019 -0400", hash_original_method = "65C564B77C92C924B4A35B510EAEB2C6", hash_generated_method = "D15C16F7414B9D538EECE7A8DA770D79")
     public final InputDevice getDevice() {
 InputDevice var6CAF134A410F580D974FCD91E6F3C893_1344692404 =         InputDevice.getDevice(getDeviceId());

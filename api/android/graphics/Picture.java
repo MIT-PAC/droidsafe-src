@@ -18,6 +18,7 @@ public class Picture {
 
     private int mNativePicture;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.621 -0400", hash_original_method = "2489F1714C6AB52D2B9965C8B69500DD", hash_generated_method = "63528B2E8ADC16DD1C04E65808C24AEE")
     public  Picture() {
         this(nativeConstructor(0));
@@ -25,6 +26,7 @@ public class Picture {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.621 -0400", hash_original_method = "0B8FC63E2385743B0CD030A74D7237E0", hash_generated_method = "BEB05DE5939B8E76EE1EA7255E1E3D3A")
     public  Picture(Picture src) {
         this(nativeConstructor(src != null ? src.mNativePicture : 0));
@@ -33,6 +35,7 @@ public class Picture {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.622 -0400", hash_original_method = "4720BFD5C543F65C552F0739FF1DD2E7", hash_generated_method = "4BD9ADE5DBB84D427AC38DA6258FE8BA")
     private  Picture(int nativePicture) {
         if(nativePicture == 0)        
@@ -50,6 +53,7 @@ public class Picture {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.622 -0400", hash_original_method = "20E22D7D195E3391E43BD9FB13A423DE", hash_generated_method = "D96E1D359F368B1235321CD40D61F22D")
     public Canvas beginRecording(int width, int height) {
         addTaint(height);
@@ -66,6 +70,7 @@ Canvas var1D97605435A680D4B9EC641401BFF9EE_814837629 =         mRecordingCanvas;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.622 -0400", hash_original_method = "4B70DEBF1EF0DC56C3D034BE86F32949", hash_generated_method = "6C8796540064B50705D12C6EBCDC58FA")
     public void endRecording() {
         if(mRecordingCanvas != null)        
@@ -114,12 +119,14 @@ Canvas var1D97605435A680D4B9EC641401BFF9EE_814837629 =         mRecordingCanvas;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Picture createFromStream(InputStream stream) {
         return new Picture(
             nativeCreateFromStream(stream, new byte[WORKING_STREAM_STORAGE]));
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.623 -0400", hash_original_method = "5D2FA2739AFC080B35312B93ED4EB821", hash_generated_method = "9CAAB0580330F805109382F6DD398285")
     public void writeToStream(OutputStream stream) {
         addTaint(stream.getTaint());
@@ -147,6 +154,7 @@ Canvas var1D97605435A680D4B9EC641401BFF9EE_814837629 =         mRecordingCanvas;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.623 -0400", hash_original_method = "A9ACB715DF1E16C6B20EA656F0034A3C", hash_generated_method = "65406D5C08A00AE047C5B3642566D2E9")
     protected void finalize() throws Throwable {
         nativeDestructor(mNativePicture);
@@ -213,6 +221,7 @@ Canvas var1D97605435A680D4B9EC641401BFF9EE_814837629 =         mRecordingCanvas;
 
         private Picture mPicture;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.624 -0400", hash_original_method = "2A456EE78DB6B79255D736BC2BE0949A", hash_generated_method = "9A52DF88588713E0DD3B90E3BE8D18C0")
         public  RecordingCanvas(Picture pict, int nativeCanvas) {
             super(nativeCanvas);
@@ -223,6 +232,7 @@ Canvas var1D97605435A680D4B9EC641401BFF9EE_814837629 =         mRecordingCanvas;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.624 -0400", hash_original_method = "6CF0BDC754DD98C47DAA94E49A23367D", hash_generated_method = "6DEB54B77C4F682E2A3D44A8BF9F0E33")
         @Override
         public void setBitmap(Bitmap bitmap) {
@@ -237,6 +247,7 @@ Canvas var1D97605435A680D4B9EC641401BFF9EE_814837629 =         mRecordingCanvas;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.625 -0400", hash_original_method = "37BF59928A286475E8AAF8FA82084BAA", hash_generated_method = "B338FF8FBF145BE3673877A69F54C9B4")
         @Override
         public void drawPicture(Picture picture) {

@@ -204,6 +204,7 @@ public final class InputMethodManager {
 
     final InputConnection mDummyInputConnection = new BaseInputConnection(this, false);
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.711 -0400", hash_original_method = "508ED56B5BF5DABABCAF5D12E61B17FA", hash_generated_method = "8F8CB7DD0282198FF166028847E17584")
       InputMethodManager(IInputMethodManager service, Looper looper) {
         mService = service;
@@ -227,11 +228,13 @@ public final class InputMethodManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static public InputMethodManager getInstance(Context context) {
         return getInstance(context.getMainLooper());
     }
 
     
+    @DSModeled(DSC.SAFE)
     static public InputMethodManager getInstance(Looper mainLooper) {
         synchronized (mInstanceSync) {
             if (mInstance != null) {
@@ -273,6 +276,7 @@ IInputContext var3882EE78855F016992A015D7D670188F_318699215 =         mIInputCon
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.713 -0400", hash_original_method = "4976C1493B414917938FA9CF9C859341", hash_generated_method = "93AF6CF816DC02A46E1E631E800FF685")
     public List<InputMethodInfo> getInputMethodList() {
         try 
@@ -296,6 +300,7 @@ List<InputMethodInfo> var1AF35DE97ED7980EC5787923E9C91923_1305658211 =          
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.713 -0400", hash_original_method = "E8BA85FCD94534AA9F0D8586DC21C83A", hash_generated_method = "2BE627A8C28A0373E28B30B0D2687B8B")
     public List<InputMethodInfo> getEnabledInputMethodList() {
         try 
@@ -319,6 +324,7 @@ List<InputMethodInfo> var66B28E882645C61D424E3DABD0D9FB5B_667127025 =           
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.713 -0400", hash_original_method = "6701B30EF11ADDDCEFC97757F6DCE403", hash_generated_method = "AE87A4934D744BDF8B02E0AA64622379")
     public List<InputMethodSubtype> getEnabledInputMethodSubtypeList(InputMethodInfo imi,
             boolean allowsImplicitlySelectedSubtypes) {
@@ -345,6 +351,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.714 -0400", hash_original_method = "53B62C40B5B8B2FB3464E7DA6A87D443", hash_generated_method = "C08491B251895C649725B8DD5184FA3E")
     public void showStatusIcon(IBinder imeToken, String packageName, int iconId) {
         addTaint(iconId);
@@ -369,6 +376,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.715 -0400", hash_original_method = "D00BAF75C3098DFC4E35D122E494F4F9", hash_generated_method = "000FD23AFECDAF85BC007CE4E0B0F198")
     public void hideStatusIcon(IBinder imeToken) {
         addTaint(imeToken.getTaint());
@@ -391,6 +399,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.715 -0400", hash_original_method = "7375BD73E964162AE893F10DF6DE4659", hash_generated_method = "36D126F4ABF7BBA8439D8085B61D5B7D")
     public void setImeWindowStatus(IBinder imeToken, int vis, int backDisposition) {
         addTaint(backDisposition);
@@ -424,6 +433,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.716 -0400", hash_original_method = "CEA057AD7D0092E84D73E0D04E9F9DEE", hash_generated_method = "BBE8440508EA5669189DD531A3914A22")
     public void registerSuggestionSpansForNotification(SuggestionSpan[] spans) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -447,6 +457,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.716 -0400", hash_original_method = "67AB3FB4ECE37955692BC451DD457E24", hash_generated_method = "89155998080391B7B3CF4A5353756897")
     public void notifySuggestionPicked(SuggestionSpan span, String originalString, int index) {
         addTaint(index);
@@ -482,6 +493,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.717 -0400", hash_original_method = "BC82DFD48282D1B48FE7389621C80801", hash_generated_method = "6CAAE0569A987A7C1523FD2E20E740E7")
     public boolean isActive(View view) {
         addTaint(view.getTaint());
@@ -506,6 +518,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.717 -0400", hash_original_method = "36DF2A9A4D9117D0F00790A34A3AF373", hash_generated_method = "4DC48E92C0706548C06935AE981AD2F5")
     public boolean isActive() {
         checkFocus();
@@ -523,6 +536,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.717 -0400", hash_original_method = "A9275A3C5F8B97D3BA22658E0542618D", hash_generated_method = "B3F2D570BEE4E3E3127FD192897A4637")
     public boolean isAcceptingText() {
         checkFocus();
@@ -535,6 +549,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.717 -0400", hash_original_method = "3A92950E40C3C85A49E393646C27AEA9", hash_generated_method = "D4740FFBD500B6D301DCC0D1B2CFF8E6")
      void clearBindingLocked() {
         clearConnectionLocked();
@@ -560,6 +575,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.718 -0400", hash_original_method = "1D1918AFC608107C503CFA70B5918395", hash_generated_method = "4D3E2B6C0C35942436DBC53B9E22A300")
      void finishInputLocked() {
         mNextServedView = null;
@@ -594,6 +610,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.718 -0400", hash_original_method = "55A79A529B0E338884C3A2F27FEDBFDF", hash_generated_method = "A3F02A6853C0AE306D5DA86B99CDD374")
     public void reportFinishInputConnection(InputConnection ic) {
         addTaint(ic.getTaint());
@@ -608,6 +625,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.718 -0400", hash_original_method = "2ABAAA397EA24F350376BE11BDE21CC8", hash_generated_method = "6D21E4A196E151B2D91A4AEC06BC50D9")
     public void displayCompletions(View view, CompletionInfo[] completions) {
         addTaint(view.getTaint());
@@ -649,6 +667,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.718 -0400", hash_original_method = "51F483359287A71D0F033A0D1668F291", hash_generated_method = "DABDDF1355B17D63F620C30DCFD586DC")
     public void updateExtractedText(View view, int token, ExtractedText text) {
         addTaint(text.getTaint());
@@ -690,6 +709,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.718 -0400", hash_original_method = "8D2F613F92BFA1616CD527BE18090765", hash_generated_method = "666F13FA52B6BF6926B44F31F6EB6514")
     public boolean showSoftInput(View view, int flags) {
         addTaint(flags);
@@ -702,6 +722,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.719 -0400", hash_original_method = "182A36951EBA765A4D1CAFFC02BFF851", hash_generated_method = "64A7C9F3CAFA799D2092BD94F15133C3")
     public boolean showSoftInput(View view, int flags, ResultReceiver resultReceiver) {
         addTaint(resultReceiver.getTaint());
@@ -746,6 +767,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.719 -0400", hash_original_method = "5110555AB7D318C3F52B5C2085DD7CF4", hash_generated_method = "ED187209014239787D8ECCFDB2ED15ED")
     public void showSoftInputUnchecked(int flags, ResultReceiver resultReceiver) {
         addTaint(resultReceiver.getTaint());
@@ -765,6 +787,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.719 -0400", hash_original_method = "4391301CC9B8F998B7CF2FBAB148B8AA", hash_generated_method = "09B5B5900E740D27B7151286F1D61335")
     public boolean hideSoftInputFromWindow(IBinder windowToken, int flags) {
         addTaint(flags);
@@ -777,6 +800,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.719 -0400", hash_original_method = "0C97F129DA85CEA766FB3D7196531B26", hash_generated_method = "4E4505D17A6097D01F41A67C896233E7")
     public boolean hideSoftInputFromWindow(IBinder windowToken, int flags,
             ResultReceiver resultReceiver) {
@@ -820,6 +844,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.719 -0400", hash_original_method = "A530968907DBDDA36B89C5946F7EC59D", hash_generated_method = "B861650397128402BD8C1B45CA9E64BA")
     public void toggleSoftInputFromWindow(IBinder windowToken, int showFlags, int hideFlags) {
         addTaint(hideFlags);
@@ -857,6 +882,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.720 -0400", hash_original_method = "79211245E8E42CAB1585D75CD7067652", hash_generated_method = "4915271F86C0777E935ADB0654A37CDC")
     public void toggleSoftInput(int showFlags, int hideFlags) {
         addTaint(hideFlags);
@@ -881,6 +907,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.720 -0400", hash_original_method = "A40BE330B9742EEEBB8728870BF9ED45", hash_generated_method = "070F1DA185BEBE42FB9FC4E82DD11AE8")
     public void restartInput(View view) {
         addTaint(view.getTaint());
@@ -908,6 +935,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.721 -0400", hash_original_method = "B3B1285322786DD26A60C9F9B7802F4B", hash_generated_method = "EF8D484F41C7E6C0C22260FFB086B2ED")
      void startInputInner() {
         View view;
@@ -1001,6 +1029,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.721 -0400", hash_original_method = "574E98E1F1761FC0DC94CE21F83FBF8C", hash_generated_method = "4D81D76D15CFF61AE0032BECFD59FC02")
     public void windowDismissed(IBinder appWindowToken) {
         addTaint(appWindowToken.getTaint());
@@ -1024,6 +1053,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.721 -0400", hash_original_method = "3DD6E391932A9CCCB1C61486572B8B95", hash_generated_method = "1875EA8926CC9B820D472611DCDF2FDE")
     public void focusIn(View view) {
         addTaint(view.getTaint());
@@ -1038,6 +1068,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.721 -0400", hash_original_method = "3857011248BD1E1DC17E86CAECB63023", hash_generated_method = "F0BFE46A3CE202379F527C529F92B5A3")
      void focusInLocked(View view) {
         if(DEBUG){ }        if(mCurRootView != view.getRootView())        
@@ -1087,6 +1118,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.722 -0400", hash_original_method = "4A6B64189F9C851EAF66731814D5760A", hash_generated_method = "FF429D54DAA208CA1129D5F43D2E897C")
      void scheduleCheckFocusLocked(View view) {
         addTaint(view.getTaint());
@@ -1103,6 +1135,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.722 -0400", hash_original_method = "7D116D001C63CE498592C7AACB0DA356", hash_generated_method = "3BE962DE6E10FCEC8C8BF62DB6EF49A7")
     public void checkFocus() {
         if(mServedView == mNextServedView && !mNextServedNeedsStart)        
@@ -1139,6 +1172,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.722 -0400", hash_original_method = "D0A5B4195CF8CF9C3EE8D9642BA1EAAF", hash_generated_method = "5A628AEF90E75D609FFF8B673EF711D1")
      void closeCurrentInput() {
         try 
@@ -1156,6 +1190,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.722 -0400", hash_original_method = "4893EC862C01D5D2A6E85A7017E94B9B", hash_generated_method = "ED58CCC433760687FDF522A84949FC15")
     public void onWindowFocus(View rootView, View focusedView, int softInputMode,
             boolean first, int windowFlags) {
@@ -1208,6 +1243,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.723 -0400", hash_original_method = "6EC728E52174DF43F39F15D376B96D59", hash_generated_method = "A7A81A7561DAABBB6063DBBA91742CCD")
     public void updateSelection(View view, int selStart, int selEnd,
             int candidatesStart, int candidatesEnd) {
@@ -1246,6 +1282,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.723 -0400", hash_original_method = "8E5F47C036105189BFF71EB5625C4E3F", hash_generated_method = "229845A555356D6475D862564F582FDD")
     public void viewClicked(View view) {
         addTaint(view.getTaint());
@@ -1298,6 +1335,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.724 -0400", hash_original_method = "06AF2B97EC9C8BBE1303A237FE727449", hash_generated_method = "295EFDBEADF1112E86A6797429A98CE8")
     public void updateCursor(View view, int left, int top, int right, int bottom) {
         addTaint(bottom);
@@ -1334,6 +1372,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.724 -0400", hash_original_method = "42E6E13C0C5606029CE59DAABCC4FEF4", hash_generated_method = "6654EC4B7A9B70FEBFD405ADD7A032F4")
     public void sendAppPrivateCommand(View view, String action, Bundle data) {
         addTaint(data.getTaint());
@@ -1374,6 +1413,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.744 -0400", hash_original_method = "BA3360E0078151C4E77F69CD0F708AC2", hash_generated_method = "CA4DB53F6F6EBCBC8D8622A744EE9D20")
     public void setInputMethod(IBinder token, String id) {
         addTaint(id.getTaint());
@@ -1397,6 +1437,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.744 -0400", hash_original_method = "6B5F7BD4B9987D792262BC3FA22B0356", hash_generated_method = "8284D8B52CC39BFACA7655E3566B26B2")
     public void setInputMethodAndSubtype(IBinder token, String id, InputMethodSubtype subtype) {
         addTaint(subtype.getTaint());
@@ -1421,6 +1462,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.744 -0400", hash_original_method = "57E46D0940B3C65A92751CB9C29D6161", hash_generated_method = "22EBBAC4C8E85CE946750E701648510E")
     public void hideSoftInputFromInputMethod(IBinder token, int flags) {
         addTaint(flags);
@@ -1444,6 +1486,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.744 -0400", hash_original_method = "E0804B4135D0004448137E06C89A5AC2", hash_generated_method = "7C1C59A791DFB0BB142986E9FB18067E")
     public void showSoftInputFromInputMethod(IBinder token, int flags) {
         addTaint(flags);
@@ -1467,6 +1510,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.744 -0400", hash_original_method = "E668070B782BDDB11E06224CB9252B61", hash_generated_method = "11801685BA911C2696416FF91D7B874F")
     public void dispatchKeyEvent(Context context, int seq, KeyEvent key,
             IInputMethodCallback callback) {
@@ -1522,6 +1566,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.745 -0400", hash_original_method = "99D2E1A6FD8F8DDA0CF04D3632103B0E", hash_generated_method = "A1A25E4D84233622766E5DD938E28B6B")
      void dispatchTrackballEvent(Context context, int seq, MotionEvent motion,
             IInputMethodCallback callback) {
@@ -1564,6 +1609,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.745 -0400", hash_original_method = "032A4A57AEC9378F2AEDB365B55F6952", hash_generated_method = "07CF8A2DB7F9DD868A788A0573B6EFA3")
     public void showInputMethodPicker() {
         synchronized
@@ -1587,6 +1633,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.745 -0400", hash_original_method = "40ED720E9E0E9A18C34ACD22184580A8", hash_generated_method = "D93FB6B63676C7A4BECDEB0C83A97522")
     public void showInputMethodAndSubtypeEnabler(String imiId) {
         addTaint(imiId.getTaint());
@@ -1611,6 +1658,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1277258179 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.745 -0400", hash_original_method = "FD9F276F6D40BEB379032073F0CE055D", hash_generated_method = "52B672A06B8EA77CDE18F2C8B2F93307")
     public InputMethodSubtype getCurrentInputMethodSubtype() {
         synchronized
@@ -1640,6 +1688,7 @@ InputMethodSubtype var540C13E9E156B687226421B24F2DF178_691957353 =              
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.745 -0400", hash_original_method = "3CA77773C45BE29D3C7CB419603994A1", hash_generated_method = "A61C4806EAA7C25C61F9A80FFFF29DE2")
     public boolean setCurrentInputMethodSubtype(InputMethodSubtype subtype) {
         addTaint(subtype.getTaint());
@@ -1714,6 +1763,7 @@ Map<InputMethodInfo, List<InputMethodSubtype>> varEDFF4FBBF053B5DC2B444ADFA049EE
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.746 -0400", hash_original_method = "36F8CCF4190068A92F1E830BF76C0680", hash_generated_method = "B986F1A0AAF416D9BB88031E3E2BCD84")
     public boolean switchToLastInputMethod(IBinder imeToken) {
         addTaint(imeToken.getTaint());
@@ -1744,6 +1794,7 @@ Map<InputMethodInfo, List<InputMethodSubtype>> varEDFF4FBBF053B5DC2B444ADFA049EE
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.746 -0400", hash_original_method = "E3938A1614AA74CBD638A5A0682603ED", hash_generated_method = "A424A64EF1042F545C351E51C1DFA9C6")
     public void setAdditionalInputMethodSubtypes(String imiId, InputMethodSubtype[] subtypes) {
         addTaint(subtypes[0].getTaint());
@@ -1769,6 +1820,7 @@ Map<InputMethodInfo, List<InputMethodSubtype>> varEDFF4FBBF053B5DC2B444ADFA049EE
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.746 -0400", hash_original_method = "D92C08014C42A358F015C9B31552925A", hash_generated_method = "B02D6231221C1BB433692585165996D8")
     public InputMethodSubtype getLastInputMethodSubtype() {
         synchronized
@@ -1798,6 +1850,7 @@ InputMethodSubtype var540C13E9E156B687226421B24F2DF178_1238493995 =             
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.746 -0400", hash_original_method = "A669FCC83173C60A2ED2B3C5020338A1", hash_generated_method = "6E4C5AB618DC4BC1EA896DFC2D432554")
      void doDump(FileDescriptor fd, PrintWriter fout, String[] args) {
         addTaint(args[0].getTaint());
@@ -1841,6 +1894,7 @@ InputMethodSubtype var540C13E9E156B687226421B24F2DF178_1238493995 =             
     
     class H extends Handler {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.746 -0400", hash_original_method = "6EF38EF9E91987FCDB2CC1FED5C76A24", hash_generated_method = "171D5E2268C2C0FB2DD94B8957DCF858")
           H(Looper looper) {
             super(looper);
@@ -1849,6 +1903,7 @@ InputMethodSubtype var540C13E9E156B687226421B24F2DF178_1238493995 =             
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.747 -0400", hash_original_method = "D40CD8B0041519F81016D036AC481E26", hash_generated_method = "B2B25E4792461D8E315370903DAF73F7")
         @Override
         public void handleMessage(Message msg) {

@@ -210,6 +210,7 @@ for(Entry<K, V> entry : entrySet())
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.579 -0400", hash_original_method = "80DED5B1493F4175A64A94324F6ABF01", hash_generated_method = "DE4E462DDFAD080821E1F2FDD12CBB2F")
     public V get(Object key) {
         addTaint(key.getTaint());
@@ -381,6 +382,7 @@ Set<K> varCB23CF4AFB8B7AE1843E733C4B0CC600_1160017523 =         keySet;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.584 -0400", hash_original_method = "1AE25A34BEB4A8F08F41373ADFFCFE34", hash_generated_method = "68BBC7F50DC671ED0F56BA1A5CF63CD0")
     public V put(K key, V value) {
         addTaint(value.getTaint());

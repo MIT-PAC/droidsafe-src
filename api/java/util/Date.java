@@ -64,6 +64,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.073 -0400", hash_original_method = "139F1B989333E9F68B465E1B19165668", hash_generated_method = "0EEF3FA43B9CE5E4B8C175E1BF11EA3A")
     @Deprecated
     public  Date(int year, int month, int day, int hour, int minute, int second) {
@@ -328,6 +329,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_858302775 =             super.clone()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static long parse(String string) {
         if (string == null) {
@@ -605,6 +607,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_858302775 =             super.clone()
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.083 -0400", hash_original_method = "3D40A4C7B327D97106C4C4EC9B9A341F", hash_generated_method = "FF4B358DC56B7DD027472E96F1EB50DD")
     @Deprecated
     public String toGMTString() {
@@ -638,6 +641,7 @@ String varB49EBA2640DE06D41F94611F3DCCEEA9_665240744 =         DateFormat.getDat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.084 -0400", hash_original_method = "6C5F0B4EE91530ACACAA7ACB374F6D90", hash_generated_method = "EAD6691D4AFD0CDEA554E449B43095F0")
     @Override
     public String toString() {
@@ -677,6 +681,7 @@ String varE65B3A02759122992CB82C0E651AD408_1060799798 =         result.toString(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @Deprecated
     public static long UTC(int year, int month, int day, int hour, int minute,
             int second) {

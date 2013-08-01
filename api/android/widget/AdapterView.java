@@ -99,6 +99,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
 
     boolean mBlockLayoutRequests = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.374 -0400", hash_original_method = "57FCDFF67BC1DAFCD174DA15B87A1337", hash_generated_method = "89DE8E953EDF7F5507A398476298E1EB")
     public  AdapterView(Context context) {
         super(context);
@@ -107,6 +108,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.374 -0400", hash_original_method = "A1536CC4437039F5CF27987414A5A415", hash_generated_method = "80A576B430D29812426EB1FB0298A662")
     public  AdapterView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -116,6 +118,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.375 -0400", hash_original_method = "4DD39388BA45E8CBF534A54DFA59E3BD", hash_generated_method = "B03AA63B21C301AAB7F40BA9A1F82543")
     public  AdapterView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);

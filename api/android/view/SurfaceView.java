@@ -446,6 +446,7 @@ public class SurfaceView extends View {
         private static final String LOG_TAG = "SurfaceHolder";
 };
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.203 -0400", hash_original_method = "36676A10DA9FEB0757A9258740A87950", hash_generated_method = "87DDB0D9485C6492CE7FD762F34FC60E")
     public  SurfaceView(Context context) {
         super(context);
@@ -456,6 +457,7 @@ public class SurfaceView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.203 -0400", hash_original_method = "AC0FAD92FEC32BF55C39DC93EF8576EF", hash_generated_method = "6331146784CA69D821F0D321E8959B8A")
     public  SurfaceView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -467,6 +469,7 @@ public class SurfaceView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.203 -0400", hash_original_method = "56551BC688438C77EC1087EC18E1D5A3", hash_generated_method = "1316159281F03B74F08359F3AE0D7BC3")
     public  SurfaceView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -479,6 +482,7 @@ public class SurfaceView extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.204 -0400", hash_original_method = "8A7163C0B5D9260FCDBBE7B713CA285D", hash_generated_method = "EC875459420059988B62E0689FF79ECE")
     private void init() {
         setWillNotDraw(true);
@@ -498,6 +502,7 @@ SurfaceHolder var2103ECF1F3E4D3C9052D93458F857375_2099901444 =         mSurfaceH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.205 -0400", hash_original_method = "D0F196EB2D52CF89A074E8F883CCEE9A", hash_generated_method = "D9472E9EFB76A81E90B6C355FEE22C88")
     @Override
     protected void onAttachedToWindow() {
@@ -531,6 +536,7 @@ SurfaceHolder var2103ECF1F3E4D3C9052D93458F857375_2099901444 =         mSurfaceH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.205 -0400", hash_original_method = "798A4FFA4C7A67465D94471AB247681B", hash_generated_method = "B598EEA46B3AE9FA935DB6F1CD600126")
     @Override
     protected void onWindowVisibilityChanged(int visibility) {
@@ -547,6 +553,7 @@ SurfaceHolder var2103ECF1F3E4D3C9052D93458F857375_2099901444 =         mSurfaceH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.206 -0400", hash_original_method = "644621127059D6B23356D81576DC6A8B", hash_generated_method = "E5286B2FAA243D4A8768171F99DC52AA")
     @Override
     public void setVisibility(int visibility) {
@@ -562,6 +569,7 @@ SurfaceHolder var2103ECF1F3E4D3C9052D93458F857375_2099901444 =         mSurfaceH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.207 -0400", hash_original_method = "4BCDE7E4A5F0F207B0BFA481971C6B8A", hash_generated_method = "D367F621F4A7622F955D0920BB8E45AC")
     @Override
     protected void onDetachedFromWindow() {
@@ -613,6 +621,7 @@ SurfaceHolder var2103ECF1F3E4D3C9052D93458F857375_2099901444 =         mSurfaceH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.207 -0400", hash_original_method = "D2E319C9E98A8DC50F96090A40CA6589", hash_generated_method = "2BA9608B48E6D31DC70ABB1CCE47FA61")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -637,6 +646,7 @@ SurfaceHolder var2103ECF1F3E4D3C9052D93458F857375_2099901444 =         mSurfaceH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.207 -0400", hash_original_method = "F99ED41FE6B39B12C38A6C99019A5F97", hash_generated_method = "17A2A7FE675F92C41C798BEDADC2A627")
     @Override
     protected boolean setFrame(int left, int top, int right, int bottom) {
@@ -656,6 +666,7 @@ SurfaceHolder var2103ECF1F3E4D3C9052D93458F857375_2099901444 =         mSurfaceH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.208 -0400", hash_original_method = "41B5D508388526C331B138172391BB1E", hash_generated_method = "EE3D4A559B7A9E5E27DA175121F5F9E0")
     @Override
     public boolean gatherTransparentRegion(Region region) {
@@ -715,6 +726,7 @@ SurfaceHolder var2103ECF1F3E4D3C9052D93458F857375_2099901444 =         mSurfaceH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.208 -0400", hash_original_method = "B44BAC95FDBF1A2D6C6E955BD515D9FE", hash_generated_method = "6F8CFC8D036B6EE8D63F1E476DFC1695")
     @Override
     public void draw(Canvas canvas) {
@@ -737,6 +749,7 @@ SurfaceHolder var2103ECF1F3E4D3C9052D93458F857375_2099901444 =         mSurfaceH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.209 -0400", hash_original_method = "1FF1947FA48636DD52DD4F3203EB471D", hash_generated_method = "E1A54D5D3FB86B729D84A9CC4184AB67")
     @Override
     protected void dispatchDraw(Canvas canvas) {
@@ -806,6 +819,7 @@ SurfaceHolder var2103ECF1F3E4D3C9052D93458F857375_2099901444 =         mSurfaceH
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.216 -0400", hash_original_method = "1133978B42097E05A4BF8CED29255FA3", hash_generated_method = "128EED3733F0FC01E31068F53657E414")
     private void updateWindow(boolean force, boolean redrawNeeded) {
         addTaint(redrawNeeded);
@@ -999,6 +1013,7 @@ for(SurfaceHolder.Callback c : callbacks)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.218 -0400", hash_original_method = "45F3E6A4EE2EB731EF40485FB92CA6AA", hash_generated_method = "2F4CAE53D612317AED40D1BEF0BBF1AC")
     private SurfaceHolder.Callback[] getSurfaceCallbacks() {
         SurfaceHolder.Callback callbacks[];
@@ -1020,6 +1035,7 @@ SurfaceHolder.Callback[] var7E06ACD9C2C819F377F4C0B98904AB11_447966681 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.218 -0400", hash_original_method = "300B2B985E368655B5E11ADA1916748D", hash_generated_method = "A6C8E4CA52B47BE053F3A9B363230D11")
      void handleGetNewSurface() {
         updateWindow(false, false);
@@ -1050,6 +1066,7 @@ SurfaceHolder.Callback[] var7E06ACD9C2C819F377F4C0B98904AB11_447966681 =        
 
         int mCurHeight = -1;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.219 -0400", hash_original_method = "636A3C131A2E0F598D9E9841916F7C6A", hash_generated_method = "C467142DB8EFC51A87F6CBFE9326D247")
         public  MyWindow(SurfaceView surfaceView) {
             mSurfaceView = new WeakReference<SurfaceView>(surfaceView);
@@ -1058,6 +1075,7 @@ SurfaceHolder.Callback[] var7E06ACD9C2C819F377F4C0B98904AB11_447966681 =        
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.220 -0400", hash_original_method = "C97B8379077214A326B52B9AC32750F8", hash_generated_method = "1D9A85B41E9B59DAA2962F843DC37A53")
         public void resized(int w, int h, Rect coveredInsets,
                 Rect visibleInsets, boolean reportDraw, Configuration newConfig) {
@@ -1105,6 +1123,7 @@ SurfaceHolder.Callback[] var7E06ACD9C2C819F377F4C0B98904AB11_447966681 =        
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.221 -0400", hash_original_method = "9244563860F137FED28CE6F0E7AFA6B7", hash_generated_method = "362A3029662AE55AB7359794FA0C4782")
         public void dispatchGetNewSurface() {
             SurfaceView surfaceView = mSurfaceView.get();
@@ -1122,6 +1141,7 @@ SurfaceHolder.Callback[] var7E06ACD9C2C819F377F4C0B98904AB11_447966681 =        
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.221 -0400", hash_original_method = "76E66C458D6EE4887227CD5EB1B9C2E4", hash_generated_method = "06FDADF4A88FD06BDDFCD1EBF1A46969")
         public void windowFocusChanged(boolean hasFocus, boolean touchEnabled) {
             addTaint(touchEnabled);

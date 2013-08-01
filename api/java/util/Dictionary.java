@@ -18,6 +18,7 @@ public abstract class Dictionary<K, V> {
     public abstract Enumeration<V> elements();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract V get(Object key);
 
     
@@ -29,9 +30,11 @@ public abstract class Dictionary<K, V> {
     public abstract Enumeration<K> keys();
 
     
+    @DSModeled(DSC.SAFE)
     public abstract V put(K key, V value);
 
     
+    @DSModeled(DSC.SAFE)
     public abstract V remove(Object key);
 
     

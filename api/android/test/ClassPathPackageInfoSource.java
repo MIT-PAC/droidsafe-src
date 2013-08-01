@@ -47,6 +47,7 @@ ClassPathPackageInfo varBA00A6319552DBD246ACAD32EC974A7E_870091672 =            
 
     private ClassLoader classLoader;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.551 -0400", hash_original_method = "5ED3C641A9C0B2F78FCA551972DB4070", hash_generated_method = "0F78D94EE956F24FEB5E237D1FEF66F4")
       ClassPathPackageInfoSource() {
         classPath = getClassPath();
@@ -61,6 +62,7 @@ ClassPathPackageInfo varBA00A6319552DBD246ACAD32EC974A7E_870091672 =            
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.552 -0400", hash_original_method = "DA950CFDA512912E4146952A9FFE3442", hash_generated_method = "DA79FB2DF5DC3D0358225837ECEFFEC5")
     public ClassPathPackageInfo getPackageInfo(String pkgName) {
         addTaint(pkgName.getTaint());
@@ -72,6 +74,7 @@ ClassPathPackageInfo var999A519CF27E9DF61AC55F1537EAA8F8_1806713539 =         ca
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.553 -0400", hash_original_method = "276BBF38C683664C5FC093FA16997BEF", hash_generated_method = "2FF546EDB0CBFA1DC6F265FF1FE84AA6")
     private ClassPathPackageInfo createPackageInfo(String packageName) {
         addTaint(packageName.getTaint());
@@ -313,6 +316,7 @@ for(String entryName : entryNames)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.558 -0400", hash_original_method = "47511CFE3B18B3B12FAA22B4CA43B4A2", hash_generated_method = "764B41953566310CB3A7B78ACB7C038E")
     private Set<String> getJarEntries(File jarFile) throws IOException {
         addTaint(jarFile.getTaint());
@@ -349,17 +353,20 @@ Set<String> var765F5FFF692F7D7E6B8C4D556FF7DF0A_1539321514 =         entryNames;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean isToplevelClass(String fileName) {
         return fileName.indexOf('$') < 0;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String getClassName(String className) {
         int classNameEnd = className.length() - CLASS_EXTENSION.length();
         return className.substring(0, classNameEnd);
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String[] getClassPath() {
         String classPath = System.getProperty("java.class.path");
         String separator = System.getProperty("path.separator", ":");

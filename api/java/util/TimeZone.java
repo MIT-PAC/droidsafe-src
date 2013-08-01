@@ -15,12 +15,14 @@ public abstract class TimeZone implements Serializable, Cloneable {
 
     private String ID;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.802 -0400", hash_original_method = "9668D4D4A28DB894D48B4297168D73B9", hash_generated_method = "8E92B7E01B365C66B79257355E0DA018")
     public  TimeZone() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.802 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "950B4C5840F8D07B6852F80011C3A297")
     @Override
     public Object clone() {
@@ -45,16 +47,19 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1052505740 =             super.clone(
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized String[] getAvailableIDs() {
         return ZoneInfoDB.getAvailableIDs();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized String[] getAvailableIDs(int offsetMillis) {
         return ZoneInfoDB.getAvailableIDs(offsetMillis);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized TimeZone getDefault() {
         if (defaultTimeZone == null) {
             defaultTimeZone = ZoneInfoDB.getSystemDefault();
@@ -63,6 +68,7 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1052505740 =             super.clone(
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.803 -0400", hash_original_method = "E1D5D6F100BA788FCF57724352534F76", hash_generated_method = "C4AB8FFB068987824C6F172D55FD245E")
     public final String getDisplayName() {
 String var5F1E216CDC734C0F06A2C8CAF0DFFBB4_1246036913 =         getDisplayName(false, LONG, Locale.getDefault());
@@ -73,6 +79,7 @@ String var5F1E216CDC734C0F06A2C8CAF0DFFBB4_1246036913 =         getDisplayName(f
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.803 -0400", hash_original_method = "813ED5DCC833F8E276BEA923F4174960", hash_generated_method = "49C686910BBBF5FE6E53A20C649A665F")
     public final String getDisplayName(Locale locale) {
         addTaint(locale.getTaint());
@@ -84,6 +91,7 @@ String var4374B9FA1903B21ADAA622AFADA909DC_1929805638 =         getDisplayName(f
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.803 -0400", hash_original_method = "084F77DA9DC739656E2D52FB38C28132", hash_generated_method = "8F41D04F84D7816AB04CBFB9A90DF9A8")
     public final String getDisplayName(boolean daylightTime, int style) {
         addTaint(style);
@@ -96,6 +104,7 @@ String var6AAF92CBF5B6719712FC74B20FF20545_1035754152 =         getDisplayName(d
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.805 -0400", hash_original_method = "4F4A34040AF2984EDE789FC8C17113CE", hash_generated_method = "EC9A2A1987F54444B885886F950027F0")
     public String getDisplayName(boolean daylightTime, int style, Locale locale) {
         addTaint(locale.getTaint());
@@ -142,6 +151,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1687644428 =         builder.toString
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.806 -0400", hash_original_method = "7CED7894325BE9D599DFC54349DF84F9", hash_generated_method = "C746D457280AEDCD29D2AAAB9CB38C60")
     private void appendNumber(StringBuilder builder, int count, int value) {
         addTaint(value);
@@ -173,6 +183,7 @@ String varA5429A949488C23EB72A92C2F2C63667_1345483823 =         ID;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.807 -0400", hash_original_method = "88FDDC2A48FC14F19CA7C51175C63814", hash_generated_method = "43F4E5B78C75C79BE7EBDBE67C95B97F")
     public int getDSTSavings() {
         int varDE7EEA295B1303B84ECAC29561C90EAF_943360319 = (useDaylightTime() ? 3600000 : 0);
@@ -183,6 +194,7 @@ String varA5429A949488C23EB72A92C2F2C63667_1345483823 =         ID;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.807 -0400", hash_original_method = "C756709CC23E72027C31097576D8FC0B", hash_generated_method = "CB83AE6A0D3838433605051E9C0AFB0C")
     public int getOffset(long time) {
         addTaint(time);
@@ -212,6 +224,7 @@ String varA5429A949488C23EB72A92C2F2C63667_1345483823 =         ID;
     public abstract int getRawOffset();
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized TimeZone getTimeZone(String id) {
         TimeZone zone = ZoneInfoDB.getTimeZone(id);
         if (zone != null) {
@@ -227,6 +240,7 @@ String varA5429A949488C23EB72A92C2F2C63667_1345483823 =         ID;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static TimeZone getCustomTimeZone(String id) {
         char sign = id.charAt(3);
         if (sign != '+' && sign != '-') {
@@ -259,6 +273,7 @@ String varA5429A949488C23EB72A92C2F2C63667_1345483823 =         ID;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static String formatTimeZoneName(String name, int offset) {
         StringBuilder buf = new StringBuilder();
         int index = offset, length = name.length();
@@ -285,6 +300,7 @@ String varA5429A949488C23EB72A92C2F2C63667_1345483823 =         ID;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.810 -0400", hash_original_method = "7F1959D5E252281790218EA5AF7B09B6", hash_generated_method = "997F3DCA2A475177F830B5D7D24D77E3")
     public boolean hasSameRules(TimeZone timeZone) {
         addTaint(timeZone.getTaint());
@@ -309,6 +325,7 @@ String varA5429A949488C23EB72A92C2F2C63667_1345483823 =         ID;
     public abstract boolean inDaylightTime(Date time);
 
     
+    @DSModeled(DSC.SAFE)
     private static int parseNumber(String string, int offset, int[] position) {
         int index = offset, length = string.length(), digit, result = 0;
         while (index < length
@@ -321,11 +338,13 @@ String varA5429A949488C23EB72A92C2F2C63667_1345483823 =         ID;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static synchronized void setDefault(TimeZone timeZone) {
         defaultTimeZone = timeZone != null ? (TimeZone) timeZone.clone() : null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.811 -0400", hash_original_method = "085ABCA184084E0387E0912A6F36E37B", hash_generated_method = "A0FB861873A075E44F256B702560E06F")
     public void setID(String id) {
         if(id == null)        

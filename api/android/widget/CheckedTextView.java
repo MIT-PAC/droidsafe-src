@@ -38,6 +38,7 @@ public class CheckedTextView extends TextView implements Checkable {
 
     private boolean mNeedRequestlayout;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.959 -0400", hash_original_method = "D98B8279143D8DB42D11ECE4C668DA6C", hash_generated_method = "C1A1B30DB9754943DFDDE64EE8731EFE")
     public  CheckedTextView(Context context) {
         this(context, null);
@@ -46,6 +47,7 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.959 -0400", hash_original_method = "36596E5D7755B07B6F1DB63ABEA718CD", hash_generated_method = "B18EFEBD6B5BBD5718945D0A2B825CF6")
     public  CheckedTextView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -55,6 +57,7 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.960 -0400", hash_original_method = "B58B3AE8D95B44872F8433BF803A9C37", hash_generated_method = "4416BDA397B6A0BD5B05906EF7578700")
     public  CheckedTextView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -84,6 +87,7 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.960 -0400", hash_original_method = "E1B1AD330E2148117F43C315FF6D1DED", hash_generated_method = "3679ED1F891BEC88079198707411C40A")
     public void toggle() {
         setChecked(!mChecked);
@@ -104,6 +108,7 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.961 -0400", hash_original_method = "F58397C66404D0D65BC532CFA70D8C12", hash_generated_method = "F4EE2E185F4515A92A5E2AD7B712EB39")
     public void setChecked(boolean checked) {
         if(mChecked != checked)        
@@ -119,6 +124,7 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.962 -0400", hash_original_method = "3FCCCD2AA960312D010B10C25B3E1D95", hash_generated_method = "A2C9C687EDE7641EE662DA8BBF1962AF")
     public void setCheckMarkDrawable(int resid) {
         if(resid != 0 && resid == mCheckMarkResource)        
@@ -145,6 +151,7 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.964 -0400", hash_original_method = "93DA6C15D035807E73845CA0E25952EE", hash_generated_method = "C3248594429A5B65C8894130487E5CB6")
     public void setCheckMarkDrawable(Drawable d) {
         if(mCheckMarkDrawable != null)        
@@ -189,6 +196,7 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.965 -0400", hash_original_method = "7617145132345CC873AC9F4B73DFB7CD", hash_generated_method = "8C71DDC022FDEF49FDAB438540989429")
     @Override
     protected void resolvePadding() {
@@ -215,6 +223,7 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.965 -0400", hash_original_method = "7A1CD8A3A060B0E646E3DFF2DD87386A", hash_generated_method = "9B9C5A258C711B9928D6549BF6653356")
     @Override
     public void setPadding(int left, int top, int right, int bottom) {
@@ -230,6 +239,7 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.966 -0400", hash_original_method = "B19E130BF4CF411642FF2978EAC8260B", hash_generated_method = "7D9A3EA4312B917F17ABCCC5C9172471")
     @Override
     protected void onDraw(Canvas canvas) {
@@ -262,6 +272,7 @@ switch(verticalGravity){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.967 -0400", hash_original_method = "E661308564BAD0BE96E34DA026589671", hash_generated_method = "E60B4E13F061DB1FF714CE7CA8480EBB")
     @Override
     protected int[] onCreateDrawableState(int extraSpace) {
@@ -284,6 +295,7 @@ switch(verticalGravity){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.967 -0400", hash_original_method = "856DABB8A541BB631DA077FA70F1A5D5", hash_generated_method = "8F60D15F2346EE1E93D4B82515EF0C22")
     @Override
     protected void drawableStateChanged() {
@@ -304,6 +316,7 @@ switch(verticalGravity){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.968 -0400", hash_original_method = "E1DFB2AF73729EA8AA28BE1E77594577", hash_generated_method = "76E27B80562C985CD49B030FF046F855")
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
@@ -317,6 +330,7 @@ switch(verticalGravity){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.968 -0400", hash_original_method = "800F92BFA9EDE937B28EAF651D664B90", hash_generated_method = "1777866A2F27E2BFC3BE9BB817580974")
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
@@ -341,6 +355,7 @@ switch(verticalGravity){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.968 -0400", hash_original_method = "31E71954214D2E567F10971C83F42BE3", hash_generated_method = "6A4DDE45A6761BAEDFBB2581417F861E")
     @Override
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {

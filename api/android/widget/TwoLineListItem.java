@@ -17,6 +17,7 @@ public class TwoLineListItem extends RelativeLayout {
 
     private TextView mText2;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.027 -0400", hash_original_method = "BC9E06923C52B4408C5799E621927130", hash_generated_method = "B726CCA79692212BE8C33AC86B2C78B5")
     public  TwoLineListItem(Context context) {
         this(context, null, 0);
@@ -25,6 +26,7 @@ public class TwoLineListItem extends RelativeLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.028 -0400", hash_original_method = "87B3C0D43C58ABA2C023B5293BE676E4", hash_generated_method = "834DF629CEC3FEE1495E5F9DCA14459F")
     public  TwoLineListItem(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -34,6 +36,7 @@ public class TwoLineListItem extends RelativeLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.029 -0400", hash_original_method = "BAEB06BAE3C9E4F2F16A54E72A4BB3E7", hash_generated_method = "6C1882FFF437C814D18EB5F3EAEF362D")
     public  TwoLineListItem(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -50,6 +53,7 @@ public class TwoLineListItem extends RelativeLayout {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.030 -0400", hash_original_method = "8089C6FCEBF2C15DBA19075B8780AF97", hash_generated_method = "C9BF355422712BB517B06701C14C698B")
     @Override
     protected void onFinishInflate() {

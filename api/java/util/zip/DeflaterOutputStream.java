@@ -26,6 +26,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
 
     private boolean syncFlush;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.568 -0400", hash_original_method = "139234A429000310B925F23DA1712488", hash_generated_method = "F8F8EA1C6A2C8CC5841D7C65FC620FED")
     public  DeflaterOutputStream(OutputStream os, Deflater def) {
         this(os, def, BUF_SIZE, false);
@@ -35,6 +36,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.568 -0400", hash_original_method = "D833AEB9A421148720E02F65A02537D6", hash_generated_method = "EC508EC72F547AF9C14FAACCB17F551B")
     public  DeflaterOutputStream(OutputStream os) {
         this(os, new Deflater(), BUF_SIZE, false);
@@ -43,6 +45,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.569 -0400", hash_original_method = "4BB74E5E227C5A90579EB5A36914BC95", hash_generated_method = "19669059882C7D68E35A3DF822C21142")
     public  DeflaterOutputStream(OutputStream os, Deflater def, int bsize) {
         this(os, def, bsize, false);
@@ -107,6 +110,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.571 -0400", hash_original_method = "5BA084DE43D12B9C920D3018364BFA70", hash_generated_method = "CDAF36726627B7EF9181B20BF883146D")
     protected void deflate() throws IOException {
         int byteCount;
@@ -123,6 +127,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.572 -0400", hash_original_method = "9BCFE06D96770C193778FD581B5E01A8", hash_generated_method = "C7C0BAB9767EA3E619F87532FF8B1D11")
     @Override
     public void close() throws IOException {
@@ -141,6 +146,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.572 -0400", hash_original_method = "1DDC7258E310FE2F6E87FB700766CEAD", hash_generated_method = "8E768FDE0B9120A7C030A75B5B792406")
     public void finish() throws IOException {
         if(done)        
@@ -168,6 +174,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.572 -0400", hash_original_method = "DD8DF91486AFD685531F1A8944310E80", hash_generated_method = "AB841CB7DA3E92DD3EDA031DF935C98A")
     @Override
     public void write(int i) throws IOException {
@@ -178,6 +185,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.573 -0400", hash_original_method = "5BF353787DD4638B35D7C1FA14989FAE", hash_generated_method = "7F86503ABB4ED36D2469ECD47893557D")
     @Override
     public void write(byte[] buffer, int offset, int byteCount) throws IOException {
@@ -212,6 +220,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.573 -0400", hash_original_method = "FB4F039ED9744680CB15453045EEE574", hash_generated_method = "05380BB10916E6ED4246D94CA8350379")
     @Override
     public void flush() throws IOException {

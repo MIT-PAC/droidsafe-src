@@ -66,6 +66,7 @@ public abstract class Animator implements Cloneable {
     public abstract boolean isRunning();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.829 -0400", hash_original_method = "5FAE51F608329798E727CB5CCA21128D", hash_generated_method = "76BE79E698B7251D3BF51E131C8CDFFE")
     public boolean isStarted() {
         boolean varF7BD74CE9A58FA4CCEA8BB81790EAC23_1865415482 = (isRunning());
@@ -128,6 +129,7 @@ ArrayList<AnimatorListener> var6F226E74DAC534764C2244A2BF49F27C_7535036 =       
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.844 -0400", hash_original_method = "9F15C7E7001670487AA27A3E97528F7B", hash_generated_method = "5B058AAE3460F4AEFCF3F780E30BA666")
     public void removeAllListeners() {
         if(mListeners != null)        
@@ -143,7 +145,7 @@ ArrayList<AnimatorListener> var6F226E74DAC534764C2244A2BF49F27C_7535036 =       
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.853 -0400", hash_original_method = "D34181C2AB04F8825A2BE8661E83342B", hash_generated_method = "412815C57F1A77E71236CF0F155CB0D6")
     @Override
     public Animator clone() {

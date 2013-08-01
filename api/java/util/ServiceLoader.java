@@ -47,6 +47,7 @@ public final class ServiceLoader<S> implements Iterable<S> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.995 -0400", hash_original_method = "5DE3F3B80408315525994C211C4640EC", hash_generated_method = "B60E62D5BFE2284818EAB4DA920ACD3A")
     public void reload() {
         internalLoad();
@@ -55,6 +56,7 @@ public final class ServiceLoader<S> implements Iterable<S> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.995 -0400", hash_original_method = "347C14FB6BD1E7714C96867577CC330D", hash_generated_method = "3A442FF703C49A0F3410D5E9C42DBEB4")
     public Iterator<S> iterator() {
 Iterator<S> var5595D01585350877366F9800888A00F9_81321559 =         new ServiceIterator(this);
@@ -74,6 +76,7 @@ Iterator<S> var5595D01585350877366F9800888A00F9_81321559 =         new ServiceIt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.996 -0400", hash_original_method = "7DCE51783862B815D2BC789E6049F748", hash_generated_method = "EB3EC4B2E81FA32FF6F4AFAD426C9AC4")
     private void internalLoad() {
         services.clear();
@@ -97,11 +100,13 @@ Iterator<S> var5595D01585350877366F9800888A00F9_81321559 =         new ServiceIt
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <S> ServiceLoader<S> load(Class<S> service) {
         return ServiceLoader.load(service, Thread.currentThread().getContextClassLoader());
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <S> ServiceLoader<S> loadInstalled(Class<S> service) {
         ClassLoader cl = ClassLoader.getSystemClassLoader();
         if (cl != null) {
@@ -127,6 +132,7 @@ Iterator<S> var5595D01585350877366F9800888A00F9_81321559 =         new ServiceIt
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.997 -0400", hash_original_method = "F8BFF902940FB319A126BEB71F562AF6", hash_generated_method = "8252DF6496BC1300A3426500F35F72CA")
     @Override
     public String toString() {
@@ -155,6 +161,7 @@ String varD6505E9E90B35E4D23556B6DAC1CF0D7_1838796484 =         "ServiceLoader f
 
         private LinkedList<String> queue = new LinkedList<String>();
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.999 -0400", hash_original_method = "9B12B690CA5F78312F729D80BAC6EFA1", hash_generated_method = "0399B2EAAD832CBB301D916334B7DFAA")
         public  ServiceIterator(ServiceLoader<S> sl) {
             this.classLoader = sl.classLoader;
@@ -167,6 +174,7 @@ String varD6505E9E90B35E4D23556B6DAC1CF0D7_1838796484 =         "ServiceLoader f
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.999 -0400", hash_original_method = "DC8C57213B773C0EB2B0D98440591DD2", hash_generated_method = "4209D36AAFE14FB5AC4F6A63ECDCFC8C")
         public boolean hasNext() {
             if(!isRead)            
@@ -184,6 +192,7 @@ String varD6505E9E90B35E4D23556B6DAC1CF0D7_1838796484 =         "ServiceLoader f
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.000 -0400", hash_original_method = "B99394086046EF47562A5B63911931C2", hash_generated_method = "90D00DDCAD05A63889FDACD58D4BCBFC")
         @SuppressWarnings("unchecked")
         public S next() {
@@ -219,6 +228,7 @@ S var4CE3DC2994840DD0E53401858CD7B335_766351919 =                 service.cast(c
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.002 -0400", hash_original_method = "D6C7FE21AC961E0461EEEE7A6B5E3796", hash_generated_method = "1F21B7CAF5D2FAD0088BB912B59F21D4")
         private void readClass() {
 for(URL url : services)
@@ -266,6 +276,7 @@ for(URL url : services)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.003 -0400", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "5878F3962AAB3469B29036E613CA5B43")
         public void remove() {
             UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_358589017 = new UnsupportedOperationException();
@@ -276,6 +287,7 @@ for(URL url : services)
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.003 -0400", hash_original_method = "0BD3CD94707D253C58DB4E9194FF8BE6", hash_generated_method = "9FA31A87DBE96AFC93BE662AF0C7BE7A")
         private void checkValidJavaClassName(String className) {
             addTaint(className.getTaint());

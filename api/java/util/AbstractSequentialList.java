@@ -14,6 +14,7 @@ public abstract class AbstractSequentialList<E> extends AbstractList<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.632 -0400", hash_original_method = "0430D75F7F3D5E3A6D5F6B220D260C02", hash_generated_method = "9C67BDB95B55F84EC870D9863D37F4CD")
     @Override
     public void add(int location, E object) {
@@ -53,6 +54,7 @@ public abstract class AbstractSequentialList<E> extends AbstractList<E> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.633 -0400", hash_original_method = "B5F59D8654788FE80539C2042F9F3DA0", hash_generated_method = "087643CA6EA6B1EA72D80081D2A89C4C")
     @Override
     public E get(int location) {
@@ -95,6 +97,7 @@ Iterator<E> var68247D54D1DDB9E66659394CC1668C3F_1413572110 =         listIterato
 public abstract ListIterator<E> listIterator(int location);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.636 -0400", hash_original_method = "F4326C1F9DDC82196649CFA76C7956BB", hash_generated_method = "ABF8AC975A2BC38A032E085B01E4493E")
     @Override
     public E remove(int location) {
@@ -126,6 +129,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_135400814 =             result;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.637 -0400", hash_original_method = "A0691253183890C7E0DBA0D74DD52EDC", hash_generated_method = "05EAB8E681A115C0D35616F8D89680FF")
     @Override
     public E set(int location, E object) {

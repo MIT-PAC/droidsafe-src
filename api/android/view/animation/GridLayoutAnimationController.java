@@ -27,6 +27,7 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
 
     private int mDirectionPriority;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.980 -0400", hash_original_method = "44CE70ED19752223312271876AB6E98A", hash_generated_method = "3D0526DCD4CCE309D9369A98186D4CBD")
     public  GridLayoutAnimationController(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -62,6 +63,7 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.980 -0400", hash_original_method = "635B8E92CCDF8F873CC8B4D59C2B03E9", hash_generated_method = "688D07ADC846A0CD46DFC5154F883307")
     public  GridLayoutAnimationController(Animation animation) {
         this(animation, 0.5f, 0.5f);
@@ -70,6 +72,7 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.981 -0400", hash_original_method = "48DE05A423E3644ACD346758FE8F6FE2", hash_generated_method = "0474A2F50ECB73AC27C56865DB796200")
     public  GridLayoutAnimationController(Animation animation, float columnDelay, float rowDelay) {
         super(animation);

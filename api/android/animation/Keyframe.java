@@ -51,11 +51,13 @@ public abstract class Keyframe implements Cloneable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Keyframe ofObject(float fraction, Object value) {
         return new ObjectKeyframe(fraction, value);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Keyframe ofObject(float fraction) {
         return new ObjectKeyframe(fraction, null);
     }
@@ -141,6 +143,7 @@ public abstract Keyframe clone();
 
         Object mValue;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.789 -0400", hash_original_method = "203797AF2B16BA31CF618ABFC3881151", hash_generated_method = "EF6D837C95C2537A7E649A182C3D153B")
           ObjectKeyframe(float fraction, Object value) {
             addTaint(fraction);
@@ -178,6 +181,7 @@ Object varD1FEA3F5EE4618A9C3646312F018E4AC_935454600 =             mValue;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.796 -0400", hash_original_method = "D24C77D2B6663612F515281C3853AB21", hash_generated_method = "E1F1B556F25E6B045FB8EBA03855F804")
         @Override
         public ObjectKeyframe clone() {
@@ -252,6 +256,7 @@ Object varD1FEA3F5EE4618A9C3646312F018E4AC_83057489 =             mValue;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.830 -0400", hash_original_method = "C5497A399E3F74A58085B920F39E31DE", hash_generated_method = "CE7D06261F31E5BAE4199A125B4DD615")
         public void setValue(Object value) {
             if(value != null && value.getClass() == Integer.class)            
@@ -267,6 +272,7 @@ Object varD1FEA3F5EE4618A9C3646312F018E4AC_83057489 =             mValue;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.833 -0400", hash_original_method = "25DF873BDC1EC275AA64D474732FCE13", hash_generated_method = "C3B806D14CF38FD8EEB900BB1C2D17A6")
         @Override
         public IntKeyframe clone() {
@@ -341,6 +347,7 @@ Object varD1FEA3F5EE4618A9C3646312F018E4AC_213966022 =             mValue;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.847 -0400", hash_original_method = "7C5BB3EB4CAFBCF934453BA7EC3D20EB", hash_generated_method = "2A46FFBA3E0452D20D17B75256AAFD5A")
         public void setValue(Object value) {
             if(value != null && value.getClass() == Float.class)            
@@ -356,6 +363,7 @@ Object varD1FEA3F5EE4618A9C3646312F018E4AC_213966022 =             mValue;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.852 -0400", hash_original_method = "5FDA2B31FC1B703F745BE5BB0395A79D", hash_generated_method = "A1F4B9A06BB68C8A9262A839678EF0C1")
         @Override
         public FloatKeyframe clone() {

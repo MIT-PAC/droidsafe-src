@@ -135,7 +135,7 @@ public class Toast {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static Toast makeText(Context context, CharSequence text, int duration) {
         Toast result = new Toast(context);
         result.addTaint(text.getTaint());
@@ -153,7 +153,7 @@ public class Toast {
     }
 
     
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.SAFE)
     public static Toast makeText(Context context, int resId, int duration)
                                 throws Resources.NotFoundException {
         return makeText(context, context.getResources().getText(resId), duration);
@@ -182,6 +182,7 @@ public class Toast {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static private INotificationManager getService() {
         if (sService != null) {
             return sService;
@@ -249,6 +250,7 @@ public class Toast {
 
         WindowManagerImpl mWM;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.958 -0400", hash_original_method = "41B653C614D176194B8FC12B04D74B1D", hash_generated_method = "E327577FEE453D387B060A3B6BA4FEA2")
           TN() {
             final WindowManager.LayoutParams params = mParams;
@@ -275,6 +277,7 @@ public class Toast {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.958 -0400", hash_original_method = "3E96BAE0A73C07217EE9E69C0532B078", hash_generated_method = "BB5D385BC3C8223150F4E4262DAAE933")
         public void show() {
             if(localLOGV){ }            mHandler.post(mShow);
@@ -284,6 +287,7 @@ public class Toast {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.959 -0400", hash_original_method = "FE787FFB2514635467B163AE42817C6A", hash_generated_method = "40ECBFB62DE691BA597DB6DCC67A7515")
         public void hide() {
             if(localLOGV){ }            mHandler.post(mHide);
@@ -293,6 +297,7 @@ public class Toast {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.959 -0400", hash_original_method = "98FF4DE105C724C8A8B16C9823509AFE", hash_generated_method = "525D64A0BC18150DC506029B28E703A6")
         public void handleShow() {
             if(localLOGV){ }            if(mView != mNextView)            
@@ -326,6 +331,7 @@ public class Toast {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.959 -0400", hash_original_method = "D907D354027470BBEF302644D06948FD", hash_generated_method = "77A17536CC0EA3BEEAF27FC774321779")
         private void trySendAccessibilityEvent() {
             AccessibilityManager accessibilityManager = AccessibilityManager.getInstance(mView.getContext());
@@ -354,6 +360,7 @@ public class Toast {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.960 -0400", hash_original_method = "20728D50D3469CDB24AC075F372999DE", hash_generated_method = "AA70D0752BF89D1DDB63FBCD9D7D350D")
         public void handleHide() {
             if(localLOGV){ }            if(mView != null)            

@@ -52,6 +52,7 @@ class JarVerifier {
 
     int mainAttributesEnd;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.956 -0400", hash_original_method = "4436059C4E8276439A6065FE93A5DE5F", hash_generated_method = "0A8DC9E44BE88658AD08D7EFC25F2EE1")
       JarVerifier(String name) {
         jarName = name;
@@ -60,6 +61,7 @@ class JarVerifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.956 -0400", hash_original_method = "A00C668D834700B7DBCD83DF376B2F68", hash_generated_method = "93BFD21D7924EA8FE59FB04CA20FCFCB")
     private SecurityException invalidDigest(String signatureFile, String name, String jarName) {
         addTaint(jarName.getTaint());
@@ -75,6 +77,7 @@ class JarVerifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.956 -0400", hash_original_method = "6DF68FF1B39EE346E0EC276311EA5830", hash_generated_method = "E9909EEE094ED6D89F21516608369B7F")
     private SecurityException failedVerification(String jarName, String signatureFile) {
         addTaint(signatureFile.getTaint());
@@ -87,6 +90,7 @@ class JarVerifier {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.957 -0400", hash_original_method = "6A6033A1386EA2314D4EF0CB331B3F5C", hash_generated_method = "A6D6AEA4E1119AA8191C8C723EACAA82")
      VerifierEntry initEntry(String name) {
         addTaint(name.getTaint());
@@ -158,6 +162,7 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_498051392 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.959 -0400", hash_original_method = "B24E46A89F6B78A5F74DC1F8899F1D36", hash_generated_method = "33CAFEEEB0CFA2B159626EC9CC8BE3A5")
      void addMetaEntry(String name, byte[] buf) {
         addTaint(buf[0]);
@@ -168,6 +173,7 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_498051392 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.959 -0400", hash_original_method = "8A8EDD1088AB3F7694E04A76DE584752", hash_generated_method = "5CB46C76A6D34058B6E97F0B50FFD4DF")
     synchronized boolean readCertificates() {
         if(metaEntries == null)        
@@ -215,6 +221,7 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_498051392 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.980 -0400", hash_original_method = "E0F968F23AF085C0376D04DBFBF51D30", hash_generated_method = "FC84297C5D9DEF715DDA943B6B2FFCD4")
     private void verifyCertificate(String certFile) {
         addTaint(certFile.getTaint());
@@ -323,6 +330,7 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_498051392 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.981 -0400", hash_original_method = "61D9EDAFD8C0E1537C8EF2C7E942A904", hash_generated_method = "1D386BF2D9B4E3A96554DB5D0120F5DD")
      boolean isSignedJar() {
         boolean varAAB13CD57140FC9C26289A146A937C91_591242426 = (certificates.size() > 0);
@@ -333,6 +341,7 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_498051392 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.983 -0400", hash_original_method = "C1D665F8901BA184CF5172955B73AB34", hash_generated_method = "B28343B8C08B32EFE1B70558CF0E5DC6")
     private boolean verify(Attributes attributes, String entry, byte[] data,
             int start, int end, boolean ignoreSecondEndline, boolean ignorable) {
@@ -390,6 +399,7 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_498051392 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.984 -0400", hash_original_method = "4AB9D8996D4C7F856FC4CD4DD096303E", hash_generated_method = "65BFC23C799E50B8137021F6D5C37C07")
      Certificate[] getCertificates(String name) {
         addTaint(name.getTaint());
@@ -421,6 +431,7 @@ Certificate[] var32B73750590266689C19084802167374_729626774 =         verifiedCe
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static Vector<Certificate> getSignerCertificates(
             String signatureFileName, Map<String, Certificate[]> certificates) {
         Vector<Certificate> result = new Vector<Certificate>();
@@ -448,6 +459,7 @@ Certificate[] var32B73750590266689C19084802167374_729626774 =         verifiedCe
 
         private Certificate[] certificates;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.987 -0400", hash_original_method = "519B899FEA5DD6CF74252B8A7E9BDF9B", hash_generated_method = "392088D1361F148BA7EABBED99C5FDBB")
           VerifierEntry(String name, MessageDigest digest, byte[] hash,
                 Certificate[] certificates) {
@@ -463,6 +475,7 @@ Certificate[] var32B73750590266689C19084802167374_729626774 =         verifiedCe
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.987 -0400", hash_original_method = "977E904E5666EA1924971461B3999364", hash_generated_method = "50C4B56121CA2DEEF9871162D7716E97")
         @Override
         public void write(int value) {
@@ -473,6 +486,7 @@ Certificate[] var32B73750590266689C19084802167374_729626774 =         verifiedCe
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.987 -0400", hash_original_method = "8BB7D0A84FCC70584CF33970C6F95BDA", hash_generated_method = "60A10365C6398DC0656D7CD3D257F7AD")
         @Override
         public void write(byte[] buf, int off, int nbytes) {
@@ -485,6 +499,7 @@ Certificate[] var32B73750590266689C19084802167374_729626774 =         verifiedCe
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.210 -0400", hash_original_method = "E514DAB8C6AF0A1EE37FB72F5B8B9108", hash_generated_method = "5C4BD9472CDE665A3B734979B8A321D7")
          void verify() {
             byte[] d = digest.digest();

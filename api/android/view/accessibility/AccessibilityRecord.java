@@ -79,12 +79,14 @@ public class AccessibilityRecord {
 
     int mConnectionId = UNDEFINED;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.480 -0400", hash_original_method = "47B5C6FFA7A08624EFFE67BFFC3F0DF4", hash_generated_method = "49EEADD37CBD0DA6FCCFEC65E1335A11")
       AccessibilityRecord() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.482 -0400", hash_original_method = "948A1D8CF51CA12DCE9E50B8B6FDE838", hash_generated_method = "7884B3EC4543596D2EECC9FE6DF3310A")
     public void setSource(View source) {
         enforceNotSealed();
@@ -110,6 +112,7 @@ public class AccessibilityRecord {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.482 -0400", hash_original_method = "D6229F18D386359B7D2ED64A724CE545", hash_generated_method = "9DF455DF0998CFE6D39CF68A4DF4AB7D")
     public AccessibilityNodeInfo getSource() {
         enforceSealed();
@@ -148,6 +151,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.484 -0400", hash_original_method = "5A67E197C5983AA9D4F6364A1A3A1EA0", hash_generated_method = "7853BA97C7DFC42E179CDFB7780C3DC9")
     public boolean isChecked() {
         boolean var6A0CD5272E311D05E98BCF36FBF20ACD_634790822 = (getBooleanProperty(PROPERTY_CHECKED));
@@ -158,6 +162,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.484 -0400", hash_original_method = "EF363FCE51C9C9A497BD6E689D39B09F", hash_generated_method = "5EB45A776185527F2588B31EFF529188")
     public void setChecked(boolean isChecked) {
         addTaint(isChecked);
@@ -169,6 +174,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.485 -0400", hash_original_method = "BBEF4BC19B4322B516FB3983E945CAF6", hash_generated_method = "33074CB7B3FA24F05CC879ED9C19AC5D")
     public boolean isEnabled() {
         boolean var6F818D4AF1185DC3F7931FBEF22B2D47_491755968 = (getBooleanProperty(PROPERTY_ENABLED));
@@ -179,6 +185,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.485 -0400", hash_original_method = "0EAAA686E8658459FDC66C98C4B45340", hash_generated_method = "1BEFE9C5C829189C2A37C3273E9F9570")
     public void setEnabled(boolean isEnabled) {
         addTaint(isEnabled);
@@ -190,6 +197,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.486 -0400", hash_original_method = "8ACE5368F7F34FD7A997EC13F4BFCCE5", hash_generated_method = "DFBCBD30D7D547EF2449FEB09FD85D42")
     public boolean isPassword() {
         boolean varC159D45C2E73AC687CB90727F00FD786_926762308 = (getBooleanProperty(PROPERTY_PASSWORD));
@@ -200,6 +208,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.486 -0400", hash_original_method = "8EDA15203F993D6B021832D12354DB70", hash_generated_method = "C7AF001103A7B4696830B695D07B86B4")
     public void setPassword(boolean isPassword) {
         addTaint(isPassword);
@@ -211,6 +220,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.486 -0400", hash_original_method = "C1D751586747941BBE1AE366FE4E3AB5", hash_generated_method = "8034DDA4D188F0C9DB241BBF0626D93B")
     public boolean isFullScreen() {
         boolean var20B7A22B6E97B858868FA1BE6F19CD37_1058642429 = (getBooleanProperty(PROPERTY_FULL_SCREEN));
@@ -221,6 +231,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.486 -0400", hash_original_method = "8C2BD0FA889006F174A45F3038D20EAE", hash_generated_method = "8DAA2D61D06378E836D54A7C935B1BFB")
     public void setFullScreen(boolean isFullScreen) {
         addTaint(isFullScreen);
@@ -232,6 +243,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.487 -0400", hash_original_method = "F5E2B33BAA7F2110DB7AE2D50276D662", hash_generated_method = "2C952AC13B709C7229AE59B4AE4C7DAA")
     public boolean isScrollable() {
         boolean varA6FFE50E93EDBB77B0E8F1D4016517C5_456365902 = (getBooleanProperty(PROPERTY_SCROLLABLE));
@@ -242,6 +254,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.487 -0400", hash_original_method = "C8E19EB47E895659C0D234F60CD63E87", hash_generated_method = "EAEA71709D852AD68EE8493BBFF49557")
     public void setScrollable(boolean scrollable) {
         addTaint(scrollable);
@@ -264,6 +277,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.488 -0400", hash_original_method = "F4CC562DD5B544AF052C8C7ADD17F3DB", hash_generated_method = "39F44303466A5C8F7F39F778FFDDD0CE")
     public void setItemCount(int itemCount) {
         enforceNotSealed();
@@ -285,6 +299,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.488 -0400", hash_original_method = "05A5E897DB8527242E13FEF032CE111F", hash_generated_method = "19B5132C68FB734C1499EBDF515D3B3D")
     public void setCurrentItemIndex(int currentItemIndex) {
         enforceNotSealed();
@@ -306,6 +321,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.489 -0400", hash_original_method = "BBFD31D579F6E6D46645245CC5F2E354", hash_generated_method = "36496D5056D8AB0FE7C2BEDCB6F05346")
     public void setFromIndex(int fromIndex) {
         enforceNotSealed();
@@ -327,6 +343,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.489 -0400", hash_original_method = "E568A8356EF0E74107283370C7553269", hash_generated_method = "FDAB56CA01587F7337EEE204C7CAA2F3")
     public void setToIndex(int toIndex) {
         enforceNotSealed();
@@ -348,6 +365,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.490 -0400", hash_original_method = "39929F8426D84CFC2AAA2E35AFA69688", hash_generated_method = "C87434146081ADE968226CDF7649BD4F")
     public void setScrollX(int scrollX) {
         enforceNotSealed();
@@ -369,6 +387,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.491 -0400", hash_original_method = "3D3AC5EAAB87E771122FE10290862D68", hash_generated_method = "24692C5BE0019BBEB295B48727960D47")
     public void setScrollY(int scrollY) {
         enforceNotSealed();
@@ -390,6 +409,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.491 -0400", hash_original_method = "EE977B785E6D4A7CA733252D06CF32E9", hash_generated_method = "33A6260074AAD8E975DFFFE9A91EDE8C")
     public void setMaxScrollX(int maxScrollX) {
         enforceNotSealed();
@@ -411,6 +431,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.492 -0400", hash_original_method = "49077E92EA018330C2FB0B17E183D4A7", hash_generated_method = "078D9BF7E9E30261FD815908FC98FAD6")
     public void setMaxScrollY(int maxScrollY) {
         enforceNotSealed();
@@ -432,6 +453,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.492 -0400", hash_original_method = "72BB1C08DFA71715A3D1B3E3C0F3D07A", hash_generated_method = "65B8104DFF6DF1C0C5382DF1AE842743")
     public void setAddedCount(int addedCount) {
         enforceNotSealed();
@@ -453,6 +475,7 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_271338897 =         cl
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.492 -0400", hash_original_method = "A6A70AD3A3D0C21790CD56D9B41496A2", hash_generated_method = "9F643C3F276AF08806F5F7A1AFD79D6C")
     public void setRemovedCount(int removedCount) {
         enforceNotSealed();
@@ -474,6 +497,7 @@ CharSequence varDD9C2143734A2F5CB66BF5CFBE75CE5F_129562355 =         mClassName;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.493 -0400", hash_original_method = "435BCAB2D716154C6ED3D9D2DD11028E", hash_generated_method = "14CBE69F155F8289009D8E6C29D09E01")
     public void setClassName(CharSequence className) {
         enforceNotSealed();
@@ -506,6 +530,7 @@ CharSequence varA52E2B9C078522648046C50A3900A0D8_613776275 =         mBeforeText
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.493 -0400", hash_original_method = "D6F685CC2DDAD1DA7E7B88F32900AE37", hash_generated_method = "8E48EFEC23F26302C038E1E38FECF921")
     public void setBeforeText(CharSequence beforeText) {
         enforceNotSealed();
@@ -527,6 +552,7 @@ CharSequence varDF4802B31F5D315C6875E7B89F1B2E58_2115904997 =         mContentDe
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.493 -0400", hash_original_method = "85E1231CCD16E203B9FBFBDBF6F7490E", hash_generated_method = "3B296FA70F852F0CC9CE451463E87DC3")
     public void setContentDescription(CharSequence contentDescription) {
         enforceNotSealed();
@@ -548,6 +574,7 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_1436928548 =         mParcelableD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.494 -0400", hash_original_method = "1574FBF11672419A058C271D89F97C62", hash_generated_method = "89FC1C8E2F27EF4EB43A98729811FB64")
     public void setParcelableData(Parcelable parcelableData) {
         enforceNotSealed();
@@ -558,6 +585,7 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_1436928548 =         mParcelableD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.494 -0400", hash_original_method = "0D9114E83A94DAB2C664FA6E45C487C9", hash_generated_method = "F7C7CF110AFA05BD358D80D700ADEDC6")
     public void setConnectionId(int connectionId) {
         enforceNotSealed();
@@ -588,6 +616,7 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_1436928548 =         mParcelableD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.494 -0400", hash_original_method = "0309B89A8A5C20FB439CB65AA9DE3FAA", hash_generated_method = "1D0DB714A8CB3548E15F7E232143A993")
      void enforceSealed() {
         if(!isSealed())        
@@ -605,6 +634,7 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_1436928548 =         mParcelableD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.495 -0400", hash_original_method = "9B7C20934D3E00C37812C7E94DAAB15E", hash_generated_method = "63B215E973E50DA9DA4E543263806456")
      void enforceNotSealed() {
         if(isSealed())        
@@ -655,6 +685,7 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_1436928548 =         mParcelableD
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AccessibilityRecord obtain(AccessibilityRecord record) {
         AccessibilityRecord clone = AccessibilityRecord.obtain();
         clone.init(record);
@@ -662,6 +693,7 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_1436928548 =         mParcelableD
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static AccessibilityRecord obtain() {
         synchronized (sPoolLock) {
             if (sPool != null) {
@@ -677,6 +709,7 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_1436928548 =         mParcelableD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.496 -0400", hash_original_method = "0FDD4277FFE3E2F2D99D4BAB0780A409", hash_generated_method = "20B2E09F317248E15A230804D060D066")
     public void recycle() {
         if(mIsInPool)        
@@ -712,6 +745,7 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_1436928548 =         mParcelableD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.496 -0400", hash_original_method = "EC9B4AFBEF6A967243E7EC5889FB4591", hash_generated_method = "5A0A1932A91C027A05D8759B7A4BAA62")
      void init(AccessibilityRecord record) {
         mSealed = record.mSealed;
@@ -739,6 +773,7 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_1436928548 =         mParcelableD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.497 -0400", hash_original_method = "F6BD36F7AA33E2CDDBD8ECFA17198BE9", hash_generated_method = "600B4D1FB38108C343C4EA3361FB0CDE")
      void clear() {
         mSealed = false;
@@ -785,6 +820,7 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_1436928548 =         mParcelableD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.497 -0400", hash_original_method = "6984D5C42FE7046E0FC00D15FC78323D", hash_generated_method = "18FEB234B3F824C5889E4FFF6C58EDCD")
     @Override
     public String toString() {

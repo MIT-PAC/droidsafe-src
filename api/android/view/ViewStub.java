@@ -29,6 +29,7 @@ public final class ViewStub extends View {
 
     private OnInflateListener mInflateListener;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.819 -0400", hash_original_method = "D5B4F404EDB1F7EE3A8219EE57BB8326", hash_generated_method = "593B806270491638C702C9C2674616C9")
     public  ViewStub(Context context) {
         addTaint(context.getTaint());
@@ -38,6 +39,7 @@ public final class ViewStub extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.819 -0400", hash_original_method = "5E88FD8C49C63D6BF51F68D5B3DF0B7F", hash_generated_method = "D81182F8A2F7FA042DE0755F365A38FA")
     public  ViewStub(Context context, int layoutResource) {
         addTaint(context.getTaint());
@@ -49,6 +51,7 @@ public final class ViewStub extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.819 -0400", hash_original_method = "333AE282E8B61286AB619D673C2E7E08", hash_generated_method = "7B6A7A4D6C726F6DCB53F6FF3B7A5CFA")
     public  ViewStub(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -58,6 +61,7 @@ public final class ViewStub extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.820 -0400", hash_original_method = "D3AED5A95127BD0FBA7E121FA6467007", hash_generated_method = "9B82AAC50DA7492A4C5FA91536F0ED3D")
     @SuppressWarnings({"UnusedDeclaration"})
     public  ViewStub(Context context, AttributeSet attrs, int defStyle) {
@@ -86,6 +90,7 @@ public final class ViewStub extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.820 -0400", hash_original_method = "7D8DDEBB17ED3180A708C3B6F0212F68", hash_generated_method = "CCF3516282D357CF9B0D0F281C26EB81")
     private void initialize(Context context) {
         addTaint(context.getTaint());
@@ -139,6 +144,7 @@ public final class ViewStub extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.821 -0400", hash_original_method = "5C9393E5CC8833BE15FFC01B23AE5CB2", hash_generated_method = "629F227210A19E60C4FCCEE9AE8F490F")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -169,6 +175,7 @@ public final class ViewStub extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.822 -0400", hash_original_method = "8020455B6FCF7D6831D6E164290A9878", hash_generated_method = "AC898F40D16D8CEF20C57E50F9D6A5DF")
     @Override
     public void setVisibility(int visibility) {
@@ -212,6 +219,7 @@ public final class ViewStub extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.822 -0400", hash_original_method = "FA523E28924F274233340119C3A40101", hash_generated_method = "F12BC5057985F32EB55CF631876B671A")
     public View inflate() {
         final ViewParent viewParent = getParent();

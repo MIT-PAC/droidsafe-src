@@ -22,6 +22,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
 
     private boolean mIsPooled;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.274 -0400", hash_original_method = "F7334C8DF7CFD0702F8B319FC0AAEBEC", hash_generated_method = "D85E3DAABC499710A355B9A59E327BBA")
     private  VelocityTracker() {
         mPtr = nativeInitialize();
@@ -75,11 +76,13 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     static public VelocityTracker obtain() {
         return sPool.acquire();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.277 -0400", hash_original_method = "E0F67E3C99A5EE80DA0668A59C0EFAE4", hash_generated_method = "0846A8ED2E43BFFDC09D1A7A77AFC8B7")
     public void recycle() {
         sPool.release(this);
@@ -128,6 +131,7 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_1505590188 =         mNext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.280 -0400", hash_original_method = "388B6019F11DE2E32EE5A9A9056EF526", hash_generated_method = "E2BE9397284FB49BDE3E875614886F4D")
     @Override
     protected void finalize() throws Throwable {
@@ -155,6 +159,7 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_1505590188 =         mNext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.280 -0400", hash_original_method = "3EB8DC396E0D228312A300339405C305", hash_generated_method = "E72C8D02D6D5031CDDA2CF440FD3B4C9")
     public void clear() {
         nativeClear(mPtr);
@@ -163,6 +168,7 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_1505590188 =         mNext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.281 -0400", hash_original_method = "47F4DCEEC62F25E97556D9BB3D79B1AA", hash_generated_method = "911A930433188FB50AB26BD58E97B1C0")
     public void addMovement(MotionEvent event) {
         addTaint(event.getTaint());
@@ -181,6 +187,7 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_1505590188 =         mNext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.281 -0400", hash_original_method = "2C861C2E66E6C5ED5AC5356AA16D4AE7", hash_generated_method = "242D20317C94F501D1AC280CAF79E160")
     public void computeCurrentVelocity(int units) {
         addTaint(units);
@@ -190,6 +197,7 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_1505590188 =         mNext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.282 -0400", hash_original_method = "AAC1E150F0714A1C0618591FDBA33AD9", hash_generated_method = "63E80A429840D6FEFD79A0DF6E72CB58")
     public void computeCurrentVelocity(int units, float maxVelocity) {
         addTaint(maxVelocity);
@@ -200,6 +208,7 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_1505590188 =         mNext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.282 -0400", hash_original_method = "175B9FF596A60DD4A27A3E2F4F8FB36B", hash_generated_method = "C9D7FDAF9DEED4D052FB7C215D7387A9")
     public float getXVelocity() {
         float var1F3A8E958A4C92A70937DB1AC04434E8_1823270462 = (nativeGetXVelocity(mPtr, ACTIVE_POINTER_ID));
@@ -210,6 +219,7 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_1505590188 =         mNext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.282 -0400", hash_original_method = "7522D7DB1CC0324C793DB225FECF96EF", hash_generated_method = "49E22005585C178B0AD431A573B92793")
     public float getYVelocity() {
         float var901305552139D9C59B978FB160946120_1786988650 = (nativeGetYVelocity(mPtr, ACTIVE_POINTER_ID));
@@ -220,6 +230,7 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_1505590188 =         mNext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.284 -0400", hash_original_method = "E88E46619158ECDA6CFC39862B1412B8", hash_generated_method = "E45074C1DEB3EB22D502B92268B7E209")
     public float getXVelocity(int id) {
         addTaint(id);
@@ -231,6 +242,7 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_1505590188 =         mNext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.284 -0400", hash_original_method = "3A1681E069274B63F81D41BA2ABBDF60", hash_generated_method = "B8D5C7626480CA89C2215D5DE8C31605")
     public float getYVelocity(int id) {
         addTaint(id);
@@ -242,6 +254,7 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_1505590188 =         mNext;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.285 -0400", hash_original_method = "53182452353A9C74BE3B46A3229E5647", hash_generated_method = "25FAD989A83856E77552CF916EE74520")
     public boolean getEstimator(int id, int degree, int horizonMillis, Estimator outEstimator) {
         addTaint(outEstimator.getTaint());
@@ -286,6 +299,7 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_1505590188 =         mNext;
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.286 -0400", hash_original_method = "EF4145D98D5D09EB61112BFE6D9F064E", hash_generated_method = "C66B2860453EC04C168AFB24B2F3B164")
         public float estimateX(float time) {
             addTaint(time);
@@ -297,6 +311,7 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_1505590188 =         mNext;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.287 -0400", hash_original_method = "4B57BC9609218FF4FD5DA8FDF96C43D9", hash_generated_method = "D34BEBCEFD6BE1B47305DB93B3024F8E")
         public float estimateY(float time) {
             addTaint(time);

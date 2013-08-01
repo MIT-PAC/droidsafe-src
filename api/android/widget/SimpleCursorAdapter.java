@@ -30,6 +30,7 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
 
     String[] mOriginalFrom;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.009 -0400", hash_original_method = "4CA266072E0BEF58A4BC70323B402D31", hash_generated_method = "D4EC842A580A19EF5EC4D153D5B9C6B0")
     @Deprecated
     public  SimpleCursorAdapter(Context context, int layout, Cursor c, String[] from, int[] to) {
@@ -47,6 +48,7 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.010 -0400", hash_original_method = "07FEC305B6EF36E13BFB609FC3D08908", hash_generated_method = "F320B5A94D3A47CF71AB8A17263C3779")
     public  SimpleCursorAdapter(Context context, int layout, Cursor c, String[] from,
             int[] to, int flags) {
@@ -65,6 +67,7 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.011 -0400", hash_original_method = "DC8B275A35A5B1D2099C370F56E50BB9", hash_generated_method = "B794107BA52DBC04CE787349AB62E0C9")
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
@@ -136,6 +139,7 @@ ViewBinder var3599647BDC732C2D53724CC7D8743271_1233704137 =         mViewBinder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.014 -0400", hash_original_method = "31A5526470C992FDAE212BFFA88B0730", hash_generated_method = "E06B0A7D875362159E7B590763BC1C85")
     public void setViewImage(ImageView v, String value) {
         addTaint(value.getTaint());
@@ -157,6 +161,7 @@ ViewBinder var3599647BDC732C2D53724CC7D8743271_1233704137 =         mViewBinder;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.014 -0400", hash_original_method = "5AA8DD17AC94ADB8D267F5D4267EA13E", hash_generated_method = "6059A05BA24D864572F36CFBDDA47D36")
     public void setViewText(TextView v, String text) {
         addTaint(text.getTaint());
@@ -207,6 +212,7 @@ CursorToStringConverter var860B777AC20C8FD62D683E658AB1E21B_1185554490 =        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.016 -0400", hash_original_method = "600E1910E4ECD6C26E4D3B813A27ACFC", hash_generated_method = "9122BF95EBDF2CD92463E56EBD4907F0")
     @Override
     public CharSequence convertToString(Cursor cursor) {
@@ -237,6 +243,7 @@ CharSequence var081817866C3B88B7C446C3ACFBAD57D7_1158493341 =         super.conv
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.017 -0400", hash_original_method = "FB1AB395EA625B0EC9BE174CD444F84E", hash_generated_method = "1CEB9E15C6F76DE34215B06CC30C3FD7")
     private void findColumns(String[] from) {
         if(mCursor != null)        
@@ -272,6 +279,7 @@ for(i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.018 -0400", hash_original_method = "4582D229162590CE1749F675A6BA90D6", hash_generated_method = "C7F286197648E2EB718C217F428175BA")
     @Override
     public Cursor swapCursor(Cursor c) {
@@ -295,6 +303,7 @@ Cursor varB5053E025797B3BF768F5C37934C244D_1086164366 =         res;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.018 -0400", hash_original_method = "6EF93FFBB8E610946B54D3F2EC498321", hash_generated_method = "9265D01264E1A78A7E0ECD1200CF4812")
     public void changeCursorAndColumns(Cursor c, String[] from, int[] to) {
         addTaint(c.getTaint());

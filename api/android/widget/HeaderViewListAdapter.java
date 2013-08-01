@@ -72,6 +72,7 @@ public class HeaderViewListAdapter implements WrapperListAdapter, Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.832 -0400", hash_original_method = "F816FE78C9557554F8C5B6BB80A06D13", hash_generated_method = "791D5399842FD9606073CC8C835A8F79")
     public int getHeadersCount() {
         int varEC0BB00903232C4A08E22EDBBBDDB3B9_634597927 = (mHeaderViewInfos.size());
@@ -82,6 +83,7 @@ public class HeaderViewListAdapter implements WrapperListAdapter, Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.833 -0400", hash_original_method = "03601E80550495DBAEB6124EE960EF9F", hash_generated_method = "5DD7A28E40DABD909D8A61BA03A15A6E")
     public int getFootersCount() {
         int var290018E65E5025ADA8657290793A446E_947470116 = (mFooterViewInfos.size());
@@ -92,6 +94,7 @@ public class HeaderViewListAdapter implements WrapperListAdapter, Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.833 -0400", hash_original_method = "D7DEAD009C651EAC8E2A235B793425D9", hash_generated_method = "DC03686CB7452FA4208AF404E225C040")
     public boolean isEmpty() {
         boolean varD9E32D821C4CD0FE1F9CC72AC30ED7E9_552159449 = (mAdapter == null || mAdapter.isEmpty());
@@ -102,6 +105,7 @@ public class HeaderViewListAdapter implements WrapperListAdapter, Filterable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.833 -0400", hash_original_method = "41241BC7260E3C26DE66CCD5C227EECC", hash_generated_method = "ED81AE9C45D5F5B1CE4B82CA13417B67")
     private boolean areAllListInfosSelectable(ArrayList<ListView.FixedViewInfo> infos) {
         addTaint(infos.getTaint());
@@ -132,6 +136,7 @@ for(ListView.FixedViewInfo info : infos)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.834 -0400", hash_original_method = "92115EA33573B801358871B3CD0766B3", hash_generated_method = "23D90EBC302AC56F2F93D2574D8D866A")
     public boolean removeHeader(View v) {
         addTaint(v.getTaint());
@@ -167,6 +172,7 @@ for(int i = 0;i < mHeaderViewInfos.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.835 -0400", hash_original_method = "C18E7E6A93212BDE730ADAF32E087D6A", hash_generated_method = "4A697BC3D4C568D6742567176FA42166")
     public boolean removeFooter(View v) {
         addTaint(v.getTaint());
@@ -202,6 +208,7 @@ for(int i = 0;i < mFooterViewInfos.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.835 -0400", hash_original_method = "5EA4C802749955ACC8971AB13A15905C", hash_generated_method = "58A4165C8F36DF0B49B89FE3154A760F")
     public int getCount() {
         if(mAdapter != null)        
@@ -225,6 +232,7 @@ for(int i = 0;i < mFooterViewInfos.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.836 -0400", hash_original_method = "BA6CC34361A3C86CCD3E8BF91B771D57", hash_generated_method = "57C08C556A9F43FB54CBE83341F6070B")
     public boolean areAllItemsEnabled() {
         if(mAdapter != null)        
@@ -248,6 +256,7 @@ for(int i = 0;i < mFooterViewInfos.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.837 -0400", hash_original_method = "DF42B35442C4183A344219B7FD0FCDD1", hash_generated_method = "EBB06D63512D1CB769BF000A4D3E67FC")
     public boolean isEnabled(int position) {
         addTaint(position);
@@ -290,6 +299,7 @@ for(int i = 0;i < mFooterViewInfos.size();i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.838 -0400", hash_original_method = "5FB1DDE7849FB7B1EE35000192AE1125", hash_generated_method = "72CF2D2A102EEF40F266B53ABBBA6954")
     public Object getItem(int position) {
         addTaint(position);
@@ -332,6 +342,7 @@ Object var85102CE5F5A2765360D9B519031AA68E_1869062222 =         mFooterViewInfos
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.839 -0400", hash_original_method = "0EFF2641ED72ED5C174A1DFD9DE35423", hash_generated_method = "68AE4E8FD833D4BBF84E8EA7D16A462F")
     public long getItemId(int position) {
         addTaint(position);
@@ -363,6 +374,7 @@ Object var85102CE5F5A2765360D9B519031AA68E_1869062222 =         mFooterViewInfos
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.840 -0400", hash_original_method = "5C897DB1697E65CD415A86C35E25516F", hash_generated_method = "D5A31B945543C6C51F6A73D0F1FD2D94")
     public boolean hasStableIds() {
         if(mAdapter != null)        
@@ -382,6 +394,7 @@ Object var85102CE5F5A2765360D9B519031AA68E_1869062222 =         mFooterViewInfos
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.841 -0400", hash_original_method = "B94999E1741825084E6BE4B30684EEAE", hash_generated_method = "452E85088C7AA777E9B5F6CE0381CD70")
     public View getView(int position, View convertView, ViewGroup parent) {
         addTaint(parent.getTaint());
@@ -426,6 +439,7 @@ View var887F5CA95EB2A1066712B07A6B2AD732_485929044 =         mFooterViewInfos.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.842 -0400", hash_original_method = "18109841CF71190B9879A21F432A9D28", hash_generated_method = "35AEB448640095FDC45305AC7AEB7BF2")
     public int getItemViewType(int position) {
         addTaint(position);
@@ -457,6 +471,7 @@ View var887F5CA95EB2A1066712B07A6B2AD732_485929044 =         mFooterViewInfos.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.843 -0400", hash_original_method = "8F6564F3EA2E826663B1C340FEA4D3E0", hash_generated_method = "48D59D4E92CF7F71655A0CD12D9F5569")
     public int getViewTypeCount() {
         if(mAdapter != null)        
@@ -476,6 +491,7 @@ View var887F5CA95EB2A1066712B07A6B2AD732_485929044 =         mFooterViewInfos.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.844 -0400", hash_original_method = "809D44C02719E33F590103DE7F6576A1", hash_generated_method = "32335E466B0703D3E78FB752261F1D23")
     public void registerDataSetObserver(DataSetObserver observer) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -491,6 +507,7 @@ View var887F5CA95EB2A1066712B07A6B2AD732_485929044 =         mFooterViewInfos.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.844 -0400", hash_original_method = "3A9A7C936FBCE4451B499589F8C4C5C5", hash_generated_method = "47FC584A630BA9EEE65988188E6FA0FB")
     public void unregisterDataSetObserver(DataSetObserver observer) {
         addTaint(observer.getTaint());
@@ -505,6 +522,7 @@ View var887F5CA95EB2A1066712B07A6B2AD732_485929044 =         mFooterViewInfos.ge
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:00.844 -0400", hash_original_method = "9E800AF0A66A6C48391AEDACEAEC8859", hash_generated_method = "8EEB73589492AD7E91CFFA70A74D98AF")
     public Filter getFilter() {
         if(mIsFilterable)        

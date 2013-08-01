@@ -69,6 +69,7 @@ for(E e : collection)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.220 -0400", hash_original_method = "13469234005B95B45B060FD6999EEF09", hash_generated_method = "E5E5F92C2A0579C7CB77AEAF55E8408D")
     @Override
     public boolean add(E object) {

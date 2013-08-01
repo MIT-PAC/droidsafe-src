@@ -57,6 +57,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
 
     private Rect mTouchFrame;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.854 -0400", hash_original_method = "CE4C0E9ECE12F7FD7C8BEF83C3609839", hash_generated_method = "45E125BEF22DEC4C40277086D3E5D084")
     public  AbsSpinner(Context context) {
         super(context);
@@ -67,6 +68,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.854 -0400", hash_original_method = "48F93C8F12C5C0BCE27736B4F067DE36", hash_generated_method = "64113F39096B63BF664F9CDE3913FABA")
     public  AbsSpinner(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -76,6 +78,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.855 -0400", hash_original_method = "22AD9CC9923933C5995E60FF80D5916E", hash_generated_method = "9610A512BAE2819EB7960A3F5242475E")
     public  AbsSpinner(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -110,6 +113,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.855 -0400", hash_original_method = "189B5B9E645B86B5245C2FF55DEC5907", hash_generated_method = "95F290FF3D8900B1A5D05DB6AC9E34A4")
     private void initAbsSpinner() {
         setFocusable(true);
@@ -120,6 +124,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.856 -0400", hash_original_method = "E5824BE9B0ACFF3A1B32EE310E006300", hash_generated_method = "150FA04CE925D03BD9792E408F6E07BE")
     @Override
     public void setAdapter(SpinnerAdapter adapter) {
@@ -158,6 +163,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.857 -0400", hash_original_method = "5DEE49E4A107B00C6160988898CCE14A", hash_generated_method = "0FFDFA172FF8DE0D08C732AFE9AF8AB3")
      void resetList() {
         mDataChanged = false;
@@ -180,6 +186,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.860 -0400", hash_original_method = "29BB60D69D80C0C6339E2E86482D98C0", hash_generated_method = "7F65E16E6BD324D6AD8260BD7215B900")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -248,6 +255,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.861 -0400", hash_original_method = "44D3B1A6F440757321735895159CF3F5", hash_generated_method = "B1889B54552F110F8A8049C1D371486B")
      int getChildHeight(View child) {
         addTaint(child.getTaint());
@@ -259,6 +267,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.862 -0400", hash_original_method = "3D627342594CC491E8B9982EF63DBDD8", hash_generated_method = "57FC472AEFDF6DBF4B365E5A0B5B1F49")
      int getChildWidth(View child) {
         addTaint(child.getTaint());
@@ -270,6 +279,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.862 -0400", hash_original_method = "2179BEF90E842D00377926E5531ABF89", hash_generated_method = "68441272E5C182478196FD083AE20DBA")
     @Override
     protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
@@ -285,6 +295,7 @@ ViewGroup.LayoutParams varC7143A11FF7EC06883706B8F169DCB38_537325208 =         n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.862 -0400", hash_original_method = "44A3231F2CD8F60C6B590B4146A8EF3F", hash_generated_method = "DA95383C3794040F6ED9210E395418B7")
      void recycleAllViews() {
         final int childCount = getChildCount();
@@ -308,7 +319,7 @@ for(int i = 0;i < childCount;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.862 -0400", hash_original_method = "D2708A7FDB907C7B6958E15DD672DA8E", hash_generated_method = "DB2DD21D96AA192577D4BFB0A2BACF6C")
     public void setSelection(int position, boolean animate) {
         addTaint(animate);
@@ -323,6 +334,7 @@ for(int i = 0;i < childCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.863 -0400", hash_original_method = "7E33360CBDBF59A4E473BBC01C4A9D09", hash_generated_method = "3376B4242D53CEB38DECEBD083FEF032")
     @Override
     public void setSelection(int position) {
@@ -337,6 +349,7 @@ for(int i = 0;i < childCount;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.863 -0400", hash_original_method = "63246E2C9E0D90A96046BA94228CF775", hash_generated_method = "A2473CD28EF4C23A0F021A2683A0599D")
      void setSelectionInt(int position, boolean animate) {
         addTaint(animate);
@@ -364,6 +377,7 @@ for(int i = 0;i < childCount;i++)
     abstract void layout(int delta, boolean animate);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.863 -0400", hash_original_method = "B9D708BD110913DD38C752A46A05BBB4", hash_generated_method = "F1FAC70B46F4541384D908F98EED2AFB")
     @Override
     public View getSelectedView() {
@@ -388,6 +402,7 @@ View var540C13E9E156B687226421B24F2DF178_887779325 =             null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.864 -0400", hash_original_method = "7199FF25ED586C3851E847C0919D8CB4", hash_generated_method = "BA6402604F9BC69D8F8A8B3C80BF4819")
     @Override
     public void requestLayout() {
@@ -426,6 +441,7 @@ SpinnerAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1334298826 =         mAdapter
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.865 -0400", hash_original_method = "AD87FEA47379DE9B1BE65A322C86E61D", hash_generated_method = "7A5CAADEAF350013DEB7DF31F5469631")
     public int pointToPosition(int x, int y) {
         addTaint(y);
@@ -474,6 +490,7 @@ for(int i = count - 1;i >= 0;i--)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.866 -0400", hash_original_method = "2B2E0178AF4521152109C90D1424ECD0", hash_generated_method = "0D190B84F9B4C787C6A098B84BA3D0D1")
     @Override
     public Parcelable onSaveInstanceState() {
@@ -505,6 +522,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_382991945 =         ss;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.867 -0400", hash_original_method = "41BC9B1A20EF7E956C712A8B84EE3401", hash_generated_method = "6E6C67961C05C24613BBF803BB4B7D0E")
     @Override
     public void onRestoreInstanceState(Parcelable state) {
@@ -543,6 +561,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_382991945 =         ss;
 
         int position;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.868 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "3F4F70129FCB46E4AE0D334AE4D70CF6")
           SavedState(Parcelable superState) {
             super(superState);
@@ -551,6 +570,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_382991945 =         ss;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.869 -0400", hash_original_method = "65E5A0CAB50633949DC788A62A186FA9", hash_generated_method = "5605444F121F9896A1C4C86DC8A5C0CA")
         private  SavedState(Parcel in) {
             super(in);
@@ -562,6 +582,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_382991945 =         ss;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.869 -0400", hash_original_method = "0007C2F01F0ACF691918256360E82965", hash_generated_method = "F5937594D59A756735DED12EE46A3860")
         @Override
         public void writeToParcel(Parcel out, int flags) {
@@ -577,6 +598,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_382991945 =         ss;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.869 -0400", hash_original_method = "7A4BA85F6ACBC7FE9656B24BA8A57B9A", hash_generated_method = "F0440F1834A5939016E4B763143BB44A")
         @Override
         public String toString() {
@@ -632,6 +654,7 @@ String var7F98A14C1972F3FDF68002B7A4E6BB79_1824766963 =             "AbsSpinner.
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.870 -0400", hash_original_method = "12E9E54F63615166D97804FCD5F19EB6", hash_generated_method = "2EC5D81587167BC91E2E1BB9F0690B71")
         public void put(int position, View v) {
             addTaint(v.getTaint());
@@ -642,6 +665,7 @@ String var7F98A14C1972F3FDF68002B7A4E6BB79_1824766963 =             "AbsSpinner.
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.870 -0400", hash_original_method = "13D5A4FF59BF1643EBD5228E429384EA", hash_generated_method = "29B802FE1C945BB12582532A43A27299")
          View get(int position) {
             addTaint(position);
@@ -666,6 +690,7 @@ View varDC838461EE2FA0CA4C9BBB70A15456B0_1135660274 =             result;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.870 -0400", hash_original_method = "1B173351B88254AC852DFD7E9D6DC12C", hash_generated_method = "5F8216B28B89B55E3F67460770F4FE01")
          void clear() {
             final SparseArray<View> scrapHeap = mScrapHeap;

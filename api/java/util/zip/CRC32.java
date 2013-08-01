@@ -43,6 +43,7 @@ public class CRC32 implements Checksum {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.486 -0400", hash_original_method = "CC03AC9F84902D02E7C98FF0D9B3A071", hash_generated_method = "BE07B44B65E0EE0F027537581BFB3A3F")
     public void update(int val) {
         crc = updateByteImpl((byte) val, crc);
@@ -51,6 +52,7 @@ public class CRC32 implements Checksum {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.487 -0400", hash_original_method = "CE6B29801A6FECCB312673EE525F73B5", hash_generated_method = "11C1D47873E07B626762B712DAFCA79D")
     public void update(byte[] buf) {
         addTaint(buf[0]);

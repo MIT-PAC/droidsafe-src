@@ -21,21 +21,25 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void registerDataSetObserver(DataSetObserver observer) {
         mDataSetObservable.registerObserver(observer);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void unregisterDataSetObserver(DataSetObserver observer) {
         mDataSetObservable.unregisterObserver(observer);
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void notifyDataSetChanged() {
         mDataSetObservable.notifyChanged();
     }
 
     
+    @DSModeled(DSC.SAFE)
     public void notifyDataSetInvalidated() {
         mDataSetObservable.notifyInvalidated();
     }
@@ -53,6 +57,7 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
         return getView(position, convertView, parent);
     }
@@ -70,6 +75,7 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public boolean isEmpty() {
         return getCount() == 0;
     }

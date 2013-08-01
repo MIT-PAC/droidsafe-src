@@ -520,7 +520,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		//Return nothing
 	}
 	
-	@DSModeled
+	@DSModeled(DSC.SAFE)
 	public boolean hasOnClickListeners(){
 		// Original method
 		/*
@@ -532,7 +532,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		return false;
 	}
 	
-	@DSModeled
+	@DSModeled(DSC.SAFE)
 	public void setOnLongClickListener(OnLongClickListener l){
 		// Original method
 		/*

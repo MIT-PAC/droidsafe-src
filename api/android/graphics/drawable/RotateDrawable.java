@@ -466,6 +466,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_831116189 =         this;
 
         private boolean mCheckedConstantState;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.484 -0400", hash_original_method = "E49363C9B9277E418FC0CB021F74A645", hash_generated_method = "D93AE749A6EA00BFCB6791BCB107BC39")
         public  RotateState(RotateState source, RotateDrawable owner, Resources res) {
             addTaint(owner.getTaint());
@@ -507,6 +508,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_831116189 =         this;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.485 -0400", hash_original_method = "9DE14D671D62BC2F01E2871493505073", hash_generated_method = "25DE17AEC6EC1DAA256A3154E4EF3E45")
         @Override
         public Drawable newDrawable() {
@@ -518,6 +520,7 @@ Drawable var73906AB68FE9D3B6E333C69CB0D4CD5C_526931470 =             new RotateD
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.485 -0400", hash_original_method = "3300EE781F91D7B956F1DECE09B43C56", hash_generated_method = "90799AF38953B20F4E50B918ABF00292")
         @Override
         public Drawable newDrawable(Resources res) {
@@ -542,6 +545,7 @@ Drawable var08E68496273584B2BA9853DFD7C4906A_498088075 =             new RotateD
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.485 -0400", hash_original_method = "8D2A3A495FE794F654E28C73CF35A2A1", hash_generated_method = "46DEEFD7667524EE8B0A6DAE656561DA")
         public boolean canConstantState() {
             if(!mCheckedConstantState)            

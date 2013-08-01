@@ -23,6 +23,7 @@ public class BasicNameValuePair implements NameValuePair, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public String getName() {
 		// TODO Auto-generated method stub
@@ -30,6 +31,7 @@ public class BasicNameValuePair implements NameValuePair, Cloneable {
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @Override
 	public String getValue() {
 		// TODO Auto-generated method stub

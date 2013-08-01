@@ -34,6 +34,7 @@ public class PorterDuff {
         SCREEN      (15),
         ADD         (16),
         OVERLAY     (17);
+        @DSModeled(DSC.SAFE)
         Mode(int nativeInt) {
             this.nativeInt = nativeInt;
         }

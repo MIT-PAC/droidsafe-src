@@ -83,6 +83,7 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
     abstract void complement();
 
     
+    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> of(E e) {
         EnumSet<E> set = EnumSet.noneOf(e.getDeclaringClass());
         set.add(e);
@@ -90,6 +91,7 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> of(E e1, E e2) {
         EnumSet<E> set = of(e1);
         set.add(e2);
@@ -97,6 +99,7 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> of(E e1, E e2, E e3) {
         EnumSet<E> set = of(e1, e2);
         set.add(e3);
@@ -104,6 +107,7 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> of(E e1, E e2, E e3, E e4) {
         EnumSet<E> set = of(e1, e2, e3);
         set.add(e4);
@@ -111,6 +115,7 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> of(E e1, E e2, E e3, E e4, E e5) {
         EnumSet<E> set = of(e1, e2, e3, e4);
         set.add(e5);
@@ -127,6 +132,7 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> range(E start, E end) {
         if (start.compareTo(end) > 0) {
             throw new IllegalArgumentException();

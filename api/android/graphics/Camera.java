@@ -11,6 +11,7 @@ public class Camera {
 
     int native_instance;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.781 -0400", hash_original_method = "6DBF72AF7766D4EB810EDB03D8391F19", hash_generated_method = "9D80413F5EE3D7B08611B8D24691ACD0")
     public  Camera() {
         nativeConstructor();

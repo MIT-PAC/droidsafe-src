@@ -13,6 +13,7 @@ import droidsafe.annotations.DSModeled;
 
 public class AbsoluteLayout extends ViewGroup {
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.912 -0400", hash_original_method = "5954FDB18E14B0E14B8E157FD227CC59", hash_generated_method = "5C18E90C9C6B6CE06AED6E1461B0424B")
     public  AbsoluteLayout(Context context) {
         super(context);
@@ -21,6 +22,7 @@ public class AbsoluteLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.913 -0400", hash_original_method = "B433FCC2495B1A37134076C038FD96A0", hash_generated_method = "A03F4B7DD97913D460B1952EA0829118")
     public  AbsoluteLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -30,6 +32,7 @@ public class AbsoluteLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.913 -0400", hash_original_method = "153087F001B91B4A777A0B839E669EB1", hash_generated_method = "B3C233F0F14986CDC8545C2C038E30CD")
     public  AbsoluteLayout(Context context, AttributeSet attrs,
             int defStyle) {
@@ -41,6 +44,7 @@ public class AbsoluteLayout extends ViewGroup {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.914 -0400", hash_original_method = "54761EA789A74CBDB221271FE56469B7", hash_generated_method = "F4756D8833F9797720DED6E768F6D696")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -76,6 +80,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.914 -0400", hash_original_method = "383A977BED79B1C96577C54DB1D6FA6E", hash_generated_method = "51B1B9C26709DB7BC3E10C9BD65EFBDD")
     @Override
     protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
@@ -87,6 +92,7 @@ ViewGroup.LayoutParams varE0F391842319CCFCCDBAE9E91F4C08B4_2140028408 =         
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.915 -0400", hash_original_method = "CB6E73396546FC793F7584A7D119E869", hash_generated_method = "FFCD5545B0F2AB79A4BEEDD503C1AD94")
     @Override
     protected void onLayout(boolean changed, int l, int t,
@@ -128,6 +134,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.916 -0400", hash_original_method = "D0490D2D5B80C9DD3F55B366503982A5", hash_generated_method = "DD5E1974F2DB34D0150192FF932C2A9A")
     @Override
     public ViewGroup.LayoutParams generateLayoutParams(AttributeSet attrs) {
@@ -153,6 +160,7 @@ ViewGroup.LayoutParams varA9C1E0D45A20413F2EC8A49EDAEEEDFF_123142570 =         n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.916 -0400", hash_original_method = "B595E0482905B38051CD63239BB5F8BA", hash_generated_method = "9DFC8CD07844DCD7E31C8B096858ECF0")
     @Override
     protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
@@ -185,6 +193,7 @@ ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1787575084 =         
 
         public int y;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.917 -0400", hash_original_method = "82F5809A27EA13ABE8A026DC04B05568", hash_generated_method = "66F42886891B1D33BF560EADFEE3B316")
         public  LayoutParams(int width, int height, int x, int y) {
             super(width, height);
@@ -198,6 +207,7 @@ ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1787575084 =         
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.918 -0400", hash_original_method = "4740233E31DF015F5CE2A2D25007B918", hash_generated_method = "EAA8B0212D547385D472DE8FE942C6B6")
         public  LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
@@ -221,6 +231,7 @@ ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1787575084 =         
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.918 -0400", hash_original_method = "E78B3F1574E2791FC4B55C9E6B90274C", hash_generated_method = "37A5DBEF9177864A03971A9D81D7D3EE")
         public  LayoutParams(ViewGroup.LayoutParams source) {
             super(source);
@@ -229,6 +240,7 @@ ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1787575084 =         
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.918 -0400", hash_original_method = "E94865805207BE74BD20D805DD96D818", hash_generated_method = "BEA2FAFB5C492B63142099731B84EF27")
         @Override
         public String debug(String output) {

@@ -308,6 +308,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean preserveBackBuffer() {
         return nPreserveBackBuffer();
     }
@@ -411,6 +412,7 @@ class GLES20Canvas extends HardwareCanvas {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void flushCaches(int level) {
         nFlushCaches(level);
     }

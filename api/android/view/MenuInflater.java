@@ -32,6 +32,7 @@ public class MenuInflater {
 
     private Context mContext;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.597 -0400", hash_original_method = "DAFF641201C63E19412016666CD58FB3", hash_generated_method = "D66A694F9921860E9CB1AE3F5CE55449")
     public  MenuInflater(Context context) {
         mContext = context;
@@ -44,6 +45,7 @@ public class MenuInflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.598 -0400", hash_original_method = "7D92BCA17E1F22EC74058A02DB16DD4F", hash_generated_method = "574B2D566E9737542D0CD10BCD22C581")
     public void inflate(int menuRes, Menu menu) {
         addTaint(menu.getTaint());
@@ -88,6 +90,7 @@ public class MenuInflater {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.601 -0400", hash_original_method = "9930459085CDC2417094A7A8585D74E6", hash_generated_method = "9E550D96C1C39C96FD598F9D22D1E271")
     private void parseMenu(XmlPullParser parser, AttributeSet attrs, Menu menu) throws XmlPullParserException, IOException {
         addTaint(menu.getTaint());
@@ -200,6 +203,7 @@ switch(eventType){
 
         private Method mMethod;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.604 -0400", hash_original_method = "71989E75CB41D046D01EA62CF0B3F6AF", hash_generated_method = "0726E723CC17755ECA49EF99CA7A7DCF")
         public  InflatedOnMenuItemClickListener(Context context, String methodName) {
             mContext = context;
@@ -232,6 +236,7 @@ switch(eventType){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.606 -0400", hash_original_method = "73DDD6FE1A9FD43CC9793E596C7A60B9", hash_generated_method = "8F9B4F7C095BD069BF65C2EE0C9B8C98")
         public boolean onMenuItemClick(MenuItem item) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -385,6 +390,7 @@ switch(eventType){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.612 -0400", hash_original_method = "D2A59B8CE3FF522E41AA18E3F41E01E5", hash_generated_method = "7A1F254F021905E5DD10F4A2EF62DA74")
         public void readGroup(AttributeSet attrs) {
             addTaint(attrs.getTaint());
@@ -402,6 +408,7 @@ switch(eventType){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.615 -0400", hash_original_method = "040ADD8FC534832950800B9A55359142", hash_generated_method = "1A5F9A31EB9EF418228AA074D0A15E3F")
         public void readItem(AttributeSet attrs) {
             addTaint(attrs.getTaint());
@@ -455,6 +462,7 @@ switch(eventType){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.615 -0400", hash_original_method = "68CBADC6295F8D47EFE8794BDB31E4A9", hash_generated_method = "176B7A7759B5712327F67AB093FCD8CA")
         private char getShortcut(String shortcutString) {
             addTaint(shortcutString.getTaint());
@@ -479,6 +487,7 @@ switch(eventType){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.616 -0400", hash_original_method = "AD827357C34932CC0921A74B0CE8A3EF", hash_generated_method = "B556BCB318CD3DC4261EA35B78B0E677")
         private void setItem(MenuItem item) {
             addTaint(item.getTaint());
@@ -542,6 +551,7 @@ switch(eventType){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.616 -0400", hash_original_method = "A5F782FF20BD7C7C25F84F91CFB5DEC5", hash_generated_method = "E439761FFBB5453CAC5A01C16AC7F887")
         public void addItem() {
             itemAdded = true;
@@ -552,6 +562,7 @@ switch(eventType){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.617 -0400", hash_original_method = "68ADA6E6B9635F44A93B8212F1D6D8E0", hash_generated_method = "1DC9F0FF042092FC34A06D920C1A7C01")
         public SubMenu addSubMenuItem() {
             itemAdded = true;
@@ -579,6 +590,7 @@ SubMenu var0DB7EBD0BEDE8F5ABDCBBB980827FFD2_1335241188 =             subMenu;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.617 -0400", hash_original_method = "20DE6E19862FEEC3F61B05674F46168C", hash_generated_method = "84DCB8177A79929D4BE13F6A57C95E12")
         @SuppressWarnings("unchecked")
         private <T> T newInstance(String className, Class<?>[] constructorSignature,

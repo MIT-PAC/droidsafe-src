@@ -82,6 +82,7 @@ Object[] varEE356BC8028D35EDB407C2CD6F5C7F86_487859408 =         al.toArray();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.885 -0400", hash_original_method = "611ED93917CDC5DE1AF7714E59426D61", hash_generated_method = "A97A508A6AB1C24B6FB5FCF21A879F6C")
     public <T> T[] toArray(T[] a) {
         addTaint(a[0].getTaint());

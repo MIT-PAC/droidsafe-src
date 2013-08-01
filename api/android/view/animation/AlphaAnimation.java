@@ -17,6 +17,7 @@ public class AlphaAnimation extends Animation {
 
     private float mToAlpha;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.677 -0400", hash_original_method = "C876E0498492EBC100852A514EEAC281", hash_generated_method = "E763CE01596363CF2569E58BA34F76AD")
     public  AlphaAnimation(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -35,6 +36,7 @@ public class AlphaAnimation extends Animation {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.678 -0400", hash_original_method = "DFFB255DB5DD71C3FC3D40107483D6B8", hash_generated_method = "7E04B9E7B71153B6C1B61C22649FFF9B")
     public  AlphaAnimation(float fromAlpha, float toAlpha) {
         mFromAlpha = fromAlpha;

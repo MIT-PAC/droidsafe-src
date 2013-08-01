@@ -609,6 +609,7 @@ String varDDC806D031E96ADAFEE4C9E5395D6E1C_593256382 =         nativeToString(mN
         XOR(3),
         REVERSE_DIFFERENCE(4),
         REPLACE(5);
+        @DSModeled(DSC.SAFE)
         Op(int nativeInt) {
             this.nativeInt = nativeInt;
         }

@@ -50,6 +50,7 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
 
     protected String[] mExcludeMimes = null;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.149 -0400", hash_original_method = "F698EB0A9BF86C10F29F79F4D1EFD1DC", hash_generated_method = "206406F26BFA9B8F8E50C9AB2E189CB1")
     public  QuickContactBadge(Context context) {
         this(context, null);
@@ -58,6 +59,7 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.150 -0400", hash_original_method = "ADED2BA446D2A9BF4C8E4781CE5F3F84", hash_generated_method = "9686B4C1F8636BF227E01308CA537305")
     public  QuickContactBadge(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -67,6 +69,7 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.150 -0400", hash_original_method = "0171DAF66D107836BC0033CB50F41701", hash_generated_method = "E9D2D7B5C2998C2B265BF207CD176C5D")
     public  QuickContactBadge(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -89,7 +92,7 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.150 -0400", hash_original_method = "5693D4EF6FAC7E7AFE930BDF5EC8E103", hash_generated_method = "3A49175F7D70A1781AD14F7C9FD0E3B4")
     @Override
     protected void drawableStateChanged() {
@@ -117,7 +120,7 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.152 -0400", hash_original_method = "23D2E4F314D26FFBC9D75F31C49B7153", hash_generated_method = "4C29E491FBADA83BF3F370F2B8FBECB6")
     @Override
     protected void onDraw(Canvas canvas) {
@@ -179,7 +182,7 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.153 -0400", hash_original_method = "E4AF1B9673F011A8417C08012510E27B", hash_generated_method = "6810026ABE20C92676789320376FD9E7")
     public void setImageToDefault() {
         if(mDefaultAvatar == null)        
@@ -210,7 +213,7 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.154 -0400", hash_original_method = "7E46CBF823F769C000B50BD24A037D73", hash_generated_method = "8A2D93579F7F511CF665A27BDE67F8E4")
     public void assignContactFromEmail(String emailAddress, boolean lazyLookup) {
         addTaint(lazyLookup);
@@ -239,7 +242,7 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.155 -0400", hash_original_method = "615886346605DCC8A37347200BE80EDB", hash_generated_method = "DBB7A6FE59CC0A00910C99B4D28F6A8B")
     public void assignContactFromPhone(String phoneNumber, boolean lazyLookup) {
         addTaint(lazyLookup);
@@ -268,7 +271,7 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.156 -0400", hash_original_method = "8712FDD692B08E6979A43AB02ED73539", hash_generated_method = "9332C53BC9532EB272CB981FE68B7B39")
     private void onContactUriChanged() {
         setEnabled(isAssigned());
@@ -277,7 +280,7 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.156 -0400", hash_original_method = "58382461F76E5F0CD49350469EC07976", hash_generated_method = "AE3D74460F56B9E573BF63B69A7BAB14")
     @Override
     public void onClick(View v) {
@@ -322,6 +325,7 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
     
     private class QueryHandler extends AsyncQueryHandler {
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.157 -0400", hash_original_method = "9B79E3E63BDEF0F27411ADE3BE0052BB", hash_generated_method = "690E9E0B29B635C88AEDB29459E9EEF3")
         public  QueryHandler(ContentResolver cr) {
             super(cr);
@@ -330,7 +334,7 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
         }
 
         
-                @DSModeled(DSC.SPEC)
+                @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.159 -0400", hash_original_method = "8665D4A0C21AED185AE6812E2DF2128E", hash_generated_method = "C00305FB1E3219C61BD323674488A045")
         @Override
         protected void onQueryComplete(int token, Object cookie, Cursor cursor) {

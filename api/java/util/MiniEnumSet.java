@@ -17,6 +17,7 @@ final class MiniEnumSet<E extends Enum<E>> extends EnumSet<E> {
 
     private long bits;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.279 -0400", hash_original_method = "13D7CE02E81D272A0503942FC3D4E826", hash_generated_method = "CF87E59531B42BDC32200667DC7F0458")
       MiniEnumSet(Class<E> elementType, E[] enums) {
         super(elementType);
@@ -63,6 +64,7 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_263335921 =         new MiniEnum
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.280 -0400", hash_original_method = "0E09B1B284FABC8D1B6052C567B95409", hash_generated_method = "EFBA53C24225B7069E6DE3CEA9344C24")
     @Override
     public boolean add(E element) {
@@ -94,6 +96,7 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_263335921 =         new MiniEnum
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.281 -0400", hash_original_method = "CD3919E65A48A028AB158BD4B0E371DE", hash_generated_method = "4F6A725F62E789F245D870F4D88CBD0C")
     @Override
     public boolean addAll(Collection<? extends E> collection) {

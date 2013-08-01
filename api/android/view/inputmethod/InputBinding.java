@@ -23,6 +23,7 @@ public final class InputBinding implements Parcelable {
 
     int mPid;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.537 -0400", hash_original_method = "04B1C2D6CDEDB76C9AA67954E8673411", hash_generated_method = "D3802D48C6F6CB4BD9FD00E716993C08")
     public  InputBinding(InputConnection conn, IBinder connToken,
             int uid, int pid) {
@@ -38,6 +39,7 @@ public final class InputBinding implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.537 -0400", hash_original_method = "DBB90F0F9CF3F4CFB7D310D0A734D117", hash_generated_method = "3E95BFDDB5E690A8BB7107EEEE54DDE0")
     public  InputBinding(InputConnection conn, InputBinding binding) {
         mConnection = conn;
@@ -52,6 +54,7 @@ public final class InputBinding implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.538 -0400", hash_original_method = "60D4493C413075577DFF548F6D5D71C3", hash_generated_method = "BAE142ABCBE2B21ACC9C810D04C9F914")
       InputBinding(Parcel source) {
         mConnection = null;
@@ -110,7 +113,7 @@ IBinder varBF6D921CD5EA7DCACE4FD636A14DA721_588803973 =         mConnectionToken
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.539 -0400", hash_original_method = "30B5CA44D3BF64A2B8A74435F40F5258", hash_generated_method = "956ECA279B67CB853C4055632118281A")
     @Override
     public String toString() {

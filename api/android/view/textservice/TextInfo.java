@@ -20,6 +20,7 @@ public final class TextInfo implements Parcelable {
 
     private int mSequence;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.020 -0400", hash_original_method = "A935C713B1C118E04C925F76EDA27293", hash_generated_method = "005C37CB404463903C96F2FDFC878DB9")
     public  TextInfo(String text) {
         this(text, 0, 0);
@@ -28,6 +29,7 @@ public final class TextInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.022 -0400", hash_original_method = "B3A9BFDD6561354A8432CF39635FFD52", hash_generated_method = "78BADAC5C7FFD45BDF9D02E499EF66FD")
     public  TextInfo(String text, int cookie, int sequence) {
         if(TextUtils.isEmpty(text))        
@@ -61,7 +63,7 @@ public final class TextInfo implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.024 -0400", hash_original_method = "573D2D5BE8E27F6CA8F77B871E9B67A7", hash_generated_method = "CD4FFFA8241B59E73A1BFAF3A3EA654A")
     @Override
     public void writeToParcel(Parcel dest, int flags) {

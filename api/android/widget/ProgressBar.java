@@ -122,6 +122,7 @@ public class ProgressBar extends View {
 
     private AccessibilityEventSender mAccessibilityEventSender;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.069 -0400", hash_original_method = "F5911F61390A242F23F5676C44FA4C61", hash_generated_method = "661AE0288A8718D3E63F42C49E8AB855")
     public  ProgressBar(Context context) {
         this(context, null);
@@ -130,6 +131,7 @@ public class ProgressBar extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.070 -0400", hash_original_method = "D031AA7B7D98D3870546853F1BC5BC9E", hash_generated_method = "86CFE48EF6108DA67F7A6A0E78EC758A")
     public  ProgressBar(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.progressBarStyle);
@@ -139,6 +141,7 @@ public class ProgressBar extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.070 -0400", hash_original_method = "E1F87E741C36AFFDC636A9ACF6EDF064", hash_generated_method = "F651297E783E5138BD05F8FA2423EDF9")
     public  ProgressBar(Context context, AttributeSet attrs, int defStyle) {
         this(context, attrs, defStyle, 0);
@@ -149,6 +152,7 @@ public class ProgressBar extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.074 -0400", hash_original_method = "DAE8B382D7288D55BBDECA5C905F6E78", hash_generated_method = "ECBB23DC7D3A80E2D75EF00254655675")
     public  ProgressBar(Context context, AttributeSet attrs, int defStyle, int styleRes) {
         super(context, attrs, defStyle);
@@ -202,6 +206,7 @@ public class ProgressBar extends View {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.076 -0400", hash_original_method = "224A1F0FE2A7F3DC81BFFEE36861F394", hash_generated_method = "70855A04D6562824065D564D4B93E8F8")
     private Drawable tileify(Drawable drawable, boolean clip) {
         addTaint(clip);
@@ -265,6 +270,7 @@ Drawable varA22A26D75522826F9AEFA195DDDFD365_1721221798 =         drawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.077 -0400", hash_original_method = "066FEFD8810FD39B2288696E8912725B", hash_generated_method = "2DBA756DA7BE0344BB0ADCEC5C86405F")
      Shape getDrawableShape() {
         final float[] roundedCorners = new float[] { 5, 5, 5, 5, 5, 5, 5, 5 };
@@ -277,6 +283,7 @@ Shape varE5AD6A465EDE45C705AEBAD629956806_621586862 =         new RoundRectShape
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.077 -0400", hash_original_method = "9EE7DD01E1AB6B0D269DB58A7544C17D", hash_generated_method = "A37EB23EBBDAD68C503FC33BC9FC4DFE")
     private Drawable tileifyIndeterminate(Drawable drawable) {
         addTaint(drawable.getTaint());
@@ -357,6 +364,7 @@ Drawable varA22A26D75522826F9AEFA195DDDFD365_507455730 =         drawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.080 -0400", hash_original_method = "9BFD2BF2FBC3833B7107C0E363644A89", hash_generated_method = "FF98C2DDC8A1A3069077A1CE018ADDD8")
     @android.view.RemotableViewMethod
     public synchronized void setIndeterminate(boolean indeterminate) {
@@ -399,6 +407,7 @@ Drawable varF00153B56D2CB49C3A37B1DEFFA7532F_736143345 =         mIndeterminateD
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.081 -0400", hash_original_method = "4CAABA82B88C397ED0E927A2E15C90A0", hash_generated_method = "3C9D22CBBB3AA56E70C40AE86580D6C1")
     public void setIndeterminateDrawable(Drawable d) {
         if(d != null)        
@@ -434,6 +443,7 @@ Drawable varE3CF59E02A1DFBC354305A0CD25ECEA2_1044407042 =         mProgressDrawa
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.082 -0400", hash_original_method = "3733E64362DE34A69671D2EF5503886A", hash_generated_method = "FD666366B0F9C3306D2A7F7F9A253A96")
     public void setProgressDrawable(Drawable d) {
         boolean needUpdate;
@@ -485,6 +495,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_7228635 =         mCurrentDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.082 -0400", hash_original_method = "56BA1F17FA722E2B64538801F5E2971D", hash_generated_method = "1234398C85FC631A9252393F10375851")
     @Override
     protected boolean verifyDrawable(Drawable who) {
@@ -499,6 +510,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_7228635 =         mCurrentDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.083 -0400", hash_original_method = "7333172C31835F46D838DB3DB892DD55", hash_generated_method = "70DDDB300C930FE9E1A5A6AD371BC4D1")
     @Override
     public void jumpDrawablesToCurrentState() {
@@ -514,6 +526,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_7228635 =         mCurrentDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.083 -0400", hash_original_method = "9D88EC1BAB8B30E9973F963BD590322C", hash_generated_method = "86259BDEA8CC00FE1AD959A79FA98761")
     @Override
     public void postInvalidate() {
@@ -528,6 +541,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_7228635 =         mCurrentDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.084 -0400", hash_original_method = "10671D93E2F61D98C60CD8288CC260A2", hash_generated_method = "C320777395D89C9FF1521C14A3EE007F")
     private synchronized void doRefreshProgress(int id, int progress, boolean fromUser,
             boolean callBackToApp) {
@@ -574,6 +588,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_7228635 =         mCurrentDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.084 -0400", hash_original_method = "1EE4C81513694B44BBA27F5A11B0191B", hash_generated_method = "7A76CCB4B14B7266EE64CCE8EB036548")
      void onProgressRefresh(float scale, boolean fromUser) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -590,6 +605,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_7228635 =         mCurrentDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.085 -0400", hash_original_method = "6344B397C965EAD8A2329C40E25F1FFC", hash_generated_method = "ACFE39C730480A10D40425C8BDE03D7B")
     private synchronized void refreshProgress(int id, int progress, boolean fromUser) {
         addTaint(fromUser);
@@ -631,6 +647,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_7228635 =         mCurrentDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.086 -0400", hash_original_method = "E60A634EF77869D698E2255CD3404933", hash_generated_method = "8F6DEA5F19AAD77B783CF0F907E6383A")
     @android.view.RemotableViewMethod
     public synchronized void setProgress(int progress) {
@@ -641,6 +658,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_7228635 =         mCurrentDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.086 -0400", hash_original_method = "65EDABD4A3EBF7E0899598C1A747DEC8", hash_generated_method = "DBE4EAE5409845C63F798D9423A78E9E")
     @android.view.RemotableViewMethod
     synchronized void setProgress(int progress, boolean fromUser) {
@@ -679,6 +697,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_7228635 =         mCurrentDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.087 -0400", hash_original_method = "9F9AE189F8359350B1506E3BE664E8EE", hash_generated_method = "8A8CE032C94CE4F79A9A60FD36CECE67")
     @android.view.RemotableViewMethod
     public synchronized void setSecondaryProgress(int secondaryProgress) {
@@ -752,6 +771,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_7228635 =         mCurrentDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.088 -0400", hash_original_method = "DB535D9F1C65E31A54636A6B02096562", hash_generated_method = "4D3A731803FF6C114AF48ED8EC08AC12")
     @android.view.RemotableViewMethod
     public synchronized void setMax(int max) {
@@ -784,6 +804,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_7228635 =         mCurrentDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.089 -0400", hash_original_method = "1E5C167C76FF3FF0E5E9EED4F2394FD5", hash_generated_method = "D3D9333876A75F30FD4A3EB5943F27E5")
     public synchronized final void incrementProgressBy(int diff) {
         addTaint(diff);
@@ -793,6 +814,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_7228635 =         mCurrentDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.089 -0400", hash_original_method = "33F180031B438855CD8341D942A736A2", hash_generated_method = "875592F97DA8F8337A21309A8EC7B82B")
     public synchronized final void incrementSecondaryProgressBy(int diff) {
         addTaint(diff);
@@ -802,6 +824,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_7228635 =         mCurrentDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.090 -0400", hash_original_method = "F5167F20A872A63C36DAF85A2B000FB5", hash_generated_method = "6FA45E3DFA2AFC6767AA6A4B3A568391")
      void startAnimation() {
         if(getVisibility() != VISIBLE)        
@@ -851,6 +874,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_7228635 =         mCurrentDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.090 -0400", hash_original_method = "3AFE1BBA347326120AD78BEE94F7B2A6", hash_generated_method = "E890542093B7CD8F089C73B6D19B98EE")
      void stopAnimation() {
         mAnimation = null;
@@ -872,6 +896,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_7228635 =         mCurrentDrawable;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.090 -0400", hash_original_method = "2C6481DDCCEAC913795356C9BF1AF628", hash_generated_method = "FBCFFDB8934B412FCF947D3B533DE793")
     public void setInterpolator(Context context, int resID) {
         addTaint(resID);
@@ -902,6 +927,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_821922003 =         mInterpolat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.091 -0400", hash_original_method = "EC8B18EE88EE8E09369A36DBF52DF684", hash_generated_method = "3FD65D1E4B02BA1914A841F69EC44FC0")
     @Override
     @RemotableViewMethod
@@ -936,6 +962,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_821922003 =         mInterpolat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.092 -0400", hash_original_method = "E937F441086D9A40C4DA651781180A92", hash_generated_method = "F814E6E5CD4BFC60A367A89CAAE37887")
     @Override
     protected void onVisibilityChanged(View changedView, int visibility) {
@@ -966,6 +993,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_821922003 =         mInterpolat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.092 -0400", hash_original_method = "51F010448C03C2EA1E2B7053B0DCB7DE", hash_generated_method = "00C41718C6D468FC0EF4D8B6461D620B")
     @Override
     public void invalidateDrawable(Drawable dr) {
@@ -1000,6 +1028,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_821922003 =         mInterpolat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.092 -0400", hash_original_method = "74277B895F883AA5B2EB254A27C149C7", hash_generated_method = "883A1F09580CEB6D2BC45799B6D0CBB7")
     @Override
     public int getResolvedLayoutDirection(Drawable who) {
@@ -1014,6 +1043,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_821922003 =         mInterpolat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.092 -0400", hash_original_method = "69EE8DE1AB95A9498391F63C2C373DBD", hash_generated_method = "8E3F25468214CB99C9456EF69A803E35")
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -1028,6 +1058,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_821922003 =         mInterpolat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.093 -0400", hash_original_method = "EA480A5BB3C1237E93332F6C8EE84591", hash_generated_method = "E890F37E2A821761E9E87DB75CB5037C")
     private void updateDrawableBounds(int w, int h) {
         addTaint(h);
@@ -1071,6 +1102,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_821922003 =         mInterpolat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.093 -0400", hash_original_method = "16CD7BB578E96B322FC9201A377B65CC", hash_generated_method = "229270E8BFECAF2393326E1A1065DCD7")
     @Override
     protected synchronized void onDraw(Canvas canvas) {
@@ -1115,6 +1147,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_821922003 =         mInterpolat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.094 -0400", hash_original_method = "6FFAE46060D92EDBE1BD141B1F5C353A", hash_generated_method = "5CE2802FDFABB61BD444615EF31B6D82")
     @Override
     protected synchronized void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -1150,6 +1183,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_821922003 =         mInterpolat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.094 -0400", hash_original_method = "568F14E497668D52F70AE96AA5EB6F88", hash_generated_method = "2B34FA3925633B97C3B9967238FEABD8")
     @Override
     protected void drawableStateChanged() {
@@ -1161,6 +1195,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_821922003 =         mInterpolat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.094 -0400", hash_original_method = "952B851172F804A1D432AC87BADE94E9", hash_generated_method = "035F9AA26E84ABF84843C88F22BD02C4")
     private void updateDrawableState() {
         int[] state = getDrawableState();
@@ -1183,6 +1218,7 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_821922003 =         mInterpolat
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.094 -0400", hash_original_method = "875308A47ADC87038CC9E153A4D8FE71", hash_generated_method = "BA6E59010649E0AB5341D02027C12FCC")
     @Override
     public Parcelable onSaveInstanceState() {
@@ -1203,6 +1239,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1040674042 =         ss;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.094 -0400", hash_original_method = "A42CFAF758710477BAC4A7B2A0C98761", hash_generated_method = "03DA06A994E94488FD6261FD993B394B")
     @Override
     public void onRestoreInstanceState(Parcelable state) {
@@ -1220,6 +1257,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1040674042 =         ss;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.095 -0400", hash_original_method = "608AE3D8DA74959AA8F2204845C7317D", hash_generated_method = "BD28E03E51CC17CCA52C53EA3B241745")
     @Override
     protected void onAttachedToWindow() {
@@ -1237,6 +1275,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1040674042 =         ss;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.095 -0400", hash_original_method = "3E30480EE15E7D073BA14A1FE62DC464", hash_generated_method = "4E75B1242BABD343DD6395D004C5A81F")
     @Override
     protected void onDetachedFromWindow() {
@@ -1268,6 +1307,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1040674042 =         ss;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.095 -0400", hash_original_method = "D1990D7DB1A5D8E4C14ADC3323533C4A", hash_generated_method = "C887023349DFAB3818350D8E5A890EB8")
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
@@ -1283,6 +1323,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1040674042 =         ss;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.095 -0400", hash_original_method = "20F0DBCD6142D6C8A8DBD6A9085999AF", hash_generated_method = "8B96CF4A8042ACE3CB9E7F89C59F7EC8")
     private void scheduleAccessibilityEventSender() {
         if(mAccessibilityEventSender == null)        
@@ -1315,6 +1356,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1040674042 =         ss;
 
         private boolean mFromUser;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.095 -0400", hash_original_method = "84E6436ACAD7BA9E1C46F86F0883DFAC", hash_generated_method = "5727DBFD18D074B41C6BDF42FF9875C9")
           RefreshProgressRunnable(int id, int progress, boolean fromUser) {
             mId = id;
@@ -1327,6 +1369,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1040674042 =         ss;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.095 -0400", hash_original_method = "336F21C38B52B9E04C9FE91372F32949", hash_generated_method = "51D6F418402664ECDD0B0622CCD44263")
         public void run() {
             doRefreshProgress(mId, mProgress, mFromUser, true);
@@ -1362,6 +1405,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1040674042 =         ss;
 
         int secondaryProgress;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.096 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "3F4F70129FCB46E4AE0D334AE4D70CF6")
           SavedState(Parcelable superState) {
             super(superState);
@@ -1370,6 +1414,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1040674042 =         ss;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.096 -0400", hash_original_method = "9D61E8AE00F16C0432FB33E15078B080", hash_generated_method = "9ED54A037992D9B4CCD324548CA845EB")
         private  SavedState(Parcel in) {
             super(in);
@@ -1381,6 +1426,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1040674042 =         ss;
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.096 -0400", hash_original_method = "47949C0C27B3FB6F61C4F76D6E851E0A", hash_generated_method = "D43E3100F12AD41EF68715035B31EAFA")
         @Override
         public void writeToParcel(Parcel out, int flags) {
@@ -1431,6 +1477,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1040674042 =         ss;
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.097 -0400", hash_original_method = "D171B097136E37DF343D32BCCA8935F6", hash_generated_method = "2295CF57C52786E3AEEE5BA06534C7E1")
         public void run() {
             sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);

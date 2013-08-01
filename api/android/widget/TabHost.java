@@ -56,6 +56,7 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
 
     private int mTabLayoutId;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.728 -0400", hash_original_method = "81177E2AB2CE2AADA9E4D9B57D5EE61E", hash_generated_method = "B68776E3AE8F26CA5F69D2AF694A3A75")
     public  TabHost(Context context) {
         super(context);
@@ -66,6 +67,7 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.728 -0400", hash_original_method = "6A9D0785655056C88014FFCBE8AF5DF8", hash_generated_method = "14F45BFBC48A6C4571EEB7701D65E9BA")
     public  TabHost(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -94,6 +96,7 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.728 -0400", hash_original_method = "E225D110F749DDFECF8013DBC90AF66D", hash_generated_method = "AFD8B2E46F167093444B29ADE7F14CDB")
     private void initTabHost() {
         setFocusableInTouchMode(true);
@@ -108,6 +111,7 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.728 -0400", hash_original_method = "9E260D3987C01C55D906A5443FE1F250", hash_generated_method = "E0879C8FFA02E42AE9B487C1E1BAA6DD")
     public TabSpec newTabSpec(String tag) {
         addTaint(tag.getTaint());
@@ -119,6 +123,7 @@ TabSpec var9394CA671E7F01C66F85FB413430087C_1322729479 =         new TabSpec(tag
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.729 -0400", hash_original_method = "11DAEE90670B382AFFC7A5048665264E", hash_generated_method = "49A6449CE74CD7D926A6486072B7FCDF")
     public void setup() {
         mTabWidget = (TabWidget) findViewById(com.android.internal.R.id.tabs);
@@ -205,6 +210,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.729 -0400", hash_original_method = "7224354A386E6E21E9006426BE4B5FE4", hash_generated_method = "DB89070E35CFC42DA1D1C60F5FB06ED5")
     public void setup(LocalActivityManager activityGroup) {
         setup();
@@ -215,6 +221,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.730 -0400", hash_original_method = "1749A697E4E6C7318205DA9AE02BC223", hash_generated_method = "4C1B09CC4A3161ACA376A60E7B4F4A76")
     @Override
     protected void onAttachedToWindow() {
@@ -229,6 +236,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.730 -0400", hash_original_method = "56196D931FB093B5A1146C07A075CA12", hash_generated_method = "F26B48291C057827C5C1790AF0239B41")
     @Override
     protected void onDetachedFromWindow() {
@@ -243,6 +251,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.730 -0400", hash_original_method = "F30EBD0BC50E7240BEF5418DD0D95D1E", hash_generated_method = "7F48E72F2966E5F1130533C717A97650")
     public void onTouchModeChanged(boolean isInTouchMode) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -263,6 +272,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.730 -0400", hash_original_method = "7B3B3CDC4F6E22F75BE659816FB8A96F", hash_generated_method = "2A1F8D09D29E761BF782958FD2FDDEA0")
     public void addTab(TabSpec tabSpec) {
         addTaint(tabSpec.getTaint());
@@ -310,6 +320,7 @@ switch(keyCode){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.730 -0400", hash_original_method = "FE75A14568F4641ABF7C1D51B3B055E3", hash_generated_method = "EDB41B266040C47F9666482EE95C9A5D")
     public void clearAllTabs() {
         mTabWidget.removeAllViews();
@@ -350,6 +361,7 @@ TabWidget varB3FC95A9DAD9613B1E41023CF16F4D5C_976987007 =         mTabWidget;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.730 -0400", hash_original_method = "4BF4FAE03E9E8C0B1DA1E933710D00F0", hash_generated_method = "DD59D330EF0F75B84978F0736072F08E")
     public String getCurrentTabTag() {
         if(mCurrentTab >= 0 && mCurrentTab < mTabSpecs.size())        
@@ -369,6 +381,7 @@ String var540C13E9E156B687226421B24F2DF178_170892712 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.730 -0400", hash_original_method = "42AE505B98E20EE6CD2716BFC7687421", hash_generated_method = "3628D40B51AF5A1D2A36308AFCC03E8B")
     public View getCurrentTabView() {
         if(mCurrentTab >= 0 && mCurrentTab < mTabSpecs.size())        
@@ -399,6 +412,7 @@ View var91CDA2CE07B9AFD30FCF6AED3E40A3D8_344153225 =         mCurrentView;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.731 -0400", hash_original_method = "8C15D02B8DC442237A4CA8C57AA1B8BD", hash_generated_method = "6D6E06D2732C5CEE4151A73D4BBEB12B")
     public void setCurrentTabByTag(String tag) {
         addTaint(tag.getTaint());
@@ -433,6 +447,7 @@ FrameLayout varB62F3AA3ED8906E8B6C427D442F6F39B_1514590079 =         mTabContent
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.731 -0400", hash_original_method = "C8998AD47D2F3EF23C8F7D2AD28B98AB", hash_generated_method = "A9BFF49A938E3E78019656F27487F32A")
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
@@ -472,6 +487,7 @@ FrameLayout varB62F3AA3ED8906E8B6C427D442F6F39B_1514590079 =         mTabContent
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.731 -0400", hash_original_method = "96A22F6DD8439F6A02086A8F9D6622C9", hash_generated_method = "B59DE55F3D1D44CD4C83D7B811421C3C")
     @Override
     public void dispatchWindowFocusChanged(boolean hasFocus) {
@@ -487,6 +503,7 @@ FrameLayout varB62F3AA3ED8906E8B6C427D442F6F39B_1514590079 =         mTabContent
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.731 -0400", hash_original_method = "E2648DF1C44758803127AAF509A8077D", hash_generated_method = "9818FC744E795A1F211F4AB7BBEE36BA")
     public void setCurrentTab(int index) {
         if(index < 0 || index >= mTabSpecs.size())        
@@ -533,6 +550,7 @@ FrameLayout varB62F3AA3ED8906E8B6C427D442F6F39B_1514590079 =         mTabContent
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.732 -0400", hash_original_method = "1A4924ED406293CF6C6A6C1455DF4ECD", hash_generated_method = "043E42BE1BF65E44F0810118880856D7")
     private void invokeOnTabChangeListener() {
         if(mOnTabChangeListener != null)        

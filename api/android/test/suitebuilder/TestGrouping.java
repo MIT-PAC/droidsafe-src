@@ -45,6 +45,7 @@ public class TestGrouping {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.177 -0400", hash_original_method = "680BBB6317C221899395AD16A5E3E2AA", hash_generated_method = "CDFB6379DC1904EAB136D7428E2DF953")
     public List<TestMethod> getTests() {
         List<TestMethod> testMethods = new ArrayList<TestMethod>();
@@ -69,6 +70,7 @@ List<TestMethod> var24D1ADC4337A1DFDD7EDF48B863FFFFD_480481699 =         testMet
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.177 -0400", hash_original_method = "2AE043142188DFBFC0C6FBA8EE4EFD15", hash_generated_method = "212E6FF65744DC78A18485594D2D3227")
     protected List<Method> getTestMethods(Class<? extends TestCase> testCaseClass) {
         addTaint(testCaseClass.getTaint());
@@ -93,6 +95,7 @@ SortedSet<Class<? extends TestCase>> varE3DDA91219760C874204BD71102F4461_1438815
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.178 -0400", hash_original_method = "6F62F66C41F8017782EE166F70D0516E", hash_generated_method = "3EA6D76880827FA61D7F27B16653F0DB")
     public boolean equals(Object o) {
         addTaint(o.getTaint());
@@ -133,6 +136,7 @@ SortedSet<Class<? extends TestCase>> varE3DDA91219760C874204BD71102F4461_1438815
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.179 -0400", hash_original_method = "E7359B0E16100AA2FD7539D694C05DFB", hash_generated_method = "616EC52565D594249B762E6F6E1E3BC9")
     public int hashCode() {
         int var2910C1999B304E5C1AE264098CA8555A_917753231 = (testCaseClasses.hashCode());
@@ -351,6 +355,7 @@ List<T> var7A9FA332A2F68B4B3F12D84C779C06B6_962876593 =         selectedItems;
         }
 
 
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.184 -0400", hash_original_method = "9D9B2E8FB03F4B758E0C890C03F2E5F6", hash_generated_method = "7A462C672AE7815DFBF4E9535985EA3F")
         public boolean apply(Class aClass) {
             addTaint(aClass.getTaint());
@@ -370,6 +375,7 @@ List<T> var7A9FA332A2F68B4B3F12D84C779C06B6_962876593 =         selectedItems;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.184 -0400", hash_original_method = "3C87EFFA5D029BD7C6E8E87D3458D6A6", hash_generated_method = "A8B0A3495F512A021CA0A7A81119B16F")
         @SuppressWarnings("unchecked")
         private boolean hasValidConstructor(java.lang.Class<?> aClass) {
@@ -410,6 +416,7 @@ for(Constructor<? extends TestCase> constructor : constructors)
         }
 
 
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.185 -0400", hash_original_method = "D26D55EE6758E6673A4F60E3C2FBF447", hash_generated_method = "D7A7270E5BC8DB259D3F8C0B859F6F72")
         public boolean apply(Method method) {
             addTaint(method.getTaint());

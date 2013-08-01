@@ -8,8 +8,7 @@ import java.nio.ByteOrder;
 import java.util.Arrays;
 
 import libcore.io.Memory;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
 
 public class GZIPInputStream extends InflaterInputStream {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.599 -0400", hash_original_field = "7261E76873EC00F13387C2BADC428359", hash_generated_field = "C9B4058E3717760CA96883C40FEF405D")
@@ -19,6 +18,7 @@ public class GZIPInputStream extends InflaterInputStream {
 
     protected boolean eos = false;
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.599 -0400", hash_original_method = "DC7C53463DEA3BC77C9FF2C25FAEFF14", hash_generated_method = "ECF56D48272603D00991EA987D1C51A7")
     public  GZIPInputStream(InputStream is) throws IOException {
         this(is, BUF_SIZE);
@@ -27,6 +27,7 @@ public class GZIPInputStream extends InflaterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.600 -0400", hash_original_method = "5DD740AE0EB83490269826B6CD66524C", hash_generated_method = "ECE065E71CBACBDE4953162582525AE9")
     public  GZIPInputStream(InputStream is, int size) throws IOException {
         super(is, new Inflater(true), size);
@@ -98,6 +99,7 @@ public class GZIPInputStream extends InflaterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.601 -0400", hash_original_method = "BB5EB4821217BB73F8D521350E3FEC7B", hash_generated_method = "3F2B46524DBDCE46E7A36A9F327E3A4C")
     @Override
     public void close() throws IOException {
@@ -109,6 +111,7 @@ public class GZIPInputStream extends InflaterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.602 -0400", hash_original_method = "FAE53FCD1CA8F33ECA2437ABBFBE85CF", hash_generated_method = "42515D6BB4D0195C4170F09DBA658B85")
     @Override
     public int read(byte[] buffer, int offset, int byteCount) throws IOException {
@@ -172,6 +175,7 @@ public class GZIPInputStream extends InflaterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.604 -0400", hash_original_method = "6D843C12482D0F9414C1006D7B90FFFD", hash_generated_method = "6B59DEE3224CF52857A8182836E188BE")
     private void verifyCrc() throws IOException {
         int size = inf.getRemaining();
@@ -208,6 +212,7 @@ public class GZIPInputStream extends InflaterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.606 -0400", hash_original_method = "9B3EB008D719ED0FB3E689755FC76BB5", hash_generated_method = "1AD877AB675543FE10BCBD2C5673A333")
     private void readFully(byte[] buffer, int offset, int length) throws IOException {
         addTaint(length);
@@ -240,6 +245,7 @@ public class GZIPInputStream extends InflaterInputStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.607 -0400", hash_original_method = "7C6B7FFA42529CFE943A1AC064CF5BC3", hash_generated_method = "077D3E0C1AFDB1725FA6EB10CAD57AE1")
     private void readZeroTerminated(boolean hcrc) throws IOException {
         addTaint(hcrc);

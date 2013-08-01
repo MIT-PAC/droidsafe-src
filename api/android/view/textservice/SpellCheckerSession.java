@@ -62,6 +62,7 @@ public class SpellCheckerSession {
         
 };
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.902 -0400", hash_original_method = "EAC7F16E5AF219F835F940B08638A4A9", hash_generated_method = "F9FA48F0EADAEBCA145DD75C1969F14F")
     public  SpellCheckerSession(
             SpellCheckerInfo info, ITextServicesManager tsm, SpellCheckerSessionListener listener) {
@@ -90,6 +91,7 @@ public class SpellCheckerSession {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.902 -0400", hash_original_method = "682777EA87EC108D0C062651A6723A7E", hash_generated_method = "3050201BAD39CA240E14EA115213D603")
     public boolean isSessionDisconnected() {
         boolean varB67DC46ACA36C27390A3501048D3ED84_1676252495 = (mSpellCheckerSessionListenerImpl.isDisconnected());
@@ -111,6 +113,7 @@ SpellCheckerInfo var3986F7CD42F0461C45907E6E93ED4397_98808614 =         mSpellCh
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.903 -0400", hash_original_method = "1E56CD8E935972828D8D1226463A945B", hash_generated_method = "6218E4D03A97D2D067BC5C2A6B63B5D3")
     public void cancel() {
         mSpellCheckerSessionListenerImpl.cancel();
@@ -119,6 +122,7 @@ SpellCheckerInfo var3986F7CD42F0461C45907E6E93ED4397_98808614 =         mSpellCh
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.904 -0400", hash_original_method = "3C04EB6043568EF1F63B84FA07955DCB", hash_generated_method = "741AD9C71CF7AEAFA40A093BD5DD8A50")
     public void close() {
         mIsUsed = false;
@@ -140,6 +144,7 @@ SpellCheckerInfo var3986F7CD42F0461C45907E6E93ED4397_98808614 =         mSpellCh
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.904 -0400", hash_original_method = "F1103B1469D8B0C12963D001E1ED8F44", hash_generated_method = "6779E02B59F6B5C4C4009E002834AF3D")
     public void getSuggestions(TextInfo textInfo, int suggestionsLimit) {
         addTaint(suggestionsLimit);
@@ -150,6 +155,7 @@ SpellCheckerInfo var3986F7CD42F0461C45907E6E93ED4397_98808614 =         mSpellCh
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.905 -0400", hash_original_method = "748B76866E07D81600FB5AF9FEF1E977", hash_generated_method = "F8126D2FE713A21701B3301568B978A4")
     public void getSuggestions(
             TextInfo[] textInfos, int suggestionsLimit, boolean sequentialWords) {
@@ -170,6 +176,7 @@ SpellCheckerInfo var3986F7CD42F0461C45907E6E93ED4397_98808614 =         mSpellCh
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.905 -0400", hash_original_method = "9106E435C4B71E55E27749112B6B4B2E", hash_generated_method = "6261983BA69111B6358811AA1B0BBC03")
     private void handleOnGetSuggestionsMultiple(SuggestionsInfo[] suggestionInfos) {
         addTaint(suggestionInfos[0].getTaint());
@@ -239,6 +246,7 @@ ISpellCheckerSessionListener var820AE1A05D9F7D1D7D422F5929FB9AB9_1994063276 =   
 
         private Handler mAsyncHandler;
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.907 -0400", hash_original_method = "45646CFDAE5B6949F64A7BA4C2829D13", hash_generated_method = "24A0ED9CB92314817C155971217375CB")
         public  SpellCheckerSessionListenerImpl(Handler handler) {
             mOpened = false;
@@ -249,6 +257,7 @@ ISpellCheckerSessionListener var820AE1A05D9F7D1D7D422F5929FB9AB9_1994063276 =   
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.910 -0400", hash_original_method = "FF3B1A32D02DE5F870E94EBAC6E0CDD1", hash_generated_method = "836DF91E7D75EF5DA76A50F84254C4C2")
         private void processTask(ISpellCheckerSession session, SpellCheckerParams scp,
                 boolean async) {
@@ -321,6 +330,7 @@ switch(scp.mWhat){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.914 -0400", hash_original_method = "469ADA81CD5459833AC5296525D5CDB7", hash_generated_method = "31E77195E95A3D563D854F6440DC0EF1")
         public synchronized void onServiceConnected(ISpellCheckerSession session) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -359,6 +369,7 @@ switch(scp.mWhat){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.915 -0400", hash_original_method = "BB59E0E202ED795E2DB7DAEC1471EA7A", hash_generated_method = "B9F5BF7650E2FC9AAB8342E0E87E62E8")
         public void cancel() {
             if(DBG)            
@@ -373,6 +384,7 @@ switch(scp.mWhat){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.915 -0400", hash_original_method = "1A7565B677D156EAC1FA51ED11F842F1", hash_generated_method = "7249BA0564811D4FFD9B0ECF37DE6E7E")
         public void getSuggestionsMultiple(
                 TextInfo[] textInfos, int suggestionsLimit, boolean sequentialWords) {
@@ -395,6 +407,7 @@ switch(scp.mWhat){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.915 -0400", hash_original_method = "09E8016792D99DD9284F914495CA50D8", hash_generated_method = "431C52B7BFC5AABB0517890C4669AA1E")
         public void close() {
             if(DBG)            
@@ -420,6 +433,7 @@ switch(scp.mWhat){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.916 -0400", hash_original_method = "A1EA0918B68CB66F258D8DAFDFEA4BA7", hash_generated_method = "21C5B6F3747336A2E36103F23C6D3AEC")
         private void processOrEnqueueTask(SpellCheckerParams scp) {
             addTaint(scp.getTaint());
@@ -460,6 +474,7 @@ switch(scp.mWhat){
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.917 -0400", hash_original_method = "DF368CC1EE007FCF3291FF75FA752896", hash_generated_method = "5528E791653C08E57DAA0076F90230CB")
         @Override
         public void onGetSuggestions(SuggestionsInfo[] results) {
@@ -500,6 +515,7 @@ switch(scp.mWhat){
 
             public ISpellCheckerSession mSession;
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.918 -0400", hash_original_method = "51C4C688A5D55FCA95337D97DFAD7FEA", hash_generated_method = "D8F47CCA6BE71DC8399AA902ECFB9936")
             public  SpellCheckerParams(int what, TextInfo[] textInfos, int suggestionsLimit,
                     boolean sequentialWords) {
