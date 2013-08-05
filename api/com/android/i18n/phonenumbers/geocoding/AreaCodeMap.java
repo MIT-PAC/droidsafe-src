@@ -44,6 +44,7 @@ AreaCodeMapStorageStrategy var31ED7B04A16DD339604BD6A4FB648540_1045847786 =     
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int getSizeOfAreaCodeMapStorage(AreaCodeMapStorageStrategy mapStorage,
       SortedMap<Integer, String> areaCodeMap) throws IOException {
         mapStorage.readFromSortedMap(areaCodeMap);
@@ -57,7 +58,7 @@ AreaCodeMapStorageStrategy var31ED7B04A16DD339604BD6A4FB648540_1045847786 =     
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.431 -0400", hash_original_method = "541ED4E710A19E1EDF02867FA9DD727B", hash_generated_method = "F9416E4E1EC60F9215DCE6910FABE8B3")
     private AreaCodeMapStorageStrategy createDefaultMapStorage() {
 AreaCodeMapStorageStrategy var5612085B6FCF2B9D00F0475758608512_1512732887 =         new DefaultMapStorage();
@@ -68,7 +69,7 @@ AreaCodeMapStorageStrategy var5612085B6FCF2B9D00F0475758608512_1512732887 =     
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.431 -0400", hash_original_method = "A0A2E6205BB60A092B8D66A75357AACD", hash_generated_method = "D3E55423EB1216AF1C8C9678C988A8EF")
     private AreaCodeMapStorageStrategy createFlyweightMapStorage() {
 AreaCodeMapStorageStrategy var3D730F5F1921CF750D41B64D8DC60212_1242076982 =         new FlyweightMapStorage();
@@ -204,6 +205,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_309267098 =         "";
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.438 -0400", hash_original_method = "D192E9C758CA69648AA3FDEEAB806454", hash_generated_method = "3BDEEBF3CD58429FC59AA2C8CD956386")
     private int binarySearch(int start, int end, long value) {
         addTaint(value);

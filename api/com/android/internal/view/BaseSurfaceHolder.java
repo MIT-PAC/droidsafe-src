@@ -314,6 +314,7 @@ Canvas var78B0430AF4ECF3E90510E88412E9F8FF_1669231997 =         internalLockCanv
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.121 -0400", hash_original_method = "ACAAC9086C35A7B567CF149ED3F96213", hash_generated_method = "5E9B05112B1A64D7DE962387DAA932A5")
     private final Canvas internalLockCanvas(Rect dirty) {
         addTaint(dirty.getTaint());

@@ -10,6 +10,7 @@ import droidsafe.annotations.DSModeled;
 
 public class ArrayUtils {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.541 -0400", hash_original_method = "43AFEF6A809467B8D7C7F671BE94BA32", hash_generated_method = "C31BA8013CD1B4E5DD8E143F798814CA")
     private  ArrayUtils() {
         // ---------- Original Method ----------

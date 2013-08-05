@@ -39,6 +39,7 @@ public class PkgUsageStats implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.620 -0400", hash_original_method = "977D0617B4C179661ACE3B4403E55D28", hash_generated_method = "47AEC8CFEB8707E21A850DA7B4D29545")
     public  PkgUsageStats(Parcel source) {
         packageName = source.readString();
@@ -66,6 +67,7 @@ for(int i = 0;i < N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.621 -0400", hash_original_method = "9D74B058D8C14276F2F5A28106414DA9", hash_generated_method = "63D83B0D430410C4CCE030F330A1E270")
     public  PkgUsageStats(PkgUsageStats pStats) {
         packageName = pStats.packageName;
@@ -80,6 +82,7 @@ for(int i = 0;i < N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.622 -0400", hash_original_method = "5A8FDC802D15BADB218E7B9A38048A4B", hash_generated_method = "AD1B9FBA930F1C5158B74B25F150ECD0")
     public String toString() {
 String varCA61EE736776B3A103C8DC641DCDABF4_1811340162 =         "PkgUsageStats{"
@@ -94,7 +97,7 @@ String varCA61EE736776B3A103C8DC641DCDABF4_1811340162 =         "PkgUsageStats{"
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.622 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "AC2710970159FBD84F053535CC9D8F3C")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_59550663 = (0);
@@ -105,6 +108,7 @@ String varCA61EE736776B3A103C8DC641DCDABF4_1811340162 =         "PkgUsageStats{"
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.622 -0400", hash_original_method = "65B01222074C1BC4168423427126F9FB", hash_generated_method = "CC7E9C1A95A742DF3FEB26C9544B80AF")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         addTaint(parcelableFlags);

@@ -80,6 +80,7 @@ public class GLImpl implements GL10, GL10Ext, GL11, GL11Ext, GL11ExtensionPack {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean allowIndirectBuffers(String appName) {
         boolean result = false;
         int version = 0;

@@ -639,6 +639,7 @@ Message varB356C499DD5E97FACB94A386F09DEB99_1938576809 =         resultMsg;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.601 -0400", hash_original_method = "DECE161063975CD41C076FDB9612D509", hash_generated_method = "3F55CE226FF42AC005882C002699E92C")
     private void replyHalfConnected(int status) {
         addTaint(status);
@@ -656,6 +657,7 @@ Message varB356C499DD5E97FACB94A386F09DEB99_1938576809 =         resultMsg;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.601 -0400", hash_original_method = "6CA7282E928AA840C6D25E995C5EBFEA", hash_generated_method = "5BE3C2E2B91740B7EE24A0C23E43AEED")
     private void replyDisconnected(int status) {
         addTaint(status);
@@ -673,6 +675,7 @@ Message varB356C499DD5E97FACB94A386F09DEB99_1938576809 =         resultMsg;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void log(String s) {
         Slog.d(TAG, s);
     }
@@ -689,12 +692,14 @@ Message varB356C499DD5E97FACB94A386F09DEB99_1938576809 =         resultMsg;
 
         private Messenger mMessenger;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.601 -0400", hash_original_method = "836D007993A4B13DC1AF265962B161E2", hash_generated_method = "C3453B046382A1E37BE69572B5A5208C")
         private  SyncMessenger() {
             // ---------- Original Method ----------
         }
 
         
+        @DSModeled(DSC.BAN)
         private static SyncMessenger obtain() {
             SyncMessenger sm;
             synchronized (sStack) {
@@ -712,6 +717,7 @@ Message varB356C499DD5E97FACB94A386F09DEB99_1938576809 =         resultMsg;
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.601 -0400", hash_original_method = "FF57C371186B795A0CEFC17D6A21913E", hash_generated_method = "CAF6CD4E18F4A1C91FFBF693F6326B2C")
         private void recycle() {
             synchronized
@@ -725,6 +731,7 @@ Message varB356C499DD5E97FACB94A386F09DEB99_1938576809 =         resultMsg;
         }
 
         
+        @DSModeled(DSC.BAN)
         private static Message sendMessageSynchronously(Messenger dstMessenger, Message msg) {
             SyncMessenger sm = SyncMessenger.obtain();
             try {

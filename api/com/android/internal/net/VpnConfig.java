@@ -52,7 +52,7 @@ public class VpnConfig implements Parcelable {
     }
 
 
-    @DSModeled(DSC.SPEC)
+    @DSModeled(DSC.BAN)
     public static Intent getIntentForConfirmation() {
         Intent intent = new Intent();
         intent.setClassName("com.android.vpndialogs", "com.android.vpndialogs.ConfirmDialog");
@@ -60,6 +60,7 @@ public class VpnConfig implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static PendingIntent getIntentForStatusPanel(Context context, VpnConfig config) {
         Intent intent = new Intent();
         intent.setClassName("com.android.vpndialogs", "com.android.vpndialogs.ManageDialog");
@@ -71,7 +72,7 @@ public class VpnConfig implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.427 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "A3B514FC58CE6A3B345E87C7F95566DE")
     @Override
     public int describeContents() {
@@ -83,6 +84,7 @@ public class VpnConfig implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.428 -0400", hash_original_method = "663713F2190B3FEEC06E42079AE10798", hash_generated_method = "9231720D234239626438B4BEF4BE7181")
     @Override
     public void writeToParcel(Parcel out, int flags) {

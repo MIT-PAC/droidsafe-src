@@ -17,7 +17,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
 
 import android.util.Xml;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
 
 public class XmlUtils {
     
@@ -28,6 +28,7 @@ public class XmlUtils {
     }
 
 
+    @DSModeled(DSC.BAN)
     public static void skipCurrentTag(XmlPullParser parser) throws XmlPullParserException, IOException {
         int outerDepth = parser.getDepth();
         int type;
@@ -38,6 +39,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final int convertValueToList(CharSequence value, String[] options, int defaultValue) {
         if (null != value) {
             for (int i = 0; i < options.length; i++) {
@@ -49,6 +51,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final boolean convertValueToBoolean(CharSequence value, boolean defaultValue) {
         boolean result = false;
         if (null == value)
@@ -61,6 +64,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final int convertValueToInt(CharSequence charSeq, int defaultValue) {
         if (null == charSeq)
             return defaultValue;
@@ -95,6 +99,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final int convertValueToUnsignedInt(String value, int defaultValue) {
         if (null == value)
             return defaultValue;
@@ -102,6 +107,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final int parseUnsignedIntAttribute(CharSequence charSeq) {
         String  value = charSeq.toString();
         long    bits;
@@ -127,6 +133,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final void writeMapXml(Map val, OutputStream out) throws XmlPullParserException, java.io.IOException {
         XmlSerializer serializer = new FastXmlSerializer();
         serializer.setOutput(out, "utf-8");
@@ -137,6 +144,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final void writeListXml(List val, OutputStream out) throws XmlPullParserException, java.io.IOException {
         XmlSerializer serializer = Xml.newSerializer();
         serializer.setOutput(out, "utf-8");
@@ -147,6 +155,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final void writeMapXml(Map val, String name, XmlSerializer out) throws XmlPullParserException, java.io.IOException {
         if (val == null) {
             out.startTag(null, "null");
@@ -167,6 +176,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final void writeListXml(List val, String name, XmlSerializer out) throws XmlPullParserException, java.io.IOException {
         if (val == null) {
             out.startTag(null, "null");
@@ -187,6 +197,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final void writeSetXml(Set val, String name, XmlSerializer out) throws XmlPullParserException, java.io.IOException {
         if (val == null) {
             out.startTag(null, "null");
@@ -204,6 +215,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final void writeByteArrayXml(byte[] val, String name,
             XmlSerializer out) throws XmlPullParserException, java.io.IOException {
         if (val == null) {
@@ -230,6 +242,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final void writeIntArrayXml(int[] val, String name,
             XmlSerializer out) throws XmlPullParserException, java.io.IOException {
         if (val == null) {
@@ -252,6 +265,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final void writeValueXml(Object v, String name, XmlSerializer out) throws XmlPullParserException, java.io.IOException {
         String typeStr;
         if (v == null) {
@@ -314,6 +328,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final HashMap readMapXml(InputStream in) throws XmlPullParserException, java.io.IOException {
         XmlPullParser   parser = Xml.newPullParser();
         parser.setInput(in, null);
@@ -321,6 +336,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final ArrayList readListXml(InputStream in) throws XmlPullParserException, java.io.IOException {
         XmlPullParser   parser = Xml.newPullParser();
         parser.setInput(in, null);
@@ -328,6 +344,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final HashSet readSetXml(InputStream in) throws XmlPullParserException, java.io.IOException {
         XmlPullParser parser = Xml.newPullParser();
         parser.setInput(in, null);
@@ -335,6 +352,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final HashMap readThisMapXml(XmlPullParser parser, String endTag, String[] name) throws XmlPullParserException, java.io.IOException {
         HashMap map = new HashMap();
         int eventType = parser.getEventType();
@@ -361,6 +379,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final ArrayList readThisListXml(XmlPullParser parser, String endTag, String[] name) throws XmlPullParserException, java.io.IOException {
         ArrayList list = new ArrayList();
         int eventType = parser.getEventType();
@@ -382,6 +401,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final HashSet readThisSetXml(XmlPullParser parser, String endTag, String[] name) throws XmlPullParserException, java.io.IOException {
         HashSet set = new HashSet();
         int eventType = parser.getEventType();
@@ -403,6 +423,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final int[] readThisIntArrayXml(XmlPullParser parser,
             String endTag, String[] name) throws XmlPullParserException, java.io.IOException {
         int num;
@@ -453,6 +474,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final Object readValueXml(XmlPullParser parser, String[] name) throws XmlPullParserException, java.io.IOException {
         int eventType = parser.getEventType();
         do {
@@ -472,6 +494,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static final Object readThisValueXml(XmlPullParser parser, String[] name) throws XmlPullParserException, java.io.IOException {
         final String valueName = parser.getAttributeValue(null, "name");
         final String tagName = parser.getName();
@@ -554,6 +577,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final void beginDocument(XmlPullParser parser, String firstElementName) throws XmlPullParserException, IOException {
         int type;
         while ((type=parser.next()) != parser.START_TAG
@@ -570,6 +594,7 @@ public class XmlUtils {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static final void nextElement(XmlPullParser parser) throws XmlPullParserException, IOException {
         int type;
         while ((type=parser.next()) != parser.START_TAG

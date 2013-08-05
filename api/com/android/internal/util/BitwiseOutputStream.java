@@ -46,6 +46,7 @@ public class BitwiseOutputStream {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.635 -0400", hash_original_method = "85E3B4FCCAFED594AE8716A3280C8E01", hash_generated_method = "A0CF2C335A2FCC8E209D57A79F780C18")
     private void possExpand(int bits) {
         addTaint(bits);

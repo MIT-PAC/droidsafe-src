@@ -227,6 +227,7 @@ public class AlertController {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean shouldCenterSingleButton(Context context) {
         TypedValue outValue = new TypedValue();
         context.getTheme().resolveAttribute(com.android.internal.R.attr.alertDialogCenterButtons,
@@ -524,7 +525,7 @@ Button var540C13E9E156B687226421B24F2DF178_1888362512 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.897 -0400", hash_original_method = "0CE32455CB333C36B4EB85B89D65D186", hash_generated_method = "AE804F87FF9C732A76621C7D609125EF")
     private void setupView() {
         LinearLayout contentPanel = (LinearLayout) mWindow.findViewById(R.id.contentPanel);
@@ -583,7 +584,7 @@ Button var540C13E9E156B687226421B24F2DF178_1888362512 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.897 -0400", hash_original_method = "291261EC5A45F15B0AF035A0FADD9120", hash_generated_method = "56CBB8368035EDEE4FCD9C988D6A418C")
     private boolean setupTitle(LinearLayout topPanel) {
         addTaint(topPanel.getTaint());
@@ -640,7 +641,7 @@ Button var540C13E9E156B687226421B24F2DF178_1888362512 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.898 -0400", hash_original_method = "887622C8B8EC01B1F9012F53B044827B", hash_generated_method = "F359A7C03078FD262952FA0D9953A7A2")
     private void setupContent(LinearLayout contentPanel) {
         addTaint(contentPanel.getTaint());
@@ -676,6 +677,7 @@ Button var540C13E9E156B687226421B24F2DF178_1888362512 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.899 -0400", hash_original_method = "5BA34AF0614F863A3B9D6C4A8679B5AF", hash_generated_method = "014BA26BCABE890F37A941C8F0696704")
     private boolean setupButtons() {
         int BIT_BUTTON_POSITIVE = 1;
@@ -743,7 +745,7 @@ Button var540C13E9E156B687226421B24F2DF178_1888362512 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.900 -0400", hash_original_method = "28BC3CB500322D129CBA8E7C7A78AD5A", hash_generated_method = "949041D966EAE0F7020A1C774161C6B8")
     private void centerButton(Button button) {
         addTaint(button.getTaint());
@@ -777,6 +779,7 @@ Button var540C13E9E156B687226421B24F2DF178_1888362512 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.901 -0400", hash_original_method = "6198B5046244FDCE77443F1833B74949", hash_generated_method = "92E795C6584D29684A7A24905B121C7C")
     private void setBackground(LinearLayout topPanel, LinearLayout contentPanel,
             View customPanel, boolean hasButtons, TypedArray a, boolean hasTitle, 

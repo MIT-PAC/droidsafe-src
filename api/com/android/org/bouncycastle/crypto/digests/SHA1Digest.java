@@ -190,7 +190,7 @@ for(int i = 0;i != X.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.412 -0400", hash_original_method = "56B08AF140AAB579ED6513720D1D076E", hash_generated_method = "C7A42DB6CBCA8CD1ABFC8612E0EAFFD7")
     private int f(
         int    u,
@@ -207,7 +207,7 @@ for(int i = 0;i != X.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.412 -0400", hash_original_method = "D49E57B066D19086A0B27FD85ECFCAA8", hash_generated_method = "CFE5B84420A42E03F72A6D91DB10D1E4")
     private int h(
         int    u,
@@ -224,7 +224,7 @@ for(int i = 0;i != X.length;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.413 -0400", hash_original_method = "1EBC13F1810260C1F73348183BDA0BFB", hash_generated_method = "A3E4114E17C896636A598A346D52653F")
     private int g(
         int    u,

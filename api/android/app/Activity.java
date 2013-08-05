@@ -475,6 +475,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SPEC)
     protected void onSaveInstanceState(Bundle outState){
 		outState.putBundle(WINDOW_HIERARCHY_TAG, mWindow.saveHierarchyState());
         Parcelable p = mFragments.saveAllState();
@@ -1783,6 +1784,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     
+    @DSModeled(DSC.SAFE)
     public void startSearch(String initialQuery, boolean selectInitialQuery, 
             Bundle appSearchData, boolean globalSearch){
 		ensureSearchManager();
@@ -3432,6 +3434,11 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     public void setApplication(Application app) { 
             this.mApplication = app;
     }
+    
+    @DSModeled(DSC.BAN)
+	public void droidsafeOnSavedInstanceState(Bundle b) {
+    	this.onSaveInstanceState(b);
+	}
 
     
 }

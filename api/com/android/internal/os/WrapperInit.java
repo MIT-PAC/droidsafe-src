@@ -10,17 +10,18 @@ import libcore.io.IoUtils;
 import android.os.Process;
 import android.util.Slog;
 import dalvik.system.Zygote;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
 
 public class WrapperInit {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.690 -0400", hash_original_method = "14AE6538EB86DCD6EBFC0019A87B65D0", hash_generated_method = "F137D9F0016E8D63FEB9D79F37359A64")
     private  WrapperInit() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void main(String[] args) {
         try {
             int fdNum = Integer.parseInt(args[0], 10);
@@ -46,6 +47,7 @@ public class WrapperInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void execApplication(String invokeWith, String niceName,
             int targetSdkVersion, FileDescriptor pipeFd, String[] args) {
         StringBuilder command = new StringBuilder(invokeWith);
@@ -62,6 +64,7 @@ public class WrapperInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     public static void execStandalone(String invokeWith, String classPath, String className,
             String[] args) {
         StringBuilder command = new StringBuilder(invokeWith);

@@ -6,32 +6,36 @@ import android.view.FallbackEventHandler;
 import android.view.LayoutInflater;
 import android.view.Window;
 import android.view.WindowManagerPolicy;
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
 
 public final class PolicyManager {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.904 -0400", hash_original_method = "8280FBDEA727C0869187AB3F61DD27B1", hash_generated_method = "84C464024E5F34F099B0A60B3B8B9AAB")
     private  PolicyManager() {
         // ---------- Original Method ----------
     }
 
     
+    @DSModeled(DSC.BAN)
     public static Window makeNewWindow(Context context) {
         return sPolicy.makeNewWindow(context);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static LayoutInflater makeNewLayoutInflater(Context context) {
         return sPolicy.makeNewLayoutInflater(context);
     }
 
     
+    @DSModeled(DSC.BAN)
     public static WindowManagerPolicy makeNewWindowManager() {
         return sPolicy.makeNewWindowManager();
     }
 
     
+    @DSModeled(DSC.BAN)
     public static FallbackEventHandler makeNewFallbackEventHandler(Context context) {
         return sPolicy.makeNewFallbackEventHandler(context);
     }

@@ -10,7 +10,7 @@ import droidsafe.annotations.DSModeled;
 
 public final class Phonenumber {
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.354 -0400", hash_original_method = "9F0C69719EBF6B458992D61E4BCC90E8", hash_generated_method = "5CB1D98A4150FC5519010EC189B4C107")
     private  Phonenumber() {
         // ---------- Original Method ----------

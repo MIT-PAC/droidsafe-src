@@ -41,6 +41,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
 
     private int mMeasuredExtraWidth;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.091 -0400", hash_original_method = "AC153E2863979DC17A482AC64988B640", hash_generated_method = "5F3CB5A8A49E2CC16CAE28F7B3615920")
     public  ActionMenuView(Context context) {
         this(context, null);
@@ -49,6 +50,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.091 -0400", hash_original_method = "35E28BCF8B52367FF953A9B63C9F4F20", hash_generated_method = "066BBF3914A2E15DB33AB3EF69F2596D")
     public  ActionMenuView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -66,7 +68,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.092 -0400", hash_original_method = "F8B2E0B9AF6B77951E8DA779DE9E37B4", hash_generated_method = "2D2E0A69D628FF0C713DCBD58D8FEF6B")
     public void setPresenter(ActionMenuPresenter presenter) {
         mPresenter = presenter;
@@ -75,7 +77,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.092 -0400", hash_original_method = "309FFF524EE8C98ED8919EC0ED593079", hash_generated_method = "B8D5CF3FB996A28A15A264C30225FB6B")
     public boolean isExpandedFormat() {
         boolean var91949478145170F53463EA7B1D93DAAB_1204164698 = (mFormatItems);
@@ -86,6 +88,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.093 -0400", hash_original_method = "8C9F73227D09E5C25F24B8EE1F20BF37", hash_generated_method = "68A3A2D5FDA4B655E08FB19B4DD36A10")
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
@@ -108,6 +111,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.095 -0400", hash_original_method = "7A0AC3F9A12B78835921801D3FB6DAA4", hash_generated_method = "6E2C6FE944B1E7FCF11828E57218B979")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -152,6 +156,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.104 -0400", hash_original_method = "904CFC5C82A7517026F4582C82215F76", hash_generated_method = "351AAC975E15280A15A4812B651A8ADE")
     private void onMeasureExactFormat(int widthMeasureSpec, int heightMeasureSpec) {
         addTaint(heightMeasureSpec);
@@ -345,6 +350,7 @@ for(int i = 0;i < childCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     static int measureChildForCells(View child, int cellSize, int cellsRemaining,
             int parentHeightMeasureSpec, int parentHeightPadding) {
         final LayoutParams lp = (LayoutParams) child.getLayoutParams();
@@ -373,6 +379,7 @@ for(int i = 0;i < childCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.109 -0400", hash_original_method = "CF95DF9C40DBA0243EC42554D6345F0F", hash_generated_method = "A0AE65CF768F5E9575C7669F802D5C80")
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
@@ -465,6 +472,7 @@ for(int i = 0;i < childCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.110 -0400", hash_original_method = "BCFF92F724E40A93547AD27810B374B7", hash_generated_method = "20B039D9957A5ED6936C442629CD13D4")
     @Override
     public void onDetachedFromWindow() {
@@ -477,7 +485,7 @@ for(int i = 0;i < childCount;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.111 -0400", hash_original_method = "9F44211E52A7149BFED02520B6DEF800", hash_generated_method = "18DB6258BF1F7F239BE44AC2C491C137")
     public boolean isOverflowReserved() {
         boolean var0E213F9463B6EFE55ADA2109C5E5DC56_664558911 = (mReserveOverflow);
@@ -488,7 +496,7 @@ for(int i = 0;i < childCount;i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.111 -0400", hash_original_method = "F5103BD0EA93D884CF8413DB778005C1", hash_generated_method = "15B323109E8BF25E66710A01C5BEDE02")
     public void setOverflowReserved(boolean reserveOverflow) {
         mReserveOverflow = reserveOverflow;
@@ -497,6 +505,7 @@ for(int i = 0;i < childCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.111 -0400", hash_original_method = "DEBB4048965D8045F192555AB279F2BA", hash_generated_method = "F1B8D32FC0B1133E8B90504B4B2F73A9")
     @Override
     protected LayoutParams generateDefaultLayoutParams() {
@@ -514,6 +523,7 @@ LayoutParams varD15CEB6F45B18F7EB233792D020C6115_1477963145 =         params;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.112 -0400", hash_original_method = "AED9080C69042489485342721EE0B0B1", hash_generated_method = "F926AC55A69AAFCD78BB177D0840DAF5")
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
@@ -569,6 +579,7 @@ LayoutParams var0E81305CCB52037DAA521CD210230A11_1566430130 =         generateDe
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.112 -0400", hash_original_method = "AF673847AD60845228ED5C7DBF294789", hash_generated_method = "A3C6B048F1F35583D16051B0D0856660")
     public LayoutParams generateOverflowButtonLayoutParams() {
         LayoutParams result = generateDefaultLayoutParams();
@@ -583,6 +594,7 @@ LayoutParams varDC838461EE2FA0CA4C9BBB70A15456B0_314501037 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.112 -0400", hash_original_method = "52251A4D38FF83C9B55C46C571A25CAE", hash_generated_method = "845428F8CF38574B2DD5659DB811DBBC")
     public boolean invokeItem(MenuItemImpl item) {
         addTaint(item.getTaint());
@@ -594,7 +606,7 @@ LayoutParams varDC838461EE2FA0CA4C9BBB70A15456B0_314501037 =         result;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.112 -0400", hash_original_method = "DC1BDB1B98459EBD06B93B75A5D0D038", hash_generated_method = "170C7542225DAFF482B195CBD8832652")
     public int getWindowAnimations() {
         int varCFCD208495D565EF66E7DFF9F98764DA_327394773 = (0);
@@ -605,7 +617,7 @@ LayoutParams varDC838461EE2FA0CA4C9BBB70A15456B0_314501037 =         result;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.112 -0400", hash_original_method = "EDB3B7E883C1486DD9AED3AB15C0E44B", hash_generated_method = "E50EB2D0FDCBBA00CCFEFF4A83375DDF")
     public void initialize(MenuBuilder menu) {
         mMenu = menu;
@@ -614,6 +626,7 @@ LayoutParams varDC838461EE2FA0CA4C9BBB70A15456B0_314501037 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.113 -0400", hash_original_method = "9B32BE6DC23F13B511A55013BB42C488", hash_generated_method = "32B0287740AA4E0FF00438BEF0003939")
     @Override
     protected boolean hasDividerBeforeChildAt(int childIndex) {
@@ -646,7 +659,7 @@ LayoutParams varDC838461EE2FA0CA4C9BBB70A15456B0_314501037 =         result;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.113 -0400", hash_original_method = "87E5D39D1D82C11AB077A37A8786E27E", hash_generated_method = "6FAA1DA8C639EA8F1F2C357335690B26")
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
         addTaint(event.getTaint());

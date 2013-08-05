@@ -389,7 +389,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_193689763 =         mItemData;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.204 -0400", hash_original_method = "10F5F40E2932688DF3201248310D8E11", hash_generated_method = "EC98767F367014966ED63E3EF0789564")
     private void insertIconView() {
         LayoutInflater inflater = getInflater();
@@ -404,7 +404,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_193689763 =         mItemData;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.204 -0400", hash_original_method = "3AE05F112F28FE467A439CFB98DC5418", hash_generated_method = "15CE423BB152D917B454510BB59793B1")
     private void insertRadioButton() {
         LayoutInflater inflater = getInflater();
@@ -421,7 +421,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_193689763 =         mItemData;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.205 -0400", hash_original_method = "C1CFD343D3CE36D4657F4BFD8E338B9A", hash_generated_method = "7247AEBE06DD9AC00AEB216787940048")
     private void insertCheckBox() {
         LayoutInflater inflater = getInflater();
@@ -460,7 +460,7 @@ MenuItemImpl varFD5535759C41B540EBDBAE602A671A91_193689763 =         mItemData;
     }
 
     
-        @DSModeled(DSC.SPEC)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.205 -0400", hash_original_method = "800EDA97716EBA1ECAA54C866B1D88CB", hash_generated_method = "EDBFDA59B83B72DA4C8E0B710A9AFCD3")
     private LayoutInflater getInflater() {
         if(mInflater == null)        

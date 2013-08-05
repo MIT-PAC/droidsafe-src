@@ -3,11 +3,11 @@ package com.android.internal.util;
 // Droidsafe Imports
 import java.util.Arrays;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
 
 public class Predicates {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.801 -0400", hash_original_method = "8D570740569D5E9289A65558AD01F51B", hash_generated_method = "0B438E75227DE5A66090FC4CE4AA0AA1")
     private  Predicates() {
         // ---------- Original Method ----------
@@ -44,6 +44,7 @@ public class Predicates {
 
         private Iterable<? extends Predicate<? super T>> components;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.804 -0400", hash_original_method = "9C4B289345C7238C0EC3F315CFBA2A0C", hash_generated_method = "C989656BFDFAC34F8AD7FE7C2030A521")
         private  AndPredicate(Iterable<? extends Predicate<? super T>> components) {
             this.components = components;
@@ -86,6 +87,7 @@ for(Predicate<? super T> predicate : components)
 
         private Iterable<? extends Predicate<? super T>> components;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.805 -0400", hash_original_method = "B6491EF17EA70E2615FEA24AC54E8597", hash_generated_method = "B016731DA2488694309B55D477B41B63")
         private  OrPredicate(Iterable<? extends Predicate<? super T>> components) {
             this.components = components;
@@ -128,6 +130,7 @@ for(Predicate<? super T> predicate : components)
 
         private Predicate<? super T> predicate;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.806 -0400", hash_original_method = "1580F792FEAB20E5896374554CF174B0", hash_generated_method = "9BB8628BFCD98C7C0FB70FE1C67B09FF")
         private  NotPredicate(Predicate<? super T> predicate) {
             this.predicate = predicate;

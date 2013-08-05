@@ -30,6 +30,7 @@ public class MemInfoReader {
     }
 
 
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.773 -0400", hash_original_method = "D9BE2698B9CEABDB1C83ECE5A41CE9EF", hash_generated_method = "0BB0FCB6779637691B1140B80A429195")
     private boolean matchText(byte[] buffer, int index, String text) {
         addTaint(text.getTaint());
@@ -68,6 +69,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.774 -0400", hash_original_method = "DB73154576977FA52BEDF797ABB76527", hash_generated_method = "91B2174C5202C73DE9FE7113894940F9")
     private long extractMemValue(byte[] buffer, int index) {
         addTaint(index);
