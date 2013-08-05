@@ -424,6 +424,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.992 -0400", hash_original_method = "D21215C119A8C9273D02F36683639F77", hash_generated_method = "E0C051D7F445AE6F94210E095DE93C38")
     private View findViewForItem(MenuItem item) {
         addTaint(item.getTaint());

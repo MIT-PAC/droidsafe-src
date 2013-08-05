@@ -27,7 +27,7 @@ public class LegacyVpnInfo implements Parcelable {
     }
 
 
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.404 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "97649CC980E66E9A4020A7D0149CB5B0")
     @Override
     public int describeContents() {
@@ -39,6 +39,7 @@ public class LegacyVpnInfo implements Parcelable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.405 -0400", hash_original_method = "25107BEE45DBA0B67087A892F5280105", hash_generated_method = "8B0A56B4A324F109891422492DA0A0DE")
     @Override
     public void writeToParcel(Parcel out, int flags) {

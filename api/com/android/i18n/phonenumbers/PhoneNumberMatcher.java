@@ -10,8 +10,7 @@ import java.util.regex.Pattern;
 import com.android.i18n.phonenumbers.PhoneNumberUtil.Leniency;
 import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
 
 final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.701 -0400", hash_original_field = "C778FABC1A5FC38BFB2983B44747E15A", hash_generated_field = "2E33D99F5B4A20B25B98A154596BE936")
@@ -74,6 +73,7 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static String limit(int lower, int upper) {
         if ((lower < 0) || (upper <= 0) || (upper < lower)) {
       throw new IllegalArgumentException();
@@ -139,6 +139,7 @@ PhoneNumberMatch varDC838461EE2FA0CA4C9BBB70A15456B0_855783461 =         result;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.706 -0400", hash_original_method = "100C9BD21D85AF1E644A5205A8C5603D", hash_generated_method = "D7515F330BC289E0F03459B12AC14EFF")
     private PhoneNumberMatch find(int index) {
         addTaint(index);
@@ -179,6 +180,7 @@ PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_164927099 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static CharSequence trimAfterFirstMatch(Pattern pattern, CharSequence candidate) {
         Matcher trailingCharsMatcher = pattern.matcher(candidate);
         if (trailingCharsMatcher.find()) {
@@ -202,11 +204,13 @@ PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_164927099 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean isCurrencySymbol(char character) {
         return Character.getType(character) == Character.CURRENCY_SYMBOL;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.707 -0400", hash_original_method = "5043FAFCBC10DCDD5AF37AD628E27369", hash_generated_method = "3B1B5A3DDE0A9C237F7B8BD867CDCE47")
     private PhoneNumberMatch extractMatch(CharSequence candidate, int offset) {
         addTaint(offset);
@@ -241,6 +245,7 @@ PhoneNumberMatch var0A837D42E9B84724F42B85C9D42F107F_2037011663 =         extrac
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.709 -0400", hash_original_method = "45043172935915C3E3D944888FE8A1AA", hash_generated_method = "6E0E022887421172DE60E5E05CF40988")
     private PhoneNumberMatch extractInnerMatch(String candidate, int offset) {
         addTaint(offset);
@@ -306,6 +311,7 @@ PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_1335905192 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.709 -0400", hash_original_method = "0BFC8BA6757CC1FCC573CFBBF7AB3349", hash_generated_method = "C77036E3359E826742E5881A5795C015")
     private PhoneNumberMatch parseAndVerify(String candidate, int offset) {
         addTaint(offset);

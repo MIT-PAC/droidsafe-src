@@ -43,6 +43,7 @@ public class ActionBarContainer extends FrameLayout {
 
     private boolean mIsStacked;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.691 -0400", hash_original_method = "11ADB8FB86182A3641DB27767A9D337F", hash_generated_method = "0678D087FC1AE67837931F30216B6ABC")
     public  ActionBarContainer(Context context) {
         this(context, null);
@@ -51,6 +52,7 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.692 -0400", hash_original_method = "63748832C1944A3823B0F9894E29E249", hash_generated_method = "6EF28D8CDCCD2115F71F8FF66F6FBBBB")
     public  ActionBarContainer(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -89,6 +91,7 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.693 -0400", hash_original_method = "69B88AD6BEB0BE6EF5F88037F33C1F3D", hash_generated_method = "F17230A7ADDEE4BBF5B41A0A02A67CB1")
     @Override
     public void onFinishInflate() {
@@ -101,6 +104,7 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.693 -0400", hash_original_method = "78385A861A7FDA3897557FA33D96C5EA", hash_generated_method = "FDD27ACB7F75CC1B3FA7552F1E5A257A")
     public void setPrimaryBackground(Drawable bg) {
         mBackground = bg;
@@ -111,6 +115,7 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.694 -0400", hash_original_method = "D9D97A9D1A3797ABD6FF2A72BC0DD994", hash_generated_method = "73451948A7F40620F184D79F93FAC309")
     public void setStackedBackground(Drawable bg) {
         mStackedBackground = bg;
@@ -121,6 +126,7 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.694 -0400", hash_original_method = "EE7203C1470FAC3396749865559F7B8E", hash_generated_method = "60046CBF2719778BB7A31CCB5A94F420")
     public void setSplitBackground(Drawable bg) {
         mSplitBackground = bg;
@@ -131,6 +137,7 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.695 -0400", hash_original_method = "B47E345D6B402EE0E60D9E3F40581018", hash_generated_method = "07A61885CB04C34DDD25B20B9D4E80D1")
     public void setTransitioning(boolean isTransitioning) {
         mIsTransitioning = isTransitioning;
@@ -143,6 +150,7 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.695 -0400", hash_original_method = "8E69245395EC81C98ED35F3490421A0A", hash_generated_method = "E701DEDB56633AD650A69EA21D1B691E")
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
@@ -156,6 +164,7 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.695 -0400", hash_original_method = "FA8EB54F33D4C310829625567514278C", hash_generated_method = "F6D6BF218EBC4D1C4D4B8E1A4B051304")
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
@@ -171,6 +180,7 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.696 -0400", hash_original_method = "9A976B5E6EF3A94656A0B6DD07EE34B7", hash_generated_method = "DD1536B81A7CCF8A2DBDEFB21E1B22EC")
     @Override
     public boolean onHoverEvent(MotionEvent ev) {
@@ -186,6 +196,7 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.696 -0400", hash_original_method = "56F3757B297FC41285B5D7002065B92C", hash_generated_method = "1B721088708F466C27D91E303F59DEBD")
     public void setTabContainer(ScrollingTabContainerView tabView) {
         if(mTabContainer != null)        
@@ -216,7 +227,7 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.697 -0400", hash_original_method = "1563ACF140881C9576C37880F51665C0", hash_generated_method = "C29B20BDCEE64978317E006D8480BAFC")
     public View getTabContainer() {
 View var377A7B795B2C85DAE993421F8FAE8AE8_19897703 =         mTabContainer;
@@ -227,6 +238,7 @@ View var377A7B795B2C85DAE993421F8FAE8AE8_19897703 =         mTabContainer;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.698 -0400", hash_original_method = "643CD56BC30DF4A83018A79008BF6616", hash_generated_method = "0D09114FD074A6D13E9933BE44B3EAB7")
     @Override
     public void onDraw(Canvas canvas) {
@@ -283,6 +295,7 @@ ActionMode var540C13E9E156B687226421B24F2DF178_551911362 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.701 -0400", hash_original_method = "8D0F26C3446558D3092AD9D990B93994", hash_generated_method = "2E5D797330F20ABDDD296029A7792ACE")
     @Override
     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -311,6 +324,7 @@ ActionMode var540C13E9E156B687226421B24F2DF178_551911362 =         null;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.702 -0400", hash_original_method = "325ECF81F05468831378A42F90AA0A17", hash_generated_method = "5EA2C08E11DBC8AC40D37BAF89FC1C74")
     @Override
     public void onLayout(boolean changed, int l, int t, int r, int b) {

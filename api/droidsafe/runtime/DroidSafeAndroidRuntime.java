@@ -52,13 +52,26 @@ public class DroidSafeAndroidRuntime {
 		
 		while (true) {
 			Bundle b = new Bundle();
-			//onsavedinstancestate(b)
 			activity.performCreate(b, context);
-		
+
+			activity.onAttachedToWindow();
+			activity.onWindowFocusChanged(true);
+
+			// Call all public methods with no params
+			activity.onBackPressed();
+			activity.onContentChanged();
+			activity.onCreateDescription();
+			activity.onLowMemory();
+			activity.onRetainNonConfigurationInstance();
+			//activity.onSearchRequested();
+			activity.onUserInteraction();
+			
+			activity.droidsafeOnSavedInstanceState(new Bundle());
 			
 			activity.droidsafeOnResume();
 			activity.droidsafeOnStop();
 			activity.droidsafeOnDestroy();
+			activity.onDetachedFromWindow();
 		}
 		
 		//code

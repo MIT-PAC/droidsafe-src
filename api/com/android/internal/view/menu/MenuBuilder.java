@@ -175,6 +175,7 @@ for(WeakReference<MenuPresenter> ref : mPresenters)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.386 -0400", hash_original_method = "54D4EF8A00AA3736A7301B3768CF2956", hash_generated_method = "5218770B9C81A96A2967040496DD621E")
     private void dispatchPresenterUpdate(boolean cleared) {
         addTaint(cleared);
@@ -209,6 +210,7 @@ for(WeakReference<MenuPresenter> ref : mPresenters)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.387 -0400", hash_original_method = "972C883CEABE6EAECC969B119D377700", hash_generated_method = "50BCB0E22B2500C1A05F8AF081D2C3F2")
     private boolean dispatchSubMenuSelected(SubMenuBuilder subMenu) {
         addTaint(subMenu.getTaint());
@@ -250,6 +252,7 @@ for(WeakReference<MenuPresenter> ref : mPresenters)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.387 -0400", hash_original_method = "8458F949934B8A3332FB7D785BD3E421", hash_generated_method = "0153124F7BA63243C66BD42805E3308F")
     private void dispatchSaveInstanceState(Bundle outState) {
         addTaint(outState.getTaint());
@@ -298,6 +301,7 @@ for(WeakReference<MenuPresenter> ref : mPresenters)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.388 -0400", hash_original_method = "4E7750A20EC8141646D41AE332CEFE6A", hash_generated_method = "3C17C740D57332AFE08760BA6C73033A")
     private void dispatchRestoreInstanceState(Bundle state) {
         addTaint(state.getTaint());
@@ -456,6 +460,7 @@ String var7F0932DDA550CC746E0478AD81F1022C_939865983 =         ACTION_VIEW_STATE
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.391 -0400", hash_original_method = "D2F8ABBFA7F348CFE09EC6E4D42923FE", hash_generated_method = "3236FD4D70A5CBA6C4A9E0B098C700B6")
     private MenuItem addInternal(int group, int id, int categoryOrder, CharSequence title) {
         addTaint(title.getTaint());
@@ -672,6 +677,7 @@ for(int i=0;i<N;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.396 -0400", hash_original_method = "B04372368F85324A2D15939652770F19", hash_generated_method = "7CBDB61250B07B7AFAFAED345A625C58")
     private void removeItemAtInt(int index, boolean updateChildrenOnMenuViews) {
         addTaint(updateChildrenOnMenuViews);
@@ -1037,6 +1043,7 @@ MenuItem var955C9579A8231EA8752336C152243F31_2086598705 =         mItems.get(ind
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int getOrdering(int categoryOrder) {
         final int index = (categoryOrder & CATEGORY_MASK) >> CATEGORY_SHIFT;
         if (index < 0 || index >= sCategoryToOrder.length) {
@@ -1071,6 +1078,7 @@ MenuItem var955C9579A8231EA8752336C152243F31_2086598705 =         mItems.get(ind
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.405 -0400", hash_original_method = "BCC95ACBA680BEE1F3E7AD661CBC9615", hash_generated_method = "5F1306E253C0176589E31B06AFE8A16B")
     private void setShortcutsVisibleInner(boolean shortcutsVisible) {
         mShortcutsVisible = shortcutsVisible
@@ -1143,6 +1151,7 @@ Context var178E2AD52D6FBBB503F908168856B574_2102030959 =         mContext;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int findInsertIndex(ArrayList<MenuItemImpl> items, int ordering) {
         for (int i = items.size() - 1; i >= 0; i--) {
             MenuItemImpl item = items.get(i);

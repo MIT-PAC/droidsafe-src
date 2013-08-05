@@ -54,7 +54,7 @@ public final class HttpDateTime {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int getDate(String dateString) {
         if (dateString.length() == 2) {
             return (dateString.charAt(0) - '0') * 10
@@ -65,7 +65,7 @@ public final class HttpDateTime {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int getMonth(String monthString) {
         int hash = Character.toLowerCase(monthString.charAt(0)) +
                 Character.toLowerCase(monthString.charAt(1)) +
@@ -101,6 +101,7 @@ public final class HttpDateTime {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int getYear(String yearString) {
         if (yearString.length() == 2) {
             int year = (yearString.charAt(0) - '0') * 10
@@ -126,6 +127,7 @@ public final class HttpDateTime {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static TimeOfDay getTime(String timeString) {
         int i = 0;
         int hour = timeString.charAt(i++) - '0';

@@ -17,8 +17,7 @@ import java.util.SortedMap;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
 
 public class MappingFileProvider implements Externalizable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.618 -0400", hash_original_field = "69F496FCE87C6BC7DC2D0257BB43A268", hash_generated_field = "3E0B4451FC75BFBEA7BE0888ADA52D93")
@@ -222,6 +221,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_938545489 =         "";
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.624 -0400", hash_original_method = "18F97AE37D6D32FF4C5E8DE16502349B", hash_generated_method = "A028CE6BEDE541F956440663AB9C55B5")
     private String findBestMatchingLanguageCode(
       Set<String> setOfLangs, String language, String script, String region) {
@@ -290,6 +290,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1028802449 =         "";
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.625 -0400", hash_original_method = "AAED8563DDED3C53862CE4371524442C", hash_generated_method = "3FB9D44F0F1AC969B59F7B520B4FA1EA")
     private boolean onlyOneOfScriptOrRegionIsEmpty(String script, String region) {
         addTaint(region.getTaint());
@@ -304,6 +305,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1028802449 =         "";
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.626 -0400", hash_original_method = "67AD4EAACC19DF5D4391EFA1CE27EABA", hash_generated_method = "45640DE8566BAE1DB980969D335ABA7D")
     private StringBuilder constructFullLocale(String language, String script, String region) {
         addTaint(region.getTaint());
@@ -323,6 +325,7 @@ StringBuilder var690DC80614311B79D32C7436393D703D_691592578 =         fullLocale
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.626 -0400", hash_original_method = "A3149B7498B5162CA69A1D6F38AF4B31", hash_generated_method = "13DCF82EAE07D2565C97EFBC6B5DE69D")
     private void appendSubsequentLocalePart(String subsequentLocalePart, StringBuilder fullLocale) {
         addTaint(fullLocale.getTaint());

@@ -92,6 +92,7 @@ public class AsYouTypeFormatter {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.516 -0400", hash_original_method = "881E62338E39DD444804F246615E6E62", hash_generated_method = "952C1E7A73F7A9247FA925266BC0A5BF")
     private PhoneMetadata getMetadataForRegion(String regionCode) {
         addTaint(regionCode.getTaint());
@@ -118,6 +119,7 @@ PhoneMetadata varFBEA0CBA6FC02D2747A4C6810F21686A_1942009525 =         EMPTY_MET
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.516 -0400", hash_original_method = "AB8E8EDD80C278D4452E081702FFED46", hash_generated_method = "8DE8F24EE2777049577C42149F0B6CA2")
     private boolean maybeCreateNewTemplate() {
         Iterator<NumberFormat> it = possibleFormats.iterator();
@@ -168,7 +170,7 @@ PhoneMetadata varFBEA0CBA6FC02D2747A4C6810F21686A_1942009525 =         EMPTY_MET
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.517 -0400", hash_original_method = "37D81E1E00F803BB98B41301D27D6488", hash_generated_method = "3DE1E8001B5B6BA849F349A4FD48B6DC")
     private void getAvailableFormats(String leadingThreeDigits) {
         addTaint(leadingThreeDigits.getTaint());
@@ -197,7 +199,7 @@ for(NumberFormat format : formatList)
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.517 -0400", hash_original_method = "0CD8D9B07AADCF252FD63C0FF91E8BCD", hash_generated_method = "ADD0A99F977BF10579D8AB69AC584F87")
     private boolean isFormatEligible(String format) {
         addTaint(format.getTaint());
@@ -209,6 +211,7 @@ for(NumberFormat format : formatList)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.518 -0400", hash_original_method = "3E367C813BED2017BCCC9CAE77808F34", hash_generated_method = "48D31EC47ABE2BB257B8250E6754C3F3")
     private void narrowDownPossibleFormats(String leadingDigits) {
         addTaint(leadingDigits.getTaint());
@@ -247,6 +250,7 @@ for(NumberFormat format : formatList)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.519 -0400", hash_original_method = "2542CBCB3D3982D996EED604A627F745", hash_generated_method = "4D3E7149A0251AD196AD38B82BBD8E06")
     private boolean createFormattingTemplate(NumberFormat format) {
         addTaint(format.getTaint());
@@ -288,6 +292,7 @@ for(NumberFormat format : formatList)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.519 -0400", hash_original_method = "D11FAAF63EBAF37B7C1EC170EAFCD005", hash_generated_method = "7710D7F1ABDC37DDF520A34DDCE1F90A")
     private String getFormattingTemplate(String numberPattern, String numberFormat) {
         addTaint(numberFormat.getTaint());
@@ -386,6 +391,7 @@ String var6D28BBF6C3B5B42D7B24DF7C977E5CFB_1298965236 =         currentOutput;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.523 -0400", hash_original_method = "6C89C7F3A0AAC3A12D8456578D2D5E4E", hash_generated_method = "651FBF2F86F13FE5E83163F866916431")
     @SuppressWarnings("fallthrough")
     private String inputDigitWithOptionToRememberPosition(char nextChar, boolean rememberPosition) {
@@ -482,7 +488,7 @@ String var6E079CFAB6A3F75F2D894571ED8C37B5_116598190 =             attemptToChoo
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.523 -0400", hash_original_method = "3C59019883483E3D8800E37699311374", hash_generated_method = "4B74DBC461884A2D1A68EC805B05442D")
     private boolean isDigitOrLeadingPlusSign(char nextChar) {
         addTaint(nextChar);
@@ -566,6 +572,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1100724953 =         "";
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.525 -0400", hash_original_method = "4C8321A90BCC237ABE581FD0E018E0B0", hash_generated_method = "AEAC26F82875D49AF8D03CCBC442734A")
     private String attemptToChooseFormattingPattern() {
         if(nationalNumber.length() >= MIN_LEADING_DIGITS_LENGTH)        
@@ -593,7 +600,7 @@ String varC50A07DAEE4370E981DA39BFDFC4411F_1915626865 =             prefixBefore
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.525 -0400", hash_original_method = "A0C52ED0A89DE12301F2C974C5007560", hash_generated_method = "600469DA323BE9F8F05A58BB4B688096")
     private String inputAccruedNationalNumber() {
         int lengthOfNationalNumber = nationalNumber.length();
@@ -632,6 +639,7 @@ String var59EDF629DC029F16882F612A4FB211C0_419983249 =             prefixBeforeN
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.526 -0400", hash_original_method = "810622AECED476A4374C59B83D98E171", hash_generated_method = "96CAA668E06ED6868FBB9D80B8ECFC79")
     private void removeNationalPrefixFromNationalNumber() {
         int startOfNationalNumber = 0;
@@ -674,6 +682,7 @@ String var59EDF629DC029F16882F612A4FB211C0_419983249 =             prefixBeforeN
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.527 -0400", hash_original_method = "B953FBA4B3460899EA66156C6BB3FF32", hash_generated_method = "D690EBCB392249A5E85E285AAA8D5E4A")
     private boolean attemptToExtractIdd() {
         Pattern internationalPrefix = regexCache.getPatternForRegex("\\" + PhoneNumberUtil.PLUS_SIGN + "|" +
@@ -703,6 +712,7 @@ String var59EDF629DC029F16882F612A4FB211C0_419983249 =             prefixBeforeN
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.527 -0400", hash_original_method = "218BC2BA6DFB456EB7693A201AB85277", hash_generated_method = "8C9379374FD5A87B86A2618E137FB2DB")
     private boolean attemptToExtractCountryCallingCode() {
         if(nationalNumber.length() == 0)        
@@ -752,7 +762,7 @@ String var59EDF629DC029F16882F612A4FB211C0_419983249 =             prefixBeforeN
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.528 -0400", hash_original_method = "77D81BD33F378FE00304ED0E0D731511", hash_generated_method = "0FDD53852399C7CDCD592EB23EFFCBDB")
     private char normalizeAndAccrueDigitsAndPlusSign(char nextChar, boolean rememberPosition) {
         addTaint(rememberPosition);
@@ -795,6 +805,7 @@ String var59EDF629DC029F16882F612A4FB211C0_419983249 =             prefixBeforeN
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.529 -0400", hash_original_method = "E1A45868A03256452AD2B7163B170B11", hash_generated_method = "68413EAA9BECA181F5BE28152A5D945D")
     private String inputDigitHelper(char nextChar) {
         addTaint(nextChar);

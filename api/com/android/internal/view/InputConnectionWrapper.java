@@ -715,6 +715,7 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_1947674392 =         value;
         }
 
 
+        @DSModeled(DSC.BAN)
         private static InputContextCallback getInstance() {
             synchronized (InputContextCallback.class) {
                 InputContextCallback callback;
@@ -731,7 +732,7 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_1947674392 =         value;
         }
 
         
-                @DSModeled(DSC.SAFE)
+                @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.785 -0400", hash_original_method = "114A3AA754115CB63309037B1A16C75C", hash_generated_method = "9BD80E9ED6FC3B32FF54FD83C1DF9459")
         private void dispose() {
             synchronized

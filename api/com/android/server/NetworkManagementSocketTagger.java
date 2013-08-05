@@ -63,6 +63,7 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.472 -0400", hash_original_method = "C210639DA77D00249F794C3EBD98DE8A", hash_generated_method = "2512FE3068530B772E6A317B46E23B54")
     private void tagSocketFd(FileDescriptor fd, int tag, int uid) {
         addTaint(uid);
@@ -103,6 +104,7 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.473 -0400", hash_original_method = "5654F79E328B73E29CE69FDDA4191C15", hash_generated_method = "03F20AD8F0899DAD8FEA5C3BF8FA0FCE")
     private void unTagSocketFd(FileDescriptor fd) {
         addTaint(fd.getTaint());

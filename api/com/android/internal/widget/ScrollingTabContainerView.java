@@ -142,6 +142,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.201 -0400", hash_original_method = "0C44DD211AEDE4F8875A759BF8E8E48B", hash_generated_method = "82FFEC8A97A4F3906C1553CD22366C3E")
     private boolean isCollapsed() {
         boolean var76D4844CC4C69129F4F1CDCDA535CE01_114465538 = (mTabSpinner != null && mTabSpinner.getParent() == this);
@@ -161,6 +162,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.204 -0400", hash_original_method = "002FC4053C0D51D3D52C5463A6463800", hash_generated_method = "8729588479AA3052EE66BEFD5C4BA58F")
     private void performCollapse() {
         if(isCollapsed())        
@@ -201,6 +203,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.205 -0400", hash_original_method = "DC1833D7C81A29FFDE1BB4D9BF0A022D", hash_generated_method = "BAA43726A712C8397ECCEFF5BC457AB2")
     private boolean performExpand() {
         if(!isCollapsed())        
@@ -264,6 +267,7 @@ for(int i = 0;i < tabCount;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.210 -0400", hash_original_method = "5C02AED63A2A4EB9B288612999968966", hash_generated_method = "FFED6F9104DBAEB69D2C19042883B9B4")
     private LinearLayout createTabLayout() {
         final LinearLayout tabLayout = new LinearLayout(getContext(), null,
@@ -284,6 +288,7 @@ LinearLayout var696580C41E2E1D1E00E87A5731979420_1358646539 =         tabLayout;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.211 -0400", hash_original_method = "37274689DF291E70B964F7E850308591", hash_generated_method = "10308988377C747061D48ADB1C15A2D6")
     private Spinner createSpinner() {
         final Spinner spinner = new Spinner(getContext(), null,
@@ -444,6 +449,7 @@ Spinner var2854793BD8388CA4EEEEFC36B3E6FEC7_1482698738 =         spinner;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.214 -0400", hash_original_method = "450EFC0E420D351EC7204D6D5C8D9AC6", hash_generated_method = "4D867E334C1AFE93784FF348737720B3")
     private TabView createTabView(ActionBar.Tab tab, boolean forAdapter) {
         addTaint(forAdapter);

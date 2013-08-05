@@ -5,8 +5,7 @@ import java.io.IOException;
 
 import javax.security.auth.x500.X500Principal;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
 
 public final class DNParser {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.322 -0400", hash_original_field = "567C996739EDFA1CDBAD4C55A80580DF", hash_generated_field = "3D2CB8429158C4900E9EA4B3985C38C4")
@@ -31,6 +30,7 @@ public final class DNParser {
 
     private char[] chars;
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.322 -0400", hash_original_method = "3E2925D928731F8540EF17AB0FA8675E", hash_generated_method = "11360DB6ACF8FCF3E98B2CD56253A240")
     public  DNParser(X500Principal principal) {
         this.dn = principal.getName(X500Principal.RFC2253);
@@ -41,6 +41,7 @@ public final class DNParser {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.323 -0400", hash_original_method = "FF4BEB2C3B52F01ACB9FD25F4CE8A230", hash_generated_method = "F3EBC385B48599B08CDCB7EF93136A83")
     private String nextAT() throws IOException {
 for(;pos < length && chars[pos] == ' ';pos++)
@@ -95,6 +96,7 @@ String varA88CD4E826BB74E12B252BCF2CEC4945_614648331 =         new String(chars,
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.325 -0400", hash_original_method = "6CE0A226336916B0D0BD29FA44800404", hash_generated_method = "9E7CE86C5A0AA00709051B3A0C5348A6")
     private String quotedAV() throws IOException {
         pos++;
@@ -157,6 +159,7 @@ String varA88CD4E826BB74E12B252BCF2CEC4945_926636910 =         new String(chars,
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.328 -0400", hash_original_method = "F2971F3EEE8ADD1AC7CDED4BAC19B062", hash_generated_method = "160F595A50FD8061C60965D385BD15BD")
     private String hexAV() throws IOException {
         if(pos + 4 >= length)        
@@ -212,6 +215,7 @@ String varCC1247AAA5590D16A647B2E2A6BA7DE8_2049899936 =         new String(chars
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.329 -0400", hash_original_method = "4DC639394A31828D7BD68247B83FBA07", hash_generated_method = "BD964D364D878C20E0656291530D6632")
     private String escapedAV() throws IOException {
         beg = pos;
@@ -262,6 +266,7 @@ String varF4AE4525652FA624971421628D52D24A_1196079737 =                 new Stri
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.330 -0400", hash_original_method = "53196F6413879CFC1842AAE874B37E3B", hash_generated_method = "630A0AECE49A022CD3949C5608C33A55")
     private char getEscaped() throws IOException {
         pos++;
@@ -319,6 +324,7 @@ switch(chars[pos]){
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.332 -0400", hash_original_method = "1AF4B344FDDD447575D7BAE99B8C4CD1", hash_generated_method = "707D02B7DED8252617A20964E54F4936")
     private char getUTF8() throws IOException {
         int res = getByte(pos);
@@ -385,6 +391,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.335 -0400", hash_original_method = "2374C761E42CEC3E752725D6A1CCC05C", hash_generated_method = "17BE8BB590AEBC9E18257D6E3E8C0E3C")
     private int getByte(int position) throws IOException {
         addTaint(position);
@@ -470,6 +477,7 @@ for(int i = 0;i < count;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.339 -0400", hash_original_method = "35FC8516F494B2993CB4F015ABFC8107", hash_generated_method = "20C03CE3477E2DD2EA51E082349B263B")
     public String find(String attributeType) {
         addTaint(attributeType.getTaint());

@@ -52,12 +52,13 @@ class FlyweightMapStorage extends AreaCodeMapStorageStrategy {
     }
 
     
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     private static int getOptimalNumberOfBytesForValue(int value) {
         return value <= Short.MAX_VALUE ? SHORT_SIZE : INT_SIZE;
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void storeWordInBuffer(ByteBuffer buffer, int wordSize, int index, int value) {
         index *= wordSize;
         if (wordSize == SHORT_SIZE) {
@@ -68,6 +69,7 @@ class FlyweightMapStorage extends AreaCodeMapStorageStrategy {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int readWordFromBuffer(ByteBuffer buffer, int wordSize, int index) {
         index *= wordSize;
         return wordSize == SHORT_SIZE ? buffer.getShort(index) : buffer.getInt(index);
@@ -133,6 +135,7 @@ for(int i = 0;i < numOfEntries;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void readExternalWord(ObjectInput objectInput, int wordSize,
                                        ByteBuffer outputBuffer, int index) throws IOException {
         index *= wordSize;
@@ -184,6 +187,7 @@ for(int i = 0;i < numOfEntries;i++)
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void writeExternalWord(ObjectOutput objectOutput, int wordSize,
                                         ByteBuffer inputBuffer, int index) throws IOException {
         index *= wordSize;

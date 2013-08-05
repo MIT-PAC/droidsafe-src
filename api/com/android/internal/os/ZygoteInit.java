@@ -33,6 +33,7 @@ import droidsafe.helpers.DSUtils;
 
 public class ZygoteInit {
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.881 -0400", hash_original_method = "428A10BCE5663B72CCCACBE02D386E37", hash_generated_method = "B822867C5762398B852DFCB190C609C4")
     private  ZygoteInit() {
         // ---------- Original Method ----------
@@ -69,6 +70,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void registerZygoteSocket() {
         if (sServerSocket == null) {
             int fileDesc;
@@ -90,6 +92,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static ZygoteConnection acceptCommandPeer() {
         try {
             return new ZygoteConnection(sServerSocket.accept());
@@ -100,6 +103,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     static void closeServerSocket() {
         try {
             if (sServerSocket != null) {
@@ -112,6 +116,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void setEffectiveUser(int uid) {
         int errno = setreuid(ROOT_UID, uid);
         if (errno != 0) {
@@ -120,6 +125,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void setEffectiveGroup(int gid) {
         int errno = setregid(ROOT_GID, gid);
         if (errno != 0) {
@@ -128,12 +134,14 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     static void preload() {
         preloadClasses();
         preloadResources();
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void preloadClasses() {
         final VMRuntime runtime = VMRuntime.getRuntime();
         InputStream is = ZygoteInit.class.getClassLoader().getResourceAsStream(
@@ -203,6 +211,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void preloadResources() {
         final VMRuntime runtime = VMRuntime.getRuntime();
         Debug.startAllocCounting();
@@ -235,6 +244,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int preloadColorStateLists(VMRuntime runtime, TypedArray ar) {
         int N = ar.length();
         for (int i=0; i<N; i++) {
@@ -258,6 +268,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static int preloadDrawables(VMRuntime runtime, TypedArray ar) {
         int N = ar.length();
         for (int i=0; i<N; i++) {
@@ -286,6 +297,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     static void gc() {
         final VMRuntime runtime = VMRuntime.getRuntime();
         System.gc();
@@ -297,6 +309,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void handleSystemServerProcess(
             ZygoteConnection.Arguments parsedArgs) throws ZygoteInit.MethodAndArgsCaller {
         closeServerSocket();
@@ -314,6 +327,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static boolean startSystemServer() throws MethodAndArgsCaller, RuntimeException {
         String args[] = {
             "--setuid=1000",
@@ -383,6 +397,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void runForkMode() throws MethodAndArgsCaller {
         while (true) {
             ZygoteConnection peer = acceptCommandPeer();
@@ -407,6 +422,7 @@ public class ZygoteInit {
     }
 
     
+    @DSModeled(DSC.BAN)
     private static void runSelectLoopMode() throws MethodAndArgsCaller {
         ArrayList<FileDescriptor> fds = new ArrayList();
         ArrayList<ZygoteConnection> peers = new ArrayList();
@@ -520,6 +536,7 @@ public class ZygoteInit {
 
         private String[] mArgs;
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.895 -0400", hash_original_method = "B7C77C284F7B165702F670BC703A8A6B", hash_generated_method = "74F6AB53C19992EBB7A9622494594EA9")
         public  MethodAndArgsCaller(Method method, String[] args) {
             mMethod = method;
@@ -530,6 +547,7 @@ public class ZygoteInit {
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.896 -0400", hash_original_method = "9C4F25D836A229393F13206C69120090", hash_generated_method = "6D6767063E10B6B8699CA581AE37AF13")
         public void run() {
             try 

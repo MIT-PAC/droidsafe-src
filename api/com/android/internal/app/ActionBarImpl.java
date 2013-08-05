@@ -209,6 +209,7 @@ public class ActionBarImpl extends ActionBar {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.755 -0400", hash_original_method = "CD1B24EA492A78A5E57A77E5FDC89AEF", hash_generated_method = "E7F6F843474A01A095D7352737E84D2A")
     private void init(View decor) {
         mContext = decor.getContext();
@@ -251,6 +252,7 @@ public class ActionBarImpl extends ActionBar {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.757 -0400", hash_original_method = "05911004B37CFCA0E1E3075964BC3E46", hash_generated_method = "DC20FE7C9FA9D47ED4B1783DD986D3F5")
     private void setHasEmbeddedTabs(boolean hasEmbeddedTabs) {
         mHasEmbeddedTabs = hasEmbeddedTabs;
@@ -287,7 +289,7 @@ public class ActionBarImpl extends ActionBar {
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.758 -0400", hash_original_method = "04F31515B176FCA9797E5A3B1AE2D925", hash_generated_method = "735A6D25E11E3FD56C47D92F64BCEB17")
     private void ensureTabsExist() {
         if(mTabScrollView != null)        
@@ -542,7 +544,7 @@ switch(mActionView.getNavigationMode()){
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.762 -0400", hash_original_method = "62AE76DE88CDD8F4A1D9D70F05364203", hash_generated_method = "B9834C343C2B2072BCE58DD14DC7465B")
     private void cleanupTabs() {
         if(mSelectedTab != null)        
@@ -755,7 +757,7 @@ ActionMode var540C13E9E156B687226421B24F2DF178_1472463163 =         null;
     }
 
     
-        @DSModeled(DSC.SAFE)
+        @DSModeled(DSC.BAN)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.764 -0400", hash_original_method = "4981E6F1136ACFE06B622EFDD1F32611", hash_generated_method = "23858E465B75E8EE0B28E9C52272C9FD")
     private void configureTab(Tab tab, int position) {
         addTaint(position);

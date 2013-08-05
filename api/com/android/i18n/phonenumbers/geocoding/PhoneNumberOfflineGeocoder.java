@@ -13,8 +13,7 @@ import java.util.logging.Logger;
 import com.android.i18n.phonenumbers.PhoneNumberUtil;
 import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
 
-import droidsafe.annotations.DSGeneratedField;
-import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.*;
 
 public class PhoneNumberOfflineGeocoder {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.650 -0400", hash_original_field = "8DDE134A73A97EF1C52A79F2EA1BEA97", hash_generated_field = "BE506E133CCC4FF41A3A629A7B84F9C7")
@@ -40,6 +39,7 @@ public class PhoneNumberOfflineGeocoder {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.652 -0400", hash_original_method = "E1BB23E7722226D1F2FA0A624B863E50", hash_generated_method = "34D9A04D01486DC7BEDD574D6C9737F0")
     private void loadMappingFileProvider() {
         InputStream source = PhoneNumberOfflineGeocoder.class.getResourceAsStream(phonePrefixDataDirectory + "config");
@@ -72,6 +72,7 @@ public class PhoneNumberOfflineGeocoder {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.652 -0400", hash_original_method = "83306CA98099E8F54D458F6E7B135EF3", hash_generated_method = "49E5C8085DECED4CA3C06D8F44B10D81")
     private AreaCodeMap getPhonePrefixDescriptions(
       int countryCallingCode, String language, String script, String region) {
@@ -105,6 +106,7 @@ AreaCodeMap var5B1B4B795B719A2CCEF18674C52B5D6E_511753923 =         availablePho
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.653 -0400", hash_original_method = "2B0DD58A818613E514EB671D31CFE754", hash_generated_method = "BA04A8E4C19D1AF27233CC65EEDC6DA9")
     private void loadAreaCodeMapFromFile(String fileName) {
         addTaint(fileName.getTaint());
@@ -142,6 +144,7 @@ AreaCodeMap var5B1B4B795B719A2CCEF18674C52B5D6E_511753923 =         availablePho
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.654 -0400", hash_original_method = "A1113EBAB3D0682FE612F1231142344C", hash_generated_method = "7CE12CBA9981D7C7423F70765D3C0151")
     private void close(InputStream in) {
         addTaint(in.getTaint());
@@ -175,6 +178,7 @@ AreaCodeMap var5B1B4B795B719A2CCEF18674C52B5D6E_511753923 =         availablePho
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.654 -0400", hash_original_method = "BFC255CAA5852747525F7A463403B75F", hash_generated_method = "FE328D3AAC5D10DA5E0EB740B4DD3139")
     private String getCountryNameForNumber(PhoneNumber number, Locale language) {
         addTaint(language.getTaint());
@@ -235,6 +239,7 @@ String var4E416BD293427CE8843A4D977CB49767_280535443 =         getDescriptionFor
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.656 -0400", hash_original_method = "0C41F4A14E4338A7839D0DC3A0BBE9E6", hash_generated_method = "6A614FCFE6816765BC99093DFCC9E23B")
     private String getAreaDescriptionForNumber(
       PhoneNumber number, String lang, String script, String region) {
