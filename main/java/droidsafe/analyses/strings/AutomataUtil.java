@@ -300,6 +300,13 @@ public class AutomataUtil {
          * @return
          */
         public static RE mkUnion(RE x, RE y) {
+            if (x.op.equals(ReOp.EMPTY)) {
+                return y;
+            }
+            if (y.op.equals(ReOp.EMPTY)) {
+                return x;
+            }
+            
             RE res = new RE(ReOp.UNION);
             res.alts = new HashSet<RE>();
             if (x.meta != null) {
@@ -464,7 +471,7 @@ public class AutomataUtil {
          */
         public static RE mkString(String lit) {
             if (lit.isEmpty()) {
-                return empty;
+                return epsilon;
             }
 
             RE res = new RE(ReOp.STRING);
@@ -557,7 +564,7 @@ public class AutomataUtil {
                     // return;
                 case STRING:
                     if (this.lit.equals("")) {
-                        empty.toString(acc, expand);
+                        epsilon.toString(acc, expand);
                     } else {
                         acc.append(this.lit);
                         return;
@@ -595,6 +602,7 @@ public class AutomataUtil {
                     acc.append("[");
                     sep = "";
                     for (RE arg : cats) {
+                        acc.append(sep);
                         arg.toString(acc, op.getPrec(), expand);
                         sep = ",";
                     }

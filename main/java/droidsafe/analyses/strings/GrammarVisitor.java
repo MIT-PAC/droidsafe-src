@@ -137,7 +137,9 @@ public class GrammarVisitor {
 
             this.terms = new HashSet<RE>();
             this.coeffs = new HashMap<Nonterminal, Set<RE>>();
-
+            for (Production p : nonterm.getProductions()) {
+                p.visitBy(nt, this);
+            }
         }
 
 
@@ -392,14 +394,6 @@ public class GrammarVisitor {
             addTerm(RE.empty);
         }
 
-        /**
-         * Add the argument regular expression to the set of terminal right-hand-sides.
-         * 
-         * @param tm
-         */
-        private void addTerm(RE tm) {
-            terms.addAll(tm.getAlts());
-        }
 
         /**
          * Visit a pair (concatenation of nonterminal) production.
@@ -490,6 +484,15 @@ public class GrammarVisitor {
             RE re2 = getRE(arg2);
             RE cur = RE.mkBinOp(p.getOperation(), re1, re2);
             addTerm(cur);
+        }
+
+        /**
+         * Add the argument regular expression to the set of terminal right-hand-sides.
+         * 
+         * @param tm
+         */
+        private void addTerm(RE tm) {
+               terms.addAll(tm.getAlts());
         }
 
         /**
