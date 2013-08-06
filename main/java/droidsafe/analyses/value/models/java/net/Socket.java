@@ -17,6 +17,7 @@ import java.net.SocketImplFactory;
 import java.net.UnknownHostException;
 import java.nio.channels.SocketChannel;
 import java.util.Set;
+import java.util.HashSet;
 import soot.jimple.spark.pag.AllocNode;
 
 public class Socket extends ValueAnalysisModeledObject {
@@ -51,7 +52,7 @@ public class Socket extends ValueAnalysisModeledObject {
 
     
     public void _init_(Set<String> dstName, Set<ValueAnalysisInt> dstPort) throws UnknownHostException, IOException {
-        Set<ValueAnalysisInt> zeroSet = new ValueAnalysisModelingSet<ValueAnalysisInt>();
+        Set<ValueAnalysisInt> zeroSet = new HashSet<ValueAnalysisInt>();
         zeroSet.add(new ValueAnalysisInt(0));
         this._init_(dstName, dstPort, null, zeroSet);
     }
@@ -59,7 +60,8 @@ public class Socket extends ValueAnalysisModeledObject {
     
     public void _init_(Set<String> dstName, Set<ValueAnalysisInt> dstPort, InetAddress localAddress, Set<ValueAnalysisInt> localPort) throws IOException {
         this.localAddress = localAddress;
-        this.destAddress = new InetSocketAddress(null);
+        if(this.destAddress == null)
+            this.destAddress = new InetSocketAddress(null);
         destAddress._init_(dstName,dstPort);
         // __ds__invalidate();
         /*

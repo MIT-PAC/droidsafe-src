@@ -250,7 +250,7 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 		//get down to an element through the dimensions
 		Local elementPtr = arrayLocal;
 		while (((ArrayType)elementPtr.getType()).getElementType() instanceof ArrayType) {
-			Local currentLocal = Jimple.v().newLocal("l" + localID++, ((ArrayType)elementPtr).getElementType());
+			Local currentLocal = Jimple.v().newLocal("l" + localID++, ((ArrayType)elementPtr.getType()).getElementType());
 			stmts.add(Jimple.v().newAssignStmt(
 					currentLocal, 
 					Jimple.v().newArrayRef(elementPtr, IntConstant.v(0))));

@@ -35,6 +35,7 @@ import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
+import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 
 /**
@@ -115,6 +116,10 @@ public class Main {
 
         // write jimple txt files for all classes so we can analzye them
         // all transforms should be done by here.
+        
+        logger.info("Caching Jimple Hierarchy Relationships...");
+        JimpleRelationships.v();
+        
         if (Config.v().writeJimpleAppClasses) {
             writeAllAppClasses();
         }

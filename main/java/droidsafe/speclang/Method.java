@@ -4,6 +4,7 @@ package droidsafe.speclang;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -13,10 +14,17 @@ import org.slf4j.LoggerFactory;
 import soot.Scene;
 import soot.SootMethod;
 import soot.Type;
+import soot.jimple.Expr;
+import soot.jimple.Stmt;
+import soot.jimple.spark.pag.AllocNode;
 import soot.tagkit.LineNumberTag;
+import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.PTAMethodInformation;
 import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
 import droidsafe.main.Config;
+import droidsafe.utils.JimpleRelationships;
+import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
 
@@ -31,30 +39,18 @@ public class Method implements Comparable<Method> {
 	private Object receiver;
 	/** locations where this method, either a call or a handler appear in source */
 	private List<SourceLocationTag> lines;
+	/** Points to information for this method call */
+	private PTAMethodInformation ptaInfo;
 
-	public Method(SootMethod method, ArgumentValue[] args, Object receiver) {
+	public Method(SootMethod method, PTAMethodInformation ptaInfo, ArgumentValue[] args, Object receiver) {
 		this.sootMethod = method;
 		this.args = args;
 		this.receiver = receiver;
 		lines = new ArrayList<SourceLocationTag>();
 		logger.info("Creating method: {} with receiever {}", method, receiver);
+		this.ptaInfo = ptaInfo;
 	}
 	
-	public Method(SootMethod method) {
-		this.sootMethod = method;
-		
-		//create argument list from types of method
-		ArgumentValue[] argTypes = new ArgumentValue[sootMethod.getParameterCount()];
-		for (int i = 0; i < argTypes.length; i++) {
-			argTypes[i] = new TypeValue(sootMethod.getParameterType(i));
-		}
-		
-		this.args = argTypes;
-		setTypes();
-		this.receiver = null;
-		
-		lines = new ArrayList<SourceLocationTag>();
-	}
 	
 	public SootMethod getSootMethod() {
 		return sootMethod;
@@ -152,6 +148,76 @@ public class Method implements Comparable<Method> {
 		Collections.sort(lines);
 	}
 	
+	/**
+	 * Return a set of lines for possible new expression that can reach receiver of this method.
+	 */
+	public Set<SourceLocationTag> getReceiverSources() {
+	    HashSet<SourceLocationTag> sources = new HashSet<SourceLocationTag>();
+	    
+	    if (ptaInfo == null || !ptaInfo.hasReceiver() || !GeoPTA.v().isPointer(ptaInfo.getReceiver()))
+	        return sources;
+	    
+	    for (AllocNode node : ptaInfo.getReceiverPTSet()) {
+	        Object expr = GeoPTA.v().getNewExpr(node);
+	        
+	        if (expr == null || !(expr instanceof Expr)) {
+	            logger.debug("Cannot find new expression for allocnode: {}", node);
+	            continue;
+	        }
+	        
+	        Stmt stmt = JimpleRelationships.v().getEnclosingStmt((Expr)expr);
+	        if (stmt == null) {
+	            logger.debug("Cannot find enclosing statement for expression: {}", expr);
+	            continue;
+	        }
+	        
+	        SootMethod method = JimpleRelationships.v().getEnclosingMethod(stmt);
+	        if (method == null) {
+	            logger.debug("Cannot find enclosing method for statement: {}", stmt);
+	            continue;
+	        }
+	        
+	        sources.add(SootUtils.getSourceLocation(stmt, method.getDeclaringClass()));
+	    }
+	    
+	    return sources;
+	}
+	
+	/**
+	 * Return the set of lines for new expression that could reach the argument i, assuming it is 
+	 * a pointer value.  Return empty set of any problems.
+	 */
+	public Set<SourceLocationTag> getArgSources(int i) {
+	    HashSet<SourceLocationTag> sources = new HashSet<SourceLocationTag>();
+        
+        if (ptaInfo == null || !GeoPTA.v().isPointer(ptaInfo.getArgValue(i)))
+            return sources;
+        
+        for (AllocNode node : ptaInfo.getArgPTSet(i)) {
+            Object expr = GeoPTA.v().getNewExpr(node);
+            
+            if (expr == null || !(expr instanceof Expr)) {
+                logger.debug("Cannot find new expression for allocnode: {}", node);
+                continue;
+            }
+            
+            Stmt stmt = JimpleRelationships.v().getEnclosingStmt((Expr)expr);
+            if (stmt == null) {
+                logger.debug("Cannot find enclosing statement for expression: {}", expr);
+                continue;
+            }
+            
+            SootMethod method = JimpleRelationships.v().getEnclosingMethod(stmt);
+            if (method == null) {
+                logger.debug("Cannot find enclosing method for statement: {}", stmt);
+                continue;
+            }
+            
+            sources.add(SootUtils.getSourceLocation(stmt, method.getDeclaringClass()));
+        }
+        
+        return sources;
+	}
 	
 	public boolean hasReceiver() {
 		return receiver != null && !receiver.equals("");			
@@ -275,19 +341,19 @@ public class Method implements Comparable<Method> {
 	public boolean checkValidSpecMethod() {
 		return API.v().isSupportedMethod(sootMethod);
 	}
-	
-	
 
-	@Override
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
         result = prime * result + Arrays.hashCode(args);
         result = prime * result + ((lines == null) ? 0 : lines.hashCode());
+        result = prime * result + ((ptaInfo == null) ? 0 : ptaInfo.hashCode());
         result = prime * result + ((receiver == null) ? 0 : receiver.hashCode());
         result = prime * result + ((sootMethod == null) ? 0 : sootMethod.hashCode());
         return result;
     }
+
 
     @Override
     public boolean equals(Object obj) {
@@ -299,6 +365,9 @@ public class Method implements Comparable<Method> {
         if (lines == null) {
             if (other.lines != null) return false;
         } else if (!lines.equals(other.lines)) return false;
+        if (ptaInfo == null) {
+            if (other.ptaInfo != null) return false;
+        } else if (!ptaInfo.equals(other.ptaInfo)) return false;
         if (receiver == null) {
             if (other.receiver != null) return false;
         } else if (!receiver.equals(other.receiver)) return false;
@@ -307,6 +376,7 @@ public class Method implements Comparable<Method> {
         } else if (!sootMethod.equals(other.sootMethod)) return false;
         return true;
     }
+
 
     public void setReceiver(Object rec) {
 		this.receiver = rec;

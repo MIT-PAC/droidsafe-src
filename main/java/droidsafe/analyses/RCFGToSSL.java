@@ -130,7 +130,7 @@ public class RCFGToSSL {
             }
         }
 	    
-	    Method method = new Method(node.getEntryPoint(), args, receiver);
+	    Method method = new Method(node.getEntryPoint(), node, args, receiver);
 	    return method;
 	}
 	
@@ -160,7 +160,7 @@ public class RCFGToSSL {
 		}
 
 		Object receiver = makeMethodReceiver(oe);
-		Method method = new Method(oe.getTarget(), args, receiver);	
+		Method method = new Method(oe.getTarget(), oe, args, receiver);	
 		
 		logger.info("Created method with target: {}", method.getSootMethod());
 		//transfer over the source location information of the call

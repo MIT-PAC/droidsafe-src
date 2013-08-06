@@ -246,6 +246,11 @@ public class RCFG {
                         SootUtils.getOverridingMethodsIncluding(iie.getMethod().getDeclaringClass(), 
                             iie.getMethodRef().getSubSignature().getString());
 
+                //set some arbitrary size on the number of possible methods we insert based
+                //on hierarchy analysis.
+                if (allMethods.size() > 4)
+                    continue;
+                
                 for (SootMethod m : allMethods) {
                     if (API.v().isSystemMethod(m)) {
                         Edge newEdge = new Edge(method, stmt, m);
