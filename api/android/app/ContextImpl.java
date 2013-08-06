@@ -84,6 +84,7 @@ import droidsafe.annotations.DSGeneratedField;
 import droidsafe.annotations.DSGenerator;
 import droidsafe.annotations.DSModeled;
 import droidsafe.concrete.DroidSafeContentResolver;
+import droidsafe.helpers.DSUtils;
 
 import java.util.Collections;
 
@@ -102,6 +103,12 @@ class ReceiverRestrictedContext extends ContextWrapper {
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
         //DSFIXME: CODE0010: Possible callback registration function detected
+    	// Generate Intents based on filter
+    	Intent[] intents = DSUtils.getIntentFromFilter(filter);
+    	for (Intent intent : intents) {
+			receiver.onReceive(this, intent);
+		}
+
         addTaint(filter.getTaint());
         addTaint(receiver.getTaint());
 Intent varD535A24B470170C9E7EA08ED846B5DCB_39836133 =         registerReceiver(receiver, filter, null, null);
@@ -118,6 +125,12 @@ Intent varD535A24B470170C9E7EA08ED846B5DCB_39836133 =         registerReceiver(r
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter,
             String broadcastPermission, Handler scheduler) {
         //DSFIXME: CODE0010: Possible callback registration function detected
+    	// Generate Intents based on filter
+    	Intent[] intents = DSUtils.getIntentFromFilter(filter);
+    	for (Intent intent : intents) {
+			receiver.onReceive(this, intent);
+		}
+
         addTaint(scheduler.getTaint());
         addTaint(broadcastPermission.getTaint());
         addTaint(filter.getTaint());

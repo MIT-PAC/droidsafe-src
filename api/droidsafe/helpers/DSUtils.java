@@ -1,6 +1,8 @@
 package droidsafe.helpers;
 
+import android.content.BroadcastReceiver;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.net.Uri;
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
@@ -32,5 +34,28 @@ public class DSUtils {
                 result.setData(Uri.parse(orig.getType()));
 		
 		//TODO: might need more here?
+	}
+	
+	/** This utility method should be used to create Intents from IntentFilters.  This
+	 * was originally developed to exercise {@link BroadcastReceiver} with all of the possible
+	 * intents for which the application registers
+	 * @param filter
+	 * @return
+	 */
+	@DSModeled(DSC.BAN)
+	public static Intent[] getIntentFromFilter(IntentFilter filter) {
+		int actionCount = filter.countActions();
+		int catCount = filter.countCategories();
+		Intent[] intents = new Intent[actionCount];
+		for (int actionIndex = 0; actionIndex < actionCount; actionIndex++) {
+			Intent intent = new Intent(filter.getAction(actionIndex));
+
+			for (int catIndex = 0; catIndex < catCount; catIndex++) {
+				intent.addCategory(filter.getCategory(catIndex));
+			}
+			intents[actionIndex] = intent;
+		}
+		
+		return intents;
 	}
 }

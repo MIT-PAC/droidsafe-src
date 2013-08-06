@@ -276,7 +276,8 @@ public final class URI implements Comparable<URI>, Serializable {
         if(uri.regionMatches(start, "//", 0, 2))        
         {
             int authorityStart = start + 2;
-            fileStart = UrlUtils.findFirstOf(uri, "/?", authorityStart, fragmentStart);
+            //fileStart = UrlUtils.findFirstOf(uri, "/?", authorityStart, fragmentStart);
+            fileStart = 0;
             if(authorityStart == uri.length())            
             {
                 URISyntaxException varE5F5DDDD4DF3054651CDAC5E21D37F76_1633852130 = new URISyntaxException(uri, "Authority expected", uri.length());
@@ -292,7 +293,8 @@ public final class URI implements Comparable<URI>, Serializable {
         {
             fileStart = start;
         } //End block
-        int queryStart = UrlUtils.findFirstOf(uri, "?", fileStart, fragmentStart);
+        //int queryStart = UrlUtils.findFirstOf(uri, "?", fileStart, fragmentStart);
+        int queryStart = 0;
         path = PATH_ENCODER.validate(uri, fileStart, queryStart, "path");
         if(queryStart < fragmentStart)        
         {

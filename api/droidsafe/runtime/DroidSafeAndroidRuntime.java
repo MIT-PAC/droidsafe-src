@@ -5,6 +5,7 @@ import java.util.Random;
 import android.app.ContextImpl;
 import android.content.BroadcastReceiver;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -106,7 +107,7 @@ public class DroidSafeAndroidRuntime {
 	
 	@DSModeled(DSC.SPEC)
 	public static void modelBroadCastReceiver(BroadcastReceiver receiver) {
-		receiver.onReceive(new ContextImpl(), new Intent());
+		// No-op onReceive called from registerReceiver in ContextImpl
 	}
 	
 	@DSModeled(DSC.SPEC)
