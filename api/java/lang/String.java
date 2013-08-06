@@ -1929,7 +1929,6 @@ String var354324DED16A0B9E2EC7A1041A7B3943_1600767136 =         new String(start
         return Float.toString(value);
     }
 
-    
     @DSModeled(DSC.SAFE)
     public static String valueOf(int value) {
         return Integer.toString(value);
@@ -2303,6 +2302,5 @@ CharSequence var14116236EC4BC8D62F0E86641118EABD_1649835730 =         substring(
             ASCII[i] = (char) i;
         }
     }
-    
 }
 
